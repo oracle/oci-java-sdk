@@ -5,21 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Summary information for an instance pool.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary information for an instance pool. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = InstancePoolSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InstancePoolSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = InstancePoolSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class InstancePoolSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -59,161 +60,154 @@ public final class InstancePoolSummary extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the instance pool.
-         **/
+        /** The OCID of the instance pool. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the instance pool.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The OCID of the compartment containing the instance pool.
-         **/
+        /** The OCID of the compartment containing the instance pool. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment containing the instance pool.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
-         *
-         **/
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The OCID of the instance configuration associated with the instance pool.
-         **/
+        /** The OCID of the instance configuration associated with the instance pool. */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceConfigurationId")
         private String instanceConfigurationId;
 
         /**
          * The OCID of the instance configuration associated with the instance pool.
+         *
          * @param instanceConfigurationId the value to set
          * @return this builder
-         **/
+         */
         public Builder instanceConfigurationId(String instanceConfigurationId) {
             this.instanceConfigurationId = instanceConfigurationId;
             this.__explicitlySet__.add("instanceConfigurationId");
             return this;
         }
-        /**
-         * The current state of the instance pool.
-         **/
+        /** The current state of the instance pool. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the instance pool.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * The availability domains for the instance pool.
-         **/
+        /** The availability domains for the instance pool. */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomains")
         private java.util.List<String> availabilityDomains;
 
         /**
          * The availability domains for the instance pool.
+         *
          * @param availabilityDomains the value to set
          * @return this builder
-         **/
+         */
         public Builder availabilityDomains(java.util.List<String> availabilityDomains) {
             this.availabilityDomains = availabilityDomains;
             this.__explicitlySet__.add("availabilityDomains");
             return this;
         }
-        /**
-         * The number of instances that should be in the instance pool.
-         **/
+        /** The number of instances that should be in the instance pool. */
         @com.fasterxml.jackson.annotation.JsonProperty("size")
         private Integer size;
 
         /**
          * The number of instances that should be in the instance pool.
+         *
          * @param size the value to set
          * @return this builder
-         **/
+         */
         public Builder size(Integer size) {
             this.size = size;
             this.__explicitlySet__.add("size");
             return this;
         }
         /**
-         * The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * Example: {@code 2016-08-25T21:10:29.600Z}
-         *
-         **/
+         * The date and time the instance pool was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the instance pool was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -221,24 +215,25 @@ public final class InstancePoolSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -303,9 +298,7 @@ public final class InstancePoolSummary extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -314,70 +307,64 @@ public final class InstancePoolSummary extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the instance pool.
-     **/
+    /** The OCID of the instance pool. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the instance pool.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The OCID of the compartment containing the instance pool.
-     **/
+    /** The OCID of the compartment containing the instance pool. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment containing the instance pool.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The OCID of the instance configuration associated with the instance pool.
-     **/
+    /** The OCID of the instance configuration associated with the instance pool. */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceConfigurationId")
     private final String instanceConfigurationId;
 
     /**
      * The OCID of the instance configuration associated with the instance pool.
+     *
      * @return the value
-     **/
+     */
     public String getInstanceConfigurationId() {
         return instanceConfigurationId;
     }
 
-    /**
-     * The current state of the instance pool.
-     **/
-    public enum LifecycleState {
+    /** The current state of the instance pool. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Provisioning("PROVISIONING"),
         Scaling("SCALING"),
         Starting("STARTING"),
@@ -388,8 +375,8 @@ public final class InstancePoolSummary extends com.oracle.bmc.http.internal.Expl
         Running("RUNNING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -428,106 +415,104 @@ public final class InstancePoolSummary extends com.oracle.bmc.http.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current state of the instance pool.
-     **/
+    /** The current state of the instance pool. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the instance pool.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * The availability domains for the instance pool.
-     **/
+    /** The availability domains for the instance pool. */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomains")
     private final java.util.List<String> availabilityDomains;
 
     /**
      * The availability domains for the instance pool.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getAvailabilityDomains() {
         return availabilityDomains;
     }
 
-    /**
-     * The number of instances that should be in the instance pool.
-     **/
+    /** The number of instances that should be in the instance pool. */
     @com.fasterxml.jackson.annotation.JsonProperty("size")
     private final Integer size;
 
     /**
      * The number of instances that should be in the instance pool.
+     *
      * @return the value
-     **/
+     */
     public Integer getSize() {
         return size;
     }
 
     /**
-     * The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Example: {@code 2016-08-25T21:10:29.600Z}
-     *
-     **/
+     * The date and time the instance pool was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the instance pool was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -539,6 +524,7 @@ public final class InstancePoolSummary extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

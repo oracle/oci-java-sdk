@@ -5,22 +5,22 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Object containing information about a mirror record.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Object containing information about a mirror record. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = RepositoryMirrorRecord.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = RepositoryMirrorRecord.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class RepositoryMirrorRecord
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "mirrorStatus",
@@ -46,90 +46,79 @@ public final class RepositoryMirrorRecord
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Mirror status of current mirror entry.
-         * QUEUED - Mirroring Queued
-         * RUNNING - Mirroring is Running
-         * PASSED - Mirroring Passed
-         * FAILED - Mirroring Failed
-         *
-         **/
+         * Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is
+         * Running PASSED - Mirroring Passed FAILED - Mirroring Failed
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("mirrorStatus")
         private MirrorStatus mirrorStatus;
 
         /**
-         * Mirror status of current mirror entry.
-         * QUEUED - Mirroring Queued
-         * RUNNING - Mirroring is Running
-         * PASSED - Mirroring Passed
-         * FAILED - Mirroring Failed
+         * Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is
+         * Running PASSED - Mirroring Passed FAILED - Mirroring Failed
          *
          * @param mirrorStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder mirrorStatus(MirrorStatus mirrorStatus) {
             this.mirrorStatus = mirrorStatus;
             this.__explicitlySet__.add("mirrorStatus");
             return this;
         }
-        /**
-         * Workrequest ID to track current mirror operation.
-         **/
+        /** Workrequest ID to track current mirror operation. */
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
         private String workRequestId;
 
         /**
          * Workrequest ID to track current mirror operation.
+         *
          * @param workRequestId the value to set
          * @return this builder
-         **/
+         */
         public Builder workRequestId(String workRequestId) {
             this.workRequestId = workRequestId;
             this.__explicitlySet__.add("workRequestId");
             return this;
         }
-        /**
-         * The time to enqueue a mirror operation.
-         **/
+        /** The time to enqueue a mirror operation. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnqueued")
         private java.util.Date timeEnqueued;
 
         /**
          * The time to enqueue a mirror operation.
+         *
          * @param timeEnqueued the value to set
          * @return this builder
-         **/
+         */
         public Builder timeEnqueued(java.util.Date timeEnqueued) {
             this.timeEnqueued = timeEnqueued;
             this.__explicitlySet__.add("timeEnqueued");
             return this;
         }
-        /**
-         * The time to start a mirror operation.
-         **/
+        /** The time to start a mirror operation. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * The time to start a mirror operation.
+         *
          * @param timeStarted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /**
-         * The time taken to complete a mirror operation. Value is null if not completed.
-         **/
+        /** The time taken to complete a mirror operation. Value is null if not completed. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
         /**
          * The time taken to complete a mirror operation. Value is null if not completed.
+         *
          * @param timeEnded the value to set
          * @return this builder
-         **/
+         */
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
@@ -174,9 +163,7 @@ public final class RepositoryMirrorRecord
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -186,14 +173,10 @@ public final class RepositoryMirrorRecord
     }
 
     /**
-     * Mirror status of current mirror entry.
-     * QUEUED - Mirroring Queued
-     * RUNNING - Mirroring is Running
-     * PASSED - Mirroring Passed
-     * FAILED - Mirroring Failed
-     *
-     **/
-    public enum MirrorStatus {
+     * Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is
+     * Running PASSED - Mirroring Passed FAILED - Mirroring Failed
+     */
+    public enum MirrorStatus implements com.oracle.bmc.http.internal.BmcEnum {
         None("NONE"),
         Queued("QUEUED"),
         Running("RUNNING"),
@@ -201,8 +184,8 @@ public final class RepositoryMirrorRecord
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -242,81 +225,70 @@ public final class RepositoryMirrorRecord
         }
     };
     /**
-     * Mirror status of current mirror entry.
-     * QUEUED - Mirroring Queued
-     * RUNNING - Mirroring is Running
-     * PASSED - Mirroring Passed
-     * FAILED - Mirroring Failed
-     *
-     **/
+     * Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is
+     * Running PASSED - Mirroring Passed FAILED - Mirroring Failed
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("mirrorStatus")
     private final MirrorStatus mirrorStatus;
 
     /**
-     * Mirror status of current mirror entry.
-     * QUEUED - Mirroring Queued
-     * RUNNING - Mirroring is Running
-     * PASSED - Mirroring Passed
-     * FAILED - Mirroring Failed
+     * Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is
+     * Running PASSED - Mirroring Passed FAILED - Mirroring Failed
      *
      * @return the value
-     **/
+     */
     public MirrorStatus getMirrorStatus() {
         return mirrorStatus;
     }
 
-    /**
-     * Workrequest ID to track current mirror operation.
-     **/
+    /** Workrequest ID to track current mirror operation. */
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
     private final String workRequestId;
 
     /**
      * Workrequest ID to track current mirror operation.
+     *
      * @return the value
-     **/
+     */
     public String getWorkRequestId() {
         return workRequestId;
     }
 
-    /**
-     * The time to enqueue a mirror operation.
-     **/
+    /** The time to enqueue a mirror operation. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnqueued")
     private final java.util.Date timeEnqueued;
 
     /**
      * The time to enqueue a mirror operation.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeEnqueued() {
         return timeEnqueued;
     }
 
-    /**
-     * The time to start a mirror operation.
-     **/
+    /** The time to start a mirror operation. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * The time to start a mirror operation.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /**
-     * The time taken to complete a mirror operation. Value is null if not completed.
-     **/
+    /** The time taken to complete a mirror operation. Value is null if not completed. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
     /**
      * The time taken to complete a mirror operation. Value is null if not completed.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
@@ -328,6 +300,7 @@ public final class RepositoryMirrorRecord
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

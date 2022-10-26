@@ -43,8 +43,10 @@ public class AutonomousDatawarehouseExample {
         String compartmentId = args[0];
         String password = args[1];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -111,7 +113,7 @@ public class AutonomousDatawarehouseExample {
         adw = waitForInstanceToBecomeAvailable(dbClient, adw.getId());
         System.out.println("Started Autonomous Datawarehouse Shared : " + adw);
 
-        //download wallet
+        // download wallet
 
         System.out.println("Downloading wallet for  : " + adw);
         GenerateAutonomousDatabaseWalletDetails adwWalletDetails = createAdwWalletDetails(password);

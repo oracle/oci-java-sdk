@@ -5,25 +5,24 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * The information about new Analytics Warehouse instance being provisioned.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information about new Analytics Warehouse instance being provisioned. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateOaxServiceInstanceDetails.Builder.class
-)
+        builder = CreateOaxServiceInstanceDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "serviceInstanceType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "serviceInstanceType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateOaxServiceInstanceDetails extends CreateServiceInstanceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -44,49 +43,46 @@ public final class CreateOaxServiceInstanceDetails extends CreateServiceInstance
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * A unique Name for Analytics Warehouse.
-         **/
+        /** A unique Name for Analytics Warehouse. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * A unique Name for Analytics Warehouse.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * This is the description for Analytics Warehouse Service.
-         **/
+        /** This is the description for Analytics Warehouse Service. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * This is the description for Analytics Warehouse Service.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * Admin information to provision Analytics Warehouse Servcie
-         **/
+        /** Admin information to provision Analytics Warehouse Servcie */
         @com.fasterxml.jackson.annotation.JsonProperty("FawAdminInfo")
         private FawAdminInfoDetails fawAdminInfo;
 
         /**
          * Admin information to provision Analytics Warehouse Servcie
+         *
          * @param fawAdminInfo the value to set
          * @return this builder
-         **/
+         */
         public Builder fawAdminInfo(FawAdminInfoDetails fawAdminInfo) {
             this.fawAdminInfo = fawAdminInfo;
             this.__explicitlySet__.add("fawAdminInfo");
@@ -131,9 +127,7 @@ public final class CreateOaxServiceInstanceDetails extends CreateServiceInstance
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -155,44 +149,41 @@ public final class CreateOaxServiceInstanceDetails extends CreateServiceInstance
         this.fawAdminInfo = fawAdminInfo;
     }
 
-    /**
-     * A unique Name for Analytics Warehouse.
-     **/
+    /** A unique Name for Analytics Warehouse. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * A unique Name for Analytics Warehouse.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * This is the description for Analytics Warehouse Service.
-     **/
+    /** This is the description for Analytics Warehouse Service. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * This is the description for Analytics Warehouse Service.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * Admin information to provision Analytics Warehouse Servcie
-     **/
+    /** Admin information to provision Analytics Warehouse Servcie */
     @com.fasterxml.jackson.annotation.JsonProperty("FawAdminInfo")
     private final FawAdminInfoDetails fawAdminInfo;
 
     /**
      * Admin information to provision Analytics Warehouse Servcie
+     *
      * @return the value
-     **/
+     */
     public FawAdminInfoDetails getFawAdminInfo() {
         return fawAdminInfo;
     }
@@ -204,6 +195,7 @@ public final class CreateOaxServiceInstanceDetails extends CreateServiceInstance
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

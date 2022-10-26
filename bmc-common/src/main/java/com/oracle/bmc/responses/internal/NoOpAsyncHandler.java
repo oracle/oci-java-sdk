@@ -8,15 +8,14 @@ import com.oracle.bmc.responses.AsyncHandler;
 
 /**
  * An async handler that doesn't do anything.
+ *
  * @param <REQUEST> type of the request
  * @param <RESPONSE> type of the response
  */
 public class NoOpAsyncHandler<REQUEST, RESPONSE> implements AsyncHandler<REQUEST, RESPONSE> {
     private static final NoOpAsyncHandler<?, ?> SINGLETON = new NoOpAsyncHandler<Object, Object>();
 
-    /**
-     * Private singleton constructor
-     */
+    /** Private singleton constructor */
     private NoOpAsyncHandler() {}
 
     @Override
@@ -31,6 +30,7 @@ public class NoOpAsyncHandler<REQUEST, RESPONSE> implements AsyncHandler<REQUEST
 
     /**
      * Return the singleton with the correct generic types.
+     *
      * @param <REQUEST> type of the request
      * @param <RESPONSE> type of the response
      * @return no op async handler singleton instance

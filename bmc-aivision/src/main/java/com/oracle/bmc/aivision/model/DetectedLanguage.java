@@ -5,19 +5,21 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * The language detected in a document.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The language detected in a document. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DetectedLanguage.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DetectedLanguage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class DetectedLanguage
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"languageCode", "confidence"})
     public DetectedLanguage(DocumentLanguage languageCode, Float confidence) {
@@ -28,33 +30,31 @@ public final class DetectedLanguage extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The language of the document, abbreviated according to ISO 639-2.
-         **/
+        /** The language of the document, abbreviated according to ISO 639-2. */
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private DocumentLanguage languageCode;
 
         /**
          * The language of the document, abbreviated according to ISO 639-2.
+         *
          * @param languageCode the value to set
          * @return this builder
-         **/
+         */
         public Builder languageCode(DocumentLanguage languageCode) {
             this.languageCode = languageCode;
             this.__explicitlySet__.add("languageCode");
             return this;
         }
-        /**
-         * The confidence score between 0 and 1.
-         **/
+        /** The confidence score between 0 and 1. */
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Float confidence;
 
         /**
          * The confidence score between 0 and 1.
+         *
          * @param confidence the value to set
          * @return this builder
-         **/
+         */
         public Builder confidence(Float confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
@@ -84,9 +84,7 @@ public final class DetectedLanguage extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,30 +93,28 @@ public final class DetectedLanguage extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * The language of the document, abbreviated according to ISO 639-2.
-     **/
+    /** The language of the document, abbreviated according to ISO 639-2. */
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final DocumentLanguage languageCode;
 
     /**
      * The language of the document, abbreviated according to ISO 639-2.
+     *
      * @return the value
-     **/
+     */
     public DocumentLanguage getLanguageCode() {
         return languageCode;
     }
 
-    /**
-     * The confidence score between 0 and 1.
-     **/
+    /** The confidence score between 0 and 1. */
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Float confidence;
 
     /**
      * The confidence score between 0 and 1.
+     *
      * @return the value
-     **/
+     */
     public Float getConfidence() {
         return confidence;
     }
@@ -130,6 +126,7 @@ public final class DetectedLanguage extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

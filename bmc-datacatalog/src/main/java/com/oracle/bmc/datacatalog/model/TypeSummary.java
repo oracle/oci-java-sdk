@@ -5,21 +5,21 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Summary data catalog type information. All types are statically defined in the system and are immutable.
- * It isn't possible to create new types or update existing types via the API.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary data catalog type information. All types are statically defined in the system and are
+ * immutable. It isn't possible to create new types or update existing types via the API. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TypeSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TypeSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class TypeSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -56,145 +56,136 @@ public final class TypeSummary extends com.oracle.bmc.http.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Unique type key that is immutable.
-         **/
+        /** Unique type key that is immutable. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Unique type key that is immutable.
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /**
-         * The immutable name of the type.
-         **/
+        /** The immutable name of the type. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The immutable name of the type.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Detailed description of the type.
-         **/
+        /** Detailed description of the type. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Detailed description of the type.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The data catalog's OCID.
-         **/
+        /** The data catalog's OCID. */
         @com.fasterxml.jackson.annotation.JsonProperty("catalogId")
         private String catalogId;
 
         /**
          * The data catalog's OCID.
+         *
          * @param catalogId the value to set
          * @return this builder
-         **/
+         */
         public Builder catalogId(String catalogId) {
             this.catalogId = catalogId;
             this.__explicitlySet__.add("catalogId");
             return this;
         }
-        /**
-         * Indicates the category this type belongs to. For instance, data assets, connections.
-         **/
+        /** Indicates the category this type belongs to. For instance, data assets, connections. */
         @com.fasterxml.jackson.annotation.JsonProperty("typeCategory")
         private String typeCategory;
 
         /**
          * Indicates the category this type belongs to. For instance, data assets, connections.
+         *
          * @param typeCategory the value to set
          * @return this builder
-         **/
+         */
         public Builder typeCategory(String typeCategory) {
             this.typeCategory = typeCategory;
             this.__explicitlySet__.add("typeCategory");
             return this;
         }
-        /**
-         * URI to the type instance in the API.
-         **/
+        /** URI to the type instance in the API. */
         @com.fasterxml.jackson.annotation.JsonProperty("uri")
         private String uri;
 
         /**
          * URI to the type instance in the API.
+         *
          * @param uri the value to set
          * @return this builder
-         **/
+         */
         public Builder uri(String uri) {
             this.uri = uri;
             this.__explicitlySet__.add("uri");
             return this;
         }
-        /**
-         * State of the folder.
-         **/
+        /** State of the folder. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * State of the folder.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * Unique key of the parent type.
-         **/
+        /** Unique key of the parent type. */
         @com.fasterxml.jackson.annotation.JsonProperty("parentTypeKey")
         private String parentTypeKey;
 
         /**
          * Unique key of the parent type.
+         *
          * @param parentTypeKey the value to set
          * @return this builder
-         **/
+         */
         public Builder parentTypeKey(String parentTypeKey) {
             this.parentTypeKey = parentTypeKey;
             this.__explicitlySet__.add("parentTypeKey");
             return this;
         }
-        /**
-         * Name of the parent type.
-         **/
+        /** Name of the parent type. */
         @com.fasterxml.jackson.annotation.JsonProperty("parentTypeName")
         private String parentTypeName;
 
         /**
          * Name of the parent type.
+         *
          * @param parentTypeName the value to set
          * @return this builder
-         **/
+         */
         public Builder parentTypeName(String parentTypeName) {
             this.parentTypeName = parentTypeName;
             this.__explicitlySet__.add("parentTypeName");
@@ -255,9 +246,7 @@ public final class TypeSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -266,128 +255,119 @@ public final class TypeSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique type key that is immutable.
-     **/
+    /** Unique type key that is immutable. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Unique type key that is immutable.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * The immutable name of the type.
-     **/
+    /** The immutable name of the type. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The immutable name of the type.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Detailed description of the type.
-     **/
+    /** Detailed description of the type. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Detailed description of the type.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The data catalog's OCID.
-     **/
+    /** The data catalog's OCID. */
     @com.fasterxml.jackson.annotation.JsonProperty("catalogId")
     private final String catalogId;
 
     /**
      * The data catalog's OCID.
+     *
      * @return the value
-     **/
+     */
     public String getCatalogId() {
         return catalogId;
     }
 
-    /**
-     * Indicates the category this type belongs to. For instance, data assets, connections.
-     **/
+    /** Indicates the category this type belongs to. For instance, data assets, connections. */
     @com.fasterxml.jackson.annotation.JsonProperty("typeCategory")
     private final String typeCategory;
 
     /**
      * Indicates the category this type belongs to. For instance, data assets, connections.
+     *
      * @return the value
-     **/
+     */
     public String getTypeCategory() {
         return typeCategory;
     }
 
-    /**
-     * URI to the type instance in the API.
-     **/
+    /** URI to the type instance in the API. */
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     private final String uri;
 
     /**
      * URI to the type instance in the API.
+     *
      * @return the value
-     **/
+     */
     public String getUri() {
         return uri;
     }
 
-    /**
-     * State of the folder.
-     **/
+    /** State of the folder. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * State of the folder.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * Unique key of the parent type.
-     **/
+    /** Unique key of the parent type. */
     @com.fasterxml.jackson.annotation.JsonProperty("parentTypeKey")
     private final String parentTypeKey;
 
     /**
      * Unique key of the parent type.
+     *
      * @return the value
-     **/
+     */
     public String getParentTypeKey() {
         return parentTypeKey;
     }
 
-    /**
-     * Name of the parent type.
-     **/
+    /** Name of the parent type. */
     @com.fasterxml.jackson.annotation.JsonProperty("parentTypeName")
     private final String parentTypeName;
 
     /**
      * Name of the parent type.
+     *
      * @return the value
-     **/
+     */
     public String getParentTypeName() {
         return parentTypeName;
     }
@@ -399,6 +379,7 @@ public final class TypeSummary extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

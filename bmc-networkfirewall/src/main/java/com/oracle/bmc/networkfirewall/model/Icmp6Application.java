@@ -5,53 +5,59 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /**
- * ICMP6 Application used on the firewall policy rules.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * ICMP6 Application used on the firewall policy rules. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Icmp6Application.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class Icmp6Application extends Application {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The value of the ICMP6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-         **/
+         * The value of the ICMP6 message Type field as defined by [RFC
+         * 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("icmpType")
         private Integer icmpType;
 
         /**
-         * The value of the ICMP6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+         * The value of the ICMP6 message Type field as defined by [RFC
+         * 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+         *
          * @param icmpType the value to set
          * @return this builder
-         **/
+         */
         public Builder icmpType(Integer icmpType) {
             this.icmpType = icmpType;
             this.__explicitlySet__.add("icmpType");
             return this;
         }
         /**
-         * The value of the ICMP6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-         **/
+         * The value of the ICMP6 message Code (subtype) field as defined by [RFC
+         * 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("icmpCode")
         private Integer icmpCode;
 
         /**
-         * The value of the ICMP6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+         * The value of the ICMP6 message Code (subtype) field as defined by [RFC
+         * 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+         *
          * @param icmpCode the value to set
          * @return this builder
-         **/
+         */
         public Builder icmpCode(Integer icmpCode) {
             this.icmpCode = icmpCode;
             this.__explicitlySet__.add("icmpCode");
@@ -81,9 +87,7 @@ public final class Icmp6Application extends Application {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,29 +104,35 @@ public final class Icmp6Application extends Application {
     }
 
     /**
-     * The value of the ICMP6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-     **/
+     * The value of the ICMP6 message Type field as defined by [RFC
+     * 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("icmpType")
     private final Integer icmpType;
 
     /**
-     * The value of the ICMP6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     * The value of the ICMP6 message Type field as defined by [RFC
+     * 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     *
      * @return the value
-     **/
+     */
     public Integer getIcmpType() {
         return icmpType;
     }
 
     /**
-     * The value of the ICMP6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-     **/
+     * The value of the ICMP6 message Code (subtype) field as defined by [RFC
+     * 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("icmpCode")
     private final Integer icmpCode;
 
     /**
-     * The value of the ICMP6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     * The value of the ICMP6 message Code (subtype) field as defined by [RFC
+     * 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     *
      * @return the value
-     **/
+     */
     public Integer getIcmpCode() {
         return icmpCode;
     }
@@ -134,6 +144,7 @@ public final class Icmp6Application extends Application {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,19 +5,20 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * kmsKeyInfo
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * kmsKeyInfo <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = KmsKeyInfo.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class KmsKeyInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class KmsKeyInfo extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "activeKeyId",
@@ -48,113 +49,106 @@ public final class KmsKeyInfo extends com.oracle.bmc.http.internal.ExplicitlySet
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * current BYOK keyId facp is using
-         **/
+        /** current BYOK keyId facp is using */
         @com.fasterxml.jackson.annotation.JsonProperty("activeKeyId")
         private String activeKeyId;
 
         /**
          * current BYOK keyId facp is using
+         *
          * @param activeKeyId the value to set
          * @return this builder
-         **/
+         */
         public Builder activeKeyId(String activeKeyId) {
             this.activeKeyId = activeKeyId;
             this.__explicitlySet__.add("activeKeyId");
             return this;
         }
-        /**
-         * current key version facp is using
-         **/
+        /** current key version facp is using */
         @com.fasterxml.jackson.annotation.JsonProperty("activeKeyVersion")
         private String activeKeyVersion;
 
         /**
          * current key version facp is using
+         *
          * @param activeKeyVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder activeKeyVersion(String activeKeyVersion) {
             this.activeKeyVersion = activeKeyVersion;
             this.__explicitlySet__.add("activeKeyVersion");
             return this;
         }
-        /**
-         * scheduled keyId to be updated
-         **/
+        /** scheduled keyId to be updated */
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledKeyId")
         private String scheduledKeyId;
 
         /**
          * scheduled keyId to be updated
+         *
          * @param scheduledKeyId the value to set
          * @return this builder
-         **/
+         */
         public Builder scheduledKeyId(String scheduledKeyId) {
             this.scheduledKeyId = scheduledKeyId;
             this.__explicitlySet__.add("scheduledKeyId");
             return this;
         }
-        /**
-         * scheduled key version to be updated.
-         **/
+        /** scheduled key version to be updated. */
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledKeyVersion")
         private String scheduledKeyVersion;
 
         /**
          * scheduled key version to be updated.
+         *
          * @param scheduledKeyVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder scheduledKeyVersion(String scheduledKeyVersion) {
             this.scheduledKeyVersion = scheduledKeyVersion;
             this.__explicitlySet__.add("scheduledKeyVersion");
             return this;
         }
-        /**
-         * current key lifeCycleState
-         **/
+        /** current key lifeCycleState */
         @com.fasterxml.jackson.annotation.JsonProperty("currentKeyLifecycleState")
         private String currentKeyLifecycleState;
 
         /**
          * current key lifeCycleState
+         *
          * @param currentKeyLifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder currentKeyLifecycleState(String currentKeyLifecycleState) {
             this.currentKeyLifecycleState = currentKeyLifecycleState;
             this.__explicitlySet__.add("currentKeyLifecycleState");
             return this;
         }
-        /**
-         * scheduled key lifeCycle state to be updated.
-         **/
+        /** scheduled key lifeCycle state to be updated. */
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledLifecycleState")
         private String scheduledLifecycleState;
 
         /**
          * scheduled key lifeCycle state to be updated.
+         *
          * @param scheduledLifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder scheduledLifecycleState(String scheduledLifecycleState) {
             this.scheduledLifecycleState = scheduledLifecycleState;
             this.__explicitlySet__.add("scheduledLifecycleState");
             return this;
         }
-        /**
-         * the scheduled key status
-         **/
+        /** the scheduled key status */
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledKeyStatus")
         private ScheduledKeyStatus scheduledKeyStatus;
 
         /**
          * the scheduled key status
+         *
          * @param scheduledKeyStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder scheduledKeyStatus(ScheduledKeyStatus scheduledKeyStatus) {
             this.scheduledKeyStatus = scheduledKeyStatus;
             this.__explicitlySet__.add("scheduledKeyStatus");
@@ -207,9 +201,7 @@ public final class KmsKeyInfo extends com.oracle.bmc.http.internal.ExplicitlySet
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -218,94 +210,86 @@ public final class KmsKeyInfo extends com.oracle.bmc.http.internal.ExplicitlySet
         return new Builder().copy(this);
     }
 
-    /**
-     * current BYOK keyId facp is using
-     **/
+    /** current BYOK keyId facp is using */
     @com.fasterxml.jackson.annotation.JsonProperty("activeKeyId")
     private final String activeKeyId;
 
     /**
      * current BYOK keyId facp is using
+     *
      * @return the value
-     **/
+     */
     public String getActiveKeyId() {
         return activeKeyId;
     }
 
-    /**
-     * current key version facp is using
-     **/
+    /** current key version facp is using */
     @com.fasterxml.jackson.annotation.JsonProperty("activeKeyVersion")
     private final String activeKeyVersion;
 
     /**
      * current key version facp is using
+     *
      * @return the value
-     **/
+     */
     public String getActiveKeyVersion() {
         return activeKeyVersion;
     }
 
-    /**
-     * scheduled keyId to be updated
-     **/
+    /** scheduled keyId to be updated */
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledKeyId")
     private final String scheduledKeyId;
 
     /**
      * scheduled keyId to be updated
+     *
      * @return the value
-     **/
+     */
     public String getScheduledKeyId() {
         return scheduledKeyId;
     }
 
-    /**
-     * scheduled key version to be updated.
-     **/
+    /** scheduled key version to be updated. */
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledKeyVersion")
     private final String scheduledKeyVersion;
 
     /**
      * scheduled key version to be updated.
+     *
      * @return the value
-     **/
+     */
     public String getScheduledKeyVersion() {
         return scheduledKeyVersion;
     }
 
-    /**
-     * current key lifeCycleState
-     **/
+    /** current key lifeCycleState */
     @com.fasterxml.jackson.annotation.JsonProperty("currentKeyLifecycleState")
     private final String currentKeyLifecycleState;
 
     /**
      * current key lifeCycleState
+     *
      * @return the value
-     **/
+     */
     public String getCurrentKeyLifecycleState() {
         return currentKeyLifecycleState;
     }
 
-    /**
-     * scheduled key lifeCycle state to be updated.
-     **/
+    /** scheduled key lifeCycle state to be updated. */
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledLifecycleState")
     private final String scheduledLifecycleState;
 
     /**
      * scheduled key lifeCycle state to be updated.
+     *
      * @return the value
-     **/
+     */
     public String getScheduledLifecycleState() {
         return scheduledLifecycleState;
     }
 
-    /**
-     * the scheduled key status
-     **/
-    public enum ScheduledKeyStatus {
+    /** the scheduled key status */
+    public enum ScheduledKeyStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Scheduling("SCHEDULING"),
         Updating("UPDATING"),
         Failed("FAILED"),
@@ -339,16 +323,15 @@ public final class KmsKeyInfo extends com.oracle.bmc.http.internal.ExplicitlySet
             throw new IllegalArgumentException("Invalid ScheduledKeyStatus: " + key);
         }
     };
-    /**
-     * the scheduled key status
-     **/
+    /** the scheduled key status */
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledKeyStatus")
     private final ScheduledKeyStatus scheduledKeyStatus;
 
     /**
      * the scheduled key status
+     *
      * @return the value
-     **/
+     */
     public ScheduledKeyStatus getScheduledKeyStatus() {
         return scheduledKeyStatus;
     }
@@ -360,6 +343,7 @@ public final class KmsKeyInfo extends com.oracle.bmc.http.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

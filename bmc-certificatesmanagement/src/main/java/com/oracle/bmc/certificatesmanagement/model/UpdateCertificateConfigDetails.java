@@ -5,39 +5,36 @@
 package com.oracle.bmc.certificatesmanagement.model;
 
 /**
- * The details of the contents of the certificate and certificate metadata.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details of the contents of the certificate and certificate metadata. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "configType",
-    defaultImpl = UpdateCertificateConfigDetails.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "configType",
+        defaultImpl = UpdateCertificateConfigDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateCertificateByImportingConfigDetails.class,
-        name = "IMPORTED"
-    ),
+            value = UpdateCertificateByImportingConfigDetails.class,
+            name = "IMPORTED"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateCertificateIssuedByInternalCaConfigDetails.class,
-        name = "ISSUED_BY_INTERNAL_CA"
-    ),
+            value = UpdateCertificateIssuedByInternalCaConfigDetails.class,
+            name = "ISSUED_BY_INTERNAL_CA"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateCertificateManagedExternallyIssuedByInternalCaConfigDetails.class,
-        name = "MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA"
-    )
+            value = UpdateCertificateManagedExternallyIssuedByInternalCaConfigDetails.class,
+            name = "MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public class UpdateCertificateConfigDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"versionName", "stage"})
     protected UpdateCertificateConfigDetails(String versionName, Stage stage) {
@@ -47,26 +44,30 @@ public class UpdateCertificateConfigDetails
     }
 
     /**
-     * A name for the certificate version. When the value is not null, a name is unique across versions of a given certificate.
-     **/
+     * A name for the certificate version. When the value is not null, a name is unique across
+     * versions of a given certificate.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("versionName")
     private final String versionName;
 
     /**
-     * A name for the certificate version. When the value is not null, a name is unique across versions of a given certificate.
+     * A name for the certificate version. When the value is not null, a name is unique across
+     * versions of a given certificate.
+     *
      * @return the value
-     **/
+     */
     public String getVersionName() {
         return versionName;
     }
 
     /**
-     * The rotation state of the certificate. The default is {@code CURRENT}, meaning that the certificate is currently in use. A certificate version
-     * that you mark as {@code PENDING} is staged and available for use, but you don't yet want to rotate it into current, active use. For example,
-     * you might update a certificate and mark its rotation state as {@code PENDING} if you haven't yet updated the certificate on the target system.
-     *
-     **/
-    public enum Stage {
+     * The rotation state of the certificate. The default is {@code CURRENT}, meaning that the
+     * certificate is currently in use. A certificate version that you mark as {@code PENDING} is
+     * staged and available for use, but you don't yet want to rotate it into current, active use.
+     * For example, you might update a certificate and mark its rotation state as {@code PENDING} if
+     * you haven't yet updated the certificate on the target system.
+     */
+    public enum Stage implements com.oracle.bmc.http.internal.BmcEnum {
         Current("CURRENT"),
         Pending("PENDING"),
         ;
@@ -99,21 +100,24 @@ public class UpdateCertificateConfigDetails
         }
     };
     /**
-     * The rotation state of the certificate. The default is {@code CURRENT}, meaning that the certificate is currently in use. A certificate version
-     * that you mark as {@code PENDING} is staged and available for use, but you don't yet want to rotate it into current, active use. For example,
-     * you might update a certificate and mark its rotation state as {@code PENDING} if you haven't yet updated the certificate on the target system.
-     *
-     **/
+     * The rotation state of the certificate. The default is {@code CURRENT}, meaning that the
+     * certificate is currently in use. A certificate version that you mark as {@code PENDING} is
+     * staged and available for use, but you don't yet want to rotate it into current, active use.
+     * For example, you might update a certificate and mark its rotation state as {@code PENDING} if
+     * you haven't yet updated the certificate on the target system.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("stage")
     private final Stage stage;
 
     /**
-     * The rotation state of the certificate. The default is {@code CURRENT}, meaning that the certificate is currently in use. A certificate version
-     * that you mark as {@code PENDING} is staged and available for use, but you don't yet want to rotate it into current, active use. For example,
-     * you might update a certificate and mark its rotation state as {@code PENDING} if you haven't yet updated the certificate on the target system.
+     * The rotation state of the certificate. The default is {@code CURRENT}, meaning that the
+     * certificate is currently in use. A certificate version that you mark as {@code PENDING} is
+     * staged and available for use, but you don't yet want to rotate it into current, active use.
+     * For example, you might update a certificate and mark its rotation state as {@code PENDING} if
+     * you haven't yet updated the certificate on the target system.
      *
      * @return the value
-     **/
+     */
     public Stage getStage() {
         return stage;
     }
@@ -125,6 +129,7 @@ public class UpdateCertificateConfigDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

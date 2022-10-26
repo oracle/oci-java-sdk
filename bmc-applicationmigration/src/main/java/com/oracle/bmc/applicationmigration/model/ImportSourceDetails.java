@@ -5,25 +5,25 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * / Basic details about the source, import manifest and object storage bucket as well as object name of the archive that should be used during import
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * / Basic details about the source, import manifest and object storage bucket as well as object
+ * name of the archive that should be used during import <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ImportSourceDetails.Builder.class
-)
+        builder = ImportSourceDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ImportSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -36,49 +36,46 @@ public final class ImportSourceDetails extends SourceDetails {
             this.__explicitlySet__.add("manifest");
             return this;
         }
-        /**
-         * the object storage namespace where the bucket and uploaded object resides
-         **/
+        /** the object storage namespace where the bucket and uploaded object resides */
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
          * the object storage namespace where the bucket and uploaded object resides
+         *
          * @param namespace the value to set
          * @return this builder
-         **/
+         */
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-        /**
-         * the bucket wherein the export archive exists in object storage
-         **/
+        /** the bucket wherein the export archive exists in object storage */
         @com.fasterxml.jackson.annotation.JsonProperty("bucket")
         private String bucket;
 
         /**
          * the bucket wherein the export archive exists in object storage
+         *
          * @param bucket the value to set
          * @return this builder
-         **/
+         */
         public Builder bucket(String bucket) {
             this.bucket = bucket;
             this.__explicitlySet__.add("bucket");
             return this;
         }
-        /**
-         * the name of the archive as it exists in object storage
-         **/
+        /** the name of the archive as it exists in object storage */
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
         /**
          * the name of the archive as it exists in object storage
+         *
          * @param objectName the value to set
          * @return this builder
-         **/
+         */
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
@@ -116,9 +113,7 @@ public final class ImportSourceDetails extends SourceDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -144,44 +139,41 @@ public final class ImportSourceDetails extends SourceDetails {
         return manifest;
     }
 
-    /**
-     * the object storage namespace where the bucket and uploaded object resides
-     **/
+    /** the object storage namespace where the bucket and uploaded object resides */
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
      * the object storage namespace where the bucket and uploaded object resides
+     *
      * @return the value
-     **/
+     */
     public String getNamespace() {
         return namespace;
     }
 
-    /**
-     * the bucket wherein the export archive exists in object storage
-     **/
+    /** the bucket wherein the export archive exists in object storage */
     @com.fasterxml.jackson.annotation.JsonProperty("bucket")
     private final String bucket;
 
     /**
      * the bucket wherein the export archive exists in object storage
+     *
      * @return the value
-     **/
+     */
     public String getBucket() {
         return bucket;
     }
 
-    /**
-     * the name of the archive as it exists in object storage
-     **/
+    /** the name of the archive as it exists in object storage */
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
     /**
      * the name of the archive as it exists in object storage
+     *
      * @return the value
-     **/
+     */
     public String getObjectName() {
         return objectName;
     }
@@ -193,6 +185,7 @@ public final class ImportSourceDetails extends SourceDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

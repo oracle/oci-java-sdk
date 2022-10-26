@@ -13,8 +13,8 @@ import java.util.Map;
 
 /**
  * Class containing all Identity realms.
- * <p>
- * Accounts (tenancies) are per Realm.
+ *
+ * <p>Accounts (tenancies) are per Realm.
  */
 public final class Realm implements Serializable, Comparable<Realm> {
     // LinkedHashMap to ensure stable ordering of registered realms
@@ -27,14 +27,15 @@ public final class Realm implements Serializable, Comparable<Realm> {
     public static final Realm OC9 = new Realm("oc9", "oraclecloud9.com");
     public static final Realm OC10 = new Realm("oc10", "oraclecloud10.com");
     public static final Realm OC14 = new Realm("oc14", "oraclecloud14.com");
+    public static final Realm OC15 = new Realm("oc15", "oraclecloud15.com");
+    public static final Realm OC16 = new Realm("oc16", "oraclecloud16.com");
+    public static final Realm OC17 = new Realm("oc17", "oraclecloud17.com");
+    public static final Realm OC18 = new Realm("oc18", "oraclecloud18.com");
+    public static final Realm OC20 = new Realm("oc20", "oraclecloud20.com");
     private static final long serialVersionUID = -905344971L;
-    /**
-     * The id of the realm.
-     */
+    /** The id of the realm. */
     private final String realmId;
-    /**
-     * The second level domain of the realm.
-     */
+    /** The second level domain of the realm. */
     private final String secondLevelDomain;
 
     private Realm(@Nonnull String realmId, @Nonnull String secondLevelDomain) {
@@ -58,13 +59,11 @@ public final class Realm implements Serializable, Comparable<Realm> {
      * Compares to realms lexicographically based on their realmId.
      *
      * @param other The Realm to be compared.
-     * @return the value {@code 0} if the realmId of the compared
-     *  Realm is equal to the realmId of this Realm; a value less
-     *  than {@code 0} if the realmId of this Realm is
-     *  lexicographically less than the realmId of the compared
-     *  Realm; and a value greater than {@code 0} if the realmId of
-     *  this Realm is lexicographically greater than the realmId of
-     *  the compared Realm.
+     * @return the value {@code 0} if the realmId of the compared Realm is equal to the realmId of
+     *     this Realm; a value less than {@code 0} if the realmId of this Realm is lexicographically
+     *     less than the realmId of the compared Realm; and a value greater than {@code 0} if the
+     *     realmId of this Realm is lexicographically greater than the realmId of the compared
+     *     Realm.
      */
     public int compareTo(Realm other) {
         return realmId.compareTo(other.realmId);
@@ -88,13 +87,12 @@ public final class Realm implements Serializable, Comparable<Realm> {
     }
 
     /**
-     * Returns the Realm object matching the specified name. The name must
-     * match exactly. (Extraneous whitespace characters are not permitted.)
+     * Returns the Realm object matching the specified name. The name must match exactly.
+     * (Extraneous whitespace characters are not permitted.)
      *
      * @param name The name of the realm
      * @return The Realm object matching the specified name, if available.
-     * @throws IllegalArgumentException if no realm exists with the specified
-     * name
+     * @throws IllegalArgumentException if no realm exists with the specified name
      */
     public static Realm valueOf(@Nonnull String name) throws IllegalArgumentException {
         if (name == null) {

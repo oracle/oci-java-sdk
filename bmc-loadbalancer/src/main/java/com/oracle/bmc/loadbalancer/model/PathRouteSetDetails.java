@@ -5,21 +5,22 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * A set of path route rules.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A set of path route rules. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = PathRouteSetDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PathRouteSetDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = PathRouteSetDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class PathRouteSetDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"pathRoutes"})
     public PathRouteSetDetails(java.util.List<PathRoute> pathRoutes) {
@@ -29,17 +30,16 @@ public final class PathRouteSetDetails extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The set of path route rules.
-         **/
+        /** The set of path route rules. */
         @com.fasterxml.jackson.annotation.JsonProperty("pathRoutes")
         private java.util.List<PathRoute> pathRoutes;
 
         /**
          * The set of path route rules.
+         *
          * @param pathRoutes the value to set
          * @return this builder
-         **/
+         */
         public Builder pathRoutes(java.util.List<PathRoute> pathRoutes) {
             this.pathRoutes = pathRoutes;
             this.__explicitlySet__.add("pathRoutes");
@@ -66,9 +66,7 @@ public final class PathRouteSetDetails extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -77,16 +75,15 @@ public final class PathRouteSetDetails extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * The set of path route rules.
-     **/
+    /** The set of path route rules. */
     @com.fasterxml.jackson.annotation.JsonProperty("pathRoutes")
     private final java.util.List<PathRoute> pathRoutes;
 
     /**
      * The set of path route rules.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<PathRoute> getPathRoutes() {
         return pathRoutes;
     }
@@ -98,6 +95,7 @@ public final class PathRouteSetDetails extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

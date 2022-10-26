@@ -5,21 +5,22 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * The metadata which can be edited after model creation.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The metadata which can be edited after model creation. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateModelDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateModelDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = UpdateModelDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class UpdateModelDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName", "description", "freeformTags", "definedTags"})
     public UpdateModelDetails(
@@ -36,73 +37,69 @@ public final class UpdateModelDetails extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * A human-friendly name of the model, which can be changed.
-         **/
+        /** A human-friendly name of the model, which can be changed. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * A human-friendly name of the model, which can be changed.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * An optional description of the model.
-         **/
+        /** An optional description of the model. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * An optional description of the model.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
-         * For example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * A simple key-value pair that is applied without any predefined name, type, or scope. It
+         * exists for cross-compatibility only. For example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
-         * For example: {@code {"bar-key": "value"}}
+         * A simple key-value pair that is applied without any predefined name, type, or scope. It
+         * exists for cross-compatibility only. For example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -144,9 +141,7 @@ public final class UpdateModelDetails extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -155,66 +150,62 @@ public final class UpdateModelDetails extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * A human-friendly name of the model, which can be changed.
-     **/
+    /** A human-friendly name of the model, which can be changed. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A human-friendly name of the model, which can be changed.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * An optional description of the model.
-     **/
+    /** An optional description of the model. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * An optional description of the model.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
-     * For example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It
+     * exists for cross-compatibility only. For example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
-     * For example: {@code {"bar-key": "value"}}
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It
+     * exists for cross-compatibility only. For example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+     * example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+     * example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -226,6 +217,7 @@ public final class UpdateModelDetails extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

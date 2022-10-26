@@ -10,13 +10,18 @@ import com.oracle.bmc.database.model.*;
 public class EnableAutonomousDatabaseOperationsInsightsResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
-     *
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * work request. Multiple OCID values are returned in a comma-separated list. Use {@link
+     * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the
+     * status of the request.
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * work request. Multiple OCID values are returned in a comma-separated list. Use {@link
+     * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the
+     * status of the request.
      *
      * @return the value
      */
@@ -25,15 +30,14 @@ public class EnableAutonomousDatabaseOperationsInsightsResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -49,7 +53,7 @@ public class EnableAutonomousDatabaseOperationsInsightsResponse
     })
     private EnableAutonomousDatabaseOperationsInsightsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcWorkRequestId,
             String opcRequestId) {
         super(__httpStatusCode__, headers);
@@ -57,29 +61,38 @@ public class EnableAutonomousDatabaseOperationsInsightsResponse
         this.opcRequestId = opcRequestId;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    EnableAutonomousDatabaseOperationsInsightsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
-         *
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * work request. Multiple OCID values are returned in a comma-separated list. Use {@link
+         * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track
+         * the status of the request.
          */
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * work request. Multiple OCID values are returned in a comma-separated list. Use {@link
+         * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track
+         * the status of the request.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -90,15 +103,14 @@ public class EnableAutonomousDatabaseOperationsInsightsResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -110,8 +122,10 @@ public class EnableAutonomousDatabaseOperationsInsightsResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(EnableAutonomousDatabaseOperationsInsightsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -123,8 +137,10 @@ public class EnableAutonomousDatabaseOperationsInsightsResponse
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public EnableAutonomousDatabaseOperationsInsightsResponse build() {
             return new EnableAutonomousDatabaseOperationsInsightsResponse(
                     __httpStatusCode__, headers, opcWorkRequestId, opcRequestId);
@@ -133,6 +149,7 @@ public class EnableAutonomousDatabaseOperationsInsightsResponse
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

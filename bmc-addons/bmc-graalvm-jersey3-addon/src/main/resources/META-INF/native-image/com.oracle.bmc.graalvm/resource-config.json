@@ -1,0 +1,12 @@
+{
+  "resources":[
+    {"pattern":"\\QMETA-INF/services/org.glassfish.hk2.extension.ServiceLocatorGenerator\\E"},
+    {"pattern":"\\QMETA-INF/services/org.glassfish.jersey.internal.inject.InjectionManagerFactory\\E"},
+    {"pattern":"\\QMETA-INF/services/org.glassfish.jersey.internal.spi.AutoDiscoverable\\E"},
+    {"pattern":"\\Qcom/oracle/bmc/sdk.properties\\E"}
+  ],
+  "bundles":[
+    {"name":"org.glassfish.jersey.client.internal.localization"},
+    {"name":"org.glassfish.jersey.internal.localization"}
+  ]
+}

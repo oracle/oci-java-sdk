@@ -4,28 +4,31 @@
  */
 package com.oracle.bmc.cloudbridge;
 
-import com.oracle.bmc.cloudbridge.internal.http.*;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.cloudbridge.requests.*;
 import com.oracle.bmc.cloudbridge.responses.*;
 
+import java.util.Objects;
+
 /**
- * Async client implementation for Inventory service. <br/>
- * There are two ways to use async client:
- * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
- * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
- * because the stream will be closed right after the AsyncHandler is invoked. <br/>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
- * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
- * is used, it is still safe to use the Future to determine whether or not the request was completed via
- * Future.isDone/isCancelled.<br/>
- * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for Inventory service. <br>
+ * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
+ * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
+ * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
+ * will be closed right after the AsyncHandler is invoked. <br>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
+ * with the Java Future.<br>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or
+ * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
+ * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
+ * whether or not the request was completed via Future.isDone/isCancelled.<br>
+ * Please refer to
+ * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
-public class InventoryAsyncClient implements InventoryAsync {
-    /**
-     * Service instance for Inventory.
-     */
+public class InventoryAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
+        implements InventoryAsync {
+    /** Service instance for Inventory. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("INVENTORY")
@@ -36,268 +39,16 @@ public class InventoryAsyncClient implements InventoryAsync {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(InventoryAsyncClient.class);
 
-    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-            authenticationDetailsProvider;
-
-    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
-            apacheConnectionClosingStrategy;
-    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
-    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
-    private final java.util.Map<
-                    com.oracle.bmc.http.signing.SigningStrategy,
-                    com.oracle.bmc.http.signing.RequestSignerFactory>
-            signingStrategyRequestSignerFactories;
-    private final boolean isNonBufferingApacheClient;
-    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
-
-    /**
-     * Used to synchronize any updates on the `this.client` object.
-     */
-    private final Object clientUpdate = new Object();
-
-    /**
-     * Stores the actual client object used to make the API calls.
-     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
-     *       For any writes to the object, please synchronize on `this.clientUpdate`.
-     */
-    private volatile com.oracle.bmc.http.internal.RestClient client;
-
-    /**
-     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
-     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
-     */
-    private volatile String overrideEndpoint = null;
-
-    /**
-     * Creates a new service instance using the given authentication provider.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     */
-    public InventoryAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     */
-    public InventoryAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(authenticationDetailsProvider, configuration, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     */
-    public InventoryAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     */
-    public InventoryAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public InventoryAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                additionalClientConfigurators,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public InventoryAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
-                        .createDefaultRequestSignerFactories(),
-                additionalClientConfigurators,
-                endpoint);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public InventoryAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
-     */
-    public InventoryAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
-        this.authenticationDetailsProvider = authenticationDetailsProvider;
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
-                new java.util.ArrayList<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
-            authenticationDetailsConfigurators.addAll(
-                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
-                                    this.authenticationDetailsProvider)
-                            .getClientConfigurators());
-        }
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
-                new java.util.ArrayList<>(additionalClientConfigurators);
-        allConfigurators.addAll(authenticationDetailsConfigurators);
-        this.restClientFactory =
-                restClientFactoryBuilder
-                        .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(allConfigurators)
-                        .build();
-        this.isNonBufferingApacheClient =
-                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        restClientFactory.getClientConfigurator());
-        this.apacheConnectionClosingStrategy =
-                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
-                        restClientFactory.getClientConfigurator());
-        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
-        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
-        this.clientConfigurationToUse = configuration;
-
-        this.refreshClient();
-
-        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
-            com.oracle.bmc.auth.RegionProvider provider =
-                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
-
-            if (provider.getRegion() != null) {
-                this.setRegion(provider.getRegion());
-                if (endpoint != null) {
-                    LOG.info(
-                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
-                            provider.getRegion(),
-                            endpoint);
-                }
-            }
-        }
-        if (endpoint != null) {
-            setEndpoint(endpoint);
-        }
+    private InventoryAsyncClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                    authenticationDetailsProvider) {
+        super(builder, authenticationDetailsProvider);
     }
 
     /**
      * Create a builder for this client.
+     *
      * @return builder
      */
     public static Builder builder() {
@@ -305,8 +56,8 @@ public class InventoryAsyncClient implements InventoryAsync {
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
+     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, InventoryAsyncClient> {
@@ -319,121 +70,26 @@ public class InventoryAsyncClient implements InventoryAsync {
 
         /**
          * Build the client.
+         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public InventoryAsyncClient build(
                 @javax.annotation.Nonnull
-                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                        authenticationDetailsProvider) {
-            if (authenticationDetailsProvider == null) {
-                throw new NullPointerException(
-                        "authenticationDetailsProvider is marked non-null but is null");
-            }
-            return new InventoryAsyncClient(
-                    authenticationDetailsProvider,
-                    configuration,
-                    clientConfigurator,
-                    requestSignerFactory,
-                    signingStrategyRequestSignerFactories,
-                    additionalClientConfigurators,
-                    endpoint);
+                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                                authenticationDetailsProvider) {
+            return new InventoryAsyncClient(this, authenticationDetailsProvider);
         }
-    }
-
-    com.oracle.bmc.http.internal.RestClient getClient() {
-        return client;
-    }
-
-    @Override
-    public void refreshClient() {
-        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                this.defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        this.signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
-            }
-        }
-
-        com.oracle.bmc.http.internal.RestClient refreshedClient =
-                this.restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        this.clientConfigurationToUse,
-                        this.isNonBufferingApacheClient);
-
-        synchronized (clientUpdate) {
-            if (this.overrideEndpoint != null) {
-                refreshedClient.setEndpoint(this.overrideEndpoint);
-            }
-
-            this.client = refreshedClient;
-        }
-
-        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint) {
-        LOG.info("Setting endpoint to {}", endpoint);
-
-        synchronized (clientUpdate) {
-            this.overrideEndpoint = endpoint;
-            client.setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
-        }
-        return endpoint;
     }
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        java.util.Optional<String> endpoint =
-                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
-        if (endpoint.isPresent()) {
-            setEndpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + SERVICE + " is not known in region " + region);
-        }
+        super.setRegion(region);
     }
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
-        try {
-            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-            setRegion(region);
-        } catch (IllegalArgumentException e) {
-            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-            setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public void close() {
-        client.close();
+        super.setRegion(regionId);
     }
 
     @Override
@@ -441,40 +97,48 @@ public class InventoryAsyncClient implements InventoryAsync {
             AnalyzeAssetsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<AnalyzeAssetsRequest, AnalyzeAssetsResponse>
                     handler) {
-        LOG.trace("Called async analyzeAssets");
-        final AnalyzeAssetsRequest interceptedRequest =
-                AnalyzeAssetsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AnalyzeAssetsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "AnalyzeAssets", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, AnalyzeAssetsResponse>
-                transformer =
-                        AnalyzeAssetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<AnalyzeAssetsRequest, AnalyzeAssetsResponse>
-                handlerToUse = handler;
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                AnalyzeAssetsRequest, AnalyzeAssetsResponse>,
-                        java.util.concurrent.Future<AnalyzeAssetsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+        Objects.requireNonNull(
+                request.getAggregationProperties(), "aggregationProperties is required");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    AnalyzeAssetsRequest, AnalyzeAssetsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, AnalyzeAssetsResponse::builder)
+                .logger(LOG, "analyzeAssets")
+                .serviceDetails(
+                        "Inventory",
+                        "AnalyzeAssets",
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetAggregation/AnalyzeAssets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(AnalyzeAssetsRequest::builder)
+                .basePath("/20220509")
+                .appendPathParam("assetAnalytics")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("sourceKey", request.getSourceKey())
+                .appendQueryParam("externalAssetKey", request.getExternalAssetKey())
+                .appendEnumQueryParam("assetType", request.getAssetType())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendListQueryParam(
+                        "aggregationProperties",
+                        request.getAggregationProperties(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "groupBy",
+                        request.getGroupBy(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("inventoryId", request.getInventoryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudbridge.model.AssetAggregationCollection.class,
+                        AnalyzeAssetsResponse.Builder::assetAggregationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", AnalyzeAssetsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", AnalyzeAssetsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -483,48 +147,33 @@ public class InventoryAsyncClient implements InventoryAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ChangeAssetCompartmentRequest, ChangeAssetCompartmentResponse>
                     handler) {
-        LOG.trace("Called async changeAssetCompartment");
-        final ChangeAssetCompartmentRequest interceptedRequest =
-                ChangeAssetCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeAssetCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "ChangeAssetCompartment", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, ChangeAssetCompartmentResponse>
-                transformer =
-                        ChangeAssetCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeAssetCompartmentRequest, ChangeAssetCompartmentResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeAssetCompartmentRequest, ChangeAssetCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeAssetCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeAssetCompartmentDetails(),
-                                ib,
-                                transformer);
+        Validate.notBlank(request.getAssetId(), "assetId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeAssetCompartmentDetails(),
+                "changeAssetCompartmentDetails is required");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeAssetCompartmentRequest, ChangeAssetCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, ChangeAssetCompartmentResponse::builder)
+                .logger(LOG, "changeAssetCompartment")
+                .serviceDetails(
+                        "Inventory",
+                        "ChangeAssetCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/ChangeAssetCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeAssetCompartmentRequest::builder)
+                .basePath("/20220509")
+                .appendPathParam("assets")
+                .appendPathParam(request.getAssetId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeAssetCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -533,47 +182,36 @@ public class InventoryAsyncClient implements InventoryAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ChangeAssetTagsRequest, ChangeAssetTagsResponse>
                     handler) {
-        LOG.trace("Called async changeAssetTags");
-        final ChangeAssetTagsRequest interceptedRequest =
-                ChangeAssetTagsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeAssetTagsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "ChangeAssetTags", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, ChangeAssetTagsResponse>
-                transformer =
-                        ChangeAssetTagsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ChangeAssetTagsRequest, ChangeAssetTagsResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeAssetTagsRequest, ChangeAssetTagsResponse>,
-                        java.util.concurrent.Future<ChangeAssetTagsResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeAssetTagsDetails(),
-                                ib,
-                                transformer);
+        Validate.notBlank(request.getAssetId(), "assetId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeAssetTagsDetails(), "changeAssetTagsDetails is required");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeAssetTagsRequest, ChangeAssetTagsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, ChangeAssetTagsResponse::builder)
+                .logger(LOG, "changeAssetTags")
+                .serviceDetails(
+                        "Inventory",
+                        "ChangeAssetTags",
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/ChangeAssetTags")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeAssetTagsRequest::builder)
+                .basePath("/20220509")
+                .appendPathParam("assets")
+                .appendPathParam(request.getAssetId())
+                .appendPathParam("actions")
+                .appendPathParam("changeTags")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.cloudbridge.model.Asset.class,
+                        ChangeAssetTagsResponse.Builder::asset)
+                .handleResponseHeaderString("etag", ChangeAssetTagsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeAssetTagsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -581,46 +219,29 @@ public class InventoryAsyncClient implements InventoryAsync {
             CreateAssetRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateAssetRequest, CreateAssetResponse>
                     handler) {
-        LOG.trace("Called async createAsset");
-        final CreateAssetRequest interceptedRequest =
-                CreateAssetConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateAssetConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "CreateAsset", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateAssetResponse>
-                transformer =
-                        CreateAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateAssetRequest, CreateAssetResponse>
-                handlerToUse = handler;
+        Objects.requireNonNull(request.getCreateAssetDetails(), "createAssetDetails is required");
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateAssetRequest, CreateAssetResponse>,
-                        java.util.concurrent.Future<CreateAssetResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateAssetDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateAssetRequest, CreateAssetResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, CreateAssetResponse::builder)
+                .logger(LOG, "createAsset")
+                .serviceDetails(
+                        "Inventory",
+                        "CreateAsset",
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/CreateAsset")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateAssetRequest::builder)
+                .basePath("/20220509")
+                .appendPathParam("assets")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.cloudbridge.model.Asset.class,
+                        CreateAssetResponse.Builder::asset)
+                .handleResponseHeaderString("etag", CreateAssetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateAssetResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -629,47 +250,28 @@ public class InventoryAsyncClient implements InventoryAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateInventoryRequest, CreateInventoryResponse>
                     handler) {
-        LOG.trace("Called async createInventory");
-        final CreateInventoryRequest interceptedRequest =
-                CreateInventoryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateInventoryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "CreateInventory", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateInventoryResponse>
-                transformer =
-                        CreateInventoryConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateInventoryRequest, CreateInventoryResponse>
-                handlerToUse = handler;
+        Objects.requireNonNull(
+                request.getCreateInventoryDetails(), "createInventoryDetails is required");
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateInventoryRequest, CreateInventoryResponse>,
-                        java.util.concurrent.Future<CreateInventoryResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateInventoryDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateInventoryRequest, CreateInventoryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, CreateInventoryResponse::builder)
+                .logger(LOG, "createInventory")
+                .serviceDetails(
+                        "Inventory",
+                        "CreateInventory",
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/CreateInventory")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateInventoryRequest::builder)
+                .basePath("/20220509")
+                .appendPathParam("inventories")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateInventoryResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateInventoryResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -677,40 +279,26 @@ public class InventoryAsyncClient implements InventoryAsync {
             DeleteAssetRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteAssetRequest, DeleteAssetResponse>
                     handler) {
-        LOG.trace("Called async deleteAsset");
-        final DeleteAssetRequest interceptedRequest =
-                DeleteAssetConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteAssetConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "DeleteAsset", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteAssetResponse>
-                transformer =
-                        DeleteAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteAssetRequest, DeleteAssetResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteAssetRequest, DeleteAssetResponse>,
-                        java.util.concurrent.Future<DeleteAssetResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getAssetId(), "assetId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteAssetRequest, DeleteAssetResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteAssetResponse::builder)
+                .logger(LOG, "deleteAsset")
+                .serviceDetails(
+                        "Inventory",
+                        "DeleteAsset",
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/DeleteAsset")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteAssetRequest::builder)
+                .basePath("/20220509")
+                .appendPathParam("assets")
+                .appendPathParam(request.getAssetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteAssetResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -719,41 +307,28 @@ public class InventoryAsyncClient implements InventoryAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteInventoryRequest, DeleteInventoryResponse>
                     handler) {
-        LOG.trace("Called async deleteInventory");
-        final DeleteInventoryRequest interceptedRequest =
-                DeleteInventoryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteInventoryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "DeleteInventory", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteInventoryResponse>
-                transformer =
-                        DeleteInventoryConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteInventoryRequest, DeleteInventoryResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteInventoryRequest, DeleteInventoryResponse>,
-                        java.util.concurrent.Future<DeleteInventoryResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getInventoryId(), "inventoryId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteInventoryRequest, DeleteInventoryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteInventoryResponse::builder)
+                .logger(LOG, "deleteInventory")
+                .serviceDetails(
+                        "Inventory",
+                        "DeleteInventory",
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/DeleteInventory")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteInventoryRequest::builder)
+                .basePath("/20220509")
+                .appendPathParam("inventories")
+                .appendPathParam(request.getInventoryId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteInventoryResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteInventoryResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -761,37 +336,29 @@ public class InventoryAsyncClient implements InventoryAsync {
             GetAssetRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetAssetRequest, GetAssetResponse>
                     handler) {
-        LOG.trace("Called async getAsset");
-        final GetAssetRequest interceptedRequest = GetAssetConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetAssetConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "GetAsset", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetAssetResponse> transformer =
-                GetAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetAssetRequest, GetAssetResponse> handlerToUse =
-                handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<GetAssetRequest, GetAssetResponse>,
-                        java.util.concurrent.Future<GetAssetResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getAssetId(), "assetId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetAssetRequest, GetAssetResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, GetAssetResponse::builder)
+                .logger(LOG, "getAsset")
+                .serviceDetails(
+                        "Inventory",
+                        "GetAsset",
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/GetAsset")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAssetRequest::builder)
+                .basePath("/20220509")
+                .appendPathParam("assets")
+                .appendPathParam(request.getAssetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudbridge.model.Asset.class,
+                        GetAssetResponse.Builder::asset)
+                .handleResponseHeaderString("etag", GetAssetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAssetResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -799,40 +366,31 @@ public class InventoryAsyncClient implements InventoryAsync {
             GetInventoryRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetInventoryRequest, GetInventoryResponse>
                     handler) {
-        LOG.trace("Called async getInventory");
-        final GetInventoryRequest interceptedRequest =
-                GetInventoryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetInventoryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "GetInventory", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetInventoryResponse>
-                transformer =
-                        GetInventoryConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetInventoryRequest, GetInventoryResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetInventoryRequest, GetInventoryResponse>,
-                        java.util.concurrent.Future<GetInventoryResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getInventoryId(), "inventoryId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetInventoryRequest, GetInventoryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, GetInventoryResponse::builder)
+                .logger(LOG, "getInventory")
+                .serviceDetails(
+                        "Inventory",
+                        "GetInventory",
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/GetInventory")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetInventoryRequest::builder)
+                .basePath("/20220509")
+                .appendPathParam("inventories")
+                .appendPathParam(request.getInventoryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudbridge.model.Inventory.class,
+                        GetInventoryResponse.Builder::inventory)
+                .handleResponseHeaderString("etag", GetInventoryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetInventoryResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", GetInventoryResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -841,47 +399,33 @@ public class InventoryAsyncClient implements InventoryAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ImportInventoryRequest, ImportInventoryResponse>
                     handler) {
-        LOG.trace("Called async importInventory");
-        final ImportInventoryRequest interceptedRequest =
-                ImportInventoryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ImportInventoryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "ImportInventory", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, ImportInventoryResponse>
-                transformer =
-                        ImportInventoryConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ImportInventoryRequest, ImportInventoryResponse>
-                handlerToUse = handler;
+        Objects.requireNonNull(
+                request.getImportInventoryDetails(), "importInventoryDetails is required");
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ImportInventoryRequest, ImportInventoryResponse>,
-                        java.util.concurrent.Future<ImportInventoryResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getImportInventoryDetails(),
-                                ib,
-                                transformer);
+        Validate.notBlank(request.getInventoryId(), "inventoryId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ImportInventoryRequest, ImportInventoryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, ImportInventoryResponse::builder)
+                .logger(LOG, "importInventory")
+                .serviceDetails(
+                        "Inventory",
+                        "ImportInventory",
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/ImportInventory")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ImportInventoryRequest::builder)
+                .basePath("/20220509")
+                .appendPathParam("inventories")
+                .appendPathParam(request.getInventoryId())
+                .appendPathParam("actions")
+                .appendPathParam("import")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ImportInventoryResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ImportInventoryResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -889,39 +433,40 @@ public class InventoryAsyncClient implements InventoryAsync {
             ListAssetsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListAssetsRequest, ListAssetsResponse>
                     handler) {
-        LOG.trace("Called async listAssets");
-        final ListAssetsRequest interceptedRequest = ListAssetsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListAssetsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "ListAssets", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListAssetsResponse>
-                transformer =
-                        ListAssetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListAssetsRequest, ListAssetsResponse> handlerToUse =
-                handler;
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListAssetsRequest, ListAssetsResponse>,
-                        java.util.concurrent.Future<ListAssetsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListAssetsRequest, ListAssetsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, ListAssetsResponse::builder)
+                .logger(LOG, "listAssets")
+                .serviceDetails(
+                        "Inventory",
+                        "ListAssets",
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetCollection/ListAssets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAssetsRequest::builder)
+                .basePath("/20220509")
+                .appendPathParam("assets")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("sourceKey", request.getSourceKey())
+                .appendQueryParam("externalAssetKey", request.getExternalAssetKey())
+                .appendEnumQueryParam("assetType", request.getAssetType())
+                .appendQueryParam("assetId", request.getAssetId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("inventoryId", request.getInventoryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudbridge.model.AssetCollection.class,
+                        ListAssetsResponse.Builder::assetCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAssetsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAssetsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -930,42 +475,35 @@ public class InventoryAsyncClient implements InventoryAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListHistoricalMetricsRequest, ListHistoricalMetricsResponse>
                     handler) {
-        LOG.trace("Called async listHistoricalMetrics");
-        final ListHistoricalMetricsRequest interceptedRequest =
-                ListHistoricalMetricsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListHistoricalMetricsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "ListHistoricalMetrics", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListHistoricalMetricsResponse>
-                transformer =
-                        ListHistoricalMetricsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListHistoricalMetricsRequest, ListHistoricalMetricsResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListHistoricalMetricsRequest, ListHistoricalMetricsResponse>,
-                        java.util.concurrent.Future<ListHistoricalMetricsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getAssetId(), "assetId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListHistoricalMetricsRequest, ListHistoricalMetricsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, ListHistoricalMetricsResponse::builder)
+                .logger(LOG, "listHistoricalMetrics")
+                .serviceDetails(
+                        "Inventory",
+                        "ListHistoricalMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/HistoricalMetric/ListHistoricalMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListHistoricalMetricsRequest::builder)
+                .basePath("/20220509")
+                .appendPathParam("assets")
+                .appendPathParam(request.getAssetId())
+                .appendPathParam("historicalMetrics")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudbridge.model.HistoricalMetricCollection.class,
+                        ListHistoricalMetricsResponse.Builder::historicalMetricCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListHistoricalMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListHistoricalMetricsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -974,41 +512,34 @@ public class InventoryAsyncClient implements InventoryAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListInventoriesRequest, ListInventoriesResponse>
                     handler) {
-        LOG.trace("Called async listInventories");
-        final ListInventoriesRequest interceptedRequest =
-                ListInventoriesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListInventoriesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "ListInventories", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListInventoriesResponse>
-                transformer =
-                        ListInventoriesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListInventoriesRequest, ListInventoriesResponse>
-                handlerToUse = handler;
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListInventoriesRequest, ListInventoriesResponse>,
-                        java.util.concurrent.Future<ListInventoriesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListInventoriesRequest, ListInventoriesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, ListInventoriesResponse::builder)
+                .logger(LOG, "listInventories")
+                .serviceDetails(
+                        "Inventory",
+                        "ListInventories",
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/ListInventories")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListInventoriesRequest::builder)
+                .basePath("/20220509")
+                .appendPathParam("inventories")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudbridge.model.InventoryCollection.class,
+                        ListInventoriesResponse.Builder::inventoryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListInventoriesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListInventoriesResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -1017,48 +548,36 @@ public class InventoryAsyncClient implements InventoryAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             SubmitHistoricalMetricsRequest, SubmitHistoricalMetricsResponse>
                     handler) {
-        LOG.trace("Called async submitHistoricalMetrics");
-        final SubmitHistoricalMetricsRequest interceptedRequest =
-                SubmitHistoricalMetricsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                SubmitHistoricalMetricsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "SubmitHistoricalMetrics", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, SubmitHistoricalMetricsResponse>
-                transformer =
-                        SubmitHistoricalMetricsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        SubmitHistoricalMetricsRequest, SubmitHistoricalMetricsResponse>
-                handlerToUse = handler;
+        Objects.requireNonNull(
+                request.getSubmitHistoricalMetricsDetails(),
+                "submitHistoricalMetricsDetails is required");
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                SubmitHistoricalMetricsRequest, SubmitHistoricalMetricsResponse>,
-                        java.util.concurrent.Future<SubmitHistoricalMetricsResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getSubmitHistoricalMetricsDetails(),
-                                ib,
-                                transformer);
+        Validate.notBlank(request.getAssetId(), "assetId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    SubmitHistoricalMetricsRequest, SubmitHistoricalMetricsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, SubmitHistoricalMetricsResponse::builder)
+                .logger(LOG, "submitHistoricalMetrics")
+                .serviceDetails(
+                        "Inventory",
+                        "SubmitHistoricalMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/HistoricalMetric/SubmitHistoricalMetrics")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SubmitHistoricalMetricsRequest::builder)
+                .basePath("/20220509")
+                .appendPathParam("assets")
+                .appendPathParam(request.getAssetId())
+                .appendPathParam("actions")
+                .appendPathParam("submitHistoricalMetrics")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.cloudbridge.model.HistoricalMetricCollection.class,
+                        SubmitHistoricalMetricsResponse.Builder::historicalMetricCollection)
+                .handleResponseHeaderString("etag", SubmitHistoricalMetricsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", SubmitHistoricalMetricsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1066,45 +585,32 @@ public class InventoryAsyncClient implements InventoryAsync {
             UpdateAssetRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateAssetRequest, UpdateAssetResponse>
                     handler) {
-        LOG.trace("Called async updateAsset");
-        final UpdateAssetRequest interceptedRequest =
-                UpdateAssetConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateAssetConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "UpdateAsset", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateAssetResponse>
-                transformer =
-                        UpdateAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateAssetRequest, UpdateAssetResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateAssetRequest, UpdateAssetResponse>,
-                        java.util.concurrent.Future<UpdateAssetResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateAssetDetails(),
-                                ib,
-                                transformer);
+        Validate.notBlank(request.getAssetId(), "assetId must not be blank");
+        Objects.requireNonNull(request.getUpdateAssetDetails(), "updateAssetDetails is required");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateAssetRequest, UpdateAssetResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, UpdateAssetResponse::builder)
+                .logger(LOG, "updateAsset")
+                .serviceDetails(
+                        "Inventory",
+                        "UpdateAsset",
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/UpdateAsset")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateAssetRequest::builder)
+                .basePath("/20220509")
+                .appendPathParam("assets")
+                .appendPathParam(request.getAssetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.cloudbridge.model.Asset.class,
+                        UpdateAssetResponse.Builder::asset)
+                .handleResponseHeaderString("etag", UpdateAssetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateAssetResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1113,45 +619,191 @@ public class InventoryAsyncClient implements InventoryAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateInventoryRequest, UpdateInventoryResponse>
                     handler) {
-        LOG.trace("Called async updateInventory");
-        final UpdateInventoryRequest interceptedRequest =
-                UpdateInventoryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateInventoryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "UpdateInventory", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateInventoryResponse>
-                transformer =
-                        UpdateInventoryConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateInventoryRequest, UpdateInventoryResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateInventoryRequest, UpdateInventoryResponse>,
-                        java.util.concurrent.Future<UpdateInventoryResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateInventoryDetails(),
-                                ib,
-                                transformer);
+        Validate.notBlank(request.getInventoryId(), "inventoryId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateInventoryDetails(), "updateInventoryDetails is required");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateInventoryRequest, UpdateInventoryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, UpdateInventoryResponse::builder)
+                .logger(LOG, "updateInventory")
+                .serviceDetails(
+                        "Inventory",
+                        "UpdateInventory",
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/UpdateInventory")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateInventoryRequest::builder)
+                .basePath("/20220509")
+                .appendPathParam("inventories")
+                .appendPathParam(request.getInventoryId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.cloudbridge.model.Inventory.class,
+                        UpdateInventoryResponse.Builder::inventory)
+                .handleResponseHeaderString("etag", UpdateInventoryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateInventoryResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public InventoryAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(builder(), authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public InventoryAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(builder().configuration(configuration), authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public InventoryAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                builder().configuration(configuration).clientConfigurator(clientConfigurator),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public InventoryAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public InventoryAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public InventoryAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public InventoryAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider);
     }
 }

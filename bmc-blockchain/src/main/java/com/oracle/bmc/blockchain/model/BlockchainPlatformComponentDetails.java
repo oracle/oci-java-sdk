@@ -5,22 +5,22 @@
 package com.oracle.bmc.blockchain.model;
 
 /**
- * Blockchain Platform component details.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Blockchain Platform component details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = BlockchainPlatformComponentDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = BlockchainPlatformComponentDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class BlockchainPlatformComponentDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"osns", "peers"})
     public BlockchainPlatformComponentDetails(
@@ -32,33 +32,31 @@ public final class BlockchainPlatformComponentDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * List of OSNs
-         **/
+        /** List of OSNs */
         @com.fasterxml.jackson.annotation.JsonProperty("osns")
         private java.util.List<Osn> osns;
 
         /**
          * List of OSNs
+         *
          * @param osns the value to set
          * @return this builder
-         **/
+         */
         public Builder osns(java.util.List<Osn> osns) {
             this.osns = osns;
             this.__explicitlySet__.add("osns");
             return this;
         }
-        /**
-         * List of Peers
-         **/
+        /** List of Peers */
         @com.fasterxml.jackson.annotation.JsonProperty("peers")
         private java.util.List<Peer> peers;
 
         /**
          * List of Peers
+         *
          * @param peers the value to set
          * @return this builder
-         **/
+         */
         public Builder peers(java.util.List<Peer> peers) {
             this.peers = peers;
             this.__explicitlySet__.add("peers");
@@ -89,9 +87,7 @@ public final class BlockchainPlatformComponentDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,30 +96,28 @@ public final class BlockchainPlatformComponentDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * List of OSNs
-     **/
+    /** List of OSNs */
     @com.fasterxml.jackson.annotation.JsonProperty("osns")
     private final java.util.List<Osn> osns;
 
     /**
      * List of OSNs
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Osn> getOsns() {
         return osns;
     }
 
-    /**
-     * List of Peers
-     **/
+    /** List of Peers */
     @com.fasterxml.jackson.annotation.JsonProperty("peers")
     private final java.util.List<Peer> peers;
 
     /**
      * List of Peers
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Peer> getPeers() {
         return peers;
     }
@@ -135,6 +129,7 @@ public final class BlockchainPlatformComponentDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,32 +5,33 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * While creating a migration, specify the source and the application that you want migrate.
- * Each migration moves a single application from a specified source to a specified Oracle Cloud Infrastructure tenancy.
- * If required, provide the credentials of the application administrator in the source environment.
- * Application Migration uses this information to access the application, as well as discover application artifacts,
- * such as the complete domain configuration along with data sources and other dependencies.
- * <p>
- * You must also assign a name and provide a description for the migration.
- * This helps you to identify the appropriate source environment when you have multiple sources defined.
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+ * While creating a migration, specify the source and the application that you want migrate. Each
+ * migration moves a single application from a specified source to a specified Oracle Cloud
+ * Infrastructure tenancy. If required, provide the credentials of the application administrator in
+ * the source environment. Application Migration uses this information to access the application, as
+ * well as discover application artifacts, such as the complete domain configuration along with data
+ * sources and other dependencies.
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>You must also assign a name and provide a description for the migration. This helps you to
+ * identify the appropriate source environment when you have multiple sources defined.
+ *
+ * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
+ * supply string values using the API. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateMigrationDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateMigrationDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateMigrationDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -77,82 +78,87 @@ public final class CreateMigrationDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the source.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment that contains the source.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the source.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment that contains the source.
          *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * User-friendly name of the application. This will be the name of the migrated application in Oracle Cloud Infrastructure.
-         **/
+         * User-friendly name of the application. This will be the name of the migrated application
+         * in Oracle Cloud Infrastructure.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * User-friendly name of the application. This will be the name of the migrated application in Oracle Cloud Infrastructure.
+         * User-friendly name of the application. This will be the name of the migrated application
+         * in Oracle Cloud Infrastructure.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Description of the application that you are migrating.
-         **/
+        /** Description of the application that you are migrating. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description of the application that you are migrating.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the source.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the source.
+         *
          * @param sourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceId(String sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
             return this;
         }
-        /**
-         * Name of the application that you want to migrate from the source environment.
-         **/
+        /** Name of the application that you want to migrate from the source environment. */
         @com.fasterxml.jackson.annotation.JsonProperty("applicationName")
         private String applicationName;
 
         /**
          * Name of the application that you want to migrate from the source environment.
+         *
          * @param applicationName the value to set
          * @return this builder
-         **/
+         */
         public Builder applicationName(String applicationName) {
             this.applicationName = applicationName;
             this.__explicitlySet__.add("applicationName");
@@ -168,20 +174,23 @@ public final class CreateMigrationDetails
             return this;
         }
         /**
-         * The pre-existing database type to be used in this migration. Currently, Application migration only supports Oracle Cloud
-         * Infrastructure databases and this option is currently available only for {@code JAVA_CLOUD_SERVICE} and {@code WEBLOGIC_CLOUD_SERVICE} target instance types.
-         *
-         **/
+         * The pre-existing database type to be used in this migration. Currently, Application
+         * migration only supports Oracle Cloud Infrastructure databases and this option is
+         * currently available only for {@code JAVA_CLOUD_SERVICE} and {@code
+         * WEBLOGIC_CLOUD_SERVICE} target instance types.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("preCreatedTargetDatabaseType")
         private TargetDatabaseTypes preCreatedTargetDatabaseType;
 
         /**
-         * The pre-existing database type to be used in this migration. Currently, Application migration only supports Oracle Cloud
-         * Infrastructure databases and this option is currently available only for {@code JAVA_CLOUD_SERVICE} and {@code WEBLOGIC_CLOUD_SERVICE} target instance types.
+         * The pre-existing database type to be used in this migration. Currently, Application
+         * migration only supports Oracle Cloud Infrastructure databases and this option is
+         * currently available only for {@code JAVA_CLOUD_SERVICE} and {@code
+         * WEBLOGIC_CLOUD_SERVICE} target instance types.
          *
          * @param preCreatedTargetDatabaseType the value to set
          * @return this builder
-         **/
+         */
         public Builder preCreatedTargetDatabaseType(
                 TargetDatabaseTypes preCreatedTargetDatabaseType) {
             this.preCreatedTargetDatabaseType = preCreatedTargetDatabaseType;
@@ -189,62 +198,65 @@ public final class CreateMigrationDetails
             return this;
         }
         /**
-         * If set to {@code true}, Application Migration migrates the application resources selectively depending on the source.
-         *
-         **/
+         * If set to {@code true}, Application Migration migrates the application resources
+         * selectively depending on the source.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isSelectiveMigration")
         private Boolean isSelectiveMigration;
 
         /**
-         * If set to {@code true}, Application Migration migrates the application resources selectively depending on the source.
+         * If set to {@code true}, Application Migration migrates the application resources
+         * selectively depending on the source.
          *
          * @param isSelectiveMigration the value to set
          * @return this builder
-         **/
+         */
         public Builder isSelectiveMigration(Boolean isSelectiveMigration) {
             this.isSelectiveMigration = isSelectiveMigration;
             this.__explicitlySet__.add("isSelectiveMigration");
             return this;
         }
         /**
-         * Configuration required to migrate the application. In addition to the key and value, additional fields are provided
-         * to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the
-         * CreateMigration operation.
-         *
-         **/
+         * Configuration required to migrate the application. In addition to the key and value,
+         * additional fields are provided to describe type type and purpose of each field. Only the
+         * value for each key is required when passing configuration to the CreateMigration
+         * operation.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceConfig")
         private java.util.Map<String, ConfigurationField> serviceConfig;
 
         /**
-         * Configuration required to migrate the application. In addition to the key and value, additional fields are provided
-         * to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the
-         * CreateMigration operation.
+         * Configuration required to migrate the application. In addition to the key and value,
+         * additional fields are provided to describe type type and purpose of each field. Only the
+         * value for each key is required when passing configuration to the CreateMigration
+         * operation.
          *
          * @param serviceConfig the value to set
          * @return this builder
-         **/
+         */
         public Builder serviceConfig(java.util.Map<String, ConfigurationField> serviceConfig) {
             this.serviceConfig = serviceConfig;
             this.__explicitlySet__.add("serviceConfig");
             return this;
         }
         /**
-         * Configuration required to migrate the application. In addition to the key and value, additional fields are provided
-         * to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the
-         * CreateMigration operation.
-         *
-         **/
+         * Configuration required to migrate the application. In addition to the key and value,
+         * additional fields are provided to describe type type and purpose of each field. Only the
+         * value for each key is required when passing configuration to the CreateMigration
+         * operation.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("applicationConfig")
         private java.util.Map<String, ConfigurationField> applicationConfig;
 
         /**
-         * Configuration required to migrate the application. In addition to the key and value, additional fields are provided
-         * to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the
-         * CreateMigration operation.
+         * Configuration required to migrate the application. In addition to the key and value,
+         * additional fields are provided to describe type type and purpose of each field. Only the
+         * value for each key is required when passing configuration to the CreateMigration
+         * operation.
          *
          * @param applicationConfig the value to set
          * @return this builder
-         **/
+         */
         public Builder applicationConfig(
                 java.util.Map<String, ConfigurationField> applicationConfig) {
             this.applicationConfig = applicationConfig;
@@ -252,40 +264,46 @@ public final class CreateMigrationDetails
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"Department": "Finance"}}
-         *
-         **/
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"Operations": {"CostCenter": "42"}}}
-         *
-         **/
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -359,9 +377,7 @@ public final class CreateMigrationDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -371,73 +387,78 @@ public final class CreateMigrationDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the source.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment that contains the source.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment that contains the source.
      *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * User-friendly name of the application. This will be the name of the migrated application in Oracle Cloud Infrastructure.
-     **/
+     * User-friendly name of the application. This will be the name of the migrated application in
+     * Oracle Cloud Infrastructure.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * User-friendly name of the application. This will be the name of the migrated application in Oracle Cloud Infrastructure.
+     * User-friendly name of the application. This will be the name of the migrated application in
+     * Oracle Cloud Infrastructure.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Description of the application that you are migrating.
-     **/
+    /** Description of the application that you are migrating. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of the application that you are migrating.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the source.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the source.
+     *
      * @return the value
-     **/
+     */
     public String getSourceId() {
         return sourceId;
     }
 
-    /**
-     * Name of the application that you want to migrate from the source environment.
-     **/
+    /** Name of the application that you want to migrate from the source environment. */
     @com.fasterxml.jackson.annotation.JsonProperty("applicationName")
     private final String applicationName;
 
     /**
      * Name of the application that you want to migrate from the source environment.
+     *
      * @return the value
-     **/
+     */
     public String getApplicationName() {
         return applicationName;
     }
@@ -450,111 +471,117 @@ public final class CreateMigrationDetails
     }
 
     /**
-     * The pre-existing database type to be used in this migration. Currently, Application migration only supports Oracle Cloud
-     * Infrastructure databases and this option is currently available only for {@code JAVA_CLOUD_SERVICE} and {@code WEBLOGIC_CLOUD_SERVICE} target instance types.
-     *
-     **/
+     * The pre-existing database type to be used in this migration. Currently, Application migration
+     * only supports Oracle Cloud Infrastructure databases and this option is currently available
+     * only for {@code JAVA_CLOUD_SERVICE} and {@code WEBLOGIC_CLOUD_SERVICE} target instance types.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("preCreatedTargetDatabaseType")
     private final TargetDatabaseTypes preCreatedTargetDatabaseType;
 
     /**
-     * The pre-existing database type to be used in this migration. Currently, Application migration only supports Oracle Cloud
-     * Infrastructure databases and this option is currently available only for {@code JAVA_CLOUD_SERVICE} and {@code WEBLOGIC_CLOUD_SERVICE} target instance types.
+     * The pre-existing database type to be used in this migration. Currently, Application migration
+     * only supports Oracle Cloud Infrastructure databases and this option is currently available
+     * only for {@code JAVA_CLOUD_SERVICE} and {@code WEBLOGIC_CLOUD_SERVICE} target instance types.
      *
      * @return the value
-     **/
+     */
     public TargetDatabaseTypes getPreCreatedTargetDatabaseType() {
         return preCreatedTargetDatabaseType;
     }
 
     /**
-     * If set to {@code true}, Application Migration migrates the application resources selectively depending on the source.
-     *
-     **/
+     * If set to {@code true}, Application Migration migrates the application resources selectively
+     * depending on the source.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isSelectiveMigration")
     private final Boolean isSelectiveMigration;
 
     /**
-     * If set to {@code true}, Application Migration migrates the application resources selectively depending on the source.
+     * If set to {@code true}, Application Migration migrates the application resources selectively
+     * depending on the source.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsSelectiveMigration() {
         return isSelectiveMigration;
     }
 
     /**
-     * Configuration required to migrate the application. In addition to the key and value, additional fields are provided
-     * to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the
-     * CreateMigration operation.
-     *
-     **/
+     * Configuration required to migrate the application. In addition to the key and value,
+     * additional fields are provided to describe type type and purpose of each field. Only the
+     * value for each key is required when passing configuration to the CreateMigration operation.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceConfig")
     private final java.util.Map<String, ConfigurationField> serviceConfig;
 
     /**
-     * Configuration required to migrate the application. In addition to the key and value, additional fields are provided
-     * to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the
-     * CreateMigration operation.
+     * Configuration required to migrate the application. In addition to the key and value,
+     * additional fields are provided to describe type type and purpose of each field. Only the
+     * value for each key is required when passing configuration to the CreateMigration operation.
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, ConfigurationField> getServiceConfig() {
         return serviceConfig;
     }
 
     /**
-     * Configuration required to migrate the application. In addition to the key and value, additional fields are provided
-     * to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the
-     * CreateMigration operation.
-     *
-     **/
+     * Configuration required to migrate the application. In addition to the key and value,
+     * additional fields are provided to describe type type and purpose of each field. Only the
+     * value for each key is required when passing configuration to the CreateMigration operation.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("applicationConfig")
     private final java.util.Map<String, ConfigurationField> applicationConfig;
 
     /**
-     * Configuration required to migrate the application. In addition to the key and value, additional fields are provided
-     * to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the
-     * CreateMigration operation.
+     * Configuration required to migrate the application. In addition to the key and value,
+     * additional fields are provided to describe type type and purpose of each field. Only the
+     * value for each key is required when passing configuration to the CreateMigration operation.
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, ConfigurationField> getApplicationConfig() {
         return applicationConfig;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"Department": "Finance"}}
-     *
-     **/
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"Operations": {"CostCenter": "42"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -566,6 +593,7 @@ public final class CreateMigrationDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

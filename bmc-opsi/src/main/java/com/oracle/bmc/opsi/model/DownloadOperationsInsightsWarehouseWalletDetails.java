@@ -5,22 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Download Wallet details.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Download Wallet details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DownloadOperationsInsightsWarehouseWalletDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DownloadOperationsInsightsWarehouseWalletDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DownloadOperationsInsightsWarehouseWalletDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"operationsInsightsWarehouseWalletPassword"})
     public DownloadOperationsInsightsWarehouseWalletDetails(
@@ -31,17 +31,16 @@ public final class DownloadOperationsInsightsWarehouseWalletDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * User provided ADW wallet password for the Operations Insights Warehouse.
-         **/
+        /** User provided ADW wallet password for the Operations Insights Warehouse. */
         @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsWarehouseWalletPassword")
         private String operationsInsightsWarehouseWalletPassword;
 
         /**
          * User provided ADW wallet password for the Operations Insights Warehouse.
+         *
          * @param operationsInsightsWarehouseWalletPassword the value to set
          * @return this builder
-         **/
+         */
         public Builder operationsInsightsWarehouseWalletPassword(
                 String operationsInsightsWarehouseWalletPassword) {
             this.operationsInsightsWarehouseWalletPassword =
@@ -73,9 +72,7 @@ public final class DownloadOperationsInsightsWarehouseWalletDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -84,16 +81,15 @@ public final class DownloadOperationsInsightsWarehouseWalletDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * User provided ADW wallet password for the Operations Insights Warehouse.
-     **/
+    /** User provided ADW wallet password for the Operations Insights Warehouse. */
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsWarehouseWalletPassword")
     private final String operationsInsightsWarehouseWalletPassword;
 
     /**
      * User provided ADW wallet password for the Operations Insights Warehouse.
+     *
      * @return the value
-     **/
+     */
     public String getOperationsInsightsWarehouseWalletPassword() {
         return operationsInsightsWarehouseWalletPassword;
     }
@@ -105,6 +101,7 @@ public final class DownloadOperationsInsightsWarehouseWalletDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -112,8 +109,7 @@ public final class DownloadOperationsInsightsWarehouseWalletDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DownloadOperationsInsightsWarehouseWalletDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("operationsInsightsWarehouseWalletPassword=")
-                .append(String.valueOf(this.operationsInsightsWarehouseWalletPassword));
+        sb.append("operationsInsightsWarehouseWalletPassword=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

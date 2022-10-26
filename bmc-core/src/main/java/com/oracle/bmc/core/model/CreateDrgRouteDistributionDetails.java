@@ -5,23 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Details used to create a route distribution.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details used to create a route distribution. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateDrgRouteDistributionDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateDrgRouteDistributionDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateDrgRouteDistributionDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "definedTags",
@@ -47,24 +46,25 @@ public final class CreateDrgRouteDistributionDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -72,80 +72,82 @@ public final class CreateDrgRouteDistributionDetails
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
-         *
-         **/
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG route table belongs to.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the DRG the DRG route table belongs to.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("drgId")
         private String drgId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG route table belongs to.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the DRG the DRG route table belongs to.
          *
          * @param drgId the value to set
          * @return this builder
-         **/
+         */
         public Builder drgId(String drgId) {
             this.drgId = drgId;
             this.__explicitlySet__.add("drgId");
             return this;
         }
         /**
-         * Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
-         *
-         **/
+         * Whether this distribution defines how routes get imported into route tables or exported
+         * through DRG Attachments
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("distributionType")
         private DistributionType distributionType;
 
         /**
-         * Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+         * Whether this distribution defines how routes get imported into route tables or exported
+         * through DRG Attachments
          *
          * @param distributionType the value to set
          * @return this builder
-         **/
+         */
         public Builder distributionType(DistributionType distributionType) {
             this.distributionType = distributionType;
             this.__explicitlySet__.add("distributionType");
@@ -190,9 +192,7 @@ public final class CreateDrgRouteDistributionDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -202,88 +202,90 @@ public final class CreateDrgRouteDistributionDetails
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG route table belongs to.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the DRG the DRG route table belongs to.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("drgId")
     private final String drgId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG route table belongs to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the DRG the DRG route table belongs to.
      *
      * @return the value
-     **/
+     */
     public String getDrgId() {
         return drgId;
     }
 
     /**
-     * Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
-     *
-     **/
-    public enum DistributionType {
+     * Whether this distribution defines how routes get imported into route tables or exported
+     * through DRG Attachments
+     */
+    public enum DistributionType implements com.oracle.bmc.http.internal.BmcEnum {
         Import("IMPORT"),
         ;
 
@@ -315,17 +317,18 @@ public final class CreateDrgRouteDistributionDetails
         }
     };
     /**
-     * Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
-     *
-     **/
+     * Whether this distribution defines how routes get imported into route tables or exported
+     * through DRG Attachments
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("distributionType")
     private final DistributionType distributionType;
 
     /**
-     * Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+     * Whether this distribution defines how routes get imported into route tables or exported
+     * through DRG Attachments
      *
      * @return the value
-     **/
+     */
     public DistributionType getDistributionType() {
         return distributionType;
     }
@@ -337,6 +340,7 @@ public final class CreateDrgRouteDistributionDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,19 +5,20 @@
 package com.oracle.bmc.resourcesearch.model;
 
 /**
- * Defines a type of resource that you can find with a search or query.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Defines a type of resource that you can find with a search or query. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ResourceType.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResourceType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ResourceType extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "fields"})
     public ResourceType(String name, java.util.List<QueryableFieldDescription> fields) {
@@ -29,27 +30,25 @@ public final class ResourceType extends com.oracle.bmc.http.internal.ExplicitlyS
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The unique name of the resource type, which matches the value returned as part of the ResourceSummary object.
-         *
-         **/
+         * The unique name of the resource type, which matches the value returned as part of the
+         * ResourceSummary object.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The unique name of the resource type, which matches the value returned as part of the ResourceSummary object.
+         * The unique name of the resource type, which matches the value returned as part of the
+         * ResourceSummary object.
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * List of all the fields and their value type that are indexed for querying.
-         *
-         **/
+        /** List of all the fields and their value type that are indexed for querying. */
         @com.fasterxml.jackson.annotation.JsonProperty("fields")
         private java.util.List<QueryableFieldDescription> fields;
 
@@ -58,7 +57,7 @@ public final class ResourceType extends com.oracle.bmc.http.internal.ExplicitlyS
          *
          * @param fields the value to set
          * @return this builder
-         **/
+         */
         public Builder fields(java.util.List<QueryableFieldDescription> fields) {
             this.fields = fields;
             this.__explicitlySet__.add("fields");
@@ -88,9 +87,7 @@ public final class ResourceType extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,25 +97,23 @@ public final class ResourceType extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The unique name of the resource type, which matches the value returned as part of the ResourceSummary object.
-     *
-     **/
+     * The unique name of the resource type, which matches the value returned as part of the
+     * ResourceSummary object.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The unique name of the resource type, which matches the value returned as part of the ResourceSummary object.
+     * The unique name of the resource type, which matches the value returned as part of the
+     * ResourceSummary object.
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * List of all the fields and their value type that are indexed for querying.
-     *
-     **/
+    /** List of all the fields and their value type that are indexed for querying. */
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
     private final java.util.List<QueryableFieldDescription> fields;
 
@@ -126,7 +121,7 @@ public final class ResourceType extends com.oracle.bmc.http.internal.ExplicitlyS
      * List of all the fields and their value type that are indexed for querying.
      *
      * @return the value
-     **/
+     */
     public java.util.List<QueryableFieldDescription> getFields() {
         return fields;
     }
@@ -138,6 +133,7 @@ public final class ResourceType extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

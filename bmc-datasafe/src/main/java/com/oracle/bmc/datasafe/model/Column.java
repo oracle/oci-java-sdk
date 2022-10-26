@@ -5,19 +5,20 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Description of a column
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Description of a column <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Column.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Column extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Column extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -42,81 +43,76 @@ public final class Column extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Name of the column displayed on UI.
-         **/
+        /** Name of the column displayed on UI. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Name of the column displayed on UI.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Specifies the corresponding field name in the data source.
-         **/
+        /** Specifies the corresponding field name in the data source. */
         @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
         private String fieldName;
 
         /**
          * Specifies the corresponding field name in the data source.
+         *
          * @param fieldName the value to set
          * @return this builder
-         **/
+         */
         public Builder fieldName(String fieldName) {
             this.fieldName = fieldName;
             this.__explicitlySet__.add("fieldName");
             return this;
         }
-        /**
-         * Specifies the data type of the column.
-         **/
+        /** Specifies the data type of the column. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
         /**
          * Specifies the data type of the column.
+         *
          * @param dataType the value to set
          * @return this builder
-         **/
+         */
         public Builder dataType(String dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-        /**
-         * Indicates if the column is hidden. Values can either be 'true' or 'false'.
-         **/
+        /** Indicates if the column is hidden. Values can either be 'true' or 'false'. */
         @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
         private Boolean isHidden;
 
         /**
          * Indicates if the column is hidden. Values can either be 'true' or 'false'.
+         *
          * @param isHidden the value to set
          * @return this builder
-         **/
+         */
         public Builder isHidden(Boolean isHidden) {
             this.isHidden = isHidden;
             this.__explicitlySet__.add("isHidden");
             return this;
         }
-        /**
-         * Specifies the display order of the column.
-         **/
+        /** Specifies the display order of the column. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayOrder")
         private Integer displayOrder;
 
         /**
          * Specifies the display order of the column.
+         *
          * @param displayOrder the value to set
          * @return this builder
-         **/
+         */
         public Builder displayOrder(Integer displayOrder) {
             this.displayOrder = displayOrder;
             this.__explicitlySet__.add("displayOrder");
@@ -161,9 +157,7 @@ public final class Column extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -172,72 +166,67 @@ public final class Column extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         return new Builder().copy(this);
     }
 
-    /**
-     * Name of the column displayed on UI.
-     **/
+    /** Name of the column displayed on UI. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Name of the column displayed on UI.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Specifies the corresponding field name in the data source.
-     **/
+    /** Specifies the corresponding field name in the data source. */
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     private final String fieldName;
 
     /**
      * Specifies the corresponding field name in the data source.
+     *
      * @return the value
-     **/
+     */
     public String getFieldName() {
         return fieldName;
     }
 
-    /**
-     * Specifies the data type of the column.
-     **/
+    /** Specifies the data type of the column. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
     /**
      * Specifies the data type of the column.
+     *
      * @return the value
-     **/
+     */
     public String getDataType() {
         return dataType;
     }
 
-    /**
-     * Indicates if the column is hidden. Values can either be 'true' or 'false'.
-     **/
+    /** Indicates if the column is hidden. Values can either be 'true' or 'false'. */
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
     private final Boolean isHidden;
 
     /**
      * Indicates if the column is hidden. Values can either be 'true' or 'false'.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsHidden() {
         return isHidden;
     }
 
-    /**
-     * Specifies the display order of the column.
-     **/
+    /** Specifies the display order of the column. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayOrder")
     private final Integer displayOrder;
 
     /**
      * Specifies the display order of the column.
+     *
      * @return the value
-     **/
+     */
     public Integer getDisplayOrder() {
         return displayOrder;
     }
@@ -249,6 +238,7 @@ public final class Column extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

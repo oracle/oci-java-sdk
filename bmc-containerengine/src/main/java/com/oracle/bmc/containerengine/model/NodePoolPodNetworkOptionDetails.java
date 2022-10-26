@@ -5,35 +5,33 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * The CNI type and relevant network details for the pods of a given node pool
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The CNI type and relevant network details for the pods of a given node pool <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "cniType",
-    defaultImpl = NodePoolPodNetworkOptionDetails.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "cniType",
+        defaultImpl = NodePoolPodNetworkOptionDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = OciVcnIpNativeNodePoolPodNetworkOptionDetails.class,
-        name = "OCI_VCN_IP_NATIVE"
-    ),
+            value = OciVcnIpNativeNodePoolPodNetworkOptionDetails.class,
+            name = "OCI_VCN_IP_NATIVE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = FlannelOverlayNodePoolPodNetworkOptionDetails.class,
-        name = "FLANNEL_OVERLAY"
-    )
+            value = FlannelOverlayNodePoolPodNetworkOptionDetails.class,
+            name = "FLANNEL_OVERLAY")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public class NodePoolPodNetworkOptionDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected NodePoolPodNetworkOptionDetails() {
@@ -47,6 +45,7 @@ public class NodePoolPodNetworkOptionDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -79,16 +78,14 @@ public class NodePoolPodNetworkOptionDetails
         return result;
     }
 
-    /**
-     * The CNI plugin used by this node pool
-     **/
-    public enum CniType {
+    /** The CNI plugin used by this node pool */
+    public enum CniType implements com.oracle.bmc.http.internal.BmcEnum {
         OciVcnIpNative("OCI_VCN_IP_NATIVE"),
         FlannelOverlay("FLANNEL_OVERLAY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 

@@ -6,65 +6,57 @@ package com.oracle.bmc.core.requests;
 
 import com.oracle.bmc.core.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeGroupExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateVolumeGroupRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeGroupExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateVolumeGroupRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class UpdateVolumeGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.UpdateVolumeGroupDetails> {
 
-    /**
-     * The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
-     */
+    /** The Oracle Cloud ID (OCID) that uniquely identifies the volume group. */
     private String volumeGroupId;
 
-    /**
-     * The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
-     */
+    /** The Oracle Cloud ID (OCID) that uniquely identifies the volume group. */
     public String getVolumeGroupId() {
         return volumeGroupId;
     }
-    /**
-     * Update volume group's set of volumes and/or display name
-     */
+    /** Update volume group's set of volumes and/or display name */
     private com.oracle.bmc.core.model.UpdateVolumeGroupDetails updateVolumeGroupDetails;
 
-    /**
-     * Update volume group's set of volumes and/or display name
-     */
+    /** Update volume group's set of volumes and/or display name */
     public com.oracle.bmc.core.model.UpdateVolumeGroupDetails getUpdateVolumeGroupDetails() {
         return updateVolumeGroupDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
-     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
-     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * Specifies whether to disable or preserve the individual volume replication when removing a volume from the
-     * replication enabled volume group. When set to {@code true}, the individual volume replica is preserved. The default
-     * value is {@code true}.
-     *
+     * Specifies whether to disable or preserve the individual volume replication when removing a
+     * volume from the replication enabled volume group. When set to {@code true}, the individual
+     * volume replica is preserved. The default value is {@code true}.
      */
     private Boolean preserveVolumeReplica;
 
     /**
-     * Specifies whether to disable or preserve the individual volume replication when removing a volume from the
-     * replication enabled volume group. When set to {@code true}, the individual volume replica is preserved. The default
-     * value is {@code true}.
-     *
+     * Specifies whether to disable or preserve the individual volume replication when removing a
+     * volume from the replication enabled volume group. When set to {@code true}, the individual
+     * volume replica is preserved. The default value is {@code true}.
      */
     public Boolean getPreserveVolumeReplica() {
         return preserveVolumeReplica;
@@ -72,6 +64,7 @@ public class UpdateVolumeGroupRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -83,17 +76,15 @@ public class UpdateVolumeGroupRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateVolumeGroupRequest, com.oracle.bmc.core.model.UpdateVolumeGroupDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
-         */
+        /** The Oracle Cloud ID (OCID) that uniquely identifies the volume group. */
         private String volumeGroupId = null;
 
         /**
          * The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
+         *
          * @param volumeGroupId the value to set
          * @return this builder instance
          */
@@ -102,13 +93,12 @@ public class UpdateVolumeGroupRequest
             return this;
         }
 
-        /**
-         * Update volume group's set of volumes and/or display name
-         */
+        /** Update volume group's set of volumes and/or display name */
         private com.oracle.bmc.core.model.UpdateVolumeGroupDetails updateVolumeGroupDetails = null;
 
         /**
          * Update volume group's set of volumes and/or display name
+         *
          * @param updateVolumeGroupDetails the value to set
          * @return this builder instance
          */
@@ -119,17 +109,18 @@ public class UpdateVolumeGroupRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
-         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
-         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -140,17 +131,16 @@ public class UpdateVolumeGroupRequest
         }
 
         /**
-         * Specifies whether to disable or preserve the individual volume replication when removing a volume from the
-         * replication enabled volume group. When set to {@code true}, the individual volume replica is preserved. The default
-         * value is {@code true}.
-         *
+         * Specifies whether to disable or preserve the individual volume replication when removing
+         * a volume from the replication enabled volume group. When set to {@code true}, the
+         * individual volume replica is preserved. The default value is {@code true}.
          */
         private Boolean preserveVolumeReplica = null;
 
         /**
-         * Specifies whether to disable or preserve the individual volume replication when removing a volume from the
-         * replication enabled volume group. When set to {@code true}, the individual volume replica is preserved. The default
-         * value is {@code true}.
+         * Specifies whether to disable or preserve the individual volume replication when removing
+         * a volume from the replication enabled volume group. When set to {@code true}, the
+         * individual volume replica is preserved. The default value is {@code true}.
          *
          * @param preserveVolumeReplica the value to set
          * @return this builder instance
@@ -162,18 +152,19 @@ public class UpdateVolumeGroupRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -185,6 +176,7 @@ public class UpdateVolumeGroupRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateVolumeGroupRequest o) {
@@ -200,10 +192,11 @@ public class UpdateVolumeGroupRequest
         /**
          * Build the instance of UpdateVolumeGroupRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateVolumeGroupRequest
          */
@@ -216,6 +209,7 @@ public class UpdateVolumeGroupRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -228,7 +222,8 @@ public class UpdateVolumeGroupRequest
         /**
          * Build the instance of UpdateVolumeGroupRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateVolumeGroupRequest
@@ -240,12 +235,14 @@ public class UpdateVolumeGroupRequest
             request.ifMatch = ifMatch;
             request.preserveVolumeReplica = preserveVolumeReplica;
             return request;
-            // new UpdateVolumeGroupRequest(volumeGroupId, updateVolumeGroupDetails, ifMatch, preserveVolumeReplica);
+            // new UpdateVolumeGroupRequest(volumeGroupId, updateVolumeGroupDetails, ifMatch,
+            // preserveVolumeReplica);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -258,6 +255,7 @@ public class UpdateVolumeGroupRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

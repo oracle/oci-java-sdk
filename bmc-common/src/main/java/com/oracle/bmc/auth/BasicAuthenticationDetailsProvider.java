@@ -8,9 +8,9 @@ import java.io.InputStream;
 
 /**
  * Base interface used provide required information to sign requests to Oracle Cloud Infrastructure.
- * <p>
- * Implementations may choose to provide hints about the cacheability of the keyId and privateKey using
- * {@link AuthCachingPolicy} (optional).
+ *
+ * <p>Implementations may choose to provide hints about the cacheability of the keyId and privateKey
+ * using {@link AuthCachingPolicy} (optional).
  */
 public interface BasicAuthenticationDetailsProvider extends AbstractAuthenticationDetailsProvider {
     /**
@@ -21,9 +21,8 @@ public interface BasicAuthenticationDetailsProvider extends AbstractAuthenticati
     String getKeyId();
 
     /**
-     * Returns a new InputStream to the private key. This stream should be
-     * closed by the caller, implementations should return new streams each
-     * time.
+     * Returns a new InputStream to the private key. This stream should be closed by the caller,
+     * implementations should return new streams each time.
      *
      * @return A new InputStream.
      */
@@ -33,7 +32,6 @@ public interface BasicAuthenticationDetailsProvider extends AbstractAuthenticati
      * Returns the optional pass phrase for the (encrypted) private key.
      *
      * @return The pass phrase, or null if not applicable
-     *
      * @deprecated Use getPassphraseCharacters instead
      */
     @Deprecated

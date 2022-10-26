@@ -8,13 +8,12 @@ import com.oracle.bmc.core.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetConsoleHistoryContentResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * The number of bytes remaining in the snapshot.
-     */
+    /** The number of bytes remaining in the snapshot. */
     private Integer opcBytesRemaining;
 
     /**
      * The number of bytes remaining in the snapshot.
+     *
      * @return the value
      */
     public Integer getOpcBytesRemaining() {
@@ -22,15 +21,14 @@ public class GetConsoleHistoryContentResponse extends com.oracle.bmc.responses.B
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -38,13 +36,12 @@ public class GetConsoleHistoryContentResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /**
-     * The returned String instance.
-     */
+    /** The returned String instance. */
     private String value;
 
     /**
      * The returned String instance.
+     *
      * @return the value
      */
     public String getValue() {
@@ -60,7 +57,7 @@ public class GetConsoleHistoryContentResponse extends com.oracle.bmc.responses.B
     })
     private GetConsoleHistoryContentResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             Integer opcBytesRemaining,
             String opcRequestId,
             String value) {
@@ -70,28 +67,31 @@ public class GetConsoleHistoryContentResponse extends com.oracle.bmc.responses.B
         this.value = value;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetConsoleHistoryContentResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * The number of bytes remaining in the snapshot.
-         */
+        /** The number of bytes remaining in the snapshot. */
         private Integer opcBytesRemaining;
 
         /**
          * The number of bytes remaining in the snapshot.
+         *
          * @param opcBytesRemaining the value to set
          * @return this builder
          */
@@ -101,15 +101,14 @@ public class GetConsoleHistoryContentResponse extends com.oracle.bmc.responses.B
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -119,13 +118,12 @@ public class GetConsoleHistoryContentResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /**
-         * The returned String instance.
-         */
+        /** The returned String instance. */
         private String value;
 
         /**
          * The returned String instance.
+         *
          * @param value the value to set
          * @return this builder
          */
@@ -136,8 +134,10 @@ public class GetConsoleHistoryContentResponse extends com.oracle.bmc.responses.B
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetConsoleHistoryContentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -150,8 +150,10 @@ public class GetConsoleHistoryContentResponse extends com.oracle.bmc.responses.B
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetConsoleHistoryContentResponse build() {
             return new GetConsoleHistoryContentResponse(
                     __httpStatusCode__, headers, opcBytesRemaining, opcRequestId, value);
@@ -160,6 +162,7 @@ public class GetConsoleHistoryContentResponse extends com.oracle.bmc.responses.B
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

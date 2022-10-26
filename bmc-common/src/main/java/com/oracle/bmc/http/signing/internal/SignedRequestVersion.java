@@ -13,9 +13,7 @@ import javax.annotation.Nonnull;
 
 import com.oracle.bmc.util.internal.Validate;
 
-/**
- * List of supported signed request versions with associated version rules.
- */
+/** List of supported signed request versions with associated version rules. */
 public enum SignedRequestVersion implements Version {
     ONE(1, unmodifiableSetOf(Algorithm.RSAPSS256), unmodifiableSetOf(KeyIdType.REF), 2048);
 
@@ -91,16 +89,14 @@ public enum SignedRequestVersion implements Version {
         return ABSENT;
     }
 
-    /**
-     * Get the latest signed request version.
-     */
+    /** Get the latest signed request version. */
     public static SignedRequestVersion getLatestVersion() {
         return ONE;
     }
 
     /**
-     * Get the SignedRequestVersion based on version number. Leading and
-     * trailing spaces in the specified number is ignored.
+     * Get the SignedRequestVersion based on version number. Leading and trailing spaces in the
+     * specified number is ignored.
      */
     static Optional<SignedRequestVersion> getVersion(@Nonnull String versionNumber) {
         Validate.notNull(versionNumber, "versionNumber must not be null");

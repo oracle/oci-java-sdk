@@ -4,12 +4,9 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/**
- * Possible lifecycle sub-states.
- *
- **/
+/** Possible lifecycle sub-states. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum LifecycleSubState {
+public enum LifecycleSubState implements com.oracle.bmc.http.internal.BmcEnum {
     Recovering("RECOVERING"),
     Starting("STARTING"),
     Stopping("STOPPING"),

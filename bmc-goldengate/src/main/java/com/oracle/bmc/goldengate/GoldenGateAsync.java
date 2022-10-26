@@ -7,47 +7,44 @@ package com.oracle.bmc.goldengate;
 import com.oracle.bmc.goldengate.requests.*;
 import com.oracle.bmc.goldengate.responses.*;
 
-/**
- * Use the Oracle Cloud Infrastructure GoldenGate APIs to perform data replication operations.
- *
- */
+/** Use the Oracle Cloud Infrastructure GoldenGate APIs to perform data replication operations. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public interface GoldenGateAsync extends AutoCloseable {
 
-    /**
-     * Rebuilds the client from scratch.
-     * Useful to refresh certificates.
-     */
+    /** Rebuilds the client from scratch. Useful to refresh certificates. */
     void refreshClient();
 
     /**
      * Sets the endpoint to call (ex, https://www.example.com).
+     *
      * @param endpoint The endpoint of the serice.
      */
     void setEndpoint(String endpoint);
 
-    /**
-     * Gets the set endpoint for REST call (ex, https://www.example.com)
-     */
+    /** Gets the set endpoint for REST call (ex, https://www.example.com) */
     String getEndpoint();
 
     /**
      * Sets the region to call (ex, Region.US_PHOENIX_1).
-     * <p>
-     * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
+     *
+     * <p>Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the
+     * endpoint. If the service is not available in this region, however, an
+     * IllegalArgumentException will be raised.
+     *
      * @param region The region of the service.
      */
     void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
-     * <p>
-     * Note, this will first try to map the region ID to a known Region and call
-     * {@link #setRegion(Region) setRegion}.
-     * <p>
-     * If no known Region could be determined, it will create an endpoint based on the
-     * default endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
+     *
+     * <p>Note, this will first try to map the region ID to a known Region and call {@link
+     * #setRegion(Region) setRegion}.
+     *
+     * <p>If no known Region could be determined, it will create an endpoint based on the default
+     * endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
      * and then call {@link #setEndpoint(String) setEndpoint}.
+     *
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
@@ -57,10 +54,10 @@ public interface GoldenGateAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CancelDeploymentBackupResponse> cancelDeploymentBackup(
             CancelDeploymentBackupRequest request,
@@ -69,15 +66,17 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves the DatabaseRegistration into a different compartment within the same tenancy. When provided, If-Match is checked against ETag values of the resource.  For information about moving resources between compartments, see [Moving Resources Between Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
-     *
+     * Moves the DatabaseRegistration into a different compartment within the same tenancy. When
+     * provided, If-Match is checked against ETag values of the resource. For information about
+     * moving resources between compartments, see [Moving Resources Between
+     * Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeDatabaseRegistrationCompartmentResponse>
             changeDatabaseRegistrationCompartment(
@@ -88,15 +87,17 @@ public interface GoldenGateAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a DeploymentBackup into a different compartment within the same tenancy.  When provided, If-Match is checked against ETag values of the resource.  For information about moving resources between compartments, see [Moving Resources Between Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
-     *
+     * Moves a DeploymentBackup into a different compartment within the same tenancy. When provided,
+     * If-Match is checked against ETag values of the resource. For information about moving
+     * resources between compartments, see [Moving Resources Between
+     * Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeDeploymentBackupCompartmentResponse>
             changeDeploymentBackupCompartment(
@@ -107,15 +108,17 @@ public interface GoldenGateAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves the Deployment into a different compartment within the same tenancy.  When provided, If-Match is checked against ETag values of the resource.  For information about moving resources between compartments, see [Moving Resources Between Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
-     *
+     * Moves the Deployment into a different compartment within the same tenancy. When provided,
+     * If-Match is checked against ETag values of the resource. For information about moving
+     * resources between compartments, see [Moving Resources Between
+     * Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeDeploymentCompartmentResponse> changeDeploymentCompartment(
             ChangeDeploymentCompartmentRequest request,
@@ -126,13 +129,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Creates a new DatabaseRegistration.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateDatabaseRegistrationResponse> createDatabaseRegistration(
             CreateDatabaseRegistrationRequest request,
@@ -143,13 +145,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Creates a new Deployment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateDeploymentResponse> createDeployment(
             CreateDeploymentRequest request,
@@ -161,10 +162,10 @@ public interface GoldenGateAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateDeploymentBackupResponse> createDeploymentBackup(
             CreateDeploymentBackupRequest request,
@@ -175,13 +176,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Deletes a DatabaseRegistration.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteDatabaseRegistrationResponse> deleteDatabaseRegistration(
             DeleteDatabaseRegistrationRequest request,
@@ -192,13 +192,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Deletes the Deployment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteDeploymentResponse> deleteDeployment(
             DeleteDeploymentRequest request,
@@ -208,13 +207,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Deletes a DeploymentBackup.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteDeploymentBackupResponse> deleteDeploymentBackup(
             DeleteDeploymentBackupRequest request,
@@ -225,13 +223,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Retrieves a DatabaseRegistration.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDatabaseRegistrationResponse> getDatabaseRegistration(
             GetDatabaseRegistrationRequest request,
@@ -242,13 +239,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Retrieves a deployment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDeploymentResponse> getDeployment(
             GetDeploymentRequest request,
@@ -258,13 +254,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Retrieves a DeploymentBackup.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDeploymentBackupResponse> getDeploymentBackup(
             GetDeploymentBackupRequest request,
@@ -275,13 +270,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Retrieves a deployment upgrade.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDeploymentUpgradeResponse> getDeploymentUpgrade(
             GetDeploymentUpgradeRequest request,
@@ -292,13 +286,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Retrieve the WorkRequest identified by the given OCID.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
@@ -308,13 +301,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Lists the DatabaseRegistrations in the compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDatabaseRegistrationsResponse> listDatabaseRegistrations(
             ListDatabaseRegistrationsRequest request,
@@ -325,13 +317,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Lists the Backups in a compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDeploymentBackupsResponse> listDeploymentBackups(
             ListDeploymentBackupsRequest request,
@@ -342,13 +333,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Lists the Deployment Upgrades in a compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDeploymentUpgradesResponse> listDeploymentUpgrades(
             ListDeploymentUpgradesRequest request,
@@ -359,13 +349,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Lists the Deployments in a compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDeploymentsResponse> listDeployments(
             ListDeploymentsRequest request,
@@ -373,15 +362,15 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the DeploymentMessages for a deployment. The sorting order is not important. By default first will be Upgrade message, next Exception message and then Storage Utilization message.
-     *
+     * Lists the DeploymentMessages for a deployment. The sorting order is not important. By default
+     * first will be Upgrade message, next Exception message and then Storage Utilization message.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListMessagesResponse> listMessages(
             ListMessagesRequest request,
@@ -391,13 +380,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Lists the TrailFiles for a deployment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListTrailFilesResponse> listTrailFiles(
             ListTrailFilesRequest request,
@@ -407,13 +395,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Lists the Trail Sequences for a TrailFile in a given deployment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListTrailSequencesResponse> listTrailSequences(
             ListTrailSequencesRequest request,
@@ -424,13 +411,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Lists work request errors.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
             ListWorkRequestErrorsRequest request,
@@ -441,13 +427,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Lists work request logs.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
             ListWorkRequestLogsRequest request,
@@ -458,13 +443,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Lists the work requests in the compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
             ListWorkRequestsRequest request,
@@ -476,10 +460,10 @@ public interface GoldenGateAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RestoreDeploymentResponse> restoreDeployment(
             RestoreDeploymentRequest request,
@@ -490,13 +474,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Starts a Deployment. When provided, If-Match is checked against ETag values of the resource.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<StartDeploymentResponse> startDeployment(
             StartDeploymentRequest request,
@@ -506,13 +489,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Stops a Deployment. When provided, If-Match is checked against ETag values of the resource.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<StopDeploymentResponse> stopDeployment(
             StopDeploymentRequest request,
@@ -522,13 +504,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Updates the DatabaseRegistration.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateDatabaseRegistrationResponse> updateDatabaseRegistration(
             UpdateDatabaseRegistrationRequest request,
@@ -539,13 +520,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Modifies a Deployment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateDeploymentResponse> updateDeployment(
             UpdateDeploymentRequest request,
@@ -555,13 +535,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Modifies a Deployment Backup.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateDeploymentBackupResponse> updateDeploymentBackup(
             UpdateDeploymentBackupRequest request,
@@ -572,13 +551,12 @@ public interface GoldenGateAsync extends AutoCloseable {
     /**
      * Upgrade a Deployment. When provided, If-Match is checked against ETag values of the resource.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpgradeDeploymentResponse> upgradeDeployment(
             UpgradeDeploymentRequest request,

@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.osmanagement.model;
 
-/**
- * Operating System types
- **/
+/** Operating System types */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-public enum OsFamilies {
+public enum OsFamilies implements com.oracle.bmc.http.internal.BmcEnum {
     Linux("LINUX"),
     Windows("WINDOWS"),
     All("ALL"),

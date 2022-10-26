@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.networkloadbalancer.model;
 
-/**
- * Sort orders.
- **/
+/** Sort orders. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-public enum SortOrder {
+public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
     Asc("ASC"),
     Desc("DESC"),
     ;

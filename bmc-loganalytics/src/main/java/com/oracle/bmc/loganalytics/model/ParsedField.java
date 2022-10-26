@@ -5,19 +5,20 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Parsed field response.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Parsed field response. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ParsedField.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ParsedField extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ParsedField extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"logContent", "fieldValues"})
     public ParsedField(String logContent, java.util.List<String> fieldValues) {
@@ -28,33 +29,31 @@ public final class ParsedField extends com.oracle.bmc.http.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Sample log entries picked up from the given file for validation.
-         **/
+        /** Sample log entries picked up from the given file for validation. */
         @com.fasterxml.jackson.annotation.JsonProperty("logContent")
         private String logContent;
 
         /**
          * Sample log entries picked up from the given file for validation.
+         *
          * @param logContent the value to set
          * @return this builder
-         **/
+         */
         public Builder logContent(String logContent) {
             this.logContent = logContent;
             this.__explicitlySet__.add("logContent");
             return this;
         }
-        /**
-         * List of field Values.
-         **/
+        /** List of field Values. */
         @com.fasterxml.jackson.annotation.JsonProperty("fieldValues")
         private java.util.List<String> fieldValues;
 
         /**
          * List of field Values.
+         *
          * @param fieldValues the value to set
          * @return this builder
-         **/
+         */
         public Builder fieldValues(java.util.List<String> fieldValues) {
             this.fieldValues = fieldValues;
             this.__explicitlySet__.add("fieldValues");
@@ -84,9 +83,7 @@ public final class ParsedField extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,30 +92,28 @@ public final class ParsedField extends com.oracle.bmc.http.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /**
-     * Sample log entries picked up from the given file for validation.
-     **/
+    /** Sample log entries picked up from the given file for validation. */
     @com.fasterxml.jackson.annotation.JsonProperty("logContent")
     private final String logContent;
 
     /**
      * Sample log entries picked up from the given file for validation.
+     *
      * @return the value
-     **/
+     */
     public String getLogContent() {
         return logContent;
     }
 
-    /**
-     * List of field Values.
-     **/
+    /** List of field Values. */
     @com.fasterxml.jackson.annotation.JsonProperty("fieldValues")
     private final java.util.List<String> fieldValues;
 
     /**
      * List of field Values.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getFieldValues() {
         return fieldValues;
     }
@@ -130,6 +125,7 @@ public final class ParsedField extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,19 +5,21 @@
 package com.oracle.bmc.usage.model;
 
 /**
- * Provides details about product rewards and the usage amount.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Provides details about product rewards and the usage amount. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ProductSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ProductSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ProductSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "productNumber",
@@ -42,81 +44,76 @@ public final class ProductSummary extends com.oracle.bmc.http.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The rate card product number.
-         **/
+        /** The rate card product number. */
         @com.fasterxml.jackson.annotation.JsonProperty("productNumber")
         private String productNumber;
 
         /**
          * The rate card product number.
+         *
          * @param productNumber the value to set
          * @return this builder
-         **/
+         */
         public Builder productNumber(String productNumber) {
             this.productNumber = productNumber;
             this.__explicitlySet__.add("productNumber");
             return this;
         }
-        /**
-         * The rate card product name.
-         **/
+        /** The rate card product name. */
         @com.fasterxml.jackson.annotation.JsonProperty("productName")
         private String productName;
 
         /**
          * The rate card product name.
+         *
          * @param productName the value to set
          * @return this builder
-         **/
+         */
         public Builder productName(String productName) {
             this.productName = productName;
             this.__explicitlySet__.add("productName");
             return this;
         }
-        /**
-         * The rate card product usage amount.
-         **/
+        /** The rate card product usage amount. */
         @com.fasterxml.jackson.annotation.JsonProperty("usageAmount")
         private Double usageAmount;
 
         /**
          * The rate card product usage amount.
+         *
          * @param usageAmount the value to set
          * @return this builder
-         **/
+         */
         public Builder usageAmount(Double usageAmount) {
             this.usageAmount = usageAmount;
             this.__explicitlySet__.add("usageAmount");
             return this;
         }
-        /**
-         * The earned rewards for the product.
-         **/
+        /** The earned rewards for the product. */
         @com.fasterxml.jackson.annotation.JsonProperty("earnedRewards")
         private Float earnedRewards;
 
         /**
          * The earned rewards for the product.
+         *
          * @param earnedRewards the value to set
          * @return this builder
-         **/
+         */
         public Builder earnedRewards(Float earnedRewards) {
             this.earnedRewards = earnedRewards;
             this.__explicitlySet__.add("earnedRewards");
             return this;
         }
-        /**
-         * The boolean parameter to indicate if the product is eligible to earn rewards.
-         **/
+        /** The boolean parameter to indicate if the product is eligible to earn rewards. */
         @com.fasterxml.jackson.annotation.JsonProperty("isEligibleToEarnRewards")
         private Boolean isEligibleToEarnRewards;
 
         /**
          * The boolean parameter to indicate if the product is eligible to earn rewards.
+         *
          * @param isEligibleToEarnRewards the value to set
          * @return this builder
-         **/
+         */
         public Builder isEligibleToEarnRewards(Boolean isEligibleToEarnRewards) {
             this.isEligibleToEarnRewards = isEligibleToEarnRewards;
             this.__explicitlySet__.add("isEligibleToEarnRewards");
@@ -161,9 +158,7 @@ public final class ProductSummary extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -172,72 +167,67 @@ public final class ProductSummary extends com.oracle.bmc.http.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /**
-     * The rate card product number.
-     **/
+    /** The rate card product number. */
     @com.fasterxml.jackson.annotation.JsonProperty("productNumber")
     private final String productNumber;
 
     /**
      * The rate card product number.
+     *
      * @return the value
-     **/
+     */
     public String getProductNumber() {
         return productNumber;
     }
 
-    /**
-     * The rate card product name.
-     **/
+    /** The rate card product name. */
     @com.fasterxml.jackson.annotation.JsonProperty("productName")
     private final String productName;
 
     /**
      * The rate card product name.
+     *
      * @return the value
-     **/
+     */
     public String getProductName() {
         return productName;
     }
 
-    /**
-     * The rate card product usage amount.
-     **/
+    /** The rate card product usage amount. */
     @com.fasterxml.jackson.annotation.JsonProperty("usageAmount")
     private final Double usageAmount;
 
     /**
      * The rate card product usage amount.
+     *
      * @return the value
-     **/
+     */
     public Double getUsageAmount() {
         return usageAmount;
     }
 
-    /**
-     * The earned rewards for the product.
-     **/
+    /** The earned rewards for the product. */
     @com.fasterxml.jackson.annotation.JsonProperty("earnedRewards")
     private final Float earnedRewards;
 
     /**
      * The earned rewards for the product.
+     *
      * @return the value
-     **/
+     */
     public Float getEarnedRewards() {
         return earnedRewards;
     }
 
-    /**
-     * The boolean parameter to indicate if the product is eligible to earn rewards.
-     **/
+    /** The boolean parameter to indicate if the product is eligible to earn rewards. */
     @com.fasterxml.jackson.annotation.JsonProperty("isEligibleToEarnRewards")
     private final Boolean isEligibleToEarnRewards;
 
     /**
      * The boolean parameter to indicate if the product is eligible to earn rewards.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsEligibleToEarnRewards() {
         return isEligibleToEarnRewards;
     }
@@ -249,6 +239,7 @@ public final class ProductSummary extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

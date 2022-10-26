@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.optimizer.model;
 
-/**
- * Possible sort orders.
- **/
+/** Possible sort orders. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-public enum SortOrder {
+public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
     Asc("ASC"),
     Desc("DESC"),
     ;

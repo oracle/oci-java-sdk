@@ -6,7 +6,10 @@ package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabaseDataguardAssociationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAutonomousDatabaseDataguardAssociationsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabaseDataguardAssociationsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ListAutonomousDatabaseDataguardAssociationsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListAutonomousDatabaseDataguardAssociationsRequest
@@ -23,25 +26,17 @@ public class ListAutonomousDatabaseDataguardAssociationsRequest
     public String getAutonomousDatabaseId() {
         return autonomousDatabaseId;
     }
-    /**
-     * The maximum number of items to return per page.
-     */
+    /** The maximum number of items to return per page. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return per page.
-     */
+    /** The maximum number of items to return per page. */
     public Integer getLimit() {
         return limit;
     }
-    /**
-     * The pagination token to continue listing from.
-     */
+    /** The pagination token to continue listing from. */
     private String page;
 
-    /**
-     * The pagination token to continue listing from.
-     */
+    /** The pagination token to continue listing from. */
     public String getPage() {
         return page;
     }
@@ -49,17 +44,19 @@ public class ListAutonomousDatabaseDataguardAssociationsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListAutonomousDatabaseDataguardAssociationsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The database
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          */
         private String autonomousDatabaseId = null;
 
         /**
-         * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The database
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param autonomousDatabaseId the value to set
          * @return this builder instance
          */
@@ -68,13 +65,12 @@ public class ListAutonomousDatabaseDataguardAssociationsRequest
             return this;
         }
 
-        /**
-         * The maximum number of items to return per page.
-         */
+        /** The maximum number of items to return per page. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -83,13 +79,12 @@ public class ListAutonomousDatabaseDataguardAssociationsRequest
             return this;
         }
 
-        /**
-         * The pagination token to continue listing from.
-         */
+        /** The pagination token to continue listing from. */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -100,18 +95,19 @@ public class ListAutonomousDatabaseDataguardAssociationsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -123,6 +119,7 @@ public class ListAutonomousDatabaseDataguardAssociationsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListAutonomousDatabaseDataguardAssociationsRequest o) {
@@ -135,12 +132,14 @@ public class ListAutonomousDatabaseDataguardAssociationsRequest
         }
 
         /**
-         * Build the instance of ListAutonomousDatabaseDataguardAssociationsRequest as configured by this builder
+         * Build the instance of ListAutonomousDatabaseDataguardAssociationsRequest as configured by
+         * this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListAutonomousDatabaseDataguardAssociationsRequest
          */
@@ -153,9 +152,11 @@ public class ListAutonomousDatabaseDataguardAssociationsRequest
         }
 
         /**
-         * Build the instance of ListAutonomousDatabaseDataguardAssociationsRequest as configured by this builder
+         * Build the instance of ListAutonomousDatabaseDataguardAssociationsRequest as configured by
+         * this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListAutonomousDatabaseDataguardAssociationsRequest
@@ -167,12 +168,14 @@ public class ListAutonomousDatabaseDataguardAssociationsRequest
             request.limit = limit;
             request.page = page;
             return request;
-            // new ListAutonomousDatabaseDataguardAssociationsRequest(autonomousDatabaseId, limit, page);
+            // new ListAutonomousDatabaseDataguardAssociationsRequest(autonomousDatabaseId, limit,
+            // page);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -181,6 +184,7 @@ public class ListAutonomousDatabaseDataguardAssociationsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

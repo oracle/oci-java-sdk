@@ -5,22 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Metadata of a column in a data object resultset.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Metadata of a column in a data object resultset. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DataObjectColumnMetadata.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DataObjectColumnMetadata.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DataObjectColumnMetadata
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -51,97 +51,91 @@ public final class DataObjectColumnMetadata
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Name of the column.
-         **/
+        /** Name of the column. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of the column.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Category of the column.
-         **/
+        /** Category of the column. */
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private Category category;
 
         /**
          * Category of the column.
+         *
          * @param category the value to set
          * @return this builder
-         **/
+         */
         public Builder category(Category category) {
             this.category = category;
             this.__explicitlySet__.add("category");
             return this;
         }
-        /**
-         * Type of a data object column.
-         **/
+        /** Type of a data object column. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataTypeName")
         private DataTypeName dataTypeName;
 
         /**
          * Type of a data object column.
+         *
          * @param dataTypeName the value to set
          * @return this builder
-         **/
+         */
         public Builder dataTypeName(DataTypeName dataTypeName) {
             this.dataTypeName = dataTypeName;
             this.__explicitlySet__.add("dataTypeName");
             return this;
         }
-        /**
-         * Display name of the column.
-         **/
+        /** Display name of the column. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Display name of the column.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Description of the column.
-         **/
+        /** Description of the column. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description of the column.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * Group name of the column.
-         **/
+        /** Group name of the column. */
         @com.fasterxml.jackson.annotation.JsonProperty("groupName")
         private String groupName;
 
         /**
          * Group name of the column.
+         *
          * @param groupName the value to set
          * @return this builder
-         **/
+         */
         public Builder groupName(String groupName) {
             this.groupName = groupName;
             this.__explicitlySet__.add("groupName");
@@ -203,9 +197,7 @@ public final class DataObjectColumnMetadata
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -214,31 +206,28 @@ public final class DataObjectColumnMetadata
         return new Builder().copy(this);
     }
 
-    /**
-     * Name of the column.
-     **/
+    /** Name of the column. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of the column.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Category of the column.
-     **/
-    public enum Category {
+    /** Category of the column. */
+    public enum Category implements com.oracle.bmc.http.internal.BmcEnum {
         Dimension("DIMENSION"),
         Metric("METRIC"),
         TimeDimension("TIME_DIMENSION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -277,31 +266,28 @@ public final class DataObjectColumnMetadata
             return UnknownEnumValue;
         }
     };
-    /**
-     * Category of the column.
-     **/
+    /** Category of the column. */
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final Category category;
 
     /**
      * Category of the column.
+     *
      * @return the value
-     **/
+     */
     public Category getCategory() {
         return category;
     }
 
-    /**
-     * Type of a data object column.
-     **/
-    public enum DataTypeName {
+    /** Type of a data object column. */
+    public enum DataTypeName implements com.oracle.bmc.http.internal.BmcEnum {
         Number("NUMBER"),
         Timestamp("TIMESTAMP"),
         Varchar2("VARCHAR2"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -340,58 +326,54 @@ public final class DataObjectColumnMetadata
             return UnknownEnumValue;
         }
     };
-    /**
-     * Type of a data object column.
-     **/
+    /** Type of a data object column. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataTypeName")
     private final DataTypeName dataTypeName;
 
     /**
      * Type of a data object column.
+     *
      * @return the value
-     **/
+     */
     public DataTypeName getDataTypeName() {
         return dataTypeName;
     }
 
-    /**
-     * Display name of the column.
-     **/
+    /** Display name of the column. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Display name of the column.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Description of the column.
-     **/
+    /** Description of the column. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of the column.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * Group name of the column.
-     **/
+    /** Group name of the column. */
     @com.fasterxml.jackson.annotation.JsonProperty("groupName")
     private final String groupName;
 
     /**
      * Group name of the column.
+     *
      * @return the value
-     **/
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -410,6 +392,7 @@ public final class DataObjectColumnMetadata
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

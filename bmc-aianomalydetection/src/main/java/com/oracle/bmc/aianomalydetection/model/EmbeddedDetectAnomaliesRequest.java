@@ -5,27 +5,25 @@
 package com.oracle.bmc.aianomalydetection.model;
 
 /**
- * The request body when the user selects to provide byte data in detect call which is Base64 encoded.
- * The default type of the data is CSV and can be JSON by setting the 'contentType'.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The request body when the user selects to provide byte data in detect call which is Base64
+ * encoded. The default type of the data is CSV and can be JSON by setting the 'contentType'. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = EmbeddedDetectAnomaliesRequest.Builder.class
-)
+        builder = EmbeddedDetectAnomaliesRequest.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "requestType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "requestType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class EmbeddedDetectAnomaliesRequest extends DetectAnomaliesDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -84,9 +82,7 @@ public final class EmbeddedDetectAnomaliesRequest extends DetectAnomaliesDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -102,9 +98,8 @@ public final class EmbeddedDetectAnomaliesRequest extends DetectAnomaliesDetails
         this.content = content;
     }
 
-    /**
-     **/
-    public enum ContentType {
+    /** */
+    public enum ContentType implements com.oracle.bmc.http.internal.BmcEnum {
         Csv("CSV"),
         Json("JSON"),
         ;
@@ -158,6 +153,7 @@ public final class EmbeddedDetectAnomaliesRequest extends DetectAnomaliesDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

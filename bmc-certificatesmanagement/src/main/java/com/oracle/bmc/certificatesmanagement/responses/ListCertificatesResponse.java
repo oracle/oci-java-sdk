@@ -9,15 +9,14 @@ import com.oracle.bmc.certificatesmanagement.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public class ListCertificatesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -26,19 +25,18 @@ public class ListCertificatesResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then there are additional items still to get. Include this value as the {@code page} parameter for the
-     * subsequent GET request. For information about pagination, see
-     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
-     *
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then there are additional items still to get. Include this value as the {@code
+     * page} parameter for the subsequent GET request. For information about pagination, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then there are additional items still to get. Include this value as the {@code page} parameter for the
-     * subsequent GET request. For information about pagination, see
-     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then there are additional items still to get. Include this value as the {@code
+     * page} parameter for the subsequent GET request. For information about pagination, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
      *
      * @return the value
      */
@@ -46,13 +44,12 @@ public class ListCertificatesResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /**
-     * The returned CertificateCollection instance.
-     */
+    /** The returned CertificateCollection instance. */
     private com.oracle.bmc.certificatesmanagement.model.CertificateCollection certificateCollection;
 
     /**
      * The returned CertificateCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.certificatesmanagement.model.CertificateCollection
@@ -69,7 +66,7 @@ public class ListCertificatesResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private ListCertificatesResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.certificatesmanagement.model.CertificateCollection
@@ -80,31 +77,33 @@ public class ListCertificatesResponse extends com.oracle.bmc.responses.BmcRespon
         this.certificateCollection = certificateCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<ListCertificatesResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -115,19 +114,20 @@ public class ListCertificatesResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then there are additional items still to get. Include this value as the {@code page} parameter for the
-         * subsequent GET request. For information about pagination, see
-         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
-         *
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then there are additional items still to get. Include this value as the
+         * {@code page} parameter for the subsequent GET request. For information about pagination,
+         * see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then there are additional items still to get. Include this value as the {@code page} parameter for the
-         * subsequent GET request. For information about pagination, see
-         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then there are additional items still to get. Include this value as the
+         * {@code page} parameter for the subsequent GET request. For information about pagination,
+         * see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -137,14 +137,13 @@ public class ListCertificatesResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /**
-         * The returned CertificateCollection instance.
-         */
+        /** The returned CertificateCollection instance. */
         private com.oracle.bmc.certificatesmanagement.model.CertificateCollection
                 certificateCollection;
 
         /**
          * The returned CertificateCollection instance.
+         *
          * @param certificateCollection the value to set
          * @return this builder
          */
@@ -157,8 +156,10 @@ public class ListCertificatesResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListCertificatesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -171,8 +172,10 @@ public class ListCertificatesResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListCertificatesResponse build() {
             return new ListCertificatesResponse(
                     __httpStatusCode__, headers, opcRequestId, opcNextPage, certificateCollection);
@@ -181,6 +184,7 @@ public class ListCertificatesResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

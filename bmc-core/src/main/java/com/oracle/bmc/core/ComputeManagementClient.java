@@ -4,336 +4,41 @@
  */
 package com.oracle.bmc.core;
 
-import com.oracle.bmc.core.internal.http.*;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
+import java.util.Objects;
+
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public class ComputeManagementClient implements ComputeManagement {
-    /**
-     * Service instance for ComputeManagement.
-     */
+public class ComputeManagementClient extends com.oracle.bmc.http.internal.BaseSyncClient
+        implements ComputeManagement {
+    /** Service instance for ComputeManagement. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("COMPUTEMANAGEMENT")
                     .serviceEndpointPrefix("iaas")
                     .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
                     .build();
-    // attempt twice if it's instance principals, immediately failures will try to refresh the token
-    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ComputeManagementAsyncClient.class);
 
-    com.oracle.bmc.http.internal.RestClient getClient() {
-        return client;
-    }
-
+    protected final java.util.concurrent.ExecutorService executorService;
     private final ComputeManagementWaiters waiters;
 
     private final ComputeManagementPaginators paginators;
-    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-            authenticationDetailsProvider;
-    private final java.util.concurrent.ExecutorService executorService;
-    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
-    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
-            apacheConnectionClosingStrategy;
-    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
-    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
-    private final java.util.Map<
-                    com.oracle.bmc.http.signing.SigningStrategy,
-                    com.oracle.bmc.http.signing.RequestSignerFactory>
-            signingStrategyRequestSignerFactories;
-    private final boolean isNonBufferingApacheClient;
-    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
-    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-            circuitBreakerConfiguration;
 
-    /**
-     * Used to synchronize any updates on the `this.client` object.
-     */
-    private final Object clientUpdate = new Object();
-
-    /**
-     * Stores the actual client object used to make the API calls.
-     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
-     *       For any writes to the object, please synchronize on `this.clientUpdate`.
-     */
-    private volatile com.oracle.bmc.http.internal.RestClient client;
-
-    /**
-     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
-     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
-     */
-    private volatile String overrideEndpoint = null;
-
-    /**
-     * Creates a new service instance using the given authentication provider.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     */
-    public ComputeManagementClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     */
-    public ComputeManagementClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(authenticationDetailsProvider, configuration, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     */
-    public ComputeManagementClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     */
-    public ComputeManagementClient(
+    private ComputeManagementClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public ComputeManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                additionalClientConfigurators,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public ComputeManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
-                        .createDefaultRequestSignerFactories(),
-                additionalClientConfigurators,
-                endpoint);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public ComputeManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
-     */
-    public ComputeManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
             java.util.concurrent.ExecutorService executorService) {
-        this(
+        super(
+                builder,
                 authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                executorService,
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * Use the {@link Builder} to get access to all these parameters.
-     *
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
-     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
-     */
-    protected ComputeManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            java.util.concurrent.ExecutorService executorService,
-            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
-        this.authenticationDetailsProvider = authenticationDetailsProvider;
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
-                new java.util.ArrayList<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
-            authenticationDetailsConfigurators.addAll(
-                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
-                                    this.authenticationDetailsProvider)
-                            .getClientConfigurators());
-        }
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
-                new java.util.ArrayList<>(additionalClientConfigurators);
-        allConfigurators.addAll(authenticationDetailsConfigurators);
-        this.restClientFactory =
-                restClientFactoryBuilder
-                        .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(allConfigurators)
-                        .build();
-        this.isNonBufferingApacheClient =
-                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        this.restClientFactory.getClientConfigurator());
-        this.apacheConnectionClosingStrategy =
-                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
-                        restClientFactory.getClientConfigurator());
-
-        this.clientConfigurationToUse =
-                (configuration != null)
-                        ? configuration
-                        : com.oracle.bmc.ClientConfiguration.builder().build();
-        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
-        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
-        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
-        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-                userCircuitBreakerConfiguration =
-                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
-                                configuration);
-        if (userCircuitBreakerConfiguration == null) {
-            this.circuitBreakerConfiguration =
-                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
-        } else {
-            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
-        }
-
-        this.refreshClient();
+                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -356,28 +61,11 @@ public class ComputeManagementClient implements ComputeManagement {
         this.waiters = new ComputeManagementWaiters(executorService, this);
 
         this.paginators = new ComputeManagementPaginators(this);
-
-        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
-            com.oracle.bmc.auth.RegionProvider provider =
-                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
-
-            if (provider.getRegion() != null) {
-                this.setRegion(provider.getRegion());
-                if (endpoint != null) {
-                    LOG.info(
-                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
-                            provider.getRegion(),
-                            endpoint);
-                }
-            }
-        }
-        if (endpoint != null) {
-            setEndpoint(endpoint);
-        }
     }
 
     /**
      * Create a builder for this client.
+     *
      * @return builder
      */
     public static Builder builder() {
@@ -385,8 +73,8 @@ public class ComputeManagementClient implements ComputeManagement {
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
+     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, ComputeManagementClient> {
@@ -401,6 +89,7 @@ public class ComputeManagementClient implements ComputeManagement {
 
         /**
          * Set the ExecutorService for the client to be created.
+         *
          * @param executorService executorService
          * @return this builder
          */
@@ -411,1378 +100,995 @@ public class ComputeManagementClient implements ComputeManagement {
 
         /**
          * Build the client.
+         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public ComputeManagementClient build(
                 @javax.annotation.Nonnull
-                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                        authenticationDetailsProvider) {
-            if (authenticationDetailsProvider == null) {
-                throw new NullPointerException(
-                        "authenticationDetailsProvider is marked non-null but is null");
-            }
+                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                                authenticationDetailsProvider) {
             return new ComputeManagementClient(
-                    authenticationDetailsProvider,
-                    configuration,
-                    clientConfigurator,
-                    requestSignerFactory,
-                    signingStrategyRequestSignerFactories,
-                    additionalClientConfigurators,
-                    endpoint,
-                    executorService);
+                    this, authenticationDetailsProvider, executorService);
         }
-    }
-
-    @Override
-    public void refreshClient() {
-        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                this.defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        this.signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
-            }
-        }
-
-        com.oracle.bmc.http.internal.RestClient refreshedClient =
-                this.restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        this.clientConfigurationToUse,
-                        this.isNonBufferingApacheClient,
-                        null,
-                        this.circuitBreakerConfiguration);
-
-        synchronized (clientUpdate) {
-            if (this.overrideEndpoint != null) {
-                refreshedClient.setEndpoint(this.overrideEndpoint);
-            }
-
-            this.client = refreshedClient;
-        }
-
-        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint) {
-        LOG.info("Setting endpoint to {}", endpoint);
-
-        synchronized (clientUpdate) {
-            this.overrideEndpoint = endpoint;
-            client.setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
-        }
-        return endpoint;
     }
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        java.util.Optional<String> endpoint =
-                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
-        if (endpoint.isPresent()) {
-            setEndpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + SERVICE + " is not known in region " + region);
-        }
+        super.setRegion(region);
     }
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
-        try {
-            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-            setRegion(region);
-        } catch (IllegalArgumentException e) {
-            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-            setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public void close() {
-        client.close();
+        super.setRegion(regionId);
     }
 
     @Override
     public AttachInstancePoolInstanceResponse attachInstancePoolInstance(
             AttachInstancePoolInstanceRequest request) {
-        LOG.trace("Called attachInstancePoolInstance");
-        final AttachInstancePoolInstanceRequest interceptedRequest =
-                AttachInstancePoolInstanceConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AttachInstancePoolInstanceConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "ComputeManagement",
-                        "AttachInstancePoolInstance",
-                        ib.getRequestUri().toString(),
-                        "");
-        java.util.function.Function<javax.ws.rs.core.Response, AttachInstancePoolInstanceResponse>
-                transformer =
-                        AttachInstancePoolInstanceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getAttachInstancePoolInstanceDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
+        Objects.requireNonNull(
+                request.getAttachInstancePoolInstanceDetails(),
+                "attachInstancePoolInstanceDetails is required");
+
+        return clientCall(request, AttachInstancePoolInstanceResponse::builder)
+                .logger(LOG, "attachInstancePoolInstance")
+                .serviceDetails("ComputeManagement", "AttachInstancePoolInstance", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AttachInstancePoolInstanceRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instancePools")
+                .appendPathParam(request.getInstancePoolId())
+                .appendPathParam("instances")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.InstancePoolInstance.class,
+                        AttachInstancePoolInstanceResponse.Builder::instancePoolInstance)
+                .handleResponseHeaderString(
+                        "opc-request-id", AttachInstancePoolInstanceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", AttachInstancePoolInstanceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        AttachInstancePoolInstanceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "location", AttachInstancePoolInstanceResponse.Builder::location)
+                .callSync();
     }
 
     @Override
     public AttachLoadBalancerResponse attachLoadBalancer(AttachLoadBalancerRequest request) {
-        LOG.trace("Called attachLoadBalancer");
-        final AttachLoadBalancerRequest interceptedRequest =
-                AttachLoadBalancerConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AttachLoadBalancerConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
+        Objects.requireNonNull(
+                request.getAttachLoadBalancerDetails(), "attachLoadBalancerDetails is required");
+
+        return clientCall(request, AttachLoadBalancerResponse::builder)
+                .logger(LOG, "attachLoadBalancer")
+                .serviceDetails(
                         "ComputeManagement",
                         "AttachLoadBalancer",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/AttachLoadBalancer");
-        java.util.function.Function<javax.ws.rs.core.Response, AttachLoadBalancerResponse>
-                transformer =
-                        AttachLoadBalancerConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getAttachLoadBalancerDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/AttachLoadBalancer")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AttachLoadBalancerRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instancePools")
+                .appendPathParam(request.getInstancePoolId())
+                .appendPathParam("actions")
+                .appendPathParam("attachLoadBalancer")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.InstancePool.class,
+                        AttachLoadBalancerResponse.Builder::instancePool)
+                .handleResponseHeaderString("etag", AttachLoadBalancerResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AttachLoadBalancerResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeClusterNetworkCompartmentResponse changeClusterNetworkCompartment(
             ChangeClusterNetworkCompartmentRequest request) {
-        LOG.trace("Called changeClusterNetworkCompartment");
-        final ChangeClusterNetworkCompartmentRequest interceptedRequest =
-                ChangeClusterNetworkCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeClusterNetworkCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getClusterNetworkId(), "clusterNetworkId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeClusterNetworkCompartmentDetails(),
+                "changeClusterNetworkCompartmentDetails is required");
+
+        return clientCall(request, ChangeClusterNetworkCompartmentResponse::builder)
+                .logger(LOG, "changeClusterNetworkCompartment")
+                .serviceDetails(
                         "ComputeManagement",
                         "ChangeClusterNetworkCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/ChangeClusterNetworkCompartment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeClusterNetworkCompartmentResponse>
-                transformer =
-                        ChangeClusterNetworkCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeClusterNetworkCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/ChangeClusterNetworkCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeClusterNetworkCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("clusterNetworks")
+                .appendPathParam(request.getClusterNetworkId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeClusterNetworkCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeClusterNetworkCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeInstanceConfigurationCompartmentResponse changeInstanceConfigurationCompartment(
             ChangeInstanceConfigurationCompartmentRequest request) {
-        LOG.trace("Called changeInstanceConfigurationCompartment");
-        final ChangeInstanceConfigurationCompartmentRequest interceptedRequest =
-                ChangeInstanceConfigurationCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeInstanceConfigurationCompartmentConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getInstanceConfigurationId(), "instanceConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeInstanceConfigurationCompartmentDetails(),
+                "changeInstanceConfigurationCompartmentDetails is required");
+
+        return clientCall(request, ChangeInstanceConfigurationCompartmentResponse::builder)
+                .logger(LOG, "changeInstanceConfigurationCompartment")
+                .serviceDetails(
                         "ComputeManagement",
                         "ChangeInstanceConfigurationCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/ChangeInstanceConfigurationCompartment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeInstanceConfigurationCompartmentResponse>
-                transformer =
-                        ChangeInstanceConfigurationCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeInstanceConfigurationCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/ChangeInstanceConfigurationCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeInstanceConfigurationCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceConfigurations")
+                .appendPathParam(request.getInstanceConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeInstanceConfigurationCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeInstanceConfigurationCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeInstancePoolCompartmentResponse changeInstancePoolCompartment(
             ChangeInstancePoolCompartmentRequest request) {
-        LOG.trace("Called changeInstancePoolCompartment");
-        final ChangeInstancePoolCompartmentRequest interceptedRequest =
-                ChangeInstancePoolCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeInstancePoolCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeInstancePoolCompartmentDetails(),
+                "changeInstancePoolCompartmentDetails is required");
+
+        return clientCall(request, ChangeInstancePoolCompartmentResponse::builder)
+                .logger(LOG, "changeInstancePoolCompartment")
+                .serviceDetails(
                         "ComputeManagement",
                         "ChangeInstancePoolCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/ChangeInstancePoolCompartment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeInstancePoolCompartmentResponse>
-                transformer =
-                        ChangeInstancePoolCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeInstancePoolCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/ChangeInstancePoolCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeInstancePoolCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instancePools")
+                .appendPathParam(request.getInstancePoolId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeInstancePoolCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeInstancePoolCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateClusterNetworkResponse createClusterNetwork(CreateClusterNetworkRequest request) {
-        LOG.trace("Called createClusterNetwork");
-        final CreateClusterNetworkRequest interceptedRequest =
-                CreateClusterNetworkConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateClusterNetworkConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateClusterNetworkDetails(),
+                "createClusterNetworkDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateClusterNetworkResponse::builder)
+                .logger(LOG, "createClusterNetwork")
+                .serviceDetails(
                         "ComputeManagement",
                         "CreateClusterNetwork",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/CreateClusterNetwork");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateClusterNetworkResponse>
-                transformer =
-                        CreateClusterNetworkConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateClusterNetworkDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/CreateClusterNetwork")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateClusterNetworkRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("clusterNetworks")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ClusterNetwork.class,
+                        CreateClusterNetworkResponse.Builder::clusterNetwork)
+                .handleResponseHeaderString("etag", CreateClusterNetworkResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateClusterNetworkResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateClusterNetworkResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public CreateInstanceConfigurationResponse createInstanceConfiguration(
             CreateInstanceConfigurationRequest request) {
-        LOG.trace("Called createInstanceConfiguration");
-        final CreateInstanceConfigurationRequest interceptedRequest =
-                CreateInstanceConfigurationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateInstanceConfigurationConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateInstanceConfiguration(),
+                "createInstanceConfiguration is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateInstanceConfigurationResponse::builder)
+                .logger(LOG, "createInstanceConfiguration")
+                .serviceDetails(
                         "ComputeManagement",
                         "CreateInstanceConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/CreateInstanceConfiguration");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateInstanceConfigurationResponse>
-                transformer =
-                        CreateInstanceConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateInstanceConfiguration(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/CreateInstanceConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateInstanceConfigurationRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceConfigurations")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.InstanceConfiguration.class,
+                        CreateInstanceConfigurationResponse.Builder::instanceConfiguration)
+                .handleResponseHeaderString(
+                        "etag", CreateInstanceConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateInstanceConfigurationResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateInstancePoolResponse createInstancePool(CreateInstancePoolRequest request) {
-        LOG.trace("Called createInstancePool");
-        final CreateInstancePoolRequest interceptedRequest =
-                CreateInstancePoolConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateInstancePoolConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateInstancePoolDetails(), "createInstancePoolDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateInstancePoolResponse::builder)
+                .logger(LOG, "createInstancePool")
+                .serviceDetails(
                         "ComputeManagement",
                         "CreateInstancePool",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/CreateInstancePool");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateInstancePoolResponse>
-                transformer =
-                        CreateInstancePoolConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateInstancePoolDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/CreateInstancePool")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateInstancePoolRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instancePools")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.InstancePool.class,
+                        CreateInstancePoolResponse.Builder::instancePool)
+                .handleResponseHeaderString("etag", CreateInstancePoolResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateInstancePoolResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteInstanceConfigurationResponse deleteInstanceConfiguration(
             DeleteInstanceConfigurationRequest request) {
-        LOG.trace("Called deleteInstanceConfiguration");
-        final DeleteInstanceConfigurationRequest interceptedRequest =
-                DeleteInstanceConfigurationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteInstanceConfigurationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "ComputeManagement",
-                        "DeleteInstanceConfiguration",
-                        ib.getRequestUri().toString(),
-                        "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteInstanceConfigurationResponse>
-                transformer =
-                        DeleteInstanceConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(
+                request.getInstanceConfigurationId(), "instanceConfigurationId must not be blank");
+
+        return clientCall(request, DeleteInstanceConfigurationResponse::builder)
+                .logger(LOG, "deleteInstanceConfiguration")
+                .serviceDetails("ComputeManagement", "DeleteInstanceConfiguration", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteInstanceConfigurationRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceConfigurations")
+                .appendPathParam(request.getInstanceConfigurationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteInstanceConfigurationResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DetachInstancePoolInstanceResponse detachInstancePoolInstance(
             DetachInstancePoolInstanceRequest request) {
-        LOG.trace("Called detachInstancePoolInstance");
-        final DetachInstancePoolInstanceRequest interceptedRequest =
-                DetachInstancePoolInstanceConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DetachInstancePoolInstanceConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
+        Objects.requireNonNull(
+                request.getDetachInstancePoolInstanceDetails(),
+                "detachInstancePoolInstanceDetails is required");
+
+        return clientCall(request, DetachInstancePoolInstanceResponse::builder)
+                .logger(LOG, "detachInstancePoolInstance")
+                .serviceDetails(
                         "ComputeManagement",
                         "DetachInstancePoolInstance",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolInstance/DetachInstancePoolInstance");
-        java.util.function.Function<javax.ws.rs.core.Response, DetachInstancePoolInstanceResponse>
-                transformer =
-                        DetachInstancePoolInstanceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getDetachInstancePoolInstanceDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolInstance/DetachInstancePoolInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DetachInstancePoolInstanceRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instancePools")
+                .appendPathParam(request.getInstancePoolId())
+                .appendPathParam("actions")
+                .appendPathParam("detachInstance")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", DetachInstancePoolInstanceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DetachInstancePoolInstanceResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public DetachLoadBalancerResponse detachLoadBalancer(DetachLoadBalancerRequest request) {
-        LOG.trace("Called detachLoadBalancer");
-        final DetachLoadBalancerRequest interceptedRequest =
-                DetachLoadBalancerConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DetachLoadBalancerConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
+        Objects.requireNonNull(
+                request.getDetachLoadBalancerDetails(), "detachLoadBalancerDetails is required");
+
+        return clientCall(request, DetachLoadBalancerResponse::builder)
+                .logger(LOG, "detachLoadBalancer")
+                .serviceDetails(
                         "ComputeManagement",
                         "DetachLoadBalancer",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/DetachLoadBalancer");
-        java.util.function.Function<javax.ws.rs.core.Response, DetachLoadBalancerResponse>
-                transformer =
-                        DetachLoadBalancerConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getDetachLoadBalancerDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/DetachLoadBalancer")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DetachLoadBalancerRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instancePools")
+                .appendPathParam(request.getInstancePoolId())
+                .appendPathParam("actions")
+                .appendPathParam("detachLoadBalancer")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.InstancePool.class,
+                        DetachLoadBalancerResponse.Builder::instancePool)
+                .handleResponseHeaderString("etag", DetachLoadBalancerResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", DetachLoadBalancerResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetClusterNetworkResponse getClusterNetwork(GetClusterNetworkRequest request) {
-        LOG.trace("Called getClusterNetwork");
-        final GetClusterNetworkRequest interceptedRequest =
-                GetClusterNetworkConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetClusterNetworkConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getClusterNetworkId(), "clusterNetworkId must not be blank");
+
+        return clientCall(request, GetClusterNetworkResponse::builder)
+                .logger(LOG, "getClusterNetwork")
+                .serviceDetails(
                         "ComputeManagement",
                         "GetClusterNetwork",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/GetClusterNetwork");
-        java.util.function.Function<javax.ws.rs.core.Response, GetClusterNetworkResponse>
-                transformer =
-                        GetClusterNetworkConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/GetClusterNetwork")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetClusterNetworkRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("clusterNetworks")
+                .appendPathParam(request.getClusterNetworkId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.ClusterNetwork.class,
+                        GetClusterNetworkResponse.Builder::clusterNetwork)
+                .handleResponseHeaderString("etag", GetClusterNetworkResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetClusterNetworkResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetInstanceConfigurationResponse getInstanceConfiguration(
             GetInstanceConfigurationRequest request) {
-        LOG.trace("Called getInstanceConfiguration");
-        final GetInstanceConfigurationRequest interceptedRequest =
-                GetInstanceConfigurationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetInstanceConfigurationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getInstanceConfigurationId(), "instanceConfigurationId must not be blank");
+
+        return clientCall(request, GetInstanceConfigurationResponse::builder)
+                .logger(LOG, "getInstanceConfiguration")
+                .serviceDetails(
                         "ComputeManagement",
                         "GetInstanceConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/GetInstanceConfiguration");
-        java.util.function.Function<javax.ws.rs.core.Response, GetInstanceConfigurationResponse>
-                transformer =
-                        GetInstanceConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/GetInstanceConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetInstanceConfigurationRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceConfigurations")
+                .appendPathParam(request.getInstanceConfigurationId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.InstanceConfiguration.class,
+                        GetInstanceConfigurationResponse.Builder::instanceConfiguration)
+                .handleResponseHeaderString("etag", GetInstanceConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetInstanceConfigurationResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetInstancePoolResponse getInstancePool(GetInstancePoolRequest request) {
-        LOG.trace("Called getInstancePool");
-        final GetInstancePoolRequest interceptedRequest =
-                GetInstancePoolConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetInstancePoolConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
+
+        return clientCall(request, GetInstancePoolResponse::builder)
+                .logger(LOG, "getInstancePool")
+                .serviceDetails(
                         "ComputeManagement",
                         "GetInstancePool",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/GetInstancePool");
-        java.util.function.Function<javax.ws.rs.core.Response, GetInstancePoolResponse>
-                transformer =
-                        GetInstancePoolConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/GetInstancePool")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetInstancePoolRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instancePools")
+                .appendPathParam(request.getInstancePoolId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.InstancePool.class,
+                        GetInstancePoolResponse.Builder::instancePool)
+                .handleResponseHeaderString("etag", GetInstancePoolResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetInstancePoolResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetInstancePoolInstanceResponse getInstancePoolInstance(
             GetInstancePoolInstanceRequest request) {
-        LOG.trace("Called getInstancePoolInstance");
-        final GetInstancePoolInstanceRequest interceptedRequest =
-                GetInstancePoolInstanceConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetInstancePoolInstanceConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
+
+        Validate.notBlank(request.getInstanceId(), "instanceId must not be blank");
+
+        return clientCall(request, GetInstancePoolInstanceResponse::builder)
+                .logger(LOG, "getInstancePoolInstance")
+                .serviceDetails(
                         "ComputeManagement",
                         "GetInstancePoolInstance",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolInstance/GetInstancePoolInstance");
-        java.util.function.Function<javax.ws.rs.core.Response, GetInstancePoolInstanceResponse>
-                transformer =
-                        GetInstancePoolInstanceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolInstance/GetInstancePoolInstance")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetInstancePoolInstanceRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instancePools")
+                .appendPathParam(request.getInstancePoolId())
+                .appendPathParam("instances")
+                .appendPathParam(request.getInstanceId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.InstancePoolInstance.class,
+                        GetInstancePoolInstanceResponse.Builder::instancePoolInstance)
+                .handleResponseHeaderString("etag", GetInstancePoolInstanceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetInstancePoolInstanceResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetInstancePoolLoadBalancerAttachmentResponse getInstancePoolLoadBalancerAttachment(
             GetInstancePoolLoadBalancerAttachmentRequest request) {
-        LOG.trace("Called getInstancePoolLoadBalancerAttachment");
-        final GetInstancePoolLoadBalancerAttachmentRequest interceptedRequest =
-                GetInstancePoolLoadBalancerAttachmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetInstancePoolLoadBalancerAttachmentConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
+
+        Validate.notBlank(
+                request.getInstancePoolLoadBalancerAttachmentId(),
+                "instancePoolLoadBalancerAttachmentId must not be blank");
+
+        return clientCall(request, GetInstancePoolLoadBalancerAttachmentResponse::builder)
+                .logger(LOG, "getInstancePoolLoadBalancerAttachment")
+                .serviceDetails(
                         "ComputeManagement",
                         "GetInstancePoolLoadBalancerAttachment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolLoadBalancerAttachment/GetInstancePoolLoadBalancerAttachment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, GetInstancePoolLoadBalancerAttachmentResponse>
-                transformer =
-                        GetInstancePoolLoadBalancerAttachmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolLoadBalancerAttachment/GetInstancePoolLoadBalancerAttachment")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetInstancePoolLoadBalancerAttachmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instancePools")
+                .appendPathParam(request.getInstancePoolId())
+                .appendPathParam("loadBalancerAttachments")
+                .appendPathParam(request.getInstancePoolLoadBalancerAttachmentId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.InstancePoolLoadBalancerAttachment.class,
+                        GetInstancePoolLoadBalancerAttachmentResponse.Builder
+                                ::instancePoolLoadBalancerAttachment)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetInstancePoolLoadBalancerAttachmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public LaunchInstanceConfigurationResponse launchInstanceConfiguration(
             LaunchInstanceConfigurationRequest request) {
-        LOG.trace("Called launchInstanceConfiguration");
-        final LaunchInstanceConfigurationRequest interceptedRequest =
-                LaunchInstanceConfigurationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                LaunchInstanceConfigurationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getInstanceConfigurationId(), "instanceConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getInstanceConfiguration(), "instanceConfiguration is required");
+
+        return clientCall(request, LaunchInstanceConfigurationResponse::builder)
+                .logger(LOG, "launchInstanceConfiguration")
+                .serviceDetails(
                         "ComputeManagement",
                         "LaunchInstanceConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/LaunchInstanceConfiguration");
-        java.util.function.Function<javax.ws.rs.core.Response, LaunchInstanceConfigurationResponse>
-                transformer =
-                        LaunchInstanceConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getInstanceConfiguration(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/LaunchInstanceConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(LaunchInstanceConfigurationRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceConfigurations")
+                .appendPathParam(request.getInstanceConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("launch")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.Instance.class,
+                        LaunchInstanceConfigurationResponse.Builder::instance)
+                .handleResponseHeaderString(
+                        "etag", LaunchInstanceConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", LaunchInstanceConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        LaunchInstanceConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public ListClusterNetworkInstancesResponse listClusterNetworkInstances(
             ListClusterNetworkInstancesRequest request) {
-        LOG.trace("Called listClusterNetworkInstances");
-        final ListClusterNetworkInstancesRequest interceptedRequest =
-                ListClusterNetworkInstancesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListClusterNetworkInstancesConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getClusterNetworkId(), "clusterNetworkId must not be blank");
+
+        return clientCall(request, ListClusterNetworkInstancesResponse::builder)
+                .logger(LOG, "listClusterNetworkInstances")
+                .serviceDetails(
                         "ComputeManagement",
                         "ListClusterNetworkInstances",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/ListClusterNetworkInstances");
-        java.util.function.Function<javax.ws.rs.core.Response, ListClusterNetworkInstancesResponse>
-                transformer =
-                        ListClusterNetworkInstancesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/ListClusterNetworkInstances")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListClusterNetworkInstancesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("clusterNetworks")
+                .appendPathParam(request.getClusterNetworkId())
+                .appendPathParam("instances")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.InstanceSummary.class,
+                        ListClusterNetworkInstancesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListClusterNetworkInstancesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListClusterNetworkInstancesResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListClusterNetworksResponse listClusterNetworks(ListClusterNetworksRequest request) {
-        LOG.trace("Called listClusterNetworks");
-        final ListClusterNetworksRequest interceptedRequest =
-                ListClusterNetworksConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListClusterNetworksConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListClusterNetworksResponse::builder)
+                .logger(LOG, "listClusterNetworks")
+                .serviceDetails(
                         "ComputeManagement",
                         "ListClusterNetworks",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/ListClusterNetworks");
-        java.util.function.Function<javax.ws.rs.core.Response, ListClusterNetworksResponse>
-                transformer =
-                        ListClusterNetworksConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/ListClusterNetworks")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListClusterNetworksRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("clusterNetworks")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.ClusterNetworkSummary.class,
+                        ListClusterNetworksResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListClusterNetworksResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListClusterNetworksResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListInstanceConfigurationsResponse listInstanceConfigurations(
             ListInstanceConfigurationsRequest request) {
-        LOG.trace("Called listInstanceConfigurations");
-        final ListInstanceConfigurationsRequest interceptedRequest =
-                ListInstanceConfigurationsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListInstanceConfigurationsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListInstanceConfigurationsResponse::builder)
+                .logger(LOG, "listInstanceConfigurations")
+                .serviceDetails(
                         "ComputeManagement",
                         "ListInstanceConfigurations",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfigurationSummary/ListInstanceConfigurations");
-        java.util.function.Function<javax.ws.rs.core.Response, ListInstanceConfigurationsResponse>
-                transformer =
-                        ListInstanceConfigurationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfigurationSummary/ListInstanceConfigurations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListInstanceConfigurationsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceConfigurations")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.InstanceConfigurationSummary.class,
+                        ListInstanceConfigurationsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListInstanceConfigurationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListInstanceConfigurationsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListInstancePoolInstancesResponse listInstancePoolInstances(
             ListInstancePoolInstancesRequest request) {
-        LOG.trace("Called listInstancePoolInstances");
-        final ListInstancePoolInstancesRequest interceptedRequest =
-                ListInstancePoolInstancesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListInstancePoolInstancesConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
+
+        return clientCall(request, ListInstancePoolInstancesResponse::builder)
+                .logger(LOG, "listInstancePoolInstances")
+                .serviceDetails(
                         "ComputeManagement",
                         "ListInstancePoolInstances",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceSummary/ListInstancePoolInstances");
-        java.util.function.Function<javax.ws.rs.core.Response, ListInstancePoolInstancesResponse>
-                transformer =
-                        ListInstancePoolInstancesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceSummary/ListInstancePoolInstances")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListInstancePoolInstancesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instancePools")
+                .appendPathParam(request.getInstancePoolId())
+                .appendPathParam("instances")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.InstanceSummary.class,
+                        ListInstancePoolInstancesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListInstancePoolInstancesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListInstancePoolInstancesResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListInstancePoolsResponse listInstancePools(ListInstancePoolsRequest request) {
-        LOG.trace("Called listInstancePools");
-        final ListInstancePoolsRequest interceptedRequest =
-                ListInstancePoolsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListInstancePoolsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListInstancePoolsResponse::builder)
+                .logger(LOG, "listInstancePools")
+                .serviceDetails(
                         "ComputeManagement",
                         "ListInstancePools",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolSummary/ListInstancePools");
-        java.util.function.Function<javax.ws.rs.core.Response, ListInstancePoolsResponse>
-                transformer =
-                        ListInstancePoolsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolSummary/ListInstancePools")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListInstancePoolsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instancePools")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.InstancePoolSummary.class,
+                        ListInstancePoolsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListInstancePoolsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListInstancePoolsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ResetInstancePoolResponse resetInstancePool(ResetInstancePoolRequest request) {
-        LOG.trace("Called resetInstancePool");
-        final ResetInstancePoolRequest interceptedRequest =
-                ResetInstancePoolConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ResetInstancePoolConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
+
+        return clientCall(request, ResetInstancePoolResponse::builder)
+                .logger(LOG, "resetInstancePool")
+                .serviceDetails(
                         "ComputeManagement",
                         "ResetInstancePool",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/ResetInstancePool");
-        java.util.function.Function<javax.ws.rs.core.Response, ResetInstancePoolResponse>
-                transformer =
-                        ResetInstancePoolConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/ResetInstancePool")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ResetInstancePoolRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instancePools")
+                .appendPathParam(request.getInstancePoolId())
+                .appendPathParam("actions")
+                .appendPathParam("reset")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.core.model.InstancePool.class,
+                        ResetInstancePoolResponse.Builder::instancePool)
+                .handleResponseHeaderString("etag", ResetInstancePoolResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ResetInstancePoolResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public SoftresetInstancePoolResponse softresetInstancePool(
             SoftresetInstancePoolRequest request) {
-        LOG.trace("Called softresetInstancePool");
-        final SoftresetInstancePoolRequest interceptedRequest =
-                SoftresetInstancePoolConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                SoftresetInstancePoolConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
+
+        return clientCall(request, SoftresetInstancePoolResponse::builder)
+                .logger(LOG, "softresetInstancePool")
+                .serviceDetails(
                         "ComputeManagement",
                         "SoftresetInstancePool",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/SoftresetInstancePool");
-        java.util.function.Function<javax.ws.rs.core.Response, SoftresetInstancePoolResponse>
-                transformer =
-                        SoftresetInstancePoolConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/SoftresetInstancePool")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SoftresetInstancePoolRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instancePools")
+                .appendPathParam(request.getInstancePoolId())
+                .appendPathParam("actions")
+                .appendPathParam("softreset")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.core.model.InstancePool.class,
+                        SoftresetInstancePoolResponse.Builder::instancePool)
+                .handleResponseHeaderString("etag", SoftresetInstancePoolResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", SoftresetInstancePoolResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public StartInstancePoolResponse startInstancePool(StartInstancePoolRequest request) {
-        LOG.trace("Called startInstancePool");
-        final StartInstancePoolRequest interceptedRequest =
-                StartInstancePoolConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                StartInstancePoolConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
+
+        return clientCall(request, StartInstancePoolResponse::builder)
+                .logger(LOG, "startInstancePool")
+                .serviceDetails(
                         "ComputeManagement",
                         "StartInstancePool",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/StartInstancePool");
-        java.util.function.Function<javax.ws.rs.core.Response, StartInstancePoolResponse>
-                transformer =
-                        StartInstancePoolConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/StartInstancePool")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StartInstancePoolRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instancePools")
+                .appendPathParam(request.getInstancePoolId())
+                .appendPathParam("actions")
+                .appendPathParam("start")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.core.model.InstancePool.class,
+                        StartInstancePoolResponse.Builder::instancePool)
+                .handleResponseHeaderString("etag", StartInstancePoolResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", StartInstancePoolResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public StopInstancePoolResponse stopInstancePool(StopInstancePoolRequest request) {
-        LOG.trace("Called stopInstancePool");
-        final StopInstancePoolRequest interceptedRequest =
-                StopInstancePoolConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                StopInstancePoolConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
+
+        return clientCall(request, StopInstancePoolResponse::builder)
+                .logger(LOG, "stopInstancePool")
+                .serviceDetails(
                         "ComputeManagement",
                         "StopInstancePool",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/StopInstancePool");
-        java.util.function.Function<javax.ws.rs.core.Response, StopInstancePoolResponse>
-                transformer =
-                        StopInstancePoolConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/StopInstancePool")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StopInstancePoolRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instancePools")
+                .appendPathParam(request.getInstancePoolId())
+                .appendPathParam("actions")
+                .appendPathParam("stop")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.core.model.InstancePool.class,
+                        StopInstancePoolResponse.Builder::instancePool)
+                .handleResponseHeaderString("etag", StopInstancePoolResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", StopInstancePoolResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public TerminateClusterNetworkResponse terminateClusterNetwork(
             TerminateClusterNetworkRequest request) {
-        LOG.trace("Called terminateClusterNetwork");
-        final TerminateClusterNetworkRequest interceptedRequest =
-                TerminateClusterNetworkConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                TerminateClusterNetworkConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getClusterNetworkId(), "clusterNetworkId must not be blank");
+
+        return clientCall(request, TerminateClusterNetworkResponse::builder)
+                .logger(LOG, "terminateClusterNetwork")
+                .serviceDetails(
                         "ComputeManagement",
                         "TerminateClusterNetwork",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/TerminateClusterNetwork");
-        java.util.function.Function<javax.ws.rs.core.Response, TerminateClusterNetworkResponse>
-                transformer =
-                        TerminateClusterNetworkConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/TerminateClusterNetwork")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(TerminateClusterNetworkRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("clusterNetworks")
+                .appendPathParam(request.getClusterNetworkId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", TerminateClusterNetworkResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        TerminateClusterNetworkResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public TerminateInstancePoolResponse terminateInstancePool(
             TerminateInstancePoolRequest request) {
-        LOG.trace("Called terminateInstancePool");
-        final TerminateInstancePoolRequest interceptedRequest =
-                TerminateInstancePoolConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                TerminateInstancePoolConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "ComputeManagement",
-                        "TerminateInstancePool",
-                        ib.getRequestUri().toString(),
-                        "");
-        java.util.function.Function<javax.ws.rs.core.Response, TerminateInstancePoolResponse>
-                transformer =
-                        TerminateInstancePoolConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
+
+        return clientCall(request, TerminateInstancePoolResponse::builder)
+                .logger(LOG, "terminateInstancePool")
+                .serviceDetails("ComputeManagement", "TerminateInstancePool", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(TerminateInstancePoolRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instancePools")
+                .appendPathParam(request.getInstancePoolId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", TerminateInstancePoolResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateClusterNetworkResponse updateClusterNetwork(UpdateClusterNetworkRequest request) {
-        LOG.trace("Called updateClusterNetwork");
-        final UpdateClusterNetworkRequest interceptedRequest =
-                UpdateClusterNetworkConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateClusterNetworkConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getClusterNetworkId(), "clusterNetworkId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateClusterNetworkDetails(),
+                "updateClusterNetworkDetails is required");
+
+        return clientCall(request, UpdateClusterNetworkResponse::builder)
+                .logger(LOG, "updateClusterNetwork")
+                .serviceDetails(
                         "ComputeManagement",
                         "UpdateClusterNetwork",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/UpdateClusterNetwork");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateClusterNetworkResponse>
-                transformer =
-                        UpdateClusterNetworkConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateClusterNetworkDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/UpdateClusterNetwork")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateClusterNetworkRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("clusterNetworks")
+                .appendPathParam(request.getClusterNetworkId())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ClusterNetwork.class,
+                        UpdateClusterNetworkResponse.Builder::clusterNetwork)
+                .handleResponseHeaderString("etag", UpdateClusterNetworkResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateClusterNetworkResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateInstanceConfigurationResponse updateInstanceConfiguration(
             UpdateInstanceConfigurationRequest request) {
-        LOG.trace("Called updateInstanceConfiguration");
-        final UpdateInstanceConfigurationRequest interceptedRequest =
-                UpdateInstanceConfigurationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateInstanceConfigurationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getInstanceConfigurationId(), "instanceConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateInstanceConfigurationDetails(),
+                "updateInstanceConfigurationDetails is required");
+
+        return clientCall(request, UpdateInstanceConfigurationResponse::builder)
+                .logger(LOG, "updateInstanceConfiguration")
+                .serviceDetails(
                         "ComputeManagement",
                         "UpdateInstanceConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/UpdateInstanceConfiguration");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateInstanceConfigurationResponse>
-                transformer =
-                        UpdateInstanceConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateInstanceConfigurationDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/UpdateInstanceConfiguration")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateInstanceConfigurationRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceConfigurations")
+                .appendPathParam(request.getInstanceConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.InstanceConfiguration.class,
+                        UpdateInstanceConfigurationResponse.Builder::instanceConfiguration)
+                .handleResponseHeaderString(
+                        "etag", UpdateInstanceConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateInstanceConfigurationResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateInstancePoolResponse updateInstancePool(UpdateInstancePoolRequest request) {
-        LOG.trace("Called updateInstancePool");
-        final UpdateInstancePoolRequest interceptedRequest =
-                UpdateInstancePoolConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateInstancePoolConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateInstancePoolDetails(), "updateInstancePoolDetails is required");
+
+        return clientCall(request, UpdateInstancePoolResponse::builder)
+                .logger(LOG, "updateInstancePool")
+                .serviceDetails(
                         "ComputeManagement",
                         "UpdateInstancePool",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/UpdateInstancePool");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateInstancePoolResponse>
-                transformer =
-                        UpdateInstancePoolConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateInstancePoolDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/UpdateInstancePool")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateInstancePoolRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instancePools")
+                .appendPathParam(request.getInstancePoolId())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.InstancePool.class,
+                        UpdateInstancePoolResponse.Builder::instancePool)
+                .handleResponseHeaderString("etag", UpdateInstancePoolResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateInstancePoolResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
@@ -1799,5 +1105,209 @@ public class ComputeManagementClient implements ComputeManagement {
     @Override
     public ComputeManagementPaginators getPaginators() {
         return paginators;
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ComputeManagementClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(builder(), authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ComputeManagementClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(builder().configuration(configuration), authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ComputeManagementClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                builder().configuration(configuration).clientConfigurator(clientConfigurator),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ComputeManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ComputeManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ComputeManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ComputeManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @param executorService {@link Builder#executorService}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ComputeManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider,
+                executorService);
     }
 }

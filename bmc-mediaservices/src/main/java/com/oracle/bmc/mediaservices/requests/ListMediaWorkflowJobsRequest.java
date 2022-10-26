@@ -6,53 +6,40 @@ package com.oracle.bmc.mediaservices.requests;
 
 import com.oracle.bmc.mediaservices.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListMediaWorkflowJobsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMediaWorkflowJobsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListMediaWorkflowJobsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ListMediaWorkflowJobsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public class ListMediaWorkflowJobsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The ID of the compartment in which to list resources.
-     */
+    /** The ID of the compartment in which to list resources. */
     private String compartmentId;
 
-    /**
-     * The ID of the compartment in which to list resources.
-     */
+    /** The ID of the compartment in which to list resources. */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * unique MediaWorkflowJob identifier
-     */
+    /** unique MediaWorkflowJob identifier */
     private String id;
 
-    /**
-     * unique MediaWorkflowJob identifier
-     */
+    /** unique MediaWorkflowJob identifier */
     public String getId() {
         return id;
     }
-    /**
-     * Unique MediaWorkflow identifier.
-     */
+    /** Unique MediaWorkflow identifier. */
     private String mediaWorkflowId;
 
-    /**
-     * Unique MediaWorkflow identifier.
-     */
+    /** Unique MediaWorkflow identifier. */
     public String getMediaWorkflowId() {
         return mediaWorkflowId;
     }
-    /**
-     * A filter to return only the resources that match the entire display name given.
-     */
+    /** A filter to return only the resources that match the entire display name given. */
     private String displayName;
 
-    /**
-     * A filter to return only the resources that match the entire display name given.
-     */
+    /** A filter to return only the resources that match the entire display name given. */
     public String getDisplayName() {
         return displayName;
     }
@@ -68,61 +55,43 @@ public class ListMediaWorkflowJobsRequest
         return lifecycleState;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from the
-     * {@code opc-next-page} header field of a previous response.
-     *
+     * A token representing the position at which to start retrieving results. This must come from
+     * the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from the
-     * {@code opc-next-page} header field of a previous response.
-     *
+     * A token representing the position at which to start retrieving results. This must come from
+     * the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
-    /**
-     * The parameter sort by.
-     */
+    /** The parameter sort by. */
     private com.oracle.bmc.mediaservices.model.MediaWorkflowJobSortBy sortBy;
 
-    /**
-     * The parameter sort by.
-     */
+    /** The parameter sort by. */
     public com.oracle.bmc.mediaservices.model.MediaWorkflowJobSortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The sort order to use, either 'ASC' or 'DESC'.
-     */
+    /** The sort order to use, either 'ASC' or 'DESC'. */
     private com.oracle.bmc.mediaservices.model.SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either 'ASC' or 'DESC'.
-     */
+    /** The sort order to use, either 'ASC' or 'DESC'. */
     public com.oracle.bmc.mediaservices.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -130,17 +99,15 @@ public class ListMediaWorkflowJobsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListMediaWorkflowJobsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The ID of the compartment in which to list resources.
-         */
+        /** The ID of the compartment in which to list resources. */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -149,13 +116,12 @@ public class ListMediaWorkflowJobsRequest
             return this;
         }
 
-        /**
-         * unique MediaWorkflowJob identifier
-         */
+        /** unique MediaWorkflowJob identifier */
         private String id = null;
 
         /**
          * unique MediaWorkflowJob identifier
+         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -164,13 +130,12 @@ public class ListMediaWorkflowJobsRequest
             return this;
         }
 
-        /**
-         * Unique MediaWorkflow identifier.
-         */
+        /** Unique MediaWorkflow identifier. */
         private String mediaWorkflowId = null;
 
         /**
          * Unique MediaWorkflow identifier.
+         *
          * @param mediaWorkflowId the value to set
          * @return this builder instance
          */
@@ -179,13 +144,12 @@ public class ListMediaWorkflowJobsRequest
             return this;
         }
 
-        /**
-         * A filter to return only the resources that match the entire display name given.
-         */
+        /** A filter to return only the resources that match the entire display name given. */
         private String displayName = null;
 
         /**
          * A filter to return only the resources that match the entire display name given.
+         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -195,13 +159,16 @@ public class ListMediaWorkflowJobsRequest
         }
 
         /**
-         * A filter to return only the resources with lifecycleState matching the given lifecycleState.
+         * A filter to return only the resources with lifecycleState matching the given
+         * lifecycleState.
          */
         private com.oracle.bmc.mediaservices.model.MediaWorkflowJob.LifecycleState lifecycleState =
                 null;
 
         /**
-         * A filter to return only the resources with lifecycleState matching the given lifecycleState.
+         * A filter to return only the resources with lifecycleState matching the given
+         * lifecycleState.
+         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -212,15 +179,14 @@ public class ListMediaWorkflowJobsRequest
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come from the
-         * {@code opc-next-page} header field of a previous response.
-         *
+         * A token representing the position at which to start retrieving results. This must come
+         * from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come from the
-         * {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come
+         * from the {@code opc-next-page} header field of a previous response.
          *
          * @param page the value to set
          * @return this builder instance
@@ -230,13 +196,12 @@ public class ListMediaWorkflowJobsRequest
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -245,13 +210,12 @@ public class ListMediaWorkflowJobsRequest
             return this;
         }
 
-        /**
-         * The parameter sort by.
-         */
+        /** The parameter sort by. */
         private com.oracle.bmc.mediaservices.model.MediaWorkflowJobSortBy sortBy = null;
 
         /**
          * The parameter sort by.
+         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -260,13 +224,12 @@ public class ListMediaWorkflowJobsRequest
             return this;
         }
 
-        /**
-         * The sort order to use, either 'ASC' or 'DESC'.
-         */
+        /** The sort order to use, either 'ASC' or 'DESC'. */
         private com.oracle.bmc.mediaservices.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -275,13 +238,12 @@ public class ListMediaWorkflowJobsRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -292,18 +254,19 @@ public class ListMediaWorkflowJobsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -315,6 +278,7 @@ public class ListMediaWorkflowJobsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListMediaWorkflowJobsRequest o) {
@@ -336,10 +300,11 @@ public class ListMediaWorkflowJobsRequest
         /**
          * Build the instance of ListMediaWorkflowJobsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListMediaWorkflowJobsRequest
          */
@@ -353,7 +318,8 @@ public class ListMediaWorkflowJobsRequest
         /**
          * Build the instance of ListMediaWorkflowJobsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListMediaWorkflowJobsRequest
@@ -371,12 +337,14 @@ public class ListMediaWorkflowJobsRequest
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListMediaWorkflowJobsRequest(compartmentId, id, mediaWorkflowId, displayName, lifecycleState, page, limit, sortBy, sortOrder, opcRequestId);
+            // new ListMediaWorkflowJobsRequest(compartmentId, id, mediaWorkflowId, displayName,
+            // lifecycleState, page, limit, sortBy, sortOrder, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -395,6 +363,7 @@ public class ListMediaWorkflowJobsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

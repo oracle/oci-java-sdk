@@ -8,10 +8,7 @@ import com.oracle.bmc.apigateway.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 public class CreateUsagePlanResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,19 +21,14 @@ public class CreateUsagePlanResponse extends com.oracle.bmc.responses.BmcRespons
     }
 
     /**
-     * The OCID of the work request. Use
-     * {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with
-     * this id to track the status
-     * of the request.
-     *
+     * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest)
+     * getWorkRequest} with this id to track the status of the request.
      */
     private String opcWorkRequestId;
 
     /**
-     * The OCID of the work request. Use
-     * {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with
-     * this id to track the status
-     * of the request.
+     * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest)
+     * getWorkRequest} with this id to track the status of the request.
      *
      * @return the value
      */
@@ -45,17 +37,14 @@ public class CreateUsagePlanResponse extends com.oracle.bmc.responses.BmcRespons
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to
-     * contact Oracle about a particular request, please provide the request
-     * id.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request id.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to
-     * contact Oracle about a particular request, please provide the request
-     * id.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request id.
      *
      * @return the value
      */
@@ -63,10 +52,7 @@ public class CreateUsagePlanResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /**
-     * Location of the resource.
-     *
-     */
+    /** Location of the resource. */
     private String location;
 
     /**
@@ -78,13 +64,12 @@ public class CreateUsagePlanResponse extends com.oracle.bmc.responses.BmcRespons
         return location;
     }
 
-    /**
-     * The returned UsagePlan instance.
-     */
+    /** The returned UsagePlan instance. */
     private com.oracle.bmc.apigateway.model.UsagePlan usagePlan;
 
     /**
      * The returned UsagePlan instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.apigateway.model.UsagePlan getUsagePlan() {
@@ -102,7 +87,7 @@ public class CreateUsagePlanResponse extends com.oracle.bmc.responses.BmcRespons
     })
     private CreateUsagePlanResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcWorkRequestId,
             String opcRequestId,
@@ -116,25 +101,25 @@ public class CreateUsagePlanResponse extends com.oracle.bmc.responses.BmcRespons
         this.usagePlan = usagePlan;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateUsagePlanResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -149,19 +134,14 @@ public class CreateUsagePlanResponse extends com.oracle.bmc.responses.BmcRespons
         }
 
         /**
-         * The OCID of the work request. Use
-         * {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with
-         * this id to track the status
-         * of the request.
-         *
+         * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest)
+         * getWorkRequest} with this id to track the status of the request.
          */
         private String opcWorkRequestId;
 
         /**
-         * The OCID of the work request. Use
-         * {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with
-         * this id to track the status
-         * of the request.
+         * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest)
+         * getWorkRequest} with this id to track the status of the request.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -172,17 +152,14 @@ public class CreateUsagePlanResponse extends com.oracle.bmc.responses.BmcRespons
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to
-         * contact Oracle about a particular request, please provide the request
-         * id.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request id.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to
-         * contact Oracle about a particular request, please provide the request
-         * id.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request id.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -192,10 +169,7 @@ public class CreateUsagePlanResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /**
-         * Location of the resource.
-         *
-         */
+        /** Location of the resource. */
         private String location;
 
         /**
@@ -209,13 +183,12 @@ public class CreateUsagePlanResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /**
-         * The returned UsagePlan instance.
-         */
+        /** The returned UsagePlan instance. */
         private com.oracle.bmc.apigateway.model.UsagePlan usagePlan;
 
         /**
          * The returned UsagePlan instance.
+         *
          * @param usagePlan the value to set
          * @return this builder
          */
@@ -226,8 +199,10 @@ public class CreateUsagePlanResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateUsagePlanResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -242,8 +217,10 @@ public class CreateUsagePlanResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateUsagePlanResponse build() {
             return new CreateUsagePlanResponse(
                     __httpStatusCode__,
@@ -258,6 +235,7 @@ public class CreateUsagePlanResponse extends com.oracle.bmc.responses.BmcRespons
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

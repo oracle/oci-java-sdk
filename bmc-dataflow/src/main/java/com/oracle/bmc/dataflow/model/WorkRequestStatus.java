@@ -4,12 +4,9 @@
  */
 package com.oracle.bmc.dataflow.model;
 
-/**
- * The status of the work request.
- *
- **/
+/** The status of the work request. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
-public enum WorkRequestStatus {
+public enum WorkRequestStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Accepted("ACCEPTED"),
     Cancelled("CANCELLED"),
     Cancelling("CANCELLING"),

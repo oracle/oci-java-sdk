@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.governancerulescontrolplane.model;
 
-/**
- * Possible operation types.
- **/
+/** Possible operation types. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
-public enum OperationType {
+public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateGovernanceRule("CREATE_GOVERNANCE_RULE"),
     UpdateGovernanceRule("UPDATE_GOVERNANCE_RULE"),
     DeleteGovernanceRule("DELETE_GOVERNANCE_RULE"),

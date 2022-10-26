@@ -5,22 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * SQL Statistics
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * SQL Statistics <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SqlStatisticAggregation.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SqlStatisticAggregation.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SqlStatisticAggregation
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sqlIdentifier",
@@ -42,10 +42,7 @@ public final class SqlStatisticAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Unique SQL_ID for a SQL Statement.
-         *
-         **/
+        /** Unique SQL_ID for a SQL Statement. */
         @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
         private String sqlIdentifier;
 
@@ -54,7 +51,7 @@ public final class SqlStatisticAggregation
          *
          * @param sqlIdentifier the value to set
          * @return this builder
-         **/
+         */
         public Builder sqlIdentifier(String sqlIdentifier) {
             this.sqlIdentifier = sqlIdentifier;
             this.__explicitlySet__.add("sqlIdentifier");
@@ -69,10 +66,7 @@ public final class SqlStatisticAggregation
             this.__explicitlySet__.add("databaseDetails");
             return this;
         }
-        /**
-         * SQL belongs to one or more categories based on the insights.
-         *
-         **/
+        /** SQL belongs to one or more categories based on the insights. */
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private java.util.List<String> category;
 
@@ -81,7 +75,7 @@ public final class SqlStatisticAggregation
          *
          * @param category the value to set
          * @return this builder
-         **/
+         */
         public Builder category(java.util.List<String> category) {
             this.category = category;
             this.__explicitlySet__.add("category");
@@ -131,9 +125,7 @@ public final class SqlStatisticAggregation
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -142,10 +134,7 @@ public final class SqlStatisticAggregation
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique SQL_ID for a SQL Statement.
-     *
-     **/
+    /** Unique SQL_ID for a SQL Statement. */
     @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
     private final String sqlIdentifier;
 
@@ -153,7 +142,7 @@ public final class SqlStatisticAggregation
      * Unique SQL_ID for a SQL Statement.
      *
      * @return the value
-     **/
+     */
     public String getSqlIdentifier() {
         return sqlIdentifier;
     }
@@ -165,10 +154,7 @@ public final class SqlStatisticAggregation
         return databaseDetails;
     }
 
-    /**
-     * SQL belongs to one or more categories based on the insights.
-     *
-     **/
+    /** SQL belongs to one or more categories based on the insights. */
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final java.util.List<String> category;
 
@@ -176,7 +162,7 @@ public final class SqlStatisticAggregation
      * SQL belongs to one or more categories based on the insights.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getCategory() {
         return category;
     }
@@ -195,6 +181,7 @@ public final class SqlStatisticAggregation
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

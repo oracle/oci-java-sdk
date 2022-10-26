@@ -9,12 +9,8 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.function.Supplier;
 
-/**
- * Supplier for private key in String format
- */
-public class StringPrivateKeySupplier
-        implements Supplier<InputStream>,
-                com.google.common /*Guava will be removed soon*/.base.Supplier<InputStream> {
+/** Supplier for private key in String format */
+public class StringPrivateKeySupplier implements Supplier<InputStream> {
 
     private final String privateKey;
 

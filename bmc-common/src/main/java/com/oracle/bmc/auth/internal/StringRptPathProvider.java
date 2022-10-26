@@ -6,9 +6,7 @@ package com.oracle.bmc.auth.internal;
 
 import org.slf4j.Logger;
 
-/**
- * This path provider directly takes a string and returns it.
- */
+/** This path provider directly takes a string and returns it. */
 public class StringRptPathProvider implements RptPathProvider {
 
     private static final Logger LOG =

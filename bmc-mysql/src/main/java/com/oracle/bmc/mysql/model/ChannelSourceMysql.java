@@ -5,93 +5,88 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * Core properties of a Mysql Channel source.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Core properties of a Mysql Channel source. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ChannelSourceMysql.Builder.class
-)
+        builder = ChannelSourceMysql.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "sourceType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "sourceType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ChannelSourceMysql extends ChannelSource {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The network address of the MySQL instance.
-         **/
+        /** The network address of the MySQL instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
         /**
          * The network address of the MySQL instance.
+         *
          * @param hostname the value to set
          * @return this builder
-         **/
+         */
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
             return this;
         }
-        /**
-         * The port the source MySQL instance listens on.
-         **/
+        /** The port the source MySQL instance listens on. */
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
          * The port the source MySQL instance listens on.
+         *
          * @param port the value to set
          * @return this builder
-         **/
+         */
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
         /**
-         * The name of the replication user on the source MySQL instance.
-         * The username has a maximum length of 96 characters. For more information,
-         * please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
-         *
-         **/
+         * The name of the replication user on the source MySQL instance. The username has a maximum
+         * length of 96 characters. For more information, please see the [MySQL
+         * documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
-         * The name of the replication user on the source MySQL instance.
-         * The username has a maximum length of 96 characters. For more information,
-         * please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
+         * The name of the replication user on the source MySQL instance. The username has a maximum
+         * length of 96 characters. For more information, please see the [MySQL
+         * documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
          *
          * @param username the value to set
          * @return this builder
-         **/
+         */
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
-        /**
-         * The SSL mode of the Channel.
-         **/
+        /** The SSL mode of the Channel. */
         @com.fasterxml.jackson.annotation.JsonProperty("sslMode")
         private SslMode sslMode;
 
         /**
          * The SSL mode of the Channel.
+         *
          * @param sslMode the value to set
          * @return this builder
-         **/
+         */
         public Builder sslMode(SslMode sslMode) {
             this.sslMode = sslMode;
             this.__explicitlySet__.add("sslMode");
@@ -145,9 +140,7 @@ public final class ChannelSourceMysql extends ChannelSource {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -171,66 +164,61 @@ public final class ChannelSourceMysql extends ChannelSource {
         this.sslCaCertificate = sslCaCertificate;
     }
 
-    /**
-     * The network address of the MySQL instance.
-     **/
+    /** The network address of the MySQL instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
     /**
      * The network address of the MySQL instance.
+     *
      * @return the value
-     **/
+     */
     public String getHostname() {
         return hostname;
     }
 
-    /**
-     * The port the source MySQL instance listens on.
-     **/
+    /** The port the source MySQL instance listens on. */
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
      * The port the source MySQL instance listens on.
+     *
      * @return the value
-     **/
+     */
     public Integer getPort() {
         return port;
     }
 
     /**
-     * The name of the replication user on the source MySQL instance.
-     * The username has a maximum length of 96 characters. For more information,
-     * please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
-     *
-     **/
+     * The name of the replication user on the source MySQL instance. The username has a maximum
+     * length of 96 characters. For more information, please see the [MySQL
+     * documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
-     * The name of the replication user on the source MySQL instance.
-     * The username has a maximum length of 96 characters. For more information,
-     * please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
+     * The name of the replication user on the source MySQL instance. The username has a maximum
+     * length of 96 characters. For more information, please see the [MySQL
+     * documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
      *
      * @return the value
-     **/
+     */
     public String getUsername() {
         return username;
     }
 
-    /**
-     * The SSL mode of the Channel.
-     **/
-    public enum SslMode {
+    /** The SSL mode of the Channel. */
+    public enum SslMode implements com.oracle.bmc.http.internal.BmcEnum {
         VerifyIdentity("VERIFY_IDENTITY"),
         VerifyCa("VERIFY_CA"),
         Required("REQUIRED"),
         Disabled("DISABLED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -269,16 +257,15 @@ public final class ChannelSourceMysql extends ChannelSource {
             return UnknownEnumValue;
         }
     };
-    /**
-     * The SSL mode of the Channel.
-     **/
+    /** The SSL mode of the Channel. */
     @com.fasterxml.jackson.annotation.JsonProperty("sslMode")
     private final SslMode sslMode;
 
     /**
      * The SSL mode of the Channel.
+     *
      * @return the value
-     **/
+     */
     public SslMode getSslMode() {
         return sslMode;
     }
@@ -297,6 +284,7 @@ public final class ChannelSourceMysql extends ChannelSource {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

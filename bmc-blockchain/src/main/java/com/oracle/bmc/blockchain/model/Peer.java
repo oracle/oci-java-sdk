@@ -5,19 +5,20 @@
 package com.oracle.bmc.blockchain.model;
 
 /**
- * A Peer details
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A Peer details <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Peer.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Peer extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Peer extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "peerKey",
@@ -48,49 +49,46 @@ public final class Peer extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * peer identifier
-         **/
+        /** peer identifier */
         @com.fasterxml.jackson.annotation.JsonProperty("peerKey")
         private String peerKey;
 
         /**
          * peer identifier
+         *
          * @param peerKey the value to set
          * @return this builder
-         **/
+         */
         public Builder peerKey(String peerKey) {
             this.peerKey = peerKey;
             this.__explicitlySet__.add("peerKey");
             return this;
         }
-        /**
-         * Peer role
-         **/
+        /** Peer role */
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private PeerRole.Role role;
 
         /**
          * Peer role
+         *
          * @param role the value to set
          * @return this builder
-         **/
+         */
         public Builder role(PeerRole.Role role) {
             this.role = role;
             this.__explicitlySet__.add("role");
             return this;
         }
-        /**
-         * peer alias
-         **/
+        /** peer alias */
         @com.fasterxml.jackson.annotation.JsonProperty("alias")
         private String alias;
 
         /**
          * peer alias
+         *
          * @param alias the value to set
          * @return this builder
-         **/
+         */
         public Builder alias(String alias) {
             this.alias = alias;
             this.__explicitlySet__.add("alias");
@@ -105,49 +103,46 @@ public final class Peer extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             this.__explicitlySet__.add("ocpuAllocationParam");
             return this;
         }
-        /**
-         * Host on which the Peer exists
-         **/
+        /** Host on which the Peer exists */
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
         /**
          * Host on which the Peer exists
+         *
          * @param host the value to set
          * @return this builder
-         **/
+         */
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-        /**
-         * Availability Domain of peer
-         **/
+        /** Availability Domain of peer */
         @com.fasterxml.jackson.annotation.JsonProperty("ad")
         private AvailabilityDomain.Ads ad;
 
         /**
          * Availability Domain of peer
+         *
          * @param ad the value to set
          * @return this builder
-         **/
+         */
         public Builder ad(AvailabilityDomain.Ads ad) {
             this.ad = ad;
             this.__explicitlySet__.add("ad");
             return this;
         }
-        /**
-         * The current state of the peer.
-         **/
+        /** The current state of the peer. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the peer.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -200,9 +195,7 @@ public final class Peer extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -211,44 +204,41 @@ public final class Peer extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         return new Builder().copy(this);
     }
 
-    /**
-     * peer identifier
-     **/
+    /** peer identifier */
     @com.fasterxml.jackson.annotation.JsonProperty("peerKey")
     private final String peerKey;
 
     /**
      * peer identifier
+     *
      * @return the value
-     **/
+     */
     public String getPeerKey() {
         return peerKey;
     }
 
-    /**
-     * Peer role
-     **/
+    /** Peer role */
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final PeerRole.Role role;
 
     /**
      * Peer role
+     *
      * @return the value
-     **/
+     */
     public PeerRole.Role getRole() {
         return role;
     }
 
-    /**
-     * peer alias
-     **/
+    /** peer alias */
     @com.fasterxml.jackson.annotation.JsonProperty("alias")
     private final String alias;
 
     /**
      * peer alias
+     *
      * @return the value
-     **/
+     */
     public String getAlias() {
         return alias;
     }
@@ -260,45 +250,41 @@ public final class Peer extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         return ocpuAllocationParam;
     }
 
-    /**
-     * Host on which the Peer exists
-     **/
+    /** Host on which the Peer exists */
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
     /**
      * Host on which the Peer exists
+     *
      * @return the value
-     **/
+     */
     public String getHost() {
         return host;
     }
 
-    /**
-     * Availability Domain of peer
-     **/
+    /** Availability Domain of peer */
     @com.fasterxml.jackson.annotation.JsonProperty("ad")
     private final AvailabilityDomain.Ads ad;
 
     /**
      * Availability Domain of peer
+     *
      * @return the value
-     **/
+     */
     public AvailabilityDomain.Ads getAd() {
         return ad;
     }
 
-    /**
-     * The current state of the peer.
-     **/
-    public enum LifecycleState {
+    /** The current state of the peer. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Active("ACTIVE"),
         Inactive("INACTIVE"),
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -337,16 +323,15 @@ public final class Peer extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current state of the peer.
-     **/
+    /** The current state of the peer. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the peer.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -358,6 +343,7 @@ public final class Peer extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,115 +6,104 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListAuditEventAnalyticsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAuditEventAnalyticsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListAuditEventAnalyticsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ListAuditEventAnalyticsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListAuditEventAnalyticsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * A filter to return only resources that match the specified compartment OCID.
-     */
+    /** A filter to return only resources that match the specified compartment OCID. */
     private String compartmentId;
 
-    /**
-     * A filter to return only resources that match the specified compartment OCID.
-     */
+    /** A filter to return only resources that match the specified compartment OCID. */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     private String opcRequestId;
 
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the if-match parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+     * if-match parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the if-match parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+     * if-match parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
      * It is usually retrieved from a previous "List" call. For details about how pagination works,
-     * see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * see [List
+     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * It is usually retrieved from a previous "List" call. For details about how pagination works,
-     * see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * see [List
+     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
     /**
-     * Default is false.
-     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-     *
+     * Default is false. When set to true, the hierarchy of compartments is traversed and all
+     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
+     * setting.
      */
     private Boolean compartmentIdInSubtree;
 
     /**
-     * Default is false.
-     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-     *
+     * Default is false. When set to true, the hierarchy of compartments is traversed and all
+     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
+     * setting.
      */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
-     * Setting this to ACCESSIBLE returns only those compartments for which the
-     * user has INSPECT permissions directly or indirectly (permissions can be on a
-     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-     *
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
+     * returns only those compartments for which the user has INSPECT permissions directly or
+     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
+     * permissions are checked and no partial results are displayed.
      */
     private AccessLevel accessLevel;
 
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
-     * Setting this to ACCESSIBLE returns only those compartments for which the
-     * user has INSPECT permissions directly or indirectly (permissions can be on a
-     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-     *
-     **/
-    public enum AccessLevel {
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
+     * returns only those compartments for which the user has INSPECT permissions directly or
+     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
+     * permissions are checked and no partial results are displayed.
+     */
+    public enum AccessLevel implements com.oracle.bmc.http.internal.BmcEnum {
         Restricted("RESTRICTED"),
         Accessible("ACCESSIBLE"),
         ;
@@ -148,49 +137,44 @@ public class ListAuditEventAnalyticsRequest
     };
 
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
-     * Setting this to ACCESSIBLE returns only those compartments for which the
-     * user has INSPECT permissions directly or indirectly (permissions can be on a
-     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-     *
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
+     * returns only those compartments for which the user has INSPECT permissions directly or
+     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
+     * permissions are checked and no partial results are displayed.
      */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
     /**
-     * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
-     * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
-     * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
-     * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
-     * (Numeric and boolean values should not be quoted.)
-     * <p>
-     **Example:** query=(operationTime ge '2021-06-04T01-00-26') and (eventName eq 'LOGON')
+     * The scimQuery query parameter accepts filter expressions that use the syntax described in
+     * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
+     * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM
+     * filtering expressions, text, date, and time values must be enclosed in quotation marks, with
+     * date and time values using ISO-8601 format. (Numeric and boolean values should not be
+     * quoted.)
      *
+     * <p>*Example:** query=(operationTime ge '2021-06-04T01-00-26') and (eventName eq 'LOGON')
      */
     private String scimQuery;
 
     /**
-     * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
-     * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
-     * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
-     * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
-     * (Numeric and boolean values should not be quoted.)
-     * <p>
-     **Example:** query=(operationTime ge '2021-06-04T01-00-26') and (eventName eq 'LOGON')
+     * The scimQuery query parameter accepts filter expressions that use the syntax described in
+     * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
+     * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM
+     * filtering expressions, text, date, and time values must be enclosed in quotation marks, with
+     * date and time values using ISO-8601 format. (Numeric and boolean values should not be
+     * quoted.)
      *
+     * <p>*Example:** query=(operationTime ge '2021-06-04T01-00-26') and (eventName eq 'LOGON')
      */
     public String getScimQuery() {
         return scimQuery;
     }
-    /**
-     * Specifies a subset of summarized fields to be returned in the response.
-     */
+    /** Specifies a subset of summarized fields to be returned in the response. */
     private java.util.List<SummaryField> summaryField;
 
-    /**
-     * Specifies a subset of summarized fields to be returned in the response.
-     **/
-    public enum SummaryField {
+    /** Specifies a subset of summarized fields to be returned in the response. */
+    public enum SummaryField implements com.oracle.bmc.http.internal.BmcEnum {
         AuditEventTime("auditEventTime"),
         DbUserName("dbUserName"),
         TargetId("targetId"),
@@ -253,68 +237,64 @@ public class ListAuditEventAnalyticsRequest
         }
     };
 
-    /**
-     * Specifies a subset of summarized fields to be returned in the response.
-     */
+    /** Specifies a subset of summarized fields to be returned in the response. */
     public java.util.List<SummaryField> getSummaryField() {
         return summaryField;
     }
     /**
-     * An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified,
-     * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
+     * An optional filter to return audit events whose creation time in the database is greater than
+     * and equal to the date-time specified, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     private java.util.Date timeStarted;
 
     /**
-     * An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified,
-     * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
+     * An optional filter to return audit events whose creation time in the database is greater than
+     * and equal to the date-time specified, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
     /**
-     * An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified,
-     * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
+     * An optional filter to return audit events whose creation time in the database is less than
+     * and equal to the date-time specified, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     private java.util.Date timeEnded;
 
     /**
-     * An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified,
-     * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
+     * An optional filter to return audit events whose creation time in the database is less than
+     * and equal to the date-time specified, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
     /**
-     * Default time zone is UTC if no time zone provided. The date-time considerations of the resource will be in accordance with the specified time zone.
-     *
+     * Default time zone is UTC if no time zone provided. The date-time considerations of the
+     * resource will be in accordance with the specified time zone.
      */
     private String queryTimeZone;
 
     /**
-     * Default time zone is UTC if no time zone provided. The date-time considerations of the resource will be in accordance with the specified time zone.
-     *
+     * Default time zone is UTC if no time zone provided. The date-time considerations of the
+     * resource will be in accordance with the specified time zone.
      */
     public String getQueryTimeZone() {
         return queryTimeZone;
     }
     /**
-     * A groupBy can only be used in combination with summaryField parameter.
-     * A groupBy value has to be a subset of the values mentioned in summaryField parameter.
-     *
+     * A groupBy can only be used in combination with summaryField parameter. A groupBy value has to
+     * be a subset of the values mentioned in summaryField parameter.
      */
     private java.util.List<GroupBy> groupBy;
 
     /**
-     * A groupBy can only be used in combination with summaryField parameter.
-     * A groupBy value has to be a subset of the values mentioned in summaryField parameter.
-     *
-     **/
-    public enum GroupBy {
+     * A groupBy can only be used in combination with summaryField parameter. A groupBy value has to
+     * be a subset of the values mentioned in summaryField parameter.
+     */
+    public enum GroupBy implements com.oracle.bmc.http.internal.BmcEnum {
         AuditEventTime("auditEventTime"),
         DbUserName("dbUserName"),
         TargetId("targetId"),
@@ -357,9 +337,8 @@ public class ListAuditEventAnalyticsRequest
     };
 
     /**
-     * A groupBy can only be used in combination with summaryField parameter.
-     * A groupBy value has to be a subset of the values mentioned in summaryField parameter.
-     *
+     * A groupBy can only be used in combination with summaryField parameter. A groupBy value has to
+     * be a subset of the values mentioned in summaryField parameter.
      */
     public java.util.List<GroupBy> getGroupBy() {
         return groupBy;
@@ -367,31 +346,27 @@ public class ListAuditEventAnalyticsRequest
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
-     *
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
-     *
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /**
-     * The sort order to use, either ascending (ASC) or descending (DESC).
-     */
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
     private SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either ascending (ASC) or descending (DESC).
-     **/
-    public enum SortOrder {
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -424,21 +399,21 @@ public class ListAuditEventAnalyticsRequest
         }
     };
 
-    /**
-     * The sort order to use, either ascending (ASC) or descending (DESC).
-     */
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * If this query parameter is specified, the result is ordered based on this query parameter value.
+     * If this query parameter is specified, the result is ordered based on this query parameter
+     * value.
      */
     private SortBy sortBy;
 
     /**
-     * If this query parameter is specified, the result is ordered based on this query parameter value.
-     **/
-    public enum SortBy {
+     * If this query parameter is specified, the result is ordered based on this query parameter
+     * value.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TargetId("targetId"),
         TargetClass("targetClass"),
         TargetName("targetName"),
@@ -481,7 +456,8 @@ public class ListAuditEventAnalyticsRequest
     };
 
     /**
-     * If this query parameter is specified, the result is ordered based on this query parameter value.
+     * If this query parameter is specified, the result is ordered based on this query parameter
+     * value.
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -490,17 +466,15 @@ public class ListAuditEventAnalyticsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListAuditEventAnalyticsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * A filter to return only resources that match the specified compartment OCID.
-         */
+        /** A filter to return only resources that match the specified compartment OCID. */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -509,13 +483,12 @@ public class ListAuditEventAnalyticsRequest
             return this;
         }
 
-        /**
-         * Unique identifier for the request.
-         */
+        /** Unique identifier for the request. */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -525,21 +498,18 @@ public class ListAuditEventAnalyticsRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the if-match parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * if-match parameter to the value of the etag from a previous GET or POST response for that
+         * resource. The resource will be updated or deleted only if the etag you provide matches
+         * the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the if-match parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * if-match parameter to the value of the etag from a previous GET or POST response for that
+         * resource. The resource will be updated or deleted only if the etag you provide matches
+         * the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -550,13 +520,14 @@ public class ListAuditEventAnalyticsRequest
         }
 
         /**
-         * For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -567,15 +538,16 @@ public class ListAuditEventAnalyticsRequest
         }
 
         /**
-         * It is usually retrieved from a previous "List" call. For details about how pagination works,
-         * see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * It is usually retrieved from a previous "List" call. For details about how pagination
+         * works, see [List
+         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * It is usually retrieved from a previous "List" call. For details about how pagination works,
-         * see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * It is usually retrieved from a previous "List" call. For details about how pagination
+         * works, see [List
+         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -586,15 +558,16 @@ public class ListAuditEventAnalyticsRequest
         }
 
         /**
-         * Default is false.
-         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-         *
+         * Default is false. When set to true, the hierarchy of compartments is traversed and all
+         * compartments and subcompartments in the tenancy are returned. Depends on the
+         * 'accessLevel' setting.
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
-         * Default is false.
-         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         * Default is false. When set to true, the hierarchy of compartments is traversed and all
+         * compartments and subcompartments in the tenancy are returned. Depends on the
+         * 'accessLevel' setting.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -605,19 +578,18 @@ public class ListAuditEventAnalyticsRequest
         }
 
         /**
-         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
-         * Setting this to ACCESSIBLE returns only those compartments for which the
-         * user has INSPECT permissions directly or indirectly (permissions can be on a
-         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-         *
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
+         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
+         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
+         * to RESTRICTED permissions are checked and no partial results are displayed.
          */
         private AccessLevel accessLevel = null;
 
         /**
-         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
-         * Setting this to ACCESSIBLE returns only those compartments for which the
-         * user has INSPECT permissions directly or indirectly (permissions can be on a
-         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
+         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
+         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
+         * to RESTRICTED permissions are checked and no partial results are displayed.
          *
          * @param accessLevel the value to set
          * @return this builder instance
@@ -628,25 +600,26 @@ public class ListAuditEventAnalyticsRequest
         }
 
         /**
-         * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
-         * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
-         * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
-         * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
-         * (Numeric and boolean values should not be quoted.)
-         * <p>
-         **Example:** query=(operationTime ge '2021-06-04T01-00-26') and (eventName eq 'LOGON')
+         * The scimQuery query parameter accepts filter expressions that use the syntax described in
+         * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
+         * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In
+         * SCIM filtering expressions, text, date, and time values must be enclosed in quotation
+         * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
+         * should not be quoted.)
          *
+         * <p>*Example:** query=(operationTime ge '2021-06-04T01-00-26') and (eventName eq 'LOGON')
          */
         private String scimQuery = null;
 
         /**
-         * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
-         * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
-         * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
-         * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
-         * (Numeric and boolean values should not be quoted.)
-         * <p>
-         **Example:** query=(operationTime ge '2021-06-04T01-00-26') and (eventName eq 'LOGON')
+         * The scimQuery query parameter accepts filter expressions that use the syntax described in
+         * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
+         * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In
+         * SCIM filtering expressions, text, date, and time values must be enclosed in quotation
+         * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
+         * should not be quoted.)
+         *
+         * <p>*Example:** query=(operationTime ge '2021-06-04T01-00-26') and (eventName eq 'LOGON')
          *
          * @param scimQuery the value to set
          * @return this builder instance
@@ -656,13 +629,12 @@ public class ListAuditEventAnalyticsRequest
             return this;
         }
 
-        /**
-         * Specifies a subset of summarized fields to be returned in the response.
-         */
+        /** Specifies a subset of summarized fields to be returned in the response. */
         private java.util.List<SummaryField> summaryField = null;
 
         /**
          * Specifies a subset of summarized fields to be returned in the response.
+         *
          * @param summaryField the value to set
          * @return this builder instance
          */
@@ -673,6 +645,7 @@ public class ListAuditEventAnalyticsRequest
 
         /**
          * Singular setter. Specifies a subset of summarized fields to be returned in the response.
+         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -681,15 +654,16 @@ public class ListAuditEventAnalyticsRequest
         }
 
         /**
-         * An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified,
-         * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
+         * An optional filter to return audit events whose creation time in the database is greater
+         * than and equal to the date-time specified, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
          */
         private java.util.Date timeStarted = null;
 
         /**
-         * An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified,
-         * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * An optional filter to return audit events whose creation time in the database is greater
+         * than and equal to the date-time specified, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeStarted the value to set
          * @return this builder instance
@@ -700,15 +674,16 @@ public class ListAuditEventAnalyticsRequest
         }
 
         /**
-         * An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified,
-         * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
+         * An optional filter to return audit events whose creation time in the database is less
+         * than and equal to the date-time specified, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
          */
         private java.util.Date timeEnded = null;
 
         /**
-         * An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified,
-         * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * An optional filter to return audit events whose creation time in the database is less
+         * than and equal to the date-time specified, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeEnded the value to set
          * @return this builder instance
@@ -719,13 +694,14 @@ public class ListAuditEventAnalyticsRequest
         }
 
         /**
-         * Default time zone is UTC if no time zone provided. The date-time considerations of the resource will be in accordance with the specified time zone.
-         *
+         * Default time zone is UTC if no time zone provided. The date-time considerations of the
+         * resource will be in accordance with the specified time zone.
          */
         private String queryTimeZone = null;
 
         /**
-         * Default time zone is UTC if no time zone provided. The date-time considerations of the resource will be in accordance with the specified time zone.
+         * Default time zone is UTC if no time zone provided. The date-time considerations of the
+         * resource will be in accordance with the specified time zone.
          *
          * @param queryTimeZone the value to set
          * @return this builder instance
@@ -736,15 +712,14 @@ public class ListAuditEventAnalyticsRequest
         }
 
         /**
-         * A groupBy can only be used in combination with summaryField parameter.
-         * A groupBy value has to be a subset of the values mentioned in summaryField parameter.
-         *
+         * A groupBy can only be used in combination with summaryField parameter. A groupBy value
+         * has to be a subset of the values mentioned in summaryField parameter.
          */
         private java.util.List<GroupBy> groupBy = null;
 
         /**
-         * A groupBy can only be used in combination with summaryField parameter.
-         * A groupBy value has to be a subset of the values mentioned in summaryField parameter.
+         * A groupBy can only be used in combination with summaryField parameter. A groupBy value
+         * has to be a subset of the values mentioned in summaryField parameter.
          *
          * @param groupBy the value to set
          * @return this builder instance
@@ -755,8 +730,8 @@ public class ListAuditEventAnalyticsRequest
         }
 
         /**
-         * Singular setter. A groupBy can only be used in combination with summaryField parameter.
-         * A groupBy value has to be a subset of the values mentioned in summaryField parameter.
+         * Singular setter. A groupBy can only be used in combination with summaryField parameter. A
+         * groupBy value has to be a subset of the values mentioned in summaryField parameter.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -767,18 +742,19 @@ public class ListAuditEventAnalyticsRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
-         *
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -788,13 +764,12 @@ public class ListAuditEventAnalyticsRequest
             return this;
         }
 
-        /**
-         * The sort order to use, either ascending (ASC) or descending (DESC).
-         */
+        /** The sort order to use, either ascending (ASC) or descending (DESC). */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -804,12 +779,15 @@ public class ListAuditEventAnalyticsRequest
         }
 
         /**
-         * If this query parameter is specified, the result is ordered based on this query parameter value.
+         * If this query parameter is specified, the result is ordered based on this query parameter
+         * value.
          */
         private SortBy sortBy = null;
 
         /**
-         * If this query parameter is specified, the result is ordered based on this query parameter value.
+         * If this query parameter is specified, the result is ordered based on this query parameter
+         * value.
+         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -820,18 +798,19 @@ public class ListAuditEventAnalyticsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -843,6 +822,7 @@ public class ListAuditEventAnalyticsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListAuditEventAnalyticsRequest o) {
@@ -870,10 +850,11 @@ public class ListAuditEventAnalyticsRequest
         /**
          * Build the instance of ListAuditEventAnalyticsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListAuditEventAnalyticsRequest
          */
@@ -887,7 +868,8 @@ public class ListAuditEventAnalyticsRequest
         /**
          * Build the instance of ListAuditEventAnalyticsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListAuditEventAnalyticsRequest
@@ -911,12 +893,15 @@ public class ListAuditEventAnalyticsRequest
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListAuditEventAnalyticsRequest(compartmentId, opcRequestId, ifMatch, limit, page, compartmentIdInSubtree, accessLevel, scimQuery, summaryField, timeStarted, timeEnded, queryTimeZone, groupBy, opcRetryToken, sortOrder, sortBy);
+            // new ListAuditEventAnalyticsRequest(compartmentId, opcRequestId, ifMatch, limit, page,
+            // compartmentIdInSubtree, accessLevel, scimQuery, summaryField, timeStarted, timeEnded,
+            // queryTimeZone, groupBy, opcRetryToken, sortOrder, sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -941,6 +926,7 @@ public class ListAuditEventAnalyticsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

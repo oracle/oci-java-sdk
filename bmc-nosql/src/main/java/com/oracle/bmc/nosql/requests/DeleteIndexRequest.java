@@ -6,90 +6,68 @@ package com.oracle.bmc.nosql.requests;
 
 import com.oracle.bmc.nosql.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/nosql/DeleteIndexExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteIndexRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/nosql/DeleteIndexExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteIndexRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 public class DeleteIndexRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * A table name within the compartment, or a table OCID.
-     */
+    /** A table name within the compartment, or a table OCID. */
     private String tableNameOrId;
 
-    /**
-     * A table name within the compartment, or a table OCID.
-     */
+    /** A table name within the compartment, or a table OCID. */
     public String getTableNameOrId() {
         return tableNameOrId;
     }
-    /**
-     * The name of a table's index.
-     */
+    /** The name of a table's index. */
     private String indexName;
 
-    /**
-     * The name of a table's index.
-     */
+    /** The name of a table's index. */
     public String getIndexName() {
         return indexName;
     }
     /**
-     * The ID of a table's compartment. When a table is identified
-     * by name, the compartmentId is often needed to provide
-     * context for interpreting the name.
-     *
+     * The ID of a table's compartment. When a table is identified by name, the compartmentId is
+     * often needed to provide context for interpreting the name.
      */
     private String compartmentId;
 
     /**
-     * The ID of a table's compartment. When a table is identified
-     * by name, the compartmentId is often needed to provide
-     * context for interpreting the name.
-     *
+     * The ID of a table's compartment. When a table is identified by name, the compartmentId is
+     * often needed to provide context for interpreting the name.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * Set as true to select "if exists" behavior.
-     */
+    /** Set as true to select "if exists" behavior. */
     private Boolean isIfExists;
 
-    /**
-     * Set as true to select "if exists" behavior.
-     */
+    /** Set as true to select "if exists" behavior. */
     public Boolean getIsIfExists() {
         return isIfExists;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the {@code if-match} parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the {@code if-match} parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -97,17 +75,15 @@ public class DeleteIndexRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DeleteIndexRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * A table name within the compartment, or a table OCID.
-         */
+        /** A table name within the compartment, or a table OCID. */
         private String tableNameOrId = null;
 
         /**
          * A table name within the compartment, or a table OCID.
+         *
          * @param tableNameOrId the value to set
          * @return this builder instance
          */
@@ -116,13 +92,12 @@ public class DeleteIndexRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * The name of a table's index.
-         */
+        /** The name of a table's index. */
         private String indexName = null;
 
         /**
          * The name of a table's index.
+         *
          * @param indexName the value to set
          * @return this builder instance
          */
@@ -132,17 +107,14 @@ public class DeleteIndexRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The ID of a table's compartment. When a table is identified
-         * by name, the compartmentId is often needed to provide
-         * context for interpreting the name.
-         *
+         * The ID of a table's compartment. When a table is identified by name, the compartmentId is
+         * often needed to provide context for interpreting the name.
          */
         private String compartmentId = null;
 
         /**
-         * The ID of a table's compartment. When a table is identified
-         * by name, the compartmentId is often needed to provide
-         * context for interpreting the name.
+         * The ID of a table's compartment. When a table is identified by name, the compartmentId is
+         * often needed to provide context for interpreting the name.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -152,13 +124,12 @@ public class DeleteIndexRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * Set as true to select "if exists" behavior.
-         */
+        /** Set as true to select "if exists" behavior. */
         private Boolean isIfExists = null;
 
         /**
          * Set as true to select "if exists" behavior.
+         *
          * @param isIfExists the value to set
          * @return this builder instance
          */
@@ -168,21 +139,18 @@ public class DeleteIndexRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the {@code if-match} parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the {@code if-match} parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -192,13 +160,12 @@ public class DeleteIndexRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -209,18 +176,19 @@ public class DeleteIndexRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -232,6 +200,7 @@ public class DeleteIndexRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(DeleteIndexRequest o) {
@@ -249,10 +218,11 @@ public class DeleteIndexRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of DeleteIndexRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of DeleteIndexRequest
          */
@@ -266,7 +236,8 @@ public class DeleteIndexRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of DeleteIndexRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of DeleteIndexRequest
@@ -280,12 +251,14 @@ public class DeleteIndexRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new DeleteIndexRequest(tableNameOrId, indexName, compartmentId, isIfExists, ifMatch, opcRequestId);
+            // new DeleteIndexRequest(tableNameOrId, indexName, compartmentId, isIfExists, ifMatch,
+            // opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -300,6 +273,7 @@ public class DeleteIndexRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

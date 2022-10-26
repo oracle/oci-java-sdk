@@ -1,4 +1,3 @@
-
 /**
  * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
@@ -44,18 +43,16 @@ public class DataSafeRestAPIClientExample {
     /**
      * The entry point for the example.
      *
-     * @param args Arguments to provide to the example. The following arguments are
-     *             expected:
-     *             <ul>
-     *             <li>The first is the name of bucket where auditEvents from
-     *             DataSafe will be copied</li>
-     *             <li>The second argument is the OCID of the compartment only
-     *             auditEvents in specified compartment OCID and its subcompartments
-     *             for which the user has INSPECT permissions directly or
-     *             indirectly</li>
-     *             </ul>
+     * @param args Arguments to provide to the example. The following arguments are expected:
+     *     <ul>
+     *       <li>The first is the name of bucket where auditEvents from DataSafe will be copied
+     *       <li>The second argument is the OCID of the compartment only auditEvents in specified
+     *           compartment OCID and its subcompartments for which the user has INSPECT permissions
+     *           directly or indirectly
+     *     </ul>
      */
     String configurationFilePath = "~/.oci/config";
+
     String profile = "DEFAULT";
 
     public static void main(String[] args) throws Exception {
@@ -67,10 +64,10 @@ public class DataSafeRestAPIClientExample {
         String compartmentId = args[1];
 
         /**
-         * Configuring the AuthenticationDetailsProvider. It's assuming there is a
-         * default OCI config file "~/.oci/config", and a profile in that config with
-         * the name "DEFAULT". Make changes to the following line if needed and use
-         * ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
+         * Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+         * config file "~/.oci/config", and a profile in that config with the name "DEFAULT". Make
+         * changes to the following line if needed and use ConfigFileReader.parse(CONFIG_LOCATION,
+         * CONFIG_PROFILE);
          */
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
 
@@ -178,7 +175,7 @@ public class DataSafeRestAPIClientExample {
         System.out.println(
                 "Count" + eventList.getAuditEventCollection().getItems().size() + "\n\n");
         if (eventList.getAuditEventCollection().getItems().size() > 0) {
-            ObjectMapper mapper = com.oracle.bmc.http.Serialization.getObjectMapper();
+            ObjectMapper mapper = com.oracle.bmc.http.client.Serialization.getObjectMapper();
             StringBuffer sb = new StringBuffer();
             AtomicBoolean isFirst = new AtomicBoolean(true);
             count = eventList.getAuditEventCollection().getItems().size();

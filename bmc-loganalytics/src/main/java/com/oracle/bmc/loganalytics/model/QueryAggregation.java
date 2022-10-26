@@ -5,20 +5,21 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Query results.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Query results. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = QueryAggregation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class QueryAggregation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class QueryAggregation
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "totalCount",
@@ -55,10 +56,7 @@ public final class QueryAggregation extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Number of rows query retrieved. Up to maxTotalCount limit.
-         *
-         **/
+        /** Number of rows query retrieved. Up to maxTotalCount limit. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalCount")
         private Integer totalCount;
 
@@ -67,16 +65,13 @@ public final class QueryAggregation extends com.oracle.bmc.http.internal.Explici
          *
          * @param totalCount the value to set
          * @return this builder
-         **/
+         */
         public Builder totalCount(Integer totalCount) {
             this.totalCount = totalCount;
             this.__explicitlySet__.add("totalCount");
             return this;
         }
-        /**
-         * Number of rows matched by query.
-         *
-         **/
+        /** Number of rows matched by query. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalMatchedCount")
         private Long totalMatchedCount;
 
@@ -85,16 +80,13 @@ public final class QueryAggregation extends com.oracle.bmc.http.internal.Explici
          *
          * @param totalMatchedCount the value to set
          * @return this builder
-         **/
+         */
         public Builder totalMatchedCount(Long totalMatchedCount) {
             this.totalMatchedCount = totalMatchedCount;
             this.__explicitlySet__.add("totalMatchedCount");
             return this;
         }
-        /**
-         * True if query did not complete processing all data.
-         *
-         **/
+        /** True if query did not complete processing all data. */
         @com.fasterxml.jackson.annotation.JsonProperty("arePartialResults")
         private Boolean arePartialResults;
 
@@ -103,16 +95,13 @@ public final class QueryAggregation extends com.oracle.bmc.http.internal.Explici
          *
          * @param arePartialResults the value to set
          * @return this builder
-         **/
+         */
         public Builder arePartialResults(Boolean arePartialResults) {
             this.arePartialResults = arePartialResults;
             this.__explicitlySet__.add("arePartialResults");
             return this;
         }
-        /**
-         * Explanation of why results may be partial. Only set if arePartialResults is true.
-         *
-         **/
+        /** Explanation of why results may be partial. Only set if arePartialResults is true. */
         @com.fasterxml.jackson.annotation.JsonProperty("partialResultReason")
         private String partialResultReason;
 
@@ -121,16 +110,13 @@ public final class QueryAggregation extends com.oracle.bmc.http.internal.Explici
          *
          * @param partialResultReason the value to set
          * @return this builder
-         **/
+         */
         public Builder partialResultReason(String partialResultReason) {
             this.partialResultReason = partialResultReason;
             this.__explicitlySet__.add("partialResultReason");
             return this;
         }
-        /**
-         * Query result columns
-         *
-         **/
+        /** Query result columns */
         @com.fasterxml.jackson.annotation.JsonProperty("columns")
         private java.util.List<AbstractColumn> columns;
 
@@ -139,16 +125,13 @@ public final class QueryAggregation extends com.oracle.bmc.http.internal.Explici
          *
          * @param columns the value to set
          * @return this builder
-         **/
+         */
         public Builder columns(java.util.List<AbstractColumn> columns) {
             this.columns = columns;
             this.__explicitlySet__.add("columns");
             return this;
         }
-        /**
-         * Query result fields
-         *
-         **/
+        /** Query result fields */
         @com.fasterxml.jackson.annotation.JsonProperty("fields")
         private java.util.List<AbstractColumn> fields;
 
@@ -157,16 +140,13 @@ public final class QueryAggregation extends com.oracle.bmc.http.internal.Explici
          *
          * @param fields the value to set
          * @return this builder
-         **/
+         */
         public Builder fields(java.util.List<AbstractColumn> fields) {
             this.fields = fields;
             this.__explicitlySet__.add("fields");
             return this;
         }
-        /**
-         * Query result data
-         *
-         **/
+        /** Query result data */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<java.util.Map<String, Object>> items;
 
@@ -175,16 +155,13 @@ public final class QueryAggregation extends com.oracle.bmc.http.internal.Explici
          *
          * @param items the value to set
          * @return this builder
-         **/
+         */
         public Builder items(java.util.List<java.util.Map<String, Object>> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
             return this;
         }
-        /**
-         * Time ellapsed executing query in milli-seconds.
-         *
-         **/
+        /** Time ellapsed executing query in milli-seconds. */
         @com.fasterxml.jackson.annotation.JsonProperty("queryExecutionTimeInMs")
         private Long queryExecutionTimeInMs;
 
@@ -193,16 +170,13 @@ public final class QueryAggregation extends com.oracle.bmc.http.internal.Explici
          *
          * @param queryExecutionTimeInMs the value to set
          * @return this builder
-         **/
+         */
         public Builder queryExecutionTimeInMs(Long queryExecutionTimeInMs) {
             this.queryExecutionTimeInMs = queryExecutionTimeInMs;
             this.__explicitlySet__.add("queryExecutionTimeInMs");
             return this;
         }
-        /**
-         * Percentage progress completion of the query.
-         *
-         **/
+        /** Percentage progress completion of the query. */
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Integer percentComplete;
 
@@ -211,7 +185,7 @@ public final class QueryAggregation extends com.oracle.bmc.http.internal.Explici
          *
          * @param percentComplete the value to set
          * @return this builder
-         **/
+         */
         public Builder percentComplete(Integer percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
@@ -272,9 +246,7 @@ public final class QueryAggregation extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -283,10 +255,7 @@ public final class QueryAggregation extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * Number of rows query retrieved. Up to maxTotalCount limit.
-     *
-     **/
+    /** Number of rows query retrieved. Up to maxTotalCount limit. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalCount")
     private final Integer totalCount;
 
@@ -294,15 +263,12 @@ public final class QueryAggregation extends com.oracle.bmc.http.internal.Explici
      * Number of rows query retrieved. Up to maxTotalCount limit.
      *
      * @return the value
-     **/
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
 
-    /**
-     * Number of rows matched by query.
-     *
-     **/
+    /** Number of rows matched by query. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalMatchedCount")
     private final Long totalMatchedCount;
 
@@ -310,15 +276,12 @@ public final class QueryAggregation extends com.oracle.bmc.http.internal.Explici
      * Number of rows matched by query.
      *
      * @return the value
-     **/
+     */
     public Long getTotalMatchedCount() {
         return totalMatchedCount;
     }
 
-    /**
-     * True if query did not complete processing all data.
-     *
-     **/
+    /** True if query did not complete processing all data. */
     @com.fasterxml.jackson.annotation.JsonProperty("arePartialResults")
     private final Boolean arePartialResults;
 
@@ -326,15 +289,12 @@ public final class QueryAggregation extends com.oracle.bmc.http.internal.Explici
      * True if query did not complete processing all data.
      *
      * @return the value
-     **/
+     */
     public Boolean getArePartialResults() {
         return arePartialResults;
     }
 
-    /**
-     * Explanation of why results may be partial. Only set if arePartialResults is true.
-     *
-     **/
+    /** Explanation of why results may be partial. Only set if arePartialResults is true. */
     @com.fasterxml.jackson.annotation.JsonProperty("partialResultReason")
     private final String partialResultReason;
 
@@ -342,15 +302,12 @@ public final class QueryAggregation extends com.oracle.bmc.http.internal.Explici
      * Explanation of why results may be partial. Only set if arePartialResults is true.
      *
      * @return the value
-     **/
+     */
     public String getPartialResultReason() {
         return partialResultReason;
     }
 
-    /**
-     * Query result columns
-     *
-     **/
+    /** Query result columns */
     @com.fasterxml.jackson.annotation.JsonProperty("columns")
     private final java.util.List<AbstractColumn> columns;
 
@@ -358,15 +315,12 @@ public final class QueryAggregation extends com.oracle.bmc.http.internal.Explici
      * Query result columns
      *
      * @return the value
-     **/
+     */
     public java.util.List<AbstractColumn> getColumns() {
         return columns;
     }
 
-    /**
-     * Query result fields
-     *
-     **/
+    /** Query result fields */
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
     private final java.util.List<AbstractColumn> fields;
 
@@ -374,15 +328,12 @@ public final class QueryAggregation extends com.oracle.bmc.http.internal.Explici
      * Query result fields
      *
      * @return the value
-     **/
+     */
     public java.util.List<AbstractColumn> getFields() {
         return fields;
     }
 
-    /**
-     * Query result data
-     *
-     **/
+    /** Query result data */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<java.util.Map<String, Object>> items;
 
@@ -390,15 +341,12 @@ public final class QueryAggregation extends com.oracle.bmc.http.internal.Explici
      * Query result data
      *
      * @return the value
-     **/
+     */
     public java.util.List<java.util.Map<String, Object>> getItems() {
         return items;
     }
 
-    /**
-     * Time ellapsed executing query in milli-seconds.
-     *
-     **/
+    /** Time ellapsed executing query in milli-seconds. */
     @com.fasterxml.jackson.annotation.JsonProperty("queryExecutionTimeInMs")
     private final Long queryExecutionTimeInMs;
 
@@ -406,15 +354,12 @@ public final class QueryAggregation extends com.oracle.bmc.http.internal.Explici
      * Time ellapsed executing query in milli-seconds.
      *
      * @return the value
-     **/
+     */
     public Long getQueryExecutionTimeInMs() {
         return queryExecutionTimeInMs;
     }
 
-    /**
-     * Percentage progress completion of the query.
-     *
-     **/
+    /** Percentage progress completion of the query. */
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Integer percentComplete;
 
@@ -422,7 +367,7 @@ public final class QueryAggregation extends com.oracle.bmc.http.internal.Explici
      * Percentage progress completion of the query.
      *
      * @return the value
-     **/
+     */
     public Integer getPercentComplete() {
         return percentComplete;
     }
@@ -434,6 +379,7 @@ public final class QueryAggregation extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

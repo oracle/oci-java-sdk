@@ -6,142 +6,104 @@ package com.oracle.bmc.email.requests;
 
 import com.oracle.bmc.email.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListEmailDomainsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListEmailDomainsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListEmailDomainsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListEmailDomainsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The OCID for the compartment.
-     */
+    /** The OCID for the compartment. */
     private String compartmentId;
 
-    /**
-     * The OCID for the compartment.
-     */
+    /** The OCID for the compartment. */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * The request ID for tracing from the system
-     */
+    /** The request ID for tracing from the system */
     private String opcRequestId;
 
-    /**
-     * The request ID for tracing from the system
-     */
+    /** The request ID for tracing from the system */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * A filter to only return resources that match the given id exactly.
-     *
-     */
+    /** A filter to only return resources that match the given id exactly. */
     private String id;
 
-    /**
-     * A filter to only return resources that match the given id exactly.
-     *
-     */
+    /** A filter to only return resources that match the given id exactly. */
     public String getId() {
         return id;
     }
-    /**
-     * A filter to only return resources that match the given name exactly.
-     *
-     */
+    /** A filter to only return resources that match the given name exactly. */
     private String name;
 
-    /**
-     * A filter to only return resources that match the given name exactly.
-     *
-     */
+    /** A filter to only return resources that match the given name exactly. */
     public String getName() {
         return name;
     }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
-     * how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important
+     * details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
-     * how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important
+     * details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the opc-next-page response header from the previous "List" call.
-     * For important details about how pagination works,
-     * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the opc-next-page response header from the previous "List"
+     * call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value of the opc-next-page response header from the previous "List" call.
-     * For important details about how pagination works,
-     * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the opc-next-page response header from the previous "List"
+     * call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order to use, either ascending or descending order.
-     *
-     */
+    /** The sort order to use, either ascending or descending order. */
     private com.oracle.bmc.email.model.SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either ascending or descending order.
-     *
-     */
+    /** The sort order to use, either ascending or descending order. */
     public com.oracle.bmc.email.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /**
-     * Filter returned list by specified lifecycle state. This parameter is case-insensitive.
-     *
-     */
+    /** Filter returned list by specified lifecycle state. This parameter is case-insensitive. */
     private com.oracle.bmc.email.model.EmailDomain.LifecycleState lifecycleState;
 
-    /**
-     * Filter returned list by specified lifecycle state. This parameter is case-insensitive.
-     *
-     */
+    /** Filter returned list by specified lifecycle state. This parameter is case-insensitive. */
     public com.oracle.bmc.email.model.EmailDomain.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
      * Specifies the attribute with which to sort the email domains.
-     * <p>
-     * Default: {@code TIMECREATED}
-     * <p>
-     * **TIMECREATED:** Sorts by timeCreated.
-     * * **NAME:** Sorts by name.
-     * * **ID:** Sorts by id.
      *
+     * <p>Default: {@code TIMECREATED}
+     *
+     * <p>**TIMECREATED:** Sorts by timeCreated. * **NAME:** Sorts by name. * **ID:** Sorts by id.
      */
     private SortBy sortBy;
 
     /**
      * Specifies the attribute with which to sort the email domains.
-     * <p>
-     * Default: {@code TIMECREATED}
-     * <p>
-     * **TIMECREATED:** Sorts by timeCreated.
-     * * **NAME:** Sorts by name.
-     * * **ID:** Sorts by id.
      *
-     **/
-    public enum SortBy {
+     * <p>Default: {@code TIMECREATED}
+     *
+     * <p>**TIMECREATED:** Sorts by timeCreated. * **NAME:** Sorts by name. * **ID:** Sorts by id.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Timecreated("TIMECREATED"),
         Id("ID"),
         Name("NAME"),
@@ -177,13 +139,10 @@ public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Specifies the attribute with which to sort the email domains.
-     * <p>
-     * Default: {@code TIMECREATED}
-     * <p>
-     * **TIMECREATED:** Sorts by timeCreated.
-     * * **NAME:** Sorts by name.
-     * * **ID:** Sorts by id.
      *
+     * <p>Default: {@code TIMECREATED}
+     *
+     * <p>**TIMECREATED:** Sorts by timeCreated. * **NAME:** Sorts by name. * **ID:** Sorts by id.
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -192,17 +151,15 @@ public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListEmailDomainsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID for the compartment.
-         */
+        /** The OCID for the compartment. */
         private String compartmentId = null;
 
         /**
          * The OCID for the compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -211,13 +168,12 @@ public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * The request ID for tracing from the system
-         */
+        /** The request ID for tracing from the system */
         private String opcRequestId = null;
 
         /**
          * The request ID for tracing from the system
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -226,10 +182,7 @@ public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * A filter to only return resources that match the given id exactly.
-         *
-         */
+        /** A filter to only return resources that match the given id exactly. */
         private String id = null;
 
         /**
@@ -243,10 +196,7 @@ public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * A filter to only return resources that match the given name exactly.
-         *
-         */
+        /** A filter to only return resources that match the given name exactly. */
         private String name = null;
 
         /**
@@ -262,16 +212,17 @@ public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
-         * how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For
+         * important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
-         * how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For
+         * important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -282,17 +233,16 @@ public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * For list pagination. The value of the opc-next-page response header from the previous "List" call.
-         * For important details about how pagination works,
-         * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The value of the opc-next-page response header from the previous
+         * "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the opc-next-page response header from the previous "List" call.
-         * For important details about how pagination works,
-         * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the opc-next-page response header from the previous
+         * "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -302,10 +252,7 @@ public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * The sort order to use, either ascending or descending order.
-         *
-         */
+        /** The sort order to use, either ascending or descending order. */
         private com.oracle.bmc.email.model.SortOrder sortOrder = null;
 
         /**
@@ -321,7 +268,6 @@ public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Filter returned list by specified lifecycle state. This parameter is case-insensitive.
-         *
          */
         private com.oracle.bmc.email.model.EmailDomain.LifecycleState lifecycleState = null;
 
@@ -339,24 +285,21 @@ public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Specifies the attribute with which to sort the email domains.
-         * <p>
-         * Default: {@code TIMECREATED}
-         * <p>
-         * **TIMECREATED:** Sorts by timeCreated.
-         * * **NAME:** Sorts by name.
-         * * **ID:** Sorts by id.
          *
+         * <p>Default: {@code TIMECREATED}
+         *
+         * <p>**TIMECREATED:** Sorts by timeCreated. * **NAME:** Sorts by name. * **ID:** Sorts by
+         * id.
          */
         private SortBy sortBy = null;
 
         /**
          * Specifies the attribute with which to sort the email domains.
-         * <p>
-         * Default: {@code TIMECREATED}
-         * <p>
-         * **TIMECREATED:** Sorts by timeCreated.
-         * * **NAME:** Sorts by name.
-         * * **ID:** Sorts by id.
+         *
+         * <p>Default: {@code TIMECREATED}
+         *
+         * <p>**TIMECREATED:** Sorts by timeCreated. * **NAME:** Sorts by name. * **ID:** Sorts by
+         * id.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -368,18 +311,19 @@ public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -391,6 +335,7 @@ public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListEmailDomainsRequest o) {
@@ -411,10 +356,11 @@ public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListEmailDomainsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListEmailDomainsRequest
          */
@@ -428,7 +374,8 @@ public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListEmailDomainsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListEmailDomainsRequest
@@ -445,12 +392,14 @@ public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.lifecycleState = lifecycleState;
             request.sortBy = sortBy;
             return request;
-            // new ListEmailDomainsRequest(compartmentId, opcRequestId, id, name, limit, page, sortOrder, lifecycleState, sortBy);
+            // new ListEmailDomainsRequest(compartmentId, opcRequestId, id, name, limit, page,
+            // sortOrder, lifecycleState, sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -468,6 +417,7 @@ public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

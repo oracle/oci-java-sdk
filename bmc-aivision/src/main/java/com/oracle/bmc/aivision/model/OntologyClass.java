@@ -5,19 +5,20 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Images and ImageObjects can be labeled with an OntologyClass.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Images and ImageObjects can be labeled with an OntologyClass. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OntologyClass.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OntologyClass extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class OntologyClass extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "parentNames", "synonymNames"})
     public OntologyClass(
@@ -30,49 +31,46 @@ public final class OntologyClass extends com.oracle.bmc.http.internal.Explicitly
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The label name.
-         **/
+        /** The label name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The label name.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The label parents.
-         **/
+        /** The label parents. */
         @com.fasterxml.jackson.annotation.JsonProperty("parentNames")
         private java.util.List<String> parentNames;
 
         /**
          * The label parents.
+         *
          * @param parentNames the value to set
          * @return this builder
-         **/
+         */
         public Builder parentNames(java.util.List<String> parentNames) {
             this.parentNames = parentNames;
             this.__explicitlySet__.add("parentNames");
             return this;
         }
-        /**
-         * The label synonyms.
-         **/
+        /** The label synonyms. */
         @com.fasterxml.jackson.annotation.JsonProperty("synonymNames")
         private java.util.List<String> synonymNames;
 
         /**
          * The label synonyms.
+         *
          * @param synonymNames the value to set
          * @return this builder
-         **/
+         */
         public Builder synonymNames(java.util.List<String> synonymNames) {
             this.synonymNames = synonymNames;
             this.__explicitlySet__.add("synonymNames");
@@ -105,9 +103,7 @@ public final class OntologyClass extends com.oracle.bmc.http.internal.Explicitly
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,44 +112,41 @@ public final class OntologyClass extends com.oracle.bmc.http.internal.Explicitly
         return new Builder().copy(this);
     }
 
-    /**
-     * The label name.
-     **/
+    /** The label name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The label name.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The label parents.
-     **/
+    /** The label parents. */
     @com.fasterxml.jackson.annotation.JsonProperty("parentNames")
     private final java.util.List<String> parentNames;
 
     /**
      * The label parents.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getParentNames() {
         return parentNames;
     }
 
-    /**
-     * The label synonyms.
-     **/
+    /** The label synonyms. */
     @com.fasterxml.jackson.annotation.JsonProperty("synonymNames")
     private final java.util.List<String> synonymNames;
 
     /**
      * The label synonyms.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getSynonymNames() {
         return synonymNames;
     }
@@ -165,6 +158,7 @@ public final class OntologyClass extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

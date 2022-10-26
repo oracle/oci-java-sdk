@@ -4,28 +4,31 @@
  */
 package com.oracle.bmc.core;
 
-import com.oracle.bmc.core.internal.http.*;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 
+import java.util.Objects;
+
 /**
- * Async client implementation for Compute service. <br/>
- * There are two ways to use async client:
- * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
- * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
- * because the stream will be closed right after the AsyncHandler is invoked. <br/>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
- * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
- * is used, it is still safe to use the Future to determine whether or not the request was completed via
- * Future.isDone/isCancelled.<br/>
- * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for Compute service. <br>
+ * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
+ * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
+ * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
+ * will be closed right after the AsyncHandler is invoked. <br>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
+ * with the Java Future.<br>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or
+ * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
+ * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
+ * whether or not the request was completed via Future.isDone/isCancelled.<br>
+ * Please refer to
+ * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public class ComputeAsyncClient implements ComputeAsync {
-    /**
-     * Service instance for Compute.
-     */
+public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
+        implements ComputeAsync {
+    /** Service instance for Compute. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("COMPUTE")
@@ -36,268 +39,16 @@ public class ComputeAsyncClient implements ComputeAsync {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ComputeAsyncClient.class);
 
-    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-            authenticationDetailsProvider;
-
-    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
-            apacheConnectionClosingStrategy;
-    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
-    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
-    private final java.util.Map<
-                    com.oracle.bmc.http.signing.SigningStrategy,
-                    com.oracle.bmc.http.signing.RequestSignerFactory>
-            signingStrategyRequestSignerFactories;
-    private final boolean isNonBufferingApacheClient;
-    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
-
-    /**
-     * Used to synchronize any updates on the `this.client` object.
-     */
-    private final Object clientUpdate = new Object();
-
-    /**
-     * Stores the actual client object used to make the API calls.
-     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
-     *       For any writes to the object, please synchronize on `this.clientUpdate`.
-     */
-    private volatile com.oracle.bmc.http.internal.RestClient client;
-
-    /**
-     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
-     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
-     */
-    private volatile String overrideEndpoint = null;
-
-    /**
-     * Creates a new service instance using the given authentication provider.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     */
-    public ComputeAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     */
-    public ComputeAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(authenticationDetailsProvider, configuration, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     */
-    public ComputeAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     */
-    public ComputeAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public ComputeAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                additionalClientConfigurators,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public ComputeAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
-                        .createDefaultRequestSignerFactories(),
-                additionalClientConfigurators,
-                endpoint);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public ComputeAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
-     */
-    public ComputeAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
-        this.authenticationDetailsProvider = authenticationDetailsProvider;
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
-                new java.util.ArrayList<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
-            authenticationDetailsConfigurators.addAll(
-                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
-                                    this.authenticationDetailsProvider)
-                            .getClientConfigurators());
-        }
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
-                new java.util.ArrayList<>(additionalClientConfigurators);
-        allConfigurators.addAll(authenticationDetailsConfigurators);
-        this.restClientFactory =
-                restClientFactoryBuilder
-                        .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(allConfigurators)
-                        .build();
-        this.isNonBufferingApacheClient =
-                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        restClientFactory.getClientConfigurator());
-        this.apacheConnectionClosingStrategy =
-                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
-                        restClientFactory.getClientConfigurator());
-        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
-        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
-        this.clientConfigurationToUse = configuration;
-
-        this.refreshClient();
-
-        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
-            com.oracle.bmc.auth.RegionProvider provider =
-                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
-
-            if (provider.getRegion() != null) {
-                this.setRegion(provider.getRegion());
-                if (endpoint != null) {
-                    LOG.info(
-                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
-                            provider.getRegion(),
-                            endpoint);
-                }
-            }
-        }
-        if (endpoint != null) {
-            setEndpoint(endpoint);
-        }
+    private ComputeAsyncClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                    authenticationDetailsProvider) {
+        super(builder, authenticationDetailsProvider);
     }
 
     /**
      * Create a builder for this client.
+     *
      * @return builder
      */
     public static Builder builder() {
@@ -305,8 +56,8 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
+     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, ComputeAsyncClient> {
@@ -319,121 +70,26 @@ public class ComputeAsyncClient implements ComputeAsync {
 
         /**
          * Build the client.
+         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public ComputeAsyncClient build(
                 @javax.annotation.Nonnull
-                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                        authenticationDetailsProvider) {
-            if (authenticationDetailsProvider == null) {
-                throw new NullPointerException(
-                        "authenticationDetailsProvider is marked non-null but is null");
-            }
-            return new ComputeAsyncClient(
-                    authenticationDetailsProvider,
-                    configuration,
-                    clientConfigurator,
-                    requestSignerFactory,
-                    signingStrategyRequestSignerFactories,
-                    additionalClientConfigurators,
-                    endpoint);
+                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                                authenticationDetailsProvider) {
+            return new ComputeAsyncClient(this, authenticationDetailsProvider);
         }
-    }
-
-    com.oracle.bmc.http.internal.RestClient getClient() {
-        return client;
-    }
-
-    @Override
-    public void refreshClient() {
-        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                this.defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        this.signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
-            }
-        }
-
-        com.oracle.bmc.http.internal.RestClient refreshedClient =
-                this.restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        this.clientConfigurationToUse,
-                        this.isNonBufferingApacheClient);
-
-        synchronized (clientUpdate) {
-            if (this.overrideEndpoint != null) {
-                refreshedClient.setEndpoint(this.overrideEndpoint);
-            }
-
-            this.client = refreshedClient;
-        }
-
-        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint) {
-        LOG.info("Setting endpoint to {}", endpoint);
-
-        synchronized (clientUpdate) {
-            this.overrideEndpoint = endpoint;
-            client.setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
-        }
-        return endpoint;
     }
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        java.util.Optional<String> endpoint =
-                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
-        if (endpoint.isPresent()) {
-            setEndpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + SERVICE + " is not known in region " + region);
-        }
+        super.setRegion(region);
     }
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
-        try {
-            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-            setRegion(region);
-        } catch (IllegalArgumentException e) {
-            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-            setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public void close() {
-        client.close();
+        super.setRegion(regionId);
     }
 
     @Override
@@ -444,48 +100,30 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     AcceptShieldedIntegrityPolicyRequest,
                                     AcceptShieldedIntegrityPolicyResponse>
                             handler) {
-        LOG.trace("Called async acceptShieldedIntegrityPolicy");
-        final AcceptShieldedIntegrityPolicyRequest interceptedRequest =
-                AcceptShieldedIntegrityPolicyConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AcceptShieldedIntegrityPolicyConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getInstanceId(), "instanceId must not be blank");
+
+        return clientCall(request, AcceptShieldedIntegrityPolicyResponse::builder)
+                .logger(LOG, "acceptShieldedIntegrityPolicy")
+                .serviceDetails(
                         "Compute",
                         "AcceptShieldedIntegrityPolicy",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/MeasuredBootReport/AcceptShieldedIntegrityPolicy");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, AcceptShieldedIntegrityPolicyResponse>
-                transformer =
-                        AcceptShieldedIntegrityPolicyConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        AcceptShieldedIntegrityPolicyRequest, AcceptShieldedIntegrityPolicyResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                AcceptShieldedIntegrityPolicyRequest,
-                                AcceptShieldedIntegrityPolicyResponse>,
-                        java.util.concurrent.Future<AcceptShieldedIntegrityPolicyResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    AcceptShieldedIntegrityPolicyRequest, AcceptShieldedIntegrityPolicyResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/MeasuredBootReport/AcceptShieldedIntegrityPolicy")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AcceptShieldedIntegrityPolicyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instances")
+                .appendPathParam(request.getInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("acceptShieldedIntegrityPolicy")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AcceptShieldedIntegrityPolicyResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -496,54 +134,34 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     AddImageShapeCompatibilityEntryRequest,
                                     AddImageShapeCompatibilityEntryResponse>
                             handler) {
-        LOG.trace("Called async addImageShapeCompatibilityEntry");
-        final AddImageShapeCompatibilityEntryRequest interceptedRequest =
-                AddImageShapeCompatibilityEntryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AddImageShapeCompatibilityEntryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getImageId(), "imageId must not be blank");
+
+        Validate.notBlank(request.getShapeName(), "shapeName must not be blank");
+
+        return clientCall(request, AddImageShapeCompatibilityEntryResponse::builder)
+                .logger(LOG, "addImageShapeCompatibilityEntry")
+                .serviceDetails(
                         "Compute",
                         "AddImageShapeCompatibilityEntry",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/AddImageShapeCompatibilityEntry");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, AddImageShapeCompatibilityEntryResponse>
-                transformer =
-                        AddImageShapeCompatibilityEntryConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        AddImageShapeCompatibilityEntryRequest,
-                        AddImageShapeCompatibilityEntryResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                AddImageShapeCompatibilityEntryRequest,
-                                AddImageShapeCompatibilityEntryResponse>,
-                        java.util.concurrent.Future<AddImageShapeCompatibilityEntryResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getAddImageShapeCompatibilityEntryDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    AddImageShapeCompatibilityEntryRequest,
-                    AddImageShapeCompatibilityEntryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/AddImageShapeCompatibilityEntry")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(AddImageShapeCompatibilityEntryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("images")
+                .appendPathParam(request.getImageId())
+                .appendPathParam("shapes")
+                .appendPathParam(request.getShapeName())
+                .accept("application/json")
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ImageShapeCompatibilityEntry.class,
+                        AddImageShapeCompatibilityEntryResponse.Builder
+                                ::imageShapeCompatibilityEntry)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddImageShapeCompatibilityEntryResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -552,50 +170,29 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             AttachBootVolumeRequest, AttachBootVolumeResponse>
                     handler) {
-        LOG.trace("Called async attachBootVolume");
-        final AttachBootVolumeRequest interceptedRequest =
-                AttachBootVolumeConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AttachBootVolumeConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getAttachBootVolumeDetails(), "attachBootVolumeDetails is required");
+
+        return clientCall(request, AttachBootVolumeResponse::builder)
+                .logger(LOG, "attachBootVolume")
+                .serviceDetails(
                         "Compute",
                         "AttachBootVolume",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeAttachment/AttachBootVolume");
-        final java.util.function.Function<javax.ws.rs.core.Response, AttachBootVolumeResponse>
-                transformer =
-                        AttachBootVolumeConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<AttachBootVolumeRequest, AttachBootVolumeResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                AttachBootVolumeRequest, AttachBootVolumeResponse>,
-                        java.util.concurrent.Future<AttachBootVolumeResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getAttachBootVolumeDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    AttachBootVolumeRequest, AttachBootVolumeResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeAttachment/AttachBootVolume")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AttachBootVolumeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("bootVolumeAttachments")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.BootVolumeAttachment.class,
+                        AttachBootVolumeResponse.Builder::bootVolumeAttachment)
+                .handleResponseHeaderString("etag", AttachBootVolumeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AttachBootVolumeResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -603,48 +200,28 @@ public class ComputeAsyncClient implements ComputeAsync {
             AttachVnicRequest request,
             final com.oracle.bmc.responses.AsyncHandler<AttachVnicRequest, AttachVnicResponse>
                     handler) {
-        LOG.trace("Called async attachVnic");
-        final AttachVnicRequest interceptedRequest = AttachVnicConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AttachVnicConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getAttachVnicDetails(), "attachVnicDetails is required");
+
+        return clientCall(request, AttachVnicResponse::builder)
+                .logger(LOG, "attachVnic")
+                .serviceDetails(
                         "Compute",
                         "AttachVnic",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/AttachVnic");
-        final java.util.function.Function<javax.ws.rs.core.Response, AttachVnicResponse>
-                transformer =
-                        AttachVnicConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<AttachVnicRequest, AttachVnicResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                AttachVnicRequest, AttachVnicResponse>,
-                        java.util.concurrent.Future<AttachVnicResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getAttachVnicDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    AttachVnicRequest, AttachVnicResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/AttachVnic")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AttachVnicRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vnicAttachments")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.VnicAttachment.class,
+                        AttachVnicResponse.Builder::vnicAttachment)
+                .handleResponseHeaderString("etag", AttachVnicResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AttachVnicResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -652,49 +229,28 @@ public class ComputeAsyncClient implements ComputeAsync {
             AttachVolumeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<AttachVolumeRequest, AttachVolumeResponse>
                     handler) {
-        LOG.trace("Called async attachVolume");
-        final AttachVolumeRequest interceptedRequest =
-                AttachVolumeConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AttachVolumeConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getAttachVolumeDetails(), "attachVolumeDetails is required");
+
+        return clientCall(request, AttachVolumeResponse::builder)
+                .logger(LOG, "attachVolume")
+                .serviceDetails(
                         "Compute",
                         "AttachVolume",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/AttachVolume");
-        final java.util.function.Function<javax.ws.rs.core.Response, AttachVolumeResponse>
-                transformer =
-                        AttachVolumeConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<AttachVolumeRequest, AttachVolumeResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                AttachVolumeRequest, AttachVolumeResponse>,
-                        java.util.concurrent.Future<AttachVolumeResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getAttachVolumeDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    AttachVolumeRequest, AttachVolumeResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/AttachVolume")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AttachVolumeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("volumeAttachments")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.VolumeAttachment.class,
+                        AttachVolumeResponse.Builder::volumeAttachment)
+                .handleResponseHeaderString("etag", AttachVolumeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AttachVolumeResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -703,51 +259,30 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CaptureConsoleHistoryRequest, CaptureConsoleHistoryResponse>
                     handler) {
-        LOG.trace("Called async captureConsoleHistory");
-        final CaptureConsoleHistoryRequest interceptedRequest =
-                CaptureConsoleHistoryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CaptureConsoleHistoryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCaptureConsoleHistoryDetails(),
+                "captureConsoleHistoryDetails is required");
+
+        return clientCall(request, CaptureConsoleHistoryResponse::builder)
+                .logger(LOG, "captureConsoleHistory")
+                .serviceDetails(
                         "Compute",
                         "CaptureConsoleHistory",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/CaptureConsoleHistory");
-        final java.util.function.Function<javax.ws.rs.core.Response, CaptureConsoleHistoryResponse>
-                transformer =
-                        CaptureConsoleHistoryConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CaptureConsoleHistoryRequest, CaptureConsoleHistoryResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CaptureConsoleHistoryRequest, CaptureConsoleHistoryResponse>,
-                        java.util.concurrent.Future<CaptureConsoleHistoryResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCaptureConsoleHistoryDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CaptureConsoleHistoryRequest, CaptureConsoleHistoryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/CaptureConsoleHistory")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CaptureConsoleHistoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceConsoleHistories")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ConsoleHistory.class,
+                        CaptureConsoleHistoryResponse.Builder::consoleHistory)
+                .handleResponseHeaderString("etag", CaptureConsoleHistoryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CaptureConsoleHistoryResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -758,59 +293,39 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     ChangeComputeCapacityReservationCompartmentRequest,
                                     ChangeComputeCapacityReservationCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeComputeCapacityReservationCompartment");
-        final ChangeComputeCapacityReservationCompartmentRequest interceptedRequest =
-                ChangeComputeCapacityReservationCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeComputeCapacityReservationCompartmentConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getCapacityReservationId(), "capacityReservationId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeComputeCapacityReservationCompartmentDetails(),
+                "changeComputeCapacityReservationCompartmentDetails is required");
+
+        return clientCall(request, ChangeComputeCapacityReservationCompartmentResponse::builder)
+                .logger(LOG, "changeComputeCapacityReservationCompartment")
+                .serviceDetails(
                         "Compute",
                         "ChangeComputeCapacityReservationCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/ChangeComputeCapacityReservationCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        ChangeComputeCapacityReservationCompartmentResponse>
-                transformer =
-                        ChangeComputeCapacityReservationCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeComputeCapacityReservationCompartmentRequest,
-                        ChangeComputeCapacityReservationCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeComputeCapacityReservationCompartmentRequest,
-                                ChangeComputeCapacityReservationCompartmentResponse>,
-                        java.util.concurrent.Future<
-                                ChangeComputeCapacityReservationCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest
-                                        .getChangeComputeCapacityReservationCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeComputeCapacityReservationCompartmentRequest,
-                    ChangeComputeCapacityReservationCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/ChangeComputeCapacityReservationCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeComputeCapacityReservationCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityReservations")
+                .appendPathParam(request.getCapacityReservationId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeComputeCapacityReservationCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeComputeCapacityReservationCompartmentResponse.Builder
+                                ::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -821,59 +336,36 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     ChangeComputeImageCapabilitySchemaCompartmentRequest,
                                     ChangeComputeImageCapabilitySchemaCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeComputeImageCapabilitySchemaCompartment");
-        final ChangeComputeImageCapabilitySchemaCompartmentRequest interceptedRequest =
-                ChangeComputeImageCapabilitySchemaCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeComputeImageCapabilitySchemaCompartmentConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getComputeImageCapabilitySchemaId(),
+                "computeImageCapabilitySchemaId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeComputeImageCapabilitySchemaCompartmentDetails(),
+                "changeComputeImageCapabilitySchemaCompartmentDetails is required");
+
+        return clientCall(request, ChangeComputeImageCapabilitySchemaCompartmentResponse::builder)
+                .logger(LOG, "changeComputeImageCapabilitySchemaCompartment")
+                .serviceDetails(
                         "Compute",
                         "ChangeComputeImageCapabilitySchemaCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/ChangeComputeImageCapabilitySchemaCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        ChangeComputeImageCapabilitySchemaCompartmentResponse>
-                transformer =
-                        ChangeComputeImageCapabilitySchemaCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeComputeImageCapabilitySchemaCompartmentRequest,
-                        ChangeComputeImageCapabilitySchemaCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeComputeImageCapabilitySchemaCompartmentRequest,
-                                ChangeComputeImageCapabilitySchemaCompartmentResponse>,
-                        java.util.concurrent.Future<
-                                ChangeComputeImageCapabilitySchemaCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest
-                                        .getChangeComputeImageCapabilitySchemaCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeComputeImageCapabilitySchemaCompartmentRequest,
-                    ChangeComputeImageCapabilitySchemaCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/ChangeComputeImageCapabilitySchemaCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeComputeImageCapabilitySchemaCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeImageCapabilitySchemas")
+                .appendPathParam(request.getComputeImageCapabilitySchemaId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeComputeImageCapabilitySchemaCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -884,55 +376,39 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     ChangeDedicatedVmHostCompartmentRequest,
                                     ChangeDedicatedVmHostCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeDedicatedVmHostCompartment");
-        final ChangeDedicatedVmHostCompartmentRequest interceptedRequest =
-                ChangeDedicatedVmHostCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeDedicatedVmHostCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDedicatedVmHostId(), "dedicatedVmHostId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeDedicatedVmHostCompartmentDetails(),
+                "changeDedicatedVmHostCompartmentDetails is required");
+
+        return clientCall(request, ChangeDedicatedVmHostCompartmentResponse::builder)
+                .logger(LOG, "changeDedicatedVmHostCompartment")
+                .serviceDetails(
                         "Compute",
                         "ChangeDedicatedVmHostCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/ChangeDedicatedVmHostCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeDedicatedVmHostCompartmentResponse>
-                transformer =
-                        ChangeDedicatedVmHostCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeDedicatedVmHostCompartmentRequest,
-                        ChangeDedicatedVmHostCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeDedicatedVmHostCompartmentRequest,
-                                ChangeDedicatedVmHostCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeDedicatedVmHostCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeDedicatedVmHostCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeDedicatedVmHostCompartmentRequest,
-                    ChangeDedicatedVmHostCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/ChangeDedicatedVmHostCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeDedicatedVmHostCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dedicatedVmHosts")
+                .appendPathParam(request.getDedicatedVmHostId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeDedicatedVmHostCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeDedicatedVmHostCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeDedicatedVmHostCompartmentResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -941,51 +417,34 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ChangeImageCompartmentRequest, ChangeImageCompartmentResponse>
                     handler) {
-        LOG.trace("Called async changeImageCompartment");
-        final ChangeImageCompartmentRequest interceptedRequest =
-                ChangeImageCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeImageCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getImageId(), "imageId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeImageCompartmentDetails(),
+                "changeImageCompartmentDetails is required");
+
+        return clientCall(request, ChangeImageCompartmentResponse::builder)
+                .logger(LOG, "changeImageCompartment")
+                .serviceDetails(
                         "Compute",
                         "ChangeImageCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/ChangeImageCompartment");
-        final java.util.function.Function<javax.ws.rs.core.Response, ChangeImageCompartmentResponse>
-                transformer =
-                        ChangeImageCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeImageCompartmentRequest, ChangeImageCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeImageCompartmentRequest, ChangeImageCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeImageCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeImageCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeImageCompartmentRequest, ChangeImageCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/ChangeImageCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeImageCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("images")
+                .appendPathParam(request.getImageId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString("etag", ChangeImageCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeImageCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -994,53 +453,37 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ChangeInstanceCompartmentRequest, ChangeInstanceCompartmentResponse>
                     handler) {
-        LOG.trace("Called async changeInstanceCompartment");
-        final ChangeInstanceCompartmentRequest interceptedRequest =
-                ChangeInstanceCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeInstanceCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getInstanceId(), "instanceId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeInstanceCompartmentDetails(),
+                "changeInstanceCompartmentDetails is required");
+
+        return clientCall(request, ChangeInstanceCompartmentResponse::builder)
+                .logger(LOG, "changeInstanceCompartment")
+                .serviceDetails(
                         "Compute",
                         "ChangeInstanceCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/ChangeInstanceCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeInstanceCompartmentResponse>
-                transformer =
-                        ChangeInstanceCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeInstanceCompartmentRequest, ChangeInstanceCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeInstanceCompartmentRequest,
-                                ChangeInstanceCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeInstanceCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeInstanceCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeInstanceCompartmentRequest, ChangeInstanceCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/ChangeInstanceCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeInstanceCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instances")
+                .appendPathParam(request.getInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString("etag", ChangeInstanceCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeInstanceCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeInstanceCompartmentResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1051,53 +494,32 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     CreateAppCatalogSubscriptionRequest,
                                     CreateAppCatalogSubscriptionResponse>
                             handler) {
-        LOG.trace("Called async createAppCatalogSubscription");
-        final CreateAppCatalogSubscriptionRequest interceptedRequest =
-                CreateAppCatalogSubscriptionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateAppCatalogSubscriptionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateAppCatalogSubscriptionDetails(),
+                "createAppCatalogSubscriptionDetails is required");
+
+        return clientCall(request, CreateAppCatalogSubscriptionResponse::builder)
+                .logger(LOG, "createAppCatalogSubscription")
+                .serviceDetails(
                         "Compute",
                         "CreateAppCatalogSubscription",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogSubscription/CreateAppCatalogSubscription");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateAppCatalogSubscriptionResponse>
-                transformer =
-                        CreateAppCatalogSubscriptionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateAppCatalogSubscriptionRequest, CreateAppCatalogSubscriptionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateAppCatalogSubscriptionRequest,
-                                CreateAppCatalogSubscriptionResponse>,
-                        java.util.concurrent.Future<CreateAppCatalogSubscriptionResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateAppCatalogSubscriptionDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateAppCatalogSubscriptionRequest, CreateAppCatalogSubscriptionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogSubscription/CreateAppCatalogSubscription")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateAppCatalogSubscriptionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("appCatalogSubscriptions")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.AppCatalogSubscription.class,
+                        CreateAppCatalogSubscriptionResponse.Builder::appCatalogSubscription)
+                .handleResponseHeaderString(
+                        "etag", CreateAppCatalogSubscriptionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateAppCatalogSubscriptionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1108,55 +530,36 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     CreateComputeCapacityReservationRequest,
                                     CreateComputeCapacityReservationResponse>
                             handler) {
-        LOG.trace("Called async createComputeCapacityReservation");
-        final CreateComputeCapacityReservationRequest interceptedRequest =
-                CreateComputeCapacityReservationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateComputeCapacityReservationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Compute",
-                        "CreateComputeCapacityReservation",
-                        ib.getRequestUri().toString(),
-                        "");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateComputeCapacityReservationResponse>
-                transformer =
-                        CreateComputeCapacityReservationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateComputeCapacityReservationRequest,
-                        CreateComputeCapacityReservationResponse>
-                handlerToUse = handler;
+        Objects.requireNonNull(
+                request.getCreateComputeCapacityReservationDetails(),
+                "createComputeCapacityReservationDetails is required");
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateComputeCapacityReservationRequest,
-                                CreateComputeCapacityReservationResponse>,
-                        java.util.concurrent.Future<CreateComputeCapacityReservationResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateComputeCapacityReservationDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateComputeCapacityReservationRequest,
-                    CreateComputeCapacityReservationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, CreateComputeCapacityReservationResponse::builder)
+                .logger(LOG, "createComputeCapacityReservation")
+                .serviceDetails("Compute", "CreateComputeCapacityReservation", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateComputeCapacityReservationRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityReservations")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeCapacityReservation.class,
+                        CreateComputeCapacityReservationResponse.Builder
+                                ::computeCapacityReservation)
+                .handleResponseHeaderString(
+                        "etag", CreateComputeCapacityReservationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateComputeCapacityReservationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateComputeCapacityReservationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateComputeCapacityReservationResponse.Builder::location)
+                .callAsync(handler);
     }
 
     @Override
@@ -1167,55 +570,33 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     CreateComputeImageCapabilitySchemaRequest,
                                     CreateComputeImageCapabilitySchemaResponse>
                             handler) {
-        LOG.trace("Called async createComputeImageCapabilitySchema");
-        final CreateComputeImageCapabilitySchemaRequest interceptedRequest =
-                CreateComputeImageCapabilitySchemaConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateComputeImageCapabilitySchemaConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateComputeImageCapabilitySchemaDetails(),
+                "createComputeImageCapabilitySchemaDetails is required");
+
+        return clientCall(request, CreateComputeImageCapabilitySchemaResponse::builder)
+                .logger(LOG, "createComputeImageCapabilitySchema")
+                .serviceDetails(
                         "Compute",
                         "CreateComputeImageCapabilitySchema",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/CreateComputeImageCapabilitySchema");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateComputeImageCapabilitySchemaResponse>
-                transformer =
-                        CreateComputeImageCapabilitySchemaConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateComputeImageCapabilitySchemaRequest,
-                        CreateComputeImageCapabilitySchemaResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateComputeImageCapabilitySchemaRequest,
-                                CreateComputeImageCapabilitySchemaResponse>,
-                        java.util.concurrent.Future<CreateComputeImageCapabilitySchemaResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateComputeImageCapabilitySchemaDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateComputeImageCapabilitySchemaRequest,
-                    CreateComputeImageCapabilitySchemaResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/CreateComputeImageCapabilitySchema")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateComputeImageCapabilitySchemaRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeImageCapabilitySchemas")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeImageCapabilitySchema.class,
+                        CreateComputeImageCapabilitySchemaResponse.Builder
+                                ::computeImageCapabilitySchema)
+                .handleResponseHeaderString(
+                        "etag", CreateComputeImageCapabilitySchemaResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateComputeImageCapabilitySchemaResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1224,51 +605,34 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateDedicatedVmHostRequest, CreateDedicatedVmHostResponse>
                     handler) {
-        LOG.trace("Called async createDedicatedVmHost");
-        final CreateDedicatedVmHostRequest interceptedRequest =
-                CreateDedicatedVmHostConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateDedicatedVmHostConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateDedicatedVmHostDetails(),
+                "createDedicatedVmHostDetails is required");
+
+        return clientCall(request, CreateDedicatedVmHostResponse::builder)
+                .logger(LOG, "createDedicatedVmHost")
+                .serviceDetails(
                         "Compute",
                         "CreateDedicatedVmHost",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/CreateDedicatedVmHost");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateDedicatedVmHostResponse>
-                transformer =
-                        CreateDedicatedVmHostConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateDedicatedVmHostRequest, CreateDedicatedVmHostResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateDedicatedVmHostRequest, CreateDedicatedVmHostResponse>,
-                        java.util.concurrent.Future<CreateDedicatedVmHostResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateDedicatedVmHostDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateDedicatedVmHostRequest, CreateDedicatedVmHostResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/CreateDedicatedVmHost")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDedicatedVmHostRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dedicatedVmHosts")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.DedicatedVmHost.class,
+                        CreateDedicatedVmHostResponse.Builder::dedicatedVmHost)
+                .handleResponseHeaderString("etag", CreateDedicatedVmHostResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateDedicatedVmHostResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateDedicatedVmHostResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1276,49 +640,29 @@ public class ComputeAsyncClient implements ComputeAsync {
             CreateImageRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateImageRequest, CreateImageResponse>
                     handler) {
-        LOG.trace("Called async createImage");
-        final CreateImageRequest interceptedRequest =
-                CreateImageConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateImageConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCreateImageDetails(), "createImageDetails is required");
+
+        return clientCall(request, CreateImageResponse::builder)
+                .logger(LOG, "createImage")
+                .serviceDetails(
                         "Compute",
                         "CreateImage",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/CreateImage");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateImageResponse>
-                transformer =
-                        CreateImageConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateImageRequest, CreateImageResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateImageRequest, CreateImageResponse>,
-                        java.util.concurrent.Future<CreateImageResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateImageDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateImageRequest, CreateImageResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/CreateImage")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateImageRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("images")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.Image.class, CreateImageResponse.Builder::image)
+                .handleResponseHeaderString("etag", CreateImageResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateImageResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateImageResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1329,55 +673,32 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     CreateInstanceConsoleConnectionRequest,
                                     CreateInstanceConsoleConnectionResponse>
                             handler) {
-        LOG.trace("Called async createInstanceConsoleConnection");
-        final CreateInstanceConsoleConnectionRequest interceptedRequest =
-                CreateInstanceConsoleConnectionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateInstanceConsoleConnectionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateInstanceConsoleConnectionDetails(),
+                "createInstanceConsoleConnectionDetails is required");
+
+        return clientCall(request, CreateInstanceConsoleConnectionResponse::builder)
+                .logger(LOG, "createInstanceConsoleConnection")
+                .serviceDetails(
                         "Compute",
                         "CreateInstanceConsoleConnection",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/CreateInstanceConsoleConnection");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateInstanceConsoleConnectionResponse>
-                transformer =
-                        CreateInstanceConsoleConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateInstanceConsoleConnectionRequest,
-                        CreateInstanceConsoleConnectionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateInstanceConsoleConnectionRequest,
-                                CreateInstanceConsoleConnectionResponse>,
-                        java.util.concurrent.Future<CreateInstanceConsoleConnectionResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateInstanceConsoleConnectionDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateInstanceConsoleConnectionRequest,
-                    CreateInstanceConsoleConnectionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/CreateInstanceConsoleConnection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateInstanceConsoleConnectionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceConsoleConnections")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.InstanceConsoleConnection.class,
+                        CreateInstanceConsoleConnectionResponse.Builder::instanceConsoleConnection)
+                .handleResponseHeaderString(
+                        "etag", CreateInstanceConsoleConnectionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateInstanceConsoleConnectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1388,47 +709,27 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     DeleteAppCatalogSubscriptionRequest,
                                     DeleteAppCatalogSubscriptionResponse>
                             handler) {
-        LOG.trace("Called async deleteAppCatalogSubscription");
-        final DeleteAppCatalogSubscriptionRequest interceptedRequest =
-                DeleteAppCatalogSubscriptionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteAppCatalogSubscriptionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Compute",
-                        "DeleteAppCatalogSubscription",
-                        ib.getRequestUri().toString(),
-                        "");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteAppCatalogSubscriptionResponse>
-                transformer =
-                        DeleteAppCatalogSubscriptionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteAppCatalogSubscriptionRequest, DeleteAppCatalogSubscriptionResponse>
-                handlerToUse = handler;
+        Objects.requireNonNull(request.getListingId(), "listingId is required");
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteAppCatalogSubscriptionRequest,
-                                DeleteAppCatalogSubscriptionResponse>,
-                        java.util.concurrent.Future<DeleteAppCatalogSubscriptionResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteAppCatalogSubscriptionRequest, DeleteAppCatalogSubscriptionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        Objects.requireNonNull(request.getResourceVersion(), "resourceVersion is required");
+
+        return clientCall(request, DeleteAppCatalogSubscriptionResponse::builder)
+                .logger(LOG, "deleteAppCatalogSubscription")
+                .serviceDetails("Compute", "DeleteAppCatalogSubscription", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteAppCatalogSubscriptionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("appCatalogSubscriptions")
+                .appendQueryParam("listingId", request.getListingId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("resourceVersion", request.getResourceVersion())
+                .accept("application/json")
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteAppCatalogSubscriptionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1439,49 +740,31 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     DeleteComputeCapacityReservationRequest,
                                     DeleteComputeCapacityReservationResponse>
                             handler) {
-        LOG.trace("Called async deleteComputeCapacityReservation");
-        final DeleteComputeCapacityReservationRequest interceptedRequest =
-                DeleteComputeCapacityReservationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteComputeCapacityReservationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getCapacityReservationId(), "capacityReservationId must not be blank");
+
+        return clientCall(request, DeleteComputeCapacityReservationResponse::builder)
+                .logger(LOG, "deleteComputeCapacityReservation")
+                .serviceDetails(
                         "Compute",
                         "DeleteComputeCapacityReservation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/DeleteComputeCapacityReservation");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteComputeCapacityReservationResponse>
-                transformer =
-                        DeleteComputeCapacityReservationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteComputeCapacityReservationRequest,
-                        DeleteComputeCapacityReservationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteComputeCapacityReservationRequest,
-                                DeleteComputeCapacityReservationResponse>,
-                        java.util.concurrent.Future<DeleteComputeCapacityReservationResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteComputeCapacityReservationRequest,
-                    DeleteComputeCapacityReservationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/DeleteComputeCapacityReservation")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteComputeCapacityReservationRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityReservations")
+                .appendPathParam(request.getCapacityReservationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteComputeCapacityReservationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteComputeCapacityReservationResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1492,49 +775,28 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     DeleteComputeImageCapabilitySchemaRequest,
                                     DeleteComputeImageCapabilitySchemaResponse>
                             handler) {
-        LOG.trace("Called async deleteComputeImageCapabilitySchema");
-        final DeleteComputeImageCapabilitySchemaRequest interceptedRequest =
-                DeleteComputeImageCapabilitySchemaConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteComputeImageCapabilitySchemaConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getComputeImageCapabilitySchemaId(),
+                "computeImageCapabilitySchemaId must not be blank");
+
+        return clientCall(request, DeleteComputeImageCapabilitySchemaResponse::builder)
+                .logger(LOG, "deleteComputeImageCapabilitySchema")
+                .serviceDetails(
                         "Compute",
                         "DeleteComputeImageCapabilitySchema",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/DeleteComputeImageCapabilitySchema");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteComputeImageCapabilitySchemaResponse>
-                transformer =
-                        DeleteComputeImageCapabilitySchemaConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteComputeImageCapabilitySchemaRequest,
-                        DeleteComputeImageCapabilitySchemaResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteComputeImageCapabilitySchemaRequest,
-                                DeleteComputeImageCapabilitySchemaResponse>,
-                        java.util.concurrent.Future<DeleteComputeImageCapabilitySchemaResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteComputeImageCapabilitySchemaRequest,
-                    DeleteComputeImageCapabilitySchemaResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/DeleteComputeImageCapabilitySchema")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteComputeImageCapabilitySchemaRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeImageCapabilitySchemas")
+                .appendPathParam(request.getComputeImageCapabilitySchemaId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteComputeImageCapabilitySchemaResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1543,45 +805,27 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteConsoleHistoryRequest, DeleteConsoleHistoryResponse>
                     handler) {
-        LOG.trace("Called async deleteConsoleHistory");
-        final DeleteConsoleHistoryRequest interceptedRequest =
-                DeleteConsoleHistoryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteConsoleHistoryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getInstanceConsoleHistoryId(),
+                "instanceConsoleHistoryId must not be blank");
+
+        return clientCall(request, DeleteConsoleHistoryResponse::builder)
+                .logger(LOG, "deleteConsoleHistory")
+                .serviceDetails(
                         "Compute",
                         "DeleteConsoleHistory",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/DeleteConsoleHistory");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteConsoleHistoryResponse>
-                transformer =
-                        DeleteConsoleHistoryConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteConsoleHistoryRequest, DeleteConsoleHistoryResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteConsoleHistoryRequest, DeleteConsoleHistoryResponse>,
-                        java.util.concurrent.Future<DeleteConsoleHistoryResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteConsoleHistoryRequest, DeleteConsoleHistoryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/DeleteConsoleHistory")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteConsoleHistoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceConsoleHistories")
+                .appendPathParam(request.getInstanceConsoleHistoryId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteConsoleHistoryResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1590,45 +834,28 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteDedicatedVmHostRequest, DeleteDedicatedVmHostResponse>
                     handler) {
-        LOG.trace("Called async deleteDedicatedVmHost");
-        final DeleteDedicatedVmHostRequest interceptedRequest =
-                DeleteDedicatedVmHostConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteDedicatedVmHostConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDedicatedVmHostId(), "dedicatedVmHostId must not be blank");
+
+        return clientCall(request, DeleteDedicatedVmHostResponse::builder)
+                .logger(LOG, "deleteDedicatedVmHost")
+                .serviceDetails(
                         "Compute",
                         "DeleteDedicatedVmHost",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/DeleteDedicatedVmHost");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDedicatedVmHostResponse>
-                transformer =
-                        DeleteDedicatedVmHostConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteDedicatedVmHostRequest, DeleteDedicatedVmHostResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteDedicatedVmHostRequest, DeleteDedicatedVmHostResponse>,
-                        java.util.concurrent.Future<DeleteDedicatedVmHostResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteDedicatedVmHostRequest, DeleteDedicatedVmHostResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/DeleteDedicatedVmHost")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDedicatedVmHostRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dedicatedVmHosts")
+                .appendPathParam(request.getDedicatedVmHostId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDedicatedVmHostResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteDedicatedVmHostResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1636,40 +863,22 @@ public class ComputeAsyncClient implements ComputeAsync {
             DeleteImageRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteImageRequest, DeleteImageResponse>
                     handler) {
-        LOG.trace("Called async deleteImage");
-        final DeleteImageRequest interceptedRequest =
-                DeleteImageConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteImageConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Compute", "DeleteImage", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteImageResponse>
-                transformer =
-                        DeleteImageConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteImageRequest, DeleteImageResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteImageRequest, DeleteImageResponse>,
-                        java.util.concurrent.Future<DeleteImageResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getImageId(), "imageId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteImageRequest, DeleteImageResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteImageResponse::builder)
+                .logger(LOG, "deleteImage")
+                .serviceDetails("Compute", "DeleteImage", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteImageRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("images")
+                .appendPathParam(request.getImageId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteImageResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1680,49 +889,28 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     DeleteInstanceConsoleConnectionRequest,
                                     DeleteInstanceConsoleConnectionResponse>
                             handler) {
-        LOG.trace("Called async deleteInstanceConsoleConnection");
-        final DeleteInstanceConsoleConnectionRequest interceptedRequest =
-                DeleteInstanceConsoleConnectionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteInstanceConsoleConnectionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getInstanceConsoleConnectionId(),
+                "instanceConsoleConnectionId must not be blank");
+
+        return clientCall(request, DeleteInstanceConsoleConnectionResponse::builder)
+                .logger(LOG, "deleteInstanceConsoleConnection")
+                .serviceDetails(
                         "Compute",
                         "DeleteInstanceConsoleConnection",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/DeleteInstanceConsoleConnection");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteInstanceConsoleConnectionResponse>
-                transformer =
-                        DeleteInstanceConsoleConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteInstanceConsoleConnectionRequest,
-                        DeleteInstanceConsoleConnectionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteInstanceConsoleConnectionRequest,
-                                DeleteInstanceConsoleConnectionResponse>,
-                        java.util.concurrent.Future<DeleteInstanceConsoleConnectionResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteInstanceConsoleConnectionRequest,
-                    DeleteInstanceConsoleConnectionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/DeleteInstanceConsoleConnection")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteInstanceConsoleConnectionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceConsoleConnections")
+                .appendPathParam(request.getInstanceConsoleConnectionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteInstanceConsoleConnectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1731,41 +919,23 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DetachBootVolumeRequest, DetachBootVolumeResponse>
                     handler) {
-        LOG.trace("Called async detachBootVolume");
-        final DetachBootVolumeRequest interceptedRequest =
-                DetachBootVolumeConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DetachBootVolumeConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Compute", "DetachBootVolume", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DetachBootVolumeResponse>
-                transformer =
-                        DetachBootVolumeConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DetachBootVolumeRequest, DetachBootVolumeResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DetachBootVolumeRequest, DetachBootVolumeResponse>,
-                        java.util.concurrent.Future<DetachBootVolumeResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(
+                request.getBootVolumeAttachmentId(), "bootVolumeAttachmentId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DetachBootVolumeRequest, DetachBootVolumeResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DetachBootVolumeResponse::builder)
+                .logger(LOG, "detachBootVolume")
+                .serviceDetails("Compute", "DetachBootVolume", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DetachBootVolumeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("bootVolumeAttachments")
+                .appendPathParam(request.getBootVolumeAttachmentId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DetachBootVolumeResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1773,42 +943,25 @@ public class ComputeAsyncClient implements ComputeAsync {
             DetachVnicRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DetachVnicRequest, DetachVnicResponse>
                     handler) {
-        LOG.trace("Called async detachVnic");
-        final DetachVnicRequest interceptedRequest = DetachVnicConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DetachVnicConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVnicAttachmentId(), "vnicAttachmentId must not be blank");
+
+        return clientCall(request, DetachVnicResponse::builder)
+                .logger(LOG, "detachVnic")
+                .serviceDetails(
                         "Compute",
                         "DetachVnic",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/DetachVnic");
-        final java.util.function.Function<javax.ws.rs.core.Response, DetachVnicResponse>
-                transformer =
-                        DetachVnicConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DetachVnicRequest, DetachVnicResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DetachVnicRequest, DetachVnicResponse>,
-                        java.util.concurrent.Future<DetachVnicResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DetachVnicRequest, DetachVnicResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/DetachVnic")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DetachVnicRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vnicAttachments")
+                .appendPathParam(request.getVnicAttachmentId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DetachVnicResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1816,43 +969,25 @@ public class ComputeAsyncClient implements ComputeAsync {
             DetachVolumeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DetachVolumeRequest, DetachVolumeResponse>
                     handler) {
-        LOG.trace("Called async detachVolume");
-        final DetachVolumeRequest interceptedRequest =
-                DetachVolumeConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DetachVolumeConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVolumeAttachmentId(), "volumeAttachmentId must not be blank");
+
+        return clientCall(request, DetachVolumeResponse::builder)
+                .logger(LOG, "detachVolume")
+                .serviceDetails(
                         "Compute",
                         "DetachVolume",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/DetachVolume");
-        final java.util.function.Function<javax.ws.rs.core.Response, DetachVolumeResponse>
-                transformer =
-                        DetachVolumeConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DetachVolumeRequest, DetachVolumeResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DetachVolumeRequest, DetachVolumeResponse>,
-                        java.util.concurrent.Future<DetachVolumeResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DetachVolumeRequest, DetachVolumeResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/DetachVolume")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DetachVolumeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("volumeAttachments")
+                .appendPathParam(request.getVolumeAttachmentId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DetachVolumeResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1860,49 +995,35 @@ public class ComputeAsyncClient implements ComputeAsync {
             ExportImageRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ExportImageRequest, ExportImageResponse>
                     handler) {
-        LOG.trace("Called async exportImage");
-        final ExportImageRequest interceptedRequest =
-                ExportImageConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ExportImageConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getImageId(), "imageId must not be blank");
+        Objects.requireNonNull(request.getExportImageDetails(), "exportImageDetails is required");
+
+        return clientCall(request, ExportImageResponse::builder)
+                .logger(LOG, "exportImage")
+                .serviceDetails(
                         "Compute",
                         "ExportImage",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/ExportImage");
-        final java.util.function.Function<javax.ws.rs.core.Response, ExportImageResponse>
-                transformer =
-                        ExportImageConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ExportImageRequest, ExportImageResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ExportImageRequest, ExportImageResponse>,
-                        java.util.concurrent.Future<ExportImageResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getExportImageDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ExportImageRequest, ExportImageResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/ExportImage")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ExportImageRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("images")
+                .appendPathParam(request.getImageId())
+                .appendPathParam("actions")
+                .appendPathParam("export")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.Image.class, ExportImageResponse.Builder::image)
+                .handleResponseHeaderString("etag", ExportImageResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ExportImageResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ExportImageResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1911,45 +1032,28 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetAppCatalogListingRequest, GetAppCatalogListingResponse>
                     handler) {
-        LOG.trace("Called async getAppCatalogListing");
-        final GetAppCatalogListingRequest interceptedRequest =
-                GetAppCatalogListingConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetAppCatalogListingConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getListingId(), "listingId must not be blank");
+
+        return clientCall(request, GetAppCatalogListingResponse::builder)
+                .logger(LOG, "getAppCatalogListing")
+                .serviceDetails(
                         "Compute",
                         "GetAppCatalogListing",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListing/GetAppCatalogListing");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetAppCatalogListingResponse>
-                transformer =
-                        GetAppCatalogListingConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetAppCatalogListingRequest, GetAppCatalogListingResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetAppCatalogListingRequest, GetAppCatalogListingResponse>,
-                        java.util.concurrent.Future<GetAppCatalogListingResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetAppCatalogListingRequest, GetAppCatalogListingResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListing/GetAppCatalogListing")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAppCatalogListingRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("appCatalogListings")
+                .appendPathParam(request.getListingId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.AppCatalogListing.class,
+                        GetAppCatalogListingResponse.Builder::appCatalogListing)
+                .handleResponseHeaderString("etag", GetAppCatalogListingResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAppCatalogListingResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1960,48 +1064,36 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     GetAppCatalogListingAgreementsRequest,
                                     GetAppCatalogListingAgreementsResponse>
                             handler) {
-        LOG.trace("Called async getAppCatalogListingAgreements");
-        final GetAppCatalogListingAgreementsRequest interceptedRequest =
-                GetAppCatalogListingAgreementsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetAppCatalogListingAgreementsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getListingId(), "listingId must not be blank");
+
+        Validate.notBlank(request.getResourceVersion(), "resourceVersion must not be blank");
+
+        return clientCall(request, GetAppCatalogListingAgreementsResponse::builder)
+                .logger(LOG, "getAppCatalogListingAgreements")
+                .serviceDetails(
                         "Compute",
                         "GetAppCatalogListingAgreements",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetAppCatalogListingAgreementsResponse>
-                transformer =
-                        GetAppCatalogListingAgreementsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetAppCatalogListingAgreementsRequest,
-                        GetAppCatalogListingAgreementsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetAppCatalogListingAgreementsRequest,
-                                GetAppCatalogListingAgreementsResponse>,
-                        java.util.concurrent.Future<GetAppCatalogListingAgreementsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetAppCatalogListingAgreementsRequest, GetAppCatalogListingAgreementsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAppCatalogListingAgreementsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("appCatalogListings")
+                .appendPathParam(request.getListingId())
+                .appendPathParam("resourceVersions")
+                .appendPathParam(request.getResourceVersion())
+                .appendPathParam("agreements")
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.AppCatalogListingResourceVersionAgreements.class,
+                        GetAppCatalogListingAgreementsResponse.Builder
+                                ::appCatalogListingResourceVersionAgreements)
+                .handleResponseHeaderString(
+                        "etag", GetAppCatalogListingAgreementsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetAppCatalogListingAgreementsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2012,50 +1104,35 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     GetAppCatalogListingResourceVersionRequest,
                                     GetAppCatalogListingResourceVersionResponse>
                             handler) {
-        LOG.trace("Called async getAppCatalogListingResourceVersion");
-        final GetAppCatalogListingResourceVersionRequest interceptedRequest =
-                GetAppCatalogListingResourceVersionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetAppCatalogListingResourceVersionConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getListingId(), "listingId must not be blank");
+
+        Validate.notBlank(request.getResourceVersion(), "resourceVersion must not be blank");
+
+        return clientCall(request, GetAppCatalogListingResourceVersionResponse::builder)
+                .logger(LOG, "getAppCatalogListingResourceVersion")
+                .serviceDetails(
                         "Compute",
                         "GetAppCatalogListingResourceVersion",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetAppCatalogListingResourceVersionResponse>
-                transformer =
-                        GetAppCatalogListingResourceVersionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetAppCatalogListingResourceVersionRequest,
-                        GetAppCatalogListingResourceVersionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetAppCatalogListingResourceVersionRequest,
-                                GetAppCatalogListingResourceVersionResponse>,
-                        java.util.concurrent.Future<GetAppCatalogListingResourceVersionResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetAppCatalogListingResourceVersionRequest,
-                    GetAppCatalogListingResourceVersionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAppCatalogListingResourceVersionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("appCatalogListings")
+                .appendPathParam(request.getListingId())
+                .appendPathParam("resourceVersions")
+                .appendPathParam(request.getResourceVersion())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.AppCatalogListingResourceVersion.class,
+                        GetAppCatalogListingResourceVersionResponse.Builder
+                                ::appCatalogListingResourceVersion)
+                .handleResponseHeaderString(
+                        "etag", GetAppCatalogListingResourceVersionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetAppCatalogListingResourceVersionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2064,46 +1141,29 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetBootVolumeAttachmentRequest, GetBootVolumeAttachmentResponse>
                     handler) {
-        LOG.trace("Called async getBootVolumeAttachment");
-        final GetBootVolumeAttachmentRequest interceptedRequest =
-                GetBootVolumeAttachmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetBootVolumeAttachmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getBootVolumeAttachmentId(), "bootVolumeAttachmentId must not be blank");
+
+        return clientCall(request, GetBootVolumeAttachmentResponse::builder)
+                .logger(LOG, "getBootVolumeAttachment")
+                .serviceDetails(
                         "Compute",
                         "GetBootVolumeAttachment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeAttachment/GetBootVolumeAttachment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetBootVolumeAttachmentResponse>
-                transformer =
-                        GetBootVolumeAttachmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetBootVolumeAttachmentRequest, GetBootVolumeAttachmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetBootVolumeAttachmentRequest, GetBootVolumeAttachmentResponse>,
-                        java.util.concurrent.Future<GetBootVolumeAttachmentResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetBootVolumeAttachmentRequest, GetBootVolumeAttachmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeAttachment/GetBootVolumeAttachment")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetBootVolumeAttachmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("bootVolumeAttachments")
+                .appendPathParam(request.getBootVolumeAttachmentId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.BootVolumeAttachment.class,
+                        GetBootVolumeAttachmentResponse.Builder::bootVolumeAttachment)
+                .handleResponseHeaderString("etag", GetBootVolumeAttachmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetBootVolumeAttachmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2114,47 +1174,32 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     GetComputeCapacityReservationRequest,
                                     GetComputeCapacityReservationResponse>
                             handler) {
-        LOG.trace("Called async getComputeCapacityReservation");
-        final GetComputeCapacityReservationRequest interceptedRequest =
-                GetComputeCapacityReservationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetComputeCapacityReservationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getCapacityReservationId(), "capacityReservationId must not be blank");
+
+        return clientCall(request, GetComputeCapacityReservationResponse::builder)
+                .logger(LOG, "getComputeCapacityReservation")
+                .serviceDetails(
                         "Compute",
                         "GetComputeCapacityReservation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/GetComputeCapacityReservation");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetComputeCapacityReservationResponse>
-                transformer =
-                        GetComputeCapacityReservationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetComputeCapacityReservationRequest, GetComputeCapacityReservationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetComputeCapacityReservationRequest,
-                                GetComputeCapacityReservationResponse>,
-                        java.util.concurrent.Future<GetComputeCapacityReservationResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetComputeCapacityReservationRequest, GetComputeCapacityReservationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/GetComputeCapacityReservation")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetComputeCapacityReservationRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityReservations")
+                .appendPathParam(request.getCapacityReservationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeCapacityReservation.class,
+                        GetComputeCapacityReservationResponse.Builder::computeCapacityReservation)
+                .handleResponseHeaderString(
+                        "etag", GetComputeCapacityReservationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetComputeCapacityReservationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2165,50 +1210,33 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     GetComputeGlobalImageCapabilitySchemaRequest,
                                     GetComputeGlobalImageCapabilitySchemaResponse>
                             handler) {
-        LOG.trace("Called async getComputeGlobalImageCapabilitySchema");
-        final GetComputeGlobalImageCapabilitySchemaRequest interceptedRequest =
-                GetComputeGlobalImageCapabilitySchemaConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetComputeGlobalImageCapabilitySchemaConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getComputeGlobalImageCapabilitySchemaId(),
+                "computeGlobalImageCapabilitySchemaId must not be blank");
+
+        return clientCall(request, GetComputeGlobalImageCapabilitySchemaResponse::builder)
+                .logger(LOG, "getComputeGlobalImageCapabilitySchema")
+                .serviceDetails(
                         "Compute",
                         "GetComputeGlobalImageCapabilitySchema",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchema/GetComputeGlobalImageCapabilitySchema");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetComputeGlobalImageCapabilitySchemaResponse>
-                transformer =
-                        GetComputeGlobalImageCapabilitySchemaConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetComputeGlobalImageCapabilitySchemaRequest,
-                        GetComputeGlobalImageCapabilitySchemaResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetComputeGlobalImageCapabilitySchemaRequest,
-                                GetComputeGlobalImageCapabilitySchemaResponse>,
-                        java.util.concurrent.Future<GetComputeGlobalImageCapabilitySchemaResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetComputeGlobalImageCapabilitySchemaRequest,
-                    GetComputeGlobalImageCapabilitySchemaResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchema/GetComputeGlobalImageCapabilitySchema")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetComputeGlobalImageCapabilitySchemaRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGlobalImageCapabilitySchemas")
+                .appendPathParam(request.getComputeGlobalImageCapabilitySchemaId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchema.class,
+                        GetComputeGlobalImageCapabilitySchemaResponse.Builder
+                                ::computeGlobalImageCapabilitySchema)
+                .handleResponseHeaderString(
+                        "etag", GetComputeGlobalImageCapabilitySchemaResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetComputeGlobalImageCapabilitySchemaResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2219,52 +1247,39 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     GetComputeGlobalImageCapabilitySchemaVersionRequest,
                                     GetComputeGlobalImageCapabilitySchemaVersionResponse>
                             handler) {
-        LOG.trace("Called async getComputeGlobalImageCapabilitySchemaVersion");
-        final GetComputeGlobalImageCapabilitySchemaVersionRequest interceptedRequest =
-                GetComputeGlobalImageCapabilitySchemaVersionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetComputeGlobalImageCapabilitySchemaVersionConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getComputeGlobalImageCapabilitySchemaId(),
+                "computeGlobalImageCapabilitySchemaId must not be blank");
+
+        Validate.notBlank(
+                request.getComputeGlobalImageCapabilitySchemaVersionName(),
+                "computeGlobalImageCapabilitySchemaVersionName must not be blank");
+
+        return clientCall(request, GetComputeGlobalImageCapabilitySchemaVersionResponse::builder)
+                .logger(LOG, "getComputeGlobalImageCapabilitySchemaVersion")
+                .serviceDetails(
                         "Compute",
                         "GetComputeGlobalImageCapabilitySchemaVersion",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchemaVersion/GetComputeGlobalImageCapabilitySchemaVersion");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        GetComputeGlobalImageCapabilitySchemaVersionResponse>
-                transformer =
-                        GetComputeGlobalImageCapabilitySchemaVersionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetComputeGlobalImageCapabilitySchemaVersionRequest,
-                        GetComputeGlobalImageCapabilitySchemaVersionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetComputeGlobalImageCapabilitySchemaVersionRequest,
-                                GetComputeGlobalImageCapabilitySchemaVersionResponse>,
-                        java.util.concurrent.Future<
-                                GetComputeGlobalImageCapabilitySchemaVersionResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetComputeGlobalImageCapabilitySchemaVersionRequest,
-                    GetComputeGlobalImageCapabilitySchemaVersionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchemaVersion/GetComputeGlobalImageCapabilitySchemaVersion")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetComputeGlobalImageCapabilitySchemaVersionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGlobalImageCapabilitySchemas")
+                .appendPathParam(request.getComputeGlobalImageCapabilitySchemaId())
+                .appendPathParam("versions")
+                .appendPathParam(request.getComputeGlobalImageCapabilitySchemaVersionName())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersion.class,
+                        GetComputeGlobalImageCapabilitySchemaVersionResponse.Builder
+                                ::computeGlobalImageCapabilitySchemaVersion)
+                .handleResponseHeaderString(
+                        "etag", GetComputeGlobalImageCapabilitySchemaVersionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetComputeGlobalImageCapabilitySchemaVersionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2275,49 +1290,34 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     GetComputeImageCapabilitySchemaRequest,
                                     GetComputeImageCapabilitySchemaResponse>
                             handler) {
-        LOG.trace("Called async getComputeImageCapabilitySchema");
-        final GetComputeImageCapabilitySchemaRequest interceptedRequest =
-                GetComputeImageCapabilitySchemaConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetComputeImageCapabilitySchemaConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getComputeImageCapabilitySchemaId(),
+                "computeImageCapabilitySchemaId must not be blank");
+
+        return clientCall(request, GetComputeImageCapabilitySchemaResponse::builder)
+                .logger(LOG, "getComputeImageCapabilitySchema")
+                .serviceDetails(
                         "Compute",
                         "GetComputeImageCapabilitySchema",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/GetComputeImageCapabilitySchema");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetComputeImageCapabilitySchemaResponse>
-                transformer =
-                        GetComputeImageCapabilitySchemaConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetComputeImageCapabilitySchemaRequest,
-                        GetComputeImageCapabilitySchemaResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetComputeImageCapabilitySchemaRequest,
-                                GetComputeImageCapabilitySchemaResponse>,
-                        java.util.concurrent.Future<GetComputeImageCapabilitySchemaResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetComputeImageCapabilitySchemaRequest,
-                    GetComputeImageCapabilitySchemaResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/GetComputeImageCapabilitySchema")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetComputeImageCapabilitySchemaRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeImageCapabilitySchemas")
+                .appendPathParam(request.getComputeImageCapabilitySchemaId())
+                .appendQueryParam("isMergeEnabled", request.getIsMergeEnabled())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeImageCapabilitySchema.class,
+                        GetComputeImageCapabilitySchemaResponse.Builder
+                                ::computeImageCapabilitySchema)
+                .handleResponseHeaderString(
+                        "etag", GetComputeImageCapabilitySchemaResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetComputeImageCapabilitySchemaResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2326,44 +1326,30 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetConsoleHistoryRequest, GetConsoleHistoryResponse>
                     handler) {
-        LOG.trace("Called async getConsoleHistory");
-        final GetConsoleHistoryRequest interceptedRequest =
-                GetConsoleHistoryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetConsoleHistoryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getInstanceConsoleHistoryId(),
+                "instanceConsoleHistoryId must not be blank");
+
+        return clientCall(request, GetConsoleHistoryResponse::builder)
+                .logger(LOG, "getConsoleHistory")
+                .serviceDetails(
                         "Compute",
                         "GetConsoleHistory",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/GetConsoleHistory");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetConsoleHistoryResponse>
-                transformer =
-                        GetConsoleHistoryConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetConsoleHistoryRequest, GetConsoleHistoryResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetConsoleHistoryRequest, GetConsoleHistoryResponse>,
-                        java.util.concurrent.Future<GetConsoleHistoryResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetConsoleHistoryRequest, GetConsoleHistoryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/GetConsoleHistory")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetConsoleHistoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceConsoleHistories")
+                .appendPathParam(request.getInstanceConsoleHistoryId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.ConsoleHistory.class,
+                        GetConsoleHistoryResponse.Builder::consoleHistory)
+                .handleResponseHeaderString("etag", GetConsoleHistoryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetConsoleHistoryResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2372,46 +1358,33 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetConsoleHistoryContentRequest, GetConsoleHistoryContentResponse>
                     handler) {
-        LOG.trace("Called async getConsoleHistoryContent");
-        final GetConsoleHistoryContentRequest interceptedRequest =
-                GetConsoleHistoryContentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetConsoleHistoryContentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getInstanceConsoleHistoryId(),
+                "instanceConsoleHistoryId must not be blank");
+
+        return clientCall(request, GetConsoleHistoryContentResponse::builder)
+                .logger(LOG, "getConsoleHistoryContent")
+                .serviceDetails(
                         "Compute",
                         "GetConsoleHistoryContent",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/GetConsoleHistoryContent");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetConsoleHistoryContentResponse>
-                transformer =
-                        GetConsoleHistoryContentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetConsoleHistoryContentRequest, GetConsoleHistoryContentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetConsoleHistoryContentRequest, GetConsoleHistoryContentResponse>,
-                        java.util.concurrent.Future<GetConsoleHistoryContentResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetConsoleHistoryContentRequest, GetConsoleHistoryContentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/GetConsoleHistoryContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetConsoleHistoryContentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceConsoleHistories")
+                .appendPathParam(request.getInstanceConsoleHistoryId())
+                .appendPathParam("data")
+                .appendQueryParam("offset", request.getOffset())
+                .appendQueryParam("length", request.getLength())
+                .accept("application/json")
+                .handleBody(String.class, GetConsoleHistoryContentResponse.Builder::value)
+                .handleResponseHeaderInteger(
+                        "opc-bytes-remaining",
+                        GetConsoleHistoryContentResponse.Builder::opcBytesRemaining)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetConsoleHistoryContentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2420,44 +1393,29 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetDedicatedVmHostRequest, GetDedicatedVmHostResponse>
                     handler) {
-        LOG.trace("Called async getDedicatedVmHost");
-        final GetDedicatedVmHostRequest interceptedRequest =
-                GetDedicatedVmHostConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDedicatedVmHostConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDedicatedVmHostId(), "dedicatedVmHostId must not be blank");
+
+        return clientCall(request, GetDedicatedVmHostResponse::builder)
+                .logger(LOG, "getDedicatedVmHost")
+                .serviceDetails(
                         "Compute",
                         "GetDedicatedVmHost",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/GetDedicatedVmHost");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetDedicatedVmHostResponse>
-                transformer =
-                        GetDedicatedVmHostConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetDedicatedVmHostRequest, GetDedicatedVmHostResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetDedicatedVmHostRequest, GetDedicatedVmHostResponse>,
-                        java.util.concurrent.Future<GetDedicatedVmHostResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetDedicatedVmHostRequest, GetDedicatedVmHostResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/GetDedicatedVmHost")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDedicatedVmHostRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dedicatedVmHosts")
+                .appendPathParam(request.getDedicatedVmHostId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.DedicatedVmHost.class,
+                        GetDedicatedVmHostResponse.Builder::dedicatedVmHost)
+                .handleResponseHeaderString("etag", GetDedicatedVmHostResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDedicatedVmHostResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2465,40 +1423,26 @@ public class ComputeAsyncClient implements ComputeAsync {
             GetImageRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetImageRequest, GetImageResponse>
                     handler) {
-        LOG.trace("Called async getImage");
-        final GetImageRequest interceptedRequest = GetImageConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetImageConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getImageId(), "imageId must not be blank");
+
+        return clientCall(request, GetImageResponse::builder)
+                .logger(LOG, "getImage")
+                .serviceDetails(
                         "Compute",
                         "GetImage",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/GetImage");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetImageResponse> transformer =
-                GetImageConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetImageRequest, GetImageResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<GetImageRequest, GetImageResponse>,
-                        java.util.concurrent.Future<GetImageResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetImageRequest, GetImageResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/GetImage")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetImageRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("images")
+                .appendPathParam(request.getImageId())
+                .accept("application/json")
+                .handleBody(com.oracle.bmc.core.model.Image.class, GetImageResponse.Builder::image)
+                .handleResponseHeaderString("etag", GetImageResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetImageResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2509,49 +1453,34 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     GetImageShapeCompatibilityEntryRequest,
                                     GetImageShapeCompatibilityEntryResponse>
                             handler) {
-        LOG.trace("Called async getImageShapeCompatibilityEntry");
-        final GetImageShapeCompatibilityEntryRequest interceptedRequest =
-                GetImageShapeCompatibilityEntryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetImageShapeCompatibilityEntryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getImageId(), "imageId must not be blank");
+
+        Validate.notBlank(request.getShapeName(), "shapeName must not be blank");
+
+        return clientCall(request, GetImageShapeCompatibilityEntryResponse::builder)
+                .logger(LOG, "getImageShapeCompatibilityEntry")
+                .serviceDetails(
                         "Compute",
                         "GetImageShapeCompatibilityEntry",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/GetImageShapeCompatibilityEntry");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetImageShapeCompatibilityEntryResponse>
-                transformer =
-                        GetImageShapeCompatibilityEntryConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetImageShapeCompatibilityEntryRequest,
-                        GetImageShapeCompatibilityEntryResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetImageShapeCompatibilityEntryRequest,
-                                GetImageShapeCompatibilityEntryResponse>,
-                        java.util.concurrent.Future<GetImageShapeCompatibilityEntryResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetImageShapeCompatibilityEntryRequest,
-                    GetImageShapeCompatibilityEntryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/GetImageShapeCompatibilityEntry")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetImageShapeCompatibilityEntryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("images")
+                .appendPathParam(request.getImageId())
+                .appendPathParam("shapes")
+                .appendPathParam(request.getShapeName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ImageShapeCompatibilityEntry.class,
+                        GetImageShapeCompatibilityEntryResponse.Builder
+                                ::imageShapeCompatibilityEntry)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetImageShapeCompatibilityEntryResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2559,43 +1488,28 @@ public class ComputeAsyncClient implements ComputeAsync {
             GetInstanceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetInstanceRequest, GetInstanceResponse>
                     handler) {
-        LOG.trace("Called async getInstance");
-        final GetInstanceRequest interceptedRequest =
-                GetInstanceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetInstanceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getInstanceId(), "instanceId must not be blank");
+
+        return clientCall(request, GetInstanceResponse::builder)
+                .logger(LOG, "getInstance")
+                .serviceDetails(
                         "Compute",
                         "GetInstance",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/GetInstance");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetInstanceResponse>
-                transformer =
-                        GetInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetInstanceRequest, GetInstanceResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetInstanceRequest, GetInstanceResponse>,
-                        java.util.concurrent.Future<GetInstanceResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetInstanceRequest, GetInstanceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/GetInstance")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetInstanceRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instances")
+                .appendPathParam(request.getInstanceId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.Instance.class,
+                        GetInstanceResponse.Builder::instance)
+                .handleResponseHeaderString("etag", GetInstanceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetInstanceResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2606,47 +1520,30 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     GetInstanceConsoleConnectionRequest,
                                     GetInstanceConsoleConnectionResponse>
                             handler) {
-        LOG.trace("Called async getInstanceConsoleConnection");
-        final GetInstanceConsoleConnectionRequest interceptedRequest =
-                GetInstanceConsoleConnectionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetInstanceConsoleConnectionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getInstanceConsoleConnectionId(),
+                "instanceConsoleConnectionId must not be blank");
+
+        return clientCall(request, GetInstanceConsoleConnectionResponse::builder)
+                .logger(LOG, "getInstanceConsoleConnection")
+                .serviceDetails(
                         "Compute",
                         "GetInstanceConsoleConnection",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/GetInstanceConsoleConnection");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetInstanceConsoleConnectionResponse>
-                transformer =
-                        GetInstanceConsoleConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetInstanceConsoleConnectionRequest, GetInstanceConsoleConnectionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetInstanceConsoleConnectionRequest,
-                                GetInstanceConsoleConnectionResponse>,
-                        java.util.concurrent.Future<GetInstanceConsoleConnectionResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetInstanceConsoleConnectionRequest, GetInstanceConsoleConnectionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/GetInstanceConsoleConnection")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetInstanceConsoleConnectionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceConsoleConnections")
+                .appendPathParam(request.getInstanceConsoleConnectionId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.InstanceConsoleConnection.class,
+                        GetInstanceConsoleConnectionResponse.Builder::instanceConsoleConnection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetInstanceConsoleConnectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2657,47 +1554,30 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     GetInstanceMaintenanceRebootRequest,
                                     GetInstanceMaintenanceRebootResponse>
                             handler) {
-        LOG.trace("Called async getInstanceMaintenanceReboot");
-        final GetInstanceMaintenanceRebootRequest interceptedRequest =
-                GetInstanceMaintenanceRebootConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetInstanceMaintenanceRebootConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getInstanceId(), "instanceId must not be blank");
+
+        return clientCall(request, GetInstanceMaintenanceRebootResponse::builder)
+                .logger(LOG, "getInstanceMaintenanceReboot")
+                .serviceDetails(
                         "Compute",
                         "GetInstanceMaintenanceReboot",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceMaintenanceReboot/GetInstanceMaintenanceReboot");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetInstanceMaintenanceRebootResponse>
-                transformer =
-                        GetInstanceMaintenanceRebootConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetInstanceMaintenanceRebootRequest, GetInstanceMaintenanceRebootResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetInstanceMaintenanceRebootRequest,
-                                GetInstanceMaintenanceRebootResponse>,
-                        java.util.concurrent.Future<GetInstanceMaintenanceRebootResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetInstanceMaintenanceRebootRequest, GetInstanceMaintenanceRebootResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceMaintenanceReboot/GetInstanceMaintenanceReboot")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetInstanceMaintenanceRebootRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instances")
+                .appendPathParam(request.getInstanceId())
+                .appendPathParam("maintenanceReboot")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.InstanceMaintenanceReboot.class,
+                        GetInstanceMaintenanceRebootResponse.Builder::instanceMaintenanceReboot)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetInstanceMaintenanceRebootResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2706,45 +1586,30 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetMeasuredBootReportRequest, GetMeasuredBootReportResponse>
                     handler) {
-        LOG.trace("Called async getMeasuredBootReport");
-        final GetMeasuredBootReportRequest interceptedRequest =
-                GetMeasuredBootReportConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetMeasuredBootReportConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getInstanceId(), "instanceId must not be blank");
+
+        return clientCall(request, GetMeasuredBootReportResponse::builder)
+                .logger(LOG, "getMeasuredBootReport")
+                .serviceDetails(
                         "Compute",
                         "GetMeasuredBootReport",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/MeasuredBootReport/GetMeasuredBootReport");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetMeasuredBootReportResponse>
-                transformer =
-                        GetMeasuredBootReportConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetMeasuredBootReportRequest, GetMeasuredBootReportResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetMeasuredBootReportRequest, GetMeasuredBootReportResponse>,
-                        java.util.concurrent.Future<GetMeasuredBootReportResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetMeasuredBootReportRequest, GetMeasuredBootReportResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/MeasuredBootReport/GetMeasuredBootReport")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMeasuredBootReportRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instances")
+                .appendPathParam(request.getInstanceId())
+                .appendPathParam("measuredBootReport")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.MeasuredBootReport.class,
+                        GetMeasuredBootReportResponse.Builder::measuredBootReport)
+                .handleResponseHeaderString("etag", GetMeasuredBootReportResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMeasuredBootReportResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2753,44 +1618,28 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetVnicAttachmentRequest, GetVnicAttachmentResponse>
                     handler) {
-        LOG.trace("Called async getVnicAttachment");
-        final GetVnicAttachmentRequest interceptedRequest =
-                GetVnicAttachmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVnicAttachmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVnicAttachmentId(), "vnicAttachmentId must not be blank");
+
+        return clientCall(request, GetVnicAttachmentResponse::builder)
+                .logger(LOG, "getVnicAttachment")
+                .serviceDetails(
                         "Compute",
                         "GetVnicAttachment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/GetVnicAttachment");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetVnicAttachmentResponse>
-                transformer =
-                        GetVnicAttachmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetVnicAttachmentRequest, GetVnicAttachmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetVnicAttachmentRequest, GetVnicAttachmentResponse>,
-                        java.util.concurrent.Future<GetVnicAttachmentResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetVnicAttachmentRequest, GetVnicAttachmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/GetVnicAttachment")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVnicAttachmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vnicAttachments")
+                .appendPathParam(request.getVnicAttachmentId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.VnicAttachment.class,
+                        GetVnicAttachmentResponse.Builder::vnicAttachment)
+                .handleResponseHeaderString("etag", GetVnicAttachmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetVnicAttachmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2799,45 +1648,28 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetVolumeAttachmentRequest, GetVolumeAttachmentResponse>
                     handler) {
-        LOG.trace("Called async getVolumeAttachment");
-        final GetVolumeAttachmentRequest interceptedRequest =
-                GetVolumeAttachmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVolumeAttachmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVolumeAttachmentId(), "volumeAttachmentId must not be blank");
+
+        return clientCall(request, GetVolumeAttachmentResponse::builder)
+                .logger(LOG, "getVolumeAttachment")
+                .serviceDetails(
                         "Compute",
                         "GetVolumeAttachment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/GetVolumeAttachment");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetVolumeAttachmentResponse>
-                transformer =
-                        GetVolumeAttachmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetVolumeAttachmentRequest, GetVolumeAttachmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetVolumeAttachmentRequest, GetVolumeAttachmentResponse>,
-                        java.util.concurrent.Future<GetVolumeAttachmentResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetVolumeAttachmentRequest, GetVolumeAttachmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/GetVolumeAttachment")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVolumeAttachmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("volumeAttachments")
+                .appendPathParam(request.getVolumeAttachmentId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.VolumeAttachment.class,
+                        GetVolumeAttachmentResponse.Builder::volumeAttachment)
+                .handleResponseHeaderString("etag", GetVolumeAttachmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetVolumeAttachmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2848,50 +1680,29 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     GetWindowsInstanceInitialCredentialsRequest,
                                     GetWindowsInstanceInitialCredentialsResponse>
                             handler) {
-        LOG.trace("Called async getWindowsInstanceInitialCredentials");
-        final GetWindowsInstanceInitialCredentialsRequest interceptedRequest =
-                GetWindowsInstanceInitialCredentialsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetWindowsInstanceInitialCredentialsConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getInstanceId(), "instanceId must not be blank");
+
+        return clientCall(request, GetWindowsInstanceInitialCredentialsResponse::builder)
+                .logger(LOG, "getWindowsInstanceInitialCredentials")
+                .serviceDetails(
                         "Compute",
                         "GetWindowsInstanceInitialCredentials",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceCredentials/GetWindowsInstanceInitialCredentials");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetWindowsInstanceInitialCredentialsResponse>
-                transformer =
-                        GetWindowsInstanceInitialCredentialsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetWindowsInstanceInitialCredentialsRequest,
-                        GetWindowsInstanceInitialCredentialsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetWindowsInstanceInitialCredentialsRequest,
-                                GetWindowsInstanceInitialCredentialsResponse>,
-                        java.util.concurrent.Future<GetWindowsInstanceInitialCredentialsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetWindowsInstanceInitialCredentialsRequest,
-                    GetWindowsInstanceInitialCredentialsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceCredentials/GetWindowsInstanceInitialCredentials")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetWindowsInstanceInitialCredentialsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instances")
+                .appendPathParam(request.getInstanceId())
+                .appendPathParam("initialCredentials")
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.InstanceCredentials.class,
+                        GetWindowsInstanceInitialCredentialsResponse.Builder::instanceCredentials)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetWindowsInstanceInitialCredentialsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2900,49 +1711,33 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             InstanceActionRequest, InstanceActionResponse>
                     handler) {
-        LOG.trace("Called async instanceAction");
-        final InstanceActionRequest interceptedRequest =
-                InstanceActionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                InstanceActionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getInstanceId(), "instanceId must not be blank");
+        Objects.requireNonNull(request.getAction(), "action is required");
+
+        return clientCall(request, InstanceActionResponse::builder)
+                .logger(LOG, "instanceAction")
+                .serviceDetails(
                         "Compute",
                         "InstanceAction",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/InstanceAction");
-        final java.util.function.Function<javax.ws.rs.core.Response, InstanceActionResponse>
-                transformer =
-                        InstanceActionConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<InstanceActionRequest, InstanceActionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                InstanceActionRequest, InstanceActionResponse>,
-                        java.util.concurrent.Future<InstanceActionResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getInstancePowerActionDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    InstanceActionRequest, InstanceActionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/InstanceAction")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(InstanceActionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instances")
+                .appendPathParam(request.getInstanceId())
+                .appendQueryParam("action", request.getAction())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.Instance.class,
+                        InstanceActionResponse.Builder::instance)
+                .handleResponseHeaderString("etag", InstanceActionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", InstanceActionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2951,49 +1746,31 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             LaunchInstanceRequest, LaunchInstanceResponse>
                     handler) {
-        LOG.trace("Called async launchInstance");
-        final LaunchInstanceRequest interceptedRequest =
-                LaunchInstanceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                LaunchInstanceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getLaunchInstanceDetails(), "launchInstanceDetails is required");
+
+        return clientCall(request, LaunchInstanceResponse::builder)
+                .logger(LOG, "launchInstance")
+                .serviceDetails(
                         "Compute",
                         "LaunchInstance",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/LaunchInstance");
-        final java.util.function.Function<javax.ws.rs.core.Response, LaunchInstanceResponse>
-                transformer =
-                        LaunchInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<LaunchInstanceRequest, LaunchInstanceResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                LaunchInstanceRequest, LaunchInstanceResponse>,
-                        java.util.concurrent.Future<LaunchInstanceResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getLaunchInstanceDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    LaunchInstanceRequest, LaunchInstanceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/LaunchInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(LaunchInstanceRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instances")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.Instance.class,
+                        LaunchInstanceResponse.Builder::instance)
+                .handleResponseHeaderString("etag", LaunchInstanceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", LaunchInstanceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", LaunchInstanceResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3004,50 +1781,35 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     ListAppCatalogListingResourceVersionsRequest,
                                     ListAppCatalogListingResourceVersionsResponse>
                             handler) {
-        LOG.trace("Called async listAppCatalogListingResourceVersions");
-        final ListAppCatalogListingResourceVersionsRequest interceptedRequest =
-                ListAppCatalogListingResourceVersionsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListAppCatalogListingResourceVersionsConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getListingId(), "listingId must not be blank");
+
+        return clientCall(request, ListAppCatalogListingResourceVersionsResponse::builder)
+                .logger(LOG, "listAppCatalogListingResourceVersions")
+                .serviceDetails(
                         "Compute",
                         "ListAppCatalogListingResourceVersions",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingResourceVersionSummary/ListAppCatalogListingResourceVersions");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListAppCatalogListingResourceVersionsResponse>
-                transformer =
-                        ListAppCatalogListingResourceVersionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListAppCatalogListingResourceVersionsRequest,
-                        ListAppCatalogListingResourceVersionsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListAppCatalogListingResourceVersionsRequest,
-                                ListAppCatalogListingResourceVersionsResponse>,
-                        java.util.concurrent.Future<ListAppCatalogListingResourceVersionsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListAppCatalogListingResourceVersionsRequest,
-                    ListAppCatalogListingResourceVersionsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingResourceVersionSummary/ListAppCatalogListingResourceVersions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAppCatalogListingResourceVersionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("appCatalogListings")
+                .appendPathParam(request.getListingId())
+                .appendPathParam("resourceVersions")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary.class,
+                        ListAppCatalogListingResourceVersionsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListAppCatalogListingResourceVersionsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListAppCatalogListingResourceVersionsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3056,45 +1818,32 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListAppCatalogListingsRequest, ListAppCatalogListingsResponse>
                     handler) {
-        LOG.trace("Called async listAppCatalogListings");
-        final ListAppCatalogListingsRequest interceptedRequest =
-                ListAppCatalogListingsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListAppCatalogListingsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        return clientCall(request, ListAppCatalogListingsResponse::builder)
+                .logger(LOG, "listAppCatalogListings")
+                .serviceDetails(
                         "Compute",
                         "ListAppCatalogListings",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingSummary/ListAppCatalogListings");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListAppCatalogListingsResponse>
-                transformer =
-                        ListAppCatalogListingsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListAppCatalogListingsRequest, ListAppCatalogListingsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListAppCatalogListingsRequest, ListAppCatalogListingsResponse>,
-                        java.util.concurrent.Future<ListAppCatalogListingsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListAppCatalogListingsRequest, ListAppCatalogListingsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingSummary/ListAppCatalogListings")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAppCatalogListingsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("appCatalogListings")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("publisherName", request.getPublisherName())
+                .appendQueryParam("publisherType", request.getPublisherType())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.AppCatalogListingSummary.class,
+                        ListAppCatalogListingsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAppCatalogListingsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAppCatalogListingsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3105,47 +1854,33 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     ListAppCatalogSubscriptionsRequest,
                                     ListAppCatalogSubscriptionsResponse>
                             handler) {
-        LOG.trace("Called async listAppCatalogSubscriptions");
-        final ListAppCatalogSubscriptionsRequest interceptedRequest =
-                ListAppCatalogSubscriptionsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListAppCatalogSubscriptionsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListAppCatalogSubscriptionsResponse::builder)
+                .logger(LOG, "listAppCatalogSubscriptions")
+                .serviceDetails(
                         "Compute",
                         "ListAppCatalogSubscriptions",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogSubscriptionSummary/ListAppCatalogSubscriptions");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListAppCatalogSubscriptionsResponse>
-                transformer =
-                        ListAppCatalogSubscriptionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListAppCatalogSubscriptionsRequest, ListAppCatalogSubscriptionsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListAppCatalogSubscriptionsRequest,
-                                ListAppCatalogSubscriptionsResponse>,
-                        java.util.concurrent.Future<ListAppCatalogSubscriptionsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListAppCatalogSubscriptionsRequest, ListAppCatalogSubscriptionsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogSubscriptionSummary/ListAppCatalogSubscriptions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAppCatalogSubscriptionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("appCatalogSubscriptions")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("listingId", request.getListingId())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.AppCatalogSubscriptionSummary.class,
+                        ListAppCatalogSubscriptionsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAppCatalogSubscriptionsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAppCatalogSubscriptionsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3154,47 +1889,35 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListBootVolumeAttachmentsRequest, ListBootVolumeAttachmentsResponse>
                     handler) {
-        LOG.trace("Called async listBootVolumeAttachments");
-        final ListBootVolumeAttachmentsRequest interceptedRequest =
-                ListBootVolumeAttachmentsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListBootVolumeAttachmentsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getAvailabilityDomain(), "availabilityDomain is required");
+
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListBootVolumeAttachmentsResponse::builder)
+                .logger(LOG, "listBootVolumeAttachments")
+                .serviceDetails(
                         "Compute",
                         "ListBootVolumeAttachments",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeAttachment/ListBootVolumeAttachments");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListBootVolumeAttachmentsResponse>
-                transformer =
-                        ListBootVolumeAttachmentsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListBootVolumeAttachmentsRequest, ListBootVolumeAttachmentsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListBootVolumeAttachmentsRequest,
-                                ListBootVolumeAttachmentsResponse>,
-                        java.util.concurrent.Future<ListBootVolumeAttachmentsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListBootVolumeAttachmentsRequest, ListBootVolumeAttachmentsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeAttachment/ListBootVolumeAttachments")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListBootVolumeAttachmentsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("bootVolumeAttachments")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("instanceId", request.getInstanceId())
+                .appendQueryParam("bootVolumeId", request.getBootVolumeId())
+                .accept("application/json, application/x-json-stream")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.BootVolumeAttachment.class,
+                        ListBootVolumeAttachmentsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListBootVolumeAttachmentsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListBootVolumeAttachmentsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3205,52 +1928,38 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     ListComputeCapacityReservationInstanceShapesRequest,
                                     ListComputeCapacityReservationInstanceShapesResponse>
                             handler) {
-        LOG.trace("Called async listComputeCapacityReservationInstanceShapes");
-        final ListComputeCapacityReservationInstanceShapesRequest interceptedRequest =
-                ListComputeCapacityReservationInstanceShapesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListComputeCapacityReservationInstanceShapesConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListComputeCapacityReservationInstanceShapesResponse::builder)
+                .logger(LOG, "listComputeCapacityReservationInstanceShapes")
+                .serviceDetails(
                         "Compute",
                         "ListComputeCapacityReservationInstanceShapes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservationInstanceShapeSummary/ListComputeCapacityReservationInstanceShapes");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        ListComputeCapacityReservationInstanceShapesResponse>
-                transformer =
-                        ListComputeCapacityReservationInstanceShapesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListComputeCapacityReservationInstanceShapesRequest,
-                        ListComputeCapacityReservationInstanceShapesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListComputeCapacityReservationInstanceShapesRequest,
-                                ListComputeCapacityReservationInstanceShapesResponse>,
-                        java.util.concurrent.Future<
-                                ListComputeCapacityReservationInstanceShapesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListComputeCapacityReservationInstanceShapesRequest,
-                    ListComputeCapacityReservationInstanceShapesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservationInstanceShapeSummary/ListComputeCapacityReservationInstanceShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeCapacityReservationInstanceShapesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityReservationInstanceShapes")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.ComputeCapacityReservationInstanceShapeSummary
+                                .class,
+                        ListComputeCapacityReservationInstanceShapesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListComputeCapacityReservationInstanceShapesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListComputeCapacityReservationInstanceShapesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3261,51 +1970,40 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     ListComputeCapacityReservationInstancesRequest,
                                     ListComputeCapacityReservationInstancesResponse>
                             handler) {
-        LOG.trace("Called async listComputeCapacityReservationInstances");
-        final ListComputeCapacityReservationInstancesRequest interceptedRequest =
-                ListComputeCapacityReservationInstancesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListComputeCapacityReservationInstancesConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getCapacityReservationId(), "capacityReservationId must not be blank");
+
+        return clientCall(request, ListComputeCapacityReservationInstancesResponse::builder)
+                .logger(LOG, "listComputeCapacityReservationInstances")
+                .serviceDetails(
                         "Compute",
                         "ListComputeCapacityReservationInstances",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CapacityReservationInstanceSummary/ListComputeCapacityReservationInstances");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListComputeCapacityReservationInstancesResponse>
-                transformer =
-                        ListComputeCapacityReservationInstancesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListComputeCapacityReservationInstancesRequest,
-                        ListComputeCapacityReservationInstancesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListComputeCapacityReservationInstancesRequest,
-                                ListComputeCapacityReservationInstancesResponse>,
-                        java.util.concurrent.Future<
-                                ListComputeCapacityReservationInstancesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListComputeCapacityReservationInstancesRequest,
-                    ListComputeCapacityReservationInstancesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CapacityReservationInstanceSummary/ListComputeCapacityReservationInstances")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeCapacityReservationInstancesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityReservations")
+                .appendPathParam(request.getCapacityReservationId())
+                .appendPathParam("instances")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json, application/x-json-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.CapacityReservationInstanceSummary.class,
+                        ListComputeCapacityReservationInstancesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListComputeCapacityReservationInstancesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListComputeCapacityReservationInstancesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3316,49 +2014,38 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     ListComputeCapacityReservationsRequest,
                                     ListComputeCapacityReservationsResponse>
                             handler) {
-        LOG.trace("Called async listComputeCapacityReservations");
-        final ListComputeCapacityReservationsRequest interceptedRequest =
-                ListComputeCapacityReservationsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListComputeCapacityReservationsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListComputeCapacityReservationsResponse::builder)
+                .logger(LOG, "listComputeCapacityReservations")
+                .serviceDetails(
                         "Compute",
                         "ListComputeCapacityReservations",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/ListComputeCapacityReservations");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListComputeCapacityReservationsResponse>
-                transformer =
-                        ListComputeCapacityReservationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListComputeCapacityReservationsRequest,
-                        ListComputeCapacityReservationsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListComputeCapacityReservationsRequest,
-                                ListComputeCapacityReservationsResponse>,
-                        java.util.concurrent.Future<ListComputeCapacityReservationsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListComputeCapacityReservationsRequest,
-                    ListComputeCapacityReservationsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/ListComputeCapacityReservations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeCapacityReservationsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityReservations")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json, application/x-json-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.ComputeCapacityReservationSummary.class,
+                        ListComputeCapacityReservationsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListComputeCapacityReservationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListComputeCapacityReservationsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3369,52 +2056,41 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     ListComputeGlobalImageCapabilitySchemaVersionsRequest,
                                     ListComputeGlobalImageCapabilitySchemaVersionsResponse>
                             handler) {
-        LOG.trace("Called async listComputeGlobalImageCapabilitySchemaVersions");
-        final ListComputeGlobalImageCapabilitySchemaVersionsRequest interceptedRequest =
-                ListComputeGlobalImageCapabilitySchemaVersionsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListComputeGlobalImageCapabilitySchemaVersionsConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getComputeGlobalImageCapabilitySchemaId(),
+                "computeGlobalImageCapabilitySchemaId must not be blank");
+
+        return clientCall(request, ListComputeGlobalImageCapabilitySchemaVersionsResponse::builder)
+                .logger(LOG, "listComputeGlobalImageCapabilitySchemaVersions")
+                .serviceDetails(
                         "Compute",
                         "ListComputeGlobalImageCapabilitySchemaVersions",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchemaVersionSummary/ListComputeGlobalImageCapabilitySchemaVersions");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        ListComputeGlobalImageCapabilitySchemaVersionsResponse>
-                transformer =
-                        ListComputeGlobalImageCapabilitySchemaVersionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListComputeGlobalImageCapabilitySchemaVersionsRequest,
-                        ListComputeGlobalImageCapabilitySchemaVersionsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListComputeGlobalImageCapabilitySchemaVersionsRequest,
-                                ListComputeGlobalImageCapabilitySchemaVersionsResponse>,
-                        java.util.concurrent.Future<
-                                ListComputeGlobalImageCapabilitySchemaVersionsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListComputeGlobalImageCapabilitySchemaVersionsRequest,
-                    ListComputeGlobalImageCapabilitySchemaVersionsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchemaVersionSummary/ListComputeGlobalImageCapabilitySchemaVersions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeGlobalImageCapabilitySchemaVersionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGlobalImageCapabilitySchemas")
+                .appendPathParam(request.getComputeGlobalImageCapabilitySchemaId())
+                .appendPathParam("versions")
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersionSummary
+                                .class,
+                        ListComputeGlobalImageCapabilitySchemaVersionsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListComputeGlobalImageCapabilitySchemaVersionsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListComputeGlobalImageCapabilitySchemaVersionsResponse.Builder
+                                ::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3425,51 +2101,34 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     ListComputeGlobalImageCapabilitySchemasRequest,
                                     ListComputeGlobalImageCapabilitySchemasResponse>
                             handler) {
-        LOG.trace("Called async listComputeGlobalImageCapabilitySchemas");
-        final ListComputeGlobalImageCapabilitySchemasRequest interceptedRequest =
-                ListComputeGlobalImageCapabilitySchemasConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListComputeGlobalImageCapabilitySchemasConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        return clientCall(request, ListComputeGlobalImageCapabilitySchemasResponse::builder)
+                .logger(LOG, "listComputeGlobalImageCapabilitySchemas")
+                .serviceDetails(
                         "Compute",
                         "ListComputeGlobalImageCapabilitySchemas",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchemaSummary/ListComputeGlobalImageCapabilitySchemas");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListComputeGlobalImageCapabilitySchemasResponse>
-                transformer =
-                        ListComputeGlobalImageCapabilitySchemasConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListComputeGlobalImageCapabilitySchemasRequest,
-                        ListComputeGlobalImageCapabilitySchemasResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListComputeGlobalImageCapabilitySchemasRequest,
-                                ListComputeGlobalImageCapabilitySchemasResponse>,
-                        java.util.concurrent.Future<
-                                ListComputeGlobalImageCapabilitySchemasResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListComputeGlobalImageCapabilitySchemasRequest,
-                    ListComputeGlobalImageCapabilitySchemasResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchemaSummary/ListComputeGlobalImageCapabilitySchemas")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeGlobalImageCapabilitySchemasRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGlobalImageCapabilitySchemas")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary.class,
+                        ListComputeGlobalImageCapabilitySchemasResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListComputeGlobalImageCapabilitySchemasResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListComputeGlobalImageCapabilitySchemasResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3480,49 +2139,35 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     ListComputeImageCapabilitySchemasRequest,
                                     ListComputeImageCapabilitySchemasResponse>
                             handler) {
-        LOG.trace("Called async listComputeImageCapabilitySchemas");
-        final ListComputeImageCapabilitySchemasRequest interceptedRequest =
-                ListComputeImageCapabilitySchemasConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListComputeImageCapabilitySchemasConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        return clientCall(request, ListComputeImageCapabilitySchemasResponse::builder)
+                .logger(LOG, "listComputeImageCapabilitySchemas")
+                .serviceDetails(
                         "Compute",
                         "ListComputeImageCapabilitySchemas",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchemaSummary/ListComputeImageCapabilitySchemas");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListComputeImageCapabilitySchemasResponse>
-                transformer =
-                        ListComputeImageCapabilitySchemasConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListComputeImageCapabilitySchemasRequest,
-                        ListComputeImageCapabilitySchemasResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListComputeImageCapabilitySchemasRequest,
-                                ListComputeImageCapabilitySchemasResponse>,
-                        java.util.concurrent.Future<ListComputeImageCapabilitySchemasResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListComputeImageCapabilitySchemasRequest,
-                    ListComputeImageCapabilitySchemasResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchemaSummary/ListComputeImageCapabilitySchemas")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeImageCapabilitySchemasRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeImageCapabilitySchemas")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("imageId", request.getImageId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary.class,
+                        ListComputeImageCapabilitySchemasResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListComputeImageCapabilitySchemasResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListComputeImageCapabilitySchemasResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3531,45 +2176,35 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListConsoleHistoriesRequest, ListConsoleHistoriesResponse>
                     handler) {
-        LOG.trace("Called async listConsoleHistories");
-        final ListConsoleHistoriesRequest interceptedRequest =
-                ListConsoleHistoriesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListConsoleHistoriesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListConsoleHistoriesResponse::builder)
+                .logger(LOG, "listConsoleHistories")
+                .serviceDetails(
                         "Compute",
                         "ListConsoleHistories",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/ListConsoleHistories");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListConsoleHistoriesResponse>
-                transformer =
-                        ListConsoleHistoriesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListConsoleHistoriesRequest, ListConsoleHistoriesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListConsoleHistoriesRequest, ListConsoleHistoriesResponse>,
-                        java.util.concurrent.Future<ListConsoleHistoriesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListConsoleHistoriesRequest, ListConsoleHistoriesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/ListConsoleHistories")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListConsoleHistoriesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceConsoleHistories")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("instanceId", request.getInstanceId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.ConsoleHistory.class,
+                        ListConsoleHistoriesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListConsoleHistoriesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListConsoleHistoriesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3580,49 +2215,35 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     ListDedicatedVmHostInstanceShapesRequest,
                                     ListDedicatedVmHostInstanceShapesResponse>
                             handler) {
-        LOG.trace("Called async listDedicatedVmHostInstanceShapes");
-        final ListDedicatedVmHostInstanceShapesRequest interceptedRequest =
-                ListDedicatedVmHostInstanceShapesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDedicatedVmHostInstanceShapesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDedicatedVmHostInstanceShapesResponse::builder)
+                .logger(LOG, "listDedicatedVmHostInstanceShapes")
+                .serviceDetails(
                         "Compute",
                         "ListDedicatedVmHostInstanceShapes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostInstanceShapeSummary/ListDedicatedVmHostInstanceShapes");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListDedicatedVmHostInstanceShapesResponse>
-                transformer =
-                        ListDedicatedVmHostInstanceShapesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListDedicatedVmHostInstanceShapesRequest,
-                        ListDedicatedVmHostInstanceShapesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListDedicatedVmHostInstanceShapesRequest,
-                                ListDedicatedVmHostInstanceShapesResponse>,
-                        java.util.concurrent.Future<ListDedicatedVmHostInstanceShapesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListDedicatedVmHostInstanceShapesRequest,
-                    ListDedicatedVmHostInstanceShapesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostInstanceShapeSummary/ListDedicatedVmHostInstanceShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDedicatedVmHostInstanceShapesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dedicatedVmHostInstanceShapes")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("dedicatedVmHostShape", request.getDedicatedVmHostShape())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DedicatedVmHostInstanceShapeSummary.class,
+                        ListDedicatedVmHostInstanceShapesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListDedicatedVmHostInstanceShapesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListDedicatedVmHostInstanceShapesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3633,47 +2254,39 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     ListDedicatedVmHostInstancesRequest,
                                     ListDedicatedVmHostInstancesResponse>
                             handler) {
-        LOG.trace("Called async listDedicatedVmHostInstances");
-        final ListDedicatedVmHostInstancesRequest interceptedRequest =
-                ListDedicatedVmHostInstancesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDedicatedVmHostInstancesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Validate.notBlank(request.getDedicatedVmHostId(), "dedicatedVmHostId must not be blank");
+
+        return clientCall(request, ListDedicatedVmHostInstancesResponse::builder)
+                .logger(LOG, "listDedicatedVmHostInstances")
+                .serviceDetails(
                         "Compute",
                         "ListDedicatedVmHostInstances",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostInstanceSummary/ListDedicatedVmHostInstances");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListDedicatedVmHostInstancesResponse>
-                transformer =
-                        ListDedicatedVmHostInstancesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListDedicatedVmHostInstancesRequest, ListDedicatedVmHostInstancesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListDedicatedVmHostInstancesRequest,
-                                ListDedicatedVmHostInstancesResponse>,
-                        java.util.concurrent.Future<ListDedicatedVmHostInstancesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListDedicatedVmHostInstancesRequest, ListDedicatedVmHostInstancesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostInstanceSummary/ListDedicatedVmHostInstances")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDedicatedVmHostInstancesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dedicatedVmHosts")
+                .appendPathParam(request.getDedicatedVmHostId())
+                .appendPathParam("instances")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json, application/x-json-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DedicatedVmHostInstanceSummary.class,
+                        ListDedicatedVmHostInstancesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDedicatedVmHostInstancesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListDedicatedVmHostInstancesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3682,47 +2295,33 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListDedicatedVmHostShapesRequest, ListDedicatedVmHostShapesResponse>
                     handler) {
-        LOG.trace("Called async listDedicatedVmHostShapes");
-        final ListDedicatedVmHostShapesRequest interceptedRequest =
-                ListDedicatedVmHostShapesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDedicatedVmHostShapesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDedicatedVmHostShapesResponse::builder)
+                .logger(LOG, "listDedicatedVmHostShapes")
+                .serviceDetails(
                         "Compute",
                         "ListDedicatedVmHostShapes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListDedicatedVmHostShapesResponse>
-                transformer =
-                        ListDedicatedVmHostShapesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListDedicatedVmHostShapesRequest, ListDedicatedVmHostShapesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListDedicatedVmHostShapesRequest,
-                                ListDedicatedVmHostShapesResponse>,
-                        java.util.concurrent.Future<ListDedicatedVmHostShapesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListDedicatedVmHostShapesRequest, ListDedicatedVmHostShapesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDedicatedVmHostShapesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dedicatedVmHostShapes")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("instanceShapeName", request.getInstanceShapeName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DedicatedVmHostShapeSummary.class,
+                        ListDedicatedVmHostShapesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDedicatedVmHostShapesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDedicatedVmHostShapesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3731,45 +2330,43 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListDedicatedVmHostsRequest, ListDedicatedVmHostsResponse>
                     handler) {
-        LOG.trace("Called async listDedicatedVmHosts");
-        final ListDedicatedVmHostsRequest interceptedRequest =
-                ListDedicatedVmHostsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDedicatedVmHostsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDedicatedVmHostsResponse::builder)
+                .logger(LOG, "listDedicatedVmHosts")
+                .serviceDetails(
                         "Compute",
                         "ListDedicatedVmHosts",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostSummary/ListDedicatedVmHosts");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListDedicatedVmHostsResponse>
-                transformer =
-                        ListDedicatedVmHostsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListDedicatedVmHostsRequest, ListDedicatedVmHostsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListDedicatedVmHostsRequest, ListDedicatedVmHostsResponse>,
-                        java.util.concurrent.Future<ListDedicatedVmHostsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListDedicatedVmHostsRequest, ListDedicatedVmHostsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostSummary/ListDedicatedVmHosts")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDedicatedVmHostsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dedicatedVmHosts")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("instanceShapeName", request.getInstanceShapeName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam(
+                        "remainingMemoryInGBsGreaterThanOrEqualTo",
+                        request.getRemainingMemoryInGBsGreaterThanOrEqualTo())
+                .appendQueryParam(
+                        "remainingOcpusGreaterThanOrEqualTo",
+                        request.getRemainingOcpusGreaterThanOrEqualTo())
+                .accept("application/json, application/x-json-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DedicatedVmHostSummary.class,
+                        ListDedicatedVmHostsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDedicatedVmHostsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDedicatedVmHostsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3780,49 +2377,35 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     ListImageShapeCompatibilityEntriesRequest,
                                     ListImageShapeCompatibilityEntriesResponse>
                             handler) {
-        LOG.trace("Called async listImageShapeCompatibilityEntries");
-        final ListImageShapeCompatibilityEntriesRequest interceptedRequest =
-                ListImageShapeCompatibilityEntriesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListImageShapeCompatibilityEntriesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getImageId(), "imageId must not be blank");
+
+        return clientCall(request, ListImageShapeCompatibilityEntriesResponse::builder)
+                .logger(LOG, "listImageShapeCompatibilityEntries")
+                .serviceDetails(
                         "Compute",
                         "ListImageShapeCompatibilityEntries",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/ListImageShapeCompatibilityEntries");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListImageShapeCompatibilityEntriesResponse>
-                transformer =
-                        ListImageShapeCompatibilityEntriesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListImageShapeCompatibilityEntriesRequest,
-                        ListImageShapeCompatibilityEntriesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListImageShapeCompatibilityEntriesRequest,
-                                ListImageShapeCompatibilityEntriesResponse>,
-                        java.util.concurrent.Future<ListImageShapeCompatibilityEntriesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListImageShapeCompatibilityEntriesRequest,
-                    ListImageShapeCompatibilityEntriesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/ListImageShapeCompatibilityEntries")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListImageShapeCompatibilityEntriesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("images")
+                .appendPathParam(request.getImageId())
+                .appendPathParam("shapes")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.ImageShapeCompatibilitySummary.class,
+                        ListImageShapeCompatibilityEntriesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListImageShapeCompatibilityEntriesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListImageShapeCompatibilityEntriesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3830,42 +2413,36 @@ public class ComputeAsyncClient implements ComputeAsync {
             ListImagesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListImagesRequest, ListImagesResponse>
                     handler) {
-        LOG.trace("Called async listImages");
-        final ListImagesRequest interceptedRequest = ListImagesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListImagesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListImagesResponse::builder)
+                .logger(LOG, "listImages")
+                .serviceDetails(
                         "Compute",
                         "ListImages",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/ListImages");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListImagesResponse>
-                transformer =
-                        ListImagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListImagesRequest, ListImagesResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListImagesRequest, ListImagesResponse>,
-                        java.util.concurrent.Future<ListImagesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListImagesRequest, ListImagesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/ListImages")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListImagesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("images")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("operatingSystem", request.getOperatingSystem())
+                .appendQueryParam("operatingSystemVersion", request.getOperatingSystemVersion())
+                .appendQueryParam("shape", request.getShape())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.Image.class, ListImagesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListImagesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListImagesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3876,48 +2453,33 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     ListInstanceConsoleConnectionsRequest,
                                     ListInstanceConsoleConnectionsResponse>
                             handler) {
-        LOG.trace("Called async listInstanceConsoleConnections");
-        final ListInstanceConsoleConnectionsRequest interceptedRequest =
-                ListInstanceConsoleConnectionsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListInstanceConsoleConnectionsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListInstanceConsoleConnectionsResponse::builder)
+                .logger(LOG, "listInstanceConsoleConnections")
+                .serviceDetails(
                         "Compute",
                         "ListInstanceConsoleConnections",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/ListInstanceConsoleConnections");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListInstanceConsoleConnectionsResponse>
-                transformer =
-                        ListInstanceConsoleConnectionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListInstanceConsoleConnectionsRequest,
-                        ListInstanceConsoleConnectionsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListInstanceConsoleConnectionsRequest,
-                                ListInstanceConsoleConnectionsResponse>,
-                        java.util.concurrent.Future<ListInstanceConsoleConnectionsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListInstanceConsoleConnectionsRequest, ListInstanceConsoleConnectionsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/ListInstanceConsoleConnections")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListInstanceConsoleConnectionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceConsoleConnections")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("instanceId", request.getInstanceId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.InstanceConsoleConnection.class,
+                        ListInstanceConsoleConnectionsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListInstanceConsoleConnectionsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListInstanceConsoleConnectionsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3926,45 +2488,37 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListInstanceDevicesRequest, ListInstanceDevicesResponse>
                     handler) {
-        LOG.trace("Called async listInstanceDevices");
-        final ListInstanceDevicesRequest interceptedRequest =
-                ListInstanceDevicesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListInstanceDevicesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getInstanceId(), "instanceId must not be blank");
+
+        return clientCall(request, ListInstanceDevicesResponse::builder)
+                .logger(LOG, "listInstanceDevices")
+                .serviceDetails(
                         "Compute",
                         "ListInstanceDevices",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Device/ListInstanceDevices");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListInstanceDevicesResponse>
-                transformer =
-                        ListInstanceDevicesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListInstanceDevicesRequest, ListInstanceDevicesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListInstanceDevicesRequest, ListInstanceDevicesResponse>,
-                        java.util.concurrent.Future<ListInstanceDevicesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListInstanceDevicesRequest, ListInstanceDevicesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Device/ListInstanceDevices")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListInstanceDevicesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instances")
+                .appendPathParam(request.getInstanceId())
+                .appendPathParam("devices")
+                .appendQueryParam("isAvailable", request.getIsAvailable())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.Device.class,
+                        ListInstanceDevicesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListInstanceDevicesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListInstanceDevicesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3972,43 +2526,36 @@ public class ComputeAsyncClient implements ComputeAsync {
             ListInstancesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListInstancesRequest, ListInstancesResponse>
                     handler) {
-        LOG.trace("Called async listInstances");
-        final ListInstancesRequest interceptedRequest =
-                ListInstancesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListInstancesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListInstancesResponse::builder)
+                .logger(LOG, "listInstances")
+                .serviceDetails(
                         "Compute",
                         "ListInstances",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/ListInstances");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListInstancesResponse>
-                transformer =
-                        ListInstancesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListInstancesRequest, ListInstancesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListInstancesRequest, ListInstancesResponse>,
-                        java.util.concurrent.Future<ListInstancesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListInstancesRequest, ListInstancesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/ListInstances")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListInstancesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instances")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("capacityReservationId", request.getCapacityReservationId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json, application/x-json-stream")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.Instance.class,
+                        ListInstancesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListInstancesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListInstancesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4016,42 +2563,31 @@ public class ComputeAsyncClient implements ComputeAsync {
             ListShapesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListShapesRequest, ListShapesResponse>
                     handler) {
-        LOG.trace("Called async listShapes");
-        final ListShapesRequest interceptedRequest = ListShapesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListShapesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListShapesResponse::builder)
+                .logger(LOG, "listShapes")
+                .serviceDetails(
                         "Compute",
                         "ListShapes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Shape/ListShapes");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListShapesResponse>
-                transformer =
-                        ListShapesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListShapesRequest, ListShapesResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListShapesRequest, ListShapesResponse>,
-                        java.util.concurrent.Future<ListShapesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListShapesRequest, ListShapesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Shape/ListShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListShapesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("shapes")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("imageId", request.getImageId())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.Shape.class, ListShapesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListShapesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListShapesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4060,45 +2596,33 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListVnicAttachmentsRequest, ListVnicAttachmentsResponse>
                     handler) {
-        LOG.trace("Called async listVnicAttachments");
-        final ListVnicAttachmentsRequest interceptedRequest =
-                ListVnicAttachmentsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListVnicAttachmentsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListVnicAttachmentsResponse::builder)
+                .logger(LOG, "listVnicAttachments")
+                .serviceDetails(
                         "Compute",
                         "ListVnicAttachments",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/ListVnicAttachments");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListVnicAttachmentsResponse>
-                transformer =
-                        ListVnicAttachmentsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListVnicAttachmentsRequest, ListVnicAttachmentsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListVnicAttachmentsRequest, ListVnicAttachmentsResponse>,
-                        java.util.concurrent.Future<ListVnicAttachmentsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListVnicAttachmentsRequest, ListVnicAttachmentsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/ListVnicAttachments")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVnicAttachmentsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vnicAttachments")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("instanceId", request.getInstanceId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("vnicId", request.getVnicId())
+                .accept("application/json, application/x-json-stream")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.VnicAttachment.class,
+                        ListVnicAttachmentsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListVnicAttachmentsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListVnicAttachmentsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4107,45 +2631,33 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListVolumeAttachmentsRequest, ListVolumeAttachmentsResponse>
                     handler) {
-        LOG.trace("Called async listVolumeAttachments");
-        final ListVolumeAttachmentsRequest interceptedRequest =
-                ListVolumeAttachmentsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListVolumeAttachmentsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListVolumeAttachmentsResponse::builder)
+                .logger(LOG, "listVolumeAttachments")
+                .serviceDetails(
                         "Compute",
                         "ListVolumeAttachments",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/ListVolumeAttachments");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListVolumeAttachmentsResponse>
-                transformer =
-                        ListVolumeAttachmentsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListVolumeAttachmentsRequest, ListVolumeAttachmentsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListVolumeAttachmentsRequest, ListVolumeAttachmentsResponse>,
-                        java.util.concurrent.Future<ListVolumeAttachmentsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListVolumeAttachmentsRequest, ListVolumeAttachmentsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/ListVolumeAttachments")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVolumeAttachmentsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("volumeAttachments")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("instanceId", request.getInstanceId())
+                .appendQueryParam("volumeId", request.getVolumeId())
+                .accept("application/json, application/x-json-stream")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.VolumeAttachment.class,
+                        ListVolumeAttachmentsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListVolumeAttachmentsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListVolumeAttachmentsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4156,49 +2668,29 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     RemoveImageShapeCompatibilityEntryRequest,
                                     RemoveImageShapeCompatibilityEntryResponse>
                             handler) {
-        LOG.trace("Called async removeImageShapeCompatibilityEntry");
-        final RemoveImageShapeCompatibilityEntryRequest interceptedRequest =
-                RemoveImageShapeCompatibilityEntryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemoveImageShapeCompatibilityEntryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getImageId(), "imageId must not be blank");
+
+        Validate.notBlank(request.getShapeName(), "shapeName must not be blank");
+
+        return clientCall(request, RemoveImageShapeCompatibilityEntryResponse::builder)
+                .logger(LOG, "removeImageShapeCompatibilityEntry")
+                .serviceDetails(
                         "Compute",
                         "RemoveImageShapeCompatibilityEntry",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/RemoveImageShapeCompatibilityEntry");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, RemoveImageShapeCompatibilityEntryResponse>
-                transformer =
-                        RemoveImageShapeCompatibilityEntryConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        RemoveImageShapeCompatibilityEntryRequest,
-                        RemoveImageShapeCompatibilityEntryResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                RemoveImageShapeCompatibilityEntryRequest,
-                                RemoveImageShapeCompatibilityEntryResponse>,
-                        java.util.concurrent.Future<RemoveImageShapeCompatibilityEntryResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    RemoveImageShapeCompatibilityEntryRequest,
-                    RemoveImageShapeCompatibilityEntryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/RemoveImageShapeCompatibilityEntry")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(RemoveImageShapeCompatibilityEntryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("images")
+                .appendPathParam(request.getImageId())
+                .appendPathParam("shapes")
+                .appendPathParam(request.getShapeName())
+                .accept("application/json")
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveImageShapeCompatibilityEntryResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4207,41 +2699,23 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             TerminateInstanceRequest, TerminateInstanceResponse>
                     handler) {
-        LOG.trace("Called async terminateInstance");
-        final TerminateInstanceRequest interceptedRequest =
-                TerminateInstanceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                TerminateInstanceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Compute", "TerminateInstance", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, TerminateInstanceResponse>
-                transformer =
-                        TerminateInstanceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<TerminateInstanceRequest, TerminateInstanceResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                TerminateInstanceRequest, TerminateInstanceResponse>,
-                        java.util.concurrent.Future<TerminateInstanceResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getInstanceId(), "instanceId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    TerminateInstanceRequest, TerminateInstanceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, TerminateInstanceResponse::builder)
+                .logger(LOG, "terminateInstance")
+                .serviceDetails("Compute", "TerminateInstance", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(TerminateInstanceRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instances")
+                .appendPathParam(request.getInstanceId())
+                .appendQueryParam("preserveBootVolume", request.getPreserveBootVolume())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", TerminateInstanceResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4252,54 +2726,35 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     UpdateComputeCapacityReservationRequest,
                                     UpdateComputeCapacityReservationResponse>
                             handler) {
-        LOG.trace("Called async updateComputeCapacityReservation");
-        final UpdateComputeCapacityReservationRequest interceptedRequest =
-                UpdateComputeCapacityReservationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateComputeCapacityReservationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getCapacityReservationId(), "capacityReservationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateComputeCapacityReservationDetails(),
+                "updateComputeCapacityReservationDetails is required");
+
+        return clientCall(request, UpdateComputeCapacityReservationResponse::builder)
+                .logger(LOG, "updateComputeCapacityReservation")
+                .serviceDetails(
                         "Compute",
                         "UpdateComputeCapacityReservation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/UpdateComputeCapacityReservation");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateComputeCapacityReservationResponse>
-                transformer =
-                        UpdateComputeCapacityReservationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateComputeCapacityReservationRequest,
-                        UpdateComputeCapacityReservationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateComputeCapacityReservationRequest,
-                                UpdateComputeCapacityReservationResponse>,
-                        java.util.concurrent.Future<UpdateComputeCapacityReservationResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateComputeCapacityReservationDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateComputeCapacityReservationRequest,
-                    UpdateComputeCapacityReservationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/UpdateComputeCapacityReservation")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateComputeCapacityReservationRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityReservations")
+                .appendPathParam(request.getCapacityReservationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateComputeCapacityReservationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateComputeCapacityReservationResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4310,54 +2765,38 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     UpdateComputeImageCapabilitySchemaRequest,
                                     UpdateComputeImageCapabilitySchemaResponse>
                             handler) {
-        LOG.trace("Called async updateComputeImageCapabilitySchema");
-        final UpdateComputeImageCapabilitySchemaRequest interceptedRequest =
-                UpdateComputeImageCapabilitySchemaConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateComputeImageCapabilitySchemaConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getComputeImageCapabilitySchemaId(),
+                "computeImageCapabilitySchemaId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateComputeImageCapabilitySchemaDetails(),
+                "updateComputeImageCapabilitySchemaDetails is required");
+
+        return clientCall(request, UpdateComputeImageCapabilitySchemaResponse::builder)
+                .logger(LOG, "updateComputeImageCapabilitySchema")
+                .serviceDetails(
                         "Compute",
                         "UpdateComputeImageCapabilitySchema",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/UpdateComputeImageCapabilitySchema");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateComputeImageCapabilitySchemaResponse>
-                transformer =
-                        UpdateComputeImageCapabilitySchemaConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateComputeImageCapabilitySchemaRequest,
-                        UpdateComputeImageCapabilitySchemaResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateComputeImageCapabilitySchemaRequest,
-                                UpdateComputeImageCapabilitySchemaResponse>,
-                        java.util.concurrent.Future<UpdateComputeImageCapabilitySchemaResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateComputeImageCapabilitySchemaDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateComputeImageCapabilitySchemaRequest,
-                    UpdateComputeImageCapabilitySchemaResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/UpdateComputeImageCapabilitySchema")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateComputeImageCapabilitySchemaRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeImageCapabilitySchemas")
+                .appendPathParam(request.getComputeImageCapabilitySchemaId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeImageCapabilitySchema.class,
+                        UpdateComputeImageCapabilitySchemaResponse.Builder
+                                ::computeImageCapabilitySchema)
+                .handleResponseHeaderString(
+                        "etag", UpdateComputeImageCapabilitySchemaResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateComputeImageCapabilitySchemaResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4366,50 +2805,35 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateConsoleHistoryRequest, UpdateConsoleHistoryResponse>
                     handler) {
-        LOG.trace("Called async updateConsoleHistory");
-        final UpdateConsoleHistoryRequest interceptedRequest =
-                UpdateConsoleHistoryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateConsoleHistoryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getInstanceConsoleHistoryId(),
+                "instanceConsoleHistoryId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateConsoleHistoryDetails(),
+                "updateConsoleHistoryDetails is required");
+
+        return clientCall(request, UpdateConsoleHistoryResponse::builder)
+                .logger(LOG, "updateConsoleHistory")
+                .serviceDetails(
                         "Compute",
                         "UpdateConsoleHistory",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/UpdateConsoleHistory");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateConsoleHistoryResponse>
-                transformer =
-                        UpdateConsoleHistoryConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateConsoleHistoryRequest, UpdateConsoleHistoryResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateConsoleHistoryRequest, UpdateConsoleHistoryResponse>,
-                        java.util.concurrent.Future<UpdateConsoleHistoryResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateConsoleHistoryDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateConsoleHistoryRequest, UpdateConsoleHistoryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/UpdateConsoleHistory")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateConsoleHistoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceConsoleHistories")
+                .appendPathParam(request.getInstanceConsoleHistoryId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ConsoleHistory.class,
+                        UpdateConsoleHistoryResponse.Builder::consoleHistory)
+                .handleResponseHeaderString("etag", UpdateConsoleHistoryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateConsoleHistoryResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4418,51 +2842,35 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateDedicatedVmHostRequest, UpdateDedicatedVmHostResponse>
                     handler) {
-        LOG.trace("Called async updateDedicatedVmHost");
-        final UpdateDedicatedVmHostRequest interceptedRequest =
-                UpdateDedicatedVmHostConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateDedicatedVmHostConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDedicatedVmHostId(), "dedicatedVmHostId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDedicatedVmHostDetails(),
+                "updateDedicatedVmHostDetails is required");
+
+        return clientCall(request, UpdateDedicatedVmHostResponse::builder)
+                .logger(LOG, "updateDedicatedVmHost")
+                .serviceDetails(
                         "Compute",
                         "UpdateDedicatedVmHost",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/UpdateDedicatedVmHost");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDedicatedVmHostResponse>
-                transformer =
-                        UpdateDedicatedVmHostConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateDedicatedVmHostRequest, UpdateDedicatedVmHostResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateDedicatedVmHostRequest, UpdateDedicatedVmHostResponse>,
-                        java.util.concurrent.Future<UpdateDedicatedVmHostResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateDedicatedVmHostDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateDedicatedVmHostRequest, UpdateDedicatedVmHostResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/UpdateDedicatedVmHost")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDedicatedVmHostRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dedicatedVmHosts")
+                .appendPathParam(request.getDedicatedVmHostId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.DedicatedVmHost.class,
+                        UpdateDedicatedVmHostResponse.Builder::dedicatedVmHost)
+                .handleResponseHeaderString("etag", UpdateDedicatedVmHostResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDedicatedVmHostResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4470,49 +2878,31 @@ public class ComputeAsyncClient implements ComputeAsync {
             UpdateImageRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateImageRequest, UpdateImageResponse>
                     handler) {
-        LOG.trace("Called async updateImage");
-        final UpdateImageRequest interceptedRequest =
-                UpdateImageConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateImageConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getImageId(), "imageId must not be blank");
+        Objects.requireNonNull(request.getUpdateImageDetails(), "updateImageDetails is required");
+
+        return clientCall(request, UpdateImageResponse::builder)
+                .logger(LOG, "updateImage")
+                .serviceDetails(
                         "Compute",
                         "UpdateImage",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/UpdateImage");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateImageResponse>
-                transformer =
-                        UpdateImageConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateImageRequest, UpdateImageResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateImageRequest, UpdateImageResponse>,
-                        java.util.concurrent.Future<UpdateImageResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateImageDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateImageRequest, UpdateImageResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/UpdateImage")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateImageRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("images")
+                .appendPathParam(request.getImageId())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.Image.class, UpdateImageResponse.Builder::image)
+                .handleResponseHeaderString("etag", UpdateImageResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateImageResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4521,49 +2911,35 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateInstanceRequest, UpdateInstanceResponse>
                     handler) {
-        LOG.trace("Called async updateInstance");
-        final UpdateInstanceRequest interceptedRequest =
-                UpdateInstanceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateInstanceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getInstanceId(), "instanceId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateInstanceDetails(), "updateInstanceDetails is required");
+
+        return clientCall(request, UpdateInstanceResponse::builder)
+                .logger(LOG, "updateInstance")
+                .serviceDetails(
                         "Compute",
                         "UpdateInstance",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/UpdateInstance");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateInstanceResponse>
-                transformer =
-                        UpdateInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateInstanceRequest, UpdateInstanceResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateInstanceRequest, UpdateInstanceResponse>,
-                        java.util.concurrent.Future<UpdateInstanceResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateInstanceDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateInstanceRequest, UpdateInstanceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/UpdateInstance")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateInstanceRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instances")
+                .appendPathParam(request.getInstanceId())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.Instance.class,
+                        UpdateInstanceResponse.Builder::instance)
+                .handleResponseHeaderString("etag", UpdateInstanceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateInstanceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateInstanceResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4574,54 +2950,38 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     UpdateInstanceConsoleConnectionRequest,
                                     UpdateInstanceConsoleConnectionResponse>
                             handler) {
-        LOG.trace("Called async updateInstanceConsoleConnection");
-        final UpdateInstanceConsoleConnectionRequest interceptedRequest =
-                UpdateInstanceConsoleConnectionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateInstanceConsoleConnectionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getInstanceConsoleConnectionId(),
+                "instanceConsoleConnectionId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateInstanceConsoleConnectionDetails(),
+                "updateInstanceConsoleConnectionDetails is required");
+
+        return clientCall(request, UpdateInstanceConsoleConnectionResponse::builder)
+                .logger(LOG, "updateInstanceConsoleConnection")
+                .serviceDetails(
                         "Compute",
                         "UpdateInstanceConsoleConnection",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/UpdateInstanceConsoleConnection");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateInstanceConsoleConnectionResponse>
-                transformer =
-                        UpdateInstanceConsoleConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateInstanceConsoleConnectionRequest,
-                        UpdateInstanceConsoleConnectionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateInstanceConsoleConnectionRequest,
-                                UpdateInstanceConsoleConnectionResponse>,
-                        java.util.concurrent.Future<UpdateInstanceConsoleConnectionResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateInstanceConsoleConnectionDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateInstanceConsoleConnectionRequest,
-                    UpdateInstanceConsoleConnectionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/UpdateInstanceConsoleConnection")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateInstanceConsoleConnectionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceConsoleConnections")
+                .appendPathParam(request.getInstanceConsoleConnectionId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.InstanceConsoleConnection.class,
+                        UpdateInstanceConsoleConnectionResponse.Builder::instanceConsoleConnection)
+                .handleResponseHeaderString(
+                        "etag", UpdateInstanceConsoleConnectionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateInstanceConsoleConnectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4630,49 +2990,192 @@ public class ComputeAsyncClient implements ComputeAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateVolumeAttachmentRequest, UpdateVolumeAttachmentResponse>
                     handler) {
-        LOG.trace("Called async updateVolumeAttachment");
-        final UpdateVolumeAttachmentRequest interceptedRequest =
-                UpdateVolumeAttachmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateVolumeAttachmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVolumeAttachmentId(), "volumeAttachmentId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateVolumeAttachmentDetails(),
+                "updateVolumeAttachmentDetails is required");
+
+        return clientCall(request, UpdateVolumeAttachmentResponse::builder)
+                .logger(LOG, "updateVolumeAttachment")
+                .serviceDetails(
                         "Compute",
                         "UpdateVolumeAttachment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/UpdateVolumeAttachment");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateVolumeAttachmentResponse>
-                transformer =
-                        UpdateVolumeAttachmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateVolumeAttachmentRequest, UpdateVolumeAttachmentResponse>
-                handlerToUse = handler;
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/UpdateVolumeAttachment")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateVolumeAttachmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("volumeAttachments")
+                .appendPathParam(request.getVolumeAttachmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.VolumeAttachment.class,
+                        UpdateVolumeAttachmentResponse.Builder::volumeAttachment)
+                .handleResponseHeaderString("etag", UpdateVolumeAttachmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateVolumeAttachmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateVolumeAttachmentRequest, UpdateVolumeAttachmentResponse>,
-                        java.util.concurrent.Future<UpdateVolumeAttachmentResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateVolumeAttachmentDetails(),
-                                ib,
-                                transformer);
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ComputeAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(builder(), authenticationDetailsProvider);
+    }
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateVolumeAttachmentRequest, UpdateVolumeAttachmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ComputeAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(builder().configuration(configuration), authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ComputeAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                builder().configuration(configuration).clientConfigurator(clientConfigurator),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ComputeAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ComputeAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ComputeAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ComputeAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider);
     }
 }

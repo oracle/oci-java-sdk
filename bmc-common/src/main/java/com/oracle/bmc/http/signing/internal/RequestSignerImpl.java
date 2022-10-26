@@ -32,10 +32,11 @@ import javax.annotation.concurrent.Immutable;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.oracle.bmc.util.StreamUtils;
 import com.oracle.bmc.util.VisibleForTesting;
+import com.oracle.bmc.http.client.Serialization;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.RequestSignerException;
 import com.oracle.bmc.http.signing.SigningStrategy;
-import com.oracle.bmc.io.DuplicatableInputStream;
+import com.oracle.bmc.http.client.io.DuplicatableInputStream;
 import com.oracle.bmc.io.internal.KeepOpenInputStream;
 import com.oracle.bmc.retrier.Retriers;
 import com.oracle.bmc.util.internal.StringUtils;
@@ -43,8 +44,8 @@ import com.oracle.bmc.util.internal.Validate;
 
 /**
  * Implementation of the {@linkplain RequestSigner} interface
- * <p>
- * This contains the main code that is used for signing a request
+ *
+ * <p>This contains the main code that is used for signing a request
  */
 @Immutable
 public class RequestSignerImpl implements RequestSigner {
@@ -58,15 +59,12 @@ public class RequestSignerImpl implements RequestSigner {
     private final Supplier<String> keyIdSupplier;
 
     /**
-     * Construct the RequestSigner with the specified KeySupplier. This will be
-     * used to get keys for doing the signing.
+     * Construct the RequestSigner with the specified KeySupplier. This will be used to get keys for
+     * doing the signing.
      *
-     * @param keySupplier
-     *            A key supplier that will be used for signing the request
-     * @param signingStrategy
-     *            The signing strategy to determine what headers to use
-     * @param keyIdSupplier
-     *            A keyId supplier that will be used for signing the request
+     * @param keySupplier A key supplier that will be used for signing the request
+     * @param signingStrategy The signing strategy to determine what headers to use
+     * @param keyIdSupplier A keyId supplier that will be used for signing the request
      */
     public RequestSignerImpl(
             @Nonnull final KeySupplier<RSAPrivateKey> keySupplier,
@@ -76,15 +74,12 @@ public class RequestSignerImpl implements RequestSigner {
     }
 
     /**
-     * Construct the RequestSigner with the specified KeySupplier. This will be
-     * used to get keys for doing the signing.
+     * Construct the RequestSigner with the specified KeySupplier. This will be used to get keys for
+     * doing the signing.
      *
-     * @param keySupplier
-     *            A key supplier that will be used for signing the request
-     * @param signingConfiguration
-     *            The signing configuration to determine what headers to use
-     * @param keyIdSupplier
-     *            A keyId supplier that will be used for signing the request
+     * @param keySupplier A key supplier that will be used for signing the request
+     * @param signingConfiguration The signing configuration to determine what headers to use
+     * @param keyIdSupplier A keyId supplier that will be used for signing the request
      */
     public RequestSignerImpl(
             @Nonnull final KeySupplier<RSAPrivateKey> keySupplier,
@@ -160,7 +155,8 @@ public class RequestSignerImpl implements RequestSigner {
             final String lowerHttpMethod = httpMethod.toLowerCase();
             final String path = extractPath(uri);
 
-            // 1) get the required headers that must be signed, and the ones that should be signed if present
+            // 1) get the required headers that must be signed, and the ones that should be signed
+            // if present
             final List<String> requiredHeaders =
                     getRequiredSigningHeaders(lowerHttpMethod, signingConfiguration);
             final List<String> optionalHeaders =
@@ -188,6 +184,10 @@ public class RequestSignerImpl implements RequestSigner {
             final Map<String, List<String>> allHeaders = new HashMap<>();
             allHeaders.putAll(existingHeaders);
             for (Map.Entry<String, String> e : missingHeaders.entrySet()) {
+                if (e.getValue() == null) {
+                    throw new NullPointerException(
+                            "Expecting exactly one value for header " + e.getKey());
+                }
                 LOG.trace("Adding missing header '{}' = '{}'", e.getKey(), e.getValue());
                 allHeaders.put(
                         e.getKey(), Collections.unmodifiableList(Arrays.asList(e.getValue())));
@@ -212,12 +212,14 @@ public class RequestSignerImpl implements RequestSigner {
                             optionalHeaders);
             missingHeaders.put(Constants.AUTHORIZATION_HEADER, authorizationHeader);
 
-            // 7) add any auth headers that were passed in as part of the original headers to the headers being returned
+            // 7) add any auth headers that were passed in as part of the original headers to the
+            // headers being returned
             for (String headerName : requiredHeaders) {
                 if (!missingHeaders.containsKey(headerName)
                         && existingHeaders.containsKey(headerName)
                         && !existingHeaders.get(headerName).isEmpty()) {
-                    // get the first entry; this will be the only entry, because otherwise calculateStringToSign would
+                    // get the first entry; this will be the only entry, because otherwise
+                    // calculateStringToSign would
                     // have thrown an exception
                     missingHeaders.put(headerName, existingHeaders.get(headerName).get(0));
                 }
@@ -277,7 +279,7 @@ public class RequestSignerImpl implements RequestSigner {
 
     private static String transformHeadersToJsonString(final Map<String, List<String>> headers) {
         try {
-            return com.oracle.bmc.http.Serialization.getObjectMapper().writeValueAsString(headers);
+            return Serialization.getObjectMapper().writeValueAsString(headers);
         } catch (JsonProcessingException ex) {
             LOG.debug("Unable to serialize headers to JSON string", ex);
             return "UNABLE TO SERIALIZE";
@@ -309,13 +311,18 @@ public class RequestSignerImpl implements RequestSigner {
         }
 
         if (isRequiredHeaderMissing(Constants.HOST, requiredHeaders, existingHeaders)) {
-            missingHeaders.put(Constants.HOST, uri.getHost());
+            String host = uri.getHost();
+            int port = uri.getPort();
+            if (port != -1) {
+                host = host + ":" + port;
+            }
+            missingHeaders.put(Constants.HOST, host);
         }
 
         boolean isPost = httpMethod.equals("post");
         boolean isPut = httpMethod.equals("put");
         boolean isPatch = httpMethod.equals("patch");
-        // for post and put, also verify the presence of content headers
+        // for post, patch and put, also verify the presence of content headers
         if (!(isPut || isPost || isPatch)) {
             // Asking to sign a body on GET/DELETE/HEAD is not allowed
             if (body != null) {
@@ -334,7 +341,8 @@ public class RequestSignerImpl implements RequestSigner {
             return missingHeaders;
         }
 
-        // supply content-type, content-length and x-content-sha256 if missing (PUT, PATCH, and POST only)
+        // supply content-type, content-length and x-content-sha256 if missing (PUT, PATCH, and POST
+        // only)
         if (requiredHeaders.contains(Constants.CONTENT_TYPE)) {
             // While we don't always sign content-type, services always
             // expect application/json (except if we're sending an input stream)
@@ -357,7 +365,6 @@ public class RequestSignerImpl implements RequestSigner {
         }
 
         final byte[] bodyBytes = readBodyBytes(body);
-
         if (isRequiredHeaderMissing(Constants.CONTENT_LENGTH, requiredHeaders, existingHeaders)) {
             missingHeaders.put(Constants.CONTENT_LENGTH, Integer.toString(bodyBytes.length));
         }
@@ -501,9 +508,21 @@ public class RequestSignerImpl implements RequestSigner {
             Retriers.tryResetStreamForRetry((InputStream) body, true);
             return byteArr;
         } else if (body instanceof InputStream) {
-            // TODO: Allow input streams to be signed, but for now restrict to DIS until we can refactor
+            // TODO: Allow input streams to be signed, but for now restrict to DIS until we can
+            // refactor
             throw new IllegalArgumentException(
                     "Only DuplicatableInputStream supported for body that needs signing.");
+        }
+        // use the same object mapper as the rest client to ensure the configurations match
+        // what is sent
+        String bodyAsString = Serialization.getObjectMapper().writeValueAsString(body);
+
+        // Annoying ObjectMapper edge case: If given a set of empty braces, it
+        // adds a set of quotes that causes auth to fail on the server-side as
+        // the message parser does not include them. Hence, the check and return
+        // of the quote-less braces.
+        if (bodyAsString.equals("\"{}\"")) {
+            return "{}".getBytes();
         }
 
         throw new IllegalArgumentException("Unexpected body type: " + body.getClass().getName());
@@ -522,17 +541,11 @@ public class RequestSignerImpl implements RequestSigner {
         return dateFormat;
     }
 
-    /**
-     * Basic configuration of what headers to sign.
-     */
+    /** Basic configuration of what headers to sign. */
     public static class SigningConfiguration {
-        /**
-         * Map of HTTP method to list of headers to sign.
-         */
+        /** Map of HTTP method to list of headers to sign. */
         private final Map<String, List<String>> headersToSign;
-        /**
-         * Map of HTTP method to list of headers to sign, if they are present.
-         */
+        /** Map of HTTP method to list of headers to sign, if they are present. */
         private final Map<String, List<String>> optionalHeadersToSign;
         /**
          * Flag indicating whether InputStreams in PUT requests are allowed to skip content headers.

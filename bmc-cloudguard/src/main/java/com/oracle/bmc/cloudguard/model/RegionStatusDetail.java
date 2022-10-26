@@ -5,21 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Status of Region query replication.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Status of Region query replication. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = RegionStatusDetail.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RegionStatusDetail extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = RegionStatusDetail.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class RegionStatusDetail
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"region", "status"})
     public RegionStatusDetail(String region, QueryReplicationStatus status) {
@@ -30,33 +31,31 @@ public final class RegionStatusDetail extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Data Source replication region.
-         **/
+        /** Data Source replication region. */
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
          * Data Source replication region.
+         *
          * @param region the value to set
          * @return this builder
-         **/
+         */
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-        /**
-         * Data Source replication region status.
-         **/
+        /** Data Source replication region status. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private QueryReplicationStatus status;
 
         /**
          * Data Source replication region status.
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(QueryReplicationStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -86,9 +85,7 @@ public final class RegionStatusDetail extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -97,30 +94,28 @@ public final class RegionStatusDetail extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * Data Source replication region.
-     **/
+    /** Data Source replication region. */
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
      * Data Source replication region.
+     *
      * @return the value
-     **/
+     */
     public String getRegion() {
         return region;
     }
 
-    /**
-     * Data Source replication region status.
-     **/
+    /** Data Source replication region status. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final QueryReplicationStatus status;
 
     /**
      * Data Source replication region status.
+     *
      * @return the value
-     **/
+     */
     public QueryReplicationStatus getStatus() {
         return status;
     }
@@ -132,6 +127,7 @@ public final class RegionStatusDetail extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,50 +6,45 @@ package com.oracle.bmc.identity.requests;
 
 import com.oracle.bmc.identity.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateIdentityProviderExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateIdentityProviderRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateIdentityProviderExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * UpdateIdentityProviderRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class UpdateIdentityProviderRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.identity.model.UpdateIdentityProviderDetails> {
 
-    /**
-     * The OCID of the identity provider.
-     */
+    /** The OCID of the identity provider. */
     private String identityProviderId;
 
-    /**
-     * The OCID of the identity provider.
-     */
+    /** The OCID of the identity provider. */
     public String getIdentityProviderId() {
         return identityProviderId;
     }
-    /**
-     * Request object for updating a identity provider.
-     */
+    /** Request object for updating a identity provider. */
     private com.oracle.bmc.identity.model.UpdateIdentityProviderDetails
             updateIdentityProviderDetails;
 
-    /**
-     * Request object for updating a identity provider.
-     */
+    /** Request object for updating a identity provider. */
     public com.oracle.bmc.identity.model.UpdateIdentityProviderDetails
             getUpdateIdentityProviderDetails() {
         return updateIdentityProviderDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
@@ -57,6 +52,7 @@ public class UpdateIdentityProviderRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -69,17 +65,15 @@ public class UpdateIdentityProviderRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateIdentityProviderRequest,
                     com.oracle.bmc.identity.model.UpdateIdentityProviderDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the identity provider.
-         */
+        /** The OCID of the identity provider. */
         private String identityProviderId = null;
 
         /**
          * The OCID of the identity provider.
+         *
          * @param identityProviderId the value to set
          * @return this builder instance
          */
@@ -88,14 +82,13 @@ public class UpdateIdentityProviderRequest
             return this;
         }
 
-        /**
-         * Request object for updating a identity provider.
-         */
+        /** Request object for updating a identity provider. */
         private com.oracle.bmc.identity.model.UpdateIdentityProviderDetails
                 updateIdentityProviderDetails = null;
 
         /**
          * Request object for updating a identity provider.
+         *
          * @param updateIdentityProviderDetails the value to set
          * @return this builder instance
          */
@@ -107,17 +100,18 @@ public class UpdateIdentityProviderRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -129,18 +123,19 @@ public class UpdateIdentityProviderRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -152,6 +147,7 @@ public class UpdateIdentityProviderRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateIdentityProviderRequest o) {
@@ -166,10 +162,11 @@ public class UpdateIdentityProviderRequest
         /**
          * Build the instance of UpdateIdentityProviderRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateIdentityProviderRequest
          */
@@ -182,6 +179,7 @@ public class UpdateIdentityProviderRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -194,7 +192,8 @@ public class UpdateIdentityProviderRequest
         /**
          * Build the instance of UpdateIdentityProviderRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateIdentityProviderRequest
@@ -205,12 +204,14 @@ public class UpdateIdentityProviderRequest
             request.updateIdentityProviderDetails = updateIdentityProviderDetails;
             request.ifMatch = ifMatch;
             return request;
-            // new UpdateIdentityProviderRequest(identityProviderId, updateIdentityProviderDetails, ifMatch);
+            // new UpdateIdentityProviderRequest(identityProviderId, updateIdentityProviderDetails,
+            // ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -222,6 +223,7 @@ public class UpdateIdentityProviderRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

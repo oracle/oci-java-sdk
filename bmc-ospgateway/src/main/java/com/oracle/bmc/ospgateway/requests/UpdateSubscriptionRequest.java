@@ -6,58 +6,46 @@ package com.oracle.bmc.ospgateway.requests;
 
 import com.oracle.bmc.ospgateway.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/UpdateSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateSubscriptionRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/UpdateSubscriptionExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateSubscriptionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 public class UpdateSubscriptionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.ospgateway.model.UpdateSubscriptionDetails> {
 
-    /**
-     * Subscription id(OCID).
-     */
+    /** Subscription id(OCID). */
     private String subscriptionId;
 
-    /**
-     * Subscription id(OCID).
-     */
+    /** Subscription id(OCID). */
     public String getSubscriptionId() {
         return subscriptionId;
     }
-    /**
-     * The home region's public name of the logged in user.
-     *
-     */
+    /** The home region's public name of the logged in user. */
     private String ospHomeRegion;
 
-    /**
-     * The home region's public name of the logged in user.
-     *
-     */
+    /** The home region's public name of the logged in user. */
     public String getOspHomeRegion() {
         return ospHomeRegion;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-     *
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-     *
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * Subscription update request.
-     */
+    /** Subscription update request. */
     private com.oracle.bmc.ospgateway.model.UpdateSubscriptionDetails updateSubscriptionDetails;
 
-    /**
-     * Subscription update request.
-     */
+    /** Subscription update request. */
     public com.oracle.bmc.ospgateway.model.UpdateSubscriptionDetails
             getUpdateSubscriptionDetails() {
         return updateSubscriptionDetails;
@@ -65,35 +53,29 @@ public class UpdateSubscriptionRequest
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the {@code if-match} parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the {@code if-match} parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
@@ -101,6 +83,7 @@ public class UpdateSubscriptionRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -113,17 +96,15 @@ public class UpdateSubscriptionRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateSubscriptionRequest,
                     com.oracle.bmc.ospgateway.model.UpdateSubscriptionDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Subscription id(OCID).
-         */
+        /** Subscription id(OCID). */
         private String subscriptionId = null;
 
         /**
          * Subscription id(OCID).
+         *
          * @param subscriptionId the value to set
          * @return this builder instance
          */
@@ -132,10 +113,7 @@ public class UpdateSubscriptionRequest
             return this;
         }
 
-        /**
-         * The home region's public name of the logged in user.
-         *
-         */
+        /** The home region's public name of the logged in user. */
         private String ospHomeRegion = null;
 
         /**
@@ -150,13 +128,14 @@ public class UpdateSubscriptionRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-         *
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -166,14 +145,13 @@ public class UpdateSubscriptionRequest
             return this;
         }
 
-        /**
-         * Subscription update request.
-         */
+        /** Subscription update request. */
         private com.oracle.bmc.ospgateway.model.UpdateSubscriptionDetails
                 updateSubscriptionDetails = null;
 
         /**
          * Subscription update request.
+         *
          * @param updateSubscriptionDetails the value to set
          * @return this builder instance
          */
@@ -185,15 +163,14 @@ public class UpdateSubscriptionRequest
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
+         * about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
+         * about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -204,21 +181,18 @@ public class UpdateSubscriptionRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the {@code if-match} parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the {@code if-match} parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -230,18 +204,19 @@ public class UpdateSubscriptionRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -253,6 +228,7 @@ public class UpdateSubscriptionRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateSubscriptionRequest o) {
@@ -270,10 +246,11 @@ public class UpdateSubscriptionRequest
         /**
          * Build the instance of UpdateSubscriptionRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateSubscriptionRequest
          */
@@ -286,6 +263,7 @@ public class UpdateSubscriptionRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -298,7 +276,8 @@ public class UpdateSubscriptionRequest
         /**
          * Build the instance of UpdateSubscriptionRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateSubscriptionRequest
@@ -312,12 +291,14 @@ public class UpdateSubscriptionRequest
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new UpdateSubscriptionRequest(subscriptionId, ospHomeRegion, compartmentId, updateSubscriptionDetails, opcRequestId, ifMatch);
+            // new UpdateSubscriptionRequest(subscriptionId, ospHomeRegion, compartmentId,
+            // updateSubscriptionDetails, opcRequestId, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -332,6 +313,7 @@ public class UpdateSubscriptionRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

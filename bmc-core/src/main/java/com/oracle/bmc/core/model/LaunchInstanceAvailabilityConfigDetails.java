@@ -5,24 +5,24 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Options for VM migration during infrastructure maintenance events and for defining
- * the availability of a VM instance after a maintenance event that impacts the underlying hardware.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Options for VM migration during infrastructure maintenance events and for defining the
+ * availability of a VM instance after a maintenance event that impacts the underlying hardware.
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = LaunchInstanceAvailabilityConfigDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = LaunchInstanceAvailabilityConfigDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class LaunchInstanceAvailabilityConfigDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isLiveMigrationPreferred", "recoveryAction"})
     public LaunchInstanceAvailabilityConfigDetails(
@@ -38,8 +38,7 @@ public final class LaunchInstanceAvailabilityConfigDetails
          * Whether to live migrate supported VM instances to a healthy physical VM host without
          * disrupting running instances during infrastructure maintenance events. If null, Oracle
          * chooses the best option for migrating the VM during infrastructure maintenance events.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isLiveMigrationPreferred")
         private Boolean isLiveMigrationPreferred;
 
@@ -50,31 +49,32 @@ public final class LaunchInstanceAvailabilityConfigDetails
          *
          * @param isLiveMigrationPreferred the value to set
          * @return this builder
-         **/
+         */
         public Builder isLiveMigrationPreferred(Boolean isLiveMigrationPreferred) {
             this.isLiveMigrationPreferred = isLiveMigrationPreferred;
             this.__explicitlySet__.add("isLiveMigrationPreferred");
             return this;
         }
         /**
-         * The lifecycle state for an instance when it is recovered after infrastructure maintenance.
-         * * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state it was in before the maintenance event.
-         * If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
-         * * {@code STOP_INSTANCE} - The instance is recovered in the stopped state.
-         *
-         **/
+         * The lifecycle state for an instance when it is recovered after infrastructure
+         * maintenance. * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state
+         * it was in before the maintenance event. If the instance was running, it is automatically
+         * rebooted. This is the default action when a value is not set. * {@code STOP_INSTANCE} -
+         * The instance is recovered in the stopped state.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("recoveryAction")
         private RecoveryAction recoveryAction;
 
         /**
-         * The lifecycle state for an instance when it is recovered after infrastructure maintenance.
-         * * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state it was in before the maintenance event.
-         * If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
-         * * {@code STOP_INSTANCE} - The instance is recovered in the stopped state.
+         * The lifecycle state for an instance when it is recovered after infrastructure
+         * maintenance. * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state
+         * it was in before the maintenance event. If the instance was running, it is automatically
+         * rebooted. This is the default action when a value is not set. * {@code STOP_INSTANCE} -
+         * The instance is recovered in the stopped state.
          *
          * @param recoveryAction the value to set
          * @return this builder
-         **/
+         */
         public Builder recoveryAction(RecoveryAction recoveryAction) {
             this.recoveryAction = recoveryAction;
             this.__explicitlySet__.add("recoveryAction");
@@ -106,9 +106,7 @@ public final class LaunchInstanceAvailabilityConfigDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -121,8 +119,7 @@ public final class LaunchInstanceAvailabilityConfigDetails
      * Whether to live migrate supported VM instances to a healthy physical VM host without
      * disrupting running instances during infrastructure maintenance events. If null, Oracle
      * chooses the best option for migrating the VM during infrastructure maintenance events.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isLiveMigrationPreferred")
     private final Boolean isLiveMigrationPreferred;
 
@@ -132,19 +129,19 @@ public final class LaunchInstanceAvailabilityConfigDetails
      * chooses the best option for migrating the VM during infrastructure maintenance events.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsLiveMigrationPreferred() {
         return isLiveMigrationPreferred;
     }
 
     /**
-     * The lifecycle state for an instance when it is recovered after infrastructure maintenance.
-     * * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state it was in before the maintenance event.
-     * If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
-     * * {@code STOP_INSTANCE} - The instance is recovered in the stopped state.
-     *
-     **/
-    public enum RecoveryAction {
+     * The lifecycle state for an instance when it is recovered after infrastructure maintenance. *
+     * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state it was in before
+     * the maintenance event. If the instance was running, it is automatically rebooted. This is the
+     * default action when a value is not set. * {@code STOP_INSTANCE} - The instance is recovered
+     * in the stopped state.
+     */
+    public enum RecoveryAction implements com.oracle.bmc.http.internal.BmcEnum {
         RestoreInstance("RESTORE_INSTANCE"),
         StopInstance("STOP_INSTANCE"),
         ;
@@ -177,23 +174,24 @@ public final class LaunchInstanceAvailabilityConfigDetails
         }
     };
     /**
-     * The lifecycle state for an instance when it is recovered after infrastructure maintenance.
-     * * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state it was in before the maintenance event.
-     * If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
-     * * {@code STOP_INSTANCE} - The instance is recovered in the stopped state.
-     *
-     **/
+     * The lifecycle state for an instance when it is recovered after infrastructure maintenance. *
+     * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state it was in before
+     * the maintenance event. If the instance was running, it is automatically rebooted. This is the
+     * default action when a value is not set. * {@code STOP_INSTANCE} - The instance is recovered
+     * in the stopped state.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("recoveryAction")
     private final RecoveryAction recoveryAction;
 
     /**
-     * The lifecycle state for an instance when it is recovered after infrastructure maintenance.
-     * * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state it was in before the maintenance event.
-     * If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
-     * * {@code STOP_INSTANCE} - The instance is recovered in the stopped state.
+     * The lifecycle state for an instance when it is recovered after infrastructure maintenance. *
+     * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state it was in before
+     * the maintenance event. If the instance was running, it is automatically rebooted. This is the
+     * default action when a value is not set. * {@code STOP_INSTANCE} - The instance is recovered
+     * in the stopped state.
      *
      * @return the value
-     **/
+     */
     public RecoveryAction getRecoveryAction() {
         return recoveryAction;
     }
@@ -205,6 +203,7 @@ public final class LaunchInstanceAvailabilityConfigDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

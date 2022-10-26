@@ -4,335 +4,39 @@
  */
 package com.oracle.bmc.budget;
 
-import com.oracle.bmc.budget.internal.http.*;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.budget.requests.*;
 import com.oracle.bmc.budget.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
+import java.util.Objects;
+
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
-public class BudgetClient implements Budget {
-    /**
-     * Service instance for Budget.
-     */
+public class BudgetClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Budget {
+    /** Service instance for Budget. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("BUDGET")
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://usage.{region}.oci.{secondLevelDomain}")
                     .build();
-    // attempt twice if it's instance principals, immediately failures will try to refresh the token
-    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(BudgetAsyncClient.class);
 
-    com.oracle.bmc.http.internal.RestClient getClient() {
-        return client;
-    }
-
     private final BudgetWaiters waiters;
 
     private final BudgetPaginators paginators;
-    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-            authenticationDetailsProvider;
-    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
-    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
-            apacheConnectionClosingStrategy;
-    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
-    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
-    private final java.util.Map<
-                    com.oracle.bmc.http.signing.SigningStrategy,
-                    com.oracle.bmc.http.signing.RequestSignerFactory>
-            signingStrategyRequestSignerFactories;
-    private final boolean isNonBufferingApacheClient;
-    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
-    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-            circuitBreakerConfiguration;
 
-    /**
-     * Used to synchronize any updates on the `this.client` object.
-     */
-    private final Object clientUpdate = new Object();
-
-    /**
-     * Stores the actual client object used to make the API calls.
-     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
-     *       For any writes to the object, please synchronize on `this.clientUpdate`.
-     */
-    private volatile com.oracle.bmc.http.internal.RestClient client;
-
-    /**
-     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
-     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
-     */
-    private volatile String overrideEndpoint = null;
-
-    /**
-     * Creates a new service instance using the given authentication provider.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     */
-    public BudgetClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     */
-    public BudgetClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(authenticationDetailsProvider, configuration, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     */
-    public BudgetClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     */
-    public BudgetClient(
+    private BudgetClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public BudgetClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                additionalClientConfigurators,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public BudgetClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
-                        .createDefaultRequestSignerFactories(),
-                additionalClientConfigurators,
-                endpoint);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public BudgetClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
-     */
-    public BudgetClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
             java.util.concurrent.ExecutorService executorService) {
-        this(
+        super(
+                builder,
                 authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                executorService,
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * Use the {@link Builder} to get access to all these parameters.
-     *
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
-     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
-     */
-    protected BudgetClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            java.util.concurrent.ExecutorService executorService,
-            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
-        this.authenticationDetailsProvider = authenticationDetailsProvider;
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
-                new java.util.ArrayList<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
-            authenticationDetailsConfigurators.addAll(
-                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
-                                    this.authenticationDetailsProvider)
-                            .getClientConfigurators());
-        }
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
-                new java.util.ArrayList<>(additionalClientConfigurators);
-        allConfigurators.addAll(authenticationDetailsConfigurators);
-        this.restClientFactory =
-                restClientFactoryBuilder
-                        .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(allConfigurators)
-                        .build();
-        this.isNonBufferingApacheClient =
-                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        this.restClientFactory.getClientConfigurator());
-        this.apacheConnectionClosingStrategy =
-                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
-                        restClientFactory.getClientConfigurator());
-
-        this.clientConfigurationToUse =
-                (configuration != null)
-                        ? configuration
-                        : com.oracle.bmc.ClientConfiguration.builder().build();
-        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
-        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
-        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
-        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-                userCircuitBreakerConfiguration =
-                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
-                                configuration);
-        if (userCircuitBreakerConfiguration == null) {
-            this.circuitBreakerConfiguration =
-                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
-        } else {
-            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
-        }
-
-        this.refreshClient();
+                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -354,28 +58,11 @@ public class BudgetClient implements Budget {
         this.waiters = new BudgetWaiters(executorService, this);
 
         this.paginators = new BudgetPaginators(this);
-
-        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
-            com.oracle.bmc.auth.RegionProvider provider =
-                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
-
-            if (provider.getRegion() != null) {
-                this.setRegion(provider.getRegion());
-                if (endpoint != null) {
-                    LOG.info(
-                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
-                            provider.getRegion(),
-                            endpoint);
-                }
-            }
-        }
-        if (endpoint != null) {
-            setEndpoint(endpoint);
-        }
     }
 
     /**
      * Create a builder for this client.
+     *
      * @return builder
      */
     public static Builder builder() {
@@ -383,8 +70,8 @@ public class BudgetClient implements Budget {
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
+     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, BudgetClient> {
@@ -399,6 +86,7 @@ public class BudgetClient implements Budget {
 
         /**
          * Set the ExecutorService for the client to be created.
+         *
          * @param executorService executorService
          * @return this builder
          */
@@ -409,495 +97,328 @@ public class BudgetClient implements Budget {
 
         /**
          * Build the client.
+         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public BudgetClient build(
                 @javax.annotation.Nonnull
-                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                        authenticationDetailsProvider) {
-            if (authenticationDetailsProvider == null) {
-                throw new NullPointerException(
-                        "authenticationDetailsProvider is marked non-null but is null");
-            }
-            return new BudgetClient(
-                    authenticationDetailsProvider,
-                    configuration,
-                    clientConfigurator,
-                    requestSignerFactory,
-                    signingStrategyRequestSignerFactories,
-                    additionalClientConfigurators,
-                    endpoint,
-                    executorService);
+                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                                authenticationDetailsProvider) {
+            return new BudgetClient(this, authenticationDetailsProvider, executorService);
         }
-    }
-
-    @Override
-    public void refreshClient() {
-        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                this.defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        this.signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
-            }
-        }
-
-        com.oracle.bmc.http.internal.RestClient refreshedClient =
-                this.restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        this.clientConfigurationToUse,
-                        this.isNonBufferingApacheClient,
-                        null,
-                        this.circuitBreakerConfiguration);
-
-        synchronized (clientUpdate) {
-            if (this.overrideEndpoint != null) {
-                refreshedClient.setEndpoint(this.overrideEndpoint);
-            }
-
-            this.client = refreshedClient;
-        }
-
-        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint) {
-        LOG.info("Setting endpoint to {}", endpoint);
-
-        synchronized (clientUpdate) {
-            this.overrideEndpoint = endpoint;
-            client.setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
-        }
-        return endpoint;
     }
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        java.util.Optional<String> endpoint =
-                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
-        if (endpoint.isPresent()) {
-            setEndpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + SERVICE + " is not known in region " + region);
-        }
+        super.setRegion(region);
     }
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
-        try {
-            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-            setRegion(region);
-        } catch (IllegalArgumentException e) {
-            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-            setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public void close() {
-        client.close();
+        super.setRegion(regionId);
     }
 
     @Override
     public CreateAlertRuleResponse createAlertRule(CreateAlertRuleRequest request) {
-        LOG.trace("Called createAlertRule");
-        final CreateAlertRuleRequest interceptedRequest =
-                CreateAlertRuleConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateAlertRuleConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBudgetId(), "budgetId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateAlertRuleDetails(), "createAlertRuleDetails is required");
+
+        return clientCall(request, CreateAlertRuleResponse::builder)
+                .logger(LOG, "createAlertRule")
+                .serviceDetails(
                         "Budget",
                         "CreateAlertRule",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/CreateAlertRule");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateAlertRuleResponse>
-                transformer =
-                        CreateAlertRuleConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateAlertRuleDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/CreateAlertRule")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateAlertRuleRequest::builder)
+                .basePath("/20190111")
+                .appendPathParam("budgets")
+                .appendPathParam(request.getBudgetId())
+                .appendPathParam("alertRules")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.budget.model.AlertRule.class,
+                        CreateAlertRuleResponse.Builder::alertRule)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateAlertRuleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateAlertRuleResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public CreateBudgetResponse createBudget(CreateBudgetRequest request) {
-        LOG.trace("Called createBudget");
-        final CreateBudgetRequest interceptedRequest =
-                CreateBudgetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateBudgetConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCreateBudgetDetails(), "createBudgetDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateBudgetResponse::builder)
+                .logger(LOG, "createBudget")
+                .serviceDetails(
                         "Budget",
                         "CreateBudget",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/CreateBudget");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateBudgetResponse> transformer =
-                CreateBudgetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateBudgetDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/CreateBudget")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateBudgetRequest::builder)
+                .basePath("/20190111")
+                .appendPathParam("budgets")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.budget.model.Budget.class,
+                        CreateBudgetResponse.Builder::budget)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateBudgetResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateBudgetResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public DeleteAlertRuleResponse deleteAlertRule(DeleteAlertRuleRequest request) {
-        LOG.trace("Called deleteAlertRule");
-        final DeleteAlertRuleRequest interceptedRequest =
-                DeleteAlertRuleConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteAlertRuleConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBudgetId(), "budgetId must not be blank");
+
+        Validate.notBlank(request.getAlertRuleId(), "alertRuleId must not be blank");
+
+        return clientCall(request, DeleteAlertRuleResponse::builder)
+                .logger(LOG, "deleteAlertRule")
+                .serviceDetails(
                         "Budget",
                         "DeleteAlertRule",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/DeleteAlertRule");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteAlertRuleResponse>
-                transformer =
-                        DeleteAlertRuleConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/DeleteAlertRule")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteAlertRuleRequest::builder)
+                .basePath("/20190111")
+                .appendPathParam("budgets")
+                .appendPathParam(request.getBudgetId())
+                .appendPathParam("alertRules")
+                .appendPathParam(request.getAlertRuleId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteAlertRuleResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteBudgetResponse deleteBudget(DeleteBudgetRequest request) {
-        LOG.trace("Called deleteBudget");
-        final DeleteBudgetRequest interceptedRequest =
-                DeleteBudgetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteBudgetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBudgetId(), "budgetId must not be blank");
+
+        return clientCall(request, DeleteBudgetResponse::builder)
+                .logger(LOG, "deleteBudget")
+                .serviceDetails(
                         "Budget",
                         "DeleteBudget",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/DeleteBudget");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteBudgetResponse> transformer =
-                DeleteBudgetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/DeleteBudget")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteBudgetRequest::builder)
+                .basePath("/20190111")
+                .appendPathParam("budgets")
+                .appendPathParam(request.getBudgetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteBudgetResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetAlertRuleResponse getAlertRule(GetAlertRuleRequest request) {
-        LOG.trace("Called getAlertRule");
-        final GetAlertRuleRequest interceptedRequest =
-                GetAlertRuleConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetAlertRuleConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBudgetId(), "budgetId must not be blank");
+
+        Validate.notBlank(request.getAlertRuleId(), "alertRuleId must not be blank");
+
+        return clientCall(request, GetAlertRuleResponse::builder)
+                .logger(LOG, "getAlertRule")
+                .serviceDetails(
                         "Budget",
                         "GetAlertRule",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/GetAlertRule");
-        java.util.function.Function<javax.ws.rs.core.Response, GetAlertRuleResponse> transformer =
-                GetAlertRuleConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/GetAlertRule")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAlertRuleRequest::builder)
+                .basePath("/20190111")
+                .appendPathParam("budgets")
+                .appendPathParam(request.getBudgetId())
+                .appendPathParam("alertRules")
+                .appendPathParam(request.getAlertRuleId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.budget.model.AlertRule.class,
+                        GetAlertRuleResponse.Builder::alertRule)
+                .handleResponseHeaderString("etag", GetAlertRuleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAlertRuleResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetBudgetResponse getBudget(GetBudgetRequest request) {
-        LOG.trace("Called getBudget");
-        final GetBudgetRequest interceptedRequest = GetBudgetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetBudgetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBudgetId(), "budgetId must not be blank");
+
+        return clientCall(request, GetBudgetResponse::builder)
+                .logger(LOG, "getBudget")
+                .serviceDetails(
                         "Budget",
                         "GetBudget",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/GetBudget");
-        java.util.function.Function<javax.ws.rs.core.Response, GetBudgetResponse> transformer =
-                GetBudgetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/GetBudget")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetBudgetRequest::builder)
+                .basePath("/20190111")
+                .appendPathParam("budgets")
+                .appendPathParam(request.getBudgetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.budget.model.Budget.class, GetBudgetResponse.Builder::budget)
+                .handleResponseHeaderString("etag", GetBudgetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetBudgetResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListAlertRulesResponse listAlertRules(ListAlertRulesRequest request) {
-        LOG.trace("Called listAlertRules");
-        final ListAlertRulesRequest interceptedRequest =
-                ListAlertRulesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListAlertRulesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBudgetId(), "budgetId must not be blank");
+
+        return clientCall(request, ListAlertRulesResponse::builder)
+                .logger(LOG, "listAlertRules")
+                .serviceDetails(
                         "Budget",
                         "ListAlertRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRuleSummary/ListAlertRules");
-        java.util.function.Function<javax.ws.rs.core.Response, ListAlertRulesResponse> transformer =
-                ListAlertRulesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRuleSummary/ListAlertRules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAlertRulesRequest::builder)
+                .basePath("/20190111")
+                .appendPathParam("budgets")
+                .appendPathParam(request.getBudgetId())
+                .appendPathParam("alertRules")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.budget.model.AlertRuleSummary.class,
+                        ListAlertRulesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAlertRulesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAlertRulesResponse.Builder::opcNextPage)
+                .callSync();
     }
 
     @Override
     public ListBudgetsResponse listBudgets(ListBudgetsRequest request) {
-        LOG.trace("Called listBudgets");
-        final ListBudgetsRequest interceptedRequest =
-                ListBudgetsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListBudgetsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListBudgetsResponse::builder)
+                .logger(LOG, "listBudgets")
+                .serviceDetails(
                         "Budget",
                         "ListBudgets",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/BudgetSummary/ListBudgets");
-        java.util.function.Function<javax.ws.rs.core.Response, ListBudgetsResponse> transformer =
-                ListBudgetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/BudgetSummary/ListBudgets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListBudgetsRequest::builder)
+                .basePath("/20190111")
+                .appendPathParam("budgets")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("targetType", request.getTargetType())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.budget.model.BudgetSummary.class,
+                        ListBudgetsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListBudgetsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListBudgetsResponse.Builder::opcNextPage)
+                .callSync();
     }
 
     @Override
     public UpdateAlertRuleResponse updateAlertRule(UpdateAlertRuleRequest request) {
-        LOG.trace("Called updateAlertRule");
-        final UpdateAlertRuleRequest interceptedRequest =
-                UpdateAlertRuleConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateAlertRuleConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBudgetId(), "budgetId must not be blank");
+
+        Validate.notBlank(request.getAlertRuleId(), "alertRuleId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateAlertRuleDetails(), "updateAlertRuleDetails is required");
+
+        return clientCall(request, UpdateAlertRuleResponse::builder)
+                .logger(LOG, "updateAlertRule")
+                .serviceDetails(
                         "Budget",
                         "UpdateAlertRule",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/UpdateAlertRule");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateAlertRuleResponse>
-                transformer =
-                        UpdateAlertRuleConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateAlertRuleDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/UpdateAlertRule")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateAlertRuleRequest::builder)
+                .basePath("/20190111")
+                .appendPathParam("budgets")
+                .appendPathParam(request.getBudgetId())
+                .appendPathParam("alertRules")
+                .appendPathParam(request.getAlertRuleId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.budget.model.AlertRule.class,
+                        UpdateAlertRuleResponse.Builder::alertRule)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateAlertRuleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateAlertRuleResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public UpdateBudgetResponse updateBudget(UpdateBudgetRequest request) {
-        LOG.trace("Called updateBudget");
-        final UpdateBudgetRequest interceptedRequest =
-                UpdateBudgetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateBudgetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBudgetId(), "budgetId must not be blank");
+        Objects.requireNonNull(request.getUpdateBudgetDetails(), "updateBudgetDetails is required");
+
+        return clientCall(request, UpdateBudgetResponse::builder)
+                .logger(LOG, "updateBudget")
+                .serviceDetails(
                         "Budget",
                         "UpdateBudget",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/UpdateBudget");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateBudgetResponse> transformer =
-                UpdateBudgetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateBudgetDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/UpdateBudget")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateBudgetRequest::builder)
+                .basePath("/20190111")
+                .appendPathParam("budgets")
+                .appendPathParam(request.getBudgetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.budget.model.Budget.class,
+                        UpdateBudgetResponse.Builder::budget)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateBudgetResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateBudgetResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
@@ -908,5 +429,209 @@ public class BudgetClient implements Budget {
     @Override
     public BudgetPaginators getPaginators() {
         return paginators;
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public BudgetClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(builder(), authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public BudgetClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(builder().configuration(configuration), authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public BudgetClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                builder().configuration(configuration).clientConfigurator(clientConfigurator),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public BudgetClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public BudgetClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public BudgetClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public BudgetClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @param executorService {@link Builder#executorService}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public BudgetClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider,
+                executorService);
     }
 }

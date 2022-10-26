@@ -5,25 +5,25 @@
 package com.oracle.bmc.certificatesmanagement.model;
 
 /**
- * The details of the configuration for creating an internally managed certificate which is issued by a private certificate authority (CA).
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details of the configuration for creating an internally managed certificate which is issued
+ * by a private certificate authority (CA). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateCertificateIssuedByInternalCaConfigDetails.Builder.class
-)
+        builder = CreateCertificateIssuedByInternalCaConfigDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "configType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "configType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateCertificateIssuedByInternalCaConfigDetails
         extends CreateCertificateConfigDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -37,32 +37,34 @@ public final class CreateCertificateIssuedByInternalCaConfigDetails
             return this;
         }
         /**
-         * The name of the profile used to create the certificate, which depends on the type of certificate you need.
-         **/
+         * The name of the profile used to create the certificate, which depends on the type of
+         * certificate you need.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("certificateProfileType")
         private CertificateProfileType certificateProfileType;
 
         /**
-         * The name of the profile used to create the certificate, which depends on the type of certificate you need.
+         * The name of the profile used to create the certificate, which depends on the type of
+         * certificate you need.
+         *
          * @param certificateProfileType the value to set
          * @return this builder
-         **/
+         */
         public Builder certificateProfileType(CertificateProfileType certificateProfileType) {
             this.certificateProfileType = certificateProfileType;
             this.__explicitlySet__.add("certificateProfileType");
             return this;
         }
-        /**
-         * The OCID of the private CA.
-         **/
+        /** The OCID of the private CA. */
         @com.fasterxml.jackson.annotation.JsonProperty("issuerCertificateAuthorityId")
         private String issuerCertificateAuthorityId;
 
         /**
          * The OCID of the private CA.
+         *
          * @param issuerCertificateAuthorityId the value to set
          * @return this builder
-         **/
+         */
         public Builder issuerCertificateAuthorityId(String issuerCertificateAuthorityId) {
             this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
             this.__explicitlySet__.add("issuerCertificateAuthorityId");
@@ -86,50 +88,47 @@ public final class CreateCertificateIssuedByInternalCaConfigDetails
             this.__explicitlySet__.add("subject");
             return this;
         }
-        /**
-         * A list of subject alternative names.
-         **/
+        /** A list of subject alternative names. */
         @com.fasterxml.jackson.annotation.JsonProperty("subjectAlternativeNames")
         private java.util.List<CertificateSubjectAlternativeName> subjectAlternativeNames;
 
         /**
          * A list of subject alternative names.
+         *
          * @param subjectAlternativeNames the value to set
          * @return this builder
-         **/
+         */
         public Builder subjectAlternativeNames(
                 java.util.List<CertificateSubjectAlternativeName> subjectAlternativeNames) {
             this.subjectAlternativeNames = subjectAlternativeNames;
             this.__explicitlySet__.add("subjectAlternativeNames");
             return this;
         }
-        /**
-         * The algorithm to use to create key pairs.
-         **/
+        /** The algorithm to use to create key pairs. */
         @com.fasterxml.jackson.annotation.JsonProperty("keyAlgorithm")
         private KeyAlgorithm keyAlgorithm;
 
         /**
          * The algorithm to use to create key pairs.
+         *
          * @param keyAlgorithm the value to set
          * @return this builder
-         **/
+         */
         public Builder keyAlgorithm(KeyAlgorithm keyAlgorithm) {
             this.keyAlgorithm = keyAlgorithm;
             this.__explicitlySet__.add("keyAlgorithm");
             return this;
         }
-        /**
-         * The algorithm to use to sign the public key certificate.
-         **/
+        /** The algorithm to use to sign the public key certificate. */
         @com.fasterxml.jackson.annotation.JsonProperty("signatureAlgorithm")
         private SignatureAlgorithm signatureAlgorithm;
 
         /**
          * The algorithm to use to sign the public key certificate.
+         *
          * @param signatureAlgorithm the value to set
          * @return this builder
-         **/
+         */
         public Builder signatureAlgorithm(SignatureAlgorithm signatureAlgorithm) {
             this.signatureAlgorithm = signatureAlgorithm;
             this.__explicitlySet__.add("signatureAlgorithm");
@@ -186,9 +185,7 @@ public final class CreateCertificateIssuedByInternalCaConfigDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -218,29 +215,31 @@ public final class CreateCertificateIssuedByInternalCaConfigDetails
     }
 
     /**
-     * The name of the profile used to create the certificate, which depends on the type of certificate you need.
-     **/
+     * The name of the profile used to create the certificate, which depends on the type of
+     * certificate you need.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("certificateProfileType")
     private final CertificateProfileType certificateProfileType;
 
     /**
-     * The name of the profile used to create the certificate, which depends on the type of certificate you need.
+     * The name of the profile used to create the certificate, which depends on the type of
+     * certificate you need.
+     *
      * @return the value
-     **/
+     */
     public CertificateProfileType getCertificateProfileType() {
         return certificateProfileType;
     }
 
-    /**
-     * The OCID of the private CA.
-     **/
+    /** The OCID of the private CA. */
     @com.fasterxml.jackson.annotation.JsonProperty("issuerCertificateAuthorityId")
     private final String issuerCertificateAuthorityId;
 
     /**
      * The OCID of the private CA.
+     *
      * @return the value
-     **/
+     */
     public String getIssuerCertificateAuthorityId() {
         return issuerCertificateAuthorityId;
     }
@@ -259,44 +258,41 @@ public final class CreateCertificateIssuedByInternalCaConfigDetails
         return subject;
     }
 
-    /**
-     * A list of subject alternative names.
-     **/
+    /** A list of subject alternative names. */
     @com.fasterxml.jackson.annotation.JsonProperty("subjectAlternativeNames")
     private final java.util.List<CertificateSubjectAlternativeName> subjectAlternativeNames;
 
     /**
      * A list of subject alternative names.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<CertificateSubjectAlternativeName> getSubjectAlternativeNames() {
         return subjectAlternativeNames;
     }
 
-    /**
-     * The algorithm to use to create key pairs.
-     **/
+    /** The algorithm to use to create key pairs. */
     @com.fasterxml.jackson.annotation.JsonProperty("keyAlgorithm")
     private final KeyAlgorithm keyAlgorithm;
 
     /**
      * The algorithm to use to create key pairs.
+     *
      * @return the value
-     **/
+     */
     public KeyAlgorithm getKeyAlgorithm() {
         return keyAlgorithm;
     }
 
-    /**
-     * The algorithm to use to sign the public key certificate.
-     **/
+    /** The algorithm to use to sign the public key certificate. */
     @com.fasterxml.jackson.annotation.JsonProperty("signatureAlgorithm")
     private final SignatureAlgorithm signatureAlgorithm;
 
     /**
      * The algorithm to use to sign the public key certificate.
+     *
      * @return the value
-     **/
+     */
     public SignatureAlgorithm getSignatureAlgorithm() {
         return signatureAlgorithm;
     }
@@ -308,6 +304,7 @@ public final class CreateCertificateIssuedByInternalCaConfigDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

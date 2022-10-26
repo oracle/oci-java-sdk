@@ -5,22 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Details of aggregation dimensions used for summarizing audit events.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details of aggregation dimensions used for summarizing audit events. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AuditEventAggregationDimensions.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AuditEventAggregationDimensions.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AuditEventAggregationDimensions
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "auditEventTime",
@@ -63,177 +63,178 @@ public final class AuditEventAggregationDimensions
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Time of audit event occurrence in the target database.
-         **/
+        /** Time of audit event occurrence in the target database. */
         @com.fasterxml.jackson.annotation.JsonProperty("auditEventTime")
         private java.util.List<java.util.Date> auditEventTime;
 
         /**
          * Time of audit event occurrence in the target database.
+         *
          * @param auditEventTime the value to set
          * @return this builder
-         **/
+         */
         public Builder auditEventTime(java.util.List<java.util.Date> auditEventTime) {
             this.auditEventTime = auditEventTime;
             this.__explicitlySet__.add("auditEventTime");
             return this;
         }
-        /**
-         * Name of the database user whose actions were audited.
-         **/
+        /** Name of the database user whose actions were audited. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbUserName")
         private java.util.List<String> dbUserName;
 
         /**
          * Name of the database user whose actions were audited.
+         *
          * @param dbUserName the value to set
          * @return this builder
-         **/
+         */
         public Builder dbUserName(java.util.List<String> dbUserName) {
             this.dbUserName = dbUserName;
             this.__explicitlySet__.add("dbUserName");
             return this;
         }
-        /**
-         * The OCID of the target database that was audited.
-         **/
+        /** The OCID of the target database that was audited. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private java.util.List<String> targetId;
 
         /**
          * The OCID of the target database that was audited.
+         *
          * @param targetId the value to set
          * @return this builder
-         **/
+         */
         public Builder targetId(java.util.List<String> targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-        /**
-         * The name of the target database that was audited.
-         **/
+        /** The name of the target database that was audited. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetName")
         private java.util.List<String> targetName;
 
         /**
          * The name of the target database that was audited.
+         *
          * @param targetName the value to set
          * @return this builder
-         **/
+         */
         public Builder targetName(java.util.List<String> targetName) {
             this.targetName = targetName;
             this.__explicitlySet__.add("targetName");
             return this;
         }
-        /**
-         * Class of the target that was audited.
-         **/
+        /** Class of the target that was audited. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetClass")
         private java.util.List<TargetClass> targetClass;
 
         /**
          * Class of the target that was audited.
+         *
          * @param targetClass the value to set
          * @return this builder
-         **/
+         */
         public Builder targetClass(java.util.List<TargetClass> targetClass) {
             this.targetClass = targetClass;
             this.__explicitlySet__.add("targetClass");
             return this;
         }
         /**
-         * Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
-         **/
+         * Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM,
+         * PACKAGE BODY.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("objectType")
         private java.util.List<String> objectType;
 
         /**
-         * Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+         * Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM,
+         * PACKAGE BODY.
+         *
          * @param objectType the value to set
          * @return this builder
-         **/
+         */
         public Builder objectType(java.util.List<String> objectType) {
             this.objectType = objectType;
             this.__explicitlySet__.add("objectType");
             return this;
         }
-        /**
-         * Name of the host machine from which the session was spawned.
-         **/
+        /** Name of the host machine from which the session was spawned. */
         @com.fasterxml.jackson.annotation.JsonProperty("clientHostname")
         private java.util.List<String> clientHostname;
 
         /**
          * Name of the host machine from which the session was spawned.
+         *
          * @param clientHostname the value to set
          * @return this builder
-         **/
+         */
         public Builder clientHostname(java.util.List<String> clientHostname) {
             this.clientHostname = clientHostname;
             this.__explicitlySet__.add("clientHostname");
             return this;
         }
         /**
-         * The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
-         **/
+         * The application from which the audit event was generated. Examples SQL Plus or SQL
+         * Developer.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("clientProgram")
         private java.util.List<String> clientProgram;
 
         /**
-         * The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
+         * The application from which the audit event was generated. Examples SQL Plus or SQL
+         * Developer.
+         *
          * @param clientProgram the value to set
          * @return this builder
-         **/
+         */
         public Builder clientProgram(java.util.List<String> clientProgram) {
             this.clientProgram = clientProgram;
             this.__explicitlySet__.add("clientProgram");
             return this;
         }
-        /**
-         * The client identifier in each Oracle session.
-         **/
+        /** The client identifier in each Oracle session. */
         @com.fasterxml.jackson.annotation.JsonProperty("clientId")
         private java.util.List<String> clientId;
 
         /**
          * The client identifier in each Oracle session.
+         *
          * @param clientId the value to set
          * @return this builder
-         **/
+         */
         public Builder clientId(java.util.List<String> clientId) {
             this.clientId = clientId;
             this.__explicitlySet__.add("clientId");
             return this;
         }
-        /**
-         * Type of auditing.
-         **/
+        /** Type of auditing. */
         @com.fasterxml.jackson.annotation.JsonProperty("auditType")
         private java.util.List<AuditType> auditType;
 
         /**
          * Type of auditing.
+         *
          * @param auditType the value to set
          * @return this builder
-         **/
+         */
         public Builder auditType(java.util.List<AuditType> auditType) {
             this.auditType = auditType;
             this.__explicitlySet__.add("auditType");
             return this;
         }
         /**
-         * Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
-         **/
+         * Name of the detail action executed by the user on the target database. i.e ALTER
+         * SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("eventName")
         private java.util.List<String> eventName;
 
         /**
-         * Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+         * Name of the detail action executed by the user on the target database. i.e ALTER
+         * SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+         *
          * @param eventName the value to set
          * @return this builder
-         **/
+         */
         public Builder eventName(java.util.List<String> eventName) {
             this.eventName = eventName;
             this.__explicitlySet__.add("eventName");
@@ -302,9 +303,7 @@ public final class AuditEventAggregationDimensions
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -313,70 +312,65 @@ public final class AuditEventAggregationDimensions
         return new Builder().copy(this);
     }
 
-    /**
-     * Time of audit event occurrence in the target database.
-     **/
+    /** Time of audit event occurrence in the target database. */
     @com.fasterxml.jackson.annotation.JsonProperty("auditEventTime")
     private final java.util.List<java.util.Date> auditEventTime;
 
     /**
      * Time of audit event occurrence in the target database.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<java.util.Date> getAuditEventTime() {
         return auditEventTime;
     }
 
-    /**
-     * Name of the database user whose actions were audited.
-     **/
+    /** Name of the database user whose actions were audited. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbUserName")
     private final java.util.List<String> dbUserName;
 
     /**
      * Name of the database user whose actions were audited.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getDbUserName() {
         return dbUserName;
     }
 
-    /**
-     * The OCID of the target database that was audited.
-     **/
+    /** The OCID of the target database that was audited. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final java.util.List<String> targetId;
 
     /**
      * The OCID of the target database that was audited.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getTargetId() {
         return targetId;
     }
 
-    /**
-     * The name of the target database that was audited.
-     **/
+    /** The name of the target database that was audited. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetName")
     private final java.util.List<String> targetName;
 
     /**
      * The name of the target database that was audited.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getTargetName() {
         return targetName;
     }
 
-    /**
-     **/
-    public enum TargetClass {
+    /** */
+    public enum TargetClass implements com.oracle.bmc.http.internal.BmcEnum {
         Database("DATABASE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -415,79 +409,79 @@ public final class AuditEventAggregationDimensions
             return UnknownEnumValue;
         }
     };
-    /**
-     * Class of the target that was audited.
-     **/
+    /** Class of the target that was audited. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetClass")
     private final java.util.List<TargetClass> targetClass;
 
     /**
      * Class of the target that was audited.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<TargetClass> getTargetClass() {
         return targetClass;
     }
 
     /**
-     * Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
-     **/
+     * Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE
+     * BODY.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
     private final java.util.List<String> objectType;
 
     /**
-     * Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+     * Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE
+     * BODY.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getObjectType() {
         return objectType;
     }
 
-    /**
-     * Name of the host machine from which the session was spawned.
-     **/
+    /** Name of the host machine from which the session was spawned. */
     @com.fasterxml.jackson.annotation.JsonProperty("clientHostname")
     private final java.util.List<String> clientHostname;
 
     /**
      * Name of the host machine from which the session was spawned.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getClientHostname() {
         return clientHostname;
     }
 
     /**
      * The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("clientProgram")
     private final java.util.List<String> clientProgram;
 
     /**
      * The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getClientProgram() {
         return clientProgram;
     }
 
-    /**
-     * The client identifier in each Oracle session.
-     **/
+    /** The client identifier in each Oracle session. */
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
     private final java.util.List<String> clientId;
 
     /**
      * The client identifier in each Oracle session.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getClientId() {
         return clientId;
     }
 
-    /**
-     **/
-    public enum AuditType {
+    /** */
+    public enum AuditType implements com.oracle.bmc.http.internal.BmcEnum {
         Standard("STANDARD"),
         FineGrained("FINE_GRAINED"),
         Xs("XS"),
@@ -498,8 +492,8 @@ public final class AuditEventAggregationDimensions
         DirectPathApi("DIRECT_PATH_API"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -538,30 +532,32 @@ public final class AuditEventAggregationDimensions
             return UnknownEnumValue;
         }
     };
-    /**
-     * Type of auditing.
-     **/
+    /** Type of auditing. */
     @com.fasterxml.jackson.annotation.JsonProperty("auditType")
     private final java.util.List<AuditType> auditType;
 
     /**
      * Type of auditing.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<AuditType> getAuditType() {
         return auditType;
     }
 
     /**
-     * Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
-     **/
+     * Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE,
+     * CREATE TRIGGER, CREATE INDEX.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("eventName")
     private final java.util.List<String> eventName;
 
     /**
-     * Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+     * Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE,
+     * CREATE TRIGGER, CREATE INDEX.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getEventName() {
         return eventName;
     }
@@ -573,6 +569,7 @@ public final class AuditEventAggregationDimensions
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

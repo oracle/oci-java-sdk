@@ -5,25 +5,24 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Enum String type of ImageCapabilitySchemaDescriptor
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Enum String type of ImageCapabilitySchemaDescriptor <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = EnumStringImageCapabilitySchemaDescriptor.Builder.class
-)
+        builder = EnumStringImageCapabilitySchemaDescriptor.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "descriptorType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "descriptorType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class EnumStringImageCapabilitySchemaDescriptor
         extends ImageCapabilitySchemaDescriptor {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -36,33 +35,31 @@ public final class EnumStringImageCapabilitySchemaDescriptor
             this.__explicitlySet__.add("source");
             return this;
         }
-        /**
-         * the list of values for the enum
-         **/
+        /** the list of values for the enum */
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<String> values;
 
         /**
          * the list of values for the enum
+         *
          * @param values the value to set
          * @return this builder
-         **/
+         */
         public Builder values(java.util.List<String> values) {
             this.values = values;
             this.__explicitlySet__.add("values");
             return this;
         }
-        /**
-         * the default value
-         **/
+        /** the default value */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private String defaultValue;
 
         /**
          * the default value
+         *
          * @param defaultValue the value to set
          * @return this builder
-         **/
+         */
         public Builder defaultValue(String defaultValue) {
             this.defaultValue = defaultValue;
             this.__explicitlySet__.add("defaultValue");
@@ -97,9 +94,7 @@ public final class EnumStringImageCapabilitySchemaDescriptor
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,30 +111,28 @@ public final class EnumStringImageCapabilitySchemaDescriptor
         this.defaultValue = defaultValue;
     }
 
-    /**
-     * the list of values for the enum
-     **/
+    /** the list of values for the enum */
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<String> values;
 
     /**
      * the list of values for the enum
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getValues() {
         return values;
     }
 
-    /**
-     * the default value
-     **/
+    /** the default value */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     private final String defaultValue;
 
     /**
      * the default value
+     *
      * @return the value
-     **/
+     */
     public String getDefaultValue() {
         return defaultValue;
     }
@@ -151,6 +144,7 @@ public final class EnumStringImageCapabilitySchemaDescriptor
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

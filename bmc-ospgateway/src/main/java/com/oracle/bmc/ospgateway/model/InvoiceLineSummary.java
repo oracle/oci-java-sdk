@@ -5,21 +5,22 @@
 package com.oracle.bmc.ospgateway.model;
 
 /**
- * Product items of the invoice
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Product items of the invoice <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = InvoiceLineSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InvoiceLineSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = InvoiceLineSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class InvoiceLineSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "product",
@@ -56,129 +57,121 @@ public final class InvoiceLineSummary extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Product of the item
-         **/
+        /** Product of the item */
         @com.fasterxml.jackson.annotation.JsonProperty("product")
         private String product;
 
         /**
          * Product of the item
+         *
          * @param product the value to set
          * @return this builder
-         **/
+         */
         public Builder product(String product) {
             this.product = product;
             this.__explicitlySet__.add("product");
             return this;
         }
-        /**
-         * Product of the item
-         **/
+        /** Product of the item */
         @com.fasterxml.jackson.annotation.JsonProperty("orderNo")
         private String orderNo;
 
         /**
          * Product of the item
+         *
          * @param orderNo the value to set
          * @return this builder
-         **/
+         */
         public Builder orderNo(String orderNo) {
             this.orderNo = orderNo;
             this.__explicitlySet__.add("orderNo");
             return this;
         }
-        /**
-         * Part number
-         **/
+        /** Part number */
         @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
         private String partNumber;
 
         /**
          * Part number
+         *
          * @param partNumber the value to set
          * @return this builder
-         **/
+         */
         public Builder partNumber(String partNumber) {
             this.partNumber = partNumber;
             this.__explicitlySet__.add("partNumber");
             return this;
         }
-        /**
-         * Start date
-         **/
+        /** Start date */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
         /**
          * Start date
+         *
          * @param timeStart the value to set
          * @return this builder
-         **/
+         */
         public Builder timeStart(java.util.Date timeStart) {
             this.timeStart = timeStart;
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-        /**
-         * End date
-         **/
+        /** End date */
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
         /**
          * End date
+         *
          * @param timeEnd the value to set
          * @return this builder
-         **/
+         */
         public Builder timeEnd(java.util.Date timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-        /**
-         * Quantity of the ordered product
-         **/
+        /** Quantity of the ordered product */
         @com.fasterxml.jackson.annotation.JsonProperty("quantity")
         private java.math.BigDecimal quantity;
 
         /**
          * Quantity of the ordered product
+         *
          * @param quantity the value to set
          * @return this builder
-         **/
+         */
         public Builder quantity(java.math.BigDecimal quantity) {
             this.quantity = quantity;
             this.__explicitlySet__.add("quantity");
             return this;
         }
-        /**
-         * Unit price of the ordered product
-         **/
+        /** Unit price of the ordered product */
         @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
         private java.math.BigDecimal netUnitPrice;
 
         /**
          * Unit price of the ordered product
+         *
          * @param netUnitPrice the value to set
          * @return this builder
-         **/
+         */
         public Builder netUnitPrice(java.math.BigDecimal netUnitPrice) {
             this.netUnitPrice = netUnitPrice;
             this.__explicitlySet__.add("netUnitPrice");
             return this;
         }
-        /**
-         * Total price of the ordered product (Net unit price x quantity)
-         **/
+        /** Total price of the ordered product (Net unit price x quantity) */
         @com.fasterxml.jackson.annotation.JsonProperty("totalPrice")
         private java.math.BigDecimal totalPrice;
 
         /**
          * Total price of the ordered product (Net unit price x quantity)
+         *
          * @param totalPrice the value to set
          * @return this builder
-         **/
+         */
         public Builder totalPrice(java.math.BigDecimal totalPrice) {
             this.totalPrice = totalPrice;
             this.__explicitlySet__.add("totalPrice");
@@ -248,9 +241,7 @@ public final class InvoiceLineSummary extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -259,114 +250,106 @@ public final class InvoiceLineSummary extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * Product of the item
-     **/
+    /** Product of the item */
     @com.fasterxml.jackson.annotation.JsonProperty("product")
     private final String product;
 
     /**
      * Product of the item
+     *
      * @return the value
-     **/
+     */
     public String getProduct() {
         return product;
     }
 
-    /**
-     * Product of the item
-     **/
+    /** Product of the item */
     @com.fasterxml.jackson.annotation.JsonProperty("orderNo")
     private final String orderNo;
 
     /**
      * Product of the item
+     *
      * @return the value
-     **/
+     */
     public String getOrderNo() {
         return orderNo;
     }
 
-    /**
-     * Part number
-     **/
+    /** Part number */
     @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
     private final String partNumber;
 
     /**
      * Part number
+     *
      * @return the value
-     **/
+     */
     public String getPartNumber() {
         return partNumber;
     }
 
-    /**
-     * Start date
-     **/
+    /** Start date */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
     /**
      * Start date
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeStart() {
         return timeStart;
     }
 
-    /**
-     * End date
-     **/
+    /** End date */
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
     /**
      * End date
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
 
-    /**
-     * Quantity of the ordered product
-     **/
+    /** Quantity of the ordered product */
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
     private final java.math.BigDecimal quantity;
 
     /**
      * Quantity of the ordered product
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getQuantity() {
         return quantity;
     }
 
-    /**
-     * Unit price of the ordered product
-     **/
+    /** Unit price of the ordered product */
     @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
     private final java.math.BigDecimal netUnitPrice;
 
     /**
      * Unit price of the ordered product
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getNetUnitPrice() {
         return netUnitPrice;
     }
 
-    /**
-     * Total price of the ordered product (Net unit price x quantity)
-     **/
+    /** Total price of the ordered product (Net unit price x quantity) */
     @com.fasterxml.jackson.annotation.JsonProperty("totalPrice")
     private final java.math.BigDecimal totalPrice;
 
     /**
      * Total price of the ordered product (Net unit price x quantity)
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getTotalPrice() {
         return totalPrice;
     }
@@ -385,6 +368,7 @@ public final class InvoiceLineSummary extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

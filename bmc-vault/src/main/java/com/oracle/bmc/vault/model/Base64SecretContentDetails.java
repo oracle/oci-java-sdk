@@ -5,25 +5,24 @@
 package com.oracle.bmc.vault.model;
 
 /**
- * Base64-encoded secret content.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Base64-encoded secret content. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = Base64SecretContentDetails.Builder.class
-)
+        builder = Base64SecretContentDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "contentType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "contentType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class Base64SecretContentDetails extends SecretContentDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -44,17 +43,16 @@ public final class Base64SecretContentDetails extends SecretContentDetails {
             this.__explicitlySet__.add("stage");
             return this;
         }
-        /**
-         * The base64-encoded content of the secret.
-         **/
+        /** The base64-encoded content of the secret. */
         @com.fasterxml.jackson.annotation.JsonProperty("content")
         private String content;
 
         /**
          * The base64-encoded content of the secret.
+         *
          * @param content the value to set
          * @return this builder
-         **/
+         */
         public Builder content(String content) {
             this.content = content;
             this.__explicitlySet__.add("content");
@@ -88,9 +86,7 @@ public final class Base64SecretContentDetails extends SecretContentDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -105,16 +101,15 @@ public final class Base64SecretContentDetails extends SecretContentDetails {
         this.content = content;
     }
 
-    /**
-     * The base64-encoded content of the secret.
-     **/
+    /** The base64-encoded content of the secret. */
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     private final String content;
 
     /**
      * The base64-encoded content of the secret.
+     *
      * @return the value
-     **/
+     */
     public String getContent() {
         return content;
     }
@@ -126,6 +121,7 @@ public final class Base64SecretContentDetails extends SecretContentDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,20 +5,20 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Query builder api response object containing updated querystring's
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Query builder api response object containing updated querystring's <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FilterOutput.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FilterOutput extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class FilterOutput extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayQueryString",
@@ -35,10 +35,7 @@ public final class FilterOutput extends com.oracle.bmc.http.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Modified user visible query string.
-         *
-         **/
+        /** Modified user visible query string. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayQueryString")
         private String displayQueryString;
 
@@ -47,16 +44,13 @@ public final class FilterOutput extends com.oracle.bmc.http.internal.ExplicitlyS
          *
          * @param displayQueryString the value to set
          * @return this builder
-         **/
+         */
         public Builder displayQueryString(String displayQueryString) {
             this.displayQueryString = displayQueryString;
             this.__explicitlySet__.add("displayQueryString");
             return this;
         }
-        /**
-         * Modified localization agnostic query string.
-         *
-         **/
+        /** Modified localization agnostic query string. */
         @com.fasterxml.jackson.annotation.JsonProperty("internalQueryString")
         private String internalQueryString;
 
@@ -65,16 +59,13 @@ public final class FilterOutput extends com.oracle.bmc.http.internal.ExplicitlyS
          *
          * @param internalQueryString the value to set
          * @return this builder
-         **/
+         */
         public Builder internalQueryString(String internalQueryString) {
             this.internalQueryString = internalQueryString;
             this.__explicitlySet__.add("internalQueryString");
             return this;
         }
-        /**
-         * Operation response time.
-         *
-         **/
+        /** Operation response time. */
         @com.fasterxml.jackson.annotation.JsonProperty("responseTimeInMs")
         private Long responseTimeInMs;
 
@@ -83,7 +74,7 @@ public final class FilterOutput extends com.oracle.bmc.http.internal.ExplicitlyS
          *
          * @param responseTimeInMs the value to set
          * @return this builder
-         **/
+         */
         public Builder responseTimeInMs(Long responseTimeInMs) {
             this.responseTimeInMs = responseTimeInMs;
             this.__explicitlySet__.add("responseTimeInMs");
@@ -120,9 +111,7 @@ public final class FilterOutput extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -131,10 +120,7 @@ public final class FilterOutput extends com.oracle.bmc.http.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /**
-     * Modified user visible query string.
-     *
-     **/
+    /** Modified user visible query string. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayQueryString")
     private final String displayQueryString;
 
@@ -142,15 +128,12 @@ public final class FilterOutput extends com.oracle.bmc.http.internal.ExplicitlyS
      * Modified user visible query string.
      *
      * @return the value
-     **/
+     */
     public String getDisplayQueryString() {
         return displayQueryString;
     }
 
-    /**
-     * Modified localization agnostic query string.
-     *
-     **/
+    /** Modified localization agnostic query string. */
     @com.fasterxml.jackson.annotation.JsonProperty("internalQueryString")
     private final String internalQueryString;
 
@@ -158,15 +141,12 @@ public final class FilterOutput extends com.oracle.bmc.http.internal.ExplicitlyS
      * Modified localization agnostic query string.
      *
      * @return the value
-     **/
+     */
     public String getInternalQueryString() {
         return internalQueryString;
     }
 
-    /**
-     * Operation response time.
-     *
-     **/
+    /** Operation response time. */
     @com.fasterxml.jackson.annotation.JsonProperty("responseTimeInMs")
     private final Long responseTimeInMs;
 
@@ -174,7 +154,7 @@ public final class FilterOutput extends com.oracle.bmc.http.internal.ExplicitlyS
      * Operation response time.
      *
      * @return the value
-     **/
+     */
     public Long getResponseTimeInMs() {
         return responseTimeInMs;
     }
@@ -186,6 +166,7 @@ public final class FilterOutput extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

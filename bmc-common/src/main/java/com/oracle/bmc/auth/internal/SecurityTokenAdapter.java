@@ -31,6 +31,7 @@ class SecurityTokenAdapter {
 
     /**
      * Checks to see if the current token is still valid
+     *
      * @return true if valid
      */
     boolean isValid() {
@@ -39,6 +40,7 @@ class SecurityTokenAdapter {
 
     /**
      * Checks to see if the current token is still valid after reducing buffer time
+     *
      * @return true if valid
      */
     boolean isValid(java.util.Optional<Duration> time) {
@@ -89,6 +91,7 @@ class SecurityTokenAdapter {
 
     /**
      * Checks if two public keys are equal
+     *
      * @param a one public key
      * @param b the other one
      * @return true if the same
@@ -104,9 +107,7 @@ class SecurityTokenAdapter {
         return encodedKey1.equals(encodedKey2);
     }
 
-    /**
-     * Return a claim from the token
-     */
+    /** Return a claim from the token */
     public String getStringClaim(String key) {
         if (!jwt.isPresent()) {
             LOG.debug("Security token is not valid.");

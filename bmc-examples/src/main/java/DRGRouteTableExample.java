@@ -55,12 +55,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Sample to demonstrate how to add, update, delete, and list static route rules in Dynamic Routing Gateway route tables
- * <p>
+ * Sample to demonstrate how to add, update, delete, and list static route rules in Dynamic Routing
+ * Gateway route tables
  *
- *  Details information on DRG: https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/managingDRGs.htm
+ * <p>Details information on DRG:
+ * https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/managingDRGs.htm
  *
- *  Details DrgRouteTable API: https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/DrgRouteTable
+ * <p>Details DrgRouteTable API:
+ * https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/DrgRouteTable
  */
 public class DRGRouteTableExample {
     private static final String TIMESTAMP_SUFFIX =
@@ -88,8 +90,10 @@ public class DRGRouteTableExample {
         VCN_CIDR_1 = args[1];
         VCN_CIDR_2 = args[2];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -301,8 +305,7 @@ public class DRGRouteTableExample {
                                         .displayName(
                                                 String.format(
                                                         "Drg-%s-%s",
-                                                        region.getRegionId(),
-                                                        TIMESTAMP_SUFFIX))
+                                                        region.getRegionId(), TIMESTAMP_SUFFIX))
                                         .build())
                         .build();
 
@@ -383,8 +386,7 @@ public class DRGRouteTableExample {
                                         .displayName(
                                                 String.format(
                                                         "DrgAttachment-%s-%s",
-                                                        region.getRegionId(),
-                                                        TIMESTAMP_SUFFIX))
+                                                        region.getRegionId(), TIMESTAMP_SUFFIX))
                                         .drgId(drg.getId())
                                         .vcnId(vcn.getId())
                                         .build())
@@ -408,7 +410,6 @@ public class DRGRouteTableExample {
      *
      * @param vcnClient the service client to use to delete the VCN
      * @param vcn the VCN to delete
-     *
      * @throws Exception if there is an error waiting on the VCN to be deleted
      */
     private static void deleteVcn(final VirtualNetworkClient vcnClient, final Vcn vcn)

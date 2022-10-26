@@ -5,19 +5,21 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Object containing information about files and directories in a repository.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Object containing information about files and directories in a repository. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RepositoryObject.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RepositoryObject extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class RepositoryObject
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "sizeInBytes", "sha", "isBinary"})
     public RepositoryObject(Type type, Long sizeInBytes, String sha, Boolean isBinary) {
@@ -30,65 +32,61 @@ public final class RepositoryObject extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The type of git object.
-         **/
+        /** The type of git object. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * The type of git object.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * Size in bytes.
-         **/
+        /** Size in bytes. */
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
         private Long sizeInBytes;
 
         /**
          * Size in bytes.
+         *
          * @param sizeInBytes the value to set
          * @return this builder
-         **/
+         */
         public Builder sizeInBytes(Long sizeInBytes) {
             this.sizeInBytes = sizeInBytes;
             this.__explicitlySet__.add("sizeInBytes");
             return this;
         }
-        /**
-         * SHA-1 hash of git object.
-         **/
+        /** SHA-1 hash of git object. */
         @com.fasterxml.jackson.annotation.JsonProperty("sha")
         private String sha;
 
         /**
          * SHA-1 hash of git object.
+         *
          * @param sha the value to set
          * @return this builder
-         **/
+         */
         public Builder sha(String sha) {
             this.sha = sha;
             this.__explicitlySet__.add("sha");
             return this;
         }
-        /**
-         * Flag to determine if the object contains binary file content or not.
-         **/
+        /** Flag to determine if the object contains binary file content or not. */
         @com.fasterxml.jackson.annotation.JsonProperty("isBinary")
         private Boolean isBinary;
 
         /**
          * Flag to determine if the object contains binary file content or not.
+         *
          * @param isBinary the value to set
          * @return this builder
-         **/
+         */
         public Builder isBinary(Boolean isBinary) {
             this.isBinary = isBinary;
             this.__explicitlySet__.add("isBinary");
@@ -125,9 +123,7 @@ public final class RepositoryObject extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -136,17 +132,15 @@ public final class RepositoryObject extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * The type of git object.
-     **/
-    public enum Type {
+    /** The type of git object. */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Blob("BLOB"),
         Tree("TREE"),
         Commit("COMMIT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -183,58 +177,54 @@ public final class RepositoryObject extends com.oracle.bmc.http.internal.Explici
             return UnknownEnumValue;
         }
     };
-    /**
-     * The type of git object.
-     **/
+    /** The type of git object. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * The type of git object.
+     *
      * @return the value
-     **/
+     */
     public Type getType() {
         return type;
     }
 
-    /**
-     * Size in bytes.
-     **/
+    /** Size in bytes. */
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
     private final Long sizeInBytes;
 
     /**
      * Size in bytes.
+     *
      * @return the value
-     **/
+     */
     public Long getSizeInBytes() {
         return sizeInBytes;
     }
 
-    /**
-     * SHA-1 hash of git object.
-     **/
+    /** SHA-1 hash of git object. */
     @com.fasterxml.jackson.annotation.JsonProperty("sha")
     private final String sha;
 
     /**
      * SHA-1 hash of git object.
+     *
      * @return the value
-     **/
+     */
     public String getSha() {
         return sha;
     }
 
-    /**
-     * Flag to determine if the object contains binary file content or not.
-     **/
+    /** Flag to determine if the object contains binary file content or not. */
     @com.fasterxml.jackson.annotation.JsonProperty("isBinary")
     private final Boolean isBinary;
 
     /**
      * Flag to determine if the object contains binary file content or not.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsBinary() {
         return isBinary;
     }
@@ -246,6 +236,7 @@ public final class RepositoryObject extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

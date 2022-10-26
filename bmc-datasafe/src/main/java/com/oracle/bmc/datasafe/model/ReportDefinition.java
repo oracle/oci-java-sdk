@@ -5,19 +5,21 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Description of report definition.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Description of report definition. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ReportDefinition.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ReportDefinition extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ReportDefinition
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -87,317 +89,346 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Name of the report definition.
-         **/
+        /** Name of the report definition. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Name of the report definition.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The OCID of the report definition.
-         **/
+        /** The OCID of the report definition. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the report definition.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
-         **/
+         * The OCID of the parent report definition. In the case of seeded report definition, this
+         * is same as definition OCID.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("parentId")
         private String parentId;
 
         /**
-         * The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
+         * The OCID of the parent report definition. In the case of seeded report definition, this
+         * is same as definition OCID.
+         *
          * @param parentId the value to set
          * @return this builder
-         **/
+         */
         public Builder parentId(String parentId) {
             this.parentId = parentId;
             this.__explicitlySet__.add("parentId");
             return this;
         }
-        /**
-         * Specifies the name of the category that this report belongs to.
-         **/
+        /** Specifies the name of the category that this report belongs to. */
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private Category category;
 
         /**
          * Specifies the name of the category that this report belongs to.
+         *
          * @param category the value to set
          * @return this builder
-         **/
+         */
         public Builder category(Category category) {
             this.category = category;
             this.__explicitlySet__.add("category");
             return this;
         }
-        /**
-         * A description of the report definition.
-         **/
+        /** A description of the report definition. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A description of the report definition.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * Specifies the name of a resource that provides data for the report. For example alerts, events.
-         **/
+         * Specifies the name of a resource that provides data for the report. For example alerts,
+         * events.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dataSource")
         private ReportDefinitionDataSource dataSource;
 
         /**
-         * Specifies the name of a resource that provides data for the report. For example alerts, events.
+         * Specifies the name of a resource that provides data for the report. For example alerts,
+         * events.
+         *
          * @param dataSource the value to set
          * @return this builder
-         **/
+         */
         public Builder dataSource(ReportDefinitionDataSource dataSource) {
             this.dataSource = dataSource;
             this.__explicitlySet__.add("dataSource");
             return this;
         }
         /**
-         * Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
-         **/
+         * Signifies whether the definition is seeded or user defined. Values can either be 'true'
+         * or 'false'.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isSeeded")
         private Boolean isSeeded;
 
         /**
-         * Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
+         * Signifies whether the definition is seeded or user defined. Values can either be 'true'
+         * or 'false'.
+         *
          * @param isSeeded the value to set
          * @return this builder
-         **/
+         */
         public Builder isSeeded(Boolean isSeeded) {
             this.isSeeded = isSeeded;
             this.__explicitlySet__.add("isSeeded");
             return this;
         }
-        /**
-         * Specifies how the report definitions are ordered in the display.
-         **/
+        /** Specifies how the report definitions are ordered in the display. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayOrder")
         private Integer displayOrder;
 
         /**
          * Specifies how the report definitions are ordered in the display.
+         *
          * @param displayOrder the value to set
          * @return this builder
-         **/
+         */
         public Builder displayOrder(Integer displayOrder) {
             this.displayOrder = displayOrder;
             this.__explicitlySet__.add("displayOrder");
             return this;
         }
-        /**
-         * Specifies the time at which the report definition was created.
-         **/
+        /** Specifies the time at which the report definition was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * Specifies the time at which the report definition was created.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * The date and time of the report definition update in Data Safe.
-         **/
+        /** The date and time of the report definition update in Data Safe. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The date and time of the report definition update in Data Safe.
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * Additional scim filters used to specialize the report.
-         **/
+        /** Additional scim filters used to specialize the report. */
         @com.fasterxml.jackson.annotation.JsonProperty("scimFilter")
         private String scimFilter;
 
         /**
          * Additional scim filters used to specialize the report.
+         *
          * @param scimFilter the value to set
          * @return this builder
-         **/
+         */
         public Builder scimFilter(String scimFilter) {
             this.scimFilter = scimFilter;
             this.__explicitlySet__.add("scimFilter");
             return this;
         }
         /**
-         * An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
-         **/
+         * An array of column objects in the order (left to right) displayed in the report. A column
+         * object stores all information about a column, including the name displayed on the UI,
+         * corresponding field name in the data source, data type of the column, and column
+         * visibility (if the column is visible to the user).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("columnInfo")
         private java.util.List<Column> columnInfo;
 
         /**
-         * An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
+         * An array of column objects in the order (left to right) displayed in the report. A column
+         * object stores all information about a column, including the name displayed on the UI,
+         * corresponding field name in the data source, data type of the column, and column
+         * visibility (if the column is visible to the user).
+         *
          * @param columnInfo the value to set
          * @return this builder
-         **/
+         */
         public Builder columnInfo(java.util.List<Column> columnInfo) {
             this.columnInfo = columnInfo;
             this.__explicitlySet__.add("columnInfo");
             return this;
         }
         /**
-         * An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
-         **/
+         * An array of column filter objects. A column Filter object stores all information about a
+         * column filter including field name, an operator, one or more expressions, if the filter
+         * is enabled, or if the filter is hidden.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("columnFilters")
         private java.util.List<ColumnFilter> columnFilters;
 
         /**
-         * An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
+         * An array of column filter objects. A column Filter object stores all information about a
+         * column filter including field name, an operator, one or more expressions, if the filter
+         * is enabled, or if the filter is hidden.
+         *
          * @param columnFilters the value to set
          * @return this builder
-         **/
+         */
         public Builder columnFilters(java.util.List<ColumnFilter> columnFilters) {
             this.columnFilters = columnFilters;
             this.__explicitlySet__.add("columnFilters");
             return this;
         }
         /**
-         * An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
-         **/
+         * An array of column sorting objects. Each column sorting object stores the column name to
+         * be sorted and if the sorting is in ascending order; sorting is done by the first column
+         * in the array, then by the second column in the array, etc.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("columnSortings")
         private java.util.List<ColumnSorting> columnSortings;
 
         /**
-         * An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
+         * An array of column sorting objects. Each column sorting object stores the column name to
+         * be sorted and if the sorting is in ascending order; sorting is done by the first column
+         * in the array, then by the second column in the array, etc.
+         *
          * @param columnSortings the value to set
          * @return this builder
-         **/
+         */
         public Builder columnSortings(java.util.List<ColumnSorting> columnSortings) {
             this.columnSortings = columnSortings;
             this.__explicitlySet__.add("columnSortings");
             return this;
         }
         /**
-         * An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
-         **/
+         * An array of report summary objects in the order (left to right) displayed in the report.
+         * A report summary object stores all information about summary of report to be displayed,
+         * including the name displayed on UI, the display order, corresponding group by and count
+         * of values, summary visibility (if the summary is visible to user).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("summary")
         private java.util.List<Summary> summary;
 
         /**
-         * An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
+         * An array of report summary objects in the order (left to right) displayed in the report.
+         * A report summary object stores all information about summary of report to be displayed,
+         * including the name displayed on UI, the display order, corresponding group by and count
+         * of values, summary visibility (if the summary is visible to user).
+         *
          * @param summary the value to set
          * @return this builder
-         **/
+         */
         public Builder summary(java.util.List<Summary> summary) {
             this.summary = summary;
             this.__explicitlySet__.add("summary");
             return this;
         }
-        /**
-         * The OCID of the compartment containing the report definition.
-         **/
+        /** The OCID of the compartment containing the report definition. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment containing the report definition.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The current state of the report.
-         **/
+        /** The current state of the report. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ReportDefinitionLifecycleState lifecycleState;
 
         /**
          * The current state of the report.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(ReportDefinitionLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          *
-         **/
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          *
-         **/
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         *
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -405,20 +436,21 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         *
-         **/
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see Resource Tags. Example: {@code {"orcl-cloud": {"free-tier-retained":
+         * "true"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see Resource Tags. Example: {@code {"orcl-cloud": {"free-tier-retained":
+         * "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         **/
+         */
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -523,9 +555,7 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -534,59 +564,58 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * Name of the report definition.
-     **/
+    /** Name of the report definition. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Name of the report definition.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The OCID of the report definition.
-     **/
+    /** The OCID of the report definition. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the report definition.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
-     **/
+     * The OCID of the parent report definition. In the case of seeded report definition, this is
+     * same as definition OCID.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("parentId")
     private final String parentId;
 
     /**
-     * The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
+     * The OCID of the parent report definition. In the case of seeded report definition, this is
+     * same as definition OCID.
+     *
      * @return the value
-     **/
+     */
     public String getParentId() {
         return parentId;
     }
 
-    /**
-     * Specifies the name of the category that this report belongs to.
-     **/
-    public enum Category {
+    /** Specifies the name of the category that this report belongs to. */
+    public enum Category implements com.oracle.bmc.http.internal.BmcEnum {
         CustomReports("CUSTOM_REPORTS"),
         Summary("SUMMARY"),
         ActivityAuditing("ACTIVITY_AUDITING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -625,256 +654,285 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             return UnknownEnumValue;
         }
     };
-    /**
-     * Specifies the name of the category that this report belongs to.
-     **/
+    /** Specifies the name of the category that this report belongs to. */
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final Category category;
 
     /**
      * Specifies the name of the category that this report belongs to.
+     *
      * @return the value
-     **/
+     */
     public Category getCategory() {
         return category;
     }
 
-    /**
-     * A description of the report definition.
-     **/
+    /** A description of the report definition. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A description of the report definition.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
     /**
-     * Specifies the name of a resource that provides data for the report. For example alerts, events.
-     **/
+     * Specifies the name of a resource that provides data for the report. For example alerts,
+     * events.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dataSource")
     private final ReportDefinitionDataSource dataSource;
 
     /**
-     * Specifies the name of a resource that provides data for the report. For example alerts, events.
+     * Specifies the name of a resource that provides data for the report. For example alerts,
+     * events.
+     *
      * @return the value
-     **/
+     */
     public ReportDefinitionDataSource getDataSource() {
         return dataSource;
     }
 
     /**
-     * Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
-     **/
+     * Signifies whether the definition is seeded or user defined. Values can either be 'true' or
+     * 'false'.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isSeeded")
     private final Boolean isSeeded;
 
     /**
-     * Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
+     * Signifies whether the definition is seeded or user defined. Values can either be 'true' or
+     * 'false'.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsSeeded() {
         return isSeeded;
     }
 
-    /**
-     * Specifies how the report definitions are ordered in the display.
-     **/
+    /** Specifies how the report definitions are ordered in the display. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayOrder")
     private final Integer displayOrder;
 
     /**
      * Specifies how the report definitions are ordered in the display.
+     *
      * @return the value
-     **/
+     */
     public Integer getDisplayOrder() {
         return displayOrder;
     }
 
-    /**
-     * Specifies the time at which the report definition was created.
-     **/
+    /** Specifies the time at which the report definition was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * Specifies the time at which the report definition was created.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The date and time of the report definition update in Data Safe.
-     **/
+    /** The date and time of the report definition update in Data Safe. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The date and time of the report definition update in Data Safe.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * Additional scim filters used to specialize the report.
-     **/
+    /** Additional scim filters used to specialize the report. */
     @com.fasterxml.jackson.annotation.JsonProperty("scimFilter")
     private final String scimFilter;
 
     /**
      * Additional scim filters used to specialize the report.
+     *
      * @return the value
-     **/
+     */
     public String getScimFilter() {
         return scimFilter;
     }
 
     /**
-     * An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
-     **/
+     * An array of column objects in the order (left to right) displayed in the report. A column
+     * object stores all information about a column, including the name displayed on the UI,
+     * corresponding field name in the data source, data type of the column, and column visibility
+     * (if the column is visible to the user).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("columnInfo")
     private final java.util.List<Column> columnInfo;
 
     /**
-     * An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
+     * An array of column objects in the order (left to right) displayed in the report. A column
+     * object stores all information about a column, including the name displayed on the UI,
+     * corresponding field name in the data source, data type of the column, and column visibility
+     * (if the column is visible to the user).
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Column> getColumnInfo() {
         return columnInfo;
     }
 
     /**
-     * An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
-     **/
+     * An array of column filter objects. A column Filter object stores all information about a
+     * column filter including field name, an operator, one or more expressions, if the filter is
+     * enabled, or if the filter is hidden.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("columnFilters")
     private final java.util.List<ColumnFilter> columnFilters;
 
     /**
-     * An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
+     * An array of column filter objects. A column Filter object stores all information about a
+     * column filter including field name, an operator, one or more expressions, if the filter is
+     * enabled, or if the filter is hidden.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<ColumnFilter> getColumnFilters() {
         return columnFilters;
     }
 
     /**
-     * An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
-     **/
+     * An array of column sorting objects. Each column sorting object stores the column name to be
+     * sorted and if the sorting is in ascending order; sorting is done by the first column in the
+     * array, then by the second column in the array, etc.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("columnSortings")
     private final java.util.List<ColumnSorting> columnSortings;
 
     /**
-     * An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
+     * An array of column sorting objects. Each column sorting object stores the column name to be
+     * sorted and if the sorting is in ascending order; sorting is done by the first column in the
+     * array, then by the second column in the array, etc.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<ColumnSorting> getColumnSortings() {
         return columnSortings;
     }
 
     /**
-     * An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
-     **/
+     * An array of report summary objects in the order (left to right) displayed in the report. A
+     * report summary object stores all information about summary of report to be displayed,
+     * including the name displayed on UI, the display order, corresponding group by and count of
+     * values, summary visibility (if the summary is visible to user).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
     private final java.util.List<Summary> summary;
 
     /**
-     * An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
+     * An array of report summary objects in the order (left to right) displayed in the report. A
+     * report summary object stores all information about summary of report to be displayed,
+     * including the name displayed on UI, the display order, corresponding group by and count of
+     * values, summary visibility (if the summary is visible to user).
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Summary> getSummary() {
         return summary;
     }
 
-    /**
-     * The OCID of the compartment containing the report definition.
-     **/
+    /** The OCID of the compartment containing the report definition. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment containing the report definition.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The current state of the report.
-     **/
+    /** The current state of the report. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ReportDefinitionLifecycleState lifecycleState;
 
     /**
      * The current state of the report.
+     *
      * @return the value
-     **/
+     */
     public ReportDefinitionLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      *
-     **/
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      *
-     **/
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     *
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     *
-     **/
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see Resource Tags. Example: {@code {"orcl-cloud": {"free-tier-retained":
+     * "true"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see Resource Tags. Example: {@code {"orcl-cloud": {"free-tier-retained":
+     * "true"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -886,6 +944,7 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

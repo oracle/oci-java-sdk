@@ -5,23 +5,23 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Database Administrator Credentials details. An empty object would result in the removal of the stored details.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Database Administrator Credentials details. An empty object would result in the removal of the
+ * stored details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateAdminCredentials.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateAdminCredentials.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateAdminCredentials
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"username", "password"})
     public UpdateAdminCredentials(String username, String password) {
@@ -32,10 +32,7 @@ public final class UpdateAdminCredentials
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Administrator username
-         *
-         **/
+        /** Administrator username */
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
@@ -44,16 +41,13 @@ public final class UpdateAdminCredentials
          *
          * @param username the value to set
          * @return this builder
-         **/
+         */
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
-        /**
-         * Administrator password
-         *
-         **/
+        /** Administrator password */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
@@ -62,7 +56,7 @@ public final class UpdateAdminCredentials
          *
          * @param password the value to set
          * @return this builder
-         **/
+         */
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
@@ -92,9 +86,7 @@ public final class UpdateAdminCredentials
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -103,10 +95,7 @@ public final class UpdateAdminCredentials
         return new Builder().copy(this);
     }
 
-    /**
-     * Administrator username
-     *
-     **/
+    /** Administrator username */
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
@@ -114,15 +103,12 @@ public final class UpdateAdminCredentials
      * Administrator username
      *
      * @return the value
-     **/
+     */
     public String getUsername() {
         return username;
     }
 
-    /**
-     * Administrator password
-     *
-     **/
+    /** Administrator password */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
@@ -130,7 +116,7 @@ public final class UpdateAdminCredentials
      * Administrator password
      *
      * @return the value
-     **/
+     */
     public String getPassword() {
         return password;
     }
@@ -142,6 +128,7 @@ public final class UpdateAdminCredentials
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -150,7 +137,7 @@ public final class UpdateAdminCredentials
         sb.append("UpdateAdminCredentials(");
         sb.append("super=").append(super.toString());
         sb.append("username=").append(String.valueOf(this.username));
-        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", password=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

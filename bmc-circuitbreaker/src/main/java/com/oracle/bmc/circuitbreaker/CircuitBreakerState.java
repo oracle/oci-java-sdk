@@ -10,26 +10,18 @@ public enum CircuitBreakerState {
      * requests through.
      */
     DISABLED,
-    /**
-     * A CLOSED breaker is operating normally and allowing requests through.
-     */
+    /** A CLOSED breaker is operating normally and allowing requests through. */
     CLOSED,
-    /**
-     * An OPEN breaker has tripped and will not allow requests through.
-     */
+    /** An OPEN breaker has tripped and will not allow requests through. */
     OPEN,
     /**
-     * A FORCED_OPEN breaker is not operating (no state transition, no events) and not allowing
-     * any requests through.
+     * A FORCED_OPEN breaker is not operating (no state transition, no events) and not allowing any
+     * requests through.
      */
     FORCED_OPEN,
-    /**
-     * A HALF_OPEN breaker has completed its wait interval and will allow requests
-     */
+    /** A HALF_OPEN breaker has completed its wait interval and will allow requests */
     HALF_OPEN,
 
-    /**
-     * The underlying implementation has an unmapped state
-     */
+    /** The underlying implementation has an unmapped state */
     UNKNOWN
 }

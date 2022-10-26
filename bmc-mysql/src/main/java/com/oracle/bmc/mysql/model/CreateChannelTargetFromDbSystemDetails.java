@@ -5,77 +5,75 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * Parameters detailing how to provision the target endpoint that is a DB System.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Parameters detailing how to provision the target endpoint that is a DB System. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateChannelTargetFromDbSystemDetails.Builder.class
-)
+        builder = CreateChannelTargetFromDbSystemDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "targetType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "targetType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateChannelTargetFromDbSystemDetails extends CreateChannelTargetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the target DB System.
-         **/
+        /** The OCID of the target DB System. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
         /**
          * The OCID of the target DB System.
+         *
          * @param dbSystemId the value to set
          * @return this builder
-         **/
+         */
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = dbSystemId;
             this.__explicitlySet__.add("dbSystemId");
             return this;
         }
         /**
-         * The case-insensitive name that identifies the replication channel. Channel names
-         * must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html).
-         * The names of non-Deleted Channels must be unique for each DB System.
-         *
-         **/
+         * The case-insensitive name that identifies the replication channel. Channel names must
+         * follow the rules defined for [MySQL
+         * identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of
+         * non-Deleted Channels must be unique for each DB System.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("channelName")
         private String channelName;
 
         /**
-         * The case-insensitive name that identifies the replication channel. Channel names
-         * must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html).
-         * The names of non-Deleted Channels must be unique for each DB System.
+         * The case-insensitive name that identifies the replication channel. Channel names must
+         * follow the rules defined for [MySQL
+         * identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of
+         * non-Deleted Channels must be unique for each DB System.
          *
          * @param channelName the value to set
          * @return this builder
-         **/
+         */
         public Builder channelName(String channelName) {
             this.channelName = channelName;
             this.__explicitlySet__.add("channelName");
             return this;
         }
-        /**
-         * The username for the replication applier of the target MySQL DB System.
-         **/
+        /** The username for the replication applier of the target MySQL DB System. */
         @com.fasterxml.jackson.annotation.JsonProperty("applierUsername")
         private String applierUsername;
 
         /**
          * The username for the replication applier of the target MySQL DB System.
+         *
          * @param applierUsername the value to set
          * @return this builder
-         **/
+         */
         public Builder applierUsername(String applierUsername) {
             this.applierUsername = applierUsername;
             this.__explicitlySet__.add("applierUsername");
@@ -110,9 +108,7 @@ public final class CreateChannelTargetFromDbSystemDetails extends CreateChannelT
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -130,50 +126,49 @@ public final class CreateChannelTargetFromDbSystemDetails extends CreateChannelT
         this.applierUsername = applierUsername;
     }
 
-    /**
-     * The OCID of the target DB System.
-     **/
+    /** The OCID of the target DB System. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
     /**
      * The OCID of the target DB System.
+     *
      * @return the value
-     **/
+     */
     public String getDbSystemId() {
         return dbSystemId;
     }
 
     /**
-     * The case-insensitive name that identifies the replication channel. Channel names
-     * must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html).
-     * The names of non-Deleted Channels must be unique for each DB System.
-     *
-     **/
+     * The case-insensitive name that identifies the replication channel. Channel names must follow
+     * the rules defined for [MySQL
+     * identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of
+     * non-Deleted Channels must be unique for each DB System.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("channelName")
     private final String channelName;
 
     /**
-     * The case-insensitive name that identifies the replication channel. Channel names
-     * must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html).
-     * The names of non-Deleted Channels must be unique for each DB System.
+     * The case-insensitive name that identifies the replication channel. Channel names must follow
+     * the rules defined for [MySQL
+     * identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of
+     * non-Deleted Channels must be unique for each DB System.
      *
      * @return the value
-     **/
+     */
     public String getChannelName() {
         return channelName;
     }
 
-    /**
-     * The username for the replication applier of the target MySQL DB System.
-     **/
+    /** The username for the replication applier of the target MySQL DB System. */
     @com.fasterxml.jackson.annotation.JsonProperty("applierUsername")
     private final String applierUsername;
 
     /**
      * The username for the replication applier of the target MySQL DB System.
+     *
      * @return the value
-     **/
+     */
     public String getApplierUsername() {
         return applierUsername;
     }
@@ -185,6 +180,7 @@ public final class CreateChannelTargetFromDbSystemDetails extends CreateChannelT
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

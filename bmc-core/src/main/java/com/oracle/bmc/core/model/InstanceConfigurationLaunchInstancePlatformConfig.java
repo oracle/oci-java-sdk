@@ -6,62 +6,55 @@ package com.oracle.bmc.core.model;
 
 /**
  * The platform configuration requested for the instance.
- * <p>
- * If you provide the parameter, the instance is created with the platform configuration that you specify.
- * For any values that you omit, the instance uses the default configuration values for the {@code shape} that you
- * specify. If you don't provide the parameter, the default values for the {@code shape} are used.
- * <p>
- * Each shape only supports certain configurable values. If the values that you provide are not valid for the
- * specified {@code shape}, an error is returned.
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>If you provide the parameter, the instance is created with the platform configuration that you
+ * specify. For any values that you omit, the instance uses the default configuration values for the
+ * {@code shape} that you specify. If you don't provide the parameter, the default values for the
+ * {@code shape} are used.
+ *
+ * <p>Each shape only supports certain configurable values. If the values that you provide are not
+ * valid for the specified {@code shape}, an error is returned. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type",
-    defaultImpl = InstanceConfigurationLaunchInstancePlatformConfig.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type",
+        defaultImpl = InstanceConfigurationLaunchInstancePlatformConfig.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig.class,
-        name = "AMD_MILAN_BM"
-    ),
+            value = InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig.class,
+            name = "AMD_MILAN_BM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = InstanceConfigurationIntelVmLaunchInstancePlatformConfig.class,
-        name = "INTEL_VM"
-    ),
+            value = InstanceConfigurationIntelVmLaunchInstancePlatformConfig.class,
+            name = "INTEL_VM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig.class,
-        name = "INTEL_ICELAKE_BM"
-    ),
+            value = InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig.class,
+            name = "INTEL_ICELAKE_BM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = InstanceConfigurationAmdRomeBmLaunchInstancePlatformConfig.class,
-        name = "AMD_ROME_BM"
-    ),
+            value = InstanceConfigurationAmdRomeBmLaunchInstancePlatformConfig.class,
+            name = "AMD_ROME_BM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = InstanceConfigurationIntelSkylakeBmLaunchInstancePlatformConfig.class,
-        name = "INTEL_SKYLAKE_BM"
-    ),
+            value = InstanceConfigurationIntelSkylakeBmLaunchInstancePlatformConfig.class,
+            name = "INTEL_SKYLAKE_BM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = InstanceConfigurationAmdRomeBmGpuLaunchInstancePlatformConfig.class,
-        name = "AMD_ROME_BM_GPU"
-    ),
+            value = InstanceConfigurationAmdRomeBmGpuLaunchInstancePlatformConfig.class,
+            name = "AMD_ROME_BM_GPU"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = InstanceConfigurationAmdVmLaunchInstancePlatformConfig.class,
-        name = "AMD_VM"
-    )
+            value = InstanceConfigurationAmdVmLaunchInstancePlatformConfig.class,
+            name = "AMD_VM")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public class InstanceConfigurationLaunchInstancePlatformConfig
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isSecureBootEnabled",
@@ -78,10 +71,7 @@ public class InstanceConfigurationLaunchInstancePlatformConfig
         this.isMeasuredBootEnabled = isMeasuredBootEnabled;
     }
 
-    /**
-     * Whether Secure Boot is enabled on the instance.
-     *
-     **/
+    /** Whether Secure Boot is enabled on the instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("isSecureBootEnabled")
     private final Boolean isSecureBootEnabled;
 
@@ -89,15 +79,12 @@ public class InstanceConfigurationLaunchInstancePlatformConfig
      * Whether Secure Boot is enabled on the instance.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsSecureBootEnabled() {
         return isSecureBootEnabled;
     }
 
-    /**
-     * Whether the Trusted Platform Module (TPM) is enabled on the instance.
-     *
-     **/
+    /** Whether the Trusted Platform Module (TPM) is enabled on the instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("isTrustedPlatformModuleEnabled")
     private final Boolean isTrustedPlatformModuleEnabled;
 
@@ -105,15 +92,12 @@ public class InstanceConfigurationLaunchInstancePlatformConfig
      * Whether the Trusted Platform Module (TPM) is enabled on the instance.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsTrustedPlatformModuleEnabled() {
         return isTrustedPlatformModuleEnabled;
     }
 
-    /**
-     * Whether the Measured Boot feature is enabled on the instance.
-     *
-     **/
+    /** Whether the Measured Boot feature is enabled on the instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("isMeasuredBootEnabled")
     private final Boolean isMeasuredBootEnabled;
 
@@ -121,7 +105,7 @@ public class InstanceConfigurationLaunchInstancePlatformConfig
      * Whether the Measured Boot feature is enabled on the instance.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsMeasuredBootEnabled() {
         return isMeasuredBootEnabled;
     }
@@ -133,6 +117,7 @@ public class InstanceConfigurationLaunchInstancePlatformConfig
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -189,11 +174,8 @@ public class InstanceConfigurationLaunchInstancePlatformConfig
         return result;
     }
 
-    /**
-     * The type of platform being configured.
-     *
-     **/
-    public enum Type {
+    /** The type of platform being configured. */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         AmdMilanBm("AMD_MILAN_BM"),
         AmdRomeBm("AMD_ROME_BM"),
         AmdRomeBmGpu("AMD_ROME_BM_GPU"),
@@ -203,8 +185,8 @@ public class InstanceConfigurationLaunchInstancePlatformConfig
         IntelVm("INTEL_VM"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 

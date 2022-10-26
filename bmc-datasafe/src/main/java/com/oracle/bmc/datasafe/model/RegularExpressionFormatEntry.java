@@ -5,31 +5,28 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The Regular Expression masking format gives the flexibility to use regular
- * expressions to search for sensitive data in a column of Large Object data
- * type (LOB), and replace the data with a fixed string, fixed number, null
- * value, or SQL expression. It can also be used for columns of VARCHAR2 type
- * to mask parts of strings. To learn more, check Regular Expressions in the
- * Data Safe documentation.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The Regular Expression masking format gives the flexibility to use regular expressions to search
+ * for sensitive data in a column of Large Object data type (LOB), and replace the data with a fixed
+ * string, fixed number, null value, or SQL expression. It can also be used for columns of VARCHAR2
+ * type to mask parts of strings. To learn more, check Regular Expressions in the Data Safe
+ * documentation. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = RegularExpressionFormatEntry.Builder.class
-)
+        builder = RegularExpressionFormatEntry.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class RegularExpressionFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -41,39 +38,35 @@ public final class RegularExpressionFormatEntry extends FormatEntry {
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The pattern that should be used to search for data.
-         **/
+        /** The pattern that should be used to search for data. */
         @com.fasterxml.jackson.annotation.JsonProperty("regularExpression")
         private String regularExpression;
 
         /**
          * The pattern that should be used to search for data.
+         *
          * @param regularExpression the value to set
          * @return this builder
-         **/
+         */
         public Builder regularExpression(String regularExpression) {
             this.regularExpression = regularExpression;
             this.__explicitlySet__.add("regularExpression");
             return this;
         }
         /**
-         * The value that should be used to replace the data matching the regular
-         * expression. It can be a fixed string, fixed number, null value, or
-         * SQL expression.
-         *
-         **/
+         * The value that should be used to replace the data matching the regular expression. It can
+         * be a fixed string, fixed number, null value, or SQL expression.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("replaceWith")
         private String replaceWith;
 
         /**
-         * The value that should be used to replace the data matching the regular
-         * expression. It can be a fixed string, fixed number, null value, or
-         * SQL expression.
+         * The value that should be used to replace the data matching the regular expression. It can
+         * be a fixed string, fixed number, null value, or SQL expression.
          *
          * @param replaceWith the value to set
          * @return this builder
-         **/
+         */
         public Builder replaceWith(String replaceWith) {
             this.replaceWith = replaceWith;
             this.__explicitlySet__.add("replaceWith");
@@ -108,9 +101,7 @@ public final class RegularExpressionFormatEntry extends FormatEntry {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -127,36 +118,32 @@ public final class RegularExpressionFormatEntry extends FormatEntry {
         this.replaceWith = replaceWith;
     }
 
-    /**
-     * The pattern that should be used to search for data.
-     **/
+    /** The pattern that should be used to search for data. */
     @com.fasterxml.jackson.annotation.JsonProperty("regularExpression")
     private final String regularExpression;
 
     /**
      * The pattern that should be used to search for data.
+     *
      * @return the value
-     **/
+     */
     public String getRegularExpression() {
         return regularExpression;
     }
 
     /**
-     * The value that should be used to replace the data matching the regular
-     * expression. It can be a fixed string, fixed number, null value, or
-     * SQL expression.
-     *
-     **/
+     * The value that should be used to replace the data matching the regular expression. It can be
+     * a fixed string, fixed number, null value, or SQL expression.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("replaceWith")
     private final String replaceWith;
 
     /**
-     * The value that should be used to replace the data matching the regular
-     * expression. It can be a fixed string, fixed number, null value, or
-     * SQL expression.
+     * The value that should be used to replace the data matching the regular expression. It can be
+     * a fixed string, fixed number, null value, or SQL expression.
      *
      * @return the value
-     **/
+     */
     public String getReplaceWith() {
         return replaceWith;
     }
@@ -168,6 +155,7 @@ public final class RegularExpressionFormatEntry extends FormatEntry {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -15,9 +15,8 @@ import com.oracle.bmc.util.internal.StringUtils;
 import javax.annotation.Nonnull;
 
 /**
- * EndpointBuilder provides a wrapper to construct the appropriate
- * endpoint for a service.  The service may override the endpoint template, but
- * if not, a default template will be used.
+ * EndpointBuilder provides a wrapper to construct the appropriate endpoint for a service. The
+ * service may override the endpoint template, but if not, a default template will be used.
  */
 public class EndpointBuilder {
     private static final org.slf4j.Logger LOG =
@@ -31,8 +30,7 @@ public class EndpointBuilder {
     private static final Map<String, String> OVERRIDE_REGION_IDS = new HashMap<>();
 
     /**
-     * Creates the service endpoint using the {@link DefaultEndpointConfiguration}
-     * method.
+     * Creates the service endpoint using the {@link DefaultEndpointConfiguration} method.
      *
      * @param service The service
      * @param regionId The regionId
@@ -56,7 +54,8 @@ public class EndpointBuilder {
         }
 
         // Do not append any other endpoint suffix like '.service.oci.oraclecloud.com` at the end
-        // Ex: If regionId is 'broom6.us.oracle.com', then endpoint should be 'https://{service}.broom6.us.oracle.com'
+        // Ex: If regionId is 'broom6.us.oracle.com', then endpoint should be
+        // 'https://{service}.broom6.us.oracle.com'
         if (StringUtils.isNotBlank(regionId) && regionId.contains(".")) {
             final String endpoint;
             if (StringUtils.isNotBlank(service.getEndpointServiceName())) {
@@ -107,7 +106,6 @@ public class EndpointBuilder {
         } else {
             endpointTemplateToUse = DEFAULT_ENDPOINT_TEMPLATE;
         }
-
         return DefaultEndpointConfiguration.builder(endpointTemplateToUse)
                 .regionId(regionIdToUse)
                 .serviceEndpointPrefix(service.getServiceEndpointPrefix())
@@ -129,8 +127,7 @@ public class EndpointBuilder {
     }
 
     /**
-     * Creates the service endpoint using the {@link DefaultEndpointConfiguration}
-     * method.
+     * Creates the service endpoint using the {@link DefaultEndpointConfiguration} method.
      *
      * @param service The service
      * @param region The region
@@ -148,9 +145,10 @@ public class EndpointBuilder {
 
     /**
      * Temporary ability to override the region for a given regionId.
-     * <p>
-     * This will most likely be removed at a later point in time.  It is not intended
-     * for use outside of the SDK.
+     *
+     * <p>This will most likely be removed at a later point in time. It is not intended for use
+     * outside of the SDK.
+     *
      * @param regionId The value obtained from {@link Region#getRegionId()}.
      * @param overrideRegionId The alternative regionId to use.
      */

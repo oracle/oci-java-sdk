@@ -5,23 +5,23 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * The information about the source object.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information about the source object. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Source.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class Source extends CreateConnectivityValidationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -141,49 +141,46 @@ public final class Source extends CreateConnectivityValidationDetails {
             this.__explicitlySet__.add("entity");
             return this;
         }
-        /**
-         * Specifies the read access.
-         **/
+        /** Specifies the read access. */
         @com.fasterxml.jackson.annotation.JsonProperty("isReadAccess")
         private Boolean isReadAccess;
 
         /**
          * Specifies the read access.
+         *
          * @param isReadAccess the value to set
          * @return this builder
-         **/
+         */
         public Builder isReadAccess(Boolean isReadAccess) {
             this.isReadAccess = isReadAccess;
             this.__explicitlySet__.add("isReadAccess");
             return this;
         }
-        /**
-         * Specifies the copy fields.
-         **/
+        /** Specifies the copy fields. */
         @com.fasterxml.jackson.annotation.JsonProperty("isCopyFields")
         private Boolean isCopyFields;
 
         /**
          * Specifies the copy fields.
+         *
          * @param isCopyFields the value to set
          * @return this builder
-         **/
+         */
         public Builder isCopyFields(Boolean isCopyFields) {
             this.isCopyFields = isCopyFields;
             this.__explicitlySet__.add("isCopyFields");
             return this;
         }
-        /**
-         * Specifies if this uses a predefined shape.
-         **/
+        /** Specifies if this uses a predefined shape. */
         @com.fasterxml.jackson.annotation.JsonProperty("isPredefinedShape")
         private Boolean isPredefinedShape;
 
         /**
          * Specifies if this uses a predefined shape.
+         *
          * @param isPredefinedShape the value to set
          * @return this builder
-         **/
+         */
         public Builder isPredefinedShape(Boolean isPredefinedShape) {
             this.isPredefinedShape = isPredefinedShape;
             this.__explicitlySet__.add("isPredefinedShape");
@@ -311,9 +308,7 @@ public final class Source extends CreateConnectivityValidationDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -372,44 +367,41 @@ public final class Source extends CreateConnectivityValidationDetails {
         return entity;
     }
 
-    /**
-     * Specifies the read access.
-     **/
+    /** Specifies the read access. */
     @com.fasterxml.jackson.annotation.JsonProperty("isReadAccess")
     private final Boolean isReadAccess;
 
     /**
      * Specifies the read access.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsReadAccess() {
         return isReadAccess;
     }
 
-    /**
-     * Specifies the copy fields.
-     **/
+    /** Specifies the copy fields. */
     @com.fasterxml.jackson.annotation.JsonProperty("isCopyFields")
     private final Boolean isCopyFields;
 
     /**
      * Specifies the copy fields.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsCopyFields() {
         return isCopyFields;
     }
 
-    /**
-     * Specifies if this uses a predefined shape.
-     **/
+    /** Specifies if this uses a predefined shape. */
     @com.fasterxml.jackson.annotation.JsonProperty("isPredefinedShape")
     private final Boolean isPredefinedShape;
 
     /**
      * Specifies if this uses a predefined shape.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsPredefinedShape() {
         return isPredefinedShape;
     }
@@ -442,6 +434,7 @@ public final class Source extends CreateConnectivityValidationDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

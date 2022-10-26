@@ -6,6 +6,7 @@ package com.oracle.bmc.encryption.internal;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.oracle.bmc.http.client.Serialization;
 import com.oracle.bmc.auth.internal.AuthUtils;
 
 import java.util.ArrayList;
@@ -49,7 +50,7 @@ public class EncryptionHeader {
         if (additionalAuthenticatedData.isEmpty()) return new HashMap<String, String>();
 
         Map<String, String> result =
-                com.oracle.bmc.http.Serialization.getObjectMapper()
+                Serialization.getObjectMapper()
                         .readValue(additionalAuthenticatedData, HashMap.class);
         return result;
     }

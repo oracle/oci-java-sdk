@@ -5,19 +5,20 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Information about a license type for Java.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Information about a license type for Java. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JavaLicense.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class JavaLicense extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class JavaLicense extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName", "licenseType", "licenseUrl"})
     public JavaLicense(String displayName, LicenseType licenseType, String licenseUrl) {
@@ -29,49 +30,46 @@ public final class JavaLicense extends com.oracle.bmc.http.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Commonly used name for the license type.
-         **/
+        /** Commonly used name for the license type. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Commonly used name for the license type.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * License Type
-         **/
+        /** License Type */
         @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
         private LicenseType licenseType;
 
         /**
          * License Type
+         *
          * @param licenseType the value to set
          * @return this builder
-         **/
+         */
         public Builder licenseType(LicenseType licenseType) {
             this.licenseType = licenseType;
             this.__explicitlySet__.add("licenseType");
             return this;
         }
-        /**
-         * Publicly accessible license URL containing the detailed terms and conditions.
-         **/
+        /** Publicly accessible license URL containing the detailed terms and conditions. */
         @com.fasterxml.jackson.annotation.JsonProperty("licenseUrl")
         private String licenseUrl;
 
         /**
          * Publicly accessible license URL containing the detailed terms and conditions.
+         *
          * @param licenseUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder licenseUrl(String licenseUrl) {
             this.licenseUrl = licenseUrl;
             this.__explicitlySet__.add("licenseUrl");
@@ -105,9 +103,7 @@ public final class JavaLicense extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,44 +112,41 @@ public final class JavaLicense extends com.oracle.bmc.http.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /**
-     * Commonly used name for the license type.
-     **/
+    /** Commonly used name for the license type. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Commonly used name for the license type.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * License Type
-     **/
+    /** License Type */
     @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
     private final LicenseType licenseType;
 
     /**
      * License Type
+     *
      * @return the value
-     **/
+     */
     public LicenseType getLicenseType() {
         return licenseType;
     }
 
-    /**
-     * Publicly accessible license URL containing the detailed terms and conditions.
-     **/
+    /** Publicly accessible license URL containing the detailed terms and conditions. */
     @com.fasterxml.jackson.annotation.JsonProperty("licenseUrl")
     private final String licenseUrl;
 
     /**
      * Publicly accessible license URL containing the detailed terms and conditions.
+     *
      * @return the value
-     **/
+     */
     public String getLicenseUrl() {
         return licenseUrl;
     }
@@ -165,6 +158,7 @@ public final class JavaLicense extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

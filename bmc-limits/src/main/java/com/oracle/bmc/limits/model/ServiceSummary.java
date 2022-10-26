@@ -5,19 +5,21 @@
 package com.oracle.bmc.limits.model;
 
 /**
- * A specific OCI service supported by resource limits.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A specific OCI service supported by resource limits. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ServiceSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ServiceSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ServiceSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "description"})
     public ServiceSummary(String name, String description) {
@@ -28,33 +30,31 @@ public final class ServiceSummary extends com.oracle.bmc.http.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The service name. Use this when calling other APIs.
-         **/
+        /** The service name. Use this when calling other APIs. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The service name. Use this when calling other APIs.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The friendly service name.
-         **/
+        /** The friendly service name. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The friendly service name.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -84,9 +84,7 @@ public final class ServiceSummary extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,30 +93,28 @@ public final class ServiceSummary extends com.oracle.bmc.http.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /**
-     * The service name. Use this when calling other APIs.
-     **/
+    /** The service name. Use this when calling other APIs. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The service name. Use this when calling other APIs.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The friendly service name.
-     **/
+    /** The friendly service name. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The friendly service name.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
@@ -130,6 +126,7 @@ public final class ServiceSummary extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

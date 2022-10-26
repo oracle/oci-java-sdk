@@ -5,22 +5,22 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = RestoreObjectsDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = RestoreObjectsDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class RestoreObjectsDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"objectName", "hours", "versionId"})
     public RestoreObjectsDetails(String objectName, Integer hours, String versionId) {
@@ -32,46 +32,41 @@ public final class RestoreObjectsDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * An object that is in an archive storage tier and needs to be restored.
-         **/
+        /** An object that is in an archive storage tier and needs to be restored. */
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
         /**
          * An object that is in an archive storage tier and needs to be restored.
+         *
          * @param objectName the value to set
          * @return this builder
-         **/
+         */
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
             return this;
         }
         /**
-         * The number of hours for which this object will be restored.
-         * By default objects will be restored for 24 hours. You can instead configure the duration using the hours parameter.
-         *
-         **/
+         * The number of hours for which this object will be restored. By default objects will be
+         * restored for 24 hours. You can instead configure the duration using the hours parameter.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("hours")
         private Integer hours;
 
         /**
-         * The number of hours for which this object will be restored.
-         * By default objects will be restored for 24 hours. You can instead configure the duration using the hours parameter.
+         * The number of hours for which this object will be restored. By default objects will be
+         * restored for 24 hours. You can instead configure the duration using the hours parameter.
          *
          * @param hours the value to set
          * @return this builder
-         **/
+         */
         public Builder hours(Integer hours) {
             this.hours = hours;
             this.__explicitlySet__.add("hours");
             return this;
         }
-        /**
-         * The versionId of the object to restore. Current object version is used by default.
-         *
-         **/
+        /** The versionId of the object to restore. Current object version is used by default. */
         @com.fasterxml.jackson.annotation.JsonProperty("versionId")
         private String versionId;
 
@@ -80,7 +75,7 @@ public final class RestoreObjectsDetails
          *
          * @param versionId the value to set
          * @return this builder
-         **/
+         */
         public Builder versionId(String versionId) {
             this.versionId = versionId;
             this.__explicitlySet__.add("versionId");
@@ -114,9 +109,7 @@ public final class RestoreObjectsDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -125,42 +118,37 @@ public final class RestoreObjectsDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * An object that is in an archive storage tier and needs to be restored.
-     **/
+    /** An object that is in an archive storage tier and needs to be restored. */
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
     /**
      * An object that is in an archive storage tier and needs to be restored.
+     *
      * @return the value
-     **/
+     */
     public String getObjectName() {
         return objectName;
     }
 
     /**
-     * The number of hours for which this object will be restored.
-     * By default objects will be restored for 24 hours. You can instead configure the duration using the hours parameter.
-     *
-     **/
+     * The number of hours for which this object will be restored. By default objects will be
+     * restored for 24 hours. You can instead configure the duration using the hours parameter.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("hours")
     private final Integer hours;
 
     /**
-     * The number of hours for which this object will be restored.
-     * By default objects will be restored for 24 hours. You can instead configure the duration using the hours parameter.
+     * The number of hours for which this object will be restored. By default objects will be
+     * restored for 24 hours. You can instead configure the duration using the hours parameter.
      *
      * @return the value
-     **/
+     */
     public Integer getHours() {
         return hours;
     }
 
-    /**
-     * The versionId of the object to restore. Current object version is used by default.
-     *
-     **/
+    /** The versionId of the object to restore. Current object version is used by default. */
     @com.fasterxml.jackson.annotation.JsonProperty("versionId")
     private final String versionId;
 
@@ -168,7 +156,7 @@ public final class RestoreObjectsDetails
      * The versionId of the object to restore. Current object version is used by default.
      *
      * @return the value
-     **/
+     */
     public String getVersionId() {
         return versionId;
     }
@@ -180,6 +168,7 @@ public final class RestoreObjectsDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

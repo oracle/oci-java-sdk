@@ -5,19 +5,21 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * The assets SCSI controller.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The assets SCSI controller. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ScsiController.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ScsiController extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ScsiController
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"label", "unitNumber", "sharedBus"})
     public ScsiController(String label, Integer unitNumber, String sharedBus) {
@@ -29,49 +31,46 @@ public final class ScsiController extends com.oracle.bmc.http.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Provides a label and summary information for the device.
-         **/
+        /** Provides a label and summary information for the device. */
         @com.fasterxml.jackson.annotation.JsonProperty("label")
         private String label;
 
         /**
          * Provides a label and summary information for the device.
+         *
          * @param label the value to set
          * @return this builder
-         **/
+         */
         public Builder label(String label) {
             this.label = label;
             this.__explicitlySet__.add("label");
             return this;
         }
-        /**
-         * The unit number of the SCSI controller.
-         **/
+        /** The unit number of the SCSI controller. */
         @com.fasterxml.jackson.annotation.JsonProperty("unitNumber")
         private Integer unitNumber;
 
         /**
          * The unit number of the SCSI controller.
+         *
          * @param unitNumber the value to set
          * @return this builder
-         **/
+         */
         public Builder unitNumber(Integer unitNumber) {
             this.unitNumber = unitNumber;
             this.__explicitlySet__.add("unitNumber");
             return this;
         }
-        /**
-         * Shared bus.
-         **/
+        /** Shared bus. */
         @com.fasterxml.jackson.annotation.JsonProperty("sharedBus")
         private String sharedBus;
 
         /**
          * Shared bus.
+         *
          * @param sharedBus the value to set
          * @return this builder
-         **/
+         */
         public Builder sharedBus(String sharedBus) {
             this.sharedBus = sharedBus;
             this.__explicitlySet__.add("sharedBus");
@@ -104,9 +103,7 @@ public final class ScsiController extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,44 +112,41 @@ public final class ScsiController extends com.oracle.bmc.http.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /**
-     * Provides a label and summary information for the device.
-     **/
+    /** Provides a label and summary information for the device. */
     @com.fasterxml.jackson.annotation.JsonProperty("label")
     private final String label;
 
     /**
      * Provides a label and summary information for the device.
+     *
      * @return the value
-     **/
+     */
     public String getLabel() {
         return label;
     }
 
-    /**
-     * The unit number of the SCSI controller.
-     **/
+    /** The unit number of the SCSI controller. */
     @com.fasterxml.jackson.annotation.JsonProperty("unitNumber")
     private final Integer unitNumber;
 
     /**
      * The unit number of the SCSI controller.
+     *
      * @return the value
-     **/
+     */
     public Integer getUnitNumber() {
         return unitNumber;
     }
 
-    /**
-     * Shared bus.
-     **/
+    /** Shared bus. */
     @com.fasterxml.jackson.annotation.JsonProperty("sharedBus")
     private final String sharedBus;
 
     /**
      * Shared bus.
+     *
      * @return the value
-     **/
+     */
     public String getSharedBus() {
         return sharedBus;
     }
@@ -164,6 +158,7 @@ public final class ScsiController extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

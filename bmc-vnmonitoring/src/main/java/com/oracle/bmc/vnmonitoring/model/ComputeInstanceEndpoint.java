@@ -5,33 +5,28 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * Defines the details required for a COMPUTE_INSTANCE-type {@code Endpoint}.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Defines the details required for a COMPUTE_INSTANCE-type {@code Endpoint}. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ComputeInstanceEndpoint.Builder.class
-)
+        builder = ComputeInstanceEndpoint.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ComputeInstanceEndpoint extends Endpoint {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The IPv4 address of the COMPUTE_INSTANCE-type {@code Endpoint} object.
-         *
-         **/
+        /** The IPv4 address of the COMPUTE_INSTANCE-type {@code Endpoint} object. */
         @com.fasterxml.jackson.annotation.JsonProperty("address")
         private String address;
 
@@ -40,43 +35,45 @@ public final class ComputeInstanceEndpoint extends Endpoint {
          *
          * @param address the value to set
          * @return this builder
-         **/
+         */
         public Builder address(String address) {
             this.address = address;
             this.__explicitlySet__.add("address");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compute instance.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compute instance.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compute instance.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compute instance.
          *
          * @param instanceId the value to set
          * @return this builder
-         **/
+         */
         public Builder instanceId(String instanceId) {
             this.instanceId = instanceId;
             this.__explicitlySet__.add("instanceId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * VNIC attached to the compute instance.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * VNIC attached to the compute instance.
          *
          * @param vnicId the value to set
          * @return this builder
-         **/
+         */
         public Builder vnicId(String vnicId) {
             this.vnicId = vnicId;
             this.__explicitlySet__.add("vnicId");
@@ -110,9 +107,7 @@ public final class ComputeInstanceEndpoint extends Endpoint {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -129,10 +124,7 @@ public final class ComputeInstanceEndpoint extends Endpoint {
         this.vnicId = vnicId;
     }
 
-    /**
-     * The IPv4 address of the COMPUTE_INSTANCE-type {@code Endpoint} object.
-     *
-     **/
+    /** The IPv4 address of the COMPUTE_INSTANCE-type {@code Endpoint} object. */
     @com.fasterxml.jackson.annotation.JsonProperty("address")
     private final String address;
 
@@ -140,39 +132,41 @@ public final class ComputeInstanceEndpoint extends Endpoint {
      * The IPv4 address of the COMPUTE_INSTANCE-type {@code Endpoint} object.
      *
      * @return the value
-     **/
+     */
     public String getAddress() {
         return address;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compute instance.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compute instance.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compute instance.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compute instance.
      *
      * @return the value
-     **/
+     */
     public String getInstanceId() {
         return instanceId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * VNIC attached to the compute instance.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     private final String vnicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * VNIC attached to the compute instance.
      *
      * @return the value
-     **/
+     */
     public String getVnicId() {
         return vnicId;
     }
@@ -184,6 +178,7 @@ public final class ComputeInstanceEndpoint extends Endpoint {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

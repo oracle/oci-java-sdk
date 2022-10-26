@@ -5,19 +5,21 @@
 package com.oracle.bmc.ospgateway.model;
 
 /**
- * Billing address details model.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Billing address details model. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BillingAddress.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BillingAddress extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class BillingAddress
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "addressKey",
@@ -60,177 +62,166 @@ public final class BillingAddress extends com.oracle.bmc.http.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Address identifier.
-         **/
+        /** Address identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("addressKey")
         private String addressKey;
 
         /**
          * Address identifier.
+         *
          * @param addressKey the value to set
          * @return this builder
-         **/
+         */
         public Builder addressKey(String addressKey) {
             this.addressKey = addressKey;
             this.__explicitlySet__.add("addressKey");
             return this;
         }
-        /**
-         * Address line 1.
-         **/
+        /** Address line 1. */
         @com.fasterxml.jackson.annotation.JsonProperty("line1")
         private String line1;
 
         /**
          * Address line 1.
+         *
          * @param line1 the value to set
          * @return this builder
-         **/
+         */
         public Builder line1(String line1) {
             this.line1 = line1;
             this.__explicitlySet__.add("line1");
             return this;
         }
-        /**
-         * Address line 2.
-         **/
+        /** Address line 2. */
         @com.fasterxml.jackson.annotation.JsonProperty("line2")
         private String line2;
 
         /**
          * Address line 2.
+         *
          * @param line2 the value to set
          * @return this builder
-         **/
+         */
         public Builder line2(String line2) {
             this.line2 = line2;
             this.__explicitlySet__.add("line2");
             return this;
         }
-        /**
-         * Name of the city.
-         **/
+        /** Name of the city. */
         @com.fasterxml.jackson.annotation.JsonProperty("city")
         private String city;
 
         /**
          * Name of the city.
+         *
          * @param city the value to set
          * @return this builder
-         **/
+         */
         public Builder city(String city) {
             this.city = city;
             this.__explicitlySet__.add("city");
             return this;
         }
-        /**
-         * Country of the address.
-         **/
+        /** Country of the address. */
         @com.fasterxml.jackson.annotation.JsonProperty("country")
         private String country;
 
         /**
          * Country of the address.
+         *
          * @param country the value to set
          * @return this builder
-         **/
+         */
         public Builder country(String country) {
             this.country = country;
             this.__explicitlySet__.add("country");
             return this;
         }
-        /**
-         * Post code of the address.
-         **/
+        /** Post code of the address. */
         @com.fasterxml.jackson.annotation.JsonProperty("postalCode")
         private String postalCode;
 
         /**
          * Post code of the address.
+         *
          * @param postalCode the value to set
          * @return this builder
-         **/
+         */
         public Builder postalCode(String postalCode) {
             this.postalCode = postalCode;
             this.__explicitlySet__.add("postalCode");
             return this;
         }
-        /**
-         * State of the address.
-         **/
+        /** State of the address. */
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private String state;
 
         /**
          * State of the address.
+         *
          * @param state the value to set
          * @return this builder
-         **/
+         */
         public Builder state(String state) {
             this.state = state;
             this.__explicitlySet__.add("state");
             return this;
         }
-        /**
-         * Contact person email address.
-         **/
+        /** Contact person email address. */
         @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
         private String emailAddress;
 
         /**
          * Contact person email address.
+         *
          * @param emailAddress the value to set
          * @return this builder
-         **/
+         */
         public Builder emailAddress(String emailAddress) {
             this.emailAddress = emailAddress;
             this.__explicitlySet__.add("emailAddress");
             return this;
         }
-        /**
-         * Name of the customer company.
-         **/
+        /** Name of the customer company. */
         @com.fasterxml.jackson.annotation.JsonProperty("companyName")
         private String companyName;
 
         /**
          * Name of the customer company.
+         *
          * @param companyName the value to set
          * @return this builder
-         **/
+         */
         public Builder companyName(String companyName) {
             this.companyName = companyName;
             this.__explicitlySet__.add("companyName");
             return this;
         }
-        /**
-         * First name of the contact person.
-         **/
+        /** First name of the contact person. */
         @com.fasterxml.jackson.annotation.JsonProperty("firstName")
         private String firstName;
 
         /**
          * First name of the contact person.
+         *
          * @param firstName the value to set
          * @return this builder
-         **/
+         */
         public Builder firstName(String firstName) {
             this.firstName = firstName;
             this.__explicitlySet__.add("firstName");
             return this;
         }
-        /**
-         * Last name of the contact person.
-         **/
+        /** Last name of the contact person. */
         @com.fasterxml.jackson.annotation.JsonProperty("lastName")
         private String lastName;
 
         /**
          * Last name of the contact person.
+         *
          * @param lastName the value to set
          * @return this builder
-         **/
+         */
         public Builder lastName(String lastName) {
             this.lastName = lastName;
             this.__explicitlySet__.add("lastName");
@@ -299,9 +290,7 @@ public final class BillingAddress extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -310,156 +299,145 @@ public final class BillingAddress extends com.oracle.bmc.http.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /**
-     * Address identifier.
-     **/
+    /** Address identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("addressKey")
     private final String addressKey;
 
     /**
      * Address identifier.
+     *
      * @return the value
-     **/
+     */
     public String getAddressKey() {
         return addressKey;
     }
 
-    /**
-     * Address line 1.
-     **/
+    /** Address line 1. */
     @com.fasterxml.jackson.annotation.JsonProperty("line1")
     private final String line1;
 
     /**
      * Address line 1.
+     *
      * @return the value
-     **/
+     */
     public String getLine1() {
         return line1;
     }
 
-    /**
-     * Address line 2.
-     **/
+    /** Address line 2. */
     @com.fasterxml.jackson.annotation.JsonProperty("line2")
     private final String line2;
 
     /**
      * Address line 2.
+     *
      * @return the value
-     **/
+     */
     public String getLine2() {
         return line2;
     }
 
-    /**
-     * Name of the city.
-     **/
+    /** Name of the city. */
     @com.fasterxml.jackson.annotation.JsonProperty("city")
     private final String city;
 
     /**
      * Name of the city.
+     *
      * @return the value
-     **/
+     */
     public String getCity() {
         return city;
     }
 
-    /**
-     * Country of the address.
-     **/
+    /** Country of the address. */
     @com.fasterxml.jackson.annotation.JsonProperty("country")
     private final String country;
 
     /**
      * Country of the address.
+     *
      * @return the value
-     **/
+     */
     public String getCountry() {
         return country;
     }
 
-    /**
-     * Post code of the address.
-     **/
+    /** Post code of the address. */
     @com.fasterxml.jackson.annotation.JsonProperty("postalCode")
     private final String postalCode;
 
     /**
      * Post code of the address.
+     *
      * @return the value
-     **/
+     */
     public String getPostalCode() {
         return postalCode;
     }
 
-    /**
-     * State of the address.
-     **/
+    /** State of the address. */
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final String state;
 
     /**
      * State of the address.
+     *
      * @return the value
-     **/
+     */
     public String getState() {
         return state;
     }
 
-    /**
-     * Contact person email address.
-     **/
+    /** Contact person email address. */
     @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
     private final String emailAddress;
 
     /**
      * Contact person email address.
+     *
      * @return the value
-     **/
+     */
     public String getEmailAddress() {
         return emailAddress;
     }
 
-    /**
-     * Name of the customer company.
-     **/
+    /** Name of the customer company. */
     @com.fasterxml.jackson.annotation.JsonProperty("companyName")
     private final String companyName;
 
     /**
      * Name of the customer company.
+     *
      * @return the value
-     **/
+     */
     public String getCompanyName() {
         return companyName;
     }
 
-    /**
-     * First name of the contact person.
-     **/
+    /** First name of the contact person. */
     @com.fasterxml.jackson.annotation.JsonProperty("firstName")
     private final String firstName;
 
     /**
      * First name of the contact person.
+     *
      * @return the value
-     **/
+     */
     public String getFirstName() {
         return firstName;
     }
 
-    /**
-     * Last name of the contact person.
-     **/
+    /** Last name of the contact person. */
     @com.fasterxml.jackson.annotation.JsonProperty("lastName")
     private final String lastName;
 
     /**
      * Last name of the contact person.
+     *
      * @return the value
-     **/
+     */
     public String getLastName() {
         return lastName;
     }
@@ -471,6 +449,7 @@ public final class BillingAddress extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

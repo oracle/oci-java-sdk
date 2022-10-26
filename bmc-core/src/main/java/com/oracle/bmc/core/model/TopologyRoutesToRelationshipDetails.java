@@ -5,22 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Defines route rule details for a {@code routesTo} relationship.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Defines route rule details for a {@code routesTo} relationship. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = TopologyRoutesToRelationshipDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = TopologyRoutesToRelationshipDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class TopologyRoutesToRelationshipDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "destinationType",
@@ -41,75 +41,85 @@ public final class TopologyRoutesToRelationshipDetails
     public static class Builder {
         /**
          * The destinationType can be set to one of two values:
-         * <p>
-         * Use {@code CIDR_BLOCK} if the rule's {@code destination} is an IP address range in CIDR notation.
-         * <p>
-         * Use {@code SERVICE_CIDR_BLOCK} if the rule's {@code destination} is the {@code cidrBlock} value for a {@link Service}.
          *
-         **/
+         * <p>Use {@code CIDR_BLOCK} if the rule's {@code destination} is an IP address range in
+         * CIDR notation.
+         *
+         * <p>Use {@code SERVICE_CIDR_BLOCK} if the rule's {@code destination} is the {@code
+         * cidrBlock} value for a {@link Service}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
         private String destinationType;
 
         /**
          * The destinationType can be set to one of two values:
-         * <p>
-         * Use {@code CIDR_BLOCK} if the rule's {@code destination} is an IP address range in CIDR notation.
-         * <p>
-         * Use {@code SERVICE_CIDR_BLOCK} if the rule's {@code destination} is the {@code cidrBlock} value for a {@link Service}.
+         *
+         * <p>Use {@code CIDR_BLOCK} if the rule's {@code destination} is an IP address range in
+         * CIDR notation.
+         *
+         * <p>Use {@code SERVICE_CIDR_BLOCK} if the rule's {@code destination} is the {@code
+         * cidrBlock} value for a {@link Service}.
          *
          * @param destinationType the value to set
          * @return this builder
-         **/
+         */
         public Builder destinationType(String destinationType) {
             this.destinationType = destinationType;
             this.__explicitlySet__.add("destinationType");
             return this;
         }
         /**
-         * An IP address range in CIDR notation or the {@code cidrBlock} value for a {@link Service}.
-         **/
+         * An IP address range in CIDR notation or the {@code cidrBlock} value for a {@link
+         * Service}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("destination")
         private String destination;
 
         /**
-         * An IP address range in CIDR notation or the {@code cidrBlock} value for a {@link Service}.
+         * An IP address range in CIDR notation or the {@code cidrBlock} value for a {@link
+         * Service}.
+         *
          * @param destination the value to set
          * @return this builder
-         **/
+         */
         public Builder destination(String destination) {
             this.destination = destination;
             this.__explicitlySet__.add("destination");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the routing table that contains the route rule.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the routing table that contains the route rule.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the routing table that contains the route rule.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the routing table that contains the route rule.
+         *
          * @param routeTableId the value to set
          * @return this builder
-         **/
+         */
         public Builder routeTableId(String routeTableId) {
             this.routeTableId = routeTableId;
             this.__explicitlySet__.add("routeTableId");
             return this;
         }
         /**
-         * A route rule can be {@code STATIC} if manually added to the route table or {@code DYNAMIC} if imported from another route table.
-         *
-         **/
+         * A route rule can be {@code STATIC} if manually added to the route table or {@code
+         * DYNAMIC} if imported from another route table.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("routeType")
         private RouteType routeType;
 
         /**
-         * A route rule can be {@code STATIC} if manually added to the route table or {@code DYNAMIC} if imported from another route table.
+         * A route rule can be {@code STATIC} if manually added to the route table or {@code
+         * DYNAMIC} if imported from another route table.
          *
          * @param routeType the value to set
          * @return this builder
-         **/
+         */
         public Builder routeType(RouteType routeType) {
             this.routeType = routeType;
             this.__explicitlySet__.add("routeType");
@@ -150,9 +160,7 @@ public final class TopologyRoutesToRelationshipDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -163,67 +171,74 @@ public final class TopologyRoutesToRelationshipDetails
 
     /**
      * The destinationType can be set to one of two values:
-     * <p>
-     * Use {@code CIDR_BLOCK} if the rule's {@code destination} is an IP address range in CIDR notation.
-     * <p>
-     * Use {@code SERVICE_CIDR_BLOCK} if the rule's {@code destination} is the {@code cidrBlock} value for a {@link Service}.
      *
-     **/
+     * <p>Use {@code CIDR_BLOCK} if the rule's {@code destination} is an IP address range in CIDR
+     * notation.
+     *
+     * <p>Use {@code SERVICE_CIDR_BLOCK} if the rule's {@code destination} is the {@code cidrBlock}
+     * value for a {@link Service}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
     private final String destinationType;
 
     /**
      * The destinationType can be set to one of two values:
-     * <p>
-     * Use {@code CIDR_BLOCK} if the rule's {@code destination} is an IP address range in CIDR notation.
-     * <p>
-     * Use {@code SERVICE_CIDR_BLOCK} if the rule's {@code destination} is the {@code cidrBlock} value for a {@link Service}.
+     *
+     * <p>Use {@code CIDR_BLOCK} if the rule's {@code destination} is an IP address range in CIDR
+     * notation.
+     *
+     * <p>Use {@code SERVICE_CIDR_BLOCK} if the rule's {@code destination} is the {@code cidrBlock}
+     * value for a {@link Service}.
      *
      * @return the value
-     **/
+     */
     public String getDestinationType() {
         return destinationType;
     }
 
     /**
      * An IP address range in CIDR notation or the {@code cidrBlock} value for a {@link Service}.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
     private final String destination;
 
     /**
      * An IP address range in CIDR notation or the {@code cidrBlock} value for a {@link Service}.
+     *
      * @return the value
-     **/
+     */
     public String getDestination() {
         return destination;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the routing table that contains the route rule.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the routing table that contains the route rule.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     private final String routeTableId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the routing table that contains the route rule.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the routing table that contains the route rule.
+     *
      * @return the value
-     **/
+     */
     public String getRouteTableId() {
         return routeTableId;
     }
 
     /**
-     * A route rule can be {@code STATIC} if manually added to the route table or {@code DYNAMIC} if imported from another route table.
-     *
-     **/
-    public enum RouteType {
+     * A route rule can be {@code STATIC} if manually added to the route table or {@code DYNAMIC} if
+     * imported from another route table.
+     */
+    public enum RouteType implements com.oracle.bmc.http.internal.BmcEnum {
         Static("STATIC"),
         Dynamic("DYNAMIC"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -263,17 +278,18 @@ public final class TopologyRoutesToRelationshipDetails
         }
     };
     /**
-     * A route rule can be {@code STATIC} if manually added to the route table or {@code DYNAMIC} if imported from another route table.
-     *
-     **/
+     * A route rule can be {@code STATIC} if manually added to the route table or {@code DYNAMIC} if
+     * imported from another route table.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("routeType")
     private final RouteType routeType;
 
     /**
-     * A route rule can be {@code STATIC} if manually added to the route table or {@code DYNAMIC} if imported from another route table.
+     * A route rule can be {@code STATIC} if manually added to the route table or {@code DYNAMIC} if
+     * imported from another route table.
      *
      * @return the value
-     **/
+     */
     public RouteType getRouteType() {
         return routeType;
     }
@@ -285,6 +301,7 @@ public final class TopologyRoutesToRelationshipDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

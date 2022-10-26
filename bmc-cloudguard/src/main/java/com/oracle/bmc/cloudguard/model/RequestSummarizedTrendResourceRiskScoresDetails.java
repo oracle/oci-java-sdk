@@ -5,22 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * ResourceRiskScores filter.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * ResourceRiskScores filter. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = RequestSummarizedTrendResourceRiskScoresDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = RequestSummarizedTrendResourceRiskScoresDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class RequestSummarizedTrendResourceRiskScoresDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"filter", "filterId"})
     public RequestSummarizedTrendResourceRiskScoresDetails(
@@ -32,33 +32,31 @@ public final class RequestSummarizedTrendResourceRiskScoresDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The filter type.
-         **/
+        /** The filter type. */
         @com.fasterxml.jackson.annotation.JsonProperty("filter")
         private ResourceRiskScoreDimension filter;
 
         /**
          * The filter type.
+         *
          * @param filter the value to set
          * @return this builder
-         **/
+         */
         public Builder filter(ResourceRiskScoreDimension filter) {
             this.filter = filter;
             this.__explicitlySet__.add("filter");
             return this;
         }
-        /**
-         * Id to be passed in to filter the risk scores.
-         **/
+        /** Id to be passed in to filter the risk scores. */
         @com.fasterxml.jackson.annotation.JsonProperty("filterId")
         private String filterId;
 
         /**
          * Id to be passed in to filter the risk scores.
+         *
          * @param filterId the value to set
          * @return this builder
-         **/
+         */
         public Builder filterId(String filterId) {
             this.filterId = filterId;
             this.__explicitlySet__.add("filterId");
@@ -89,9 +87,7 @@ public final class RequestSummarizedTrendResourceRiskScoresDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,30 +96,28 @@ public final class RequestSummarizedTrendResourceRiskScoresDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The filter type.
-     **/
+    /** The filter type. */
     @com.fasterxml.jackson.annotation.JsonProperty("filter")
     private final ResourceRiskScoreDimension filter;
 
     /**
      * The filter type.
+     *
      * @return the value
-     **/
+     */
     public ResourceRiskScoreDimension getFilter() {
         return filter;
     }
 
-    /**
-     * Id to be passed in to filter the risk scores.
-     **/
+    /** Id to be passed in to filter the risk scores. */
     @com.fasterxml.jackson.annotation.JsonProperty("filterId")
     private final String filterId;
 
     /**
      * Id to be passed in to filter the risk scores.
+     *
      * @return the value
-     **/
+     */
     public String getFilterId() {
         return filterId;
     }
@@ -135,6 +129,7 @@ public final class RequestSummarizedTrendResourceRiskScoresDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

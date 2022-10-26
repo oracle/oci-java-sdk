@@ -5,22 +5,22 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies the list of artifact override arguments at the time of deployment.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Specifies the list of artifact override arguments at the time of deployment. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DeployArtifactOverrideArgumentCollection.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DeployArtifactOverrideArgumentCollection.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DeployArtifactOverrideArgumentCollection
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items"})
     public DeployArtifactOverrideArgumentCollection(
@@ -31,17 +31,16 @@ public final class DeployArtifactOverrideArgumentCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * List of artifact override arguments at the time of deployment.
-         **/
+        /** List of artifact override arguments at the time of deployment. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DeployArtifactOverrideArgument> items;
 
         /**
          * List of artifact override arguments at the time of deployment.
+         *
          * @param items the value to set
          * @return this builder
-         **/
+         */
         public Builder items(java.util.List<DeployArtifactOverrideArgument> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -69,9 +68,7 @@ public final class DeployArtifactOverrideArgumentCollection
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -80,16 +77,15 @@ public final class DeployArtifactOverrideArgumentCollection
         return new Builder().copy(this);
     }
 
-    /**
-     * List of artifact override arguments at the time of deployment.
-     **/
+    /** List of artifact override arguments at the time of deployment. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DeployArtifactOverrideArgument> items;
 
     /**
      * List of artifact override arguments at the time of deployment.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<DeployArtifactOverrideArgument> getItems() {
         return items;
     }
@@ -101,6 +97,7 @@ public final class DeployArtifactOverrideArgumentCollection
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

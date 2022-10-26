@@ -5,22 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The content of the SQL Tuning Advisor summary report.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The content of the SQL Tuning Advisor summary report. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SqlTuningAdvisorTaskSummaryReport.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SqlTuningAdvisorTaskSummaryReport.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SqlTuningAdvisorTaskSummaryReport
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "taskInfo",
@@ -61,18 +61,17 @@ public final class SqlTuningAdvisorTaskSummaryReport
             this.__explicitlySet__.add("statistics");
             return this;
         }
-        /**
-         * The list of object findings related to statistics.
-         **/
+        /** The list of object findings related to statistics. */
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatFindings")
         private java.util.List<SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary>
                 objectStatFindings;
 
         /**
          * The list of object findings related to statistics.
+         *
          * @param objectStatFindings the value to set
          * @return this builder
-         **/
+         */
         public Builder objectStatFindings(
                 java.util.List<SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary>
                         objectStatFindings) {
@@ -80,17 +79,16 @@ public final class SqlTuningAdvisorTaskSummaryReport
             this.__explicitlySet__.add("objectStatFindings");
             return this;
         }
-        /**
-         * The list of object findings related to indexes.
-         **/
+        /** The list of object findings related to indexes. */
         @com.fasterxml.jackson.annotation.JsonProperty("indexFindings")
         private java.util.List<SqlTuningAdvisorTaskSummaryReportIndexFindingSummary> indexFindings;
 
         /**
          * The list of object findings related to indexes.
+         *
          * @param indexFindings the value to set
          * @return this builder
-         **/
+         */
         public Builder indexFindings(
                 java.util.List<SqlTuningAdvisorTaskSummaryReportIndexFindingSummary>
                         indexFindings) {
@@ -133,9 +131,7 @@ public final class SqlTuningAdvisorTaskSummaryReport
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -158,33 +154,31 @@ public final class SqlTuningAdvisorTaskSummaryReport
         return statistics;
     }
 
-    /**
-     * The list of object findings related to statistics.
-     **/
+    /** The list of object findings related to statistics. */
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatFindings")
     private final java.util.List<SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary>
             objectStatFindings;
 
     /**
      * The list of object findings related to statistics.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary>
             getObjectStatFindings() {
         return objectStatFindings;
     }
 
-    /**
-     * The list of object findings related to indexes.
-     **/
+    /** The list of object findings related to indexes. */
     @com.fasterxml.jackson.annotation.JsonProperty("indexFindings")
     private final java.util.List<SqlTuningAdvisorTaskSummaryReportIndexFindingSummary>
             indexFindings;
 
     /**
      * The list of object findings related to indexes.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<SqlTuningAdvisorTaskSummaryReportIndexFindingSummary> getIndexFindings() {
         return indexFindings;
     }
@@ -196,6 +190,7 @@ public final class SqlTuningAdvisorTaskSummaryReport
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

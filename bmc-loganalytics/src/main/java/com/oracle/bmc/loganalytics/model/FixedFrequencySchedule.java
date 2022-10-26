@@ -5,25 +5,24 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Fixed frequency schedule for a scheduled task.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Fixed frequency schedule for a scheduled task. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = FixedFrequencySchedule.Builder.class
-)
+        builder = FixedFrequencySchedule.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class FixedFrequencySchedule extends Schedule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -46,45 +45,41 @@ public final class FixedFrequencySchedule extends Schedule {
         }
         /**
          * Recurring interval in ISO 8601 extended format as described in
-         * https://en.wikipedia.org/wiki/ISO_8601#Durations.
-         * The largest supported unit is D, e.g. P14D (not P2W).
-         * The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
-         *
-         **/
+         * https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g.
+         * P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or
+         * PT30240M).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("recurringInterval")
         private String recurringInterval;
 
         /**
          * Recurring interval in ISO 8601 extended format as described in
-         * https://en.wikipedia.org/wiki/ISO_8601#Durations.
-         * The largest supported unit is D, e.g. P14D (not P2W).
-         * The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+         * https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g.
+         * P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or
+         * PT30240M).
          *
          * @param recurringInterval the value to set
          * @return this builder
-         **/
+         */
         public Builder recurringInterval(String recurringInterval) {
             this.recurringInterval = recurringInterval;
             this.__explicitlySet__.add("recurringInterval");
             return this;
         }
         /**
-         * Number of times (0-based) to execute until auto-stop.
-         * Default value -1 will execute indefinitely.
-         * Value 0 will execute once.
-         *
-         **/
+         * Number of times (0-based) to execute until auto-stop. Default value -1 will execute
+         * indefinitely. Value 0 will execute once.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("repeatCount")
         private Integer repeatCount;
 
         /**
-         * Number of times (0-based) to execute until auto-stop.
-         * Default value -1 will execute indefinitely.
-         * Value 0 will execute once.
+         * Number of times (0-based) to execute until auto-stop. Default value -1 will execute
+         * indefinitely. Value 0 will execute once.
          *
          * @param repeatCount the value to set
          * @return this builder
-         **/
+         */
         public Builder repeatCount(Integer repeatCount) {
             this.repeatCount = repeatCount;
             this.__explicitlySet__.add("repeatCount");
@@ -125,9 +120,7 @@ public final class FixedFrequencySchedule extends Schedule {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -149,42 +142,38 @@ public final class FixedFrequencySchedule extends Schedule {
 
     /**
      * Recurring interval in ISO 8601 extended format as described in
-     * https://en.wikipedia.org/wiki/ISO_8601#Durations.
-     * The largest supported unit is D, e.g. P14D (not P2W).
-     * The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
-     *
-     **/
+     * https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D
+     * (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or
+     * PT30240M).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("recurringInterval")
     private final String recurringInterval;
 
     /**
      * Recurring interval in ISO 8601 extended format as described in
-     * https://en.wikipedia.org/wiki/ISO_8601#Durations.
-     * The largest supported unit is D, e.g. P14D (not P2W).
-     * The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+     * https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D
+     * (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or
+     * PT30240M).
      *
      * @return the value
-     **/
+     */
     public String getRecurringInterval() {
         return recurringInterval;
     }
 
     /**
-     * Number of times (0-based) to execute until auto-stop.
-     * Default value -1 will execute indefinitely.
-     * Value 0 will execute once.
-     *
-     **/
+     * Number of times (0-based) to execute until auto-stop. Default value -1 will execute
+     * indefinitely. Value 0 will execute once.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("repeatCount")
     private final Integer repeatCount;
 
     /**
-     * Number of times (0-based) to execute until auto-stop.
-     * Default value -1 will execute indefinitely.
-     * Value 0 will execute once.
+     * Number of times (0-based) to execute until auto-stop. Default value -1 will execute
+     * indefinitely. Value 0 will execute once.
      *
      * @return the value
-     **/
+     */
     public Integer getRepeatCount() {
         return repeatCount;
     }
@@ -196,6 +185,7 @@ public final class FixedFrequencySchedule extends Schedule {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

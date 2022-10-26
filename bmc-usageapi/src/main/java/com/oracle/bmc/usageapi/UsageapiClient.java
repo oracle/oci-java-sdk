@@ -4,335 +4,40 @@
  */
 package com.oracle.bmc.usageapi;
 
-import com.oracle.bmc.usageapi.internal.http.*;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.usageapi.requests.*;
 import com.oracle.bmc.usageapi.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
+import java.util.Objects;
+
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
-public class UsageapiClient implements Usageapi {
-    /**
-     * Service instance for Usageapi.
-     */
+public class UsageapiClient extends com.oracle.bmc.http.internal.BaseSyncClient
+        implements Usageapi {
+    /** Service instance for Usageapi. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("USAGEAPI")
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://usageapi.{region}.oci.{secondLevelDomain}")
                     .build();
-    // attempt twice if it's instance principals, immediately failures will try to refresh the token
-    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(UsageapiAsyncClient.class);
 
-    com.oracle.bmc.http.internal.RestClient getClient() {
-        return client;
-    }
-
     private final UsageapiWaiters waiters;
 
     private final UsageapiPaginators paginators;
-    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-            authenticationDetailsProvider;
-    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
-    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
-            apacheConnectionClosingStrategy;
-    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
-    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
-    private final java.util.Map<
-                    com.oracle.bmc.http.signing.SigningStrategy,
-                    com.oracle.bmc.http.signing.RequestSignerFactory>
-            signingStrategyRequestSignerFactories;
-    private final boolean isNonBufferingApacheClient;
-    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
-    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-            circuitBreakerConfiguration;
 
-    /**
-     * Used to synchronize any updates on the `this.client` object.
-     */
-    private final Object clientUpdate = new Object();
-
-    /**
-     * Stores the actual client object used to make the API calls.
-     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
-     *       For any writes to the object, please synchronize on `this.clientUpdate`.
-     */
-    private volatile com.oracle.bmc.http.internal.RestClient client;
-
-    /**
-     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
-     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
-     */
-    private volatile String overrideEndpoint = null;
-
-    /**
-     * Creates a new service instance using the given authentication provider.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     */
-    public UsageapiClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     */
-    public UsageapiClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(authenticationDetailsProvider, configuration, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     */
-    public UsageapiClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     */
-    public UsageapiClient(
+    private UsageapiClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public UsageapiClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                additionalClientConfigurators,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public UsageapiClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
-                        .createDefaultRequestSignerFactories(),
-                additionalClientConfigurators,
-                endpoint);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public UsageapiClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
-     */
-    public UsageapiClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
             java.util.concurrent.ExecutorService executorService) {
-        this(
+        super(
+                builder,
                 authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                executorService,
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * Use the {@link Builder} to get access to all these parameters.
-     *
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
-     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
-     */
-    protected UsageapiClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            java.util.concurrent.ExecutorService executorService,
-            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
-        this.authenticationDetailsProvider = authenticationDetailsProvider;
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
-                new java.util.ArrayList<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
-            authenticationDetailsConfigurators.addAll(
-                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
-                                    this.authenticationDetailsProvider)
-                            .getClientConfigurators());
-        }
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
-                new java.util.ArrayList<>(additionalClientConfigurators);
-        allConfigurators.addAll(authenticationDetailsConfigurators);
-        this.restClientFactory =
-                restClientFactoryBuilder
-                        .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(allConfigurators)
-                        .build();
-        this.isNonBufferingApacheClient =
-                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        this.restClientFactory.getClientConfigurator());
-        this.apacheConnectionClosingStrategy =
-                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
-                        restClientFactory.getClientConfigurator());
-
-        this.clientConfigurationToUse =
-                (configuration != null)
-                        ? configuration
-                        : com.oracle.bmc.ClientConfiguration.builder().build();
-        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
-        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
-        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
-        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-                userCircuitBreakerConfiguration =
-                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
-                                configuration);
-        if (userCircuitBreakerConfiguration == null) {
-            this.circuitBreakerConfiguration =
-                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
-        } else {
-            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
-        }
-
-        this.refreshClient();
+                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -354,28 +59,11 @@ public class UsageapiClient implements Usageapi {
         this.waiters = new UsageapiWaiters(executorService, this);
 
         this.paginators = new UsageapiPaginators(this);
-
-        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
-            com.oracle.bmc.auth.RegionProvider provider =
-                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
-
-            if (provider.getRegion() != null) {
-                this.setRegion(provider.getRegion());
-                if (endpoint != null) {
-                    LOG.info(
-                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
-                            provider.getRegion(),
-                            endpoint);
-                }
-            }
-        }
-        if (endpoint != null) {
-            setEndpoint(endpoint);
-        }
     }
 
     /**
      * Create a builder for this client.
+     *
      * @return builder
      */
     public static Builder builder() {
@@ -383,8 +71,8 @@ public class UsageapiClient implements Usageapi {
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
+     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, UsageapiClient> {
@@ -399,6 +87,7 @@ public class UsageapiClient implements Usageapi {
 
         /**
          * Set the ExecutorService for the client to be created.
+         *
          * @param executorService executorService
          * @return this builder
          */
@@ -409,837 +98,567 @@ public class UsageapiClient implements Usageapi {
 
         /**
          * Build the client.
+         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public UsageapiClient build(
                 @javax.annotation.Nonnull
-                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                        authenticationDetailsProvider) {
-            if (authenticationDetailsProvider == null) {
-                throw new NullPointerException(
-                        "authenticationDetailsProvider is marked non-null but is null");
-            }
-            return new UsageapiClient(
-                    authenticationDetailsProvider,
-                    configuration,
-                    clientConfigurator,
-                    requestSignerFactory,
-                    signingStrategyRequestSignerFactories,
-                    additionalClientConfigurators,
-                    endpoint,
-                    executorService);
+                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                                authenticationDetailsProvider) {
+            return new UsageapiClient(this, authenticationDetailsProvider, executorService);
         }
-    }
-
-    @Override
-    public void refreshClient() {
-        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                this.defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        this.signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
-            }
-        }
-
-        com.oracle.bmc.http.internal.RestClient refreshedClient =
-                this.restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        this.clientConfigurationToUse,
-                        this.isNonBufferingApacheClient,
-                        null,
-                        this.circuitBreakerConfiguration);
-
-        synchronized (clientUpdate) {
-            if (this.overrideEndpoint != null) {
-                refreshedClient.setEndpoint(this.overrideEndpoint);
-            }
-
-            this.client = refreshedClient;
-        }
-
-        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint) {
-        LOG.info("Setting endpoint to {}", endpoint);
-
-        synchronized (clientUpdate) {
-            this.overrideEndpoint = endpoint;
-            client.setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
-        }
-        return endpoint;
     }
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        java.util.Optional<String> endpoint =
-                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
-        if (endpoint.isPresent()) {
-            setEndpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + SERVICE + " is not known in region " + region);
-        }
+        super.setRegion(region);
     }
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
-        try {
-            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-            setRegion(region);
-        } catch (IllegalArgumentException e) {
-            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-            setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public void close() {
-        client.close();
+        super.setRegion(regionId);
     }
 
     @Override
     public CreateCustomTableResponse createCustomTable(CreateCustomTableRequest request) {
-        LOG.trace("Called createCustomTable");
-        final CreateCustomTableRequest interceptedRequest =
-                CreateCustomTableConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateCustomTableConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateCustomTableDetails(), "createCustomTableDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateCustomTableResponse::builder)
+                .logger(LOG, "createCustomTable")
+                .serviceDetails(
                         "Usageapi",
                         "CreateCustomTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/CreateCustomTable");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateCustomTableResponse>
-                transformer =
-                        CreateCustomTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateCustomTableDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/CreateCustomTable")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCustomTableRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("customTables")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.CustomTable.class,
+                        CreateCustomTableResponse.Builder::customTable)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCustomTableResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateCustomTableResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public CreateQueryResponse createQuery(CreateQueryRequest request) {
-        LOG.trace("Called createQuery");
-        final CreateQueryRequest interceptedRequest =
-                CreateQueryConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateQueryConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCreateQueryDetails(), "createQueryDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateQueryResponse::builder)
+                .logger(LOG, "createQuery")
+                .serviceDetails(
                         "Usageapi",
                         "CreateQuery",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/CreateQuery");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateQueryResponse> transformer =
-                CreateQueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateQueryDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/CreateQuery")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateQueryRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("queries")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.Query.class,
+                        CreateQueryResponse.Builder::query)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateQueryResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateQueryResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public CreateScheduleResponse createSchedule(CreateScheduleRequest request) {
-        LOG.trace("Called createSchedule");
-        final CreateScheduleRequest interceptedRequest =
-                CreateScheduleConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateScheduleConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateScheduleDetails(), "createScheduleDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateScheduleResponse::builder)
+                .logger(LOG, "createSchedule")
+                .serviceDetails(
                         "Usageapi",
                         "CreateSchedule",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/CreateSchedule");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateScheduleResponse> transformer =
-                CreateScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateScheduleDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/CreateSchedule")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateScheduleRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("schedules")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.Schedule.class,
+                        CreateScheduleResponse.Builder::schedule)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateScheduleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateScheduleResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public DeleteCustomTableResponse deleteCustomTable(DeleteCustomTableRequest request) {
-        LOG.trace("Called deleteCustomTable");
-        final DeleteCustomTableRequest interceptedRequest =
-                DeleteCustomTableConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteCustomTableConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getCustomTableId(), "customTableId must not be blank");
+
+        return clientCall(request, DeleteCustomTableResponse::builder)
+                .logger(LOG, "deleteCustomTable")
+                .serviceDetails(
                         "Usageapi",
                         "DeleteCustomTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/DeleteCustomTable");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteCustomTableResponse>
-                transformer =
-                        DeleteCustomTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/DeleteCustomTable")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCustomTableRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("customTables")
+                .appendPathParam(request.getCustomTableId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCustomTableResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteQueryResponse deleteQuery(DeleteQueryRequest request) {
-        LOG.trace("Called deleteQuery");
-        final DeleteQueryRequest interceptedRequest =
-                DeleteQueryConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteQueryConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getQueryId(), "queryId must not be blank");
+
+        return clientCall(request, DeleteQueryResponse::builder)
+                .logger(LOG, "deleteQuery")
+                .serviceDetails(
                         "Usageapi",
                         "DeleteQuery",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/DeleteQuery");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteQueryResponse> transformer =
-                DeleteQueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/DeleteQuery")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteQueryRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("queries")
+                .appendPathParam(request.getQueryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteQueryResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteScheduleResponse deleteSchedule(DeleteScheduleRequest request) {
-        LOG.trace("Called deleteSchedule");
-        final DeleteScheduleRequest interceptedRequest =
-                DeleteScheduleConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteScheduleConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getScheduleId(), "scheduleId must not be blank");
+
+        return clientCall(request, DeleteScheduleResponse::builder)
+                .logger(LOG, "deleteSchedule")
+                .serviceDetails(
                         "Usageapi",
                         "DeleteSchedule",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/DeleteSchedule");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteScheduleResponse> transformer =
-                DeleteScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/DeleteSchedule")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteScheduleRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("schedules")
+                .appendPathParam(request.getScheduleId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteScheduleResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetCustomTableResponse getCustomTable(GetCustomTableRequest request) {
-        LOG.trace("Called getCustomTable");
-        final GetCustomTableRequest interceptedRequest =
-                GetCustomTableConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetCustomTableConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getCustomTableId(), "customTableId must not be blank");
+
+        return clientCall(request, GetCustomTableResponse::builder)
+                .logger(LOG, "getCustomTable")
+                .serviceDetails(
                         "Usageapi",
                         "GetCustomTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/GetCustomTable");
-        java.util.function.Function<javax.ws.rs.core.Response, GetCustomTableResponse> transformer =
-                GetCustomTableConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/GetCustomTable")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCustomTableRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("customTables")
+                .appendPathParam(request.getCustomTableId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.CustomTable.class,
+                        GetCustomTableResponse.Builder::customTable)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCustomTableResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetCustomTableResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public GetQueryResponse getQuery(GetQueryRequest request) {
-        LOG.trace("Called getQuery");
-        final GetQueryRequest interceptedRequest = GetQueryConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetQueryConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getQueryId(), "queryId must not be blank");
+
+        return clientCall(request, GetQueryResponse::builder)
+                .logger(LOG, "getQuery")
+                .serviceDetails(
                         "Usageapi",
                         "GetQuery",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/GetQuery");
-        java.util.function.Function<javax.ws.rs.core.Response, GetQueryResponse> transformer =
-                GetQueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/GetQuery")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetQueryRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("queries")
+                .appendPathParam(request.getQueryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.Query.class, GetQueryResponse.Builder::query)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetQueryResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetQueryResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public GetScheduleResponse getSchedule(GetScheduleRequest request) {
-        LOG.trace("Called getSchedule");
-        final GetScheduleRequest interceptedRequest =
-                GetScheduleConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetScheduleConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getScheduleId(), "scheduleId must not be blank");
+
+        return clientCall(request, GetScheduleResponse::builder)
+                .logger(LOG, "getSchedule")
+                .serviceDetails(
                         "Usageapi",
                         "GetSchedule",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/GetSchedule");
-        java.util.function.Function<javax.ws.rs.core.Response, GetScheduleResponse> transformer =
-                GetScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/GetSchedule")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetScheduleRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("schedules")
+                .appendPathParam(request.getScheduleId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.Schedule.class,
+                        GetScheduleResponse.Builder::schedule)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetScheduleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetScheduleResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public GetScheduledRunResponse getScheduledRun(GetScheduledRunRequest request) {
-        LOG.trace("Called getScheduledRun");
-        final GetScheduledRunRequest interceptedRequest =
-                GetScheduledRunConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetScheduledRunConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getScheduledRunId(), "scheduledRunId must not be blank");
+
+        return clientCall(request, GetScheduledRunResponse::builder)
+                .logger(LOG, "getScheduledRun")
+                .serviceDetails(
                         "Usageapi",
                         "GetScheduledRun",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/ScheduledRun/GetScheduledRun");
-        java.util.function.Function<javax.ws.rs.core.Response, GetScheduledRunResponse>
-                transformer =
-                        GetScheduledRunConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/ScheduledRun/GetScheduledRun")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetScheduledRunRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("scheduledRuns")
+                .appendPathParam(request.getScheduledRunId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.ScheduledRun.class,
+                        GetScheduledRunResponse.Builder::scheduledRun)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetScheduledRunResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetScheduledRunResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public ListCustomTablesResponse listCustomTables(ListCustomTablesRequest request) {
-        LOG.trace("Called listCustomTables");
-        final ListCustomTablesRequest interceptedRequest =
-                ListCustomTablesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListCustomTablesConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getSavedReportId(), "savedReportId is required");
+
+        return clientCall(request, ListCustomTablesResponse::builder)
+                .logger(LOG, "listCustomTables")
+                .serviceDetails(
                         "Usageapi",
                         "ListCustomTables",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/ListCustomTables");
-        java.util.function.Function<javax.ws.rs.core.Response, ListCustomTablesResponse>
-                transformer =
-                        ListCustomTablesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/ListCustomTables")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCustomTablesRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("customTables")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("savedReportId", request.getSavedReportId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.CustomTableCollection.class,
+                        ListCustomTablesResponse.Builder::customTableCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCustomTablesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCustomTablesResponse.Builder::opcNextPage)
+                .callSync();
     }
 
     @Override
     public ListQueriesResponse listQueries(ListQueriesRequest request) {
-        LOG.trace("Called listQueries");
-        final ListQueriesRequest interceptedRequest =
-                ListQueriesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListQueriesConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListQueriesResponse::builder)
+                .logger(LOG, "listQueries")
+                .serviceDetails(
                         "Usageapi",
                         "ListQueries",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/ListQueries");
-        java.util.function.Function<javax.ws.rs.core.Response, ListQueriesResponse> transformer =
-                ListQueriesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/ListQueries")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListQueriesRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("queries")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.QueryCollection.class,
+                        ListQueriesResponse.Builder::queryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListQueriesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListQueriesResponse.Builder::opcNextPage)
+                .callSync();
     }
 
     @Override
     public ListScheduledRunsResponse listScheduledRuns(ListScheduledRunsRequest request) {
-        LOG.trace("Called listScheduledRuns");
-        final ListScheduledRunsRequest interceptedRequest =
-                ListScheduledRunsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListScheduledRunsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getScheduleId(), "scheduleId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListScheduledRunsResponse::builder)
+                .logger(LOG, "listScheduledRuns")
+                .serviceDetails(
                         "Usageapi",
                         "ListScheduledRuns",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/ScheduledRun/ListScheduledRuns");
-        java.util.function.Function<javax.ws.rs.core.Response, ListScheduledRunsResponse>
-                transformer =
-                        ListScheduledRunsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/ScheduledRun/ListScheduledRuns")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListScheduledRunsRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("scheduledRuns")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("scheduleId", request.getScheduleId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.ScheduledRunCollection.class,
+                        ListScheduledRunsResponse.Builder::scheduledRunCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListScheduledRunsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListScheduledRunsResponse.Builder::opcNextPage)
+                .callSync();
     }
 
     @Override
     public ListSchedulesResponse listSchedules(ListSchedulesRequest request) {
-        LOG.trace("Called listSchedules");
-        final ListSchedulesRequest interceptedRequest =
-                ListSchedulesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListSchedulesConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListSchedulesResponse::builder)
+                .logger(LOG, "listSchedules")
+                .serviceDetails(
                         "Usageapi",
                         "ListSchedules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/ListSchedules");
-        java.util.function.Function<javax.ws.rs.core.Response, ListSchedulesResponse> transformer =
-                ListSchedulesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/ListSchedules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSchedulesRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("schedules")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("name", request.getName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.ScheduleCollection.class,
+                        ListSchedulesResponse.Builder::scheduleCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSchedulesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSchedulesResponse.Builder::opcNextPage)
+                .callSync();
     }
 
     @Override
     public RequestSummarizedConfigurationsResponse requestSummarizedConfigurations(
             RequestSummarizedConfigurationsRequest request) {
-        LOG.trace("Called requestSummarizedConfigurations");
-        final RequestSummarizedConfigurationsRequest interceptedRequest =
-                RequestSummarizedConfigurationsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RequestSummarizedConfigurationsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getTenantId(), "tenantId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, RequestSummarizedConfigurationsResponse::builder)
+                .logger(LOG, "requestSummarizedConfigurations")
+                .serviceDetails(
                         "Usageapi",
                         "RequestSummarizedConfigurations",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Configuration/RequestSummarizedConfigurations");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, RequestSummarizedConfigurationsResponse>
-                transformer =
-                        RequestSummarizedConfigurationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Configuration/RequestSummarizedConfigurations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(RequestSummarizedConfigurationsRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("configuration")
+                .appendQueryParam("tenantId", request.getTenantId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.ConfigurationAggregation.class,
+                        RequestSummarizedConfigurationsResponse.Builder::configurationAggregation)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RequestSummarizedConfigurationsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public RequestSummarizedUsagesResponse requestSummarizedUsages(
             RequestSummarizedUsagesRequest request) {
-        LOG.trace("Called requestSummarizedUsages");
-        final RequestSummarizedUsagesRequest interceptedRequest =
-                RequestSummarizedUsagesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RequestSummarizedUsagesConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getRequestSummarizedUsagesDetails(),
+                "requestSummarizedUsagesDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, RequestSummarizedUsagesResponse::builder)
+                .logger(LOG, "requestSummarizedUsages")
+                .serviceDetails(
                         "Usageapi",
                         "RequestSummarizedUsages",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageSummary/RequestSummarizedUsages");
-        java.util.function.Function<javax.ws.rs.core.Response, RequestSummarizedUsagesResponse>
-                transformer =
-                        RequestSummarizedUsagesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getRequestSummarizedUsagesDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageSummary/RequestSummarizedUsages")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RequestSummarizedUsagesRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("usage")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.UsageAggregation.class,
+                        RequestSummarizedUsagesResponse.Builder::usageAggregation)
+                .handleResponseHeaderString(
+                        "opc-request-id", RequestSummarizedUsagesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", RequestSummarizedUsagesResponse.Builder::opcNextPage)
+                .callSync();
     }
 
     @Override
     public UpdateCustomTableResponse updateCustomTable(UpdateCustomTableRequest request) {
-        LOG.trace("Called updateCustomTable");
-        final UpdateCustomTableRequest interceptedRequest =
-                UpdateCustomTableConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateCustomTableConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getUpdateCustomTableDetails(), "updateCustomTableDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getCustomTableId(), "customTableId must not be blank");
+
+        return clientCall(request, UpdateCustomTableResponse::builder)
+                .logger(LOG, "updateCustomTable")
+                .serviceDetails(
                         "Usageapi",
                         "UpdateCustomTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/UpdateCustomTable");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateCustomTableResponse>
-                transformer =
-                        UpdateCustomTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateCustomTableDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/UpdateCustomTable")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCustomTableRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("customTables")
+                .appendPathParam(request.getCustomTableId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.CustomTable.class,
+                        UpdateCustomTableResponse.Builder::customTable)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCustomTableResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateCustomTableResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public UpdateQueryResponse updateQuery(UpdateQueryRequest request) {
-        LOG.trace("Called updateQuery");
-        final UpdateQueryRequest interceptedRequest =
-                UpdateQueryConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateQueryConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getUpdateQueryDetails(), "updateQueryDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getQueryId(), "queryId must not be blank");
+
+        return clientCall(request, UpdateQueryResponse::builder)
+                .logger(LOG, "updateQuery")
+                .serviceDetails(
                         "Usageapi",
                         "UpdateQuery",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/UpdateQuery");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateQueryResponse> transformer =
-                UpdateQueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateQueryDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/UpdateQuery")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateQueryRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("queries")
+                .appendPathParam(request.getQueryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.Query.class,
+                        UpdateQueryResponse.Builder::query)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateQueryResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateQueryResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public UpdateScheduleResponse updateSchedule(UpdateScheduleRequest request) {
-        LOG.trace("Called updateSchedule");
-        final UpdateScheduleRequest interceptedRequest =
-                UpdateScheduleConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateScheduleConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getUpdateScheduleDetails(), "updateScheduleDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getScheduleId(), "scheduleId must not be blank");
+
+        return clientCall(request, UpdateScheduleResponse::builder)
+                .logger(LOG, "updateSchedule")
+                .serviceDetails(
                         "Usageapi",
                         "UpdateSchedule",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/UpdateSchedule");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateScheduleResponse> transformer =
-                UpdateScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateScheduleDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/UpdateSchedule")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateScheduleRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("schedules")
+                .appendPathParam(request.getScheduleId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.Schedule.class,
+                        UpdateScheduleResponse.Builder::schedule)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateScheduleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateScheduleResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
@@ -1250,5 +669,209 @@ public class UsageapiClient implements Usageapi {
     @Override
     public UsageapiPaginators getPaginators() {
         return paginators;
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public UsageapiClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(builder(), authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public UsageapiClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(builder().configuration(configuration), authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public UsageapiClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                builder().configuration(configuration).clientConfigurator(clientConfigurator),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public UsageapiClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public UsageapiClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public UsageapiClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public UsageapiClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @param executorService {@link Builder#executorService}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public UsageapiClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider,
+                executorService);
     }
 }

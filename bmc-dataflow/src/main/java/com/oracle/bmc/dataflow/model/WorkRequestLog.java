@@ -5,20 +5,21 @@
 package com.oracle.bmc.dataflow.model;
 
 /**
- * A Data Flow work request log object.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A Data Flow work request log object. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkRequestLog.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WorkRequestLog extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class WorkRequestLog
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "message", "timestamp", "workRequestid"})
     public WorkRequestLog(Long id, String message, java.util.Date timestamp, String workRequestid) {
@@ -31,10 +32,7 @@ public final class WorkRequestLog extends com.oracle.bmc.http.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The id of a work request log.
-         *
-         **/
+        /** The id of a work request log. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private Long id;
 
@@ -43,48 +41,43 @@ public final class WorkRequestLog extends com.oracle.bmc.http.internal.Explicitl
          *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(Long id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * A human readable log message.
-         **/
+        /** A human readable log message. */
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
          * A human readable log message.
+         *
          * @param message the value to set
          * @return this builder
-         **/
+         */
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
-        /**
-         * The time the log message was written. An RFC3339 formatted datetime string.
-         **/
+        /** The time the log message was written. An RFC3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
          * The time the log message was written. An RFC3339 formatted datetime string.
+         *
          * @param timestamp the value to set
          * @return this builder
-         **/
+         */
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-        /**
-         * The OCID of a work request.
-         *
-         **/
+        /** The OCID of a work request. */
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestid")
         private String workRequestid;
 
@@ -93,7 +86,7 @@ public final class WorkRequestLog extends com.oracle.bmc.http.internal.Explicitl
          *
          * @param workRequestid the value to set
          * @return this builder
-         **/
+         */
         public Builder workRequestid(String workRequestid) {
             this.workRequestid = workRequestid;
             this.__explicitlySet__.add("workRequestid");
@@ -130,9 +123,7 @@ public final class WorkRequestLog extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -141,10 +132,7 @@ public final class WorkRequestLog extends com.oracle.bmc.http.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /**
-     * The id of a work request log.
-     *
-     **/
+    /** The id of a work request log. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final Long id;
 
@@ -152,43 +140,38 @@ public final class WorkRequestLog extends com.oracle.bmc.http.internal.Explicitl
      * The id of a work request log.
      *
      * @return the value
-     **/
+     */
     public Long getId() {
         return id;
     }
 
-    /**
-     * A human readable log message.
-     **/
+    /** A human readable log message. */
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
      * A human readable log message.
+     *
      * @return the value
-     **/
+     */
     public String getMessage() {
         return message;
     }
 
-    /**
-     * The time the log message was written. An RFC3339 formatted datetime string.
-     **/
+    /** The time the log message was written. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
      * The time the log message was written. An RFC3339 formatted datetime string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimestamp() {
         return timestamp;
     }
 
-    /**
-     * The OCID of a work request.
-     *
-     **/
+    /** The OCID of a work request. */
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestid")
     private final String workRequestid;
 
@@ -196,7 +179,7 @@ public final class WorkRequestLog extends com.oracle.bmc.http.internal.Explicitl
      * The OCID of a work request.
      *
      * @return the value
-     **/
+     */
     public String getWorkRequestid() {
         return workRequestid;
     }
@@ -208,6 +191,7 @@ public final class WorkRequestLog extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.databasetools.model;
 
-/**
- * The lifecycle state.
- **/
+/** The lifecycle state. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
-public enum LifecycleState {
+public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Updating("UPDATING"),
     Active("ACTIVE"),

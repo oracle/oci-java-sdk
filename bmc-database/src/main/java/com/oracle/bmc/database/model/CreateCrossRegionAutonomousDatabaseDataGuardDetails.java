@@ -5,67 +5,50 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details to create an Autonomous Data Guard association for an existing Autonomous Database where the standby is in a different (remote) region from the source primary database.
- * *IMPORTANT*
- * Note the following for creating standby databases in cross-region Autonomous Data Guard associations:
- *   - To create your standby database in a region different from the region of the primary, use the API endpoint of the region in which the standby will be located. For example, if the primary database is in the IAD region, and you want to create the standby in the PHX region, make the API call using the PHX endpoint (https://database.us-phoenix-1.oraclecloud.com). See [API Endpoints](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#REST_APIs) for the list of Database Service API endpoints.
- *   - In the request to create the standby database, the {@code sourceId} value should be the OCID of the primary database.
- * The following parameters are required for the cross-region standby database and must contain the same values as the source Autonomous Database:
- *   - dbName
- *   - cpuCoreCount
- *   - dataStorageSizeInTB
- *   - dbVersion
- * The following parameters are optional for the cross-region standby database. If included in the request, these parameters contain the same values as the source Autonomous Database:
- *   - customerContacts
- *   - scheduledOperations
- *   - isAutoScalingForStorageEnabled
- *   - definedTags
- *   - freeformTags
- *   - licenseModel
- *   - whitelistedIps
- *   - isMtlsConnectionRequired
- * Example I - Creating a cross-region standby with required parameters only:
- *     {@code {
- *       "compartmentId": "ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>",
- *       "cpuCoreCount": 1,
- *       "dbName": "adatabasedb1",
- *       "sourceId": "ocid1.autonomousdatabase.oc1.phx..<var>&lt;unique_ID&gt;</var>",
- *       "dataStorageSizeInTBs": 1,
- *       "source": "CROSS_REGION_DATAGUARD",
- *       "adminPassword" : "<var>&lt;password&gt;</var>",
- *     }}
- *  Example II - Creating a cross-region standby that specifies optional parameters in addition to the required parameters:
- *     {@code {
- *       "compartmentId": "ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>",
- *       "cpuCoreCount": 1,
- *       "dbName": "adatabasedb1",
- *       "sourceId": "ocid1.autonomousdatabase.oc1.phx..<var>&lt;unique_ID&gt;</var>",
- *       "dataStorageSizeInTBs": 1,
- *       "source": "CROSS_REGION_DATAGUARD",
- *   "adminPassword" : "<var>&lt;password&gt;</var>",
- *       "dbVersion": "19c",
- *       "licenseModel": "LICENSE_INCLUDED",
- *       "isAutoScalingForStorageEnabled": "true"
- *     }}
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details to create an Autonomous Data Guard association for an existing Autonomous Database where
+ * the standby is in a different (remote) region from the source primary database. *IMPORTANT* Note
+ * the following for creating standby databases in cross-region Autonomous Data Guard associations:
+ * - To create your standby database in a region different from the region of the primary, use the
+ * API endpoint of the region in which the standby will be located. For example, if the primary
+ * database is in the IAD region, and you want to create the standby in the PHX region, make the API
+ * call using the PHX endpoint (https://database.us-phoenix-1.oraclecloud.com). See [API
+ * Endpoints](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#REST_APIs) for
+ * the list of Database Service API endpoints. - In the request to create the standby database, the
+ * {@code sourceId} value should be the OCID of the primary database. The following parameters are
+ * required for the cross-region standby database and must contain the same values as the source
+ * Autonomous Database: - dbName - cpuCoreCount - dataStorageSizeInTB - dbVersion The following
+ * parameters are optional for the cross-region standby database. If included in the request, these
+ * parameters contain the same values as the source Autonomous Database: - customerContacts -
+ * scheduledOperations - isAutoScalingForStorageEnabled - definedTags - freeformTags - licenseModel
+ * - whitelistedIps - isMtlsConnectionRequired Example I - Creating a cross-region standby with
+ * required parameters only: {@code { "compartmentId":
+ * "ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>", "cpuCoreCount": 1, "dbName":
+ * "adatabasedb1", "sourceId": "ocid1.autonomousdatabase.oc1.phx..<var>&lt;unique_ID&gt;</var>",
+ * "dataStorageSizeInTBs": 1, "source": "CROSS_REGION_DATAGUARD", "adminPassword" :
+ * "<var>&lt;password&gt;</var>", }} Example II - Creating a cross-region standby that specifies
+ * optional parameters in addition to the required parameters: {@code { "compartmentId":
+ * "ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>", "cpuCoreCount": 1, "dbName":
+ * "adatabasedb1", "sourceId": "ocid1.autonomousdatabase.oc1.phx..<var>&lt;unique_ID&gt;</var>",
+ * "dataStorageSizeInTBs": 1, "source": "CROSS_REGION_DATAGUARD", "adminPassword" :
+ * "<var>&lt;password&gt;</var>", "dbVersion": "19c", "licenseModel": "LICENSE_INCLUDED",
+ * "isAutoScalingForStorageEnabled": "true" }} <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateCrossRegionAutonomousDatabaseDataGuardDetails.Builder.class
-)
+        builder = CreateCrossRegionAutonomousDatabaseDataGuardDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "source"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "source")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
         extends CreateAutonomousDatabaseBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -417,16 +400,21 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new standby database for the Data Guard association.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * source Autonomous Database that will be used to create a new standby database for the
+         * Data Guard association.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new standby database for the Data Guard association.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * source Autonomous Database that will be used to create a new standby database for the
+         * Data Guard association.
+         *
          * @param sourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceId(String sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
@@ -609,9 +597,7 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -704,15 +690,20 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new standby database for the Data Guard association.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * source Autonomous Database that will be used to create a new standby database for the Data
+     * Guard association.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new standby database for the Data Guard association.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * source Autonomous Database that will be used to create a new standby database for the Data
+     * Guard association.
+     *
      * @return the value
-     **/
+     */
     public String getSourceId() {
         return sourceId;
     }
@@ -724,6 +715,7 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

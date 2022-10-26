@@ -5,21 +5,22 @@
 package com.oracle.bmc.aispeech.model;
 
 /**
- * Description of Transcription Task.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Description of Transcription Task. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = TranscriptionTask.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TranscriptionTask extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = TranscriptionTask.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class TranscriptionTask
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -75,96 +76,98 @@ public final class TranscriptionTask extends com.oracle.bmc.http.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the task.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the task.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the task.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the task.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * A user-friendly display name for the task.
-         **/
+        /** A user-friendly display name for the task. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * A user-friendly display name for the task.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Task started time.
-         **/
+        /** Task started time. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * Task started time.
+         *
          * @param timeStarted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /**
-         * Task finished time.
-         **/
+        /** Task finished time. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
          * Task finished time.
+         *
          * @param timeFinished the value to set
          * @return this builder
-         **/
+         */
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
         /**
-         * How much progress the operation has made, vs the total amount of work that must be performed.
-         **/
+         * How much progress the operation has made, vs the total amount of work that must be
+         * performed.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Integer percentComplete;
 
         /**
-         * How much progress the operation has made, vs the total amount of work that must be performed.
+         * How much progress the operation has made, vs the total amount of work that must be
+         * performed.
+         *
          * @param percentComplete the value to set
          * @return this builder
-         **/
+         */
         public Builder percentComplete(Integer percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
             return this;
         }
-        /**
-         * Time to live duration in days for tasks. Task will be available till max 90 days.
-         **/
+        /** Time to live duration in days for tasks. Task will be available till max 90 days. */
         @com.fasterxml.jackson.annotation.JsonProperty("ttlInDays")
         private Integer ttlInDays;
 
         /**
          * Time to live duration in days for tasks. Task will be available till max 90 days.
+         *
          * @param ttlInDays the value to set
          * @return this builder
-         **/
+         */
         public Builder ttlInDays(Integer ttlInDays) {
             this.ttlInDays = ttlInDays;
             this.__explicitlySet__.add("ttlInDays");
@@ -188,49 +191,46 @@ public final class TranscriptionTask extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("audioFormatDetails");
             return this;
         }
-        /**
-         * Size of input file in Bytes.
-         **/
+        /** Size of input file in Bytes. */
         @com.fasterxml.jackson.annotation.JsonProperty("fileSizeInBytes")
         private Integer fileSizeInBytes;
 
         /**
          * Size of input file in Bytes.
+         *
          * @param fileSizeInBytes the value to set
          * @return this builder
-         **/
+         */
         public Builder fileSizeInBytes(Integer fileSizeInBytes) {
             this.fileSizeInBytes = fileSizeInBytes;
             this.__explicitlySet__.add("fileSizeInBytes");
             return this;
         }
-        /**
-         * Duration of input file in Seconds.
-         **/
+        /** Duration of input file in Seconds. */
         @com.fasterxml.jackson.annotation.JsonProperty("fileDurationInSeconds")
         private Integer fileDurationInSeconds;
 
         /**
          * Duration of input file in Seconds.
+         *
          * @param fileDurationInSeconds the value to set
          * @return this builder
-         **/
+         */
         public Builder fileDurationInSeconds(Integer fileDurationInSeconds) {
             this.fileDurationInSeconds = fileDurationInSeconds;
             this.__explicitlySet__.add("fileDurationInSeconds");
             return this;
         }
-        /**
-         * Task proccessing duration, which excludes waiting time in the system.
-         **/
+        /** Task proccessing duration, which excludes waiting time in the system. */
         @com.fasterxml.jackson.annotation.JsonProperty("processingDurationInSeconds")
         private Integer processingDurationInSeconds;
 
         /**
          * Task proccessing duration, which excludes waiting time in the system.
+         *
          * @param processingDurationInSeconds the value to set
          * @return this builder
-         **/
+         */
         public Builder processingDurationInSeconds(Integer processingDurationInSeconds) {
             this.processingDurationInSeconds = processingDurationInSeconds;
             this.__explicitlySet__.add("processingDurationInSeconds");
@@ -254,33 +254,35 @@ public final class TranscriptionTask extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("outputLocation");
             return this;
         }
-        /**
-         * The current state of the Task.
-         **/
+        /** The current state of the Task. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the Task.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-         **/
+         * A message describing the current state in more detail. For example, can be used to
+         * provide actionable information for a resource in Failed state.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * A message describing the current state in more detail. For example, can be used to
+         * provide actionable information for a resource in Failed state.
+         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -365,9 +367,7 @@ public final class TranscriptionTask extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -377,85 +377,85 @@ public final class TranscriptionTask extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the task.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the task.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the task.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the task.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * A user-friendly display name for the task.
-     **/
+    /** A user-friendly display name for the task. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A user-friendly display name for the task.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Task started time.
-     **/
+    /** Task started time. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * Task started time.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /**
-     * Task finished time.
-     **/
+    /** Task finished time. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
      * Task finished time.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
 
     /**
      * How much progress the operation has made, vs the total amount of work that must be performed.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Integer percentComplete;
 
     /**
      * How much progress the operation has made, vs the total amount of work that must be performed.
+     *
      * @return the value
-     **/
+     */
     public Integer getPercentComplete() {
         return percentComplete;
     }
 
-    /**
-     * Time to live duration in days for tasks. Task will be available till max 90 days.
-     **/
+    /** Time to live duration in days for tasks. Task will be available till max 90 days. */
     @com.fasterxml.jackson.annotation.JsonProperty("ttlInDays")
     private final Integer ttlInDays;
 
     /**
      * Time to live duration in days for tasks. Task will be available till max 90 days.
+     *
      * @return the value
-     **/
+     */
     public Integer getTtlInDays() {
         return ttlInDays;
     }
@@ -474,44 +474,41 @@ public final class TranscriptionTask extends com.oracle.bmc.http.internal.Explic
         return audioFormatDetails;
     }
 
-    /**
-     * Size of input file in Bytes.
-     **/
+    /** Size of input file in Bytes. */
     @com.fasterxml.jackson.annotation.JsonProperty("fileSizeInBytes")
     private final Integer fileSizeInBytes;
 
     /**
      * Size of input file in Bytes.
+     *
      * @return the value
-     **/
+     */
     public Integer getFileSizeInBytes() {
         return fileSizeInBytes;
     }
 
-    /**
-     * Duration of input file in Seconds.
-     **/
+    /** Duration of input file in Seconds. */
     @com.fasterxml.jackson.annotation.JsonProperty("fileDurationInSeconds")
     private final Integer fileDurationInSeconds;
 
     /**
      * Duration of input file in Seconds.
+     *
      * @return the value
-     **/
+     */
     public Integer getFileDurationInSeconds() {
         return fileDurationInSeconds;
     }
 
-    /**
-     * Task proccessing duration, which excludes waiting time in the system.
-     **/
+    /** Task proccessing duration, which excludes waiting time in the system. */
     @com.fasterxml.jackson.annotation.JsonProperty("processingDurationInSeconds")
     private final Integer processingDurationInSeconds;
 
     /**
      * Task proccessing duration, which excludes waiting time in the system.
+     *
      * @return the value
-     **/
+     */
     public Integer getProcessingDurationInSeconds() {
         return processingDurationInSeconds;
     }
@@ -530,10 +527,8 @@ public final class TranscriptionTask extends com.oracle.bmc.http.internal.Explic
         return outputLocation;
     }
 
-    /**
-     * The current state of the Task.
-     **/
-    public enum LifecycleState {
+    /** The current state of the Task. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
         Succeeded("SUCCEEDED"),
@@ -541,8 +536,8 @@ public final class TranscriptionTask extends com.oracle.bmc.http.internal.Explic
         Canceled("CANCELED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -581,30 +576,32 @@ public final class TranscriptionTask extends com.oracle.bmc.http.internal.Explic
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current state of the Task.
-     **/
+    /** The current state of the Task. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the Task.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-     **/
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in Failed state.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in Failed state.
+     *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -616,6 +613,7 @@ public final class TranscriptionTask extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

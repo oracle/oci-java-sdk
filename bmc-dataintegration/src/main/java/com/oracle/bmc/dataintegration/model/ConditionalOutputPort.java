@@ -5,25 +5,24 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The conditional output port details, used in operators such as split.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The conditional output port details, used in operators such as split. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ConditionalOutputPort.Builder.class
-)
+        builder = ConditionalOutputPort.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ConditionalOutputPort extends TypedObject {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -89,33 +88,31 @@ public final class ConditionalOutputPort extends TypedObject {
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The port details for the data asset.Type.
-         **/
+        /** The port details for the data asset.Type. */
         @com.fasterxml.jackson.annotation.JsonProperty("portType")
         private PortType portType;
 
         /**
          * The port details for the data asset.Type.
+         *
          * @param portType the value to set
          * @return this builder
-         **/
+         */
         public Builder portType(PortType portType) {
             this.portType = portType;
             this.__explicitlySet__.add("portType");
             return this;
         }
-        /**
-         * An array of fields.
-         **/
+        /** An array of fields. */
         @com.fasterxml.jackson.annotation.JsonProperty("fields")
         private java.util.List<TypedObject> fields;
 
         /**
          * An array of fields.
+         *
          * @param fields the value to set
          * @return this builder
-         **/
+         */
         public Builder fields(java.util.List<TypedObject> fields) {
             this.fields = fields;
             this.__explicitlySet__.add("fields");
@@ -189,9 +186,7 @@ public final class ConditionalOutputPort extends TypedObject {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -218,17 +213,15 @@ public final class ConditionalOutputPort extends TypedObject {
         this.splitCondition = splitCondition;
     }
 
-    /**
-     * The port details for the data asset.Type.
-     **/
-    public enum PortType {
+    /** The port details for the data asset.Type. */
+    public enum PortType implements com.oracle.bmc.http.internal.BmcEnum {
         Data("DATA"),
         Control("CONTROL"),
         Model("MODEL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -267,30 +260,28 @@ public final class ConditionalOutputPort extends TypedObject {
             return UnknownEnumValue;
         }
     };
-    /**
-     * The port details for the data asset.Type.
-     **/
+    /** The port details for the data asset.Type. */
     @com.fasterxml.jackson.annotation.JsonProperty("portType")
     private final PortType portType;
 
     /**
      * The port details for the data asset.Type.
+     *
      * @return the value
-     **/
+     */
     public PortType getPortType() {
         return portType;
     }
 
-    /**
-     * An array of fields.
-     **/
+    /** An array of fields. */
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
     private final java.util.List<TypedObject> fields;
 
     /**
      * An array of fields.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<TypedObject> getFields() {
         return fields;
     }
@@ -309,6 +300,7 @@ public final class ConditionalOutputPort extends TypedObject {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

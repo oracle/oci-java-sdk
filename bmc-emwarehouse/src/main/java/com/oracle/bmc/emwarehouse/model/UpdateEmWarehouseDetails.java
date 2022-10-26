@@ -5,22 +5,22 @@
 package com.oracle.bmc.emwarehouse.model;
 
 /**
- * The information to be updated.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information to be updated. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateEmWarehouseDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateEmWarehouseDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateEmWarehouseDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -42,53 +42,50 @@ public final class UpdateEmWarehouseDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Compartment Identifier
-         **/
+        /** Compartment Identifier */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * EMBridge Identifier
-         **/
+        /** EMBridge Identifier */
         @com.fasterxml.jackson.annotation.JsonProperty("emBridgeId")
         private String emBridgeId;
 
         /**
          * EMBridge Identifier
+         *
          * @param emBridgeId the value to set
          * @return this builder
-         **/
+         */
         public Builder emBridgeId(String emBridgeId) {
             this.emBridgeId = emBridgeId;
             this.__explicitlySet__.add("emBridgeId");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -97,8 +94,7 @@ public final class UpdateEmWarehouseDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -108,7 +104,7 @@ public final class UpdateEmWarehouseDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -150,9 +146,7 @@ public final class UpdateEmWarehouseDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -161,66 +155,62 @@ public final class UpdateEmWarehouseDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * Compartment Identifier
-     **/
+    /** Compartment Identifier */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * EMBridge Identifier
-     **/
+    /** EMBridge Identifier */
     @com.fasterxml.jackson.annotation.JsonProperty("emBridgeId")
     private final String emBridgeId;
 
     /**
      * EMBridge Identifier
+     *
      * @return the value
-     **/
+     */
     public String getEmBridgeId() {
         return emBridgeId;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -232,6 +222,7 @@ public final class UpdateEmWarehouseDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

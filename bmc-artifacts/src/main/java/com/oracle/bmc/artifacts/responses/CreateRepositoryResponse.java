@@ -8,10 +8,7 @@ import com.oracle.bmc.artifacts.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class CreateRepositoryResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,15 +21,14 @@ public class CreateRepositoryResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,13 +36,12 @@ public class CreateRepositoryResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /**
-     * The returned Repository instance.
-     */
+    /** The returned Repository instance. */
     private com.oracle.bmc.artifacts.model.Repository repository;
 
     /**
      * The returned Repository instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.artifacts.model.Repository getRepository() {
@@ -62,7 +57,7 @@ public class CreateRepositoryResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private CreateRepositoryResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.artifacts.model.Repository repository) {
@@ -72,25 +67,25 @@ public class CreateRepositoryResponse extends com.oracle.bmc.responses.BmcRespon
         this.repository = repository;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateRepositoryResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -105,15 +100,14 @@ public class CreateRepositoryResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -123,13 +117,12 @@ public class CreateRepositoryResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /**
-         * The returned Repository instance.
-         */
+        /** The returned Repository instance. */
         private com.oracle.bmc.artifacts.model.Repository repository;
 
         /**
          * The returned Repository instance.
+         *
          * @param repository the value to set
          * @return this builder
          */
@@ -140,8 +133,10 @@ public class CreateRepositoryResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateRepositoryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -154,8 +149,10 @@ public class CreateRepositoryResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateRepositoryResponse build() {
             return new CreateRepositoryResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, repository);
@@ -164,6 +161,7 @@ public class CreateRepositoryResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

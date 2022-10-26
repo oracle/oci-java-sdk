@@ -5,22 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The configuration of the Database Management service.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The configuration of the Database Management service. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CloudDatabaseManagementConfig.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CloudDatabaseManagementConfig.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CloudDatabaseManagementConfig
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"managementStatus", "managementType"})
     public CloudDatabaseManagementConfig(
@@ -32,33 +32,31 @@ public final class CloudDatabaseManagementConfig
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The status of the Database Management service.
-         **/
+        /** The status of the Database Management service. */
         @com.fasterxml.jackson.annotation.JsonProperty("managementStatus")
         private ManagementStatus managementStatus;
 
         /**
          * The status of the Database Management service.
+         *
          * @param managementStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder managementStatus(ManagementStatus managementStatus) {
             this.managementStatus = managementStatus;
             this.__explicitlySet__.add("managementStatus");
             return this;
         }
-        /**
-         * The Database Management type.
-         **/
+        /** The Database Management type. */
         @com.fasterxml.jackson.annotation.JsonProperty("managementType")
         private ManagementType managementType;
 
         /**
          * The Database Management type.
+         *
          * @param managementType the value to set
          * @return this builder
-         **/
+         */
         public Builder managementType(ManagementType managementType) {
             this.managementType = managementType;
             this.__explicitlySet__.add("managementType");
@@ -89,9 +87,7 @@ public final class CloudDatabaseManagementConfig
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,10 +96,8 @@ public final class CloudDatabaseManagementConfig
         return new Builder().copy(this);
     }
 
-    /**
-     * The status of the Database Management service.
-     **/
-    public enum ManagementStatus {
+    /** The status of the Database Management service. */
+    public enum ManagementStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Enabling("ENABLING"),
         Enabled("ENABLED"),
         Disabling("DISABLING"),
@@ -114,8 +108,8 @@ public final class CloudDatabaseManagementConfig
         FailedUpdating("FAILED_UPDATING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -154,30 +148,27 @@ public final class CloudDatabaseManagementConfig
             return UnknownEnumValue;
         }
     };
-    /**
-     * The status of the Database Management service.
-     **/
+    /** The status of the Database Management service. */
     @com.fasterxml.jackson.annotation.JsonProperty("managementStatus")
     private final ManagementStatus managementStatus;
 
     /**
      * The status of the Database Management service.
+     *
      * @return the value
-     **/
+     */
     public ManagementStatus getManagementStatus() {
         return managementStatus;
     }
 
-    /**
-     * The Database Management type.
-     **/
-    public enum ManagementType {
+    /** The Database Management type. */
+    public enum ManagementType implements com.oracle.bmc.http.internal.BmcEnum {
         Basic("BASIC"),
         Advanced("ADVANCED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -216,16 +207,15 @@ public final class CloudDatabaseManagementConfig
             return UnknownEnumValue;
         }
     };
-    /**
-     * The Database Management type.
-     **/
+    /** The Database Management type. */
     @com.fasterxml.jackson.annotation.JsonProperty("managementType")
     private final ManagementType managementType;
 
     /**
      * The Database Management type.
+     *
      * @return the value
-     **/
+     */
     public ManagementType getManagementType() {
         return managementType;
     }
@@ -237,6 +227,7 @@ public final class CloudDatabaseManagementConfig
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

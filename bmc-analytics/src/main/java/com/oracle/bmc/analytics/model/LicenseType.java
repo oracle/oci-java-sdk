@@ -4,12 +4,9 @@
  */
 package com.oracle.bmc.analytics.model;
 
-/**
- * The license type of the instance.
- *
- **/
+/** The license type of the instance. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
-public enum LicenseType {
+public enum LicenseType implements com.oracle.bmc.http.internal.BmcEnum {
     LicenseIncluded("LICENSE_INCLUDED"),
     BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
 

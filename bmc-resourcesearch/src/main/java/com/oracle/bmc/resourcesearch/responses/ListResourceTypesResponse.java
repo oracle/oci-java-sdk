@@ -8,13 +8,12 @@ import com.oracle.bmc.resourcesearch.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 public class ListResourceTypesResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * Pagination token
-     */
+    /** Pagination token */
     private String opcNextPage;
 
     /**
      * Pagination token
+     *
      * @return the value
      */
     public String getOpcNextPage() {
@@ -22,15 +21,14 @@ public class ListResourceTypesResponse extends com.oracle.bmc.responses.BmcRespo
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -38,13 +36,12 @@ public class ListResourceTypesResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /**
-     * A list of com.oracle.bmc.resourcesearch.model.ResourceType instances.
-     */
+    /** A list of com.oracle.bmc.resourcesearch.model.ResourceType instances. */
     private java.util.List<com.oracle.bmc.resourcesearch.model.ResourceType> items;
 
     /**
      * A list of com.oracle.bmc.resourcesearch.model.ResourceType instances.
+     *
      * @return the value
      */
     public java.util.List<com.oracle.bmc.resourcesearch.model.ResourceType> getItems() {
@@ -60,7 +57,7 @@ public class ListResourceTypesResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private ListResourceTypesResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcNextPage,
             String opcRequestId,
             java.util.List<com.oracle.bmc.resourcesearch.model.ResourceType> items) {
@@ -70,28 +67,30 @@ public class ListResourceTypesResponse extends com.oracle.bmc.responses.BmcRespo
         this.items = items;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<ListResourceTypesResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * Pagination token
-         */
+        /** Pagination token */
         private String opcNextPage;
 
         /**
          * Pagination token
+         *
          * @param opcNextPage the value to set
          * @return this builder
          */
@@ -101,15 +100,14 @@ public class ListResourceTypesResponse extends com.oracle.bmc.responses.BmcRespo
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -119,13 +117,12 @@ public class ListResourceTypesResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /**
-         * A list of com.oracle.bmc.resourcesearch.model.ResourceType instances.
-         */
+        /** A list of com.oracle.bmc.resourcesearch.model.ResourceType instances. */
         private java.util.List<com.oracle.bmc.resourcesearch.model.ResourceType> items;
 
         /**
          * A list of com.oracle.bmc.resourcesearch.model.ResourceType instances.
+         *
          * @param items the value to set
          * @return this builder
          */
@@ -137,8 +134,10 @@ public class ListResourceTypesResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListResourceTypesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,8 +150,10 @@ public class ListResourceTypesResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListResourceTypesResponse build() {
             return new ListResourceTypesResponse(
                     __httpStatusCode__, headers, opcNextPage, opcRequestId, items);
@@ -161,6 +162,7 @@ public class ListResourceTypesResponse extends com.oracle.bmc.responses.BmcRespo
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

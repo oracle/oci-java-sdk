@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.optimizer.model;
 
-/**
- * Possible operation statuses.
- **/
+/** Possible operation statuses. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-public enum OperationStatus {
+public enum OperationStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),
     Failed("FAILED"),

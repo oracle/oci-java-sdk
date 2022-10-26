@@ -9,13 +9,14 @@ import com.oracle.bmc.dataconnectivity.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 public class ListTypesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -23,52 +24,48 @@ public class ListTypesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /**
-     * Pagination token for the next page of objects.
-     */
+    /** Pagination token for the next page of objects. */
     private String opcNextPage;
 
     /**
      * Pagination token for the next page of objects.
+     *
      * @return the value
      */
     public String getOpcNextPage() {
         return opcNextPage;
     }
 
-    /**
-     * Pagination token for the previous page of objects.
-     */
+    /** Pagination token for the previous page of objects. */
     private String opcPrevPage;
 
     /**
      * Pagination token for the previous page of objects.
+     *
      * @return the value
      */
     public String getOpcPrevPage() {
         return opcPrevPage;
     }
 
-    /**
-     * Total items in the entire list
-     */
+    /** Total items in the entire list */
     private Integer opcTotalItems;
 
     /**
      * Total items in the entire list
+     *
      * @return the value
      */
     public Integer getOpcTotalItems() {
         return opcTotalItems;
     }
 
-    /**
-     * The returned TypesSummaryCollection instance.
-     */
+    /** The returned TypesSummaryCollection instance. */
     private com.oracle.bmc.dataconnectivity.model.TypesSummaryCollection typesSummaryCollection;
 
     /**
      * The returned TypesSummaryCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.dataconnectivity.model.TypesSummaryCollection
@@ -87,7 +84,7 @@ public class ListTypesResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private ListTypesResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcNextPage,
             String opcPrevPage,
@@ -101,29 +98,33 @@ public class ListTypesResponse extends com.oracle.bmc.responses.BmcResponse {
         this.typesSummaryCollection = typesSummaryCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<ListTypesResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -133,13 +134,12 @@ public class ListTypesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * Pagination token for the next page of objects.
-         */
+        /** Pagination token for the next page of objects. */
         private String opcNextPage;
 
         /**
          * Pagination token for the next page of objects.
+         *
          * @param opcNextPage the value to set
          * @return this builder
          */
@@ -148,13 +148,12 @@ public class ListTypesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * Pagination token for the previous page of objects.
-         */
+        /** Pagination token for the previous page of objects. */
         private String opcPrevPage;
 
         /**
          * Pagination token for the previous page of objects.
+         *
          * @param opcPrevPage the value to set
          * @return this builder
          */
@@ -163,13 +162,12 @@ public class ListTypesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * Total items in the entire list
-         */
+        /** Total items in the entire list */
         private Integer opcTotalItems;
 
         /**
          * Total items in the entire list
+         *
          * @param opcTotalItems the value to set
          * @return this builder
          */
@@ -178,13 +176,12 @@ public class ListTypesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * The returned TypesSummaryCollection instance.
-         */
+        /** The returned TypesSummaryCollection instance. */
         private com.oracle.bmc.dataconnectivity.model.TypesSummaryCollection typesSummaryCollection;
 
         /**
          * The returned TypesSummaryCollection instance.
+         *
          * @param typesSummaryCollection the value to set
          * @return this builder
          */
@@ -197,8 +194,10 @@ public class ListTypesResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListTypesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -213,8 +212,10 @@ public class ListTypesResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListTypesResponse build() {
             return new ListTypesResponse(
                     __httpStatusCode__,
@@ -229,6 +230,7 @@ public class ListTypesResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

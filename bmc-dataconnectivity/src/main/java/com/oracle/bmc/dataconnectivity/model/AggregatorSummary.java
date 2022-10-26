@@ -5,21 +5,23 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * A summary type containing information about the object's aggregator including its type, key, name, and description.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A summary type containing information about the object's aggregator including its type, key,
+ * name, and description. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AggregatorSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AggregatorSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = AggregatorSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class AggregatorSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "key", "name", "identifier", "description"})
     public AggregatorSummary(
@@ -34,81 +36,76 @@ public final class AggregatorSummary extends com.oracle.bmc.http.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The type of the aggregator.
-         **/
+        /** The type of the aggregator. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * The type of the aggregator.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * The key of the aggregator object.
-         **/
+        /** The key of the aggregator object. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The key of the aggregator object.
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /**
-         * The name of the aggregator.
-         **/
+        /** The name of the aggregator. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the aggregator.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The identifier of the aggregator.
-         **/
+        /** The identifier of the aggregator. */
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
          * The identifier of the aggregator.
+         *
          * @param identifier the value to set
          * @return this builder
-         **/
+         */
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-        /**
-         * The description of the aggregator.
-         **/
+        /** The description of the aggregator. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the aggregator.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -149,9 +146,7 @@ public final class AggregatorSummary extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -160,72 +155,67 @@ public final class AggregatorSummary extends com.oracle.bmc.http.internal.Explic
         return new Builder().copy(this);
     }
 
-    /**
-     * The type of the aggregator.
-     **/
+    /** The type of the aggregator. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * The type of the aggregator.
+     *
      * @return the value
-     **/
+     */
     public String getType() {
         return type;
     }
 
-    /**
-     * The key of the aggregator object.
-     **/
+    /** The key of the aggregator object. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The key of the aggregator object.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * The name of the aggregator.
-     **/
+    /** The name of the aggregator. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the aggregator.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The identifier of the aggregator.
-     **/
+    /** The identifier of the aggregator. */
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
      * The identifier of the aggregator.
+     *
      * @return the value
-     **/
+     */
     public String getIdentifier() {
         return identifier;
     }
 
-    /**
-     * The description of the aggregator.
-     **/
+    /** The description of the aggregator. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the aggregator.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
@@ -237,6 +227,7 @@ public final class AggregatorSummary extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,89 +5,83 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of the job execution result stored in Object Storage. The
- * job execution result could be accessed using the Object Storage API.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details of the job execution result stored in Object Storage. The job execution result could
+ * be accessed using the Object Storage API. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ObjectStorageJobExecutionResultDetails.Builder.class
-)
+        builder = ObjectStorageJobExecutionResultDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ObjectStorageJobExecutionResultDetails extends JobExecutionResultDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The Object Storage namespace used for job execution result storage.
-         **/
+        /** The Object Storage namespace used for job execution result storage. */
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
         private String namespaceName;
 
         /**
          * The Object Storage namespace used for job execution result storage.
+         *
          * @param namespaceName the value to set
          * @return this builder
-         **/
+         */
         public Builder namespaceName(String namespaceName) {
             this.namespaceName = namespaceName;
             this.__explicitlySet__.add("namespaceName");
             return this;
         }
-        /**
-         * The name of the bucket used for job execution result storage.
-         **/
+        /** The name of the bucket used for job execution result storage. */
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
         /**
          * The name of the bucket used for job execution result storage.
+         *
          * @param bucketName the value to set
          * @return this builder
-         **/
+         */
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
             return this;
         }
-        /**
-         * The name of the object containing the job execution result.
-         **/
+        /** The name of the object containing the job execution result. */
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
         /**
          * The name of the object containing the job execution result.
+         *
          * @param objectName the value to set
          * @return this builder
-         **/
+         */
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
             return this;
         }
-        /**
-         * The number of rows returned in the result for the Query SqlType.
-         **/
+        /** The number of rows returned in the result for the Query SqlType. */
         @com.fasterxml.jackson.annotation.JsonProperty("rowCount")
         private Integer rowCount;
 
         /**
          * The number of rows returned in the result for the Query SqlType.
+         *
          * @param rowCount the value to set
          * @return this builder
-         **/
+         */
         public Builder rowCount(Integer rowCount) {
             this.rowCount = rowCount;
             this.__explicitlySet__.add("rowCount");
@@ -125,9 +119,7 @@ public final class ObjectStorageJobExecutionResultDetails extends JobExecutionRe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -146,58 +138,54 @@ public final class ObjectStorageJobExecutionResultDetails extends JobExecutionRe
         this.rowCount = rowCount;
     }
 
-    /**
-     * The Object Storage namespace used for job execution result storage.
-     **/
+    /** The Object Storage namespace used for job execution result storage. */
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
     private final String namespaceName;
 
     /**
      * The Object Storage namespace used for job execution result storage.
+     *
      * @return the value
-     **/
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
 
-    /**
-     * The name of the bucket used for job execution result storage.
-     **/
+    /** The name of the bucket used for job execution result storage. */
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
     /**
      * The name of the bucket used for job execution result storage.
+     *
      * @return the value
-     **/
+     */
     public String getBucketName() {
         return bucketName;
     }
 
-    /**
-     * The name of the object containing the job execution result.
-     **/
+    /** The name of the object containing the job execution result. */
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
     /**
      * The name of the object containing the job execution result.
+     *
      * @return the value
-     **/
+     */
     public String getObjectName() {
         return objectName;
     }
 
-    /**
-     * The number of rows returned in the result for the Query SqlType.
-     **/
+    /** The number of rows returned in the result for the Query SqlType. */
     @com.fasterxml.jackson.annotation.JsonProperty("rowCount")
     private final Integer rowCount;
 
     /**
      * The number of rows returned in the result for the Query SqlType.
+     *
      * @return the value
-     **/
+     */
     public Integer getRowCount() {
         return rowCount;
     }
@@ -209,6 +197,7 @@ public final class ObjectStorageJobExecutionResultDetails extends JobExecutionRe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

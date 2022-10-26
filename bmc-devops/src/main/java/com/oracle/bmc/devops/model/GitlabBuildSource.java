@@ -5,25 +5,24 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * GitLab build source for Build stage.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * GitLab build source for Build stage. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = GitlabBuildSource.Builder.class
-)
+        builder = GitlabBuildSource.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "connectionType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "connectionType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class GitlabBuildSource extends BuildSource {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -53,17 +52,16 @@ public final class GitlabBuildSource extends BuildSource {
             this.__explicitlySet__.add("branch");
             return this;
         }
-        /**
-         * Connection identifier pertinent to GitLab source provider.
-         **/
+        /** Connection identifier pertinent to GitLab source provider. */
         @com.fasterxml.jackson.annotation.JsonProperty("connectionId")
         private String connectionId;
 
         /**
          * Connection identifier pertinent to GitLab source provider.
+         *
          * @param connectionId the value to set
          * @return this builder
-         **/
+         */
         public Builder connectionId(String connectionId) {
             this.connectionId = connectionId;
             this.__explicitlySet__.add("connectionId");
@@ -101,9 +99,7 @@ public final class GitlabBuildSource extends BuildSource {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,16 +115,15 @@ public final class GitlabBuildSource extends BuildSource {
         this.connectionId = connectionId;
     }
 
-    /**
-     * Connection identifier pertinent to GitLab source provider.
-     **/
+    /** Connection identifier pertinent to GitLab source provider. */
     @com.fasterxml.jackson.annotation.JsonProperty("connectionId")
     private final String connectionId;
 
     /**
      * Connection identifier pertinent to GitLab source provider.
+     *
      * @return the value
-     **/
+     */
     public String getConnectionId() {
         return connectionId;
     }
@@ -140,6 +135,7 @@ public final class GitlabBuildSource extends BuildSource {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

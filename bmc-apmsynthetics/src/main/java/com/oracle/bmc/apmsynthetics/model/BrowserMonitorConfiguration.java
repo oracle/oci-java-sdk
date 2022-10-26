@@ -5,25 +5,24 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Configuration details for the BROWSER monitor type.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Configuration details for the BROWSER monitor type. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = BrowserMonitorConfiguration.Builder.class
-)
+        builder = BrowserMonitorConfiguration.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "configType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "configType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class BrowserMonitorConfiguration extends MonitorConfiguration {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -45,36 +44,38 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
             return this;
         }
         /**
-         * If certificate validation is enabled, then the call will fail in case of certification errors.
-         **/
+         * If certificate validation is enabled, then the call will fail in case of certification
+         * errors.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isCertificateValidationEnabled")
         private Boolean isCertificateValidationEnabled;
 
         /**
-         * If certificate validation is enabled, then the call will fail in case of certification errors.
+         * If certificate validation is enabled, then the call will fail in case of certification
+         * errors.
+         *
          * @param isCertificateValidationEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isCertificateValidationEnabled(Boolean isCertificateValidationEnabled) {
             this.isCertificateValidationEnabled = isCertificateValidationEnabled;
             this.__explicitlySet__.add("isCertificateValidationEnabled");
             return this;
         }
         /**
-         * Verifies all the search strings present in the response.
-         * If any search string is not present in the response, then it will be considered as a failure.
-         *
-         **/
+         * Verifies all the search strings present in the response. If any search string is not
+         * present in the response, then it will be considered as a failure.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("verifyTexts")
         private java.util.List<VerifyText> verifyTexts;
 
         /**
-         * Verifies all the search strings present in the response.
-         * If any search string is not present in the response, then it will be considered as a failure.
+         * Verifies all the search strings present in the response. If any search string is not
+         * present in the response, then it will be considered as a failure.
          *
          * @param verifyTexts the value to set
          * @return this builder
-         **/
+         */
         public Builder verifyTexts(java.util.List<VerifyText> verifyTexts) {
             this.verifyTexts = verifyTexts;
             this.__explicitlySet__.add("verifyTexts");
@@ -128,9 +129,7 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -153,33 +152,35 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
     }
 
     /**
-     * If certificate validation is enabled, then the call will fail in case of certification errors.
-     **/
+     * If certificate validation is enabled, then the call will fail in case of certification
+     * errors.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isCertificateValidationEnabled")
     private final Boolean isCertificateValidationEnabled;
 
     /**
-     * If certificate validation is enabled, then the call will fail in case of certification errors.
+     * If certificate validation is enabled, then the call will fail in case of certification
+     * errors.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsCertificateValidationEnabled() {
         return isCertificateValidationEnabled;
     }
 
     /**
-     * Verifies all the search strings present in the response.
-     * If any search string is not present in the response, then it will be considered as a failure.
-     *
-     **/
+     * Verifies all the search strings present in the response. If any search string is not present
+     * in the response, then it will be considered as a failure.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("verifyTexts")
     private final java.util.List<VerifyText> verifyTexts;
 
     /**
-     * Verifies all the search strings present in the response.
-     * If any search string is not present in the response, then it will be considered as a failure.
+     * Verifies all the search strings present in the response. If any search string is not present
+     * in the response, then it will be considered as a failure.
      *
      * @return the value
-     **/
+     */
     public java.util.List<VerifyText> getVerifyTexts() {
         return verifyTexts;
     }
@@ -198,6 +199,7 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

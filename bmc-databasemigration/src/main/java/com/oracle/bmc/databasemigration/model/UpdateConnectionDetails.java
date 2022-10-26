@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Details to update in a Database Connection resource.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details to update in a Database Connection resource. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateConnectionDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateConnectionDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateConnectionDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -67,10 +66,7 @@ public final class UpdateConnectionDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Database Connection display name identifier.
-         *
-         **/
+        /** Database Connection display name identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -79,16 +75,13 @@ public final class UpdateConnectionDetails
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The OCID of the cloud database.
-         *
-         **/
+        /** The OCID of the cloud database. */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
@@ -97,7 +90,7 @@ public final class UpdateConnectionDetails
          *
          * @param databaseId the value to set
          * @return this builder
-         **/
+         */
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
@@ -113,52 +106,57 @@ public final class UpdateConnectionDetails
             return this;
         }
         /**
-         * This name is the distinguished name used while creating the certificate on target database. Not required for source container database connections.
-         **/
+         * This name is the distinguished name used while creating the certificate on target
+         * database. Not required for source container database connections.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("certificateTdn")
         private String certificateTdn;
 
         /**
-         * This name is the distinguished name used while creating the certificate on target database. Not required for source container database connections.
+         * This name is the distinguished name used while creating the certificate on target
+         * database. Not required for source container database connections.
+         *
          * @param certificateTdn the value to set
          * @return this builder
-         **/
+         */
         public Builder certificateTdn(String certificateTdn) {
             this.certificateTdn = certificateTdn;
             this.__explicitlySet__.add("certificateTdn");
             return this;
         }
         /**
-         * cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not required for source container database connections.
-         *
-         **/
+         * cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not
+         * required for source container database connections.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("tlsWallet")
         private String tlsWallet;
 
         /**
-         * cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not required for source container database connections.
+         * cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not
+         * required for source container database connections.
          *
          * @param tlsWallet the value to set
          * @return this builder
-         **/
+         */
         public Builder tlsWallet(String tlsWallet) {
             this.tlsWallet = tlsWallet;
             this.__explicitlySet__.add("tlsWallet");
             return this;
         }
         /**
-         * keystore.jks file contents; base64 encoded String. Not required for source container database connections.
-         *
-         **/
+         * keystore.jks file contents; base64 encoded String. Not required for source container
+         * database connections.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("tlsKeystore")
         private String tlsKeystore;
 
         /**
-         * keystore.jks file contents; base64 encoded String. Not required for source container database connections.
+         * keystore.jks file contents; base64 encoded String. Not required for source container
+         * database connections.
          *
          * @param tlsKeystore the value to set
          * @return this builder
-         **/
+         */
         public Builder tlsKeystore(String tlsKeystore) {
             this.tlsKeystore = tlsKeystore;
             this.__explicitlySet__.add("tlsKeystore");
@@ -201,20 +199,19 @@ public final class UpdateConnectionDetails
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -223,8 +220,7 @@ public final class UpdateConnectionDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -234,7 +230,7 @@ public final class UpdateConnectionDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -308,9 +304,7 @@ public final class UpdateConnectionDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -319,10 +313,7 @@ public final class UpdateConnectionDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * Database Connection display name identifier.
-     *
-     **/
+    /** Database Connection display name identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -330,15 +321,12 @@ public final class UpdateConnectionDetails
      * Database Connection display name identifier.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The OCID of the cloud database.
-     *
-     **/
+    /** The OCID of the cloud database. */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
@@ -346,7 +334,7 @@ public final class UpdateConnectionDetails
      * The OCID of the cloud database.
      *
      * @return the value
-     **/
+     */
     public String getDatabaseId() {
         return databaseId;
     }
@@ -359,47 +347,52 @@ public final class UpdateConnectionDetails
     }
 
     /**
-     * This name is the distinguished name used while creating the certificate on target database. Not required for source container database connections.
-     **/
+     * This name is the distinguished name used while creating the certificate on target database.
+     * Not required for source container database connections.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("certificateTdn")
     private final String certificateTdn;
 
     /**
-     * This name is the distinguished name used while creating the certificate on target database. Not required for source container database connections.
+     * This name is the distinguished name used while creating the certificate on target database.
+     * Not required for source container database connections.
+     *
      * @return the value
-     **/
+     */
     public String getCertificateTdn() {
         return certificateTdn;
     }
 
     /**
-     * cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not required for source container database connections.
-     *
-     **/
+     * cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not
+     * required for source container database connections.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("tlsWallet")
     private final String tlsWallet;
 
     /**
-     * cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not required for source container database connections.
+     * cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not
+     * required for source container database connections.
      *
      * @return the value
-     **/
+     */
     public String getTlsWallet() {
         return tlsWallet;
     }
 
     /**
-     * keystore.jks file contents; base64 encoded String. Not required for source container database connections.
-     *
-     **/
+     * keystore.jks file contents; base64 encoded String. Not required for source container database
+     * connections.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("tlsKeystore")
     private final String tlsKeystore;
 
     /**
-     * keystore.jks file contents; base64 encoded String. Not required for source container database connections.
+     * keystore.jks file contents; base64 encoded String. Not required for source container database
+     * connections.
      *
      * @return the value
-     **/
+     */
     public String getTlsKeystore() {
         return tlsKeystore;
     }
@@ -433,37 +426,35 @@ public final class UpdateConnectionDetails
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -475,6 +466,7 @@ public final class UpdateConnectionDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

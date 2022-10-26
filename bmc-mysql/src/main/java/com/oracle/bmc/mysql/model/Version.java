@@ -5,20 +5,20 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * A supported MySQL Version.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A supported MySQL Version. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Version.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Version extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Version extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"version", "description"})
     public Version(String version, String description) {
@@ -29,33 +29,31 @@ public final class Version extends com.oracle.bmc.http.internal.ExplicitlySetBmc
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The specific version identifier
-         **/
+        /** The specific version identifier */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * The specific version identifier
+         *
          * @param version the value to set
          * @return this builder
-         **/
+         */
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /**
-         * A link to a page describing the version.
-         **/
+        /** A link to a page describing the version. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A link to a page describing the version.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -85,9 +83,7 @@ public final class Version extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,30 +92,28 @@ public final class Version extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         return new Builder().copy(this);
     }
 
-    /**
-     * The specific version identifier
-     **/
+    /** The specific version identifier */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * The specific version identifier
+     *
      * @return the value
-     **/
+     */
     public String getVersion() {
         return version;
     }
 
-    /**
-     * A link to a page describing the version.
-     **/
+    /** A link to a page describing the version. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A link to a page describing the version.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
@@ -131,6 +125,7 @@ public final class Version extends com.oracle.bmc.http.internal.ExplicitlySetBmc
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

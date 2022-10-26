@@ -5,21 +5,24 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Backup Options
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Backup Options To use any of the API operations, you must be authorized in an IAM policy. If
+ * you're not authorized, talk to an administrator. If you're an administrator who needs to write
+ * policies to give users access, see [Getting Started with
+ * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbBackupConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DbBackupConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class DbBackupConfig
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "autoBackupEnabled",
@@ -42,76 +45,90 @@ public final class DbBackupConfig extends com.oracle.bmc.http.internal.Explicitl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-         **/
+         * If set to true, configures automatic backups. If you previously used RMAN or dbcli to
+         * configure backups and then you switch to using the Console or the API for backups, a new
+         * backup configuration is created and associated with your database. This means that you
+         * can no longer rely on your previously configured unmanaged backups to work.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("autoBackupEnabled")
         private Boolean autoBackupEnabled;
 
         /**
-         * If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+         * If set to true, configures automatic backups. If you previously used RMAN or dbcli to
+         * configure backups and then you switch to using the Console or the API for backups, a new
+         * backup configuration is created and associated with your database. This means that you
+         * can no longer rely on your previously configured unmanaged backups to work.
+         *
          * @param autoBackupEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder autoBackupEnabled(Boolean autoBackupEnabled) {
             this.autoBackupEnabled = autoBackupEnabled;
             this.__explicitlySet__.add("autoBackupEnabled");
             return this;
         }
         /**
-         * Number of days between the current and the earliest point of recoverability covered by automatic backups.
-         * This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window.
-         * When the value is updated, it is applied to all existing automatic backups.
-         *
-         **/
+         * Number of days between the current and the earliest point of recoverability covered by
+         * automatic backups. This value applies to automatic backups only. After a new automatic
+         * backup has been created, Oracle removes old automatic backups that are created before the
+         * window. When the value is updated, it is applied to all existing automatic backups.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("recoveryWindowInDays")
         private Integer recoveryWindowInDays;
 
         /**
-         * Number of days between the current and the earliest point of recoverability covered by automatic backups.
-         * This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window.
-         * When the value is updated, it is applied to all existing automatic backups.
+         * Number of days between the current and the earliest point of recoverability covered by
+         * automatic backups. This value applies to automatic backups only. After a new automatic
+         * backup has been created, Oracle removes old automatic backups that are created before the
+         * window. When the value is updated, it is applied to all existing automatic backups.
          *
          * @param recoveryWindowInDays the value to set
          * @return this builder
-         **/
+         */
         public Builder recoveryWindowInDays(Integer recoveryWindowInDays) {
             this.recoveryWindowInDays = recoveryWindowInDays;
             this.__explicitlySet__.add("recoveryWindowInDays");
             return this;
         }
         /**
-         * Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).
-         * <p>
-         * Example: {@code SLOT_TWO}
+         * Time window selected for initiating automatic backup for the database system. There are
+         * twelve available two-hour time windows. If no option is selected, a start time between
+         * 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example,
+         * if the user selects SLOT_TWO from the enum list, the automatic backup job will start in
+         * between 2:00 AM (inclusive) to 4:00 AM (exclusive).
          *
-         **/
+         * <p>Example: {@code SLOT_TWO}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("autoBackupWindow")
         private AutoBackupWindow autoBackupWindow;
 
         /**
-         * Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).
-         * <p>
-         * Example: {@code SLOT_TWO}
+         * Time window selected for initiating automatic backup for the database system. There are
+         * twelve available two-hour time windows. If no option is selected, a start time between
+         * 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example,
+         * if the user selects SLOT_TWO from the enum list, the automatic backup job will start in
+         * between 2:00 AM (inclusive) to 4:00 AM (exclusive).
+         *
+         * <p>Example: {@code SLOT_TWO}
          *
          * @param autoBackupWindow the value to set
          * @return this builder
-         **/
+         */
         public Builder autoBackupWindow(AutoBackupWindow autoBackupWindow) {
             this.autoBackupWindow = autoBackupWindow;
             this.__explicitlySet__.add("autoBackupWindow");
             return this;
         }
-        /**
-         * Backup destination details.
-         **/
+        /** Backup destination details. */
         @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationDetails")
         private java.util.List<BackupDestinationDetails> backupDestinationDetails;
 
         /**
          * Backup destination details.
+         *
          * @param backupDestinationDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder backupDestinationDetails(
                 java.util.List<BackupDestinationDetails> backupDestinationDetails) {
             this.backupDestinationDetails = backupDestinationDetails;
@@ -153,9 +170,7 @@ public final class DbBackupConfig extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -165,46 +180,57 @@ public final class DbBackupConfig extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-     **/
+     * If set to true, configures automatic backups. If you previously used RMAN or dbcli to
+     * configure backups and then you switch to using the Console or the API for backups, a new
+     * backup configuration is created and associated with your database. This means that you can no
+     * longer rely on your previously configured unmanaged backups to work.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("autoBackupEnabled")
     private final Boolean autoBackupEnabled;
 
     /**
-     * If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+     * If set to true, configures automatic backups. If you previously used RMAN or dbcli to
+     * configure backups and then you switch to using the Console or the API for backups, a new
+     * backup configuration is created and associated with your database. This means that you can no
+     * longer rely on your previously configured unmanaged backups to work.
+     *
      * @return the value
-     **/
+     */
     public Boolean getAutoBackupEnabled() {
         return autoBackupEnabled;
     }
 
     /**
-     * Number of days between the current and the earliest point of recoverability covered by automatic backups.
-     * This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window.
+     * Number of days between the current and the earliest point of recoverability covered by
+     * automatic backups. This value applies to automatic backups only. After a new automatic backup
+     * has been created, Oracle removes old automatic backups that are created before the window.
      * When the value is updated, it is applied to all existing automatic backups.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("recoveryWindowInDays")
     private final Integer recoveryWindowInDays;
 
     /**
-     * Number of days between the current and the earliest point of recoverability covered by automatic backups.
-     * This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window.
+     * Number of days between the current and the earliest point of recoverability covered by
+     * automatic backups. This value applies to automatic backups only. After a new automatic backup
+     * has been created, Oracle removes old automatic backups that are created before the window.
      * When the value is updated, it is applied to all existing automatic backups.
      *
      * @return the value
-     **/
+     */
     public Integer getRecoveryWindowInDays() {
         return recoveryWindowInDays;
     }
 
     /**
-     * Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).
-     * <p>
-     * Example: {@code SLOT_TWO}
+     * Time window selected for initiating automatic backup for the database system. There are
+     * twelve available two-hour time windows. If no option is selected, a start time between 12:00
+     * AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user
+     * selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM
+     * (inclusive) to 4:00 AM (exclusive).
      *
-     **/
-    public enum AutoBackupWindow {
+     * <p>Example: {@code SLOT_TWO}
+     */
+    public enum AutoBackupWindow implements com.oracle.bmc.http.internal.BmcEnum {
         SlotOne("SLOT_ONE"),
         SlotTwo("SLOT_TWO"),
         SlotThree("SLOT_THREE"),
@@ -219,8 +245,8 @@ public final class DbBackupConfig extends com.oracle.bmc.http.internal.Explicitl
         SlotTwelve("SLOT_TWELVE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -260,35 +286,41 @@ public final class DbBackupConfig extends com.oracle.bmc.http.internal.Explicitl
         }
     };
     /**
-     * Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).
-     * <p>
-     * Example: {@code SLOT_TWO}
+     * Time window selected for initiating automatic backup for the database system. There are
+     * twelve available two-hour time windows. If no option is selected, a start time between 12:00
+     * AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user
+     * selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM
+     * (inclusive) to 4:00 AM (exclusive).
      *
-     **/
+     * <p>Example: {@code SLOT_TWO}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("autoBackupWindow")
     private final AutoBackupWindow autoBackupWindow;
 
     /**
-     * Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).
-     * <p>
-     * Example: {@code SLOT_TWO}
+     * Time window selected for initiating automatic backup for the database system. There are
+     * twelve available two-hour time windows. If no option is selected, a start time between 12:00
+     * AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user
+     * selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM
+     * (inclusive) to 4:00 AM (exclusive).
+     *
+     * <p>Example: {@code SLOT_TWO}
      *
      * @return the value
-     **/
+     */
     public AutoBackupWindow getAutoBackupWindow() {
         return autoBackupWindow;
     }
 
-    /**
-     * Backup destination details.
-     **/
+    /** Backup destination details. */
     @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationDetails")
     private final java.util.List<BackupDestinationDetails> backupDestinationDetails;
 
     /**
      * Backup destination details.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<BackupDestinationDetails> getBackupDestinationDetails() {
         return backupDestinationDetails;
     }
@@ -300,6 +332,7 @@ public final class DbBackupConfig extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

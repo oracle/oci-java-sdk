@@ -5,23 +5,22 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * The compute shape used to launch a notebook session compute instance.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The compute shape used to launch a notebook session compute instance. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = NotebookSessionShapeSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = NotebookSessionShapeSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class NotebookSessionShapeSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "coreCount", "memoryInGBs", "shapeSeries"})
     public NotebookSessionShapeSummary(
@@ -38,10 +37,7 @@ public final class NotebookSessionShapeSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the notebook session shape.
-         *
-         **/
+        /** The name of the notebook session shape. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -50,16 +46,13 @@ public final class NotebookSessionShapeSummary
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The number of cores associated with this notebook session shape.
-         *
-         **/
+        /** The number of cores associated with this notebook session shape. */
         @com.fasterxml.jackson.annotation.JsonProperty("coreCount")
         private Integer coreCount;
 
@@ -68,16 +61,13 @@ public final class NotebookSessionShapeSummary
          *
          * @param coreCount the value to set
          * @return this builder
-         **/
+         */
         public Builder coreCount(Integer coreCount) {
             this.coreCount = coreCount;
             this.__explicitlySet__.add("coreCount");
             return this;
         }
-        /**
-         * The amount of memory in GBs associated with this notebook session shape.
-         *
-         **/
+        /** The amount of memory in GBs associated with this notebook session shape. */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Integer memoryInGBs;
 
@@ -86,16 +76,13 @@ public final class NotebookSessionShapeSummary
          *
          * @param memoryInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder memoryInGBs(Integer memoryInGBs) {
             this.memoryInGBs = memoryInGBs;
             this.__explicitlySet__.add("memoryInGBs");
             return this;
         }
-        /**
-         * The family that the compute shape belongs to.
-         *
-         **/
+        /** The family that the compute shape belongs to. */
         @com.fasterxml.jackson.annotation.JsonProperty("shapeSeries")
         private NotebookSessionShapeSeries shapeSeries;
 
@@ -104,7 +91,7 @@ public final class NotebookSessionShapeSummary
          *
          * @param shapeSeries the value to set
          * @return this builder
-         **/
+         */
         public Builder shapeSeries(NotebookSessionShapeSeries shapeSeries) {
             this.shapeSeries = shapeSeries;
             this.__explicitlySet__.add("shapeSeries");
@@ -142,9 +129,7 @@ public final class NotebookSessionShapeSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -153,10 +138,7 @@ public final class NotebookSessionShapeSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the notebook session shape.
-     *
-     **/
+    /** The name of the notebook session shape. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -164,15 +146,12 @@ public final class NotebookSessionShapeSummary
      * The name of the notebook session shape.
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The number of cores associated with this notebook session shape.
-     *
-     **/
+    /** The number of cores associated with this notebook session shape. */
     @com.fasterxml.jackson.annotation.JsonProperty("coreCount")
     private final Integer coreCount;
 
@@ -180,15 +159,12 @@ public final class NotebookSessionShapeSummary
      * The number of cores associated with this notebook session shape.
      *
      * @return the value
-     **/
+     */
     public Integer getCoreCount() {
         return coreCount;
     }
 
-    /**
-     * The amount of memory in GBs associated with this notebook session shape.
-     *
-     **/
+    /** The amount of memory in GBs associated with this notebook session shape. */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Integer memoryInGBs;
 
@@ -196,15 +172,12 @@ public final class NotebookSessionShapeSummary
      * The amount of memory in GBs associated with this notebook session shape.
      *
      * @return the value
-     **/
+     */
     public Integer getMemoryInGBs() {
         return memoryInGBs;
     }
 
-    /**
-     * The family that the compute shape belongs to.
-     *
-     **/
+    /** The family that the compute shape belongs to. */
     @com.fasterxml.jackson.annotation.JsonProperty("shapeSeries")
     private final NotebookSessionShapeSeries shapeSeries;
 
@@ -212,7 +185,7 @@ public final class NotebookSessionShapeSummary
      * The family that the compute shape belongs to.
      *
      * @return the value
-     **/
+     */
     public NotebookSessionShapeSeries getShapeSeries() {
         return shapeSeries;
     }
@@ -224,6 +197,7 @@ public final class NotebookSessionShapeSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

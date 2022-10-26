@@ -4,335 +4,40 @@
  */
 package com.oracle.bmc.loadbalancer;
 
-import com.oracle.bmc.loadbalancer.internal.http.*;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.loadbalancer.requests.*;
 import com.oracle.bmc.loadbalancer.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
+import java.util.Objects;
+
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-public class LoadBalancerClient implements LoadBalancer {
-    /**
-     * Service instance for LoadBalancer.
-     */
+public class LoadBalancerClient extends com.oracle.bmc.http.internal.BaseSyncClient
+        implements LoadBalancer {
+    /** Service instance for LoadBalancer. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("LOADBALANCER")
                     .serviceEndpointPrefix("iaas")
                     .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
                     .build();
-    // attempt twice if it's instance principals, immediately failures will try to refresh the token
-    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(LoadBalancerAsyncClient.class);
 
-    com.oracle.bmc.http.internal.RestClient getClient() {
-        return client;
-    }
-
     private final LoadBalancerWaiters waiters;
 
     private final LoadBalancerPaginators paginators;
-    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-            authenticationDetailsProvider;
-    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
-    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
-            apacheConnectionClosingStrategy;
-    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
-    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
-    private final java.util.Map<
-                    com.oracle.bmc.http.signing.SigningStrategy,
-                    com.oracle.bmc.http.signing.RequestSignerFactory>
-            signingStrategyRequestSignerFactories;
-    private final boolean isNonBufferingApacheClient;
-    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
-    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-            circuitBreakerConfiguration;
 
-    /**
-     * Used to synchronize any updates on the `this.client` object.
-     */
-    private final Object clientUpdate = new Object();
-
-    /**
-     * Stores the actual client object used to make the API calls.
-     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
-     *       For any writes to the object, please synchronize on `this.clientUpdate`.
-     */
-    private volatile com.oracle.bmc.http.internal.RestClient client;
-
-    /**
-     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
-     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
-     */
-    private volatile String overrideEndpoint = null;
-
-    /**
-     * Creates a new service instance using the given authentication provider.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     */
-    public LoadBalancerClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     */
-    public LoadBalancerClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(authenticationDetailsProvider, configuration, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     */
-    public LoadBalancerClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     */
-    public LoadBalancerClient(
+    private LoadBalancerClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public LoadBalancerClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                additionalClientConfigurators,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public LoadBalancerClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
-                        .createDefaultRequestSignerFactories(),
-                additionalClientConfigurators,
-                endpoint);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public LoadBalancerClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
-     */
-    public LoadBalancerClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
             java.util.concurrent.ExecutorService executorService) {
-        this(
+        super(
+                builder,
                 authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                executorService,
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * Use the {@link Builder} to get access to all these parameters.
-     *
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
-     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
-     */
-    protected LoadBalancerClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            java.util.concurrent.ExecutorService executorService,
-            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
-        this.authenticationDetailsProvider = authenticationDetailsProvider;
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
-                new java.util.ArrayList<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
-            authenticationDetailsConfigurators.addAll(
-                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
-                                    this.authenticationDetailsProvider)
-                            .getClientConfigurators());
-        }
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
-                new java.util.ArrayList<>(additionalClientConfigurators);
-        allConfigurators.addAll(authenticationDetailsConfigurators);
-        this.restClientFactory =
-                restClientFactoryBuilder
-                        .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(allConfigurators)
-                        .build();
-        this.isNonBufferingApacheClient =
-                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        this.restClientFactory.getClientConfigurator());
-        this.apacheConnectionClosingStrategy =
-                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
-                        restClientFactory.getClientConfigurator());
-
-        this.clientConfigurationToUse =
-                (configuration != null)
-                        ? configuration
-                        : com.oracle.bmc.ClientConfiguration.builder().build();
-        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
-        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
-        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
-        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-                userCircuitBreakerConfiguration =
-                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
-                                configuration);
-        if (userCircuitBreakerConfiguration == null) {
-            this.circuitBreakerConfiguration =
-                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
-        } else {
-            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
-        }
-
-        this.refreshClient();
+                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -354,28 +59,11 @@ public class LoadBalancerClient implements LoadBalancer {
         this.waiters = new LoadBalancerWaiters(executorService, this);
 
         this.paginators = new LoadBalancerPaginators(this);
-
-        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
-            com.oracle.bmc.auth.RegionProvider provider =
-                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
-
-            if (provider.getRegion() != null) {
-                this.setRegion(provider.getRegion());
-                if (endpoint != null) {
-                    LOG.info(
-                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
-                            provider.getRegion(),
-                            endpoint);
-                }
-            }
-        }
-        if (endpoint != null) {
-            setEndpoint(endpoint);
-        }
     }
 
     /**
      * Create a builder for this client.
+     *
      * @return builder
      */
     public static Builder builder() {
@@ -383,8 +71,8 @@ public class LoadBalancerClient implements LoadBalancer {
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
+     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, LoadBalancerClient> {
@@ -399,6 +87,7 @@ public class LoadBalancerClient implements LoadBalancer {
 
         /**
          * Set the ExecutorService for the client to be created.
+         *
          * @param executorService executorService
          * @return this builder
          */
@@ -409,2371 +98,1867 @@ public class LoadBalancerClient implements LoadBalancer {
 
         /**
          * Build the client.
+         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public LoadBalancerClient build(
                 @javax.annotation.Nonnull
-                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                        authenticationDetailsProvider) {
-            if (authenticationDetailsProvider == null) {
-                throw new NullPointerException(
-                        "authenticationDetailsProvider is marked non-null but is null");
-            }
-            return new LoadBalancerClient(
-                    authenticationDetailsProvider,
-                    configuration,
-                    clientConfigurator,
-                    requestSignerFactory,
-                    signingStrategyRequestSignerFactories,
-                    additionalClientConfigurators,
-                    endpoint,
-                    executorService);
+                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                                authenticationDetailsProvider) {
+            return new LoadBalancerClient(this, authenticationDetailsProvider, executorService);
         }
-    }
-
-    @Override
-    public void refreshClient() {
-        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                this.defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        this.signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
-            }
-        }
-
-        com.oracle.bmc.http.internal.RestClient refreshedClient =
-                this.restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        this.clientConfigurationToUse,
-                        this.isNonBufferingApacheClient,
-                        null,
-                        this.circuitBreakerConfiguration);
-
-        synchronized (clientUpdate) {
-            if (this.overrideEndpoint != null) {
-                refreshedClient.setEndpoint(this.overrideEndpoint);
-            }
-
-            this.client = refreshedClient;
-        }
-
-        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint) {
-        LOG.info("Setting endpoint to {}", endpoint);
-
-        synchronized (clientUpdate) {
-            this.overrideEndpoint = endpoint;
-            client.setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
-        }
-        return endpoint;
     }
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        java.util.Optional<String> endpoint =
-                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
-        if (endpoint.isPresent()) {
-            setEndpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + SERVICE + " is not known in region " + region);
-        }
+        super.setRegion(region);
     }
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
-        try {
-            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-            setRegion(region);
-        } catch (IllegalArgumentException e) {
-            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-            setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public void close() {
-        client.close();
+        super.setRegion(regionId);
     }
 
     @Override
     public ChangeLoadBalancerCompartmentResponse changeLoadBalancerCompartment(
             ChangeLoadBalancerCompartmentRequest request) {
-        LOG.trace("Called changeLoadBalancerCompartment");
-        final ChangeLoadBalancerCompartmentRequest interceptedRequest =
-                ChangeLoadBalancerCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeLoadBalancerCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeLoadBalancerCompartmentDetails(),
+                "changeLoadBalancerCompartmentDetails is required");
+
+        return clientCall(request, ChangeLoadBalancerCompartmentResponse::builder)
+                .logger(LOG, "changeLoadBalancerCompartment")
+                .serviceDetails(
                         "LoadBalancer",
                         "ChangeLoadBalancerCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/ChangeLoadBalancerCompartment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeLoadBalancerCompartmentResponse>
-                transformer =
-                        ChangeLoadBalancerCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeLoadBalancerCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/ChangeLoadBalancerCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeLoadBalancerCompartmentRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeLoadBalancerCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeLoadBalancerCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateBackendResponse createBackend(CreateBackendRequest request) {
-        LOG.trace("Called createBackend");
-        final CreateBackendRequest interceptedRequest =
-                CreateBackendConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateBackendConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateBackendDetails(), "createBackendDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "CreateBackend", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateBackendResponse> transformer =
-                CreateBackendConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateBackendDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getBackendSetName(), "backendSetName must not be blank");
+
+        return clientCall(request, CreateBackendResponse::builder)
+                .logger(LOG, "createBackend")
+                .serviceDetails("LoadBalancer", "CreateBackend", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateBackendRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("backendSets")
+                .appendPathParam(request.getBackendSetName())
+                .appendPathParam("backends")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateBackendResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateBackendResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateBackendSetResponse createBackendSet(CreateBackendSetRequest request) {
-        LOG.trace("Called createBackendSet");
-        final CreateBackendSetRequest interceptedRequest =
-                CreateBackendSetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateBackendSetConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateBackendSetDetails(), "createBackendSetDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "CreateBackendSet", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateBackendSetResponse>
-                transformer =
-                        CreateBackendSetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateBackendSetDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        return clientCall(request, CreateBackendSetResponse::builder)
+                .logger(LOG, "createBackendSet")
+                .serviceDetails("LoadBalancer", "CreateBackendSet", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateBackendSetRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("backendSets")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateBackendSetResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateBackendSetResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateCertificateResponse createCertificate(CreateCertificateRequest request) {
-        LOG.trace("Called createCertificate");
-        final CreateCertificateRequest interceptedRequest =
-                CreateCertificateConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateCertificateConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateCertificateDetails(), "createCertificateDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "CreateCertificate", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateCertificateResponse>
-                transformer =
-                        CreateCertificateConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateCertificateDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        return clientCall(request, CreateCertificateResponse::builder)
+                .logger(LOG, "createCertificate")
+                .serviceDetails("LoadBalancer", "CreateCertificate", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCertificateRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("certificates")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateCertificateResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCertificateResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateHostnameResponse createHostname(CreateHostnameRequest request) {
-        LOG.trace("Called createHostname");
-        final CreateHostnameRequest interceptedRequest =
-                CreateHostnameConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateHostnameConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateHostnameDetails(), "createHostnameDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "CreateHostname", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateHostnameResponse> transformer =
-                CreateHostnameConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateHostnameDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        return clientCall(request, CreateHostnameResponse::builder)
+                .logger(LOG, "createHostname")
+                .serviceDetails("LoadBalancer", "CreateHostname", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateHostnameRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("hostnames")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateHostnameResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateHostnameResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateListenerResponse createListener(CreateListenerRequest request) {
-        LOG.trace("Called createListener");
-        final CreateListenerRequest interceptedRequest =
-                CreateListenerConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateListenerConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateListenerDetails(), "createListenerDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "CreateListener", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateListenerResponse> transformer =
-                CreateListenerConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateListenerDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        return clientCall(request, CreateListenerResponse::builder)
+                .logger(LOG, "createListener")
+                .serviceDetails("LoadBalancer", "CreateListener", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateListenerRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("listeners")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateListenerResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateListenerResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateLoadBalancerResponse createLoadBalancer(CreateLoadBalancerRequest request) {
-        LOG.trace("Called createLoadBalancer");
-        final CreateLoadBalancerRequest interceptedRequest =
-                CreateLoadBalancerConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateLoadBalancerConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateLoadBalancerDetails(), "createLoadBalancerDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "CreateLoadBalancer", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateLoadBalancerResponse>
-                transformer =
-                        CreateLoadBalancerConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateLoadBalancerDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        return clientCall(request, CreateLoadBalancerResponse::builder)
+                .logger(LOG, "createLoadBalancer")
+                .serviceDetails("LoadBalancer", "CreateLoadBalancer", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateLoadBalancerRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateLoadBalancerResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateLoadBalancerResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreatePathRouteSetResponse createPathRouteSet(CreatePathRouteSetRequest request) {
-        LOG.trace("Called createPathRouteSet");
-        final CreatePathRouteSetRequest interceptedRequest =
-                CreatePathRouteSetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreatePathRouteSetConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreatePathRouteSetDetails(), "createPathRouteSetDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "CreatePathRouteSet", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, CreatePathRouteSetResponse>
-                transformer =
-                        CreatePathRouteSetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreatePathRouteSetDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        return clientCall(request, CreatePathRouteSetResponse::builder)
+                .logger(LOG, "createPathRouteSet")
+                .serviceDetails("LoadBalancer", "CreatePathRouteSet", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreatePathRouteSetRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("pathRouteSets")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreatePathRouteSetResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreatePathRouteSetResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateRoutingPolicyResponse createRoutingPolicy(CreateRoutingPolicyRequest request) {
-        LOG.trace("Called createRoutingPolicy");
-        final CreateRoutingPolicyRequest interceptedRequest =
-                CreateRoutingPolicyConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateRoutingPolicyConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateRoutingPolicyDetails(), "createRoutingPolicyDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "CreateRoutingPolicy", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateRoutingPolicyResponse>
-                transformer =
-                        CreateRoutingPolicyConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateRoutingPolicyDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        return clientCall(request, CreateRoutingPolicyResponse::builder)
+                .logger(LOG, "createRoutingPolicy")
+                .serviceDetails("LoadBalancer", "CreateRoutingPolicy", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateRoutingPolicyRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("routingPolicies")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateRoutingPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateRoutingPolicyResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateRuleSetResponse createRuleSet(CreateRuleSetRequest request) {
-        LOG.trace("Called createRuleSet");
-        final CreateRuleSetRequest interceptedRequest =
-                CreateRuleSetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateRuleSetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "CreateRuleSet", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateRuleSetResponse> transformer =
-                CreateRuleSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateRuleSetDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateRuleSetDetails(), "createRuleSetDetails is required");
+
+        return clientCall(request, CreateRuleSetResponse::builder)
+                .logger(LOG, "createRuleSet")
+                .serviceDetails("LoadBalancer", "CreateRuleSet", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateRuleSetRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("ruleSets")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateRuleSetResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateRuleSetResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateSSLCipherSuiteResponse createSSLCipherSuite(CreateSSLCipherSuiteRequest request) {
-        LOG.trace("Called createSSLCipherSuite");
-        final CreateSSLCipherSuiteRequest interceptedRequest =
-                CreateSSLCipherSuiteConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateSSLCipherSuiteConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateSSLCipherSuiteDetails(),
+                "createSSLCipherSuiteDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "CreateSSLCipherSuite", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateSSLCipherSuiteResponse>
-                transformer =
-                        CreateSSLCipherSuiteConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateSSLCipherSuiteDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        return clientCall(request, CreateSSLCipherSuiteResponse::builder)
+                .logger(LOG, "createSSLCipherSuite")
+                .serviceDetails("LoadBalancer", "CreateSSLCipherSuite", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSSLCipherSuiteRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("sslCipherSuites")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateSSLCipherSuiteResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSSLCipherSuiteResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteBackendResponse deleteBackend(DeleteBackendRequest request) {
-        LOG.trace("Called deleteBackend");
-        final DeleteBackendRequest interceptedRequest =
-                DeleteBackendConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteBackendConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "DeleteBackend", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteBackendResponse> transformer =
-                DeleteBackendConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getBackendSetName(), "backendSetName must not be blank");
+
+        Validate.notBlank(request.getBackendName(), "backendName must not be blank");
+
+        return clientCall(request, DeleteBackendResponse::builder)
+                .logger(LOG, "deleteBackend")
+                .serviceDetails("LoadBalancer", "DeleteBackend", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteBackendRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("backendSets")
+                .appendPathParam(request.getBackendSetName())
+                .appendPathParam("backends")
+                .appendPathParam(request.getBackendName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteBackendResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteBackendResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteBackendSetResponse deleteBackendSet(DeleteBackendSetRequest request) {
-        LOG.trace("Called deleteBackendSet");
-        final DeleteBackendSetRequest interceptedRequest =
-                DeleteBackendSetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteBackendSetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "DeleteBackendSet", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteBackendSetResponse>
-                transformer =
-                        DeleteBackendSetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getBackendSetName(), "backendSetName must not be blank");
+
+        return clientCall(request, DeleteBackendSetResponse::builder)
+                .logger(LOG, "deleteBackendSet")
+                .serviceDetails("LoadBalancer", "DeleteBackendSet", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteBackendSetRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("backendSets")
+                .appendPathParam(request.getBackendSetName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteBackendSetResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteBackendSetResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request) {
-        LOG.trace("Called deleteCertificate");
-        final DeleteCertificateRequest interceptedRequest =
-                DeleteCertificateConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteCertificateConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "DeleteCertificate", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteCertificateResponse>
-                transformer =
-                        DeleteCertificateConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getCertificateName(), "certificateName must not be blank");
+
+        return clientCall(request, DeleteCertificateResponse::builder)
+                .logger(LOG, "deleteCertificate")
+                .serviceDetails("LoadBalancer", "DeleteCertificate", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCertificateRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("certificates")
+                .appendPathParam(request.getCertificateName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteCertificateResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCertificateResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteHostnameResponse deleteHostname(DeleteHostnameRequest request) {
-        LOG.trace("Called deleteHostname");
-        final DeleteHostnameRequest interceptedRequest =
-                DeleteHostnameConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteHostnameConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "DeleteHostname", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteHostnameResponse> transformer =
-                DeleteHostnameConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getName(), "name must not be blank");
+
+        return clientCall(request, DeleteHostnameResponse::builder)
+                .logger(LOG, "deleteHostname")
+                .serviceDetails("LoadBalancer", "DeleteHostname", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteHostnameRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("hostnames")
+                .appendPathParam(request.getName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteHostnameResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteHostnameResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteListenerResponse deleteListener(DeleteListenerRequest request) {
-        LOG.trace("Called deleteListener");
-        final DeleteListenerRequest interceptedRequest =
-                DeleteListenerConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteListenerConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "DeleteListener", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteListenerResponse> transformer =
-                DeleteListenerConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getListenerName(), "listenerName must not be blank");
+
+        return clientCall(request, DeleteListenerResponse::builder)
+                .logger(LOG, "deleteListener")
+                .serviceDetails("LoadBalancer", "DeleteListener", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteListenerRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("listeners")
+                .appendPathParam(request.getListenerName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteListenerResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteListenerResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteLoadBalancerResponse deleteLoadBalancer(DeleteLoadBalancerRequest request) {
-        LOG.trace("Called deleteLoadBalancer");
-        final DeleteLoadBalancerRequest interceptedRequest =
-                DeleteLoadBalancerConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteLoadBalancerConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "DeleteLoadBalancer", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteLoadBalancerResponse>
-                transformer =
-                        DeleteLoadBalancerConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        return clientCall(request, DeleteLoadBalancerResponse::builder)
+                .logger(LOG, "deleteLoadBalancer")
+                .serviceDetails("LoadBalancer", "DeleteLoadBalancer", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteLoadBalancerRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteLoadBalancerResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteLoadBalancerResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeletePathRouteSetResponse deletePathRouteSet(DeletePathRouteSetRequest request) {
-        LOG.trace("Called deletePathRouteSet");
-        final DeletePathRouteSetRequest interceptedRequest =
-                DeletePathRouteSetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeletePathRouteSetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "DeletePathRouteSet", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeletePathRouteSetResponse>
-                transformer =
-                        DeletePathRouteSetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getPathRouteSetName(), "pathRouteSetName must not be blank");
+
+        return clientCall(request, DeletePathRouteSetResponse::builder)
+                .logger(LOG, "deletePathRouteSet")
+                .serviceDetails("LoadBalancer", "DeletePathRouteSet", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeletePathRouteSetRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("pathRouteSets")
+                .appendPathParam(request.getPathRouteSetName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeletePathRouteSetResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeletePathRouteSetResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteRoutingPolicyResponse deleteRoutingPolicy(DeleteRoutingPolicyRequest request) {
-        LOG.trace("Called deleteRoutingPolicy");
-        final DeleteRoutingPolicyRequest interceptedRequest =
-                DeleteRoutingPolicyConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteRoutingPolicyConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "DeleteRoutingPolicy", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteRoutingPolicyResponse>
-                transformer =
-                        DeleteRoutingPolicyConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getRoutingPolicyName(), "routingPolicyName must not be blank");
+
+        return clientCall(request, DeleteRoutingPolicyResponse::builder)
+                .logger(LOG, "deleteRoutingPolicy")
+                .serviceDetails("LoadBalancer", "DeleteRoutingPolicy", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteRoutingPolicyRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("routingPolicies")
+                .appendPathParam(request.getRoutingPolicyName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteRoutingPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteRoutingPolicyResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteRuleSetResponse deleteRuleSet(DeleteRuleSetRequest request) {
-        LOG.trace("Called deleteRuleSet");
-        final DeleteRuleSetRequest interceptedRequest =
-                DeleteRuleSetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteRuleSetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "DeleteRuleSet", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteRuleSetResponse> transformer =
-                DeleteRuleSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getRuleSetName(), "ruleSetName must not be blank");
+
+        return clientCall(request, DeleteRuleSetResponse::builder)
+                .logger(LOG, "deleteRuleSet")
+                .serviceDetails("LoadBalancer", "DeleteRuleSet", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteRuleSetRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("ruleSets")
+                .appendPathParam(request.getRuleSetName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteRuleSetResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteRuleSetResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteSSLCipherSuiteResponse deleteSSLCipherSuite(DeleteSSLCipherSuiteRequest request) {
-        LOG.trace("Called deleteSSLCipherSuite");
-        final DeleteSSLCipherSuiteRequest interceptedRequest =
-                DeleteSSLCipherSuiteConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteSSLCipherSuiteConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "DeleteSSLCipherSuite", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteSSLCipherSuiteResponse>
-                transformer =
-                        DeleteSSLCipherSuiteConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getName(), "name must not be blank");
+
+        return clientCall(request, DeleteSSLCipherSuiteResponse::builder)
+                .logger(LOG, "deleteSSLCipherSuite")
+                .serviceDetails("LoadBalancer", "DeleteSSLCipherSuite", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSSLCipherSuiteRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("sslCipherSuites")
+                .appendPathParam(request.getName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteSSLCipherSuiteResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSSLCipherSuiteResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetBackendResponse getBackend(GetBackendRequest request) {
-        LOG.trace("Called getBackend");
-        final GetBackendRequest interceptedRequest = GetBackendConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetBackendConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getBackendSetName(), "backendSetName must not be blank");
+
+        Validate.notBlank(request.getBackendName(), "backendName must not be blank");
+
+        return clientCall(request, GetBackendResponse::builder)
+                .logger(LOG, "getBackend")
+                .serviceDetails(
                         "LoadBalancer",
                         "GetBackend",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Backend/GetBackend");
-        java.util.function.Function<javax.ws.rs.core.Response, GetBackendResponse> transformer =
-                GetBackendConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Backend/GetBackend")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetBackendRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("backendSets")
+                .appendPathParam(request.getBackendSetName())
+                .appendPathParam("backends")
+                .appendPathParam(request.getBackendName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.loadbalancer.model.Backend.class,
+                        GetBackendResponse.Builder::backend)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetBackendResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("eTag", GetBackendResponse.Builder::eTag)
+                .callSync();
     }
 
     @Override
     public GetBackendHealthResponse getBackendHealth(GetBackendHealthRequest request) {
-        LOG.trace("Called getBackendHealth");
-        final GetBackendHealthRequest interceptedRequest =
-                GetBackendHealthConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetBackendHealthConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getBackendSetName(), "backendSetName must not be blank");
+
+        Validate.notBlank(request.getBackendName(), "backendName must not be blank");
+
+        return clientCall(request, GetBackendHealthResponse::builder)
+                .logger(LOG, "getBackendHealth")
+                .serviceDetails(
                         "LoadBalancer",
                         "GetBackendHealth",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendHealth/GetBackendHealth");
-        java.util.function.Function<javax.ws.rs.core.Response, GetBackendHealthResponse>
-                transformer =
-                        GetBackendHealthConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendHealth/GetBackendHealth")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetBackendHealthRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("backendSets")
+                .appendPathParam(request.getBackendSetName())
+                .appendPathParam("backends")
+                .appendPathParam(request.getBackendName())
+                .appendPathParam("health")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.loadbalancer.model.BackendHealth.class,
+                        GetBackendHealthResponse.Builder::backendHealth)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetBackendHealthResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("eTag", GetBackendHealthResponse.Builder::eTag)
+                .callSync();
     }
 
     @Override
     public GetBackendSetResponse getBackendSet(GetBackendSetRequest request) {
-        LOG.trace("Called getBackendSet");
-        final GetBackendSetRequest interceptedRequest =
-                GetBackendSetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetBackendSetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getBackendSetName(), "backendSetName must not be blank");
+
+        return clientCall(request, GetBackendSetResponse::builder)
+                .logger(LOG, "getBackendSet")
+                .serviceDetails(
                         "LoadBalancer",
                         "GetBackendSet",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendSet/GetBackendSet");
-        java.util.function.Function<javax.ws.rs.core.Response, GetBackendSetResponse> transformer =
-                GetBackendSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendSet/GetBackendSet")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetBackendSetRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("backendSets")
+                .appendPathParam(request.getBackendSetName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.loadbalancer.model.BackendSet.class,
+                        GetBackendSetResponse.Builder::backendSet)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetBackendSetResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("eTag", GetBackendSetResponse.Builder::eTag)
+                .callSync();
     }
 
     @Override
     public GetBackendSetHealthResponse getBackendSetHealth(GetBackendSetHealthRequest request) {
-        LOG.trace("Called getBackendSetHealth");
-        final GetBackendSetHealthRequest interceptedRequest =
-                GetBackendSetHealthConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetBackendSetHealthConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getBackendSetName(), "backendSetName must not be blank");
+
+        return clientCall(request, GetBackendSetHealthResponse::builder)
+                .logger(LOG, "getBackendSetHealth")
+                .serviceDetails(
                         "LoadBalancer",
                         "GetBackendSetHealth",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendSetHealth/GetBackendSetHealth");
-        java.util.function.Function<javax.ws.rs.core.Response, GetBackendSetHealthResponse>
-                transformer =
-                        GetBackendSetHealthConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendSetHealth/GetBackendSetHealth")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetBackendSetHealthRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("backendSets")
+                .appendPathParam(request.getBackendSetName())
+                .appendPathParam("health")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.loadbalancer.model.BackendSetHealth.class,
+                        GetBackendSetHealthResponse.Builder::backendSetHealth)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetBackendSetHealthResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("eTag", GetBackendSetHealthResponse.Builder::eTag)
+                .callSync();
     }
 
     @Override
     public GetHealthCheckerResponse getHealthChecker(GetHealthCheckerRequest request) {
-        LOG.trace("Called getHealthChecker");
-        final GetHealthCheckerRequest interceptedRequest =
-                GetHealthCheckerConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetHealthCheckerConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getBackendSetName(), "backendSetName must not be blank");
+
+        return clientCall(request, GetHealthCheckerResponse::builder)
+                .logger(LOG, "getHealthChecker")
+                .serviceDetails(
                         "LoadBalancer",
                         "GetHealthChecker",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/HealthChecker/GetHealthChecker");
-        java.util.function.Function<javax.ws.rs.core.Response, GetHealthCheckerResponse>
-                transformer =
-                        GetHealthCheckerConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/HealthChecker/GetHealthChecker")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetHealthCheckerRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("backendSets")
+                .appendPathParam(request.getBackendSetName())
+                .appendPathParam("healthChecker")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.loadbalancer.model.HealthChecker.class,
+                        GetHealthCheckerResponse.Builder::healthChecker)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetHealthCheckerResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("eTag", GetHealthCheckerResponse.Builder::eTag)
+                .callSync();
     }
 
     @Override
     public GetHostnameResponse getHostname(GetHostnameRequest request) {
-        LOG.trace("Called getHostname");
-        final GetHostnameRequest interceptedRequest =
-                GetHostnameConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetHostnameConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getName(), "name must not be blank");
+
+        return clientCall(request, GetHostnameResponse::builder)
+                .logger(LOG, "getHostname")
+                .serviceDetails(
                         "LoadBalancer",
                         "GetHostname",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Hostname/GetHostname");
-        java.util.function.Function<javax.ws.rs.core.Response, GetHostnameResponse> transformer =
-                GetHostnameConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Hostname/GetHostname")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetHostnameRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("hostnames")
+                .appendPathParam(request.getName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.loadbalancer.model.Hostname.class,
+                        GetHostnameResponse.Builder::hostname)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetHostnameResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("eTag", GetHostnameResponse.Builder::eTag)
+                .callSync();
     }
 
     @Override
     public GetLoadBalancerResponse getLoadBalancer(GetLoadBalancerRequest request) {
-        LOG.trace("Called getLoadBalancer");
-        final GetLoadBalancerRequest interceptedRequest =
-                GetLoadBalancerConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetLoadBalancerConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        return clientCall(request, GetLoadBalancerResponse::builder)
+                .logger(LOG, "getLoadBalancer")
+                .serviceDetails(
                         "LoadBalancer",
                         "GetLoadBalancer",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/GetLoadBalancer");
-        java.util.function.Function<javax.ws.rs.core.Response, GetLoadBalancerResponse>
-                transformer =
-                        GetLoadBalancerConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/GetLoadBalancer")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetLoadBalancerRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.loadbalancer.model.LoadBalancer.class,
+                        GetLoadBalancerResponse.Builder::loadBalancer)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetLoadBalancerResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("eTag", GetLoadBalancerResponse.Builder::eTag)
+                .callSync();
     }
 
     @Override
     public GetLoadBalancerHealthResponse getLoadBalancerHealth(
             GetLoadBalancerHealthRequest request) {
-        LOG.trace("Called getLoadBalancerHealth");
-        final GetLoadBalancerHealthRequest interceptedRequest =
-                GetLoadBalancerHealthConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetLoadBalancerHealthConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        return clientCall(request, GetLoadBalancerHealthResponse::builder)
+                .logger(LOG, "getLoadBalancerHealth")
+                .serviceDetails(
                         "LoadBalancer",
                         "GetLoadBalancerHealth",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerHealth/GetLoadBalancerHealth");
-        java.util.function.Function<javax.ws.rs.core.Response, GetLoadBalancerHealthResponse>
-                transformer =
-                        GetLoadBalancerHealthConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerHealth/GetLoadBalancerHealth")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetLoadBalancerHealthRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("health")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.loadbalancer.model.LoadBalancerHealth.class,
+                        GetLoadBalancerHealthResponse.Builder::loadBalancerHealth)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetLoadBalancerHealthResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("eTag", GetLoadBalancerHealthResponse.Builder::eTag)
+                .callSync();
     }
 
     @Override
     public GetPathRouteSetResponse getPathRouteSet(GetPathRouteSetRequest request) {
-        LOG.trace("Called getPathRouteSet");
-        final GetPathRouteSetRequest interceptedRequest =
-                GetPathRouteSetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetPathRouteSetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getPathRouteSetName(), "pathRouteSetName must not be blank");
+
+        return clientCall(request, GetPathRouteSetResponse::builder)
+                .logger(LOG, "getPathRouteSet")
+                .serviceDetails(
                         "LoadBalancer",
                         "GetPathRouteSet",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/GetPathRouteSet");
-        java.util.function.Function<javax.ws.rs.core.Response, GetPathRouteSetResponse>
-                transformer =
-                        GetPathRouteSetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/GetPathRouteSet")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPathRouteSetRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("pathRouteSets")
+                .appendPathParam(request.getPathRouteSetName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.loadbalancer.model.PathRouteSet.class,
+                        GetPathRouteSetResponse.Builder::pathRouteSet)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPathRouteSetResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("eTag", GetPathRouteSetResponse.Builder::eTag)
+                .callSync();
     }
 
     @Override
     public GetRoutingPolicyResponse getRoutingPolicy(GetRoutingPolicyRequest request) {
-        LOG.trace("Called getRoutingPolicy");
-        final GetRoutingPolicyRequest interceptedRequest =
-                GetRoutingPolicyConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetRoutingPolicyConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getRoutingPolicyName(), "routingPolicyName must not be blank");
+
+        return clientCall(request, GetRoutingPolicyResponse::builder)
+                .logger(LOG, "getRoutingPolicy")
+                .serviceDetails(
                         "LoadBalancer",
                         "GetRoutingPolicy",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/RoutingPolicy/GetRoutingPolicy");
-        java.util.function.Function<javax.ws.rs.core.Response, GetRoutingPolicyResponse>
-                transformer =
-                        GetRoutingPolicyConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/RoutingPolicy/GetRoutingPolicy")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetRoutingPolicyRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("routingPolicies")
+                .appendPathParam(request.getRoutingPolicyName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.loadbalancer.model.RoutingPolicy.class,
+                        GetRoutingPolicyResponse.Builder::routingPolicy)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetRoutingPolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("eTag", GetRoutingPolicyResponse.Builder::eTag)
+                .callSync();
     }
 
     @Override
     public GetRuleSetResponse getRuleSet(GetRuleSetRequest request) {
-        LOG.trace("Called getRuleSet");
-        final GetRuleSetRequest interceptedRequest = GetRuleSetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetRuleSetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getRuleSetName(), "ruleSetName must not be blank");
+
+        return clientCall(request, GetRuleSetResponse::builder)
+                .logger(LOG, "getRuleSet")
+                .serviceDetails(
                         "LoadBalancer",
                         "GetRuleSet",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/GetRuleSet");
-        java.util.function.Function<javax.ws.rs.core.Response, GetRuleSetResponse> transformer =
-                GetRuleSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/GetRuleSet")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetRuleSetRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("ruleSets")
+                .appendPathParam(request.getRuleSetName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.loadbalancer.model.RuleSet.class,
+                        GetRuleSetResponse.Builder::ruleSet)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetRuleSetResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("eTag", GetRuleSetResponse.Builder::eTag)
+                .callSync();
     }
 
     @Override
     public GetSSLCipherSuiteResponse getSSLCipherSuite(GetSSLCipherSuiteRequest request) {
-        LOG.trace("Called getSSLCipherSuite");
-        final GetSSLCipherSuiteRequest interceptedRequest =
-                GetSSLCipherSuiteConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetSSLCipherSuiteConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getName(), "name must not be blank");
+
+        return clientCall(request, GetSSLCipherSuiteResponse::builder)
+                .logger(LOG, "getSSLCipherSuite")
+                .serviceDetails(
                         "LoadBalancer",
                         "GetSSLCipherSuite",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/SSLCipherSuite/GetSSLCipherSuite");
-        java.util.function.Function<javax.ws.rs.core.Response, GetSSLCipherSuiteResponse>
-                transformer =
-                        GetSSLCipherSuiteConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/SSLCipherSuite/GetSSLCipherSuite")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSSLCipherSuiteRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("sslCipherSuites")
+                .appendPathParam(request.getName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.loadbalancer.model.SSLCipherSuite.class,
+                        GetSSLCipherSuiteResponse.Builder::sSLCipherSuite)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSSLCipherSuiteResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("eTag", GetSSLCipherSuiteResponse.Builder::eTag)
+                .callSync();
     }
 
     @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
-        LOG.trace("Called getWorkRequest");
-        final GetWorkRequestRequest interceptedRequest =
-                GetWorkRequestConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, GetWorkRequestResponse::builder)
+                .logger(LOG, "getWorkRequest")
+                .serviceDetails(
                         "LoadBalancer",
                         "GetWorkRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/WorkRequest/GetWorkRequest");
-        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
-                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/WorkRequest/GetWorkRequest")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetWorkRequestRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancerWorkRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.loadbalancer.model.WorkRequest.class,
+                        GetWorkRequestResponse.Builder::workRequest)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListBackendSetsResponse listBackendSets(ListBackendSetsRequest request) {
-        LOG.trace("Called listBackendSets");
-        final ListBackendSetsRequest interceptedRequest =
-                ListBackendSetsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListBackendSetsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        return clientCall(request, ListBackendSetsResponse::builder)
+                .logger(LOG, "listBackendSets")
+                .serviceDetails(
                         "LoadBalancer",
                         "ListBackendSets",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendSet/ListBackendSets");
-        java.util.function.Function<javax.ws.rs.core.Response, ListBackendSetsResponse>
-                transformer =
-                        ListBackendSetsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendSet/ListBackendSets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListBackendSetsRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("backendSets")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBodyList(
+                        com.oracle.bmc.loadbalancer.model.BackendSet.class,
+                        ListBackendSetsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListBackendSetsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("eTag", ListBackendSetsResponse.Builder::eTag)
+                .callSync();
     }
 
     @Override
     public ListBackendsResponse listBackends(ListBackendsRequest request) {
-        LOG.trace("Called listBackends");
-        final ListBackendsRequest interceptedRequest =
-                ListBackendsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListBackendsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getBackendSetName(), "backendSetName must not be blank");
+
+        return clientCall(request, ListBackendsResponse::builder)
+                .logger(LOG, "listBackends")
+                .serviceDetails(
                         "LoadBalancer",
                         "ListBackends",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Backend/ListBackends");
-        java.util.function.Function<javax.ws.rs.core.Response, ListBackendsResponse> transformer =
-                ListBackendsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Backend/ListBackends")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListBackendsRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("backendSets")
+                .appendPathParam(request.getBackendSetName())
+                .appendPathParam("backends")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBodyList(
+                        com.oracle.bmc.loadbalancer.model.Backend.class,
+                        ListBackendsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListBackendsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("eTag", ListBackendsResponse.Builder::eTag)
+                .callSync();
     }
 
     @Override
     public ListCertificatesResponse listCertificates(ListCertificatesRequest request) {
-        LOG.trace("Called listCertificates");
-        final ListCertificatesRequest interceptedRequest =
-                ListCertificatesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListCertificatesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        return clientCall(request, ListCertificatesResponse::builder)
+                .logger(LOG, "listCertificates")
+                .serviceDetails(
                         "LoadBalancer",
                         "ListCertificates",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Certificate/ListCertificates");
-        java.util.function.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
-                transformer =
-                        ListCertificatesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Certificate/ListCertificates")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCertificatesRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("certificates")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBodyList(
+                        com.oracle.bmc.loadbalancer.model.Certificate.class,
+                        ListCertificatesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCertificatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("eTag", ListCertificatesResponse.Builder::eTag)
+                .callSync();
     }
 
     @Override
     public ListHostnamesResponse listHostnames(ListHostnamesRequest request) {
-        LOG.trace("Called listHostnames");
-        final ListHostnamesRequest interceptedRequest =
-                ListHostnamesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListHostnamesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        return clientCall(request, ListHostnamesResponse::builder)
+                .logger(LOG, "listHostnames")
+                .serviceDetails(
                         "LoadBalancer",
                         "ListHostnames",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Hostname/ListHostnames");
-        java.util.function.Function<javax.ws.rs.core.Response, ListHostnamesResponse> transformer =
-                ListHostnamesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Hostname/ListHostnames")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListHostnamesRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("hostnames")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBodyList(
+                        com.oracle.bmc.loadbalancer.model.Hostname.class,
+                        ListHostnamesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListHostnamesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("eTag", ListHostnamesResponse.Builder::eTag)
+                .callSync();
     }
 
     @Override
     public ListListenerRulesResponse listListenerRules(ListListenerRulesRequest request) {
-        LOG.trace("Called listListenerRules");
-        final ListListenerRulesRequest interceptedRequest =
-                ListListenerRulesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListListenerRulesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getListenerName(), "listenerName must not be blank");
+
+        return clientCall(request, ListListenerRulesResponse::builder)
+                .logger(LOG, "listListenerRules")
+                .serviceDetails(
                         "LoadBalancer",
                         "ListListenerRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/ListenerRuleSummary/ListListenerRules");
-        java.util.function.Function<javax.ws.rs.core.Response, ListListenerRulesResponse>
-                transformer =
-                        ListListenerRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/ListenerRuleSummary/ListListenerRules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListListenerRulesRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("listeners")
+                .appendPathParam(request.getListenerName())
+                .appendPathParam("rules")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBodyList(
+                        com.oracle.bmc.loadbalancer.model.ListenerRuleSummary.class,
+                        ListListenerRulesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListListenerRulesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("eTag", ListListenerRulesResponse.Builder::eTag)
+                .callSync();
     }
 
     @Override
     public ListLoadBalancerHealthsResponse listLoadBalancerHealths(
             ListLoadBalancerHealthsRequest request) {
-        LOG.trace("Called listLoadBalancerHealths");
-        final ListLoadBalancerHealthsRequest interceptedRequest =
-                ListLoadBalancerHealthsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListLoadBalancerHealthsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListLoadBalancerHealthsResponse::builder)
+                .logger(LOG, "listLoadBalancerHealths")
+                .serviceDetails(
                         "LoadBalancer",
                         "ListLoadBalancerHealths",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerHealthSummary/ListLoadBalancerHealths");
-        java.util.function.Function<javax.ws.rs.core.Response, ListLoadBalancerHealthsResponse>
-                transformer =
-                        ListLoadBalancerHealthsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerHealthSummary/ListLoadBalancerHealths")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListLoadBalancerHealthsRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancerHealths")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.loadbalancer.model.LoadBalancerHealthSummary.class,
+                        ListLoadBalancerHealthsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListLoadBalancerHealthsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListLoadBalancerHealthsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListLoadBalancersResponse listLoadBalancers(ListLoadBalancersRequest request) {
-        LOG.trace("Called listLoadBalancers");
-        final ListLoadBalancersRequest interceptedRequest =
-                ListLoadBalancersConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListLoadBalancersConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListLoadBalancersResponse::builder)
+                .logger(LOG, "listLoadBalancers")
+                .serviceDetails(
                         "LoadBalancer",
                         "ListLoadBalancers",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/ListLoadBalancers");
-        java.util.function.Function<javax.ws.rs.core.Response, ListLoadBalancersResponse>
-                transformer =
-                        ListLoadBalancersConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/ListLoadBalancers")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListLoadBalancersRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("detail", request.getDetail())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.loadbalancer.model.LoadBalancer.class,
+                        ListLoadBalancersResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListLoadBalancersResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListLoadBalancersResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListPathRouteSetsResponse listPathRouteSets(ListPathRouteSetsRequest request) {
-        LOG.trace("Called listPathRouteSets");
-        final ListPathRouteSetsRequest interceptedRequest =
-                ListPathRouteSetsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListPathRouteSetsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        return clientCall(request, ListPathRouteSetsResponse::builder)
+                .logger(LOG, "listPathRouteSets")
+                .serviceDetails(
                         "LoadBalancer",
                         "ListPathRouteSets",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/ListPathRouteSets");
-        java.util.function.Function<javax.ws.rs.core.Response, ListPathRouteSetsResponse>
-                transformer =
-                        ListPathRouteSetsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/ListPathRouteSets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPathRouteSetsRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("pathRouteSets")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBodyList(
+                        com.oracle.bmc.loadbalancer.model.PathRouteSet.class,
+                        ListPathRouteSetsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPathRouteSetsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("eTag", ListPathRouteSetsResponse.Builder::eTag)
+                .callSync();
     }
 
     @Override
     public ListPoliciesResponse listPolicies(ListPoliciesRequest request) {
-        LOG.trace("Called listPolicies");
-        final ListPoliciesRequest interceptedRequest =
-                ListPoliciesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListPoliciesConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListPoliciesResponse::builder)
+                .logger(LOG, "listPolicies")
+                .serviceDetails(
                         "LoadBalancer",
                         "ListPolicies",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies");
-        java.util.function.Function<javax.ws.rs.core.Response, ListPoliciesResponse> transformer =
-                ListPoliciesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPoliciesRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancerPolicies")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.loadbalancer.model.LoadBalancerPolicy.class,
+                        ListPoliciesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPoliciesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPoliciesResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListProtocolsResponse listProtocols(ListProtocolsRequest request) {
-        LOG.trace("Called listProtocols");
-        final ListProtocolsRequest interceptedRequest =
-                ListProtocolsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListProtocolsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListProtocolsResponse::builder)
+                .logger(LOG, "listProtocols")
+                .serviceDetails(
                         "LoadBalancer",
                         "ListProtocols",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols");
-        java.util.function.Function<javax.ws.rs.core.Response, ListProtocolsResponse> transformer =
-                ListProtocolsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListProtocolsRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancerProtocols")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.loadbalancer.model.LoadBalancerProtocol.class,
+                        ListProtocolsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListProtocolsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListProtocolsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListRoutingPoliciesResponse listRoutingPolicies(ListRoutingPoliciesRequest request) {
-        LOG.trace("Called listRoutingPolicies");
-        final ListRoutingPoliciesRequest interceptedRequest =
-                ListRoutingPoliciesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListRoutingPoliciesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        return clientCall(request, ListRoutingPoliciesResponse::builder)
+                .logger(LOG, "listRoutingPolicies")
+                .serviceDetails(
                         "LoadBalancer",
                         "ListRoutingPolicies",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/RoutingPolicy/ListRoutingPolicies");
-        java.util.function.Function<javax.ws.rs.core.Response, ListRoutingPoliciesResponse>
-                transformer =
-                        ListRoutingPoliciesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/RoutingPolicy/ListRoutingPolicies")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRoutingPoliciesRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("routingPolicies")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBodyList(
+                        com.oracle.bmc.loadbalancer.model.RoutingPolicy.class,
+                        ListRoutingPoliciesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRoutingPoliciesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRoutingPoliciesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString("eTag", ListRoutingPoliciesResponse.Builder::eTag)
+                .callSync();
     }
 
     @Override
     public ListRuleSetsResponse listRuleSets(ListRuleSetsRequest request) {
-        LOG.trace("Called listRuleSets");
-        final ListRuleSetsRequest interceptedRequest =
-                ListRuleSetsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListRuleSetsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        return clientCall(request, ListRuleSetsResponse::builder)
+                .logger(LOG, "listRuleSets")
+                .serviceDetails(
                         "LoadBalancer",
                         "ListRuleSets",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/ListRuleSets");
-        java.util.function.Function<javax.ws.rs.core.Response, ListRuleSetsResponse> transformer =
-                ListRuleSetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/ListRuleSets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRuleSetsRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("ruleSets")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBodyList(
+                        com.oracle.bmc.loadbalancer.model.RuleSet.class,
+                        ListRuleSetsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRuleSetsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("eTag", ListRuleSetsResponse.Builder::eTag)
+                .callSync();
     }
 
     @Override
     public ListSSLCipherSuitesResponse listSSLCipherSuites(ListSSLCipherSuitesRequest request) {
-        LOG.trace("Called listSSLCipherSuites");
-        final ListSSLCipherSuitesRequest interceptedRequest =
-                ListSSLCipherSuitesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListSSLCipherSuitesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        return clientCall(request, ListSSLCipherSuitesResponse::builder)
+                .logger(LOG, "listSSLCipherSuites")
+                .serviceDetails(
                         "LoadBalancer",
                         "ListSSLCipherSuites",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/SSLCipherSuite/ListSSLCipherSuites");
-        java.util.function.Function<javax.ws.rs.core.Response, ListSSLCipherSuitesResponse>
-                transformer =
-                        ListSSLCipherSuitesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/SSLCipherSuite/ListSSLCipherSuites")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSSLCipherSuitesRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("sslCipherSuites")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBodyList(
+                        com.oracle.bmc.loadbalancer.model.SSLCipherSuite.class,
+                        ListSSLCipherSuitesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSSLCipherSuitesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("eTag", ListSSLCipherSuitesResponse.Builder::eTag)
+                .callSync();
     }
 
     @Override
     public ListShapesResponse listShapes(ListShapesRequest request) {
-        LOG.trace("Called listShapes");
-        final ListShapesRequest interceptedRequest = ListShapesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListShapesConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListShapesResponse::builder)
+                .logger(LOG, "listShapes")
+                .serviceDetails(
                         "LoadBalancer",
                         "ListShapes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes");
-        java.util.function.Function<javax.ws.rs.core.Response, ListShapesResponse> transformer =
-                ListShapesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListShapesRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancerShapes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.loadbalancer.model.LoadBalancerShape.class,
+                        ListShapesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListShapesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListShapesResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request) {
-        LOG.trace("Called listWorkRequests");
-        final ListWorkRequestsRequest interceptedRequest =
-                ListWorkRequestsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        return clientCall(request, ListWorkRequestsResponse::builder)
+                .logger(LOG, "listWorkRequests")
+                .serviceDetails(
                         "LoadBalancer",
                         "ListWorkRequests",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/WorkRequest/ListWorkRequests");
-        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer =
-                        ListWorkRequestsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/WorkRequest/ListWorkRequests")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestsRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("workRequests")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.loadbalancer.model.WorkRequest.class,
+                        ListWorkRequestsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateBackendResponse updateBackend(UpdateBackendRequest request) {
-        LOG.trace("Called updateBackend");
-        final UpdateBackendRequest interceptedRequest =
-                UpdateBackendConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateBackendConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getUpdateBackendDetails(), "updateBackendDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "UpdateBackend", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateBackendResponse> transformer =
-                UpdateBackendConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateBackendDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getBackendSetName(), "backendSetName must not be blank");
+
+        Validate.notBlank(request.getBackendName(), "backendName must not be blank");
+
+        return clientCall(request, UpdateBackendResponse::builder)
+                .logger(LOG, "updateBackend")
+                .serviceDetails("LoadBalancer", "UpdateBackend", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateBackendRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("backendSets")
+                .appendPathParam(request.getBackendSetName())
+                .appendPathParam("backends")
+                .appendPathParam(request.getBackendName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateBackendResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateBackendResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateBackendSetResponse updateBackendSet(UpdateBackendSetRequest request) {
-        LOG.trace("Called updateBackendSet");
-        final UpdateBackendSetRequest interceptedRequest =
-                UpdateBackendSetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateBackendSetConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getUpdateBackendSetDetails(), "updateBackendSetDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "UpdateBackendSet", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateBackendSetResponse>
-                transformer =
-                        UpdateBackendSetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateBackendSetDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getBackendSetName(), "backendSetName must not be blank");
+
+        return clientCall(request, UpdateBackendSetResponse::builder)
+                .logger(LOG, "updateBackendSet")
+                .serviceDetails("LoadBalancer", "UpdateBackendSet", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateBackendSetRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("backendSets")
+                .appendPathParam(request.getBackendSetName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateBackendSetResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateBackendSetResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateHealthCheckerResponse updateHealthChecker(UpdateHealthCheckerRequest request) {
-        LOG.trace("Called updateHealthChecker");
-        final UpdateHealthCheckerRequest interceptedRequest =
-                UpdateHealthCheckerConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateHealthCheckerConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getHealthChecker(), "healthChecker is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "UpdateHealthChecker", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateHealthCheckerResponse>
-                transformer =
-                        UpdateHealthCheckerConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getHealthChecker(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getBackendSetName(), "backendSetName must not be blank");
+
+        return clientCall(request, UpdateHealthCheckerResponse::builder)
+                .logger(LOG, "updateHealthChecker")
+                .serviceDetails("LoadBalancer", "UpdateHealthChecker", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateHealthCheckerRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("backendSets")
+                .appendPathParam(request.getBackendSetName())
+                .appendPathParam("healthChecker")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateHealthCheckerResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateHealthCheckerResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateHostnameResponse updateHostname(UpdateHostnameRequest request) {
-        LOG.trace("Called updateHostname");
-        final UpdateHostnameRequest interceptedRequest =
-                UpdateHostnameConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateHostnameConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getUpdateHostnameDetails(), "updateHostnameDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "UpdateHostname", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateHostnameResponse> transformer =
-                UpdateHostnameConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateHostnameDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getName(), "name must not be blank");
+
+        return clientCall(request, UpdateHostnameResponse::builder)
+                .logger(LOG, "updateHostname")
+                .serviceDetails("LoadBalancer", "UpdateHostname", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateHostnameRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("hostnames")
+                .appendPathParam(request.getName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateHostnameResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateHostnameResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateListenerResponse updateListener(UpdateListenerRequest request) {
-        LOG.trace("Called updateListener");
-        final UpdateListenerRequest interceptedRequest =
-                UpdateListenerConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateListenerConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getUpdateListenerDetails(), "updateListenerDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "UpdateListener", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateListenerResponse> transformer =
-                UpdateListenerConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateListenerDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getListenerName(), "listenerName must not be blank");
+
+        return clientCall(request, UpdateListenerResponse::builder)
+                .logger(LOG, "updateListener")
+                .serviceDetails("LoadBalancer", "UpdateListener", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateListenerRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("listeners")
+                .appendPathParam(request.getListenerName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateListenerResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateListenerResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateLoadBalancerResponse updateLoadBalancer(UpdateLoadBalancerRequest request) {
-        LOG.trace("Called updateLoadBalancer");
-        final UpdateLoadBalancerRequest interceptedRequest =
-                UpdateLoadBalancerConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateLoadBalancerConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getUpdateLoadBalancerDetails(), "updateLoadBalancerDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "UpdateLoadBalancer", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateLoadBalancerResponse>
-                transformer =
-                        UpdateLoadBalancerConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateLoadBalancerDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        return clientCall(request, UpdateLoadBalancerResponse::builder)
+                .logger(LOG, "updateLoadBalancer")
+                .serviceDetails("LoadBalancer", "UpdateLoadBalancer", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateLoadBalancerRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateLoadBalancerResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateLoadBalancerResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateLoadBalancerShapeResponse updateLoadBalancerShape(
             UpdateLoadBalancerShapeRequest request) {
-        LOG.trace("Called updateLoadBalancerShape");
-        final UpdateLoadBalancerShapeRequest interceptedRequest =
-                UpdateLoadBalancerShapeConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateLoadBalancerShapeConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateLoadBalancerShapeDetails(),
+                "updateLoadBalancerShapeDetails is required");
+
+        return clientCall(request, UpdateLoadBalancerShapeResponse::builder)
+                .logger(LOG, "updateLoadBalancerShape")
+                .serviceDetails(
                         "LoadBalancer",
                         "UpdateLoadBalancerShape",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/UpdateLoadBalancerShape");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateLoadBalancerShapeResponse>
-                transformer =
-                        UpdateLoadBalancerShapeConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateLoadBalancerShapeDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/UpdateLoadBalancerShape")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateLoadBalancerShapeRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("updateShape")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateLoadBalancerShapeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateLoadBalancerShapeResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateNetworkSecurityGroupsResponse updateNetworkSecurityGroups(
             UpdateNetworkSecurityGroupsRequest request) {
-        LOG.trace("Called updateNetworkSecurityGroups");
-        final UpdateNetworkSecurityGroupsRequest interceptedRequest =
-                UpdateNetworkSecurityGroupsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateNetworkSecurityGroupsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getUpdateNetworkSecurityGroupsDetails(),
+                "updateNetworkSecurityGroupsDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        return clientCall(request, UpdateNetworkSecurityGroupsResponse::builder)
+                .logger(LOG, "updateNetworkSecurityGroups")
+                .serviceDetails(
                         "LoadBalancer",
                         "UpdateNetworkSecurityGroups",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/NetworkSecurityGroups/UpdateNetworkSecurityGroups");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateNetworkSecurityGroupsResponse>
-                transformer =
-                        UpdateNetworkSecurityGroupsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateNetworkSecurityGroupsDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/NetworkSecurityGroups/UpdateNetworkSecurityGroups")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateNetworkSecurityGroupsRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("networkSecurityGroups")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateNetworkSecurityGroupsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateNetworkSecurityGroupsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdatePathRouteSetResponse updatePathRouteSet(UpdatePathRouteSetRequest request) {
-        LOG.trace("Called updatePathRouteSet");
-        final UpdatePathRouteSetRequest interceptedRequest =
-                UpdatePathRouteSetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdatePathRouteSetConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getUpdatePathRouteSetDetails(), "updatePathRouteSetDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "UpdatePathRouteSet", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdatePathRouteSetResponse>
-                transformer =
-                        UpdatePathRouteSetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdatePathRouteSetDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getPathRouteSetName(), "pathRouteSetName must not be blank");
+
+        return clientCall(request, UpdatePathRouteSetResponse::builder)
+                .logger(LOG, "updatePathRouteSet")
+                .serviceDetails("LoadBalancer", "UpdatePathRouteSet", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdatePathRouteSetRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("pathRouteSets")
+                .appendPathParam(request.getPathRouteSetName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdatePathRouteSetResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdatePathRouteSetResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateRoutingPolicyResponse updateRoutingPolicy(UpdateRoutingPolicyRequest request) {
-        LOG.trace("Called updateRoutingPolicy");
-        final UpdateRoutingPolicyRequest interceptedRequest =
-                UpdateRoutingPolicyConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateRoutingPolicyConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getUpdateRoutingPolicyDetails(), "updateRoutingPolicyDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "UpdateRoutingPolicy", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateRoutingPolicyResponse>
-                transformer =
-                        UpdateRoutingPolicyConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateRoutingPolicyDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getRoutingPolicyName(), "routingPolicyName must not be blank");
+
+        return clientCall(request, UpdateRoutingPolicyResponse::builder)
+                .logger(LOG, "updateRoutingPolicy")
+                .serviceDetails("LoadBalancer", "UpdateRoutingPolicy", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateRoutingPolicyRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("routingPolicies")
+                .appendPathParam(request.getRoutingPolicyName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateRoutingPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateRoutingPolicyResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateRuleSetResponse updateRuleSet(UpdateRuleSetRequest request) {
-        LOG.trace("Called updateRuleSet");
-        final UpdateRuleSetRequest interceptedRequest =
-                UpdateRuleSetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateRuleSetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "UpdateRuleSet", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateRuleSetResponse> transformer =
-                UpdateRuleSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateRuleSetDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getRuleSetName(), "ruleSetName must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateRuleSetDetails(), "updateRuleSetDetails is required");
+
+        return clientCall(request, UpdateRuleSetResponse::builder)
+                .logger(LOG, "updateRuleSet")
+                .serviceDetails("LoadBalancer", "UpdateRuleSet", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateRuleSetRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("ruleSets")
+                .appendPathParam(request.getRuleSetName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateRuleSetResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateRuleSetResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateSSLCipherSuiteResponse updateSSLCipherSuite(UpdateSSLCipherSuiteRequest request) {
-        LOG.trace("Called updateSSLCipherSuite");
-        final UpdateSSLCipherSuiteRequest interceptedRequest =
-                UpdateSSLCipherSuiteConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateSSLCipherSuiteConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getUpdateSSLCipherSuiteDetails(),
+                "updateSSLCipherSuiteDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoadBalancer", "UpdateSSLCipherSuite", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateSSLCipherSuiteResponse>
-                transformer =
-                        UpdateSSLCipherSuiteConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateSSLCipherSuiteDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
+
+        Validate.notBlank(request.getName(), "name must not be blank");
+
+        return clientCall(request, UpdateSSLCipherSuiteResponse::builder)
+                .logger(LOG, "updateSSLCipherSuite")
+                .serviceDetails("LoadBalancer", "UpdateSSLCipherSuite", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSSLCipherSuiteRequest::builder)
+                .basePath("/20170115")
+                .appendPathParam("loadBalancers")
+                .appendPathParam(request.getLoadBalancerId())
+                .appendPathParam("sslCipherSuites")
+                .appendPathParam(request.getName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateSSLCipherSuiteResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateSSLCipherSuiteResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
@@ -2784,5 +1969,209 @@ public class LoadBalancerClient implements LoadBalancer {
     @Override
     public LoadBalancerPaginators getPaginators() {
         return paginators;
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public LoadBalancerClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(builder(), authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public LoadBalancerClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(builder().configuration(configuration), authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public LoadBalancerClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                builder().configuration(configuration).clientConfigurator(clientConfigurator),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public LoadBalancerClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public LoadBalancerClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public LoadBalancerClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public LoadBalancerClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @param executorService {@link Builder#executorService}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public LoadBalancerClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider,
+                executorService);
     }
 }

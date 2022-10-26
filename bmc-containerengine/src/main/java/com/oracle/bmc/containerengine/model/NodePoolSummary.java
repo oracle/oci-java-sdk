@@ -5,19 +5,21 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * The properties that define a node pool summary.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The properties that define a node pool summary. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = NodePoolSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class NodePoolSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class NodePoolSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -93,165 +95,159 @@ public final class NodePoolSummary extends com.oracle.bmc.http.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the node pool.
-         **/
+        /** The OCID of the node pool. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the node pool.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The state of the nodepool.
-         **/
+        /** The state of the nodepool. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private NodePoolLifecycleState lifecycleState;
 
         /**
          * The state of the nodepool.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(NodePoolLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * Details about the state of the nodepool.
-         **/
+        /** Details about the state of the nodepool. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Details about the state of the nodepool.
+         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /**
-         * The OCID of the compartment in which the node pool exists.
-         **/
+        /** The OCID of the compartment in which the node pool exists. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment in which the node pool exists.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The OCID of the cluster to which this node pool is attached.
-         **/
+        /** The OCID of the cluster to which this node pool is attached. */
         @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
         private String clusterId;
 
         /**
          * The OCID of the cluster to which this node pool is attached.
+         *
          * @param clusterId the value to set
          * @return this builder
-         **/
+         */
         public Builder clusterId(String clusterId) {
             this.clusterId = clusterId;
             this.__explicitlySet__.add("clusterId");
             return this;
         }
-        /**
-         * The name of the node pool.
-         **/
+        /** The name of the node pool. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the node pool.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The version of Kubernetes running on the nodes in the node pool.
-         **/
+        /** The version of Kubernetes running on the nodes in the node pool. */
         @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersion")
         private String kubernetesVersion;
 
         /**
          * The version of Kubernetes running on the nodes in the node pool.
+         *
          * @param kubernetesVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder kubernetesVersion(String kubernetesVersion) {
             this.kubernetesVersion = kubernetesVersion;
             this.__explicitlySet__.add("kubernetesVersion");
             return this;
         }
         /**
-         * Deprecated. see {@code nodeSource}. The OCID of the image running on the nodes in the node pool.
-         *
-         **/
+         * Deprecated. see {@code nodeSource}. The OCID of the image running on the nodes in the
+         * node pool.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("nodeImageId")
         private String nodeImageId;
 
         /**
-         * Deprecated. see {@code nodeSource}. The OCID of the image running on the nodes in the node pool.
+         * Deprecated. see {@code nodeSource}. The OCID of the image running on the nodes in the
+         * node pool.
          *
          * @param nodeImageId the value to set
          * @return this builder
-         **/
+         */
         public Builder nodeImageId(String nodeImageId) {
             this.nodeImageId = nodeImageId;
             this.__explicitlySet__.add("nodeImageId");
             return this;
         }
         /**
-         * Deprecated. see {@code nodeSource}. The name of the image running on the nodes in the node pool.
-         *
-         **/
+         * Deprecated. see {@code nodeSource}. The name of the image running on the nodes in the
+         * node pool.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("nodeImageName")
         private String nodeImageName;
 
         /**
-         * Deprecated. see {@code nodeSource}. The name of the image running on the nodes in the node pool.
+         * Deprecated. see {@code nodeSource}. The name of the image running on the nodes in the
+         * node pool.
          *
          * @param nodeImageName the value to set
          * @return this builder
-         **/
+         */
         public Builder nodeImageName(String nodeImageName) {
             this.nodeImageName = nodeImageName;
             this.__explicitlySet__.add("nodeImageName");
             return this;
         }
-        /**
-         * The shape configuration of the nodes.
-         **/
+        /** The shape configuration of the nodes. */
         @com.fasterxml.jackson.annotation.JsonProperty("nodeShapeConfig")
         private NodeShapeConfig nodeShapeConfig;
 
         /**
          * The shape configuration of the nodes.
+         *
          * @param nodeShapeConfig the value to set
          * @return this builder
-         **/
+         */
         public Builder nodeShapeConfig(NodeShapeConfig nodeShapeConfig) {
             this.nodeShapeConfig = nodeShapeConfig;
             this.__explicitlySet__.add("nodeShapeConfig");
@@ -259,171 +255,167 @@ public final class NodePoolSummary extends com.oracle.bmc.http.internal.Explicit
         }
         /**
          * Deprecated. see {@code nodeSourceDetails}. Source running on the nodes in the node pool.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("nodeSource")
         private NodeSourceOption nodeSource;
 
         /**
          * Deprecated. see {@code nodeSourceDetails}. Source running on the nodes in the node pool.
+         *
          * @param nodeSource the value to set
          * @return this builder
-         **/
+         */
         public Builder nodeSource(NodeSourceOption nodeSource) {
             this.nodeSource = nodeSource;
             this.__explicitlySet__.add("nodeSource");
             return this;
         }
-        /**
-         * Source running on the nodes in the node pool.
-         **/
+        /** Source running on the nodes in the node pool. */
         @com.fasterxml.jackson.annotation.JsonProperty("nodeSourceDetails")
         private NodeSourceDetails nodeSourceDetails;
 
         /**
          * Source running on the nodes in the node pool.
+         *
          * @param nodeSourceDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder nodeSourceDetails(NodeSourceDetails nodeSourceDetails) {
             this.nodeSourceDetails = nodeSourceDetails;
             this.__explicitlySet__.add("nodeSourceDetails");
             return this;
         }
-        /**
-         * The name of the node shape of the nodes in the node pool.
-         **/
+        /** The name of the node shape of the nodes in the node pool. */
         @com.fasterxml.jackson.annotation.JsonProperty("nodeShape")
         private String nodeShape;
 
         /**
          * The name of the node shape of the nodes in the node pool.
+         *
          * @param nodeShape the value to set
          * @return this builder
-         **/
+         */
         public Builder nodeShape(String nodeShape) {
             this.nodeShape = nodeShape;
             this.__explicitlySet__.add("nodeShape");
             return this;
         }
-        /**
-         * A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
-         **/
+        /** A list of key/value pairs to add to nodes after they join the Kubernetes cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("initialNodeLabels")
         private java.util.List<KeyValue> initialNodeLabels;
 
         /**
          * A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
+         *
          * @param initialNodeLabels the value to set
          * @return this builder
-         **/
+         */
         public Builder initialNodeLabels(java.util.List<KeyValue> initialNodeLabels) {
             this.initialNodeLabels = initialNodeLabels;
             this.__explicitlySet__.add("initialNodeLabels");
             return this;
         }
-        /**
-         * The SSH public key on each node in the node pool on launch.
-         **/
+        /** The SSH public key on each node in the node pool on launch. */
         @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKey")
         private String sshPublicKey;
 
         /**
          * The SSH public key on each node in the node pool on launch.
+         *
          * @param sshPublicKey the value to set
          * @return this builder
-         **/
+         */
         public Builder sshPublicKey(String sshPublicKey) {
             this.sshPublicKey = sshPublicKey;
             this.__explicitlySet__.add("sshPublicKey");
             return this;
         }
-        /**
-         * The number of nodes in each subnet.
-         **/
+        /** The number of nodes in each subnet. */
         @com.fasterxml.jackson.annotation.JsonProperty("quantityPerSubnet")
         private Integer quantityPerSubnet;
 
         /**
          * The number of nodes in each subnet.
+         *
          * @param quantityPerSubnet the value to set
          * @return this builder
-         **/
+         */
         public Builder quantityPerSubnet(Integer quantityPerSubnet) {
             this.quantityPerSubnet = quantityPerSubnet;
             this.__explicitlySet__.add("quantityPerSubnet");
             return this;
         }
-        /**
-         * The OCIDs of the subnets in which to place nodes for this node pool.
-         **/
+        /** The OCIDs of the subnets in which to place nodes for this node pool. */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
         private java.util.List<String> subnetIds;
 
         /**
          * The OCIDs of the subnets in which to place nodes for this node pool.
+         *
          * @param subnetIds the value to set
          * @return this builder
-         **/
+         */
         public Builder subnetIds(java.util.List<String> subnetIds) {
             this.subnetIds = subnetIds;
             this.__explicitlySet__.add("subnetIds");
             return this;
         }
-        /**
-         * The configuration of nodes in the node pool.
-         **/
+        /** The configuration of nodes in the node pool. */
         @com.fasterxml.jackson.annotation.JsonProperty("nodeConfigDetails")
         private NodePoolNodeConfigDetails nodeConfigDetails;
 
         /**
          * The configuration of nodes in the node pool.
+         *
          * @param nodeConfigDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder nodeConfigDetails(NodePoolNodeConfigDetails nodeConfigDetails) {
             this.nodeConfigDetails = nodeConfigDetails;
             this.__explicitlySet__.add("nodeConfigDetails");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
-         *
-         **/
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
-         *
-         **/
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -431,20 +423,19 @@ public final class NodePoolSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         *
-         **/
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         **/
+         */
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -567,9 +558,7 @@ public final class NodePoolSummary extends com.oracle.bmc.http.internal.Explicit
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -578,316 +567,303 @@ public final class NodePoolSummary extends com.oracle.bmc.http.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the node pool.
-     **/
+    /** The OCID of the node pool. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the node pool.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The state of the nodepool.
-     **/
+    /** The state of the nodepool. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final NodePoolLifecycleState lifecycleState;
 
     /**
      * The state of the nodepool.
+     *
      * @return the value
-     **/
+     */
     public NodePoolLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * Details about the state of the nodepool.
-     **/
+    /** Details about the state of the nodepool. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Details about the state of the nodepool.
+     *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /**
-     * The OCID of the compartment in which the node pool exists.
-     **/
+    /** The OCID of the compartment in which the node pool exists. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment in which the node pool exists.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The OCID of the cluster to which this node pool is attached.
-     **/
+    /** The OCID of the cluster to which this node pool is attached. */
     @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
     private final String clusterId;
 
     /**
      * The OCID of the cluster to which this node pool is attached.
+     *
      * @return the value
-     **/
+     */
     public String getClusterId() {
         return clusterId;
     }
 
-    /**
-     * The name of the node pool.
-     **/
+    /** The name of the node pool. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the node pool.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The version of Kubernetes running on the nodes in the node pool.
-     **/
+    /** The version of Kubernetes running on the nodes in the node pool. */
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersion")
     private final String kubernetesVersion;
 
     /**
      * The version of Kubernetes running on the nodes in the node pool.
+     *
      * @return the value
-     **/
+     */
     public String getKubernetesVersion() {
         return kubernetesVersion;
     }
 
     /**
-     * Deprecated. see {@code nodeSource}. The OCID of the image running on the nodes in the node pool.
-     *
-     **/
+     * Deprecated. see {@code nodeSource}. The OCID of the image running on the nodes in the node
+     * pool.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("nodeImageId")
     private final String nodeImageId;
 
     /**
-     * Deprecated. see {@code nodeSource}. The OCID of the image running on the nodes in the node pool.
+     * Deprecated. see {@code nodeSource}. The OCID of the image running on the nodes in the node
+     * pool.
      *
      * @return the value
-     **/
+     */
     public String getNodeImageId() {
         return nodeImageId;
     }
 
     /**
-     * Deprecated. see {@code nodeSource}. The name of the image running on the nodes in the node pool.
-     *
-     **/
+     * Deprecated. see {@code nodeSource}. The name of the image running on the nodes in the node
+     * pool.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("nodeImageName")
     private final String nodeImageName;
 
     /**
-     * Deprecated. see {@code nodeSource}. The name of the image running on the nodes in the node pool.
+     * Deprecated. see {@code nodeSource}. The name of the image running on the nodes in the node
+     * pool.
      *
      * @return the value
-     **/
+     */
     public String getNodeImageName() {
         return nodeImageName;
     }
 
-    /**
-     * The shape configuration of the nodes.
-     **/
+    /** The shape configuration of the nodes. */
     @com.fasterxml.jackson.annotation.JsonProperty("nodeShapeConfig")
     private final NodeShapeConfig nodeShapeConfig;
 
     /**
      * The shape configuration of the nodes.
+     *
      * @return the value
-     **/
+     */
     public NodeShapeConfig getNodeShapeConfig() {
         return nodeShapeConfig;
     }
 
-    /**
-     * Deprecated. see {@code nodeSourceDetails}. Source running on the nodes in the node pool.
-     **/
+    /** Deprecated. see {@code nodeSourceDetails}. Source running on the nodes in the node pool. */
     @com.fasterxml.jackson.annotation.JsonProperty("nodeSource")
     private final NodeSourceOption nodeSource;
 
     /**
      * Deprecated. see {@code nodeSourceDetails}. Source running on the nodes in the node pool.
+     *
      * @return the value
-     **/
+     */
     public NodeSourceOption getNodeSource() {
         return nodeSource;
     }
 
-    /**
-     * Source running on the nodes in the node pool.
-     **/
+    /** Source running on the nodes in the node pool. */
     @com.fasterxml.jackson.annotation.JsonProperty("nodeSourceDetails")
     private final NodeSourceDetails nodeSourceDetails;
 
     /**
      * Source running on the nodes in the node pool.
+     *
      * @return the value
-     **/
+     */
     public NodeSourceDetails getNodeSourceDetails() {
         return nodeSourceDetails;
     }
 
-    /**
-     * The name of the node shape of the nodes in the node pool.
-     **/
+    /** The name of the node shape of the nodes in the node pool. */
     @com.fasterxml.jackson.annotation.JsonProperty("nodeShape")
     private final String nodeShape;
 
     /**
      * The name of the node shape of the nodes in the node pool.
+     *
      * @return the value
-     **/
+     */
     public String getNodeShape() {
         return nodeShape;
     }
 
-    /**
-     * A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
-     **/
+    /** A list of key/value pairs to add to nodes after they join the Kubernetes cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("initialNodeLabels")
     private final java.util.List<KeyValue> initialNodeLabels;
 
     /**
      * A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<KeyValue> getInitialNodeLabels() {
         return initialNodeLabels;
     }
 
-    /**
-     * The SSH public key on each node in the node pool on launch.
-     **/
+    /** The SSH public key on each node in the node pool on launch. */
     @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKey")
     private final String sshPublicKey;
 
     /**
      * The SSH public key on each node in the node pool on launch.
+     *
      * @return the value
-     **/
+     */
     public String getSshPublicKey() {
         return sshPublicKey;
     }
 
-    /**
-     * The number of nodes in each subnet.
-     **/
+    /** The number of nodes in each subnet. */
     @com.fasterxml.jackson.annotation.JsonProperty("quantityPerSubnet")
     private final Integer quantityPerSubnet;
 
     /**
      * The number of nodes in each subnet.
+     *
      * @return the value
-     **/
+     */
     public Integer getQuantityPerSubnet() {
         return quantityPerSubnet;
     }
 
-    /**
-     * The OCIDs of the subnets in which to place nodes for this node pool.
-     **/
+    /** The OCIDs of the subnets in which to place nodes for this node pool. */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
     private final java.util.List<String> subnetIds;
 
     /**
      * The OCIDs of the subnets in which to place nodes for this node pool.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getSubnetIds() {
         return subnetIds;
     }
 
-    /**
-     * The configuration of nodes in the node pool.
-     **/
+    /** The configuration of nodes in the node pool. */
     @com.fasterxml.jackson.annotation.JsonProperty("nodeConfigDetails")
     private final NodePoolNodeConfigDetails nodeConfigDetails;
 
     /**
      * The configuration of nodes in the node pool.
+     *
      * @return the value
-     **/
+     */
     public NodePoolNodeConfigDetails getNodeConfigDetails() {
         return nodeConfigDetails;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
-     *
-     **/
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     *
-     **/
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -906,6 +882,7 @@ public final class NodePoolSummary extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

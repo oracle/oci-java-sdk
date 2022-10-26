@@ -12,9 +12,7 @@ import java.io.IOException;
 
 import static org.junit.Assert.fail;
 
-/**
- * Tests for {@link PEMFileRSAPrivateKeySupplierTest}.
- */
+/** Tests for {@link PEMFileRSAPrivateKeySupplierTest}. */
 public class PEMFileRSAPrivateKeySupplierTest {
     @Test(expected = IllegalArgumentException.class)
     public void ctor_invalidFile() throws IOException {

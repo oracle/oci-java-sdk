@@ -5,19 +5,20 @@
 package com.oracle.bmc.licensemanager.model;
 
 /**
- * The collection of image details for the product license.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The collection of image details for the product license. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ImageResponse.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ImageResponse extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ImageResponse extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -42,81 +43,76 @@ public final class ImageResponse extends com.oracle.bmc.http.internal.Explicitly
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The image ID associated with the product license.
-         **/
+        /** The image ID associated with the product license. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The image ID associated with the product license.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The listing name associated with the product license.
-         **/
+        /** The listing name associated with the product license. */
         @com.fasterxml.jackson.annotation.JsonProperty("listingName")
         private String listingName;
 
         /**
          * The listing name associated with the product license.
+         *
          * @param listingName the value to set
          * @return this builder
-         **/
+         */
         public Builder listingName(String listingName) {
             this.listingName = listingName;
             this.__explicitlySet__.add("listingName");
             return this;
         }
-        /**
-         * The image publisher.
-         **/
+        /** The image publisher. */
         @com.fasterxml.jackson.annotation.JsonProperty("publisher")
         private String publisher;
 
         /**
          * The image publisher.
+         *
          * @param publisher the value to set
          * @return this builder
-         **/
+         */
         public Builder publisher(String publisher) {
             this.publisher = publisher;
             this.__explicitlySet__.add("publisher");
             return this;
         }
-        /**
-         * The image listing ID.
-         **/
+        /** The image listing ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("listingId")
         private String listingId;
 
         /**
          * The image listing ID.
+         *
          * @param listingId the value to set
          * @return this builder
-         **/
+         */
         public Builder listingId(String listingId) {
             this.listingId = listingId;
             this.__explicitlySet__.add("listingId");
             return this;
         }
-        /**
-         * The image package version.
-         **/
+        /** The image package version. */
         @com.fasterxml.jackson.annotation.JsonProperty("packageVersion")
         private String packageVersion;
 
         /**
          * The image package version.
+         *
          * @param packageVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder packageVersion(String packageVersion) {
             this.packageVersion = packageVersion;
             this.__explicitlySet__.add("packageVersion");
@@ -161,9 +157,7 @@ public final class ImageResponse extends com.oracle.bmc.http.internal.Explicitly
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -172,72 +166,67 @@ public final class ImageResponse extends com.oracle.bmc.http.internal.Explicitly
         return new Builder().copy(this);
     }
 
-    /**
-     * The image ID associated with the product license.
-     **/
+    /** The image ID associated with the product license. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The image ID associated with the product license.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The listing name associated with the product license.
-     **/
+    /** The listing name associated with the product license. */
     @com.fasterxml.jackson.annotation.JsonProperty("listingName")
     private final String listingName;
 
     /**
      * The listing name associated with the product license.
+     *
      * @return the value
-     **/
+     */
     public String getListingName() {
         return listingName;
     }
 
-    /**
-     * The image publisher.
-     **/
+    /** The image publisher. */
     @com.fasterxml.jackson.annotation.JsonProperty("publisher")
     private final String publisher;
 
     /**
      * The image publisher.
+     *
      * @return the value
-     **/
+     */
     public String getPublisher() {
         return publisher;
     }
 
-    /**
-     * The image listing ID.
-     **/
+    /** The image listing ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
     private final String listingId;
 
     /**
      * The image listing ID.
+     *
      * @return the value
-     **/
+     */
     public String getListingId() {
         return listingId;
     }
 
-    /**
-     * The image package version.
-     **/
+    /** The image package version. */
     @com.fasterxml.jackson.annotation.JsonProperty("packageVersion")
     private final String packageVersion;
 
     /**
      * The image package version.
+     *
      * @return the value
-     **/
+     */
     public String getPackageVersion() {
         return packageVersion;
     }
@@ -249,6 +238,7 @@ public final class ImageResponse extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

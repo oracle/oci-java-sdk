@@ -5,20 +5,22 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * An API is simple container for an API Specification. For more information, see [API Gateway Concepts](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Concepts/apigatewayconcepts.htm).
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * An API is simple container for an API Specification. For more information, see [API Gateway
+ * Concepts](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Concepts/apigatewayconcepts.htm).
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Api.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Api extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Api extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -62,232 +64,219 @@ public final class Api extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * resource.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * resource.
          *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
-         * <p>
-         * Example: {@code My new resource}
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
-         **/
+         * <p>Example: {@code My new resource}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
-         * <p>
-         * Example: {@code My new resource}
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         *
+         * <p>Example: {@code My new resource}
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the
-         * resource is created.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment in which the resource is created.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the
-         * resource is created.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment in which the resource is created.
          *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The time this resource was created. An RFC3339 formatted datetime string.
-         **/
+        /** The time this resource was created. An RFC3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time this resource was created. An RFC3339 formatted datetime string.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * The time this resource was last updated. An RFC3339 formatted datetime string.
-         **/
+        /** The time this resource was last updated. An RFC3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time this resource was last updated. An RFC3339 formatted datetime string.
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * The current state of the API.
-         **/
+        /** The current state of the API. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the API.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current lifecycleState in more detail. For ACTIVE
-         * state it describes if the document has been validated and the possible values are:
-         * - 'New' for just updated API Specifications
-         * - 'Validating' for a document which is being validated.
-         * - 'Valid' the document has been validated without any errors or warnings
-         * - 'Warning' the document has been validated and contains warnings
-         * - 'Error' the document has been validated and contains errors
-         * - 'Failed' the document validation failed
-         * - 'Canceled' the document validation was canceled
-         * <p>
-         * For other states it may provide more details like actionable information.
+         * A message describing the current lifecycleState in more detail. For ACTIVE state it
+         * describes if the document has been validated and the possible values are: - 'New' for
+         * just updated API Specifications - 'Validating' for a document which is being validated. -
+         * 'Valid' the document has been validated without any errors or warnings - 'Warning' the
+         * document has been validated and contains warnings - 'Error' the document has been
+         * validated and contains errors - 'Failed' the document validation failed - 'Canceled' the
+         * document validation was canceled
          *
-         **/
+         * <p>For other states it may provide more details like actionable information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current lifecycleState in more detail. For ACTIVE
-         * state it describes if the document has been validated and the possible values are:
-         * - 'New' for just updated API Specifications
-         * - 'Validating' for a document which is being validated.
-         * - 'Valid' the document has been validated without any errors or warnings
-         * - 'Warning' the document has been validated and contains warnings
-         * - 'Error' the document has been validated and contains errors
-         * - 'Failed' the document validation failed
-         * - 'Canceled' the document validation was canceled
-         * <p>
-         * For other states it may provide more details like actionable information.
+         * A message describing the current lifecycleState in more detail. For ACTIVE state it
+         * describes if the document has been validated and the possible values are: - 'New' for
+         * just updated API Specifications - 'Validating' for a document which is being validated. -
+         * 'Valid' the document has been validated without any errors or warnings - 'Warning' the
+         * document has been validated and contains warnings - 'Error' the document has been
+         * validated and contains errors - 'Failed' the document validation failed - 'Canceled' the
+         * document validation was canceled
+         *
+         * <p>For other states it may provide more details like actionable information.
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /**
-         * Type of API Specification file.
-         **/
+        /** Type of API Specification file. */
         @com.fasterxml.jackson.annotation.JsonProperty("specificationType")
         private String specificationType;
 
         /**
          * Type of API Specification file.
+         *
          * @param specificationType the value to set
          * @return this builder
-         **/
+         */
         public Builder specificationType(String specificationType) {
             this.specificationType = specificationType;
             this.__explicitlySet__.add("specificationType");
             return this;
         }
-        /**
-         * Status of each feature available from the API.
-         **/
+        /** Status of each feature available from the API. */
         @com.fasterxml.jackson.annotation.JsonProperty("validationResults")
         private java.util.List<ApiValidationResult> validationResults;
 
         /**
          * Status of each feature available from the API.
+         *
          * @param validationResults the value to set
          * @return this builder
-         **/
+         */
         public Builder validationResults(java.util.List<ApiValidationResult> validationResults) {
             this.validationResults = validationResults;
             this.__explicitlySet__.add("validationResults");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair
-         * with no predefined name, type, or namespace. For more information, see
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair
-         * with no predefined name, type, or namespace. For more information, see
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -357,9 +346,7 @@ public final class Api extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -369,93 +356,88 @@ public final class Api extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * resource.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * resource.
      *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     * <p>
-     * Example: {@code My new resource}
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
-     **/
+     * <p>Example: {@code My new resource}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     * <p>
-     * Example: {@code My new resource}
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     *
+     * <p>Example: {@code My new resource}
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the
-     * resource is created.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment in which the resource is created.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the
-     * resource is created.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment in which the resource is created.
      *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The time this resource was created. An RFC3339 formatted datetime string.
-     **/
+    /** The time this resource was created. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The time this resource was last updated. An RFC3339 formatted datetime string.
-     **/
+    /** The time this resource was last updated. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The current state of the API.
-     **/
-    public enum LifecycleState {
+    /** The current state of the API. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Active("ACTIVE"),
         Updating("UPDATING"),
@@ -464,8 +446,8 @@ public final class Api extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -504,128 +486,116 @@ public final class Api extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current state of the API.
-     **/
+    /** The current state of the API. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the API.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current lifecycleState in more detail. For ACTIVE
-     * state it describes if the document has been validated and the possible values are:
-     * - 'New' for just updated API Specifications
-     * - 'Validating' for a document which is being validated.
-     * - 'Valid' the document has been validated without any errors or warnings
-     * - 'Warning' the document has been validated and contains warnings
-     * - 'Error' the document has been validated and contains errors
-     * - 'Failed' the document validation failed
-     * - 'Canceled' the document validation was canceled
-     * <p>
-     * For other states it may provide more details like actionable information.
+     * A message describing the current lifecycleState in more detail. For ACTIVE state it describes
+     * if the document has been validated and the possible values are: - 'New' for just updated API
+     * Specifications - 'Validating' for a document which is being validated. - 'Valid' the document
+     * has been validated without any errors or warnings - 'Warning' the document has been validated
+     * and contains warnings - 'Error' the document has been validated and contains errors -
+     * 'Failed' the document validation failed - 'Canceled' the document validation was canceled
      *
-     **/
+     * <p>For other states it may provide more details like actionable information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current lifecycleState in more detail. For ACTIVE
-     * state it describes if the document has been validated and the possible values are:
-     * - 'New' for just updated API Specifications
-     * - 'Validating' for a document which is being validated.
-     * - 'Valid' the document has been validated without any errors or warnings
-     * - 'Warning' the document has been validated and contains warnings
-     * - 'Error' the document has been validated and contains errors
-     * - 'Failed' the document validation failed
-     * - 'Canceled' the document validation was canceled
-     * <p>
-     * For other states it may provide more details like actionable information.
+     * A message describing the current lifecycleState in more detail. For ACTIVE state it describes
+     * if the document has been validated and the possible values are: - 'New' for just updated API
+     * Specifications - 'Validating' for a document which is being validated. - 'Valid' the document
+     * has been validated without any errors or warnings - 'Warning' the document has been validated
+     * and contains warnings - 'Error' the document has been validated and contains errors -
+     * 'Failed' the document validation failed - 'Canceled' the document validation was canceled
+     *
+     * <p>For other states it may provide more details like actionable information.
      *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /**
-     * Type of API Specification file.
-     **/
+    /** Type of API Specification file. */
     @com.fasterxml.jackson.annotation.JsonProperty("specificationType")
     private final String specificationType;
 
     /**
      * Type of API Specification file.
+     *
      * @return the value
-     **/
+     */
     public String getSpecificationType() {
         return specificationType;
     }
 
-    /**
-     * Status of each feature available from the API.
-     **/
+    /** Status of each feature available from the API. */
     @com.fasterxml.jackson.annotation.JsonProperty("validationResults")
     private final java.util.List<ApiValidationResult> validationResults;
 
     /**
      * Status of each feature available from the API.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<ApiValidationResult> getValidationResults() {
         return validationResults;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair
-     * with no predefined name, type, or namespace. For more information, see
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair
-     * with no predefined name, type, or namespace. For more information, see
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -637,6 +607,7 @@ public final class Api extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

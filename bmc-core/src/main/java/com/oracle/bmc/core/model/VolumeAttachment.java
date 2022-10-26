@@ -5,47 +5,42 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A base object for all types of attachments between a storage volume and an instance.
- * For specific details about iSCSI attachments, see
- * {@link IScsiVolumeAttachment}.
- * <p>
- * For general information about volume attachments, see
- * [Overview of Block Volume Storage](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm).
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you
- * supply string values using the API.
+ * A base object for all types of attachments between a storage volume and an instance. For specific
+ * details about iSCSI attachments, see {@link IScsiVolumeAttachment}.
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>For general information about volume attachments, see [Overview of Block Volume
+ * Storage](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm).
+ *
+ * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
+ * supply string values using the API. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "attachmentType",
-    defaultImpl = VolumeAttachment.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "attachmentType",
+        defaultImpl = VolumeAttachment.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = IScsiVolumeAttachment.class,
-        name = "iscsi"
-    ),
+            value = IScsiVolumeAttachment.class,
+            name = "iscsi"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = EmulatedVolumeAttachment.class,
-        name = "emulated"
-    ),
+            value = EmulatedVolumeAttachment.class,
+            name = "emulated"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ParavirtualizedVolumeAttachment.class,
-        name = "paravirtualized"
-    )
+            value = ParavirtualizedVolumeAttachment.class,
+            name = "paravirtualized")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class VolumeAttachment extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class VolumeAttachment extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -97,146 +92,136 @@ public class VolumeAttachment extends com.oracle.bmc.http.internal.ExplicitlySet
 
     /**
      * The availability domain of an instance.
-     * <p>
-     * Example: {@code Uocm:PHX-AD-1}
      *
-     **/
+     * <p>Example: {@code Uocm:PHX-AD-1}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
      * The availability domain of an instance.
-     * <p>
-     * Example: {@code Uocm:PHX-AD-1}
+     *
+     * <p>Example: {@code Uocm:PHX-AD-1}
      *
      * @return the value
-     **/
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
-    /**
-     * The OCID of the compartment.
-     **/
+    /** The OCID of the compartment. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The device name.
-     **/
+    /** The device name. */
     @com.fasterxml.jackson.annotation.JsonProperty("device")
     private final String device;
 
     /**
      * The device name.
+     *
      * @return the value
-     **/
+     */
     public String getDevice() {
         return device;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The OCID of the volume attachment.
-     **/
+    /** The OCID of the volume attachment. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the volume attachment.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The OCID of the instance the volume is attached to.
-     **/
+    /** The OCID of the instance the volume is attached to. */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
     /**
      * The OCID of the instance the volume is attached to.
+     *
      * @return the value
-     **/
+     */
     public String getInstanceId() {
         return instanceId;
     }
 
-    /**
-     * Whether the attachment was created in read-only mode.
-     **/
+    /** Whether the attachment was created in read-only mode. */
     @com.fasterxml.jackson.annotation.JsonProperty("isReadOnly")
     private final Boolean isReadOnly;
 
     /**
      * Whether the attachment was created in read-only mode.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsReadOnly() {
         return isReadOnly;
     }
 
     /**
-     * Whether the attachment should be created in shareable mode. If an attachment
-     * is created in shareable mode, then other instances can attach the same volume, provided
-     * that they also create their attachments in shareable mode. Only certain volume types can
-     * be attached in shareable mode. Defaults to false if not specified.
-     *
-     **/
+     * Whether the attachment should be created in shareable mode. If an attachment is created in
+     * shareable mode, then other instances can attach the same volume, provided that they also
+     * create their attachments in shareable mode. Only certain volume types can be attached in
+     * shareable mode. Defaults to false if not specified.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isShareable")
     private final Boolean isShareable;
 
     /**
-     * Whether the attachment should be created in shareable mode. If an attachment
-     * is created in shareable mode, then other instances can attach the same volume, provided
-     * that they also create their attachments in shareable mode. Only certain volume types can
-     * be attached in shareable mode. Defaults to false if not specified.
+     * Whether the attachment should be created in shareable mode. If an attachment is created in
+     * shareable mode, then other instances can attach the same volume, provided that they also
+     * create their attachments in shareable mode. Only certain volume types can be attached in
+     * shareable mode. Defaults to false if not specified.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsShareable() {
         return isShareable;
     }
 
-    /**
-     * The current state of the volume attachment.
-     **/
-    public enum LifecycleState {
+    /** The current state of the volume attachment. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Attaching("ATTACHING"),
         Attached("ATTACHED"),
         Detaching("DETACHING"),
         Detached("DETACHED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -275,90 +260,92 @@ public class VolumeAttachment extends com.oracle.bmc.http.internal.ExplicitlySet
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current state of the volume attachment.
-     **/
+    /** The current state of the volume attachment. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the volume attachment.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the volume was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
-     **/
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the volume was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The OCID of the volume.
-     **/
+    /** The OCID of the volume. */
     @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
     private final String volumeId;
 
     /**
      * The OCID of the volume.
+     *
      * @return the value
-     **/
+     */
     public String getVolumeId() {
         return volumeId;
     }
 
     /**
-     * Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or not.
-     *
-     **/
+     * Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or
+     * not.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
     private final Boolean isPvEncryptionInTransitEnabled;
 
     /**
-     * Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or not.
+     * Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or
+     * not.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsPvEncryptionInTransitEnabled() {
         return isPvEncryptionInTransitEnabled;
     }
 
     /**
-     * Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
-     **/
+     * Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to
+     * NVMe attachment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isMultipath")
     private final Boolean isMultipath;
 
     /**
-     * Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
+     * Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to
+     * NVMe attachment.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsMultipath() {
         return isMultipath;
     }
 
     /**
-     * The iscsi login state of the volume attachment. For a Iscsi volume attachment,
-     * all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
-     *
-     **/
-    public enum IscsiLoginState {
+     * The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi
+     * sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
+     */
+    public enum IscsiLoginState implements com.oracle.bmc.http.internal.BmcEnum {
         Unknown("UNKNOWN"),
         LoggingIn("LOGGING_IN"),
         LoginSucceeded("LOGIN_SUCCEEDED"),
@@ -368,8 +355,8 @@ public class VolumeAttachment extends com.oracle.bmc.http.internal.ExplicitlySet
         LogoutFailed("LOGOUT_FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -409,19 +396,18 @@ public class VolumeAttachment extends com.oracle.bmc.http.internal.ExplicitlySet
         }
     };
     /**
-     * The iscsi login state of the volume attachment. For a Iscsi volume attachment,
-     * all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
-     *
-     **/
+     * The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi
+     * sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("iscsiLoginState")
     private final IscsiLoginState iscsiLoginState;
 
     /**
-     * The iscsi login state of the volume attachment. For a Iscsi volume attachment,
-     * all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
+     * The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi
+     * sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
      *
      * @return the value
-     **/
+     */
     public IscsiLoginState getIscsiLoginState() {
         return iscsiLoginState;
     }
@@ -433,6 +419,7 @@ public class VolumeAttachment extends com.oracle.bmc.http.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

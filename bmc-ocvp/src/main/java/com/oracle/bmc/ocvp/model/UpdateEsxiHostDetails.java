@@ -5,22 +5,22 @@
 package com.oracle.bmc.ocvp.model;
 
 /**
- * The ESXi host information to be updated.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The ESXi host information to be updated. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateEsxiHostDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateEsxiHostDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateEsxiHostDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName", "nextSku", "freeformTags", "definedTags"})
     public UpdateEsxiHostDetails(
@@ -38,94 +38,96 @@ public final class UpdateEsxiHostDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A descriptive name for the ESXi host. It's changeable.
-         * Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
-         * <p>
-         * Avoid entering confidential information.
+         * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are
+         * 1-16 character length limit, Must start with a letter, Must be English letters, numbers,
+         * - only, No repeating hyphens, Must be unique within the SDDC.
          *
-         **/
+         * <p>Avoid entering confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A descriptive name for the ESXi host. It's changeable.
-         * Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
-         * <p>
-         * Avoid entering confidential information.
+         * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are
+         * 1-16 character length limit, Must start with a letter, Must be English letters, numbers,
+         * - only, No repeating hyphens, Must be unique within the SDDC.
+         *
+         * <p>Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The billing option to switch to after the existing billing cycle ends.
-         * If {@code nextSku} is null or empty, {@code currentSku} continues to the next billing cycle.
-         * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
-         *
-         **/
+         * The billing option to switch to after the existing billing cycle ends. If {@code nextSku}
+         * is null or empty, {@code currentSku} continues to the next billing cycle. {@link
+         * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("nextSku")
         private Sku nextSku;
 
         /**
-         * The billing option to switch to after the existing billing cycle ends.
-         * If {@code nextSku} is null or empty, {@code currentSku} continues to the next billing cycle.
-         * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+         * The billing option to switch to after the existing billing cycle ends. If {@code nextSku}
+         * is null or empty, {@code currentSku} continues to the next billing cycle. {@link
+         * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
          *
          * @param nextSku the value to set
          * @return this builder
-         **/
+         */
         public Builder nextSku(Sku nextSku) {
             this.nextSku = nextSku;
             this.__explicitlySet__.add("nextSku");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -164,9 +166,7 @@ public final class UpdateEsxiHostDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -176,87 +176,89 @@ public final class UpdateEsxiHostDetails
     }
 
     /**
-     * A descriptive name for the ESXi host. It's changeable.
-     * Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
-     * <p>
-     * Avoid entering confidential information.
+     * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16
+     * character length limit, Must start with a letter, Must be English letters, numbers, - only,
+     * No repeating hyphens, Must be unique within the SDDC.
      *
-     **/
+     * <p>Avoid entering confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A descriptive name for the ESXi host. It's changeable.
-     * Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
-     * <p>
-     * Avoid entering confidential information.
+     * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16
+     * character length limit, Must start with a letter, Must be English letters, numbers, - only,
+     * No repeating hyphens, Must be unique within the SDDC.
+     *
+     * <p>Avoid entering confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The billing option to switch to after the existing billing cycle ends.
-     * If {@code nextSku} is null or empty, {@code currentSku} continues to the next billing cycle.
-     * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
-     *
-     **/
+     * The billing option to switch to after the existing billing cycle ends. If {@code nextSku} is
+     * null or empty, {@code currentSku} continues to the next billing cycle. {@link
+     * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("nextSku")
     private final Sku nextSku;
 
     /**
-     * The billing option to switch to after the existing billing cycle ends.
-     * If {@code nextSku} is null or empty, {@code currentSku} continues to the next billing cycle.
-     * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     * The billing option to switch to after the existing billing cycle ends. If {@code nextSku} is
+     * null or empty, {@code currentSku} continues to the next billing cycle. {@link
+     * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
      *
      * @return the value
-     **/
+     */
     public Sku getNextSku() {
         return nextSku;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -268,6 +270,7 @@ public final class UpdateEsxiHostDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

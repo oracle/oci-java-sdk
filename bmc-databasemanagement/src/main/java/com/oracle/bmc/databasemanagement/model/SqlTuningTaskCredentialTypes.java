@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.databasemanagement.model;
 
-/**
- * The types of credentials that can be used to connect to the database.
- **/
+/** The types of credentials that can be used to connect to the database. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum SqlTuningTaskCredentialTypes {
+public enum SqlTuningTaskCredentialTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Secret("SECRET"),
     Password("PASSWORD"),
     ;

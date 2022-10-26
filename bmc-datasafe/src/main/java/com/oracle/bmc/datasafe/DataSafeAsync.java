@@ -7,46 +7,44 @@ package com.oracle.bmc.datasafe;
 import com.oracle.bmc.datasafe.requests.*;
 import com.oracle.bmc.datasafe.responses.*;
 
-/**
- * APIs for using Oracle Data Safe.
- */
+/** APIs for using Oracle Data Safe. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public interface DataSafeAsync extends AutoCloseable {
 
-    /**
-     * Rebuilds the client from scratch.
-     * Useful to refresh certificates.
-     */
+    /** Rebuilds the client from scratch. Useful to refresh certificates. */
     void refreshClient();
 
     /**
      * Sets the endpoint to call (ex, https://www.example.com).
+     *
      * @param endpoint The endpoint of the serice.
      */
     void setEndpoint(String endpoint);
 
-    /**
-     * Gets the set endpoint for REST call (ex, https://www.example.com)
-     */
+    /** Gets the set endpoint for REST call (ex, https://www.example.com) */
     String getEndpoint();
 
     /**
      * Sets the region to call (ex, Region.US_PHOENIX_1).
-     * <p>
-     * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
+     *
+     * <p>Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the
+     * endpoint. If the service is not available in this region, however, an
+     * IllegalArgumentException will be raised.
+     *
      * @param region The region of the service.
      */
     void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
-     * <p>
-     * Note, this will first try to map the region ID to a known Region and call
-     * {@link #setRegion(Region) setRegion}.
-     * <p>
-     * If no known Region could be determined, it will create an endpoint based on the
-     * default endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
+     *
+     * <p>Note, this will first try to map the region ID to a known Region and call {@link
+     * #setRegion(Region) setRegion}.
+     *
+     * <p>If no known Region could be determined, it will create an endpoint based on the default
+     * endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
      * and then call {@link #setEndpoint(String) setEndpoint}.
+     *
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
@@ -54,13 +52,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Reactivates a previously deactivated Data Safe target database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ActivateTargetDatabaseResponse> activateTargetDatabase(
             ActivateTargetDatabaseRequest request,
@@ -70,17 +67,16 @@ public interface DataSafeAsync extends AutoCloseable {
 
     /**
      * Adds columns to the specified masking policy from the associated sensitive data model. It
-     * automatically pulls all the sensitive columns and their relationships from the sensitive
-     * data model and uses this information to create columns in the masking policy. It also assigns
+     * automatically pulls all the sensitive columns and their relationships from the sensitive data
+     * model and uses this information to create columns in the masking policy. It also assigns
      * default masking formats to these columns based on the associated sensitive types.
-     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<AddMaskingColumnsFromSdmResponse> addMaskingColumnsFromSdm(
             AddMaskingColumnsFromSdmRequest request,
@@ -89,18 +85,18 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Applies the results of a discovery job to the specified sensitive data model. Note that the plannedAction attribute
-     * of discovery results is used for processing them. You should first use PatchDiscoveryJobResults to set the plannedAction
-     * attribute of the discovery results you want to process. ApplyDiscoveryJobResults automatically reads the plannedAction
-     * attribute and updates the sensitive data model to reflect the actions you planned.
-     *
+     * Applies the results of a discovery job to the specified sensitive data model. Note that the
+     * plannedAction attribute of discovery results is used for processing them. You should first
+     * use PatchDiscoveryJobResults to set the plannedAction attribute of the discovery results you
+     * want to process. ApplyDiscoveryJobResults automatically reads the plannedAction attribute and
+     * updates the sensitive data model to reflect the actions you planned.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ApplyDiscoveryJobResultsResponse> applyDiscoveryJobResults(
             ApplyDiscoveryJobResultsRequest request,
@@ -109,14 +105,15 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Calculates the volume of audit events available on the target database to be collected. Measurable up to the defined retention period of the audit target resource.
+     * Calculates the volume of audit events available on the target database to be collected.
+     * Measurable up to the defined retention period of the audit target resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CalculateAuditVolumeAvailableResponse>
             calculateAuditVolumeAvailable(
@@ -131,10 +128,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CalculateAuditVolumeCollectedResponse>
             calculateAuditVolumeCollected(
@@ -147,13 +144,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Cancel the given work request.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CancelWorkRequestResponse> cancelWorkRequest(
             CancelWorkRequestRequest request,
@@ -166,10 +162,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeAlertCompartmentResponse> changeAlertCompartment(
             ChangeAlertCompartmentRequest request,
@@ -178,15 +174,15 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves the archive retreival to the specified compartment. When provided, if-Match is checked against ETag value of the resource.
-     *
+     * Moves the archive retreival to the specified compartment. When provided, if-Match is checked
+     * against ETag value of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeAuditArchiveRetrievalCompartmentResponse>
             changeAuditArchiveRetrievalCompartment(
@@ -201,10 +197,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeAuditPolicyCompartmentResponse> changeAuditPolicyCompartment(
             ChangeAuditPolicyCompartmentRequest request,
@@ -218,10 +214,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeAuditProfileCompartmentResponse>
             changeAuditProfileCompartment(
@@ -232,14 +228,15 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves the Data Safe private endpoint and its dependent resources to the specified compartment.
+     * Moves the Data Safe private endpoint and its dependent resources to the specified
+     * compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeDataSafePrivateEndpointCompartmentResponse>
             changeDataSafePrivateEndpointCompartment(
@@ -254,10 +251,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeDiscoveryJobCompartmentResponse>
             changeDiscoveryJobCompartment(
@@ -272,10 +269,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeLibraryMaskingFormatCompartmentResponse>
             changeLibraryMaskingFormatCompartment(
@@ -290,10 +287,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeMaskingPolicyCompartmentResponse>
             changeMaskingPolicyCompartment(
@@ -308,10 +305,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeOnPremConnectorCompartmentResponse>
             changeOnPremConnectorCompartment(
@@ -322,14 +319,15 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a resource into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     * Moves a resource into a different compartment. When provided, If-Match is checked against
+     * ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeReportCompartmentResponse> changeReportCompartment(
             ChangeReportCompartmentRequest request,
@@ -338,14 +336,15 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves a resource into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     * Moves a resource into a different compartment. When provided, If-Match is checked against
+     * ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeReportDefinitionCompartmentResponse>
             changeReportDefinitionCompartment(
@@ -360,10 +359,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeRetentionResponse> changeRetention(
             ChangeRetentionRequest request,
@@ -371,19 +370,22 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves the specified saved security assessment or future scheduled assessments into a different compartment.
-     * <p>
-     * To start, call first the operation ListSecurityAssessments with filters \"type = save_schedule\". This returns the scheduleAssessmentId. Then, call this changeCompartment with the scheduleAssessmentId.
-     * <p>
-     * The existing saved security assessments created due to the schedule are not moved. However, all new saves will be associated with the new compartment.
+     * Moves the specified saved security assessment or future scheduled assessments into a
+     * different compartment.
      *
+     * <p>To start, call first the operation ListSecurityAssessments with filters \"type =
+     * save_schedule\". This returns the scheduleAssessmentId. Then, call this changeCompartment
+     * with the scheduleAssessmentId.
+     *
+     * <p>The existing saved security assessments created due to the schedule are not moved.
+     * However, all new saves will be associated with the new compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeSecurityAssessmentCompartmentResponse>
             changeSecurityAssessmentCompartment(
@@ -394,14 +396,15 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves the specified sensitive data model and its dependent resources into a different compartment.
+     * Moves the specified sensitive data model and its dependent resources into a different
+     * compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeSensitiveDataModelCompartmentResponse>
             changeSensitiveDataModelCompartment(
@@ -416,10 +419,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeSensitiveTypeCompartmentResponse>
             changeSensitiveTypeCompartment(
@@ -434,10 +437,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeTargetAlertPolicyAssociationCompartmentResponse>
             changeTargetAlertPolicyAssociationCompartment(
@@ -452,10 +455,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeTargetDatabaseCompartmentResponse>
             changeTargetDatabaseCompartment(
@@ -466,19 +469,19 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves the specified saved user assessment or future scheduled assessments into a different compartment.
-     * To start storing scheduled user assessments on a different compartment, first call the operation ListUserAssessments with
-     * the filters \"type = save_schedule\". That call returns the scheduleAssessmentId. Then call
-     * ChangeUserAssessmentCompartment with the scheduleAssessmentId. The existing saved user assessments created per the schedule
-     * are not be moved. However, all new saves will be associated with the new compartment.
-     *
+     * Moves the specified saved user assessment or future scheduled assessments into a different
+     * compartment. To start storing scheduled user assessments on a different compartment, first
+     * call the operation ListUserAssessments with the filters \"type = save_schedule\". That call
+     * returns the scheduleAssessmentId. Then call ChangeUserAssessmentCompartment with the
+     * scheduleAssessmentId. The existing saved user assessments created per the schedule are not be
+     * moved. However, all new saves will be associated with the new compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeUserAssessmentCompartmentResponse>
             changeUserAssessmentCompartment(
@@ -489,16 +492,16 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Compares two security assessments. For this comparison, a security assessment can be a saved assessment, a latest assessment, or a baseline assessment.
-     * For example, you can compare saved assessment or a latest assessment against a baseline.
-     *
+     * Compares two security assessments. For this comparison, a security assessment can be a saved
+     * assessment, a latest assessment, or a baseline assessment. For example, you can compare saved
+     * assessment or a latest assessment against a baseline.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CompareSecurityAssessmentResponse> compareSecurityAssessment(
             CompareSecurityAssessmentRequest request,
@@ -507,16 +510,16 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Compares two user assessments. For this comparison, a user assessment can be a saved, a latest assessment, or a baseline.
-     * As an example, it can be used to compare a user assessment saved or a latest assessment with a baseline.
-     *
+     * Compares two user assessments. For this comparison, a user assessment can be a saved, a
+     * latest assessment, or a baseline. As an example, it can be used to compare a user assessment
+     * saved or a latest assessment with a baseline.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CompareUserAssessmentResponse> compareUserAssessment(
             CompareUserAssessmentRequest request,
@@ -525,17 +528,17 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a work request to retrieve archived audit data. This asynchronous process will usually take over an hour to complete.
-     * Save the id from the response of this operation. Call GetAuditArchiveRetrieval operation after an hour, passing the id to know the status of
-     * this operation.
-     *
+     * Creates a work request to retrieve archived audit data. This asynchronous process will
+     * usually take over an hour to complete. Save the id from the response of this operation. Call
+     * GetAuditArchiveRetrieval operation after an hour, passing the id to know the status of this
+     * operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateAuditArchiveRetrievalResponse> createAuditArchiveRetrieval(
             CreateAuditArchiveRetrievalRequest request,
@@ -546,13 +549,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Creates a new Data Safe private endpoint.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateDataSafePrivateEndpointResponse>
             createDataSafePrivateEndpoint(
@@ -563,19 +565,18 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Performs incremental data discovery for the specified sensitive data model. It uses the target database associated
-     * with the sensitive data model.
-     * After performing data discovery, you can use ListDiscoveryJobResults to view the discovery results, PatchDiscoveryJobResults
-     * to specify the action you want perform on these results, and then ApplyDiscoveryJobResults to process the results
-     * and apply them to the sensitive data model.
-     *
+     * Performs incremental data discovery for the specified sensitive data model. It uses the
+     * target database associated with the sensitive data model. After performing data discovery,
+     * you can use ListDiscoveryJobResults to view the discovery results, PatchDiscoveryJobResults
+     * to specify the action you want perform on these results, and then ApplyDiscoveryJobResults to
+     * process the results and apply them to the sensitive data model.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateDiscoveryJobResponse> createDiscoveryJob(
             CreateDiscoveryJobRequest request,
@@ -584,19 +585,18 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new library masking format. A masking format can have one or more
-     * format entries. The combined output of all the format entries is used for masking.
-     * It provides the flexibility to define a masking format that can generate different
-     * parts of a data value separately and then combine them to get the final data value
-     * for masking. Note that you cannot define masking condition in a library masking format.
-     *
+     * Creates a new library masking format. A masking format can have one or more format entries.
+     * The combined output of all the format entries is used for masking. It provides the
+     * flexibility to define a masking format that can generate different parts of a data value
+     * separately and then combine them to get the final data value for masking. Note that you
+     * cannot define masking condition in a library masking format.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateLibraryMaskingFormatResponse> createLibraryMaskingFormat(
             CreateLibraryMaskingFormatRequest request,
@@ -605,34 +605,35 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new masking column in the specified masking policy. Use this operation
-     * to add parent columns only. It automatically adds the child columns from the
-     * associated sensitive data model or target database. If you provide the
-     * sensitiveTypeId attribute but not the maskingFormats attribute, it automatically
-     * assigns the default masking format associated with the specified sensitive type.
-     * Alternatively, if you provide the maskingFormats attribute, the specified masking
-     * formats are assigned to the column.
-     * <p>
-     * Using the maskingFormats attribute, you can assign one or more masking formats
-     * to a column. You need to specify a condition as part of each masking format. It
-     * enables you to do <a href=\"https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html\">conditional masking</a>
-     * so that you can mask the column data values differently using different
-     * masking conditions. A masking format can have one or more format entries. The
-     * combined output of all the format entries is used for masking. It provides the
-     * flexibility to define a masking format that can generate different parts of a data
-     * value separately and then combine them to get the final data value for masking.
-     * <p>
-     * You can use the maskingColumnGroup attribute to group the columns that you would
-     * like to mask together. It enables you to do <a href=\"https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037\">group or compound masking</a> that ensures that the
-     * masked data across the columns in a group continue to retain the same logical relationship.
+     * Creates a new masking column in the specified masking policy. Use this operation to add
+     * parent columns only. It automatically adds the child columns from the associated sensitive
+     * data model or target database. If you provide the sensitiveTypeId attribute but not the
+     * maskingFormats attribute, it automatically assigns the default masking format associated with
+     * the specified sensitive type. Alternatively, if you provide the maskingFormats attribute, the
+     * specified masking formats are assigned to the column.
      *
+     * <p>Using the maskingFormats attribute, you can assign one or more masking formats to a
+     * column. You need to specify a condition as part of each masking format. It enables you to do
+     * <a
+     * href=\"https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html\">conditional
+     * masking</a> so that you can mask the column data values differently using different masking
+     * conditions. A masking format can have one or more format entries. The combined output of all
+     * the format entries is used for masking. It provides the flexibility to define a masking
+     * format that can generate different parts of a data value separately and then combine them to
+     * get the final data value for masking.
+     *
+     * <p>You can use the maskingColumnGroup attribute to group the columns that you would like to
+     * mask together. It enables you to do <a
+     * href=\"https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037\">group
+     * or compound masking</a> that ensures that the masked data across the columns in a group
+     * continue to retain the same logical relationship.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateMaskingColumnResponse> createMaskingColumn(
             CreateMaskingColumnRequest request,
@@ -641,31 +642,32 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new masking policy and associates it with a sensitive data model or a reference target database.
-     * <p>
-     * To use a sensitive data model as the source of masking columns, set the columnSource attribute to
-     * SENSITIVE_DATA_MODEL and provide the sensitiveDataModelId attribute. After creating a masking policy,
-     * you can use the AddMaskingColumnsFromSdm operation to automatically add all the columns from
-     * the associated sensitive data model. In this case, the target database associated with the
-     * sensitive data model is used for column and masking format validations.
-     * <p>
-     * You can also create a masking policy without using a sensitive data model. In this case,
-     * you need to associate your masking policy with a target database by setting the columnSource
-     * attribute to TARGET and providing the targetId attribute. The specified target database
-     * is used for column and masking format validations.
-     * <p>
-     * After creating a masking policy, you can use the CreateMaskingColumn or PatchMaskingColumns
-     * operation to manually add columns to the policy. You need to add the parent columns only,
-     * and it automatically adds the child columns (in referential relationship with the parent columns)
-     * from the associated sensitive data model or target database.
+     * Creates a new masking policy and associates it with a sensitive data model or a reference
+     * target database.
      *
+     * <p>To use a sensitive data model as the source of masking columns, set the columnSource
+     * attribute to SENSITIVE_DATA_MODEL and provide the sensitiveDataModelId attribute. After
+     * creating a masking policy, you can use the AddMaskingColumnsFromSdm operation to
+     * automatically add all the columns from the associated sensitive data model. In this case, the
+     * target database associated with the sensitive data model is used for column and masking
+     * format validations.
+     *
+     * <p>You can also create a masking policy without using a sensitive data model. In this case,
+     * you need to associate your masking policy with a target database by setting the columnSource
+     * attribute to TARGET and providing the targetId attribute. The specified target database is
+     * used for column and masking format validations.
+     *
+     * <p>After creating a masking policy, you can use the CreateMaskingColumn or
+     * PatchMaskingColumns operation to manually add columns to the policy. You need to add the
+     * parent columns only, and it automatically adds the child columns (in referential relationship
+     * with the parent columns) from the associated sensitive data model or target database.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateMaskingPolicyResponse> createMaskingPolicy(
             CreateMaskingPolicyRequest request,
@@ -676,13 +678,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Creates a new on-premises connector.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateOnPremConnectorResponse> createOnPremConnector(
             CreateOnPremConnectorRequest request,
@@ -691,15 +692,15 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new report definition with parameters specified in the body. The report definition is stored in the specified compartment.
-     *
+     * Creates a new report definition with parameters specified in the body. The report definition
+     * is stored in the specified compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateReportDefinitionResponse> createReportDefinition(
             CreateReportDefinitionRequest request,
@@ -708,17 +709,17 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new saved security assessment for one or multiple targets in a compartment. When this operation is performed,
-     * it will save the latest assessments in the specified compartment. If a schedule is passed, it will persist the latest assessments,
-     * at the defined date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
+     * Creates a new saved security assessment for one or multiple targets in a compartment. When
+     * this operation is performed, it will save the latest assessments in the specified
+     * compartment. If a schedule is passed, it will persist the latest assessments, at the defined
+     * date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateSecurityAssessmentResponse> createSecurityAssessment(
             CreateSecurityAssessmentRequest request,
@@ -729,13 +730,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Creates a new sensitive column in the specified sensitive data model.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateSensitiveColumnResponse> createSensitiveColumn(
             CreateSensitiveColumnRequest request,
@@ -744,17 +744,16 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new sensitive data model. If schemas and sensitive types are provided, it automatically runs data discovery
-     * and adds the discovered columns to the sensitive data model. Otherwise, it creates an empty sensitive data model
-     * that can be updated later.
-     *
+     * Creates a new sensitive data model. If schemas and sensitive types are provided, it
+     * automatically runs data discovery and adds the discovered columns to the sensitive data
+     * model. Otherwise, it creates an empty sensitive data model that can be updated later.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateSensitiveDataModelResponse> createSensitiveDataModel(
             CreateSensitiveDataModelRequest request,
@@ -763,17 +762,16 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new sensitive type, which can be a basic sensitive type with regular expressions or a sensitive category.
-     * While sensitive types are used for data discovery, sensitive categories are used for logically grouping the related
-     * or similar sensitive types.
-     *
+     * Creates a new sensitive type, which can be a basic sensitive type with regular expressions or
+     * a sensitive category. While sensitive types are used for data discovery, sensitive categories
+     * are used for logically grouping the related or similar sensitive types.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateSensitiveTypeResponse> createSensitiveType(
             CreateSensitiveTypeRequest request,
@@ -784,13 +782,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Creates a new target-alert policy association to track a alert policy applied on target.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateTargetAlertPolicyAssociationResponse>
             createTargetAlertPolicyAssociation(
@@ -801,15 +798,15 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Registers the specified database with Data Safe and creates a Data Safe target database in the Data Safe Console.
-     *
+     * Registers the specified database with Data Safe and creates a Data Safe target database in
+     * the Data Safe Console.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateTargetDatabaseResponse> createTargetDatabase(
             CreateTargetDatabaseRequest request,
@@ -818,17 +815,17 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new saved user assessment for one or multiple targets in a compartment. It saves the latest assessments in the
-     * specified compartment. If a scheduled is passed in, this operation persists the latest assessments that exist at the defined
-     * date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
+     * Creates a new saved user assessment for one or multiple targets in a compartment. It saves
+     * the latest assessments in the specified compartment. If a scheduled is passed in, this
+     * operation persists the latest assessments that exist at the defined date and time, in the
+     * format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateUserAssessmentResponse> createUserAssessment(
             CreateUserAssessmentRequest request,
@@ -839,13 +836,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Deactivates a target database in Data Safe.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeactivateTargetDatabaseResponse> deactivateTargetDatabase(
             DeactivateTargetDatabaseRequest request,
@@ -854,16 +850,16 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * To unload retrieved archive data, call the operation ListAuditArchiveRetrieval first.
-     * This will return the auditArchiveRetrievalId. Then call this operation with auditArchiveRetrievalId.
-     *
+     * To unload retrieved archive data, call the operation ListAuditArchiveRetrieval first. This
+     * will return the auditArchiveRetrievalId. Then call this operation with
+     * auditArchiveRetrievalId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteAuditArchiveRetrievalResponse> deleteAuditArchiveRetrieval(
             DeleteAuditArchiveRetrievalRequest request,
@@ -876,10 +872,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteAuditTrailResponse> deleteAuditTrail(
             DeleteAuditTrailRequest request,
@@ -891,10 +887,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteDataSafePrivateEndpointResponse>
             deleteDataSafePrivateEndpoint(
@@ -909,10 +905,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteDiscoveryJobResponse> deleteDiscoveryJob(
             DeleteDiscoveryJobRequest request,
@@ -925,10 +921,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteDiscoveryJobResultResponse> deleteDiscoveryJobResult(
             DeleteDiscoveryJobResultRequest request,
@@ -941,10 +937,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteLibraryMaskingFormatResponse> deleteLibraryMaskingFormat(
             DeleteLibraryMaskingFormatRequest request,
@@ -957,10 +953,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteMaskingColumnResponse> deleteMaskingColumn(
             DeleteMaskingColumnRequest request,
@@ -973,10 +969,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteMaskingPolicyResponse> deleteMaskingPolicy(
             DeleteMaskingPolicyRequest request,
@@ -989,10 +985,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteOnPremConnectorResponse> deleteOnPremConnector(
             DeleteOnPremConnectorRequest request,
@@ -1001,14 +997,15 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the specified report definition. Only the user created report definition can be deleted. The seeded report definitions cannot be deleted.
+     * Deletes the specified report definition. Only the user created report definition can be
+     * deleted. The seeded report definitions cannot be deleted.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteReportDefinitionResponse> deleteReportDefinition(
             DeleteReportDefinitionRequest request,
@@ -1017,18 +1014,18 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the specified saved security assessment or schedule. To delete a security assessment schedule,
-     * first call the operation ListSecurityAssessments with filters \"type = save_schedule\".
-     * That operation returns the scheduleAssessmentId. Then, call DeleteSecurityAssessment with the scheduleAssessmentId.
-     * If the assessment being deleted is the baseline for that compartment, then it will impact all baselines in the compartment.
-     *
+     * Deletes the specified saved security assessment or schedule. To delete a security assessment
+     * schedule, first call the operation ListSecurityAssessments with filters \"type =
+     * save_schedule\". That operation returns the scheduleAssessmentId. Then, call
+     * DeleteSecurityAssessment with the scheduleAssessmentId. If the assessment being deleted is
+     * the baseline for that compartment, then it will impact all baselines in the compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteSecurityAssessmentResponse> deleteSecurityAssessment(
             DeleteSecurityAssessmentRequest request,
@@ -1041,10 +1038,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteSensitiveColumnResponse> deleteSensitiveColumn(
             DeleteSensitiveColumnRequest request,
@@ -1057,10 +1054,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteSensitiveDataModelResponse> deleteSensitiveDataModel(
             DeleteSensitiveDataModelRequest request,
@@ -1073,10 +1070,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteSensitiveTypeResponse> deleteSensitiveType(
             DeleteSensitiveTypeRequest request,
@@ -1089,10 +1086,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteTargetAlertPolicyAssociationResponse>
             deleteTargetAlertPolicyAssociation(
@@ -1103,14 +1100,15 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Deregisters the specified database from Data Safe and removes the target database from the Data Safe Console.
+     * Deregisters the specified database from Data Safe and removes the target database from the
+     * Data Safe Console.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteTargetDatabaseResponse> deleteTargetDatabase(
             DeleteTargetDatabaseRequest request,
@@ -1119,18 +1117,18 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the specified saved user assessment or schedule. To delete a user assessment schedule, first call the operation
-     * ListUserAssessments with filters \"type = save_schedule\".
-     * That call returns the scheduleAssessmentId. Then call DeleteUserAssessment with the scheduleAssessmentId.
-     * If the assessment being deleted is the baseline for that compartment, then it will impact all baselines in the compartment.
-     *
+     * Deletes the specified saved user assessment or schedule. To delete a user assessment
+     * schedule, first call the operation ListUserAssessments with filters \"type = save_schedule\".
+     * That call returns the scheduleAssessmentId. Then call DeleteUserAssessment with the
+     * scheduleAssessmentId. If the assessment being deleted is the baseline for that compartment,
+     * then it will impact all baselines in the compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteUserAssessmentResponse> deleteUserAssessment(
             DeleteUserAssessmentRequest request,
@@ -1139,18 +1137,17 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the list of audit trails created under audit profile.The
-     * operation can be used to create new audit trails for target database
-     * when they become available for audit collection because of change of database version
-     * or change of database unified mode or change of data base  edition or being deleted previously etc.
-     *
+     * Updates the list of audit trails created under audit profile.The operation can be used to
+     * create new audit trails for target database when they become available for audit collection
+     * because of change of database version or change of database unified mode or change of data
+     * base edition or being deleted previously etc.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DiscoverAuditTrailsResponse> discoverAuditTrails(
             DiscoverAuditTrailsRequest request,
@@ -1159,18 +1156,19 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Downloads an already-generated discovery report. Note that the GenerateDiscoveryReportForDownload operation is a
-     * prerequisite for the DownloadDiscoveryReport operation. Use GenerateDiscoveryReportForDownload to generate a discovery
-     * report file and then use DownloadDiscoveryReport to download the generated file. By default, it downloads report for
-     * all the columns in a sensitive data model. Use the discoveryJobId attribute to download report for a specific discovery job.
-     *
+     * Downloads an already-generated discovery report. Note that the
+     * GenerateDiscoveryReportForDownload operation is a prerequisite for the
+     * DownloadDiscoveryReport operation. Use GenerateDiscoveryReportForDownload to generate a
+     * discovery report file and then use DownloadDiscoveryReport to download the generated file. By
+     * default, it downloads report for all the columns in a sensitive data model. Use the
+     * discoveryJobId attribute to download report for a specific discovery job.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DownloadDiscoveryReportResponse> downloadDiscoveryReport(
             DownloadDiscoveryReportRequest request,
@@ -1179,14 +1177,15 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Downloads the masking log generated by the last masking operation on a target database using the specified masking policy.
+     * Downloads the masking log generated by the last masking operation on a target database using
+     * the specified masking policy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DownloadMaskingLogResponse> downloadMaskingLog(
             DownloadMaskingLogRequest request,
@@ -1195,18 +1194,17 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Downloads an already-generated file corresponding to the specified masking policy.
-     * Note that the GenerateMaskingPolicyForDownload operation is a prerequisite for the
-     * DownloadMaskingPolicy operation. Use GenerateMaskingPolicyForDownload to generate
-     * a masking policy file and then use DownloadMaskingPolicy to download the generated file.
-     *
+     * Downloads an already-generated file corresponding to the specified masking policy. Note that
+     * the GenerateMaskingPolicyForDownload operation is a prerequisite for the
+     * DownloadMaskingPolicy operation. Use GenerateMaskingPolicyForDownload to generate a masking
+     * policy file and then use DownloadMaskingPolicy to download the generated file.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DownloadMaskingPolicyResponse> downloadMaskingPolicy(
             DownloadMaskingPolicyRequest request,
@@ -1216,16 +1214,16 @@ public interface DataSafeAsync extends AutoCloseable {
 
     /**
      * Downloads an already-generated masking report. Note that the GenerateMaskingReportForDownload
-     * operation is a prerequisite for the DownloadMaskingReport operation. Use GenerateMaskingReportForDownload
-     * to generate a masking report file and then use DownloadMaskingReport to download the generated file.
-     *
+     * operation is a prerequisite for the DownloadMaskingReport operation. Use
+     * GenerateMaskingReportForDownload to generate a masking report file and then use
+     * DownloadMaskingReport to download the generated file.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DownloadMaskingReportResponse> downloadMaskingReport(
             DownloadMaskingReportRequest request,
@@ -1234,15 +1232,15 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Downloads the privilege script to grant/revoke required roles from the Data Safe account on the target database.
-     *
+     * Downloads the privilege script to grant/revoke required roles from the Data Safe account on
+     * the target database.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DownloadPrivilegeScriptResponse> downloadPrivilegeScript(
             DownloadPrivilegeScriptRequest request,
@@ -1251,16 +1249,17 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Downloads the report of the specified security assessment. To download the security assessment report, it needs to be generated first.
-     * Please use GenerateSecurityAssessmentReport to generate a downloadable report in the preferred format (PDF, XLS).
-     *
+     * Downloads the report of the specified security assessment. To download the security
+     * assessment report, it needs to be generated first. Please use
+     * GenerateSecurityAssessmentReport to generate a downloadable report in the preferred format
+     * (PDF, XLS).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DownloadSecurityAssessmentReportResponse>
             downloadSecurityAssessmentReport(
@@ -1271,18 +1270,17 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Downloads an already-generated file corresponding to the specified sensitive data model. Note that the
-     * GenerateSensitiveDataModelForDownload operation is a prerequisite for the DownloadSensitiveDataModel operation.
-     * Use GenerateSensitiveDataModelForDownload to generate a data model file and then use DownloadSensitiveDataModel
-     * to download the generated file.
-     *
+     * Downloads an already-generated file corresponding to the specified sensitive data model. Note
+     * that the GenerateSensitiveDataModelForDownload operation is a prerequisite for the
+     * DownloadSensitiveDataModel operation. Use GenerateSensitiveDataModelForDownload to generate a
+     * data model file and then use DownloadSensitiveDataModel to download the generated file.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DownloadSensitiveDataModelResponse> downloadSensitiveDataModel(
             DownloadSensitiveDataModelRequest request,
@@ -1291,16 +1289,16 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Downloads the report of the specified user assessment. To download the user assessment report, it needs to be generated first.
-     * Please use GenerateUserAssessmentReport to generate a downloadable report in the preferred format (PDF, XLS).
-     *
+     * Downloads the report of the specified user assessment. To download the user assessment
+     * report, it needs to be generated first. Please use GenerateUserAssessmentReport to generate a
+     * downloadable report in the preferred format (PDF, XLS).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DownloadUserAssessmentReportResponse> downloadUserAssessmentReport(
             DownloadUserAssessmentReportRequest request,
@@ -1312,13 +1310,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Enables Data Safe in the tenancy and region.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<EnableDataSafeConfigurationResponse> enableDataSafeConfiguration(
             EnableDataSafeConfigurationRequest request,
@@ -1327,18 +1324,18 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Generates a downloadable discovery report. It's a prerequisite for the DownloadDiscoveryReport operation. Use this
-     * endpoint to generate a discovery report file and then use DownloadDiscoveryReport to download the generated file.
-     * By default, it generates report for all the columns in a sensitive data model. Use the discoveryJobId attribute
-     * to generate report for a specific discovery job.
-     *
+     * Generates a downloadable discovery report. It's a prerequisite for the
+     * DownloadDiscoveryReport operation. Use this endpoint to generate a discovery report file and
+     * then use DownloadDiscoveryReport to download the generated file. By default, it generates
+     * report for all the columns in a sensitive data model. Use the discoveryJobId attribute to
+     * generate report for a specific discovery job.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GenerateDiscoveryReportForDownloadResponse>
             generateDiscoveryReportForDownload(
@@ -1349,19 +1346,18 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Generates a downloadable file corresponding to the specified masking policy. It's
-     * a prerequisite for the DownloadMaskingPolicy operation. Use this endpoint to generate
-     * a masking policy file and then use DownloadMaskingPolicy to download the generated file.
-     * Note that file generation and download are serial operations. The download operation
-     * can't be invoked while the generate operation is in progress.
-     *
+     * Generates a downloadable file corresponding to the specified masking policy. It's a
+     * prerequisite for the DownloadMaskingPolicy operation. Use this endpoint to generate a masking
+     * policy file and then use DownloadMaskingPolicy to download the generated file. Note that file
+     * generation and download are serial operations. The download operation can't be invoked while
+     * the generate operation is in progress.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GenerateMaskingPolicyForDownloadResponse>
             generateMaskingPolicyForDownload(
@@ -1372,18 +1368,16 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Generates a downloadable masking report. It's a prerequisite for the
-     * DownloadMaskingReport operation. Use this endpoint to generate a
-     * masking report file and then use DownloadMaskingReport to download
-     * the generated file.
-     *
+     * Generates a downloadable masking report. It's a prerequisite for the DownloadMaskingReport
+     * operation. Use this endpoint to generate a masking report file and then use
+     * DownloadMaskingReport to download the generated file.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GenerateMaskingReportForDownloadResponse>
             generateMaskingReportForDownload(
@@ -1396,13 +1390,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Creates and downloads the configuration of the specified on-premises connector.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GenerateOnPremConnectorConfigurationResponse>
             generateOnPremConnectorConfiguration(
@@ -1417,10 +1410,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GenerateReportResponse> generateReport(
             GenerateReportRequest request,
@@ -1428,16 +1421,16 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Generates the report of the specified security assessment. You can get the report in PDF or XLS format.
-     * After generating the report, use DownloadSecurityAssessmentReport to download it in the preferred format.
-     *
+     * Generates the report of the specified security assessment. You can get the report in PDF or
+     * XLS format. After generating the report, use DownloadSecurityAssessmentReport to download it
+     * in the preferred format.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GenerateSecurityAssessmentReportResponse>
             generateSecurityAssessmentReport(
@@ -1448,18 +1441,18 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Generates a downloadable file corresponding to the specified sensitive data model. It's a prerequisite for the
-     * DownloadSensitiveDataModel operation. Use this endpoint to generate a data model file and then use DownloadSensitiveDataModel
-     * to download the generated file. Note that file generation and download are serial operations. The download operation
-     * can't be invoked while the generate operation is in progress.
-     *
+     * Generates a downloadable file corresponding to the specified sensitive data model. It's a
+     * prerequisite for the DownloadSensitiveDataModel operation. Use this endpoint to generate a
+     * data model file and then use DownloadSensitiveDataModel to download the generated file. Note
+     * that file generation and download are serial operations. The download operation can't be
+     * invoked while the generate operation is in progress.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GenerateSensitiveDataModelForDownloadResponse>
             generateSensitiveDataModelForDownload(
@@ -1470,16 +1463,16 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Generates the report of the specified user assessment. The report is available in PDF or XLS format.
-     * After generating the report, use DownloadUserAssessmentReport to download it in the preferred format.
-     *
+     * Generates the report of the specified user assessment. The report is available in PDF or XLS
+     * format. After generating the report, use DownloadUserAssessmentReport to download it in the
+     * preferred format.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GenerateUserAssessmentReportResponse> generateUserAssessmentReport(
             GenerateUserAssessmentReportRequest request,
@@ -1493,10 +1486,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetAlertResponse> getAlert(
             GetAlertRequest request,
@@ -1507,10 +1500,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetAlertPolicyResponse> getAlertPolicy(
             GetAlertPolicyRequest request,
@@ -1522,10 +1515,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetAuditArchiveRetrievalResponse> getAuditArchiveRetrieval(
             GetAuditArchiveRetrievalRequest request,
@@ -1538,10 +1531,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetAuditPolicyResponse> getAuditPolicy(
             GetAuditPolicyRequest request,
@@ -1553,10 +1546,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetAuditProfileResponse> getAuditProfile(
             GetAuditProfileRequest request,
@@ -1568,10 +1561,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetAuditTrailResponse> getAuditTrail(
             GetAuditTrailRequest request,
@@ -1579,21 +1572,18 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of basic masking formats compatible with the supported data types.
-     * The data types are grouped into the following categories -
-     * Character - Includes CHAR, NCHAR, VARCHAR2, and NVARCHAR2
-     * Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE
-     * Date - Includes DATE and TIMESTAMP
-     * LOB - Includes BLOB, CLOB, and NCLOB
-     * All - Includes all the supported data types
-     *
+     * Gets a list of basic masking formats compatible with the supported data types. The data types
+     * are grouped into the following categories - Character - Includes CHAR, NCHAR, VARCHAR2, and
+     * NVARCHAR2 Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE Date -
+     * Includes DATE and TIMESTAMP LOB - Includes BLOB, CLOB, and NCLOB All - Includes all the
+     * supported data types
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetCompatibleFormatsForDataTypesResponse>
             getCompatibleFormatsForDataTypes(
@@ -1604,18 +1594,17 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a list of library masking formats compatible with the existing sensitive types.
-     * For each sensitive type, it returns the assigned default masking format as well as
-     * the other library masking formats that have the sensitiveTypeIds attribute containing
-     * the OCID of the sensitive type.
-     *
+     * Gets a list of library masking formats compatible with the existing sensitive types. For each
+     * sensitive type, it returns the assigned default masking format as well as the other library
+     * masking formats that have the sensitiveTypeIds attribute containing the OCID of the sensitive
+     * type.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetCompatibleFormatsForSensitiveTypesResponse>
             getCompatibleFormatsForSensitiveTypes(
@@ -1630,10 +1619,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDataSafeConfigurationResponse> getDataSafeConfiguration(
             GetDataSafeConfigurationRequest request,
@@ -1646,10 +1635,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDataSafePrivateEndpointResponse> getDataSafePrivateEndpoint(
             GetDataSafePrivateEndpointRequest request,
@@ -1662,10 +1651,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDiscoveryJobResponse> getDiscoveryJob(
             GetDiscoveryJobRequest request,
@@ -1677,10 +1666,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDiscoveryJobResultResponse> getDiscoveryJobResult(
             GetDiscoveryJobResultRequest request,
@@ -1693,10 +1682,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetLibraryMaskingFormatResponse> getLibraryMaskingFormat(
             GetLibraryMaskingFormatRequest request,
@@ -1709,10 +1698,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetMaskingColumnResponse> getMaskingColumn(
             GetMaskingColumnRequest request,
@@ -1724,10 +1713,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetMaskingPolicyResponse> getMaskingPolicy(
             GetMaskingPolicyRequest request,
@@ -1739,10 +1728,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetMaskingReportResponse> getMaskingReport(
             GetMaskingReportRequest request,
@@ -1754,10 +1743,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetOnPremConnectorResponse> getOnPremConnector(
             GetOnPremConnectorRequest request,
@@ -1770,10 +1759,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetReportResponse> getReport(
             GetReportRequest request,
@@ -1784,10 +1773,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetReportContentResponse> getReportContent(
             GetReportContentRequest request,
@@ -1799,10 +1788,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetReportDefinitionResponse> getReportDefinition(
             GetReportDefinitionRequest request,
@@ -1815,10 +1804,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetSecurityAssessmentResponse> getSecurityAssessment(
             GetSecurityAssessmentRequest request,
@@ -1827,14 +1816,15 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the details of the comparison report on the security assessments submitted for comparison.
+     * Gets the details of the comparison report on the security assessments submitted for
+     * comparison.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetSecurityAssessmentComparisonResponse>
             getSecurityAssessmentComparison(
@@ -1849,10 +1839,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetSensitiveColumnResponse> getSensitiveColumn(
             GetSensitiveColumnRequest request,
@@ -1865,10 +1855,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetSensitiveDataModelResponse> getSensitiveDataModel(
             GetSensitiveDataModelRequest request,
@@ -1881,10 +1871,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetSensitiveTypeResponse> getSensitiveType(
             GetSensitiveTypeRequest request,
@@ -1896,10 +1886,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetTargetAlertPolicyAssociationResponse>
             getTargetAlertPolicyAssociation(
@@ -1912,13 +1902,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Returns the details of the specified Data Safe target database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetTargetDatabaseResponse> getTargetDatabase(
             GetTargetDatabaseRequest request,
@@ -1931,10 +1920,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetUserAssessmentResponse> getUserAssessment(
             GetUserAssessmentRequest request,
@@ -1947,10 +1936,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetUserAssessmentComparisonResponse> getUserAssessmentComparison(
             GetUserAssessmentComparisonRequest request,
@@ -1963,10 +1952,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
@@ -1976,13 +1965,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Returns aggregation details of alerts.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAlertAnalyticsResponse> listAlertAnalytics(
             ListAlertAnalyticsRequest request,
@@ -1993,13 +1981,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Gets a list of all alert policies.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAlertPoliciesResponse> listAlertPolicies(
             ListAlertPoliciesRequest request,
@@ -2008,16 +1995,16 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the rules of the specified alert policy. The alert policy is said to be satisfied when all rules in the policy evaulate to true.
-     * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
-     *
+     * Lists the rules of the specified alert policy. The alert policy is said to be satisfied when
+     * all rules in the policy evaulate to true. If there are three rules: rule1,rule2 and rule3,
+     * the policy is satisfied if rule1 AND rule2 AND rule3 is True.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAlertPolicyRulesResponse> listAlertPolicyRules(
             ListAlertPolicyRulesRequest request,
@@ -2028,13 +2015,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Gets a list of all alerts.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAlertsResponse> listAlerts(
             ListAlertsRequest request,
@@ -2043,13 +2029,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Returns the list of audit archive retrieval.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAuditArchiveRetrievalsResponse> listAuditArchiveRetrievals(
             ListAuditArchiveRetrievalsRequest request,
@@ -2058,20 +2043,20 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * By default ListAuditEventAnalytics operation will return all of the summary columns. To filter desired summary columns, specify
-     * it in the `summaryOf` query parameter.
-     * <p>
-     **Example:** /ListAuditEventAnalytics?summaryField=targetName&summaryField=userName&summaryField=clientHostName&summaryField
-     *              &summaryField=dmls&summaryField=privilege_changes&summaryField=ddls&summaryField=login_failure&summaryField=login_success
-     *              &summaryField=eventcount&q=(operationTime ge '2021-06-13T23:49:14')&groupBy=targetName
+     * By default ListAuditEventAnalytics operation will return all of the summary columns. To
+     * filter desired summary columns, specify it in the `summaryOf` query parameter.
      *
+     * <p>*Example:**
+     * /ListAuditEventAnalytics?summaryField=targetName&summaryField=userName&summaryField=clientHostName&summaryField
+     * &summaryField=dmls&summaryField=privilege_changes&summaryField=ddls&summaryField=login_failure&summaryField=login_success
+     * &summaryField=eventcount&q=(operationTime ge '2021-06-13T23:49:14')&groupBy=targetName
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAuditEventAnalyticsResponse> listAuditEventAnalytics(
             ListAuditEventAnalyticsRequest request,
@@ -2080,27 +2065,28 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * The ListAuditEvents operation returns specified `compartmentId` audit Events only.
-     * The list does not include any audit Events associated with the `subcompartments` of the specified `compartmentId`.
-     * <p>
-     * The parameter `accessLevel` specifies whether to return only those compartments for which the
-     * requestor has INSPECT permissions on at least one resource directly
-     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * The ListAuditEvents operation returns specified `compartmentId` audit Events only. The list
+     * does not include any audit Events associated with the `subcompartments` of the specified
+     * `compartmentId`.
+     *
+     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
+     * the requestor has INSPECT permissions on at least one resource directly or indirectly
+     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
      * Principal doesn't have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
-     * <p>
-     * The parameter `compartmentIdInSubtree` applies when you perform ListAuditEvents on the
-     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      *
+     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListAuditEvents on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
+     * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
+     * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
+     * ACCESSIBLE.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAuditEventsResponse> listAuditEvents(
             ListAuditEventsRequest request,
@@ -2108,29 +2094,30 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Retrieves a list of all audited targets with their corresponding provisioned audit policies, and their provisioning conditions.
-     * <p>
-     * The ListAuditPolicies operation returns only the audit policies in the specified `compartmentId`.
-     * The list does not include any subcompartments of the compartmentId passed.
-     * <p>
-     * The parameter `accessLevel` specifies whether to return only those compartments for which the
-     * requestor has INSPECT permissions on at least one resource directly
-     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Retrieves a list of all audited targets with their corresponding provisioned audit policies,
+     * and their provisioning conditions.
+     *
+     * <p>The ListAuditPolicies operation returns only the audit policies in the specified
+     * `compartmentId`. The list does not include any subcompartments of the compartmentId passed.
+     *
+     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
+     * the requestor has INSPECT permissions on at least one resource directly or indirectly
+     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
      * Principal doesn't have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
-     * <p>
-     * The parameter `compartmentIdInSubtree` applies when you perform ListAuditPolicies on the
-     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      *
+     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListAuditPolicies on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
+     * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
+     * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
+     * ACCESSIBLE.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAuditPoliciesResponse> listAuditPolicies(
             ListAuditPoliciesRequest request,
@@ -2139,27 +2126,29 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of audit profile aggregated details . A audit profile  aggregation helps understand the overall  state of audit profile profiles.
-     * As an example, it helps understand how many audit profiles have paid usage. It is especially useful to create dashboards or to support analytics.
-     * <p>
-     * The parameter `accessLevel` specifies whether to return only those compartments for which the
-     * requestor has INSPECT permissions on at least one resource directly
-     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Gets a list of audit profile aggregated details . A audit profile aggregation helps
+     * understand the overall state of audit profile profiles. As an example, it helps understand
+     * how many audit profiles have paid usage. It is especially useful to create dashboards or to
+     * support analytics.
+     *
+     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
+     * the requestor has INSPECT permissions on at least one resource directly or indirectly
+     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
      * Principal doesn't have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
-     * <p>
-     * The parameter `compartmentIdInSubtree` applies when you perform AuditProfileAnalytics on the
-     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      *
+     * <p>The parameter `compartmentIdInSubtree` applies when you perform AuditProfileAnalytics on
+     * the `compartmentId` passed and when it is set to true, the entire hierarchy of compartments
+     * can be returned. To get a full list of all compartments and subcompartments in the tenancy
+     * (root compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
+     * ACCESSIBLE.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAuditProfileAnalyticsResponse> listAuditProfileAnalytics(
             ListAuditProfileAnalyticsRequest request,
@@ -2169,28 +2158,28 @@ public interface DataSafeAsync extends AutoCloseable {
 
     /**
      * Gets a list of all audit profiles.
-     * <p>
-     * The ListAuditProfiles operation returns only the audit profiles in the specified `compartmentId`.
-     * The list does not include any subcompartments of the compartmentId passed.
-     * <p>
-     * The parameter `accessLevel` specifies whether to return only those compartments for which the
-     * requestor has INSPECT permissions on at least one resource directly
-     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     *
+     * <p>The ListAuditProfiles operation returns only the audit profiles in the specified
+     * `compartmentId`. The list does not include any subcompartments of the compartmentId passed.
+     *
+     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
+     * the requestor has INSPECT permissions on at least one resource directly or indirectly
+     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
      * Principal doesn't have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
-     * <p>
-     * The parameter `compartmentIdInSubtree` applies when you perform ListAuditProfiles on the
-     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      *
+     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListAuditProfiles on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
+     * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
+     * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
+     * ACCESSIBLE.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAuditProfilesResponse> listAuditProfiles(
             ListAuditProfilesRequest request,
@@ -2199,27 +2188,28 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of audit trail aggregated details . A audit trail aggregation helps understand the overall  state of trails.
-     * As an example, it helps understand how many trails are running or stopped. It is especially useful to create dashboards or to support analytics.
-     * <p>
-     * The parameter `accessLevel` specifies whether to return only those compartments for which the
-     * requestor has INSPECT permissions on at least one resource directly
-     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Gets a list of audit trail aggregated details . A audit trail aggregation helps understand
+     * the overall state of trails. As an example, it helps understand how many trails are running
+     * or stopped. It is especially useful to create dashboards or to support analytics.
+     *
+     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
+     * the requestor has INSPECT permissions on at least one resource directly or indirectly
+     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
      * Principal doesn't have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
-     * <p>
-     * The parameter `compartmentIdInSubtree` applies when you perform AuditTrailAnalytics on the
-     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      *
+     * <p>The parameter `compartmentIdInSubtree` applies when you perform AuditTrailAnalytics on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
+     * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
+     * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
+     * ACCESSIBLE.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAuditTrailAnalyticsResponse> listAuditTrailAnalytics(
             ListAuditTrailAnalyticsRequest request,
@@ -2228,28 +2218,28 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of all audit trails.
-     * The ListAuditTrails operation returns only the audit trails in the specified `compartmentId`.
-     * The list does not include any subcompartments of the compartmentId passed.
-     * <p>
-     * The parameter `accessLevel` specifies whether to return only those compartments for which the
-     * requestor has INSPECT permissions on at least one resource directly
-     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Gets a list of all audit trails. The ListAuditTrails operation returns only the audit trails
+     * in the specified `compartmentId`. The list does not include any subcompartments of the
+     * compartmentId passed.
+     *
+     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
+     * the requestor has INSPECT permissions on at least one resource directly or indirectly
+     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
      * Principal doesn't have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
-     * <p>
-     * The parameter `compartmentIdInSubtree` applies when you perform ListAuditTrails on the
-     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      *
+     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListAuditTrails on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
+     * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
+     * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
+     * ACCESSIBLE.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAuditTrailsResponse> listAuditTrails(
             ListAuditTrailsRequest request,
@@ -2257,14 +2247,15 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Retrieves a list of audit trails, and associated audit event volume for each trail up to defined start date.
+     * Retrieves a list of audit trails, and associated audit event volume for each trail up to
+     * defined start date.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAvailableAuditVolumesResponse> listAvailableAuditVolumes(
             ListAvailableAuditVolumesRequest request,
@@ -2277,10 +2268,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListCollectedAuditVolumesResponse> listCollectedAuditVolumes(
             ListCollectedAuditVolumesRequest request,
@@ -2291,13 +2282,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Returns a list of column metadata objects.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListColumnsResponse> listColumns(
             ListColumnsRequest request,
@@ -2306,13 +2296,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Gets a list of Data Safe private endpoints.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDataSafePrivateEndpointsResponse> listDataSafePrivateEndpoints(
             ListDataSafePrivateEndpointsRequest request,
@@ -2326,10 +2315,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDiscoveryAnalyticsResponse> listDiscoveryAnalytics(
             ListDiscoveryAnalyticsRequest request,
@@ -2342,10 +2331,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDiscoveryJobResultsResponse> listDiscoveryJobResults(
             ListDiscoveryJobResultsRequest request,
@@ -2358,10 +2347,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDiscoveryJobsResponse> listDiscoveryJobs(
             ListDiscoveryJobsRequest request,
@@ -2372,13 +2361,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * List all the findings from all the targets in the specified assessment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListFindingsResponse> listFindings(
             ListFindingsRequest request,
@@ -2386,18 +2374,18 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of grants for a particular user in the specified user assessment. A user grant contains details such as the
-     * privilege name, type, category, and depth level. The depth level indicates how deep in the hierarchy of roles granted to
-     * roles a privilege grant is. The userKey in this operation is a system-generated identifier. Perform the operation ListUsers
+     * Gets a list of grants for a particular user in the specified user assessment. A user grant
+     * contains details such as the privilege name, type, category, and depth level. The depth level
+     * indicates how deep in the hierarchy of roles granted to roles a privilege grant is. The
+     * userKey in this operation is a system-generated identifier. Perform the operation ListUsers
      * to get the userKey for a particular user.
-     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListGrantsResponse> listGrants(
             ListGrantsRequest request,
@@ -2406,13 +2394,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Gets a list of library masking formats based on the specified query parameters.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListLibraryMaskingFormatsResponse> listLibraryMaskingFormats(
             ListLibraryMaskingFormatsRequest request,
@@ -2421,15 +2408,15 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
-     *
+     * Gets a list of masked columns present in the specified masking report and based on the
+     * specified query parameters.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListMaskedColumnsResponse> listMaskedColumns(
             ListMaskedColumnsRequest request,
@@ -2442,10 +2429,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListMaskingAnalyticsResponse> listMaskingAnalytics(
             ListMaskingAnalyticsRequest request,
@@ -2454,15 +2441,15 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of masking columns present in the specified masking policy and based on the specified query parameters.
-     *
+     * Gets a list of masking columns present in the specified masking policy and based on the
+     * specified query parameters.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListMaskingColumnsResponse> listMaskingColumns(
             ListMaskingColumnsRequest request,
@@ -2475,10 +2462,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListMaskingPoliciesResponse> listMaskingPolicies(
             ListMaskingPoliciesRequest request,
@@ -2491,10 +2478,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListMaskingReportsResponse> listMaskingReports(
             ListMaskingReportsRequest request,
@@ -2505,13 +2492,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Gets a list of on-premises connectors.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListOnPremConnectorsResponse> listOnPremConnectors(
             ListOnPremConnectorsRequest request,
@@ -2520,17 +2506,16 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of report definitions.
-     * The ListReportDefinitions operation returns only the report definitions in the specified `compartmentId`.
-     * It also returns the seeded report definitions which are available to all the compartments.
-     *
+     * Gets a list of report definitions. The ListReportDefinitions operation returns only the
+     * report definitions in the specified `compartmentId`. It also returns the seeded report
+     * definitions which are available to all the compartments.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListReportDefinitionsResponse> listReportDefinitions(
             ListReportDefinitionsRequest request,
@@ -2539,14 +2524,15 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of all the reports in the compartment. It contains information such as report generation time.
+     * Gets a list of all the reports in the compartment. It contains information such as report
+     * generation time.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListReportsResponse> listReports(
             ListReportsRequest request,
@@ -2555,13 +2541,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Returns a list of role metadata objects.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListRolesResponse> listRoles(
             ListRolesRequest request,
@@ -2570,13 +2555,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Returns list of schema.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListSchemasResponse> listSchemas(
             ListSchemasRequest request,
@@ -2584,28 +2568,28 @@ public interface DataSafeAsync extends AutoCloseable {
 
     /**
      * Gets a list of security assessments.
-     * <p>
-     * The ListSecurityAssessments operation returns only the assessments in the specified `compartmentId`.
-     * The list does not include any subcompartments of the compartmentId passed.
-     * <p>
-     * The parameter `accessLevel` specifies whether to return only those compartments for which the
-     * requestor has INSPECT permissions on at least one resource directly
-     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     *
+     * <p>The ListSecurityAssessments operation returns only the assessments in the specified
+     * `compartmentId`. The list does not include any subcompartments of the compartmentId passed.
+     *
+     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
+     * the requestor has INSPECT permissions on at least one resource directly or indirectly
+     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
      * Principal doesn't have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
-     * <p>
-     * The parameter `compartmentIdInSubtree` applies when you perform ListSecurityAssessments on the
-     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      *
+     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListSecurityAssessments on
+     * the `compartmentId` passed and when it is set to true, the entire hierarchy of compartments
+     * can be returned. To get a full list of all compartments and subcompartments in the tenancy
+     * (root compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
+     * ACCESSIBLE.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListSecurityAssessmentsResponse> listSecurityAssessments(
             ListSecurityAssessmentsRequest request,
@@ -2614,15 +2598,15 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of sensitive columns present in the specified sensitive data model based on the specified query parameters.
-     *
+     * Gets a list of sensitive columns present in the specified sensitive data model based on the
+     * specified query parameters.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListSensitiveColumnsResponse> listSensitiveColumns(
             ListSensitiveColumnsRequest request,
@@ -2633,13 +2617,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Gets a list of sensitive data models based on the specified query parameters.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListSensitiveDataModelsResponse> listSensitiveDataModels(
             ListSensitiveDataModelsRequest request,
@@ -2650,13 +2633,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Gets a list of sensitive types based on the specified query parameters.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListSensitiveTypesResponse> listSensitiveTypes(
             ListSensitiveTypesRequest request,
@@ -2667,13 +2649,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Returns a list of table metadata objects.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListTablesResponse> listTables(
             ListTablesRequest request,
@@ -2682,13 +2663,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Gets a list of all target-alert policy associations.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListTargetAlertPolicyAssociationsResponse>
             listTargetAlertPolicyAssociations(
@@ -2701,13 +2681,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Returns the list of registered target databases in Data Safe.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListTargetDatabasesResponse> listTargetDatabases(
             ListTargetDatabasesRequest request,
@@ -2716,29 +2695,32 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of aggregated user details from the specified user assessment. This provides information about the overall state
-     * of database user security.  For example, the user details include how many users have the DBA role and how many users are in
-     * the critical category. This data is especially useful content for dashboards or to support analytics.
-     * <p>
-     * When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree is set to \"true,\" and if the
-     * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
-     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
-     * root compartment. If the requestor does not have access to at least one subcompartment of the compartment specified by
-     * compartmentId, then \"Not Authorized\" is returned.
-     * <p>
-     * The parameter compartmentIdInSubtree applies when you perform ListUserAnalytics on the compartmentId passed and when it is
-     * set to true, the entire hierarchy of compartments can be returned.
-     * <p>
-     * To use ListUserAnalytics to get a full list of all compartments and subcompartments in the tenancy from the root compartment,
-     * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
+     * Gets a list of aggregated user details from the specified user assessment. This provides
+     * information about the overall state of database user security. For example, the user details
+     * include how many users have the DBA role and how many users are in the critical category.
+     * This data is especially useful content for dashboards or to support analytics.
      *
+     * <p>When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree
+     * is set to \"true,\" and if the parameter accessLevel is set to ACCESSIBLE, then the operation
+     * returns compartments in which the requestor has INSPECT permissions on at least one resource,
+     * directly or indirectly (in subcompartments). If the operation is performed at the root
+     * compartment. If the requestor does not have access to at least one subcompartment of the
+     * compartment specified by compartmentId, then \"Not Authorized\" is returned.
+     *
+     * <p>The parameter compartmentIdInSubtree applies when you perform ListUserAnalytics on the
+     * compartmentId passed and when it is set to true, the entire hierarchy of compartments can be
+     * returned.
+     *
+     * <p>To use ListUserAnalytics to get a full list of all compartments and subcompartments in the
+     * tenancy from the root compartment, set the parameter compartmentIdInSubtree to true and
+     * accessLevel to ACCESSIBLE.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListUserAnalyticsResponse> listUserAnalytics(
             ListUserAnalyticsRequest request,
@@ -2748,28 +2730,28 @@ public interface DataSafeAsync extends AutoCloseable {
 
     /**
      * Gets a list of user assessments.
-     * <p>
-     * The ListUserAssessments operation returns only the assessments in the specified `compartmentId`.
-     * The list does not include any subcompartments of the compartmentId passed.
-     * <p>
-     * The parameter `accessLevel` specifies whether to return only those compartments for which the
-     * requestor has INSPECT permissions on at least one resource directly
-     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     *
+     * <p>The ListUserAssessments operation returns only the assessments in the specified
+     * `compartmentId`. The list does not include any subcompartments of the compartmentId passed.
+     *
+     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
+     * the requestor has INSPECT permissions on at least one resource directly or indirectly
+     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
      * Principal doesn't have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
-     * <p>
-     * The parameter `compartmentIdInSubtree` applies when you perform ListUserAssessments on the
-     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      *
+     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListUserAssessments on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
+     * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
+     * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
+     * ACCESSIBLE.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListUserAssessmentsResponse> listUserAssessments(
             ListUserAssessmentsRequest request,
@@ -2778,18 +2760,18 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of users of the specified user assessment. The result contains the database user details for each user, such
-     * as user type, account status, last login time, user creation time, authentication type, user profile, and the date and time
-     * of the latest password change. It also contains the user category derived from these user details as well as privileges
+     * Gets a list of users of the specified user assessment. The result contains the database user
+     * details for each user, such as user type, account status, last login time, user creation
+     * time, authentication type, user profile, and the date and time of the latest password change.
+     * It also contains the user category derived from these user details as well as privileges
      * granted to each user.
-     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListUsersResponse> listUsers(
             ListUsersRequest request,
@@ -2798,13 +2780,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Gets a list of errors for the specified work request.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
             ListWorkRequestErrorsRequest request,
@@ -2815,13 +2796,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Gets a list of log entries for the specified work request.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
             ListWorkRequestLogsRequest request,
@@ -2832,13 +2812,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Gets a list of work requests.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
             ListWorkRequestsRequest request,
@@ -2850,10 +2829,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<MaskDataResponse> maskData(
             MaskDataRequest request,
@@ -2862,13 +2841,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Modifies Global Settings in Data Safe in the tenancy and region.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ModifyGlobalSettingsResponse> modifyGlobalSettings(
             ModifyGlobalSettingsRequest request,
@@ -2881,26 +2859,26 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<PatchAlertsResponse> patchAlerts(
             PatchAlertsRequest request,
             com.oracle.bmc.responses.AsyncHandler<PatchAlertsRequest, PatchAlertsResponse> handler);
 
     /**
-     * Patches one or more discovery results. You can use this operation to set the plannedAction attribute before using
-     * ApplyDiscoveryJobResults to process the results based on this attribute.
-     *
+     * Patches one or more discovery results. You can use this operation to set the plannedAction
+     * attribute before using ApplyDiscoveryJobResults to process the results based on this
+     * attribute.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<PatchDiscoveryJobResultsResponse> patchDiscoveryJobResults(
             PatchDiscoveryJobResultsRequest request,
@@ -2913,13 +2891,12 @@ public interface DataSafeAsync extends AutoCloseable {
      * masking columns. To create masking columns, use CreateMaskingColumnDetails as the patch
      * value. And to update masking columns, use UpdateMaskingColumnDetails as the patch value.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<PatchMaskingColumnsResponse> patchMaskingColumns(
             PatchMaskingColumnsRequest request,
@@ -2928,17 +2905,17 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Patches one or more columns in the specified sensitive data model. Use it to create, update, or delete sensitive columns.
-     * To create sensitive columns, use CreateSensitiveColumnDetails as the patch value. And to update sensitive columns,
-     * use UpdateSensitiveColumnDetails as the patch value.
-     *
+     * Patches one or more columns in the specified sensitive data model. Use it to create, update,
+     * or delete sensitive columns. To create sensitive columns, use CreateSensitiveColumnDetails as
+     * the patch value. And to update sensitive columns, use UpdateSensitiveColumnDetails as the
+     * patch value.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<PatchSensitiveColumnsResponse> patchSensitiveColumns(
             PatchSensitiveColumnsRequest request,
@@ -2951,10 +2928,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ProvisionAuditPolicyResponse> provisionAuditPolicy(
             ProvisionAuditPolicyRequest request,
@@ -2963,16 +2940,17 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Runs a security assessment, refreshes the latest assessment, and saves it for future reference.
-     * The assessment runs with a securityAssessmentId of type LATEST. Before you start, first call the ListSecurityAssessments operation with filter \"type = latest\" to get the security assessment id for the target's latest assessment.
-     *
+     * Runs a security assessment, refreshes the latest assessment, and saves it for future
+     * reference. The assessment runs with a securityAssessmentId of type LATEST. Before you start,
+     * first call the ListSecurityAssessments operation with filter \"type = latest\" to get the
+     * security assessment id for the target's latest assessment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RefreshSecurityAssessmentResponse> refreshSecurityAssessment(
             RefreshSecurityAssessmentRequest request,
@@ -2981,17 +2959,17 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Refreshes the latest assessment and saves it for future reference. This operation runs with a userAssessmentId of type LATEST.
-     * Before you start, first call the ListUserAssessments operation with filter \"type = latest\" to get the user assessment ID for
-     * the target's latest assessment.
-     *
+     * Refreshes the latest assessment and saves it for future reference. This operation runs with a
+     * userAssessmentId of type LATEST. Before you start, first call the ListUserAssessments
+     * operation with filter \"type = latest\" to get the user assessment ID for the target's latest
+     * assessment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RefreshUserAssessmentResponse> refreshUserAssessment(
             RefreshUserAssessmentRequest request,
@@ -3004,10 +2982,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ResumeAuditTrailResponse> resumeAuditTrail(
             ResumeAuditTrailRequest request,
@@ -3015,15 +2993,15 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Resume the given work request. Issuing a resume does not guarantee of immediate resume of the work request.
-     *
+     * Resume the given work request. Issuing a resume does not guarantee of immediate resume of the
+     * work request.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ResumeWorkRequestResponse> resumeWorkRequest(
             ResumeWorkRequestRequest request,
@@ -3036,10 +3014,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RetrieveAuditPoliciesResponse> retrieveAuditPolicies(
             RetrieveAuditPoliciesRequest request,
@@ -3048,14 +3026,15 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Sets the saved security assessment as the baseline in the compartment where the the specified assessment resides. The security assessment needs to be of type 'SAVED'.
+     * Sets the saved security assessment as the baseline in the compartment where the the specified
+     * assessment resides. The security assessment needs to be of type 'SAVED'.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<SetSecurityAssessmentBaselineResponse>
             setSecurityAssessmentBaseline(
@@ -3066,14 +3045,15 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Sets the saved user assessment as the baseline in the compartment where the specified assessment resides. The user assessment needs to be of type 'SAVED'.
+     * Sets the saved user assessment as the baseline in the compartment where the specified
+     * assessment resides. The user assessment needs to be of type 'SAVED'.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<SetUserAssessmentBaselineResponse> setUserAssessmentBaseline(
             SetUserAssessmentBaselineRequest request,
@@ -3086,10 +3066,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<StartAuditTrailResponse> startAuditTrail(
             StartAuditTrailRequest request,
@@ -3101,10 +3081,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<StopAuditTrailResponse> stopAuditTrail(
             StopAuditTrailRequest request,
@@ -3112,15 +3092,15 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Suspend the given work request. Issuing a suspend does not guarantee of a immediate suspend of the work request.
-     *
+     * Suspend the given work request. Issuing a suspend does not guarantee of a immediate suspend
+     * of the work request.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<SuspendWorkRequestResponse> suspendWorkRequest(
             SuspendWorkRequestRequest request,
@@ -3129,16 +3109,16 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Removes the baseline setting for the saved security assessment. The saved security assessment is no longer considered a baseline.
-     * Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
-     *
+     * Removes the baseline setting for the saved security assessment. The saved security assessment
+     * is no longer considered a baseline. Sets the if-match parameter to the value of the etag from
+     * a previous GET or POST response for that resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UnsetSecurityAssessmentBaselineResponse>
             unsetSecurityAssessmentBaseline(
@@ -3149,16 +3129,16 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Removes the baseline setting for the saved user assessment. The saved user assessment is no longer considered a baseline.
-     * Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
-     *
+     * Removes the baseline setting for the saved user assessment. The saved user assessment is no
+     * longer considered a baseline. Sets the if-match parameter to the value of the etag from a
+     * previous GET or POST response for that resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UnsetUserAssessmentBaselineResponse> unsetUserAssessmentBaseline(
             UnsetUserAssessmentBaselineRequest request,
@@ -3171,10 +3151,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateAlertResponse> updateAlert(
             UpdateAlertRequest request,
@@ -3185,10 +3165,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateAuditArchiveRetrievalResponse> updateAuditArchiveRetrieval(
             UpdateAuditArchiveRetrievalRequest request,
@@ -3201,10 +3181,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateAuditPolicyResponse> updateAuditPolicy(
             UpdateAuditPolicyRequest request,
@@ -3217,10 +3197,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateAuditProfileResponse> updateAuditProfile(
             UpdateAuditProfileRequest request,
@@ -3233,10 +3213,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateAuditTrailResponse> updateAuditTrail(
             UpdateAuditTrailRequest request,
@@ -3248,10 +3228,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateDataSafePrivateEndpointResponse>
             updateDataSafePrivateEndpoint(
@@ -3262,14 +3242,16 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates one or more attributes of the specified library masking format. Note that updating the formatEntries attribute replaces all the existing masking format entries with the specified format entries.
+     * Updates one or more attributes of the specified library masking format. Note that updating
+     * the formatEntries attribute replaces all the existing masking format entries with the
+     * specified format entries.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateLibraryMaskingFormatResponse> updateLibraryMaskingFormat(
             UpdateLibraryMaskingFormatRequest request,
@@ -3278,16 +3260,16 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates one or more attributes of the specified masking column. Note that updating the maskingFormats
-     * attribute replaces the currently assigned masking formats with the specified masking formats.
-     *
+     * Updates one or more attributes of the specified masking column. Note that updating the
+     * maskingFormats attribute replaces the currently assigned masking formats with the specified
+     * masking formats.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateMaskingColumnResponse> updateMaskingColumn(
             UpdateMaskingColumnRequest request,
@@ -3300,10 +3282,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateMaskingPolicyResponse> updateMaskingPolicy(
             UpdateMaskingPolicyRequest request,
@@ -3316,10 +3298,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateOnPremConnectorResponse> updateOnPremConnector(
             UpdateOnPremConnectorRequest request,
@@ -3330,13 +3312,12 @@ public interface DataSafeAsync extends AutoCloseable {
     /**
      * Updates the wallet for the specified on-premises connector to a new version.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateOnPremConnectorWalletResponse> updateOnPremConnectorWallet(
             UpdateOnPremConnectorWalletRequest request,
@@ -3345,14 +3326,15 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the specified report definition. Only user created report definition can be updated. Seeded report definitions need to be saved as new report definition first.
+     * Updates the specified report definition. Only user created report definition can be updated.
+     * Seeded report definitions need to be saved as new report definition first.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateReportDefinitionResponse> updateReportDefinition(
             UpdateReportDefinitionRequest request,
@@ -3361,15 +3343,15 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates one or more attributes of the specified security assessment. This operation allows to update the security assessment displayName, description, or schedule.
-     *
+     * Updates one or more attributes of the specified security assessment. This operation allows to
+     * update the security assessment displayName, description, or schedule.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateSecurityAssessmentResponse> updateSecurityAssessment(
             UpdateSecurityAssessmentRequest request,
@@ -3382,10 +3364,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateSensitiveColumnResponse> updateSensitiveColumn(
             UpdateSensitiveColumnRequest request,
@@ -3394,16 +3376,15 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates one or more attributes of the specified sensitive data model. Note that updating any attribute of a sensitive
-     * data model does not perform data discovery.
-     *
+     * Updates one or more attributes of the specified sensitive data model. Note that updating any
+     * attribute of a sensitive data model does not perform data discovery.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateSensitiveDataModelResponse> updateSensitiveDataModel(
             UpdateSensitiveDataModelRequest request,
@@ -3416,10 +3397,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateSensitiveTypeResponse> updateSensitiveType(
             UpdateSensitiveTypeRequest request,
@@ -3432,10 +3413,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateTargetAlertPolicyAssociationResponse>
             updateTargetAlertPolicyAssociation(
@@ -3450,10 +3431,10 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateTargetDatabaseResponse> updateTargetDatabase(
             UpdateTargetDatabaseRequest request,
@@ -3462,15 +3443,15 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates one or more attributes of the specified user assessment. This operation allows to update the user assessment displayName, description, or schedule.
-     *
+     * Updates one or more attributes of the specified user assessment. This operation allows to
+     * update the user assessment displayName, description, or schedule.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateUserAssessmentResponse> updateUserAssessment(
             UpdateUserAssessmentRequest request,
@@ -3480,18 +3461,17 @@ public interface DataSafeAsync extends AutoCloseable {
 
     /**
      * Uploads a masking policy file (also called template) to update the specified masking policy.
-     * To create a new masking policy using a file, first use the CreateMaskingPolicy operation
-     * to create an empty masking policy and then use this endpoint to upload the masking policy file.
+     * To create a new masking policy using a file, first use the CreateMaskingPolicy operation to
+     * create an empty masking policy and then use this endpoint to upload the masking policy file.
      * Note that the upload operation replaces the content of the specified masking policy,
      * including all the existing columns and masking formats, with the content of the file.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UploadMaskingPolicyResponse> uploadMaskingPolicy(
             UploadMaskingPolicyRequest request,
@@ -3500,18 +3480,19 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Uploads a sensitive data model file (also called template) to update the specified sensitive data model. To create
-     * a new sensitive data model using a file, first use the CreateSensitiveDataModel operation to create an empty data model
-     * and then use this endpoint to upload the data model file. Note that the upload operation replaces the content of the
-     * specified sensitive data model, including all the existing columns and their relationships, with the content of the file.
-     *
+     * Uploads a sensitive data model file (also called template) to update the specified sensitive
+     * data model. To create a new sensitive data model using a file, first use the
+     * CreateSensitiveDataModel operation to create an empty data model and then use this endpoint
+     * to upload the data model file. Note that the upload operation replaces the content of the
+     * specified sensitive data model, including all the existing columns and their relationships,
+     * with the content of the file.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UploadSensitiveDataModelResponse> uploadSensitiveDataModel(
             UploadSensitiveDataModelRequest request,

@@ -6,32 +6,26 @@ package com.oracle.bmc.stackmonitoring.requests;
 
 import com.oracle.bmc.stackmonitoring.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/ListDiscoveryJobLogsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDiscoveryJobLogsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/ListDiscoveryJobLogsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDiscoveryJobLogsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public class ListDiscoveryJobLogsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The Discovery Job ID
-     */
+    /** The Discovery Job ID */
     private String discoveryJobId;
 
-    /**
-     * The Discovery Job ID
-     */
+    /** The Discovery Job ID */
     public String getDiscoveryJobId() {
         return discoveryJobId;
     }
-    /**
-     * The log type like INFO, WARNING, ERROR, SUCCESS
-     */
+    /** The log type like INFO, WARNING, ERROR, SUCCESS */
     private LogType logType;
 
-    /**
-     * The log type like INFO, WARNING, ERROR, SUCCESS
-     **/
-    public enum LogType {
+    /** The log type like INFO, WARNING, ERROR, SUCCESS */
+    public enum LogType implements com.oracle.bmc.http.internal.BmcEnum {
         Info("INFO"),
         Warning("WARNING"),
         Error("ERROR"),
@@ -66,70 +60,58 @@ public class ListDiscoveryJobLogsRequest
         }
     };
 
-    /**
-     * The log type like INFO, WARNING, ERROR, SUCCESS
-     */
+    /** The log type like INFO, WARNING, ERROR, SUCCESS */
     public LogType getLogType() {
         return logType;
     }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * paginated "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * paginated "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the
-     * previous "List" call. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the
-     * previous "List" call. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     private com.oracle.bmc.stackmonitoring.model.SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     public com.oracle.bmc.stackmonitoring.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for logType is ascending.
-     *
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
+     * descending. Default order for logType is ascending.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for logType is ascending.
-     *
-     **/
-    public enum SortBy {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
+     * descending. Default order for logType is ascending.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TimeCreated("timeCreated"),
         LogType("logType"),
         ;
@@ -163,8 +145,8 @@ public class ListDiscoveryJobLogsRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for logType is ascending.
-     *
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
+     * descending. Default order for logType is ascending.
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -172,14 +154,12 @@ public class ListDiscoveryJobLogsRequest
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -188,17 +168,15 @@ public class ListDiscoveryJobLogsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDiscoveryJobLogsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The Discovery Job ID
-         */
+        /** The Discovery Job ID */
         private String discoveryJobId = null;
 
         /**
          * The Discovery Job ID
+         *
          * @param discoveryJobId the value to set
          * @return this builder instance
          */
@@ -207,13 +185,12 @@ public class ListDiscoveryJobLogsRequest
             return this;
         }
 
-        /**
-         * The log type like INFO, WARNING, ERROR, SUCCESS
-         */
+        /** The log type like INFO, WARNING, ERROR, SUCCESS */
         private LogType logType = null;
 
         /**
          * The log type like INFO, WARNING, ERROR, SUCCESS
+         *
          * @param logType the value to set
          * @return this builder instance
          */
@@ -224,16 +201,15 @@ public class ListDiscoveryJobLogsRequest
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * paginated "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * paginated "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -245,16 +221,15 @@ public class ListDiscoveryJobLogsRequest
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -264,10 +239,7 @@ public class ListDiscoveryJobLogsRequest
             return this;
         }
 
-        /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-         *
-         */
+        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
         private com.oracle.bmc.stackmonitoring.model.SortOrder sortOrder = null;
 
         /**
@@ -282,13 +254,14 @@ public class ListDiscoveryJobLogsRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for logType is ascending.
-         *
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
+         * is descending. Default order for logType is ascending.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for logType is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
+         * is descending. Default order for logType is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -301,7 +274,6 @@ public class ListDiscoveryJobLogsRequest
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId = null;
 
@@ -319,18 +291,19 @@ public class ListDiscoveryJobLogsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -342,6 +315,7 @@ public class ListDiscoveryJobLogsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListDiscoveryJobLogsRequest o) {
@@ -360,10 +334,11 @@ public class ListDiscoveryJobLogsRequest
         /**
          * Build the instance of ListDiscoveryJobLogsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListDiscoveryJobLogsRequest
          */
@@ -377,7 +352,8 @@ public class ListDiscoveryJobLogsRequest
         /**
          * Build the instance of ListDiscoveryJobLogsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDiscoveryJobLogsRequest
@@ -392,12 +368,14 @@ public class ListDiscoveryJobLogsRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListDiscoveryJobLogsRequest(discoveryJobId, logType, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListDiscoveryJobLogsRequest(discoveryJobId, logType, limit, page, sortOrder,
+            // sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -413,6 +391,7 @@ public class ListDiscoveryJobLogsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

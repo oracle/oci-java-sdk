@@ -5,24 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of Db server network nodes to extend or shrink the VM cluster network. Applies to Exadata Cloud@Customer
- * instances only.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details of Db server network nodes to extend or shrink the VM cluster network. Applies to Exadata
+ * Cloud@Customer instances only. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ResizeVmClusterNetworkDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ResizeVmClusterNetworkDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ResizeVmClusterNetworkDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"action", "vmNetworks"})
     public ResizeVmClusterNetworkDetails(
@@ -35,38 +34,38 @@ public final class ResizeVmClusterNetworkDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Actions that can be performed on the VM cluster network.
-         * ADD_DBSERVER_NETWORK - Provide Db server network details of network nodes to be added to the VM cluster network.
-         * REMOVE_DBSERVER_NETWORK - Provide Db server network details of network nodes to be removed from the VM cluster network.
-         *
-         **/
+         * Actions that can be performed on the VM cluster network. ADD_DBSERVER_NETWORK - Provide
+         * Db server network details of network nodes to be added to the VM cluster network.
+         * REMOVE_DBSERVER_NETWORK - Provide Db server network details of network nodes to be
+         * removed from the VM cluster network.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
         /**
-         * Actions that can be performed on the VM cluster network.
-         * ADD_DBSERVER_NETWORK - Provide Db server network details of network nodes to be added to the VM cluster network.
-         * REMOVE_DBSERVER_NETWORK - Provide Db server network details of network nodes to be removed from the VM cluster network.
+         * Actions that can be performed on the VM cluster network. ADD_DBSERVER_NETWORK - Provide
+         * Db server network details of network nodes to be added to the VM cluster network.
+         * REMOVE_DBSERVER_NETWORK - Provide Db server network details of network nodes to be
+         * removed from the VM cluster network.
          *
          * @param action the value to set
          * @return this builder
-         **/
+         */
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
             return this;
         }
-        /**
-         * Details of the client and backup networks.
-         **/
+        /** Details of the client and backup networks. */
         @com.fasterxml.jackson.annotation.JsonProperty("vmNetworks")
         private java.util.List<VmNetworkDetails> vmNetworks;
 
         /**
          * Details of the client and backup networks.
+         *
          * @param vmNetworks the value to set
          * @return this builder
-         **/
+         */
         public Builder vmNetworks(java.util.List<VmNetworkDetails> vmNetworks) {
             this.vmNetworks = vmNetworks;
             this.__explicitlySet__.add("vmNetworks");
@@ -97,9 +96,7 @@ public final class ResizeVmClusterNetworkDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -109,12 +106,12 @@ public final class ResizeVmClusterNetworkDetails
     }
 
     /**
-     * Actions that can be performed on the VM cluster network.
-     * ADD_DBSERVER_NETWORK - Provide Db server network details of network nodes to be added to the VM cluster network.
-     * REMOVE_DBSERVER_NETWORK - Provide Db server network details of network nodes to be removed from the VM cluster network.
-     *
-     **/
-    public enum Action {
+     * Actions that can be performed on the VM cluster network. ADD_DBSERVER_NETWORK - Provide Db
+     * server network details of network nodes to be added to the VM cluster network.
+     * REMOVE_DBSERVER_NETWORK - Provide Db server network details of network nodes to be removed
+     * from the VM cluster network.
+     */
+    public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
         AddDbserverNetwork("ADD_DBSERVER_NETWORK"),
         RemoveDbserverNetwork("REMOVE_DBSERVER_NETWORK"),
         ;
@@ -147,35 +144,35 @@ public final class ResizeVmClusterNetworkDetails
         }
     };
     /**
-     * Actions that can be performed on the VM cluster network.
-     * ADD_DBSERVER_NETWORK - Provide Db server network details of network nodes to be added to the VM cluster network.
-     * REMOVE_DBSERVER_NETWORK - Provide Db server network details of network nodes to be removed from the VM cluster network.
-     *
-     **/
+     * Actions that can be performed on the VM cluster network. ADD_DBSERVER_NETWORK - Provide Db
+     * server network details of network nodes to be added to the VM cluster network.
+     * REMOVE_DBSERVER_NETWORK - Provide Db server network details of network nodes to be removed
+     * from the VM cluster network.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
     /**
-     * Actions that can be performed on the VM cluster network.
-     * ADD_DBSERVER_NETWORK - Provide Db server network details of network nodes to be added to the VM cluster network.
-     * REMOVE_DBSERVER_NETWORK - Provide Db server network details of network nodes to be removed from the VM cluster network.
+     * Actions that can be performed on the VM cluster network. ADD_DBSERVER_NETWORK - Provide Db
+     * server network details of network nodes to be added to the VM cluster network.
+     * REMOVE_DBSERVER_NETWORK - Provide Db server network details of network nodes to be removed
+     * from the VM cluster network.
      *
      * @return the value
-     **/
+     */
     public Action getAction() {
         return action;
     }
 
-    /**
-     * Details of the client and backup networks.
-     **/
+    /** Details of the client and backup networks. */
     @com.fasterxml.jackson.annotation.JsonProperty("vmNetworks")
     private final java.util.List<VmNetworkDetails> vmNetworks;
 
     /**
      * Details of the client and backup networks.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<VmNetworkDetails> getVmNetworks() {
         return vmNetworks;
     }
@@ -187,6 +184,7 @@ public final class ResizeVmClusterNetworkDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

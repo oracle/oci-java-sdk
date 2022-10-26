@@ -5,22 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * The summary of the AWR SYSSTAT data.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The summary of the AWR SYSSTAT data. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AwrDatabaseSysstatSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AwrDatabaseSysstatSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AwrDatabaseSysstatSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -48,97 +48,99 @@ public final class AwrDatabaseSysstatSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the SYSSTAT.
-         **/
+        /** The name of the SYSSTAT. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the SYSSTAT.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The name of the SYSSTAT category.
-         **/
+        /** The name of the SYSSTAT category. */
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private String category;
 
         /**
          * The name of the SYSSTAT category.
+         *
          * @param category the value to set
          * @return this builder
-         **/
+         */
         public Builder category(String category) {
             this.category = category;
             this.__explicitlySet__.add("category");
             return this;
         }
-        /**
-         * The start time of the SYSSTAT.
-         **/
+        /** The start time of the SYSSTAT. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeBegin")
         private java.util.Date timeBegin;
 
         /**
          * The start time of the SYSSTAT.
+         *
          * @param timeBegin the value to set
          * @return this builder
-         **/
+         */
         public Builder timeBegin(java.util.Date timeBegin) {
             this.timeBegin = timeBegin;
             this.__explicitlySet__.add("timeBegin");
             return this;
         }
-        /**
-         * The end time of the SYSSTAT.
-         **/
+        /** The end time of the SYSSTAT. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
         /**
          * The end time of the SYSSTAT.
+         *
          * @param timeEnd the value to set
          * @return this builder
-         **/
+         */
         public Builder timeEnd(java.util.Date timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
         /**
-         * The average value of the SYSSTAT. The units are stats name/val per the time period {timeBegin - timeEnd}.
-         **/
+         * The average value of the SYSSTAT. The units are stats name/val per the time period
+         * {timeBegin - timeEnd}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("avgValue")
         private Double avgValue;
 
         /**
-         * The average value of the SYSSTAT. The units are stats name/val per the time period {timeBegin - timeEnd}.
+         * The average value of the SYSSTAT. The units are stats name/val per the time period
+         * {timeBegin - timeEnd}.
+         *
          * @param avgValue the value to set
          * @return this builder
-         **/
+         */
         public Builder avgValue(Double avgValue) {
             this.avgValue = avgValue;
             this.__explicitlySet__.add("avgValue");
             return this;
         }
         /**
-         * The last value of the SYSSTAT. The units are stats name/val per the time period {timeBegin - timeEnd}.
-         **/
+         * The last value of the SYSSTAT. The units are stats name/val per the time period
+         * {timeBegin - timeEnd}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("currentValue")
         private Double currentValue;
 
         /**
-         * The last value of the SYSSTAT. The units are stats name/val per the time period {timeBegin - timeEnd}.
+         * The last value of the SYSSTAT. The units are stats name/val per the time period
+         * {timeBegin - timeEnd}.
+         *
          * @param currentValue the value to set
          * @return this builder
-         **/
+         */
         public Builder currentValue(Double currentValue) {
             this.currentValue = currentValue;
             this.__explicitlySet__.add("currentValue");
@@ -187,9 +189,7 @@ public final class AwrDatabaseSysstatSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -198,86 +198,88 @@ public final class AwrDatabaseSysstatSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the SYSSTAT.
-     **/
+    /** The name of the SYSSTAT. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the SYSSTAT.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The name of the SYSSTAT category.
-     **/
+    /** The name of the SYSSTAT category. */
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
     /**
      * The name of the SYSSTAT category.
+     *
      * @return the value
-     **/
+     */
     public String getCategory() {
         return category;
     }
 
-    /**
-     * The start time of the SYSSTAT.
-     **/
+    /** The start time of the SYSSTAT. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeBegin")
     private final java.util.Date timeBegin;
 
     /**
      * The start time of the SYSSTAT.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeBegin() {
         return timeBegin;
     }
 
-    /**
-     * The end time of the SYSSTAT.
-     **/
+    /** The end time of the SYSSTAT. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
     /**
      * The end time of the SYSSTAT.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
 
     /**
-     * The average value of the SYSSTAT. The units are stats name/val per the time period {timeBegin - timeEnd}.
-     **/
+     * The average value of the SYSSTAT. The units are stats name/val per the time period {timeBegin
+     * - timeEnd}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("avgValue")
     private final Double avgValue;
 
     /**
-     * The average value of the SYSSTAT. The units are stats name/val per the time period {timeBegin - timeEnd}.
+     * The average value of the SYSSTAT. The units are stats name/val per the time period {timeBegin
+     * - timeEnd}.
+     *
      * @return the value
-     **/
+     */
     public Double getAvgValue() {
         return avgValue;
     }
 
     /**
-     * The last value of the SYSSTAT. The units are stats name/val per the time period {timeBegin - timeEnd}.
-     **/
+     * The last value of the SYSSTAT. The units are stats name/val per the time period {timeBegin -
+     * timeEnd}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("currentValue")
     private final Double currentValue;
 
     /**
-     * The last value of the SYSSTAT. The units are stats name/val per the time period {timeBegin - timeEnd}.
+     * The last value of the SYSSTAT. The units are stats name/val per the time period {timeBegin -
+     * timeEnd}.
+     *
      * @return the value
-     **/
+     */
     public Double getCurrentValue() {
         return currentValue;
     }
@@ -289,6 +291,7 @@ public final class AwrDatabaseSysstatSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

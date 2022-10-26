@@ -9,15 +9,14 @@ import com.oracle.bmc.computeinstanceagent.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
 public class GetInstanceAgentPluginResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,13 +24,12 @@ public class GetInstanceAgentPluginResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /**
-     * The returned InstanceAgentPlugin instance.
-     */
+    /** The returned InstanceAgentPlugin instance. */
     private com.oracle.bmc.computeinstanceagent.model.InstanceAgentPlugin instanceAgentPlugin;
 
     /**
      * The returned InstanceAgentPlugin instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.computeinstanceagent.model.InstanceAgentPlugin getInstanceAgentPlugin() {
@@ -46,7 +44,7 @@ public class GetInstanceAgentPluginResponse extends com.oracle.bmc.responses.Bmc
     })
     private GetInstanceAgentPluginResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.computeinstanceagent.model.InstanceAgentPlugin instanceAgentPlugin) {
         super(__httpStatusCode__, headers);
@@ -54,31 +52,34 @@ public class GetInstanceAgentPluginResponse extends com.oracle.bmc.responses.Bmc
         this.instanceAgentPlugin = instanceAgentPlugin;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetInstanceAgentPluginResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -88,13 +89,12 @@ public class GetInstanceAgentPluginResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /**
-         * The returned InstanceAgentPlugin instance.
-         */
+        /** The returned InstanceAgentPlugin instance. */
         private com.oracle.bmc.computeinstanceagent.model.InstanceAgentPlugin instanceAgentPlugin;
 
         /**
          * The returned InstanceAgentPlugin instance.
+         *
          * @param instanceAgentPlugin the value to set
          * @return this builder
          */
@@ -106,8 +106,10 @@ public class GetInstanceAgentPluginResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetInstanceAgentPluginResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -119,8 +121,10 @@ public class GetInstanceAgentPluginResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetInstanceAgentPluginResponse build() {
             return new GetInstanceAgentPluginResponse(
                     __httpStatusCode__, headers, opcRequestId, instanceAgentPlugin);
@@ -129,6 +133,7 @@ public class GetInstanceAgentPluginResponse extends com.oracle.bmc.responses.Bmc
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

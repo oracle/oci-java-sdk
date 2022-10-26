@@ -5,21 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Summary of a masking report.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary of a masking report. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = MaskingReportSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MaskingReportSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = MaskingReportSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class MaskingReportSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -65,193 +66,193 @@ public final class MaskingReportSummary extends com.oracle.bmc.http.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the masking report.
-         **/
+        /** The OCID of the masking report. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the masking report.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The OCID of the compartment that contains the masking report.
-         **/
+        /** The OCID of the compartment that contains the masking report. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that contains the masking report.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The OCID of the masking work request that resulted in this masking report.
-         **/
+        /** The OCID of the masking work request that resulted in this masking report. */
         @com.fasterxml.jackson.annotation.JsonProperty("maskingWorkRequestId")
         private String maskingWorkRequestId;
 
         /**
          * The OCID of the masking work request that resulted in this masking report.
+         *
          * @param maskingWorkRequestId the value to set
          * @return this builder
-         **/
+         */
         public Builder maskingWorkRequestId(String maskingWorkRequestId) {
             this.maskingWorkRequestId = maskingWorkRequestId;
             this.__explicitlySet__.add("maskingWorkRequestId");
             return this;
         }
-        /**
-         * The OCID of the masking policy used.
-         **/
+        /** The OCID of the masking policy used. */
         @com.fasterxml.jackson.annotation.JsonProperty("maskingPolicyId")
         private String maskingPolicyId;
 
         /**
          * The OCID of the masking policy used.
+         *
          * @param maskingPolicyId the value to set
          * @return this builder
-         **/
+         */
         public Builder maskingPolicyId(String maskingPolicyId) {
             this.maskingPolicyId = maskingPolicyId;
             this.__explicitlySet__.add("maskingPolicyId");
             return this;
         }
-        /**
-         * The OCID of the target database masked.
-         **/
+        /** The OCID of the target database masked. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
          * The OCID of the target database masked.
+         *
          * @param targetId the value to set
          * @return this builder
-         **/
+         */
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-        /**
-         * The total number of unique sensitive types associated with the masked columns.
-         **/
+        /** The total number of unique sensitive types associated with the masked columns. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedSensitiveTypes")
         private Long totalMaskedSensitiveTypes;
 
         /**
          * The total number of unique sensitive types associated with the masked columns.
+         *
          * @param totalMaskedSensitiveTypes the value to set
          * @return this builder
-         **/
+         */
         public Builder totalMaskedSensitiveTypes(Long totalMaskedSensitiveTypes) {
             this.totalMaskedSensitiveTypes = totalMaskedSensitiveTypes;
             this.__explicitlySet__.add("totalMaskedSensitiveTypes");
             return this;
         }
-        /**
-         * The total number of unique schemas that contain the masked columns.
-         **/
+        /** The total number of unique schemas that contain the masked columns. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedSchemas")
         private Long totalMaskedSchemas;
 
         /**
          * The total number of unique schemas that contain the masked columns.
+         *
          * @param totalMaskedSchemas the value to set
          * @return this builder
-         **/
+         */
         public Builder totalMaskedSchemas(Long totalMaskedSchemas) {
             this.totalMaskedSchemas = totalMaskedSchemas;
             this.__explicitlySet__.add("totalMaskedSchemas");
             return this;
         }
         /**
-         * The total number of unique objects (tables and editioning views) that contain the masked columns.
-         **/
+         * The total number of unique objects (tables and editioning views) that contain the masked
+         * columns.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedObjects")
         private Long totalMaskedObjects;
 
         /**
-         * The total number of unique objects (tables and editioning views) that contain the masked columns.
+         * The total number of unique objects (tables and editioning views) that contain the masked
+         * columns.
+         *
          * @param totalMaskedObjects the value to set
          * @return this builder
-         **/
+         */
         public Builder totalMaskedObjects(Long totalMaskedObjects) {
             this.totalMaskedObjects = totalMaskedObjects;
             this.__explicitlySet__.add("totalMaskedObjects");
             return this;
         }
-        /**
-         * The total number of masked columns.
-         **/
+        /** The total number of masked columns. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedColumns")
         private Long totalMaskedColumns;
 
         /**
          * The total number of masked columns.
+         *
          * @param totalMaskedColumns the value to set
          * @return this builder
-         **/
+         */
         public Builder totalMaskedColumns(Long totalMaskedColumns) {
             this.totalMaskedColumns = totalMaskedColumns;
             this.__explicitlySet__.add("totalMaskedColumns");
             return this;
         }
-        /**
-         * The total number of masked values.
-         **/
+        /** The total number of masked values. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedValues")
         private Long totalMaskedValues;
 
         /**
          * The total number of masked values.
+         *
          * @param totalMaskedValues the value to set
          * @return this builder
-         **/
+         */
         public Builder totalMaskedValues(Long totalMaskedValues) {
             this.totalMaskedValues = totalMaskedValues;
             this.__explicitlySet__.add("totalMaskedValues");
             return this;
         }
         /**
-         * The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-         **/
+         * The date and time data masking started, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeMaskingStarted")
         private java.util.Date timeMaskingStarted;
 
         /**
-         * The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+         * The date and time data masking started, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339)
+         *
          * @param timeMaskingStarted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeMaskingStarted(java.util.Date timeMaskingStarted) {
             this.timeMaskingStarted = timeMaskingStarted;
             this.__explicitlySet__.add("timeMaskingStarted");
             return this;
         }
         /**
-         * The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-         **/
+         * The date and time data masking finished, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeMaskingFinished")
         private java.util.Date timeMaskingFinished;
 
         /**
-         * The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+         * The date and time data masking finished, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339)
+         *
          * @param timeMaskingFinished the value to set
          * @return this builder
-         **/
+         */
         public Builder timeMaskingFinished(java.util.Date timeMaskingFinished) {
             this.timeMaskingFinished = timeMaskingFinished;
             this.__explicitlySet__.add("timeMaskingFinished");
@@ -324,9 +325,7 @@ public final class MaskingReportSummary extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -335,170 +334,170 @@ public final class MaskingReportSummary extends com.oracle.bmc.http.internal.Exp
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the masking report.
-     **/
+    /** The OCID of the masking report. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the masking report.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The OCID of the compartment that contains the masking report.
-     **/
+    /** The OCID of the compartment that contains the masking report. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that contains the masking report.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The OCID of the masking work request that resulted in this masking report.
-     **/
+    /** The OCID of the masking work request that resulted in this masking report. */
     @com.fasterxml.jackson.annotation.JsonProperty("maskingWorkRequestId")
     private final String maskingWorkRequestId;
 
     /**
      * The OCID of the masking work request that resulted in this masking report.
+     *
      * @return the value
-     **/
+     */
     public String getMaskingWorkRequestId() {
         return maskingWorkRequestId;
     }
 
-    /**
-     * The OCID of the masking policy used.
-     **/
+    /** The OCID of the masking policy used. */
     @com.fasterxml.jackson.annotation.JsonProperty("maskingPolicyId")
     private final String maskingPolicyId;
 
     /**
      * The OCID of the masking policy used.
+     *
      * @return the value
-     **/
+     */
     public String getMaskingPolicyId() {
         return maskingPolicyId;
     }
 
-    /**
-     * The OCID of the target database masked.
-     **/
+    /** The OCID of the target database masked. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
      * The OCID of the target database masked.
+     *
      * @return the value
-     **/
+     */
     public String getTargetId() {
         return targetId;
     }
 
-    /**
-     * The total number of unique sensitive types associated with the masked columns.
-     **/
+    /** The total number of unique sensitive types associated with the masked columns. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedSensitiveTypes")
     private final Long totalMaskedSensitiveTypes;
 
     /**
      * The total number of unique sensitive types associated with the masked columns.
+     *
      * @return the value
-     **/
+     */
     public Long getTotalMaskedSensitiveTypes() {
         return totalMaskedSensitiveTypes;
     }
 
-    /**
-     * The total number of unique schemas that contain the masked columns.
-     **/
+    /** The total number of unique schemas that contain the masked columns. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedSchemas")
     private final Long totalMaskedSchemas;
 
     /**
      * The total number of unique schemas that contain the masked columns.
+     *
      * @return the value
-     **/
+     */
     public Long getTotalMaskedSchemas() {
         return totalMaskedSchemas;
     }
 
     /**
-     * The total number of unique objects (tables and editioning views) that contain the masked columns.
-     **/
+     * The total number of unique objects (tables and editioning views) that contain the masked
+     * columns.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedObjects")
     private final Long totalMaskedObjects;
 
     /**
-     * The total number of unique objects (tables and editioning views) that contain the masked columns.
+     * The total number of unique objects (tables and editioning views) that contain the masked
+     * columns.
+     *
      * @return the value
-     **/
+     */
     public Long getTotalMaskedObjects() {
         return totalMaskedObjects;
     }
 
-    /**
-     * The total number of masked columns.
-     **/
+    /** The total number of masked columns. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedColumns")
     private final Long totalMaskedColumns;
 
     /**
      * The total number of masked columns.
+     *
      * @return the value
-     **/
+     */
     public Long getTotalMaskedColumns() {
         return totalMaskedColumns;
     }
 
-    /**
-     * The total number of masked values.
-     **/
+    /** The total number of masked values. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedValues")
     private final Long totalMaskedValues;
 
     /**
      * The total number of masked values.
+     *
      * @return the value
-     **/
+     */
     public Long getTotalMaskedValues() {
         return totalMaskedValues;
     }
 
     /**
-     * The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-     **/
+     * The date and time data masking started, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeMaskingStarted")
     private final java.util.Date timeMaskingStarted;
 
     /**
-     * The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+     * The date and time data masking started, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339)
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeMaskingStarted() {
         return timeMaskingStarted;
     }
 
     /**
-     * The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-     **/
+     * The date and time data masking finished, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeMaskingFinished")
     private final java.util.Date timeMaskingFinished;
 
     /**
-     * The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+     * The date and time data masking finished, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339)
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeMaskingFinished() {
         return timeMaskingFinished;
     }
@@ -510,6 +509,7 @@ public final class MaskingReportSummary extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

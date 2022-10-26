@@ -5,25 +5,24 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Frequency Details model for weekly frequency based on day of week.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Frequency Details model for weekly frequency based on day of week. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = WeeklyFrequencyDetails.Builder.class
-)
+        builder = WeeklyFrequencyDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class WeeklyFrequencyDetails extends AbstractFrequencyDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -44,17 +43,16 @@ public final class WeeklyFrequencyDetails extends AbstractFrequencyDetails {
             this.__explicitlySet__.add("time");
             return this;
         }
-        /**
-         * A list of days of the week to be scheduled. i.e. execute on Monday and Thursday.
-         **/
+        /** A list of days of the week to be scheduled. i.e. execute on Monday and Thursday. */
         @com.fasterxml.jackson.annotation.JsonProperty("days")
         private java.util.List<Days> days;
 
         /**
          * A list of days of the week to be scheduled. i.e. execute on Monday and Thursday.
+         *
          * @param days the value to set
          * @return this builder
-         **/
+         */
         public Builder days(java.util.List<Days> days) {
             this.days = days;
             this.__explicitlySet__.add("days");
@@ -88,9 +86,7 @@ public final class WeeklyFrequencyDetails extends AbstractFrequencyDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -113,9 +109,8 @@ public final class WeeklyFrequencyDetails extends AbstractFrequencyDetails {
         return time;
     }
 
-    /**
-     **/
-    public enum Days {
+    /** */
+    public enum Days implements com.oracle.bmc.http.internal.BmcEnum {
         Sunday("SUNDAY"),
         Monday("MONDAY"),
         Tuesday("TUESDAY"),
@@ -125,8 +120,8 @@ public final class WeeklyFrequencyDetails extends AbstractFrequencyDetails {
         Saturday("SATURDAY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -163,16 +158,15 @@ public final class WeeklyFrequencyDetails extends AbstractFrequencyDetails {
             return UnknownEnumValue;
         }
     };
-    /**
-     * A list of days of the week to be scheduled. i.e. execute on Monday and Thursday.
-     **/
+    /** A list of days of the week to be scheduled. i.e. execute on Monday and Thursday. */
     @com.fasterxml.jackson.annotation.JsonProperty("days")
     private final java.util.List<Days> days;
 
     /**
      * A list of days of the week to be scheduled. i.e. execute on Monday and Thursday.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Days> getDays() {
         return days;
     }
@@ -184,6 +178,7 @@ public final class WeeklyFrequencyDetails extends AbstractFrequencyDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

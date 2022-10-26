@@ -6,183 +6,145 @@ package com.oracle.bmc.dns.requests;
 
 import com.oracle.bmc.dns.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListSteeringPoliciesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSteeringPoliciesRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListSteeringPoliciesExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSteeringPoliciesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public class ListSteeringPoliciesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The OCID of the compartment the resource belongs to.
-     */
+    /** The OCID of the compartment the resource belongs to. */
     private String compartmentId;
 
-    /**
-     * The OCID of the compartment the resource belongs to.
-     */
+    /** The OCID of the compartment the resource belongs to. */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need
-     * to contact Oracle about a particular request, please provide
-     * the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need
-     * to contact Oracle about a particular request, please provide
-     * the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * The maximum number of items to return in a page of the collection.
-     *
-     */
+    /** The maximum number of items to return in a page of the collection. */
     private Long limit;
 
-    /**
-     * The maximum number of items to return in a page of the collection.
-     *
-     */
+    /** The maximum number of items to return in a page of the collection. */
     public Long getLimit() {
         return limit;
     }
-    /**
-     * The value of the {@code opc-next-page} response header from the previous "List" call.
-     *
-     */
+    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
     private String page;
 
-    /**
-     * The value of the {@code opc-next-page} response header from the previous "List" call.
-     *
-     */
+    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
     public String getPage() {
         return page;
     }
-    /**
-     * The OCID of a resource.
-     */
+    /** The OCID of a resource. */
     private String id;
 
-    /**
-     * The OCID of a resource.
-     */
+    /** The OCID of a resource. */
     public String getId() {
         return id;
     }
-    /**
-     * The displayName of a resource.
-     */
+    /** The displayName of a resource. */
     private String displayName;
 
-    /**
-     * The displayName of a resource.
-     */
+    /** The displayName of a resource. */
     public String getDisplayName() {
         return displayName;
     }
     /**
-     * The partial displayName of a resource. Will match any resource whose name
-     * (case-insensitive) contains the provided value.
-     *
+     * The partial displayName of a resource. Will match any resource whose name (case-insensitive)
+     * contains the provided value.
      */
     private String displayNameContains;
 
     /**
-     * The partial displayName of a resource. Will match any resource whose name
-     * (case-insensitive) contains the provided value.
-     *
+     * The partial displayName of a resource. Will match any resource whose name (case-insensitive)
+     * contains the provided value.
      */
     public String getDisplayNameContains() {
         return displayNameContains;
     }
     /**
-     * Search by health check monitor OCID.
-     * Will match any resource whose health check monitor ID matches the provided value.
-     *
+     * Search by health check monitor OCID. Will match any resource whose health check monitor ID
+     * matches the provided value.
      */
     private String healthCheckMonitorId;
 
     /**
-     * Search by health check monitor OCID.
-     * Will match any resource whose health check monitor ID matches the provided value.
-     *
+     * Search by health check monitor OCID. Will match any resource whose health check monitor ID
+     * matches the provided value.
      */
     public String getHealthCheckMonitorId() {
         return healthCheckMonitorId;
     }
     /**
-     * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
-     * all returned resources were created on or after the indicated time.
-     *
+     * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned
+     * resources were created on or after the indicated time.
      */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
     /**
-     * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
-     * all returned resources were created on or after the indicated time.
-     *
+     * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned
+     * resources were created on or after the indicated time.
      */
     public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
         return timeCreatedGreaterThanOrEqualTo;
     }
     /**
-     * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
-     * all returned resources were created before the indicated time.
-     *
+     * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned
+     * resources were created before the indicated time.
      */
     private java.util.Date timeCreatedLessThan;
 
     /**
-     * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
-     * all returned resources were created before the indicated time.
-     *
+     * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned
+     * resources were created before the indicated time.
      */
     public java.util.Date getTimeCreatedLessThan() {
         return timeCreatedLessThan;
     }
     /**
-     * Search by steering template type.
-     * Will match any resource whose template type matches the provided value.
-     *
+     * Search by steering template type. Will match any resource whose template type matches the
+     * provided value.
      */
     private String template;
 
     /**
-     * Search by steering template type.
-     * Will match any resource whose template type matches the provided value.
-     *
+     * Search by steering template type. Will match any resource whose template type matches the
+     * provided value.
      */
     public String getTemplate() {
         return template;
     }
-    /**
-     * The state of a resource.
-     */
+    /** The state of a resource. */
     private com.oracle.bmc.dns.model.SteeringPolicySummary.LifecycleState lifecycleState;
 
-    /**
-     * The state of a resource.
-     */
+    /** The state of a resource. */
     public com.oracle.bmc.dns.model.SteeringPolicySummary.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * The field by which to sort steering policies. If unspecified, defaults to {@code timeCreated}.
+     * The field by which to sort steering policies. If unspecified, defaults to {@code
+     * timeCreated}.
      */
     private SortBy sortBy;
 
     /**
-     * The field by which to sort steering policies. If unspecified, defaults to {@code timeCreated}.
-     **/
-    public enum SortBy {
+     * The field by which to sort steering policies. If unspecified, defaults to {@code
+     * timeCreated}.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         DisplayName("displayName"),
         TimeCreated("timeCreated"),
         Template("template"),
@@ -217,34 +179,23 @@ public class ListSteeringPoliciesRequest
     };
 
     /**
-     * The field by which to sort steering policies. If unspecified, defaults to {@code timeCreated}.
+     * The field by which to sort steering policies. If unspecified, defaults to {@code
+     * timeCreated}.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The order to sort the resources.
-     *
-     */
+    /** The order to sort the resources. */
     private com.oracle.bmc.dns.model.SortOrder sortOrder;
 
-    /**
-     * The order to sort the resources.
-     *
-     */
+    /** The order to sort the resources. */
     public com.oracle.bmc.dns.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /**
-     * Specifies to operate only on resources that have a matching DNS scope.
-     *
-     */
+    /** Specifies to operate only on resources that have a matching DNS scope. */
     private com.oracle.bmc.dns.model.Scope scope;
 
-    /**
-     * Specifies to operate only on resources that have a matching DNS scope.
-     *
-     */
+    /** Specifies to operate only on resources that have a matching DNS scope. */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
@@ -252,17 +203,15 @@ public class ListSteeringPoliciesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSteeringPoliciesRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the compartment the resource belongs to.
-         */
+        /** The OCID of the compartment the resource belongs to. */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment the resource belongs to.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -272,17 +221,14 @@ public class ListSteeringPoliciesRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need
-         * to contact Oracle about a particular request, please provide
-         * the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need
-         * to contact Oracle about a particular request, please provide
-         * the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -292,10 +238,7 @@ public class ListSteeringPoliciesRequest
             return this;
         }
 
-        /**
-         * The maximum number of items to return in a page of the collection.
-         *
-         */
+        /** The maximum number of items to return in a page of the collection. */
         private Long limit = null;
 
         /**
@@ -309,10 +252,7 @@ public class ListSteeringPoliciesRequest
             return this;
         }
 
-        /**
-         * The value of the {@code opc-next-page} response header from the previous "List" call.
-         *
-         */
+        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
         private String page = null;
 
         /**
@@ -326,13 +266,12 @@ public class ListSteeringPoliciesRequest
             return this;
         }
 
-        /**
-         * The OCID of a resource.
-         */
+        /** The OCID of a resource. */
         private String id = null;
 
         /**
          * The OCID of a resource.
+         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -341,13 +280,12 @@ public class ListSteeringPoliciesRequest
             return this;
         }
 
-        /**
-         * The displayName of a resource.
-         */
+        /** The displayName of a resource. */
         private String displayName = null;
 
         /**
          * The displayName of a resource.
+         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -359,7 +297,6 @@ public class ListSteeringPoliciesRequest
         /**
          * The partial displayName of a resource. Will match any resource whose name
          * (case-insensitive) contains the provided value.
-         *
          */
         private String displayNameContains = null;
 
@@ -376,15 +313,14 @@ public class ListSteeringPoliciesRequest
         }
 
         /**
-         * Search by health check monitor OCID.
-         * Will match any resource whose health check monitor ID matches the provided value.
-         *
+         * Search by health check monitor OCID. Will match any resource whose health check monitor
+         * ID matches the provided value.
          */
         private String healthCheckMonitorId = null;
 
         /**
-         * Search by health check monitor OCID.
-         * Will match any resource whose health check monitor ID matches the provided value.
+         * Search by health check monitor OCID. Will match any resource whose health check monitor
+         * ID matches the provided value.
          *
          * @param healthCheckMonitorId the value to set
          * @return this builder instance
@@ -395,15 +331,14 @@ public class ListSteeringPoliciesRequest
         }
 
         /**
-         * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
-         * all returned resources were created on or after the indicated time.
-         *
+         * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned
+         * resources were created on or after the indicated time.
          */
         private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
 
         /**
-         * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
-         * all returned resources were created on or after the indicated time.
+         * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned
+         * resources were created on or after the indicated time.
          *
          * @param timeCreatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
@@ -415,15 +350,14 @@ public class ListSteeringPoliciesRequest
         }
 
         /**
-         * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
-         * all returned resources were created before the indicated time.
-         *
+         * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned
+         * resources were created before the indicated time.
          */
         private java.util.Date timeCreatedLessThan = null;
 
         /**
-         * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
-         * all returned resources were created before the indicated time.
+         * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned
+         * resources were created before the indicated time.
          *
          * @param timeCreatedLessThan the value to set
          * @return this builder instance
@@ -434,15 +368,14 @@ public class ListSteeringPoliciesRequest
         }
 
         /**
-         * Search by steering template type.
-         * Will match any resource whose template type matches the provided value.
-         *
+         * Search by steering template type. Will match any resource whose template type matches the
+         * provided value.
          */
         private String template = null;
 
         /**
-         * Search by steering template type.
-         * Will match any resource whose template type matches the provided value.
+         * Search by steering template type. Will match any resource whose template type matches the
+         * provided value.
          *
          * @param template the value to set
          * @return this builder instance
@@ -452,13 +385,12 @@ public class ListSteeringPoliciesRequest
             return this;
         }
 
-        /**
-         * The state of a resource.
-         */
+        /** The state of a resource. */
         private com.oracle.bmc.dns.model.SteeringPolicySummary.LifecycleState lifecycleState = null;
 
         /**
          * The state of a resource.
+         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -469,12 +401,15 @@ public class ListSteeringPoliciesRequest
         }
 
         /**
-         * The field by which to sort steering policies. If unspecified, defaults to {@code timeCreated}.
+         * The field by which to sort steering policies. If unspecified, defaults to {@code
+         * timeCreated}.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field by which to sort steering policies. If unspecified, defaults to {@code timeCreated}.
+         * The field by which to sort steering policies. If unspecified, defaults to {@code
+         * timeCreated}.
+         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -483,10 +418,7 @@ public class ListSteeringPoliciesRequest
             return this;
         }
 
-        /**
-         * The order to sort the resources.
-         *
-         */
+        /** The order to sort the resources. */
         private com.oracle.bmc.dns.model.SortOrder sortOrder = null;
 
         /**
@@ -500,10 +432,7 @@ public class ListSteeringPoliciesRequest
             return this;
         }
 
-        /**
-         * Specifies to operate only on resources that have a matching DNS scope.
-         *
-         */
+        /** Specifies to operate only on resources that have a matching DNS scope. */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
@@ -519,18 +448,19 @@ public class ListSteeringPoliciesRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -542,6 +472,7 @@ public class ListSteeringPoliciesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListSteeringPoliciesRequest o) {
@@ -568,10 +499,11 @@ public class ListSteeringPoliciesRequest
         /**
          * Build the instance of ListSteeringPoliciesRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListSteeringPoliciesRequest
          */
@@ -585,7 +517,8 @@ public class ListSteeringPoliciesRequest
         /**
          * Build the instance of ListSteeringPoliciesRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListSteeringPoliciesRequest
@@ -608,12 +541,16 @@ public class ListSteeringPoliciesRequest
             request.sortOrder = sortOrder;
             request.scope = scope;
             return request;
-            // new ListSteeringPoliciesRequest(compartmentId, opcRequestId, limit, page, id, displayName, displayNameContains, healthCheckMonitorId, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, template, lifecycleState, sortBy, sortOrder, scope);
+            // new ListSteeringPoliciesRequest(compartmentId, opcRequestId, limit, page, id,
+            // displayName, displayNameContains, healthCheckMonitorId,
+            // timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, template, lifecycleState,
+            // sortBy, sortOrder, scope);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -637,6 +574,7 @@ public class ListSteeringPoliciesRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

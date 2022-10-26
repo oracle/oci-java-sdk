@@ -5,30 +5,29 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /**
- * Summary of the target asset.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary of the target asset. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type",
-    defaultImpl = TargetAssetSummary.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type",
+        defaultImpl = TargetAssetSummary.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = VmTargetAssetSummary.class,
-        name = "INSTANCE"
-    )
+            value = VmTargetAssetSummary.class,
+            name = "INSTANCE")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class TargetAssetSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class TargetAssetSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -78,114 +77,110 @@ public class TargetAssetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         this.migrationAsset = migrationAsset;
     }
 
-    /**
-     * Unique identifier that is immutable on creation.
-     **/
+    /** Unique identifier that is immutable on creation. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier that is immutable on creation.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-     **/
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The current state of the target asset.
-     **/
+    /** The current state of the target asset. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final TargetAsset.LifecycleState lifecycleState;
 
     /**
      * The current state of the target asset.
+     *
      * @return the value
-     **/
+     */
     public TargetAsset.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * OCID of the associated migration plan.
-     **/
+    /** OCID of the associated migration plan. */
     @com.fasterxml.jackson.annotation.JsonProperty("migrationPlanId")
     private final String migrationPlanId;
 
     /**
      * OCID of the associated migration plan.
+     *
      * @return the value
-     **/
+     */
     public String getMigrationPlanId() {
         return migrationPlanId;
     }
 
-    /**
-     * Compartment identifier
-     **/
+    /** Compartment identifier */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment identifier
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * Created resource identifier
-     **/
+    /** Created resource identifier */
     @com.fasterxml.jackson.annotation.JsonProperty("createdResourceId")
     private final String createdResourceId;
 
     /**
      * Created resource identifier
+     *
      * @return the value
-     **/
+     */
     public String getCreatedResourceId() {
         return createdResourceId;
     }
 
-    /**
-     * A boolean indicating whether the asset should be migrated.
-     **/
+    /** A boolean indicating whether the asset should be migrated. */
     @com.fasterxml.jackson.annotation.JsonProperty("isExcludedFromExecution")
     private final Boolean isExcludedFromExecution;
 
     /**
      * A boolean indicating whether the asset should be migrated.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsExcludedFromExecution() {
         return isExcludedFromExecution;
     }
 
-    /**
-     * Messages about compatibility issues.
-     **/
+    /** Messages about compatibility issues. */
     @com.fasterxml.jackson.annotation.JsonProperty("compatibilityMessages")
     private final java.util.List<CompatibilityMessage> compatibilityMessages;
 
     /**
      * Messages about compatibility issues.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<CompatibilityMessage> getCompatibilityMessages() {
         return compatibilityMessages;
     }
@@ -197,58 +192,58 @@ public class TargetAssetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         return estimatedCost;
     }
 
-    /**
-     * The time when the target asset was created. An RFC3339 formatted datetime string.
-     **/
+    /** The time when the target asset was created. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time when the target asset was created. An RFC3339 formatted datetime string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-     **/
+     * A message describing the current state in more detail. For example, it can be used to provide
+     * actionable information for a resource in Failed state.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, it can be used to provide
+     * actionable information for a resource in Failed state.
+     *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /**
-     * The time when the target asset was updated. An RFC3339 formatted datetime string.
-     **/
+    /** The time when the target asset was updated. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time when the target asset was updated. An RFC3339 formatted datetime string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The time when the assessment was done. An RFC3339 formatted datetime string.
-     **/
+    /** The time when the assessment was done. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeAssessed")
     private final java.util.Date timeAssessed;
 
     /**
      * The time when the assessment was done. An RFC3339 formatted datetime string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeAssessed() {
         return timeAssessed;
     }
@@ -267,6 +262,7 @@ public class TargetAssetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -365,15 +361,13 @@ public class TargetAssetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         return result;
     }
 
-    /**
-     * The type of target asset.
-     **/
-    public enum Type {
+    /** The type of target asset. */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Instance("INSTANCE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 

@@ -6,117 +6,93 @@ package com.oracle.bmc.budget.requests;
 
 import com.oracle.bmc.budget.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/ListBudgetsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListBudgetsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/ListBudgetsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListBudgetsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The ID of the compartment in which to list resources.
-     */
+    /** The ID of the compartment in which to list resources. */
     private String compartmentId;
 
-    /**
-     * The ID of the compartment in which to list resources.
-     */
+    /** The ID of the compartment in which to list resources. */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order to use, either 'asc' or 'desc'.
-     */
+    /** The sort order to use, either 'asc' or 'desc'. */
     private com.oracle.bmc.budget.model.SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either 'asc' or 'desc'.
-     */
+    /** The sort order to use, either 'asc' or 'desc'. */
     public com.oracle.bmc.budget.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. If not specified, the default is timeCreated.
-     * The default sort order for timeCreated is DESC.
-     * The default sort order for displayName is ASC in alphanumeric order.
-     *
+     * The field to sort by. If not specified, the default is timeCreated. The default sort order
+     * for timeCreated is DESC. The default sort order for displayName is ASC in alphanumeric order.
      */
     private com.oracle.bmc.budget.model.SortBy sortBy;
 
     /**
-     * The field to sort by. If not specified, the default is timeCreated.
-     * The default sort order for timeCreated is DESC.
-     * The default sort order for displayName is ASC in alphanumeric order.
-     *
+     * The field to sort by. If not specified, the default is timeCreated. The default sort order
+     * for timeCreated is DESC. The default sort order for displayName is ASC in alphanumeric order.
      */
     public com.oracle.bmc.budget.model.SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The current state of the resource to filter by.
-     */
+    /** The current state of the resource to filter by. */
     private com.oracle.bmc.budget.model.LifecycleState lifecycleState;
 
-    /**
-     * The current state of the resource to filter by.
-     */
+    /** The current state of the resource to filter by. */
     public com.oracle.bmc.budget.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
      * A user-friendly name. This does not have to be unique, and it's changeable.
-     * <p>
-     * Example: {@code My new resource}
      *
+     * <p>Example: {@code My new resource}
      */
     private String displayName;
 
     /**
      * A user-friendly name. This does not have to be unique, and it's changeable.
-     * <p>
-     * Example: {@code My new resource}
      *
+     * <p>Example: {@code My new resource}
      */
     public String getDisplayName() {
         return displayName;
     }
     /**
-     * The type of target to filter by:
-     *   * ALL - List all budgets
-     *   * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
-     *   * TAG - List all budgets with targetType == "TAG"
-     *
+     * The type of target to filter by: * ALL - List all budgets * COMPARTMENT - List all budgets
+     * with targetType == "COMPARTMENT" * TAG - List all budgets with targetType == "TAG"
      */
     private TargetType targetType;
 
     /**
-     * The type of target to filter by:
-     *   * ALL - List all budgets
-     *   * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
-     *   * TAG - List all budgets with targetType == "TAG"
-     *
-     **/
-    public enum TargetType {
+     * The type of target to filter by: * ALL - List all budgets * COMPARTMENT - List all budgets
+     * with targetType == "COMPARTMENT" * TAG - List all budgets with targetType == "TAG"
+     */
+    public enum TargetType implements com.oracle.bmc.http.internal.BmcEnum {
         All("ALL"),
         Compartment("COMPARTMENT"),
         Tag("TAG"),
@@ -151,23 +127,16 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     };
 
     /**
-     * The type of target to filter by:
-     *   * ALL - List all budgets
-     *   * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
-     *   * TAG - List all budgets with targetType == "TAG"
-     *
+     * The type of target to filter by: * ALL - List all budgets * COMPARTMENT - List all budgets
+     * with targetType == "COMPARTMENT" * TAG - List all budgets with targetType == "TAG"
      */
     public TargetType getTargetType() {
         return targetType;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -175,17 +144,15 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListBudgetsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The ID of the compartment in which to list resources.
-         */
+        /** The ID of the compartment in which to list resources. */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -194,13 +161,12 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -210,12 +176,15 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -224,13 +193,12 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * The sort order to use, either 'asc' or 'desc'.
-         */
+        /** The sort order to use, either 'asc' or 'desc'. */
         private com.oracle.bmc.budget.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -240,17 +208,16 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The field to sort by. If not specified, the default is timeCreated.
-         * The default sort order for timeCreated is DESC.
-         * The default sort order for displayName is ASC in alphanumeric order.
-         *
+         * The field to sort by. If not specified, the default is timeCreated. The default sort
+         * order for timeCreated is DESC. The default sort order for displayName is ASC in
+         * alphanumeric order.
          */
         private com.oracle.bmc.budget.model.SortBy sortBy = null;
 
         /**
-         * The field to sort by. If not specified, the default is timeCreated.
-         * The default sort order for timeCreated is DESC.
-         * The default sort order for displayName is ASC in alphanumeric order.
+         * The field to sort by. If not specified, the default is timeCreated. The default sort
+         * order for timeCreated is DESC. The default sort order for displayName is ASC in
+         * alphanumeric order.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -260,13 +227,12 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * The current state of the resource to filter by.
-         */
+        /** The current state of the resource to filter by. */
         private com.oracle.bmc.budget.model.LifecycleState lifecycleState = null;
 
         /**
          * The current state of the resource to filter by.
+         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -277,16 +243,15 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * A user-friendly name. This does not have to be unique, and it's changeable.
-         * <p>
-         * Example: {@code My new resource}
          *
+         * <p>Example: {@code My new resource}
          */
         private String displayName = null;
 
         /**
          * A user-friendly name. This does not have to be unique, and it's changeable.
-         * <p>
-         * Example: {@code My new resource}
+         *
+         * <p>Example: {@code My new resource}
          *
          * @param displayName the value to set
          * @return this builder instance
@@ -297,19 +262,16 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The type of target to filter by:
-         *   * ALL - List all budgets
-         *   * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
-         *   * TAG - List all budgets with targetType == "TAG"
-         *
+         * The type of target to filter by: * ALL - List all budgets * COMPARTMENT - List all
+         * budgets with targetType == "COMPARTMENT" * TAG - List all budgets with targetType ==
+         * "TAG"
          */
         private TargetType targetType = null;
 
         /**
-         * The type of target to filter by:
-         *   * ALL - List all budgets
-         *   * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
-         *   * TAG - List all budgets with targetType == "TAG"
+         * The type of target to filter by: * ALL - List all budgets * COMPARTMENT - List all
+         * budgets with targetType == "COMPARTMENT" * TAG - List all budgets with targetType ==
+         * "TAG"
          *
          * @param targetType the value to set
          * @return this builder instance
@@ -319,13 +281,12 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -336,18 +297,19 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -359,6 +321,7 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListBudgetsRequest o) {
@@ -379,10 +342,11 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListBudgetsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListBudgetsRequest
          */
@@ -396,7 +360,8 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListBudgetsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListBudgetsRequest
@@ -413,12 +378,14 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.targetType = targetType;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListBudgetsRequest(compartmentId, limit, page, sortOrder, sortBy, lifecycleState, displayName, targetType, opcRequestId);
+            // new ListBudgetsRequest(compartmentId, limit, page, sortOrder, sortBy, lifecycleState,
+            // displayName, targetType, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -436,6 +403,7 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -9,15 +9,14 @@ import com.oracle.bmc.objectstorage.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListReplicationSourcesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
-     * request, provide this request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide this request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
-     * request, provide this request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide this request ID.
      *
      * @return the value
      */
@@ -26,12 +25,15 @@ public class ListReplicationSourcesResponse extends com.oracle.bmc.responses.Bmc
     }
 
     /**
-     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when
+     * debugging.
      */
     private String opcClientRequestId;
 
     /**
-     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when
+     * debugging.
+     *
      * @return the value
      */
     public String getOpcClientRequestId() {
@@ -39,25 +41,26 @@ public class ListReplicationSourcesResponse extends com.oracle.bmc.responses.Bmc
     }
 
     /**
-     * For paginating a list of replication sources.
-     * In the GET request, set the limit to the number of items that you want returned in the response.
-     * If the {@code opc-next-page} header appears in the response, then this is a partial list and there are additional
-     * policies to get. Include the header's value as the {@code page} parameter in the subsequent GET request to get the
-     * next batch of policies. Repeat this process to retrieve the entire list of sources.
-     * <p>
-     * For more details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For paginating a list of replication sources. In the GET request, set the limit to the number
+     * of items that you want returned in the response. If the {@code opc-next-page} header appears
+     * in the response, then this is a partial list and there are additional policies to get.
+     * Include the header's value as the {@code page} parameter in the subsequent GET request to get
+     * the next batch of policies. Repeat this process to retrieve the entire list of sources.
      *
+     * <p>For more details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
     /**
-     * For paginating a list of replication sources.
-     * In the GET request, set the limit to the number of items that you want returned in the response.
-     * If the {@code opc-next-page} header appears in the response, then this is a partial list and there are additional
-     * policies to get. Include the header's value as the {@code page} parameter in the subsequent GET request to get the
-     * next batch of policies. Repeat this process to retrieve the entire list of sources.
-     * <p>
-     * For more details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For paginating a list of replication sources. In the GET request, set the limit to the number
+     * of items that you want returned in the response. If the {@code opc-next-page} header appears
+     * in the response, then this is a partial list and there are additional policies to get.
+     * Include the header's value as the {@code page} parameter in the subsequent GET request to get
+     * the next batch of policies. Repeat this process to retrieve the entire list of sources.
+     *
+     * <p>For more details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -65,13 +68,12 @@ public class ListReplicationSourcesResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /**
-     * A list of com.oracle.bmc.objectstorage.model.ReplicationSource instances.
-     */
+    /** A list of com.oracle.bmc.objectstorage.model.ReplicationSource instances. */
     private java.util.List<com.oracle.bmc.objectstorage.model.ReplicationSource> items;
 
     /**
      * A list of com.oracle.bmc.objectstorage.model.ReplicationSource instances.
+     *
      * @return the value
      */
     public java.util.List<com.oracle.bmc.objectstorage.model.ReplicationSource> getItems() {
@@ -88,7 +90,7 @@ public class ListReplicationSourcesResponse extends com.oracle.bmc.responses.Bmc
     })
     private ListReplicationSourcesResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcClientRequestId,
             String opcNextPage,
@@ -100,31 +102,34 @@ public class ListReplicationSourcesResponse extends com.oracle.bmc.responses.Bmc
         this.items = items;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    ListReplicationSourcesResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
-         * request, provide this request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide this request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
-         * request, provide this request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide this request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -135,12 +140,15 @@ public class ListReplicationSourcesResponse extends com.oracle.bmc.responses.Bmc
         }
 
         /**
-         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when
+         * debugging.
          */
         private String opcClientRequestId;
 
         /**
-         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when
+         * debugging.
+         *
          * @param opcClientRequestId the value to set
          * @return this builder
          */
@@ -150,25 +158,28 @@ public class ListReplicationSourcesResponse extends com.oracle.bmc.responses.Bmc
         }
 
         /**
-         * For paginating a list of replication sources.
-         * In the GET request, set the limit to the number of items that you want returned in the response.
-         * If the {@code opc-next-page} header appears in the response, then this is a partial list and there are additional
-         * policies to get. Include the header's value as the {@code page} parameter in the subsequent GET request to get the
-         * next batch of policies. Repeat this process to retrieve the entire list of sources.
-         * <p>
-         * For more details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For paginating a list of replication sources. In the GET request, set the limit to the
+         * number of items that you want returned in the response. If the {@code opc-next-page}
+         * header appears in the response, then this is a partial list and there are additional
+         * policies to get. Include the header's value as the {@code page} parameter in the
+         * subsequent GET request to get the next batch of policies. Repeat this process to retrieve
+         * the entire list of sources.
          *
+         * <p>For more details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
         /**
-         * For paginating a list of replication sources.
-         * In the GET request, set the limit to the number of items that you want returned in the response.
-         * If the {@code opc-next-page} header appears in the response, then this is a partial list and there are additional
-         * policies to get. Include the header's value as the {@code page} parameter in the subsequent GET request to get the
-         * next batch of policies. Repeat this process to retrieve the entire list of sources.
-         * <p>
-         * For more details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For paginating a list of replication sources. In the GET request, set the limit to the
+         * number of items that you want returned in the response. If the {@code opc-next-page}
+         * header appears in the response, then this is a partial list and there are additional
+         * policies to get. Include the header's value as the {@code page} parameter in the
+         * subsequent GET request to get the next batch of policies. Repeat this process to retrieve
+         * the entire list of sources.
+         *
+         * <p>For more details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -178,13 +189,12 @@ public class ListReplicationSourcesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /**
-         * A list of com.oracle.bmc.objectstorage.model.ReplicationSource instances.
-         */
+        /** A list of com.oracle.bmc.objectstorage.model.ReplicationSource instances. */
         private java.util.List<com.oracle.bmc.objectstorage.model.ReplicationSource> items;
 
         /**
          * A list of com.oracle.bmc.objectstorage.model.ReplicationSource instances.
+         *
          * @param items the value to set
          * @return this builder
          */
@@ -196,8 +206,10 @@ public class ListReplicationSourcesResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListReplicationSourcesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -211,8 +223,10 @@ public class ListReplicationSourcesResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListReplicationSourcesResponse build() {
             return new ListReplicationSourcesResponse(
                     __httpStatusCode__,
@@ -226,6 +240,7 @@ public class ListReplicationSourcesResponse extends com.oracle.bmc.responses.Bmc
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

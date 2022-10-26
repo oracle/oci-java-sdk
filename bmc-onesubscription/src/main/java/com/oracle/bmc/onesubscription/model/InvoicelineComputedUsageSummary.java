@@ -5,23 +5,22 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Computed Usage Summary object
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Computed Usage Summary object <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = InvoicelineComputedUsageSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = InvoicelineComputedUsageSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class InvoicelineComputedUsageSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "parentProduct",
@@ -73,10 +72,7 @@ public final class InvoicelineComputedUsageSummary
             this.__explicitlySet__.add("product");
             return this;
         }
-        /**
-         * Total Quantity that was used for computation
-         *
-         **/
+        /** Total Quantity that was used for computation */
         @com.fasterxml.jackson.annotation.JsonProperty("quantity")
         private Double quantity;
 
@@ -85,16 +81,13 @@ public final class InvoicelineComputedUsageSummary
          *
          * @param quantity the value to set
          * @return this builder
-         **/
+         */
         public Builder quantity(Double quantity) {
             this.quantity = quantity;
             this.__explicitlySet__.add("quantity");
             return this;
         }
-        /**
-         * Net Unit Price for the product in consideration, price actual.
-         *
-         **/
+        /** Net Unit Price for the product in consideration, price actual. */
         @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
         private Double netUnitPrice;
 
@@ -103,16 +96,13 @@ public final class InvoicelineComputedUsageSummary
          *
          * @param netUnitPrice the value to set
          * @return this builder
-         **/
+         */
         public Builder netUnitPrice(Double netUnitPrice) {
             this.netUnitPrice = netUnitPrice;
             this.__explicitlySet__.add("netUnitPrice");
             return this;
         }
-        /**
-         * Metered Service date.
-         *
-         **/
+        /** Metered Service date. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeMeteredOn")
         private java.util.Date timeMeteredOn;
 
@@ -121,16 +111,13 @@ public final class InvoicelineComputedUsageSummary
          *
          * @param timeMeteredOn the value to set
          * @return this builder
-         **/
+         */
         public Builder timeMeteredOn(java.util.Date timeMeteredOn) {
             this.timeMeteredOn = timeMeteredOn;
             this.__explicitlySet__.add("timeMeteredOn");
             return this;
         }
-        /**
-         * Usage compute type in SPM.
-         *
-         **/
+        /** Usage compute type in SPM. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
@@ -139,16 +126,13 @@ public final class InvoicelineComputedUsageSummary
          *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * Sum of Usage/Service Billing Line net Amount
-         *
-         **/
+        /** Sum of Usage/Service Billing Line net Amount */
         @com.fasterxml.jackson.annotation.JsonProperty("cost")
         private Double cost;
 
@@ -157,16 +141,13 @@ public final class InvoicelineComputedUsageSummary
          *
          * @param cost the value to set
          * @return this builder
-         **/
+         */
         public Builder cost(Double cost) {
             this.cost = cost;
             this.__explicitlySet__.add("cost");
             return this;
         }
-        /**
-         * Computed Line Amount rounded.
-         *
-         **/
+        /** Computed Line Amount rounded. */
         @com.fasterxml.jackson.annotation.JsonProperty("costRounded")
         private Double costRounded;
 
@@ -175,7 +156,7 @@ public final class InvoicelineComputedUsageSummary
          *
          * @param costRounded the value to set
          * @return this builder
-         **/
+         */
         public Builder costRounded(Double costRounded) {
             this.costRounded = costRounded;
             this.__explicitlySet__.add("costRounded");
@@ -232,9 +213,7 @@ public final class InvoicelineComputedUsageSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -257,10 +236,7 @@ public final class InvoicelineComputedUsageSummary
         return product;
     }
 
-    /**
-     * Total Quantity that was used for computation
-     *
-     **/
+    /** Total Quantity that was used for computation */
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
     private final Double quantity;
 
@@ -268,15 +244,12 @@ public final class InvoicelineComputedUsageSummary
      * Total Quantity that was used for computation
      *
      * @return the value
-     **/
+     */
     public Double getQuantity() {
         return quantity;
     }
 
-    /**
-     * Net Unit Price for the product in consideration, price actual.
-     *
-     **/
+    /** Net Unit Price for the product in consideration, price actual. */
     @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
     private final Double netUnitPrice;
 
@@ -284,15 +257,12 @@ public final class InvoicelineComputedUsageSummary
      * Net Unit Price for the product in consideration, price actual.
      *
      * @return the value
-     **/
+     */
     public Double getNetUnitPrice() {
         return netUnitPrice;
     }
 
-    /**
-     * Metered Service date.
-     *
-     **/
+    /** Metered Service date. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeMeteredOn")
     private final java.util.Date timeMeteredOn;
 
@@ -300,16 +270,13 @@ public final class InvoicelineComputedUsageSummary
      * Metered Service date.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeMeteredOn() {
         return timeMeteredOn;
     }
 
-    /**
-     * Usage compute type in SPM.
-     *
-     **/
-    public enum Type {
+    /** Usage compute type in SPM. */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Promotion("PROMOTION"),
         DoNotBill("DO_NOT_BILL"),
         Usage("USAGE"),
@@ -323,8 +290,8 @@ public final class InvoicelineComputedUsageSummary
         ServiceCredit("SERVICE_CREDIT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -361,10 +328,7 @@ public final class InvoicelineComputedUsageSummary
             return UnknownEnumValue;
         }
     };
-    /**
-     * Usage compute type in SPM.
-     *
-     **/
+    /** Usage compute type in SPM. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
@@ -372,15 +336,12 @@ public final class InvoicelineComputedUsageSummary
      * Usage compute type in SPM.
      *
      * @return the value
-     **/
+     */
     public Type getType() {
         return type;
     }
 
-    /**
-     * Sum of Usage/Service Billing Line net Amount
-     *
-     **/
+    /** Sum of Usage/Service Billing Line net Amount */
     @com.fasterxml.jackson.annotation.JsonProperty("cost")
     private final Double cost;
 
@@ -388,15 +349,12 @@ public final class InvoicelineComputedUsageSummary
      * Sum of Usage/Service Billing Line net Amount
      *
      * @return the value
-     **/
+     */
     public Double getCost() {
         return cost;
     }
 
-    /**
-     * Computed Line Amount rounded.
-     *
-     **/
+    /** Computed Line Amount rounded. */
     @com.fasterxml.jackson.annotation.JsonProperty("costRounded")
     private final Double costRounded;
 
@@ -404,7 +362,7 @@ public final class InvoicelineComputedUsageSummary
      * Computed Line Amount rounded.
      *
      * @return the value
-     **/
+     */
     public Double getCostRounded() {
         return costRounded;
     }
@@ -416,6 +374,7 @@ public final class InvoicelineComputedUsageSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

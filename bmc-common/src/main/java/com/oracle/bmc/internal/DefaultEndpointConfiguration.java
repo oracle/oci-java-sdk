@@ -7,14 +7,12 @@ package com.oracle.bmc.internal;
 import javax.annotation.Nonnull;
 
 /**
- * DefaultEndpointConfiguration provides a way to construct the host endpoint for a service
- * given a template and some variables based on the default Oracle Cloud Infrastructure naming
- * convention.
- * <p>
- * The available variables are:
- * - {serviceEndpointPrefix} : The service prefix in the URL.
- * - {region} : The public region id, ex, "us-phoenix-1".
- * - {secondLevelDomain} : The second level domain associated with the Realm.
+ * DefaultEndpointConfiguration provides a way to construct the host endpoint for a service given a
+ * template and some variables based on the default Oracle Cloud Infrastructure naming convention.
+ *
+ * <p>The available variables are: - {serviceEndpointPrefix} : The service prefix in the URL. -
+ * {region} : The public region id, ex, "us-phoenix-1". - {secondLevelDomain} : The second level
+ * domain associated with the Realm.
  */
 public class DefaultEndpointConfiguration {
     private static final String SERVICE_ENDPOINT_PREFIX_TEMPLATE = "{serviceEndpointPrefix}";
@@ -33,6 +31,7 @@ public class DefaultEndpointConfiguration {
 
     /**
      * Creates a new builder starting with the given template.
+     *
      * @param endpointTemplate The template
      * @return A new builder.
      */
@@ -90,6 +89,7 @@ public class DefaultEndpointConfiguration {
 
     /**
      * Builds the final endpoint based on the variables provided.
+     *
      * @return The endpoint.
      */
     public String build() {

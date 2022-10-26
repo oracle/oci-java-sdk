@@ -5,19 +5,20 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * The event type.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The event type. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EventType.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EventType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class EventType extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "eventTypeName",
@@ -42,58 +43,52 @@ public final class EventType extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the event type.
-         **/
+        /** The name of the event type. */
         @com.fasterxml.jackson.annotation.JsonProperty("eventTypeName")
         private String eventTypeName;
 
         /**
          * The name of the event type.
+         *
          * @param eventTypeName the value to set
          * @return this builder
-         **/
+         */
         public Builder eventTypeName(String eventTypeName) {
             this.eventTypeName = eventTypeName;
             this.__explicitlySet__.add("eventTypeName");
             return this;
         }
-        /**
-         * The version.
-         **/
+        /** The version. */
         @com.fasterxml.jackson.annotation.JsonProperty("specVersion")
         private String specVersion;
 
         /**
          * The version.
+         *
          * @param specVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder specVersion(String specVersion) {
             this.specVersion = specVersion;
             this.__explicitlySet__.add("specVersion");
             return this;
         }
-        /**
-         * A flag indicating whether or not the event type is enabled.
-         **/
+        /** A flag indicating whether or not the event type is enabled. */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * A flag indicating whether or not the event type is enabled.
+         *
          * @param isEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-        /**
-         * A flag indicating whether or not the event type is user defined.
-         *
-         **/
+        /** A flag indicating whether or not the event type is user defined. */
         @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
         private Boolean isSystem;
 
@@ -102,23 +97,22 @@ public final class EventType extends com.oracle.bmc.http.internal.ExplicitlySetB
          *
          * @param isSystem the value to set
          * @return this builder
-         **/
+         */
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = isSystem;
             this.__explicitlySet__.add("isSystem");
             return this;
         }
-        /**
-         * The last updated time.
-         **/
+        /** The last updated time. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The last updated time.
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -163,9 +157,7 @@ public final class EventType extends com.oracle.bmc.http.internal.ExplicitlySetB
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -174,52 +166,46 @@ public final class EventType extends com.oracle.bmc.http.internal.ExplicitlySetB
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the event type.
-     **/
+    /** The name of the event type. */
     @com.fasterxml.jackson.annotation.JsonProperty("eventTypeName")
     private final String eventTypeName;
 
     /**
      * The name of the event type.
+     *
      * @return the value
-     **/
+     */
     public String getEventTypeName() {
         return eventTypeName;
     }
 
-    /**
-     * The version.
-     **/
+    /** The version. */
     @com.fasterxml.jackson.annotation.JsonProperty("specVersion")
     private final String specVersion;
 
     /**
      * The version.
+     *
      * @return the value
-     **/
+     */
     public String getSpecVersion() {
         return specVersion;
     }
 
-    /**
-     * A flag indicating whether or not the event type is enabled.
-     **/
+    /** A flag indicating whether or not the event type is enabled. */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * A flag indicating whether or not the event type is enabled.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
-    /**
-     * A flag indicating whether or not the event type is user defined.
-     *
-     **/
+    /** A flag indicating whether or not the event type is user defined. */
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     private final Boolean isSystem;
 
@@ -227,21 +213,20 @@ public final class EventType extends com.oracle.bmc.http.internal.ExplicitlySetB
      * A flag indicating whether or not the event type is user defined.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsSystem() {
         return isSystem;
     }
 
-    /**
-     * The last updated time.
-     **/
+    /** The last updated time. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The last updated time.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -253,6 +238,7 @@ public final class EventType extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

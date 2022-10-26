@@ -6,92 +6,89 @@ package com.oracle.bmc.cims.requests;
 
 import com.oracle.bmc.cims.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/UpdateIncidentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateIncidentRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/UpdateIncidentExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateIncidentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public class UpdateIncidentRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.cims.model.UpdateIncident> {
 
-    /**
-     * Unique identifier for the support ticket.
-     */
+    /** Unique identifier for the support ticket. */
     private String incidentKey;
 
-    /**
-     * Unique identifier for the support ticket.
-     */
+    /** Unique identifier for the support ticket. */
     public String getIncidentKey() {
         return incidentKey;
     }
-    /**
-     * The Customer Support Identifier associated with the support account.
-     */
+    /** The Customer Support Identifier associated with the support account. */
     private String csi;
 
-    /**
-     * The Customer Support Identifier associated with the support account.
-     */
+    /** The Customer Support Identifier associated with the support account. */
     public String getCsi() {
         return csi;
     }
-    /**
-     * Details about the support ticket being updated.
-     */
+    /** Details about the support ticket being updated. */
     private com.oracle.bmc.cims.model.UpdateIncident updateIncidentDetails;
 
-    /**
-     * Details about the support ticket being updated.
-     */
+    /** Details about the support ticket being updated. */
     public com.oracle.bmc.cims.model.UpdateIncident getUpdateIncidentDetails() {
         return updateIncidentDetails;
     }
     /**
-     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+     * Cloud Infrastructure account.
      */
     private String ocid;
 
     /**
-     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+     * Cloud Infrastructure account.
      */
     public String getOcid() {
         return ocid;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /**
-     * The region of the tenancy.
-     */
+    /** The region of the tenancy. */
     private String homeregion;
 
-    /**
-     * The region of the tenancy.
-     */
+    /** The region of the tenancy. */
     public String getHomeregion() {
         return homeregion;
     }
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -103,17 +100,15 @@ public class UpdateIncidentRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateIncidentRequest, com.oracle.bmc.cims.model.UpdateIncident> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique identifier for the support ticket.
-         */
+        /** Unique identifier for the support ticket. */
         private String incidentKey = null;
 
         /**
          * Unique identifier for the support ticket.
+         *
          * @param incidentKey the value to set
          * @return this builder instance
          */
@@ -122,13 +117,12 @@ public class UpdateIncidentRequest
             return this;
         }
 
-        /**
-         * The Customer Support Identifier associated with the support account.
-         */
+        /** The Customer Support Identifier associated with the support account. */
         private String csi = null;
 
         /**
          * The Customer Support Identifier associated with the support account.
+         *
          * @param csi the value to set
          * @return this builder instance
          */
@@ -137,13 +131,12 @@ public class UpdateIncidentRequest
             return this;
         }
 
-        /**
-         * Details about the support ticket being updated.
-         */
+        /** Details about the support ticket being updated. */
         private com.oracle.bmc.cims.model.UpdateIncident updateIncidentDetails = null;
 
         /**
          * Details about the support ticket being updated.
+         *
          * @param updateIncidentDetails the value to set
          * @return this builder instance
          */
@@ -154,12 +147,15 @@ public class UpdateIncidentRequest
         }
 
         /**
-         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+         * Cloud Infrastructure account.
          */
         private String ocid = null;
 
         /**
-         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+         * Cloud Infrastructure account.
+         *
          * @param ocid the value to set
          * @return this builder instance
          */
@@ -169,12 +165,15 @@ public class UpdateIncidentRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -184,12 +183,19 @@ public class UpdateIncidentRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
+         *
          * @param ifMatch the value to set
          * @return this builder instance
          */
@@ -198,13 +204,12 @@ public class UpdateIncidentRequest
             return this;
         }
 
-        /**
-         * The region of the tenancy.
-         */
+        /** The region of the tenancy. */
         private String homeregion = null;
 
         /**
          * The region of the tenancy.
+         *
          * @param homeregion the value to set
          * @return this builder instance
          */
@@ -215,18 +220,19 @@ public class UpdateIncidentRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -238,6 +244,7 @@ public class UpdateIncidentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateIncidentRequest o) {
@@ -256,10 +263,11 @@ public class UpdateIncidentRequest
         /**
          * Build the instance of UpdateIncidentRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateIncidentRequest
          */
@@ -272,6 +280,7 @@ public class UpdateIncidentRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -284,7 +293,8 @@ public class UpdateIncidentRequest
         /**
          * Build the instance of UpdateIncidentRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateIncidentRequest
@@ -299,12 +309,14 @@ public class UpdateIncidentRequest
             request.ifMatch = ifMatch;
             request.homeregion = homeregion;
             return request;
-            // new UpdateIncidentRequest(incidentKey, csi, updateIncidentDetails, ocid, opcRequestId, ifMatch, homeregion);
+            // new UpdateIncidentRequest(incidentKey, csi, updateIncidentDetails, ocid,
+            // opcRequestId, ifMatch, homeregion);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -320,6 +332,7 @@ public class UpdateIncidentRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

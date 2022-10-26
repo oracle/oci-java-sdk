@@ -6,77 +6,65 @@ package com.oracle.bmc.servicemesh.requests;
 
 import com.oracle.bmc.servicemesh.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListMeshesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMeshesRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListMeshesExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMeshesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 public class ListMeshesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The ID of the compartment in which to list resources.
-     */
+    /** The ID of the compartment in which to list resources. */
     private String compartmentId;
 
-    /**
-     * The ID of the compartment in which to list resources.
-     */
+    /** The ID of the compartment in which to list resources. */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * A filter to return only resources that match the entire displayName given.
-     */
+    /** A filter to return only resources that match the entire displayName given. */
     private String displayName;
 
-    /**
-     * A filter to return only resources that match the entire displayName given.
-     */
+    /** A filter to return only resources that match the entire displayName given. */
     public String getDisplayName() {
         return displayName;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from
+     * the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from
+     * the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order to use, either 'ASC' or 'DESC'.
-     */
+    /** The sort order to use, either 'ASC' or 'DESC'. */
     private com.oracle.bmc.servicemesh.model.SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either 'ASC' or 'DESC'.
-     */
+    /** The sort order to use, either 'ASC' or 'DESC'. */
     public com.oracle.bmc.servicemesh.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
-     *
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
+     * descending. Default order for displayName is ascending.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
-     *
-     **/
-    public enum SortBy {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
+     * descending. Default order for displayName is ascending.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Id("id"),
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
@@ -111,42 +99,30 @@ public class ListMeshesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
-     *
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
+     * descending. Default order for displayName is ascending.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * A filter to return only resources that match the life cycle state given.
-     */
+    /** A filter to return only resources that match the life cycle state given. */
     private String lifecycleState;
 
-    /**
-     * A filter to return only resources that match the life cycle state given.
-     */
+    /** A filter to return only resources that match the life cycle state given. */
     public String getLifecycleState() {
         return lifecycleState;
     }
-    /**
-     * Unique Mesh identifier.
-     */
+    /** Unique Mesh identifier. */
     private String id;
 
-    /**
-     * Unique Mesh identifier.
-     */
+    /** Unique Mesh identifier. */
     public String getId() {
         return id;
     }
@@ -154,17 +130,15 @@ public class ListMeshesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListMeshesRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The ID of the compartment in which to list resources.
-         */
+        /** The ID of the compartment in which to list resources. */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -173,13 +147,12 @@ public class ListMeshesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /**
-         * A filter to return only resources that match the entire displayName given.
-         */
+        /** A filter to return only resources that match the entire displayName given. */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire displayName given.
+         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -188,13 +161,12 @@ public class ListMeshesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -204,12 +176,15 @@ public class ListMeshesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come
+         * from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come
+         * from the {@code opc-next-page} header field of a previous response.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -218,13 +193,12 @@ public class ListMeshesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /**
-         * The sort order to use, either 'ASC' or 'DESC'.
-         */
+        /** The sort order to use, either 'ASC' or 'DESC'. */
         private com.oracle.bmc.servicemesh.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -234,13 +208,14 @@ public class ListMeshesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
-         *
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
+         * is descending. Default order for displayName is ascending.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
+         * is descending. Default order for displayName is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -250,13 +225,12 @@ public class ListMeshesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -265,13 +239,12 @@ public class ListMeshesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /**
-         * A filter to return only resources that match the life cycle state given.
-         */
+        /** A filter to return only resources that match the life cycle state given. */
         private String lifecycleState = null;
 
         /**
          * A filter to return only resources that match the life cycle state given.
+         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -280,13 +253,12 @@ public class ListMeshesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /**
-         * Unique Mesh identifier.
-         */
+        /** Unique Mesh identifier. */
         private String id = null;
 
         /**
          * Unique Mesh identifier.
+         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -297,18 +269,19 @@ public class ListMeshesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -320,6 +293,7 @@ public class ListMeshesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListMeshesRequest o) {
@@ -340,10 +314,11 @@ public class ListMeshesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         /**
          * Build the instance of ListMeshesRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListMeshesRequest
          */
@@ -357,7 +332,8 @@ public class ListMeshesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         /**
          * Build the instance of ListMeshesRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListMeshesRequest
@@ -374,12 +350,14 @@ public class ListMeshesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.lifecycleState = lifecycleState;
             request.id = id;
             return request;
-            // new ListMeshesRequest(compartmentId, displayName, limit, page, sortOrder, sortBy, opcRequestId, lifecycleState, id);
+            // new ListMeshesRequest(compartmentId, displayName, limit, page, sortOrder, sortBy,
+            // opcRequestId, lifecycleState, id);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -397,6 +375,7 @@ public class ListMeshesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

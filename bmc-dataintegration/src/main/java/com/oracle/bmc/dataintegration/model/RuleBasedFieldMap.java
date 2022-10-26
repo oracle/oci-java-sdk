@@ -5,25 +5,24 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * A map of rule patterns.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A map of rule patterns. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = RuleBasedFieldMap.Builder.class
-)
+        builder = RuleBasedFieldMap.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class RuleBasedFieldMap extends FieldMap {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,33 +34,31 @@ public final class RuleBasedFieldMap extends FieldMap {
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The object key.
-         **/
+        /** The object key. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The object key.
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /**
-         * The object's model version.
-         **/
+        /** The object's model version. */
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
          * The object's model version.
+         *
          * @param modelVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -85,81 +82,80 @@ public final class RuleBasedFieldMap extends FieldMap {
             this.__explicitlySet__.add("configValues");
             return this;
         }
-        /**
-         * mapType
-         **/
+        /** mapType */
         @com.fasterxml.jackson.annotation.JsonProperty("mapType")
         private MapType mapType;
 
         /**
          * mapType
+         *
          * @param mapType the value to set
          * @return this builder
-         **/
+         */
         public Builder mapType(MapType mapType) {
             this.mapType = mapType;
             this.__explicitlySet__.add("mapType");
             return this;
         }
-        /**
-         * The pattern to map from.
-         **/
+        /** The pattern to map from. */
         @com.fasterxml.jackson.annotation.JsonProperty("fromPattern")
         private String fromPattern;
 
         /**
          * The pattern to map from.
+         *
          * @param fromPattern the value to set
          * @return this builder
-         **/
+         */
         public Builder fromPattern(String fromPattern) {
             this.fromPattern = fromPattern;
             this.__explicitlySet__.add("fromPattern");
             return this;
         }
-        /**
-         * The pattern to map to.
-         **/
+        /** The pattern to map to. */
         @com.fasterxml.jackson.annotation.JsonProperty("toPattern")
         private String toPattern;
 
         /**
          * The pattern to map to.
+         *
          * @param toPattern the value to set
          * @return this builder
-         **/
+         */
         public Builder toPattern(String toPattern) {
             this.toPattern = toPattern;
             this.__explicitlySet__.add("toPattern");
             return this;
         }
-        /**
-         * Specifies whether the rule uses a java regex syntax.
-         **/
+        /** Specifies whether the rule uses a java regex syntax. */
         @com.fasterxml.jackson.annotation.JsonProperty("isJavaRegexSyntax")
         private Boolean isJavaRegexSyntax;
 
         /**
          * Specifies whether the rule uses a java regex syntax.
+         *
          * @param isJavaRegexSyntax the value to set
          * @return this builder
-         **/
+         */
         public Builder isJavaRegexSyntax(Boolean isJavaRegexSyntax) {
             this.isJavaRegexSyntax = isJavaRegexSyntax;
             this.__explicitlySet__.add("isJavaRegexSyntax");
             return this;
         }
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-         **/
+         * The status of an object that can be set to value 1 for shallow references across objects,
+         * other values reserved.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         * The status of an object that can be set to value 1 for shallow references across objects,
+         * other values reserved.
+         *
          * @param objectStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
@@ -250,9 +246,7 @@ public final class RuleBasedFieldMap extends FieldMap {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -289,30 +283,28 @@ public final class RuleBasedFieldMap extends FieldMap {
         this.toRuleConfig = toRuleConfig;
     }
 
-    /**
-     * The object key.
-     **/
+    /** The object key. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The object key.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * The object's model version.
-     **/
+    /** The object's model version. */
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The object's model version.
+     *
      * @return the value
-     **/
+     */
     public String getModelVersion() {
         return modelVersion;
     }
@@ -331,17 +323,15 @@ public final class RuleBasedFieldMap extends FieldMap {
         return configValues;
     }
 
-    /**
-     * mapType
-     **/
-    public enum MapType {
+    /** mapType */
+    public enum MapType implements com.oracle.bmc.http.internal.BmcEnum {
         Mapbyname("MAPBYNAME"),
         Mapbyposition("MAPBYPOSITION"),
         Mapbypattern("MAPBYPATTERN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -380,72 +370,71 @@ public final class RuleBasedFieldMap extends FieldMap {
             return UnknownEnumValue;
         }
     };
-    /**
-     * mapType
-     **/
+    /** mapType */
     @com.fasterxml.jackson.annotation.JsonProperty("mapType")
     private final MapType mapType;
 
     /**
      * mapType
+     *
      * @return the value
-     **/
+     */
     public MapType getMapType() {
         return mapType;
     }
 
-    /**
-     * The pattern to map from.
-     **/
+    /** The pattern to map from. */
     @com.fasterxml.jackson.annotation.JsonProperty("fromPattern")
     private final String fromPattern;
 
     /**
      * The pattern to map from.
+     *
      * @return the value
-     **/
+     */
     public String getFromPattern() {
         return fromPattern;
     }
 
-    /**
-     * The pattern to map to.
-     **/
+    /** The pattern to map to. */
     @com.fasterxml.jackson.annotation.JsonProperty("toPattern")
     private final String toPattern;
 
     /**
      * The pattern to map to.
+     *
      * @return the value
-     **/
+     */
     public String getToPattern() {
         return toPattern;
     }
 
-    /**
-     * Specifies whether the rule uses a java regex syntax.
-     **/
+    /** Specifies whether the rule uses a java regex syntax. */
     @com.fasterxml.jackson.annotation.JsonProperty("isJavaRegexSyntax")
     private final Boolean isJavaRegexSyntax;
 
     /**
      * Specifies whether the rule uses a java regex syntax.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsJavaRegexSyntax() {
         return isJavaRegexSyntax;
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-     **/
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectStatus() {
         return objectStatus;
     }
@@ -471,6 +460,7 @@ public final class RuleBasedFieldMap extends FieldMap {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

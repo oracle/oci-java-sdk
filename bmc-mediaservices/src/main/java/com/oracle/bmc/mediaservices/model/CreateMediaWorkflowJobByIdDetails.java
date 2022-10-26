@@ -5,25 +5,24 @@
 package com.oracle.bmc.mediaservices.model;
 
 /**
- * Information to run a MediaWorkflow identified by its OCID.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Information to run a MediaWorkflow identified by its OCID. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateMediaWorkflowJobByIdDetails.Builder.class
-)
+        builder = CreateMediaWorkflowJobByIdDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "workflowIdentifierType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "workflowIdentifierType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateMediaWorkflowJobByIdDetails extends CreateMediaWorkflowJobDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -82,17 +81,16 @@ public final class CreateMediaWorkflowJobByIdDetails extends CreateMediaWorkflow
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /**
-         * OCID of the MediaWorkflow that should be run.
-         **/
+        /** OCID of the MediaWorkflow that should be run. */
         @com.fasterxml.jackson.annotation.JsonProperty("mediaWorkflowId")
         private String mediaWorkflowId;
 
         /**
          * OCID of the MediaWorkflow that should be run.
+         *
          * @param mediaWorkflowId the value to set
          * @return this builder
-         **/
+         */
         public Builder mediaWorkflowId(String mediaWorkflowId) {
             this.mediaWorkflowId = mediaWorkflowId;
             this.__explicitlySet__.add("mediaWorkflowId");
@@ -145,9 +143,7 @@ public final class CreateMediaWorkflowJobByIdDetails extends CreateMediaWorkflow
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -175,16 +171,15 @@ public final class CreateMediaWorkflowJobByIdDetails extends CreateMediaWorkflow
         this.mediaWorkflowId = mediaWorkflowId;
     }
 
-    /**
-     * OCID of the MediaWorkflow that should be run.
-     **/
+    /** OCID of the MediaWorkflow that should be run. */
     @com.fasterxml.jackson.annotation.JsonProperty("mediaWorkflowId")
     private final String mediaWorkflowId;
 
     /**
      * OCID of the MediaWorkflow that should be run.
+     *
      * @return the value
-     **/
+     */
     public String getMediaWorkflowId() {
         return mediaWorkflowId;
     }
@@ -196,6 +191,7 @@ public final class CreateMediaWorkflowJobByIdDetails extends CreateMediaWorkflow
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

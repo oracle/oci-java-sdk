@@ -4,9 +4,9 @@
 
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
-    <artifactId>oci-java-sdk-objectstorage-parent</artifactId>
-    <version>2.46.0</version>
-    <relativePath>../pom.xml</relativePath>
+    <artifactId>oci-java-sdk</artifactId>
+    <version>3.0.0-beta1</version>
+    <relativePath>../../pom.xml</relativePath>
   </parent>
 
   <artifactId>oci-java-sdk-objectstorage-extensions</artifactId>
@@ -16,17 +16,67 @@
 
 
 
-
   <dependencies>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>2.46.0</version>
+      <version>3.0.0-beta1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-common-httpclient</artifactId>
+      <version>3.0.0-beta1</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-objectstorage-generated</artifactId>
-      <version>2.46.0</version>
+      <version>3.0.0-beta1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+    </dependency>
+    <dependency>
+      <!-- TODO: DEX-14784 - this should not use jakarta.ws.rs-api as a test dependency; rewrite tests -->
+      <groupId>jakarta.ws.rs</groupId>
+      <artifactId>jakarta.ws.rs-api</artifactId>
+      <version>${jakarta.ws.rs-api.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- Test dependencies -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>java-hamcrest</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.powermock</groupId>
+      <artifactId>powermock-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.powermock</groupId>
+      <artifactId>powermock-module-junit4</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.powermock</groupId>
+      <artifactId>powermock-api-mockito</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 

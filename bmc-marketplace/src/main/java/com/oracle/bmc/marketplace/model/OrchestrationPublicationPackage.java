@@ -5,25 +5,24 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * A publication package for stack publications.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A publication package for stack publications. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = OrchestrationPublicationPackage.Builder.class
-)
+        builder = OrchestrationPublicationPackage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "packageType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "packageType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class OrchestrationPublicationPackage extends PublicationPackage {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -80,33 +79,31 @@ public final class OrchestrationPublicationPackage extends PublicationPackage {
             this.__explicitlySet__.add("operatingSystem");
             return this;
         }
-        /**
-         * A link to the stack resource.
-         **/
+        /** A link to the stack resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceLink")
         private String resourceLink;
 
         /**
          * A link to the stack resource.
+         *
          * @param resourceLink the value to set
          * @return this builder
-         **/
+         */
         public Builder resourceLink(String resourceLink) {
             this.resourceLink = resourceLink;
             this.__explicitlySet__.add("resourceLink");
             return this;
         }
-        /**
-         * A list of variables for the stack resource.
-         **/
+        /** A list of variables for the stack resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("variables")
         private java.util.List<OrchestrationVariable> variables;
 
         /**
          * A list of variables for the stack resource.
+         *
          * @param variables the value to set
          * @return this builder
-         **/
+         */
         public Builder variables(java.util.List<OrchestrationVariable> variables) {
             this.variables = variables;
             this.__explicitlySet__.add("variables");
@@ -163,9 +160,7 @@ public final class OrchestrationPublicationPackage extends PublicationPackage {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -189,30 +184,28 @@ public final class OrchestrationPublicationPackage extends PublicationPackage {
         this.variables = variables;
     }
 
-    /**
-     * A link to the stack resource.
-     **/
+    /** A link to the stack resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceLink")
     private final String resourceLink;
 
     /**
      * A link to the stack resource.
+     *
      * @return the value
-     **/
+     */
     public String getResourceLink() {
         return resourceLink;
     }
 
-    /**
-     * A list of variables for the stack resource.
-     **/
+    /** A list of variables for the stack resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
     private final java.util.List<OrchestrationVariable> variables;
 
     /**
      * A list of variables for the stack resource.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<OrchestrationVariable> getVariables() {
         return variables;
     }
@@ -224,6 +217,7 @@ public final class OrchestrationPublicationPackage extends PublicationPackage {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

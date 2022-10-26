@@ -5,24 +5,24 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The summary of table statistics statuses, which includes status categories such as Stale, Not Stale, and No Stats,
- * the number of table statistics grouped by status category, and the percentage of objects with a particular status.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The summary of table statistics statuses, which includes status categories such as Stale, Not
+ * Stale, and No Stats, the number of table statistics grouped by status category, and the
+ * percentage of objects with a particular status. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = TableStatisticSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = TableStatisticSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class TableStatisticSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "count", "percentage"})
     public TableStatisticSummary(
@@ -35,49 +35,46 @@ public final class TableStatisticSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The valid status categories of table statistics.
-         **/
+        /** The valid status categories of table statistics. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private TableStatisticsStatusCategory type;
 
         /**
          * The valid status categories of table statistics.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(TableStatisticsStatusCategory type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * The number of objects aggregated by status category.
-         **/
+        /** The number of objects aggregated by status category. */
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
         /**
          * The number of objects aggregated by status category.
+         *
          * @param count the value to set
          * @return this builder
-         **/
+         */
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
             return this;
         }
-        /**
-         * The percentage of objects with a particular status.
-         **/
+        /** The percentage of objects with a particular status. */
         @com.fasterxml.jackson.annotation.JsonProperty("percentage")
         private Double percentage;
 
         /**
          * The percentage of objects with a particular status.
+         *
          * @param percentage the value to set
          * @return this builder
-         **/
+         */
         public Builder percentage(Double percentage) {
             this.percentage = percentage;
             this.__explicitlySet__.add("percentage");
@@ -111,9 +108,7 @@ public final class TableStatisticSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -122,44 +117,41 @@ public final class TableStatisticSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * The valid status categories of table statistics.
-     **/
+    /** The valid status categories of table statistics. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final TableStatisticsStatusCategory type;
 
     /**
      * The valid status categories of table statistics.
+     *
      * @return the value
-     **/
+     */
     public TableStatisticsStatusCategory getType() {
         return type;
     }
 
-    /**
-     * The number of objects aggregated by status category.
-     **/
+    /** The number of objects aggregated by status category. */
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
     /**
      * The number of objects aggregated by status category.
+     *
      * @return the value
-     **/
+     */
     public Integer getCount() {
         return count;
     }
 
-    /**
-     * The percentage of objects with a particular status.
-     **/
+    /** The percentage of objects with a particular status. */
     @com.fasterxml.jackson.annotation.JsonProperty("percentage")
     private final Double percentage;
 
     /**
      * The percentage of objects with a particular status.
+     *
      * @return the value
-     **/
+     */
     public Double getPercentage() {
         return percentage;
     }
@@ -171,6 +163,7 @@ public final class TableStatisticSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

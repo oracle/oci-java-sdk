@@ -5,50 +5,45 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Base type for how fields are projected. There are many different mechanisms for doing this such as by a name pattern, datatype and so on. See the {@code modelType} property for the types.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Base type for how fields are projected. There are many different mechanisms for doing this such
+ * as by a name pattern, datatype and so on. See the {@code modelType} property for the types. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType",
-    defaultImpl = ProjectionRule.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType",
+        defaultImpl = ProjectionRule.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = RenameRule.class,
-        name = "RENAME_RULE"
-    ),
+            value = RenameRule.class,
+            name = "RENAME_RULE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = TypeListRule.class,
-        name = "TYPE_LIST_RULE"
-    ),
+            value = TypeListRule.class,
+            name = "TYPE_LIST_RULE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = TypedNamePatternRule.class,
-        name = "TYPED_NAME_PATTERN_RULE"
-    ),
+            value = TypedNamePatternRule.class,
+            name = "TYPED_NAME_PATTERN_RULE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = NamePatternRule.class,
-        name = "NAME_PATTERN_RULE"
-    ),
+            value = NamePatternRule.class,
+            name = "NAME_PATTERN_RULE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GroupedNamePatternRule.class,
-        name = "GROUPED_NAME_PATTERN_RULE"
-    ),
+            value = GroupedNamePatternRule.class,
+            name = "GROUPED_NAME_PATTERN_RULE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = NameListRule.class,
-        name = "NAME_LIST_RULE"
-    )
+            value = NameListRule.class,
+            name = "NAME_LIST_RULE")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ProjectionRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class ProjectionRule extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -77,30 +72,28 @@ public class ProjectionRule extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.description = description;
     }
 
-    /**
-     * The key of the object.
-     **/
+    /** The key of the object. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The key of the object.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * The model version of an object.
-     **/
+    /** The model version of an object. */
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The model version of an object.
+     *
      * @return the value
-     **/
+     */
     public String getModelVersion() {
         return modelVersion;
     }
@@ -112,16 +105,15 @@ public class ProjectionRule extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return parentRef;
     }
 
-    /**
-     * Specifies whether the rule uses a java regex syntax.
-     **/
+    /** Specifies whether the rule uses a java regex syntax. */
     @com.fasterxml.jackson.annotation.JsonProperty("isJavaRegexSyntax")
     private final Boolean isJavaRegexSyntax;
 
     /**
      * Specifies whether the rule uses a java regex syntax.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsJavaRegexSyntax() {
         return isJavaRegexSyntax;
     }
@@ -134,29 +126,31 @@ public class ProjectionRule extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-     **/
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectStatus() {
         return objectStatus;
     }
 
-    /**
-     * A user defined description for the object.
-     **/
+    /** A user defined description for the object. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A user defined description for the object.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
@@ -168,6 +162,7 @@ public class ProjectionRule extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -223,10 +218,8 @@ public class ProjectionRule extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return result;
     }
 
-    /**
-     * The type of the project rule.
-     **/
-    public enum ModelType {
+    /** The type of the project rule. */
+    public enum ModelType implements com.oracle.bmc.http.internal.BmcEnum {
         NamePatternRule("NAME_PATTERN_RULE"),
         TypeListRule("TYPE_LIST_RULE"),
         NameListRule("NAME_LIST_RULE"),
@@ -235,8 +228,8 @@ public class ProjectionRule extends com.oracle.bmc.http.internal.ExplicitlySetBm
         GroupedNamePatternRule("GROUPED_NAME_PATTERN_RULE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 

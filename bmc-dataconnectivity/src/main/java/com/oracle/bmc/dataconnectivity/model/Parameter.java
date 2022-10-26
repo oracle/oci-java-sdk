@@ -5,23 +5,23 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * Parameters are created and assigned values that can be configured for each integration task.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Parameters are created and assigned values that can be configured for each integration task. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Parameter.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class Parameter extends TypedObject {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -96,17 +96,16 @@ public final class Parameter extends TypedObject {
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * The default value of the parameter.
-         **/
+        /** The default value of the parameter. */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private Object defaultValue;
 
         /**
          * The default value of the parameter.
+         *
          * @param defaultValue the value to set
          * @return this builder
-         **/
+         */
         public Builder defaultValue(Object defaultValue) {
             this.defaultValue = defaultValue;
             this.__explicitlySet__.add("defaultValue");
@@ -114,79 +113,76 @@ public final class Parameter extends TypedObject {
         }
         /**
          * The default value of the parameter, which can be an object in DIS, such as a data entity.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("rootObjectDefaultValue")
         private Object rootObjectDefaultValue;
 
         /**
          * The default value of the parameter, which can be an object in DIS, such as a data entity.
+         *
          * @param rootObjectDefaultValue the value to set
          * @return this builder
-         **/
+         */
         public Builder rootObjectDefaultValue(Object rootObjectDefaultValue) {
             this.rootObjectDefaultValue = rootObjectDefaultValue;
             this.__explicitlySet__.add("rootObjectDefaultValue");
             return this;
         }
-        /**
-         * Specifies whether the parameter is an input value.
-         **/
+        /** Specifies whether the parameter is an input value. */
         @com.fasterxml.jackson.annotation.JsonProperty("isInput")
         private Boolean isInput;
 
         /**
          * Specifies whether the parameter is an input value.
+         *
          * @param isInput the value to set
          * @return this builder
-         **/
+         */
         public Builder isInput(Boolean isInput) {
             this.isInput = isInput;
             this.__explicitlySet__.add("isInput");
             return this;
         }
-        /**
-         * Specifies whether the parameter is an output value.
-         **/
+        /** Specifies whether the parameter is an output value. */
         @com.fasterxml.jackson.annotation.JsonProperty("isOutput")
         private Boolean isOutput;
 
         /**
          * Specifies whether the parameter is an output value.
+         *
          * @param isOutput the value to set
          * @return this builder
-         **/
+         */
         public Builder isOutput(Boolean isOutput) {
             this.isOutput = isOutput;
             this.__explicitlySet__.add("isOutput");
             return this;
         }
-        /**
-         * The output aggregation type.
-         **/
+        /** The output aggregation type. */
         @com.fasterxml.jackson.annotation.JsonProperty("outputAggregationType")
         private OutputAggregationType outputAggregationType;
 
         /**
          * The output aggregation type.
+         *
          * @param outputAggregationType the value to set
          * @return this builder
-         **/
+         */
         public Builder outputAggregationType(OutputAggregationType outputAggregationType) {
             this.outputAggregationType = outputAggregationType;
             this.__explicitlySet__.add("outputAggregationType");
             return this;
         }
-        /**
-         * The type of value the parameter was created for.
-         **/
+        /** The type of value the parameter was created for. */
         @com.fasterxml.jackson.annotation.JsonProperty("typeName")
         private String typeName;
 
         /**
          * The type of value the parameter was created for.
+         *
          * @param typeName the value to set
          * @return this builder
-         **/
+         */
         public Builder typeName(String typeName) {
             this.typeName = typeName;
             this.__explicitlySet__.add("typeName");
@@ -267,9 +263,7 @@ public final class Parameter extends TypedObject {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -311,66 +305,60 @@ public final class Parameter extends TypedObject {
         return type;
     }
 
-    /**
-     * The default value of the parameter.
-     **/
+    /** The default value of the parameter. */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     private final Object defaultValue;
 
     /**
      * The default value of the parameter.
+     *
      * @return the value
-     **/
+     */
     public Object getDefaultValue() {
         return defaultValue;
     }
 
-    /**
-     * The default value of the parameter, which can be an object in DIS, such as a data entity.
-     **/
+    /** The default value of the parameter, which can be an object in DIS, such as a data entity. */
     @com.fasterxml.jackson.annotation.JsonProperty("rootObjectDefaultValue")
     private final Object rootObjectDefaultValue;
 
     /**
      * The default value of the parameter, which can be an object in DIS, such as a data entity.
+     *
      * @return the value
-     **/
+     */
     public Object getRootObjectDefaultValue() {
         return rootObjectDefaultValue;
     }
 
-    /**
-     * Specifies whether the parameter is an input value.
-     **/
+    /** Specifies whether the parameter is an input value. */
     @com.fasterxml.jackson.annotation.JsonProperty("isInput")
     private final Boolean isInput;
 
     /**
      * Specifies whether the parameter is an input value.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsInput() {
         return isInput;
     }
 
-    /**
-     * Specifies whether the parameter is an output value.
-     **/
+    /** Specifies whether the parameter is an output value. */
     @com.fasterxml.jackson.annotation.JsonProperty("isOutput")
     private final Boolean isOutput;
 
     /**
      * Specifies whether the parameter is an output value.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsOutput() {
         return isOutput;
     }
 
-    /**
-     * The output aggregation type.
-     **/
-    public enum OutputAggregationType {
+    /** The output aggregation type. */
+    public enum OutputAggregationType implements com.oracle.bmc.http.internal.BmcEnum {
         Min("MIN"),
         Max("MAX"),
         Count("COUNT"),
@@ -404,30 +392,28 @@ public final class Parameter extends TypedObject {
             throw new IllegalArgumentException("Invalid OutputAggregationType: " + key);
         }
     };
-    /**
-     * The output aggregation type.
-     **/
+    /** The output aggregation type. */
     @com.fasterxml.jackson.annotation.JsonProperty("outputAggregationType")
     private final OutputAggregationType outputAggregationType;
 
     /**
      * The output aggregation type.
+     *
      * @return the value
-     **/
+     */
     public OutputAggregationType getOutputAggregationType() {
         return outputAggregationType;
     }
 
-    /**
-     * The type of value the parameter was created for.
-     **/
+    /** The type of value the parameter was created for. */
     @com.fasterxml.jackson.annotation.JsonProperty("typeName")
     private final String typeName;
 
     /**
      * The type of value the parameter was created for.
+     *
      * @return the value
-     **/
+     */
     public String getTypeName() {
         return typeName;
     }
@@ -439,6 +425,7 @@ public final class Parameter extends TypedObject {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

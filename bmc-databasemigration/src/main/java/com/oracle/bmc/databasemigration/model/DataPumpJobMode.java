@@ -4,12 +4,9 @@
  */
 package com.oracle.bmc.databasemigration.model;
 
-/**
- * Data Pump job modes
- *
- **/
+/** Data Pump job modes */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-public enum DataPumpJobMode {
+public enum DataPumpJobMode implements com.oracle.bmc.http.internal.BmcEnum {
     Full("FULL"),
     Schema("SCHEMA"),
     Table("TABLE"),

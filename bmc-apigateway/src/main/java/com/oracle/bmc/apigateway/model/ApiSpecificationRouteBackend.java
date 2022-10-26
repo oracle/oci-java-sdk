@@ -5,44 +5,39 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * The backend to forward requests to.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The backend to forward requests to. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type",
-    defaultImpl = ApiSpecificationRouteBackend.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type",
+        defaultImpl = ApiSpecificationRouteBackend.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = HTTPBackend.class,
-        name = "HTTP_BACKEND"
-    ),
+            value = HTTPBackend.class,
+            name = "HTTP_BACKEND"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = OracleFunctionBackend.class,
-        name = "ORACLE_FUNCTIONS_BACKEND"
-    ),
+            value = OracleFunctionBackend.class,
+            name = "ORACLE_FUNCTIONS_BACKEND"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = StockResponseBackend.class,
-        name = "STOCK_RESPONSE_BACKEND"
-    ),
+            value = StockResponseBackend.class,
+            name = "STOCK_RESPONSE_BACKEND"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = DynamicRoutingBackend.class,
-        name = "DYNAMIC_ROUTING_BACKEND"
-    )
+            value = DynamicRoutingBackend.class,
+            name = "DYNAMIC_ROUTING_BACKEND")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public class ApiSpecificationRouteBackend
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected ApiSpecificationRouteBackend() {
@@ -56,6 +51,7 @@ public class ApiSpecificationRouteBackend
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -88,18 +84,16 @@ public class ApiSpecificationRouteBackend
         return result;
     }
 
-    /**
-     * Type of the API backend.
-     **/
-    public enum Type {
+    /** Type of the API backend. */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         OracleFunctionsBackend("ORACLE_FUNCTIONS_BACKEND"),
         HttpBackend("HTTP_BACKEND"),
         StockResponseBackend("STOCK_RESPONSE_BACKEND"),
         DynamicRoutingBackend("DYNAMIC_ROUTING_BACKEND"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 

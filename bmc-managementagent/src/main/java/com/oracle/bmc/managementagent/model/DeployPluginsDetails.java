@@ -5,21 +5,22 @@
 package com.oracle.bmc.managementagent.model;
 
 /**
- * The information required to deploy new Management Agent Plugins.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information required to deploy new Management Agent Plugins. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DeployPluginsDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DeployPluginsDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = DeployPluginsDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class DeployPluginsDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"pluginIds", "agentCompartmentId", "agentIds"})
     public DeployPluginsDetails(
@@ -34,49 +35,46 @@ public final class DeployPluginsDetails extends com.oracle.bmc.http.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Plugin Id
-         **/
+        /** Plugin Id */
         @com.fasterxml.jackson.annotation.JsonProperty("pluginIds")
         private java.util.List<String> pluginIds;
 
         /**
          * Plugin Id
+         *
          * @param pluginIds the value to set
          * @return this builder
-         **/
+         */
         public Builder pluginIds(java.util.List<String> pluginIds) {
             this.pluginIds = pluginIds;
             this.__explicitlySet__.add("pluginIds");
             return this;
         }
-        /**
-         * Management Agent Compartment Identifier
-         **/
+        /** Management Agent Compartment Identifier */
         @com.fasterxml.jackson.annotation.JsonProperty("agentCompartmentId")
         private String agentCompartmentId;
 
         /**
          * Management Agent Compartment Identifier
+         *
          * @param agentCompartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder agentCompartmentId(String agentCompartmentId) {
             this.agentCompartmentId = agentCompartmentId;
             this.__explicitlySet__.add("agentCompartmentId");
             return this;
         }
-        /**
-         * List of Agent identifiers
-         **/
+        /** List of Agent identifiers */
         @com.fasterxml.jackson.annotation.JsonProperty("agentIds")
         private java.util.List<String> agentIds;
 
         /**
          * List of Agent identifiers
+         *
          * @param agentIds the value to set
          * @return this builder
-         **/
+         */
         public Builder agentIds(java.util.List<String> agentIds) {
             this.agentIds = agentIds;
             this.__explicitlySet__.add("agentIds");
@@ -111,9 +109,7 @@ public final class DeployPluginsDetails extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -122,44 +118,41 @@ public final class DeployPluginsDetails extends com.oracle.bmc.http.internal.Exp
         return new Builder().copy(this);
     }
 
-    /**
-     * Plugin Id
-     **/
+    /** Plugin Id */
     @com.fasterxml.jackson.annotation.JsonProperty("pluginIds")
     private final java.util.List<String> pluginIds;
 
     /**
      * Plugin Id
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getPluginIds() {
         return pluginIds;
     }
 
-    /**
-     * Management Agent Compartment Identifier
-     **/
+    /** Management Agent Compartment Identifier */
     @com.fasterxml.jackson.annotation.JsonProperty("agentCompartmentId")
     private final String agentCompartmentId;
 
     /**
      * Management Agent Compartment Identifier
+     *
      * @return the value
-     **/
+     */
     public String getAgentCompartmentId() {
         return agentCompartmentId;
     }
 
-    /**
-     * List of Agent identifiers
-     **/
+    /** List of Agent identifiers */
     @com.fasterxml.jackson.annotation.JsonProperty("agentIds")
     private final java.util.List<String> agentIds;
 
     /**
      * List of Agent identifiers
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getAgentIds() {
         return agentIds;
     }
@@ -171,6 +164,7 @@ public final class DeployPluginsDetails extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

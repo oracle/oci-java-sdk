@@ -58,12 +58,15 @@ public class TagDefaultExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // TODO: Provide the tag namespace name from root compartment and tag definition name, tag definition must exist in tag namespace
+        // TODO: Provide the tag namespace name from root compartment and tag definition name, tag
+        // definition must exist in tag namespace
         String tagNamespaceName = "CHANGE_ME";
         String tagDefinitionName = "CHANGE_ME";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -100,16 +103,16 @@ public class TagDefaultExample {
             System.out.println(tagDefaults);
         }
 
-        //Updating the tag default created in sample, setting value to updated_value.
+        // Updating the tag default created in sample, setting value to updated_value.
         updateTagDefault(identityClient, tagDefault.getId(), "updated_value");
 
-        //Get the updated tag default.
+        // Get the updated tag default.
         TagDefault updtedTagDefault = getTagDefault(identityClient, tagDefault.getId());
 
         System.out.println("Updated TagDefault details for : " + updtedTagDefault.getId() + "\n");
         System.out.println(updtedTagDefault);
 
-        //Delete the tag default.
+        // Delete the tag default.
         deleteTagDefault(identityClient, tagDefault.getId());
     }
 

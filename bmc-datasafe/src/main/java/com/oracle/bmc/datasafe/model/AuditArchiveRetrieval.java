@@ -5,24 +5,26 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Represents the archive retrieve request for the audit data. You can retrieve audit data for a target database from the archive and store it online.
- * For more information, see [Retrieve Audit Data for a Target Database from the Archive](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/security-assessment-overview.html).
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Represents the archive retrieve request for the audit data. You can retrieve audit data for a
+ * target database from the archive and store it online. For more information, see [Retrieve Audit
+ * Data for a Target Database from the
+ * Archive](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/security-assessment-overview.html).
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AuditArchiveRetrieval.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AuditArchiveRetrieval.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AuditArchiveRetrieval
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -83,269 +85,277 @@ public final class AuditArchiveRetrieval
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the archive retrieval.
-         **/
+        /** The OCID of the archive retrieval. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the archive retrieval.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The OCID of the compartment that contains archive retrieval.
-         **/
+        /** The OCID of the compartment that contains archive retrieval. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that contains archive retrieval.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The display name of the archive retrieval. The name does not have to be unique, and is changeable.
-         **/
+         * The display name of the archive retrieval. The name does not have to be unique, and is
+         * changeable.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The display name of the archive retrieval. The name does not have to be unique, and is changeable.
+         * The display name of the archive retrieval. The name does not have to be unique, and is
+         * changeable.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Description of the archive retrieval.
-         **/
+        /** Description of the archive retrieval. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description of the archive retrieval.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * Start month of the archive retrieval, in the format defined by RFC3339.
-         **/
+        /** Start month of the archive retrieval, in the format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("startDate")
         private java.util.Date startDate;
 
         /**
          * Start month of the archive retrieval, in the format defined by RFC3339.
+         *
          * @param startDate the value to set
          * @return this builder
-         **/
+         */
         public Builder startDate(java.util.Date startDate) {
             this.startDate = startDate;
             this.__explicitlySet__.add("startDate");
             return this;
         }
-        /**
-         * End month of the archive retrieval, in the format defined by RFC3339.
-         **/
+        /** End month of the archive retrieval, in the format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("endDate")
         private java.util.Date endDate;
 
         /**
          * End month of the archive retrieval, in the format defined by RFC3339.
+         *
          * @param endDate the value to set
          * @return this builder
-         **/
+         */
         public Builder endDate(java.util.Date endDate) {
             this.endDate = endDate;
             this.__explicitlySet__.add("endDate");
             return this;
         }
-        /**
-         * The OCID of the target associated with the archive retrieval.
-         **/
+        /** The OCID of the target associated with the archive retrieval. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
          * The OCID of the target associated with the archive retrieval.
+         *
          * @param targetId the value to set
          * @return this builder
-         **/
+         */
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-        /**
-         * The date time when archive retrieval was requested, in the format defined by RFC3339.
-         **/
+        /** The date time when archive retrieval was requested, in the format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeRequested")
         private java.util.Date timeRequested;
 
         /**
          * The date time when archive retrieval was requested, in the format defined by RFC3339.
+         *
          * @param timeRequested the value to set
          * @return this builder
-         **/
+         */
         public Builder timeRequested(java.util.Date timeRequested) {
             this.timeRequested = timeRequested;
             this.__explicitlySet__.add("timeRequested");
             return this;
         }
         /**
-         * The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
-         **/
+         * The date time when archive retrieval request was fulfilled, in the format defined by
+         * RFC3339.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCompleted")
         private java.util.Date timeCompleted;
 
         /**
-         * The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
+         * The date time when archive retrieval request was fulfilled, in the format defined by
+         * RFC3339.
+         *
          * @param timeCompleted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCompleted(java.util.Date timeCompleted) {
             this.timeCompleted = timeCompleted;
             this.__explicitlySet__.add("timeCompleted");
             return this;
         }
         /**
-         * The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
-         **/
+         * The date time when retrieved archive data will be deleted from Data Safe and unloaded
+         * back into archival.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfExpiry")
         private java.util.Date timeOfExpiry;
 
         /**
-         * The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
+         * The date time when retrieved archive data will be deleted from Data Safe and unloaded
+         * back into archival.
+         *
          * @param timeOfExpiry the value to set
          * @return this builder
-         **/
+         */
         public Builder timeOfExpiry(java.util.Date timeOfExpiry) {
             this.timeOfExpiry = timeOfExpiry;
             this.__explicitlySet__.add("timeOfExpiry");
             return this;
         }
         /**
-         * Total count of audit events to be retrieved from the archive for the specified date range.
-         **/
+         * Total count of audit events to be retrieved from the archive for the specified date
+         * range.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("auditEventCount")
         private Long auditEventCount;
 
         /**
-         * Total count of audit events to be retrieved from the archive for the specified date range.
+         * Total count of audit events to be retrieved from the archive for the specified date
+         * range.
+         *
          * @param auditEventCount the value to set
          * @return this builder
-         **/
+         */
         public Builder auditEventCount(Long auditEventCount) {
             this.auditEventCount = auditEventCount;
             this.__explicitlySet__.add("auditEventCount");
             return this;
         }
-        /**
-         * The Error details of a failed archive retrieval.
-         **/
+        /** The Error details of a failed archive retrieval. */
         @com.fasterxml.jackson.annotation.JsonProperty("errorInfo")
         private String errorInfo;
 
         /**
          * The Error details of a failed archive retrieval.
+         *
          * @param errorInfo the value to set
          * @return this builder
-         **/
+         */
         public Builder errorInfo(String errorInfo) {
             this.errorInfo = errorInfo;
             this.__explicitlySet__.add("errorInfo");
             return this;
         }
-        /**
-         * The current state of the archive retrieval.
-         **/
+        /** The current state of the archive retrieval. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private AuditArchiveRetrievalLifecycleState lifecycleState;
 
         /**
          * The current state of the archive retrieval.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(AuditArchiveRetrievalLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * Details about the current state of the archive retrieval.
-         **/
+        /** Details about the current state of the archive retrieval. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Details about the current state of the archive retrieval.
+         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          *
-         **/
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          *
-         **/
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         *
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -353,20 +363,21 @@ public final class AuditArchiveRetrieval
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         *
-         **/
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see Resource Tags. Example: {@code {"orcl-cloud": {"free-tier-retained":
+         * "true"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see Resource Tags. Example: {@code {"orcl-cloud": {"free-tier-retained":
+         * "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         **/
+         */
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -459,9 +470,7 @@ public final class AuditArchiveRetrieval
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -470,256 +479,261 @@ public final class AuditArchiveRetrieval
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the archive retrieval.
-     **/
+    /** The OCID of the archive retrieval. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the archive retrieval.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The OCID of the compartment that contains archive retrieval.
-     **/
+    /** The OCID of the compartment that contains archive retrieval. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that contains archive retrieval.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The display name of the archive retrieval. The name does not have to be unique, and is changeable.
-     **/
+     * The display name of the archive retrieval. The name does not have to be unique, and is
+     * changeable.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The display name of the archive retrieval. The name does not have to be unique, and is changeable.
+     * The display name of the archive retrieval. The name does not have to be unique, and is
+     * changeable.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Description of the archive retrieval.
-     **/
+    /** Description of the archive retrieval. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of the archive retrieval.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * Start month of the archive retrieval, in the format defined by RFC3339.
-     **/
+    /** Start month of the archive retrieval, in the format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("startDate")
     private final java.util.Date startDate;
 
     /**
      * Start month of the archive retrieval, in the format defined by RFC3339.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getStartDate() {
         return startDate;
     }
 
-    /**
-     * End month of the archive retrieval, in the format defined by RFC3339.
-     **/
+    /** End month of the archive retrieval, in the format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("endDate")
     private final java.util.Date endDate;
 
     /**
      * End month of the archive retrieval, in the format defined by RFC3339.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getEndDate() {
         return endDate;
     }
 
-    /**
-     * The OCID of the target associated with the archive retrieval.
-     **/
+    /** The OCID of the target associated with the archive retrieval. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
      * The OCID of the target associated with the archive retrieval.
+     *
      * @return the value
-     **/
+     */
     public String getTargetId() {
         return targetId;
     }
 
-    /**
-     * The date time when archive retrieval was requested, in the format defined by RFC3339.
-     **/
+    /** The date time when archive retrieval was requested, in the format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeRequested")
     private final java.util.Date timeRequested;
 
     /**
      * The date time when archive retrieval was requested, in the format defined by RFC3339.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeRequested() {
         return timeRequested;
     }
 
     /**
      * The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCompleted")
     private final java.util.Date timeCompleted;
 
     /**
      * The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCompleted() {
         return timeCompleted;
     }
 
     /**
-     * The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
-     **/
+     * The date time when retrieved archive data will be deleted from Data Safe and unloaded back
+     * into archival.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfExpiry")
     private final java.util.Date timeOfExpiry;
 
     /**
-     * The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
+     * The date time when retrieved archive data will be deleted from Data Safe and unloaded back
+     * into archival.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeOfExpiry() {
         return timeOfExpiry;
     }
 
     /**
      * Total count of audit events to be retrieved from the archive for the specified date range.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("auditEventCount")
     private final Long auditEventCount;
 
     /**
      * Total count of audit events to be retrieved from the archive for the specified date range.
+     *
      * @return the value
-     **/
+     */
     public Long getAuditEventCount() {
         return auditEventCount;
     }
 
-    /**
-     * The Error details of a failed archive retrieval.
-     **/
+    /** The Error details of a failed archive retrieval. */
     @com.fasterxml.jackson.annotation.JsonProperty("errorInfo")
     private final String errorInfo;
 
     /**
      * The Error details of a failed archive retrieval.
+     *
      * @return the value
-     **/
+     */
     public String getErrorInfo() {
         return errorInfo;
     }
 
-    /**
-     * The current state of the archive retrieval.
-     **/
+    /** The current state of the archive retrieval. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final AuditArchiveRetrievalLifecycleState lifecycleState;
 
     /**
      * The current state of the archive retrieval.
+     *
      * @return the value
-     **/
+     */
     public AuditArchiveRetrievalLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * Details about the current state of the archive retrieval.
-     **/
+    /** Details about the current state of the archive retrieval. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Details about the current state of the archive retrieval.
+     *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      *
-     **/
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      *
-     **/
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     *
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     *
-     **/
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see Resource Tags. Example: {@code {"orcl-cloud": {"free-tier-retained":
+     * "true"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see Resource Tags. Example: {@code {"orcl-cloud": {"free-tier-retained":
+     * "true"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -731,6 +745,7 @@ public final class AuditArchiveRetrieval
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

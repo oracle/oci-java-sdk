@@ -5,20 +5,21 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Specify time range. This paramter can be overwritten if time criteria is specified in the query string. If no time criteria are found in query string this time range is used.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Specify time range. This paramter can be overwritten if time criteria is specified in the query
+ * string. If no time criteria are found in query string this time range is used. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TimeRange.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TimeRange extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class TimeRange extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeStart", "timeEnd", "timeZone"})
     public TimeRange(java.util.Date timeStart, java.util.Date timeEnd, String timeZone) {
@@ -31,45 +32,44 @@ public final class TimeRange extends com.oracle.bmc.http.internal.ExplicitlySetB
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Time for query to start matching results from. Start time must be less than end time otherwise it will result in error.
-         *
-         **/
+         * Time for query to start matching results from. Start time must be less than end time
+         * otherwise it will result in error.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
         /**
-         * Time for query to start matching results from. Start time must be less than end time otherwise it will result in error.
+         * Time for query to start matching results from. Start time must be less than end time
+         * otherwise it will result in error.
          *
          * @param timeStart the value to set
          * @return this builder
-         **/
+         */
         public Builder timeStart(java.util.Date timeStart) {
             this.timeStart = timeStart;
             this.__explicitlySet__.add("timeStart");
             return this;
         }
         /**
-         * Time for query to stop matching results to. End Time must be greater than or equal to start time otherwise it will result in error.
-         *
-         **/
+         * Time for query to stop matching results to. End Time must be greater than or equal to
+         * start time otherwise it will result in error.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
         /**
-         * Time for query to stop matching results to. End Time must be greater than or equal to start time otherwise it will result in error.
+         * Time for query to stop matching results to. End Time must be greater than or equal to
+         * start time otherwise it will result in error.
          *
          * @param timeEnd the value to set
          * @return this builder
-         **/
+         */
         public Builder timeEnd(java.util.Date timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-        /**
-         * Time zone for query.
-         *
-         **/
+        /** Time zone for query. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private String timeZone;
 
@@ -78,7 +78,7 @@ public final class TimeRange extends com.oracle.bmc.http.internal.ExplicitlySetB
          *
          * @param timeZone the value to set
          * @return this builder
-         **/
+         */
         public Builder timeZone(String timeZone) {
             this.timeZone = timeZone;
             this.__explicitlySet__.add("timeZone");
@@ -111,9 +111,7 @@ public final class TimeRange extends com.oracle.bmc.http.internal.ExplicitlySetB
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -123,41 +121,40 @@ public final class TimeRange extends com.oracle.bmc.http.internal.ExplicitlySetB
     }
 
     /**
-     * Time for query to start matching results from. Start time must be less than end time otherwise it will result in error.
-     *
-     **/
+     * Time for query to start matching results from. Start time must be less than end time
+     * otherwise it will result in error.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
     /**
-     * Time for query to start matching results from. Start time must be less than end time otherwise it will result in error.
+     * Time for query to start matching results from. Start time must be less than end time
+     * otherwise it will result in error.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeStart() {
         return timeStart;
     }
 
     /**
-     * Time for query to stop matching results to. End Time must be greater than or equal to start time otherwise it will result in error.
-     *
-     **/
+     * Time for query to stop matching results to. End Time must be greater than or equal to start
+     * time otherwise it will result in error.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
     /**
-     * Time for query to stop matching results to. End Time must be greater than or equal to start time otherwise it will result in error.
+     * Time for query to stop matching results to. End Time must be greater than or equal to start
+     * time otherwise it will result in error.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
 
-    /**
-     * Time zone for query.
-     *
-     **/
+    /** Time zone for query. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final String timeZone;
 
@@ -165,7 +162,7 @@ public final class TimeRange extends com.oracle.bmc.http.internal.ExplicitlySetB
      * Time zone for query.
      *
      * @return the value
-     **/
+     */
     public String getTimeZone() {
         return timeZone;
     }
@@ -177,6 +174,7 @@ public final class TimeRange extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

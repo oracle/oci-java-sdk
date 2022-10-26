@@ -4,17 +4,18 @@
  */
 package com.oracle.bmc.apmsynthetics;
 
-import com.oracle.bmc.apmsynthetics.internal.http.*;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.apmsynthetics.requests.*;
 import com.oracle.bmc.apmsynthetics.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
+import java.util.Objects;
+
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public class ApmSyntheticClient implements ApmSynthetic {
-    /**
-     * Service instance for ApmSynthetic.
-     */
+public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncClient
+        implements ApmSynthetic {
+    /** Service instance for ApmSynthetic. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("APMSYNTHETIC")
@@ -22,300 +23,27 @@ public class ApmSyntheticClient implements ApmSynthetic {
                     .serviceEndpointTemplate(
                             "https://apm-synthetic.{region}.oci.{secondLevelDomain}")
                     .build();
-    // attempt twice if it's instance principals, immediately failures will try to refresh the token
-    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ApmSyntheticAsyncClient.class);
 
-    com.oracle.bmc.http.internal.RestClient getClient() {
-        return client;
-    }
-
     private final ApmSyntheticPaginators paginators;
-    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-            authenticationDetailsProvider;
-    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
-    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
-            apacheConnectionClosingStrategy;
-    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
-    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
-    private final java.util.Map<
-                    com.oracle.bmc.http.signing.SigningStrategy,
-                    com.oracle.bmc.http.signing.RequestSignerFactory>
-            signingStrategyRequestSignerFactories;
-    private final boolean isNonBufferingApacheClient;
-    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
-    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-            circuitBreakerConfiguration;
 
-    /**
-     * Used to synchronize any updates on the `this.client` object.
-     */
-    private final Object clientUpdate = new Object();
-
-    /**
-     * Stores the actual client object used to make the API calls.
-     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
-     *       For any writes to the object, please synchronize on `this.clientUpdate`.
-     */
-    private volatile com.oracle.bmc.http.internal.RestClient client;
-
-    /**
-     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
-     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
-     */
-    private volatile String overrideEndpoint = null;
-
-    /**
-     * Creates a new service instance using the given authentication provider.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     */
-    public ApmSyntheticClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     */
-    public ApmSyntheticClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(authenticationDetailsProvider, configuration, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     */
-    public ApmSyntheticClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
+    private ApmSyntheticClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                    authenticationDetailsProvider) {
+        super(
+                builder,
                 authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     */
-    public ApmSyntheticClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public ApmSyntheticClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                additionalClientConfigurators,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public ApmSyntheticClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
-                        .createDefaultRequestSignerFactories(),
-                additionalClientConfigurators,
-                endpoint);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public ApmSyntheticClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * Use the {@link Builder} to get access to all these parameters.
-     *
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
-     */
-    protected ApmSyntheticClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
-        this.authenticationDetailsProvider = authenticationDetailsProvider;
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
-                new java.util.ArrayList<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
-            authenticationDetailsConfigurators.addAll(
-                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
-                                    this.authenticationDetailsProvider)
-                            .getClientConfigurators());
-        }
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
-                new java.util.ArrayList<>(additionalClientConfigurators);
-        allConfigurators.addAll(authenticationDetailsConfigurators);
-        this.restClientFactory =
-                restClientFactoryBuilder
-                        .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(allConfigurators)
-                        .build();
-        this.isNonBufferingApacheClient =
-                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        this.restClientFactory.getClientConfigurator());
-        this.apacheConnectionClosingStrategy =
-                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
-                        restClientFactory.getClientConfigurator());
-
-        this.clientConfigurationToUse =
-                (configuration != null)
-                        ? configuration
-                        : com.oracle.bmc.ClientConfiguration.builder().build();
-        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
-        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
-        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
-        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-                userCircuitBreakerConfiguration =
-                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
-                                configuration);
-        if (userCircuitBreakerConfiguration == null) {
-            this.circuitBreakerConfiguration =
-                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
-        } else {
-            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
-        }
-
-        this.refreshClient();
+                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
 
         this.paginators = new ApmSyntheticPaginators(this);
-
-        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
-            com.oracle.bmc.auth.RegionProvider provider =
-                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
-
-            if (provider.getRegion() != null) {
-                this.setRegion(provider.getRegion());
-                if (endpoint != null) {
-                    LOG.info(
-                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
-                            provider.getRegion(),
-                            endpoint);
-                }
-            }
-        }
-        if (endpoint != null) {
-            setEndpoint(endpoint);
-        }
     }
 
     /**
      * Create a builder for this client.
+     *
      * @return builder
      */
     public static Builder builder() {
@@ -323,8 +51,8 @@ public class ApmSyntheticClient implements ApmSynthetic {
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
+     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, ApmSyntheticClient> {
@@ -337,810 +65,787 @@ public class ApmSyntheticClient implements ApmSynthetic {
 
         /**
          * Build the client.
+         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public ApmSyntheticClient build(
                 @javax.annotation.Nonnull
-                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                        authenticationDetailsProvider) {
-            if (authenticationDetailsProvider == null) {
-                throw new NullPointerException(
-                        "authenticationDetailsProvider is marked non-null but is null");
-            }
-            return new ApmSyntheticClient(
-                    authenticationDetailsProvider,
-                    configuration,
-                    clientConfigurator,
-                    requestSignerFactory,
-                    signingStrategyRequestSignerFactories,
-                    additionalClientConfigurators,
-                    endpoint);
+                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                                authenticationDetailsProvider) {
+            return new ApmSyntheticClient(this, authenticationDetailsProvider);
         }
-    }
-
-    @Override
-    public void refreshClient() {
-        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                this.defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        this.signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
-            }
-        }
-
-        com.oracle.bmc.http.internal.RestClient refreshedClient =
-                this.restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        this.clientConfigurationToUse,
-                        this.isNonBufferingApacheClient,
-                        null,
-                        this.circuitBreakerConfiguration);
-
-        synchronized (clientUpdate) {
-            if (this.overrideEndpoint != null) {
-                refreshedClient.setEndpoint(this.overrideEndpoint);
-            }
-
-            this.client = refreshedClient;
-        }
-
-        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint) {
-        LOG.info("Setting endpoint to {}", endpoint);
-
-        synchronized (clientUpdate) {
-            this.overrideEndpoint = endpoint;
-            client.setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
-        }
-        return endpoint;
     }
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        java.util.Optional<String> endpoint =
-                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
-        if (endpoint.isPresent()) {
-            setEndpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + SERVICE + " is not known in region " + region);
-        }
+        super.setRegion(region);
     }
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
-        try {
-            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-            setRegion(region);
-        } catch (IllegalArgumentException e) {
-            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-            setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public void close() {
-        client.close();
+        super.setRegion(regionId);
     }
 
     @Override
     public AggregateNetworkDataResponse aggregateNetworkData(AggregateNetworkDataRequest request) {
-        LOG.trace("Called aggregateNetworkData");
-        final AggregateNetworkDataRequest interceptedRequest =
-                AggregateNetworkDataConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AggregateNetworkDataConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMonitorId(), "monitorId must not be blank");
+        Objects.requireNonNull(
+                request.getAggregateNetworkDataDetails(),
+                "aggregateNetworkDataDetails is required");
+
+        return clientCall(request, AggregateNetworkDataResponse::builder)
+                .logger(LOG, "aggregateNetworkData")
+                .serviceDetails(
                         "ApmSynthetic",
                         "AggregateNetworkData",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/AggregatedNetworkDataResult/AggregateNetworkData");
-        java.util.function.Function<javax.ws.rs.core.Response, AggregateNetworkDataResponse>
-                transformer =
-                        AggregateNetworkDataConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getAggregateNetworkDataDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/AggregatedNetworkDataResult/AggregateNetworkData")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AggregateNetworkDataRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("monitors")
+                .appendPathParam(request.getMonitorId())
+                .appendPathParam("actions")
+                .appendPathParam("aggregateNetworkData")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apmsynthetics.model.AggregatedNetworkDataResult.class,
+                        AggregateNetworkDataResponse.Builder::aggregatedNetworkDataResult)
+                .handleResponseHeaderString("etag", AggregateNetworkDataResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AggregateNetworkDataResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public CreateDedicatedVantagePointResponse createDedicatedVantagePoint(
             CreateDedicatedVantagePointRequest request) {
-        LOG.trace("Called createDedicatedVantagePoint");
-        final CreateDedicatedVantagePointRequest interceptedRequest =
-                CreateDedicatedVantagePointConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateDedicatedVantagePointConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateDedicatedVantagePointDetails(),
+                "createDedicatedVantagePointDetails is required");
+
+        return clientCall(request, CreateDedicatedVantagePointResponse::builder)
+                .logger(LOG, "createDedicatedVantagePoint")
+                .serviceDetails(
                         "ApmSynthetic",
                         "CreateDedicatedVantagePoint",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/CreateDedicatedVantagePoint");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateDedicatedVantagePointResponse>
-                transformer =
-                        CreateDedicatedVantagePointConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getCreateDedicatedVantagePointDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/CreateDedicatedVantagePoint")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDedicatedVantagePointRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("dedicatedVantagePoints")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apmsynthetics.model.DedicatedVantagePoint.class,
+                        CreateDedicatedVantagePointResponse.Builder::dedicatedVantagePoint)
+                .handleResponseHeaderString(
+                        "etag", CreateDedicatedVantagePointResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateDedicatedVantagePointResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public CreateMonitorResponse createMonitor(CreateMonitorRequest request) {
-        LOG.trace("Called createMonitor");
-        final CreateMonitorRequest interceptedRequest =
-                CreateMonitorConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateMonitorConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateMonitorDetails(), "createMonitorDetails is required");
+
+        return clientCall(request, CreateMonitorResponse::builder)
+                .logger(LOG, "createMonitor")
+                .serviceDetails(
                         "ApmSynthetic",
                         "CreateMonitor",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/CreateMonitor");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateMonitorResponse> transformer =
-                CreateMonitorConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateMonitorDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/CreateMonitor")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMonitorRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("monitors")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apmsynthetics.model.Monitor.class,
+                        CreateMonitorResponse.Builder::monitor)
+                .handleResponseHeaderString("etag", CreateMonitorResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateMonitorResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public CreateScriptResponse createScript(CreateScriptRequest request) {
-        LOG.trace("Called createScript");
-        final CreateScriptRequest interceptedRequest =
-                CreateScriptConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateScriptConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCreateScriptDetails(), "createScriptDetails is required");
+
+        return clientCall(request, CreateScriptResponse::builder)
+                .logger(LOG, "createScript")
+                .serviceDetails(
                         "ApmSynthetic",
                         "CreateScript",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/CreateScript");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateScriptResponse> transformer =
-                CreateScriptConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateScriptDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/CreateScript")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateScriptRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("scripts")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apmsynthetics.model.Script.class,
+                        CreateScriptResponse.Builder::script)
+                .handleResponseHeaderString("etag", CreateScriptResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateScriptResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public DeleteDedicatedVantagePointResponse deleteDedicatedVantagePoint(
             DeleteDedicatedVantagePointRequest request) {
-        LOG.trace("Called deleteDedicatedVantagePoint");
-        final DeleteDedicatedVantagePointRequest interceptedRequest =
-                DeleteDedicatedVantagePointConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteDedicatedVantagePointConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getDedicatedVantagePointId(), "dedicatedVantagePointId must not be blank");
+
+        return clientCall(request, DeleteDedicatedVantagePointResponse::builder)
+                .logger(LOG, "deleteDedicatedVantagePoint")
+                .serviceDetails(
                         "ApmSynthetic",
                         "DeleteDedicatedVantagePoint",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/DeleteDedicatedVantagePoint");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteDedicatedVantagePointResponse>
-                transformer =
-                        DeleteDedicatedVantagePointConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/DeleteDedicatedVantagePoint")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDedicatedVantagePointRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("dedicatedVantagePoints")
+                .appendPathParam(request.getDedicatedVantagePointId())
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDedicatedVantagePointResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public DeleteMonitorResponse deleteMonitor(DeleteMonitorRequest request) {
-        LOG.trace("Called deleteMonitor");
-        final DeleteMonitorRequest interceptedRequest =
-                DeleteMonitorConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteMonitorConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMonitorId(), "monitorId must not be blank");
+
+        return clientCall(request, DeleteMonitorResponse::builder)
+                .logger(LOG, "deleteMonitor")
+                .serviceDetails(
                         "ApmSynthetic",
                         "DeleteMonitor",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/DeleteMonitor");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteMonitorResponse> transformer =
-                DeleteMonitorConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/DeleteMonitor")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMonitorRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("monitors")
+                .appendPathParam(request.getMonitorId())
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteMonitorResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public DeleteScriptResponse deleteScript(DeleteScriptRequest request) {
-        LOG.trace("Called deleteScript");
-        final DeleteScriptRequest interceptedRequest =
-                DeleteScriptConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteScriptConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getScriptId(), "scriptId must not be blank");
+
+        return clientCall(request, DeleteScriptResponse::builder)
+                .logger(LOG, "deleteScript")
+                .serviceDetails(
                         "ApmSynthetic",
                         "DeleteScript",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/DeleteScript");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteScriptResponse> transformer =
-                DeleteScriptConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/DeleteScript")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteScriptRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("scripts")
+                .appendPathParam(request.getScriptId())
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteScriptResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetDedicatedVantagePointResponse getDedicatedVantagePoint(
             GetDedicatedVantagePointRequest request) {
-        LOG.trace("Called getDedicatedVantagePoint");
-        final GetDedicatedVantagePointRequest interceptedRequest =
-                GetDedicatedVantagePointConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDedicatedVantagePointConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getDedicatedVantagePointId(), "dedicatedVantagePointId must not be blank");
+
+        return clientCall(request, GetDedicatedVantagePointResponse::builder)
+                .logger(LOG, "getDedicatedVantagePoint")
+                .serviceDetails(
                         "ApmSynthetic",
                         "GetDedicatedVantagePoint",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/GetDedicatedVantagePoint");
-        java.util.function.Function<javax.ws.rs.core.Response, GetDedicatedVantagePointResponse>
-                transformer =
-                        GetDedicatedVantagePointConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/GetDedicatedVantagePoint")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDedicatedVantagePointRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("dedicatedVantagePoints")
+                .appendPathParam(request.getDedicatedVantagePointId())
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.apmsynthetics.model.DedicatedVantagePoint.class,
+                        GetDedicatedVantagePointResponse.Builder::dedicatedVantagePoint)
+                .handleResponseHeaderString("etag", GetDedicatedVantagePointResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDedicatedVantagePointResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetMonitorResponse getMonitor(GetMonitorRequest request) {
-        LOG.trace("Called getMonitor");
-        final GetMonitorRequest interceptedRequest = GetMonitorConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetMonitorConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMonitorId(), "monitorId must not be blank");
+
+        return clientCall(request, GetMonitorResponse::builder)
+                .logger(LOG, "getMonitor")
+                .serviceDetails(
                         "ApmSynthetic",
                         "GetMonitor",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/GetMonitor");
-        java.util.function.Function<javax.ws.rs.core.Response, GetMonitorResponse> transformer =
-                GetMonitorConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/GetMonitor")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMonitorRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("monitors")
+                .appendPathParam(request.getMonitorId())
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.apmsynthetics.model.Monitor.class,
+                        GetMonitorResponse.Builder::monitor)
+                .handleResponseHeaderString("etag", GetMonitorResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMonitorResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetMonitorResultResponse getMonitorResult(GetMonitorResultRequest request) {
-        LOG.trace("Called getMonitorResult");
-        final GetMonitorResultRequest interceptedRequest =
-                GetMonitorResultConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetMonitorResultConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMonitorId(), "monitorId must not be blank");
+        Objects.requireNonNull(request.getVantagePoint(), "vantagePoint is required");
+
+        Objects.requireNonNull(request.getResultType(), "resultType is required");
+
+        Objects.requireNonNull(request.getResultContentType(), "resultContentType is required");
+
+        Validate.notBlank(request.getExecutionTime(), "executionTime must not be blank");
+
+        return clientCall(request, GetMonitorResultResponse::builder)
+                .logger(LOG, "getMonitorResult")
+                .serviceDetails(
                         "ApmSynthetic",
                         "GetMonitorResult",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/MonitorResult/GetMonitorResult");
-        java.util.function.Function<javax.ws.rs.core.Response, GetMonitorResultResponse>
-                transformer =
-                        GetMonitorResultConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/MonitorResult/GetMonitorResult")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMonitorResultRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("monitors")
+                .appendPathParam(request.getMonitorId())
+                .appendPathParam("results")
+                .appendPathParam(request.getExecutionTime())
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .appendQueryParam("vantagePoint", request.getVantagePoint())
+                .appendQueryParam("resultType", request.getResultType())
+                .appendQueryParam("resultContentType", request.getResultContentType())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.apmsynthetics.model.MonitorResult.class,
+                        GetMonitorResultResponse.Builder::monitorResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMonitorResultResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetScriptResponse getScript(GetScriptRequest request) {
-        LOG.trace("Called getScript");
-        final GetScriptRequest interceptedRequest = GetScriptConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetScriptConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getScriptId(), "scriptId must not be blank");
+
+        return clientCall(request, GetScriptResponse::builder)
+                .logger(LOG, "getScript")
+                .serviceDetails(
                         "ApmSynthetic",
                         "GetScript",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/GetScript");
-        java.util.function.Function<javax.ws.rs.core.Response, GetScriptResponse> transformer =
-                GetScriptConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/GetScript")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetScriptRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("scripts")
+                .appendPathParam(request.getScriptId())
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.apmsynthetics.model.Script.class,
+                        GetScriptResponse.Builder::script)
+                .handleResponseHeaderString("etag", GetScriptResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetScriptResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListDedicatedVantagePointsResponse listDedicatedVantagePoints(
             ListDedicatedVantagePointsRequest request) {
-        LOG.trace("Called listDedicatedVantagePoints");
-        final ListDedicatedVantagePointsRequest interceptedRequest =
-                ListDedicatedVantagePointsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDedicatedVantagePointsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListDedicatedVantagePointsResponse::builder)
+                .logger(LOG, "listDedicatedVantagePoints")
+                .serviceDetails(
                         "ApmSynthetic",
                         "ListDedicatedVantagePoints",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePointCollection/ListDedicatedVantagePoints");
-        java.util.function.Function<javax.ws.rs.core.Response, ListDedicatedVantagePointsResponse>
-                transformer =
-                        ListDedicatedVantagePointsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePointCollection/ListDedicatedVantagePoints")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDedicatedVantagePointsRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("dedicatedVantagePoints")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("status", request.getStatus())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.apmsynthetics.model.DedicatedVantagePointCollection.class,
+                        ListDedicatedVantagePointsResponse.Builder::dedicatedVantagePointCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDedicatedVantagePointsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDedicatedVantagePointsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListMonitorsResponse listMonitors(ListMonitorsRequest request) {
-        LOG.trace("Called listMonitors");
-        final ListMonitorsRequest interceptedRequest =
-                ListMonitorsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListMonitorsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListMonitorsResponse::builder)
+                .logger(LOG, "listMonitors")
+                .serviceDetails(
                         "ApmSynthetic",
                         "ListMonitors",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/MonitorCollection/ListMonitors");
-        java.util.function.Function<javax.ws.rs.core.Response, ListMonitorsResponse> transformer =
-                ListMonitorsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/MonitorCollection/ListMonitors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMonitorsRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("monitors")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("scriptId", request.getScriptId())
+                .appendQueryParam("vantagePoint", request.getVantagePoint())
+                .appendQueryParam("monitorType", request.getMonitorType())
+                .appendEnumQueryParam("status", request.getStatus())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.apmsynthetics.model.MonitorCollection.class,
+                        ListMonitorsResponse.Builder::monitorCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMonitorsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMonitorsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListPublicVantagePointsResponse listPublicVantagePoints(
             ListPublicVantagePointsRequest request) {
-        LOG.trace("Called listPublicVantagePoints");
-        final ListPublicVantagePointsRequest interceptedRequest =
-                ListPublicVantagePointsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListPublicVantagePointsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListPublicVantagePointsResponse::builder)
+                .logger(LOG, "listPublicVantagePoints")
+                .serviceDetails(
                         "ApmSynthetic",
                         "ListPublicVantagePoints",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/PublicVantagePointCollection/ListPublicVantagePoints");
-        java.util.function.Function<javax.ws.rs.core.Response, ListPublicVantagePointsResponse>
-                transformer =
-                        ListPublicVantagePointsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/PublicVantagePointCollection/ListPublicVantagePoints")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPublicVantagePointsRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("publicVantagePoints")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("name", request.getName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.apmsynthetics.model.PublicVantagePointCollection.class,
+                        ListPublicVantagePointsResponse.Builder::publicVantagePointCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPublicVantagePointsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPublicVantagePointsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListScriptsResponse listScripts(ListScriptsRequest request) {
-        LOG.trace("Called listScripts");
-        final ListScriptsRequest interceptedRequest =
-                ListScriptsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListScriptsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListScriptsResponse::builder)
+                .logger(LOG, "listScripts")
+                .serviceDetails(
                         "ApmSynthetic",
                         "ListScripts",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/ScriptCollection/ListScripts");
-        java.util.function.Function<javax.ws.rs.core.Response, ListScriptsResponse> transformer =
-                ListScriptsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/ScriptCollection/ListScripts")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListScriptsRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("scripts")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("contentType", request.getContentType())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.apmsynthetics.model.ScriptCollection.class,
+                        ListScriptsResponse.Builder::scriptCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListScriptsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListScriptsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public UpdateDedicatedVantagePointResponse updateDedicatedVantagePoint(
             UpdateDedicatedVantagePointRequest request) {
-        LOG.trace("Called updateDedicatedVantagePoint");
-        final UpdateDedicatedVantagePointRequest interceptedRequest =
-                UpdateDedicatedVantagePointConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateDedicatedVantagePointConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getDedicatedVantagePointId(), "dedicatedVantagePointId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDedicatedVantagePointDetails(),
+                "updateDedicatedVantagePointDetails is required");
+
+        return clientCall(request, UpdateDedicatedVantagePointResponse::builder)
+                .logger(LOG, "updateDedicatedVantagePoint")
+                .serviceDetails(
                         "ApmSynthetic",
                         "UpdateDedicatedVantagePoint",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/UpdateDedicatedVantagePoint");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateDedicatedVantagePointResponse>
-                transformer =
-                        UpdateDedicatedVantagePointConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateDedicatedVantagePointDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/UpdateDedicatedVantagePoint")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDedicatedVantagePointRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("dedicatedVantagePoints")
+                .appendPathParam(request.getDedicatedVantagePointId())
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apmsynthetics.model.DedicatedVantagePoint.class,
+                        UpdateDedicatedVantagePointResponse.Builder::dedicatedVantagePoint)
+                .handleResponseHeaderString(
+                        "etag", UpdateDedicatedVantagePointResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDedicatedVantagePointResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public UpdateMonitorResponse updateMonitor(UpdateMonitorRequest request) {
-        LOG.trace("Called updateMonitor");
-        final UpdateMonitorRequest interceptedRequest =
-                UpdateMonitorConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateMonitorConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMonitorId(), "monitorId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMonitorDetails(), "updateMonitorDetails is required");
+
+        return clientCall(request, UpdateMonitorResponse::builder)
+                .logger(LOG, "updateMonitor")
+                .serviceDetails(
                         "ApmSynthetic",
                         "UpdateMonitor",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/UpdateMonitor");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateMonitorResponse> transformer =
-                UpdateMonitorConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateMonitorDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/UpdateMonitor")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMonitorRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("monitors")
+                .appendPathParam(request.getMonitorId())
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apmsynthetics.model.Monitor.class,
+                        UpdateMonitorResponse.Builder::monitor)
+                .handleResponseHeaderString("etag", UpdateMonitorResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateMonitorResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public UpdateScriptResponse updateScript(UpdateScriptRequest request) {
-        LOG.trace("Called updateScript");
-        final UpdateScriptRequest interceptedRequest =
-                UpdateScriptConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateScriptConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getScriptId(), "scriptId must not be blank");
+        Objects.requireNonNull(request.getUpdateScriptDetails(), "updateScriptDetails is required");
+
+        return clientCall(request, UpdateScriptResponse::builder)
+                .logger(LOG, "updateScript")
+                .serviceDetails(
                         "ApmSynthetic",
                         "UpdateScript",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/UpdateScript");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateScriptResponse> transformer =
-                UpdateScriptConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateScriptDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/UpdateScript")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateScriptRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("scripts")
+                .appendPathParam(request.getScriptId())
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apmsynthetics.model.Script.class,
+                        UpdateScriptResponse.Builder::script)
+                .handleResponseHeaderString("etag", UpdateScriptResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateScriptResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ApmSyntheticPaginators getPaginators() {
         return paginators;
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ApmSyntheticClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(builder(), authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ApmSyntheticClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(builder().configuration(configuration), authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ApmSyntheticClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                builder().configuration(configuration).clientConfigurator(clientConfigurator),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ApmSyntheticClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ApmSyntheticClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ApmSyntheticClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ApmSyntheticClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider);
     }
 }

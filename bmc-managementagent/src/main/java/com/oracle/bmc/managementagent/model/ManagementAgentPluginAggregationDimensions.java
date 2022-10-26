@@ -5,22 +5,22 @@
 package com.oracle.bmc.managementagent.model;
 
 /**
- * The Aggregation of Management Agent Plugin Dimensions
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The Aggregation of Management Agent Plugin Dimensions <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ManagementAgentPluginAggregationDimensions.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ManagementAgentPluginAggregationDimensions.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ManagementAgentPluginAggregationDimensions
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"pluginName", "pluginDisplayName"})
     public ManagementAgentPluginAggregationDimensions(String pluginName, String pluginDisplayName) {
@@ -31,33 +31,31 @@ public final class ManagementAgentPluginAggregationDimensions
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Management Agent Plugin Name
-         **/
+        /** Management Agent Plugin Name */
         @com.fasterxml.jackson.annotation.JsonProperty("pluginName")
         private String pluginName;
 
         /**
          * Management Agent Plugin Name
+         *
          * @param pluginName the value to set
          * @return this builder
-         **/
+         */
         public Builder pluginName(String pluginName) {
             this.pluginName = pluginName;
             this.__explicitlySet__.add("pluginName");
             return this;
         }
-        /**
-         * Management Agent Plugin Display Name
-         **/
+        /** Management Agent Plugin Display Name */
         @com.fasterxml.jackson.annotation.JsonProperty("pluginDisplayName")
         private String pluginDisplayName;
 
         /**
          * Management Agent Plugin Display Name
+         *
          * @param pluginDisplayName the value to set
          * @return this builder
-         **/
+         */
         public Builder pluginDisplayName(String pluginDisplayName) {
             this.pluginDisplayName = pluginDisplayName;
             this.__explicitlySet__.add("pluginDisplayName");
@@ -89,9 +87,7 @@ public final class ManagementAgentPluginAggregationDimensions
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,30 +96,28 @@ public final class ManagementAgentPluginAggregationDimensions
         return new Builder().copy(this);
     }
 
-    /**
-     * Management Agent Plugin Name
-     **/
+    /** Management Agent Plugin Name */
     @com.fasterxml.jackson.annotation.JsonProperty("pluginName")
     private final String pluginName;
 
     /**
      * Management Agent Plugin Name
+     *
      * @return the value
-     **/
+     */
     public String getPluginName() {
         return pluginName;
     }
 
-    /**
-     * Management Agent Plugin Display Name
-     **/
+    /** Management Agent Plugin Display Name */
     @com.fasterxml.jackson.annotation.JsonProperty("pluginDisplayName")
     private final String pluginDisplayName;
 
     /**
      * Management Agent Plugin Display Name
+     *
      * @return the value
-     **/
+     */
     public String getPluginDisplayName() {
         return pluginDisplayName;
     }
@@ -135,6 +129,7 @@ public final class ManagementAgentPluginAggregationDimensions
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

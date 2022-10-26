@@ -5,25 +5,25 @@
 package com.oracle.bmc.nosql.model;
 
 /**
- * TableUsageSummary represents a single usage record, or slice, that includes
- * information about read and write throughput consumed during that period
- * as well as the current information regarding storage capacity. In
- * addition the count of throttling exceptions for the period is reported.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * TableUsageSummary represents a single usage record, or slice, that includes information about
+ * read and write throughput consumed during that period as well as the current information
+ * regarding storage capacity. In addition the count of throttling exceptions for the period is
+ * reported. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = TableUsageSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TableUsageSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = TableUsageSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class TableUsageSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "secondsInPeriod",
@@ -57,134 +57,114 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The length of the sampling period.
-         **/
+        /** The length of the sampling period. */
         @com.fasterxml.jackson.annotation.JsonProperty("secondsInPeriod")
         private Integer secondsInPeriod;
 
         /**
          * The length of the sampling period.
+         *
          * @param secondsInPeriod the value to set
          * @return this builder
-         **/
+         */
         public Builder secondsInPeriod(Integer secondsInPeriod) {
             this.secondsInPeriod = secondsInPeriod;
             this.__explicitlySet__.add("secondsInPeriod");
             return this;
         }
-        /**
-         * Read throughput during the sampling period.
-         **/
+        /** Read throughput during the sampling period. */
         @com.fasterxml.jackson.annotation.JsonProperty("readUnits")
         private Integer readUnits;
 
         /**
          * Read throughput during the sampling period.
+         *
          * @param readUnits the value to set
          * @return this builder
-         **/
+         */
         public Builder readUnits(Integer readUnits) {
             this.readUnits = readUnits;
             this.__explicitlySet__.add("readUnits");
             return this;
         }
-        /**
-         * Write throughput during the sampling period.
-         **/
+        /** Write throughput during the sampling period. */
         @com.fasterxml.jackson.annotation.JsonProperty("writeUnits")
         private Integer writeUnits;
 
         /**
          * Write throughput during the sampling period.
+         *
          * @param writeUnits the value to set
          * @return this builder
-         **/
+         */
         public Builder writeUnits(Integer writeUnits) {
             this.writeUnits = writeUnits;
             this.__explicitlySet__.add("writeUnits");
             return this;
         }
-        /**
-         * The size of the table, in GB.
-         **/
+        /** The size of the table, in GB. */
         @com.fasterxml.jackson.annotation.JsonProperty("storageInGBs")
         private Integer storageInGBs;
 
         /**
          * The size of the table, in GB.
+         *
          * @param storageInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder storageInGBs(Integer storageInGBs) {
             this.storageInGBs = storageInGBs;
             this.__explicitlySet__.add("storageInGBs");
             return this;
         }
-        /**
-         * The number of times reads were throttled due to exceeding
-         * the read throughput limit.
-         *
-         **/
+        /** The number of times reads were throttled due to exceeding the read throughput limit. */
         @com.fasterxml.jackson.annotation.JsonProperty("readThrottleCount")
         private Integer readThrottleCount;
 
         /**
-         * The number of times reads were throttled due to exceeding
-         * the read throughput limit.
+         * The number of times reads were throttled due to exceeding the read throughput limit.
          *
          * @param readThrottleCount the value to set
          * @return this builder
-         **/
+         */
         public Builder readThrottleCount(Integer readThrottleCount) {
             this.readThrottleCount = readThrottleCount;
             this.__explicitlySet__.add("readThrottleCount");
             return this;
         }
         /**
-         * The number of times writes were throttled due to exceeding
-         * the write throughput limit.
-         *
-         **/
+         * The number of times writes were throttled due to exceeding the write throughput limit.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("writeThrottleCount")
         private Integer writeThrottleCount;
 
         /**
-         * The number of times writes were throttled due to exceeding
-         * the write throughput limit.
+         * The number of times writes were throttled due to exceeding the write throughput limit.
          *
          * @param writeThrottleCount the value to set
          * @return this builder
-         **/
+         */
         public Builder writeThrottleCount(Integer writeThrottleCount) {
             this.writeThrottleCount = writeThrottleCount;
             this.__explicitlySet__.add("writeThrottleCount");
             return this;
         }
-        /**
-         * The number of times writes were throttled because the table
-         * exceeded its size limit.
-         *
-         **/
+        /** The number of times writes were throttled because the table exceeded its size limit. */
         @com.fasterxml.jackson.annotation.JsonProperty("storageThrottleCount")
         private Integer storageThrottleCount;
 
         /**
-         * The number of times writes were throttled because the table
-         * exceeded its size limit.
+         * The number of times writes were throttled because the table exceeded its size limit.
          *
          * @param storageThrottleCount the value to set
          * @return this builder
-         **/
+         */
         public Builder storageThrottleCount(Integer storageThrottleCount) {
             this.storageThrottleCount = storageThrottleCount;
             this.__explicitlySet__.add("storageThrottleCount");
             return this;
         }
-        /**
-         * The percentage of allowed per-shard usage for the table shard with the highest usage.
-         *
-         **/
+        /** The percentage of allowed per-shard usage for the table shard with the highest usage. */
         @com.fasterxml.jackson.annotation.JsonProperty("maxShardSizeUsageInPercent")
         private Integer maxShardSizeUsageInPercent;
 
@@ -193,7 +173,7 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
          *
          * @param maxShardSizeUsageInPercent the value to set
          * @return this builder
-         **/
+         */
         public Builder maxShardSizeUsageInPercent(Integer maxShardSizeUsageInPercent) {
             this.maxShardSizeUsageInPercent = maxShardSizeUsageInPercent;
             this.__explicitlySet__.add("maxShardSizeUsageInPercent");
@@ -250,9 +230,7 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -261,120 +239,98 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
         return new Builder().copy(this);
     }
 
-    /**
-     * The length of the sampling period.
-     **/
+    /** The length of the sampling period. */
     @com.fasterxml.jackson.annotation.JsonProperty("secondsInPeriod")
     private final Integer secondsInPeriod;
 
     /**
      * The length of the sampling period.
+     *
      * @return the value
-     **/
+     */
     public Integer getSecondsInPeriod() {
         return secondsInPeriod;
     }
 
-    /**
-     * Read throughput during the sampling period.
-     **/
+    /** Read throughput during the sampling period. */
     @com.fasterxml.jackson.annotation.JsonProperty("readUnits")
     private final Integer readUnits;
 
     /**
      * Read throughput during the sampling period.
+     *
      * @return the value
-     **/
+     */
     public Integer getReadUnits() {
         return readUnits;
     }
 
-    /**
-     * Write throughput during the sampling period.
-     **/
+    /** Write throughput during the sampling period. */
     @com.fasterxml.jackson.annotation.JsonProperty("writeUnits")
     private final Integer writeUnits;
 
     /**
      * Write throughput during the sampling period.
+     *
      * @return the value
-     **/
+     */
     public Integer getWriteUnits() {
         return writeUnits;
     }
 
-    /**
-     * The size of the table, in GB.
-     **/
+    /** The size of the table, in GB. */
     @com.fasterxml.jackson.annotation.JsonProperty("storageInGBs")
     private final Integer storageInGBs;
 
     /**
      * The size of the table, in GB.
+     *
      * @return the value
-     **/
+     */
     public Integer getStorageInGBs() {
         return storageInGBs;
     }
 
-    /**
-     * The number of times reads were throttled due to exceeding
-     * the read throughput limit.
-     *
-     **/
+    /** The number of times reads were throttled due to exceeding the read throughput limit. */
     @com.fasterxml.jackson.annotation.JsonProperty("readThrottleCount")
     private final Integer readThrottleCount;
 
     /**
-     * The number of times reads were throttled due to exceeding
-     * the read throughput limit.
+     * The number of times reads were throttled due to exceeding the read throughput limit.
      *
      * @return the value
-     **/
+     */
     public Integer getReadThrottleCount() {
         return readThrottleCount;
     }
 
-    /**
-     * The number of times writes were throttled due to exceeding
-     * the write throughput limit.
-     *
-     **/
+    /** The number of times writes were throttled due to exceeding the write throughput limit. */
     @com.fasterxml.jackson.annotation.JsonProperty("writeThrottleCount")
     private final Integer writeThrottleCount;
 
     /**
-     * The number of times writes were throttled due to exceeding
-     * the write throughput limit.
+     * The number of times writes were throttled due to exceeding the write throughput limit.
      *
      * @return the value
-     **/
+     */
     public Integer getWriteThrottleCount() {
         return writeThrottleCount;
     }
 
-    /**
-     * The number of times writes were throttled because the table
-     * exceeded its size limit.
-     *
-     **/
+    /** The number of times writes were throttled because the table exceeded its size limit. */
     @com.fasterxml.jackson.annotation.JsonProperty("storageThrottleCount")
     private final Integer storageThrottleCount;
 
     /**
-     * The number of times writes were throttled because the table
-     * exceeded its size limit.
+     * The number of times writes were throttled because the table exceeded its size limit.
      *
      * @return the value
-     **/
+     */
     public Integer getStorageThrottleCount() {
         return storageThrottleCount;
     }
 
-    /**
-     * The percentage of allowed per-shard usage for the table shard with the highest usage.
-     *
-     **/
+    /** The percentage of allowed per-shard usage for the table shard with the highest usage. */
     @com.fasterxml.jackson.annotation.JsonProperty("maxShardSizeUsageInPercent")
     private final Integer maxShardSizeUsageInPercent;
 
@@ -382,7 +338,7 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
      * The percentage of allowed per-shard usage for the table shard with the highest usage.
      *
      * @return the value
-     **/
+     */
     public Integer getMaxShardSizeUsageInPercent() {
         return maxShardSizeUsageInPercent;
     }
@@ -394,6 +350,7 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,7 +4,7 @@
   <parent>
     <artifactId>oci-java-sdk-addons</artifactId>
     <groupId>com.oracle.oci.sdk</groupId>
-    <version>2.46.0</version>
+    <version>3.0.0-beta1</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-addons-graalvm</artifactId>
@@ -89,21 +89,23 @@
     <dependency>
       <groupId>org.glassfish.hk2</groupId>
       <artifactId>hk2-api</artifactId>
+      <version>${hk2.version}</version>
     </dependency>
     <dependency>
       <groupId>org.glassfish.hk2</groupId>
       <artifactId>hk2-locator</artifactId>
+      <version>${hk2.version}</version>
     </dependency>
     <dependency>
       <groupId>org.graalvm.nativeimage</groupId>
       <artifactId>svm</artifactId>
       <version>${graalvm.version}</version>
+       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.graalvm.sdk</groupId>
       <artifactId>graal-sdk</artifactId>
       <version>${graalvm.version}</version>
-      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
@@ -112,9 +114,14 @@
       <scope>test</scope>
     </dependency>
     <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>org.bouncycastle</groupId>
       <artifactId>bcprov-jdk15on</artifactId>
-      <scope>provided</scope>
+       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
@@ -130,32 +137,45 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.oracle.oci.sdk</groupId>
-      <artifactId>oci-java-sdk-common</artifactId>
-      <version>2.46.0</version>
+      <!-- This is the addon for Jersey 2 and GraalVM -->
+      <groupId>org.glassfish.jersey.inject</groupId>
+      <artifactId>jersey-hk2</artifactId>
+      <version>${jersey.version}</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
-      <artifactId>oci-java-sdk-objectstorage-extensions</artifactId>
-      <version>2.46.0</version>
+      <artifactId>oci-java-sdk-common</artifactId>
+      <version>3.0.0-beta1</version>
+       <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-common-httpclient</artifactId>
+      <version>3.0.0-beta1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-core</artifactId>
+      <version>3.0.0-beta1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-identity</artifactId>
-      <version>2.46.0</version>
+      <version>3.0.0-beta1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-objectstorage-extensions</artifactId>
-      <version>2.46.0</version>
+      <version>3.0.0-beta1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
-      <artifactId>oci-java-sdk-core</artifactId>
-      <version>2.46.0</version>
+      <artifactId>oci-java-sdk-objectstorage-generated</artifactId>
+      <version>3.0.0-beta1</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

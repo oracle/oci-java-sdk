@@ -5,21 +5,22 @@
 package com.oracle.bmc.limits.model;
 
 /**
- * Request payload to add lock to the resource. The FULL lock type allows no modifications (delete, create, update).
- *   The DELETE lock type allows all modifications, but delete is not allowed.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Request payload to add lock to the resource. The FULL lock type allows no modifications (delete,
+ * create, update). The DELETE lock type allows all modifications, but delete is not allowed. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AddLockDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AddLockDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class AddLockDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "relatedResourceId", "message"})
     public AddLockDetails(Type type, String relatedResourceId, String message) {
@@ -31,55 +32,54 @@ public final class AddLockDetails extends com.oracle.bmc.http.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Lock type.
-         **/
+        /** Lock type. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * Lock type.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
-         *
-         **/
+         * The resource ID that is locking this resource. Indicates that deleting this resource
+         * removes the lock.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("relatedResourceId")
         private String relatedResourceId;
 
         /**
-         * The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+         * The resource ID that is locking this resource. Indicates that deleting this resource
+         * removes the lock.
          *
          * @param relatedResourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder relatedResourceId(String relatedResourceId) {
             this.relatedResourceId = relatedResourceId;
             this.__explicitlySet__.add("relatedResourceId");
             return this;
         }
         /**
-         * A message added by the lock creator. The message typically gives an
-         * indication of why the resource is locked.
-         *
-         **/
+         * A message added by the lock creator. The message typically gives an indication of why the
+         * resource is locked.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
-         * A message added by the lock creator. The message typically gives an
-         * indication of why the resource is locked.
+         * A message added by the lock creator. The message typically gives an indication of why the
+         * resource is locked.
          *
          * @param message the value to set
          * @return this builder
-         **/
+         */
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
@@ -113,9 +113,7 @@ public final class AddLockDetails extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -124,10 +122,8 @@ public final class AddLockDetails extends com.oracle.bmc.http.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /**
-     * Lock type.
-     **/
-    public enum Type {
+    /** Lock type. */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Full("FULL"),
         Delete("DELETE"),
         ;
@@ -159,50 +155,49 @@ public final class AddLockDetails extends com.oracle.bmc.http.internal.Explicitl
             throw new IllegalArgumentException("Invalid Type: " + key);
         }
     };
-    /**
-     * Lock type.
-     **/
+    /** Lock type. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * Lock type.
+     *
      * @return the value
-     **/
+     */
     public Type getType() {
         return type;
     }
 
     /**
-     * The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
-     *
-     **/
+     * The resource ID that is locking this resource. Indicates that deleting this resource removes
+     * the lock.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("relatedResourceId")
     private final String relatedResourceId;
 
     /**
-     * The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+     * The resource ID that is locking this resource. Indicates that deleting this resource removes
+     * the lock.
      *
      * @return the value
-     **/
+     */
     public String getRelatedResourceId() {
         return relatedResourceId;
     }
 
     /**
-     * A message added by the lock creator. The message typically gives an
-     * indication of why the resource is locked.
-     *
-     **/
+     * A message added by the lock creator. The message typically gives an indication of why the
+     * resource is locked.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
-     * A message added by the lock creator. The message typically gives an
-     * indication of why the resource is locked.
+     * A message added by the lock creator. The message typically gives an indication of why the
+     * resource is locked.
      *
      * @return the value
-     **/
+     */
     public String getMessage() {
         return message;
     }
@@ -214,6 +209,7 @@ public final class AddLockDetails extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

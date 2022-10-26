@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details for an Exadata VM cluster network. Applies to Exadata Cloud@Customer instances only.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details for an Exadata VM cluster network. Applies to Exadata Cloud@Customer instances only. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = VmClusterNetworkDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = VmClusterNetworkDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class VmClusterNetworkDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -56,140 +55,144 @@ public final class VmClusterNetworkDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
-         **/
+         * The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does
+         * not need to be unique.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
+         * The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does
+         * not need to be unique.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The SCAN details.
-         **/
+        /** The SCAN details. */
         @com.fasterxml.jackson.annotation.JsonProperty("scans")
         private java.util.List<ScanDetails> scans;
 
         /**
          * The SCAN details.
+         *
          * @param scans the value to set
          * @return this builder
-         **/
+         */
         public Builder scans(java.util.List<ScanDetails> scans) {
             this.scans = scans;
             this.__explicitlySet__.add("scans");
             return this;
         }
-        /**
-         * The list of DNS server IP addresses. Maximum of 3 allowed.
-         **/
+        /** The list of DNS server IP addresses. Maximum of 3 allowed. */
         @com.fasterxml.jackson.annotation.JsonProperty("dns")
         private java.util.List<String> dns;
 
         /**
          * The list of DNS server IP addresses. Maximum of 3 allowed.
+         *
          * @param dns the value to set
          * @return this builder
-         **/
+         */
         public Builder dns(java.util.List<String> dns) {
             this.dns = dns;
             this.__explicitlySet__.add("dns");
             return this;
         }
-        /**
-         * The list of NTP server IP addresses. Maximum of 3 allowed.
-         **/
+        /** The list of NTP server IP addresses. Maximum of 3 allowed. */
         @com.fasterxml.jackson.annotation.JsonProperty("ntp")
         private java.util.List<String> ntp;
 
         /**
          * The list of NTP server IP addresses. Maximum of 3 allowed.
+         *
          * @param ntp the value to set
          * @return this builder
-         **/
+         */
         public Builder ntp(java.util.List<String> ntp) {
             this.ntp = ntp;
             this.__explicitlySet__.add("ntp");
             return this;
         }
-        /**
-         * Details of the client and backup networks.
-         **/
+        /** Details of the client and backup networks. */
         @com.fasterxml.jackson.annotation.JsonProperty("vmNetworks")
         private java.util.List<VmNetworkDetails> vmNetworks;
 
         /**
          * Details of the client and backup networks.
+         *
          * @param vmNetworks the value to set
          * @return this builder
-         **/
+         */
         public Builder vmNetworks(java.util.List<VmNetworkDetails> vmNetworks) {
             this.vmNetworks = vmNetworks;
             this.__explicitlySet__.add("vmNetworks");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         *
-         **/
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -247,9 +250,7 @@ public final class VmClusterNetworkDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -259,125 +260,129 @@ public final class VmClusterNetworkDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
-     **/
+     * The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not
+     * need to be unique.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
+     * The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not
+     * need to be unique.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The SCAN details.
-     **/
+    /** The SCAN details. */
     @com.fasterxml.jackson.annotation.JsonProperty("scans")
     private final java.util.List<ScanDetails> scans;
 
     /**
      * The SCAN details.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<ScanDetails> getScans() {
         return scans;
     }
 
-    /**
-     * The list of DNS server IP addresses. Maximum of 3 allowed.
-     **/
+    /** The list of DNS server IP addresses. Maximum of 3 allowed. */
     @com.fasterxml.jackson.annotation.JsonProperty("dns")
     private final java.util.List<String> dns;
 
     /**
      * The list of DNS server IP addresses. Maximum of 3 allowed.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getDns() {
         return dns;
     }
 
-    /**
-     * The list of NTP server IP addresses. Maximum of 3 allowed.
-     **/
+    /** The list of NTP server IP addresses. Maximum of 3 allowed. */
     @com.fasterxml.jackson.annotation.JsonProperty("ntp")
     private final java.util.List<String> ntp;
 
     /**
      * The list of NTP server IP addresses. Maximum of 3 allowed.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getNtp() {
         return ntp;
     }
 
-    /**
-     * Details of the client and backup networks.
-     **/
+    /** Details of the client and backup networks. */
     @com.fasterxml.jackson.annotation.JsonProperty("vmNetworks")
     private final java.util.List<VmNetworkDetails> vmNetworks;
 
     /**
      * Details of the client and backup networks.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<VmNetworkDetails> getVmNetworks() {
         return vmNetworks;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -389,6 +394,7 @@ public final class VmClusterNetworkDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

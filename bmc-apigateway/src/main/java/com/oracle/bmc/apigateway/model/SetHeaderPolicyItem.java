@@ -5,23 +5,23 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Set will add a new header if it was not in the original request.  If the header already exists on the
- * request, you can choose to override, append, or skip it.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Set will add a new header if it was not in the original request. If the header already exists on
+ * the request, you can choose to override, append, or skip it. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SetHeaderPolicyItem.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SetHeaderPolicyItem extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = SetHeaderPolicyItem.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class SetHeaderPolicyItem
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "values", "ifExists"})
     public SetHeaderPolicyItem(String name, java.util.List<String> values, IfExists ifExists) {
@@ -34,58 +34,59 @@ public final class SetHeaderPolicyItem extends com.oracle.bmc.http.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The case-insensitive name of the header.  This name must be unique across transformation policies.
-         *
-         **/
+         * The case-insensitive name of the header. This name must be unique across transformation
+         * policies.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The case-insensitive name of the header.  This name must be unique across transformation policies.
+         * The case-insensitive name of the header. This name must be unique across transformation
+         * policies.
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * A list of new values.  Each value can be a constant or may include one or more expressions enclosed within
-         * ${} delimiters.
-         *
-         **/
+         * A list of new values. Each value can be a constant or may include one or more expressions
+         * enclosed within ${} delimiters.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<String> values;
 
         /**
-         * A list of new values.  Each value can be a constant or may include one or more expressions enclosed within
-         * ${} delimiters.
+         * A list of new values. Each value can be a constant or may include one or more expressions
+         * enclosed within ${} delimiters.
          *
          * @param values the value to set
          * @return this builder
-         **/
+         */
         public Builder values(java.util.List<String> values) {
             this.values = values;
             this.__explicitlySet__.add("values");
             return this;
         }
         /**
-         * If a header with the same name already exists in the request, OVERWRITE will overwrite the value,
-         * APPEND will append to the existing value, or SKIP will keep the existing value.
-         *
-         **/
+         * If a header with the same name already exists in the request, OVERWRITE will overwrite
+         * the value, APPEND will append to the existing value, or SKIP will keep the existing
+         * value.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("ifExists")
         private IfExists ifExists;
 
         /**
-         * If a header with the same name already exists in the request, OVERWRITE will overwrite the value,
-         * APPEND will append to the existing value, or SKIP will keep the existing value.
+         * If a header with the same name already exists in the request, OVERWRITE will overwrite
+         * the value, APPEND will append to the existing value, or SKIP will keep the existing
+         * value.
          *
          * @param ifExists the value to set
          * @return this builder
-         **/
+         */
         public Builder ifExists(IfExists ifExists) {
             this.ifExists = ifExists;
             this.__explicitlySet__.add("ifExists");
@@ -119,9 +120,7 @@ public final class SetHeaderPolicyItem extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -131,52 +130,51 @@ public final class SetHeaderPolicyItem extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The case-insensitive name of the header.  This name must be unique across transformation policies.
-     *
-     **/
+     * The case-insensitive name of the header. This name must be unique across transformation
+     * policies.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * The case-insensitive name of the header. This name must be unique across transformation
+     * policies.
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
-     * A list of new values.  Each value can be a constant or may include one or more expressions enclosed within
-     * ${} delimiters.
-     *
-     **/
+     * A list of new values. Each value can be a constant or may include one or more expressions
+     * enclosed within ${} delimiters.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<String> values;
 
     /**
-     * A list of new values.  Each value can be a constant or may include one or more expressions enclosed within
-     * ${} delimiters.
+     * A list of new values. Each value can be a constant or may include one or more expressions
+     * enclosed within ${} delimiters.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getValues() {
         return values;
     }
 
     /**
-     * If a header with the same name already exists in the request, OVERWRITE will overwrite the value,
-     * APPEND will append to the existing value, or SKIP will keep the existing value.
-     *
-     **/
-    public enum IfExists {
+     * If a header with the same name already exists in the request, OVERWRITE will overwrite the
+     * value, APPEND will append to the existing value, or SKIP will keep the existing value.
+     */
+    public enum IfExists implements com.oracle.bmc.http.internal.BmcEnum {
         Overwrite("OVERWRITE"),
         Append("APPEND"),
         Skip("SKIP"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -216,19 +214,18 @@ public final class SetHeaderPolicyItem extends com.oracle.bmc.http.internal.Expl
         }
     };
     /**
-     * If a header with the same name already exists in the request, OVERWRITE will overwrite the value,
-     * APPEND will append to the existing value, or SKIP will keep the existing value.
-     *
-     **/
+     * If a header with the same name already exists in the request, OVERWRITE will overwrite the
+     * value, APPEND will append to the existing value, or SKIP will keep the existing value.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("ifExists")
     private final IfExists ifExists;
 
     /**
-     * If a header with the same name already exists in the request, OVERWRITE will overwrite the value,
-     * APPEND will append to the existing value, or SKIP will keep the existing value.
+     * If a header with the same name already exists in the request, OVERWRITE will overwrite the
+     * value, APPEND will append to the existing value, or SKIP will keep the existing value.
      *
      * @return the value
-     **/
+     */
     public IfExists getIfExists() {
         return ifExists;
     }
@@ -240,6 +237,7 @@ public final class SetHeaderPolicyItem extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

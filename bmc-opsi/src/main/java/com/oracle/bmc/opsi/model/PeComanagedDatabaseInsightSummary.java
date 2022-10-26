@@ -5,25 +5,24 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Summary of a database insight resource.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary of a database insight resource. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = PeComanagedDatabaseInsightSummary.Builder.class
-)
+        builder = PeComanagedDatabaseInsightSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "entitySource"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "entitySource")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class PeComanagedDatabaseInsightSummary extends DatabaseInsightSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -189,33 +188,35 @@ public final class PeComanagedDatabaseInsightSummary extends DatabaseInsightSumm
             this.__explicitlySet__.add("databaseConnectionStatusDetails");
             return this;
         }
-        /**
-         * OCI database resource type
-         **/
+        /** OCI database resource type */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseResourceType")
         private String databaseResourceType;
 
         /**
          * OCI database resource type
+         *
          * @param databaseResourceType the value to set
          * @return this builder
-         **/
+         */
         public Builder databaseResourceType(String databaseResourceType) {
             this.databaseResourceType = databaseResourceType;
             this.__explicitlySet__.add("databaseResourceType");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the OPSI private endpoint
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("opsiPrivateEndpointId")
         private String opsiPrivateEndpointId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the OPSI private endpoint
+         *
          * @param opsiPrivateEndpointId the value to set
          * @return this builder
-         **/
+         */
         public Builder opsiPrivateEndpointId(String opsiPrivateEndpointId) {
             this.opsiPrivateEndpointId = opsiPrivateEndpointId;
             this.__explicitlySet__.add("opsiPrivateEndpointId");
@@ -320,9 +321,7 @@ public final class PeComanagedDatabaseInsightSummary extends DatabaseInsightSumm
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -376,30 +375,32 @@ public final class PeComanagedDatabaseInsightSummary extends DatabaseInsightSumm
         this.opsiPrivateEndpointId = opsiPrivateEndpointId;
     }
 
-    /**
-     * OCI database resource type
-     **/
+    /** OCI database resource type */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseResourceType")
     private final String databaseResourceType;
 
     /**
      * OCI database resource type
+     *
      * @return the value
-     **/
+     */
     public String getDatabaseResourceType() {
         return databaseResourceType;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the OPSI private endpoint
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("opsiPrivateEndpointId")
     private final String opsiPrivateEndpointId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the OPSI private endpoint
+     *
      * @return the value
-     **/
+     */
     public String getOpsiPrivateEndpointId() {
         return opsiPrivateEndpointId;
     }
@@ -411,6 +412,7 @@ public final class PeComanagedDatabaseInsightSummary extends DatabaseInsightSumm
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,22 +5,22 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AccessibleCompartmentRequest.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AccessibleCompartmentRequest.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AccessibleCompartmentRequest
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"authorizationRequest", "compartmentIds"})
     public AccessibleCompartmentRequest(
@@ -32,33 +32,31 @@ public final class AccessibleCompartmentRequest
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The authorization request.
-         **/
+        /** The authorization request. */
         @com.fasterxml.jackson.annotation.JsonProperty("authorizationRequest")
         private AuthorizationRequest authorizationRequest;
 
         /**
          * The authorization request.
+         *
          * @param authorizationRequest the value to set
          * @return this builder
-         **/
+         */
         public Builder authorizationRequest(AuthorizationRequest authorizationRequest) {
             this.authorizationRequest = authorizationRequest;
             this.__explicitlySet__.add("authorizationRequest");
             return this;
         }
-        /**
-         * The list of compartment ids.
-         **/
+        /** The list of compartment ids. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentIds")
         private java.util.List<String> compartmentIds;
 
         /**
          * The list of compartment ids.
+         *
          * @param compartmentIds the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentIds(java.util.List<String> compartmentIds) {
             this.compartmentIds = compartmentIds;
             this.__explicitlySet__.add("compartmentIds");
@@ -90,9 +88,7 @@ public final class AccessibleCompartmentRequest
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -101,30 +97,28 @@ public final class AccessibleCompartmentRequest
         return new Builder().copy(this);
     }
 
-    /**
-     * The authorization request.
-     **/
+    /** The authorization request. */
     @com.fasterxml.jackson.annotation.JsonProperty("authorizationRequest")
     private final AuthorizationRequest authorizationRequest;
 
     /**
      * The authorization request.
+     *
      * @return the value
-     **/
+     */
     public AuthorizationRequest getAuthorizationRequest() {
         return authorizationRequest;
     }
 
-    /**
-     * The list of compartment ids.
-     **/
+    /** The list of compartment ids. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentIds")
     private final java.util.List<String> compartmentIds;
 
     /**
      * The list of compartment ids.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getCompartmentIds() {
         return compartmentIds;
     }
@@ -136,6 +130,7 @@ public final class AccessibleCompartmentRequest
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

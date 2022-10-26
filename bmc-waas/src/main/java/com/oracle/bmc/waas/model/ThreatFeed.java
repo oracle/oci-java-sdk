@@ -5,19 +5,21 @@
 package com.oracle.bmc.waas.model;
 
 /**
- * The settings of the threat intelligence feed. You can block requests from IP addresses based on their reputations with various commercial and open source threat feeds.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The settings of the threat intelligence feed. You can block requests from IP addresses based on
+ * their reputations with various commercial and open source threat feeds. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ThreatFeed.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ThreatFeed extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ThreatFeed extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "name", "action", "description"})
     public ThreatFeed(String key, String name, Action action, String description) {
@@ -30,65 +32,65 @@ public final class ThreatFeed extends com.oracle.bmc.http.internal.ExplicitlySet
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The unique key of the threat intelligence feed.
-         **/
+        /** The unique key of the threat intelligence feed. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The unique key of the threat intelligence feed.
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /**
-         * The name of the threat intelligence feed.
-         **/
+        /** The name of the threat intelligence feed. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the threat intelligence feed.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The action to take when traffic is flagged as malicious by data from the threat intelligence feed. If unspecified, defaults to {@code OFF}.
-         **/
+         * The action to take when traffic is flagged as malicious by data from the threat
+         * intelligence feed. If unspecified, defaults to {@code OFF}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
         /**
-         * The action to take when traffic is flagged as malicious by data from the threat intelligence feed. If unspecified, defaults to {@code OFF}.
+         * The action to take when traffic is flagged as malicious by data from the threat
+         * intelligence feed. If unspecified, defaults to {@code OFF}.
+         *
          * @param action the value to set
          * @return this builder
-         **/
+         */
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
             return this;
         }
-        /**
-         * The description of the threat intelligence feed.
-         **/
+        /** The description of the threat intelligence feed. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the threat intelligence feed.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -124,9 +126,7 @@ public final class ThreatFeed extends com.oracle.bmc.http.internal.ExplicitlySet
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -135,45 +135,44 @@ public final class ThreatFeed extends com.oracle.bmc.http.internal.ExplicitlySet
         return new Builder().copy(this);
     }
 
-    /**
-     * The unique key of the threat intelligence feed.
-     **/
+    /** The unique key of the threat intelligence feed. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The unique key of the threat intelligence feed.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * The name of the threat intelligence feed.
-     **/
+    /** The name of the threat intelligence feed. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the threat intelligence feed.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
-     * The action to take when traffic is flagged as malicious by data from the threat intelligence feed. If unspecified, defaults to {@code OFF}.
-     **/
-    public enum Action {
+     * The action to take when traffic is flagged as malicious by data from the threat intelligence
+     * feed. If unspecified, defaults to {@code OFF}.
+     */
+    public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
         Off("OFF"),
         Detect("DETECT"),
         Block("BLOCK"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -212,29 +211,31 @@ public final class ThreatFeed extends com.oracle.bmc.http.internal.ExplicitlySet
         }
     };
     /**
-     * The action to take when traffic is flagged as malicious by data from the threat intelligence feed. If unspecified, defaults to {@code OFF}.
-     **/
+     * The action to take when traffic is flagged as malicious by data from the threat intelligence
+     * feed. If unspecified, defaults to {@code OFF}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
     /**
-     * The action to take when traffic is flagged as malicious by data from the threat intelligence feed. If unspecified, defaults to {@code OFF}.
+     * The action to take when traffic is flagged as malicious by data from the threat intelligence
+     * feed. If unspecified, defaults to {@code OFF}.
+     *
      * @return the value
-     **/
+     */
     public Action getAction() {
         return action;
     }
 
-    /**
-     * The description of the threat intelligence feed.
-     **/
+    /** The description of the threat intelligence feed. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the threat intelligence feed.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
@@ -246,6 +247,7 @@ public final class ThreatFeed extends com.oracle.bmc.http.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

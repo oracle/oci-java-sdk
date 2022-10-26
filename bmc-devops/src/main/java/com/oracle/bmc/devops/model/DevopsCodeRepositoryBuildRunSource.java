@@ -5,39 +5,37 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies details of build run through DevOps code repository.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Specifies details of build run through DevOps code repository. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DevopsCodeRepositoryBuildRunSource.Builder.class
-)
+        builder = DevopsCodeRepositoryBuildRunSource.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "sourceType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "sourceType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DevopsCodeRepositoryBuildRunSource extends BuildRunSource {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The trigger that invoked the build run.
-         **/
+        /** The trigger that invoked the build run. */
         @com.fasterxml.jackson.annotation.JsonProperty("triggerId")
         private String triggerId;
 
         /**
          * The trigger that invoked the build run.
+         *
          * @param triggerId the value to set
          * @return this builder
-         **/
+         */
         public Builder triggerId(String triggerId) {
             this.triggerId = triggerId;
             this.__explicitlySet__.add("triggerId");
@@ -52,17 +50,16 @@ public final class DevopsCodeRepositoryBuildRunSource extends BuildRunSource {
             this.__explicitlySet__.add("triggerInfo");
             return this;
         }
-        /**
-         * The DevOps code repository identifier that invoked the build run.
-         **/
+        /** The DevOps code repository identifier that invoked the build run. */
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
         private String repositoryId;
 
         /**
          * The DevOps code repository identifier that invoked the build run.
+         *
          * @param repositoryId the value to set
          * @return this builder
-         **/
+         */
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = repositoryId;
             this.__explicitlySet__.add("repositoryId");
@@ -97,9 +94,7 @@ public final class DevopsCodeRepositoryBuildRunSource extends BuildRunSource {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,16 +112,15 @@ public final class DevopsCodeRepositoryBuildRunSource extends BuildRunSource {
         this.repositoryId = repositoryId;
     }
 
-    /**
-     * The trigger that invoked the build run.
-     **/
+    /** The trigger that invoked the build run. */
     @com.fasterxml.jackson.annotation.JsonProperty("triggerId")
     private final String triggerId;
 
     /**
      * The trigger that invoked the build run.
+     *
      * @return the value
-     **/
+     */
     public String getTriggerId() {
         return triggerId;
     }
@@ -138,16 +132,15 @@ public final class DevopsCodeRepositoryBuildRunSource extends BuildRunSource {
         return triggerInfo;
     }
 
-    /**
-     * The DevOps code repository identifier that invoked the build run.
-     **/
+    /** The DevOps code repository identifier that invoked the build run. */
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
     private final String repositoryId;
 
     /**
      * The DevOps code repository identifier that invoked the build run.
+     *
      * @return the value
-     **/
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
@@ -159,6 +152,7 @@ public final class DevopsCodeRepositoryBuildRunSource extends BuildRunSource {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

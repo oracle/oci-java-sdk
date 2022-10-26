@@ -4,11 +4,10 @@
  */
 package com.oracle.bmc.operatoraccesscontrol.model;
 
-/**
- * Possible lifecycle states for an operator control assignment.
- **/
+/** Possible lifecycle states for an operator control assignment. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum OperatorControlAssignmentLifecycleStates {
+public enum OperatorControlAssignmentLifecycleStates
+        implements com.oracle.bmc.http.internal.BmcEnum {
     Created("CREATED"),
     Applied("APPLIED"),
     Applyfailed("APPLYFAILED"),

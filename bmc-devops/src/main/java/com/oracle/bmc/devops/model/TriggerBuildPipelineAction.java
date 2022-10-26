@@ -5,25 +5,24 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The action to trigger a build pipeline.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The action to trigger a build pipeline. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = TriggerBuildPipelineAction.Builder.class
-)
+        builder = TriggerBuildPipelineAction.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class TriggerBuildPipelineAction extends TriggerAction {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,17 +34,16 @@ public final class TriggerBuildPipelineAction extends TriggerAction {
             this.__explicitlySet__.add("filter");
             return this;
         }
-        /**
-         * The OCID of the build pipeline to be triggered.
-         **/
+        /** The OCID of the build pipeline to be triggered. */
         @com.fasterxml.jackson.annotation.JsonProperty("buildPipelineId")
         private String buildPipelineId;
 
         /**
          * The OCID of the build pipeline to be triggered.
+         *
          * @param buildPipelineId the value to set
          * @return this builder
-         **/
+         */
         public Builder buildPipelineId(String buildPipelineId) {
             this.buildPipelineId = buildPipelineId;
             this.__explicitlySet__.add("buildPipelineId");
@@ -76,9 +74,7 @@ public final class TriggerBuildPipelineAction extends TriggerAction {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -93,16 +89,15 @@ public final class TriggerBuildPipelineAction extends TriggerAction {
         this.buildPipelineId = buildPipelineId;
     }
 
-    /**
-     * The OCID of the build pipeline to be triggered.
-     **/
+    /** The OCID of the build pipeline to be triggered. */
     @com.fasterxml.jackson.annotation.JsonProperty("buildPipelineId")
     private final String buildPipelineId;
 
     /**
      * The OCID of the build pipeline to be triggered.
+     *
      * @return the value
-     **/
+     */
     public String getBuildPipelineId() {
         return buildPipelineId;
     }
@@ -114,6 +109,7 @@ public final class TriggerBuildPipelineAction extends TriggerAction {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

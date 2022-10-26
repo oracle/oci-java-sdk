@@ -5,19 +5,20 @@
 package com.oracle.bmc.osmanagement.model;
 
 /**
- * Summary of the Event.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary of the Event. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EventSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EventSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class EventSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -54,117 +55,110 @@ public final class EventSummary extends com.oracle.bmc.http.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * OCID identifier of the event
-         **/
+        /** OCID identifier of the event */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * OCID identifier of the event
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * Unique OCI identifier of the instance where the event occurred
-         **/
+        /** Unique OCI identifier of the instance where the event occurred */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
         /**
          * Unique OCI identifier of the instance where the event occurred
+         *
          * @param instanceId the value to set
          * @return this builder
-         **/
+         */
         public Builder instanceId(String instanceId) {
             this.instanceId = instanceId;
             this.__explicitlySet__.add("instanceId");
             return this;
         }
-        /**
-         * human readable description of the event
-         **/
+        /** human readable description of the event */
         @com.fasterxml.jackson.annotation.JsonProperty("summary")
         private String summary;
 
         /**
          * human readable description of the event
+         *
          * @param summary the value to set
          * @return this builder
-         **/
+         */
         public Builder summary(String summary) {
             this.summary = summary;
             this.__explicitlySet__.add("summary");
             return this;
         }
-        /**
-         * Type of the event.
-         **/
+        /** Type of the event. */
         @com.fasterxml.jackson.annotation.JsonProperty("eventType")
         private EventType eventType;
 
         /**
          * Type of the event.
+         *
          * @param eventType the value to set
          * @return this builder
-         **/
+         */
         public Builder eventType(EventType eventType) {
             this.eventType = eventType;
             this.__explicitlySet__.add("eventType");
             return this;
         }
-        /**
-         * Event occurrence count. Number of time the same event happened on the system.
-         **/
+        /** Event occurrence count. Number of time the same event happened on the system. */
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
         /**
          * Event occurrence count. Number of time the same event happened on the system.
+         *
          * @param count the value to set
          * @return this builder
-         **/
+         */
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
             return this;
         }
-        /**
-         * Time of the occurrence of the event
-         **/
+        /** Time of the occurrence of the event */
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
          * Time of the occurrence of the event
+         *
          * @param timestamp the value to set
          * @return this builder
-         **/
+         */
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -173,8 +167,7 @@ public final class EventSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -184,7 +177,7 @@ public final class EventSummary extends com.oracle.bmc.http.internal.ExplicitlyS
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -192,20 +185,19 @@ public final class EventSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         *
-         **/
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         **/
+         */
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -266,9 +258,7 @@ public final class EventSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -277,140 +267,131 @@ public final class EventSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /**
-     * OCID identifier of the event
-     **/
+    /** OCID identifier of the event */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * OCID identifier of the event
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * Unique OCI identifier of the instance where the event occurred
-     **/
+    /** Unique OCI identifier of the instance where the event occurred */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
     /**
      * Unique OCI identifier of the instance where the event occurred
+     *
      * @return the value
-     **/
+     */
     public String getInstanceId() {
         return instanceId;
     }
 
-    /**
-     * human readable description of the event
-     **/
+    /** human readable description of the event */
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
     private final String summary;
 
     /**
      * human readable description of the event
+     *
      * @return the value
-     **/
+     */
     public String getSummary() {
         return summary;
     }
 
-    /**
-     * Type of the event.
-     **/
+    /** Type of the event. */
     @com.fasterxml.jackson.annotation.JsonProperty("eventType")
     private final EventType eventType;
 
     /**
      * Type of the event.
+     *
      * @return the value
-     **/
+     */
     public EventType getEventType() {
         return eventType;
     }
 
-    /**
-     * Event occurrence count. Number of time the same event happened on the system.
-     **/
+    /** Event occurrence count. Number of time the same event happened on the system. */
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
     /**
      * Event occurrence count. Number of time the same event happened on the system.
+     *
      * @return the value
-     **/
+     */
     public Integer getCount() {
         return count;
     }
 
-    /**
-     * Time of the occurrence of the event
-     **/
+    /** Time of the occurrence of the event */
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
      * Time of the occurrence of the event
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimestamp() {
         return timestamp;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     *
-     **/
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -422,6 +403,7 @@ public final class EventSummary extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

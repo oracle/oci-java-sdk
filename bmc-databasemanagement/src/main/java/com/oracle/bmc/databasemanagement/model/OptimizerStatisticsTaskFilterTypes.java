@@ -5,10 +5,11 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Indicates which Gather Optimizer Statistics Collection or Optimizer Statistics Advisor tasks should be filtered.
- **/
+ * Indicates which Gather Optimizer Statistics Collection or Optimizer Statistics Advisor tasks
+ * should be filtered.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum OptimizerStatisticsTaskFilterTypes {
+public enum OptimizerStatisticsTaskFilterTypes implements com.oracle.bmc.http.internal.BmcEnum {
     All("ALL"),
     Manual("MANUAL"),
     Auto("AUTO"),

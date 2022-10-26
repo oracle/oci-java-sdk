@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/**
- * The current state of audit policies available on the target.
- **/
+/** The current state of audit policies available on the target. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum AuditPolicyLifecycleState {
+public enum AuditPolicyLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Updating("UPDATING"),
     Active("ACTIVE"),

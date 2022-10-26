@@ -8,10 +8,7 @@ import com.oracle.bmc.mysql.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 public class CreateDbSystemResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -23,13 +20,12 @@ public class CreateDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
         return etag;
     }
 
-    /**
-     * The URI for the entity being described in the response body.
-     */
+    /** The URI for the entity being described in the response body. */
     private String location;
 
     /**
      * The URI for the entity being described in the response body.
+     *
      * @return the value
      */
     public String getLocation() {
@@ -37,15 +33,14 @@ public class CreateDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -54,13 +49,14 @@ public class CreateDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-     *
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      *
      * @return the value
      */
@@ -68,13 +64,12 @@ public class CreateDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
         return opcWorkRequestId;
     }
 
-    /**
-     * The returned DbSystem instance.
-     */
+    /** The returned DbSystem instance. */
     private com.oracle.bmc.mysql.model.DbSystem dbSystem;
 
     /**
      * The returned DbSystem instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.mysql.model.DbSystem getDbSystem() {
@@ -92,7 +87,7 @@ public class CreateDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
     })
     private CreateDbSystemResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String location,
             String opcRequestId,
@@ -106,25 +101,25 @@ public class CreateDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
         this.dbSystem = dbSystem;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateDbSystemResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -138,13 +133,12 @@ public class CreateDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /**
-         * The URI for the entity being described in the response body.
-         */
+        /** The URI for the entity being described in the response body. */
         private String location;
 
         /**
          * The URI for the entity being described in the response body.
+         *
          * @param location the value to set
          * @return this builder
          */
@@ -154,15 +148,14 @@ public class CreateDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -173,13 +166,14 @@ public class CreateDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-         *
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -189,13 +183,12 @@ public class CreateDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /**
-         * The returned DbSystem instance.
-         */
+        /** The returned DbSystem instance. */
         private com.oracle.bmc.mysql.model.DbSystem dbSystem;
 
         /**
          * The returned DbSystem instance.
+         *
          * @param dbSystem the value to set
          * @return this builder
          */
@@ -206,8 +199,10 @@ public class CreateDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateDbSystemResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -222,8 +217,10 @@ public class CreateDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateDbSystemResponse build() {
             return new CreateDbSystemResponse(
                     __httpStatusCode__,
@@ -238,6 +235,7 @@ public class CreateDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

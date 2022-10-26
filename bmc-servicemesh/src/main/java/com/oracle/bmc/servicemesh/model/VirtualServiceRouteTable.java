@@ -5,22 +5,22 @@
 package com.oracle.bmc.servicemesh.model;
 
 /**
- * This resource represents a customer-managed service route table in the Service Mesh.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * This resource represents a customer-managed service route table in the Service Mesh. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = VirtualServiceRouteTable.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = VirtualServiceRouteTable.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class VirtualServiceRouteTable
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -72,215 +72,213 @@ public final class VirtualServiceRouteTable
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Unique identifier that is immutable on creation.
-         **/
+        /** Unique identifier that is immutable on creation. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique identifier that is immutable on creation.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The OCID of the virtual service in which this virtual service route table is created.
-         **/
+        /** The OCID of the virtual service in which this virtual service route table is created. */
         @com.fasterxml.jackson.annotation.JsonProperty("virtualServiceId")
         private String virtualServiceId;
 
         /**
          * The OCID of the virtual service in which this virtual service route table is created.
+         *
          * @param virtualServiceId the value to set
          * @return this builder
-         **/
+         */
         public Builder virtualServiceId(String virtualServiceId) {
             this.virtualServiceId = virtualServiceId;
             this.__explicitlySet__.add("virtualServiceId");
             return this;
         }
         /**
-         * A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation.
-         * Avoid entering confidential information.
-         * <p>
-         * Example: {@code My unique resource name}
+         * A user-friendly name. The name must be unique within the same virtual service and cannot
+         * be changed after creation. Avoid entering confidential information.
          *
-         **/
+         * <p>Example: {@code My unique resource name}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation.
-         * Avoid entering confidential information.
-         * <p>
-         * Example: {@code My unique resource name}
+         * A user-friendly name. The name must be unique within the same virtual service and cannot
+         * be changed after creation. Avoid entering confidential information.
+         *
+         * <p>Example: {@code My unique resource name}
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * Description of the resource. It can be changed after creation.
-         * Avoid entering confidential information.
-         * <p>
-         * Example: {@code This is my new resource}
+         * Description of the resource. It can be changed after creation. Avoid entering
+         * confidential information.
          *
-         **/
+         * <p>Example: {@code This is my new resource}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Description of the resource. It can be changed after creation.
-         * Avoid entering confidential information.
-         * <p>
-         * Example: {@code This is my new resource}
+         * Description of the resource. It can be changed after creation. Avoid entering
+         * confidential information.
+         *
+         * <p>Example: {@code This is my new resource}
          *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
-         **/
+         * The priority of the route table. Lower value means higher priority. The routes are
+         * declared based on the priority.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("priority")
         private Integer priority;
 
         /**
-         * The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
+         * The priority of the route table. Lower value means higher priority. The routes are
+         * declared based on the priority.
+         *
          * @param priority the value to set
          * @return this builder
-         **/
+         */
         public Builder priority(Integer priority) {
             this.priority = priority;
             this.__explicitlySet__.add("priority");
             return this;
         }
-        /**
-         * The route rules for the virtual service.
-         **/
+        /** The route rules for the virtual service. */
         @com.fasterxml.jackson.annotation.JsonProperty("routeRules")
         private java.util.List<VirtualServiceTrafficRouteRule> routeRules;
 
         /**
          * The route rules for the virtual service.
+         *
          * @param routeRules the value to set
          * @return this builder
-         **/
+         */
         public Builder routeRules(java.util.List<VirtualServiceTrafficRouteRule> routeRules) {
             this.routeRules = routeRules;
             this.__explicitlySet__.add("routeRules");
             return this;
         }
-        /**
-         * The time when this resource was created in an RFC3339 formatted datetime string.
-         **/
+        /** The time when this resource was created in an RFC3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time when this resource was created in an RFC3339 formatted datetime string.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * The time when this resource was updated in an RFC3339 formatted datetime string.
-         **/
+        /** The time when this resource was updated in an RFC3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time when this resource was updated in an RFC3339 formatted datetime string.
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * The current state of the Resource.
-         **/
+        /** The current state of the Resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the Resource.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-         **/
+         * A message describing the current state in more detail. For example, can be used to
+         * provide actionable information for a resource in a Failed state.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+         * A message describing the current state in more detail. For example, can be used to
+         * provide actionable information for a resource in a Failed state.
+         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -289,8 +287,7 @@ public final class VirtualServiceRouteTable
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -300,7 +297,7 @@ public final class VirtualServiceRouteTable
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -308,20 +305,19 @@ public final class VirtualServiceRouteTable
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         *
-         **/
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         **/
+         */
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -402,9 +398,7 @@ public final class VirtualServiceRouteTable
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -413,154 +407,149 @@ public final class VirtualServiceRouteTable
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique identifier that is immutable on creation.
-     **/
+    /** Unique identifier that is immutable on creation. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier that is immutable on creation.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The OCID of the virtual service in which this virtual service route table is created.
-     **/
+    /** The OCID of the virtual service in which this virtual service route table is created. */
     @com.fasterxml.jackson.annotation.JsonProperty("virtualServiceId")
     private final String virtualServiceId;
 
     /**
      * The OCID of the virtual service in which this virtual service route table is created.
+     *
      * @return the value
-     **/
+     */
     public String getVirtualServiceId() {
         return virtualServiceId;
     }
 
     /**
-     * A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation.
-     * Avoid entering confidential information.
-     * <p>
-     * Example: {@code My unique resource name}
+     * A user-friendly name. The name must be unique within the same virtual service and cannot be
+     * changed after creation. Avoid entering confidential information.
      *
-     **/
+     * <p>Example: {@code My unique resource name}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation.
-     * Avoid entering confidential information.
-     * <p>
-     * Example: {@code My unique resource name}
+     * A user-friendly name. The name must be unique within the same virtual service and cannot be
+     * changed after creation. Avoid entering confidential information.
+     *
+     * <p>Example: {@code My unique resource name}
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
-     * Description of the resource. It can be changed after creation.
-     * Avoid entering confidential information.
-     * <p>
-     * Example: {@code This is my new resource}
+     * Description of the resource. It can be changed after creation. Avoid entering confidential
+     * information.
      *
-     **/
+     * <p>Example: {@code This is my new resource}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Description of the resource. It can be changed after creation.
-     * Avoid entering confidential information.
-     * <p>
-     * Example: {@code This is my new resource}
+     * Description of the resource. It can be changed after creation. Avoid entering confidential
+     * information.
+     *
+     * <p>Example: {@code This is my new resource}
      *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
     /**
-     * The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
-     **/
+     * The priority of the route table. Lower value means higher priority. The routes are declared
+     * based on the priority.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
     private final Integer priority;
 
     /**
-     * The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
+     * The priority of the route table. Lower value means higher priority. The routes are declared
+     * based on the priority.
+     *
      * @return the value
-     **/
+     */
     public Integer getPriority() {
         return priority;
     }
 
-    /**
-     * The route rules for the virtual service.
-     **/
+    /** The route rules for the virtual service. */
     @com.fasterxml.jackson.annotation.JsonProperty("routeRules")
     private final java.util.List<VirtualServiceTrafficRouteRule> routeRules;
 
     /**
      * The route rules for the virtual service.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<VirtualServiceTrafficRouteRule> getRouteRules() {
         return routeRules;
     }
 
-    /**
-     * The time when this resource was created in an RFC3339 formatted datetime string.
-     **/
+    /** The time when this resource was created in an RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time when this resource was created in an RFC3339 formatted datetime string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The time when this resource was updated in an RFC3339 formatted datetime string.
-     **/
+    /** The time when this resource was updated in an RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time when this resource was updated in an RFC3339 formatted datetime string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The current state of the Resource.
-     **/
-    public enum LifecycleState {
+    /** The current state of the Resource. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Updating("UPDATING"),
         Active("ACTIVE"),
@@ -569,8 +558,8 @@ public final class VirtualServiceRouteTable
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -609,84 +598,83 @@ public final class VirtualServiceRouteTable
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current state of the Resource.
-     **/
+    /** The current state of the Resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the Resource.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-     **/
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in a Failed state.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in a Failed state.
+     *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     *
-     **/
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -698,6 +686,7 @@ public final class VirtualServiceRouteTable
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

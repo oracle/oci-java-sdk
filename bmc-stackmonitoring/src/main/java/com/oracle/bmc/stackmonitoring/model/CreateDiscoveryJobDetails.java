@@ -5,22 +5,22 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * The request of DiscoveryJob details.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The request of DiscoveryJob details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateDiscoveryJobDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateDiscoveryJobDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateDiscoveryJobDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "discoveryType",
@@ -49,50 +49,49 @@ public final class CreateDiscoveryJobDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
-         *
-         **/
+         * Add option submits new discovery Job. Add with retry option to re-submit failed discovery
+         * job. Refresh option refreshes the existing discovered resources.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("discoveryType")
         private DiscoveryType discoveryType;
 
         /**
-         * Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
+         * Add option submits new discovery Job. Add with retry option to re-submit failed discovery
+         * job. Refresh option refreshes the existing discovered resources.
          *
          * @param discoveryType the value to set
          * @return this builder
-         **/
+         */
         public Builder discoveryType(DiscoveryType discoveryType) {
             this.discoveryType = discoveryType;
             this.__explicitlySet__.add("discoveryType");
             return this;
         }
-        /**
-         * Client who submits discovery job.
-         **/
+        /** Client who submits discovery job. */
         @com.fasterxml.jackson.annotation.JsonProperty("discoveryClient")
         private String discoveryClient;
 
         /**
          * Client who submits discovery job.
+         *
          * @param discoveryClient the value to set
          * @return this builder
-         **/
+         */
         public Builder discoveryClient(String discoveryClient) {
             this.discoveryClient = discoveryClient;
             this.__explicitlySet__.add("discoveryClient");
             return this;
         }
-        /**
-         * The OCID of Compartment
-         **/
+        /** The OCID of Compartment */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of Compartment
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -108,20 +107,19 @@ public final class CreateDiscoveryJobDetails
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -130,8 +128,7 @@ public final class CreateDiscoveryJobDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -141,7 +138,7 @@ public final class CreateDiscoveryJobDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -191,9 +188,7 @@ public final class CreateDiscoveryJobDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -203,10 +198,10 @@ public final class CreateDiscoveryJobDetails
     }
 
     /**
-     * Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
-     *
-     **/
-    public enum DiscoveryType {
+     * Add option submits new discovery Job. Add with retry option to re-submit failed discovery
+     * job. Refresh option refreshes the existing discovered resources.
+     */
+    public enum DiscoveryType implements com.oracle.bmc.http.internal.BmcEnum {
         Add("ADD"),
         AddWithRetry("ADD_WITH_RETRY"),
         Refresh("REFRESH"),
@@ -240,45 +235,44 @@ public final class CreateDiscoveryJobDetails
         }
     };
     /**
-     * Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
-     *
-     **/
+     * Add option submits new discovery Job. Add with retry option to re-submit failed discovery
+     * job. Refresh option refreshes the existing discovered resources.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("discoveryType")
     private final DiscoveryType discoveryType;
 
     /**
-     * Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
+     * Add option submits new discovery Job. Add with retry option to re-submit failed discovery
+     * job. Refresh option refreshes the existing discovered resources.
      *
      * @return the value
-     **/
+     */
     public DiscoveryType getDiscoveryType() {
         return discoveryType;
     }
 
-    /**
-     * Client who submits discovery job.
-     **/
+    /** Client who submits discovery job. */
     @com.fasterxml.jackson.annotation.JsonProperty("discoveryClient")
     private final String discoveryClient;
 
     /**
      * Client who submits discovery job.
+     *
      * @return the value
-     **/
+     */
     public String getDiscoveryClient() {
         return discoveryClient;
     }
 
-    /**
-     * The OCID of Compartment
-     **/
+    /** The OCID of Compartment */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of Compartment
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -291,37 +285,35 @@ public final class CreateDiscoveryJobDetails
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -333,6 +325,7 @@ public final class CreateDiscoveryJobDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

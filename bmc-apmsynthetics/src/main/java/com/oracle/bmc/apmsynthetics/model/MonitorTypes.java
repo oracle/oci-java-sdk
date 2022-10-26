@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.apmsynthetics.model;
 
-/**
- * Monitor type.
- **/
+/** Monitor type. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum MonitorTypes {
+public enum MonitorTypes implements com.oracle.bmc.http.internal.BmcEnum {
     ScriptedBrowser("SCRIPTED_BROWSER"),
     Browser("BROWSER"),
     ScriptedRest("SCRIPTED_REST"),

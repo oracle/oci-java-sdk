@@ -5,19 +5,20 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * To capture all the Outlier details related to profiling.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * To capture all the Outlier details related to profiling. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Outlier.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Outlier extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Outlier extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"low", "high", "lowCount", "highCount"})
     public Outlier(String low, String high, String lowCount, String highCount) {
@@ -30,65 +31,61 @@ public final class Outlier extends com.oracle.bmc.http.internal.ExplicitlySetBmc
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * low value of outlier
-         **/
+        /** low value of outlier */
         @com.fasterxml.jackson.annotation.JsonProperty("low")
         private String low;
 
         /**
          * low value of outlier
+         *
          * @param low the value to set
          * @return this builder
-         **/
+         */
         public Builder low(String low) {
             this.low = low;
             this.__explicitlySet__.add("low");
             return this;
         }
-        /**
-         * high value of outlier
-         **/
+        /** high value of outlier */
         @com.fasterxml.jackson.annotation.JsonProperty("high")
         private String high;
 
         /**
          * high value of outlier
+         *
          * @param high the value to set
          * @return this builder
-         **/
+         */
         public Builder high(String high) {
             this.high = high;
             this.__explicitlySet__.add("high");
             return this;
         }
-        /**
-         * lowCount value of outlier
-         **/
+        /** lowCount value of outlier */
         @com.fasterxml.jackson.annotation.JsonProperty("lowCount")
         private String lowCount;
 
         /**
          * lowCount value of outlier
+         *
          * @param lowCount the value to set
          * @return this builder
-         **/
+         */
         public Builder lowCount(String lowCount) {
             this.lowCount = lowCount;
             this.__explicitlySet__.add("lowCount");
             return this;
         }
-        /**
-         * highCount value of outlier
-         **/
+        /** highCount value of outlier */
         @com.fasterxml.jackson.annotation.JsonProperty("highCount")
         private String highCount;
 
         /**
          * highCount value of outlier
+         *
          * @param highCount the value to set
          * @return this builder
-         **/
+         */
         public Builder highCount(String highCount) {
             this.highCount = highCount;
             this.__explicitlySet__.add("highCount");
@@ -124,9 +121,7 @@ public final class Outlier extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -135,58 +130,54 @@ public final class Outlier extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         return new Builder().copy(this);
     }
 
-    /**
-     * low value of outlier
-     **/
+    /** low value of outlier */
     @com.fasterxml.jackson.annotation.JsonProperty("low")
     private final String low;
 
     /**
      * low value of outlier
+     *
      * @return the value
-     **/
+     */
     public String getLow() {
         return low;
     }
 
-    /**
-     * high value of outlier
-     **/
+    /** high value of outlier */
     @com.fasterxml.jackson.annotation.JsonProperty("high")
     private final String high;
 
     /**
      * high value of outlier
+     *
      * @return the value
-     **/
+     */
     public String getHigh() {
         return high;
     }
 
-    /**
-     * lowCount value of outlier
-     **/
+    /** lowCount value of outlier */
     @com.fasterxml.jackson.annotation.JsonProperty("lowCount")
     private final String lowCount;
 
     /**
      * lowCount value of outlier
+     *
      * @return the value
-     **/
+     */
     public String getLowCount() {
         return lowCount;
     }
 
-    /**
-     * highCount value of outlier
-     **/
+    /** highCount value of outlier */
     @com.fasterxml.jackson.annotation.JsonProperty("highCount")
     private final String highCount;
 
     /**
      * highCount value of outlier
+     *
      * @return the value
-     **/
+     */
     public String getHighCount() {
         return highCount;
     }
@@ -198,6 +189,7 @@ public final class Outlier extends com.oracle.bmc.http.internal.ExplicitlySetBmc
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

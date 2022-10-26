@@ -6,152 +6,124 @@ package com.oracle.bmc.artifacts.requests;
 
 import com.oracle.bmc.artifacts.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/ListRepositoriesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListRepositoriesRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/ListRepositoriesExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListRepositoriesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListRepositoriesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * A filter to return the resources for the specified OCID.
-     *
-     */
+    /** A filter to return the resources for the specified OCID. */
     private String id;
 
-    /**
-     * A filter to return the resources for the specified OCID.
-     *
-     */
+    /** A filter to return the resources for the specified OCID. */
     public String getId() {
         return id;
     }
-    /**
-     * A filter to return only resources that match the given display name exactly.
-     *
-     */
+    /** A filter to return only resources that match the given display name exactly. */
     private String displayName;
 
-    /**
-     * A filter to return only resources that match the given display name exactly.
-     *
-     */
+    /** A filter to return only resources that match the given display name exactly. */
     public String getDisplayName() {
         return displayName;
     }
-    /**
-     * A filter to return resources that match the isImmutable value.
-     *
-     */
+    /** A filter to return resources that match the isImmutable value. */
     private Boolean isImmutable;
 
-    /**
-     * A filter to return resources that match the isImmutable value.
-     *
-     */
+    /** A filter to return resources that match the isImmutable value. */
     public Boolean getIsImmutable() {
         return isImmutable;
     }
-    /**
-     * A filter to return only resources that match the given lifecycle state name exactly.
-     *
-     */
+    /** A filter to return only resources that match the given lifecycle state name exactly. */
     private String lifecycleState;
 
-    /**
-     * A filter to return only resources that match the given lifecycle state name exactly.
-     *
-     */
+    /** A filter to return only resources that match the given lifecycle state name exactly. */
     public String getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a paginated
-     * "List" call. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     * <p>
-     * Example: {@code 50}
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
+     * <p>Example: {@code 50}
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a paginated
-     * "List" call. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     * <p>
-     * Example: {@code 50}
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
+     * <p>Example: {@code 50}
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
-     * call. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
-     * call. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
     /**
-     * Unique identifier for the request.
-     * If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique identifier for the request.
-     * If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
      * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
-     * sort order is case sensitive.
-     * <p>
-     **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
-     * optionally filter by availability domain if the scope of the resource type is within a
-     * single availability domain. If you call one of these "List" operations without specifying
-     * an availability domain, the resources are grouped by availability domain, then sorted.
+     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort
+     * order is case sensitive.
      *
+     * <p>*Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+     * optionally filter by availability domain if the scope of the resource type is within a single
+     * availability domain. If you call one of these "List" operations without specifying an
+     * availability domain, the resources are grouped by availability domain, then sorted.
      */
     private SortBy sortBy;
 
     /**
      * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
-     * sort order is case sensitive.
-     * <p>
-     **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
-     * optionally filter by availability domain if the scope of the resource type is within a
-     * single availability domain. If you call one of these "List" operations without specifying
-     * an availability domain, the resources are grouped by availability domain, then sorted.
+     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort
+     * order is case sensitive.
      *
-     **/
-    public enum SortBy {
+     * <p>*Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+     * optionally filter by availability domain if the scope of the resource type is within a single
+     * availability domain. If you call one of these "List" operations without specifying an
+     * availability domain, the resources are grouped by availability domain, then sorted.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Timecreated("TIMECREATED"),
         Displayname("DISPLAYNAME"),
         ;
@@ -186,31 +158,28 @@ public class ListRepositoriesRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
-     * sort order is case sensitive.
-     * <p>
-     **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
-     * optionally filter by availability domain if the scope of the resource type is within a
-     * single availability domain. If you call one of these "List" operations without specifying
-     * an availability domain, the resources are grouped by availability domain, then sorted.
+     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort
+     * order is case sensitive.
      *
+     * <p>*Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+     * optionally filter by availability domain if the scope of the resource type is within a single
+     * availability domain. If you call one of these "List" operations without specifying an
+     * availability domain, the resources are grouped by availability domain, then sorted.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
-     * is case sensitive.
-     *
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
+     * DISPLAYNAME sort order is case sensitive.
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
-     * is case sensitive.
-     *
-     **/
-    public enum SortOrder {
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
+     * DISPLAYNAME sort order is case sensitive.
+     */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -244,9 +213,8 @@ public class ListRepositoriesRequest extends com.oracle.bmc.requests.BmcRequest<
     };
 
     /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
-     * is case sensitive.
-     *
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
+     * DISPLAYNAME sort order is case sensitive.
      */
     public SortOrder getSortOrder() {
         return sortOrder;
@@ -255,17 +223,19 @@ public class ListRepositoriesRequest extends com.oracle.bmc.requests.BmcRequest<
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListRepositoriesRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -274,10 +244,7 @@ public class ListRepositoriesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * A filter to return the resources for the specified OCID.
-         *
-         */
+        /** A filter to return the resources for the specified OCID. */
         private String id = null;
 
         /**
@@ -291,10 +258,7 @@ public class ListRepositoriesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * A filter to return only resources that match the given display name exactly.
-         *
-         */
+        /** A filter to return only resources that match the given display name exactly. */
         private String displayName = null;
 
         /**
@@ -308,10 +272,7 @@ public class ListRepositoriesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * A filter to return resources that match the isImmutable value.
-         *
-         */
+        /** A filter to return resources that match the isImmutable value. */
         private Boolean isImmutable = null;
 
         /**
@@ -325,10 +286,7 @@ public class ListRepositoriesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * A filter to return only resources that match the given lifecycle state name exactly.
-         *
-         */
+        /** A filter to return only resources that match the given lifecycle state name exactly. */
         private String lifecycleState = null;
 
         /**
@@ -343,21 +301,20 @@ public class ListRepositoriesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a paginated
-         * "List" call. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         * <p>
-         * Example: {@code 50}
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * <p>Example: {@code 50}
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a paginated
-         * "List" call. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         * <p>
-         * Example: {@code 50}
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * <p>Example: {@code 50}
          *
          * @param limit the value to set
          * @return this builder instance
@@ -368,17 +325,16 @@ public class ListRepositoriesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
-         * call. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
-         * call. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -389,15 +345,14 @@ public class ListRepositoriesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * Unique identifier for the request.
-         * If you need to contact Oracle about a particular request, please provide the request ID.
-         *
+         * Unique identifier for the request. If you need to contact Oracle about a particular
+         * request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique identifier for the request.
-         * If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique identifier for the request. If you need to contact Oracle about a particular
+         * request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -408,27 +363,28 @@ public class ListRepositoriesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-         * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
-         * sort order is case sensitive.
-         * <p>
-         **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
-         * optionally filter by availability domain if the scope of the resource type is within a
-         * single availability domain. If you call one of these "List" operations without specifying
-         * an availability domain, the resources are grouped by availability domain, then sorted.
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
+         * for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The
+         * DISPLAYNAME sort order is case sensitive.
          *
+         * <p>*Note:** In general, some "List" operations (for example, {@code ListInstances}) let
+         * you optionally filter by availability domain if the scope of the resource type is within
+         * a single availability domain. If you call one of these "List" operations without
+         * specifying an availability domain, the resources are grouped by availability domain, then
+         * sorted.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-         * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
-         * sort order is case sensitive.
-         * <p>
-         **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
-         * optionally filter by availability domain if the scope of the resource type is within a
-         * single availability domain. If you call one of these "List" operations without specifying
-         * an availability domain, the resources are grouped by availability domain, then sorted.
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
+         * for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The
+         * DISPLAYNAME sort order is case sensitive.
+         *
+         * <p>*Note:** In general, some "List" operations (for example, {@code ListInstances}) let
+         * you optionally filter by availability domain if the scope of the resource type is within
+         * a single availability domain. If you call one of these "List" operations without
+         * specifying an availability domain, the resources are grouped by availability domain, then
+         * sorted.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -439,15 +395,14 @@ public class ListRepositoriesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
-         * is case sensitive.
-         *
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
+         * DISPLAYNAME sort order is case sensitive.
          */
         private SortOrder sortOrder = null;
 
         /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
-         * is case sensitive.
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
+         * DISPLAYNAME sort order is case sensitive.
          *
          * @param sortOrder the value to set
          * @return this builder instance
@@ -459,18 +414,19 @@ public class ListRepositoriesRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -482,6 +438,7 @@ public class ListRepositoriesRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListRepositoriesRequest o) {
@@ -503,10 +460,11 @@ public class ListRepositoriesRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListRepositoriesRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListRepositoriesRequest
          */
@@ -520,7 +478,8 @@ public class ListRepositoriesRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListRepositoriesRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListRepositoriesRequest
@@ -538,12 +497,14 @@ public class ListRepositoriesRequest extends com.oracle.bmc.requests.BmcRequest<
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             return request;
-            // new ListRepositoriesRequest(compartmentId, id, displayName, isImmutable, lifecycleState, limit, page, opcRequestId, sortBy, sortOrder);
+            // new ListRepositoriesRequest(compartmentId, id, displayName, isImmutable,
+            // lifecycleState, limit, page, opcRequestId, sortBy, sortOrder);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -562,6 +523,7 @@ public class ListRepositoriesRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

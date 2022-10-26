@@ -6,69 +6,78 @@ package com.oracle.bmc.databasemanagement.requests;
 
 import com.oracle.bmc.databasemanagement.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSqlTuningAdvisorTaskFindingsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSqlTuningAdvisorTaskFindingsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSqlTuningAdvisorTaskFindingsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ListSqlTuningAdvisorTaskFindingsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class ListSqlTuningAdvisorTaskFindingsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Managed Database.
      */
     private String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Managed Database.
      */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
     /**
-     * The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The SQL tuning task identifier. This is not the
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private Long sqlTuningAdvisorTaskId;
 
     /**
-     * The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The SQL tuning task identifier. This is not the
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     public Long getSqlTuningAdvisorTaskId() {
         return sqlTuningAdvisorTaskId;
     }
     /**
-     * The optional greater than or equal to filter on the execution ID related to a specific SQL Tuning Advisor task.
+     * The optional greater than or equal to filter on the execution ID related to a specific SQL
+     * Tuning Advisor task.
      */
     private Long beginExecId;
 
     /**
-     * The optional greater than or equal to filter on the execution ID related to a specific SQL Tuning Advisor task.
+     * The optional greater than or equal to filter on the execution ID related to a specific SQL
+     * Tuning Advisor task.
      */
     public Long getBeginExecId() {
         return beginExecId;
     }
     /**
-     * The optional less than or equal to query parameter to filter on the execution ID related to a specific SQL Tuning Advisor task.
+     * The optional less than or equal to query parameter to filter on the execution ID related to a
+     * specific SQL Tuning Advisor task.
      */
     private Long endExecId;
 
     /**
-     * The optional less than or equal to query parameter to filter on the execution ID related to a specific SQL Tuning Advisor task.
+     * The optional less than or equal to query parameter to filter on the execution ID related to a
+     * specific SQL Tuning Advisor task.
      */
     public Long getEndExecId() {
         return endExecId;
     }
     /**
-     * The search period during which the API will search for begin and end exec id, if not supplied.
-     * Unused if beginExecId and endExecId optional query params are both supplied.
-     *
+     * The search period during which the API will search for begin and end exec id, if not
+     * supplied. Unused if beginExecId and endExecId optional query params are both supplied.
      */
     private SearchPeriod searchPeriod;
 
     /**
-     * The search period during which the API will search for begin and end exec id, if not supplied.
-     * Unused if beginExecId and endExecId optional query params are both supplied.
-     *
-     **/
-    public enum SearchPeriod {
+     * The search period during which the API will search for begin and end exec id, if not
+     * supplied. Unused if beginExecId and endExecId optional query params are both supplied.
+     */
+    public enum SearchPeriod implements com.oracle.bmc.http.internal.BmcEnum {
         Last24Hr("LAST_24HR"),
         Last7Day("LAST_7DAY"),
         Last31Day("LAST_31DAY"),
@@ -105,22 +114,17 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
     };
 
     /**
-     * The search period during which the API will search for begin and end exec id, if not supplied.
-     * Unused if beginExecId and endExecId optional query params are both supplied.
-     *
+     * The search period during which the API will search for begin and end exec id, if not
+     * supplied. Unused if beginExecId and endExecId optional query params are both supplied.
      */
     public SearchPeriod getSearchPeriod() {
         return searchPeriod;
     }
-    /**
-     * The filter used to display specific findings in the report.
-     */
+    /** The filter used to display specific findings in the report. */
     private FindingFilter findingFilter;
 
-    /**
-     * The filter used to display specific findings in the report.
-     **/
-    public enum FindingFilter {
+    /** The filter used to display specific findings in the report. */
+    public enum FindingFilter implements com.oracle.bmc.http.internal.BmcEnum {
         None("none"),
         Findings("FINDINGS"),
         Nofindings("NOFINDINGS"),
@@ -162,43 +166,29 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
         }
     };
 
-    /**
-     * The filter used to display specific findings in the report.
-     */
+    /** The filter used to display specific findings in the report. */
     public FindingFilter getFindingFilter() {
         return findingFilter;
     }
-    /**
-     * The hash value of the object for the statistic finding search.
-     */
+    /** The hash value of the object for the statistic finding search. */
     private String statsHashFilter;
 
-    /**
-     * The hash value of the object for the statistic finding search.
-     */
+    /** The hash value of the object for the statistic finding search. */
     public String getStatsHashFilter() {
         return statsHashFilter;
     }
-    /**
-     * The hash value of the index table name.
-     */
+    /** The hash value of the index table name. */
     private String indexHashFilter;
 
-    /**
-     * The hash value of the index table name.
-     */
+    /** The hash value of the index table name. */
     public String getIndexHashFilter() {
         return indexHashFilter;
     }
-    /**
-     * The possible sortBy values of an object's recommendations.
-     */
+    /** The possible sortBy values of an object's recommendations. */
     private SortBy sortBy;
 
-    /**
-     * The possible sortBy values of an object's recommendations.
-     **/
-    public enum SortBy {
+    /** The possible sortBy values of an object's recommendations. */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         DbtimeBenefit("DBTIME_BENEFIT"),
         ParsingSchema("PARSING_SCHEMA"),
         SqlId("SQL_ID"),
@@ -242,57 +232,47 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
         }
     };
 
-    /**
-     * The possible sortBy values of an object's recommendations.
-     */
+    /** The possible sortBy values of an object's recommendations. */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending
+     * (\u2018DESC\u2019) order. Descending order is the default order.
      */
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
 
     /**
-     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending
+     * (\u2018DESC\u2019) order. Descending order is the default order.
      */
     public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
         return sortOrder;
     }
     /**
-     * The page token representing the page from where the next set of paginated results
-     * are retrieved. This is usually retrieved from a previous list call.
-     *
+     * The page token representing the page from where the next set of paginated results are
+     * retrieved. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page from where the next set of paginated results
-     * are retrieved. This is usually retrieved from a previous list call.
-     *
+     * The page token representing the page from where the next set of paginated results are
+     * retrieved. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The maximum number of records returned in the paginated response.
-     */
+    /** The maximum number of records returned in the paginated response. */
     private Integer limit;
 
-    /**
-     * The maximum number of records returned in the paginated response.
-     */
+    /** The maximum number of records returned in the paginated response. */
     public Integer getLimit() {
         return limit;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -300,17 +280,19 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSqlTuningAdvisorTaskFindingsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Managed Database.
          */
         private String managedDatabaseId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Managed Database.
+         *
          * @param managedDatabaseId the value to set
          * @return this builder instance
          */
@@ -320,12 +302,15 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
         }
 
         /**
-         * The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The SQL tuning task identifier. This is not the
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          */
         private Long sqlTuningAdvisorTaskId = null;
 
         /**
-         * The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The SQL tuning task identifier. This is not the
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param sqlTuningAdvisorTaskId the value to set
          * @return this builder instance
          */
@@ -335,12 +320,15 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
         }
 
         /**
-         * The optional greater than or equal to filter on the execution ID related to a specific SQL Tuning Advisor task.
+         * The optional greater than or equal to filter on the execution ID related to a specific
+         * SQL Tuning Advisor task.
          */
         private Long beginExecId = null;
 
         /**
-         * The optional greater than or equal to filter on the execution ID related to a specific SQL Tuning Advisor task.
+         * The optional greater than or equal to filter on the execution ID related to a specific
+         * SQL Tuning Advisor task.
+         *
          * @param beginExecId the value to set
          * @return this builder instance
          */
@@ -350,12 +338,15 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
         }
 
         /**
-         * The optional less than or equal to query parameter to filter on the execution ID related to a specific SQL Tuning Advisor task.
+         * The optional less than or equal to query parameter to filter on the execution ID related
+         * to a specific SQL Tuning Advisor task.
          */
         private Long endExecId = null;
 
         /**
-         * The optional less than or equal to query parameter to filter on the execution ID related to a specific SQL Tuning Advisor task.
+         * The optional less than or equal to query parameter to filter on the execution ID related
+         * to a specific SQL Tuning Advisor task.
+         *
          * @param endExecId the value to set
          * @return this builder instance
          */
@@ -365,15 +356,14 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
         }
 
         /**
-         * The search period during which the API will search for begin and end exec id, if not supplied.
-         * Unused if beginExecId and endExecId optional query params are both supplied.
-         *
+         * The search period during which the API will search for begin and end exec id, if not
+         * supplied. Unused if beginExecId and endExecId optional query params are both supplied.
          */
         private SearchPeriod searchPeriod = null;
 
         /**
-         * The search period during which the API will search for begin and end exec id, if not supplied.
-         * Unused if beginExecId and endExecId optional query params are both supplied.
+         * The search period during which the API will search for begin and end exec id, if not
+         * supplied. Unused if beginExecId and endExecId optional query params are both supplied.
          *
          * @param searchPeriod the value to set
          * @return this builder instance
@@ -383,13 +373,12 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
             return this;
         }
 
-        /**
-         * The filter used to display specific findings in the report.
-         */
+        /** The filter used to display specific findings in the report. */
         private FindingFilter findingFilter = null;
 
         /**
          * The filter used to display specific findings in the report.
+         *
          * @param findingFilter the value to set
          * @return this builder instance
          */
@@ -398,13 +387,12 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
             return this;
         }
 
-        /**
-         * The hash value of the object for the statistic finding search.
-         */
+        /** The hash value of the object for the statistic finding search. */
         private String statsHashFilter = null;
 
         /**
          * The hash value of the object for the statistic finding search.
+         *
          * @param statsHashFilter the value to set
          * @return this builder instance
          */
@@ -413,13 +401,12 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
             return this;
         }
 
-        /**
-         * The hash value of the index table name.
-         */
+        /** The hash value of the index table name. */
         private String indexHashFilter = null;
 
         /**
          * The hash value of the index table name.
+         *
          * @param indexHashFilter the value to set
          * @return this builder instance
          */
@@ -428,13 +415,12 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
             return this;
         }
 
-        /**
-         * The possible sortBy values of an object's recommendations.
-         */
+        /** The possible sortBy values of an object's recommendations. */
         private SortBy sortBy = null;
 
         /**
          * The possible sortBy values of an object's recommendations.
+         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -444,12 +430,15 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
         }
 
         /**
-         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending
+         * (\u2018DESC\u2019) order. Descending order is the default order.
          */
         private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder = null;
 
         /**
-         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending
+         * (\u2018DESC\u2019) order. Descending order is the default order.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -459,15 +448,14 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
         }
 
         /**
-         * The page token representing the page from where the next set of paginated results
-         * are retrieved. This is usually retrieved from a previous list call.
-         *
+         * The page token representing the page from where the next set of paginated results are
+         * retrieved. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page from where the next set of paginated results
-         * are retrieved. This is usually retrieved from a previous list call.
+         * The page token representing the page from where the next set of paginated results are
+         * retrieved. This is usually retrieved from a previous list call.
          *
          * @param page the value to set
          * @return this builder instance
@@ -477,13 +465,12 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
             return this;
         }
 
-        /**
-         * The maximum number of records returned in the paginated response.
-         */
+        /** The maximum number of records returned in the paginated response. */
         private Integer limit = null;
 
         /**
          * The maximum number of records returned in the paginated response.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -492,13 +479,12 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -509,18 +495,19 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -532,6 +519,7 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListSqlTuningAdvisorTaskFindingsRequest o) {
@@ -554,12 +542,14 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
         }
 
         /**
-         * Build the instance of ListSqlTuningAdvisorTaskFindingsRequest as configured by this builder
+         * Build the instance of ListSqlTuningAdvisorTaskFindingsRequest as configured by this
+         * builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListSqlTuningAdvisorTaskFindingsRequest
          */
@@ -571,9 +561,11 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
         }
 
         /**
-         * Build the instance of ListSqlTuningAdvisorTaskFindingsRequest as configured by this builder
+         * Build the instance of ListSqlTuningAdvisorTaskFindingsRequest as configured by this
+         * builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListSqlTuningAdvisorTaskFindingsRequest
@@ -595,12 +587,15 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
             request.limit = limit;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListSqlTuningAdvisorTaskFindingsRequest(managedDatabaseId, sqlTuningAdvisorTaskId, beginExecId, endExecId, searchPeriod, findingFilter, statsHashFilter, indexHashFilter, sortBy, sortOrder, page, limit, opcRequestId);
+            // new ListSqlTuningAdvisorTaskFindingsRequest(managedDatabaseId,
+            // sqlTuningAdvisorTaskId, beginExecId, endExecId, searchPeriod, findingFilter,
+            // statsHashFilter, indexHashFilter, sortBy, sortOrder, page, limit, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -622,6 +617,7 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

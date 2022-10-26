@@ -9,15 +9,14 @@ import com.oracle.bmc.dataintegration.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class ListSchemasResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -26,13 +25,16 @@ public class ListSchemasResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * Retrieves the next page of results. When this header appears in the response, additional
+     * pages of results remain. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
     /**
-     * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Retrieves the next page of results. When this header appears in the response, additional
+     * pages of results remain. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -41,13 +43,16 @@ public class ListSchemasResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Retrieves the previous page of results. When this header appears in the response, previous pages of results exist. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * Retrieves the previous page of results. When this header appears in the response, previous
+     * pages of results exist. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcPrevPage;
 
     /**
-     * Retrieves the previous page of results. When this header appears in the response, previous pages of results exist. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Retrieves the previous page of results. When this header appears in the response, previous
+     * pages of results exist. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -55,10 +60,7 @@ public class ListSchemasResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcPrevPage;
     }
 
-    /**
-     * Total items in the entire list.
-     *
-     */
+    /** Total items in the entire list. */
     private Integer opcTotalItems;
 
     /**
@@ -70,13 +72,12 @@ public class ListSchemasResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcTotalItems;
     }
 
-    /**
-     * The returned SchemaSummaryCollection instance.
-     */
+    /** The returned SchemaSummaryCollection instance. */
     private com.oracle.bmc.dataintegration.model.SchemaSummaryCollection schemaSummaryCollection;
 
     /**
      * The returned SchemaSummaryCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.dataintegration.model.SchemaSummaryCollection
@@ -95,7 +96,7 @@ public class ListSchemasResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private ListSchemasResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcNextPage,
             String opcPrevPage,
@@ -109,31 +110,33 @@ public class ListSchemasResponse extends com.oracle.bmc.responses.BmcResponse {
         this.schemaSummaryCollection = schemaSummaryCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<ListSchemasResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -144,13 +147,16 @@ public class ListSchemasResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * Retrieves the next page of results. When this header appears in the response, additional
+         * pages of results remain. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
         /**
-         * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Retrieves the next page of results. When this header appears in the response, additional
+         * pages of results remain. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -161,13 +167,16 @@ public class ListSchemasResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Retrieves the previous page of results. When this header appears in the response, previous pages of results exist. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * Retrieves the previous page of results. When this header appears in the response,
+         * previous pages of results exist. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcPrevPage;
 
         /**
-         * Retrieves the previous page of results. When this header appears in the response, previous pages of results exist. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Retrieves the previous page of results. When this header appears in the response,
+         * previous pages of results exist. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcPrevPage the value to set
          * @return this builder
@@ -177,10 +186,7 @@ public class ListSchemasResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * Total items in the entire list.
-         *
-         */
+        /** Total items in the entire list. */
         private Integer opcTotalItems;
 
         /**
@@ -194,14 +200,13 @@ public class ListSchemasResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * The returned SchemaSummaryCollection instance.
-         */
+        /** The returned SchemaSummaryCollection instance. */
         private com.oracle.bmc.dataintegration.model.SchemaSummaryCollection
                 schemaSummaryCollection;
 
         /**
          * The returned SchemaSummaryCollection instance.
+         *
          * @param schemaSummaryCollection the value to set
          * @return this builder
          */
@@ -214,8 +219,10 @@ public class ListSchemasResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListSchemasResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -230,8 +237,10 @@ public class ListSchemasResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListSchemasResponse build() {
             return new ListSchemasResponse(
                     __httpStatusCode__,
@@ -246,6 +255,7 @@ public class ListSchemasResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

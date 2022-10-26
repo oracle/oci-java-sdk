@@ -6,74 +6,59 @@ package com.oracle.bmc.devops.requests;
 
 import com.oracle.bmc.devops.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRepositoryFileLinesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetRepositoryFileLinesRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRepositoryFileLinesExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * GetRepositoryFileLinesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class GetRepositoryFileLinesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * Unique repository identifier.
-     */
+    /** Unique repository identifier. */
     private String repositoryId;
 
-    /**
-     * Unique repository identifier.
-     */
+    /** Unique repository identifier. */
     public String getRepositoryId() {
         return repositoryId;
     }
-    /**
-     * Path to a file within a repository.
-     */
+    /** Path to a file within a repository. */
     private String filePath;
 
-    /**
-     * Path to a file within a repository.
-     */
+    /** Path to a file within a repository. */
     public String getFilePath() {
         return filePath;
     }
-    /**
-     * Retrieve file lines from specific revision.
-     */
+    /** Retrieve file lines from specific revision. */
     private String revision;
 
-    /**
-     * Retrieve file lines from specific revision.
-     */
+    /** Retrieve file lines from specific revision. */
     public String getRevision() {
         return revision;
     }
-    /**
-     * Line number from where to start returning file lines.
-     */
+    /** Line number from where to start returning file lines. */
     private Integer startLineNumber;
 
-    /**
-     * Line number from where to start returning file lines.
-     */
+    /** Line number from where to start returning file lines. */
     public Integer getStartLineNumber() {
         return startLineNumber;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -82,17 +67,15 @@ public class GetRepositoryFileLinesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetRepositoryFileLinesRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique repository identifier.
-         */
+        /** Unique repository identifier. */
         private String repositoryId = null;
 
         /**
          * Unique repository identifier.
+         *
          * @param repositoryId the value to set
          * @return this builder instance
          */
@@ -101,13 +84,12 @@ public class GetRepositoryFileLinesRequest
             return this;
         }
 
-        /**
-         * Path to a file within a repository.
-         */
+        /** Path to a file within a repository. */
         private String filePath = null;
 
         /**
          * Path to a file within a repository.
+         *
          * @param filePath the value to set
          * @return this builder instance
          */
@@ -116,13 +98,12 @@ public class GetRepositoryFileLinesRequest
             return this;
         }
 
-        /**
-         * Retrieve file lines from specific revision.
-         */
+        /** Retrieve file lines from specific revision. */
         private String revision = null;
 
         /**
          * Retrieve file lines from specific revision.
+         *
          * @param revision the value to set
          * @return this builder instance
          */
@@ -131,13 +112,12 @@ public class GetRepositoryFileLinesRequest
             return this;
         }
 
-        /**
-         * Line number from where to start returning file lines.
-         */
+        /** Line number from where to start returning file lines. */
         private Integer startLineNumber = null;
 
         /**
          * Line number from where to start returning file lines.
+         *
          * @param startLineNumber the value to set
          * @return this builder instance
          */
@@ -146,13 +126,12 @@ public class GetRepositoryFileLinesRequest
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -162,12 +141,15 @@ public class GetRepositoryFileLinesRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide the request ID.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -178,18 +160,19 @@ public class GetRepositoryFileLinesRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -201,6 +184,7 @@ public class GetRepositoryFileLinesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetRepositoryFileLinesRequest o) {
@@ -218,10 +202,11 @@ public class GetRepositoryFileLinesRequest
         /**
          * Build the instance of GetRepositoryFileLinesRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetRepositoryFileLinesRequest
          */
@@ -235,7 +220,8 @@ public class GetRepositoryFileLinesRequest
         /**
          * Build the instance of GetRepositoryFileLinesRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetRepositoryFileLinesRequest
@@ -249,12 +235,14 @@ public class GetRepositoryFileLinesRequest
             request.limit = limit;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetRepositoryFileLinesRequest(repositoryId, filePath, revision, startLineNumber, limit, opcRequestId);
+            // new GetRepositoryFileLinesRequest(repositoryId, filePath, revision, startLineNumber,
+            // limit, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -269,6 +257,7 @@ public class GetRepositoryFileLinesRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

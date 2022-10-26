@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.managementagent.model;
 
-/**
- * Supported install types.
- **/
+/** Supported install types. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-public enum InstallTypes {
+public enum InstallTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Agent("AGENT"),
     Gateway("GATEWAY"),
 

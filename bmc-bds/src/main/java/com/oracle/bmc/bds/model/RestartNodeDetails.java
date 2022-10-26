@@ -5,21 +5,22 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * The information about restarted node.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information about restarted node. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = RestartNodeDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RestartNodeDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = RestartNodeDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class RestartNodeDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"nodeId"})
     public RestartNodeDetails(String nodeId) {
@@ -29,17 +30,16 @@ public final class RestartNodeDetails extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * OCID of the node to be restarted.
-         **/
+        /** OCID of the node to be restarted. */
         @com.fasterxml.jackson.annotation.JsonProperty("nodeId")
         private String nodeId;
 
         /**
          * OCID of the node to be restarted.
+         *
          * @param nodeId the value to set
          * @return this builder
-         **/
+         */
         public Builder nodeId(String nodeId) {
             this.nodeId = nodeId;
             this.__explicitlySet__.add("nodeId");
@@ -66,9 +66,7 @@ public final class RestartNodeDetails extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -77,16 +75,15 @@ public final class RestartNodeDetails extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * OCID of the node to be restarted.
-     **/
+    /** OCID of the node to be restarted. */
     @com.fasterxml.jackson.annotation.JsonProperty("nodeId")
     private final String nodeId;
 
     /**
      * OCID of the node to be restarted.
+     *
      * @return the value
-     **/
+     */
     public String getNodeId() {
         return nodeId;
     }
@@ -98,6 +95,7 @@ public final class RestartNodeDetails extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

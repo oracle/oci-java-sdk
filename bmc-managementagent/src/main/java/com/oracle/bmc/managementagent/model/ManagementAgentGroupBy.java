@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.managementagent.model;
 
-/**
- * Supported groupBy types for Management Agent.
- **/
+/** Supported groupBy types for Management Agent. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-public enum ManagementAgentGroupBy {
+public enum ManagementAgentGroupBy implements com.oracle.bmc.http.internal.BmcEnum {
     AvailabilityStatus("availabilityStatus"),
     PlatformType("platformType"),
     Version("version"),

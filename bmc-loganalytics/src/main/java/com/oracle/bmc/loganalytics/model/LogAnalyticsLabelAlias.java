@@ -5,22 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Label alias mapping view
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Label alias mapping view <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = LogAnalyticsLabelAlias.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = LogAnalyticsLabelAlias.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class LogAnalyticsLabelAlias
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "alias",
@@ -48,101 +48,95 @@ public final class LogAnalyticsLabelAlias
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The alias.
-         **/
+        /** The alias. */
         @com.fasterxml.jackson.annotation.JsonProperty("alias")
         private String alias;
 
         /**
          * The alias.
+         *
          * @param alias the value to set
          * @return this builder
-         **/
+         */
         public Builder alias(String alias) {
             this.alias = alias;
             this.__explicitlySet__.add("alias");
             return this;
         }
-        /**
-         * The alias display name.
-         **/
+        /** The alias display name. */
         @com.fasterxml.jackson.annotation.JsonProperty("aliasDisplayName")
         private String aliasDisplayName;
 
         /**
          * The alias display name.
+         *
          * @param aliasDisplayName the value to set
          * @return this builder
-         **/
+         */
         public Builder aliasDisplayName(String aliasDisplayName) {
             this.aliasDisplayName = aliasDisplayName;
             this.__explicitlySet__.add("aliasDisplayName");
             return this;
         }
         /**
-         * The system flag.  A value of false denotes a custom, or user
-         * defined object.  A value of true denotes a built in object.
-         *
-         **/
+         * The system flag. A value of false denotes a custom, or user defined object. A value of
+         * true denotes a built in object.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
         private Boolean isSystem;
 
         /**
-         * The system flag.  A value of false denotes a custom, or user
-         * defined object.  A value of true denotes a built in object.
+         * The system flag. A value of false denotes a custom, or user defined object. A value of
+         * true denotes a built in object.
          *
          * @param isSystem the value to set
          * @return this builder
-         **/
+         */
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = isSystem;
             this.__explicitlySet__.add("isSystem");
             return this;
         }
-        /**
-         * The label display name.
-         **/
+        /** The label display name. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The label display name.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The label name.
-         **/
+        /** The label name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The label name.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The label priority. Default value is NONE.
-         **/
+        /** The label priority. Default value is NONE. */
         @com.fasterxml.jackson.annotation.JsonProperty("priority")
         private Priority priority;
 
         /**
          * The label priority. Default value is NONE.
+         *
          * @param priority the value to set
          * @return this builder
-         **/
+         */
         public Builder priority(Priority priority) {
             this.priority = priority;
             this.__explicitlySet__.add("priority");
@@ -191,9 +185,7 @@ public final class LogAnalyticsLabelAlias
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -202,92 +194,85 @@ public final class LogAnalyticsLabelAlias
         return new Builder().copy(this);
     }
 
-    /**
-     * The alias.
-     **/
+    /** The alias. */
     @com.fasterxml.jackson.annotation.JsonProperty("alias")
     private final String alias;
 
     /**
      * The alias.
+     *
      * @return the value
-     **/
+     */
     public String getAlias() {
         return alias;
     }
 
-    /**
-     * The alias display name.
-     **/
+    /** The alias display name. */
     @com.fasterxml.jackson.annotation.JsonProperty("aliasDisplayName")
     private final String aliasDisplayName;
 
     /**
      * The alias display name.
+     *
      * @return the value
-     **/
+     */
     public String getAliasDisplayName() {
         return aliasDisplayName;
     }
 
     /**
-     * The system flag.  A value of false denotes a custom, or user
-     * defined object.  A value of true denotes a built in object.
-     *
-     **/
+     * The system flag. A value of false denotes a custom, or user defined object. A value of true
+     * denotes a built in object.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     private final Boolean isSystem;
 
     /**
-     * The system flag.  A value of false denotes a custom, or user
-     * defined object.  A value of true denotes a built in object.
+     * The system flag. A value of false denotes a custom, or user defined object. A value of true
+     * denotes a built in object.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsSystem() {
         return isSystem;
     }
 
-    /**
-     * The label display name.
-     **/
+    /** The label display name. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The label display name.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The label name.
-     **/
+    /** The label name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The label name.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The label priority. Default value is NONE.
-     **/
-    public enum Priority {
+    /** The label priority. Default value is NONE. */
+    public enum Priority implements com.oracle.bmc.http.internal.BmcEnum {
         None("NONE"),
         Low("LOW"),
         Medium("MEDIUM"),
         High("HIGH"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -326,16 +311,15 @@ public final class LogAnalyticsLabelAlias
             return UnknownEnumValue;
         }
     };
-    /**
-     * The label priority. Default value is NONE.
-     **/
+    /** The label priority. Default value is NONE. */
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
     private final Priority priority;
 
     /**
      * The label priority. Default value is NONE.
+     *
      * @return the value
-     **/
+     */
     public Priority getPriority() {
         return priority;
     }
@@ -347,6 +331,7 @@ public final class LogAnalyticsLabelAlias
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

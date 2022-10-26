@@ -59,37 +59,37 @@ import java.util.regex.Pattern;
  * This class demonstrates how to use the Notification service api in the Java SDK. This will cover:
  *
  * <ul>
- *   <li>Create one topic</li>
- *   <li>Update this topic</li>
- *   <li>Create one subscription for this topic</li>
- *   <li>Get the subscription<li/>
- *   <li>List all the subscription for given topic<li/>
- *   <li>Confirm the subscription</li>
- *   <li>Update the subscription</li>
- *   <li>Publish message to this topic</li>
- *   <li>Unsubscribe the subscription<li/>
- *   <li>Delete this topic</li>
+ *   <li>Create one topic
+ *   <li>Update this topic
+ *   <li>Create one subscription for this topic
+ *   <li>Get the subscription
+ *   <li/>
+ *   <li>List all the subscription for given topic
+ *   <li/>
+ *   <li>Confirm the subscription
+ *   <li>Update the subscription
+ *   <li>Publish message to this topic
+ *   <li>Unsubscribe the subscription
+ *   <li/>
+ *   <li>Delete this topic
  * </ul>
  *
  * This class makes the following assumptions:
- * <ul>
- *   <li>
- *      The configuration file used by service clients will be sourced from the default
- *      location (~/.oci/config) and the DEFAULT profile will be used
- *   </li>
- *   <li>Region where the example will be run is: us-phoenix-1</li>
- *   <li>
- *      The user has the appropriate permissions to manage topic, subscription and can publish message in the compartment specified.
- *   </li>
- *   <li>
- *       It will be run in two parts. Since for purpose of publishing messages we need a confirmation token.
- *       In the first run the user can create a topic, update topic, create subscription, list subscription, resend confirmation request.
  *
- *       In the second run the user can comment the code run in first part and continue with running the remaining code with
- *       the following details updated: token, topicId, subscriptionId. The second run will confirm subscription, update retry policy,
- *       send a message, delete the subscription and delete the topic.
- *   </li>
  * <ul>
+ *   <li>The configuration file used by service clients will be sourced from the default location
+ *       (~/.oci/config) and the DEFAULT profile will be used
+ *   <li>Region where the example will be run is: us-phoenix-1
+ *   <li>The user has the appropriate permissions to manage topic, subscription and can publish
+ *       message in the compartment specified.
+ *   <li>It will be run in two parts. Since for purpose of publishing messages we need a
+ *       confirmation token. In the first run the user can create a topic, update topic, create
+ *       subscription, list subscription, resend confirmation request.
+ *       <p>In the second run the user can comment the code run in first part and continue with
+ *       running the remaining code with the following details updated: token, topicId,
+ *       subscriptionId. The second run will confirm subscription, update retry policy, send a
+ *       message, delete the subscription and delete the topic.
+ *       <ul>
  */
 public class NotificationExample {
     public static void main(String[] args) throws Exception {
@@ -99,9 +99,12 @@ public class NotificationExample {
         String ociConfigurationProfile = "DEFAULT";
         String protocol = "EMAIL";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
-        // line if needed and use ConfigFileReader.parse(ociConfigurationFilePath, ociConfigurationProfile);
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
+        // line if needed and use ConfigFileReader.parse(ociConfigurationFilePath,
+        // ociConfigurationProfile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
 
@@ -222,7 +225,8 @@ public class NotificationExample {
                         + resendSubscriptionConfirmationResponse.getOpcRequestId());
 
         // Copy auth token received in email and paste here
-        // One example of auth token: MDAwMHJpeWF3RFVzREhRMGlsOE9NUFNFY0R3cUd4clc0V0xLQjRNR3grMGI3bzRMT2xiT0Y0PQ==
+        // One example of auth token:
+        // MDAwMHJpeWF3RFVzREhRMGlsOE9NUFNFY0R3cUd4clc0V0xLQjRNR3grMGI3bzRMT2xiT0Y0PQ==
         String token =
                 "MDAwMHNCRmh4eE0xZVRyUnF3OWJ6SkdJL0ZiaGluTFJvTkRlbi9xS0x4dmhITHZWcTBzbXJnPQ==";
 
@@ -243,7 +247,8 @@ public class NotificationExample {
                 pattern.matcher(
                         confirmationResult
                                 .getUnsubscribeUrl()
-                                // converting unicode characters back so the regular expression pattern will work
+                                // converting unicode characters back so the regular expression
+                                // pattern will work
                                 .replace("\\u003d", "=")
                                 .replace("\\u0026", "&"));
         matcher.find();

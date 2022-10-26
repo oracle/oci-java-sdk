@@ -6,9 +6,7 @@ package com.oracle.bmc.waiter;
 
 import com.oracle.bmc.waiter.WaiterConfiguration.WaitContext;
 
-/**
- * Delay strategy that increases the wait time exponentially until a max time has been reached.
- */
+/** Delay strategy that increases the wait time exponentially until a max time has been reached. */
 public class ExponentialBackoffDelayStrategy implements DelayStrategy {
     private final long maxDelayInMillis;
 

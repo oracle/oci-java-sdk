@@ -9,17 +9,14 @@ import com.oracle.bmc.dataintegration.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class ListRuntimeOperatorsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -28,17 +25,16 @@ public class ListRuntimeOperatorsResponse extends com.oracle.bmc.responses.BmcRe
     }
 
     /**
-     * For pagination of a list of {@code RuntimeOperator}s. If this header appears in the response, then this
-     * is a partial list of RuntimeOperator. Include this value as the {@code page} parameter in a subsequent
-     * GET request to get the next batch of RuntimeOperators.
-     *
+     * For pagination of a list of {@code RuntimeOperator}s. If this header appears in the response,
+     * then this is a partial list of RuntimeOperator. Include this value as the {@code page}
+     * parameter in a subsequent GET request to get the next batch of RuntimeOperators.
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of {@code RuntimeOperator}s. If this header appears in the response, then this
-     * is a partial list of RuntimeOperator. Include this value as the {@code page} parameter in a subsequent
-     * GET request to get the next batch of RuntimeOperators.
+     * For pagination of a list of {@code RuntimeOperator}s. If this header appears in the response,
+     * then this is a partial list of RuntimeOperator. Include this value as the {@code page}
+     * parameter in a subsequent GET request to get the next batch of RuntimeOperators.
      *
      * @return the value
      */
@@ -46,14 +42,13 @@ public class ListRuntimeOperatorsResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /**
-     * The returned RuntimeOperatorSummaryCollection instance.
-     */
+    /** The returned RuntimeOperatorSummaryCollection instance. */
     private com.oracle.bmc.dataintegration.model.RuntimeOperatorSummaryCollection
             runtimeOperatorSummaryCollection;
 
     /**
      * The returned RuntimeOperatorSummaryCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.dataintegration.model.RuntimeOperatorSummaryCollection
@@ -70,7 +65,7 @@ public class ListRuntimeOperatorsResponse extends com.oracle.bmc.responses.BmcRe
     })
     private ListRuntimeOperatorsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.dataintegration.model.RuntimeOperatorSummaryCollection
@@ -81,33 +76,33 @@ public class ListRuntimeOperatorsResponse extends com.oracle.bmc.responses.BmcRe
         this.runtimeOperatorSummaryCollection = runtimeOperatorSummaryCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<ListRuntimeOperatorsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -118,17 +113,18 @@ public class ListRuntimeOperatorsResponse extends com.oracle.bmc.responses.BmcRe
         }
 
         /**
-         * For pagination of a list of {@code RuntimeOperator}s. If this header appears in the response, then this
-         * is a partial list of RuntimeOperator. Include this value as the {@code page} parameter in a subsequent
-         * GET request to get the next batch of RuntimeOperators.
-         *
+         * For pagination of a list of {@code RuntimeOperator}s. If this header appears in the
+         * response, then this is a partial list of RuntimeOperator. Include this value as the
+         * {@code page} parameter in a subsequent GET request to get the next batch of
+         * RuntimeOperators.
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of {@code RuntimeOperator}s. If this header appears in the response, then this
-         * is a partial list of RuntimeOperator. Include this value as the {@code page} parameter in a subsequent
-         * GET request to get the next batch of RuntimeOperators.
+         * For pagination of a list of {@code RuntimeOperator}s. If this header appears in the
+         * response, then this is a partial list of RuntimeOperator. Include this value as the
+         * {@code page} parameter in a subsequent GET request to get the next batch of
+         * RuntimeOperators.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -138,14 +134,13 @@ public class ListRuntimeOperatorsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /**
-         * The returned RuntimeOperatorSummaryCollection instance.
-         */
+        /** The returned RuntimeOperatorSummaryCollection instance. */
         private com.oracle.bmc.dataintegration.model.RuntimeOperatorSummaryCollection
                 runtimeOperatorSummaryCollection;
 
         /**
          * The returned RuntimeOperatorSummaryCollection instance.
+         *
          * @param runtimeOperatorSummaryCollection the value to set
          * @return this builder
          */
@@ -158,8 +153,10 @@ public class ListRuntimeOperatorsResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListRuntimeOperatorsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -172,8 +169,10 @@ public class ListRuntimeOperatorsResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListRuntimeOperatorsResponse build() {
             return new ListRuntimeOperatorsResponse(
                     __httpStatusCode__,
@@ -186,6 +185,7 @@ public class ListRuntimeOperatorsResponse extends com.oracle.bmc.responses.BmcRe
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -9,13 +9,14 @@ import com.oracle.bmc.goldengate.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
-     *
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please include the request ID.
      */
     private String opcRequestId;
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please include the request ID.
      *
      * @return the value
      */
@@ -23,10 +24,7 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /**
-     * The number of seconds the client should wait before polling this endpoint again.
-     *
-     */
+    /** The number of seconds the client should wait before polling this endpoint again. */
     private Integer retryAfter;
 
     /**
@@ -38,13 +36,12 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
         return retryAfter;
     }
 
-    /**
-     * The returned WorkRequest instance.
-     */
+    /** The returned WorkRequest instance. */
     private com.oracle.bmc.goldengate.model.WorkRequest workRequest;
 
     /**
      * The returned WorkRequest instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.goldengate.model.WorkRequest getWorkRequest() {
@@ -60,7 +57,7 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
     })
     private GetWorkRequestResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             Integer retryAfter,
             com.oracle.bmc.goldengate.model.WorkRequest workRequest) {
@@ -70,29 +67,33 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
         this.workRequest = workRequest;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetWorkRequestResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
-         *
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please include the request ID.
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please include the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -102,10 +103,7 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /**
-         * The number of seconds the client should wait before polling this endpoint again.
-         *
-         */
+        /** The number of seconds the client should wait before polling this endpoint again. */
         private Integer retryAfter;
 
         /**
@@ -119,13 +117,12 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /**
-         * The returned WorkRequest instance.
-         */
+        /** The returned WorkRequest instance. */
         private com.oracle.bmc.goldengate.model.WorkRequest workRequest;
 
         /**
          * The returned WorkRequest instance.
+         *
          * @param workRequest the value to set
          * @return this builder
          */
@@ -136,8 +133,10 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetWorkRequestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -150,8 +149,10 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetWorkRequestResponse build() {
             return new GetWorkRequestResponse(
                     __httpStatusCode__, headers, opcRequestId, retryAfter, workRequest);
@@ -160,6 +161,7 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

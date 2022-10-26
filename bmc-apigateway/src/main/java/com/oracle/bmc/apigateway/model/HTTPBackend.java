@@ -5,24 +5,23 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Send the request to an HTTP backend.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Send the request to an HTTP backend. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HTTPBackend.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class HTTPBackend extends ApiSpecificationRouteBackend {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,10 +34,7 @@ public final class HTTPBackend extends ApiSpecificationRouteBackend {
             this.__explicitlySet__.add("url");
             return this;
         }
-        /**
-         * Defines a timeout for establishing a connection with a proxied server.
-         *
-         **/
+        /** Defines a timeout for establishing a connection with a proxied server. */
         @com.fasterxml.jackson.annotation.JsonProperty("connectTimeoutInSeconds")
         private Float connectTimeoutInSeconds;
 
@@ -47,16 +43,13 @@ public final class HTTPBackend extends ApiSpecificationRouteBackend {
          *
          * @param connectTimeoutInSeconds the value to set
          * @return this builder
-         **/
+         */
         public Builder connectTimeoutInSeconds(Float connectTimeoutInSeconds) {
             this.connectTimeoutInSeconds = connectTimeoutInSeconds;
             this.__explicitlySet__.add("connectTimeoutInSeconds");
             return this;
         }
-        /**
-         * Defines a timeout for reading a response from the proxied server.
-         *
-         **/
+        /** Defines a timeout for reading a response from the proxied server. */
         @com.fasterxml.jackson.annotation.JsonProperty("readTimeoutInSeconds")
         private Float readTimeoutInSeconds;
 
@@ -65,16 +58,13 @@ public final class HTTPBackend extends ApiSpecificationRouteBackend {
          *
          * @param readTimeoutInSeconds the value to set
          * @return this builder
-         **/
+         */
         public Builder readTimeoutInSeconds(Float readTimeoutInSeconds) {
             this.readTimeoutInSeconds = readTimeoutInSeconds;
             this.__explicitlySet__.add("readTimeoutInSeconds");
             return this;
         }
-        /**
-         * Defines a timeout for transmitting a request to the proxied server.
-         *
-         **/
+        /** Defines a timeout for transmitting a request to the proxied server. */
         @com.fasterxml.jackson.annotation.JsonProperty("sendTimeoutInSeconds")
         private Float sendTimeoutInSeconds;
 
@@ -83,16 +73,13 @@ public final class HTTPBackend extends ApiSpecificationRouteBackend {
          *
          * @param sendTimeoutInSeconds the value to set
          * @return this builder
-         **/
+         */
         public Builder sendTimeoutInSeconds(Float sendTimeoutInSeconds) {
             this.sendTimeoutInSeconds = sendTimeoutInSeconds;
             this.__explicitlySet__.add("sendTimeoutInSeconds");
             return this;
         }
-        /**
-         * Defines whether or not to uphold SSL verification.
-         *
-         **/
+        /** Defines whether or not to uphold SSL verification. */
         @com.fasterxml.jackson.annotation.JsonProperty("isSslVerifyDisabled")
         private Boolean isSslVerifyDisabled;
 
@@ -101,7 +88,7 @@ public final class HTTPBackend extends ApiSpecificationRouteBackend {
          *
          * @param isSslVerifyDisabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isSslVerifyDisabled(Boolean isSslVerifyDisabled) {
             this.isSslVerifyDisabled = isSslVerifyDisabled;
             this.__explicitlySet__.add("isSslVerifyDisabled");
@@ -146,9 +133,7 @@ public final class HTTPBackend extends ApiSpecificationRouteBackend {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -179,10 +164,7 @@ public final class HTTPBackend extends ApiSpecificationRouteBackend {
         return url;
     }
 
-    /**
-     * Defines a timeout for establishing a connection with a proxied server.
-     *
-     **/
+    /** Defines a timeout for establishing a connection with a proxied server. */
     @com.fasterxml.jackson.annotation.JsonProperty("connectTimeoutInSeconds")
     private final Float connectTimeoutInSeconds;
 
@@ -190,15 +172,12 @@ public final class HTTPBackend extends ApiSpecificationRouteBackend {
      * Defines a timeout for establishing a connection with a proxied server.
      *
      * @return the value
-     **/
+     */
     public Float getConnectTimeoutInSeconds() {
         return connectTimeoutInSeconds;
     }
 
-    /**
-     * Defines a timeout for reading a response from the proxied server.
-     *
-     **/
+    /** Defines a timeout for reading a response from the proxied server. */
     @com.fasterxml.jackson.annotation.JsonProperty("readTimeoutInSeconds")
     private final Float readTimeoutInSeconds;
 
@@ -206,15 +185,12 @@ public final class HTTPBackend extends ApiSpecificationRouteBackend {
      * Defines a timeout for reading a response from the proxied server.
      *
      * @return the value
-     **/
+     */
     public Float getReadTimeoutInSeconds() {
         return readTimeoutInSeconds;
     }
 
-    /**
-     * Defines a timeout for transmitting a request to the proxied server.
-     *
-     **/
+    /** Defines a timeout for transmitting a request to the proxied server. */
     @com.fasterxml.jackson.annotation.JsonProperty("sendTimeoutInSeconds")
     private final Float sendTimeoutInSeconds;
 
@@ -222,15 +198,12 @@ public final class HTTPBackend extends ApiSpecificationRouteBackend {
      * Defines a timeout for transmitting a request to the proxied server.
      *
      * @return the value
-     **/
+     */
     public Float getSendTimeoutInSeconds() {
         return sendTimeoutInSeconds;
     }
 
-    /**
-     * Defines whether or not to uphold SSL verification.
-     *
-     **/
+    /** Defines whether or not to uphold SSL verification. */
     @com.fasterxml.jackson.annotation.JsonProperty("isSslVerifyDisabled")
     private final Boolean isSslVerifyDisabled;
 
@@ -238,7 +211,7 @@ public final class HTTPBackend extends ApiSpecificationRouteBackend {
      * Defines whether or not to uphold SSL verification.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsSslVerifyDisabled() {
         return isSslVerifyDisabled;
     }
@@ -250,6 +223,7 @@ public final class HTTPBackend extends ApiSpecificationRouteBackend {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

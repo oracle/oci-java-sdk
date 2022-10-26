@@ -5,21 +5,22 @@
 package com.oracle.bmc.licensemanager.model;
 
 /**
- * The bulk upload response.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The bulk upload response. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = BulkUploadResponse.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BulkUploadResponse extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = BulkUploadResponse.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class BulkUploadResponse
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "totalSupportedRecords",
@@ -53,65 +54,69 @@ public final class BulkUploadResponse extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The number of license records which were supported.
-         **/
+        /** The number of license records which were supported. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalSupportedRecords")
         private Integer totalSupportedRecords;
 
         /**
          * The number of license records which were supported.
+         *
          * @param totalSupportedRecords the value to set
          * @return this builder
-         **/
+         */
         public Builder totalSupportedRecords(Integer totalSupportedRecords) {
             this.totalSupportedRecords = totalSupportedRecords;
             this.__explicitlySet__.add("totalSupportedRecords");
             return this;
         }
-        /**
-         * The number of supported license records that were uploaded successfully.
-         **/
+        /** The number of supported license records that were uploaded successfully. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalSupportedRecordsSaved")
         private Integer totalSupportedRecordsSaved;
 
         /**
          * The number of supported license records that were uploaded successfully.
+         *
          * @param totalSupportedRecordsSaved the value to set
          * @return this builder
-         **/
+         */
         public Builder totalSupportedRecordsSaved(Integer totalSupportedRecordsSaved) {
             this.totalSupportedRecordsSaved = totalSupportedRecordsSaved;
             this.__explicitlySet__.add("totalSupportedRecordsSaved");
             return this;
         }
         /**
-         * The number of supported license records that were valid but not uploaded since they were duplicates.
-         **/
+         * The number of supported license records that were valid but not uploaded since they were
+         * duplicates.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("totalSupportedDuplicateRecords")
         private Integer totalSupportedDuplicateRecords;
 
         /**
-         * The number of supported license records that were valid but not uploaded since they were duplicates.
+         * The number of supported license records that were valid but not uploaded since they were
+         * duplicates.
+         *
          * @param totalSupportedDuplicateRecords the value to set
          * @return this builder
-         **/
+         */
         public Builder totalSupportedDuplicateRecords(Integer totalSupportedDuplicateRecords) {
             this.totalSupportedDuplicateRecords = totalSupportedDuplicateRecords;
             this.__explicitlySet__.add("totalSupportedDuplicateRecords");
             return this;
         }
         /**
-         * The number of supported license records that were valid but failed with errors during upload.
-         **/
+         * The number of supported license records that were valid but failed with errors during
+         * upload.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("totalSupportedFailedLicenseRecords")
         private Integer totalSupportedFailedLicenseRecords;
 
         /**
-         * The number of supported license records that were valid but failed with errors during upload.
+         * The number of supported license records that were valid but failed with errors during
+         * upload.
+         *
          * @param totalSupportedFailedLicenseRecords the value to set
          * @return this builder
-         **/
+         */
         public Builder totalSupportedFailedLicenseRecords(
                 Integer totalSupportedFailedLicenseRecords) {
             this.totalSupportedFailedLicenseRecords = totalSupportedFailedLicenseRecords;
@@ -119,32 +124,38 @@ public final class BulkUploadResponse extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * The number of supported license records that could not be uploaded since they were invalid.
-         **/
+         * The number of supported license records that could not be uploaded since they were
+         * invalid.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("totalSupportedInvalidRecords")
         private Integer totalSupportedInvalidRecords;
 
         /**
-         * The number of supported license records that could not be uploaded since they were invalid.
+         * The number of supported license records that could not be uploaded since they were
+         * invalid.
+         *
          * @param totalSupportedInvalidRecords the value to set
          * @return this builder
-         **/
+         */
         public Builder totalSupportedInvalidRecords(Integer totalSupportedInvalidRecords) {
             this.totalSupportedInvalidRecords = totalSupportedInvalidRecords;
             this.__explicitlySet__.add("totalSupportedInvalidRecords");
             return this;
         }
         /**
-         * Detailed error information corresponding to each supported but invalid row for the uploaded file.
-         **/
+         * Detailed error information corresponding to each supported but invalid row for the
+         * uploaded file.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("validationErrorInfo")
         private java.util.List<BulkUploadValidationErrorInfo> validationErrorInfo;
 
         /**
-         * Detailed error information corresponding to each supported but invalid row for the uploaded file.
+         * Detailed error information corresponding to each supported but invalid row for the
+         * uploaded file.
+         *
          * @param validationErrorInfo the value to set
          * @return this builder
-         **/
+         */
         public Builder validationErrorInfo(
                 java.util.List<BulkUploadValidationErrorInfo> validationErrorInfo) {
             this.validationErrorInfo = validationErrorInfo;
@@ -152,33 +163,35 @@ public final class BulkUploadResponse extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * Error information corresponding to the supported records which are valid but could not be created.
-         **/
+         * Error information corresponding to the supported records which are valid but could not be
+         * created.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("failedLicenseRecordInfo")
         private java.util.List<BulkUploadFailedRecordInfo> failedLicenseRecordInfo;
 
         /**
-         * Error information corresponding to the supported records which are valid but could not be created.
+         * Error information corresponding to the supported records which are valid but could not be
+         * created.
+         *
          * @param failedLicenseRecordInfo the value to set
          * @return this builder
-         **/
+         */
         public Builder failedLicenseRecordInfo(
                 java.util.List<BulkUploadFailedRecordInfo> failedLicenseRecordInfo) {
             this.failedLicenseRecordInfo = failedLicenseRecordInfo;
             this.__explicitlySet__.add("failedLicenseRecordInfo");
             return this;
         }
-        /**
-         * Response message for bulk upload.
-         **/
+        /** Response message for bulk upload. */
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
          * Response message for bulk upload.
+         *
          * @param message the value to set
          * @return this builder
-         **/
+         */
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
@@ -236,9 +249,7 @@ public final class BulkUploadResponse extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -247,114 +258,122 @@ public final class BulkUploadResponse extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * The number of license records which were supported.
-     **/
+    /** The number of license records which were supported. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalSupportedRecords")
     private final Integer totalSupportedRecords;
 
     /**
      * The number of license records which were supported.
+     *
      * @return the value
-     **/
+     */
     public Integer getTotalSupportedRecords() {
         return totalSupportedRecords;
     }
 
-    /**
-     * The number of supported license records that were uploaded successfully.
-     **/
+    /** The number of supported license records that were uploaded successfully. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalSupportedRecordsSaved")
     private final Integer totalSupportedRecordsSaved;
 
     /**
      * The number of supported license records that were uploaded successfully.
+     *
      * @return the value
-     **/
+     */
     public Integer getTotalSupportedRecordsSaved() {
         return totalSupportedRecordsSaved;
     }
 
     /**
-     * The number of supported license records that were valid but not uploaded since they were duplicates.
-     **/
+     * The number of supported license records that were valid but not uploaded since they were
+     * duplicates.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("totalSupportedDuplicateRecords")
     private final Integer totalSupportedDuplicateRecords;
 
     /**
-     * The number of supported license records that were valid but not uploaded since they were duplicates.
+     * The number of supported license records that were valid but not uploaded since they were
+     * duplicates.
+     *
      * @return the value
-     **/
+     */
     public Integer getTotalSupportedDuplicateRecords() {
         return totalSupportedDuplicateRecords;
     }
 
     /**
      * The number of supported license records that were valid but failed with errors during upload.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("totalSupportedFailedLicenseRecords")
     private final Integer totalSupportedFailedLicenseRecords;
 
     /**
      * The number of supported license records that were valid but failed with errors during upload.
+     *
      * @return the value
-     **/
+     */
     public Integer getTotalSupportedFailedLicenseRecords() {
         return totalSupportedFailedLicenseRecords;
     }
 
     /**
      * The number of supported license records that could not be uploaded since they were invalid.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("totalSupportedInvalidRecords")
     private final Integer totalSupportedInvalidRecords;
 
     /**
      * The number of supported license records that could not be uploaded since they were invalid.
+     *
      * @return the value
-     **/
+     */
     public Integer getTotalSupportedInvalidRecords() {
         return totalSupportedInvalidRecords;
     }
 
     /**
-     * Detailed error information corresponding to each supported but invalid row for the uploaded file.
-     **/
+     * Detailed error information corresponding to each supported but invalid row for the uploaded
+     * file.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("validationErrorInfo")
     private final java.util.List<BulkUploadValidationErrorInfo> validationErrorInfo;
 
     /**
-     * Detailed error information corresponding to each supported but invalid row for the uploaded file.
+     * Detailed error information corresponding to each supported but invalid row for the uploaded
+     * file.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<BulkUploadValidationErrorInfo> getValidationErrorInfo() {
         return validationErrorInfo;
     }
 
     /**
-     * Error information corresponding to the supported records which are valid but could not be created.
-     **/
+     * Error information corresponding to the supported records which are valid but could not be
+     * created.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("failedLicenseRecordInfo")
     private final java.util.List<BulkUploadFailedRecordInfo> failedLicenseRecordInfo;
 
     /**
-     * Error information corresponding to the supported records which are valid but could not be created.
+     * Error information corresponding to the supported records which are valid but could not be
+     * created.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<BulkUploadFailedRecordInfo> getFailedLicenseRecordInfo() {
         return failedLicenseRecordInfo;
     }
 
-    /**
-     * Response message for bulk upload.
-     **/
+    /** Response message for bulk upload. */
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
      * Response message for bulk upload.
+     *
      * @return the value
-     **/
+     */
     public String getMessage() {
         return message;
     }
@@ -366,6 +385,7 @@ public final class BulkUploadResponse extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

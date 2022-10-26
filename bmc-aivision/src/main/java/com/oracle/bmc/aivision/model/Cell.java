@@ -5,19 +5,20 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * A single cell in a table.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A single cell in a table. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Cell.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Cell extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Cell extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "text",
@@ -45,65 +46,61 @@ public final class Cell extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The text recognized in the cell.
-         **/
+        /** The text recognized in the cell. */
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
         /**
          * The text recognized in the cell.
+         *
          * @param text the value to set
          * @return this builder
-         **/
+         */
         public Builder text(String text) {
             this.text = text;
             this.__explicitlySet__.add("text");
             return this;
         }
-        /**
-         * The index of the cell inside the row.
-         **/
+        /** The index of the cell inside the row. */
         @com.fasterxml.jackson.annotation.JsonProperty("rowIndex")
         private Integer rowIndex;
 
         /**
          * The index of the cell inside the row.
+         *
          * @param rowIndex the value to set
          * @return this builder
-         **/
+         */
         public Builder rowIndex(Integer rowIndex) {
             this.rowIndex = rowIndex;
             this.__explicitlySet__.add("rowIndex");
             return this;
         }
-        /**
-         * The index of the cell inside the column.
-         **/
+        /** The index of the cell inside the column. */
         @com.fasterxml.jackson.annotation.JsonProperty("columnIndex")
         private Integer columnIndex;
 
         /**
          * The index of the cell inside the column.
+         *
          * @param columnIndex the value to set
          * @return this builder
-         **/
+         */
         public Builder columnIndex(Integer columnIndex) {
             this.columnIndex = columnIndex;
             this.__explicitlySet__.add("columnIndex");
             return this;
         }
-        /**
-         * The confidence score between 0 and 1.
-         **/
+        /** The confidence score between 0 and 1. */
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Float confidence;
 
         /**
          * The confidence score between 0 and 1.
+         *
          * @param confidence the value to set
          * @return this builder
-         **/
+         */
         public Builder confidence(Float confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
@@ -118,17 +115,16 @@ public final class Cell extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             this.__explicitlySet__.add("boundingPolygon");
             return this;
         }
-        /**
-         * The words detected in the cell.
-         **/
+        /** The words detected in the cell. */
         @com.fasterxml.jackson.annotation.JsonProperty("wordIndexes")
         private java.util.List<Integer> wordIndexes;
 
         /**
          * The words detected in the cell.
+         *
          * @param wordIndexes the value to set
          * @return this builder
-         **/
+         */
         public Builder wordIndexes(java.util.List<Integer> wordIndexes) {
             this.wordIndexes = wordIndexes;
             this.__explicitlySet__.add("wordIndexes");
@@ -177,9 +173,7 @@ public final class Cell extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -188,58 +182,54 @@ public final class Cell extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         return new Builder().copy(this);
     }
 
-    /**
-     * The text recognized in the cell.
-     **/
+    /** The text recognized in the cell. */
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
     /**
      * The text recognized in the cell.
+     *
      * @return the value
-     **/
+     */
     public String getText() {
         return text;
     }
 
-    /**
-     * The index of the cell inside the row.
-     **/
+    /** The index of the cell inside the row. */
     @com.fasterxml.jackson.annotation.JsonProperty("rowIndex")
     private final Integer rowIndex;
 
     /**
      * The index of the cell inside the row.
+     *
      * @return the value
-     **/
+     */
     public Integer getRowIndex() {
         return rowIndex;
     }
 
-    /**
-     * The index of the cell inside the column.
-     **/
+    /** The index of the cell inside the column. */
     @com.fasterxml.jackson.annotation.JsonProperty("columnIndex")
     private final Integer columnIndex;
 
     /**
      * The index of the cell inside the column.
+     *
      * @return the value
-     **/
+     */
     public Integer getColumnIndex() {
         return columnIndex;
     }
 
-    /**
-     * The confidence score between 0 and 1.
-     **/
+    /** The confidence score between 0 and 1. */
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Float confidence;
 
     /**
      * The confidence score between 0 and 1.
+     *
      * @return the value
-     **/
+     */
     public Float getConfidence() {
         return confidence;
     }
@@ -251,16 +241,15 @@ public final class Cell extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         return boundingPolygon;
     }
 
-    /**
-     * The words detected in the cell.
-     **/
+    /** The words detected in the cell. */
     @com.fasterxml.jackson.annotation.JsonProperty("wordIndexes")
     private final java.util.List<Integer> wordIndexes;
 
     /**
      * The words detected in the cell.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Integer> getWordIndexes() {
         return wordIndexes;
     }
@@ -272,6 +261,7 @@ public final class Cell extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

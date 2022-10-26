@@ -5,26 +5,24 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Send the request to a Dynamic Routing backend.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Send the request to a Dynamic Routing backend. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DynamicRoutingBackend.Builder.class
-)
+        builder = DynamicRoutingBackend.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DynamicRoutingBackend extends ApiSpecificationRouteBackend {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -37,17 +35,16 @@ public final class DynamicRoutingBackend extends ApiSpecificationRouteBackend {
             this.__explicitlySet__.add("selectionSource");
             return this;
         }
-        /**
-         * List of backends to chose from for Dynamic Routing.
-         **/
+        /** List of backends to chose from for Dynamic Routing. */
         @com.fasterxml.jackson.annotation.JsonProperty("routingBackends")
         private java.util.List<DynamicRoutingTypeRoutingBackend> routingBackends;
 
         /**
          * List of backends to chose from for Dynamic Routing.
+         *
          * @param routingBackends the value to set
          * @return this builder
-         **/
+         */
         public Builder routingBackends(
                 java.util.List<DynamicRoutingTypeRoutingBackend> routingBackends) {
             this.routingBackends = routingBackends;
@@ -79,9 +76,7 @@ public final class DynamicRoutingBackend extends ApiSpecificationRouteBackend {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -106,16 +101,15 @@ public final class DynamicRoutingBackend extends ApiSpecificationRouteBackend {
         return selectionSource;
     }
 
-    /**
-     * List of backends to chose from for Dynamic Routing.
-     **/
+    /** List of backends to chose from for Dynamic Routing. */
     @com.fasterxml.jackson.annotation.JsonProperty("routingBackends")
     private final java.util.List<DynamicRoutingTypeRoutingBackend> routingBackends;
 
     /**
      * List of backends to chose from for Dynamic Routing.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<DynamicRoutingTypeRoutingBackend> getRoutingBackends() {
         return routingBackends;
     }
@@ -127,6 +121,7 @@ public final class DynamicRoutingBackend extends ApiSpecificationRouteBackend {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

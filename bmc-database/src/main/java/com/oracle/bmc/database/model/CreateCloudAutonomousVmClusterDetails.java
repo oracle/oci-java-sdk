@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details for the create cloud Autonomous VM cluster operation.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details for the create cloud Autonomous VM cluster operation. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateCloudAutonomousVmClusterDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateCloudAutonomousVmClusterDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateCloudAutonomousVmClusterDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -62,188 +61,222 @@ public final class CreateCloudAutonomousVmClusterDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * User defined description of the cloud Autonomous VM cluster.
-         **/
+        /** User defined description of the cloud Autonomous VM cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * User defined description of the cloud Autonomous VM cluster.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * subnet the cloud Autonomous VM Cluster is associated with.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * subnet the cloud Autonomous VM Cluster is associated with.
          *
          * @param subnetId the value to set
          * @return this builder
-         **/
+         */
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
         /**
-         * The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
-         **/
+         * The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be
+         * unique.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
+         * The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be
+         * unique.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * cloud Exadata infrastructure.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("cloudExadataInfrastructureId")
         private String cloudExadataInfrastructureId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * cloud Exadata infrastructure.
+         *
          * @param cloudExadataInfrastructureId the value to set
          * @return this builder
-         **/
+         */
         public Builder cloudExadataInfrastructureId(String cloudExadataInfrastructureId) {
             this.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
             this.__explicitlySet__.add("cloudExadataInfrastructureId");
             return this;
         }
         /**
-         * The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
-         **/
+         * The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System
+         * Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("clusterTimeZone")
         private String clusterTimeZone;
 
         /**
-         * The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System
+         * Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         *
          * @param clusterTimeZone the value to set
          * @return this builder
-         **/
+         */
         public Builder clusterTimeZone(String clusterTimeZone) {
             this.clusterTimeZone = clusterTimeZone;
             this.__explicitlySet__.add("clusterTimeZone");
             return this;
         }
         /**
-         * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
-         * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
-         * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the
-         * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
-         *
-         **/
+         * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
+         * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
+         * equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included
+         * allows you to subscribe to new Oracle Database software licenses and the Database
+         * service. Note that when provisioning an Autonomous Database on [dedicated Exadata
+         * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html),
+         * this attribute must be null because the attribute is already set at the Autonomous
+         * Exadata Infrastructure level. When using [shared Exadata
+         * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if
+         * a value is not specified, the system will supply the value of {@code
+         * BRING_YOUR_OWN_LICENSE}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
         /**
-         * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
-         * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
-         * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the
-         * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+         * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
+         * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
+         * equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included
+         * allows you to subscribe to new Oracle Database software licenses and the Database
+         * service. Note that when provisioning an Autonomous Database on [dedicated Exadata
+         * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html),
+         * this attribute must be null because the attribute is already set at the Autonomous
+         * Exadata Infrastructure level. When using [shared Exadata
+         * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if
+         * a value is not specified, the system will supply the value of {@code
+         * BRING_YOUR_OWN_LICENSE}.
          *
          * @param licenseModel the value to set
          * @return this builder
-         **/
+         */
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
             return this;
         }
         /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-         * **NsgIds restrictions:**
-         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
-         *
-         **/
+         * The list of
+         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+         * network security groups (NSGs) to which this resource belongs. Setting this to an empty
+         * list removes all resources from all NSGs. For more information about NSGs, see [Security
+         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+         * Databases with private access. The nsgIds list can be empty.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-         * **NsgIds restrictions:**
-         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         * The list of
+         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+         * network security groups (NSGs) to which this resource belongs. Setting this to an empty
+         * list removes all resources from all NSGs. For more information about NSGs, see [Security
+         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+         * Databases with private access. The nsgIds list can be empty.
          *
          * @param nsgIds the value to set
          * @return this builder
-         **/
+         */
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         *
-         **/
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -309,9 +342,7 @@ public final class CreateCloudAutonomousVmClusterDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -321,99 +352,116 @@ public final class CreateCloudAutonomousVmClusterDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * User defined description of the cloud Autonomous VM cluster.
-     **/
+    /** User defined description of the cloud Autonomous VM cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * User defined description of the cloud Autonomous VM cluster.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * subnet the cloud Autonomous VM Cluster is associated with.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * subnet the cloud Autonomous VM Cluster is associated with.
      *
      * @return the value
-     **/
+     */
     public String getSubnetId() {
         return subnetId;
     }
 
     /**
-     * The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
-     **/
+     * The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be
+     * unique.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
+     * The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be
+     * unique.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * cloud Exadata infrastructure.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("cloudExadataInfrastructureId")
     private final String cloudExadataInfrastructureId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * cloud Exadata infrastructure.
+     *
      * @return the value
-     **/
+     */
     public String getCloudExadataInfrastructureId() {
         return cloudExadataInfrastructureId;
     }
 
     /**
-     * The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
-     **/
+     * The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time
+     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("clusterTimeZone")
     private final String clusterTimeZone;
 
     /**
-     * The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time
+     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     *
      * @return the value
-     **/
+     */
     public String getClusterTimeZone() {
         return clusterTimeZone;
     }
 
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
-     * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
-     * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the
-     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
-     *
-     **/
-    public enum LicenseModel {
+     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
+     * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
+     * equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included
+     * allows you to subscribe to new Oracle Database software licenses and the Database service.
+     * Note that when provisioning an Autonomous Database on [dedicated Exadata
+     * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this
+     * attribute must be null because the attribute is already set at the Autonomous Exadata
+     * Infrastructure level. When using [shared Exadata
+     * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a
+     * value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     */
+    public enum LicenseModel implements com.oracle.bmc.http.internal.BmcEnum {
         LicenseIncluded("LICENSE_INCLUDED"),
         BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
         ;
@@ -446,83 +494,101 @@ public final class CreateCloudAutonomousVmClusterDetails
         }
     };
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
-     * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
-     * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the
-     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
-     *
-     **/
+     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
+     * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
+     * equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included
+     * allows you to subscribe to new Oracle Database software licenses and the Database service.
+     * Note that when provisioning an Autonomous Database on [dedicated Exadata
+     * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this
+     * attribute must be null because the attribute is already set at the Autonomous Exadata
+     * Infrastructure level. When using [shared Exadata
+     * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a
+     * value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
-     * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
-     * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the
-     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
+     * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
+     * equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included
+     * allows you to subscribe to new Oracle Database software licenses and the Database service.
+     * Note that when provisioning an Autonomous Database on [dedicated Exadata
+     * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this
+     * attribute must be null because the attribute is already set at the Autonomous Exadata
+     * Infrastructure level. When using [shared Exadata
+     * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a
+     * value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
      *
      * @return the value
-     **/
+     */
     public LicenseModel getLicenseModel() {
         return licenseModel;
     }
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:**
-     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
-     *
-     **/
+     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * for the network security groups (NSGs) to which this resource belongs. Setting this to an
+     * empty list removes all resources from all NSGs. For more information about NSGs, see
+     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+     * Databases with private access. The nsgIds list can be empty.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:**
-     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * for the network security groups (NSGs) to which this resource belongs. Setting this to an
+     * empty list removes all resources from all NSGs. For more information about NSGs, see
+     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+     * Databases with private access. The nsgIds list can be empty.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -534,6 +600,7 @@ public final class CreateCloudAutonomousVmClusterDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

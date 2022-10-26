@@ -5,29 +5,31 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * A PEM-format RSA credential for securing requests to the Oracle Cloud Infrastructure REST API. Also known
- * as an *API signing key*. Specifically, this is the public key from the key pair. The private key remains with
- * the user calling the API. For information about generating a key pair
- * in the required PEM format, see [Required Keys and OCIDs](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm).
- * <p>
- **Important:** This is **not** the SSH key for accessing compute instances.
- * <p>
- * Each user can have a maximum of three API signing keys.
- * <p>
- * For more information about user credentials, see [User Credentials](https://docs.cloud.oracle.com/Content/Identity/Concepts/usercredentials.htm).
+ * A PEM-format RSA credential for securing requests to the Oracle Cloud Infrastructure REST API.
+ * Also known as an *API signing key*. Specifically, this is the public key from the key pair. The
+ * private key remains with the user calling the API. For information about generating a key pair in
+ * the required PEM format, see [Required Keys and
+ * OCIDs](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm).
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>*Important:** This is **not** the SSH key for accessing compute instances.
+ *
+ * <p>Each user can have a maximum of three API signing keys.
+ *
+ * <p>For more information about user credentials, see [User
+ * Credentials](https://docs.cloud.oracle.com/Content/Identity/Concepts/usercredentials.htm). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ApiKey.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ApiKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ApiKey extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "keyId",
@@ -61,8 +63,7 @@ public final class ApiKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         /**
          * An Oracle-assigned identifier for the key, in this format:
          * TENANCY_OCID/USER_OCID/KEY_FINGERPRINT.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
 
@@ -72,55 +73,52 @@ public final class ApiKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
          *
          * @param keyId the value to set
          * @return this builder
-         **/
+         */
         public Builder keyId(String keyId) {
             this.keyId = keyId;
             this.__explicitlySet__.add("keyId");
             return this;
         }
-        /**
-         * The key's value.
-         **/
+        /** The key's value. */
         @com.fasterxml.jackson.annotation.JsonProperty("keyValue")
         private String keyValue;
 
         /**
          * The key's value.
+         *
          * @param keyValue the value to set
          * @return this builder
-         **/
+         */
         public Builder keyValue(String keyValue) {
             this.keyValue = keyValue;
             this.__explicitlySet__.add("keyValue");
             return this;
         }
-        /**
-         * The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
-         **/
+        /** The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef). */
         @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
         private String fingerprint;
 
         /**
          * The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
+         *
          * @param fingerprint the value to set
          * @return this builder
-         **/
+         */
         public Builder fingerprint(String fingerprint) {
             this.fingerprint = fingerprint;
             this.__explicitlySet__.add("fingerprint");
             return this;
         }
-        /**
-         * The OCID of the user the key belongs to.
-         **/
+        /** The OCID of the user the key belongs to. */
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
         /**
          * The OCID of the user the key belongs to.
+         *
          * @param userId the value to set
          * @return this builder
-         **/
+         */
         public Builder userId(String userId) {
             this.userId = userId;
             this.__explicitlySet__.add("userId");
@@ -128,57 +126,54 @@ public final class ApiKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         }
         /**
          * Date and time the {@code ApiKey} object was created, in the format defined by RFC3339.
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         **/
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * Date and time the {@code ApiKey} object was created, in the format defined by RFC3339.
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The API key's current state. After creating an {@code ApiKey} object, make sure its {@code lifecycleState} changes from
-         * CREATING to ACTIVE before using it.
-         *
-         **/
+         * The API key's current state. After creating an {@code ApiKey} object, make sure its
+         * {@code lifecycleState} changes from CREATING to ACTIVE before using it.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The API key's current state. After creating an {@code ApiKey} object, make sure its {@code lifecycleState} changes from
-         * CREATING to ACTIVE before using it.
+         * The API key's current state. After creating an {@code ApiKey} object, make sure its
+         * {@code lifecycleState} changes from CREATING to ACTIVE before using it.
          *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * The detailed status of INACTIVE lifecycleState.
-         **/
+        /** The detailed status of INACTIVE lifecycleState. */
         @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
         private Long inactiveStatus;
 
         /**
          * The detailed status of INACTIVE lifecycleState.
+         *
          * @param inactiveStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder inactiveStatus(Long inactiveStatus) {
             this.inactiveStatus = inactiveStatus;
             this.__explicitlySet__.add("inactiveStatus");
@@ -231,9 +226,7 @@ public final class ApiKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -245,8 +238,7 @@ public final class ApiKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     /**
      * An Oracle-assigned identifier for the key, in this format:
      * TENANCY_OCID/USER_OCID/KEY_FINGERPRINT.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
@@ -255,79 +247,74 @@ public final class ApiKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
      * TENANCY_OCID/USER_OCID/KEY_FINGERPRINT.
      *
      * @return the value
-     **/
+     */
     public String getKeyId() {
         return keyId;
     }
 
-    /**
-     * The key's value.
-     **/
+    /** The key's value. */
     @com.fasterxml.jackson.annotation.JsonProperty("keyValue")
     private final String keyValue;
 
     /**
      * The key's value.
+     *
      * @return the value
-     **/
+     */
     public String getKeyValue() {
         return keyValue;
     }
 
-    /**
-     * The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
-     **/
+    /** The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef). */
     @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
     private final String fingerprint;
 
     /**
      * The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
+     *
      * @return the value
-     **/
+     */
     public String getFingerprint() {
         return fingerprint;
     }
 
-    /**
-     * The OCID of the user the key belongs to.
-     **/
+    /** The OCID of the user the key belongs to. */
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
 
     /**
      * The OCID of the user the key belongs to.
+     *
      * @return the value
-     **/
+     */
     public String getUserId() {
         return userId;
     }
 
     /**
      * Date and time the {@code ApiKey} object was created, in the format defined by RFC3339.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     **/
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * Date and time the {@code ApiKey} object was created, in the format defined by RFC3339.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The API key's current state. After creating an {@code ApiKey} object, make sure its {@code lifecycleState} changes from
-     * CREATING to ACTIVE before using it.
-     *
-     **/
-    public enum LifecycleState {
+     * The API key's current state. After creating an {@code ApiKey} object, make sure its {@code
+     * lifecycleState} changes from CREATING to ACTIVE before using it.
+     */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Active("ACTIVE"),
         Inactive("INACTIVE"),
@@ -335,8 +322,8 @@ public final class ApiKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         Deleted("DELETED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -376,33 +363,31 @@ public final class ApiKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         }
     };
     /**
-     * The API key's current state. After creating an {@code ApiKey} object, make sure its {@code lifecycleState} changes from
-     * CREATING to ACTIVE before using it.
-     *
-     **/
+     * The API key's current state. After creating an {@code ApiKey} object, make sure its {@code
+     * lifecycleState} changes from CREATING to ACTIVE before using it.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The API key's current state. After creating an {@code ApiKey} object, make sure its {@code lifecycleState} changes from
-     * CREATING to ACTIVE before using it.
+     * The API key's current state. After creating an {@code ApiKey} object, make sure its {@code
+     * lifecycleState} changes from CREATING to ACTIVE before using it.
      *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * The detailed status of INACTIVE lifecycleState.
-     **/
+    /** The detailed status of INACTIVE lifecycleState. */
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
     private final Long inactiveStatus;
 
     /**
      * The detailed status of INACTIVE lifecycleState.
+     *
      * @return the value
-     **/
+     */
     public Long getInactiveStatus() {
         return inactiveStatus;
     }
@@ -414,6 +399,7 @@ public final class ApiKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

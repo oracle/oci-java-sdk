@@ -6,126 +6,104 @@ package com.oracle.bmc.oda.requests;
 
 import com.oracle.bmc.oda.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListChannelsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListChannelsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListChannelsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListChannelsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * Unique Digital Assistant instance identifier.
-     */
+    /** Unique Digital Assistant instance identifier. */
     private String odaInstanceId;
 
-    /**
-     * Unique Digital Assistant instance identifier.
-     */
+    /** Unique Digital Assistant instance identifier. */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
-    /**
-     * Unique Channel identifier.
-     */
+    /** Unique Channel identifier. */
     private String id;
 
-    /**
-     * Unique Channel identifier.
-     */
+    /** Unique Channel identifier. */
     public String getId() {
         return id;
     }
     /**
-     * List only the information for Channels with this name. Channels names are unique and may not change.
-     * <p>
-     * Example: {@code MyChannel}
+     * List only the information for Channels with this name. Channels names are unique and may not
+     * change.
      *
+     * <p>Example: {@code MyChannel}
      */
     private String name;
 
     /**
-     * List only the information for Channels with this name. Channels names are unique and may not change.
-     * <p>
-     * Example: {@code MyChannel}
+     * List only the information for Channels with this name. Channels names are unique and may not
+     * change.
      *
+     * <p>Example: {@code MyChannel}
      */
     public String getName() {
         return name;
     }
-    /**
-     * List only Channels with this category.
-     */
+    /** List only Channels with this category. */
     private com.oracle.bmc.oda.model.ChannelCategory category;
 
-    /**
-     * List only Channels with this category.
-     */
+    /** List only Channels with this category. */
     public com.oracle.bmc.oda.model.ChannelCategory getCategory() {
         return category;
     }
-    /**
-     * List only Channels of this type.
-     */
+    /** List only Channels of this type. */
     private com.oracle.bmc.oda.model.ChannelType type;
 
-    /**
-     * List only Channels of this type.
-     */
+    /** List only Channels of this type. */
     public com.oracle.bmc.oda.model.ChannelType getType() {
         return type;
     }
-    /**
-     * List only the resources that are in this lifecycle state.
-     */
+    /** List only the resources that are in this lifecycle state. */
     private com.oracle.bmc.oda.model.LifecycleState lifecycleState;
 
-    /**
-     * List only the resources that are in this lifecycle state.
-     */
+    /** List only the resources that are in this lifecycle state. */
     public com.oracle.bmc.oda.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /**
-     * The maximum number of items to return per page.
-     */
+    /** The maximum number of items to return per page. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return per page.
-     */
+    /** The maximum number of items to return per page. */
     public Integer getLimit() {
         return limit;
     }
     /**
      * The page at which to start retrieving results.
-     * <p>
-     * You get this value from the {@code opc-next-page} header in a previous list request.
-     * To retireve the first page, omit this query parameter.
-     * <p>
-     * Example: {@code MToxMA==}
      *
+     * <p>You get this value from the {@code opc-next-page} header in a previous list request. To
+     * retireve the first page, omit this query parameter.
+     *
+     * <p>Example: {@code MToxMA==}
      */
     private String page;
 
     /**
      * The page at which to start retrieving results.
-     * <p>
-     * You get this value from the {@code opc-next-page} header in a previous list request.
-     * To retireve the first page, omit this query parameter.
-     * <p>
-     * Example: {@code MToxMA==}
      *
+     * <p>You get this value from the {@code opc-next-page} header in a previous list request. To
+     * retireve the first page, omit this query parameter.
+     *
+     * <p>Example: {@code MToxMA==}
      */
     public String getPage() {
         return page;
     }
     /**
-     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC}
+     * (descending).
      */
     private SortOrder sortOrder;
 
     /**
-     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
-     **/
-    public enum SortOrder {
+     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC}
+     * (descending).
+     */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -159,26 +137,29 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
     };
 
     /**
-     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC}
+     * (descending).
      */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * Sort on this field. You can specify one sort order only. The default sort field is {@code timeCreated}.
-     * <p>
-     * The default sort order for {@code timeCreated} and {@code timeUpdated} is descending, and the default sort order for {@code name} is ascending.
+     * Sort on this field. You can specify one sort order only. The default sort field is {@code
+     * timeCreated}.
      *
+     * <p>The default sort order for {@code timeCreated} and {@code timeUpdated} is descending, and
+     * the default sort order for {@code name} is ascending.
      */
     private SortBy sortBy;
 
     /**
-     * Sort on this field. You can specify one sort order only. The default sort field is {@code timeCreated}.
-     * <p>
-     * The default sort order for {@code timeCreated} and {@code timeUpdated} is descending, and the default sort order for {@code name} is ascending.
+     * Sort on this field. You can specify one sort order only. The default sort field is {@code
+     * timeCreated}.
      *
-     **/
-    public enum SortBy {
+     * <p>The default sort order for {@code timeCreated} and {@code timeUpdated} is descending, and
+     * the default sort order for {@code name} is ascending.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TimeCreated("timeCreated"),
         TimeUpdated("timeUpdated"),
         Name("name"),
@@ -213,21 +194,24 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
     };
 
     /**
-     * Sort on this field. You can specify one sort order only. The default sort field is {@code timeCreated}.
-     * <p>
-     * The default sort order for {@code timeCreated} and {@code timeUpdated} is descending, and the default sort order for {@code name} is ascending.
+     * Sort on this field. You can specify one sort order only. The default sort field is {@code
+     * timeCreated}.
      *
+     * <p>The default sort order for {@code timeCreated} and {@code timeUpdated} is descending, and
+     * the default sort order for {@code name} is ascending.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     * The client request ID for tracing. This value is included in the opc-request-id response
+     * header.
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     * The client request ID for tracing. This value is included in the opc-request-id response
+     * header.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -236,17 +220,15 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListChannelsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique Digital Assistant instance identifier.
-         */
+        /** Unique Digital Assistant instance identifier. */
         private String odaInstanceId = null;
 
         /**
          * Unique Digital Assistant instance identifier.
+         *
          * @param odaInstanceId the value to set
          * @return this builder instance
          */
@@ -255,13 +237,12 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * Unique Channel identifier.
-         */
+        /** Unique Channel identifier. */
         private String id = null;
 
         /**
          * Unique Channel identifier.
+         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -271,17 +252,18 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * List only the information for Channels with this name. Channels names are unique and may not change.
-         * <p>
-         * Example: {@code MyChannel}
+         * List only the information for Channels with this name. Channels names are unique and may
+         * not change.
          *
+         * <p>Example: {@code MyChannel}
          */
         private String name = null;
 
         /**
-         * List only the information for Channels with this name. Channels names are unique and may not change.
-         * <p>
-         * Example: {@code MyChannel}
+         * List only the information for Channels with this name. Channels names are unique and may
+         * not change.
+         *
+         * <p>Example: {@code MyChannel}
          *
          * @param name the value to set
          * @return this builder instance
@@ -291,13 +273,12 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * List only Channels with this category.
-         */
+        /** List only Channels with this category. */
         private com.oracle.bmc.oda.model.ChannelCategory category = null;
 
         /**
          * List only Channels with this category.
+         *
          * @param category the value to set
          * @return this builder instance
          */
@@ -306,13 +287,12 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * List only Channels of this type.
-         */
+        /** List only Channels of this type. */
         private com.oracle.bmc.oda.model.ChannelType type = null;
 
         /**
          * List only Channels of this type.
+         *
          * @param type the value to set
          * @return this builder instance
          */
@@ -321,13 +301,12 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * List only the resources that are in this lifecycle state.
-         */
+        /** List only the resources that are in this lifecycle state. */
         private com.oracle.bmc.oda.model.LifecycleState lifecycleState = null;
 
         /**
          * List only the resources that are in this lifecycle state.
+         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -336,13 +315,12 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The maximum number of items to return per page.
-         */
+        /** The maximum number of items to return per page. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -353,22 +331,21 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * The page at which to start retrieving results.
-         * <p>
-         * You get this value from the {@code opc-next-page} header in a previous list request.
-         * To retireve the first page, omit this query parameter.
-         * <p>
-         * Example: {@code MToxMA==}
          *
+         * <p>You get this value from the {@code opc-next-page} header in a previous list request.
+         * To retireve the first page, omit this query parameter.
+         *
+         * <p>Example: {@code MToxMA==}
          */
         private String page = null;
 
         /**
          * The page at which to start retrieving results.
-         * <p>
-         * You get this value from the {@code opc-next-page} header in a previous list request.
+         *
+         * <p>You get this value from the {@code opc-next-page} header in a previous list request.
          * To retireve the first page, omit this query parameter.
-         * <p>
-         * Example: {@code MToxMA==}
+         *
+         * <p>Example: {@code MToxMA==}
          *
          * @param page the value to set
          * @return this builder instance
@@ -379,12 +356,15 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+         * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC}
+         * (descending).
          */
         private SortOrder sortOrder = null;
 
         /**
-         * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+         * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC}
+         * (descending).
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -394,17 +374,20 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Sort on this field. You can specify one sort order only. The default sort field is {@code timeCreated}.
-         * <p>
-         * The default sort order for {@code timeCreated} and {@code timeUpdated} is descending, and the default sort order for {@code name} is ascending.
+         * Sort on this field. You can specify one sort order only. The default sort field is {@code
+         * timeCreated}.
          *
+         * <p>The default sort order for {@code timeCreated} and {@code timeUpdated} is descending,
+         * and the default sort order for {@code name} is ascending.
          */
         private SortBy sortBy = null;
 
         /**
-         * Sort on this field. You can specify one sort order only. The default sort field is {@code timeCreated}.
-         * <p>
-         * The default sort order for {@code timeCreated} and {@code timeUpdated} is descending, and the default sort order for {@code name} is ascending.
+         * Sort on this field. You can specify one sort order only. The default sort field is {@code
+         * timeCreated}.
+         *
+         * <p>The default sort order for {@code timeCreated} and {@code timeUpdated} is descending,
+         * and the default sort order for {@code name} is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -415,12 +398,15 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * The client request ID for tracing. This value is included in the opc-request-id response
+         * header.
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * The client request ID for tracing. This value is included in the opc-request-id response
+         * header.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -431,18 +417,19 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -454,6 +441,7 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListChannelsRequest o) {
@@ -476,10 +464,11 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListChannelsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListChannelsRequest
          */
@@ -493,7 +482,8 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListChannelsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListChannelsRequest
@@ -512,12 +502,14 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListChannelsRequest(odaInstanceId, id, name, category, type, lifecycleState, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListChannelsRequest(odaInstanceId, id, name, category, type, lifecycleState,
+            // limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -537,6 +529,7 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

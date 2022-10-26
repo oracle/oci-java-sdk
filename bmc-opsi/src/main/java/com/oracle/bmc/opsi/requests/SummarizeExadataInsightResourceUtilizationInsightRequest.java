@@ -6,319 +6,262 @@ package com.oracle.bmc.opsi.requests;
 
 import com.oracle.bmc.opsi.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeExadataInsightResourceUtilizationInsightExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeExadataInsightResourceUtilizationInsightRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeExadataInsightResourceUtilizationInsightExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * SummarizeExadataInsightResourceUtilizationInsightRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class SummarizeExadataInsightResourceUtilizationInsightRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * Filter by resource.
-     * Supported values are HOST , STORAGE_SERVER and DATABASE
-     *
-     */
+    /** Filter by resource. Supported values are HOST , STORAGE_SERVER and DATABASE */
     private String resourceType;
 
-    /**
-     * Filter by resource.
-     * Supported values are HOST , STORAGE_SERVER and DATABASE
-     *
-     */
+    /** Filter by resource. Supported values are HOST , STORAGE_SERVER and DATABASE */
     public String getResourceType() {
         return resourceType;
     }
     /**
-     * Filter by resource metric.
-     * Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
-     *
+     * Filter by resource metric. Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
      */
     private String resourceMetric;
 
     /**
-     * Filter by resource metric.
-     * Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
-     *
+     * Filter by resource metric. Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
      */
     public String getResourceMetric() {
         return resourceMetric;
     }
     /**
-     * Specify time period in ISO 8601 format with respect to current time.
-     * Default is last 30 days represented by P30D.
-     * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
-     * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
-     *
+     * Specify time period in ISO 8601 format with respect to current time. Default is last 30 days
+     * represented by P30D. If timeInterval is specified, then timeIntervalStart and timeIntervalEnd
+     * will be ignored. Examples P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y
+     * (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
      */
     private String analysisTimeInterval;
 
     /**
-     * Specify time period in ISO 8601 format with respect to current time.
-     * Default is last 30 days represented by P30D.
-     * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
-     * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
-     *
+     * Specify time period in ISO 8601 format with respect to current time. Default is last 30 days
+     * represented by P30D. If timeInterval is specified, then timeIntervalStart and timeIntervalEnd
+     * will be ignored. Examples P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y
+     * (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
      */
     public String getAnalysisTimeInterval() {
         return analysisTimeInterval;
     }
     /**
-     * Analysis start time in UTC in ISO 8601 format(inclusive).
-     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
-     * The minimum allowed value is 2 years prior to the current day.
-     * timeIntervalStart and timeIntervalEnd parameters are used together.
-     * If analysisTimeInterval is specified, this parameter is ignored.
-     *
+     * Analysis start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
+     * (yyyy-MM-ddThh:mm:ssZ). The minimum allowed value is 2 years prior to the current day.
+     * timeIntervalStart and timeIntervalEnd parameters are used together. If analysisTimeInterval
+     * is specified, this parameter is ignored.
      */
     private java.util.Date timeIntervalStart;
 
     /**
-     * Analysis start time in UTC in ISO 8601 format(inclusive).
-     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
-     * The minimum allowed value is 2 years prior to the current day.
-     * timeIntervalStart and timeIntervalEnd parameters are used together.
-     * If analysisTimeInterval is specified, this parameter is ignored.
-     *
+     * Analysis start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
+     * (yyyy-MM-ddThh:mm:ssZ). The minimum allowed value is 2 years prior to the current day.
+     * timeIntervalStart and timeIntervalEnd parameters are used together. If analysisTimeInterval
+     * is specified, this parameter is ignored.
      */
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
     /**
-     * Analysis end time in UTC in ISO 8601 format(exclusive).
-     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
-     * timeIntervalStart and timeIntervalEnd are used together.
-     * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
-     *
+     * Analysis end time in UTC in ISO 8601 format(exclusive). Example 2019-10-30T00:00:00Z
+     * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd are used together. If
+     * timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
      */
     private java.util.Date timeIntervalEnd;
 
     /**
-     * Analysis end time in UTC in ISO 8601 format(exclusive).
-     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
-     * timeIntervalStart and timeIntervalEnd are used together.
-     * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
-     *
+     * Analysis end time in UTC in ISO 8601 format(exclusive). Example 2019-10-30T00:00:00Z
+     * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd are used together. If
+     * timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
      */
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
     /**
-     * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
+     * Optional list of exadata insight resource
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private java.util.List<String> exadataInsightId;
 
     /**
-     * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
+     * Optional list of exadata insight resource
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public java.util.List<String> getExadataInsightId() {
         return exadataInsightId;
     }
-    /**
-     * Filter by one or more Exadata types.
-     * Possible value are DBMACHINE, EXACS, and EXACC.
-     *
-     */
+    /** Filter by one or more Exadata types. Possible value are DBMACHINE, EXACS, and EXACC. */
     private java.util.List<String> exadataType;
 
-    /**
-     * Filter by one or more Exadata types.
-     * Possible value are DBMACHINE, EXACS, and EXACC.
-     *
-     */
+    /** Filter by one or more Exadata types. Possible value are DBMACHINE, EXACS, and EXACC. */
     public java.util.List<String> getExadataType() {
         return exadataType;
     }
-    /**
-     * Number of days used for utilization forecast analysis.
-     *
-     */
+    /** Number of days used for utilization forecast analysis. */
     private Integer forecastStartDay;
 
-    /**
-     * Number of days used for utilization forecast analysis.
-     *
-     */
+    /** Number of days used for utilization forecast analysis. */
     public Integer getForecastStartDay() {
         return forecastStartDay;
     }
-    /**
-     * Number of days used for utilization forecast analysis.
-     *
-     */
+    /** Number of days used for utilization forecast analysis. */
     private Integer forecastDays;
 
-    /**
-     * Number of days used for utilization forecast analysis.
-     *
-     */
+    /** Number of days used for utilization forecast analysis. */
     public Integer getForecastDays() {
         return forecastDays;
     }
-    /**
-     * Filter by one or more cdb name.
-     *
-     */
+    /** Filter by one or more cdb name. */
     private java.util.List<String> cdbName;
 
-    /**
-     * Filter by one or more cdb name.
-     *
-     */
+    /** Filter by one or more cdb name. */
     public java.util.List<String> getCdbName() {
         return cdbName;
     }
-    /**
-     * Filter by hostname.
-     *
-     */
+    /** Filter by hostname. */
     private java.util.List<String> hostName;
 
-    /**
-     * Filter by hostname.
-     *
-     */
+    /** Filter by hostname. */
     public java.util.List<String> getHostName() {
         return hostName;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to
-     * return in a paginated "List" call.
-     * For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-     * Example: {@code 50}
-     *
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example:
+     * {@code 50}
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to
-     * return in a paginated "List" call.
-     * For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-     * Example: {@code 50}
-     *
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example:
+     * {@code 50}
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from
-     * the previous "List" call. For important details about how pagination works,
-     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from
-     * the previous "List" call. For important details about how pagination works,
-     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
     /**
-     * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
-     * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
-     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
-     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
-     *
+     * A list of tag filters to apply. Only resources with a defined tag matching the value will be
+     * returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All inputs
+     * are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are
+     * interpreted as "OR". Values for different keys (i.e. different namespaces, different tag
+     * names, or both) are interpreted as "AND".
      */
     private java.util.List<String> definedTagEquals;
 
     /**
-     * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
-     * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
-     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
-     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
-     *
+     * A list of tag filters to apply. Only resources with a defined tag matching the value will be
+     * returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All inputs
+     * are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are
+     * interpreted as "OR". Values for different keys (i.e. different namespaces, different tag
+     * names, or both) are interpreted as "AND".
      */
     public java.util.List<String> getDefinedTagEquals() {
         return definedTagEquals;
     }
     /**
-     * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
-     * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
-     * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
-     *
+     * A list of tag filters to apply. Only resources with a freeform tag matching the value will be
+     * returned. The key for each tag is "{tagName}.{value}". All inputs are case-insensitive.
+     * Multiple values for the same tag name are interpreted as "OR". Values for different tag names
+     * are interpreted as "AND".
      */
     private java.util.List<String> freeformTagEquals;
 
     /**
-     * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
-     * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
-     * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
-     *
+     * A list of tag filters to apply. Only resources with a freeform tag matching the value will be
+     * returned. The key for each tag is "{tagName}.{value}". All inputs are case-insensitive.
+     * Multiple values for the same tag name are interpreted as "OR". Values for different tag names
+     * are interpreted as "AND".
      */
     public java.util.List<String> getFreeformTagEquals() {
         return freeformTagEquals;
     }
     /**
-     * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
-     * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
-     * or "{namespace}.true".  All inputs are case-insensitive.
-     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
-     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
-     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
-     *
+     * A list of tag existence filters to apply. Only resources for which the specified defined tags
+     * exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true"
+     * (for checking existence of a defined tag) or "{namespace}.true". All inputs are
+     * case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
+     * ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace
+     * and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
+     * different tag names, or both) are interpreted as "AND".
      */
     private java.util.List<String> definedTagExists;
 
     /**
-     * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
-     * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
-     * or "{namespace}.true".  All inputs are case-insensitive.
-     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
-     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
-     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
-     *
+     * A list of tag existence filters to apply. Only resources for which the specified defined tags
+     * exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true"
+     * (for checking existence of a defined tag) or "{namespace}.true". All inputs are
+     * case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
+     * ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace
+     * and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
+     * different tag names, or both) are interpreted as "AND".
      */
     public java.util.List<String> getDefinedTagExists() {
         return definedTagExists;
     }
     /**
-     * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
-     * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
-     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
-     * Multiple values for different tag names are interpreted as "AND".
-     *
+     * A list of tag existence filters to apply. Only resources for which the specified freeform
+     * tags exist the value will be returned. The key for each tag is "{tagName}.true". All inputs
+     * are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
+     * ("false" at the end) is not supported. Multiple values for different tag names are
+     * interpreted as "AND".
      */
     private java.util.List<String> freeformTagExists;
 
     /**
-     * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
-     * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
-     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
-     * Multiple values for different tag names are interpreted as "AND".
-     *
+     * A list of tag existence filters to apply. Only resources for which the specified freeform
+     * tags exist the value will be returned. The key for each tag is "{tagName}.true". All inputs
+     * are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
+     * ("false" at the end) is not supported. Multiple values for different tag names are
+     * interpreted as "AND".
      */
     public java.util.List<String> getFreeformTagExists() {
         return freeformTagExists;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -327,17 +270,19 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SummarizeExadataInsightResourceUtilizationInsightRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -346,16 +291,11 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
             return this;
         }
 
-        /**
-         * Filter by resource.
-         * Supported values are HOST , STORAGE_SERVER and DATABASE
-         *
-         */
+        /** Filter by resource. Supported values are HOST , STORAGE_SERVER and DATABASE */
         private String resourceType = null;
 
         /**
-         * Filter by resource.
-         * Supported values are HOST , STORAGE_SERVER and DATABASE
+         * Filter by resource. Supported values are HOST , STORAGE_SERVER and DATABASE
          *
          * @param resourceType the value to set
          * @return this builder instance
@@ -366,15 +306,14 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
         }
 
         /**
-         * Filter by resource metric.
-         * Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
-         *
+         * Filter by resource metric. Supported values are CPU , STORAGE, MEMORY, IO, IOPS,
+         * THROUGHPUT
          */
         private String resourceMetric = null;
 
         /**
-         * Filter by resource metric.
-         * Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
+         * Filter by resource metric. Supported values are CPU , STORAGE, MEMORY, IO, IOPS,
+         * THROUGHPUT
          *
          * @param resourceMetric the value to set
          * @return this builder instance
@@ -385,19 +324,20 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
         }
 
         /**
-         * Specify time period in ISO 8601 format with respect to current time.
-         * Default is last 30 days represented by P30D.
-         * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
-         * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
-         *
+         * Specify time period in ISO 8601 format with respect to current time. Default is last 30
+         * days represented by P30D. If timeInterval is specified, then timeIntervalStart and
+         * timeIntervalEnd will be ignored. Examples P90D (last 90 days), P4W (last 4 weeks), P2M
+         * (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to
+         * current time (P25M).
          */
         private String analysisTimeInterval = null;
 
         /**
-         * Specify time period in ISO 8601 format with respect to current time.
-         * Default is last 30 days represented by P30D.
-         * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
-         * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+         * Specify time period in ISO 8601 format with respect to current time. Default is last 30
+         * days represented by P30D. If timeInterval is specified, then timeIntervalStart and
+         * timeIntervalEnd will be ignored. Examples P90D (last 90 days), P4W (last 4 weeks), P2M
+         * (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to
+         * current time (P25M).
          *
          * @param analysisTimeInterval the value to set
          * @return this builder instance
@@ -408,21 +348,18 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
         }
 
         /**
-         * Analysis start time in UTC in ISO 8601 format(inclusive).
-         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
-         * The minimum allowed value is 2 years prior to the current day.
-         * timeIntervalStart and timeIntervalEnd parameters are used together.
-         * If analysisTimeInterval is specified, this parameter is ignored.
-         *
+         * Analysis start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
+         * (yyyy-MM-ddThh:mm:ssZ). The minimum allowed value is 2 years prior to the current day.
+         * timeIntervalStart and timeIntervalEnd parameters are used together. If
+         * analysisTimeInterval is specified, this parameter is ignored.
          */
         private java.util.Date timeIntervalStart = null;
 
         /**
-         * Analysis start time in UTC in ISO 8601 format(inclusive).
-         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
-         * The minimum allowed value is 2 years prior to the current day.
-         * timeIntervalStart and timeIntervalEnd parameters are used together.
-         * If analysisTimeInterval is specified, this parameter is ignored.
+         * Analysis start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
+         * (yyyy-MM-ddThh:mm:ssZ). The minimum allowed value is 2 years prior to the current day.
+         * timeIntervalStart and timeIntervalEnd parameters are used together. If
+         * analysisTimeInterval is specified, this parameter is ignored.
          *
          * @param timeIntervalStart the value to set
          * @return this builder instance
@@ -433,19 +370,16 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
         }
 
         /**
-         * Analysis end time in UTC in ISO 8601 format(exclusive).
-         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
-         * timeIntervalStart and timeIntervalEnd are used together.
-         * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
-         *
+         * Analysis end time in UTC in ISO 8601 format(exclusive). Example 2019-10-30T00:00:00Z
+         * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd are used together. If
+         * timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
          */
         private java.util.Date timeIntervalEnd = null;
 
         /**
-         * Analysis end time in UTC in ISO 8601 format(exclusive).
-         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
-         * timeIntervalStart and timeIntervalEnd are used together.
-         * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+         * Analysis end time in UTC in ISO 8601 format(exclusive). Example 2019-10-30T00:00:00Z
+         * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd are used together. If
+         * timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
          *
          * @param timeIntervalEnd the value to set
          * @return this builder instance
@@ -456,13 +390,14 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
         }
 
         /**
-         * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * Optional list of exadata insight resource
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private java.util.List<String> exadataInsightId = null;
 
         /**
-         * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Optional list of exadata insight resource
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param exadataInsightId the value to set
          * @return this builder instance
@@ -473,7 +408,8 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
         }
 
         /**
-         * Singular setter. Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Singular setter. Optional list of exadata insight resource
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -482,16 +418,11 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
             return this.exadataInsightId(java.util.Arrays.asList(singularValue));
         }
 
-        /**
-         * Filter by one or more Exadata types.
-         * Possible value are DBMACHINE, EXACS, and EXACC.
-         *
-         */
+        /** Filter by one or more Exadata types. Possible value are DBMACHINE, EXACS, and EXACC. */
         private java.util.List<String> exadataType = null;
 
         /**
-         * Filter by one or more Exadata types.
-         * Possible value are DBMACHINE, EXACS, and EXACC.
+         * Filter by one or more Exadata types. Possible value are DBMACHINE, EXACS, and EXACC.
          *
          * @param exadataType the value to set
          * @return this builder instance
@@ -502,8 +433,8 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
         }
 
         /**
-         * Singular setter. Filter by one or more Exadata types.
-         * Possible value are DBMACHINE, EXACS, and EXACC.
+         * Singular setter. Filter by one or more Exadata types. Possible value are DBMACHINE,
+         * EXACS, and EXACC.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -512,10 +443,7 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
             return this.exadataType(java.util.Arrays.asList(singularValue));
         }
 
-        /**
-         * Number of days used for utilization forecast analysis.
-         *
-         */
+        /** Number of days used for utilization forecast analysis. */
         private Integer forecastStartDay = null;
 
         /**
@@ -529,10 +457,7 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
             return this;
         }
 
-        /**
-         * Number of days used for utilization forecast analysis.
-         *
-         */
+        /** Number of days used for utilization forecast analysis. */
         private Integer forecastDays = null;
 
         /**
@@ -546,10 +471,7 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
             return this;
         }
 
-        /**
-         * Filter by one or more cdb name.
-         *
-         */
+        /** Filter by one or more cdb name. */
         private java.util.List<String> cdbName = null;
 
         /**
@@ -573,10 +495,7 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
             return this.cdbName(java.util.Arrays.asList(singularValue));
         }
 
-        /**
-         * Filter by hostname.
-         *
-         */
+        /** Filter by hostname. */
         private java.util.List<String> hostName = null;
 
         /**
@@ -601,20 +520,17 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to
-         * return in a paginated "List" call.
-         * For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
-         *
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to
-         * return in a paginated "List" call.
-         * For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
          * @param limit the value to set
@@ -626,17 +542,16 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from
-         * the previous "List" call. For important details about how pagination works,
-         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from
-         * the previous "List" call. For important details about how pagination works,
-         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -647,19 +562,20 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
         }
 
         /**
-         * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
-         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
-         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
-         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
-         *
+         * A list of tag filters to apply. Only resources with a defined tag matching the value will
+         * be returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All
+         * inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and
+         * tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
+         * different tag names, or both) are interpreted as "AND".
          */
         private java.util.List<String> definedTagEquals = null;
 
         /**
-         * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
-         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
-         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
-         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         * A list of tag filters to apply. Only resources with a defined tag matching the value will
+         * be returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All
+         * inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and
+         * tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
+         * different tag names, or both) are interpreted as "AND".
          *
          * @param definedTagEquals the value to set
          * @return this builder instance
@@ -670,10 +586,11 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
         }
 
         /**
-         * Singular setter. A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
-         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
-         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
-         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         * Singular setter. A list of tag filters to apply. Only resources with a defined tag
+         * matching the value will be returned. Each item in the list has the format
+         * "{namespace}.{tagName}.{value}". All inputs are case-insensitive. Multiple values for the
+         * same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different
+         * keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -683,17 +600,18 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
         }
 
         /**
-         * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
-         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
-         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
-         *
+         * A list of tag filters to apply. Only resources with a freeform tag matching the value
+         * will be returned. The key for each tag is "{tagName}.{value}". All inputs are
+         * case-insensitive. Multiple values for the same tag name are interpreted as "OR". Values
+         * for different tag names are interpreted as "AND".
          */
         private java.util.List<String> freeformTagEquals = null;
 
         /**
-         * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
-         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
-         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+         * A list of tag filters to apply. Only resources with a freeform tag matching the value
+         * will be returned. The key for each tag is "{tagName}.{value}". All inputs are
+         * case-insensitive. Multiple values for the same tag name are interpreted as "OR". Values
+         * for different tag names are interpreted as "AND".
          *
          * @param freeformTagEquals the value to set
          * @return this builder instance
@@ -704,9 +622,10 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
         }
 
         /**
-         * Singular setter. A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
-         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
-         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+         * Singular setter. A list of tag filters to apply. Only resources with a freeform tag
+         * matching the value will be returned. The key for each tag is "{tagName}.{value}". All
+         * inputs are case-insensitive. Multiple values for the same tag name are interpreted as
+         * "OR". Values for different tag names are interpreted as "AND".
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -716,23 +635,26 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
         }
 
         /**
-         * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
-         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
-         * or "{namespace}.true".  All inputs are case-insensitive.
-         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
-         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
-         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
-         *
+         * A list of tag existence filters to apply. Only resources for which the specified defined
+         * tags exist will be returned. Each item in the list has the format
+         * "{namespace}.{tagName}.true" (for checking existence of a defined tag) or
+         * "{namespace}.true". All inputs are case-insensitive. Currently, only existence ("true" at
+         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
+         * the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for
+         * different keys (i.e. different namespaces, different tag names, or both) are interpreted
+         * as "AND".
          */
         private java.util.List<String> definedTagExists = null;
 
         /**
-         * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
-         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
-         * or "{namespace}.true".  All inputs are case-insensitive.
-         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
-         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
-         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         * A list of tag existence filters to apply. Only resources for which the specified defined
+         * tags exist will be returned. Each item in the list has the format
+         * "{namespace}.{tagName}.true" (for checking existence of a defined tag) or
+         * "{namespace}.true". All inputs are case-insensitive. Currently, only existence ("true" at
+         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
+         * the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for
+         * different keys (i.e. different namespaces, different tag names, or both) are interpreted
+         * as "AND".
          *
          * @param definedTagExists the value to set
          * @return this builder instance
@@ -743,12 +665,14 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
         }
 
         /**
-         * Singular setter. A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
-         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
-         * or "{namespace}.true".  All inputs are case-insensitive.
-         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
-         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
-         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         * Singular setter. A list of tag existence filters to apply. Only resources for which the
+         * specified defined tags exist will be returned. Each item in the list has the format
+         * "{namespace}.{tagName}.true" (for checking existence of a defined tag) or
+         * "{namespace}.true". All inputs are case-insensitive. Currently, only existence ("true" at
+         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
+         * the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for
+         * different keys (i.e. different namespaces, different tag names, or both) are interpreted
+         * as "AND".
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -758,19 +682,20 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
         }
 
         /**
-         * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
-         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
-         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
-         * Multiple values for different tag names are interpreted as "AND".
-         *
+         * A list of tag existence filters to apply. Only resources for which the specified freeform
+         * tags exist the value will be returned. The key for each tag is "{tagName}.true". All
+         * inputs are case-insensitive. Currently, only existence ("true" at the end) is supported.
+         * Absence ("false" at the end) is not supported. Multiple values for different tag names
+         * are interpreted as "AND".
          */
         private java.util.List<String> freeformTagExists = null;
 
         /**
-         * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
-         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
-         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
-         * Multiple values for different tag names are interpreted as "AND".
+         * A list of tag existence filters to apply. Only resources for which the specified freeform
+         * tags exist the value will be returned. The key for each tag is "{tagName}.true". All
+         * inputs are case-insensitive. Currently, only existence ("true" at the end) is supported.
+         * Absence ("false" at the end) is not supported. Multiple values for different tag names
+         * are interpreted as "AND".
          *
          * @param freeformTagExists the value to set
          * @return this builder instance
@@ -781,10 +706,11 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
         }
 
         /**
-         * Singular setter. A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
-         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
-         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
-         * Multiple values for different tag names are interpreted as "AND".
+         * Singular setter. A list of tag existence filters to apply. Only resources for which the
+         * specified freeform tags exist the value will be returned. The key for each tag is
+         * "{tagName}.true". All inputs are case-insensitive. Currently, only existence ("true" at
+         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
+         * different tag names are interpreted as "AND".
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -794,15 +720,14 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -814,18 +739,19 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -837,6 +763,7 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(SummarizeExadataInsightResourceUtilizationInsightRequest o) {
@@ -865,12 +792,14 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
         }
 
         /**
-         * Build the instance of SummarizeExadataInsightResourceUtilizationInsightRequest as configured by this builder
+         * Build the instance of SummarizeExadataInsightResourceUtilizationInsightRequest as
+         * configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of SummarizeExadataInsightResourceUtilizationInsightRequest
          */
@@ -883,9 +812,11 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
         }
 
         /**
-         * Build the instance of SummarizeExadataInsightResourceUtilizationInsightRequest as configured by this builder
+         * Build the instance of SummarizeExadataInsightResourceUtilizationInsightRequest as
+         * configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of SummarizeExadataInsightResourceUtilizationInsightRequest
@@ -914,12 +845,17 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
             request.freeformTagExists = freeformTagExists;
             request.opcRequestId = opcRequestId;
             return request;
-            // new SummarizeExadataInsightResourceUtilizationInsightRequest(compartmentId, resourceType, resourceMetric, analysisTimeInterval, timeIntervalStart, timeIntervalEnd, exadataInsightId, exadataType, forecastStartDay, forecastDays, cdbName, hostName, limit, page, definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists, opcRequestId);
+            // new SummarizeExadataInsightResourceUtilizationInsightRequest(compartmentId,
+            // resourceType, resourceMetric, analysisTimeInterval, timeIntervalStart,
+            // timeIntervalEnd, exadataInsightId, exadataType, forecastStartDay, forecastDays,
+            // cdbName, hostName, limit, page, definedTagEquals, freeformTagEquals,
+            // definedTagExists, freeformTagExists, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -947,6 +883,7 @@ public class SummarizeExadataInsightResourceUtilizationInsightRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

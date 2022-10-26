@@ -27,49 +27,45 @@ import static com.oracle.bmc.util.internal.FileUtils.expandUserHome;
 
 /**
  * Simple implementation to read OCI configuration files.
- * <p>
- * Note, config files <b>MUST</b> contain a "DEFAULT" profile, else validation
- * will fail. Additional profiles are optional.
+ *
+ * <p>Note, config files <b>MUST</b> contain a "DEFAULT" profile, else validation will fail.
+ * Additional profiles are optional.
  */
 public final class ConfigFileReader {
-    /**
-     * Default location of the config file.
-     */
+    /** Default location of the config file. */
     public static final String DEFAULT_FILE_PATH = "~/.oci/config";
 
     /**
-     * The fallback default location of the config file. If and only if the {@link #DEFAULT_FILE_PATH} does not exist,
-     * this fallback default location will be used.
+     * The fallback default location of the config file. If and only if the {@link
+     * #DEFAULT_FILE_PATH} does not exist, this fallback default location will be used.
      */
     public static final String FALLBACK_DEFAULT_FILE_PATH = "~/.oraclebmc/config";
 
     private static final String DEFAULT_PROFILE_NAME = "DEFAULT";
 
-    /**
-     * Environment variable name for the config file location
-     */
+    /** Environment variable name for the config file location */
     public static final String OCI_CONFIG_FILE_PATH_ENV_VAR_NAME = "OCI_CONFIG_FILE";
+
     private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(ConfigFileReader.class);
 
     /**
-     * Creates a new ConfigFile instance using the configuration at the default location,
-     * using the default profile.  See {@link #DEFAULT_FILE_PATH}.
+     * Creates a new ConfigFile instance using the configuration at the default location, using the
+     * default profile. See {@link #DEFAULT_FILE_PATH}.
+     *
      * @return A new ConfigFile instance.
-     * @throws IOException
-     *             if the file could not be read.
+     * @throws IOException if the file could not be read.
      */
     public static ConfigFile parseDefault() throws IOException {
         return parseDefault(null);
     }
 
     /**
-     * Creates a new ConfigFile instance using the configuration at the default location,
-     * using the given profile.  See {@link #DEFAULT_FILE_PATH}.
-     * @param profile The profile name to load, or null if you want to load the
-     *            "DEFAULT" profile.
+     * Creates a new ConfigFile instance using the configuration at the default location, using the
+     * given profile. See {@link #DEFAULT_FILE_PATH}.
+     *
+     * @param profile The profile name to load, or null if you want to load the "DEFAULT" profile.
      * @return A new ConfigFile instance.
-     * @throws IOException
-     *             if the file could not be read.
+     * @throws IOException if the file could not be read.
      */
     public static ConfigFile parseDefault(@Nullable String profile) throws IOException {
         File effectiveFile = null;
@@ -95,22 +91,19 @@ public final class ConfigFileReader {
             throw new IOException(
                     String.format(
                             "Can't load the default config from '%s' or '%s' because it does not exist or it is not a file.",
-                            defaultFile.getAbsolutePath(),
-                            fallbackDefaultFile.getAbsolutePath()));
+                            defaultFile.getAbsolutePath(), fallbackDefaultFile.getAbsolutePath()));
         }
     }
 
     /**
      * Create a new instance using a file at a given location.
-     * <p>
-     * This method is the same as calling {@link #parse(String, String)} with
-     * "DEFAULT" as the profile.
      *
-     * @param configurationFilePath
-     *            The path to the config file.
+     * <p>This method is the same as calling {@link #parse(String, String)} with "DEFAULT" as the
+     * profile.
+     *
+     * @param configurationFilePath The path to the config file.
      * @return A new ConfigFile instance.
-     * @throws IOException
-     *             if the file could not be read.
+     * @throws IOException if the file could not be read.
      */
     public static ConfigFile parse(String configurationFilePath) throws IOException {
         return parse(configurationFilePath, null);
@@ -119,14 +112,10 @@ public final class ConfigFileReader {
     /**
      * Create a new instance using a file at a given location.
      *
-     * @param configurationFilePath
-     *            The path to the config file.
-     * @param profile
-     *            The profile name to load, or null if you want to load the
-     *            "DEFAULT" profile.
+     * @param configurationFilePath The path to the config file.
+     * @param profile The profile name to load, or null if you want to load the "DEFAULT" profile.
      * @return A new ConfigFile instance.
-     * @throws IOException
-     *             if the file could not be read.
+     * @throws IOException if the file could not be read.
      */
     public static ConfigFile parse(String configurationFilePath, @Nullable String profile)
             throws IOException {
@@ -136,14 +125,10 @@ public final class ConfigFileReader {
     /**
      * Create a new instance using an UTF-8 input stream.
      *
-     * @param configurationStream
-     *            The path to the config file.
-     * @param profile
-     *            The profile name to load, or null if you want to load the
-     *            "DEFAULT" profile.
+     * @param configurationStream The path to the config file.
+     * @param profile The profile name to load, or null if you want to load the "DEFAULT" profile.
      * @return A new ConfigFile instance.
-     * @throws IOException
-     *             if the file could not be read.
+     * @throws IOException if the file could not be read.
      */
     public static ConfigFile parse(InputStream configurationStream, @Nullable String profile)
             throws IOException {
@@ -153,16 +138,11 @@ public final class ConfigFileReader {
     /**
      * Create a new instance using an input stream.
      *
-     * @param configurationStream
-     *            The path to the config file.
-     * @param profile
-     *            The profile name to load, or null if you want to load the
-     *            "DEFAULT" profile.
-     * @param charset
-     *            The charset used when parsing the input stream
+     * @param configurationStream The path to the config file.
+     * @param profile The profile name to load, or null if you want to load the "DEFAULT" profile.
+     * @param charset The charset used when parsing the input stream
      * @return A new ConfigFile instance.
-     * @throws IOException
-     *             if the file could not be read.
+     * @throws IOException if the file could not be read.
      */
     public static ConfigFile parse(
             InputStream configurationStream, @Nullable String profile, @Nonnull Charset charset)
@@ -188,9 +168,7 @@ public final class ConfigFileReader {
 
     private ConfigFileReader() {}
 
-    /**
-     * ConfigFile represents a simple lookup mechanism for a OCI config file.
-     */
+    /** ConfigFile represents a simple lookup mechanism for a OCI config file. */
     public static final class ConfigFile {
         private final ConfigAccumulator accumulator;
         private final String profile;
@@ -202,12 +180,11 @@ public final class ConfigFileReader {
         }
 
         /**
-         * Gets the value associated with a given key. The value returned will
-         * be the one for the selected profile (if available), else the value in
-         * the DEFAULT profile (if specified), else null.
+         * Gets the value associated with a given key. The value returned will be the one for the
+         * selected profile (if available), else the value in the DEFAULT profile (if specified),
+         * else null.
          *
-         * @param key
-         *            The key to look up.
+         * @param key The key to look up.
          * @return The value, or null if it didn't exist.
          */
         public String get(String key) {

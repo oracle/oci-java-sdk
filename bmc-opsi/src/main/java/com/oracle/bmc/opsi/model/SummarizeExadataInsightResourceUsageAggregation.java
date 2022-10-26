@@ -5,22 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Resource usage summation for the current time period
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Resource usage summation for the current time period <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SummarizeExadataInsightResourceUsageAggregation.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SummarizeExadataInsightResourceUsageAggregation.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SummarizeExadataInsightResourceUsageAggregation
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeIntervalStart",
@@ -57,42 +57,37 @@ public final class SummarizeExadataInsightResourceUsageAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The start timestamp that was passed into the request.
-         **/
+        /** The start timestamp that was passed into the request. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
         private java.util.Date timeIntervalStart;
 
         /**
          * The start timestamp that was passed into the request.
+         *
          * @param timeIntervalStart the value to set
          * @return this builder
-         **/
+         */
         public Builder timeIntervalStart(java.util.Date timeIntervalStart) {
             this.timeIntervalStart = timeIntervalStart;
             this.__explicitlySet__.add("timeIntervalStart");
             return this;
         }
-        /**
-         * The end timestamp that was passed into the request.
-         **/
+        /** The end timestamp that was passed into the request. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
         private java.util.Date timeIntervalEnd;
 
         /**
          * The end timestamp that was passed into the request.
+         *
          * @param timeIntervalEnd the value to set
          * @return this builder
-         **/
+         */
         public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
             this.timeIntervalEnd = timeIntervalEnd;
             this.__explicitlySet__.add("timeIntervalEnd");
             return this;
         }
-        /**
-         * Defines the type of exadata resource metric (example: CPU, STORAGE)
-         *
-         **/
+        /** Defines the type of exadata resource metric (example: CPU, STORAGE) */
         @com.fasterxml.jackson.annotation.JsonProperty("exadataResourceMetric")
         private ExadataResourceMetric exadataResourceMetric;
 
@@ -101,50 +96,47 @@ public final class SummarizeExadataInsightResourceUsageAggregation
          *
          * @param exadataResourceMetric the value to set
          * @return this builder
-         **/
+         */
         public Builder exadataResourceMetric(ExadataResourceMetric exadataResourceMetric) {
             this.exadataResourceMetric = exadataResourceMetric;
             this.__explicitlySet__.add("exadataResourceMetric");
             return this;
         }
         /**
-         * Defines the resource type for an exadata  (example: DATABASE, STORAGE_SERVER, HOST, DISKGROUP)
-         *
-         **/
+         * Defines the resource type for an exadata (example: DATABASE, STORAGE_SERVER, HOST,
+         * DISKGROUP)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("exadataResourceType")
         private ExadataResourceType exadataResourceType;
 
         /**
-         * Defines the resource type for an exadata  (example: DATABASE, STORAGE_SERVER, HOST, DISKGROUP)
+         * Defines the resource type for an exadata (example: DATABASE, STORAGE_SERVER, HOST,
+         * DISKGROUP)
          *
          * @param exadataResourceType the value to set
          * @return this builder
-         **/
+         */
         public Builder exadataResourceType(ExadataResourceType exadataResourceType) {
             this.exadataResourceType = exadataResourceType;
             this.__explicitlySet__.add("exadataResourceType");
             return this;
         }
-        /**
-         * Displays usage unit ( CORES, GB , PERCENT, MBPS)
-         **/
+        /** Displays usage unit ( CORES, GB , PERCENT, MBPS) */
         @com.fasterxml.jackson.annotation.JsonProperty("usageUnit")
         private UsageUnit usageUnit;
 
         /**
          * Displays usage unit ( CORES, GB , PERCENT, MBPS)
+         *
          * @param usageUnit the value to set
          * @return this builder
-         **/
+         */
         public Builder usageUnit(UsageUnit usageUnit) {
             this.usageUnit = usageUnit;
             this.__explicitlySet__.add("usageUnit");
             return this;
         }
-        /**
-         * Total amount used of the resource metric type (CPU, STORAGE).
-         *
-         **/
+        /** Total amount used of the resource metric type (CPU, STORAGE). */
         @com.fasterxml.jackson.annotation.JsonProperty("usage")
         private Double usage;
 
@@ -153,59 +145,64 @@ public final class SummarizeExadataInsightResourceUsageAggregation
          *
          * @param usage the value to set
          * @return this builder
-         **/
+         */
         public Builder usage(Double usage) {
             this.usage = usage;
             this.__explicitlySet__.add("usage");
             return this;
         }
         /**
-         * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
-         *
-         **/
+         * The maximum allocated amount of the resource metric type (CPU, STORAGE) for a set of
+         * databases.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("capacity")
         private Double capacity;
 
         /**
-         * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
+         * The maximum allocated amount of the resource metric type (CPU, STORAGE) for a set of
+         * databases.
          *
          * @param capacity the value to set
          * @return this builder
-         **/
+         */
         public Builder capacity(Double capacity) {
             this.capacity = capacity;
             this.__explicitlySet__.add("capacity");
             return this;
         }
         /**
-         * Percentage change in resource usage during the current period calculated using linear regression functions
-         **/
+         * Percentage change in resource usage during the current period calculated using linear
+         * regression functions
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("usageChangePercent")
         private Double usageChangePercent;
 
         /**
-         * Percentage change in resource usage during the current period calculated using linear regression functions
+         * Percentage change in resource usage during the current period calculated using linear
+         * regression functions
+         *
          * @param usageChangePercent the value to set
          * @return this builder
-         **/
+         */
         public Builder usageChangePercent(Double usageChangePercent) {
             this.usageChangePercent = usageChangePercent;
             this.__explicitlySet__.add("usageChangePercent");
             return this;
         }
         /**
-         * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
-         *
-         **/
+         * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only
+         * applies to CPU and does not not apply for Autonomous Databases.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("totalHostCapacity")
         private Double totalHostCapacity;
 
         /**
-         * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+         * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only
+         * applies to CPU and does not not apply for Autonomous Databases.
          *
          * @param totalHostCapacity the value to set
          * @return this builder
-         **/
+         */
         public Builder totalHostCapacity(Double totalHostCapacity) {
             this.totalHostCapacity = totalHostCapacity;
             this.__explicitlySet__.add("totalHostCapacity");
@@ -266,9 +263,7 @@ public final class SummarizeExadataInsightResourceUsageAggregation
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -277,39 +272,34 @@ public final class SummarizeExadataInsightResourceUsageAggregation
         return new Builder().copy(this);
     }
 
-    /**
-     * The start timestamp that was passed into the request.
-     **/
+    /** The start timestamp that was passed into the request. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
     private final java.util.Date timeIntervalStart;
 
     /**
      * The start timestamp that was passed into the request.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
 
-    /**
-     * The end timestamp that was passed into the request.
-     **/
+    /** The end timestamp that was passed into the request. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
     private final java.util.Date timeIntervalEnd;
 
     /**
      * The end timestamp that was passed into the request.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
 
-    /**
-     * Defines the type of exadata resource metric (example: CPU, STORAGE)
-     *
-     **/
-    public enum ExadataResourceMetric {
+    /** Defines the type of exadata resource metric (example: CPU, STORAGE) */
+    public enum ExadataResourceMetric implements com.oracle.bmc.http.internal.BmcEnum {
         Cpu("CPU"),
         Storage("STORAGE"),
         Io("IO"),
@@ -318,8 +308,8 @@ public final class SummarizeExadataInsightResourceUsageAggregation
         Throughput("THROUGHPUT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -358,10 +348,7 @@ public final class SummarizeExadataInsightResourceUsageAggregation
             return UnknownEnumValue;
         }
     };
-    /**
-     * Defines the type of exadata resource metric (example: CPU, STORAGE)
-     *
-     **/
+    /** Defines the type of exadata resource metric (example: CPU, STORAGE) */
     @com.fasterxml.jackson.annotation.JsonProperty("exadataResourceMetric")
     private final ExadataResourceMetric exadataResourceMetric;
 
@@ -369,24 +356,23 @@ public final class SummarizeExadataInsightResourceUsageAggregation
      * Defines the type of exadata resource metric (example: CPU, STORAGE)
      *
      * @return the value
-     **/
+     */
     public ExadataResourceMetric getExadataResourceMetric() {
         return exadataResourceMetric;
     }
 
     /**
-     * Defines the resource type for an exadata  (example: DATABASE, STORAGE_SERVER, HOST, DISKGROUP)
-     *
-     **/
-    public enum ExadataResourceType {
+     * Defines the resource type for an exadata (example: DATABASE, STORAGE_SERVER, HOST, DISKGROUP)
+     */
+    public enum ExadataResourceType implements com.oracle.bmc.http.internal.BmcEnum {
         Database("DATABASE"),
         Host("HOST"),
         StorageServer("STORAGE_SERVER"),
         Diskgroup("DISKGROUP"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -426,25 +412,22 @@ public final class SummarizeExadataInsightResourceUsageAggregation
         }
     };
     /**
-     * Defines the resource type for an exadata  (example: DATABASE, STORAGE_SERVER, HOST, DISKGROUP)
-     *
-     **/
+     * Defines the resource type for an exadata (example: DATABASE, STORAGE_SERVER, HOST, DISKGROUP)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("exadataResourceType")
     private final ExadataResourceType exadataResourceType;
 
     /**
-     * Defines the resource type for an exadata  (example: DATABASE, STORAGE_SERVER, HOST, DISKGROUP)
+     * Defines the resource type for an exadata (example: DATABASE, STORAGE_SERVER, HOST, DISKGROUP)
      *
      * @return the value
-     **/
+     */
     public ExadataResourceType getExadataResourceType() {
         return exadataResourceType;
     }
 
-    /**
-     * Displays usage unit ( CORES, GB , PERCENT, MBPS)
-     **/
-    public enum UsageUnit {
+    /** Displays usage unit ( CORES, GB , PERCENT, MBPS) */
+    public enum UsageUnit implements com.oracle.bmc.http.internal.BmcEnum {
         Cores("CORES"),
         Gb("GB"),
         Mbps("MBPS"),
@@ -452,8 +435,8 @@ public final class SummarizeExadataInsightResourceUsageAggregation
         Percent("PERCENT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -492,24 +475,20 @@ public final class SummarizeExadataInsightResourceUsageAggregation
             return UnknownEnumValue;
         }
     };
-    /**
-     * Displays usage unit ( CORES, GB , PERCENT, MBPS)
-     **/
+    /** Displays usage unit ( CORES, GB , PERCENT, MBPS) */
     @com.fasterxml.jackson.annotation.JsonProperty("usageUnit")
     private final UsageUnit usageUnit;
 
     /**
      * Displays usage unit ( CORES, GB , PERCENT, MBPS)
+     *
      * @return the value
-     **/
+     */
     public UsageUnit getUsageUnit() {
         return usageUnit;
     }
 
-    /**
-     * Total amount used of the resource metric type (CPU, STORAGE).
-     *
-     **/
+    /** Total amount used of the resource metric type (CPU, STORAGE). */
     @com.fasterxml.jackson.annotation.JsonProperty("usage")
     private final Double usage;
 
@@ -517,53 +496,58 @@ public final class SummarizeExadataInsightResourceUsageAggregation
      * Total amount used of the resource metric type (CPU, STORAGE).
      *
      * @return the value
-     **/
+     */
     public Double getUsage() {
         return usage;
     }
 
     /**
-     * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
-     *
-     **/
+     * The maximum allocated amount of the resource metric type (CPU, STORAGE) for a set of
+     * databases.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
     private final Double capacity;
 
     /**
-     * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
+     * The maximum allocated amount of the resource metric type (CPU, STORAGE) for a set of
+     * databases.
      *
      * @return the value
-     **/
+     */
     public Double getCapacity() {
         return capacity;
     }
 
     /**
-     * Percentage change in resource usage during the current period calculated using linear regression functions
-     **/
+     * Percentage change in resource usage during the current period calculated using linear
+     * regression functions
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("usageChangePercent")
     private final Double usageChangePercent;
 
     /**
-     * Percentage change in resource usage during the current period calculated using linear regression functions
+     * Percentage change in resource usage during the current period calculated using linear
+     * regression functions
+     *
      * @return the value
-     **/
+     */
     public Double getUsageChangePercent() {
         return usageChangePercent;
     }
 
     /**
-     * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
-     *
-     **/
+     * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only
+     * applies to CPU and does not not apply for Autonomous Databases.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("totalHostCapacity")
     private final Double totalHostCapacity;
 
     /**
-     * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+     * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only
+     * applies to CPU and does not not apply for Autonomous Databases.
      *
      * @return the value
-     **/
+     */
     public Double getTotalHostCapacity() {
         return totalHostCapacity;
     }
@@ -575,6 +559,7 @@ public final class SummarizeExadataInsightResourceUsageAggregation
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

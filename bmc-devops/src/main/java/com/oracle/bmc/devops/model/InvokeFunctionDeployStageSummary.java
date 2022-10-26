@@ -5,25 +5,24 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies Invoke Function stage.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Specifies Invoke Function stage. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = InvokeFunctionDeployStageSummary.Builder.class
-)
+        builder = InvokeFunctionDeployStageSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "deployStageType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "deployStageType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class InvokeFunctionDeployStageSummary extends DeployStageSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -154,69 +153,69 @@ public final class InvokeFunctionDeployStageSummary extends DeployStageSummary {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /**
-         * Function environment OCID.
-         **/
+        /** Function environment OCID. */
         @com.fasterxml.jackson.annotation.JsonProperty("functionDeployEnvironmentId")
         private String functionDeployEnvironmentId;
 
         /**
          * Function environment OCID.
+         *
          * @param functionDeployEnvironmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder functionDeployEnvironmentId(String functionDeployEnvironmentId) {
             this.functionDeployEnvironmentId = functionDeployEnvironmentId;
             this.__explicitlySet__.add("functionDeployEnvironmentId");
             return this;
         }
         /**
-         * Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution.
-         * If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
-         *
-         **/
+         * Optional artifact OCID. The artifact will be included in the body for the function
+         * invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode
+         * is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to
+         * replace the placeholders in the artifact content.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactId")
         private String deployArtifactId;
 
         /**
-         * Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution.
-         * If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
+         * Optional artifact OCID. The artifact will be included in the body for the function
+         * invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode
+         * is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to
+         * replace the placeholders in the artifact content.
          *
          * @param deployArtifactId the value to set
          * @return this builder
-         **/
+         */
         public Builder deployArtifactId(String deployArtifactId) {
             this.deployArtifactId = deployArtifactId;
             this.__explicitlySet__.add("deployArtifactId");
             return this;
         }
-        /**
-         * A boolean flag specifies whether this stage executes asynchronously.
-         **/
+        /** A boolean flag specifies whether this stage executes asynchronously. */
         @com.fasterxml.jackson.annotation.JsonProperty("isAsync")
         private Boolean isAsync;
 
         /**
          * A boolean flag specifies whether this stage executes asynchronously.
+         *
          * @param isAsync the value to set
          * @return this builder
-         **/
+         */
         public Builder isAsync(Boolean isAsync) {
             this.isAsync = isAsync;
             this.__explicitlySet__.add("isAsync");
             return this;
         }
-        /**
-         * A boolean flag specifies whether the invoked function must be validated.
-         **/
+        /** A boolean flag specifies whether the invoked function must be validated. */
         @com.fasterxml.jackson.annotation.JsonProperty("isValidationEnabled")
         private Boolean isValidationEnabled;
 
         /**
          * A boolean flag specifies whether the invoked function must be validated.
+         *
          * @param isValidationEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isValidationEnabled(Boolean isValidationEnabled) {
             this.isValidationEnabled = isValidationEnabled;
             this.__explicitlySet__.add("isValidationEnabled");
@@ -313,9 +312,7 @@ public final class InvokeFunctionDeployStageSummary extends DeployStageSummary {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -365,62 +362,62 @@ public final class InvokeFunctionDeployStageSummary extends DeployStageSummary {
         this.isValidationEnabled = isValidationEnabled;
     }
 
-    /**
-     * Function environment OCID.
-     **/
+    /** Function environment OCID. */
     @com.fasterxml.jackson.annotation.JsonProperty("functionDeployEnvironmentId")
     private final String functionDeployEnvironmentId;
 
     /**
      * Function environment OCID.
+     *
      * @return the value
-     **/
+     */
     public String getFunctionDeployEnvironmentId() {
         return functionDeployEnvironmentId;
     }
 
     /**
-     * Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution.
-     * If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
-     *
-     **/
+     * Optional artifact OCID. The artifact will be included in the body for the function invocation
+     * during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to
+     * SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the
+     * placeholders in the artifact content.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactId")
     private final String deployArtifactId;
 
     /**
-     * Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution.
-     * If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
+     * Optional artifact OCID. The artifact will be included in the body for the function invocation
+     * during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to
+     * SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the
+     * placeholders in the artifact content.
      *
      * @return the value
-     **/
+     */
     public String getDeployArtifactId() {
         return deployArtifactId;
     }
 
-    /**
-     * A boolean flag specifies whether this stage executes asynchronously.
-     **/
+    /** A boolean flag specifies whether this stage executes asynchronously. */
     @com.fasterxml.jackson.annotation.JsonProperty("isAsync")
     private final Boolean isAsync;
 
     /**
      * A boolean flag specifies whether this stage executes asynchronously.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsAsync() {
         return isAsync;
     }
 
-    /**
-     * A boolean flag specifies whether the invoked function must be validated.
-     **/
+    /** A boolean flag specifies whether the invoked function must be validated. */
     @com.fasterxml.jackson.annotation.JsonProperty("isValidationEnabled")
     private final Boolean isValidationEnabled;
 
     /**
      * A boolean flag specifies whether the invoked function must be validated.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsValidationEnabled() {
         return isValidationEnabled;
     }
@@ -432,6 +429,7 @@ public final class InvokeFunctionDeployStageSummary extends DeployStageSummary {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

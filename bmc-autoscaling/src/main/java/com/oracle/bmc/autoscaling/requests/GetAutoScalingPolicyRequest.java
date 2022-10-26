@@ -6,31 +6,31 @@ package com.oracle.bmc.autoscaling.requests;
 
 import com.oracle.bmc.autoscaling.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/autoscaling/GetAutoScalingPolicyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetAutoScalingPolicyRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/autoscaling/GetAutoScalingPolicyExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetAutoScalingPolicyRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public class GetAutoScalingPolicyRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * autoscaling configuration.
      */
     private String autoScalingConfigurationId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * autoscaling configuration.
      */
     public String getAutoScalingConfigurationId() {
         return autoScalingConfigurationId;
     }
-    /**
-     * The ID of the autoscaling policy.
-     */
+    /** The ID of the autoscaling policy. */
     private String autoScalingPolicyId;
 
-    /**
-     * The ID of the autoscaling policy.
-     */
+    /** The ID of the autoscaling policy. */
     public String getAutoScalingPolicyId() {
         return autoScalingPolicyId;
     }
@@ -44,17 +44,19 @@ public class GetAutoScalingPolicyRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetAutoScalingPolicyRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * autoscaling configuration.
          */
         private String autoScalingConfigurationId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * autoscaling configuration.
+         *
          * @param autoScalingConfigurationId the value to set
          * @return this builder instance
          */
@@ -63,13 +65,12 @@ public class GetAutoScalingPolicyRequest
             return this;
         }
 
-        /**
-         * The ID of the autoscaling policy.
-         */
+        /** The ID of the autoscaling policy. */
         private String autoScalingPolicyId = null;
 
         /**
          * The ID of the autoscaling policy.
+         *
          * @param autoScalingPolicyId the value to set
          * @return this builder instance
          */
@@ -81,7 +82,6 @@ public class GetAutoScalingPolicyRequest
         private String opcRequestId = null;
 
         /**
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -92,18 +92,19 @@ public class GetAutoScalingPolicyRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -115,6 +116,7 @@ public class GetAutoScalingPolicyRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetAutoScalingPolicyRequest o) {
@@ -129,10 +131,11 @@ public class GetAutoScalingPolicyRequest
         /**
          * Build the instance of GetAutoScalingPolicyRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetAutoScalingPolicyRequest
          */
@@ -146,7 +149,8 @@ public class GetAutoScalingPolicyRequest
         /**
          * Build the instance of GetAutoScalingPolicyRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetAutoScalingPolicyRequest
@@ -157,12 +161,14 @@ public class GetAutoScalingPolicyRequest
             request.autoScalingPolicyId = autoScalingPolicyId;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetAutoScalingPolicyRequest(autoScalingConfigurationId, autoScalingPolicyId, opcRequestId);
+            // new GetAutoScalingPolicyRequest(autoScalingConfigurationId, autoScalingPolicyId,
+            // opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -174,6 +180,7 @@ public class GetAutoScalingPolicyRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

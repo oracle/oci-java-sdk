@@ -5,22 +5,22 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Database Connection Summary.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Database Connection Summary. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ConnectionSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ConnectionSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ConnectionSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ConnectionSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -72,10 +72,7 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the resource
-         *
-         **/
+        /** The OCID of the resource */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -84,16 +81,13 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
          *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * OCID of the compartment
-         *
-         **/
+        /** OCID of the compartment */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -102,16 +96,13 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
          *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * Database connection type.
-         *
-         **/
+        /** Database connection type. */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
         private DatabaseConnectionTypes databaseType;
 
@@ -120,25 +111,26 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
          *
          * @param databaseType the value to set
          * @return this builder
-         **/
+         */
         public Builder databaseType(DatabaseConnectionTypes databaseType) {
             this.databaseType = databaseType;
             this.__explicitlySet__.add("databaseType");
             return this;
         }
         /**
-         * Database manual connection subtype. This value can only be specified for manual connections.
-         *
-         **/
+         * Database manual connection subtype. This value can only be specified for manual
+         * connections.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("manualDatabaseSubType")
         private DatabaseManualConnectionSubTypes manualDatabaseSubType;
 
         /**
-         * Database manual connection subtype. This value can only be specified for manual connections.
+         * Database manual connection subtype. This value can only be specified for manual
+         * connections.
          *
          * @param manualDatabaseSubType the value to set
          * @return this builder
-         **/
+         */
         public Builder manualDatabaseSubType(
                 DatabaseManualConnectionSubTypes manualDatabaseSubType) {
             this.manualDatabaseSubType = manualDatabaseSubType;
@@ -146,27 +138,25 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * True if the Autonomous Connection is dedicated. Not provided for Non-Autonomous Connections.
-         *
-         **/
+         * True if the Autonomous Connection is dedicated. Not provided for Non-Autonomous
+         * Connections.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
         private Boolean isDedicated;
 
         /**
-         * True if the Autonomous Connection is dedicated. Not provided for Non-Autonomous Connections.
+         * True if the Autonomous Connection is dedicated. Not provided for Non-Autonomous
+         * Connections.
          *
          * @param isDedicated the value to set
          * @return this builder
-         **/
+         */
         public Builder isDedicated(Boolean isDedicated) {
             this.isDedicated = isDedicated;
             this.__explicitlySet__.add("isDedicated");
             return this;
         }
-        /**
-         * Database Connection display name identifier.
-         *
-         **/
+        /** Database Connection display name identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -175,16 +165,13 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The OCID of the cloud database.
-         *
-         **/
+        /** The OCID of the cloud database. */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
@@ -193,16 +180,13 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
          *
          * @param databaseId the value to set
          * @return this builder
-         **/
+         */
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
             return this;
         }
-        /**
-         * The time the Connection resource was created. An RFC3339 formatted datetime string.
-         *
-         **/
+        /** The time the Connection resource was created. An RFC3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -211,34 +195,32 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The time of the last Connection resource details update. An RFC3339 formatted datetime string.
-         *
-         **/
+         * The time of the last Connection resource details update. An RFC3339 formatted datetime
+         * string.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time of the last Connection resource details update. An RFC3339 formatted datetime string.
+         * The time of the last Connection resource details update. An RFC3339 formatted datetime
+         * string.
          *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * The current state of the Connection resource.
-         *
-         **/
+        /** The current state of the Connection resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleStates lifecycleState;
 
@@ -247,47 +229,45 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
          *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information
-         * for a resource in Failed state.
-         *
-         **/
+         * A message describing the current state in more detail. For example, can be used to
+         * provide actionable information for a resource in Failed state.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information
-         * for a resource in Failed state.
+         * A message describing the current state in more detail. For example, can be used to
+         * provide actionable information for a resource in Failed state.
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -296,8 +276,7 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -307,7 +286,7 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -315,20 +294,19 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         *
-         **/
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         **/
+         */
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -409,9 +387,7 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -420,10 +396,7 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the resource
-     *
-     **/
+    /** The OCID of the resource */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
@@ -431,15 +404,12 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
      * The OCID of the resource
      *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * OCID of the compartment
-     *
-     **/
+    /** OCID of the compartment */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
@@ -447,15 +417,12 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
      * OCID of the compartment
      *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * Database connection type.
-     *
-     **/
+    /** Database connection type. */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
     private final DatabaseConnectionTypes databaseType;
 
@@ -463,15 +430,14 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
      * Database connection type.
      *
      * @return the value
-     **/
+     */
     public DatabaseConnectionTypes getDatabaseType() {
         return databaseType;
     }
 
     /**
      * Database manual connection subtype. This value can only be specified for manual connections.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("manualDatabaseSubType")
     private final DatabaseManualConnectionSubTypes manualDatabaseSubType;
 
@@ -479,15 +445,14 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
      * Database manual connection subtype. This value can only be specified for manual connections.
      *
      * @return the value
-     **/
+     */
     public DatabaseManualConnectionSubTypes getManualDatabaseSubType() {
         return manualDatabaseSubType;
     }
 
     /**
      * True if the Autonomous Connection is dedicated. Not provided for Non-Autonomous Connections.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
     private final Boolean isDedicated;
 
@@ -495,15 +460,12 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
      * True if the Autonomous Connection is dedicated. Not provided for Non-Autonomous Connections.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsDedicated() {
         return isDedicated;
     }
 
-    /**
-     * Database Connection display name identifier.
-     *
-     **/
+    /** Database Connection display name identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -511,15 +473,12 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
      * Database Connection display name identifier.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The OCID of the cloud database.
-     *
-     **/
+    /** The OCID of the cloud database. */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
@@ -527,15 +486,12 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
      * The OCID of the cloud database.
      *
      * @return the value
-     **/
+     */
     public String getDatabaseId() {
         return databaseId;
     }
 
-    /**
-     * The time the Connection resource was created. An RFC3339 formatted datetime string.
-     *
-     **/
+    /** The time the Connection resource was created. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -543,31 +499,29 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
      * The time the Connection resource was created. An RFC3339 formatted datetime string.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The time of the last Connection resource details update. An RFC3339 formatted datetime string.
-     *
-     **/
+     * The time of the last Connection resource details update. An RFC3339 formatted datetime
+     * string.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time of the last Connection resource details update. An RFC3339 formatted datetime string.
+     * The time of the last Connection resource details update. An RFC3339 formatted datetime
+     * string.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The current state of the Connection resource.
-     *
-     **/
+    /** The current state of the Connection resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleStates lifecycleState;
 
@@ -575,79 +529,75 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
      * The current state of the Connection resource.
      *
      * @return the value
-     **/
+     */
     public LifecycleStates getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information
-     * for a resource in Failed state.
-     *
-     **/
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in Failed state.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information
-     * for a resource in Failed state.
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in Failed state.
      *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     *
-     **/
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -659,6 +609,7 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

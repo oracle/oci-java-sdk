@@ -5,23 +5,24 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * A DRG attachment serves as a link between a DRG and a network resource. A DRG can be attached to a VCN,
- * IPSec tunnel, remote peering connection, or virtual circuit.
- * <p>
- * For more information, see [Overview of the Networking Service](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm).
+ * A DRG attachment serves as a link between a DRG and a network resource. A DRG can be attached to
+ * a VCN, IPSec tunnel, remote peering connection, or virtual circuit.
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>For more information, see [Overview of the Networking
+ * Service](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DrgAttachment.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DrgAttachment extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class DrgAttachment extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -71,128 +72,137 @@ public final class DrgAttachment extends com.oracle.bmc.http.internal.Explicitly
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the DRG attachment.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the DRG attachment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the DRG attachment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the DRG attachment.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
-         *
-         **/
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the DRG.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("drgId")
         private String drgId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the DRG.
+         *
          * @param drgId the value to set
          * @return this builder
-         **/
+         */
         public Builder drgId(String drgId) {
             this.drgId = drgId;
             this.__explicitlySet__.add("drgId");
             return this;
         }
         /**
-         * The DRG attachment's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-         **/
+         * The DRG attachment's Oracle ID
+         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The DRG attachment's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * The DRG attachment's Oracle ID
+         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The DRG attachment's current state.
-         **/
+        /** The DRG attachment's current state. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The DRG attachment's current state.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the DRG attachment was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
-         **/
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the DRG attachment was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
-         * <p>
-         * The DRG route table manages traffic inside the DRG.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the DRG route table that is assigned to this attachment.
          *
-         **/
+         * <p>The DRG route table manages traffic inside the DRG.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("drgRouteTableId")
         private String drgRouteTableId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
-         * <p>
-         * The DRG route table manages traffic inside the DRG.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the DRG route table that is assigned to this attachment.
+         *
+         * <p>The DRG route table manages traffic inside the DRG.
          *
          * @param drgRouteTableId the value to set
          * @return this builder
-         **/
+         */
         public Builder drgRouteTableId(String drgRouteTableId) {
             this.drgRouteTableId = drgRouteTableId;
             this.__explicitlySet__.add("drgRouteTableId");
@@ -210,8 +220,7 @@ public final class DrgAttachment extends com.oracle.bmc.http.internal.Explicitly
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -221,7 +230,7 @@ public final class DrgAttachment extends com.oracle.bmc.http.internal.Explicitly
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -229,84 +238,90 @@ public final class DrgAttachment extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-         * This field is deprecated. Instead, use the {@code networkDetails} field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the VCN. This field is deprecated. Instead, use the {@code networkDetails} field to
+         * view the
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * the attached resource.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-         * This field is deprecated. Instead, use the {@code networkDetails} field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the VCN. This field is deprecated. Instead, use the {@code networkDetails} field to
+         * view the
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * the attached resource.
          *
          * @param vcnId the value to set
          * @return this builder
-         **/
+         */
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table
-         * are advertised to the attachment.
-         * If this value is null, no routes are advertised through this attachment.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the export route distribution used to specify how routes in the assigned DRG route
+         * table are advertised to the attachment. If this value is null, no routes are advertised
+         * through this attachment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("exportDrgRouteDistributionId")
         private String exportDrgRouteDistributionId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table
-         * are advertised to the attachment.
-         * If this value is null, no routes are advertised through this attachment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the export route distribution used to specify how routes in the assigned DRG route
+         * table are advertised to the attachment. If this value is null, no routes are advertised
+         * through this attachment.
          *
          * @param exportDrgRouteDistributionId the value to set
          * @return this builder
-         **/
+         */
         public Builder exportDrgRouteDistributionId(String exportDrgRouteDistributionId) {
             this.exportDrgRouteDistributionId = exportDrgRouteDistributionId;
             this.__explicitlySet__.add("exportDrgRouteDistributionId");
             return this;
         }
         /**
-         * Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.
-         * <p>
-         * Example: {@code false}
+         * Indicates whether the DRG attachment and attached network live in a different tenancy
+         * than the DRG.
          *
-         **/
+         * <p>Example: {@code false}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isCrossTenancy")
         private Boolean isCrossTenancy;
 
         /**
-         * Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.
-         * <p>
-         * Example: {@code false}
+         * Indicates whether the DRG attachment and attached network live in a different tenancy
+         * than the DRG.
+         *
+         * <p>Example: {@code false}
          *
          * @param isCrossTenancy the value to set
          * @return this builder
-         **/
+         */
         public Builder isCrossTenancy(Boolean isCrossTenancy) {
             this.isCrossTenancy = isCrossTenancy;
             this.__explicitlySet__.add("isCrossTenancy");
@@ -383,9 +398,7 @@ public final class DrgAttachment extends com.oracle.bmc.http.internal.Explicitly
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -395,69 +408,75 @@ public final class DrgAttachment extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the DRG attachment.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the DRG attachment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the DRG attachment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the DRG attachment.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the DRG.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("drgId")
     private final String drgId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the DRG.
+     *
      * @return the value
-     **/
+     */
     public String getDrgId() {
         return drgId;
     }
 
     /**
-     * The DRG attachment's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-     **/
+     * The DRG attachment's Oracle ID
+     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The DRG attachment's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * The DRG attachment's Oracle ID
+     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The DRG attachment's current state.
-     **/
-    public enum LifecycleState {
+    /** The DRG attachment's current state. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Attaching("ATTACHING"),
         Attached("ATTACHED"),
         Detaching("DETACHING"),
@@ -491,56 +510,57 @@ public final class DrgAttachment extends com.oracle.bmc.http.internal.Explicitly
             throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
-    /**
-     * The DRG attachment's current state.
-     **/
+    /** The DRG attachment's current state. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The DRG attachment's current state.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the DRG attachment was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
-     **/
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the DRG attachment was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
-     * <p>
-     * The DRG route table manages traffic inside the DRG.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the DRG route table that is assigned to this attachment.
      *
-     **/
+     * <p>The DRG route table manages traffic inside the DRG.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("drgRouteTableId")
     private final String drgRouteTableId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
-     * <p>
-     * The DRG route table manages traffic inside the DRG.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the DRG route table that is assigned to this attachment.
+     *
+     * <p>The DRG route table manages traffic inside the DRG.
      *
      * @return the value
-     **/
+     */
     public String getDrgRouteTableId() {
         return drgRouteTableId;
     }
@@ -553,95 +573,98 @@ public final class DrgAttachment extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-     * This field is deprecated. Instead, use the {@code networkDetails} field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the VCN. This field is deprecated. Instead, use the {@code networkDetails} field to view the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * attached resource.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-     * This field is deprecated. Instead, use the {@code networkDetails} field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the VCN. This field is deprecated. Instead, use the {@code networkDetails} field to view the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * attached resource.
      *
      * @return the value
-     **/
+     */
     public String getVcnId() {
         return vcnId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table
-     * are advertised to the attachment.
-     * If this value is null, no routes are advertised through this attachment.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the export route distribution used to specify how routes in the assigned DRG route table are
+     * advertised to the attachment. If this value is null, no routes are advertised through this
+     * attachment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("exportDrgRouteDistributionId")
     private final String exportDrgRouteDistributionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table
-     * are advertised to the attachment.
-     * If this value is null, no routes are advertised through this attachment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the export route distribution used to specify how routes in the assigned DRG route table are
+     * advertised to the attachment. If this value is null, no routes are advertised through this
+     * attachment.
      *
      * @return the value
-     **/
+     */
     public String getExportDrgRouteDistributionId() {
         return exportDrgRouteDistributionId;
     }
 
     /**
-     * Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.
-     * <p>
-     * Example: {@code false}
+     * Indicates whether the DRG attachment and attached network live in a different tenancy than
+     * the DRG.
      *
-     **/
+     * <p>Example: {@code false}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isCrossTenancy")
     private final Boolean isCrossTenancy;
 
     /**
-     * Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.
-     * <p>
-     * Example: {@code false}
+     * Indicates whether the DRG attachment and attached network live in a different tenancy than
+     * the DRG.
+     *
+     * <p>Example: {@code false}
      *
      * @return the value
-     **/
+     */
     public Boolean getIsCrossTenancy() {
         return isCrossTenancy;
     }
@@ -653,6 +676,7 @@ public final class DrgAttachment extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

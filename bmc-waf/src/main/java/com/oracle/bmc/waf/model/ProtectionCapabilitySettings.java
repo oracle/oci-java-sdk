@@ -5,23 +5,22 @@
 package com.oracle.bmc.waf.model;
 
 /**
- * Settings for protection capabilities
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Settings for protection capabilities <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ProtectionCapabilitySettings.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ProtectionCapabilitySettings.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ProtectionCapabilitySettings
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "maxNumberOfArguments",
@@ -50,110 +49,114 @@ public final class ProtectionCapabilitySettings
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
-         *
-         **/
+         * Maximum number of arguments allowed. Used in protection capability 920380: Number of
+         * Arguments Limits.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("maxNumberOfArguments")
         private Integer maxNumberOfArguments;
 
         /**
-         * Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
+         * Maximum number of arguments allowed. Used in protection capability 920380: Number of
+         * Arguments Limits.
          *
          * @param maxNumberOfArguments the value to set
          * @return this builder
-         **/
+         */
         public Builder maxNumberOfArguments(Integer maxNumberOfArguments) {
             this.maxNumberOfArguments = maxNumberOfArguments;
             this.__explicitlySet__.add("maxNumberOfArguments");
             return this;
         }
         /**
-         * Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
-         *
-         **/
+         * Maximum allowed length of a single argument. Used in protection capability 920370: Limit
+         * argument value length.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("maxSingleArgumentLength")
         private Integer maxSingleArgumentLength;
 
         /**
-         * Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
+         * Maximum allowed length of a single argument. Used in protection capability 920370: Limit
+         * argument value length.
          *
          * @param maxSingleArgumentLength the value to set
          * @return this builder
-         **/
+         */
         public Builder maxSingleArgumentLength(Integer maxSingleArgumentLength) {
             this.maxSingleArgumentLength = maxSingleArgumentLength;
             this.__explicitlySet__.add("maxSingleArgumentLength");
             return this;
         }
         /**
-         * Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
-         *
-         **/
+         * Maximum allowed total length of all arguments. Used in protection capability 920390:
+         * Limit arguments total length.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("maxTotalArgumentLength")
         private Integer maxTotalArgumentLength;
 
         /**
-         * Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
+         * Maximum allowed total length of all arguments. Used in protection capability 920390:
+         * Limit arguments total length.
          *
          * @param maxTotalArgumentLength the value to set
          * @return this builder
-         **/
+         */
         public Builder maxTotalArgumentLength(Integer maxTotalArgumentLength) {
             this.maxTotalArgumentLength = maxTotalArgumentLength;
             this.__explicitlySet__.add("maxTotalArgumentLength");
             return this;
         }
         /**
-         * Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
-         *
-         **/
+         * Maximum number of headers allowed in an HTTP request. Used in protection capability
+         * 9200014: Limit Number of Request Headers.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("maxHttpRequestHeaders")
         private Integer maxHttpRequestHeaders;
 
         /**
-         * Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
+         * Maximum number of headers allowed in an HTTP request. Used in protection capability
+         * 9200014: Limit Number of Request Headers.
          *
          * @param maxHttpRequestHeaders the value to set
          * @return this builder
-         **/
+         */
         public Builder maxHttpRequestHeaders(Integer maxHttpRequestHeaders) {
             this.maxHttpRequestHeaders = maxHttpRequestHeaders;
             this.__explicitlySet__.add("maxHttpRequestHeaders");
             return this;
         }
         /**
-         * Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
-         *
-         **/
+         * Maximum allowed length of headers in an HTTP request. Used in protection capability:
+         * 9200024: Limit length of request header size.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("maxHttpRequestHeaderLength")
         private Integer maxHttpRequestHeaderLength;
 
         /**
-         * Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
+         * Maximum allowed length of headers in an HTTP request. Used in protection capability:
+         * 9200024: Limit length of request header size.
          *
          * @param maxHttpRequestHeaderLength the value to set
          * @return this builder
-         **/
+         */
         public Builder maxHttpRequestHeaderLength(Integer maxHttpRequestHeaderLength) {
             this.maxHttpRequestHeaderLength = maxHttpRequestHeaderLength;
             this.__explicitlySet__.add("maxHttpRequestHeaderLength");
             return this;
         }
         /**
-         * List of allowed HTTP methods. Each value as a RFC7230 formated token string.
-         * Used in protection capability 911100: Restrict HTTP Request Methods.
-         *
-         **/
+         * List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in
+         * protection capability 911100: Restrict HTTP Request Methods.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("allowedHttpMethods")
         private java.util.List<String> allowedHttpMethods;
 
         /**
-         * List of allowed HTTP methods. Each value as a RFC7230 formated token string.
-         * Used in protection capability 911100: Restrict HTTP Request Methods.
+         * List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in
+         * protection capability 911100: Restrict HTTP Request Methods.
          *
          * @param allowedHttpMethods the value to set
          * @return this builder
-         **/
+         */
         public Builder allowedHttpMethods(java.util.List<String> allowedHttpMethods) {
             this.allowedHttpMethods = allowedHttpMethods;
             this.__explicitlySet__.add("allowedHttpMethods");
@@ -202,9 +205,7 @@ public final class ProtectionCapabilitySettings
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -214,99 +215,103 @@ public final class ProtectionCapabilitySettings
     }
 
     /**
-     * Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
-     *
-     **/
+     * Maximum number of arguments allowed. Used in protection capability 920380: Number of
+     * Arguments Limits.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("maxNumberOfArguments")
     private final Integer maxNumberOfArguments;
 
     /**
-     * Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
+     * Maximum number of arguments allowed. Used in protection capability 920380: Number of
+     * Arguments Limits.
      *
      * @return the value
-     **/
+     */
     public Integer getMaxNumberOfArguments() {
         return maxNumberOfArguments;
     }
 
     /**
-     * Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
-     *
-     **/
+     * Maximum allowed length of a single argument. Used in protection capability 920370: Limit
+     * argument value length.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("maxSingleArgumentLength")
     private final Integer maxSingleArgumentLength;
 
     /**
-     * Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
+     * Maximum allowed length of a single argument. Used in protection capability 920370: Limit
+     * argument value length.
      *
      * @return the value
-     **/
+     */
     public Integer getMaxSingleArgumentLength() {
         return maxSingleArgumentLength;
     }
 
     /**
-     * Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
-     *
-     **/
+     * Maximum allowed total length of all arguments. Used in protection capability 920390: Limit
+     * arguments total length.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("maxTotalArgumentLength")
     private final Integer maxTotalArgumentLength;
 
     /**
-     * Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
+     * Maximum allowed total length of all arguments. Used in protection capability 920390: Limit
+     * arguments total length.
      *
      * @return the value
-     **/
+     */
     public Integer getMaxTotalArgumentLength() {
         return maxTotalArgumentLength;
     }
 
     /**
-     * Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
-     *
-     **/
+     * Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014:
+     * Limit Number of Request Headers.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("maxHttpRequestHeaders")
     private final Integer maxHttpRequestHeaders;
 
     /**
-     * Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
+     * Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014:
+     * Limit Number of Request Headers.
      *
      * @return the value
-     **/
+     */
     public Integer getMaxHttpRequestHeaders() {
         return maxHttpRequestHeaders;
     }
 
     /**
-     * Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
-     *
-     **/
+     * Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024:
+     * Limit length of request header size.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("maxHttpRequestHeaderLength")
     private final Integer maxHttpRequestHeaderLength;
 
     /**
-     * Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
+     * Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024:
+     * Limit length of request header size.
      *
      * @return the value
-     **/
+     */
     public Integer getMaxHttpRequestHeaderLength() {
         return maxHttpRequestHeaderLength;
     }
 
     /**
-     * List of allowed HTTP methods. Each value as a RFC7230 formated token string.
-     * Used in protection capability 911100: Restrict HTTP Request Methods.
-     *
-     **/
+     * List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in
+     * protection capability 911100: Restrict HTTP Request Methods.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("allowedHttpMethods")
     private final java.util.List<String> allowedHttpMethods;
 
     /**
-     * List of allowed HTTP methods. Each value as a RFC7230 formated token string.
-     * Used in protection capability 911100: Restrict HTTP Request Methods.
+     * List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in
+     * protection capability 911100: Restrict HTTP Request Methods.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getAllowedHttpMethods() {
         return allowedHttpMethods;
     }
@@ -318,6 +323,7 @@ public final class ProtectionCapabilitySettings
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

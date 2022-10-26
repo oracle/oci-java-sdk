@@ -5,21 +5,22 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * Admin information to provision Analytics Warehouse Servcie.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Admin information to provision Analytics Warehouse Servcie. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = FawAdminInfoDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FawAdminInfoDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = FawAdminInfoDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class FawAdminInfoDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"adwAdminPass", "fawServicePass", "notificationEmail"})
     public FawAdminInfoDetails(
@@ -32,49 +33,46 @@ public final class FawAdminInfoDetails extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Password for the ADW to be created in User Tenancy
-         **/
+        /** Password for the ADW to be created in User Tenancy */
         @com.fasterxml.jackson.annotation.JsonProperty("adwAdminPass")
         private String adwAdminPass;
 
         /**
          * Password for the ADW to be created in User Tenancy
+         *
          * @param adwAdminPass the value to set
          * @return this builder
-         **/
+         */
         public Builder adwAdminPass(String adwAdminPass) {
             this.adwAdminPass = adwAdminPass;
             this.__explicitlySet__.add("adwAdminPass");
             return this;
         }
-        /**
-         * Password for the auto-created FAWService user
-         **/
+        /** Password for the auto-created FAWService user */
         @com.fasterxml.jackson.annotation.JsonProperty("fawServicePass")
         private String fawServicePass;
 
         /**
          * Password for the auto-created FAWService user
+         *
          * @param fawServicePass the value to set
          * @return this builder
-         **/
+         */
         public Builder fawServicePass(String fawServicePass) {
             this.fawServicePass = fawServicePass;
             this.__explicitlySet__.add("fawServicePass");
             return this;
         }
-        /**
-         * Email ID to send notification for Analytics Warehouse updates.
-         **/
+        /** Email ID to send notification for Analytics Warehouse updates. */
         @com.fasterxml.jackson.annotation.JsonProperty("notificationEmail")
         private String notificationEmail;
 
         /**
          * Email ID to send notification for Analytics Warehouse updates.
+         *
          * @param notificationEmail the value to set
          * @return this builder
-         **/
+         */
         public Builder notificationEmail(String notificationEmail) {
             this.notificationEmail = notificationEmail;
             this.__explicitlySet__.add("notificationEmail");
@@ -109,9 +107,7 @@ public final class FawAdminInfoDetails extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -120,44 +116,41 @@ public final class FawAdminInfoDetails extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * Password for the ADW to be created in User Tenancy
-     **/
+    /** Password for the ADW to be created in User Tenancy */
     @com.fasterxml.jackson.annotation.JsonProperty("adwAdminPass")
     private final String adwAdminPass;
 
     /**
      * Password for the ADW to be created in User Tenancy
+     *
      * @return the value
-     **/
+     */
     public String getAdwAdminPass() {
         return adwAdminPass;
     }
 
-    /**
-     * Password for the auto-created FAWService user
-     **/
+    /** Password for the auto-created FAWService user */
     @com.fasterxml.jackson.annotation.JsonProperty("fawServicePass")
     private final String fawServicePass;
 
     /**
      * Password for the auto-created FAWService user
+     *
      * @return the value
-     **/
+     */
     public String getFawServicePass() {
         return fawServicePass;
     }
 
-    /**
-     * Email ID to send notification for Analytics Warehouse updates.
-     **/
+    /** Email ID to send notification for Analytics Warehouse updates. */
     @com.fasterxml.jackson.annotation.JsonProperty("notificationEmail")
     private final String notificationEmail;
 
     /**
      * Email ID to send notification for Analytics Warehouse updates.
+     *
      * @return the value
-     **/
+     */
     public String getNotificationEmail() {
         return notificationEmail;
     }
@@ -169,6 +162,7 @@ public final class FawAdminInfoDetails extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -176,8 +170,8 @@ public final class FawAdminInfoDetails extends com.oracle.bmc.http.internal.Expl
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FawAdminInfoDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("adwAdminPass=").append(String.valueOf(this.adwAdminPass));
-        sb.append(", fawServicePass=").append(String.valueOf(this.fawServicePass));
+        sb.append("adwAdminPass=").append("<redacted>");
+        sb.append(", fawServicePass=").append("<redacted>");
         sb.append(", notificationEmail=").append(String.valueOf(this.notificationEmail));
         sb.append(")");
         return sb.toString();

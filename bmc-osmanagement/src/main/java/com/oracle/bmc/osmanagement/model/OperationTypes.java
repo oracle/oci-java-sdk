@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.osmanagement.model;
 
-/**
- * Possible package operation types
- **/
+/** Possible package operation types */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-public enum OperationTypes {
+public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Install("INSTALL"),
     Update("UPDATE"),
     Remove("REMOVE"),

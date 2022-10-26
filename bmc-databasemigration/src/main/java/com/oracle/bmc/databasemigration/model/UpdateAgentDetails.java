@@ -5,22 +5,22 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * ODMS Agent Details
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * ODMS Agent Details <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateAgentDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateAgentDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = UpdateAgentDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class UpdateAgentDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -48,10 +48,7 @@ public final class UpdateAgentDetails extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * ODMS Agent name
-         *
-         **/
+        /** ODMS Agent name */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -60,16 +57,13 @@ public final class UpdateAgentDetails extends com.oracle.bmc.http.internal.Expli
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The OCID of the Stream
-         *
-         **/
+        /** The OCID of the Stream */
         @com.fasterxml.jackson.annotation.JsonProperty("streamId")
         private String streamId;
 
@@ -78,16 +72,13 @@ public final class UpdateAgentDetails extends com.oracle.bmc.http.internal.Expli
          *
          * @param streamId the value to set
          * @return this builder
-         **/
+         */
         public Builder streamId(String streamId) {
             this.streamId = streamId;
             this.__explicitlySet__.add("streamId");
             return this;
         }
-        /**
-         * ODMS Agent public key.
-         *
-         **/
+        /** ODMS Agent public key. */
         @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
         private String publicKey;
 
@@ -96,16 +87,13 @@ public final class UpdateAgentDetails extends com.oracle.bmc.http.internal.Expli
          *
          * @param publicKey the value to set
          * @return this builder
-         **/
+         */
         public Builder publicKey(String publicKey) {
             this.publicKey = publicKey;
             this.__explicitlySet__.add("publicKey");
             return this;
         }
-        /**
-         * ODMS Agent version
-         *
-         **/
+        /** ODMS Agent version */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
@@ -114,27 +102,26 @@ public final class UpdateAgentDetails extends com.oracle.bmc.http.internal.Expli
          *
          * @param version the value to set
          * @return this builder
-         **/
+         */
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -143,8 +130,7 @@ public final class UpdateAgentDetails extends com.oracle.bmc.http.internal.Expli
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -154,7 +140,7 @@ public final class UpdateAgentDetails extends com.oracle.bmc.http.internal.Expli
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -204,9 +190,7 @@ public final class UpdateAgentDetails extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -215,10 +199,7 @@ public final class UpdateAgentDetails extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * ODMS Agent name
-     *
-     **/
+    /** ODMS Agent name */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -226,15 +207,12 @@ public final class UpdateAgentDetails extends com.oracle.bmc.http.internal.Expli
      * ODMS Agent name
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The OCID of the Stream
-     *
-     **/
+    /** The OCID of the Stream */
     @com.fasterxml.jackson.annotation.JsonProperty("streamId")
     private final String streamId;
 
@@ -242,15 +220,12 @@ public final class UpdateAgentDetails extends com.oracle.bmc.http.internal.Expli
      * The OCID of the Stream
      *
      * @return the value
-     **/
+     */
     public String getStreamId() {
         return streamId;
     }
 
-    /**
-     * ODMS Agent public key.
-     *
-     **/
+    /** ODMS Agent public key. */
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
     private final String publicKey;
 
@@ -258,15 +233,12 @@ public final class UpdateAgentDetails extends com.oracle.bmc.http.internal.Expli
      * ODMS Agent public key.
      *
      * @return the value
-     **/
+     */
     public String getPublicKey() {
         return publicKey;
     }
 
-    /**
-     * ODMS Agent version
-     *
-     **/
+    /** ODMS Agent version */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
@@ -274,43 +246,41 @@ public final class UpdateAgentDetails extends com.oracle.bmc.http.internal.Expli
      * ODMS Agent version
      *
      * @return the value
-     **/
+     */
     public String getVersion() {
         return version;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -322,6 +292,7 @@ public final class UpdateAgentDetails extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

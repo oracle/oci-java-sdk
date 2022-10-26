@@ -6,13 +6,14 @@ package com.oracle.bmc.databasemanagement.model;
 
 /**
  * The management option used when enabling Database Management.
- * <p>
- * - BASIC: Basic database management for Oracle Databases that includes key monitoring metrics and basic Performance Hub features.
- * - ADVANCED: Advanced database management for Oracle Databases that includes basic database management, fleet management, advanced Performance Hub and Managed Database features.
  *
- **/
+ * <p>- BASIC: Basic database management for Oracle Databases that includes key monitoring metrics
+ * and basic Performance Hub features. - ADVANCED: Advanced database management for Oracle Databases
+ * that includes basic database management, fleet management, advanced Performance Hub and Managed
+ * Database features.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum ManagementOption {
+public enum ManagementOption implements com.oracle.bmc.http.internal.BmcEnum {
     Basic("BASIC"),
     Advanced("ADVANCED"),
 

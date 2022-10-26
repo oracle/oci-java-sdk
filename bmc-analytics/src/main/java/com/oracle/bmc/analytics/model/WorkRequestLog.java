@@ -5,20 +5,21 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * Log entries related to a specific work request.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Log entries related to a specific work request. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkRequestLog.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WorkRequestLog extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class WorkRequestLog
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"message", "timestamp"})
     public WorkRequestLog(String message, java.util.Date timestamp) {
@@ -29,10 +30,7 @@ public final class WorkRequestLog extends com.oracle.bmc.http.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The description of the event that occurred.
-         *
-         **/
+        /** The description of the event that occurred. */
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
@@ -41,7 +39,7 @@ public final class WorkRequestLog extends com.oracle.bmc.http.internal.Explicitl
          *
          * @param message the value to set
          * @return this builder
-         **/
+         */
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
@@ -49,21 +47,20 @@ public final class WorkRequestLog extends com.oracle.bmc.http.internal.Explicitl
         }
         /**
          * The date and time the log entry occured, in the format defined by RFC3339.
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         **/
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
          * The date and time the log entry occured, in the format defined by RFC3339.
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timestamp the value to set
          * @return this builder
-         **/
+         */
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
@@ -93,9 +90,7 @@ public final class WorkRequestLog extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -104,10 +99,7 @@ public final class WorkRequestLog extends com.oracle.bmc.http.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /**
-     * The description of the event that occurred.
-     *
-     **/
+    /** The description of the event that occurred. */
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
@@ -115,27 +107,26 @@ public final class WorkRequestLog extends com.oracle.bmc.http.internal.Explicitl
      * The description of the event that occurred.
      *
      * @return the value
-     **/
+     */
     public String getMessage() {
         return message;
     }
 
     /**
      * The date and time the log entry occured, in the format defined by RFC3339.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     **/
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
      * The date and time the log entry occured, in the format defined by RFC3339.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimestamp() {
         return timestamp;
     }
@@ -147,6 +138,7 @@ public final class WorkRequestLog extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,40 +6,36 @@ package com.oracle.bmc.core.requests;
 
 import com.oracle.bmc.core.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachVnicExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use AttachVnicRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachVnicExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use AttachVnicRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class AttachVnicRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.AttachVnicDetails> {
 
-    /**
-     * Attach VNIC details.
-     */
+    /** Attach VNIC details. */
     private com.oracle.bmc.core.model.AttachVnicDetails attachVnicDetails;
 
-    /**
-     * Attach VNIC details.
-     */
+    /** Attach VNIC details. */
     public com.oracle.bmc.core.model.AttachVnicDetails getAttachVnicDetails() {
         return attachVnicDetails;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * may be rejected).
-     *
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request may be rejected).
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * may be rejected).
-     *
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request may be rejected).
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -47,6 +43,7 @@ public class AttachVnicRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -58,17 +55,15 @@ public class AttachVnicRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     AttachVnicRequest, com.oracle.bmc.core.model.AttachVnicDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Attach VNIC details.
-         */
+        /** Attach VNIC details. */
         private com.oracle.bmc.core.model.AttachVnicDetails attachVnicDetails = null;
 
         /**
          * Attach VNIC details.
+         *
          * @param attachVnicDetails the value to set
          * @return this builder instance
          */
@@ -80,20 +75,19 @@ public class AttachVnicRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * may be rejected).
-         *
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request may be rejected).
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request may be rejected).
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -105,18 +99,19 @@ public class AttachVnicRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -128,6 +123,7 @@ public class AttachVnicRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(AttachVnicRequest o) {
@@ -141,10 +137,11 @@ public class AttachVnicRequest
         /**
          * Build the instance of AttachVnicRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of AttachVnicRequest
          */
@@ -157,6 +154,7 @@ public class AttachVnicRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -169,7 +167,8 @@ public class AttachVnicRequest
         /**
          * Build the instance of AttachVnicRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of AttachVnicRequest
@@ -185,6 +184,7 @@ public class AttachVnicRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -193,6 +193,7 @@ public class AttachVnicRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

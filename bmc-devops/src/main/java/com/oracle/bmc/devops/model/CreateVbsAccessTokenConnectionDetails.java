@@ -5,27 +5,25 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The details for creating a connection of the type {@code VBS_ACCESS_TOKEN}.
- * This type corresponds to a connection in Visual Builder Studio that is authenticated with a personal access token.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details for creating a connection of the type {@code VBS_ACCESS_TOKEN}. This type corresponds
+ * to a connection in Visual Builder Studio that is authenticated with a personal access token. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateVbsAccessTokenConnectionDetails.Builder.class
-)
+        builder = CreateVbsAccessTokenConnectionDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "connectionType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "connectionType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateVbsAccessTokenConnectionDetails extends CreateConnectionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -74,33 +72,31 @@ public final class CreateVbsAccessTokenConnectionDetails extends CreateConnectio
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /**
-         * The OCID of personal access token saved in secret store.
-         **/
+        /** The OCID of personal access token saved in secret store. */
         @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
         private String accessToken;
 
         /**
          * The OCID of personal access token saved in secret store.
+         *
          * @param accessToken the value to set
          * @return this builder
-         **/
+         */
         public Builder accessToken(String accessToken) {
             this.accessToken = accessToken;
             this.__explicitlySet__.add("accessToken");
             return this;
         }
-        /**
-         * The Base URL of the hosted VBS server.
-         **/
+        /** The Base URL of the hosted VBS server. */
         @com.fasterxml.jackson.annotation.JsonProperty("baseUrl")
         private String baseUrl;
 
         /**
          * The Base URL of the hosted VBS server.
+         *
          * @param baseUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder baseUrl(String baseUrl) {
             this.baseUrl = baseUrl;
             this.__explicitlySet__.add("baseUrl");
@@ -153,9 +149,7 @@ public final class CreateVbsAccessTokenConnectionDetails extends CreateConnectio
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -178,30 +172,28 @@ public final class CreateVbsAccessTokenConnectionDetails extends CreateConnectio
         this.baseUrl = baseUrl;
     }
 
-    /**
-     * The OCID of personal access token saved in secret store.
-     **/
+    /** The OCID of personal access token saved in secret store. */
     @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
     private final String accessToken;
 
     /**
      * The OCID of personal access token saved in secret store.
+     *
      * @return the value
-     **/
+     */
     public String getAccessToken() {
         return accessToken;
     }
 
-    /**
-     * The Base URL of the hosted VBS server.
-     **/
+    /** The Base URL of the hosted VBS server. */
     @com.fasterxml.jackson.annotation.JsonProperty("baseUrl")
     private final String baseUrl;
 
     /**
      * The Base URL of the hosted VBS server.
+     *
      * @return the value
-     **/
+     */
     public String getBaseUrl() {
         return baseUrl;
     }
@@ -213,6 +205,7 @@ public final class CreateVbsAccessTokenConnectionDetails extends CreateConnectio
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

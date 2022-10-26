@@ -22,7 +22,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.oracle.bmc.ConfigFileReader;
-import com.oracle.bmc.Options;
+import com.oracle.bmc.http.client.Options;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
@@ -46,26 +46,24 @@ import com.oracle.bmc.datalabelingservice.responses.CreateDatasetResponse;
 import com.oracle.bmc.datalabelingservice.responses.DeleteDatasetResponse;
 import com.oracle.bmc.datalabelingservice.responses.GetDatasetResponse;
 import com.oracle.bmc.datalabelingservice.responses.UpdateDatasetResponse;
-import com.oracle.bmc.http.JerseyDefaultConnectorConfigurator;
 import com.oracle.bmc.identity.IdentityClient;
 
 /**
- * This class provides an example of how to use Data Labeling Service to create,
- * get, update and delete dataset.
- * <p>
- * The Data Labeling service queried by this example will be assigned:
- * <ul>
- * <li>an endpoint url defined by constant ENDPOINT</li>
- * <li>The configuration file used by service clients will be sourced from the
- * default location (~/.oci/config) and the DEFAULT profile will be used.</li>
- * </ul>
- * </p>
+ * This class provides an example of how to use Data Labeling Service to create, get, update and
+ * delete dataset.
  *
- * @param args Arguments to provide to the example. The following arguments are
- *             expected:
- *             <ul>
- *             <li>The first argument is the OCID of the compartment.</li>
- *             </ul>
+ * <p>The Data Labeling service queried by this example will be assigned:
+ *
+ * <ul>
+ *   <li>an endpoint url defined by constant ENDPOINT
+ *   <li>The configuration file used by service clients will be sourced from the default location
+ *       (~/.oci/config) and the DEFAULT profile will be used.
+ * </ul>
+ *
+ * @param args Arguments to provide to the example. The following arguments are expected:
+ *     <ul>
+ *       <li>The first argument is the OCID of the compartment.
+ *     </ul>
  */
 public class DataLabelingDatasetExample {
 

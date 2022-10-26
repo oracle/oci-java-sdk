@@ -5,22 +5,22 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Log of a specific job
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Log of a specific job <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DiscoveryJobLogSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DiscoveryJobLogSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DiscoveryJobLogSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "logType", "logMessage", "timeCreated"})
     public DiscoveryJobLogSummary(
@@ -34,65 +34,61 @@ public final class DiscoveryJobLogSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of Discovery job
-         **/
+        /** The OCID of Discovery job */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of Discovery job
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * Type of log (INFO, WARNING, ERROR or SUCCESS)
-         **/
+        /** Type of log (INFO, WARNING, ERROR or SUCCESS) */
         @com.fasterxml.jackson.annotation.JsonProperty("logType")
         private LogType logType;
 
         /**
          * Type of log (INFO, WARNING, ERROR or SUCCESS)
+         *
          * @param logType the value to set
          * @return this builder
-         **/
+         */
         public Builder logType(LogType logType) {
             this.logType = logType;
             this.__explicitlySet__.add("logType");
             return this;
         }
-        /**
-         * Log message
-         **/
+        /** Log message */
         @com.fasterxml.jackson.annotation.JsonProperty("logMessage")
         private String logMessage;
 
         /**
          * Log message
+         *
          * @param logMessage the value to set
          * @return this builder
-         **/
+         */
         public Builder logMessage(String logMessage) {
             this.logMessage = logMessage;
             this.__explicitlySet__.add("logMessage");
             return this;
         }
-        /**
-         * Time the Job log was created
-         **/
+        /** Time the Job log was created */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * Time the Job log was created
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -130,9 +126,7 @@ public final class DiscoveryJobLogSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -141,32 +135,29 @@ public final class DiscoveryJobLogSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of Discovery job
-     **/
+    /** The OCID of Discovery job */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of Discovery job
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * Type of log (INFO, WARNING, ERROR or SUCCESS)
-     **/
-    public enum LogType {
+    /** Type of log (INFO, WARNING, ERROR or SUCCESS) */
+    public enum LogType implements com.oracle.bmc.http.internal.BmcEnum {
         Info("INFO"),
         Warning("WARNING"),
         Error("ERROR"),
         Success("SUCCESS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -205,44 +196,41 @@ public final class DiscoveryJobLogSummary
             return UnknownEnumValue;
         }
     };
-    /**
-     * Type of log (INFO, WARNING, ERROR or SUCCESS)
-     **/
+    /** Type of log (INFO, WARNING, ERROR or SUCCESS) */
     @com.fasterxml.jackson.annotation.JsonProperty("logType")
     private final LogType logType;
 
     /**
      * Type of log (INFO, WARNING, ERROR or SUCCESS)
+     *
      * @return the value
-     **/
+     */
     public LogType getLogType() {
         return logType;
     }
 
-    /**
-     * Log message
-     **/
+    /** Log message */
     @com.fasterxml.jackson.annotation.JsonProperty("logMessage")
     private final String logMessage;
 
     /**
      * Log message
+     *
      * @return the value
-     **/
+     */
     public String getLogMessage() {
         return logMessage;
     }
 
-    /**
-     * Time the Job log was created
-     **/
+    /** Time the Job log was created */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * Time the Job log was created
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -254,6 +242,7 @@ public final class DiscoveryJobLogSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

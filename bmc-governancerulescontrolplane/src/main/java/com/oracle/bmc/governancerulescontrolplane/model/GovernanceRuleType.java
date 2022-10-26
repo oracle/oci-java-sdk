@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.governancerulescontrolplane.model;
 
-/**
- * Type of the governance rule.
- **/
+/** Type of the governance rule. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
-public enum GovernanceRuleType {
+public enum GovernanceRuleType implements com.oracle.bmc.http.internal.BmcEnum {
     Quota("QUOTA"),
     Tag("TAG"),
     AllowedRegions("ALLOWED_REGIONS"),

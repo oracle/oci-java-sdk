@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details to create and download an Oracle Autonomous Database wallet.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details to create and download an Oracle Autonomous Database wallet. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = GenerateAutonomousDatabaseWalletDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = GenerateAutonomousDatabaseWalletDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class GenerateAutonomousDatabaseWalletDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"generateType", "password"})
     public GenerateAutonomousDatabaseWalletDetails(GenerateType generateType, String password) {
@@ -34,45 +33,51 @@ public final class GenerateAutonomousDatabaseWalletDetails
     public static class Builder {
         /**
          * The type of wallet to generate.
-         * <p>
-         **Shared Exadata infrastructure usage:**
-         * * {@code SINGLE} - used to generate a wallet for a single database
-         * * {@code ALL} - used to generate wallet for all databases in the region
-         * <p>
-         **Dedicated Exadata infrastructure usage:** Value must be {@code NULL} if attribute is used.
          *
-         **/
+         * <p>*Shared Exadata infrastructure usage:** * {@code SINGLE} - used to generate a wallet
+         * for a single database * {@code ALL} - used to generate wallet for all databases in the
+         * region
+         *
+         * <p>*Dedicated Exadata infrastructure usage:** Value must be {@code NULL} if attribute is
+         * used.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("generateType")
         private GenerateType generateType;
 
         /**
          * The type of wallet to generate.
-         * <p>
-         **Shared Exadata infrastructure usage:**
-         * * {@code SINGLE} - used to generate a wallet for a single database
-         * * {@code ALL} - used to generate wallet for all databases in the region
-         * <p>
-         **Dedicated Exadata infrastructure usage:** Value must be {@code NULL} if attribute is used.
+         *
+         * <p>*Shared Exadata infrastructure usage:** * {@code SINGLE} - used to generate a wallet
+         * for a single database * {@code ALL} - used to generate wallet for all databases in the
+         * region
+         *
+         * <p>*Dedicated Exadata infrastructure usage:** Value must be {@code NULL} if attribute is
+         * used.
          *
          * @param generateType the value to set
          * @return this builder
-         **/
+         */
         public Builder generateType(GenerateType generateType) {
             this.generateType = generateType;
             this.__explicitlySet__.add("generateType");
             return this;
         }
         /**
-         * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
-         **/
+         * The password to encrypt the keys inside the wallet. The password must be at least 8
+         * characters long and must include at least 1 letter and either 1 numeric character or 1
+         * special character.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
         /**
-         * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+         * The password to encrypt the keys inside the wallet. The password must be at least 8
+         * characters long and must include at least 1 letter and either 1 numeric character or 1
+         * special character.
+         *
          * @param password the value to set
          * @return this builder
-         **/
+         */
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
@@ -103,9 +108,7 @@ public final class GenerateAutonomousDatabaseWalletDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,15 +119,14 @@ public final class GenerateAutonomousDatabaseWalletDetails
 
     /**
      * The type of wallet to generate.
-     * <p>
-     **Shared Exadata infrastructure usage:**
-     * * {@code SINGLE} - used to generate a wallet for a single database
-     * * {@code ALL} - used to generate wallet for all databases in the region
-     * <p>
-     **Dedicated Exadata infrastructure usage:** Value must be {@code NULL} if attribute is used.
      *
-     **/
-    public enum GenerateType {
+     * <p>*Shared Exadata infrastructure usage:** * {@code SINGLE} - used to generate a wallet for a
+     * single database * {@code ALL} - used to generate wallet for all databases in the region
+     *
+     * <p>*Dedicated Exadata infrastructure usage:** Value must be {@code NULL} if attribute is
+     * used.
+     */
+    public enum GenerateType implements com.oracle.bmc.http.internal.BmcEnum {
         All("ALL"),
         Single("SINGLE"),
         ;
@@ -158,42 +160,46 @@ public final class GenerateAutonomousDatabaseWalletDetails
     };
     /**
      * The type of wallet to generate.
-     * <p>
-     **Shared Exadata infrastructure usage:**
-     * * {@code SINGLE} - used to generate a wallet for a single database
-     * * {@code ALL} - used to generate wallet for all databases in the region
-     * <p>
-     **Dedicated Exadata infrastructure usage:** Value must be {@code NULL} if attribute is used.
      *
-     **/
+     * <p>*Shared Exadata infrastructure usage:** * {@code SINGLE} - used to generate a wallet for a
+     * single database * {@code ALL} - used to generate wallet for all databases in the region
+     *
+     * <p>*Dedicated Exadata infrastructure usage:** Value must be {@code NULL} if attribute is
+     * used.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("generateType")
     private final GenerateType generateType;
 
     /**
      * The type of wallet to generate.
-     * <p>
-     **Shared Exadata infrastructure usage:**
-     * * {@code SINGLE} - used to generate a wallet for a single database
-     * * {@code ALL} - used to generate wallet for all databases in the region
-     * <p>
-     **Dedicated Exadata infrastructure usage:** Value must be {@code NULL} if attribute is used.
+     *
+     * <p>*Shared Exadata infrastructure usage:** * {@code SINGLE} - used to generate a wallet for a
+     * single database * {@code ALL} - used to generate wallet for all databases in the region
+     *
+     * <p>*Dedicated Exadata infrastructure usage:** Value must be {@code NULL} if attribute is
+     * used.
      *
      * @return the value
-     **/
+     */
     public GenerateType getGenerateType() {
         return generateType;
     }
 
     /**
-     * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
-     **/
+     * The password to encrypt the keys inside the wallet. The password must be at least 8
+     * characters long and must include at least 1 letter and either 1 numeric character or 1
+     * special character.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
-     * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+     * The password to encrypt the keys inside the wallet. The password must be at least 8
+     * characters long and must include at least 1 letter and either 1 numeric character or 1
+     * special character.
+     *
      * @return the value
-     **/
+     */
     public String getPassword() {
         return password;
     }
@@ -205,6 +211,7 @@ public final class GenerateAutonomousDatabaseWalletDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,25 +5,24 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies the Instance Group Canary deployment stage.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Specifies the Instance Group Canary deployment stage. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateComputeInstanceGroupCanaryDeployStageDetails.Builder.class
-)
+        builder = UpdateComputeInstanceGroupCanaryDeployStageDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "deployStageType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "deployStageType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateComputeInstanceGroupCanaryDeployStageDetails
         extends UpdateDeployStageDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -74,33 +73,31 @@ public final class UpdateComputeInstanceGroupCanaryDeployStageDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /**
-         * The OCID of the artifact that contains the deployment specification.
-         **/
+        /** The OCID of the artifact that contains the deployment specification. */
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentSpecDeployArtifactId")
         private String deploymentSpecDeployArtifactId;
 
         /**
          * The OCID of the artifact that contains the deployment specification.
+         *
          * @param deploymentSpecDeployArtifactId the value to set
          * @return this builder
-         **/
+         */
         public Builder deploymentSpecDeployArtifactId(String deploymentSpecDeployArtifactId) {
             this.deploymentSpecDeployArtifactId = deploymentSpecDeployArtifactId;
             this.__explicitlySet__.add("deploymentSpecDeployArtifactId");
             return this;
         }
-        /**
-         * The list of file artifact OCIDs to deploy.
-         **/
+        /** The list of file artifact OCIDs to deploy. */
         @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactIds")
         private java.util.List<String> deployArtifactIds;
 
         /**
          * The list of file artifact OCIDs to deploy.
+         *
          * @param deployArtifactIds the value to set
          * @return this builder
-         **/
+         */
         public Builder deployArtifactIds(java.util.List<String> deployArtifactIds) {
             this.deployArtifactIds = deployArtifactIds;
             this.__explicitlySet__.add("deployArtifactIds");
@@ -179,9 +176,7 @@ public final class UpdateComputeInstanceGroupCanaryDeployStageDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -213,30 +208,28 @@ public final class UpdateComputeInstanceGroupCanaryDeployStageDetails
         this.testLoadBalancerConfig = testLoadBalancerConfig;
     }
 
-    /**
-     * The OCID of the artifact that contains the deployment specification.
-     **/
+    /** The OCID of the artifact that contains the deployment specification. */
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentSpecDeployArtifactId")
     private final String deploymentSpecDeployArtifactId;
 
     /**
      * The OCID of the artifact that contains the deployment specification.
+     *
      * @return the value
-     **/
+     */
     public String getDeploymentSpecDeployArtifactId() {
         return deploymentSpecDeployArtifactId;
     }
 
-    /**
-     * The list of file artifact OCIDs to deploy.
-     **/
+    /** The list of file artifact OCIDs to deploy. */
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactIds")
     private final java.util.List<String> deployArtifactIds;
 
     /**
      * The list of file artifact OCIDs to deploy.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getDeployArtifactIds() {
         return deployArtifactIds;
     }
@@ -262,6 +255,7 @@ public final class UpdateComputeInstanceGroupCanaryDeployStageDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

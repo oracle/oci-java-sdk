@@ -9,13 +9,14 @@ import com.oracle.bmc.loganalytics.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class GetParserSummaryResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      *
      * @return the value
      */
@@ -23,13 +24,12 @@ public class GetParserSummaryResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /**
-     * The returned ParserSummaryReport instance.
-     */
+    /** The returned ParserSummaryReport instance. */
     private com.oracle.bmc.loganalytics.model.ParserSummaryReport parserSummaryReport;
 
     /**
      * The returned ParserSummaryReport instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.loganalytics.model.ParserSummaryReport getParserSummaryReport() {
@@ -44,7 +44,7 @@ public class GetParserSummaryResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private GetParserSummaryResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.ParserSummaryReport parserSummaryReport) {
         super(__httpStatusCode__, headers);
@@ -52,29 +52,33 @@ public class GetParserSummaryResponse extends com.oracle.bmc.responses.BmcRespon
         this.parserSummaryReport = parserSummaryReport;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetParserSummaryResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -84,13 +88,12 @@ public class GetParserSummaryResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /**
-         * The returned ParserSummaryReport instance.
-         */
+        /** The returned ParserSummaryReport instance. */
         private com.oracle.bmc.loganalytics.model.ParserSummaryReport parserSummaryReport;
 
         /**
          * The returned ParserSummaryReport instance.
+         *
          * @param parserSummaryReport the value to set
          * @return this builder
          */
@@ -102,8 +105,10 @@ public class GetParserSummaryResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetParserSummaryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -115,8 +120,10 @@ public class GetParserSummaryResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetParserSummaryResponse build() {
             return new GetParserSummaryResponse(
                     __httpStatusCode__, headers, opcRequestId, parserSummaryReport);
@@ -125,6 +132,7 @@ public class GetParserSummaryResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

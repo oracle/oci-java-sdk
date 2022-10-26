@@ -5,21 +5,22 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * The attach DataAsset response.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The attach DataAsset response. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AttachDataAssetInfo.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AttachDataAssetInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = AttachDataAssetInfo.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class AttachDataAssetInfo
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"referenceInfo"})
     public AttachDataAssetInfo(java.util.Map<String, ValidationResult> referenceInfo) {
@@ -29,17 +30,16 @@ public final class AttachDataAssetInfo extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Mapping the DataAsset name as the key to the results as the value.
-         **/
+        /** Mapping the DataAsset name as the key to the results as the value. */
         @com.fasterxml.jackson.annotation.JsonProperty("referenceInfo")
         private java.util.Map<String, ValidationResult> referenceInfo;
 
         /**
          * Mapping the DataAsset name as the key to the results as the value.
+         *
          * @param referenceInfo the value to set
          * @return this builder
-         **/
+         */
         public Builder referenceInfo(java.util.Map<String, ValidationResult> referenceInfo) {
             this.referenceInfo = referenceInfo;
             this.__explicitlySet__.add("referenceInfo");
@@ -66,9 +66,7 @@ public final class AttachDataAssetInfo extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -77,16 +75,15 @@ public final class AttachDataAssetInfo extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * Mapping the DataAsset name as the key to the results as the value.
-     **/
+    /** Mapping the DataAsset name as the key to the results as the value. */
     @com.fasterxml.jackson.annotation.JsonProperty("referenceInfo")
     private final java.util.Map<String, ValidationResult> referenceInfo;
 
     /**
      * Mapping the DataAsset name as the key to the results as the value.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, ValidationResult> getReferenceInfo() {
         return referenceInfo;
     }
@@ -98,6 +95,7 @@ public final class AttachDataAssetInfo extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

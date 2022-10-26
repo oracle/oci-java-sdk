@@ -5,20 +5,21 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Invoice details
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Invoice details <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = InvoiceSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InvoiceSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class InvoiceSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "spmInvoiceNumber",
@@ -85,10 +86,7 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * SPM Document Number is an functional identifier for invoice in SPM
-         *
-         **/
+        /** SPM Document Number is an functional identifier for invoice in SPM */
         @com.fasterxml.jackson.annotation.JsonProperty("spmInvoiceNumber")
         private String spmInvoiceNumber;
 
@@ -97,16 +95,13 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
          *
          * @param spmInvoiceNumber the value to set
          * @return this builder
-         **/
+         */
         public Builder spmInvoiceNumber(String spmInvoiceNumber) {
             this.spmInvoiceNumber = spmInvoiceNumber;
             this.__explicitlySet__.add("spmInvoiceNumber");
             return this;
         }
-        /**
-         * AR Invoice Numbers comma separated under one invoice
-         *
-         **/
+        /** AR Invoice Numbers comma separated under one invoice */
         @com.fasterxml.jackson.annotation.JsonProperty("arInvoices")
         private String arInvoices;
 
@@ -115,7 +110,7 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
          *
          * @param arInvoices the value to set
          * @return this builder
-         **/
+         */
         public Builder arInvoices(String arInvoices) {
             this.arInvoices = arInvoices;
             this.__explicitlySet__.add("arInvoices");
@@ -148,10 +143,7 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
             this.__explicitlySet__.add("billToAddress");
             return this;
         }
-        /**
-         * Payment Method
-         *
-         **/
+        /** Payment Method */
         @com.fasterxml.jackson.annotation.JsonProperty("paymentMethod")
         private String paymentMethod;
 
@@ -160,7 +152,7 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
          *
          * @param paymentMethod the value to set
          * @return this builder
-         **/
+         */
         public Builder paymentMethod(String paymentMethod) {
             this.paymentMethod = paymentMethod;
             this.__explicitlySet__.add("paymentMethod");
@@ -175,10 +167,7 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
             this.__explicitlySet__.add("paymentTerm");
             return this;
         }
-        /**
-         * Receipt Method of Payment Mode
-         *
-         **/
+        /** Receipt Method of Payment Mode */
         @com.fasterxml.jackson.annotation.JsonProperty("receiptMethod")
         private String receiptMethod;
 
@@ -187,7 +176,7 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
          *
          * @param receiptMethod the value to set
          * @return this builder
-         **/
+         */
         public Builder receiptMethod(String receiptMethod) {
             this.receiptMethod = receiptMethod;
             this.__explicitlySet__.add("receiptMethod");
@@ -211,10 +200,7 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
             this.__explicitlySet__.add("organization");
             return this;
         }
-        /**
-         * Document Type in SPM like SPM Invoice,SPM Credit Memo etc.,
-         *
-         **/
+        /** Document Type in SPM like SPM Invoice,SPM Credit Memo etc., */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
@@ -223,16 +209,13 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
          *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * Document Status in SPM which depicts current state of invoice
-         *
-         **/
+        /** Document Status in SPM which depicts current state of invoice */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
@@ -241,16 +224,13 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
          *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * Invoice associated subscription plan number.
-         *
-         **/
+        /** Invoice associated subscription plan number. */
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionNumber")
         private String subscriptionNumber;
 
@@ -259,16 +239,13 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
          *
          * @param subscriptionNumber the value to set
          * @return this builder
-         **/
+         */
         public Builder subscriptionNumber(String subscriptionNumber) {
             this.subscriptionNumber = subscriptionNumber;
             this.__explicitlySet__.add("subscriptionNumber");
             return this;
         }
-        /**
-         * Invoice Date
-         *
-         **/
+        /** Invoice Date */
         @com.fasterxml.jackson.annotation.JsonProperty("timeInvoiceDate")
         private java.util.Date timeInvoiceDate;
 
@@ -277,16 +254,13 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
          *
          * @param timeInvoiceDate the value to set
          * @return this builder
-         **/
+         */
         public Builder timeInvoiceDate(java.util.Date timeInvoiceDate) {
             this.timeInvoiceDate = timeInvoiceDate;
             this.__explicitlySet__.add("timeInvoiceDate");
             return this;
         }
-        /**
-         * SPM Invocie creation date
-         *
-         **/
+        /** SPM Invocie creation date */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -295,16 +269,13 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * User that executed SPM Invoice process
-         *
-         **/
+        /** User that executed SPM Invoice process */
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
@@ -313,16 +284,13 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
          *
          * @param createdBy the value to set
          * @return this builder
-         **/
+         */
         public Builder createdBy(String createdBy) {
             this.createdBy = createdBy;
             this.__explicitlySet__.add("createdBy");
             return this;
         }
-        /**
-         * SPM Invoice updated date
-         *
-         **/
+        /** SPM Invoice updated date */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
@@ -331,16 +299,13 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
          *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * User that updated SPM Invoice
-         *
-         **/
+        /** User that updated SPM Invoice */
         @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
         private String updatedBy;
 
@@ -349,16 +314,13 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
          *
          * @param updatedBy the value to set
          * @return this builder
-         **/
+         */
         public Builder updatedBy(String updatedBy) {
             this.updatedBy = updatedBy;
             this.__explicitlySet__.add("updatedBy");
             return this;
         }
-        /**
-         * Invoice Lines under particular invoice.
-         *
-         **/
+        /** Invoice Lines under particular invoice. */
         @com.fasterxml.jackson.annotation.JsonProperty("invoiceLines")
         private java.util.List<InvoiceLineSummary> invoiceLines;
 
@@ -367,7 +329,7 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
          *
          * @param invoiceLines the value to set
          * @return this builder
-         **/
+         */
         public Builder invoiceLines(java.util.List<InvoiceLineSummary> invoiceLines) {
             this.invoiceLines = invoiceLines;
             this.__explicitlySet__.add("invoiceLines");
@@ -468,9 +430,7 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -479,10 +439,7 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /**
-     * SPM Document Number is an functional identifier for invoice in SPM
-     *
-     **/
+    /** SPM Document Number is an functional identifier for invoice in SPM */
     @com.fasterxml.jackson.annotation.JsonProperty("spmInvoiceNumber")
     private final String spmInvoiceNumber;
 
@@ -490,15 +447,12 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
      * SPM Document Number is an functional identifier for invoice in SPM
      *
      * @return the value
-     **/
+     */
     public String getSpmInvoiceNumber() {
         return spmInvoiceNumber;
     }
 
-    /**
-     * AR Invoice Numbers comma separated under one invoice
-     *
-     **/
+    /** AR Invoice Numbers comma separated under one invoice */
     @com.fasterxml.jackson.annotation.JsonProperty("arInvoices")
     private final String arInvoices;
 
@@ -506,7 +460,7 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
      * AR Invoice Numbers comma separated under one invoice
      *
      * @return the value
-     **/
+     */
     public String getArInvoices() {
         return arInvoices;
     }
@@ -532,10 +486,7 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
         return billToAddress;
     }
 
-    /**
-     * Payment Method
-     *
-     **/
+    /** Payment Method */
     @com.fasterxml.jackson.annotation.JsonProperty("paymentMethod")
     private final String paymentMethod;
 
@@ -543,7 +494,7 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
      * Payment Method
      *
      * @return the value
-     **/
+     */
     public String getPaymentMethod() {
         return paymentMethod;
     }
@@ -555,10 +506,7 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
         return paymentTerm;
     }
 
-    /**
-     * Receipt Method of Payment Mode
-     *
-     **/
+    /** Receipt Method of Payment Mode */
     @com.fasterxml.jackson.annotation.JsonProperty("receiptMethod")
     private final String receiptMethod;
 
@@ -566,7 +514,7 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
      * Receipt Method of Payment Mode
      *
      * @return the value
-     **/
+     */
     public String getReceiptMethod() {
         return receiptMethod;
     }
@@ -585,10 +533,7 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
         return organization;
     }
 
-    /**
-     * Document Type in SPM like SPM Invoice,SPM Credit Memo etc.,
-     *
-     **/
+    /** Document Type in SPM like SPM Invoice,SPM Credit Memo etc., */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
@@ -596,15 +541,12 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
      * Document Type in SPM like SPM Invoice,SPM Credit Memo etc.,
      *
      * @return the value
-     **/
+     */
     public String getType() {
         return type;
     }
 
-    /**
-     * Document Status in SPM which depicts current state of invoice
-     *
-     **/
+    /** Document Status in SPM which depicts current state of invoice */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
@@ -612,15 +554,12 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
      * Document Status in SPM which depicts current state of invoice
      *
      * @return the value
-     **/
+     */
     public String getStatus() {
         return status;
     }
 
-    /**
-     * Invoice associated subscription plan number.
-     *
-     **/
+    /** Invoice associated subscription plan number. */
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionNumber")
     private final String subscriptionNumber;
 
@@ -628,15 +567,12 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
      * Invoice associated subscription plan number.
      *
      * @return the value
-     **/
+     */
     public String getSubscriptionNumber() {
         return subscriptionNumber;
     }
 
-    /**
-     * Invoice Date
-     *
-     **/
+    /** Invoice Date */
     @com.fasterxml.jackson.annotation.JsonProperty("timeInvoiceDate")
     private final java.util.Date timeInvoiceDate;
 
@@ -644,15 +580,12 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
      * Invoice Date
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeInvoiceDate() {
         return timeInvoiceDate;
     }
 
-    /**
-     * SPM Invocie creation date
-     *
-     **/
+    /** SPM Invocie creation date */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -660,15 +593,12 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
      * SPM Invocie creation date
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * User that executed SPM Invoice process
-     *
-     **/
+    /** User that executed SPM Invoice process */
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
@@ -676,15 +606,12 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
      * User that executed SPM Invoice process
      *
      * @return the value
-     **/
+     */
     public String getCreatedBy() {
         return createdBy;
     }
 
-    /**
-     * SPM Invoice updated date
-     *
-     **/
+    /** SPM Invoice updated date */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
@@ -692,15 +619,12 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
      * SPM Invoice updated date
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * User that updated SPM Invoice
-     *
-     **/
+    /** User that updated SPM Invoice */
     @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
     private final String updatedBy;
 
@@ -708,15 +632,12 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
      * User that updated SPM Invoice
      *
      * @return the value
-     **/
+     */
     public String getUpdatedBy() {
         return updatedBy;
     }
 
-    /**
-     * Invoice Lines under particular invoice.
-     *
-     **/
+    /** Invoice Lines under particular invoice. */
     @com.fasterxml.jackson.annotation.JsonProperty("invoiceLines")
     private final java.util.List<InvoiceLineSummary> invoiceLines;
 
@@ -724,7 +645,7 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
      * Invoice Lines under particular invoice.
      *
      * @return the value
-     **/
+     */
     public java.util.List<InvoiceLineSummary> getInvoiceLines() {
         return invoiceLines;
     }
@@ -736,6 +657,7 @@ public final class InvoiceSummary extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,24 +5,25 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
- * To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized,
- * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * To use any of the API operations, you must be authorized in an IAM policy. If you are not
+ * authorized, talk to an administrator. If you are an administrator who needs to write policies to
+ * give users access, see [Getting Started with
+ * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = RenameObjectDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RenameObjectDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = RenameObjectDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class RenameObjectDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sourceName",
@@ -47,85 +48,80 @@ public final class RenameObjectDetails extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the source object to be renamed.
-         **/
+        /** The name of the source object to be renamed. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
         private String sourceName;
 
         /**
          * The name of the source object to be renamed.
+         *
          * @param sourceName the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceName(String sourceName) {
             this.sourceName = sourceName;
             this.__explicitlySet__.add("sourceName");
             return this;
         }
-        /**
-         * The new name of the source object. Avoid entering confidential information.
-         **/
+        /** The new name of the source object. Avoid entering confidential information. */
         @com.fasterxml.jackson.annotation.JsonProperty("newName")
         private String newName;
 
         /**
          * The new name of the source object. Avoid entering confidential information.
+         *
          * @param newName the value to set
          * @return this builder
-         **/
+         */
         public Builder newName(String newName) {
             this.newName = newName;
             this.__explicitlySet__.add("newName");
             return this;
         }
-        /**
-         * The if-match entity tag (ETag) of the source object.
-         **/
+        /** The if-match entity tag (ETag) of the source object. */
         @com.fasterxml.jackson.annotation.JsonProperty("srcObjIfMatchETag")
         private String srcObjIfMatchETag;
 
         /**
          * The if-match entity tag (ETag) of the source object.
+         *
          * @param srcObjIfMatchETag the value to set
          * @return this builder
-         **/
+         */
         public Builder srcObjIfMatchETag(String srcObjIfMatchETag) {
             this.srcObjIfMatchETag = srcObjIfMatchETag;
             this.__explicitlySet__.add("srcObjIfMatchETag");
             return this;
         }
-        /**
-         * The if-match entity tag (ETag) of the new object.
-         **/
+        /** The if-match entity tag (ETag) of the new object. */
         @com.fasterxml.jackson.annotation.JsonProperty("newObjIfMatchETag")
         private String newObjIfMatchETag;
 
         /**
          * The if-match entity tag (ETag) of the new object.
+         *
          * @param newObjIfMatchETag the value to set
          * @return this builder
-         **/
+         */
         public Builder newObjIfMatchETag(String newObjIfMatchETag) {
             this.newObjIfMatchETag = newObjIfMatchETag;
             this.__explicitlySet__.add("newObjIfMatchETag");
             return this;
         }
         /**
-         * The if-none-match entity tag (ETag) of the new object. The only valid value is '*', which indicates
-         * request should fail if the new object already exists.
-         *
-         **/
+         * The if-none-match entity tag (ETag) of the new object. The only valid value is '*', which
+         * indicates request should fail if the new object already exists.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("newObjIfNoneMatchETag")
         private String newObjIfNoneMatchETag;
 
         /**
-         * The if-none-match entity tag (ETag) of the new object. The only valid value is '*', which indicates
-         * request should fail if the new object already exists.
+         * The if-none-match entity tag (ETag) of the new object. The only valid value is '*', which
+         * indicates request should fail if the new object already exists.
          *
          * @param newObjIfNoneMatchETag the value to set
          * @return this builder
-         **/
+         */
         public Builder newObjIfNoneMatchETag(String newObjIfNoneMatchETag) {
             this.newObjIfNoneMatchETag = newObjIfNoneMatchETag;
             this.__explicitlySet__.add("newObjIfNoneMatchETag");
@@ -170,9 +166,7 @@ public final class RenameObjectDetails extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -181,76 +175,71 @@ public final class RenameObjectDetails extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the source object to be renamed.
-     **/
+    /** The name of the source object to be renamed. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     private final String sourceName;
 
     /**
      * The name of the source object to be renamed.
+     *
      * @return the value
-     **/
+     */
     public String getSourceName() {
         return sourceName;
     }
 
-    /**
-     * The new name of the source object. Avoid entering confidential information.
-     **/
+    /** The new name of the source object. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("newName")
     private final String newName;
 
     /**
      * The new name of the source object. Avoid entering confidential information.
+     *
      * @return the value
-     **/
+     */
     public String getNewName() {
         return newName;
     }
 
-    /**
-     * The if-match entity tag (ETag) of the source object.
-     **/
+    /** The if-match entity tag (ETag) of the source object. */
     @com.fasterxml.jackson.annotation.JsonProperty("srcObjIfMatchETag")
     private final String srcObjIfMatchETag;
 
     /**
      * The if-match entity tag (ETag) of the source object.
+     *
      * @return the value
-     **/
+     */
     public String getSrcObjIfMatchETag() {
         return srcObjIfMatchETag;
     }
 
-    /**
-     * The if-match entity tag (ETag) of the new object.
-     **/
+    /** The if-match entity tag (ETag) of the new object. */
     @com.fasterxml.jackson.annotation.JsonProperty("newObjIfMatchETag")
     private final String newObjIfMatchETag;
 
     /**
      * The if-match entity tag (ETag) of the new object.
+     *
      * @return the value
-     **/
+     */
     public String getNewObjIfMatchETag() {
         return newObjIfMatchETag;
     }
 
     /**
-     * The if-none-match entity tag (ETag) of the new object. The only valid value is '*', which indicates
-     * request should fail if the new object already exists.
-     *
-     **/
+     * The if-none-match entity tag (ETag) of the new object. The only valid value is '*', which
+     * indicates request should fail if the new object already exists.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("newObjIfNoneMatchETag")
     private final String newObjIfNoneMatchETag;
 
     /**
-     * The if-none-match entity tag (ETag) of the new object. The only valid value is '*', which indicates
-     * request should fail if the new object already exists.
+     * The if-none-match entity tag (ETag) of the new object. The only valid value is '*', which
+     * indicates request should fail if the new object already exists.
      *
      * @return the value
-     **/
+     */
     public String getNewObjIfNoneMatchETag() {
         return newObjIfNoneMatchETag;
     }
@@ -262,6 +251,7 @@ public final class RenameObjectDetails extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

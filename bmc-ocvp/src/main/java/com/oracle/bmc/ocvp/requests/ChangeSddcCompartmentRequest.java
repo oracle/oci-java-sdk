@@ -6,7 +6,10 @@ package com.oracle.bmc.ocvp.requests;
 
 import com.oracle.bmc.ocvp.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ChangeSddcCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeSddcCompartmentRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ChangeSddcCompartmentExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ChangeSddcCompartmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class ChangeSddcCompartmentRequest
@@ -14,62 +17,52 @@ public class ChangeSddcCompartmentRequest
                 com.oracle.bmc.ocvp.model.ChangeSddcCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC.
-     *
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * SDDC.
      */
     private String sddcId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC.
-     *
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * SDDC.
      */
     public String getSddcId() {
         return sddcId;
     }
-    /**
-     * Request to change the compartment of the specified SDDC
-     */
+    /** Request to change the compartment of the specified SDDC */
     private com.oracle.bmc.ocvp.model.ChangeSddcCompartmentDetails changeSddcCompartmentDetails;
 
-    /**
-     * Request to change the compartment of the specified SDDC
-     */
+    /** Request to change the compartment of the specified SDDC */
     public com.oracle.bmc.ocvp.model.ChangeSddcCompartmentDetails
             getChangeSddcCompartmentDetails() {
         return changeSddcCompartmentDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the {@code if-match} parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the {@code if-match} parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular
-     * request, please provide the request ID.
-     *
+     * Unique identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular
-     * request, please provide the request ID.
-     *
+     * Unique identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -77,20 +70,18 @@ public class ChangeSddcCompartmentRequest
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * may be rejected).
-     *
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request may be rejected).
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * may be rejected).
-     *
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request may be rejected).
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -98,6 +89,7 @@ public class ChangeSddcCompartmentRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -110,18 +102,18 @@ public class ChangeSddcCompartmentRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeSddcCompartmentRequest,
                     com.oracle.bmc.ocvp.model.ChangeSddcCompartmentDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC.
-         *
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * SDDC.
          */
         private String sddcId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * SDDC.
          *
          * @param sddcId the value to set
          * @return this builder instance
@@ -131,14 +123,13 @@ public class ChangeSddcCompartmentRequest
             return this;
         }
 
-        /**
-         * Request to change the compartment of the specified SDDC
-         */
+        /** Request to change the compartment of the specified SDDC */
         private com.oracle.bmc.ocvp.model.ChangeSddcCompartmentDetails
                 changeSddcCompartmentDetails = null;
 
         /**
          * Request to change the compartment of the specified SDDC
+         *
          * @param changeSddcCompartmentDetails the value to set
          * @return this builder instance
          */
@@ -150,21 +141,18 @@ public class ChangeSddcCompartmentRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the {@code if-match} parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the {@code if-match} parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -177,7 +165,6 @@ public class ChangeSddcCompartmentRequest
         /**
          * Unique identifier for the request. If you need to contact Oracle about a particular
          * request, please provide the request ID.
-         *
          */
         private String opcRequestId = null;
 
@@ -195,20 +182,19 @@ public class ChangeSddcCompartmentRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * may be rejected).
-         *
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request may be rejected).
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request may be rejected).
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -220,18 +206,19 @@ public class ChangeSddcCompartmentRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -243,6 +230,7 @@ public class ChangeSddcCompartmentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ChangeSddcCompartmentRequest o) {
@@ -259,10 +247,11 @@ public class ChangeSddcCompartmentRequest
         /**
          * Build the instance of ChangeSddcCompartmentRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ChangeSddcCompartmentRequest
          */
@@ -275,6 +264,7 @@ public class ChangeSddcCompartmentRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -287,7 +277,8 @@ public class ChangeSddcCompartmentRequest
         /**
          * Build the instance of ChangeSddcCompartmentRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ChangeSddcCompartmentRequest
@@ -300,12 +291,14 @@ public class ChangeSddcCompartmentRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new ChangeSddcCompartmentRequest(sddcId, changeSddcCompartmentDetails, ifMatch, opcRequestId, opcRetryToken);
+            // new ChangeSddcCompartmentRequest(sddcId, changeSddcCompartmentDetails, ifMatch,
+            // opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -319,6 +312,7 @@ public class ChangeSddcCompartmentRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

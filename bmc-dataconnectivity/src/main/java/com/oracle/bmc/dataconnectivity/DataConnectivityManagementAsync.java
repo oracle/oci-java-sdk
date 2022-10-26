@@ -8,45 +8,46 @@ import com.oracle.bmc.dataconnectivity.requests.*;
 import com.oracle.bmc.dataconnectivity.responses.*;
 
 /**
- * Use the Data Connectivity Management Service APIs to perform common extract, load, and transform (ETL) tasks.
+ * Use the Data Connectivity Management Service APIs to perform common extract, load, and transform
+ * (ETL) tasks.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 public interface DataConnectivityManagementAsync extends AutoCloseable {
 
-    /**
-     * Rebuilds the client from scratch.
-     * Useful to refresh certificates.
-     */
+    /** Rebuilds the client from scratch. Useful to refresh certificates. */
     void refreshClient();
 
     /**
      * Sets the endpoint to call (ex, https://www.example.com).
+     *
      * @param endpoint The endpoint of the serice.
      */
     void setEndpoint(String endpoint);
 
-    /**
-     * Gets the set endpoint for REST call (ex, https://www.example.com)
-     */
+    /** Gets the set endpoint for REST call (ex, https://www.example.com) */
     String getEndpoint();
 
     /**
      * Sets the region to call (ex, Region.US_PHOENIX_1).
-     * <p>
-     * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
+     *
+     * <p>Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the
+     * endpoint. If the service is not available in this region, however, an
+     * IllegalArgumentException will be raised.
+     *
      * @param region The region of the service.
      */
     void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
-     * <p>
-     * Note, this will first try to map the region ID to a known Region and call
-     * {@link #setRegion(Region) setRegion}.
-     * <p>
-     * If no known Region could be determined, it will create an endpoint based on the
-     * default endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
+     *
+     * <p>Note, this will first try to map the region ID to a known Region and call {@link
+     * #setRegion(Region) setRegion}.
+     *
+     * <p>If no known Region could be determined, it will create an endpoint based on the default
+     * endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
      * and then call {@link #setEndpoint(String) setEndpoint}.
+     *
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
@@ -54,13 +55,12 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
     /**
      * The endpoint will be moved to the specified compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeEndpointCompartmentResponse> changeEndpointCompartment(
             ChangeEndpointCompartmentRequest request,
@@ -71,13 +71,12 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
     /**
      * The registry will be moved to the specified compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeRegistryCompartmentResponse> changeRegistryCompartment(
             ChangeRegistryCompartmentRequest request,
@@ -90,10 +89,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateAttachDataAssetResponse> createAttachDataAsset(
             CreateAttachDataAssetRequest request,
@@ -106,10 +105,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateConnectionResponse> createConnection(
             CreateConnectionRequest request,
@@ -121,10 +120,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateConnectionValidationResponse> createConnectionValidation(
             CreateConnectionValidationRequest request,
@@ -133,14 +132,15 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * This endpoint is used to trigger validation of dataAsset, connection, schema, entity, dataOperationConfig
+     * This endpoint is used to trigger validation of dataAsset, connection, schema, entity,
+     * dataOperationConfig
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateConnectivityValidationResponse> createConnectivityValidation(
             CreateConnectivityValidationRequest request,
@@ -154,10 +154,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateDataAssetResponse> createDataAsset(
             CreateDataAssetRequest request,
@@ -169,10 +169,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateDataPreviewResponse> createDataPreview(
             CreateDataPreviewRequest request,
@@ -185,10 +185,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateDataProfileResponse> createDataProfile(
             CreateDataProfileRequest request,
@@ -201,10 +201,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateDeReferenceArtifactResponse> createDeReferenceArtifact(
             CreateDeReferenceArtifactRequest request,
@@ -217,10 +217,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateDetachDataAssetResponse> createDetachDataAsset(
             CreateDetachDataAssetRequest request,
@@ -231,13 +231,12 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
     /**
      * Creates a new Data Connectivity Management endpoint ready to perform data connectivity.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateEndpointResponse> createEndpoint(
             CreateEndpointRequest request,
@@ -249,10 +248,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateEntityShapeResponse> createEntityShape(
             CreateEntityShapeRequest request,
@@ -265,10 +264,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateExecuteOperationJobResponse> createExecuteOperationJob(
             CreateExecuteOperationJobRequest request,
@@ -281,10 +280,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateFolderResponse> createFolder(
             CreateFolderRequest request,
@@ -296,10 +295,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateFullPushDownTaskResponse> createFullPushDownTask(
             CreateFullPushDownTaskRequest request,
@@ -312,10 +311,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateReferenceArtifactResponse> createReferenceArtifact(
             CreateReferenceArtifactRequest request,
@@ -324,15 +323,15 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Data Connectivity Management registry ready to perform data connectivity management.
-     *
+     * Creates a new Data Connectivity Management registry ready to perform data connectivity
+     * management.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateRegistryResponse> createRegistry(
             CreateRegistryRequest request,
@@ -340,14 +339,15 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Execute network validation on the selected data assets associated with the provided private endpoint.
+     * Execute network validation on the selected data assets associated with the provided private
+     * endpoint.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateTestNetworkConnectivityResponse>
             createTestNetworkConnectivity(
@@ -362,10 +362,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteConnectionResponse> deleteConnection(
             DeleteConnectionRequest request,
@@ -377,10 +377,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteDataAssetResponse> deleteDataAsset(
             DeleteDataAssetRequest request,
@@ -392,10 +392,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteEndpointResponse> deleteEndpoint(
             DeleteEndpointRequest request,
@@ -407,10 +407,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteFolderResponse> deleteFolder(
             DeleteFolderRequest request,
@@ -422,10 +422,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteNetworkConnectivityStatusResponse>
             deleteNetworkConnectivityStatus(
@@ -440,10 +440,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteRegistryResponse> deleteRegistry(
             DeleteRegistryRequest request,
@@ -455,10 +455,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeriveEntitiesResponse> deriveEntities(
             DeriveEntitiesRequest request,
@@ -470,10 +470,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetConnectionResponse> getConnection(
             GetConnectionRequest request,
@@ -485,10 +485,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDataAssetResponse> getDataAsset(
             GetDataAssetRequest request,
@@ -500,10 +500,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDataEntityResponse> getDataEntity(
             GetDataEntityRequest request,
@@ -515,10 +515,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetEndpointResponse> getEndpoint(
             GetEndpointRequest request,
@@ -529,10 +529,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetEngineConfigurationsResponse> getEngineConfigurations(
             GetEngineConfigurationsRequest request,
@@ -545,10 +545,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetExecuteOperationJobResponse> getExecuteOperationJob(
             GetExecuteOperationJobRequest request,
@@ -561,24 +561,25 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetFolderResponse> getFolder(
             GetFolderRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetFolderRequest, GetFolderResponse> handler);
 
     /**
-     * Get the status of network reachability check, with the timestamp of when the status was last checked, for a given PrivateEndpoint-DataAsset pair.
+     * Get the status of network reachability check, with the timestamp of when the status was last
+     * checked, for a given PrivateEndpoint-DataAsset pair.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetNetworkConnectivityStatusResponse> getNetworkConnectivityStatus(
             GetNetworkConnectivityStatusRequest request,
@@ -592,10 +593,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetOperationResponse> getOperation(
             GetOperationRequest request,
@@ -607,10 +608,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetRegistryResponse> getRegistry(
             GetRegistryRequest request,
@@ -621,10 +622,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetSchemaResponse> getSchema(
             GetSchemaRequest request,
@@ -633,13 +634,12 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
     /**
      * This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetTypeResponse> getType(
             GetTypeRequest request,
@@ -650,10 +650,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
@@ -665,10 +665,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListConnectionsResponse> listConnections(
             ListConnectionsRequest request,
@@ -678,13 +678,12 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
     /**
      * Retrieves a list of all data asset summaries.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDataAssetsResponse> listDataAssets(
             ListDataAssetsRequest request,
@@ -694,13 +693,12 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
     /**
      * Lists a summary of data entities from the data asset using the specified connection.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDataEntitiesResponse> listDataEntities(
             ListDataEntitiesRequest request,
@@ -710,13 +708,12 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
     /**
      * Returns a list of Data Connectivity Management endpoints.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListEndpointsResponse> listEndpoints(
             ListEndpointsRequest request,
@@ -728,25 +725,25 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListFoldersResponse> listFolders(
             ListFoldersRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListFoldersRequest, ListFoldersResponse> handler);
 
     /**
-     * Lists the summary of operations that are present in the schema, identified by the schema name.
-     *
+     * Lists the summary of operations that are present in the schema, identified by the schema
+     * name.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListOperationsResponse> listOperations(
             ListOperationsRequest request,
@@ -756,13 +753,12 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
     /**
      * Retrieves a list of all reference info of a dcms artifact.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListReferenceArtifactsResponse> listReferenceArtifacts(
             ListReferenceArtifactsRequest request,
@@ -773,13 +769,12 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
     /**
      * Retrieves a list of Data Connectivity Management registries.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListRegistriesResponse> listRegistries(
             ListRegistriesRequest request,
@@ -791,10 +786,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListSchemasResponse> listSchemas(
             ListSchemasRequest request,
@@ -803,13 +798,12 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
     /**
      * This endpoint retrieves a list of all the supported connector types.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListTypesResponse> listTypes(
             ListTypesRequest request,
@@ -818,13 +812,12 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
     /**
      * Returns a (paginated) list of errors for a given work request.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
             ListWorkRequestErrorsRequest request,
@@ -835,13 +828,12 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
     /**
      * Returns a (paginated) list of logs for a given work request.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
             ListWorkRequestLogsRequest request,
@@ -852,13 +844,12 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
     /**
      * Lists the work requests in a compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
             ListWorkRequestsRequest request,
@@ -870,10 +861,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateConnectionResponse> updateConnection(
             UpdateConnectionRequest request,
@@ -885,10 +876,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateDataAssetResponse> updateDataAsset(
             UpdateDataAssetRequest request,
@@ -900,10 +891,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateEndpointResponse> updateEndpoint(
             UpdateEndpointRequest request,
@@ -915,10 +906,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateFolderResponse> updateFolder(
             UpdateFolderRequest request,
@@ -930,10 +921,10 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateRegistryResponse> updateRegistry(
             UpdateRegistryRequest request,
@@ -943,13 +934,12 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
     /**
      * Validates the dataAsset network reachability.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ValidateDataAssetNetworkReachablityResponse>
             validateDataAssetNetworkReachablity(

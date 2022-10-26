@@ -11,7 +11,6 @@ public class ListTagNamespacesResponse extends com.oracle.bmc.responses.BmcRespo
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
@@ -26,17 +25,16 @@ public class ListTagNamespacesResponse extends com.oracle.bmc.responses.BmcRespo
     }
 
     /**
-     * For pagination of a list of tagNamespaces. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-     * subsequent GET request to get the next batch of items.
-     *
+     * For pagination of a list of tagNamespaces. When paging through a list, if this header appears
+     * in the response, then a partial list might have been returned. Include this value as the
+     * {@code page} parameter for the subsequent GET request to get the next batch of items.
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of tagNamespaces. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-     * subsequent GET request to get the next batch of items.
+     * For pagination of a list of tagNamespaces. When paging through a list, if this header appears
+     * in the response, then a partial list might have been returned. Include this value as the
+     * {@code page} parameter for the subsequent GET request to get the next batch of items.
      *
      * @return the value
      */
@@ -44,13 +42,12 @@ public class ListTagNamespacesResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /**
-     * A list of com.oracle.bmc.identity.model.TagNamespaceSummary instances.
-     */
+    /** A list of com.oracle.bmc.identity.model.TagNamespaceSummary instances. */
     private java.util.List<com.oracle.bmc.identity.model.TagNamespaceSummary> items;
 
     /**
      * A list of com.oracle.bmc.identity.model.TagNamespaceSummary instances.
+     *
      * @return the value
      */
     public java.util.List<com.oracle.bmc.identity.model.TagNamespaceSummary> getItems() {
@@ -66,7 +63,7 @@ public class ListTagNamespacesResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private ListTagNamespacesResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcNextPage,
             java.util.List<com.oracle.bmc.identity.model.TagNamespaceSummary> items) {
@@ -76,17 +73,20 @@ public class ListTagNamespacesResponse extends com.oracle.bmc.responses.BmcRespo
         this.items = items;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<ListTagNamespacesResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
@@ -94,7 +94,6 @@ public class ListTagNamespacesResponse extends com.oracle.bmc.responses.BmcRespo
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId;
 
@@ -111,17 +110,18 @@ public class ListTagNamespacesResponse extends com.oracle.bmc.responses.BmcRespo
         }
 
         /**
-         * For pagination of a list of tagNamespaces. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-         * subsequent GET request to get the next batch of items.
-         *
+         * For pagination of a list of tagNamespaces. When paging through a list, if this header
+         * appears in the response, then a partial list might have been returned. Include this value
+         * as the {@code page} parameter for the subsequent GET request to get the next batch of
+         * items.
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of tagNamespaces. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-         * subsequent GET request to get the next batch of items.
+         * For pagination of a list of tagNamespaces. When paging through a list, if this header
+         * appears in the response, then a partial list might have been returned. Include this value
+         * as the {@code page} parameter for the subsequent GET request to get the next batch of
+         * items.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -131,13 +131,12 @@ public class ListTagNamespacesResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /**
-         * A list of com.oracle.bmc.identity.model.TagNamespaceSummary instances.
-         */
+        /** A list of com.oracle.bmc.identity.model.TagNamespaceSummary instances. */
         private java.util.List<com.oracle.bmc.identity.model.TagNamespaceSummary> items;
 
         /**
          * A list of com.oracle.bmc.identity.model.TagNamespaceSummary instances.
+         *
          * @param items the value to set
          * @return this builder
          */
@@ -149,8 +148,10 @@ public class ListTagNamespacesResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListTagNamespacesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -163,8 +164,10 @@ public class ListTagNamespacesResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListTagNamespacesResponse build() {
             return new ListTagNamespacesResponse(
                     __httpStatusCode__, headers, opcRequestId, opcNextPage, items);
@@ -173,6 +176,7 @@ public class ListTagNamespacesResponse extends com.oracle.bmc.responses.BmcRespo
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

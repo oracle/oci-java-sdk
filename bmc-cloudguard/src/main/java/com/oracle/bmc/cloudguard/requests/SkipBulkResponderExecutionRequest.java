@@ -6,40 +6,36 @@ package com.oracle.bmc.cloudguard.requests;
 
 import com.oracle.bmc.cloudguard.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/SkipBulkResponderExecutionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SkipBulkResponderExecutionRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/SkipBulkResponderExecutionExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * SkipBulkResponderExecutionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class SkipBulkResponderExecutionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.SkipBulkResponderExecutionDetails> {
 
-    /**
-     * A list of responder execution ids to skip the execution
-     */
+    /** A list of responder execution ids to skip the execution */
     private com.oracle.bmc.cloudguard.model.SkipBulkResponderExecutionDetails
             skipBulkResponderExecutionDetails;
 
-    /**
-     * A list of responder execution ids to skip the execution
-     */
+    /** A list of responder execution ids to skip the execution */
     public com.oracle.bmc.cloudguard.model.SkipBulkResponderExecutionDetails
             getSkipBulkResponderExecutionDetails() {
         return skipBulkResponderExecutionDetails;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -52,18 +48,16 @@ public class SkipBulkResponderExecutionRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SkipBulkResponderExecutionRequest,
                     com.oracle.bmc.cloudguard.model.SkipBulkResponderExecutionDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * A list of responder execution ids to skip the execution
-         */
+        /** A list of responder execution ids to skip the execution */
         private com.oracle.bmc.cloudguard.model.SkipBulkResponderExecutionDetails
                 skipBulkResponderExecutionDetails = null;
 
         /**
          * A list of responder execution ids to skip the execution
+         *
          * @param skipBulkResponderExecutionDetails the value to set
          * @return this builder instance
          */
@@ -74,13 +68,12 @@ public class SkipBulkResponderExecutionRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -91,18 +84,19 @@ public class SkipBulkResponderExecutionRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -114,6 +108,7 @@ public class SkipBulkResponderExecutionRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(SkipBulkResponderExecutionRequest o) {
@@ -127,10 +122,11 @@ public class SkipBulkResponderExecutionRequest
         /**
          * Build the instance of SkipBulkResponderExecutionRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of SkipBulkResponderExecutionRequest
          */
@@ -143,6 +139,7 @@ public class SkipBulkResponderExecutionRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -156,7 +153,8 @@ public class SkipBulkResponderExecutionRequest
         /**
          * Build the instance of SkipBulkResponderExecutionRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of SkipBulkResponderExecutionRequest
@@ -166,12 +164,14 @@ public class SkipBulkResponderExecutionRequest
             request.skipBulkResponderExecutionDetails = skipBulkResponderExecutionDetails;
             request.opcRequestId = opcRequestId;
             return request;
-            // new SkipBulkResponderExecutionRequest(skipBulkResponderExecutionDetails, opcRequestId);
+            // new SkipBulkResponderExecutionRequest(skipBulkResponderExecutionDetails,
+            // opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -182,6 +182,7 @@ public class SkipBulkResponderExecutionRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

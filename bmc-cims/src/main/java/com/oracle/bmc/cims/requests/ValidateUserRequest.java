@@ -6,63 +6,57 @@ package com.oracle.bmc.cims.requests;
 
 import com.oracle.bmc.cims.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/ValidateUserExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ValidateUserRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/ValidateUserExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ValidateUserRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The Customer Support Identifier number for the support account.
-     */
+    /** The Customer Support Identifier number for the support account. */
     private String csi;
 
-    /**
-     * The Customer Support Identifier number for the support account.
-     */
+    /** The Customer Support Identifier number for the support account. */
     public String getCsi() {
         return csi;
     }
     /**
-     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+     * Cloud Infrastructure account.
      */
     private String ocid;
 
     /**
-     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+     * Cloud Infrastructure account.
      */
     public String getOcid() {
         return ocid;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * The kind of support request.
-     */
+    /** The kind of support request. */
     private String problemType;
 
-    /**
-     * The kind of support request.
-     */
+    /** The kind of support request. */
     public String getProblemType() {
         return problemType;
     }
-    /**
-     * The region of the tenancy.
-     */
+    /** The region of the tenancy. */
     private String homeregion;
 
-    /**
-     * The region of the tenancy.
-     */
+    /** The region of the tenancy. */
     public String getHomeregion() {
         return homeregion;
     }
@@ -70,17 +64,15 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ValidateUserRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The Customer Support Identifier number for the support account.
-         */
+        /** The Customer Support Identifier number for the support account. */
         private String csi = null;
 
         /**
          * The Customer Support Identifier number for the support account.
+         *
          * @param csi the value to set
          * @return this builder instance
          */
@@ -90,12 +82,15 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+         * Cloud Infrastructure account.
          */
         private String ocid = null;
 
         /**
-         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+         * Cloud Infrastructure account.
+         *
          * @param ocid the value to set
          * @return this builder instance
          */
@@ -105,12 +100,15 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -119,13 +117,12 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The kind of support request.
-         */
+        /** The kind of support request. */
         private String problemType = null;
 
         /**
          * The kind of support request.
+         *
          * @param problemType the value to set
          * @return this builder instance
          */
@@ -134,13 +131,12 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The region of the tenancy.
-         */
+        /** The region of the tenancy. */
         private String homeregion = null;
 
         /**
          * The region of the tenancy.
+         *
          * @param homeregion the value to set
          * @return this builder instance
          */
@@ -151,18 +147,19 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -174,6 +171,7 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ValidateUserRequest o) {
@@ -190,10 +188,11 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ValidateUserRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ValidateUserRequest
          */
@@ -207,7 +206,8 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ValidateUserRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ValidateUserRequest
@@ -226,6 +226,7 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -239,6 +240,7 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

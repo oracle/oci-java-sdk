@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/**
- * Indication that represents the threat level of a Sighting
- **/
+/** Indication that represents the threat level of a Sighting */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum Severity {
+public enum Severity implements com.oracle.bmc.http.internal.BmcEnum {
     Critical("CRITICAL"),
     High("HIGH"),
     Medium("MEDIUM"),

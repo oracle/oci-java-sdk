@@ -6,40 +6,36 @@ package com.oracle.bmc.licensemanager.requests;
 
 import com.oracle.bmc.licensemanager.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/ListLicenseRecordsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListLicenseRecordsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/ListLicenseRecordsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListLicenseRecordsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 public class ListLicenseRecordsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * Unique product license identifier.
-     */
+    /** Unique product license identifier. */
     private String productLicenseId;
 
-    /**
-     * Unique product license identifier.
-     */
+    /** Unique product license identifier. */
     public String getProductLicenseId() {
         return productLicenseId;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from
+     * the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from
+     * the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
@@ -47,27 +43,21 @@ public class ListLicenseRecordsRequest extends com.oracle.bmc.requests.BmcReques
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * The sort order to use, whether {@code ASC} or {@code DESC}.
-     */
+    /** The sort order to use, whether {@code ASC} or {@code DESC}. */
     private SortOrder sortOrder;
 
-    /**
-     * The sort order to use, whether {@code ASC} or {@code DESC}.
-     **/
-    public enum SortOrder {
+    /** The sort order to use, whether {@code ASC} or {@code DESC}. */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -100,31 +90,27 @@ public class ListLicenseRecordsRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
 
-    /**
-     * The sort order to use, whether {@code ASC} or {@code DESC}.
-     */
+    /** The sort order to use, whether {@code ASC} or {@code DESC}. */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
      * Specifies the attribute with which to sort the rules.
-     * <p>
-     * Default: {@code expirationDate}
-     * <p>
-     * **expirationDate:** Sorts by expiration date of the license record.
      *
+     * <p>Default: {@code expirationDate}
+     *
+     * <p>**expirationDate:** Sorts by expiration date of the license record.
      */
     private SortBy sortBy;
 
     /**
      * Specifies the attribute with which to sort the rules.
-     * <p>
-     * Default: {@code expirationDate}
-     * <p>
-     * **expirationDate:** Sorts by expiration date of the license record.
      *
-     **/
-    public enum SortBy {
+     * <p>Default: {@code expirationDate}
+     *
+     * <p>**expirationDate:** Sorts by expiration date of the license record.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         ExpirationDate("expirationDate"),
         ;
 
@@ -158,11 +144,10 @@ public class ListLicenseRecordsRequest extends com.oracle.bmc.requests.BmcReques
 
     /**
      * Specifies the attribute with which to sort the rules.
-     * <p>
-     * Default: {@code expirationDate}
-     * <p>
-     * **expirationDate:** Sorts by expiration date of the license record.
      *
+     * <p>Default: {@code expirationDate}
+     *
+     * <p>**expirationDate:** Sorts by expiration date of the license record.
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -171,17 +156,15 @@ public class ListLicenseRecordsRequest extends com.oracle.bmc.requests.BmcReques
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListLicenseRecordsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique product license identifier.
-         */
+        /** Unique product license identifier. */
         private String productLicenseId = null;
 
         /**
          * Unique product license identifier.
+         *
          * @param productLicenseId the value to set
          * @return this builder instance
          */
@@ -190,13 +173,12 @@ public class ListLicenseRecordsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -206,12 +188,15 @@ public class ListLicenseRecordsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come
+         * from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come
+         * from the {@code opc-next-page} header field of a previous response.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -221,15 +206,14 @@ public class ListLicenseRecordsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
+         * about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
+         * about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -239,13 +223,12 @@ public class ListLicenseRecordsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /**
-         * The sort order to use, whether {@code ASC} or {@code DESC}.
-         */
+        /** The sort order to use, whether {@code ASC} or {@code DESC}. */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, whether {@code ASC} or {@code DESC}.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -256,20 +239,19 @@ public class ListLicenseRecordsRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Specifies the attribute with which to sort the rules.
-         * <p>
-         * Default: {@code expirationDate}
-         * <p>
-         * **expirationDate:** Sorts by expiration date of the license record.
          *
+         * <p>Default: {@code expirationDate}
+         *
+         * <p>**expirationDate:** Sorts by expiration date of the license record.
          */
         private SortBy sortBy = null;
 
         /**
          * Specifies the attribute with which to sort the rules.
-         * <p>
-         * Default: {@code expirationDate}
-         * <p>
-         * **expirationDate:** Sorts by expiration date of the license record.
+         *
+         * <p>Default: {@code expirationDate}
+         *
+         * <p>**expirationDate:** Sorts by expiration date of the license record.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -281,18 +263,19 @@ public class ListLicenseRecordsRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -304,6 +287,7 @@ public class ListLicenseRecordsRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListLicenseRecordsRequest o) {
@@ -321,10 +305,11 @@ public class ListLicenseRecordsRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * Build the instance of ListLicenseRecordsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListLicenseRecordsRequest
          */
@@ -338,7 +323,8 @@ public class ListLicenseRecordsRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * Build the instance of ListLicenseRecordsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListLicenseRecordsRequest
@@ -352,12 +338,14 @@ public class ListLicenseRecordsRequest extends com.oracle.bmc.requests.BmcReques
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListLicenseRecordsRequest(productLicenseId, limit, page, opcRequestId, sortOrder, sortBy);
+            // new ListLicenseRecordsRequest(productLicenseId, limit, page, opcRequestId, sortOrder,
+            // sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -372,6 +360,7 @@ public class ListLicenseRecordsRequest extends com.oracle.bmc.requests.BmcReques
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

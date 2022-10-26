@@ -5,22 +5,22 @@
 package com.oracle.bmc.servicemesh.model;
 
 /**
- * The information about a new IngressGatewayRouteTable.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information about a new IngressGatewayRouteTable. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateIngressGatewayRouteTableDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateIngressGatewayRouteTableDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateIngressGatewayRouteTableDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "ingressGatewayId",
@@ -54,135 +54,134 @@ public final class CreateIngressGatewayRouteTableDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the service mesh in which this access policy is created.
-         **/
+        /** The OCID of the service mesh in which this access policy is created. */
         @com.fasterxml.jackson.annotation.JsonProperty("ingressGatewayId")
         private String ingressGatewayId;
 
         /**
          * The OCID of the service mesh in which this access policy is created.
+         *
          * @param ingressGatewayId the value to set
          * @return this builder
-         **/
+         */
         public Builder ingressGatewayId(String ingressGatewayId) {
             this.ingressGatewayId = ingressGatewayId;
             this.__explicitlySet__.add("ingressGatewayId");
             return this;
         }
         /**
-         * A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation.
-         * Avoid entering confidential information.
-         * <p>
-         * Example: {@code My unique resource name}
+         * A user-friendly name. The name must be unique within the same ingress gateway and cannot
+         * be changed after creation. Avoid entering confidential information.
          *
-         **/
+         * <p>Example: {@code My unique resource name}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation.
-         * Avoid entering confidential information.
-         * <p>
-         * Example: {@code My unique resource name}
+         * A user-friendly name. The name must be unique within the same ingress gateway and cannot
+         * be changed after creation. Avoid entering confidential information.
+         *
+         * <p>Example: {@code My unique resource name}
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * Description of the resource. It can be changed after creation.
-         * Avoid entering confidential information.
-         * <p>
-         * Example: {@code This is my new resource}
+         * Description of the resource. It can be changed after creation. Avoid entering
+         * confidential information.
          *
-         **/
+         * <p>Example: {@code This is my new resource}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Description of the resource. It can be changed after creation.
-         * Avoid entering confidential information.
-         * <p>
-         * Example: {@code This is my new resource}
+         * Description of the resource. It can be changed after creation. Avoid entering
+         * confidential information.
+         *
+         * <p>Example: {@code This is my new resource}
          *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
-         **/
+         * The priority of the route table. Lower value means higher priority. The routes are
+         * declared based on the priority.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("priority")
         private Integer priority;
 
         /**
-         * The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
+         * The priority of the route table. Lower value means higher priority. The routes are
+         * declared based on the priority.
+         *
          * @param priority the value to set
          * @return this builder
-         **/
+         */
         public Builder priority(Integer priority) {
             this.priority = priority;
             this.__explicitlySet__.add("priority");
             return this;
         }
-        /**
-         * The route rules for the ingress gateway.
-         **/
+        /** The route rules for the ingress gateway. */
         @com.fasterxml.jackson.annotation.JsonProperty("routeRules")
         private java.util.List<IngressGatewayTrafficRouteRule> routeRules;
 
         /**
          * The route rules for the ingress gateway.
+         *
          * @param routeRules the value to set
          * @return this builder
-         **/
+         */
         public Builder routeRules(java.util.List<IngressGatewayTrafficRouteRule> routeRules) {
             this.routeRules = routeRules;
             this.__explicitlySet__.add("routeRules");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -191,8 +190,7 @@ public final class CreateIngressGatewayRouteTableDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -202,7 +200,7 @@ public final class CreateIngressGatewayRouteTableDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -260,9 +258,7 @@ public final class CreateIngressGatewayRouteTableDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -271,140 +267,138 @@ public final class CreateIngressGatewayRouteTableDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the service mesh in which this access policy is created.
-     **/
+    /** The OCID of the service mesh in which this access policy is created. */
     @com.fasterxml.jackson.annotation.JsonProperty("ingressGatewayId")
     private final String ingressGatewayId;
 
     /**
      * The OCID of the service mesh in which this access policy is created.
+     *
      * @return the value
-     **/
+     */
     public String getIngressGatewayId() {
         return ingressGatewayId;
     }
 
     /**
-     * A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation.
-     * Avoid entering confidential information.
-     * <p>
-     * Example: {@code My unique resource name}
+     * A user-friendly name. The name must be unique within the same ingress gateway and cannot be
+     * changed after creation. Avoid entering confidential information.
      *
-     **/
+     * <p>Example: {@code My unique resource name}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation.
-     * Avoid entering confidential information.
-     * <p>
-     * Example: {@code My unique resource name}
+     * A user-friendly name. The name must be unique within the same ingress gateway and cannot be
+     * changed after creation. Avoid entering confidential information.
+     *
+     * <p>Example: {@code My unique resource name}
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
-     * Description of the resource. It can be changed after creation.
-     * Avoid entering confidential information.
-     * <p>
-     * Example: {@code This is my new resource}
+     * Description of the resource. It can be changed after creation. Avoid entering confidential
+     * information.
      *
-     **/
+     * <p>Example: {@code This is my new resource}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Description of the resource. It can be changed after creation.
-     * Avoid entering confidential information.
-     * <p>
-     * Example: {@code This is my new resource}
+     * Description of the resource. It can be changed after creation. Avoid entering confidential
+     * information.
+     *
+     * <p>Example: {@code This is my new resource}
      *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
     /**
-     * The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
-     **/
+     * The priority of the route table. Lower value means higher priority. The routes are declared
+     * based on the priority.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
     private final Integer priority;
 
     /**
-     * The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
+     * The priority of the route table. Lower value means higher priority. The routes are declared
+     * based on the priority.
+     *
      * @return the value
-     **/
+     */
     public Integer getPriority() {
         return priority;
     }
 
-    /**
-     * The route rules for the ingress gateway.
-     **/
+    /** The route rules for the ingress gateway. */
     @com.fasterxml.jackson.annotation.JsonProperty("routeRules")
     private final java.util.List<IngressGatewayTrafficRouteRule> routeRules;
 
     /**
      * The route rules for the ingress gateway.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<IngressGatewayTrafficRouteRule> getRouteRules() {
         return routeRules;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -416,6 +410,7 @@ public final class CreateIngressGatewayRouteTableDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

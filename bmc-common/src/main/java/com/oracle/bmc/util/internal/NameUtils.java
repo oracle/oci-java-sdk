@@ -4,15 +4,14 @@
  */
 package com.oracle.bmc.util.internal;
 
-/**
- * Utility functions related to naming
- */
+/** Utility functions related to naming */
 public enum NameUtils {
     ; // prevent instantiation
 
     /**
-     * Canonicalizes a name for use in enum types. This specifically is for enum ids (values) that matched
-     * the enum name except were lower case and used hyphen delimiters vs upper case and underscores (enum naming convention)
+     * Canonicalizes a name for use in enum types. This specifically is for enum ids (values) that
+     * matched the enum name except were lower case and used hyphen delimiters vs upper case and
+     * underscores (enum naming convention)
      *
      * @param name The un-canonicalized name.
      * @return The canonicalized name.
@@ -21,7 +20,7 @@ public enum NameUtils {
         return name.toUpperCase().replaceAll("-", "_");
     }
 
-    /** Convert enum type name to un-canonicalized name **/
+    /** Convert enum type name to un-canonicalized name * */
     public static String decanonicalizeFromEnumTypes(final String name) {
         return name.toLowerCase().replaceAll("_", "-");
     }

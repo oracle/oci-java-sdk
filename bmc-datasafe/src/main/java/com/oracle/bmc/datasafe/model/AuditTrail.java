@@ -5,23 +5,23 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * An audit trail represents the source of audit records that provides documentary evidence of
- * the sequence of activities in the target database. Configuring audit trails in Data Safe, and enabling
- * audit data collection on the audit trails copies the audit records from the target database's audit trail
- * into the Data Safe repository.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * An audit trail represents the source of audit records that provides documentary evidence of the
+ * sequence of activities in the target database. Configuring audit trails in Data Safe, and
+ * enabling audit data collection on the audit trails copies the audit records from the target
+ * database's audit trail into the Data Safe repository. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AuditTrail.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class AuditTrail extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -85,145 +85,136 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the audit trail.
-         **/
+        /** The OCID of the audit trail. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the audit trail.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The OCID of the  parent audit.
-         **/
+        /** The OCID of the parent audit. */
         @com.fasterxml.jackson.annotation.JsonProperty("auditProfileId")
         private String auditProfileId;
 
         /**
-         * The OCID of the  parent audit.
+         * The OCID of the parent audit.
+         *
          * @param auditProfileId the value to set
          * @return this builder
-         **/
+         */
         public Builder auditProfileId(String auditProfileId) {
             this.auditProfileId = auditProfileId;
             this.__explicitlySet__.add("auditProfileId");
             return this;
         }
-        /**
-         * The OCID of the Data Safe target for which the audit trail is created.
-         **/
+        /** The OCID of the Data Safe target for which the audit trail is created. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
          * The OCID of the Data Safe target for which the audit trail is created.
+         *
          * @param targetId the value to set
          * @return this builder
-         **/
+         */
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-        /**
-         * The display name of the audit trail.
-         **/
+        /** The display name of the audit trail. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The display name of the audit trail.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The date and time the audit trail was created, in the format defined by RFC3339.
-         **/
+        /** The date and time the audit trail was created, in the format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the audit trail was created, in the format defined by RFC3339.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * The date and time the audit trail was updated, in the format defined by RFC3339.
-         **/
+        /** The date and time the audit trail was updated, in the format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The date and time the audit trail was updated, in the format defined by RFC3339.
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * The current state of the audit trail.
-         **/
+        /** The current state of the audit trail. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private AuditTrailLifecycleState lifecycleState;
 
         /**
          * The current state of the audit trail.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(AuditTrailLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * The current sub-state of the audit trail.
-         **/
+        /** The current sub-state of the audit trail. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private AuditTrailStatus status;
 
         /**
          * The current sub-state of the audit trail.
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(AuditTrailStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * Details about the current state of the audit trail in Data Safe.
-         **/
+        /** Details about the current state of the audit trail in Data Safe. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Details about the current state of the audit trail in Data Safe.
+         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -232,8 +223,7 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
         /**
          * An audit trail location represents the source of audit records that provides documentary
          * evidence of the sequence of activities in the target database.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("trailLocation")
         private String trailLocation;
 
@@ -243,75 +233,77 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
          *
          * @param trailLocation the value to set
          * @return this builder
-         **/
+         */
         public Builder trailLocation(String trailLocation) {
             this.trailLocation = trailLocation;
             this.__explicitlySet__.add("trailLocation");
             return this;
         }
-        /**
-         * The description of the audit trail.
-         **/
+        /** The description of the audit trail. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the audit trail.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * Indicates if auto purge is enabled on the target database, which helps delete audit data in the
-         * target database every seven days so that the database's audit trail does not become too large.
-         *
-         **/
+         * Indicates if auto purge is enabled on the target database, which helps delete audit data
+         * in the target database every seven days so that the database's audit trail does not
+         * become too large.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoPurgeEnabled")
         private Boolean isAutoPurgeEnabled;
 
         /**
-         * Indicates if auto purge is enabled on the target database, which helps delete audit data in the
-         * target database every seven days so that the database's audit trail does not become too large.
+         * Indicates if auto purge is enabled on the target database, which helps delete audit data
+         * in the target database every seven days so that the database's audit trail does not
+         * become too large.
          *
          * @param isAutoPurgeEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isAutoPurgeEnabled(Boolean isAutoPurgeEnabled) {
             this.isAutoPurgeEnabled = isAutoPurgeEnabled;
             this.__explicitlySet__.add("isAutoPurgeEnabled");
             return this;
         }
         /**
-         * The date from which the audit trail must start collecting data, in the format defined by RFC3339.
-         **/
+         * The date from which the audit trail must start collecting data, in the format defined by
+         * RFC3339.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("auditCollectionStartTime")
         private java.util.Date auditCollectionStartTime;
 
         /**
-         * The date from which the audit trail must start collecting data, in the format defined by RFC3339.
+         * The date from which the audit trail must start collecting data, in the format defined by
+         * RFC3339.
+         *
          * @param auditCollectionStartTime the value to set
          * @return this builder
-         **/
+         */
         public Builder auditCollectionStartTime(java.util.Date auditCollectionStartTime) {
             this.auditCollectionStartTime = auditCollectionStartTime;
             this.__explicitlySet__.add("auditCollectionStartTime");
             return this;
         }
-        /**
-         * The OCID of the workrequest for audit trail which collects audit records.
-         **/
+        /** The OCID of the workrequest for audit trail which collects audit records. */
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
         private String workRequestId;
 
         /**
          * The OCID of the workrequest for audit trail which collects audit records.
+         *
          * @param workRequestId the value to set
          * @return this builder
-         **/
+         */
         public Builder workRequestId(String workRequestId) {
             this.workRequestId = workRequestId;
             this.__explicitlySet__.add("workRequestId");
@@ -320,8 +312,7 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
         /**
          * The OCID of the compartment that contains the audit trail and its same as the compartment
          * of audit profile resource.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -331,51 +322,57 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
          *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          *
-         **/
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          *
-         **/
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         *
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -383,20 +380,21 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         *
-         **/
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see Resource Tags. Example: {@code {"orcl-cloud": {"free-tier-retained":
+         * "true"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see Resource Tags. Example: {@code {"orcl-cloud": {"free-tier-retained":
+         * "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         **/
+         */
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -493,9 +491,7 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -504,128 +500,119 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the audit trail.
-     **/
+    /** The OCID of the audit trail. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the audit trail.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The OCID of the  parent audit.
-     **/
+    /** The OCID of the parent audit. */
     @com.fasterxml.jackson.annotation.JsonProperty("auditProfileId")
     private final String auditProfileId;
 
     /**
-     * The OCID of the  parent audit.
+     * The OCID of the parent audit.
+     *
      * @return the value
-     **/
+     */
     public String getAuditProfileId() {
         return auditProfileId;
     }
 
-    /**
-     * The OCID of the Data Safe target for which the audit trail is created.
-     **/
+    /** The OCID of the Data Safe target for which the audit trail is created. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
      * The OCID of the Data Safe target for which the audit trail is created.
+     *
      * @return the value
-     **/
+     */
     public String getTargetId() {
         return targetId;
     }
 
-    /**
-     * The display name of the audit trail.
-     **/
+    /** The display name of the audit trail. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The display name of the audit trail.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The date and time the audit trail was created, in the format defined by RFC3339.
-     **/
+    /** The date and time the audit trail was created, in the format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the audit trail was created, in the format defined by RFC3339.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The date and time the audit trail was updated, in the format defined by RFC3339.
-     **/
+    /** The date and time the audit trail was updated, in the format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The date and time the audit trail was updated, in the format defined by RFC3339.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The current state of the audit trail.
-     **/
+    /** The current state of the audit trail. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final AuditTrailLifecycleState lifecycleState;
 
     /**
      * The current state of the audit trail.
+     *
      * @return the value
-     **/
+     */
     public AuditTrailLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * The current sub-state of the audit trail.
-     **/
+    /** The current sub-state of the audit trail. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final AuditTrailStatus status;
 
     /**
      * The current sub-state of the audit trail.
+     *
      * @return the value
-     **/
+     */
     public AuditTrailStatus getStatus() {
         return status;
     }
 
-    /**
-     * Details about the current state of the audit trail in Data Safe.
-     **/
+    /** Details about the current state of the audit trail in Data Safe. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Details about the current state of the audit trail in Data Safe.
+     *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -633,8 +620,7 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
     /**
      * An audit trail location represents the source of audit records that provides documentary
      * evidence of the sequence of activities in the target database.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("trailLocation")
     private final String trailLocation;
 
@@ -643,143 +629,151 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
      * evidence of the sequence of activities in the target database.
      *
      * @return the value
-     **/
+     */
     public String getTrailLocation() {
         return trailLocation;
     }
 
-    /**
-     * The description of the audit trail.
-     **/
+    /** The description of the audit trail. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the audit trail.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
     /**
-     * Indicates if auto purge is enabled on the target database, which helps delete audit data in the
-     * target database every seven days so that the database's audit trail does not become too large.
-     *
-     **/
+     * Indicates if auto purge is enabled on the target database, which helps delete audit data in
+     * the target database every seven days so that the database's audit trail does not become too
+     * large.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoPurgeEnabled")
     private final Boolean isAutoPurgeEnabled;
 
     /**
-     * Indicates if auto purge is enabled on the target database, which helps delete audit data in the
-     * target database every seven days so that the database's audit trail does not become too large.
+     * Indicates if auto purge is enabled on the target database, which helps delete audit data in
+     * the target database every seven days so that the database's audit trail does not become too
+     * large.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsAutoPurgeEnabled() {
         return isAutoPurgeEnabled;
     }
 
     /**
-     * The date from which the audit trail must start collecting data, in the format defined by RFC3339.
-     **/
+     * The date from which the audit trail must start collecting data, in the format defined by
+     * RFC3339.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("auditCollectionStartTime")
     private final java.util.Date auditCollectionStartTime;
 
     /**
-     * The date from which the audit trail must start collecting data, in the format defined by RFC3339.
+     * The date from which the audit trail must start collecting data, in the format defined by
+     * RFC3339.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getAuditCollectionStartTime() {
         return auditCollectionStartTime;
     }
 
-    /**
-     * The OCID of the workrequest for audit trail which collects audit records.
-     **/
+    /** The OCID of the workrequest for audit trail which collects audit records. */
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
     private final String workRequestId;
 
     /**
      * The OCID of the workrequest for audit trail which collects audit records.
+     *
      * @return the value
-     **/
+     */
     public String getWorkRequestId() {
         return workRequestId;
     }
 
     /**
-     * The OCID of the compartment that contains the audit trail and its same as the compartment
-     * of audit profile resource.
-     *
-     **/
+     * The OCID of the compartment that contains the audit trail and its same as the compartment of
+     * audit profile resource.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment that contains the audit trail and its same as the compartment
-     * of audit profile resource.
+     * The OCID of the compartment that contains the audit trail and its same as the compartment of
+     * audit profile resource.
      *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      *
-     **/
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      *
-     **/
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     *
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     *
-     **/
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see Resource Tags. Example: {@code {"orcl-cloud": {"free-tier-retained":
+     * "true"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see Resource Tags. Example: {@code {"orcl-cloud": {"free-tier-retained":
+     * "true"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -791,6 +785,7 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

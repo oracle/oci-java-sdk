@@ -9,13 +9,14 @@ import com.oracle.bmc.datasafe.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,13 +25,18 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results remain. Include opc-next-page value as the page parameter for the subsequent GET request to get the next batch of items. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. When this header appears in the response, additional pages of results
+     * remain. Include opc-next-page value as the page parameter for the subsequent GET request to
+     * get the next batch of items. For details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results remain. Include opc-next-page value as the page parameter for the subsequent GET request to get the next batch of items. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages of results
+     * remain. Include opc-next-page value as the page parameter for the subsequent GET request to
+     * get the next batch of items. For details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -38,13 +44,12 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /**
-     * A list of com.oracle.bmc.datasafe.model.WorkRequestLogEntry instances.
-     */
+    /** A list of com.oracle.bmc.datasafe.model.WorkRequestLogEntry instances. */
     private java.util.List<com.oracle.bmc.datasafe.model.WorkRequestLogEntry> items;
 
     /**
      * A list of com.oracle.bmc.datasafe.model.WorkRequestLogEntry instances.
+     *
      * @return the value
      */
     public java.util.List<com.oracle.bmc.datasafe.model.WorkRequestLogEntry> getItems() {
@@ -60,7 +65,7 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
     })
     private ListWorkRequestLogsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcNextPage,
             java.util.List<com.oracle.bmc.datasafe.model.WorkRequestLogEntry> items) {
@@ -70,29 +75,33 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
         this.items = items;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<ListWorkRequestLogsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -103,13 +112,18 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of results remain. Include opc-next-page value as the page parameter for the subsequent GET request to get the next batch of items. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. When this header appears in the response, additional pages of
+         * results remain. Include opc-next-page value as the page parameter for the subsequent GET
+         * request to get the next batch of items. For details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of results remain. Include opc-next-page value as the page parameter for the subsequent GET request to get the next batch of items. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages of
+         * results remain. Include opc-next-page value as the page parameter for the subsequent GET
+         * request to get the next batch of items. For details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -119,13 +133,12 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /**
-         * A list of com.oracle.bmc.datasafe.model.WorkRequestLogEntry instances.
-         */
+        /** A list of com.oracle.bmc.datasafe.model.WorkRequestLogEntry instances. */
         private java.util.List<com.oracle.bmc.datasafe.model.WorkRequestLogEntry> items;
 
         /**
          * A list of com.oracle.bmc.datasafe.model.WorkRequestLogEntry instances.
+         *
          * @param items the value to set
          * @return this builder
          */
@@ -137,8 +150,10 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListWorkRequestLogsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,8 +166,10 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListWorkRequestLogsResponse build() {
             return new ListWorkRequestLogsResponse(
                     __httpStatusCode__, headers, opcRequestId, opcNextPage, items);
@@ -161,6 +178,7 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

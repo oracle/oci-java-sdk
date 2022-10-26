@@ -5,19 +5,21 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The native shape field object.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The native shape field object. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = NativeShapeField.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class NativeShapeField extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class NativeShapeField
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -49,48 +51,51 @@ public final class NativeShapeField extends com.oracle.bmc.http.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         **/
+         * Free form text without any restriction on permitted characters. Name can have letters,
+         * numbers, and special characters. The value is editable and is restricted to 1000
+         * characters.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on permitted characters. Name can have letters,
+         * numbers, and special characters. The value is editable and is restricted to 1000
+         * characters.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The model type reference.
-         **/
+        /** The model type reference. */
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
         /**
          * The model type reference.
+         *
          * @param modelType the value to set
          * @return this builder
-         **/
+         */
         public Builder modelType(String modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
             return this;
         }
-        /**
-         * The type reference.
-         **/
+        /** The type reference. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Object type;
 
         /**
          * The type reference.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(Object type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -105,49 +110,46 @@ public final class NativeShapeField extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("configValues");
             return this;
         }
-        /**
-         * The position of the attribute.
-         **/
+        /** The position of the attribute. */
         @com.fasterxml.jackson.annotation.JsonProperty("position")
         private Integer position;
 
         /**
          * The position of the attribute.
+         *
          * @param position the value to set
          * @return this builder
-         **/
+         */
         public Builder position(Integer position) {
             this.position = position;
             this.__explicitlySet__.add("position");
             return this;
         }
-        /**
-         * The default value.
-         **/
+        /** The default value. */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValueString")
         private String defaultValueString;
 
         /**
          * The default value.
+         *
          * @param defaultValueString the value to set
          * @return this builder
-         **/
+         */
         public Builder defaultValueString(String defaultValueString) {
             this.defaultValueString = defaultValueString;
             this.__explicitlySet__.add("defaultValueString");
             return this;
         }
-        /**
-         * Specifies whether the field is mandatory.
-         **/
+        /** Specifies whether the field is mandatory. */
         @com.fasterxml.jackson.annotation.JsonProperty("isMandatory")
         private Boolean isMandatory;
 
         /**
          * Specifies whether the field is mandatory.
+         *
          * @param isMandatory the value to set
          * @return this builder
-         **/
+         */
         public Builder isMandatory(Boolean isMandatory) {
             this.isMandatory = isMandatory;
             this.__explicitlySet__.add("isMandatory");
@@ -200,9 +202,7 @@ public final class NativeShapeField extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -212,43 +212,44 @@ public final class NativeShapeField extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     **/
+     * Free form text without any restriction on permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The model type reference.
-     **/
+    /** The model type reference. */
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
     /**
      * The model type reference.
+     *
      * @return the value
-     **/
+     */
     public String getModelType() {
         return modelType;
     }
 
-    /**
-     * The type reference.
-     **/
+    /** The type reference. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Object type;
 
     /**
      * The type reference.
+     *
      * @return the value
-     **/
+     */
     public Object getType() {
         return type;
     }
@@ -260,44 +261,41 @@ public final class NativeShapeField extends com.oracle.bmc.http.internal.Explici
         return configValues;
     }
 
-    /**
-     * The position of the attribute.
-     **/
+    /** The position of the attribute. */
     @com.fasterxml.jackson.annotation.JsonProperty("position")
     private final Integer position;
 
     /**
      * The position of the attribute.
+     *
      * @return the value
-     **/
+     */
     public Integer getPosition() {
         return position;
     }
 
-    /**
-     * The default value.
-     **/
+    /** The default value. */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValueString")
     private final String defaultValueString;
 
     /**
      * The default value.
+     *
      * @return the value
-     **/
+     */
     public String getDefaultValueString() {
         return defaultValueString;
     }
 
-    /**
-     * Specifies whether the field is mandatory.
-     **/
+    /** Specifies whether the field is mandatory. */
     @com.fasterxml.jackson.annotation.JsonProperty("isMandatory")
     private final Boolean isMandatory;
 
     /**
      * Specifies whether the field is mandatory.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsMandatory() {
         return isMandatory;
     }
@@ -309,6 +307,7 @@ public final class NativeShapeField extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

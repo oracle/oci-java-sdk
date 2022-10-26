@@ -5,19 +5,20 @@
 package com.oracle.bmc.blockchain.model;
 
 /**
- * Peer role
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Peer role <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PeerRole.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PeerRole extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class PeerRole extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"role"})
     public PeerRole(Role role) {
@@ -27,17 +28,16 @@ public final class PeerRole extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Peer role names
-         **/
+        /** Peer role names */
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private Role role;
 
         /**
          * Peer role names
+         *
          * @param role the value to set
          * @return this builder
-         **/
+         */
         public Builder role(Role role) {
             this.role = role;
             this.__explicitlySet__.add("role");
@@ -64,9 +64,7 @@ public final class PeerRole extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -75,10 +73,8 @@ public final class PeerRole extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return new Builder().copy(this);
     }
 
-    /**
-     * Peer role names
-     **/
-    public enum Role {
+    /** Peer role names */
+    public enum Role implements com.oracle.bmc.http.internal.BmcEnum {
         Member("MEMBER"),
         Admin("ADMIN"),
         ;
@@ -110,16 +106,15 @@ public final class PeerRole extends com.oracle.bmc.http.internal.ExplicitlySetBm
             throw new IllegalArgumentException("Invalid Role: " + key);
         }
     };
-    /**
-     * Peer role names
-     **/
+    /** Peer role names */
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final Role role;
 
     /**
      * Peer role names
+     *
      * @return the value
-     **/
+     */
     public Role getRole() {
         return role;
     }
@@ -131,6 +126,7 @@ public final class PeerRole extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

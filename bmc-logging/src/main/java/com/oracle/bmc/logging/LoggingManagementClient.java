@@ -4,335 +4,40 @@
  */
 package com.oracle.bmc.logging;
 
-import com.oracle.bmc.logging.internal.http.*;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.logging.requests.*;
 import com.oracle.bmc.logging.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
+import java.util.Objects;
+
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-public class LoggingManagementClient implements LoggingManagement {
-    /**
-     * Service instance for LoggingManagement.
-     */
+public class LoggingManagementClient extends com.oracle.bmc.http.internal.BaseSyncClient
+        implements LoggingManagement {
+    /** Service instance for LoggingManagement. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("LOGGINGMANAGEMENT")
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://logging.{region}.oci.{secondLevelDomain}")
                     .build();
-    // attempt twice if it's instance principals, immediately failures will try to refresh the token
-    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(LoggingManagementAsyncClient.class);
 
-    com.oracle.bmc.http.internal.RestClient getClient() {
-        return client;
-    }
-
     private final LoggingManagementWaiters waiters;
 
     private final LoggingManagementPaginators paginators;
-    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-            authenticationDetailsProvider;
-    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
-    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
-            apacheConnectionClosingStrategy;
-    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
-    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
-    private final java.util.Map<
-                    com.oracle.bmc.http.signing.SigningStrategy,
-                    com.oracle.bmc.http.signing.RequestSignerFactory>
-            signingStrategyRequestSignerFactories;
-    private final boolean isNonBufferingApacheClient;
-    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
-    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-            circuitBreakerConfiguration;
 
-    /**
-     * Used to synchronize any updates on the `this.client` object.
-     */
-    private final Object clientUpdate = new Object();
-
-    /**
-     * Stores the actual client object used to make the API calls.
-     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
-     *       For any writes to the object, please synchronize on `this.clientUpdate`.
-     */
-    private volatile com.oracle.bmc.http.internal.RestClient client;
-
-    /**
-     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
-     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
-     */
-    private volatile String overrideEndpoint = null;
-
-    /**
-     * Creates a new service instance using the given authentication provider.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     */
-    public LoggingManagementClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     */
-    public LoggingManagementClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(authenticationDetailsProvider, configuration, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     */
-    public LoggingManagementClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     */
-    public LoggingManagementClient(
+    private LoggingManagementClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public LoggingManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                additionalClientConfigurators,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public LoggingManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
-                        .createDefaultRequestSignerFactories(),
-                additionalClientConfigurators,
-                endpoint);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public LoggingManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
-     */
-    public LoggingManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
             java.util.concurrent.ExecutorService executorService) {
-        this(
+        super(
+                builder,
                 authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                executorService,
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * Use the {@link Builder} to get access to all these parameters.
-     *
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
-     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
-     */
-    protected LoggingManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            java.util.concurrent.ExecutorService executorService,
-            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
-        this.authenticationDetailsProvider = authenticationDetailsProvider;
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
-                new java.util.ArrayList<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
-            authenticationDetailsConfigurators.addAll(
-                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
-                                    this.authenticationDetailsProvider)
-                            .getClientConfigurators());
-        }
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
-                new java.util.ArrayList<>(additionalClientConfigurators);
-        allConfigurators.addAll(authenticationDetailsConfigurators);
-        this.restClientFactory =
-                restClientFactoryBuilder
-                        .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(allConfigurators)
-                        .build();
-        this.isNonBufferingApacheClient =
-                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        this.restClientFactory.getClientConfigurator());
-        this.apacheConnectionClosingStrategy =
-                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
-                        restClientFactory.getClientConfigurator());
-
-        this.clientConfigurationToUse =
-                (configuration != null)
-                        ? configuration
-                        : com.oracle.bmc.ClientConfiguration.builder().build();
-        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
-        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
-        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
-        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-                userCircuitBreakerConfiguration =
-                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
-                                configuration);
-        if (userCircuitBreakerConfiguration == null) {
-            this.circuitBreakerConfiguration =
-                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
-        } else {
-            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
-        }
-
-        this.refreshClient();
+                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -354,28 +59,11 @@ public class LoggingManagementClient implements LoggingManagement {
         this.waiters = new LoggingManagementWaiters(executorService, this);
 
         this.paginators = new LoggingManagementPaginators(this);
-
-        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
-            com.oracle.bmc.auth.RegionProvider provider =
-                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
-
-            if (provider.getRegion() != null) {
-                this.setRegion(provider.getRegion());
-                if (endpoint != null) {
-                    LOG.info(
-                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
-                            provider.getRegion(),
-                            endpoint);
-                }
-            }
-        }
-        if (endpoint != null) {
-            setEndpoint(endpoint);
-        }
     }
 
     /**
      * Create a builder for this client.
+     *
      * @return builder
      */
     public static Builder builder() {
@@ -383,8 +71,8 @@ public class LoggingManagementClient implements LoggingManagement {
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
+     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, LoggingManagementClient> {
@@ -399,6 +87,7 @@ public class LoggingManagementClient implements LoggingManagement {
 
         /**
          * Set the ExecutorService for the client to be created.
+         *
          * @param executorService executorService
          * @return this builder
          */
@@ -409,1358 +98,1037 @@ public class LoggingManagementClient implements LoggingManagement {
 
         /**
          * Build the client.
+         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public LoggingManagementClient build(
                 @javax.annotation.Nonnull
-                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                        authenticationDetailsProvider) {
-            if (authenticationDetailsProvider == null) {
-                throw new NullPointerException(
-                        "authenticationDetailsProvider is marked non-null but is null");
-            }
+                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                                authenticationDetailsProvider) {
             return new LoggingManagementClient(
-                    authenticationDetailsProvider,
-                    configuration,
-                    clientConfigurator,
-                    requestSignerFactory,
-                    signingStrategyRequestSignerFactories,
-                    additionalClientConfigurators,
-                    endpoint,
-                    executorService);
+                    this, authenticationDetailsProvider, executorService);
         }
-    }
-
-    @Override
-    public void refreshClient() {
-        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                this.defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        this.signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
-            }
-        }
-
-        com.oracle.bmc.http.internal.RestClient refreshedClient =
-                this.restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        this.clientConfigurationToUse,
-                        this.isNonBufferingApacheClient,
-                        null,
-                        this.circuitBreakerConfiguration);
-
-        synchronized (clientUpdate) {
-            if (this.overrideEndpoint != null) {
-                refreshedClient.setEndpoint(this.overrideEndpoint);
-            }
-
-            this.client = refreshedClient;
-        }
-
-        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint) {
-        LOG.info("Setting endpoint to {}", endpoint);
-
-        synchronized (clientUpdate) {
-            this.overrideEndpoint = endpoint;
-            client.setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
-        }
-        return endpoint;
     }
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        java.util.Optional<String> endpoint =
-                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
-        if (endpoint.isPresent()) {
-            setEndpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + SERVICE + " is not known in region " + region);
-        }
+        super.setRegion(region);
     }
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
-        try {
-            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-            setRegion(region);
-        } catch (IllegalArgumentException e) {
-            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-            setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public void close() {
-        client.close();
+        super.setRegion(regionId);
     }
 
     @Override
     public ChangeLogGroupCompartmentResponse changeLogGroupCompartment(
             ChangeLogGroupCompartmentRequest request) {
-        LOG.trace("Called changeLogGroupCompartment");
-        final ChangeLogGroupCompartmentRequest interceptedRequest =
-                ChangeLogGroupCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeLogGroupCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLogGroupId(), "logGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeLogGroupCompartmentDetails(),
+                "changeLogGroupCompartmentDetails is required");
+
+        return clientCall(request, ChangeLogGroupCompartmentResponse::builder)
+                .logger(LOG, "changeLogGroupCompartment")
+                .serviceDetails(
                         "LoggingManagement",
                         "ChangeLogGroupCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/ChangeLogGroupCompartment");
-        java.util.function.Function<javax.ws.rs.core.Response, ChangeLogGroupCompartmentResponse>
-                transformer =
-                        ChangeLogGroupCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeLogGroupCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/ChangeLogGroupCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeLogGroupCompartmentRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("logGroups")
+                .appendPathParam(request.getLogGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeLogGroupCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeLogGroupCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeLogLogGroupResponse changeLogLogGroup(ChangeLogLogGroupRequest request) {
-        LOG.trace("Called changeLogLogGroup");
-        final ChangeLogLogGroupRequest interceptedRequest =
-                ChangeLogLogGroupConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeLogLogGroupConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLogGroupId(), "logGroupId must not be blank");
+
+        Validate.notBlank(request.getLogId(), "logId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeLogLogGroupDetails(), "changeLogLogGroupDetails is required");
+
+        return clientCall(request, ChangeLogLogGroupResponse::builder)
+                .logger(LOG, "changeLogLogGroup")
+                .serviceDetails(
                         "LoggingManagement",
                         "ChangeLogLogGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/ChangeLogLogGroup");
-        java.util.function.Function<javax.ws.rs.core.Response, ChangeLogLogGroupResponse>
-                transformer =
-                        ChangeLogLogGroupConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getChangeLogLogGroupDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/ChangeLogLogGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeLogLogGroupRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("logGroups")
+                .appendPathParam(request.getLogGroupId())
+                .appendPathParam("logs")
+                .appendPathParam(request.getLogId())
+                .appendPathParam("actions")
+                .appendPathParam("changeLogGroup")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ChangeLogLogGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeLogLogGroupResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeLogSavedSearchCompartmentResponse changeLogSavedSearchCompartment(
             ChangeLogSavedSearchCompartmentRequest request) {
-        LOG.trace("Called changeLogSavedSearchCompartment");
-        final ChangeLogSavedSearchCompartmentRequest interceptedRequest =
-                ChangeLogSavedSearchCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeLogSavedSearchCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLogSavedSearchId(), "logSavedSearchId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeLogSavedSearchCompartmentDetails(),
+                "changeLogSavedSearchCompartmentDetails is required");
+
+        return clientCall(request, ChangeLogSavedSearchCompartmentResponse::builder)
+                .logger(LOG, "changeLogSavedSearchCompartment")
+                .serviceDetails(
                         "LoggingManagement",
                         "ChangeLogSavedSearchCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/ChangeLogSavedSearchCompartment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeLogSavedSearchCompartmentResponse>
-                transformer =
-                        ChangeLogSavedSearchCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeLogSavedSearchCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/ChangeLogSavedSearchCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeLogSavedSearchCompartmentRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("logSavedSearches")
+                .appendPathParam(request.getLogSavedSearchId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeLogSavedSearchCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeUnifiedAgentConfigurationCompartmentResponse
             changeUnifiedAgentConfigurationCompartment(
                     ChangeUnifiedAgentConfigurationCompartmentRequest request) {
-        LOG.trace("Called changeUnifiedAgentConfigurationCompartment");
-        final ChangeUnifiedAgentConfigurationCompartmentRequest interceptedRequest =
-                ChangeUnifiedAgentConfigurationCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeUnifiedAgentConfigurationCompartmentConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getUnifiedAgentConfigurationId(),
+                "unifiedAgentConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeUnifiedAgentConfigurationCompartmentDetails(),
+                "changeUnifiedAgentConfigurationCompartmentDetails is required");
+
+        return clientCall(request, ChangeUnifiedAgentConfigurationCompartmentResponse::builder)
+                .logger(LOG, "changeUnifiedAgentConfigurationCompartment")
+                .serviceDetails(
                         "LoggingManagement",
                         "ChangeUnifiedAgentConfigurationCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/ChangeUnifiedAgentConfigurationCompartment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        ChangeUnifiedAgentConfigurationCompartmentResponse>
-                transformer =
-                        ChangeUnifiedAgentConfigurationCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeUnifiedAgentConfigurationCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/ChangeUnifiedAgentConfigurationCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeUnifiedAgentConfigurationCompartmentRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("unifiedAgentConfigurations")
+                .appendPathParam(request.getUnifiedAgentConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeUnifiedAgentConfigurationCompartmentResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeUnifiedAgentConfigurationCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateLogResponse createLog(CreateLogRequest request) {
-        LOG.trace("Called createLog");
-        final CreateLogRequest interceptedRequest = CreateLogConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateLogConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLogGroupId(), "logGroupId must not be blank");
+        Objects.requireNonNull(request.getCreateLogDetails(), "createLogDetails is required");
+
+        return clientCall(request, CreateLogResponse::builder)
+                .logger(LOG, "createLog")
+                .serviceDetails(
                         "LoggingManagement",
                         "CreateLog",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/CreateLog");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateLogResponse> transformer =
-                CreateLogConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateLogDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/CreateLog")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateLogRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("logGroups")
+                .appendPathParam(request.getLogGroupId())
+                .appendPathParam("logs")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateLogResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateLogResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateLogGroupResponse createLogGroup(CreateLogGroupRequest request) {
-        LOG.trace("Called createLogGroup");
-        final CreateLogGroupRequest interceptedRequest =
-                CreateLogGroupConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateLogGroupConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateLogGroupDetails(), "createLogGroupDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateLogGroupResponse::builder)
+                .logger(LOG, "createLogGroup")
+                .serviceDetails(
                         "LoggingManagement",
                         "CreateLogGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/CreateLogGroup");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateLogGroupResponse> transformer =
-                CreateLogGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateLogGroupDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/CreateLogGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateLogGroupRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("logGroups")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateLogGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateLogGroupResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateLogSavedSearchResponse createLogSavedSearch(CreateLogSavedSearchRequest request) {
-        LOG.trace("Called createLogSavedSearch");
-        final CreateLogSavedSearchRequest interceptedRequest =
-                CreateLogSavedSearchConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateLogSavedSearchConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateLogSavedSearchDetails(),
+                "createLogSavedSearchDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateLogSavedSearchResponse::builder)
+                .logger(LOG, "createLogSavedSearch")
+                .serviceDetails(
                         "LoggingManagement",
                         "CreateLogSavedSearch",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/CreateLogSavedSearch");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateLogSavedSearchResponse>
-                transformer =
-                        CreateLogSavedSearchConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateLogSavedSearchDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/CreateLogSavedSearch")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateLogSavedSearchRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("logSavedSearches")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.logging.model.LogSavedSearch.class,
+                        CreateLogSavedSearchResponse.Builder::logSavedSearch)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateLogSavedSearchResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateLogSavedSearchResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public CreateUnifiedAgentConfigurationResponse createUnifiedAgentConfiguration(
             CreateUnifiedAgentConfigurationRequest request) {
-        LOG.trace("Called createUnifiedAgentConfiguration");
-        final CreateUnifiedAgentConfigurationRequest interceptedRequest =
-                CreateUnifiedAgentConfigurationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateUnifiedAgentConfigurationConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateUnifiedAgentConfigurationDetails(),
+                "createUnifiedAgentConfigurationDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateUnifiedAgentConfigurationResponse::builder)
+                .logger(LOG, "createUnifiedAgentConfiguration")
+                .serviceDetails(
                         "LoggingManagement",
                         "CreateUnifiedAgentConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/CreateUnifiedAgentConfiguration");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateUnifiedAgentConfigurationResponse>
-                transformer =
-                        CreateUnifiedAgentConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getCreateUnifiedAgentConfigurationDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/CreateUnifiedAgentConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateUnifiedAgentConfigurationRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("unifiedAgentConfigurations")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateUnifiedAgentConfigurationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateUnifiedAgentConfigurationResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteLogResponse deleteLog(DeleteLogRequest request) {
-        LOG.trace("Called deleteLog");
-        final DeleteLogRequest interceptedRequest = DeleteLogConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteLogConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLogGroupId(), "logGroupId must not be blank");
+
+        Validate.notBlank(request.getLogId(), "logId must not be blank");
+
+        return clientCall(request, DeleteLogResponse::builder)
+                .logger(LOG, "deleteLog")
+                .serviceDetails(
                         "LoggingManagement",
                         "DeleteLog",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/DeleteLog");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteLogResponse> transformer =
-                DeleteLogConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/DeleteLog")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteLogRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("logGroups")
+                .appendPathParam(request.getLogGroupId())
+                .appendPathParam("logs")
+                .appendPathParam(request.getLogId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteLogResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteLogResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteLogGroupResponse deleteLogGroup(DeleteLogGroupRequest request) {
-        LOG.trace("Called deleteLogGroup");
-        final DeleteLogGroupRequest interceptedRequest =
-                DeleteLogGroupConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteLogGroupConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLogGroupId(), "logGroupId must not be blank");
+
+        return clientCall(request, DeleteLogGroupResponse::builder)
+                .logger(LOG, "deleteLogGroup")
+                .serviceDetails(
                         "LoggingManagement",
                         "DeleteLogGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/DeleteLogGroup");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteLogGroupResponse> transformer =
-                DeleteLogGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/DeleteLogGroup")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteLogGroupRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("logGroups")
+                .appendPathParam(request.getLogGroupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteLogGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteLogGroupResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteLogSavedSearchResponse deleteLogSavedSearch(DeleteLogSavedSearchRequest request) {
-        LOG.trace("Called deleteLogSavedSearch");
-        final DeleteLogSavedSearchRequest interceptedRequest =
-                DeleteLogSavedSearchConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteLogSavedSearchConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLogSavedSearchId(), "logSavedSearchId must not be blank");
+
+        return clientCall(request, DeleteLogSavedSearchResponse::builder)
+                .logger(LOG, "deleteLogSavedSearch")
+                .serviceDetails(
                         "LoggingManagement",
                         "DeleteLogSavedSearch",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/DeleteLogSavedSearch");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteLogSavedSearchResponse>
-                transformer =
-                        DeleteLogSavedSearchConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/DeleteLogSavedSearch")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteLogSavedSearchRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("logSavedSearches")
+                .appendPathParam(request.getLogSavedSearchId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteLogSavedSearchResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteUnifiedAgentConfigurationResponse deleteUnifiedAgentConfiguration(
             DeleteUnifiedAgentConfigurationRequest request) {
-        LOG.trace("Called deleteUnifiedAgentConfiguration");
-        final DeleteUnifiedAgentConfigurationRequest interceptedRequest =
-                DeleteUnifiedAgentConfigurationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteUnifiedAgentConfigurationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getUnifiedAgentConfigurationId(),
+                "unifiedAgentConfigurationId must not be blank");
+
+        return clientCall(request, DeleteUnifiedAgentConfigurationResponse::builder)
+                .logger(LOG, "deleteUnifiedAgentConfiguration")
+                .serviceDetails(
                         "LoggingManagement",
                         "DeleteUnifiedAgentConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/DeleteUnifiedAgentConfiguration");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteUnifiedAgentConfigurationResponse>
-                transformer =
-                        DeleteUnifiedAgentConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/DeleteUnifiedAgentConfiguration")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteUnifiedAgentConfigurationRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("unifiedAgentConfigurations")
+                .appendPathParam(request.getUnifiedAgentConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteUnifiedAgentConfigurationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteUnifiedAgentConfigurationResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteWorkRequestResponse deleteWorkRequest(DeleteWorkRequestRequest request) {
-        LOG.trace("Called deleteWorkRequest");
-        final DeleteWorkRequestRequest interceptedRequest =
-                DeleteWorkRequestConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteWorkRequestConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, DeleteWorkRequestResponse::builder)
+                .logger(LOG, "deleteWorkRequest")
+                .serviceDetails(
                         "LoggingManagement",
                         "DeleteWorkRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/DeleteWorkRequest");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
-                transformer =
-                        DeleteWorkRequestConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/DeleteWorkRequest")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteWorkRequestRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteWorkRequestResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteWorkRequestResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetLogResponse getLog(GetLogRequest request) {
-        LOG.trace("Called getLog");
-        final GetLogRequest interceptedRequest = GetLogConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetLogConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLogGroupId(), "logGroupId must not be blank");
+
+        Validate.notBlank(request.getLogId(), "logId must not be blank");
+
+        return clientCall(request, GetLogResponse::builder)
+                .logger(LOG, "getLog")
+                .serviceDetails(
                         "LoggingManagement",
                         "GetLog",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/GetLog");
-        java.util.function.Function<javax.ws.rs.core.Response, GetLogResponse> transformer =
-                GetLogConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/GetLog")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetLogRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("logGroups")
+                .appendPathParam(request.getLogGroupId())
+                .appendPathParam("logs")
+                .appendPathParam(request.getLogId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(com.oracle.bmc.logging.model.Log.class, GetLogResponse.Builder::log)
+                .handleResponseHeaderString("opc-request-id", GetLogResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetLogResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public GetLogGroupResponse getLogGroup(GetLogGroupRequest request) {
-        LOG.trace("Called getLogGroup");
-        final GetLogGroupRequest interceptedRequest =
-                GetLogGroupConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetLogGroupConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLogGroupId(), "logGroupId must not be blank");
+
+        return clientCall(request, GetLogGroupResponse::builder)
+                .logger(LOG, "getLogGroup")
+                .serviceDetails(
                         "LoggingManagement",
                         "GetLogGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/GetLogGroup");
-        java.util.function.Function<javax.ws.rs.core.Response, GetLogGroupResponse> transformer =
-                GetLogGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/GetLogGroup")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetLogGroupRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("logGroups")
+                .appendPathParam(request.getLogGroupId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.logging.model.LogGroup.class,
+                        GetLogGroupResponse.Builder::logGroup)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetLogGroupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetLogGroupResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public GetLogIncludedSearchResponse getLogIncludedSearch(GetLogIncludedSearchRequest request) {
-        LOG.trace("Called getLogIncludedSearch");
-        final GetLogIncludedSearchRequest interceptedRequest =
-                GetLogIncludedSearchConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetLogIncludedSearchConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getLogIncludedSearchId(), "logIncludedSearchId must not be blank");
+
+        return clientCall(request, GetLogIncludedSearchResponse::builder)
+                .logger(LOG, "getLogIncludedSearch")
+                .serviceDetails(
                         "LoggingManagement",
                         "GetLogIncludedSearch",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogIncludedSearch/GetLogIncludedSearch");
-        java.util.function.Function<javax.ws.rs.core.Response, GetLogIncludedSearchResponse>
-                transformer =
-                        GetLogIncludedSearchConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogIncludedSearch/GetLogIncludedSearch")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetLogIncludedSearchRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("logIncludedSearch")
+                .appendPathParam(request.getLogIncludedSearchId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.logging.model.LogIncludedSearch.class,
+                        GetLogIncludedSearchResponse.Builder::logIncludedSearch)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetLogIncludedSearchResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetLogIncludedSearchResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public GetLogSavedSearchResponse getLogSavedSearch(GetLogSavedSearchRequest request) {
-        LOG.trace("Called getLogSavedSearch");
-        final GetLogSavedSearchRequest interceptedRequest =
-                GetLogSavedSearchConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetLogSavedSearchConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLogSavedSearchId(), "logSavedSearchId must not be blank");
+
+        return clientCall(request, GetLogSavedSearchResponse::builder)
+                .logger(LOG, "getLogSavedSearch")
+                .serviceDetails(
                         "LoggingManagement",
                         "GetLogSavedSearch",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/GetLogSavedSearch");
-        java.util.function.Function<javax.ws.rs.core.Response, GetLogSavedSearchResponse>
-                transformer =
-                        GetLogSavedSearchConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/GetLogSavedSearch")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetLogSavedSearchRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("logSavedSearches")
+                .appendPathParam(request.getLogSavedSearchId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.logging.model.LogSavedSearch.class,
+                        GetLogSavedSearchResponse.Builder::logSavedSearch)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetLogSavedSearchResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetLogSavedSearchResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public GetUnifiedAgentConfigurationResponse getUnifiedAgentConfiguration(
             GetUnifiedAgentConfigurationRequest request) {
-        LOG.trace("Called getUnifiedAgentConfiguration");
-        final GetUnifiedAgentConfigurationRequest interceptedRequest =
-                GetUnifiedAgentConfigurationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetUnifiedAgentConfigurationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getUnifiedAgentConfigurationId(),
+                "unifiedAgentConfigurationId must not be blank");
+
+        return clientCall(request, GetUnifiedAgentConfigurationResponse::builder)
+                .logger(LOG, "getUnifiedAgentConfiguration")
+                .serviceDetails(
                         "LoggingManagement",
                         "GetUnifiedAgentConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/GetUnifiedAgentConfiguration");
-        java.util.function.Function<javax.ws.rs.core.Response, GetUnifiedAgentConfigurationResponse>
-                transformer =
-                        GetUnifiedAgentConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/GetUnifiedAgentConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetUnifiedAgentConfigurationRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("unifiedAgentConfigurations")
+                .appendPathParam(request.getUnifiedAgentConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.logging.model.UnifiedAgentConfiguration.class,
+                        GetUnifiedAgentConfigurationResponse.Builder::unifiedAgentConfiguration)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetUnifiedAgentConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", GetUnifiedAgentConfigurationResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
-        LOG.trace("Called getWorkRequest");
-        final GetWorkRequestRequest interceptedRequest =
-                GetWorkRequestConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, GetWorkRequestResponse::builder)
+                .logger(LOG, "getWorkRequest")
+                .serviceDetails(
                         "LoggingManagement",
                         "GetWorkRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/GetWorkRequest");
-        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
-                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/GetWorkRequest")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetWorkRequestRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.logging.model.WorkRequest.class,
+                        GetWorkRequestResponse.Builder::workRequest)
+                .handleResponseHeaderString("etag", GetWorkRequestResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
+                .handleResponseHeaderBigDecimal(
+                        "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callSync();
     }
 
     @Override
     public ListLogGroupsResponse listLogGroups(ListLogGroupsRequest request) {
-        LOG.trace("Called listLogGroups");
-        final ListLogGroupsRequest interceptedRequest =
-                ListLogGroupsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListLogGroupsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListLogGroupsResponse::builder)
+                .logger(LOG, "listLogGroups")
+                .serviceDetails(
                         "LoggingManagement",
                         "ListLogGroups",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroupSummary/ListLogGroups");
-        java.util.function.Function<javax.ws.rs.core.Response, ListLogGroupsResponse> transformer =
-                ListLogGroupsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroupSummary/ListLogGroups")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListLogGroupsRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("logGroups")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("isCompartmentIdInSubtree", request.getIsCompartmentIdInSubtree())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.logging.model.LogGroupSummary.class,
+                        ListLogGroupsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListLogGroupsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-previous-page", ListLogGroupsResponse.Builder::opcPreviousPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListLogGroupsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListLogIncludedSearchesResponse listLogIncludedSearches(
             ListLogIncludedSearchesRequest request) {
-        LOG.trace("Called listLogIncludedSearches");
-        final ListLogIncludedSearchesRequest interceptedRequest =
-                ListLogIncludedSearchesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListLogIncludedSearchesConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListLogIncludedSearchesResponse::builder)
+                .logger(LOG, "listLogIncludedSearches")
+                .serviceDetails(
                         "LoggingManagement",
                         "ListLogIncludedSearches",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogIncludedSearch/ListLogIncludedSearches");
-        java.util.function.Function<javax.ws.rs.core.Response, ListLogIncludedSearchesResponse>
-                transformer =
-                        ListLogIncludedSearchesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogIncludedSearch/ListLogIncludedSearches")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListLogIncludedSearchesRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("logIncludedSearches")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("logIncludedSearchId", request.getLogIncludedSearchId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.logging.model.LogIncludedSearchSummaryCollection.class,
+                        ListLogIncludedSearchesResponse.Builder::logIncludedSearchSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListLogIncludedSearchesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-previous-page",
+                        ListLogIncludedSearchesResponse.Builder::opcPreviousPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListLogIncludedSearchesResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListLogSavedSearchesResponse listLogSavedSearches(ListLogSavedSearchesRequest request) {
-        LOG.trace("Called listLogSavedSearches");
-        final ListLogSavedSearchesRequest interceptedRequest =
-                ListLogSavedSearchesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListLogSavedSearchesConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListLogSavedSearchesResponse::builder)
+                .logger(LOG, "listLogSavedSearches")
+                .serviceDetails(
                         "LoggingManagement",
                         "ListLogSavedSearches",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/ListLogSavedSearches");
-        java.util.function.Function<javax.ws.rs.core.Response, ListLogSavedSearchesResponse>
-                transformer =
-                        ListLogSavedSearchesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/ListLogSavedSearches")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListLogSavedSearchesRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("logSavedSearches")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("logSavedSearchId", request.getLogSavedSearchId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.logging.model.LogSavedSearchSummaryCollection.class,
+                        ListLogSavedSearchesResponse.Builder::logSavedSearchSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListLogSavedSearchesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-previous-page", ListLogSavedSearchesResponse.Builder::opcPreviousPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListLogSavedSearchesResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListLogsResponse listLogs(ListLogsRequest request) {
-        LOG.trace("Called listLogs");
-        final ListLogsRequest interceptedRequest = ListLogsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListLogsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLogGroupId(), "logGroupId must not be blank");
+
+        return clientCall(request, ListLogsResponse::builder)
+                .logger(LOG, "listLogs")
+                .serviceDetails(
                         "LoggingManagement",
                         "ListLogs",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSummary/ListLogs");
-        java.util.function.Function<javax.ws.rs.core.Response, ListLogsResponse> transformer =
-                ListLogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSummary/ListLogs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListLogsRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("logGroups")
+                .appendPathParam(request.getLogGroupId())
+                .appendPathParam("logs")
+                .appendEnumQueryParam("logType", request.getLogType())
+                .appendQueryParam("sourceService", request.getSourceService())
+                .appendQueryParam("sourceResource", request.getSourceResource())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.logging.model.LogSummary.class,
+                        ListLogsResponse.Builder::items)
+                .handleResponseHeaderString("opc-next-page", ListLogsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-previous-page", ListLogsResponse.Builder::opcPreviousPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListLogsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListServicesResponse listServices(ListServicesRequest request) {
-        LOG.trace("Called listServices");
-        final ListServicesRequest interceptedRequest =
-                ListServicesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListServicesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListServicesResponse::builder)
+                .logger(LOG, "listServices")
+                .serviceDetails(
                         "LoggingManagement",
                         "ListServices",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/ServiceSummary/ListServices");
-        java.util.function.Function<javax.ws.rs.core.Response, ListServicesResponse> transformer =
-                ListServicesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/ServiceSummary/ListServices")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListServicesRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("v2")
+                .appendPathParam("registry")
+                .appendPathParam("services")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.logging.model.ServiceSummary.class,
+                        ListServicesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListServicesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListServicesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-previous-page", ListServicesResponse.Builder::opcPreviousPage)
+                .callSync();
     }
 
     @Override
     public ListUnifiedAgentConfigurationsResponse listUnifiedAgentConfigurations(
             ListUnifiedAgentConfigurationsRequest request) {
-        LOG.trace("Called listUnifiedAgentConfigurations");
-        final ListUnifiedAgentConfigurationsRequest interceptedRequest =
-                ListUnifiedAgentConfigurationsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListUnifiedAgentConfigurationsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListUnifiedAgentConfigurationsResponse::builder)
+                .logger(LOG, "listUnifiedAgentConfigurations")
+                .serviceDetails(
                         "LoggingManagement",
                         "ListUnifiedAgentConfigurations",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/ListUnifiedAgentConfigurations");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ListUnifiedAgentConfigurationsResponse>
-                transformer =
-                        ListUnifiedAgentConfigurationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/ListUnifiedAgentConfigurations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListUnifiedAgentConfigurationsRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("unifiedAgentConfigurations")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("logId", request.getLogId())
+                .appendQueryParam("isCompartmentIdInSubtree", request.getIsCompartmentIdInSubtree())
+                .appendQueryParam("groupId", request.getGroupId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.logging.model.UnifiedAgentConfigurationCollection.class,
+                        ListUnifiedAgentConfigurationsResponse.Builder
+                                ::unifiedAgentConfigurationCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListUnifiedAgentConfigurationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-previous-page",
+                        ListUnifiedAgentConfigurationsResponse.Builder::opcPreviousPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListUnifiedAgentConfigurationsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListWorkRequestErrorsResponse listWorkRequestErrors(
             ListWorkRequestErrorsRequest request) {
-        LOG.trace("Called listWorkRequestErrors");
-        final ListWorkRequestErrorsRequest interceptedRequest =
-                ListWorkRequestErrorsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, ListWorkRequestErrorsResponse::builder)
+                .logger(LOG, "listWorkRequestErrors")
+                .serviceDetails(
                         "LoggingManagement",
                         "ListWorkRequestErrors",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequestError/ListWorkRequestErrors");
-        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
-                transformer =
-                        ListWorkRequestErrorsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequestError/ListWorkRequestErrors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestErrorsRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .appendPathParam("errors")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.logging.model.WorkRequestError.class,
+                        ListWorkRequestErrorsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request) {
-        LOG.trace("Called listWorkRequestLogs");
-        final ListWorkRequestLogsRequest interceptedRequest =
-                ListWorkRequestLogsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, ListWorkRequestLogsResponse::builder)
+                .logger(LOG, "listWorkRequestLogs")
+                .serviceDetails(
                         "LoggingManagement",
                         "ListWorkRequestLogs",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequestLog/ListWorkRequestLogs");
-        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
-                transformer =
-                        ListWorkRequestLogsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequestLog/ListWorkRequestLogs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestLogsRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .appendPathParam("logs")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.logging.model.WorkRequestLog.class,
+                        ListWorkRequestLogsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request) {
-        LOG.trace("Called listWorkRequests");
-        final ListWorkRequestsRequest interceptedRequest =
-                ListWorkRequestsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListWorkRequestsResponse::builder)
+                .logger(LOG, "listWorkRequests")
+                .serviceDetails(
                         "LoggingManagement",
                         "ListWorkRequests",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/ListWorkRequests");
-        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer =
-                        ListWorkRequestsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/ListWorkRequests")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestsRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("workRequests")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("status", request.getStatus())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.logging.model.WorkRequestSummary.class,
+                        ListWorkRequestsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-previous-page", ListWorkRequestsResponse.Builder::opcPreviousPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateLogResponse updateLog(UpdateLogRequest request) {
-        LOG.trace("Called updateLog");
-        final UpdateLogRequest interceptedRequest = UpdateLogConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateLogConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLogGroupId(), "logGroupId must not be blank");
+
+        Validate.notBlank(request.getLogId(), "logId must not be blank");
+        Objects.requireNonNull(request.getUpdateLogDetails(), "updateLogDetails is required");
+
+        return clientCall(request, UpdateLogResponse::builder)
+                .logger(LOG, "updateLog")
+                .serviceDetails(
                         "LoggingManagement",
                         "UpdateLog",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/UpdateLog");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateLogResponse> transformer =
-                UpdateLogConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateLogDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/UpdateLog")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateLogRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("logGroups")
+                .appendPathParam(request.getLogGroupId())
+                .appendPathParam("logs")
+                .appendPathParam(request.getLogId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateLogResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateLogResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateLogGroupResponse updateLogGroup(UpdateLogGroupRequest request) {
-        LOG.trace("Called updateLogGroup");
-        final UpdateLogGroupRequest interceptedRequest =
-                UpdateLogGroupConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateLogGroupConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLogGroupId(), "logGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateLogGroupDetails(), "updateLogGroupDetails is required");
+
+        return clientCall(request, UpdateLogGroupResponse::builder)
+                .logger(LOG, "updateLogGroup")
+                .serviceDetails(
                         "LoggingManagement",
                         "UpdateLogGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/UpdateLogGroup");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateLogGroupResponse> transformer =
-                UpdateLogGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateLogGroupDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/UpdateLogGroup")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateLogGroupRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("logGroups")
+                .appendPathParam(request.getLogGroupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateLogGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateLogGroupResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateLogSavedSearchResponse updateLogSavedSearch(UpdateLogSavedSearchRequest request) {
-        LOG.trace("Called updateLogSavedSearch");
-        final UpdateLogSavedSearchRequest interceptedRequest =
-                UpdateLogSavedSearchConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateLogSavedSearchConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getLogSavedSearchId(), "logSavedSearchId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateLogSavedSearchDetails(),
+                "updateLogSavedSearchDetails is required");
+
+        return clientCall(request, UpdateLogSavedSearchResponse::builder)
+                .logger(LOG, "updateLogSavedSearch")
+                .serviceDetails(
                         "LoggingManagement",
                         "UpdateLogSavedSearch",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/UpdateLogSavedSearch");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateLogSavedSearchResponse>
-                transformer =
-                        UpdateLogSavedSearchConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateLogSavedSearchDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/UpdateLogSavedSearch")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateLogSavedSearchRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("logSavedSearches")
+                .appendPathParam(request.getLogSavedSearchId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.logging.model.LogSavedSearch.class,
+                        UpdateLogSavedSearchResponse.Builder::logSavedSearch)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateLogSavedSearchResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateLogSavedSearchResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public UpdateUnifiedAgentConfigurationResponse updateUnifiedAgentConfiguration(
             UpdateUnifiedAgentConfigurationRequest request) {
-        LOG.trace("Called updateUnifiedAgentConfiguration");
-        final UpdateUnifiedAgentConfigurationRequest interceptedRequest =
-                UpdateUnifiedAgentConfigurationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateUnifiedAgentConfigurationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getUnifiedAgentConfigurationId(),
+                "unifiedAgentConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateUnifiedAgentConfigurationDetails(),
+                "updateUnifiedAgentConfigurationDetails is required");
+
+        return clientCall(request, UpdateUnifiedAgentConfigurationResponse::builder)
+                .logger(LOG, "updateUnifiedAgentConfiguration")
+                .serviceDetails(
                         "LoggingManagement",
                         "UpdateUnifiedAgentConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/UpdateUnifiedAgentConfiguration");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateUnifiedAgentConfigurationResponse>
-                transformer =
-                        UpdateUnifiedAgentConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateUnifiedAgentConfigurationDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/UpdateUnifiedAgentConfiguration")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateUnifiedAgentConfigurationRequest::builder)
+                .basePath("/20200531")
+                .appendPathParam("unifiedAgentConfigurations")
+                .appendPathParam(request.getUnifiedAgentConfigurationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateUnifiedAgentConfigurationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateUnifiedAgentConfigurationResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
@@ -1771,5 +1139,209 @@ public class LoggingManagementClient implements LoggingManagement {
     @Override
     public LoggingManagementPaginators getPaginators() {
         return paginators;
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public LoggingManagementClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(builder(), authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public LoggingManagementClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(builder().configuration(configuration), authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public LoggingManagementClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                builder().configuration(configuration).clientConfigurator(clientConfigurator),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public LoggingManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public LoggingManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public LoggingManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public LoggingManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @param executorService {@link Builder#executorService}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public LoggingManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider,
+                executorService);
     }
 }

@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.applicationmigration.model;
 
-/**
- * The type of the target database associated with the target instance.
- **/
+/** The type of the target database associated with the target instance. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
-public enum TargetDatabaseTypes {
+public enum TargetDatabaseTypes implements com.oracle.bmc.http.internal.BmcEnum {
     DatabaseSystem("DATABASE_SYSTEM"),
     NotSet("NOT_SET"),
 

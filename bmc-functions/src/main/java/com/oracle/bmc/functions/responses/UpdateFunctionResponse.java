@@ -9,17 +9,16 @@ import com.oracle.bmc.functions.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class UpdateFunctionResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For optimistic concurrency control. Add this value to the {@code if-match} parameter
-     * in a PUT or DELETE operation. The resource will be updated only if the value you
-     * provide matches the {@code etag} on the resource.
-     *
+     * For optimistic concurrency control. Add this value to the {@code if-match} parameter in a PUT
+     * or DELETE operation. The resource will be updated only if the value you provide matches the
+     * {@code etag} on the resource.
      */
     private String etag;
 
     /**
-     * For optimistic concurrency control. Add this value to the {@code if-match} parameter
-     * in a PUT or DELETE operation. The resource will be updated only if the value you
-     * provide matches the {@code etag} on the resource.
+     * For optimistic concurrency control. Add this value to the {@code if-match} parameter in a PUT
+     * or DELETE operation. The resource will be updated only if the value you provide matches the
+     * {@code etag} on the resource.
      *
      * @return the value
      */
@@ -28,15 +27,14 @@ public class UpdateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -44,13 +42,12 @@ public class UpdateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /**
-     * The returned Function instance.
-     */
+    /** The returned Function instance. */
     private com.oracle.bmc.functions.model.Function function;
 
     /**
      * The returned Function instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.functions.model.Function getFunction() {
@@ -66,7 +63,7 @@ public class UpdateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
     })
     private UpdateFunctionResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.functions.model.Function function) {
@@ -76,33 +73,35 @@ public class UpdateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
         this.function = function;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<UpdateFunctionResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For optimistic concurrency control. Add this value to the {@code if-match} parameter
-         * in a PUT or DELETE operation. The resource will be updated only if the value you
-         * provide matches the {@code etag} on the resource.
-         *
+         * For optimistic concurrency control. Add this value to the {@code if-match} parameter in a
+         * PUT or DELETE operation. The resource will be updated only if the value you provide
+         * matches the {@code etag} on the resource.
          */
         private String etag;
 
         /**
-         * For optimistic concurrency control. Add this value to the {@code if-match} parameter
-         * in a PUT or DELETE operation. The resource will be updated only if the value you
-         * provide matches the {@code etag} on the resource.
+         * For optimistic concurrency control. Add this value to the {@code if-match} parameter in a
+         * PUT or DELETE operation. The resource will be updated only if the value you provide
+         * matches the {@code etag} on the resource.
          *
          * @param etag the value to set
          * @return this builder
@@ -113,15 +112,14 @@ public class UpdateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -131,13 +129,12 @@ public class UpdateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /**
-         * The returned Function instance.
-         */
+        /** The returned Function instance. */
         private com.oracle.bmc.functions.model.Function function;
 
         /**
          * The returned Function instance.
+         *
          * @param function the value to set
          * @return this builder
          */
@@ -148,8 +145,10 @@ public class UpdateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(UpdateFunctionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -162,8 +161,10 @@ public class UpdateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public UpdateFunctionResponse build() {
             return new UpdateFunctionResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, function);
@@ -172,6 +173,7 @@ public class UpdateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -65,66 +65,29 @@ import java.util.Date;
 /**
  * Use Case: MySQL DB System with Database Tools Private Endpoint
  *
- * This example creates a Database Tools Connection to a MySQL DB System
- * accessible by private IP. Note, since this connection will be against a
- * private IP address, a Database Tools Private Endpoint Reverse Connection
- * is required. This example serves as an academic exercise of the SDK.
+ * <p>This example creates a Database Tools Connection to a MySQL DB System accessible by private
+ * IP. Note, since this connection will be against a private IP address, a Database Tools Private
+ * Endpoint Reverse Connection is required. This example serves as an academic exercise of the SDK.
  *
- * Prerequisites:
- *  - An existing MySQL DB System in a VCN and associated subnet
- *  - Available capacity (limits apply) to create a new Private Endpoint
- *  - An existing Vault for storage of secrets
- *  - A previously configured .oci/config file with a [DEFAULT] section
+ * <p>Prerequisites: - An existing MySQL DB System in a VCN and associated subnet - Available
+ * capacity (limits apply) to create a new Private Endpoint - An existing Vault for storage of
+ * secrets - A previously configured .oci/config file with a [DEFAULT] section
  *
- * High-level Steps:
- *  1- Locate the MySQL DB System by provided OCID (arg[0])
- *  2- Locate the Vault by provided OCID (arg[2])
- *  3- Create a Database Tools Private Endpoint Reverse Connection
- *  4- Store the secret in the Vault (as base64 encoded string)
- *  5- Create a Database Tools connection
- *  6- Validate the connection
+ * <p>High-level Steps: 1- Locate the MySQL DB System by provided OCID (arg[0]) 2- Locate the Vault
+ * by provided OCID (arg[2]) 3- Create a Database Tools Private Endpoint Reverse Connection 4- Store
+ * the secret in the Vault (as base64 encoded string) 5- Create a Database Tools connection 6-
+ * Validate the connection
  *
- *  ... cleanup when done (delete the temporary secret, connection, and PE)
+ * <p>... cleanup when done (delete the temporary secret, connection, and PE)
  *
- *                       Client
- *                         |
- *                         |
- *  +----------------------+----------+
- *  |                      V          |
- *  |              +----------------+ |
- *  |              | Database Tools | |
- *  |              |    Service     | |
- *  |              +----------------+ |
- *  |                      |          |
- *  | Database             |          |
- *  | Tools                |          |
- *  | VCN                  |          |
- *  +----------------------+----------+
- *                         |
- *                         |
- *  +----------------------+----------+
- *  |                      |          |
- *  |                      V          |
- *  |                +-----------+    |
- *  |                | Database  |    |
- *  |                |  Tools    |    |
- *  |                | Private   |    |
- *  |                | Endpoint  |    |
- *  |                +-----------+    |
- *  |                      |          |
- *  |                      |          |
- *  |                      V          |
- *  |                  ---------      |
- *  |                 /  MDS    \     |
- *  |                | Private  |     |
- *  |                \   IP    /      |
- *  |                 ---------       |
- *  |                                 |
- *  | Customer                        |
- *  | VCN (jump host not required)    |
- *  +---------------------------------+
+ * <p>Client | | +----------------------+----------+ | V | | +----------------+ | | | Database Tools
+ * | | | | Service | | | +----------------+ | | | | | Database | | | Tools | | | VCN | |
+ * +----------------------+----------+ | | +----------------------+----------+ | | | | V | |
+ * +-----------+ | | | Database | | | | Tools | | | | Private | | | | Endpoint | | | +-----------+ |
+ * | | | | | | | V | | --------- | | / MDS \ | | | Private | | | \ IP / | | --------- | | | |
+ * Customer | | VCN (jump host not required) | +---------------------------------+
  *
- *  Note: We recommend that you activate the java assertion (-ea) when running this example.
+ * <p>Note: We recommend that you activate the java assertion (-ea) when running this example.
  */
 public class DatabaseToolsMySqlDbSystemConnectionWithPeExample {
 
@@ -152,12 +115,12 @@ public class DatabaseToolsMySqlDbSystemConnectionWithPeExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     * <ul>
-     *   <li>The OCID of an existing MySQL DB System</li>
-     *   <li>The OCID of a Vault created in KMS with at least one master key</li>
-     *   <li>The Name of the User in the MySQL database, like admin</li>
-     *   <li>The Password of the User in the MySQL database</li>
-     * </ul>
+     *     <ul>
+     *       <li>The OCID of an existing MySQL DB System
+     *       <li>The OCID of a Vault created in KMS with at least one master key
+     *       <li>The Name of the User in the MySQL database, like admin
+     *       <li>The Password of the User in the MySQL database
+     *     </ul>
      */
     public static void main(String[] args) throws Exception {
         System.out.println("\n\n============================================================\n");
@@ -175,8 +138,10 @@ public class DatabaseToolsMySqlDbSystemConnectionWithPeExample {
         dbUser = args[2];
         dbPassword = args[3];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, profile);
         provider = new ConfigFileAuthenticationDetailsProvider(ConfigFileReader.parseDefault());
 
@@ -225,12 +190,10 @@ public class DatabaseToolsMySqlDbSystemConnectionWithPeExample {
     }
 
     /**
-     * Create a Database Tools connection with:
-     * - Same compartment as specified MySQL DB System OCID
-     * - Database User supplied as argument
-     * - Database Password Stored in a Vault
-     * - Related Resource with a reference to the MySQL DB System OCID
-     * - Time generated display name
+     * Create a Database Tools connection with: - Same compartment as specified MySQL DB System OCID
+     * - Database User supplied as argument - Database Password Stored in a Vault - Related Resource
+     * with a reference to the MySQL DB System OCID - Time generated display name
+     *
      * @return OCID of the Database Tools Connection created
      * @throws Exception
      */
@@ -243,7 +206,8 @@ public class DatabaseToolsMySqlDbSystemConnectionWithPeExample {
         String connectionDisplayName =
                 "conn-javasdk-" + now.format(DateTimeFormatter.ofPattern("dd-HH-mm-ss-SSS"));
 
-        // Related Resource is optional, but will help provide additional information when querying the
+        // Related Resource is optional, but will help provide additional information when querying
+        // the
         // connection using the OCI Console, the SDKs and the CLI.
         CreateDatabaseToolsRelatedResourceMySqlDetails relatedResource =
                 CreateDatabaseToolsRelatedResourceMySqlDetails.builder()
@@ -277,8 +241,7 @@ public class DatabaseToolsMySqlDbSystemConnectionWithPeExample {
         System.out.println(
                 String.format(
                         "=== Creating connection %s using Work request: %s",
-                        connectionDisplayName,
-                        response.getOpcWorkRequestId()));
+                        connectionDisplayName, response.getOpcWorkRequestId()));
 
         waitForDatabaseToolsConnection(connectionId, LifecycleState.Active);
 
@@ -300,6 +263,7 @@ public class DatabaseToolsMySqlDbSystemConnectionWithPeExample {
      * Create a Private Endpoint for a Reverse Connection. The Database Tools Private Endpoint will
      * be created in the same compartment and subnet as the MySQL DB system. A best practice would
      * be to use separate subnets with properly configured security lists.
+     *
      * @throws Exception
      */
     public static String createPrivateEndpoint() throws Exception {
@@ -336,8 +300,7 @@ public class DatabaseToolsMySqlDbSystemConnectionWithPeExample {
         System.out.println(
                 String.format(
                         "=== Creating Private Endpoint %s using Work request: %s",
-                        displayName,
-                        createPrivateEndpointResponse.getOpcWorkRequestId()));
+                        displayName, createPrivateEndpointResponse.getOpcWorkRequestId()));
 
         // We wait for the response.
         waitForDatabaseToolsPrivateEndpoint(peId, LifecycleState.Active);
@@ -360,8 +323,9 @@ public class DatabaseToolsMySqlDbSystemConnectionWithPeExample {
     }
 
     /**
-     * Validate a Database Tools Connection.
-     * Sends a no-op query to the MySQL database to confirm the connection is valid.
+     * Validate a Database Tools Connection. Sends a no-op query to the MySQL database to confirm
+     * the connection is valid.
+     *
      * @return true if the Connection is Valid
      */
     private static boolean validateConnection() {
@@ -400,8 +364,8 @@ public class DatabaseToolsMySqlDbSystemConnectionWithPeExample {
     }
 
     /**
-     * Queries the cloud infrastructure for the MySQL DB system specified and caches
-     * a few of the results for later use.
+     * Queries the cloud infrastructure for the MySQL DB system specified and caches a few of the
+     * results for later use.
      */
     private static void getDatabaseInfo() {
         System.out.println(String.format("Requesting information for database: %s...", dbSystemId));
@@ -428,8 +392,8 @@ public class DatabaseToolsMySqlDbSystemConnectionWithPeExample {
     }
 
     /**
-     * Queries the cloud infrastructure for the Vault specified and caches
-     * a few of these parameters for later use.
+     * Queries the cloud infrastructure for the Vault specified and caches a few of these parameters
+     * for later use.
      */
     private static void getVaultInfo() {
         System.out.println(String.format("Retrieving the vault %s key to create secrets", vaultId));
@@ -443,8 +407,7 @@ public class DatabaseToolsMySqlDbSystemConnectionWithPeExample {
         System.out.println(
                 String.format(
                         "Vault %s management endpoint is %s",
-                        vaultId,
-                        vault.getManagementEndpoint()));
+                        vaultId, vault.getManagementEndpoint()));
 
         vaultCompartmentId = vault.getCompartmentId();
 
@@ -463,6 +426,7 @@ public class DatabaseToolsMySqlDbSystemConnectionWithPeExample {
 
     /**
      * Create a secret in a Vault
+     *
      * @param secretName Name of the Secret
      * @param base64Content The content of the secret as a base 64 string
      * @return the OCID of the generated secret
@@ -499,8 +463,9 @@ public class DatabaseToolsMySqlDbSystemConnectionWithPeExample {
     }
 
     /**
-     * Delete a Secret in a Vault.
-     * Note that the secret is not actually deleted immediately, it is scheduled for deletion on a later date.
+     * Delete a Secret in a Vault. Note that the secret is not actually deleted immediately, it is
+     * scheduled for deletion on a later date.
+     *
      * @param secretId The OCID of the Secret to delete
      * @throws Exception
      */
@@ -535,6 +500,7 @@ public class DatabaseToolsMySqlDbSystemConnectionWithPeExample {
 
     /**
      * Delete The database Tools Connection for the specified connectionId
+     *
      * @param connectionId The OCID of the Database Tools to delete
      * @throws Exception
      */
@@ -550,8 +516,7 @@ public class DatabaseToolsMySqlDbSystemConnectionWithPeExample {
             System.out.println(
                     String.format(
                             "Deleting connection %s using Work request: %s",
-                            connectionId,
-                            response.getOpcWorkRequestId()));
+                            connectionId, response.getOpcWorkRequestId()));
 
             waitForDatabaseToolsConnection(connectionId, LifecycleState.Deleted);
             System.out.println(String.format("Connection %s state is now deleted", connectionId));
@@ -560,6 +525,7 @@ public class DatabaseToolsMySqlDbSystemConnectionWithPeExample {
 
     /**
      * Delete the Database Tools Private Endpoint for the specified privateEndpointId
+     *
      * @param privateEndpointId
      * @throws Exception
      */
@@ -587,8 +553,8 @@ public class DatabaseToolsMySqlDbSystemConnectionWithPeExample {
     }
 
     /**
-     * Wait for a specific Connection to get a specific state. Required for
-     * asynchronous operation.
+     * Wait for a specific Connection to get a specific state. Required for asynchronous operation.
+     *
      * @param connectionId The OCID of the database Tools Connection
      * @param targetState The LifeCycle state to reach
      * @throws Exception
@@ -599,8 +565,7 @@ public class DatabaseToolsMySqlDbSystemConnectionWithPeExample {
         System.out.println(
                 String.format(
                         "=== Waiting for connection %s to match state -> %s",
-                        connectionId,
-                        targetState));
+                        connectionId, targetState));
 
         DatabaseToolsWaiters waiter = databaseToolsClient.getWaiters();
         waiter.forDatabaseToolsConnection(
@@ -613,8 +578,8 @@ public class DatabaseToolsMySqlDbSystemConnectionWithPeExample {
     }
 
     /**
-     * Wait for a specific Secret to get a specific state. Required for
-     * asynchronous operation.
+     * Wait for a specific Secret to get a specific state. Required for asynchronous operation.
+     *
      * @param secretId The OCID of the Secret in a Vault
      * @param targetState The LifeCycle state to reach
      * @throws Exception
@@ -633,7 +598,9 @@ public class DatabaseToolsMySqlDbSystemConnectionWithPeExample {
     }
 
     /**
-     * Wait for a specific Private Endpoint to get a specific state. Required for asynchronous operation.
+     * Wait for a specific Private Endpoint to get a specific state. Required for asynchronous
+     * operation.
+     *
      * @param endpointId The OCID of the database Tools Private Endpoint
      * @param targetState The LifeCycle state to reach
      * @throws Exception
@@ -644,8 +611,7 @@ public class DatabaseToolsMySqlDbSystemConnectionWithPeExample {
         System.out.println(
                 String.format(
                         "=== Waiting for private endpoint %s to match state -> %s",
-                        endpointId,
-                        targetState));
+                        endpointId, targetState));
 
         DatabaseToolsWaiters waiter = databaseToolsClient.getWaiters();
         waiter.forDatabaseToolsPrivateEndpoint(

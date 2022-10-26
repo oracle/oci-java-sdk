@@ -9,15 +9,14 @@ import com.oracle.bmc.datacatalog.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class UsersResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -26,13 +25,16 @@ public class UsersResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * Retrieves the next page of results. When this header appears in the response, additional
+     * pages of results remain. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
     /**
-     * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Retrieves the next page of results. When this header appears in the response, additional
+     * pages of results remain. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -40,13 +42,12 @@ public class UsersResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /**
-     * The returned String instance.
-     */
+    /** The returned String instance. */
     private String value;
 
     /**
      * The returned String instance.
+     *
      * @return the value
      */
     public String getValue() {
@@ -62,7 +63,7 @@ public class UsersResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private UsersResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcNextPage,
             String value) {
@@ -72,31 +73,33 @@ public class UsersResponse extends com.oracle.bmc.responses.BmcResponse {
         this.value = value;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<UsersResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -107,13 +110,16 @@ public class UsersResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * Retrieves the next page of results. When this header appears in the response, additional
+         * pages of results remain. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
         /**
-         * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Retrieves the next page of results. When this header appears in the response, additional
+         * pages of results remain. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -123,13 +129,12 @@ public class UsersResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * The returned String instance.
-         */
+        /** The returned String instance. */
         private String value;
 
         /**
          * The returned String instance.
+         *
          * @param value the value to set
          * @return this builder
          */
@@ -140,8 +145,10 @@ public class UsersResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(UsersResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -154,8 +161,10 @@ public class UsersResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public UsersResponse build() {
             return new UsersResponse(__httpStatusCode__, headers, opcRequestId, opcNextPage, value);
         }
@@ -163,6 +172,7 @@ public class UsersResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

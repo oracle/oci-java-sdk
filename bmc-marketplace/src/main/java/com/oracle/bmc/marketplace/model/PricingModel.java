@@ -5,19 +5,20 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * The model for pricing.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The model for pricing. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PricingModel.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PricingModel extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class PricingModel extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "type",
@@ -42,65 +43,65 @@ public final class PricingModel extends com.oracle.bmc.http.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The type of the pricing model.
-         **/
+        /** The type of the pricing model. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private PricingTypeEnum type;
 
         /**
          * The type of the pricing model.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(PricingTypeEnum type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * The type of pricing for a PAYGO model, eg PER_OCPU_LINEAR, PER_OCPU_MIN_BILLING, PER_INSTANCE.  Null if type is not PAYGO.
-         **/
+         * The type of pricing for a PAYGO model, eg PER_OCPU_LINEAR, PER_OCPU_MIN_BILLING,
+         * PER_INSTANCE. Null if type is not PAYGO.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("payGoStrategy")
         private PricingStrategyEnum payGoStrategy;
 
         /**
-         * The type of pricing for a PAYGO model, eg PER_OCPU_LINEAR, PER_OCPU_MIN_BILLING, PER_INSTANCE.  Null if type is not PAYGO.
+         * The type of pricing for a PAYGO model, eg PER_OCPU_LINEAR, PER_OCPU_MIN_BILLING,
+         * PER_INSTANCE. Null if type is not PAYGO.
+         *
          * @param payGoStrategy the value to set
          * @return this builder
-         **/
+         */
         public Builder payGoStrategy(PricingStrategyEnum payGoStrategy) {
             this.payGoStrategy = payGoStrategy;
             this.__explicitlySet__.add("payGoStrategy");
             return this;
         }
-        /**
-         * The currency of the pricing model.
-         **/
+        /** The currency of the pricing model. */
         @com.fasterxml.jackson.annotation.JsonProperty("currency")
         private PricingCurrencyEnum currency;
 
         /**
          * The currency of the pricing model.
+         *
          * @param currency the value to set
          * @return this builder
-         **/
+         */
         public Builder currency(PricingCurrencyEnum currency) {
             this.currency = currency;
             this.__explicitlySet__.add("currency");
             return this;
         }
-        /**
-         * The pricing rate.
-         **/
+        /** The pricing rate. */
         @com.fasterxml.jackson.annotation.JsonProperty("rate")
         private java.math.BigDecimal rate;
 
         /**
          * The pricing rate.
+         *
          * @param rate the value to set
          * @return this builder
-         **/
+         */
         public Builder rate(java.math.BigDecimal rate) {
             this.rate = rate;
             this.__explicitlySet__.add("rate");
@@ -154,9 +155,7 @@ public final class PricingModel extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -165,58 +164,58 @@ public final class PricingModel extends com.oracle.bmc.http.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /**
-     * The type of the pricing model.
-     **/
+    /** The type of the pricing model. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final PricingTypeEnum type;
 
     /**
      * The type of the pricing model.
+     *
      * @return the value
-     **/
+     */
     public PricingTypeEnum getType() {
         return type;
     }
 
     /**
-     * The type of pricing for a PAYGO model, eg PER_OCPU_LINEAR, PER_OCPU_MIN_BILLING, PER_INSTANCE.  Null if type is not PAYGO.
-     **/
+     * The type of pricing for a PAYGO model, eg PER_OCPU_LINEAR, PER_OCPU_MIN_BILLING,
+     * PER_INSTANCE. Null if type is not PAYGO.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("payGoStrategy")
     private final PricingStrategyEnum payGoStrategy;
 
     /**
-     * The type of pricing for a PAYGO model, eg PER_OCPU_LINEAR, PER_OCPU_MIN_BILLING, PER_INSTANCE.  Null if type is not PAYGO.
+     * The type of pricing for a PAYGO model, eg PER_OCPU_LINEAR, PER_OCPU_MIN_BILLING,
+     * PER_INSTANCE. Null if type is not PAYGO.
+     *
      * @return the value
-     **/
+     */
     public PricingStrategyEnum getPayGoStrategy() {
         return payGoStrategy;
     }
 
-    /**
-     * The currency of the pricing model.
-     **/
+    /** The currency of the pricing model. */
     @com.fasterxml.jackson.annotation.JsonProperty("currency")
     private final PricingCurrencyEnum currency;
 
     /**
      * The currency of the pricing model.
+     *
      * @return the value
-     **/
+     */
     public PricingCurrencyEnum getCurrency() {
         return currency;
     }
 
-    /**
-     * The pricing rate.
-     **/
+    /** The pricing rate. */
     @com.fasterxml.jackson.annotation.JsonProperty("rate")
     private final java.math.BigDecimal rate;
 
     /**
      * The pricing rate.
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getRate() {
         return rate;
     }
@@ -235,6 +234,7 @@ public final class PricingModel extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

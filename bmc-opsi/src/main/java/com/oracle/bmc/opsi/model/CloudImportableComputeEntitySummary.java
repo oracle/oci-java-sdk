@@ -5,25 +5,24 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * A compute host entity that can be imported into Operations Insights.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A compute host entity that can be imported into Operations Insights. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CloudImportableComputeEntitySummary.Builder.class
-)
+        builder = CloudImportableComputeEntitySummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "entitySource"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "entitySource")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CloudImportableComputeEntitySummary extends ImportableComputeEntitySummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -54,40 +53,40 @@ public final class CloudImportableComputeEntitySummary extends ImportableCompute
             return this;
         }
         /**
-         * The host name. The host name is unique amongst the hosts managed by the same management agent.
-         **/
+         * The host name. The host name is unique amongst the hosts managed by the same management
+         * agent.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
         /**
-         * The host name. The host name is unique amongst the hosts managed by the same management agent.
+         * The host name. The host name is unique amongst the hosts managed by the same management
+         * agent.
+         *
          * @param hostName the value to set
          * @return this builder
-         **/
+         */
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
         /**
-         * Platform type.
-         * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
-         *
-         **/
+         * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported
+         * platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("platformType")
         private PlatformType platformType;
 
         /**
-         * Platform type.
-         * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported
+         * platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
          *
          * @param platformType the value to set
          * @return this builder
-         **/
+         */
         public Builder platformType(PlatformType platformType) {
             this.platformType = platformType;
             this.__explicitlySet__.add("platformType");
@@ -132,9 +131,7 @@ public final class CloudImportableComputeEntitySummary extends ImportableCompute
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -156,35 +153,36 @@ public final class CloudImportableComputeEntitySummary extends ImportableCompute
     }
 
     /**
-     * The host name. The host name is unique amongst the hosts managed by the same management agent.
-     **/
+     * The host name. The host name is unique amongst the hosts managed by the same management
+     * agent.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
-     * The host name. The host name is unique amongst the hosts managed by the same management agent.
+     * The host name. The host name is unique amongst the hosts managed by the same management
+     * agent.
+     *
      * @return the value
-     **/
+     */
     public String getHostName() {
         return hostName;
     }
 
     /**
-     * Platform type.
-     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
-     *
-     **/
-    public enum PlatformType {
+     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported
+     * platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     */
+    public enum PlatformType implements com.oracle.bmc.http.internal.BmcEnum {
         Linux("LINUX"),
         Solaris("SOLARIS"),
         Sunos("SUNOS"),
         Zlinux("ZLINUX"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -224,23 +222,20 @@ public final class CloudImportableComputeEntitySummary extends ImportableCompute
         }
     };
     /**
-     * Platform type.
-     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
-     *
-     **/
+     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported
+     * platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     private final PlatformType platformType;
 
     /**
-     * Platform type.
-     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported
+     * platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
      *
      * @return the value
-     **/
+     */
     public PlatformType getPlatformType() {
         return platformType;
     }
@@ -252,6 +247,7 @@ public final class CloudImportableComputeEntitySummary extends ImportableCompute
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,19 +5,20 @@
 package com.oracle.bmc.emwarehouse.model;
 
 /**
- * The resource usage information.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The resource usage information. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ResourceUsage.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResourceUsage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ResourceUsage extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "operationsInsightsWarehouseId",
@@ -45,97 +46,91 @@ public final class ResourceUsage extends com.oracle.bmc.http.internal.Explicitly
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * operations Insights Warehouse Identifier
-         **/
+        /** operations Insights Warehouse Identifier */
         @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsWarehouseId")
         private String operationsInsightsWarehouseId;
 
         /**
          * operations Insights Warehouse Identifier
+         *
          * @param operationsInsightsWarehouseId the value to set
          * @return this builder
-         **/
+         */
         public Builder operationsInsightsWarehouseId(String operationsInsightsWarehouseId) {
             this.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
             this.__explicitlySet__.add("operationsInsightsWarehouseId");
             return this;
         }
-        /**
-         * Unique identifier that is immutable on creation
-         **/
+        /** Unique identifier that is immutable on creation */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique identifier that is immutable on creation
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * EmInstanceCount
-         **/
+        /** EmInstanceCount */
         @com.fasterxml.jackson.annotation.JsonProperty("emInstanceCount")
         private Integer emInstanceCount;
 
         /**
          * EmInstanceCount
+         *
          * @param emInstanceCount the value to set
          * @return this builder
-         **/
+         */
         public Builder emInstanceCount(Integer emInstanceCount) {
             this.emInstanceCount = emInstanceCount;
             this.__explicitlySet__.add("emInstanceCount");
             return this;
         }
-        /**
-         * EmInstance Target count
-         **/
+        /** EmInstance Target count */
         @com.fasterxml.jackson.annotation.JsonProperty("targetsCount")
         private Integer targetsCount;
 
         /**
          * EmInstance Target count
+         *
          * @param targetsCount the value to set
          * @return this builder
-         **/
+         */
         public Builder targetsCount(Integer targetsCount) {
             this.targetsCount = targetsCount;
             this.__explicitlySet__.add("targetsCount");
             return this;
         }
-        /**
-         * List of emInstances
-         **/
+        /** List of emInstances */
         @com.fasterxml.jackson.annotation.JsonProperty("emInstances")
         private java.util.List<EmInstancesDetails> emInstances;
 
         /**
          * List of emInstances
+         *
          * @param emInstances the value to set
          * @return this builder
-         **/
+         */
         public Builder emInstances(java.util.List<EmInstancesDetails> emInstances) {
             this.emInstances = emInstances;
             this.__explicitlySet__.add("emInstances");
             return this;
         }
-        /**
-         * schema name
-         **/
+        /** schema name */
         @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
         private String schemaName;
 
         /**
          * schema name
+         *
          * @param schemaName the value to set
          * @return this builder
-         **/
+         */
         public Builder schemaName(String schemaName) {
             this.schemaName = schemaName;
             this.__explicitlySet__.add("schemaName");
@@ -184,9 +179,7 @@ public final class ResourceUsage extends com.oracle.bmc.http.internal.Explicitly
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -195,86 +188,80 @@ public final class ResourceUsage extends com.oracle.bmc.http.internal.Explicitly
         return new Builder().copy(this);
     }
 
-    /**
-     * operations Insights Warehouse Identifier
-     **/
+    /** operations Insights Warehouse Identifier */
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsWarehouseId")
     private final String operationsInsightsWarehouseId;
 
     /**
      * operations Insights Warehouse Identifier
+     *
      * @return the value
-     **/
+     */
     public String getOperationsInsightsWarehouseId() {
         return operationsInsightsWarehouseId;
     }
 
-    /**
-     * Unique identifier that is immutable on creation
-     **/
+    /** Unique identifier that is immutable on creation */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier that is immutable on creation
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * EmInstanceCount
-     **/
+    /** EmInstanceCount */
     @com.fasterxml.jackson.annotation.JsonProperty("emInstanceCount")
     private final Integer emInstanceCount;
 
     /**
      * EmInstanceCount
+     *
      * @return the value
-     **/
+     */
     public Integer getEmInstanceCount() {
         return emInstanceCount;
     }
 
-    /**
-     * EmInstance Target count
-     **/
+    /** EmInstance Target count */
     @com.fasterxml.jackson.annotation.JsonProperty("targetsCount")
     private final Integer targetsCount;
 
     /**
      * EmInstance Target count
+     *
      * @return the value
-     **/
+     */
     public Integer getTargetsCount() {
         return targetsCount;
     }
 
-    /**
-     * List of emInstances
-     **/
+    /** List of emInstances */
     @com.fasterxml.jackson.annotation.JsonProperty("emInstances")
     private final java.util.List<EmInstancesDetails> emInstances;
 
     /**
      * List of emInstances
+     *
      * @return the value
-     **/
+     */
     public java.util.List<EmInstancesDetails> getEmInstances() {
         return emInstances;
     }
 
-    /**
-     * schema name
-     **/
+    /** schema name */
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
     private final String schemaName;
 
     /**
      * schema name
+     *
      * @return the value
-     **/
+     */
     public String getSchemaName() {
         return schemaName;
     }
@@ -286,6 +273,7 @@ public final class ResourceUsage extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

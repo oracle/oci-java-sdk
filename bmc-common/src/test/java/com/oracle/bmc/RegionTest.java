@@ -23,17 +23,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
-import com.oracle.bmc.internal.GuavaUtils;
 import com.oracle.bmc.helper.EnvironmentVariablesHelper;
 import com.oracle.bmc.model.RegionSchema;
 import com.oracle.bmc.model.internal.JsonConverter;
 import com.oracle.bmc.util.internal.FileUtils;
 import com.oracle.bmc.util.internal.NameUtils;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-import org.glassfish.jersey.client.ClientConfig;
-import org.glassfish.jersey.client.ClientProperties;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -52,7 +49,6 @@ import static org.junit.Assert.assertSame;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class RegionTest {
-
     private static final Service TEST_SERVICE =
             Services.serviceBuilder()
                     .serviceEndpointPrefix("foobar")
@@ -74,10 +70,6 @@ public class RegionTest {
 
     @Before
     public void reset() {
-        Region.setInstanceMetadataServiceClientConfig(
-                new ClientConfig()
-                        .property(ClientProperties.CONNECT_TIMEOUT, 10000)
-                        .property(ClientProperties.READ_TIMEOUT, 60000));
         Region.hasUsedInstanceMetadataService = false;
         Region.skipInstanceMetadataService();
     }
@@ -129,9 +121,9 @@ public class RegionTest {
     }
 
     @Test
-    public void regionalEndpoint_withOc1RegionEnumAndId_endpointsShouldBeEqual() {
-        final String expectedEndpoint = "https://foobar.us-phoenix-1.oraclecloud.com";
-        final Region oc1Region = Region.US_PHOENIX_1;
+    public void regionalEndpoint_withRegionEnum_andRegionString_oc1() {
+        String expectedEndpoint = "https://foobar.us-phoenix-1.oraclecloud.com";
+        Region oc1Region = Region.US_PHOENIX_1;
         assertEquals(expectedEndpoint, Region.formatDefaultRegionEndpoint(TEST_SERVICE, oc1Region));
         assertEquals(
                 expectedEndpoint,
@@ -139,52 +131,27 @@ public class RegionTest {
     }
 
     @Test
-    public void regionalEndpoint_withOc2RegionEnumId_endpointsShouldBeEqual() {
-        final String expectedEndpoint = "https://foobar.us-luke-1.oraclegovcloud.com";
-        final Region oc2Region = Region.US_LUKE_1;
+    public void regionalEndpoint_withRegionEnum_andRegionString_oc2() {
+        String expectedEndpoint = "https://foobar.us-langley-1.oraclegovcloud.com";
+        Region oc2Region = Region.US_LANGLEY_1;
+        assertEquals(expectedEndpoint, Region.formatDefaultRegionEndpoint(TEST_SERVICE, oc2Region));
         assertEquals(
-                "Endpoint from OC2 Region enum should be equal",
-                expectedEndpoint,
-                Region.formatDefaultRegionEndpoint(TEST_SERVICE, oc2Region));
-        assertEquals(
-                "Endpoint from OC2 Region ID should be equal",
                 expectedEndpoint,
                 Region.formatDefaultRegionEndpoint(TEST_SERVICE, oc2Region.getRegionId()));
     }
 
     @Test
-    public void regionalEndpoint_withOc3RegionEnumAndId_endpointsShouldBeEqual() {
-        final String expectedEndpoint = "https://foobar.us-gov-chicago-1.oraclegovcloud.com";
-        final Region oc3Region = Region.US_GOV_CHICAGO_1;
+    public void regionalEndpoint_withRegionEnum_andRegionString_oc3() {
+        String expectedEndpoint = "https://foobar.us-gov-ashburn-1.oraclegovcloud.com";
+        Region oc3Region = Region.US_GOV_ASHBURN_1;
+        assertEquals(expectedEndpoint, Region.formatDefaultRegionEndpoint(TEST_SERVICE, oc3Region));
         assertEquals(
-                "Endpoint from OC3 Region enum should be equal",
-                expectedEndpoint,
-                Region.formatDefaultRegionEndpoint(TEST_SERVICE, oc3Region));
-        assertEquals(
-                "Endpoint from OC3 Region ID should be equal",
                 expectedEndpoint,
                 Region.formatDefaultRegionEndpoint(TEST_SERVICE, oc3Region.getRegionId()));
     }
 
     @Test
-    public void regionalEndpoint_withTorontoRegionEnum_andRegionString() {
-        final String expectedEndpoint = "https://foobar.ca-toronto-1.oraclecloud.com";
-        final Region region = Region.CA_TORONTO_1;
-        final Optional<String> actualEndpoint =
-                GuavaUtils.adaptFromGuava(region.getEndpoint(TEST_SERVICE));
-        assertTrue(actualEndpoint.isPresent());
-        assertEquals(expectedEndpoint, actualEndpoint.get());
-        assertEquals(
-                expectedEndpoint,
-                Region.formatDefaultRegionEndpoint(TEST_SERVICE, region.getRegionId()));
-    }
-
-    @Test
     public void regionalEndpoint_withUnknownRegionString_defaultsToOc1() {
-        Region.setInstanceMetadataServiceClientConfig(
-                new ClientConfig()
-                        .property(ClientProperties.CONNECT_TIMEOUT, 1000)
-                        .property(ClientProperties.READ_TIMEOUT, 5000));
         assertEquals(
                 "https://foobar.us-foobar-1.oraclecloud.com",
                 Region.formatDefaultRegionEndpoint(TEST_SERVICE, "us-foobar-1"));
@@ -210,11 +177,6 @@ public class RegionTest {
 
     @Test(timeout = 10000)
     public void invalidRegion() {
-        Region.setInstanceMetadataServiceClientConfig(
-                new ClientConfig()
-                        .property(ClientProperties.CONNECT_TIMEOUT, 1000)
-                        .property(ClientProperties.READ_TIMEOUT, 5000));
-
         final String regionId = "baz";
         try {
             assertNotNull(Region.fromRegionCodeOrId(regionId));
@@ -222,8 +184,7 @@ public class RegionTest {
         } catch (IllegalArgumentException e) {
             assertTrue(e.getMessage().contains(regionId));
             final Region newRegion = Region.register(regionId, Realm.OC1);
-            final Optional<String> endpoint =
-                    GuavaUtils.adaptFromGuava(newRegion.getEndpoint(TEST_SERVICE));
+            final Optional<String> endpoint = newRegion.getEndpoint(TEST_SERVICE);
             assertTrue(endpoint.isPresent());
             assertEquals("https://foobar.baz.oraclecloud.com", endpoint.get());
         }
@@ -233,15 +194,12 @@ public class RegionTest {
     public void validRegionName() {
         assertSame(Region.CA_TORONTO_1, Region.valueOf("CA_TORONTO_1"));
         assertSame(Region.US_PHOENIX_1, Region.valueOf("US_PHOENIX_1"));
+        assertSame(Region.EU_ZURICH_1, Region.valueOf("EU_ZURICH_1"));
+        assertSame(Region.AP_SYDNEY_1, Region.valueOf("AP_SYDNEY_1"));
     }
 
     @Test(timeout = 10000, expected = IllegalArgumentException.class)
     public void invalidRegionName() {
-        Region.setInstanceMetadataServiceClientConfig(
-                new ClientConfig()
-                        .property(ClientProperties.CONNECT_TIMEOUT, 1000)
-                        .property(ClientProperties.READ_TIMEOUT, 5000));
-
         Region.valueOf("foobar");
     }
 
@@ -320,8 +278,10 @@ public class RegionTest {
     }
 
     @Test
-    // Check that the region names follow enum naming convention (if the regionId is us-phoenix-1, then the name of the
-    // region object should be US-PHOENIX-1). This allows for forward compatibility when registering new regions.
+    // Check that the region names follow enum naming convention (if the regionId is us-phoenix-1,
+    // then the name of the
+    // region object should be US-PHOENIX-1). This allows for forward compatibility when registering
+    // new regions.
     public void knownRegionsFollowNamingGuidelines() throws IllegalAccessException {
         final Field[] declaredFields = Region.class.getDeclaredFields();
         for (Field field : declaredFields) {
@@ -386,11 +346,6 @@ public class RegionTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testEnvEmptyDomain() throws Exception {
-        Region.setInstanceMetadataServiceClientConfig(
-                new ClientConfig()
-                        .property(ClientProperties.CONNECT_TIMEOUT, 1000)
-                        .property(ClientProperties.READ_TIMEOUT, 5000));
-
         String regionBlob =
                 "{ \"realmKey\" : \"YCX\",\"realmDomainComponent\" : \"\",\"regionKey\" : \"MSW\",\"regionIdentifier\" : \"us-moscow-1\"}";
         Map<String, String> newEnvMap = new HashMap<>();
@@ -440,11 +395,6 @@ public class RegionTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testNewEnvRegion() throws Exception {
-        Region.setInstanceMetadataServiceClientConfig(
-                new ClientConfig()
-                        .property(ClientProperties.CONNECT_TIMEOUT, 1000)
-                        .property(ClientProperties.READ_TIMEOUT, 5000));
-
         String regionBlob =
                 "{ \"realmKey\" : \"RTC\",\"realmDomainComponent\" : \"oracle-cloudfoobar.com\",\"regionKey\" : \"HHH\",\"regionIdentifier\" : \"us-hhh-1\"}";
         Map<String, String> newEnvMap = new HashMap<>();
@@ -455,11 +405,6 @@ public class RegionTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testEnvEmptyRealm() throws Exception {
-        Region.setInstanceMetadataServiceClientConfig(
-                new ClientConfig()
-                        .property(ClientProperties.CONNECT_TIMEOUT, 1000)
-                        .property(ClientProperties.READ_TIMEOUT, 5000));
-
         String regionBlob =
                 "{ \"realmKey\" : \"\",\"realmDomainComponent\" : \"foobar-oraclecloud.com\",\"regionKey\" : \"BRN\",\"regionIdentifier\" : \"us-berlin-1\"}";
         Map<String, String> newEnvMap = new HashMap<>();
@@ -470,7 +415,6 @@ public class RegionTest {
 
     @Test
     public void testValidConfigFile() {
-
         File file = new File(FileUtils.expandUserHome("~/.oci/regions-config.json"));
         if (file.exists()) {
             Region region = Region.fromRegionCodeOrId("ATL");
@@ -492,10 +436,6 @@ public class RegionTest {
     @Test(timeout = 10000, expected = IllegalArgumentException.class)
     public void testValueOf() {
         // if IMDS can't be reached, this test takes >15 seconds
-        Region.setInstanceMetadataServiceClientConfig(
-                new ClientConfig()
-                        .property(ClientProperties.CONNECT_TIMEOUT, 1000)
-                        .property(ClientProperties.READ_TIMEOUT, 5000));
         Region.valueOf("unknown");
     }
 
@@ -503,10 +443,6 @@ public class RegionTest {
     @Test(timeout = 10000, expected = IllegalArgumentException.class)
     public void testFromRegionCode() {
         // if IMDS can't be reached, this test takes >15 seconds
-        Region.setInstanceMetadataServiceClientConfig(
-                new ClientConfig()
-                        .property(ClientProperties.CONNECT_TIMEOUT, 1000)
-                        .property(ClientProperties.READ_TIMEOUT, 5000));
         Region.fromRegionCode("unknown");
     }
 
@@ -514,10 +450,6 @@ public class RegionTest {
     @Test(timeout = 10000, expected = IllegalArgumentException.class)
     public void testFromRegionCodeOrId() {
         // if IMDS can't be reached, this test takes >15 seconds
-        Region.setInstanceMetadataServiceClientConfig(
-                new ClientConfig()
-                        .property(ClientProperties.CONNECT_TIMEOUT, 1000)
-                        .property(ClientProperties.READ_TIMEOUT, 5000));
         Region.fromRegionCodeOrId("unknown");
     }
 
@@ -525,10 +457,6 @@ public class RegionTest {
     @Test(timeout = 10000, expected = IllegalArgumentException.class)
     public void testFromRegionId() {
         // if IMDS can't be reached, this test takes >15 seconds
-        Region.setInstanceMetadataServiceClientConfig(
-                new ClientConfig()
-                        .property(ClientProperties.CONNECT_TIMEOUT, 1000)
-                        .property(ClientProperties.READ_TIMEOUT, 5000));
         Region.fromRegionId("unknown");
     }
 
@@ -536,10 +464,6 @@ public class RegionTest {
     @Test(timeout = 10000)
     public void testFormatDefaultRegionEndpoint() {
         // if IMDS can't be reached, this test takes >15 seconds
-        Region.setInstanceMetadataServiceClientConfig(
-                new ClientConfig()
-                        .property(ClientProperties.CONNECT_TIMEOUT, 1000)
-                        .property(ClientProperties.READ_TIMEOUT, 5000));
         Service svc =
                 Services.serviceBuilder()
                         .serviceName("test")
@@ -554,10 +478,6 @@ public class RegionTest {
     @Test(timeout = 10000)
     public void testValues_Imds() {
         // if IMDS can't be reached, this test takes >15 seconds
-        Region.setInstanceMetadataServiceClientConfig(
-                new ClientConfig()
-                        .property(ClientProperties.CONNECT_TIMEOUT, 1000)
-                        .property(ClientProperties.READ_TIMEOUT, 5000));
         Region.registerFromInstanceMetadataService();
         Region.values();
     }
@@ -566,10 +486,6 @@ public class RegionTest {
     @Ignore("This test can be run when METADATA_SERVICE_BASE_URL is reachable")
     public void testMultithreaded_Imds() {
         try {
-            Region.setInstanceMetadataServiceClientConfig(
-                    new ClientConfig()
-                            .property(ClientProperties.CONNECT_TIMEOUT, 100)
-                            .property(ClientProperties.READ_TIMEOUT, 500));
             Region.hasUsedInstanceMetadataService = false;
             final ConcurrentMap<String, Boolean> resultMap = new ConcurrentHashMap<>();
             Thread t1 =

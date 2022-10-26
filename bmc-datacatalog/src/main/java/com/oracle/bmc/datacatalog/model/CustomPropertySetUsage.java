@@ -5,22 +5,22 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Details of a single custom property.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details of a single custom property. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CustomPropertySetUsage.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CustomPropertySetUsage.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CustomPropertySetUsage
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "displayName", "value", "namespaceName"})
     public CustomPropertySetUsage(
@@ -34,65 +34,61 @@ public final class CustomPropertySetUsage
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Unique Identifier of the attribute which is ID
-         **/
+        /** Unique Identifier of the attribute which is ID */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Unique Identifier of the attribute which is ID
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /**
-         * Name of the custom property
-         **/
+        /** Name of the custom property */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Name of the custom property
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The custom property value
-         **/
+        /** The custom property value */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * The custom property value
+         *
          * @param value the value to set
          * @return this builder
-         **/
+         */
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /**
-         * Namespace name of the custom property
-         **/
+        /** Namespace name of the custom property */
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
         private String namespaceName;
 
         /**
          * Namespace name of the custom property
+         *
          * @param namespaceName the value to set
          * @return this builder
-         **/
+         */
         public Builder namespaceName(String namespaceName) {
             this.namespaceName = namespaceName;
             this.__explicitlySet__.add("namespaceName");
@@ -130,9 +126,7 @@ public final class CustomPropertySetUsage
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -141,58 +135,54 @@ public final class CustomPropertySetUsage
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique Identifier of the attribute which is ID
-     **/
+    /** Unique Identifier of the attribute which is ID */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Unique Identifier of the attribute which is ID
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * Name of the custom property
-     **/
+    /** Name of the custom property */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Name of the custom property
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The custom property value
-     **/
+    /** The custom property value */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * The custom property value
+     *
      * @return the value
-     **/
+     */
     public String getValue() {
         return value;
     }
 
-    /**
-     * Namespace name of the custom property
-     **/
+    /** Namespace name of the custom property */
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
     private final String namespaceName;
 
     /**
      * Namespace name of the custom property
+     *
      * @return the value
-     **/
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -204,6 +194,7 @@ public final class CustomPropertySetUsage
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

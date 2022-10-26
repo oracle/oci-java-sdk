@@ -5,27 +5,28 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The target Exadata Infrastructure system software version for an infrastructure resource. Applies to Exadata Cloud@Customer and Exadata Cloud instances only.
- * <p>
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
- * talk to an administrator. If you're an administrator who needs to write policies to give users access,
- * see [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+ * The target Exadata Infrastructure system software version for an infrastructure resource. Applies
+ * to Exadata Cloud@Customer and Exadata Cloud instances only.
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
+ * authorized, talk to an administrator. If you're an administrator who needs to write policies to
+ * give users access, see [Getting Started with
+ * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = InfrastructureTargetVersionSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = InfrastructureTargetVersionSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class InfrastructureTargetVersionSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "targetDbVersionHistoryEntry",
@@ -48,16 +49,19 @@ public final class InfrastructureTargetVersionSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The history entry of the target system software version for the database server patching operation.
-         **/
+         * The history entry of the target system software version for the database server patching
+         * operation.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("targetDbVersionHistoryEntry")
         private java.util.List<String> targetDbVersionHistoryEntry;
 
         /**
-         * The history entry of the target system software version for the database server patching operation.
+         * The history entry of the target system software version for the database server patching
+         * operation.
+         *
          * @param targetDbVersionHistoryEntry the value to set
          * @return this builder
-         **/
+         */
         public Builder targetDbVersionHistoryEntry(
                 java.util.List<String> targetDbVersionHistoryEntry) {
             this.targetDbVersionHistoryEntry = targetDbVersionHistoryEntry;
@@ -65,16 +69,19 @@ public final class InfrastructureTargetVersionSummary
             return this;
         }
         /**
-         * The history entry of the target storage cell system software version for the storage cell patching operation.
-         **/
+         * The history entry of the target storage cell system software version for the storage cell
+         * patching operation.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("targetStorageVersionHistoryEntry")
         private java.util.List<String> targetStorageVersionHistoryEntry;
 
         /**
-         * The history entry of the target storage cell system software version for the storage cell patching operation.
+         * The history entry of the target storage cell system software version for the storage cell
+         * patching operation.
+         *
          * @param targetStorageVersionHistoryEntry the value to set
          * @return this builder
-         **/
+         */
         public Builder targetStorageVersionHistoryEntry(
                 java.util.List<String> targetStorageVersionHistoryEntry) {
             this.targetStorageVersionHistoryEntry = targetStorageVersionHistoryEntry;
@@ -82,32 +89,38 @@ public final class InfrastructureTargetVersionSummary
             return this;
         }
         /**
-         * The resource type of the target Exadata infrastructure resource that will receive the system software update.
-         **/
+         * The resource type of the target Exadata infrastructure resource that will receive the
+         * system software update.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourceType")
         private TargetResourceType targetResourceType;
 
         /**
-         * The resource type of the target Exadata infrastructure resource that will receive the system software update.
+         * The resource type of the target Exadata infrastructure resource that will receive the
+         * system software update.
+         *
          * @param targetResourceType the value to set
          * @return this builder
-         **/
+         */
         public Builder targetResourceType(TargetResourceType targetResourceType) {
             this.targetResourceType = targetResourceType;
             this.__explicitlySet__.add("targetResourceType");
             return this;
         }
         /**
-         * The OCID of the target Exadata Infrastructure resource that will receive the maintenance update.
-         **/
+         * The OCID of the target Exadata Infrastructure resource that will receive the maintenance
+         * update.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourceId")
         private String targetResourceId;
 
         /**
-         * The OCID of the target Exadata Infrastructure resource that will receive the maintenance update.
+         * The OCID of the target Exadata Infrastructure resource that will receive the maintenance
+         * update.
+         *
          * @param targetResourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder targetResourceId(String targetResourceId) {
             this.targetResourceId = targetResourceId;
             this.__explicitlySet__.add("targetResourceId");
@@ -148,9 +161,7 @@ public final class InfrastructureTargetVersionSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -160,37 +171,44 @@ public final class InfrastructureTargetVersionSummary
     }
 
     /**
-     * The history entry of the target system software version for the database server patching operation.
-     **/
+     * The history entry of the target system software version for the database server patching
+     * operation.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("targetDbVersionHistoryEntry")
     private final java.util.List<String> targetDbVersionHistoryEntry;
 
     /**
-     * The history entry of the target system software version for the database server patching operation.
+     * The history entry of the target system software version for the database server patching
+     * operation.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getTargetDbVersionHistoryEntry() {
         return targetDbVersionHistoryEntry;
     }
 
     /**
-     * The history entry of the target storage cell system software version for the storage cell patching operation.
-     **/
+     * The history entry of the target storage cell system software version for the storage cell
+     * patching operation.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("targetStorageVersionHistoryEntry")
     private final java.util.List<String> targetStorageVersionHistoryEntry;
 
     /**
-     * The history entry of the target storage cell system software version for the storage cell patching operation.
+     * The history entry of the target storage cell system software version for the storage cell
+     * patching operation.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getTargetStorageVersionHistoryEntry() {
         return targetStorageVersionHistoryEntry;
     }
 
     /**
-     * The resource type of the target Exadata infrastructure resource that will receive the system software update.
-     **/
-    public enum TargetResourceType {
+     * The resource type of the target Exadata infrastructure resource that will receive the system
+     * software update.
+     */
+    public enum TargetResourceType implements com.oracle.bmc.http.internal.BmcEnum {
         ExadataDbSystem("EXADATA_DB_SYSTEM"),
         CloudExadataInfrastructure("CLOUD_EXADATA_INFRASTRUCTURE"),
         ExaccInfrastructure("EXACC_INFRASTRUCTURE"),
@@ -224,29 +242,35 @@ public final class InfrastructureTargetVersionSummary
         }
     };
     /**
-     * The resource type of the target Exadata infrastructure resource that will receive the system software update.
-     **/
+     * The resource type of the target Exadata infrastructure resource that will receive the system
+     * software update.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceType")
     private final TargetResourceType targetResourceType;
 
     /**
-     * The resource type of the target Exadata infrastructure resource that will receive the system software update.
+     * The resource type of the target Exadata infrastructure resource that will receive the system
+     * software update.
+     *
      * @return the value
-     **/
+     */
     public TargetResourceType getTargetResourceType() {
         return targetResourceType;
     }
 
     /**
-     * The OCID of the target Exadata Infrastructure resource that will receive the maintenance update.
-     **/
+     * The OCID of the target Exadata Infrastructure resource that will receive the maintenance
+     * update.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceId")
     private final String targetResourceId;
 
     /**
-     * The OCID of the target Exadata Infrastructure resource that will receive the maintenance update.
+     * The OCID of the target Exadata Infrastructure resource that will receive the maintenance
+     * update.
+     *
      * @return the value
-     **/
+     */
     public String getTargetResourceId() {
         return targetResourceId;
     }
@@ -258,6 +282,7 @@ public final class InfrastructureTargetVersionSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

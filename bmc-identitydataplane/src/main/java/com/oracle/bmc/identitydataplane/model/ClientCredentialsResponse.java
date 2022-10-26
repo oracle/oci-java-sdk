@@ -5,22 +5,22 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ClientCredentialsResponse.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ClientCredentialsResponse.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ClientCredentialsResponse
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"accessToken", "tokenType", "expiresIn"})
     public ClientCredentialsResponse(String accessToken, String tokenType, String expiresIn) {
@@ -32,49 +32,46 @@ public final class ClientCredentialsResponse
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The access token.
-         **/
+        /** The access token. */
         @com.fasterxml.jackson.annotation.JsonProperty("access_token")
         private String accessToken;
 
         /**
          * The access token.
+         *
          * @param accessToken the value to set
          * @return this builder
-         **/
+         */
         public Builder accessToken(String accessToken) {
             this.accessToken = accessToken;
             this.__explicitlySet__.add("accessToken");
             return this;
         }
-        /**
-         * The token type.
-         **/
+        /** The token type. */
         @com.fasterxml.jackson.annotation.JsonProperty("token_type")
         private String tokenType;
 
         /**
          * The token type.
+         *
          * @param tokenType the value to set
          * @return this builder
-         **/
+         */
         public Builder tokenType(String tokenType) {
             this.tokenType = tokenType;
             this.__explicitlySet__.add("tokenType");
             return this;
         }
-        /**
-         * The amount of time until the token expires.
-         **/
+        /** The amount of time until the token expires. */
         @com.fasterxml.jackson.annotation.JsonProperty("expires_in")
         private String expiresIn;
 
         /**
          * The amount of time until the token expires.
+         *
          * @param expiresIn the value to set
          * @return this builder
-         **/
+         */
         public Builder expiresIn(String expiresIn) {
             this.expiresIn = expiresIn;
             this.__explicitlySet__.add("expiresIn");
@@ -108,9 +105,7 @@ public final class ClientCredentialsResponse
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,44 +114,41 @@ public final class ClientCredentialsResponse
         return new Builder().copy(this);
     }
 
-    /**
-     * The access token.
-     **/
+    /** The access token. */
     @com.fasterxml.jackson.annotation.JsonProperty("access_token")
     private final String accessToken;
 
     /**
      * The access token.
+     *
      * @return the value
-     **/
+     */
     public String getAccessToken() {
         return accessToken;
     }
 
-    /**
-     * The token type.
-     **/
+    /** The token type. */
     @com.fasterxml.jackson.annotation.JsonProperty("token_type")
     private final String tokenType;
 
     /**
      * The token type.
+     *
      * @return the value
-     **/
+     */
     public String getTokenType() {
         return tokenType;
     }
 
-    /**
-     * The amount of time until the token expires.
-     **/
+    /** The amount of time until the token expires. */
     @com.fasterxml.jackson.annotation.JsonProperty("expires_in")
     private final String expiresIn;
 
     /**
      * The amount of time until the token expires.
+     *
      * @return the value
-     **/
+     */
     public String getExpiresIn() {
         return expiresIn;
     }
@@ -168,6 +160,7 @@ public final class ClientCredentialsResponse
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,26 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm) service.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Autonomous Database configuration details for storing [manual
+ * backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809)
+ * in the [Object
+ * Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm)
+ * service. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AutonomousDatabaseBackupConfig.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AutonomousDatabaseBackupConfig.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AutonomousDatabaseBackupConfig
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"manualBackupBucketName", "manualBackupType"})
     public AutonomousDatabaseBackupConfig(
@@ -34,32 +37,36 @@ public final class AutonomousDatabaseBackupConfig
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Name of [Object Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
-         **/
+         * Name of [Object
+         * Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm)
+         * bucket to use for storing manual backups.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("manualBackupBucketName")
         private String manualBackupBucketName;
 
         /**
-         * Name of [Object Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
+         * Name of [Object
+         * Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm)
+         * bucket to use for storing manual backups.
+         *
          * @param manualBackupBucketName the value to set
          * @return this builder
-         **/
+         */
         public Builder manualBackupBucketName(String manualBackupBucketName) {
             this.manualBackupBucketName = manualBackupBucketName;
             this.__explicitlySet__.add("manualBackupBucketName");
             return this;
         }
-        /**
-         * The manual backup destination type.
-         **/
+        /** The manual backup destination type. */
         @com.fasterxml.jackson.annotation.JsonProperty("manualBackupType")
         private ManualBackupType manualBackupType;
 
         /**
          * The manual backup destination type.
+         *
          * @param manualBackupType the value to set
          * @return this builder
-         **/
+         */
         public Builder manualBackupType(ManualBackupType manualBackupType) {
             this.manualBackupType = manualBackupType;
             this.__explicitlySet__.add("manualBackupType");
@@ -91,9 +98,7 @@ public final class AutonomousDatabaseBackupConfig
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -103,29 +108,32 @@ public final class AutonomousDatabaseBackupConfig
     }
 
     /**
-     * Name of [Object Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
-     **/
+     * Name of [Object
+     * Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm)
+     * bucket to use for storing manual backups.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("manualBackupBucketName")
     private final String manualBackupBucketName;
 
     /**
-     * Name of [Object Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
+     * Name of [Object
+     * Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm)
+     * bucket to use for storing manual backups.
+     *
      * @return the value
-     **/
+     */
     public String getManualBackupBucketName() {
         return manualBackupBucketName;
     }
 
-    /**
-     * The manual backup destination type.
-     **/
-    public enum ManualBackupType {
+    /** The manual backup destination type. */
+    public enum ManualBackupType implements com.oracle.bmc.http.internal.BmcEnum {
         None("NONE"),
         ObjectStore("OBJECT_STORE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -164,16 +172,15 @@ public final class AutonomousDatabaseBackupConfig
             return UnknownEnumValue;
         }
     };
-    /**
-     * The manual backup destination type.
-     **/
+    /** The manual backup destination type. */
     @com.fasterxml.jackson.annotation.JsonProperty("manualBackupType")
     private final ManualBackupType manualBackupType;
 
     /**
      * The manual backup destination type.
+     *
      * @return the value
-     **/
+     */
     public ManualBackupType getManualBackupType() {
         return manualBackupType;
     }
@@ -185,6 +192,7 @@ public final class AutonomousDatabaseBackupConfig
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

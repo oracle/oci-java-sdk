@@ -9,10 +9,7 @@ import com.oracle.bmc.cloudguard.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class GetTargetResponderRecipeResponderRuleResponse
         extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -25,15 +22,14 @@ public class GetTargetResponderRecipeResponderRuleResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -41,14 +37,13 @@ public class GetTargetResponderRecipeResponderRuleResponse
         return opcRequestId;
     }
 
-    /**
-     * The returned TargetResponderRecipeResponderRule instance.
-     */
+    /** The returned TargetResponderRecipeResponderRule instance. */
     private com.oracle.bmc.cloudguard.model.TargetResponderRecipeResponderRule
             targetResponderRecipeResponderRule;
 
     /**
      * The returned TargetResponderRecipeResponderRule instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.cloudguard.model.TargetResponderRecipeResponderRule
@@ -65,7 +60,7 @@ public class GetTargetResponderRecipeResponderRuleResponse
     })
     private GetTargetResponderRecipeResponderRuleResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.cloudguard.model.TargetResponderRecipeResponderRule
@@ -76,25 +71,26 @@ public class GetTargetResponderRecipeResponderRuleResponse
         this.targetResponderRecipeResponderRule = targetResponderRecipeResponderRule;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetTargetResponderRecipeResponderRuleResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -109,15 +105,14 @@ public class GetTargetResponderRecipeResponderRuleResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -127,14 +122,13 @@ public class GetTargetResponderRecipeResponderRuleResponse
             return this;
         }
 
-        /**
-         * The returned TargetResponderRecipeResponderRule instance.
-         */
+        /** The returned TargetResponderRecipeResponderRule instance. */
         private com.oracle.bmc.cloudguard.model.TargetResponderRecipeResponderRule
                 targetResponderRecipeResponderRule;
 
         /**
          * The returned TargetResponderRecipeResponderRule instance.
+         *
          * @param targetResponderRecipeResponderRule the value to set
          * @return this builder
          */
@@ -147,8 +141,10 @@ public class GetTargetResponderRecipeResponderRuleResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetTargetResponderRecipeResponderRuleResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -161,8 +157,10 @@ public class GetTargetResponderRecipeResponderRuleResponse
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetTargetResponderRecipeResponderRuleResponse build() {
             return new GetTargetResponderRecipeResponderRuleResponse(
                     __httpStatusCode__,
@@ -175,6 +173,7 @@ public class GetTargetResponderRecipeResponderRuleResponse
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

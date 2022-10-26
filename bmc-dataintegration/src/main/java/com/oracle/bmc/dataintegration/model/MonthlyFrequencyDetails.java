@@ -5,25 +5,24 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Frequency Details model for monthly frequency.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Frequency Details model for monthly frequency. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = MonthlyFrequencyDetails.Builder.class
-)
+        builder = MonthlyFrequencyDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class MonthlyFrequencyDetails extends AbstractFrequencyDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -36,16 +35,19 @@ public final class MonthlyFrequencyDetails extends AbstractFrequencyDetails {
             return this;
         }
         /**
-         * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
-         **/
+         * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can
+         * be scheduled for every month, once in two months, once in tree months etc.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("interval")
         private Integer interval;
 
         /**
-         * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+         * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can
+         * be scheduled for every month, once in two months, once in tree months etc.
+         *
          * @param interval the value to set
          * @return this builder
-         **/
+         */
         public Builder interval(Integer interval) {
             this.interval = interval;
             this.__explicitlySet__.add("interval");
@@ -61,16 +63,19 @@ public final class MonthlyFrequencyDetails extends AbstractFrequencyDetails {
             return this;
         }
         /**
-         * A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
-         **/
+         * A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the
+         * month.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("days")
         private java.util.List<Integer> days;
 
         /**
-         * A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+         * A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the
+         * month.
+         *
          * @param days the value to set
          * @return this builder
-         **/
+         */
         public Builder days(java.util.List<Integer> days) {
             this.days = days;
             this.__explicitlySet__.add("days");
@@ -108,9 +113,7 @@ public final class MonthlyFrequencyDetails extends AbstractFrequencyDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -129,15 +132,18 @@ public final class MonthlyFrequencyDetails extends AbstractFrequencyDetails {
     }
 
     /**
-     * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
-     **/
+     * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be
+     * scheduled for every month, once in two months, once in tree months etc.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("interval")
     private final Integer interval;
 
     /**
-     * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+     * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be
+     * scheduled for every month, once in two months, once in tree months etc.
+     *
      * @return the value
-     **/
+     */
     public Integer getInterval() {
         return interval;
     }
@@ -151,14 +157,15 @@ public final class MonthlyFrequencyDetails extends AbstractFrequencyDetails {
 
     /**
      * A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("days")
     private final java.util.List<Integer> days;
 
     /**
      * A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Integer> getDays() {
         return days;
     }
@@ -170,6 +177,7 @@ public final class MonthlyFrequencyDetails extends AbstractFrequencyDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

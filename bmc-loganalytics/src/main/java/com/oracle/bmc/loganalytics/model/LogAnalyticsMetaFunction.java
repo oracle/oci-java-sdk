@@ -5,22 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * LogAnalyticsMetaFunction
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * LogAnalyticsMetaFunction <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = LogAnalyticsMetaFunction.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = LogAnalyticsMetaFunction.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class LogAnalyticsMetaFunction
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "metaFunctionArgument",
@@ -51,114 +51,107 @@ public final class LogAnalyticsMetaFunction
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * An array of meta function arguments.
-         **/
+        /** An array of meta function arguments. */
         @com.fasterxml.jackson.annotation.JsonProperty("metaFunctionArgument")
         private java.util.List<LogAnalyticsMetaFunctionArgument> metaFunctionArgument;
 
         /**
          * An array of meta function arguments.
+         *
          * @param metaFunctionArgument the value to set
          * @return this builder
-         **/
+         */
         public Builder metaFunctionArgument(
                 java.util.List<LogAnalyticsMetaFunctionArgument> metaFunctionArgument) {
             this.metaFunctionArgument = metaFunctionArgument;
             this.__explicitlySet__.add("metaFunctionArgument");
             return this;
         }
-        /**
-         * The component.
-         **/
+        /** The component. */
         @com.fasterxml.jackson.annotation.JsonProperty("component")
         private String component;
 
         /**
          * The component.
+         *
          * @param component the value to set
          * @return this builder
-         **/
+         */
         public Builder component(String component) {
             this.component = component;
             this.__explicitlySet__.add("component");
             return this;
         }
-        /**
-         * The description.
-         **/
+        /** The description. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The edit version.
-         **/
+        /** The edit version. */
         @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
         private Long editVersion;
 
         /**
          * The edit version.
+         *
          * @param editVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder editVersion(Long editVersion) {
             this.editVersion = editVersion;
             this.__explicitlySet__.add("editVersion");
             return this;
         }
-        /**
-         * The meta function unique identifier.
-         **/
+        /** The meta function unique identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("metaFunctionId")
         private Long metaFunctionId;
 
         /**
          * The meta function unique identifier.
+         *
          * @param metaFunctionId the value to set
          * @return this builder
-         **/
+         */
         public Builder metaFunctionId(Long metaFunctionId) {
             this.metaFunctionId = metaFunctionId;
             this.__explicitlySet__.add("metaFunctionId");
             return this;
         }
-        /**
-         * The java class name.
-         **/
+        /** The java class name. */
         @com.fasterxml.jackson.annotation.JsonProperty("javaClassName")
         private String javaClassName;
 
         /**
          * The java class name.
+         *
          * @param javaClassName the value to set
          * @return this builder
-         **/
+         */
         public Builder javaClassName(String javaClassName) {
             this.javaClassName = javaClassName;
             this.__explicitlySet__.add("javaClassName");
             return this;
         }
-        /**
-         * The meta function name.
-         **/
+        /** The meta function name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The meta function name.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -211,9 +204,7 @@ public final class LogAnalyticsMetaFunction
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -222,100 +213,93 @@ public final class LogAnalyticsMetaFunction
         return new Builder().copy(this);
     }
 
-    /**
-     * An array of meta function arguments.
-     **/
+    /** An array of meta function arguments. */
     @com.fasterxml.jackson.annotation.JsonProperty("metaFunctionArgument")
     private final java.util.List<LogAnalyticsMetaFunctionArgument> metaFunctionArgument;
 
     /**
      * An array of meta function arguments.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<LogAnalyticsMetaFunctionArgument> getMetaFunctionArgument() {
         return metaFunctionArgument;
     }
 
-    /**
-     * The component.
-     **/
+    /** The component. */
     @com.fasterxml.jackson.annotation.JsonProperty("component")
     private final String component;
 
     /**
      * The component.
+     *
      * @return the value
-     **/
+     */
     public String getComponent() {
         return component;
     }
 
-    /**
-     * The description.
-     **/
+    /** The description. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The edit version.
-     **/
+    /** The edit version. */
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
     private final Long editVersion;
 
     /**
      * The edit version.
+     *
      * @return the value
-     **/
+     */
     public Long getEditVersion() {
         return editVersion;
     }
 
-    /**
-     * The meta function unique identifier.
-     **/
+    /** The meta function unique identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("metaFunctionId")
     private final Long metaFunctionId;
 
     /**
      * The meta function unique identifier.
+     *
      * @return the value
-     **/
+     */
     public Long getMetaFunctionId() {
         return metaFunctionId;
     }
 
-    /**
-     * The java class name.
-     **/
+    /** The java class name. */
     @com.fasterxml.jackson.annotation.JsonProperty("javaClassName")
     private final String javaClassName;
 
     /**
      * The java class name.
+     *
      * @return the value
-     **/
+     */
     public String getJavaClassName() {
         return javaClassName;
     }
 
-    /**
-     * The meta function name.
-     **/
+    /** The meta function name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The meta function name.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
@@ -327,6 +311,7 @@ public final class LogAnalyticsMetaFunction
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

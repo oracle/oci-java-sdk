@@ -5,22 +5,22 @@
 package com.oracle.bmc.ospgateway.model;
 
 /**
- * Subscription payment authorization response
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Subscription payment authorization response <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AuthorizeSubscriptionPaymentReceipt.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AuthorizeSubscriptionPaymentReceipt.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AuthorizeSubscriptionPaymentReceipt
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"headerId", "apiToken", "userToken"})
     public AuthorizeSubscriptionPaymentReceipt(String headerId, String apiToken, String userToken) {
@@ -32,49 +32,46 @@ public final class AuthorizeSubscriptionPaymentReceipt
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Payment header id
-         **/
+        /** Payment header id */
         @com.fasterxml.jackson.annotation.JsonProperty("headerId")
         private String headerId;
 
         /**
          * Payment header id
+         *
          * @param headerId the value to set
          * @return this builder
-         **/
+         */
         public Builder headerId(String headerId) {
             this.headerId = headerId;
             this.__explicitlySet__.add("headerId");
             return this;
         }
-        /**
-         * Parameters in a token for Payment Service
-         **/
+        /** Parameters in a token for Payment Service */
         @com.fasterxml.jackson.annotation.JsonProperty("apiToken")
         private String apiToken;
 
         /**
          * Parameters in a token for Payment Service
+         *
          * @param apiToken the value to set
          * @return this builder
-         **/
+         */
         public Builder apiToken(String apiToken) {
             this.apiToken = apiToken;
             this.__explicitlySet__.add("apiToken");
             return this;
         }
-        /**
-         * Session token created for Payment Service
-         **/
+        /** Session token created for Payment Service */
         @com.fasterxml.jackson.annotation.JsonProperty("userToken")
         private String userToken;
 
         /**
          * Session token created for Payment Service
+         *
          * @param userToken the value to set
          * @return this builder
-         **/
+         */
         public Builder userToken(String userToken) {
             this.userToken = userToken;
             this.__explicitlySet__.add("userToken");
@@ -109,9 +106,7 @@ public final class AuthorizeSubscriptionPaymentReceipt
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -120,44 +115,41 @@ public final class AuthorizeSubscriptionPaymentReceipt
         return new Builder().copy(this);
     }
 
-    /**
-     * Payment header id
-     **/
+    /** Payment header id */
     @com.fasterxml.jackson.annotation.JsonProperty("headerId")
     private final String headerId;
 
     /**
      * Payment header id
+     *
      * @return the value
-     **/
+     */
     public String getHeaderId() {
         return headerId;
     }
 
-    /**
-     * Parameters in a token for Payment Service
-     **/
+    /** Parameters in a token for Payment Service */
     @com.fasterxml.jackson.annotation.JsonProperty("apiToken")
     private final String apiToken;
 
     /**
      * Parameters in a token for Payment Service
+     *
      * @return the value
-     **/
+     */
     public String getApiToken() {
         return apiToken;
     }
 
-    /**
-     * Session token created for Payment Service
-     **/
+    /** Session token created for Payment Service */
     @com.fasterxml.jackson.annotation.JsonProperty("userToken")
     private final String userToken;
 
     /**
      * Session token created for Payment Service
+     *
      * @return the value
-     **/
+     */
     public String getUserToken() {
         return userToken;
     }
@@ -169,6 +161,7 @@ public final class AuthorizeSubscriptionPaymentReceipt
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

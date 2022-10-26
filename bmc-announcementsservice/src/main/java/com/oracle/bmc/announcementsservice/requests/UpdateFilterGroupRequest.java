@@ -6,77 +6,62 @@ package com.oracle.bmc.announcementsservice.requests;
 
 import com.oracle.bmc.announcementsservice.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/UpdateFilterGroupExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateFilterGroupRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/UpdateFilterGroupExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateFilterGroupRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 public class UpdateFilterGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.announcementsservice.model.UpdateFilterGroupDetails> {
 
-    /**
-     * The OCID of the announcement subscription.
-     */
+    /** The OCID of the announcement subscription. */
     private String announcementSubscriptionId;
 
-    /**
-     * The OCID of the announcement subscription.
-     */
+    /** The OCID of the announcement subscription. */
     public String getAnnouncementSubscriptionId() {
         return announcementSubscriptionId;
     }
-    /**
-     * The name of the filter group.
-     */
+    /** The name of the filter group. */
     private String filterGroupName;
 
-    /**
-     * The name of the filter group.
-     */
+    /** The name of the filter group. */
     public String getFilterGroupName() {
         return filterGroupName;
     }
-    /**
-     * The filter group information to update.
-     */
+    /** The filter group information to update. */
     private com.oracle.bmc.announcementsservice.model.UpdateFilterGroupDetails
             updateFilterGroupDetails;
 
-    /**
-     * The filter group information to update.
-     */
+    /** The filter group information to update. */
     public com.oracle.bmc.announcementsservice.model.UpdateFilterGroupDetails
             getUpdateFilterGroupDetails() {
         return updateFilterGroupDetails;
     }
     /**
-     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the complete request ID.
-     *
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the complete request ID.
      */
     private String opcRequestId;
 
     /**
-     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the complete request ID.
-     *
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the complete request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * The locking version, used for optimistic concurrency control.
-     */
+    /** The locking version, used for optimistic concurrency control. */
     private String ifMatch;
 
-    /**
-     * The locking version, used for optimistic concurrency control.
-     */
+    /** The locking version, used for optimistic concurrency control. */
     public String getIfMatch() {
         return ifMatch;
     }
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -89,17 +74,15 @@ public class UpdateFilterGroupRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateFilterGroupRequest,
                     com.oracle.bmc.announcementsservice.model.UpdateFilterGroupDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the announcement subscription.
-         */
+        /** The OCID of the announcement subscription. */
         private String announcementSubscriptionId = null;
 
         /**
          * The OCID of the announcement subscription.
+         *
          * @param announcementSubscriptionId the value to set
          * @return this builder instance
          */
@@ -108,13 +91,12 @@ public class UpdateFilterGroupRequest
             return this;
         }
 
-        /**
-         * The name of the filter group.
-         */
+        /** The name of the filter group. */
         private String filterGroupName = null;
 
         /**
          * The name of the filter group.
+         *
          * @param filterGroupName the value to set
          * @return this builder instance
          */
@@ -123,14 +105,13 @@ public class UpdateFilterGroupRequest
             return this;
         }
 
-        /**
-         * The filter group information to update.
-         */
+        /** The filter group information to update. */
         private com.oracle.bmc.announcementsservice.model.UpdateFilterGroupDetails
                 updateFilterGroupDetails = null;
 
         /**
          * The filter group information to update.
+         *
          * @param updateFilterGroupDetails the value to set
          * @return this builder instance
          */
@@ -142,15 +123,14 @@ public class UpdateFilterGroupRequest
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the complete request ID.
-         *
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
+         * about a particular request, please provide the complete request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the complete request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
+         * about a particular request, please provide the complete request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -160,13 +140,12 @@ public class UpdateFilterGroupRequest
             return this;
         }
 
-        /**
-         * The locking version, used for optimistic concurrency control.
-         */
+        /** The locking version, used for optimistic concurrency control. */
         private String ifMatch = null;
 
         /**
          * The locking version, used for optimistic concurrency control.
+         *
          * @param ifMatch the value to set
          * @return this builder instance
          */
@@ -177,18 +156,19 @@ public class UpdateFilterGroupRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -200,6 +180,7 @@ public class UpdateFilterGroupRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateFilterGroupRequest o) {
@@ -216,10 +197,11 @@ public class UpdateFilterGroupRequest
         /**
          * Build the instance of UpdateFilterGroupRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateFilterGroupRequest
          */
@@ -232,6 +214,7 @@ public class UpdateFilterGroupRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -245,7 +228,8 @@ public class UpdateFilterGroupRequest
         /**
          * Build the instance of UpdateFilterGroupRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateFilterGroupRequest
@@ -258,12 +242,14 @@ public class UpdateFilterGroupRequest
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new UpdateFilterGroupRequest(announcementSubscriptionId, filterGroupName, updateFilterGroupDetails, opcRequestId, ifMatch);
+            // new UpdateFilterGroupRequest(announcementSubscriptionId, filterGroupName,
+            // updateFilterGroupDetails, opcRequestId, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -277,6 +263,7 @@ public class UpdateFilterGroupRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

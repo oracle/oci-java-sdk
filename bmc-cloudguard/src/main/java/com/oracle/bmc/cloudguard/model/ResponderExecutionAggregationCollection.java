@@ -5,22 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Collection of ResponderExecutionAggregation objects
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Collection of ResponderExecutionAggregation objects <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ResponderExecutionAggregationCollection.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ResponderExecutionAggregationCollection.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ResponderExecutionAggregationCollection
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items"})
     public ResponderExecutionAggregationCollection(
@@ -31,17 +31,16 @@ public final class ResponderExecutionAggregationCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The items consist of all the ResponderExecutionAggregation objects.
-         **/
+        /** The items consist of all the ResponderExecutionAggregation objects. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ResponderExecutionAggregation> items;
 
         /**
          * The items consist of all the ResponderExecutionAggregation objects.
+         *
          * @param items the value to set
          * @return this builder
-         **/
+         */
         public Builder items(java.util.List<ResponderExecutionAggregation> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -69,9 +68,7 @@ public final class ResponderExecutionAggregationCollection
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -80,16 +77,15 @@ public final class ResponderExecutionAggregationCollection
         return new Builder().copy(this);
     }
 
-    /**
-     * The items consist of all the ResponderExecutionAggregation objects.
-     **/
+    /** The items consist of all the ResponderExecutionAggregation objects. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ResponderExecutionAggregation> items;
 
     /**
      * The items consist of all the ResponderExecutionAggregation objects.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<ResponderExecutionAggregation> getItems() {
         return items;
     }
@@ -101,6 +97,7 @@ public final class ResponderExecutionAggregationCollection
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.emwarehouse.model;
 
-/**
- * Possible operation types.
- **/
+/** Possible operation types. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
-public enum OperationType {
+public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateEmWarehouse("CREATE_EM_WAREHOUSE"),
     UpdateEmWarehouse("UPDATE_EM_WAREHOUSE"),
     DeleteEmWarehouse("DELETE_EM_WAREHOUSE"),

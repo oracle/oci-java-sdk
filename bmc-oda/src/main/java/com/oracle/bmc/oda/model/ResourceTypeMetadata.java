@@ -5,21 +5,22 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * Describes resources of a given type within a package.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Describes resources of a given type within a package. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ResourceTypeMetadata.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResourceTypeMetadata extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ResourceTypeMetadata.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ResourceTypeMetadata
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"resourceType", "properties"})
     public ResourceTypeMetadata(String resourceType, java.util.List<MetadataProperty> properties) {
@@ -30,33 +31,35 @@ public final class ResourceTypeMetadata extends com.oracle.bmc.http.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The type of the resource described by this metadata object.
-         **/
+        /** The type of the resource described by this metadata object. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
          * The type of the resource described by this metadata object.
+         *
          * @param resourceType the value to set
          * @return this builder
-         **/
+         */
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
         /**
-         * Any properties needed to describe the content and its usage for this resource type, and within the containing package.
-         **/
+         * Any properties needed to describe the content and its usage for this resource type, and
+         * within the containing package.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.List<MetadataProperty> properties;
 
         /**
-         * Any properties needed to describe the content and its usage for this resource type, and within the containing package.
+         * Any properties needed to describe the content and its usage for this resource type, and
+         * within the containing package.
+         *
          * @param properties the value to set
          * @return this builder
-         **/
+         */
         public Builder properties(java.util.List<MetadataProperty> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -87,9 +90,7 @@ public final class ResourceTypeMetadata extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -98,30 +99,32 @@ public final class ResourceTypeMetadata extends com.oracle.bmc.http.internal.Exp
         return new Builder().copy(this);
     }
 
-    /**
-     * The type of the resource described by this metadata object.
-     **/
+    /** The type of the resource described by this metadata object. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
      * The type of the resource described by this metadata object.
+     *
      * @return the value
-     **/
+     */
     public String getResourceType() {
         return resourceType;
     }
 
     /**
-     * Any properties needed to describe the content and its usage for this resource type, and within the containing package.
-     **/
+     * Any properties needed to describe the content and its usage for this resource type, and
+     * within the containing package.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.List<MetadataProperty> properties;
 
     /**
-     * Any properties needed to describe the content and its usage for this resource type, and within the containing package.
+     * Any properties needed to describe the content and its usage for this resource type, and
+     * within the containing package.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<MetadataProperty> getProperties() {
         return properties;
     }
@@ -133,6 +136,7 @@ public final class ResourceTypeMetadata extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

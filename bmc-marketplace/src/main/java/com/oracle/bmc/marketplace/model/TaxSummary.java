@@ -5,19 +5,20 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * Tax implication that current tenant may be eligible while using specific listing
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Tax implication that current tenant may be eligible while using specific listing <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TaxSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TaxSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class TaxSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"code", "name", "country", "url"})
     public TaxSummary(java.util.UUID code, String name, String country, String url) {
@@ -30,65 +31,61 @@ public final class TaxSummary extends com.oracle.bmc.http.internal.ExplicitlySet
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Unique code for the tax.
-         **/
+        /** Unique code for the tax. */
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private java.util.UUID code;
 
         /**
          * Unique code for the tax.
+         *
          * @param code the value to set
          * @return this builder
-         **/
+         */
         public Builder code(java.util.UUID code) {
             this.code = code;
             this.__explicitlySet__.add("code");
             return this;
         }
-        /**
-         * Name of the tax code.
-         **/
+        /** Name of the tax code. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of the tax code.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Country, which imposes the tax.
-         **/
+        /** Country, which imposes the tax. */
         @com.fasterxml.jackson.annotation.JsonProperty("country")
         private String country;
 
         /**
          * Country, which imposes the tax.
+         *
          * @param country the value to set
          * @return this builder
-         **/
+         */
         public Builder country(String country) {
             this.country = country;
             this.__explicitlySet__.add("country");
             return this;
         }
-        /**
-         * The URL with more details about this tax.
-         **/
+        /** The URL with more details about this tax. */
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
         /**
          * The URL with more details about this tax.
+         *
          * @param url the value to set
          * @return this builder
-         **/
+         */
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
@@ -124,9 +121,7 @@ public final class TaxSummary extends com.oracle.bmc.http.internal.ExplicitlySet
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -135,58 +130,54 @@ public final class TaxSummary extends com.oracle.bmc.http.internal.ExplicitlySet
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique code for the tax.
-     **/
+    /** Unique code for the tax. */
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final java.util.UUID code;
 
     /**
      * Unique code for the tax.
+     *
      * @return the value
-     **/
+     */
     public java.util.UUID getCode() {
         return code;
     }
 
-    /**
-     * Name of the tax code.
-     **/
+    /** Name of the tax code. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of the tax code.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Country, which imposes the tax.
-     **/
+    /** Country, which imposes the tax. */
     @com.fasterxml.jackson.annotation.JsonProperty("country")
     private final String country;
 
     /**
      * Country, which imposes the tax.
+     *
      * @return the value
-     **/
+     */
     public String getCountry() {
         return country;
     }
 
-    /**
-     * The URL with more details about this tax.
-     **/
+    /** The URL with more details about this tax. */
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
      * The URL with more details about this tax.
+     *
      * @return the value
-     **/
+     */
     public String getUrl() {
         return url;
     }
@@ -198,6 +189,7 @@ public final class TaxSummary extends com.oracle.bmc.http.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

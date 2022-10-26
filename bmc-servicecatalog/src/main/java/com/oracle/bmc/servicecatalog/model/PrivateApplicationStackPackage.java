@@ -5,25 +5,24 @@
 package com.oracle.bmc.servicecatalog.model;
 
 /**
- * A stack package for private applications.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A stack package for private applications. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = PrivateApplicationStackPackage.Builder.class
-)
+        builder = PrivateApplicationStackPackage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "packageType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "packageType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class PrivateApplicationStackPackage extends PrivateApplicationPackage {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -71,33 +70,31 @@ public final class PrivateApplicationStackPackage extends PrivateApplicationPack
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * The content URL of the terraform configuration.
-         **/
+        /** The content URL of the terraform configuration. */
         @com.fasterxml.jackson.annotation.JsonProperty("contentUrl")
         private String contentUrl;
 
         /**
          * The content URL of the terraform configuration.
+         *
          * @param contentUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder contentUrl(String contentUrl) {
             this.contentUrl = contentUrl;
             this.__explicitlySet__.add("contentUrl");
             return this;
         }
-        /**
-         * The MIME type of the terraform configuration.
-         **/
+        /** The MIME type of the terraform configuration. */
         @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
         private String mimeType;
 
         /**
          * The MIME type of the terraform configuration.
+         *
          * @param mimeType the value to set
          * @return this builder
-         **/
+         */
         public Builder mimeType(String mimeType) {
             this.mimeType = mimeType;
             this.__explicitlySet__.add("mimeType");
@@ -150,9 +147,7 @@ public final class PrivateApplicationStackPackage extends PrivateApplicationPack
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -175,30 +170,28 @@ public final class PrivateApplicationStackPackage extends PrivateApplicationPack
         this.mimeType = mimeType;
     }
 
-    /**
-     * The content URL of the terraform configuration.
-     **/
+    /** The content URL of the terraform configuration. */
     @com.fasterxml.jackson.annotation.JsonProperty("contentUrl")
     private final String contentUrl;
 
     /**
      * The content URL of the terraform configuration.
+     *
      * @return the value
-     **/
+     */
     public String getContentUrl() {
         return contentUrl;
     }
 
-    /**
-     * The MIME type of the terraform configuration.
-     **/
+    /** The MIME type of the terraform configuration. */
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
     private final String mimeType;
 
     /**
      * The MIME type of the terraform configuration.
+     *
      * @return the value
-     **/
+     */
     public String getMimeType() {
         return mimeType;
     }
@@ -210,6 +203,7 @@ public final class PrivateApplicationStackPackage extends PrivateApplicationPack
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

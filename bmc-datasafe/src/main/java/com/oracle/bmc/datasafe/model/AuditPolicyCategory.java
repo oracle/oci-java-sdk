@@ -5,10 +5,11 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Represents the category to which an audit policy belongs. An audit policy can belong to a single category.
- **/
+ * Represents the category to which an audit policy belongs. An audit policy can belong to a single
+ * category.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum AuditPolicyCategory {
+public enum AuditPolicyCategory implements com.oracle.bmc.http.internal.BmcEnum {
     BasicActivity("BASIC_ACTIVITY"),
     AdminUserActivity("ADMIN_USER_ACTIVITY"),
     UserActivity("USER_ACTIVITY"),

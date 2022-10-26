@@ -5,30 +5,29 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Exadata insight resource.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Exadata insight resource. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "entitySource",
-    defaultImpl = ExadataInsight.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "entitySource",
+        defaultImpl = ExadataInsight.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = EmManagedExternalExadataInsight.class,
-        name = "EM_MANAGED_EXTERNAL_EXADATA"
-    )
+            value = EmManagedExternalExadataInsight.class,
+            name = "EM_MANAGED_EXTERNAL_EXADATA")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ExadataInsight extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class ExadataInsight extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -81,224 +80,217 @@ public class ExadataInsight extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.lifecycleDetails = lifecycleDetails;
     }
 
-    /**
-     * Exadata insight identifier
-     **/
+    /** Exadata insight identifier */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Exadata insight identifier
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * Compartment identifier of the Exadata insight resource
-     **/
+    /** Compartment identifier of the Exadata insight resource */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment identifier of the Exadata insight resource
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
-     **/
+     * The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is
+     * unique amongst the Exadata systems managed by the same Enterprise Manager.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("exadataName")
     private final String exadataName;
 
     /**
-     * The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
+     * The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is
+     * unique amongst the Exadata systems managed by the same Enterprise Manager.
+     *
      * @return the value
-     **/
+     */
     public String getExadataName() {
         return exadataName;
     }
 
-    /**
-     * The user-friendly name for the Exadata system. The name does not have to be unique.
-     **/
+    /** The user-friendly name for the Exadata system. The name does not have to be unique. */
     @com.fasterxml.jackson.annotation.JsonProperty("exadataDisplayName")
     private final String exadataDisplayName;
 
     /**
      * The user-friendly name for the Exadata system. The name does not have to be unique.
+     *
      * @return the value
-     **/
+     */
     public String getExadataDisplayName() {
         return exadataDisplayName;
     }
 
-    /**
-     * Operations Insights internal representation of the the Exadata system type.
-     **/
+    /** Operations Insights internal representation of the the Exadata system type. */
     @com.fasterxml.jackson.annotation.JsonProperty("exadataType")
     private final ExadataType exadataType;
 
     /**
      * Operations Insights internal representation of the the Exadata system type.
+     *
      * @return the value
-     **/
+     */
     public ExadataType getExadataType() {
         return exadataType;
     }
 
-    /**
-     * Exadata rack type.
-     **/
+    /** Exadata rack type. */
     @com.fasterxml.jackson.annotation.JsonProperty("exadataRackType")
     private final ExadataRackType exadataRackType;
 
     /**
      * Exadata rack type.
+     *
      * @return the value
-     **/
+     */
     public ExadataRackType getExadataRackType() {
         return exadataRackType;
     }
 
-    /**
-     * true if virtualization is used in the Exadata system
-     **/
+    /** true if virtualization is used in the Exadata system */
     @com.fasterxml.jackson.annotation.JsonProperty("isVirtualizedExadata")
     private final Boolean isVirtualizedExadata;
 
     /**
      * true if virtualization is used in the Exadata system
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsVirtualizedExadata() {
         return isVirtualizedExadata;
     }
 
-    /**
-     * Indicates the status of an Exadata insight in Operations Insights
-     **/
+    /** Indicates the status of an Exadata insight in Operations Insights */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final ResourceStatus status;
 
     /**
      * Indicates the status of an Exadata insight in Operations Insights
+     *
      * @return the value
-     **/
+     */
     public ResourceStatus getStatus() {
         return status;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     *
-     **/
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 
-    /**
-     * The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
-     **/
+    /** The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The time the Exadata insight was updated. An RFC3339 formatted datetime string
-     **/
+    /** The time the Exadata insight was updated. An RFC3339 formatted datetime string */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time the Exadata insight was updated. An RFC3339 formatted datetime string
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The current state of the Exadata insight.
-     **/
+    /** The current state of the Exadata insight. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ExadataInsightLifecycleState lifecycleState;
 
     /**
      * The current state of the Exadata insight.
+     *
      * @return the value
-     **/
+     */
     public ExadataInsightLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-     **/
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in Failed state.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in Failed state.
+     *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -310,6 +302,7 @@ public class ExadataInsight extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

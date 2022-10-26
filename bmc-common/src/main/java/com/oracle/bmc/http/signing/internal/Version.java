@@ -11,34 +11,22 @@ import javax.annotation.Nonnull;
 
 import java.util.Optional;
 
-/**
- * The rules for a signed request version, i.e., supported algorithms, supported keyId formats.
- */
+/** The rules for a signed request version, i.e., supported algorithms, supported keyId formats. */
 public interface Version {
 
-    /**
-     * Get a set of supported algorithms.
-     */
+    /** Get a set of supported algorithms. */
     Set<Algorithm> getSupportedAlgorithms();
 
-    /**
-     * Get a set of supported keyId types.
-     */
+    /** Get a set of supported keyId types. */
     Set<KeyIdType> getSupportedKeyIdTypes();
 
-    /**
-     * Get the version number.
-     */
+    /** Get the version number. */
     int getVersionNumber();
 
-    /**
-     * Get the name of this version - usually the version number as a String.
-     */
+    /** Get the name of this version - usually the version number as a String. */
     String getVersionName();
 
-    /**
-     * Get the minimum public key size in bits.
-     */
+    /** Get the minimum public key size in bits. */
     int getMinimumKeySizeInBits();
 
     Optional<Error> validateKeyId(@Nonnull String keyId);

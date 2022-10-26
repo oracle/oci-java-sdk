@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.licensemanager.model;
 
-/**
- * The product license unit.
- **/
+/** The product license unit. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
-public enum LicenseUnit {
+public enum LicenseUnit implements com.oracle.bmc.http.internal.BmcEnum {
     Ocpu("OCPU"),
     NamedUserPlus("NAMED_USER_PLUS"),
     Processors("PROCESSORS"),

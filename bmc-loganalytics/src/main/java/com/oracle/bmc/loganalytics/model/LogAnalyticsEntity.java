@@ -5,22 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Description of a log analytics entity.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Description of a log analytics entity. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = LogAnalyticsEntity.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = LogAnalyticsEntity.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class LogAnalyticsEntity
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -94,29 +94,27 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
-         * a resource that is provisioned and managed by the customer on their premises or on the cloud.
-         *
-         **/
+         * The log analytics entity OCID. This ID is a reference used by log analytics features and
+         * it represents a resource that is provisioned and managed by the customer on their
+         * premises or on the cloud.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
-         * a resource that is provisioned and managed by the customer on their premises or on the cloud.
+         * The log analytics entity OCID. This ID is a reference used by log analytics features and
+         * it represents a resource that is provisioned and managed by the customer on their
+         * premises or on the cloud.
          *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * Log analytics entity name.
-         *
-         **/
+        /** Log analytics entity name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -125,32 +123,32 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         **/
+         * Compartment Identifier [OCID]
+         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Compartment Identifier [OCID]
+         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * Log analytics entity type name.
-         *
-         **/
+        /** Log analytics entity type name. */
         @com.fasterxml.jackson.annotation.JsonProperty("entityTypeName")
         private String entityTypeName;
 
@@ -159,16 +157,13 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
          *
          * @param entityTypeName the value to set
          * @return this builder
-         **/
+         */
         public Builder entityTypeName(String entityTypeName) {
             this.entityTypeName = entityTypeName;
             this.__explicitlySet__.add("entityTypeName");
             return this;
         }
-        /**
-         * Internal name for the log analytics entity type.
-         *
-         **/
+        /** Internal name for the log analytics entity type. */
         @com.fasterxml.jackson.annotation.JsonProperty("entityTypeInternalName")
         private String entityTypeInternalName;
 
@@ -177,16 +172,13 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
          *
          * @param entityTypeInternalName the value to set
          * @return this builder
-         **/
+         */
         public Builder entityTypeInternalName(String entityTypeInternalName) {
             this.entityTypeInternalName = entityTypeInternalName;
             this.__explicitlySet__.add("entityTypeInternalName");
             return this;
         }
-        /**
-         * The current state of the log analytics entity.
-         *
-         **/
+        /** The current state of the log analytics entity. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private EntityLifecycleStates lifecycleState;
 
@@ -195,34 +187,32 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
          *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(EntityLifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
-         *
-         **/
+         * lifecycleDetails has additional information regarding substeps such as management agent
+         * plugin deployment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
+         * lifecycleDetails has additional information regarding substeps such as management agent
+         * plugin deployment.
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /**
-         * The OCID of the Management Agent.
-         *
-         **/
+        /** The OCID of the Management Agent. */
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
@@ -231,16 +221,13 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
          *
          * @param managementAgentId the value to set
          * @return this builder
-         **/
+         */
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = managementAgentId;
             this.__explicitlySet__.add("managementAgentId");
             return this;
         }
-        /**
-         * Management agent (management-agents resource kind) display name
-         *
-         **/
+        /** Management agent (management-agents resource kind) display name */
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentDisplayName")
         private String managementAgentDisplayName;
 
@@ -249,16 +236,13 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
          *
          * @param managementAgentDisplayName the value to set
          * @return this builder
-         **/
+         */
         public Builder managementAgentDisplayName(String managementAgentDisplayName) {
             this.managementAgentDisplayName = managementAgentDisplayName;
             this.__explicitlySet__.add("managementAgentDisplayName");
             return this;
         }
-        /**
-         * Management agent (management-agents resource kind) compartment OCID
-         *
-         **/
+        /** Management agent (management-agents resource kind) compartment OCID */
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentCompartmentId")
         private String managementAgentCompartmentId;
 
@@ -267,16 +251,13 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
          *
          * @param managementAgentCompartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder managementAgentCompartmentId(String managementAgentCompartmentId) {
             this.managementAgentCompartmentId = managementAgentCompartmentId;
             this.__explicitlySet__.add("managementAgentCompartmentId");
             return this;
         }
-        /**
-         * The timezone region of the log analytics entity.
-         *
-         **/
+        /** The timezone region of the log analytics entity. */
         @com.fasterxml.jackson.annotation.JsonProperty("timezoneRegion")
         private String timezoneRegion;
 
@@ -285,25 +266,26 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
          *
          * @param timezoneRegion the value to set
          * @return this builder
-         **/
+         */
         public Builder timezoneRegion(String timezoneRegion) {
             this.timezoneRegion = timezoneRegion;
             this.__explicitlySet__.add("timezoneRegion");
             return this;
         }
         /**
-         * The name/value pairs for parameter values to be used in file patterns specified in log sources.
-         *
-         **/
+         * The name/value pairs for parameter values to be used in file patterns specified in log
+         * sources.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, String> properties;
 
         /**
-         * The name/value pairs for parameter values to be used in file patterns specified in log sources.
+         * The name/value pairs for parameter values to be used in file patterns specified in log
+         * sources.
          *
          * @param properties the value to set
          * @return this builder
-         **/
+         */
         public Builder properties(java.util.Map<String, String> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -318,10 +300,7 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("creationSource");
             return this;
         }
-        /**
-         * The date and time the resource was created, in the format defined by RFC3339.
-         *
-         **/
+        /** The date and time the resource was created, in the format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -330,16 +309,13 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * The date and time the resource was last updated, in the format defined by RFC3339.
-         *
-         **/
+        /** The date and time the resource was last updated, in the format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
@@ -348,7 +324,7 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
          *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -356,8 +332,7 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
         }
         /**
          * The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("areLogsCollected")
         private Boolean areLogsCollected;
 
@@ -366,49 +341,51 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
          *
          * @param areLogsCollected the value to set
          * @return this builder
-         **/
+         */
         public Builder areLogsCollected(Boolean areLogsCollected) {
             this.areLogsCollected = areLogsCollected;
             this.__explicitlySet__.add("areLogsCollected");
             return this;
         }
         /**
-         * The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity
-         * represents a non-cloud resource that the customer may have on their premises.
-         *
-         **/
+         * The OCID of the Cloud resource which this entity is a representation of. This may be
+         * blank when the entity represents a non-cloud resource that the customer may have on their
+         * premises.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("cloudResourceId")
         private String cloudResourceId;
 
         /**
-         * The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity
-         * represents a non-cloud resource that the customer may have on their premises.
+         * The OCID of the Cloud resource which this entity is a representation of. This may be
+         * blank when the entity represents a non-cloud resource that the customer may have on their
+         * premises.
          *
          * @param cloudResourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder cloudResourceId(String cloudResourceId) {
             this.cloudResourceId = cloudResourceId;
             this.__explicitlySet__.add("cloudResourceId");
             return this;
         }
         /**
-         * The hostname where the entity represented here is actually present. This would be the output one would get if
-         * they run {@code echo $HOSTNAME} on Linux or an equivalent OS command. This may be different from
-         * management agents host since logs may be collected remotely.
-         *
-         **/
+         * The hostname where the entity represented here is actually present. This would be the
+         * output one would get if they run {@code echo $HOSTNAME} on Linux or an equivalent OS
+         * command. This may be different from management agents host since logs may be collected
+         * remotely.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
         /**
-         * The hostname where the entity represented here is actually present. This would be the output one would get if
-         * they run {@code echo $HOSTNAME} on Linux or an equivalent OS command. This may be different from
-         * management agents host since logs may be collected remotely.
+         * The hostname where the entity represented here is actually present. This would be the
+         * output one would get if they run {@code echo $HOSTNAME} on Linux or an equivalent OS
+         * command. This may be different from management agents host since logs may be collected
+         * remotely.
          *
          * @param hostname the value to set
          * @return this builder
-         **/
+         */
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
@@ -416,8 +393,7 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
         }
         /**
          * This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
@@ -426,27 +402,26 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
          *
          * @param sourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceId(String sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -455,8 +430,7 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -466,7 +440,7 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -576,9 +550,7 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -588,27 +560,25 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
-     * a resource that is provisioned and managed by the customer on their premises or on the cloud.
-     *
-     **/
+     * The log analytics entity OCID. This ID is a reference used by log analytics features and it
+     * represents a resource that is provisioned and managed by the customer on their premises or on
+     * the cloud.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
-     * a resource that is provisioned and managed by the customer on their premises or on the cloud.
+     * The log analytics entity OCID. This ID is a reference used by log analytics features and it
+     * represents a resource that is provisioned and managed by the customer on their premises or on
+     * the cloud.
      *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * Log analytics entity name.
-     *
-     **/
+    /** Log analytics entity name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -616,29 +586,29 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
      * Log analytics entity name.
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
-     * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     **/
+     * Compartment Identifier [OCID]
+     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Compartment Identifier [OCID]
+     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * Log analytics entity type name.
-     *
-     **/
+    /** Log analytics entity type name. */
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeName")
     private final String entityTypeName;
 
@@ -646,15 +616,12 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
      * Log analytics entity type name.
      *
      * @return the value
-     **/
+     */
     public String getEntityTypeName() {
         return entityTypeName;
     }
 
-    /**
-     * Internal name for the log analytics entity type.
-     *
-     **/
+    /** Internal name for the log analytics entity type. */
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeInternalName")
     private final String entityTypeInternalName;
 
@@ -662,15 +629,12 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
      * Internal name for the log analytics entity type.
      *
      * @return the value
-     **/
+     */
     public String getEntityTypeInternalName() {
         return entityTypeInternalName;
     }
 
-    /**
-     * The current state of the log analytics entity.
-     *
-     **/
+    /** The current state of the log analytics entity. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final EntityLifecycleStates lifecycleState;
 
@@ -678,31 +642,29 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
      * The current state of the log analytics entity.
      *
      * @return the value
-     **/
+     */
     public EntityLifecycleStates getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
-     *
-     **/
+     * lifecycleDetails has additional information regarding substeps such as management agent
+     * plugin deployment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
+     * lifecycleDetails has additional information regarding substeps such as management agent
+     * plugin deployment.
      *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /**
-     * The OCID of the Management Agent.
-     *
-     **/
+    /** The OCID of the Management Agent. */
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
@@ -710,15 +672,12 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
      * The OCID of the Management Agent.
      *
      * @return the value
-     **/
+     */
     public String getManagementAgentId() {
         return managementAgentId;
     }
 
-    /**
-     * Management agent (management-agents resource kind) display name
-     *
-     **/
+    /** Management agent (management-agents resource kind) display name */
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentDisplayName")
     private final String managementAgentDisplayName;
 
@@ -726,15 +685,12 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
      * Management agent (management-agents resource kind) display name
      *
      * @return the value
-     **/
+     */
     public String getManagementAgentDisplayName() {
         return managementAgentDisplayName;
     }
 
-    /**
-     * Management agent (management-agents resource kind) compartment OCID
-     *
-     **/
+    /** Management agent (management-agents resource kind) compartment OCID */
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentCompartmentId")
     private final String managementAgentCompartmentId;
 
@@ -742,15 +698,12 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
      * Management agent (management-agents resource kind) compartment OCID
      *
      * @return the value
-     **/
+     */
     public String getManagementAgentCompartmentId() {
         return managementAgentCompartmentId;
     }
 
-    /**
-     * The timezone region of the log analytics entity.
-     *
-     **/
+    /** The timezone region of the log analytics entity. */
     @com.fasterxml.jackson.annotation.JsonProperty("timezoneRegion")
     private final String timezoneRegion;
 
@@ -758,23 +711,24 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
      * The timezone region of the log analytics entity.
      *
      * @return the value
-     **/
+     */
     public String getTimezoneRegion() {
         return timezoneRegion;
     }
 
     /**
-     * The name/value pairs for parameter values to be used in file patterns specified in log sources.
-     *
-     **/
+     * The name/value pairs for parameter values to be used in file patterns specified in log
+     * sources.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.Map<String, String> properties;
 
     /**
-     * The name/value pairs for parameter values to be used in file patterns specified in log sources.
+     * The name/value pairs for parameter values to be used in file patterns specified in log
+     * sources.
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getProperties() {
         return properties;
     }
@@ -786,10 +740,7 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
         return creationSource;
     }
 
-    /**
-     * The date and time the resource was created, in the format defined by RFC3339.
-     *
-     **/
+    /** The date and time the resource was created, in the format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -797,15 +748,12 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
      * The date and time the resource was created, in the format defined by RFC3339.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The date and time the resource was last updated, in the format defined by RFC3339.
-     *
-     **/
+    /** The date and time the resource was last updated, in the format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
@@ -813,15 +761,12 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
      * The date and time the resource was last updated, in the format defined by RFC3339.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
-     *
-     **/
+    /** The Boolean flag to indicate if logs are collected for an entity for log analytics usage. */
     @com.fasterxml.jackson.annotation.JsonProperty("areLogsCollected")
     private final Boolean areLogsCollected;
 
@@ -829,53 +774,48 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
      * The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
      *
      * @return the value
-     **/
+     */
     public Boolean getAreLogsCollected() {
         return areLogsCollected;
     }
 
     /**
-     * The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity
-     * represents a non-cloud resource that the customer may have on their premises.
-     *
-     **/
+     * The OCID of the Cloud resource which this entity is a representation of. This may be blank
+     * when the entity represents a non-cloud resource that the customer may have on their premises.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("cloudResourceId")
     private final String cloudResourceId;
 
     /**
-     * The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity
-     * represents a non-cloud resource that the customer may have on their premises.
+     * The OCID of the Cloud resource which this entity is a representation of. This may be blank
+     * when the entity represents a non-cloud resource that the customer may have on their premises.
      *
      * @return the value
-     **/
+     */
     public String getCloudResourceId() {
         return cloudResourceId;
     }
 
     /**
-     * The hostname where the entity represented here is actually present. This would be the output one would get if
-     * they run {@code echo $HOSTNAME} on Linux or an equivalent OS command. This may be different from
-     * management agents host since logs may be collected remotely.
-     *
-     **/
+     * The hostname where the entity represented here is actually present. This would be the output
+     * one would get if they run {@code echo $HOSTNAME} on Linux or an equivalent OS command. This
+     * may be different from management agents host since logs may be collected remotely.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
     /**
-     * The hostname where the entity represented here is actually present. This would be the output one would get if
-     * they run {@code echo $HOSTNAME} on Linux or an equivalent OS command. This may be different from
-     * management agents host since logs may be collected remotely.
+     * The hostname where the entity represented here is actually present. This would be the output
+     * one would get if they run {@code echo $HOSTNAME} on Linux or an equivalent OS command. This
+     * may be different from management agents host since logs may be collected remotely.
      *
      * @return the value
-     **/
+     */
     public String getHostname() {
         return hostname;
     }
 
-    /**
-     * This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
-     *
-     **/
+    /** This indicates the type of source. It is primarily for Enterprise Manager Repository ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
@@ -883,43 +823,41 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
      * This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
      *
      * @return the value
-     **/
+     */
     public String getSourceId() {
         return sourceId;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -931,6 +869,7 @@ public final class LogAnalyticsEntity extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

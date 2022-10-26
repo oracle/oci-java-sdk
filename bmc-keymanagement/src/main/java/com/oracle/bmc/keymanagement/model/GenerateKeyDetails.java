@@ -5,21 +5,22 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = GenerateKeyDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class GenerateKeyDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = GenerateKeyDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class GenerateKeyDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "associatedData",
@@ -45,38 +46,36 @@ public final class GenerateKeyDetails extends com.oracle.bmc.http.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Information that can be used to provide an encryption context for the encrypted data.
-         * The length of the string representation of the associated data must be fewer than 4096
+         * Information that can be used to provide an encryption context for the encrypted data. The
+         * length of the string representation of the associated data must be fewer than 4096
          * characters.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("associatedData")
         private java.util.Map<String, String> associatedData;
 
         /**
-         * Information that can be used to provide an encryption context for the encrypted data.
-         * The length of the string representation of the associated data must be fewer than 4096
+         * Information that can be used to provide an encryption context for the encrypted data. The
+         * length of the string representation of the associated data must be fewer than 4096
          * characters.
          *
          * @param associatedData the value to set
          * @return this builder
-         **/
+         */
         public Builder associatedData(java.util.Map<String, String> associatedData) {
             this.associatedData = associatedData;
             this.__explicitlySet__.add("associatedData");
             return this;
         }
-        /**
-         * If true, the generated key is also returned unencrypted.
-         **/
+        /** If true, the generated key is also returned unencrypted. */
         @com.fasterxml.jackson.annotation.JsonProperty("includePlaintextKey")
         private Boolean includePlaintextKey;
 
         /**
          * If true, the generated key is also returned unencrypted.
+         *
          * @param includePlaintextKey the value to set
          * @return this builder
-         **/
+         */
         public Builder includePlaintextKey(Boolean includePlaintextKey) {
             this.includePlaintextKey = includePlaintextKey;
             this.__explicitlySet__.add("includePlaintextKey");
@@ -84,15 +83,16 @@ public final class GenerateKeyDetails extends com.oracle.bmc.http.internal.Expli
         }
         /**
          * The OCID of the master encryption key to encrypt the generated data encryption key with.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
 
         /**
          * The OCID of the master encryption key to encrypt the generated data encryption key with.
+         *
          * @param keyId the value to set
          * @return this builder
-         **/
+         */
         public Builder keyId(String keyId) {
             this.keyId = keyId;
             this.__explicitlySet__.add("keyId");
@@ -108,20 +108,21 @@ public final class GenerateKeyDetails extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * Information that provides context for audit logging. You can provide this additional
-         * data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
-         *
-         **/
+         * Information that provides context for audit logging. You can provide this additional data
+         * by formatting it as key-value pairs to include in audit logs when audit logging is
+         * enabled.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("loggingContext")
         private java.util.Map<String, String> loggingContext;
 
         /**
-         * Information that provides context for audit logging. You can provide this additional
-         * data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
+         * Information that provides context for audit logging. You can provide this additional data
+         * by formatting it as key-value pairs to include in audit logs when audit logging is
+         * enabled.
          *
          * @param loggingContext the value to set
          * @return this builder
-         **/
+         */
         public Builder loggingContext(java.util.Map<String, String> loggingContext) {
             this.loggingContext = loggingContext;
             this.__explicitlySet__.add("loggingContext");
@@ -166,9 +167,7 @@ public final class GenerateKeyDetails extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -178,49 +177,46 @@ public final class GenerateKeyDetails extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Information that can be used to provide an encryption context for the encrypted data.
-     * The length of the string representation of the associated data must be fewer than 4096
+     * Information that can be used to provide an encryption context for the encrypted data. The
+     * length of the string representation of the associated data must be fewer than 4096
      * characters.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("associatedData")
     private final java.util.Map<String, String> associatedData;
 
     /**
-     * Information that can be used to provide an encryption context for the encrypted data.
-     * The length of the string representation of the associated data must be fewer than 4096
+     * Information that can be used to provide an encryption context for the encrypted data. The
+     * length of the string representation of the associated data must be fewer than 4096
      * characters.
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getAssociatedData() {
         return associatedData;
     }
 
-    /**
-     * If true, the generated key is also returned unencrypted.
-     **/
+    /** If true, the generated key is also returned unencrypted. */
     @com.fasterxml.jackson.annotation.JsonProperty("includePlaintextKey")
     private final Boolean includePlaintextKey;
 
     /**
      * If true, the generated key is also returned unencrypted.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIncludePlaintextKey() {
         return includePlaintextKey;
     }
 
-    /**
-     * The OCID of the master encryption key to encrypt the generated data encryption key with.
-     **/
+    /** The OCID of the master encryption key to encrypt the generated data encryption key with. */
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
     /**
      * The OCID of the master encryption key to encrypt the generated data encryption key with.
+     *
      * @return the value
-     **/
+     */
     public String getKeyId() {
         return keyId;
     }
@@ -233,19 +229,18 @@ public final class GenerateKeyDetails extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Information that provides context for audit logging. You can provide this additional
-     * data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
-     *
-     **/
+     * Information that provides context for audit logging. You can provide this additional data by
+     * formatting it as key-value pairs to include in audit logs when audit logging is enabled.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("loggingContext")
     private final java.util.Map<String, String> loggingContext;
 
     /**
-     * Information that provides context for audit logging. You can provide this additional
-     * data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
+     * Information that provides context for audit logging. You can provide this additional data by
+     * formatting it as key-value pairs to include in audit logs when audit logging is enabled.
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getLoggingContext() {
         return loggingContext;
     }
@@ -257,6 +252,7 @@ public final class GenerateKeyDetails extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

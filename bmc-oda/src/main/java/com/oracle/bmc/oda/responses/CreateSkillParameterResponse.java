@@ -8,13 +8,12 @@ import com.oracle.bmc.oda.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * Fully qualified URL for the newly created resource.
-     */
+    /** Fully qualified URL for the newly created resource. */
     private String location;
 
     /**
      * Fully qualified URL for the newly created resource.
+     *
      * @return the value
      */
     public String getLocation() {
@@ -22,15 +21,14 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -39,25 +37,27 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
     }
 
     /**
-     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
+     * control.
      */
     private String etag;
 
     /**
-     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
+     * control.
+     *
      * @return the value
      */
     public String getEtag() {
         return etag;
     }
 
-    /**
-     * The returned SkillParameter instance.
-     */
+    /** The returned SkillParameter instance. */
     private com.oracle.bmc.oda.model.SkillParameter skillParameter;
 
     /**
      * The returned SkillParameter instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.oda.model.SkillParameter getSkillParameter() {
@@ -74,7 +74,7 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
     })
     private CreateSkillParameterResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String location,
             String opcRequestId,
             String etag,
@@ -86,28 +86,30 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
         this.skillParameter = skillParameter;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateSkillParameterResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * Fully qualified URL for the newly created resource.
-         */
+        /** Fully qualified URL for the newly created resource. */
         private String location;
 
         /**
          * Fully qualified URL for the newly created resource.
+         *
          * @param location the value to set
          * @return this builder
          */
@@ -117,15 +119,14 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -136,12 +137,15 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
         }
 
         /**
-         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
+         * control.
          */
         private String etag;
 
         /**
-         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
+         * control.
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -150,13 +154,12 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /**
-         * The returned SkillParameter instance.
-         */
+        /** The returned SkillParameter instance. */
         private com.oracle.bmc.oda.model.SkillParameter skillParameter;
 
         /**
          * The returned SkillParameter instance.
+         *
          * @param skillParameter the value to set
          * @return this builder
          */
@@ -167,8 +170,10 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateSkillParameterResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -182,8 +187,10 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateSkillParameterResponse build() {
             return new CreateSkillParameterResponse(
                     __httpStatusCode__, headers, location, opcRequestId, etag, skillParameter);
@@ -192,6 +199,7 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

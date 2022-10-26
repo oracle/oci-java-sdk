@@ -5,19 +5,21 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Properties used in tag create operations.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Properties used in tag create operations. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateTagDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateTagDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class CreateTagDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "termKey"})
     public CreateTagDetails(String name, String termKey) {
@@ -29,36 +31,34 @@ public final class CreateTagDetails extends com.oracle.bmc.http.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The name of the tag in the case of a free form tag.
-         * When linking to a glossary term, this field is not specified.
-         *
-         **/
+         * The name of the tag in the case of a free form tag. When linking to a glossary term, this
+         * field is not specified.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name of the tag in the case of a free form tag.
-         * When linking to a glossary term, this field is not specified.
+         * The name of the tag in the case of a free form tag. When linking to a glossary term, this
+         * field is not specified.
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Unique key of the related term or null in the case of a free form tag.
-         **/
+        /** Unique key of the related term or null in the case of a free form tag. */
         @com.fasterxml.jackson.annotation.JsonProperty("termKey")
         private String termKey;
 
         /**
          * Unique key of the related term or null in the case of a free form tag.
+         *
          * @param termKey the value to set
          * @return this builder
-         **/
+         */
         public Builder termKey(String termKey) {
             this.termKey = termKey;
             this.__explicitlySet__.add("termKey");
@@ -88,9 +88,7 @@ public final class CreateTagDetails extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,33 +98,31 @@ public final class CreateTagDetails extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The name of the tag in the case of a free form tag.
-     * When linking to a glossary term, this field is not specified.
-     *
-     **/
+     * The name of the tag in the case of a free form tag. When linking to a glossary term, this
+     * field is not specified.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name of the tag in the case of a free form tag.
-     * When linking to a glossary term, this field is not specified.
+     * The name of the tag in the case of a free form tag. When linking to a glossary term, this
+     * field is not specified.
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Unique key of the related term or null in the case of a free form tag.
-     **/
+    /** Unique key of the related term or null in the case of a free form tag. */
     @com.fasterxml.jackson.annotation.JsonProperty("termKey")
     private final String termKey;
 
     /**
      * Unique key of the related term or null in the case of a free form tag.
+     *
      * @return the value
-     **/
+     */
     public String getTermKey() {
         return termKey;
     }
@@ -138,6 +134,7 @@ public final class CreateTagDetails extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

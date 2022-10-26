@@ -14,19 +14,13 @@ import java.util.concurrent.atomic.AtomicLong;
 
 public class RandomFailureInjector implements FailureInjector {
 
-    /**
-     * Chance that an operation will fail.
-     */
+    /** Chance that an operation will fail. */
     private final double pctFailureChance;
 
-    /**
-     * Maximum numbers of failures we will generate on a thread.
-     */
+    /** Maximum numbers of failures we will generate on a thread. */
     private final int maxFailures;
 
-    /**
-     * Failures we have seen so far
-     */
+    /** Failures we have seen so far */
     private AtomicLong failures;
 
     public RandomFailureInjector(double pctFailureChance, int maxFailures) {

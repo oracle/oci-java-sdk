@@ -5,42 +5,39 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Summary of the Stage.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary of the Stage. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "buildPipelineStageType",
-    defaultImpl = BuildPipelineStageSummary.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "buildPipelineStageType",
+        defaultImpl = BuildPipelineStageSummary.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = WaitStageSummary.class,
-        name = "WAIT"
-    ),
+            value = WaitStageSummary.class,
+            name = "WAIT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = BuildStageSummary.class,
-        name = "BUILD"
-    ),
+            value = BuildStageSummary.class,
+            name = "BUILD"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = DeliverArtifactStageSummary.class,
-        name = "DELIVER_ARTIFACT"
-    ),
+            value = DeliverArtifactStageSummary.class,
+            name = "DELIVER_ARTIFACT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = TriggerDeploymentStageSummary.class,
-        name = "TRIGGER_DEPLOYMENT_PIPELINE"
-    )
+            value = TriggerDeploymentStageSummary.class,
+            name = "TRIGGER_DEPLOYMENT_PIPELINE")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class BuildPipelineStageSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class BuildPipelineStageSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -90,108 +87,110 @@ public class BuildPipelineStageSummary extends com.oracle.bmc.http.internal.Expl
         this.systemTags = systemTags;
     }
 
-    /**
-     * Unique identifier that is immutable on creation.
-     **/
+    /** Unique identifier that is immutable on creation. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier that is immutable on creation.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-     **/
+     * Stage display name, which can be renamed and is not necessarily unique. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
+     * Stage display name, which can be renamed and is not necessarily unique. Avoid entering
+     * confidential information.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The OCID of the DevOps project.
-     **/
+    /** The OCID of the DevOps project. */
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     private final String projectId;
 
     /**
      * The OCID of the DevOps project.
+     *
      * @return the value
-     **/
+     */
     public String getProjectId() {
         return projectId;
     }
 
-    /**
-     * The OCID of the build pipeline.
-     **/
+    /** The OCID of the build pipeline. */
     @com.fasterxml.jackson.annotation.JsonProperty("buildPipelineId")
     private final String buildPipelineId;
 
     /**
      * The OCID of the build pipeline.
+     *
      * @return the value
-     **/
+     */
     public String getBuildPipelineId() {
         return buildPipelineId;
     }
 
-    /**
-     * The OCID of the compartment where the pipeline is created.
-     **/
+    /** The OCID of the compartment where the pipeline is created. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment where the pipeline is created.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-     **/
+     * The time the stage was created. Format defined by
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     * The time the stage was created. Format defined by
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-     **/
+     * The time the stage was updated. Format defined by
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     * The time the stage was updated. Format defined by
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The current state of the stage.
-     *
-     **/
+    /** The current state of the stage. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final BuildPipelineStage.LifecycleState lifecycleState;
 
@@ -199,35 +198,37 @@ public class BuildPipelineStageSummary extends com.oracle.bmc.http.internal.Expl
      * The current state of the stage.
      *
      * @return the value
-     **/
+     */
     public BuildPipelineStage.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-     **/
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in Failed state.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in Failed state.
+     *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /**
-     * Optional description about the build stage.
-     **/
+    /** Optional description about the build stage. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Optional description about the build stage.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
@@ -240,43 +241,60 @@ public class BuildPipelineStageSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. See [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. See [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"bar-key": "value"}}
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
+     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
+     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     **/
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -288,6 +306,7 @@ public class BuildPipelineStageSummary extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

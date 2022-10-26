@@ -9,17 +9,16 @@ import com.oracle.bmc.managementagent.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 public class ListManagementAgentInstallKeysResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-     * subsequent GET request to get the next batch of items.
-     *
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then a partial list might have been returned. Include this value as the {@code
+     * page} parameter for the subsequent GET request to get the next batch of items.
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-     * subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then a partial list might have been returned. Include this value as the {@code
+     * page} parameter for the subsequent GET request to get the next batch of items.
      *
      * @return the value
      */
@@ -28,15 +27,14 @@ public class ListManagementAgentInstallKeysResponse extends com.oracle.bmc.respo
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -52,6 +50,7 @@ public class ListManagementAgentInstallKeysResponse extends com.oracle.bmc.respo
 
     /**
      * A list of com.oracle.bmc.managementagent.model.ManagementAgentInstallKeySummary instances.
+     *
      * @return the value
      */
     public java.util.List<com.oracle.bmc.managementagent.model.ManagementAgentInstallKeySummary>
@@ -68,7 +67,7 @@ public class ListManagementAgentInstallKeysResponse extends com.oracle.bmc.respo
     })
     private ListManagementAgentInstallKeysResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcNextPage,
             String opcRequestId,
             java.util.List<com.oracle.bmc.managementagent.model.ManagementAgentInstallKeySummary>
@@ -79,33 +78,36 @@ public class ListManagementAgentInstallKeysResponse extends com.oracle.bmc.respo
         this.items = items;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    ListManagementAgentInstallKeysResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-         * subsequent GET request to get the next batch of items.
-         *
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then a partial list might have been returned. Include this value as the
+         * {@code page} parameter for the subsequent GET request to get the next batch of items.
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-         * subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then a partial list might have been returned. Include this value as the
+         * {@code page} parameter for the subsequent GET request to get the next batch of items.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -116,15 +118,14 @@ public class ListManagementAgentInstallKeysResponse extends com.oracle.bmc.respo
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -135,14 +136,17 @@ public class ListManagementAgentInstallKeysResponse extends com.oracle.bmc.respo
         }
 
         /**
-         * A list of com.oracle.bmc.managementagent.model.ManagementAgentInstallKeySummary instances.
+         * A list of com.oracle.bmc.managementagent.model.ManagementAgentInstallKeySummary
+         * instances.
          */
         private java.util.List<
                         com.oracle.bmc.managementagent.model.ManagementAgentInstallKeySummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.managementagent.model.ManagementAgentInstallKeySummary instances.
+         * A list of com.oracle.bmc.managementagent.model.ManagementAgentInstallKeySummary
+         * instances.
+         *
          * @param items the value to set
          * @return this builder
          */
@@ -157,8 +161,10 @@ public class ListManagementAgentInstallKeysResponse extends com.oracle.bmc.respo
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListManagementAgentInstallKeysResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -171,8 +177,10 @@ public class ListManagementAgentInstallKeysResponse extends com.oracle.bmc.respo
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListManagementAgentInstallKeysResponse build() {
             return new ListManagementAgentInstallKeysResponse(
                     __httpStatusCode__, headers, opcNextPage, opcRequestId, items);
@@ -181,6 +189,7 @@ public class ListManagementAgentInstallKeysResponse extends com.oracle.bmc.respo
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -6,55 +6,58 @@ package com.oracle.bmc.jms.requests;
 
 import com.oracle.bmc.jms.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeResourceInventoryExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeResourceInventoryRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeResourceInventoryExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * SummarizeResourceInventoryRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class SummarizeResourceInventoryRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-     *
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment in which to list resources.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-     *
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment in which to list resources.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The start of the time period during which resources are searched (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     private java.util.Date timeStart;
 
     /**
-     * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The start of the time period during which resources are searched (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     public java.util.Date getTimeStart() {
         return timeStart;
     }
     /**
-     * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The end of the time period during which resources are searched (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     private java.util.Date timeEnd;
 
     /**
-     * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The end of the time period during which resources are searched (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -62,18 +65,18 @@ public class SummarizeResourceInventoryRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SummarizeResourceInventoryRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-         *
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment in which to list resources.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -84,12 +87,15 @@ public class SummarizeResourceInventoryRequest
         }
 
         /**
-         * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The start of the time period during which resources are searched (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          */
         private java.util.Date timeStart = null;
 
         /**
-         * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The start of the time period during which resources are searched (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
          * @param timeStart the value to set
          * @return this builder instance
          */
@@ -99,12 +105,15 @@ public class SummarizeResourceInventoryRequest
         }
 
         /**
-         * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The end of the time period during which resources are searched (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          */
         private java.util.Date timeEnd = null;
 
         /**
-         * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The end of the time period during which resources are searched (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
          * @param timeEnd the value to set
          * @return this builder instance
          */
@@ -113,13 +122,12 @@ public class SummarizeResourceInventoryRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -130,18 +138,19 @@ public class SummarizeResourceInventoryRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -153,6 +162,7 @@ public class SummarizeResourceInventoryRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(SummarizeResourceInventoryRequest o) {
@@ -168,10 +178,11 @@ public class SummarizeResourceInventoryRequest
         /**
          * Build the instance of SummarizeResourceInventoryRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of SummarizeResourceInventoryRequest
          */
@@ -185,7 +196,8 @@ public class SummarizeResourceInventoryRequest
         /**
          * Build the instance of SummarizeResourceInventoryRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of SummarizeResourceInventoryRequest
@@ -197,12 +209,14 @@ public class SummarizeResourceInventoryRequest
             request.timeEnd = timeEnd;
             request.opcRequestId = opcRequestId;
             return request;
-            // new SummarizeResourceInventoryRequest(compartmentId, timeStart, timeEnd, opcRequestId);
+            // new SummarizeResourceInventoryRequest(compartmentId, timeStart, timeEnd,
+            // opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -215,6 +229,7 @@ public class SummarizeResourceInventoryRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

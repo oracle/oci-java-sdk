@@ -5,19 +5,21 @@
 package com.oracle.bmc.aianomalydetection.model;
 
 /**
- * Detailed information like statistics, metrics and status for a signal
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Detailed information like statistics, metrics and status for a signal <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PerSignalDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PerSignalDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class PerSignalDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "signalName",
@@ -54,153 +56,142 @@ public final class PerSignalDetails extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of a signal.
-         **/
+        /** The name of a signal. */
         @com.fasterxml.jackson.annotation.JsonProperty("signalName")
         private String signalName;
 
         /**
          * The name of a signal.
+         *
          * @param signalName the value to set
          * @return this builder
-         **/
+         */
         public Builder signalName(String signalName) {
             this.signalName = signalName;
             this.__explicitlySet__.add("signalName");
             return this;
         }
-        /**
-         * The ratio of missing values in a signal filled/imputed by the IDP algorithm.
-         **/
+        /** The ratio of missing values in a signal filled/imputed by the IDP algorithm. */
         @com.fasterxml.jackson.annotation.JsonProperty("mviRatio")
         private Double mviRatio;
 
         /**
          * The ratio of missing values in a signal filled/imputed by the IDP algorithm.
+         *
          * @param mviRatio the value to set
          * @return this builder
-         **/
+         */
         public Builder mviRatio(Double mviRatio) {
             this.mviRatio = mviRatio;
             this.__explicitlySet__.add("mviRatio");
             return this;
         }
-        /**
-         * A boolean value to indicate if a signal is quantized or not.
-         **/
+        /** A boolean value to indicate if a signal is quantized or not. */
         @com.fasterxml.jackson.annotation.JsonProperty("isQuantized")
         private Boolean isQuantized;
 
         /**
          * A boolean value to indicate if a signal is quantized or not.
+         *
          * @param isQuantized the value to set
          * @return this builder
-         **/
+         */
         public Builder isQuantized(Boolean isQuantized) {
             this.isQuantized = isQuantized;
             this.__explicitlySet__.add("isQuantized");
             return this;
         }
-        /**
-         * Accuracy metric for a signal.
-         **/
+        /** Accuracy metric for a signal. */
         @com.fasterxml.jackson.annotation.JsonProperty("fap")
         private Float fap;
 
         /**
          * Accuracy metric for a signal.
+         *
          * @param fap the value to set
          * @return this builder
-         **/
+         */
         public Builder fap(Float fap) {
             this.fap = fap;
             this.__explicitlySet__.add("fap");
             return this;
         }
-        /**
-         * Min value within a signal.
-         **/
+        /** Min value within a signal. */
         @com.fasterxml.jackson.annotation.JsonProperty("min")
         private Double min;
 
         /**
          * Min value within a signal.
+         *
          * @param min the value to set
          * @return this builder
-         **/
+         */
         public Builder min(Double min) {
             this.min = min;
             this.__explicitlySet__.add("min");
             return this;
         }
-        /**
-         * Max value within a signal.
-         **/
+        /** Max value within a signal. */
         @com.fasterxml.jackson.annotation.JsonProperty("max")
         private Double max;
 
         /**
          * Max value within a signal.
+         *
          * @param max the value to set
          * @return this builder
-         **/
+         */
         public Builder max(Double max) {
             this.max = max;
             this.__explicitlySet__.add("max");
             return this;
         }
-        /**
-         * Standard deviation of values within a signal.
-         **/
+        /** Standard deviation of values within a signal. */
         @com.fasterxml.jackson.annotation.JsonProperty("std")
         private Double std;
 
         /**
          * Standard deviation of values within a signal.
+         *
          * @param std the value to set
          * @return this builder
-         **/
+         */
         public Builder std(Double std) {
             this.std = std;
             this.__explicitlySet__.add("std");
             return this;
         }
         /**
-         * Status of the signal:
-         *  * ACCEPTED - the signal is used for training the model
-         *  * DROPPED - the signal does not meet requirement, and is dropped before training the model.
-         *  * OTHER - placeholder for other status
-         *
-         **/
+         * Status of the signal: * ACCEPTED - the signal is used for training the model * DROPPED -
+         * the signal does not meet requirement, and is dropped before training the model. * OTHER -
+         * placeholder for other status
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * Status of the signal:
-         *  * ACCEPTED - the signal is used for training the model
-         *  * DROPPED - the signal does not meet requirement, and is dropped before training the model.
-         *  * OTHER - placeholder for other status
+         * Status of the signal: * ACCEPTED - the signal is used for training the model * DROPPED -
+         * the signal does not meet requirement, and is dropped before training the model. * OTHER -
+         * placeholder for other status
          *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * detailed information for a signal.
-         **/
+        /** detailed information for a signal. */
         @com.fasterxml.jackson.annotation.JsonProperty("details")
         private String details;
 
         /**
          * detailed information for a signal.
+         *
          * @param details the value to set
          * @return this builder
-         **/
+         */
         public Builder details(String details) {
             this.details = details;
             this.__explicitlySet__.add("details");
@@ -261,9 +252,7 @@ public final class PerSignalDetails extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -272,119 +261,110 @@ public final class PerSignalDetails extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of a signal.
-     **/
+    /** The name of a signal. */
     @com.fasterxml.jackson.annotation.JsonProperty("signalName")
     private final String signalName;
 
     /**
      * The name of a signal.
+     *
      * @return the value
-     **/
+     */
     public String getSignalName() {
         return signalName;
     }
 
-    /**
-     * The ratio of missing values in a signal filled/imputed by the IDP algorithm.
-     **/
+    /** The ratio of missing values in a signal filled/imputed by the IDP algorithm. */
     @com.fasterxml.jackson.annotation.JsonProperty("mviRatio")
     private final Double mviRatio;
 
     /**
      * The ratio of missing values in a signal filled/imputed by the IDP algorithm.
+     *
      * @return the value
-     **/
+     */
     public Double getMviRatio() {
         return mviRatio;
     }
 
-    /**
-     * A boolean value to indicate if a signal is quantized or not.
-     **/
+    /** A boolean value to indicate if a signal is quantized or not. */
     @com.fasterxml.jackson.annotation.JsonProperty("isQuantized")
     private final Boolean isQuantized;
 
     /**
      * A boolean value to indicate if a signal is quantized or not.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsQuantized() {
         return isQuantized;
     }
 
-    /**
-     * Accuracy metric for a signal.
-     **/
+    /** Accuracy metric for a signal. */
     @com.fasterxml.jackson.annotation.JsonProperty("fap")
     private final Float fap;
 
     /**
      * Accuracy metric for a signal.
+     *
      * @return the value
-     **/
+     */
     public Float getFap() {
         return fap;
     }
 
-    /**
-     * Min value within a signal.
-     **/
+    /** Min value within a signal. */
     @com.fasterxml.jackson.annotation.JsonProperty("min")
     private final Double min;
 
     /**
      * Min value within a signal.
+     *
      * @return the value
-     **/
+     */
     public Double getMin() {
         return min;
     }
 
-    /**
-     * Max value within a signal.
-     **/
+    /** Max value within a signal. */
     @com.fasterxml.jackson.annotation.JsonProperty("max")
     private final Double max;
 
     /**
      * Max value within a signal.
+     *
      * @return the value
-     **/
+     */
     public Double getMax() {
         return max;
     }
 
-    /**
-     * Standard deviation of values within a signal.
-     **/
+    /** Standard deviation of values within a signal. */
     @com.fasterxml.jackson.annotation.JsonProperty("std")
     private final Double std;
 
     /**
      * Standard deviation of values within a signal.
+     *
      * @return the value
-     **/
+     */
     public Double getStd() {
         return std;
     }
 
     /**
-     * Status of the signal:
-     *  * ACCEPTED - the signal is used for training the model
-     *  * DROPPED - the signal does not meet requirement, and is dropped before training the model.
-     *  * OTHER - placeholder for other status
-     *
-     **/
-    public enum Status {
+     * Status of the signal: * ACCEPTED - the signal is used for training the model * DROPPED - the
+     * signal does not meet requirement, and is dropped before training the model. * OTHER -
+     * placeholder for other status
+     */
+    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Accepted("ACCEPTED"),
         Dropped("DROPPED"),
         Other("OTHER"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -423,37 +403,33 @@ public final class PerSignalDetails extends com.oracle.bmc.http.internal.Explici
         }
     };
     /**
-     * Status of the signal:
-     *  * ACCEPTED - the signal is used for training the model
-     *  * DROPPED - the signal does not meet requirement, and is dropped before training the model.
-     *  * OTHER - placeholder for other status
-     *
-     **/
+     * Status of the signal: * ACCEPTED - the signal is used for training the model * DROPPED - the
+     * signal does not meet requirement, and is dropped before training the model. * OTHER -
+     * placeholder for other status
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * Status of the signal:
-     *  * ACCEPTED - the signal is used for training the model
-     *  * DROPPED - the signal does not meet requirement, and is dropped before training the model.
-     *  * OTHER - placeholder for other status
+     * Status of the signal: * ACCEPTED - the signal is used for training the model * DROPPED - the
+     * signal does not meet requirement, and is dropped before training the model. * OTHER -
+     * placeholder for other status
      *
      * @return the value
-     **/
+     */
     public Status getStatus() {
         return status;
     }
 
-    /**
-     * detailed information for a signal.
-     **/
+    /** detailed information for a signal. */
     @com.fasterxml.jackson.annotation.JsonProperty("details")
     private final String details;
 
     /**
      * detailed information for a signal.
+     *
      * @return the value
-     **/
+     */
     public String getDetails() {
         return details;
     }
@@ -465,6 +441,7 @@ public final class PerSignalDetails extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

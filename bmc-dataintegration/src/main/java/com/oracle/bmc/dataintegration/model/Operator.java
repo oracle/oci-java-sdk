@@ -5,114 +5,93 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * An operator defines some data integration semantics in a data flow. It may be reading/writing data or transforming the data.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * An operator defines some data integration semantics in a data flow. It may be reading/writing
+ * data or transforming the data. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType",
-    defaultImpl = Operator.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType",
+        defaultImpl = Operator.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = Joiner.class,
-        name = "JOINER_OPERATOR"
-    ),
+            value = Joiner.class,
+            name = "JOINER_OPERATOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = TaskOperator.class,
-        name = "TASK_OPERATOR"
-    ),
+            value = TaskOperator.class,
+            name = "TASK_OPERATOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = Flatten.class,
-        name = "FLATTEN_OPERATOR"
-    ),
+            value = Flatten.class,
+            name = "FLATTEN_OPERATOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = Aggregator.class,
-        name = "AGGREGATOR_OPERATOR"
-    ),
+            value = Aggregator.class,
+            name = "AGGREGATOR_OPERATOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = SortOper.class,
-        name = "SORT_OPERATOR"
-    ),
+            value = SortOper.class,
+            name = "SORT_OPERATOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = Projection.class,
-        name = "PROJECTION_OPERATOR"
-    ),
+            value = Projection.class,
+            name = "PROJECTION_OPERATOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = EndOperator.class,
-        name = "END_OPERATOR"
-    ),
+            value = EndOperator.class,
+            name = "END_OPERATOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = Source.class,
-        name = "SOURCE_OPERATOR"
-    ),
+            value = Source.class,
+            name = "SOURCE_OPERATOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = Union.class,
-        name = "UNION_OPERATOR"
-    ),
+            value = Union.class,
+            name = "UNION_OPERATOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ExpressionOperator.class,
-        name = "EXPRESSION_OPERATOR"
-    ),
+            value = ExpressionOperator.class,
+            name = "EXPRESSION_OPERATOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = Function.class,
-        name = "FUNCTION_OPERATOR"
-    ),
+            value = Function.class,
+            name = "FUNCTION_OPERATOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = DecisionOperator.class,
-        name = "DECISION_OPERATOR"
-    ),
+            value = DecisionOperator.class,
+            name = "DECISION_OPERATOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = Intersect.class,
-        name = "INTERSECT_OPERATOR"
-    ),
+            value = Intersect.class,
+            name = "INTERSECT_OPERATOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = Target.class,
-        name = "TARGET_OPERATOR"
-    ),
+            value = Target.class,
+            name = "TARGET_OPERATOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = Distinct.class,
-        name = "DISTINCT_OPERATOR"
-    ),
+            value = Distinct.class,
+            name = "DISTINCT_OPERATOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = Filter.class,
-        name = "FILTER_OPERATOR"
-    ),
+            value = Filter.class,
+            name = "FILTER_OPERATOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = Lookup.class,
-        name = "LOOKUP_OPERATOR"
-    ),
+            value = Lookup.class,
+            name = "LOOKUP_OPERATOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = Pivot.class,
-        name = "PIVOT_OPERATOR"
-    ),
+            value = Pivot.class,
+            name = "PIVOT_OPERATOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = StartOperator.class,
-        name = "START_OPERATOR"
-    ),
+            value = StartOperator.class,
+            name = "START_OPERATOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = MergeOperator.class,
-        name = "MERGE_OPERATOR"
-    ),
+            value = MergeOperator.class,
+            name = "MERGE_OPERATOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = Split.class,
-        name = "SPLIT_OPERATOR"
-    ),
+            value = Split.class,
+            name = "SPLIT_OPERATOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = Minus.class,
-        name = "MINUS_OPERATOR"
-    )
+            value = Minus.class,
+            name = "MINUS_OPERATOR")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class Operator extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class Operator extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -156,30 +135,28 @@ public class Operator extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         this.opConfigValues = opConfigValues;
     }
 
-    /**
-     * The key of the object.
-     **/
+    /** The key of the object. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The key of the object.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * The model version of an object.
-     **/
+    /** The model version of an object. */
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The model version of an object.
+     *
      * @return the value
-     **/
+     */
     public String getModelVersion() {
         return modelVersion;
     }
@@ -192,113 +169,117 @@ public class Operator extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     **/
+     * Free form text without any restriction on permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Details about the operator.
-     **/
+    /** Details about the operator. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Details about the operator.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The version of the object that is used to track changes in the object instance.
-     **/
+    /** The version of the object that is used to track changes in the object instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
     /**
      * The version of the object that is used to track changes in the object instance.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectVersion() {
         return objectVersion;
     }
 
-    /**
-     * An array of input ports.
-     **/
+    /** An array of input ports. */
     @com.fasterxml.jackson.annotation.JsonProperty("inputPorts")
     private final java.util.List<InputPort> inputPorts;
 
     /**
      * An array of input ports.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<InputPort> getInputPorts() {
         return inputPorts;
     }
 
-    /**
-     * An array of output ports.
-     **/
+    /** An array of output ports. */
     @com.fasterxml.jackson.annotation.JsonProperty("outputPorts")
     private final java.util.List<TypedObject> outputPorts;
 
     /**
      * An array of output ports.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<TypedObject> getOutputPorts() {
         return outputPorts;
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-     **/
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectStatus() {
         return objectStatus;
     }
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-     **/
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with
+     * upper case letter or underscore. The value can be modified.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with
+     * upper case letter or underscore. The value can be modified.
+     *
      * @return the value
-     **/
+     */
     public String getIdentifier() {
         return identifier;
     }
 
-    /**
-     * An array of parameters used in the data flow.
-     **/
+    /** An array of parameters used in the data flow. */
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.List<Parameter> parameters;
 
     /**
      * An array of parameters used in the data flow.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Parameter> getParameters() {
         return parameters;
     }
@@ -317,6 +298,7 @@ public class Operator extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -389,10 +371,8 @@ public class Operator extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         return result;
     }
 
-    /**
-     * The model type of the operator.
-     **/
-    public enum ModelType {
+    /** The model type of the operator. */
+    public enum ModelType implements com.oracle.bmc.http.internal.BmcEnum {
         SourceOperator("SOURCE_OPERATOR"),
         FilterOperator("FILTER_OPERATOR"),
         JoinerOperator("JOINER_OPERATOR"),
@@ -418,8 +398,8 @@ public class Operator extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         PivotOperator("PIVOT_OPERATOR"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 

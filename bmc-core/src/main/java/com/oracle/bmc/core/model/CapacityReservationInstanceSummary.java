@@ -5,22 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Condensed instance data when listing instances in a compute capacity reservation.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Condensed instance data when listing instances in a compute capacity reservation. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CapacityReservationInstanceSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CapacityReservationInstanceSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CapacityReservationInstanceSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -48,65 +48,61 @@ public final class CapacityReservationInstanceSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the instance.
-         **/
+        /** The OCID of the instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the instance.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The availability domain the instance is running in.
-         **/
+        /** The availability domain the instance is running in. */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
          * The availability domain the instance is running in.
+         *
          * @param availabilityDomain the value to set
          * @return this builder
-         **/
+         */
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-        /**
-         * The OCID of the compartment that contains the instance.
-         **/
+        /** The OCID of the compartment that contains the instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that contains the instance.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The fault domain the instance is running in.
-         **/
+        /** The fault domain the instance is running in. */
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
         /**
          * The fault domain the instance is running in.
+         *
          * @param faultDomain the value to set
          * @return this builder
-         **/
+         */
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
@@ -122,24 +118,27 @@ public final class CapacityReservationInstanceSummary
             return this;
         }
         /**
-         * The shape of the instance. The shape determines the number of CPUs, amount of memory,
-         * and other resources allocated to the instance.
-         * <p>
-         * You can enumerate all available shapes by calling {@link #listComputeCapacityReservationInstanceShapes(ListComputeCapacityReservationInstanceShapesRequest) listComputeCapacityReservationInstanceShapes}.
+         * The shape of the instance. The shape determines the number of CPUs, amount of memory, and
+         * other resources allocated to the instance.
          *
-         **/
+         * <p>You can enumerate all available shapes by calling {@link
+         * #listComputeCapacityReservationInstanceShapes(ListComputeCapacityReservationInstanceShapesRequest)
+         * listComputeCapacityReservationInstanceShapes}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
-         * The shape of the instance. The shape determines the number of CPUs, amount of memory,
-         * and other resources allocated to the instance.
-         * <p>
-         * You can enumerate all available shapes by calling {@link #listComputeCapacityReservationInstanceShapes(ListComputeCapacityReservationInstanceShapesRequest) listComputeCapacityReservationInstanceShapes}.
+         * The shape of the instance. The shape determines the number of CPUs, amount of memory, and
+         * other resources allocated to the instance.
+         *
+         * <p>You can enumerate all available shapes by calling {@link
+         * #listComputeCapacityReservationInstanceShapes(ListComputeCapacityReservationInstanceShapesRequest)
+         * listComputeCapacityReservationInstanceShapes}.
          *
          * @param shape the value to set
          * @return this builder
-         **/
+         */
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
@@ -188,9 +187,7 @@ public final class CapacityReservationInstanceSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -199,58 +196,54 @@ public final class CapacityReservationInstanceSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the instance.
-     **/
+    /** The OCID of the instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the instance.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The availability domain the instance is running in.
-     **/
+    /** The availability domain the instance is running in. */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
      * The availability domain the instance is running in.
+     *
      * @return the value
-     **/
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
-    /**
-     * The OCID of the compartment that contains the instance.
-     **/
+    /** The OCID of the compartment that contains the instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that contains the instance.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The fault domain the instance is running in.
-     **/
+    /** The fault domain the instance is running in. */
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
     /**
      * The fault domain the instance is running in.
+     *
      * @return the value
-     **/
+     */
     public String getFaultDomain() {
         return faultDomain;
     }
@@ -263,23 +256,26 @@ public final class CapacityReservationInstanceSummary
     }
 
     /**
-     * The shape of the instance. The shape determines the number of CPUs, amount of memory,
-     * and other resources allocated to the instance.
-     * <p>
-     * You can enumerate all available shapes by calling {@link #listComputeCapacityReservationInstanceShapes(ListComputeCapacityReservationInstanceShapesRequest) listComputeCapacityReservationInstanceShapes}.
+     * The shape of the instance. The shape determines the number of CPUs, amount of memory, and
+     * other resources allocated to the instance.
      *
-     **/
+     * <p>You can enumerate all available shapes by calling {@link
+     * #listComputeCapacityReservationInstanceShapes(ListComputeCapacityReservationInstanceShapesRequest)
+     * listComputeCapacityReservationInstanceShapes}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
-     * The shape of the instance. The shape determines the number of CPUs, amount of memory,
-     * and other resources allocated to the instance.
-     * <p>
-     * You can enumerate all available shapes by calling {@link #listComputeCapacityReservationInstanceShapes(ListComputeCapacityReservationInstanceShapesRequest) listComputeCapacityReservationInstanceShapes}.
+     * The shape of the instance. The shape determines the number of CPUs, amount of memory, and
+     * other resources allocated to the instance.
+     *
+     * <p>You can enumerate all available shapes by calling {@link
+     * #listComputeCapacityReservationInstanceShapes(ListComputeCapacityReservationInstanceShapesRequest)
+     * listComputeCapacityReservationInstanceShapes}.
      *
      * @return the value
-     **/
+     */
     public String getShape() {
         return shape;
     }
@@ -291,6 +287,7 @@ public final class CapacityReservationInstanceSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

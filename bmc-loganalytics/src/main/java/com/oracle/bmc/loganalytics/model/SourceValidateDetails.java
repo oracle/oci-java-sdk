@@ -5,22 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * source validation details
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * source validation details <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SourceValidateDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SourceValidateDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SourceValidateDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "value"})
     public SourceValidateDetails(String key, String value) {
@@ -31,33 +31,31 @@ public final class SourceValidateDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The key.
-         **/
+        /** The key. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The key.
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /**
-         * The value.
-         **/
+        /** The value. */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * The value.
+         *
          * @param value the value to set
          * @return this builder
-         **/
+         */
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -87,9 +85,7 @@ public final class SourceValidateDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -98,30 +94,28 @@ public final class SourceValidateDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The key.
-     **/
+    /** The key. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The key.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * The value.
-     **/
+    /** The value. */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * The value.
+     *
      * @return the value
-     **/
+     */
     public String getValue() {
         return value;
     }
@@ -133,6 +127,7 @@ public final class SourceValidateDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

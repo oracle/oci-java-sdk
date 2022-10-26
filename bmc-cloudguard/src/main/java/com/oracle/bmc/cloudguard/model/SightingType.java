@@ -5,19 +5,20 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Specific behavior that can trigger a Sighting
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Specific behavior that can trigger a Sighting <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SightingType.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SightingType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class SightingType extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -45,97 +46,91 @@ public final class SightingType extends com.oracle.bmc.http.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The unique identifier of sighting type
-         **/
+        /** The unique identifier of sighting type */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique identifier of sighting type
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * Name of the sighting type
-         **/
+        /** Name of the sighting type */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Name of the sighting type
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Description of the sighting type
-         **/
+        /** Description of the sighting type */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description of the sighting type
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * Link of the sighting type
-         **/
+        /** Link of the sighting type */
         @com.fasterxml.jackson.annotation.JsonProperty("mitreLink")
         private String mitreLink;
 
         /**
          * Link of the sighting type
+         *
          * @param mitreLink the value to set
          * @return this builder
-         **/
+         */
         public Builder mitreLink(String mitreLink) {
             this.mitreLink = mitreLink;
             this.__explicitlySet__.add("mitreLink");
             return this;
         }
-        /**
-         * Mitre Att&ck tactic
-         **/
+        /** Mitre Att&ck tactic */
         @com.fasterxml.jackson.annotation.JsonProperty("tactic")
         private String tactic;
 
         /**
          * Mitre Att&ck tactic
+         *
          * @param tactic the value to set
          * @return this builder
-         **/
+         */
         public Builder tactic(String tactic) {
             this.tactic = tactic;
             this.__explicitlySet__.add("tactic");
             return this;
         }
-        /**
-         * List of Mitre Att&ck Techniques
-         **/
+        /** List of Mitre Att&ck Techniques */
         @com.fasterxml.jackson.annotation.JsonProperty("techniques")
         private java.util.List<String> techniques;
 
         /**
          * List of Mitre Att&ck Techniques
+         *
          * @param techniques the value to set
          * @return this builder
-         **/
+         */
         public Builder techniques(java.util.List<String> techniques) {
             this.techniques = techniques;
             this.__explicitlySet__.add("techniques");
@@ -184,9 +179,7 @@ public final class SightingType extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -195,86 +188,80 @@ public final class SightingType extends com.oracle.bmc.http.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /**
-     * The unique identifier of sighting type
-     **/
+    /** The unique identifier of sighting type */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique identifier of sighting type
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * Name of the sighting type
-     **/
+    /** Name of the sighting type */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Name of the sighting type
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Description of the sighting type
-     **/
+    /** Description of the sighting type */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of the sighting type
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * Link of the sighting type
-     **/
+    /** Link of the sighting type */
     @com.fasterxml.jackson.annotation.JsonProperty("mitreLink")
     private final String mitreLink;
 
     /**
      * Link of the sighting type
+     *
      * @return the value
-     **/
+     */
     public String getMitreLink() {
         return mitreLink;
     }
 
-    /**
-     * Mitre Att&ck tactic
-     **/
+    /** Mitre Att&ck tactic */
     @com.fasterxml.jackson.annotation.JsonProperty("tactic")
     private final String tactic;
 
     /**
      * Mitre Att&ck tactic
+     *
      * @return the value
-     **/
+     */
     public String getTactic() {
         return tactic;
     }
 
-    /**
-     * List of Mitre Att&ck Techniques
-     **/
+    /** List of Mitre Att&ck Techniques */
     @com.fasterxml.jackson.annotation.JsonProperty("techniques")
     private final java.util.List<String> techniques;
 
     /**
      * List of Mitre Att&ck Techniques
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getTechniques() {
         return techniques;
     }
@@ -286,6 +273,7 @@ public final class SightingType extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

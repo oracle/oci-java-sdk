@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.budget.model;
 
-/**
- * The sort order to use. Valid values are 'asc' or 'desc'.
- **/
+/** The sort order to use. Valid values are 'asc' or 'desc'. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
-public enum SortOrder {
+public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
     Asc("ASC"),
     Desc("DESC"),
     ;

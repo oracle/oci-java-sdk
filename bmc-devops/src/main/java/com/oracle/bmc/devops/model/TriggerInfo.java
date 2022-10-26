@@ -5,19 +5,20 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Trigger details that need to be used for the BuildRun
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Trigger details that need to be used for the BuildRun <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TriggerInfo.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TriggerInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class TriggerInfo extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName", "actions"})
     public TriggerInfo(String displayName, java.util.List<TriggerAction> actions) {
@@ -28,33 +29,31 @@ public final class TriggerInfo extends com.oracle.bmc.http.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Name for Trigger.
-         **/
+        /** Name for Trigger. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Name for Trigger.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The list of actions that are to be performed for this Trigger
-         **/
+        /** The list of actions that are to be performed for this Trigger */
         @com.fasterxml.jackson.annotation.JsonProperty("actions")
         private java.util.List<TriggerAction> actions;
 
         /**
          * The list of actions that are to be performed for this Trigger
+         *
          * @param actions the value to set
          * @return this builder
-         **/
+         */
         public Builder actions(java.util.List<TriggerAction> actions) {
             this.actions = actions;
             this.__explicitlySet__.add("actions");
@@ -84,9 +83,7 @@ public final class TriggerInfo extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,30 +92,28 @@ public final class TriggerInfo extends com.oracle.bmc.http.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /**
-     * Name for Trigger.
-     **/
+    /** Name for Trigger. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Name for Trigger.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The list of actions that are to be performed for this Trigger
-     **/
+    /** The list of actions that are to be performed for this Trigger */
     @com.fasterxml.jackson.annotation.JsonProperty("actions")
     private final java.util.List<TriggerAction> actions;
 
     /**
      * The list of actions that are to be performed for this Trigger
+     *
      * @return the value
-     **/
+     */
     public java.util.List<TriggerAction> getActions() {
         return actions;
     }
@@ -130,6 +125,7 @@ public final class TriggerInfo extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

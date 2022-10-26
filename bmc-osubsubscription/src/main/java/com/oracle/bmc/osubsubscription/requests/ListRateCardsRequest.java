@@ -6,107 +6,87 @@ package com.oracle.bmc.osubsubscription.requests;
 
 import com.oracle.bmc.osubsubscription.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osubsubscription/ListRateCardsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListRateCardsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osubsubscription/ListRateCardsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListRateCardsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
 public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * Line level Subscription Id
-     */
+    /** Line level Subscription Id */
     private String subscriptionId;
 
-    /**
-     * Line level Subscription Id
-     */
+    /** Line level Subscription Id */
     public String getSubscriptionId() {
         return subscriptionId;
     }
-    /**
-     * The OCID of the compartment.
-     */
+    /** The OCID of the compartment. */
     private String compartmentId;
 
-    /**
-     * The OCID of the compartment.
-     */
+    /** The OCID of the compartment. */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * This param is used to get the rate card(s) whose effective start date starts on or after a particular date
+     * This param is used to get the rate card(s) whose effective start date starts on or after a
+     * particular date
      */
     private java.util.Date timeFrom;
 
     /**
-     * This param is used to get the rate card(s) whose effective start date starts on or after a particular date
+     * This param is used to get the rate card(s) whose effective start date starts on or after a
+     * particular date
      */
     public java.util.Date getTimeFrom() {
         return timeFrom;
     }
     /**
-     * This param is used to get the rate card(s) whose effective end date ends on or before a particular date
+     * This param is used to get the rate card(s) whose effective end date ends on or before a
+     * particular date
      */
     private java.util.Date timeTo;
 
     /**
-     * This param is used to get the rate card(s) whose effective end date ends on or before a particular date
+     * This param is used to get the rate card(s) whose effective end date ends on or before a
+     * particular date
      */
     public java.util.Date getTimeTo() {
         return timeTo;
     }
-    /**
-     * This param is used to get the rate card(s) filterd by the partNumber
-     */
+    /** This param is used to get the rate card(s) filterd by the partNumber */
     private String partNumber;
 
-    /**
-     * This param is used to get the rate card(s) filterd by the partNumber
-     */
+    /** This param is used to get the rate card(s) filterd by the partNumber */
     public String getPartNumber() {
         return partNumber;
     }
     /**
      * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
-     * <p>
-     * Example: {@code 500}
      *
+     * <p>Example: {@code 500}
      */
     private Integer limit;
 
     /**
      * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
-     * <p>
-     * Example: {@code 500}
      *
+     * <p>Example: {@code 500}
      */
     public Integer getLimit() {
         return limit;
     }
-    /**
-     * The value of the {@code opc-next-page} response header from the previous "List" call.
-     *
-     */
+    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
     private String page;
 
-    /**
-     * The value of the {@code opc-next-page} response header from the previous "List" call.
-     *
-     */
+    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     private SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     **/
-    public enum SortOrder {
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -139,24 +119,15 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
 
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}).
-     *
-     */
+    /** The field to sort by. You can provide one sort order ({@code sortOrder}). */
     private SortBy sortBy;
 
-    /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}).
-     *
-     **/
-    public enum SortBy {
+    /** The field to sort by. You can provide one sort order ({@code sortOrder}). */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Timecreated("TIMECREATED"),
         Timestart("TIMESTART"),
         ;
@@ -189,35 +160,32 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
 
-    /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}).
-     *
-     */
+    /** The field to sort by. You can provide one sort order ({@code sortOrder}). */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
-     *
+     * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1,
+     * us-phoenix-1 etc.
      */
     private String xOneOriginRegion;
 
     /**
-     * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
-     *
+     * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1,
+     * us-phoenix-1 etc.
      */
     public String getXOneOriginRegion() {
         return xOneOriginRegion;
@@ -226,17 +194,15 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListRateCardsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Line level Subscription Id
-         */
+        /** Line level Subscription Id */
         private String subscriptionId = null;
 
         /**
          * Line level Subscription Id
+         *
          * @param subscriptionId the value to set
          * @return this builder instance
          */
@@ -245,13 +211,12 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The OCID of the compartment.
-         */
+        /** The OCID of the compartment. */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -261,12 +226,15 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * This param is used to get the rate card(s) whose effective start date starts on or after a particular date
+         * This param is used to get the rate card(s) whose effective start date starts on or after
+         * a particular date
          */
         private java.util.Date timeFrom = null;
 
         /**
-         * This param is used to get the rate card(s) whose effective start date starts on or after a particular date
+         * This param is used to get the rate card(s) whose effective start date starts on or after
+         * a particular date
+         *
          * @param timeFrom the value to set
          * @return this builder instance
          */
@@ -276,12 +244,15 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * This param is used to get the rate card(s) whose effective end date ends on or before a particular date
+         * This param is used to get the rate card(s) whose effective end date ends on or before a
+         * particular date
          */
         private java.util.Date timeTo = null;
 
         /**
-         * This param is used to get the rate card(s) whose effective end date ends on or before a particular date
+         * This param is used to get the rate card(s) whose effective end date ends on or before a
+         * particular date
+         *
          * @param timeTo the value to set
          * @return this builder instance
          */
@@ -290,13 +261,12 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * This param is used to get the rate card(s) filterd by the partNumber
-         */
+        /** This param is used to get the rate card(s) filterd by the partNumber */
         private String partNumber = null;
 
         /**
          * This param is used to get the rate card(s) filterd by the partNumber
+         *
          * @param partNumber the value to set
          * @return this builder instance
          */
@@ -307,16 +277,15 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
-         * <p>
-         * Example: {@code 500}
          *
+         * <p>Example: {@code 500}
          */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
-         * <p>
-         * Example: {@code 500}
+         *
+         * <p>Example: {@code 500}
          *
          * @param limit the value to set
          * @return this builder instance
@@ -326,10 +295,7 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The value of the {@code opc-next-page} response header from the previous "List" call.
-         *
-         */
+        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
         private String page = null;
 
         /**
@@ -343,10 +309,7 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-         *
-         */
+        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
         private SortOrder sortOrder = null;
 
         /**
@@ -360,10 +323,7 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}).
-         *
-         */
+        /** The field to sort by. You can provide one sort order ({@code sortOrder}). */
         private SortBy sortBy = null;
 
         /**
@@ -378,13 +338,14 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -395,13 +356,14 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
-         *
+         * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1,
+         * us-phoenix-1 etc.
          */
         private String xOneOriginRegion = null;
 
         /**
-         * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+         * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1,
+         * us-phoenix-1 etc.
          *
          * @param xOneOriginRegion the value to set
          * @return this builder instance
@@ -413,18 +375,19 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -436,6 +399,7 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListRateCardsRequest o) {
@@ -458,10 +422,11 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of ListRateCardsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListRateCardsRequest
          */
@@ -475,7 +440,8 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of ListRateCardsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListRateCardsRequest
@@ -494,12 +460,14 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.opcRequestId = opcRequestId;
             request.xOneOriginRegion = xOneOriginRegion;
             return request;
-            // new ListRateCardsRequest(subscriptionId, compartmentId, timeFrom, timeTo, partNumber, limit, page, sortOrder, sortBy, opcRequestId, xOneOriginRegion);
+            // new ListRateCardsRequest(subscriptionId, compartmentId, timeFrom, timeTo, partNumber,
+            // limit, page, sortOrder, sortBy, opcRequestId, xOneOriginRegion);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -519,6 +487,7 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

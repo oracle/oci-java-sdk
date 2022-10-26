@@ -4,335 +4,40 @@
  */
 package com.oracle.bmc.filestorage;
 
-import com.oracle.bmc.filestorage.internal.http.*;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.filestorage.requests.*;
 import com.oracle.bmc.filestorage.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
+import java.util.Objects;
+
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
-public class FileStorageClient implements FileStorage {
-    /**
-     * Service instance for FileStorage.
-     */
+public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClient
+        implements FileStorage {
+    /** Service instance for FileStorage. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("FILESTORAGE")
                     .serviceEndpointPrefix("filestorage")
                     .serviceEndpointTemplate("https://filestorage.{region}.{secondLevelDomain}")
                     .build();
-    // attempt twice if it's instance principals, immediately failures will try to refresh the token
-    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(FileStorageAsyncClient.class);
 
-    com.oracle.bmc.http.internal.RestClient getClient() {
-        return client;
-    }
-
     private final FileStorageWaiters waiters;
 
     private final FileStoragePaginators paginators;
-    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-            authenticationDetailsProvider;
-    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
-    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
-            apacheConnectionClosingStrategy;
-    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
-    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
-    private final java.util.Map<
-                    com.oracle.bmc.http.signing.SigningStrategy,
-                    com.oracle.bmc.http.signing.RequestSignerFactory>
-            signingStrategyRequestSignerFactories;
-    private final boolean isNonBufferingApacheClient;
-    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
-    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-            circuitBreakerConfiguration;
 
-    /**
-     * Used to synchronize any updates on the `this.client` object.
-     */
-    private final Object clientUpdate = new Object();
-
-    /**
-     * Stores the actual client object used to make the API calls.
-     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
-     *       For any writes to the object, please synchronize on `this.clientUpdate`.
-     */
-    private volatile com.oracle.bmc.http.internal.RestClient client;
-
-    /**
-     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
-     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
-     */
-    private volatile String overrideEndpoint = null;
-
-    /**
-     * Creates a new service instance using the given authentication provider.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     */
-    public FileStorageClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     */
-    public FileStorageClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(authenticationDetailsProvider, configuration, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     */
-    public FileStorageClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     */
-    public FileStorageClient(
+    private FileStorageClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public FileStorageClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                additionalClientConfigurators,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public FileStorageClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
-                        .createDefaultRequestSignerFactories(),
-                additionalClientConfigurators,
-                endpoint);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public FileStorageClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
-     */
-    public FileStorageClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
             java.util.concurrent.ExecutorService executorService) {
-        this(
+        super(
+                builder,
                 authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                executorService,
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * Use the {@link Builder} to get access to all these parameters.
-     *
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
-     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
-     */
-    protected FileStorageClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            java.util.concurrent.ExecutorService executorService,
-            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
-        this.authenticationDetailsProvider = authenticationDetailsProvider;
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
-                new java.util.ArrayList<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
-            authenticationDetailsConfigurators.addAll(
-                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
-                                    this.authenticationDetailsProvider)
-                            .getClientConfigurators());
-        }
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
-                new java.util.ArrayList<>(additionalClientConfigurators);
-        allConfigurators.addAll(authenticationDetailsConfigurators);
-        this.restClientFactory =
-                restClientFactoryBuilder
-                        .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(allConfigurators)
-                        .build();
-        this.isNonBufferingApacheClient =
-                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        this.restClientFactory.getClientConfigurator());
-        this.apacheConnectionClosingStrategy =
-                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
-                        restClientFactory.getClientConfigurator());
-
-        this.clientConfigurationToUse =
-                (configuration != null)
-                        ? configuration
-                        : com.oracle.bmc.ClientConfiguration.builder().build();
-        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
-        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
-        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
-        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-                userCircuitBreakerConfiguration =
-                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
-                                configuration);
-        if (userCircuitBreakerConfiguration == null) {
-            this.circuitBreakerConfiguration =
-                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
-        } else {
-            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
-        }
-
-        this.refreshClient();
+                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -354,28 +59,11 @@ public class FileStorageClient implements FileStorage {
         this.waiters = new FileStorageWaiters(executorService, this);
 
         this.paginators = new FileStoragePaginators(this);
-
-        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
-            com.oracle.bmc.auth.RegionProvider provider =
-                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
-
-            if (provider.getRegion() != null) {
-                this.setRegion(provider.getRegion());
-                if (endpoint != null) {
-                    LOG.info(
-                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
-                            provider.getRegion(),
-                            endpoint);
-                }
-            }
-        }
-        if (endpoint != null) {
-            setEndpoint(endpoint);
-        }
     }
 
     /**
      * Create a builder for this client.
+     *
      * @return builder
      */
     public static Builder builder() {
@@ -383,8 +71,8 @@ public class FileStorageClient implements FileStorage {
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
+     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, FileStorageClient> {
@@ -399,6 +87,7 @@ public class FileStorageClient implements FileStorage {
 
         /**
          * Set the ExecutorService for the client to be created.
+         *
          * @param executorService executorService
          * @return this builder
          */
@@ -409,1460 +98,1069 @@ public class FileStorageClient implements FileStorage {
 
         /**
          * Build the client.
+         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public FileStorageClient build(
                 @javax.annotation.Nonnull
-                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                        authenticationDetailsProvider) {
-            if (authenticationDetailsProvider == null) {
-                throw new NullPointerException(
-                        "authenticationDetailsProvider is marked non-null but is null");
-            }
-            return new FileStorageClient(
-                    authenticationDetailsProvider,
-                    configuration,
-                    clientConfigurator,
-                    requestSignerFactory,
-                    signingStrategyRequestSignerFactories,
-                    additionalClientConfigurators,
-                    endpoint,
-                    executorService);
+                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                                authenticationDetailsProvider) {
+            return new FileStorageClient(this, authenticationDetailsProvider, executorService);
         }
-    }
-
-    @Override
-    public void refreshClient() {
-        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                this.defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        this.signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
-            }
-        }
-
-        com.oracle.bmc.http.internal.RestClient refreshedClient =
-                this.restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        this.clientConfigurationToUse,
-                        this.isNonBufferingApacheClient,
-                        null,
-                        this.circuitBreakerConfiguration);
-
-        synchronized (clientUpdate) {
-            if (this.overrideEndpoint != null) {
-                refreshedClient.setEndpoint(this.overrideEndpoint);
-            }
-
-            this.client = refreshedClient;
-        }
-
-        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint) {
-        LOG.info("Setting endpoint to {}", endpoint);
-
-        synchronized (clientUpdate) {
-            this.overrideEndpoint = endpoint;
-            client.setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
-        }
-        return endpoint;
     }
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        java.util.Optional<String> endpoint =
-                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
-        if (endpoint.isPresent()) {
-            setEndpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + SERVICE + " is not known in region " + region);
-        }
+        super.setRegion(region);
     }
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
-        try {
-            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-            setRegion(region);
-        } catch (IllegalArgumentException e) {
-            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-            setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public void close() {
-        client.close();
+        super.setRegion(regionId);
     }
 
     @Override
     public ChangeFileSystemCompartmentResponse changeFileSystemCompartment(
             ChangeFileSystemCompartmentRequest request) {
-        LOG.trace("Called changeFileSystemCompartment");
-        final ChangeFileSystemCompartmentRequest interceptedRequest =
-                ChangeFileSystemCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeFileSystemCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeFileSystemCompartmentDetails(),
+                "changeFileSystemCompartmentDetails is required");
+
+        return clientCall(request, ChangeFileSystemCompartmentResponse::builder)
+                .logger(LOG, "changeFileSystemCompartment")
+                .serviceDetails(
                         "FileStorage",
                         "ChangeFileSystemCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/ChangeFileSystemCompartment");
-        java.util.function.Function<javax.ws.rs.core.Response, ChangeFileSystemCompartmentResponse>
-                transformer =
-                        ChangeFileSystemCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeFileSystemCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/ChangeFileSystemCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeFileSystemCompartmentRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("fileSystems")
+                .appendPathParam(request.getFileSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeFileSystemCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeMountTargetCompartmentResponse changeMountTargetCompartment(
             ChangeMountTargetCompartmentRequest request) {
-        LOG.trace("Called changeMountTargetCompartment");
-        final ChangeMountTargetCompartmentRequest interceptedRequest =
-                ChangeMountTargetCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeMountTargetCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMountTargetId(), "mountTargetId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMountTargetCompartmentDetails(),
+                "changeMountTargetCompartmentDetails is required");
+
+        return clientCall(request, ChangeMountTargetCompartmentResponse::builder)
+                .logger(LOG, "changeMountTargetCompartment")
+                .serviceDetails(
                         "FileStorage",
                         "ChangeMountTargetCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/ChangeMountTargetCompartment");
-        java.util.function.Function<javax.ws.rs.core.Response, ChangeMountTargetCompartmentResponse>
-                transformer =
-                        ChangeMountTargetCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeMountTargetCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/ChangeMountTargetCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeMountTargetCompartmentRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("mountTargets")
+                .appendPathParam(request.getMountTargetId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeMountTargetCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeReplicationCompartmentResponse changeReplicationCompartment(
             ChangeReplicationCompartmentRequest request) {
-        LOG.trace("Called changeReplicationCompartment");
-        final ChangeReplicationCompartmentRequest interceptedRequest =
-                ChangeReplicationCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeReplicationCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getReplicationId(), "replicationId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeReplicationCompartmentDetails(),
+                "changeReplicationCompartmentDetails is required");
+
+        return clientCall(request, ChangeReplicationCompartmentResponse::builder)
+                .logger(LOG, "changeReplicationCompartment")
+                .serviceDetails(
                         "FileStorage",
                         "ChangeReplicationCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/ChangeReplicationCompartment");
-        java.util.function.Function<javax.ws.rs.core.Response, ChangeReplicationCompartmentResponse>
-                transformer =
-                        ChangeReplicationCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeReplicationCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/ChangeReplicationCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeReplicationCompartmentRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("replications")
+                .appendPathParam(request.getReplicationId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeReplicationCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateExportResponse createExport(CreateExportRequest request) {
-        LOG.trace("Called createExport");
-        final CreateExportRequest interceptedRequest =
-                CreateExportConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateExportConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCreateExportDetails(), "createExportDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateExportResponse::builder)
+                .logger(LOG, "createExport")
+                .serviceDetails(
                         "FileStorage",
                         "CreateExport",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/CreateExport");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateExportResponse> transformer =
-                CreateExportConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateExportDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/CreateExport")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateExportRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("exports")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.Export.class,
+                        CreateExportResponse.Builder::export)
+                .handleResponseHeaderString("etag", CreateExportResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateExportResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateFileSystemResponse createFileSystem(CreateFileSystemRequest request) {
-        LOG.trace("Called createFileSystem");
-        final CreateFileSystemRequest interceptedRequest =
-                CreateFileSystemConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateFileSystemConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateFileSystemDetails(), "createFileSystemDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateFileSystemResponse::builder)
+                .logger(LOG, "createFileSystem")
+                .serviceDetails(
                         "FileStorage",
                         "CreateFileSystem",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/CreateFileSystem");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateFileSystemResponse>
-                transformer =
-                        CreateFileSystemConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateFileSystemDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/CreateFileSystem")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateFileSystemRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("fileSystems")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.FileSystem.class,
+                        CreateFileSystemResponse.Builder::fileSystem)
+                .handleResponseHeaderString("etag", CreateFileSystemResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateFileSystemResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateMountTargetResponse createMountTarget(CreateMountTargetRequest request) {
-        LOG.trace("Called createMountTarget");
-        final CreateMountTargetRequest interceptedRequest =
-                CreateMountTargetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateMountTargetConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateMountTargetDetails(), "createMountTargetDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateMountTargetResponse::builder)
+                .logger(LOG, "createMountTarget")
+                .serviceDetails(
                         "FileStorage",
                         "CreateMountTarget",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/CreateMountTarget");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateMountTargetResponse>
-                transformer =
-                        CreateMountTargetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateMountTargetDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/CreateMountTarget")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMountTargetRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("mountTargets")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.MountTarget.class,
+                        CreateMountTargetResponse.Builder::mountTarget)
+                .handleResponseHeaderString("etag", CreateMountTargetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateMountTargetResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateReplicationResponse createReplication(CreateReplicationRequest request) {
-        LOG.trace("Called createReplication");
-        final CreateReplicationRequest interceptedRequest =
-                CreateReplicationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateReplicationConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateReplicationDetails(), "createReplicationDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateReplicationResponse::builder)
+                .logger(LOG, "createReplication")
+                .serviceDetails(
                         "FileStorage",
                         "CreateReplication",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/CreateReplication");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateReplicationResponse>
-                transformer =
-                        CreateReplicationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateReplicationDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/CreateReplication")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateReplicationRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("replications")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.Replication.class,
+                        CreateReplicationResponse.Builder::replication)
+                .handleResponseHeaderString("etag", CreateReplicationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateReplicationResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateSnapshotResponse createSnapshot(CreateSnapshotRequest request) {
-        LOG.trace("Called createSnapshot");
-        final CreateSnapshotRequest interceptedRequest =
-                CreateSnapshotConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateSnapshotConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateSnapshotDetails(), "createSnapshotDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateSnapshotResponse::builder)
+                .logger(LOG, "createSnapshot")
+                .serviceDetails(
                         "FileStorage",
                         "CreateSnapshot",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/CreateSnapshot");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateSnapshotResponse> transformer =
-                CreateSnapshotConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateSnapshotDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/CreateSnapshot")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSnapshotRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("snapshots")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.Snapshot.class,
+                        CreateSnapshotResponse.Builder::snapshot)
+                .handleResponseHeaderString("etag", CreateSnapshotResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSnapshotResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteExportResponse deleteExport(DeleteExportRequest request) {
-        LOG.trace("Called deleteExport");
-        final DeleteExportRequest interceptedRequest =
-                DeleteExportConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteExportConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getExportId(), "exportId must not be blank");
+
+        return clientCall(request, DeleteExportResponse::builder)
+                .logger(LOG, "deleteExport")
+                .serviceDetails(
                         "FileStorage",
                         "DeleteExport",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/DeleteExport");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteExportResponse> transformer =
-                DeleteExportConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/DeleteExport")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteExportRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("exports")
+                .appendPathParam(request.getExportId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteExportResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteFileSystemResponse deleteFileSystem(DeleteFileSystemRequest request) {
-        LOG.trace("Called deleteFileSystem");
-        final DeleteFileSystemRequest interceptedRequest =
-                DeleteFileSystemConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteFileSystemConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
+
+        return clientCall(request, DeleteFileSystemResponse::builder)
+                .logger(LOG, "deleteFileSystem")
+                .serviceDetails(
                         "FileStorage",
                         "DeleteFileSystem",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/DeleteFileSystem");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteFileSystemResponse>
-                transformer =
-                        DeleteFileSystemConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/DeleteFileSystem")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteFileSystemRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("fileSystems")
+                .appendPathParam(request.getFileSystemId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteFileSystemResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteMountTargetResponse deleteMountTarget(DeleteMountTargetRequest request) {
-        LOG.trace("Called deleteMountTarget");
-        final DeleteMountTargetRequest interceptedRequest =
-                DeleteMountTargetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteMountTargetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMountTargetId(), "mountTargetId must not be blank");
+
+        return clientCall(request, DeleteMountTargetResponse::builder)
+                .logger(LOG, "deleteMountTarget")
+                .serviceDetails(
                         "FileStorage",
                         "DeleteMountTarget",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/DeleteMountTarget");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteMountTargetResponse>
-                transformer =
-                        DeleteMountTargetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/DeleteMountTarget")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMountTargetRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("mountTargets")
+                .appendPathParam(request.getMountTargetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteMountTargetResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteReplicationResponse deleteReplication(DeleteReplicationRequest request) {
-        LOG.trace("Called deleteReplication");
-        final DeleteReplicationRequest interceptedRequest =
-                DeleteReplicationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteReplicationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getReplicationId(), "replicationId must not be blank");
+
+        return clientCall(request, DeleteReplicationResponse::builder)
+                .logger(LOG, "deleteReplication")
+                .serviceDetails(
                         "FileStorage",
                         "DeleteReplication",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/DeleteReplication");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteReplicationResponse>
-                transformer =
-                        DeleteReplicationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/DeleteReplication")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteReplicationRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("replications")
+                .appendPathParam(request.getReplicationId())
+                .appendEnumQueryParam("deleteMode", request.getDeleteMode())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteReplicationResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteReplicationTargetResponse deleteReplicationTarget(
             DeleteReplicationTargetRequest request) {
-        LOG.trace("Called deleteReplicationTarget");
-        final DeleteReplicationTargetRequest interceptedRequest =
-                DeleteReplicationTargetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteReplicationTargetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getReplicationTargetId(), "replicationTargetId must not be blank");
+
+        return clientCall(request, DeleteReplicationTargetResponse::builder)
+                .logger(LOG, "deleteReplicationTarget")
+                .serviceDetails(
                         "FileStorage",
                         "DeleteReplicationTarget",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ReplicationTarget/DeleteReplicationTarget");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteReplicationTargetResponse>
-                transformer =
-                        DeleteReplicationTargetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ReplicationTarget/DeleteReplicationTarget")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteReplicationTargetRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("replicationTargets")
+                .appendPathParam(request.getReplicationTargetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteReplicationTargetResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteSnapshotResponse deleteSnapshot(DeleteSnapshotRequest request) {
-        LOG.trace("Called deleteSnapshot");
-        final DeleteSnapshotRequest interceptedRequest =
-                DeleteSnapshotConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteSnapshotConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getSnapshotId(), "snapshotId must not be blank");
+
+        return clientCall(request, DeleteSnapshotResponse::builder)
+                .logger(LOG, "deleteSnapshot")
+                .serviceDetails(
                         "FileStorage",
                         "DeleteSnapshot",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/DeleteSnapshot");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteSnapshotResponse> transformer =
-                DeleteSnapshotConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/DeleteSnapshot")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSnapshotRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("snapshots")
+                .appendPathParam(request.getSnapshotId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSnapshotResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public EstimateReplicationResponse estimateReplication(EstimateReplicationRequest request) {
-        LOG.trace("Called estimateReplication");
-        final EstimateReplicationRequest interceptedRequest =
-                EstimateReplicationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                EstimateReplicationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
+
+        return clientCall(request, EstimateReplicationResponse::builder)
+                .logger(LOG, "estimateReplication")
+                .serviceDetails(
                         "FileStorage",
                         "EstimateReplication",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/EstimateReplication");
-        java.util.function.Function<javax.ws.rs.core.Response, EstimateReplicationResponse>
-                transformer =
-                        EstimateReplicationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/EstimateReplication")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EstimateReplicationRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("fileSystems")
+                .appendPathParam(request.getFileSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("estimateReplication")
+                .appendQueryParam("changeRateInMBps", request.getChangeRateInMBps())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.ReplicationEstimate.class,
+                        EstimateReplicationResponse.Builder::replicationEstimate)
+                .handleResponseHeaderString("etag", EstimateReplicationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", EstimateReplicationResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetExportResponse getExport(GetExportRequest request) {
-        LOG.trace("Called getExport");
-        final GetExportRequest interceptedRequest = GetExportConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetExportConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getExportId(), "exportId must not be blank");
+
+        return clientCall(request, GetExportResponse::builder)
+                .logger(LOG, "getExport")
+                .serviceDetails(
                         "FileStorage",
                         "GetExport",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/GetExport");
-        java.util.function.Function<javax.ws.rs.core.Response, GetExportResponse> transformer =
-                GetExportConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/GetExport")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExportRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("exports")
+                .appendPathParam(request.getExportId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.Export.class,
+                        GetExportResponse.Builder::export)
+                .handleResponseHeaderString("etag", GetExportResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExportResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetExportSetResponse getExportSet(GetExportSetRequest request) {
-        LOG.trace("Called getExportSet");
-        final GetExportSetRequest interceptedRequest =
-                GetExportSetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetExportSetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getExportSetId(), "exportSetId must not be blank");
+
+        return clientCall(request, GetExportSetResponse::builder)
+                .logger(LOG, "getExportSet")
+                .serviceDetails(
                         "FileStorage",
                         "GetExportSet",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSet/GetExportSet");
-        java.util.function.Function<javax.ws.rs.core.Response, GetExportSetResponse> transformer =
-                GetExportSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSet/GetExportSet")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExportSetRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("exportSets")
+                .appendPathParam(request.getExportSetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.ExportSet.class,
+                        GetExportSetResponse.Builder::exportSet)
+                .handleResponseHeaderString("etag", GetExportSetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExportSetResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetFileSystemResponse getFileSystem(GetFileSystemRequest request) {
-        LOG.trace("Called getFileSystem");
-        final GetFileSystemRequest interceptedRequest =
-                GetFileSystemConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetFileSystemConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
+
+        return clientCall(request, GetFileSystemResponse::builder)
+                .logger(LOG, "getFileSystem")
+                .serviceDetails(
                         "FileStorage",
                         "GetFileSystem",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/GetFileSystem");
-        java.util.function.Function<javax.ws.rs.core.Response, GetFileSystemResponse> transformer =
-                GetFileSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/GetFileSystem")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetFileSystemRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("fileSystems")
+                .appendPathParam(request.getFileSystemId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.FileSystem.class,
+                        GetFileSystemResponse.Builder::fileSystem)
+                .handleResponseHeaderString("etag", GetFileSystemResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetFileSystemResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetMountTargetResponse getMountTarget(GetMountTargetRequest request) {
-        LOG.trace("Called getMountTarget");
-        final GetMountTargetRequest interceptedRequest =
-                GetMountTargetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetMountTargetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMountTargetId(), "mountTargetId must not be blank");
+
+        return clientCall(request, GetMountTargetResponse::builder)
+                .logger(LOG, "getMountTarget")
+                .serviceDetails(
                         "FileStorage",
                         "GetMountTarget",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/GetMountTarget");
-        java.util.function.Function<javax.ws.rs.core.Response, GetMountTargetResponse> transformer =
-                GetMountTargetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/GetMountTarget")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMountTargetRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("mountTargets")
+                .appendPathParam(request.getMountTargetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.MountTarget.class,
+                        GetMountTargetResponse.Builder::mountTarget)
+                .handleResponseHeaderString("etag", GetMountTargetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMountTargetResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetReplicationResponse getReplication(GetReplicationRequest request) {
-        LOG.trace("Called getReplication");
-        final GetReplicationRequest interceptedRequest =
-                GetReplicationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetReplicationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getReplicationId(), "replicationId must not be blank");
+
+        return clientCall(request, GetReplicationResponse::builder)
+                .logger(LOG, "getReplication")
+                .serviceDetails(
                         "FileStorage",
                         "GetReplication",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/GetReplication");
-        java.util.function.Function<javax.ws.rs.core.Response, GetReplicationResponse> transformer =
-                GetReplicationConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/GetReplication")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetReplicationRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("replications")
+                .appendPathParam(request.getReplicationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.Replication.class,
+                        GetReplicationResponse.Builder::replication)
+                .handleResponseHeaderString("etag", GetReplicationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetReplicationResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetReplicationTargetResponse getReplicationTarget(GetReplicationTargetRequest request) {
-        LOG.trace("Called getReplicationTarget");
-        final GetReplicationTargetRequest interceptedRequest =
-                GetReplicationTargetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetReplicationTargetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getReplicationTargetId(), "replicationTargetId must not be blank");
+
+        return clientCall(request, GetReplicationTargetResponse::builder)
+                .logger(LOG, "getReplicationTarget")
+                .serviceDetails(
                         "FileStorage",
                         "GetReplicationTarget",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ReplicationTarget/GetReplicationTarget");
-        java.util.function.Function<javax.ws.rs.core.Response, GetReplicationTargetResponse>
-                transformer =
-                        GetReplicationTargetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ReplicationTarget/GetReplicationTarget")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetReplicationTargetRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("replicationTargets")
+                .appendPathParam(request.getReplicationTargetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.ReplicationTarget.class,
+                        GetReplicationTargetResponse.Builder::replicationTarget)
+                .handleResponseHeaderString("etag", GetReplicationTargetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetReplicationTargetResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetSnapshotResponse getSnapshot(GetSnapshotRequest request) {
-        LOG.trace("Called getSnapshot");
-        final GetSnapshotRequest interceptedRequest =
-                GetSnapshotConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetSnapshotConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getSnapshotId(), "snapshotId must not be blank");
+
+        return clientCall(request, GetSnapshotResponse::builder)
+                .logger(LOG, "getSnapshot")
+                .serviceDetails(
                         "FileStorage",
                         "GetSnapshot",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/GetSnapshot");
-        java.util.function.Function<javax.ws.rs.core.Response, GetSnapshotResponse> transformer =
-                GetSnapshotConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/GetSnapshot")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSnapshotRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("snapshots")
+                .appendPathParam(request.getSnapshotId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.Snapshot.class,
+                        GetSnapshotResponse.Builder::snapshot)
+                .handleResponseHeaderString("etag", GetSnapshotResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSnapshotResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListExportSetsResponse listExportSets(ListExportSetsRequest request) {
-        LOG.trace("Called listExportSets");
-        final ListExportSetsRequest interceptedRequest =
-                ListExportSetsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListExportSetsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getAvailabilityDomain(), "availabilityDomain is required");
+
+        return clientCall(request, ListExportSetsResponse::builder)
+                .logger(LOG, "listExportSets")
+                .serviceDetails(
                         "FileStorage",
                         "ListExportSets",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSetSummary/ListExportSets");
-        java.util.function.Function<javax.ws.rs.core.Response, ListExportSetsResponse> transformer =
-                ListExportSetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSetSummary/ListExportSets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExportSetsRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("exportSets")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("id", request.getId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.filestorage.model.ExportSetSummary.class,
+                        ListExportSetsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExportSetsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExportSetsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListExportsResponse listExports(ListExportsRequest request) {
-        LOG.trace("Called listExports");
-        final ListExportsRequest interceptedRequest =
-                ListExportsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListExportsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListExportsResponse::builder)
+                .logger(LOG, "listExports")
+                .serviceDetails(
                         "FileStorage",
                         "ListExports",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSummary/ListExports");
-        java.util.function.Function<javax.ws.rs.core.Response, ListExportsResponse> transformer =
-                ListExportsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSummary/ListExports")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExportsRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("exports")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("exportSetId", request.getExportSetId())
+                .appendQueryParam("fileSystemId", request.getFileSystemId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("id", request.getId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.filestorage.model.ExportSummary.class,
+                        ListExportsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExportsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExportsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListFileSystemsResponse listFileSystems(ListFileSystemsRequest request) {
-        LOG.trace("Called listFileSystems");
-        final ListFileSystemsRequest interceptedRequest =
-                ListFileSystemsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListFileSystemsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getAvailabilityDomain(), "availabilityDomain is required");
+
+        return clientCall(request, ListFileSystemsResponse::builder)
+                .logger(LOG, "listFileSystems")
+                .serviceDetails(
                         "FileStorage",
                         "ListFileSystems",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystemSummary/ListFileSystems");
-        java.util.function.Function<javax.ws.rs.core.Response, ListFileSystemsResponse>
-                transformer =
-                        ListFileSystemsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystemSummary/ListFileSystems")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListFileSystemsRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("fileSystems")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("sourceSnapshotId", request.getSourceSnapshotId())
+                .appendQueryParam("parentFileSystemId", request.getParentFileSystemId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.filestorage.model.FileSystemSummary.class,
+                        ListFileSystemsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListFileSystemsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListFileSystemsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListMountTargetsResponse listMountTargets(ListMountTargetsRequest request) {
-        LOG.trace("Called listMountTargets");
-        final ListMountTargetsRequest interceptedRequest =
-                ListMountTargetsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListMountTargetsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getAvailabilityDomain(), "availabilityDomain is required");
+
+        return clientCall(request, ListMountTargetsResponse::builder)
+                .logger(LOG, "listMountTargets")
+                .serviceDetails(
                         "FileStorage",
                         "ListMountTargets",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTargetSummary/ListMountTargets");
-        java.util.function.Function<javax.ws.rs.core.Response, ListMountTargetsResponse>
-                transformer =
-                        ListMountTargetsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTargetSummary/ListMountTargets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMountTargetsRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("mountTargets")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("exportSetId", request.getExportSetId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("id", request.getId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.filestorage.model.MountTargetSummary.class,
+                        ListMountTargetsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMountTargetsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMountTargetsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListReplicationTargetsResponse listReplicationTargets(
             ListReplicationTargetsRequest request) {
-        LOG.trace("Called listReplicationTargets");
-        final ListReplicationTargetsRequest interceptedRequest =
-                ListReplicationTargetsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListReplicationTargetsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getAvailabilityDomain(), "availabilityDomain is required");
+
+        return clientCall(request, ListReplicationTargetsResponse::builder)
+                .logger(LOG, "listReplicationTargets")
+                .serviceDetails(
                         "FileStorage",
                         "ListReplicationTargets",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ReplicationTargetSummary/ListReplicationTargets");
-        java.util.function.Function<javax.ws.rs.core.Response, ListReplicationTargetsResponse>
-                transformer =
-                        ListReplicationTargetsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ReplicationTargetSummary/ListReplicationTargets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListReplicationTargetsRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("replicationTargets")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.filestorage.model.ReplicationTargetSummary.class,
+                        ListReplicationTargetsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListReplicationTargetsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListReplicationTargetsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListReplicationsResponse listReplications(ListReplicationsRequest request) {
-        LOG.trace("Called listReplications");
-        final ListReplicationsRequest interceptedRequest =
-                ListReplicationsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListReplicationsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getAvailabilityDomain(), "availabilityDomain is required");
+
+        return clientCall(request, ListReplicationsResponse::builder)
+                .logger(LOG, "listReplications")
+                .serviceDetails(
                         "FileStorage",
                         "ListReplications",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ReplicationSummary/ListReplications");
-        java.util.function.Function<javax.ws.rs.core.Response, ListReplicationsResponse>
-                transformer =
-                        ListReplicationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ReplicationSummary/ListReplications")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListReplicationsRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("replications")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("fileSystemId", request.getFileSystemId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.filestorage.model.ReplicationSummary.class,
+                        ListReplicationsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListReplicationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListReplicationsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListSnapshotsResponse listSnapshots(ListSnapshotsRequest request) {
-        LOG.trace("Called listSnapshots");
-        final ListSnapshotsRequest interceptedRequest =
-                ListSnapshotsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListSnapshotsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getFileSystemId(), "fileSystemId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListSnapshotsResponse::builder)
+                .logger(LOG, "listSnapshots")
+                .serviceDetails(
                         "FileStorage",
                         "ListSnapshots",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/SnapshotSummary/ListSnapshots");
-        java.util.function.Function<javax.ws.rs.core.Response, ListSnapshotsResponse> transformer =
-                ListSnapshotsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/SnapshotSummary/ListSnapshots")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSnapshotsRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("snapshots")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("fileSystemId", request.getFileSystemId())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.filestorage.model.SnapshotSummary.class,
+                        ListSnapshotsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSnapshotsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSnapshotsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateExportResponse updateExport(UpdateExportRequest request) {
-        LOG.trace("Called updateExport");
-        final UpdateExportRequest interceptedRequest =
-                UpdateExportConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateExportConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getExportId(), "exportId must not be blank");
+        Objects.requireNonNull(request.getUpdateExportDetails(), "updateExportDetails is required");
+
+        return clientCall(request, UpdateExportResponse::builder)
+                .logger(LOG, "updateExport")
+                .serviceDetails(
                         "FileStorage",
                         "UpdateExport",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/UpdateExport");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateExportResponse> transformer =
-                UpdateExportConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateExportDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/UpdateExport")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExportRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("exports")
+                .appendPathParam(request.getExportId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.Export.class,
+                        UpdateExportResponse.Builder::export)
+                .handleResponseHeaderString("etag", UpdateExportResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExportResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateExportSetResponse updateExportSet(UpdateExportSetRequest request) {
-        LOG.trace("Called updateExportSet");
-        final UpdateExportSetRequest interceptedRequest =
-                UpdateExportSetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateExportSetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getExportSetId(), "exportSetId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExportSetDetails(), "updateExportSetDetails is required");
+
+        return clientCall(request, UpdateExportSetResponse::builder)
+                .logger(LOG, "updateExportSet")
+                .serviceDetails(
                         "FileStorage",
                         "UpdateExportSet",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSet/UpdateExportSet");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateExportSetResponse>
-                transformer =
-                        UpdateExportSetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateExportSetDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSet/UpdateExportSet")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExportSetRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("exportSets")
+                .appendPathParam(request.getExportSetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.ExportSet.class,
+                        UpdateExportSetResponse.Builder::exportSet)
+                .handleResponseHeaderString("etag", UpdateExportSetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExportSetResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateFileSystemResponse updateFileSystem(UpdateFileSystemRequest request) {
-        LOG.trace("Called updateFileSystem");
-        final UpdateFileSystemRequest interceptedRequest =
-                UpdateFileSystemConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateFileSystemConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateFileSystemDetails(), "updateFileSystemDetails is required");
+
+        return clientCall(request, UpdateFileSystemResponse::builder)
+                .logger(LOG, "updateFileSystem")
+                .serviceDetails(
                         "FileStorage",
                         "UpdateFileSystem",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/UpdateFileSystem");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateFileSystemResponse>
-                transformer =
-                        UpdateFileSystemConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateFileSystemDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/UpdateFileSystem")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateFileSystemRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("fileSystems")
+                .appendPathParam(request.getFileSystemId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.FileSystem.class,
+                        UpdateFileSystemResponse.Builder::fileSystem)
+                .handleResponseHeaderString("etag", UpdateFileSystemResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateFileSystemResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateMountTargetResponse updateMountTarget(UpdateMountTargetRequest request) {
-        LOG.trace("Called updateMountTarget");
-        final UpdateMountTargetRequest interceptedRequest =
-                UpdateMountTargetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateMountTargetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMountTargetId(), "mountTargetId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMountTargetDetails(), "updateMountTargetDetails is required");
+
+        return clientCall(request, UpdateMountTargetResponse::builder)
+                .logger(LOG, "updateMountTarget")
+                .serviceDetails(
                         "FileStorage",
                         "UpdateMountTarget",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/UpdateMountTarget");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateMountTargetResponse>
-                transformer =
-                        UpdateMountTargetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateMountTargetDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/UpdateMountTarget")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMountTargetRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("mountTargets")
+                .appendPathParam(request.getMountTargetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.MountTarget.class,
+                        UpdateMountTargetResponse.Builder::mountTarget)
+                .handleResponseHeaderString("etag", UpdateMountTargetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateMountTargetResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateReplicationResponse updateReplication(UpdateReplicationRequest request) {
-        LOG.trace("Called updateReplication");
-        final UpdateReplicationRequest interceptedRequest =
-                UpdateReplicationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateReplicationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getReplicationId(), "replicationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateReplicationDetails(), "updateReplicationDetails is required");
+
+        return clientCall(request, UpdateReplicationResponse::builder)
+                .logger(LOG, "updateReplication")
+                .serviceDetails(
                         "FileStorage",
                         "UpdateReplication",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/UpdateReplication");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateReplicationResponse>
-                transformer =
-                        UpdateReplicationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateReplicationDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/UpdateReplication")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateReplicationRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("replications")
+                .appendPathParam(request.getReplicationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.Replication.class,
+                        UpdateReplicationResponse.Builder::replication)
+                .handleResponseHeaderString("etag", UpdateReplicationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateReplicationResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateSnapshotResponse updateSnapshot(UpdateSnapshotRequest request) {
-        LOG.trace("Called updateSnapshot");
-        final UpdateSnapshotRequest interceptedRequest =
-                UpdateSnapshotConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateSnapshotConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getSnapshotId(), "snapshotId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateSnapshotDetails(), "updateSnapshotDetails is required");
+
+        return clientCall(request, UpdateSnapshotResponse::builder)
+                .logger(LOG, "updateSnapshot")
+                .serviceDetails(
                         "FileStorage",
                         "UpdateSnapshot",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/UpdateSnapshot");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateSnapshotResponse> transformer =
-                UpdateSnapshotConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateSnapshotDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/UpdateSnapshot")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSnapshotRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("snapshots")
+                .appendPathParam(request.getSnapshotId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.Snapshot.class,
+                        UpdateSnapshotResponse.Builder::snapshot)
+                .handleResponseHeaderString("etag", UpdateSnapshotResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateSnapshotResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
@@ -1873,5 +1171,209 @@ public class FileStorageClient implements FileStorage {
     @Override
     public FileStoragePaginators getPaginators() {
         return paginators;
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public FileStorageClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(builder(), authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public FileStorageClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(builder().configuration(configuration), authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public FileStorageClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                builder().configuration(configuration).clientConfigurator(clientConfigurator),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public FileStorageClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public FileStorageClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public FileStorageClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public FileStorageClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @param executorService {@link Builder#executorService}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public FileStorageClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider,
+                executorService);
     }
 }

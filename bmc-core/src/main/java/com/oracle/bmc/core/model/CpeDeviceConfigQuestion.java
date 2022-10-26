@@ -6,25 +6,25 @@ package com.oracle.bmc.core.model;
 
 /**
  * An individual question that the customer can answer about the CPE device.
- * <p>
- * The customer provides answers to these questions in
- * {@link #updateTunnelCpeDeviceConfig(UpdateTunnelCpeDeviceConfigRequest) updateTunnelCpeDeviceConfig}.
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>The customer provides answers to these questions in {@link
+ * #updateTunnelCpeDeviceConfig(UpdateTunnelCpeDeviceConfigRequest) updateTunnelCpeDeviceConfig}.
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CpeDeviceConfigQuestion.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CpeDeviceConfigQuestion.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CpeDeviceConfigQuestion
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "displayName", "explanation"})
     public CpeDeviceConfigQuestion(String key, String displayName, String explanation) {
@@ -36,10 +36,7 @@ public final class CpeDeviceConfigQuestion
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * A string that identifies the question.
-         *
-         **/
+        /** A string that identifies the question. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
@@ -48,36 +45,32 @@ public final class CpeDeviceConfigQuestion
          *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
         /**
-         * A descriptive label for the question (for example, to display in a form in a graphical interface).
-         * Avoid entering confidential information.
-         *
-         **/
+         * A descriptive label for the question (for example, to display in a form in a graphical
+         * interface). Avoid entering confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A descriptive label for the question (for example, to display in a form in a graphical interface).
-         * Avoid entering confidential information.
+         * A descriptive label for the question (for example, to display in a form in a graphical
+         * interface). Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * A description or explanation of the question, to help the customer answer accurately.
-         *
-         **/
+        /** A description or explanation of the question, to help the customer answer accurately. */
         @com.fasterxml.jackson.annotation.JsonProperty("explanation")
         private String explanation;
 
@@ -86,7 +79,7 @@ public final class CpeDeviceConfigQuestion
          *
          * @param explanation the value to set
          * @return this builder
-         **/
+         */
         public Builder explanation(String explanation) {
             this.explanation = explanation;
             this.__explicitlySet__.add("explanation");
@@ -120,9 +113,7 @@ public final class CpeDeviceConfigQuestion
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -131,10 +122,7 @@ public final class CpeDeviceConfigQuestion
         return new Builder().copy(this);
     }
 
-    /**
-     * A string that identifies the question.
-     *
-     **/
+    /** A string that identifies the question. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
@@ -142,33 +130,29 @@ public final class CpeDeviceConfigQuestion
      * A string that identifies the question.
      *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
     /**
-     * A descriptive label for the question (for example, to display in a form in a graphical interface).
-     * Avoid entering confidential information.
-     *
-     **/
+     * A descriptive label for the question (for example, to display in a form in a graphical
+     * interface). Avoid entering confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A descriptive label for the question (for example, to display in a form in a graphical interface).
-     * Avoid entering confidential information.
+     * A descriptive label for the question (for example, to display in a form in a graphical
+     * interface). Avoid entering confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * A description or explanation of the question, to help the customer answer accurately.
-     *
-     **/
+    /** A description or explanation of the question, to help the customer answer accurately. */
     @com.fasterxml.jackson.annotation.JsonProperty("explanation")
     private final String explanation;
 
@@ -176,7 +160,7 @@ public final class CpeDeviceConfigQuestion
      * A description or explanation of the question, to help the customer answer accurately.
      *
      * @return the value
-     **/
+     */
     public String getExplanation() {
         return explanation;
     }
@@ -188,6 +172,7 @@ public final class CpeDeviceConfigQuestion
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

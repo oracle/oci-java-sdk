@@ -5,22 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The number of databases in the fleet, grouped by database type and sub type.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The number of databases in the fleet, grouped by database type and sub type. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = FleetStatusByCategory.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = FleetStatusByCategory.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class FleetStatusByCategory
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "databaseType",
@@ -42,69 +42,67 @@ public final class FleetStatusByCategory
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The type of Oracle Database installation.
-         **/
+        /** The type of Oracle Database installation. */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
         private DatabaseType databaseType;
 
         /**
          * The type of Oracle Database installation.
+         *
          * @param databaseType the value to set
          * @return this builder
-         **/
+         */
         public Builder databaseType(DatabaseType databaseType) {
             this.databaseType = databaseType;
             this.__explicitlySet__.add("databaseType");
             return this;
         }
         /**
-         * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
-         * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
-         *
-         **/
+         * The subtype of the Oracle Database. Indicates whether the database is a Container
+         * Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous
+         * Container Database.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
         private DatabaseSubType databaseSubType;
 
         /**
-         * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
-         * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+         * The subtype of the Oracle Database. Indicates whether the database is a Container
+         * Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous
+         * Container Database.
          *
          * @param databaseSubType the value to set
          * @return this builder
-         **/
+         */
         public Builder databaseSubType(DatabaseSubType databaseSubType) {
             this.databaseSubType = databaseSubType;
             this.__explicitlySet__.add("databaseSubType");
             return this;
         }
-        /**
-         * The infrastructure used to deploy the Oracle Database.
-         **/
+        /** The infrastructure used to deploy the Oracle Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
         private DeploymentType deploymentType;
 
         /**
          * The infrastructure used to deploy the Oracle Database.
+         *
          * @param deploymentType the value to set
          * @return this builder
-         **/
+         */
         public Builder deploymentType(DeploymentType deploymentType) {
             this.deploymentType = deploymentType;
             this.__explicitlySet__.add("deploymentType");
             return this;
         }
-        /**
-         * The number of databases in the fleet.
-         **/
+        /** The number of databases in the fleet. */
         @com.fasterxml.jackson.annotation.JsonProperty("inventoryCount")
         private Integer inventoryCount;
 
         /**
          * The number of databases in the fleet.
+         *
          * @param inventoryCount the value to set
          * @return this builder
-         **/
+         */
         public Builder inventoryCount(Integer inventoryCount) {
             this.inventoryCount = inventoryCount;
             this.__explicitlySet__.add("inventoryCount");
@@ -145,9 +143,7 @@ public final class FleetStatusByCategory
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -156,62 +152,60 @@ public final class FleetStatusByCategory
         return new Builder().copy(this);
     }
 
-    /**
-     * The type of Oracle Database installation.
-     **/
+    /** The type of Oracle Database installation. */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
     private final DatabaseType databaseType;
 
     /**
      * The type of Oracle Database installation.
+     *
      * @return the value
-     **/
+     */
     public DatabaseType getDatabaseType() {
         return databaseType;
     }
 
     /**
      * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
-     * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
-     *
-     **/
+     * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container
+     * Database.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
     private final DatabaseSubType databaseSubType;
 
     /**
      * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
-     * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+     * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container
+     * Database.
      *
      * @return the value
-     **/
+     */
     public DatabaseSubType getDatabaseSubType() {
         return databaseSubType;
     }
 
-    /**
-     * The infrastructure used to deploy the Oracle Database.
-     **/
+    /** The infrastructure used to deploy the Oracle Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
     private final DeploymentType deploymentType;
 
     /**
      * The infrastructure used to deploy the Oracle Database.
+     *
      * @return the value
-     **/
+     */
     public DeploymentType getDeploymentType() {
         return deploymentType;
     }
 
-    /**
-     * The number of databases in the fleet.
-     **/
+    /** The number of databases in the fleet. */
     @com.fasterxml.jackson.annotation.JsonProperty("inventoryCount")
     private final Integer inventoryCount;
 
     /**
      * The number of databases in the fleet.
+     *
      * @return the value
-     **/
+     */
     public Integer getInventoryCount() {
         return inventoryCount;
     }
@@ -223,6 +217,7 @@ public final class FleetStatusByCategory
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

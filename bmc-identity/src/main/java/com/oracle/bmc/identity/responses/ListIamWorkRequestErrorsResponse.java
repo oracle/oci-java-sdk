@@ -9,17 +9,16 @@ import com.oracle.bmc.identity.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListIamWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For list pagination. When this header appears in the response, additional pages of
-     * results remain. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. When this header appears in the response, additional pages of results
+     * remain. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of
-     * results remain. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages of results
+     * remain. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -30,7 +29,6 @@ public class ListIamWorkRequestErrorsResponse extends com.oracle.bmc.responses.B
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
@@ -44,13 +42,12 @@ public class ListIamWorkRequestErrorsResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /**
-     * A list of com.oracle.bmc.identity.model.IamWorkRequestErrorSummary instances.
-     */
+    /** A list of com.oracle.bmc.identity.model.IamWorkRequestErrorSummary instances. */
     private java.util.List<com.oracle.bmc.identity.model.IamWorkRequestErrorSummary> items;
 
     /**
      * A list of com.oracle.bmc.identity.model.IamWorkRequestErrorSummary instances.
+     *
      * @return the value
      */
     public java.util.List<com.oracle.bmc.identity.model.IamWorkRequestErrorSummary> getItems() {
@@ -66,7 +63,7 @@ public class ListIamWorkRequestErrorsResponse extends com.oracle.bmc.responses.B
     })
     private ListIamWorkRequestErrorsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcNextPage,
             String opcRequestId,
             java.util.List<com.oracle.bmc.identity.model.IamWorkRequestErrorSummary> items) {
@@ -76,33 +73,36 @@ public class ListIamWorkRequestErrorsResponse extends com.oracle.bmc.responses.B
         this.items = items;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    ListIamWorkRequestErrorsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
          * For list pagination. When this header appears in the response, additional pages of
-         * results remain. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * results remain. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
         /**
          * For list pagination. When this header appears in the response, additional pages of
-         * results remain. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * results remain. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -115,7 +115,6 @@ public class ListIamWorkRequestErrorsResponse extends com.oracle.bmc.responses.B
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId;
 
@@ -131,13 +130,12 @@ public class ListIamWorkRequestErrorsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /**
-         * A list of com.oracle.bmc.identity.model.IamWorkRequestErrorSummary instances.
-         */
+        /** A list of com.oracle.bmc.identity.model.IamWorkRequestErrorSummary instances. */
         private java.util.List<com.oracle.bmc.identity.model.IamWorkRequestErrorSummary> items;
 
         /**
          * A list of com.oracle.bmc.identity.model.IamWorkRequestErrorSummary instances.
+         *
          * @param items the value to set
          * @return this builder
          */
@@ -149,8 +147,10 @@ public class ListIamWorkRequestErrorsResponse extends com.oracle.bmc.responses.B
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListIamWorkRequestErrorsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -163,8 +163,10 @@ public class ListIamWorkRequestErrorsResponse extends com.oracle.bmc.responses.B
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListIamWorkRequestErrorsResponse build() {
             return new ListIamWorkRequestErrorsResponse(
                     __httpStatusCode__, headers, opcNextPage, opcRequestId, items);
@@ -173,6 +175,7 @@ public class ListIamWorkRequestErrorsResponse extends com.oracle.bmc.responses.B
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

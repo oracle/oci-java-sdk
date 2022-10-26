@@ -6,51 +6,48 @@ package com.oracle.bmc.opsi.requests;
 
 import com.oracle.bmc.opsi.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/DeleteOperationsInsightsWarehouseUserExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteOperationsInsightsWarehouseUserRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/DeleteOperationsInsightsWarehouseUserExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * DeleteOperationsInsightsWarehouseUserRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class DeleteOperationsInsightsWarehouseUserRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * Unique Operations Insights Warehouse User identifier
-     */
+    /** Unique Operations Insights Warehouse User identifier */
     private String operationsInsightsWarehouseUserId;
 
-    /**
-     * Unique Operations Insights Warehouse User identifier
-     */
+    /** Unique Operations Insights Warehouse User identifier */
     public String getOperationsInsightsWarehouseUserId() {
         return operationsInsightsWarehouseUserId;
     }
     /**
-     * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
-     * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
-     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * Used for optimistic concurrency control. In the update or delete call for a resource, set the
+     * {@code if-match} parameter to the value of the etag from a previous get, create, or update
+     * response for that resource. The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
-     * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
-     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * Used for optimistic concurrency control. In the update or delete call for a resource, set the
+     * {@code if-match} parameter to the value of the etag from a previous get, create, or update
+     * response for that resource. The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -59,17 +56,15 @@ public class DeleteOperationsInsightsWarehouseUserRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DeleteOperationsInsightsWarehouseUserRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique Operations Insights Warehouse User identifier
-         */
+        /** Unique Operations Insights Warehouse User identifier */
         private String operationsInsightsWarehouseUserId = null;
 
         /**
          * Unique Operations Insights Warehouse User identifier
+         *
          * @param operationsInsightsWarehouseUserId the value to set
          * @return this builder instance
          */
@@ -79,17 +74,18 @@ public class DeleteOperationsInsightsWarehouseUserRequest
         }
 
         /**
-         * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
-         * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
-         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-         *
+         * Used for optimistic concurrency control. In the update or delete call for a resource, set
+         * the {@code if-match} parameter to the value of the etag from a previous get, create, or
+         * update response for that resource. The resource will be updated or deleted only if the
+         * etag you provide matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
-         * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
-         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * Used for optimistic concurrency control. In the update or delete call for a resource, set
+         * the {@code if-match} parameter to the value of the etag from a previous get, create, or
+         * update response for that resource. The resource will be updated or deleted only if the
+         * etag you provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -100,15 +96,14 @@ public class DeleteOperationsInsightsWarehouseUserRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -120,18 +115,19 @@ public class DeleteOperationsInsightsWarehouseUserRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -143,6 +139,7 @@ public class DeleteOperationsInsightsWarehouseUserRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(DeleteOperationsInsightsWarehouseUserRequest o) {
@@ -155,12 +152,14 @@ public class DeleteOperationsInsightsWarehouseUserRequest
         }
 
         /**
-         * Build the instance of DeleteOperationsInsightsWarehouseUserRequest as configured by this builder
+         * Build the instance of DeleteOperationsInsightsWarehouseUserRequest as configured by this
+         * builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of DeleteOperationsInsightsWarehouseUserRequest
          */
@@ -172,9 +171,11 @@ public class DeleteOperationsInsightsWarehouseUserRequest
         }
 
         /**
-         * Build the instance of DeleteOperationsInsightsWarehouseUserRequest as configured by this builder
+         * Build the instance of DeleteOperationsInsightsWarehouseUserRequest as configured by this
+         * builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of DeleteOperationsInsightsWarehouseUserRequest
@@ -186,12 +187,14 @@ public class DeleteOperationsInsightsWarehouseUserRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new DeleteOperationsInsightsWarehouseUserRequest(operationsInsightsWarehouseUserId, ifMatch, opcRequestId);
+            // new DeleteOperationsInsightsWarehouseUserRequest(operationsInsightsWarehouseUserId,
+            // ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -203,6 +206,7 @@ public class DeleteOperationsInsightsWarehouseUserRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

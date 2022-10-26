@@ -5,19 +5,20 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Day of the week.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Day of the week. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DayOfWeek.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DayOfWeek extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class DayOfWeek extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name"})
     public DayOfWeek(Name name) {
@@ -27,17 +28,16 @@ public final class DayOfWeek extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Name of the day of the week.
-         **/
+        /** Name of the day of the week. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private Name name;
 
         /**
          * Name of the day of the week.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(Name name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -64,9 +64,7 @@ public final class DayOfWeek extends com.oracle.bmc.http.internal.ExplicitlySetB
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -75,10 +73,8 @@ public final class DayOfWeek extends com.oracle.bmc.http.internal.ExplicitlySetB
         return new Builder().copy(this);
     }
 
-    /**
-     * Name of the day of the week.
-     **/
-    public enum Name {
+    /** Name of the day of the week. */
+    public enum Name implements com.oracle.bmc.http.internal.BmcEnum {
         Monday("MONDAY"),
         Tuesday("TUESDAY"),
         Wednesday("WEDNESDAY"),
@@ -88,8 +84,8 @@ public final class DayOfWeek extends com.oracle.bmc.http.internal.ExplicitlySetB
         Sunday("SUNDAY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -126,16 +122,15 @@ public final class DayOfWeek extends com.oracle.bmc.http.internal.ExplicitlySetB
             return UnknownEnumValue;
         }
     };
-    /**
-     * Name of the day of the week.
-     **/
+    /** Name of the day of the week. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final Name name;
 
     /**
      * Name of the day of the week.
+     *
      * @return the value
-     **/
+     */
     public Name getName() {
         return name;
     }
@@ -147,6 +142,7 @@ public final class DayOfWeek extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/**
- * Source of the importable agent entity.
- **/
+/** Source of the importable agent entity. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum ImportableAgentEntitySource {
+public enum ImportableAgentEntitySource implements com.oracle.bmc.http.internal.BmcEnum {
     MacsManagedExternalHost("MACS_MANAGED_EXTERNAL_HOST"),
     MacsManagedCloudHost("MACS_MANAGED_CLOUD_HOST"),
 

@@ -39,11 +39,11 @@ import java.util.HashMap;
 
 public class CreateLoadBalancerRuleSetExample {
     /**
-     * Please refer to https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/latest/RuleSet/CreateRuleSet
-     * for information about using the API to create a rule set.
-     * This example requires an existing LoadBalancer and it will do the following
-     * 1) Create new rule set.
-     * 2) Create a new listener with a reference to the new rule set.
+     * Please refer to
+     * https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/latest/RuleSet/CreateRuleSet for
+     * information about using the API to create a rule set. This example requires an existing
+     * LoadBalancer and it will do the following 1) Create new rule set. 2) Create a new listener
+     * with a reference to the new rule set.
      *
      * @param args
      * @throws Exception
@@ -63,8 +63,10 @@ public class CreateLoadBalancerRuleSetExample {
         String listenerProtocol =
                 "HTTP"; // Rules in this example are applicable to HTTP or HTTP2 protocols
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();

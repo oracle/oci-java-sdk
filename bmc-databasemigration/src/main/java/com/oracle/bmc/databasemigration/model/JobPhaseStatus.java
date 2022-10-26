@@ -4,12 +4,9 @@
  */
 package com.oracle.bmc.databasemigration.model;
 
-/**
- * Job Phase status.
- *
- **/
+/** Job Phase status. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-public enum JobPhaseStatus {
+public enum JobPhaseStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Pending("PENDING"),
     Started("STARTED"),
     Completed("COMPLETED"),

@@ -6,55 +6,43 @@ package com.oracle.bmc.mediaservices.requests;
 
 import com.oracle.bmc.mediaservices.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListMediaAssetsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMediaAssetsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListMediaAssetsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMediaAssetsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The ID of the compartment in which to list resources.
-     */
+    /** The ID of the compartment in which to list resources. */
     private String compartmentId;
 
-    /**
-     * The ID of the compartment in which to list resources.
-     */
+    /** The ID of the compartment in which to list resources. */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * A filter to return only the resources that match the entire display name given.
-     */
+    /** A filter to return only the resources that match the entire display name given. */
     private String displayName;
 
-    /**
-     * A filter to return only the resources that match the entire display name given.
-     */
+    /** A filter to return only the resources that match the entire display name given. */
     public String getDisplayName() {
         return displayName;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from the
-     * {@code opc-next-page} header field of a previous response.
-     *
+     * A token representing the position at which to start retrieving results. This must come from
+     * the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from the
-     * {@code opc-next-page} header field of a previous response.
-     *
+     * A token representing the position at which to start retrieving results. This must come from
+     * the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
@@ -70,137 +58,99 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
     public com.oracle.bmc.mediaservices.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /**
-     * The sort order to use, either 'ASC' or 'DESC'.
-     */
+    /** The sort order to use, either 'ASC' or 'DESC'. */
     private com.oracle.bmc.mediaservices.model.SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either 'ASC' or 'DESC'.
-     */
+    /** The sort order to use, either 'ASC' or 'DESC'. */
     public com.oracle.bmc.mediaservices.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
-     *
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
+     * descending. Default order for displayName is ascending.
      */
     private com.oracle.bmc.mediaservices.model.MediaAssetSortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
-     *
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
+     * descending. Default order for displayName is ascending.
      */
     public com.oracle.bmc.mediaservices.model.MediaAssetSortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * Unique DistributionChannel identifier.
-     */
+    /** Unique DistributionChannel identifier. */
     private String distributionChannelId;
 
-    /**
-     * Unique DistributionChannel identifier.
-     */
+    /** Unique DistributionChannel identifier. */
     public String getDistributionChannelId() {
         return distributionChannelId;
     }
-    /**
-     * Unique MediaAsset identifier of the asset from which this asset is derived.
-     */
+    /** Unique MediaAsset identifier of the asset from which this asset is derived. */
     private String parentMediaAssetId;
 
-    /**
-     * Unique MediaAsset identifier of the asset from which this asset is derived.
-     */
+    /** Unique MediaAsset identifier of the asset from which this asset is derived. */
     public String getParentMediaAssetId() {
         return parentMediaAssetId;
     }
-    /**
-     * Unique MediaAsset identifier of the first asset upload.
-     */
+    /** Unique MediaAsset identifier of the first asset upload. */
     private String masterMediaAssetId;
 
-    /**
-     * Unique MediaAsset identifier of the first asset upload.
-     */
+    /** Unique MediaAsset identifier of the first asset upload. */
     public String getMasterMediaAssetId() {
         return masterMediaAssetId;
     }
-    /**
-     * Filter MediaAsset by the asset type.
-     */
+    /** Filter MediaAsset by the asset type. */
     private com.oracle.bmc.mediaservices.model.AssetType type;
 
-    /**
-     * Filter MediaAsset by the asset type.
-     */
+    /** Filter MediaAsset by the asset type. */
     public com.oracle.bmc.mediaservices.model.AssetType getType() {
         return type;
     }
-    /**
-     * Filter MediaAsset by the bucket where the object is stored.
-     */
+    /** Filter MediaAsset by the bucket where the object is stored. */
     private String bucketName;
 
-    /**
-     * Filter MediaAsset by the bucket where the object is stored.
-     */
+    /** Filter MediaAsset by the bucket where the object is stored. */
     public String getBucketName() {
         return bucketName;
     }
-    /**
-     * Filter MediaAsset by the name of the object in object storage.
-     */
+    /** Filter MediaAsset by the name of the object in object storage. */
     private String objectName;
 
-    /**
-     * Filter MediaAsset by the name of the object in object storage.
-     */
+    /** Filter MediaAsset by the name of the object in object storage. */
     public String getObjectName() {
         return objectName;
     }
     /**
-     * The ID of the MediaWorkflowJob used to produce this asset, if this parameter is supplied then the workflow ID must also be supplied.
+     * The ID of the MediaWorkflowJob used to produce this asset, if this parameter is supplied then
+     * the workflow ID must also be supplied.
      */
     private String mediaWorkflowJobId;
 
     /**
-     * The ID of the MediaWorkflowJob used to produce this asset, if this parameter is supplied then the workflow ID must also be supplied.
+     * The ID of the MediaWorkflowJob used to produce this asset, if this parameter is supplied then
+     * the workflow ID must also be supplied.
      */
     public String getMediaWorkflowJobId() {
         return mediaWorkflowJobId;
     }
-    /**
-     * The ID of the MediaWorkflow used to produce this asset.
-     */
+    /** The ID of the MediaWorkflow used to produce this asset. */
     private String sourceMediaWorkflowId;
 
-    /**
-     * The ID of the MediaWorkflow used to produce this asset.
-     */
+    /** The ID of the MediaWorkflow used to produce this asset. */
     public String getSourceMediaWorkflowId() {
         return sourceMediaWorkflowId;
     }
-    /**
-     * The version of the MediaWorkflow used to produce this asset.
-     */
+    /** The version of the MediaWorkflow used to produce this asset. */
     private Long sourceMediaWorkflowVersion;
 
-    /**
-     * The version of the MediaWorkflow used to produce this asset.
-     */
+    /** The version of the MediaWorkflow used to produce this asset. */
     public Long getSourceMediaWorkflowVersion() {
         return sourceMediaWorkflowVersion;
     }
@@ -208,17 +158,15 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListMediaAssetsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The ID of the compartment in which to list resources.
-         */
+        /** The ID of the compartment in which to list resources. */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -227,13 +175,12 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /**
-         * A filter to return only the resources that match the entire display name given.
-         */
+        /** A filter to return only the resources that match the entire display name given. */
         private String displayName = null;
 
         /**
          * A filter to return only the resources that match the entire display name given.
+         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -242,13 +189,12 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -258,15 +204,14 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come from the
-         * {@code opc-next-page} header field of a previous response.
-         *
+         * A token representing the position at which to start retrieving results. This must come
+         * from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come from the
-         * {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come
+         * from the {@code opc-next-page} header field of a previous response.
          *
          * @param page the value to set
          * @return this builder instance
@@ -277,12 +222,15 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * A filter to return only the resources with lifecycleState matching the given lifecycleState.
+         * A filter to return only the resources with lifecycleState matching the given
+         * lifecycleState.
          */
         private com.oracle.bmc.mediaservices.model.LifecycleState lifecycleState = null;
 
         /**
-         * A filter to return only the resources with lifecycleState matching the given lifecycleState.
+         * A filter to return only the resources with lifecycleState matching the given
+         * lifecycleState.
+         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -292,13 +240,12 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /**
-         * The sort order to use, either 'ASC' or 'DESC'.
-         */
+        /** The sort order to use, either 'ASC' or 'DESC'. */
         private com.oracle.bmc.mediaservices.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -308,13 +255,14 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
-         *
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
+         * is descending. Default order for displayName is ascending.
          */
         private com.oracle.bmc.mediaservices.model.MediaAssetSortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
+         * is descending. Default order for displayName is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -324,13 +272,12 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -339,13 +286,12 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /**
-         * Unique DistributionChannel identifier.
-         */
+        /** Unique DistributionChannel identifier. */
         private String distributionChannelId = null;
 
         /**
          * Unique DistributionChannel identifier.
+         *
          * @param distributionChannelId the value to set
          * @return this builder instance
          */
@@ -354,13 +300,12 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /**
-         * Unique MediaAsset identifier of the asset from which this asset is derived.
-         */
+        /** Unique MediaAsset identifier of the asset from which this asset is derived. */
         private String parentMediaAssetId = null;
 
         /**
          * Unique MediaAsset identifier of the asset from which this asset is derived.
+         *
          * @param parentMediaAssetId the value to set
          * @return this builder instance
          */
@@ -369,13 +314,12 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /**
-         * Unique MediaAsset identifier of the first asset upload.
-         */
+        /** Unique MediaAsset identifier of the first asset upload. */
         private String masterMediaAssetId = null;
 
         /**
          * Unique MediaAsset identifier of the first asset upload.
+         *
          * @param masterMediaAssetId the value to set
          * @return this builder instance
          */
@@ -384,13 +328,12 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /**
-         * Filter MediaAsset by the asset type.
-         */
+        /** Filter MediaAsset by the asset type. */
         private com.oracle.bmc.mediaservices.model.AssetType type = null;
 
         /**
          * Filter MediaAsset by the asset type.
+         *
          * @param type the value to set
          * @return this builder instance
          */
@@ -399,13 +342,12 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /**
-         * Filter MediaAsset by the bucket where the object is stored.
-         */
+        /** Filter MediaAsset by the bucket where the object is stored. */
         private String bucketName = null;
 
         /**
          * Filter MediaAsset by the bucket where the object is stored.
+         *
          * @param bucketName the value to set
          * @return this builder instance
          */
@@ -414,13 +356,12 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /**
-         * Filter MediaAsset by the name of the object in object storage.
-         */
+        /** Filter MediaAsset by the name of the object in object storage. */
         private String objectName = null;
 
         /**
          * Filter MediaAsset by the name of the object in object storage.
+         *
          * @param objectName the value to set
          * @return this builder instance
          */
@@ -430,12 +371,15 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * The ID of the MediaWorkflowJob used to produce this asset, if this parameter is supplied then the workflow ID must also be supplied.
+         * The ID of the MediaWorkflowJob used to produce this asset, if this parameter is supplied
+         * then the workflow ID must also be supplied.
          */
         private String mediaWorkflowJobId = null;
 
         /**
-         * The ID of the MediaWorkflowJob used to produce this asset, if this parameter is supplied then the workflow ID must also be supplied.
+         * The ID of the MediaWorkflowJob used to produce this asset, if this parameter is supplied
+         * then the workflow ID must also be supplied.
+         *
          * @param mediaWorkflowJobId the value to set
          * @return this builder instance
          */
@@ -444,13 +388,12 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /**
-         * The ID of the MediaWorkflow used to produce this asset.
-         */
+        /** The ID of the MediaWorkflow used to produce this asset. */
         private String sourceMediaWorkflowId = null;
 
         /**
          * The ID of the MediaWorkflow used to produce this asset.
+         *
          * @param sourceMediaWorkflowId the value to set
          * @return this builder instance
          */
@@ -459,13 +402,12 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /**
-         * The version of the MediaWorkflow used to produce this asset.
-         */
+        /** The version of the MediaWorkflow used to produce this asset. */
         private Long sourceMediaWorkflowVersion = null;
 
         /**
          * The version of the MediaWorkflow used to produce this asset.
+         *
          * @param sourceMediaWorkflowVersion the value to set
          * @return this builder instance
          */
@@ -476,18 +418,19 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -499,6 +442,7 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListMediaAssetsRequest o) {
@@ -527,10 +471,11 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of ListMediaAssetsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListMediaAssetsRequest
          */
@@ -544,7 +489,8 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of ListMediaAssetsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListMediaAssetsRequest
@@ -569,12 +515,16 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.sourceMediaWorkflowId = sourceMediaWorkflowId;
             request.sourceMediaWorkflowVersion = sourceMediaWorkflowVersion;
             return request;
-            // new ListMediaAssetsRequest(compartmentId, displayName, limit, page, lifecycleState, sortOrder, sortBy, opcRequestId, distributionChannelId, parentMediaAssetId, masterMediaAssetId, type, bucketName, objectName, mediaWorkflowJobId, sourceMediaWorkflowId, sourceMediaWorkflowVersion);
+            // new ListMediaAssetsRequest(compartmentId, displayName, limit, page, lifecycleState,
+            // sortOrder, sortBy, opcRequestId, distributionChannelId, parentMediaAssetId,
+            // masterMediaAssetId, type, bucketName, objectName, mediaWorkflowJobId,
+            // sourceMediaWorkflowId, sourceMediaWorkflowVersion);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -600,6 +550,7 @@ public class ListMediaAssetsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

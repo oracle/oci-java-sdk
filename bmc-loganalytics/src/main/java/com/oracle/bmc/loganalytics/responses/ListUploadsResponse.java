@@ -9,13 +9,14 @@ import com.oracle.bmc.loganalytics.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class ListUploadsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      *
      * @return the value
      */
@@ -24,17 +25,18 @@ public class ListUploadsResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
-     * subsequent request to get the next batch of items.
-     *
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then additional items may be available on the next page of the list. Include this
+     * value as the {@code page} parameter for the subsequent request to get the next batch of
+     * items.
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
-     * subsequent request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then additional items may be available on the next page of the list. Include this
+     * value as the {@code page} parameter for the subsequent request to get the next batch of
+     * items.
      *
      * @return the value
      */
@@ -42,26 +44,24 @@ public class ListUploadsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /**
-     * Total count.
-     */
+    /** Total count. */
     private Long opcTotalItems;
 
     /**
      * Total count.
+     *
      * @return the value
      */
     public Long getOpcTotalItems() {
         return opcTotalItems;
     }
 
-    /**
-     * The returned UploadCollection instance.
-     */
+    /** The returned UploadCollection instance. */
     private com.oracle.bmc.loganalytics.model.UploadCollection uploadCollection;
 
     /**
      * The returned UploadCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.loganalytics.model.UploadCollection getUploadCollection() {
@@ -78,7 +78,7 @@ public class ListUploadsResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private ListUploadsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcNextPage,
             Long opcTotalItems,
@@ -90,29 +90,33 @@ public class ListUploadsResponse extends com.oracle.bmc.responses.BmcResponse {
         this.uploadCollection = uploadCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<ListUploadsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -123,17 +127,18 @@ public class ListUploadsResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
-         * subsequent request to get the next batch of items.
-         *
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then additional items may be available on the next page of the list.
+         * Include this value as the {@code page} parameter for the subsequent request to get the
+         * next batch of items.
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
-         * subsequent request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then additional items may be available on the next page of the list.
+         * Include this value as the {@code page} parameter for the subsequent request to get the
+         * next batch of items.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -143,13 +148,12 @@ public class ListUploadsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * Total count.
-         */
+        /** Total count. */
         private Long opcTotalItems;
 
         /**
          * Total count.
+         *
          * @param opcTotalItems the value to set
          * @return this builder
          */
@@ -158,13 +162,12 @@ public class ListUploadsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * The returned UploadCollection instance.
-         */
+        /** The returned UploadCollection instance. */
         private com.oracle.bmc.loganalytics.model.UploadCollection uploadCollection;
 
         /**
          * The returned UploadCollection instance.
+         *
          * @param uploadCollection the value to set
          * @return this builder
          */
@@ -176,8 +179,10 @@ public class ListUploadsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListUploadsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -191,8 +196,10 @@ public class ListUploadsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListUploadsResponse build() {
             return new ListUploadsResponse(
                     __httpStatusCode__,
@@ -206,6 +213,7 @@ public class ListUploadsResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -5,19 +5,21 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * The error in document processing.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The error in document processing. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ProcessingError.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ProcessingError extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ProcessingError
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"code", "message"})
     public ProcessingError(String code, String message) {
@@ -28,33 +30,31 @@ public final class ProcessingError extends com.oracle.bmc.http.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The error code.
-         **/
+        /** The error code. */
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
         /**
          * The error code.
+         *
          * @param code the value to set
          * @return this builder
-         **/
+         */
         public Builder code(String code) {
             this.code = code;
             this.__explicitlySet__.add("code");
             return this;
         }
-        /**
-         * The error message.
-         **/
+        /** The error message. */
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
          * The error message.
+         *
          * @param message the value to set
          * @return this builder
-         **/
+         */
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
@@ -84,9 +84,7 @@ public final class ProcessingError extends com.oracle.bmc.http.internal.Explicit
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,30 +93,28 @@ public final class ProcessingError extends com.oracle.bmc.http.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /**
-     * The error code.
-     **/
+    /** The error code. */
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
     /**
      * The error code.
+     *
      * @return the value
-     **/
+     */
     public String getCode() {
         return code;
     }
 
-    /**
-     * The error message.
-     **/
+    /** The error message. */
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
      * The error message.
+     *
      * @return the value
-     **/
+     */
     public String getMessage() {
         return message;
     }
@@ -130,6 +126,7 @@ public final class ProcessingError extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

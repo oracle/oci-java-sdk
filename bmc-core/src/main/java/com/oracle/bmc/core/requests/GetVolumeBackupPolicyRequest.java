@@ -6,20 +6,19 @@ package com.oracle.bmc.core.requests;
 
 import com.oracle.bmc.core.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeBackupPolicyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetVolumeBackupPolicyRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeBackupPolicyExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * GetVolumeBackupPolicyRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetVolumeBackupPolicyRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The OCID of the volume backup policy.
-     */
+    /** The OCID of the volume backup policy. */
     private String policyId;
 
-    /**
-     * The OCID of the volume backup policy.
-     */
+    /** The OCID of the volume backup policy. */
     public String getPolicyId() {
         return policyId;
     }
@@ -27,17 +26,15 @@ public class GetVolumeBackupPolicyRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetVolumeBackupPolicyRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the volume backup policy.
-         */
+        /** The OCID of the volume backup policy. */
         private String policyId = null;
 
         /**
          * The OCID of the volume backup policy.
+         *
          * @param policyId the value to set
          * @return this builder instance
          */
@@ -48,18 +45,19 @@ public class GetVolumeBackupPolicyRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -71,6 +69,7 @@ public class GetVolumeBackupPolicyRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetVolumeBackupPolicyRequest o) {
@@ -83,10 +82,11 @@ public class GetVolumeBackupPolicyRequest
         /**
          * Build the instance of GetVolumeBackupPolicyRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetVolumeBackupPolicyRequest
          */
@@ -100,7 +100,8 @@ public class GetVolumeBackupPolicyRequest
         /**
          * Build the instance of GetVolumeBackupPolicyRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetVolumeBackupPolicyRequest
@@ -115,6 +116,7 @@ public class GetVolumeBackupPolicyRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -123,6 +125,7 @@ public class GetVolumeBackupPolicyRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

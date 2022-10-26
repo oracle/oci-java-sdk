@@ -5,39 +5,45 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * A route distribution establishes how routes get imported into DRG route tables and exported through the DRG attachments.
- * <p>
- * A route distribution is a list of statements. Each statement consists of a set of matches, all of which must be {@code True} in order for
- * the statement's action to take place. Each statement determines which routes are propagated.
- * <p>
- * You can assign a route distribution as a route table's import distribution. The statements in an import
- * route distribution specify how how incoming route advertisements through a referenced attachment or all attachments of a certain type are inserted into the route table.
- * <p>
- * You can assign a route distribution as a DRG attachment's export distribution. Export route distribution statements specify how routes in a
- * DRG attachment's assigned table are advertised out through the attachment. When a DRG attachment is created, a route distribution is created with a
- * single ACCEPT statement with match criteria MATCH_ALL.
- * Exporting routes through VCN attachments is unsupported, so no VCN attachments are assigned an export distribution.
- * <p>
- * The two auto-generated DRG route tables (one as the default for VCN attachments, and the other for all other types of attachments)
- * are each assigned an auto generated import route distribution. The default VCN table's import distribution has a single statement with match criteria MATCH_ALL to import routes from
- * each DRG attachment type. The other table's import distribution has a statement to import routes from attachments with the VCN type.
- * <p>
- * The route distribution is always in the same compartment as the DRG.
+ * A route distribution establishes how routes get imported into DRG route tables and exported
+ * through the DRG attachments.
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>A route distribution is a list of statements. Each statement consists of a set of matches, all
+ * of which must be {@code True} in order for the statement's action to take place. Each statement
+ * determines which routes are propagated.
+ *
+ * <p>You can assign a route distribution as a route table's import distribution. The statements in
+ * an import route distribution specify how how incoming route advertisements through a referenced
+ * attachment or all attachments of a certain type are inserted into the route table.
+ *
+ * <p>You can assign a route distribution as a DRG attachment's export distribution. Export route
+ * distribution statements specify how routes in a DRG attachment's assigned table are advertised
+ * out through the attachment. When a DRG attachment is created, a route distribution is created
+ * with a single ACCEPT statement with match criteria MATCH_ALL. Exporting routes through VCN
+ * attachments is unsupported, so no VCN attachments are assigned an export distribution.
+ *
+ * <p>The two auto-generated DRG route tables (one as the default for VCN attachments, and the other
+ * for all other types of attachments) are each assigned an auto generated import route
+ * distribution. The default VCN table's import distribution has a single statement with match
+ * criteria MATCH_ALL to import routes from each DRG attachment type. The other table's import
+ * distribution has a statement to import routes from attachments with the VCN type.
+ *
+ * <p>The route distribution is always in the same compartment as the DRG. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DrgRouteDistribution.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DrgRouteDistribution extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = DrgRouteDistribution.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class DrgRouteDistribution
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "drgId",
@@ -75,34 +81,38 @@ public final class DrgRouteDistribution extends com.oracle.bmc.http.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG that contains this route distribution.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the DRG that contains this route distribution.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("drgId")
         private String drgId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG that contains this route distribution.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the DRG that contains this route distribution.
          *
          * @param drgId the value to set
          * @return this builder
-         **/
+         */
         public Builder drgId(String drgId) {
             this.drgId = drgId;
             this.__explicitlySet__.add("drgId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the route distribution.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the route distribution.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the route distribution.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the route distribution.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -111,8 +121,7 @@ public final class DrgRouteDistribution extends com.oracle.bmc.http.internal.Exp
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -122,7 +131,7 @@ public final class DrgRouteDistribution extends com.oracle.bmc.http.internal.Exp
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -130,112 +139,114 @@ public final class DrgRouteDistribution extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
-         *
-         **/
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * The route distribution's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-         **/
+         * The route distribution's Oracle ID
+         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The route distribution's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * The route distribution's Oracle ID
+         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The route distribution's current state.
-         **/
+        /** The route distribution's current state. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The route distribution's current state.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * The date and time the route distribution was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the route distribution was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
-         **/
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the route distribution was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the route distribution was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
-         *
-         **/
+         * Whether this distribution defines how routes get imported into route tables or exported
+         * through DRG attachments.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("distributionType")
         private DistributionType distributionType;
 
         /**
-         * Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
+         * Whether this distribution defines how routes get imported into route tables or exported
+         * through DRG attachments.
          *
          * @param distributionType the value to set
          * @return this builder
-         **/
+         */
         public Builder distributionType(DistributionType distributionType) {
             this.distributionType = distributionType;
             this.__explicitlySet__.add("distributionType");
@@ -296,9 +307,7 @@ public final class DrgRouteDistribution extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -308,107 +317,109 @@ public final class DrgRouteDistribution extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG that contains this route distribution.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the DRG that contains this route distribution.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("drgId")
     private final String drgId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG that contains this route distribution.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the DRG that contains this route distribution.
      *
      * @return the value
-     **/
+     */
     public String getDrgId() {
         return drgId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the route distribution.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the route distribution.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the route distribution.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the route distribution.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * The route distribution's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-     **/
+     * The route distribution's Oracle ID
+     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The route distribution's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * The route distribution's Oracle ID
+     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The route distribution's current state.
-     **/
-    public enum LifecycleState {
+    /** The route distribution's current state. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
         Terminating("TERMINATING"),
@@ -442,45 +453,45 @@ public final class DrgRouteDistribution extends com.oracle.bmc.http.internal.Exp
             throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
-    /**
-     * The route distribution's current state.
-     **/
+    /** The route distribution's current state. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The route distribution's current state.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * The date and time the route distribution was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the route distribution was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
-     **/
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the route distribution was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the route distribution was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
-     *
-     **/
-    public enum DistributionType {
+     * Whether this distribution defines how routes get imported into route tables or exported
+     * through DRG attachments.
+     */
+    public enum DistributionType implements com.oracle.bmc.http.internal.BmcEnum {
         Import("IMPORT"),
         Export("EXPORT"),
         ;
@@ -513,17 +524,18 @@ public final class DrgRouteDistribution extends com.oracle.bmc.http.internal.Exp
         }
     };
     /**
-     * Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
-     *
-     **/
+     * Whether this distribution defines how routes get imported into route tables or exported
+     * through DRG attachments.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("distributionType")
     private final DistributionType distributionType;
 
     /**
-     * Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
+     * Whether this distribution defines how routes get imported into route tables or exported
+     * through DRG attachments.
      *
      * @return the value
-     **/
+     */
     public DistributionType getDistributionType() {
         return distributionType;
     }
@@ -535,6 +547,7 @@ public final class DrgRouteDistribution extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

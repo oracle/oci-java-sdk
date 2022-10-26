@@ -4,17 +4,17 @@
  */
 package com.oracle.bmc.bds;
 
-import com.oracle.bmc.bds.internal.http.*;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.bds.requests.*;
 import com.oracle.bmc.bds.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
+import java.util.Objects;
+
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-public class BdsClient implements Bds {
-    /**
-     * Service instance for Bds.
-     */
+public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Bds {
+    /** Service instance for Bds. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("BDS")
@@ -22,318 +22,22 @@ public class BdsClient implements Bds {
                     .serviceEndpointTemplate(
                             "https://bigdataservice.{region}.oci.{secondLevelDomain}")
                     .build();
-    // attempt twice if it's instance principals, immediately failures will try to refresh the token
-    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(BdsAsyncClient.class);
 
-    com.oracle.bmc.http.internal.RestClient getClient() {
-        return client;
-    }
-
     private final BdsWaiters waiters;
 
     private final BdsPaginators paginators;
-    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-            authenticationDetailsProvider;
-    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
-    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
-            apacheConnectionClosingStrategy;
-    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
-    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
-    private final java.util.Map<
-                    com.oracle.bmc.http.signing.SigningStrategy,
-                    com.oracle.bmc.http.signing.RequestSignerFactory>
-            signingStrategyRequestSignerFactories;
-    private final boolean isNonBufferingApacheClient;
-    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
-    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-            circuitBreakerConfiguration;
 
-    /**
-     * Used to synchronize any updates on the `this.client` object.
-     */
-    private final Object clientUpdate = new Object();
-
-    /**
-     * Stores the actual client object used to make the API calls.
-     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
-     *       For any writes to the object, please synchronize on `this.clientUpdate`.
-     */
-    private volatile com.oracle.bmc.http.internal.RestClient client;
-
-    /**
-     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
-     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
-     */
-    private volatile String overrideEndpoint = null;
-
-    /**
-     * Creates a new service instance using the given authentication provider.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     */
-    public BdsClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     */
-    public BdsClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(authenticationDetailsProvider, configuration, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     */
-    public BdsClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     */
-    public BdsClient(
+    private BdsClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public BdsClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                additionalClientConfigurators,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public BdsClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
-                        .createDefaultRequestSignerFactories(),
-                additionalClientConfigurators,
-                endpoint);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public BdsClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
-     */
-    public BdsClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
             java.util.concurrent.ExecutorService executorService) {
-        this(
+        super(
+                builder,
                 authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                executorService,
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * Use the {@link Builder} to get access to all these parameters.
-     *
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
-     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
-     */
-    protected BdsClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            java.util.concurrent.ExecutorService executorService,
-            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
-        this.authenticationDetailsProvider = authenticationDetailsProvider;
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
-                new java.util.ArrayList<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
-            authenticationDetailsConfigurators.addAll(
-                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
-                                    this.authenticationDetailsProvider)
-                            .getClientConfigurators());
-        }
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
-                new java.util.ArrayList<>(additionalClientConfigurators);
-        allConfigurators.addAll(authenticationDetailsConfigurators);
-        this.restClientFactory =
-                restClientFactoryBuilder
-                        .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(allConfigurators)
-                        .build();
-        this.isNonBufferingApacheClient =
-                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        this.restClientFactory.getClientConfigurator());
-        this.apacheConnectionClosingStrategy =
-                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
-                        restClientFactory.getClientConfigurator());
-
-        this.clientConfigurationToUse =
-                (configuration != null)
-                        ? configuration
-                        : com.oracle.bmc.ClientConfiguration.builder().build();
-        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
-        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
-        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
-        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-                userCircuitBreakerConfiguration =
-                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
-                                configuration);
-        if (userCircuitBreakerConfiguration == null) {
-            this.circuitBreakerConfiguration =
-                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
-        } else {
-            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
-        }
-
-        this.refreshClient();
+                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -355,28 +59,11 @@ public class BdsClient implements Bds {
         this.waiters = new BdsWaiters(executorService, this);
 
         this.paginators = new BdsPaginators(this);
-
-        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
-            com.oracle.bmc.auth.RegionProvider provider =
-                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
-
-            if (provider.getRegion() != null) {
-                this.setRegion(provider.getRegion());
-                if (endpoint != null) {
-                    LOG.info(
-                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
-                            provider.getRegion(),
-                            endpoint);
-                }
-            }
-        }
-        if (endpoint != null) {
-            setEndpoint(endpoint);
-        }
     }
 
     /**
      * Create a builder for this client.
+     *
      * @return builder
      */
     public static Builder builder() {
@@ -384,8 +71,8 @@ public class BdsClient implements Bds {
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
+     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, BdsClient> {
@@ -400,6 +87,7 @@ public class BdsClient implements Bds {
 
         /**
          * Set the ExecutorService for the client to be created.
+         *
          * @param executorService executorService
          * @return this builder
          */
@@ -410,1678 +98,1321 @@ public class BdsClient implements Bds {
 
         /**
          * Build the client.
+         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public BdsClient build(
                 @javax.annotation.Nonnull
-                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                        authenticationDetailsProvider) {
-            if (authenticationDetailsProvider == null) {
-                throw new NullPointerException(
-                        "authenticationDetailsProvider is marked non-null but is null");
-            }
-            return new BdsClient(
-                    authenticationDetailsProvider,
-                    configuration,
-                    clientConfigurator,
-                    requestSignerFactory,
-                    signingStrategyRequestSignerFactories,
-                    additionalClientConfigurators,
-                    endpoint,
-                    executorService);
+                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                                authenticationDetailsProvider) {
+            return new BdsClient(this, authenticationDetailsProvider, executorService);
         }
-    }
-
-    @Override
-    public void refreshClient() {
-        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                this.defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        this.signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
-            }
-        }
-
-        com.oracle.bmc.http.internal.RestClient refreshedClient =
-                this.restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        this.clientConfigurationToUse,
-                        this.isNonBufferingApacheClient,
-                        null,
-                        this.circuitBreakerConfiguration);
-
-        synchronized (clientUpdate) {
-            if (this.overrideEndpoint != null) {
-                refreshedClient.setEndpoint(this.overrideEndpoint);
-            }
-
-            this.client = refreshedClient;
-        }
-
-        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint) {
-        LOG.info("Setting endpoint to {}", endpoint);
-
-        synchronized (clientUpdate) {
-            this.overrideEndpoint = endpoint;
-            client.setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
-        }
-        return endpoint;
     }
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        java.util.Optional<String> endpoint =
-                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
-        if (endpoint.isPresent()) {
-            setEndpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + SERVICE + " is not known in region " + region);
-        }
+        super.setRegion(region);
     }
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
-        try {
-            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-            setRegion(region);
-        } catch (IllegalArgumentException e) {
-            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-            setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public void close() {
-        client.close();
+        super.setRegion(regionId);
     }
 
     @Override
     public ActivateBdsMetastoreConfigurationResponse activateBdsMetastoreConfiguration(
             ActivateBdsMetastoreConfigurationRequest request) {
-        LOG.trace("Called activateBdsMetastoreConfiguration");
-        final ActivateBdsMetastoreConfigurationRequest interceptedRequest =
-                ActivateBdsMetastoreConfigurationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ActivateBdsMetastoreConfigurationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(request.getMetastoreConfigId(), "metastoreConfigId must not be blank");
+        Objects.requireNonNull(
+                request.getActivateBdsMetastoreConfigurationDetails(),
+                "activateBdsMetastoreConfigurationDetails is required");
+
+        return clientCall(request, ActivateBdsMetastoreConfigurationResponse::builder)
+                .logger(LOG, "activateBdsMetastoreConfiguration")
+                .serviceDetails(
                         "Bds",
                         "ActivateBdsMetastoreConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/ActivateBdsMetastoreConfiguration");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ActivateBdsMetastoreConfigurationResponse>
-                transformer =
-                        ActivateBdsMetastoreConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getActivateBdsMetastoreConfigurationDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/ActivateBdsMetastoreConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ActivateBdsMetastoreConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("metastoreConfigs")
+                .appendPathParam(request.getMetastoreConfigId())
+                .appendPathParam("actions")
+                .appendPathParam("activate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ActivateBdsMetastoreConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ActivateBdsMetastoreConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public AddAutoScalingConfigurationResponse addAutoScalingConfiguration(
             AddAutoScalingConfigurationRequest request) {
-        LOG.trace("Called addAutoScalingConfiguration");
-        final AddAutoScalingConfigurationRequest interceptedRequest =
-                AddAutoScalingConfigurationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AddAutoScalingConfigurationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getAddAutoScalingConfigurationDetails(),
+                "addAutoScalingConfigurationDetails is required");
+
+        return clientCall(request, AddAutoScalingConfigurationResponse::builder)
+                .logger(LOG, "addAutoScalingConfiguration")
+                .serviceDetails(
                         "Bds",
                         "AddAutoScalingConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddAutoScalingConfiguration");
-        java.util.function.Function<javax.ws.rs.core.Response, AddAutoScalingConfigurationResponse>
-                transformer =
-                        AddAutoScalingConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getAddAutoScalingConfigurationDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddAutoScalingConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddAutoScalingConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("autoScalingConfiguration")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", AddAutoScalingConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        AddAutoScalingConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public AddBlockStorageResponse addBlockStorage(AddBlockStorageRequest request) {
-        LOG.trace("Called addBlockStorage");
-        final AddBlockStorageRequest interceptedRequest =
-                AddBlockStorageConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AddBlockStorageConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getAddBlockStorageDetails(), "addBlockStorageDetails is required");
+
+        return clientCall(request, AddBlockStorageResponse::builder)
+                .logger(LOG, "addBlockStorage")
+                .serviceDetails(
                         "Bds",
                         "AddBlockStorage",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddBlockStorage");
-        java.util.function.Function<javax.ws.rs.core.Response, AddBlockStorageResponse>
-                transformer =
-                        AddBlockStorageConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getAddBlockStorageDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddBlockStorage")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddBlockStorageRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("addBlockStorage")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", AddBlockStorageResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", AddBlockStorageResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public AddCloudSqlResponse addCloudSql(AddCloudSqlRequest request) {
-        LOG.trace("Called addCloudSql");
-        final AddCloudSqlRequest interceptedRequest =
-                AddCloudSqlConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AddCloudSqlConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(request.getAddCloudSqlDetails(), "addCloudSqlDetails is required");
+
+        return clientCall(request, AddCloudSqlResponse::builder)
+                .logger(LOG, "addCloudSql")
+                .serviceDetails(
                         "Bds",
                         "AddCloudSql",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddCloudSql");
-        java.util.function.Function<javax.ws.rs.core.Response, AddCloudSqlResponse> transformer =
-                AddCloudSqlConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getAddCloudSqlDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddCloudSql")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddCloudSqlRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("addCloudSql")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", AddCloudSqlResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", AddCloudSqlResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public AddWorkerNodesResponse addWorkerNodes(AddWorkerNodesRequest request) {
-        LOG.trace("Called addWorkerNodes");
-        final AddWorkerNodesRequest interceptedRequest =
-                AddWorkerNodesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AddWorkerNodesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getAddWorkerNodesDetails(), "addWorkerNodesDetails is required");
+
+        return clientCall(request, AddWorkerNodesResponse::builder)
+                .logger(LOG, "addWorkerNodes")
+                .serviceDetails(
                         "Bds",
                         "AddWorkerNodes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddWorkerNodes");
-        java.util.function.Function<javax.ws.rs.core.Response, AddWorkerNodesResponse> transformer =
-                AddWorkerNodesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getAddWorkerNodesDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddWorkerNodes")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddWorkerNodesRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("addWorkerNodes")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", AddWorkerNodesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", AddWorkerNodesResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeBdsInstanceCompartmentResponse changeBdsInstanceCompartment(
             ChangeBdsInstanceCompartmentRequest request) {
-        LOG.trace("Called changeBdsInstanceCompartment");
-        final ChangeBdsInstanceCompartmentRequest interceptedRequest =
-                ChangeBdsInstanceCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeBdsInstanceCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeBdsInstanceCompartmentDetails(),
+                "changeBdsInstanceCompartmentDetails is required");
+
+        return clientCall(request, ChangeBdsInstanceCompartmentResponse::builder)
+                .logger(LOG, "changeBdsInstanceCompartment")
+                .serviceDetails(
                         "Bds",
                         "ChangeBdsInstanceCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ChangeBdsInstanceCompartment");
-        java.util.function.Function<javax.ws.rs.core.Response, ChangeBdsInstanceCompartmentResponse>
-                transformer =
-                        ChangeBdsInstanceCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeBdsInstanceCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ChangeBdsInstanceCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeBdsInstanceCompartmentRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeBdsInstanceCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeBdsInstanceCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeShapeResponse changeShape(ChangeShapeRequest request) {
-        LOG.trace("Called changeShape");
-        final ChangeShapeRequest interceptedRequest =
-                ChangeShapeConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeShapeConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(request.getChangeShapeDetails(), "changeShapeDetails is required");
+
+        return clientCall(request, ChangeShapeResponse::builder)
+                .logger(LOG, "changeShape")
+                .serviceDetails(
                         "Bds",
                         "ChangeShape",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ChangeShape");
-        java.util.function.Function<javax.ws.rs.core.Response, ChangeShapeResponse> transformer =
-                ChangeShapeConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getChangeShapeDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ChangeShape")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeShapeRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("changeShape")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeShapeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ChangeShapeResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public CreateBdsApiKeyResponse createBdsApiKey(CreateBdsApiKeyRequest request) {
-        LOG.trace("Called createBdsApiKey");
-        final CreateBdsApiKeyRequest interceptedRequest =
-                CreateBdsApiKeyConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateBdsApiKeyConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateBdsApiKeyDetails(), "createBdsApiKeyDetails is required");
+
+        return clientCall(request, CreateBdsApiKeyResponse::builder)
+                .logger(LOG, "createBdsApiKey")
+                .serviceDetails(
                         "Bds",
                         "CreateBdsApiKey",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/CreateBdsApiKey");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateBdsApiKeyResponse>
-                transformer =
-                        CreateBdsApiKeyConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateBdsApiKeyDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/CreateBdsApiKey")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateBdsApiKeyRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("apiKeys")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateBdsApiKeyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateBdsApiKeyResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public CreateBdsInstanceResponse createBdsInstance(CreateBdsInstanceRequest request) {
-        LOG.trace("Called createBdsInstance");
-        final CreateBdsInstanceRequest interceptedRequest =
-                CreateBdsInstanceConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateBdsInstanceConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateBdsInstanceDetails(), "createBdsInstanceDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateBdsInstanceResponse::builder)
+                .logger(LOG, "createBdsInstance")
+                .serviceDetails(
                         "Bds",
                         "CreateBdsInstance",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/CreateBdsInstance");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateBdsInstanceResponse>
-                transformer =
-                        CreateBdsInstanceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateBdsInstanceDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/CreateBdsInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateBdsInstanceRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateBdsInstanceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateBdsInstanceResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public CreateBdsMetastoreConfigurationResponse createBdsMetastoreConfiguration(
             CreateBdsMetastoreConfigurationRequest request) {
-        LOG.trace("Called createBdsMetastoreConfiguration");
-        final CreateBdsMetastoreConfigurationRequest interceptedRequest =
-                CreateBdsMetastoreConfigurationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateBdsMetastoreConfigurationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateBdsMetastoreConfigurationDetails(),
+                "createBdsMetastoreConfigurationDetails is required");
+
+        return clientCall(request, CreateBdsMetastoreConfigurationResponse::builder)
+                .logger(LOG, "createBdsMetastoreConfiguration")
+                .serviceDetails(
                         "Bds",
                         "CreateBdsMetastoreConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/CreateBdsMetastoreConfiguration");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateBdsMetastoreConfigurationResponse>
-                transformer =
-                        CreateBdsMetastoreConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getCreateBdsMetastoreConfigurationDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/CreateBdsMetastoreConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateBdsMetastoreConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("metastoreConfigs")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateBdsMetastoreConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateBdsMetastoreConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteBdsApiKeyResponse deleteBdsApiKey(DeleteBdsApiKeyRequest request) {
-        LOG.trace("Called deleteBdsApiKey");
-        final DeleteBdsApiKeyRequest interceptedRequest =
-                DeleteBdsApiKeyConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteBdsApiKeyConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(request.getApiKeyId(), "apiKeyId must not be blank");
+
+        return clientCall(request, DeleteBdsApiKeyResponse::builder)
+                .logger(LOG, "deleteBdsApiKey")
+                .serviceDetails(
                         "Bds",
                         "DeleteBdsApiKey",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/DeleteBdsApiKey");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteBdsApiKeyResponse>
-                transformer =
-                        DeleteBdsApiKeyConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/DeleteBdsApiKey")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteBdsApiKeyRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("apiKeys")
+                .appendPathParam(request.getApiKeyId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteBdsApiKeyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteBdsApiKeyResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteBdsInstanceResponse deleteBdsInstance(DeleteBdsInstanceRequest request) {
-        LOG.trace("Called deleteBdsInstance");
-        final DeleteBdsInstanceRequest interceptedRequest =
-                DeleteBdsInstanceConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteBdsInstanceConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        return clientCall(request, DeleteBdsInstanceResponse::builder)
+                .logger(LOG, "deleteBdsInstance")
+                .serviceDetails(
                         "Bds",
                         "DeleteBdsInstance",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/DeleteBdsInstance");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteBdsInstanceResponse>
-                transformer =
-                        DeleteBdsInstanceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/DeleteBdsInstance")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteBdsInstanceRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteBdsInstanceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteBdsInstanceResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteBdsMetastoreConfigurationResponse deleteBdsMetastoreConfiguration(
             DeleteBdsMetastoreConfigurationRequest request) {
-        LOG.trace("Called deleteBdsMetastoreConfiguration");
-        final DeleteBdsMetastoreConfigurationRequest interceptedRequest =
-                DeleteBdsMetastoreConfigurationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteBdsMetastoreConfigurationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(request.getMetastoreConfigId(), "metastoreConfigId must not be blank");
+
+        return clientCall(request, DeleteBdsMetastoreConfigurationResponse::builder)
+                .logger(LOG, "deleteBdsMetastoreConfiguration")
+                .serviceDetails(
                         "Bds",
                         "DeleteBdsMetastoreConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/DeleteBdsMetastoreConfiguration");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteBdsMetastoreConfigurationResponse>
-                transformer =
-                        DeleteBdsMetastoreConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/DeleteBdsMetastoreConfiguration")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteBdsMetastoreConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("metastoreConfigs")
+                .appendPathParam(request.getMetastoreConfigId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteBdsMetastoreConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteBdsMetastoreConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public GetAutoScalingConfigurationResponse getAutoScalingConfiguration(
             GetAutoScalingConfigurationRequest request) {
-        LOG.trace("Called getAutoScalingConfiguration");
-        final GetAutoScalingConfigurationRequest interceptedRequest =
-                GetAutoScalingConfigurationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetAutoScalingConfigurationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getAutoScalingConfigurationId(),
+                "autoScalingConfigurationId must not be blank");
+
+        return clientCall(request, GetAutoScalingConfigurationResponse::builder)
+                .logger(LOG, "getAutoScalingConfiguration")
+                .serviceDetails(
                         "Bds",
                         "GetAutoScalingConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetAutoScalingConfiguration");
-        java.util.function.Function<javax.ws.rs.core.Response, GetAutoScalingConfigurationResponse>
-                transformer =
-                        GetAutoScalingConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetAutoScalingConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAutoScalingConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("autoScalingConfiguration")
+                .appendPathParam(request.getAutoScalingConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.bds.model.AutoScalingConfiguration.class,
+                        GetAutoScalingConfigurationResponse.Builder::autoScalingConfiguration)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAutoScalingConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", GetAutoScalingConfigurationResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public GetBdsApiKeyResponse getBdsApiKey(GetBdsApiKeyRequest request) {
-        LOG.trace("Called getBdsApiKey");
-        final GetBdsApiKeyRequest interceptedRequest =
-                GetBdsApiKeyConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetBdsApiKeyConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(request.getApiKeyId(), "apiKeyId must not be blank");
+
+        return clientCall(request, GetBdsApiKeyResponse::builder)
+                .logger(LOG, "getBdsApiKey")
+                .serviceDetails(
                         "Bds",
                         "GetBdsApiKey",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/GetBdsApiKey");
-        java.util.function.Function<javax.ws.rs.core.Response, GetBdsApiKeyResponse> transformer =
-                GetBdsApiKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/GetBdsApiKey")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetBdsApiKeyRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("apiKeys")
+                .appendPathParam(request.getApiKeyId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.bds.model.BdsApiKey.class,
+                        GetBdsApiKeyResponse.Builder::bdsApiKey)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetBdsApiKeyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetBdsApiKeyResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public GetBdsInstanceResponse getBdsInstance(GetBdsInstanceRequest request) {
-        LOG.trace("Called getBdsInstance");
-        final GetBdsInstanceRequest interceptedRequest =
-                GetBdsInstanceConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetBdsInstanceConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        return clientCall(request, GetBdsInstanceResponse::builder)
+                .logger(LOG, "getBdsInstance")
+                .serviceDetails(
                         "Bds",
                         "GetBdsInstance",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetBdsInstance");
-        java.util.function.Function<javax.ws.rs.core.Response, GetBdsInstanceResponse> transformer =
-                GetBdsInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetBdsInstance")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetBdsInstanceRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.bds.model.BdsInstance.class,
+                        GetBdsInstanceResponse.Builder::bdsInstance)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetBdsInstanceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetBdsInstanceResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public GetBdsMetastoreConfigurationResponse getBdsMetastoreConfiguration(
             GetBdsMetastoreConfigurationRequest request) {
-        LOG.trace("Called getBdsMetastoreConfiguration");
-        final GetBdsMetastoreConfigurationRequest interceptedRequest =
-                GetBdsMetastoreConfigurationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetBdsMetastoreConfigurationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(request.getMetastoreConfigId(), "metastoreConfigId must not be blank");
+
+        return clientCall(request, GetBdsMetastoreConfigurationResponse::builder)
+                .logger(LOG, "getBdsMetastoreConfiguration")
+                .serviceDetails(
                         "Bds",
                         "GetBdsMetastoreConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/GetBdsMetastoreConfiguration");
-        java.util.function.Function<javax.ws.rs.core.Response, GetBdsMetastoreConfigurationResponse>
-                transformer =
-                        GetBdsMetastoreConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/GetBdsMetastoreConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetBdsMetastoreConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("metastoreConfigs")
+                .appendPathParam(request.getMetastoreConfigId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.bds.model.BdsMetastoreConfiguration.class,
+                        GetBdsMetastoreConfigurationResponse.Builder::bdsMetastoreConfiguration)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetBdsMetastoreConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", GetBdsMetastoreConfigurationResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
-        LOG.trace("Called getWorkRequest");
-        final GetWorkRequestRequest interceptedRequest =
-                GetWorkRequestConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, GetWorkRequestResponse::builder)
+                .logger(LOG, "getWorkRequest")
+                .serviceDetails(
                         "Bds",
                         "GetWorkRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequest/GetWorkRequest");
-        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
-                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequest/GetWorkRequest")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetWorkRequestRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.bds.model.WorkRequest.class,
+                        GetWorkRequestResponse.Builder::workRequest)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
+                .handleResponseHeaderBigDecimal(
+                        "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callSync();
     }
 
     @Override
     public InstallPatchResponse installPatch(InstallPatchRequest request) {
-        LOG.trace("Called installPatch");
-        final InstallPatchRequest interceptedRequest =
-                InstallPatchConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                InstallPatchConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(request.getInstallPatchDetails(), "installPatchDetails is required");
+
+        return clientCall(request, InstallPatchResponse::builder)
+                .logger(LOG, "installPatch")
+                .serviceDetails(
                         "Bds",
                         "InstallPatch",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/InstallPatch");
-        java.util.function.Function<javax.ws.rs.core.Response, InstallPatchResponse> transformer =
-                InstallPatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getInstallPatchDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/InstallPatch")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(InstallPatchRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("installPatch")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", InstallPatchResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", InstallPatchResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public ListAutoScalingConfigurationsResponse listAutoScalingConfigurations(
             ListAutoScalingConfigurationsRequest request) {
-        LOG.trace("Called listAutoScalingConfigurations");
-        final ListAutoScalingConfigurationsRequest interceptedRequest =
-                ListAutoScalingConfigurationsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListAutoScalingConfigurationsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        return clientCall(request, ListAutoScalingConfigurationsResponse::builder)
+                .logger(LOG, "listAutoScalingConfigurations")
+                .serviceDetails(
                         "Bds",
                         "ListAutoScalingConfigurations",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListAutoScalingConfigurations");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ListAutoScalingConfigurationsResponse>
-                transformer =
-                        ListAutoScalingConfigurationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListAutoScalingConfigurations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAutoScalingConfigurationsRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("autoScalingConfiguration")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.AutoScalingConfigurationSummary.class,
+                        ListAutoScalingConfigurationsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListAutoScalingConfigurationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAutoScalingConfigurationsResponse.Builder::opcNextPage)
+                .callSync();
     }
 
     @Override
     public ListBdsApiKeysResponse listBdsApiKeys(ListBdsApiKeysRequest request) {
-        LOG.trace("Called listBdsApiKeys");
-        final ListBdsApiKeysRequest interceptedRequest =
-                ListBdsApiKeysConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListBdsApiKeysConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        return clientCall(request, ListBdsApiKeysResponse::builder)
+                .logger(LOG, "listBdsApiKeys")
+                .serviceDetails(
                         "Bds",
                         "ListBdsApiKeys",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/ListBdsApiKeys");
-        java.util.function.Function<javax.ws.rs.core.Response, ListBdsApiKeysResponse> transformer =
-                ListBdsApiKeysConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/ListBdsApiKeys")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListBdsApiKeysRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("apiKeys")
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("userId", request.getUserId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.BdsApiKeySummary.class,
+                        ListBdsApiKeysResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListBdsApiKeysResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListBdsApiKeysResponse.Builder::opcNextPage)
+                .callSync();
     }
 
     @Override
     public ListBdsInstancesResponse listBdsInstances(ListBdsInstancesRequest request) {
-        LOG.trace("Called listBdsInstances");
-        final ListBdsInstancesRequest interceptedRequest =
-                ListBdsInstancesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListBdsInstancesConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListBdsInstancesResponse::builder)
+                .logger(LOG, "listBdsInstances")
+                .serviceDetails(
                         "Bds",
                         "ListBdsInstances",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstanceSummary/ListBdsInstances");
-        java.util.function.Function<javax.ws.rs.core.Response, ListBdsInstancesResponse>
-                transformer =
-                        ListBdsInstancesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstanceSummary/ListBdsInstances")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListBdsInstancesRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.BdsInstanceSummary.class,
+                        ListBdsInstancesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListBdsInstancesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListBdsInstancesResponse.Builder::opcNextPage)
+                .callSync();
     }
 
     @Override
     public ListBdsMetastoreConfigurationsResponse listBdsMetastoreConfigurations(
             ListBdsMetastoreConfigurationsRequest request) {
-        LOG.trace("Called listBdsMetastoreConfigurations");
-        final ListBdsMetastoreConfigurationsRequest interceptedRequest =
-                ListBdsMetastoreConfigurationsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListBdsMetastoreConfigurationsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        return clientCall(request, ListBdsMetastoreConfigurationsResponse::builder)
+                .logger(LOG, "listBdsMetastoreConfigurations")
+                .serviceDetails(
                         "Bds",
                         "ListBdsMetastoreConfigurations",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/ListBdsMetastoreConfigurations");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ListBdsMetastoreConfigurationsResponse>
-                transformer =
-                        ListBdsMetastoreConfigurationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/ListBdsMetastoreConfigurations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListBdsMetastoreConfigurationsRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("metastoreConfigs")
+                .appendEnumQueryParam("metastoreType", request.getMetastoreType())
+                .appendQueryParam("metastoreId", request.getMetastoreId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("bdsApiKeyId", request.getBdsApiKeyId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary.class,
+                        ListBdsMetastoreConfigurationsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListBdsMetastoreConfigurationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListBdsMetastoreConfigurationsResponse.Builder::opcNextPage)
+                .callSync();
     }
 
     @Override
     public ListPatchHistoriesResponse listPatchHistories(ListPatchHistoriesRequest request) {
-        LOG.trace("Called listPatchHistories");
-        final ListPatchHistoriesRequest interceptedRequest =
-                ListPatchHistoriesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListPatchHistoriesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        return clientCall(request, ListPatchHistoriesResponse::builder)
+                .logger(LOG, "listPatchHistories")
+                .serviceDetails(
                         "Bds",
                         "ListPatchHistories",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListPatchHistories");
-        java.util.function.Function<javax.ws.rs.core.Response, ListPatchHistoriesResponse>
-                transformer =
-                        ListPatchHistoriesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListPatchHistories")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPatchHistoriesRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("patchHistory")
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("patchVersion", request.getPatchVersion())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.PatchHistorySummary.class,
+                        ListPatchHistoriesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPatchHistoriesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPatchHistoriesResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListPatchesResponse listPatches(ListPatchesRequest request) {
-        LOG.trace("Called listPatches");
-        final ListPatchesRequest interceptedRequest =
-                ListPatchesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListPatchesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        return clientCall(request, ListPatchesResponse::builder)
+                .logger(LOG, "listPatches")
+                .serviceDetails(
                         "Bds",
                         "ListPatches",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListPatches");
-        java.util.function.Function<javax.ws.rs.core.Response, ListPatchesResponse> transformer =
-                ListPatchesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListPatches")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPatchesRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("patches")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.PatchSummary.class,
+                        ListPatchesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPatchesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPatchesResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListWorkRequestErrorsResponse listWorkRequestErrors(
             ListWorkRequestErrorsRequest request) {
-        LOG.trace("Called listWorkRequestErrors");
-        final ListWorkRequestErrorsRequest interceptedRequest =
-                ListWorkRequestErrorsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, ListWorkRequestErrorsResponse::builder)
+                .logger(LOG, "listWorkRequestErrors")
+                .serviceDetails(
                         "Bds",
                         "ListWorkRequestErrors",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequestError/ListWorkRequestErrors");
-        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
-                transformer =
-                        ListWorkRequestErrorsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequestError/ListWorkRequestErrors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestErrorsRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .appendPathParam("errors")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.WorkRequestError.class,
+                        ListWorkRequestErrorsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request) {
-        LOG.trace("Called listWorkRequestLogs");
-        final ListWorkRequestLogsRequest interceptedRequest =
-                ListWorkRequestLogsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, ListWorkRequestLogsResponse::builder)
+                .logger(LOG, "listWorkRequestLogs")
+                .serviceDetails(
                         "Bds",
                         "ListWorkRequestLogs",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequestLogEntry/ListWorkRequestLogs");
-        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
-                transformer =
-                        ListWorkRequestLogsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequestLogEntry/ListWorkRequestLogs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestLogsRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .appendPathParam("logs")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.WorkRequestLogEntry.class,
+                        ListWorkRequestLogsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request) {
-        LOG.trace("Called listWorkRequests");
-        final ListWorkRequestsRequest interceptedRequest =
-                ListWorkRequestsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListWorkRequestsResponse::builder)
+                .logger(LOG, "listWorkRequests")
+                .serviceDetails(
                         "Bds",
                         "ListWorkRequests",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequest/ListWorkRequests");
-        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer =
-                        ListWorkRequestsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequest/ListWorkRequests")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestsRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("workRequests")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("resourceId", request.getResourceId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.WorkRequest.class,
+                        ListWorkRequestsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .callSync();
     }
 
     @Override
     public RemoveAutoScalingConfigurationResponse removeAutoScalingConfiguration(
             RemoveAutoScalingConfigurationRequest request) {
-        LOG.trace("Called removeAutoScalingConfiguration");
-        final RemoveAutoScalingConfigurationRequest interceptedRequest =
-                RemoveAutoScalingConfigurationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemoveAutoScalingConfigurationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getAutoScalingConfigurationId(),
+                "autoScalingConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveAutoScalingConfigurationDetails(),
+                "removeAutoScalingConfigurationDetails is required");
+
+        return clientCall(request, RemoveAutoScalingConfigurationResponse::builder)
+                .logger(LOG, "removeAutoScalingConfiguration")
+                .serviceDetails(
                         "Bds",
                         "RemoveAutoScalingConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RemoveAutoScalingConfiguration");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, RemoveAutoScalingConfigurationResponse>
-                transformer =
-                        RemoveAutoScalingConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getRemoveAutoScalingConfigurationDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RemoveAutoScalingConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveAutoScalingConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("autoScalingConfiguration")
+                .appendPathParam(request.getAutoScalingConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("remove")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveAutoScalingConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RemoveAutoScalingConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public RemoveCloudSqlResponse removeCloudSql(RemoveCloudSqlRequest request) {
-        LOG.trace("Called removeCloudSql");
-        final RemoveCloudSqlRequest interceptedRequest =
-                RemoveCloudSqlConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemoveCloudSqlConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveCloudSqlDetails(), "removeCloudSqlDetails is required");
+
+        return clientCall(request, RemoveCloudSqlResponse::builder)
+                .logger(LOG, "removeCloudSql")
+                .serviceDetails(
                         "Bds",
                         "RemoveCloudSql",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RemoveCloudSql");
-        java.util.function.Function<javax.ws.rs.core.Response, RemoveCloudSqlResponse> transformer =
-                RemoveCloudSqlConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getRemoveCloudSqlDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RemoveCloudSql")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveCloudSqlRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("removeCloudSql")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveCloudSqlResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", RemoveCloudSqlResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public RemoveNodeResponse removeNode(RemoveNodeRequest request) {
-        LOG.trace("Called removeNode");
-        final RemoveNodeRequest interceptedRequest = RemoveNodeConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemoveNodeConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(request.getRemoveNodeDetails(), "removeNodeDetails is required");
+
+        return clientCall(request, RemoveNodeResponse::builder)
+                .logger(LOG, "removeNode")
+                .serviceDetails(
                         "Bds",
                         "RemoveNode",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RemoveNode");
-        java.util.function.Function<javax.ws.rs.core.Response, RemoveNodeResponse> transformer =
-                RemoveNodeConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getRemoveNodeDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RemoveNode")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveNodeRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("removeNode")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveNodeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", RemoveNodeResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public RestartNodeResponse restartNode(RestartNodeRequest request) {
-        LOG.trace("Called restartNode");
-        final RestartNodeRequest interceptedRequest =
-                RestartNodeConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RestartNodeConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(request.getRestartNodeDetails(), "restartNodeDetails is required");
+
+        return clientCall(request, RestartNodeResponse::builder)
+                .logger(LOG, "restartNode")
+                .serviceDetails(
                         "Bds",
                         "RestartNode",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RestartNode");
-        java.util.function.Function<javax.ws.rs.core.Response, RestartNodeResponse> transformer =
-                RestartNodeConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getRestartNodeDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RestartNode")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RestartNodeRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("restartNode")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", RestartNodeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", RestartNodeResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public StartBdsInstanceResponse startBdsInstance(StartBdsInstanceRequest request) {
-        LOG.trace("Called startBdsInstance");
-        final StartBdsInstanceRequest interceptedRequest =
-                StartBdsInstanceConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                StartBdsInstanceConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getStartBdsInstanceDetails(), "startBdsInstanceDetails is required");
+
+        return clientCall(request, StartBdsInstanceResponse::builder)
+                .logger(LOG, "startBdsInstance")
+                .serviceDetails(
                         "Bds",
                         "StartBdsInstance",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/StartBdsInstance");
-        java.util.function.Function<javax.ws.rs.core.Response, StartBdsInstanceResponse>
-                transformer =
-                        StartBdsInstanceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getStartBdsInstanceDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/StartBdsInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StartBdsInstanceRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("start")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", StartBdsInstanceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StartBdsInstanceResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public StopBdsInstanceResponse stopBdsInstance(StopBdsInstanceRequest request) {
-        LOG.trace("Called stopBdsInstance");
-        final StopBdsInstanceRequest interceptedRequest =
-                StopBdsInstanceConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                StopBdsInstanceConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getStopBdsInstanceDetails(), "stopBdsInstanceDetails is required");
+
+        return clientCall(request, StopBdsInstanceResponse::builder)
+                .logger(LOG, "stopBdsInstance")
+                .serviceDetails(
                         "Bds",
                         "StopBdsInstance",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/StopBdsInstance");
-        java.util.function.Function<javax.ws.rs.core.Response, StopBdsInstanceResponse>
-                transformer =
-                        StopBdsInstanceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getStopBdsInstanceDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/StopBdsInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StopBdsInstanceRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("stop")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", StopBdsInstanceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StopBdsInstanceResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public TestBdsMetastoreConfigurationResponse testBdsMetastoreConfiguration(
             TestBdsMetastoreConfigurationRequest request) {
-        LOG.trace("Called testBdsMetastoreConfiguration");
-        final TestBdsMetastoreConfigurationRequest interceptedRequest =
-                TestBdsMetastoreConfigurationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                TestBdsMetastoreConfigurationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(request.getMetastoreConfigId(), "metastoreConfigId must not be blank");
+        Objects.requireNonNull(
+                request.getTestBdsMetastoreConfigurationDetails(),
+                "testBdsMetastoreConfigurationDetails is required");
+
+        return clientCall(request, TestBdsMetastoreConfigurationResponse::builder)
+                .logger(LOG, "testBdsMetastoreConfiguration")
+                .serviceDetails(
                         "Bds",
                         "TestBdsMetastoreConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/TestBdsMetastoreConfiguration");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, TestBdsMetastoreConfigurationResponse>
-                transformer =
-                        TestBdsMetastoreConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getTestBdsMetastoreConfigurationDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/TestBdsMetastoreConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(TestBdsMetastoreConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("metastoreConfigs")
+                .appendPathParam(request.getMetastoreConfigId())
+                .appendPathParam("actions")
+                .appendPathParam("test")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        TestBdsMetastoreConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        TestBdsMetastoreConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public TestBdsObjectStorageConnectionResponse testBdsObjectStorageConnection(
             TestBdsObjectStorageConnectionRequest request) {
-        LOG.trace("Called testBdsObjectStorageConnection");
-        final TestBdsObjectStorageConnectionRequest interceptedRequest =
-                TestBdsObjectStorageConnectionConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                TestBdsObjectStorageConnectionConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(request.getApiKeyId(), "apiKeyId must not be blank");
+        Objects.requireNonNull(
+                request.getTestBdsObjectStorageConnectionDetails(),
+                "testBdsObjectStorageConnectionDetails is required");
+
+        return clientCall(request, TestBdsObjectStorageConnectionResponse::builder)
+                .logger(LOG, "testBdsObjectStorageConnection")
+                .serviceDetails(
                         "Bds",
                         "TestBdsObjectStorageConnection",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/TestBdsObjectStorageConnection");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, TestBdsObjectStorageConnectionResponse>
-                transformer =
-                        TestBdsObjectStorageConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getTestBdsObjectStorageConnectionDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/TestBdsObjectStorageConnection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(TestBdsObjectStorageConnectionRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("apiKeys")
+                .appendPathParam(request.getApiKeyId())
+                .appendPathParam("actions")
+                .appendPathParam("testObjectStorageConnection")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        TestBdsObjectStorageConnectionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        TestBdsObjectStorageConnectionResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateAutoScalingConfigurationResponse updateAutoScalingConfiguration(
             UpdateAutoScalingConfigurationRequest request) {
-        LOG.trace("Called updateAutoScalingConfiguration");
-        final UpdateAutoScalingConfigurationRequest interceptedRequest =
-                UpdateAutoScalingConfigurationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateAutoScalingConfigurationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getAutoScalingConfigurationId(),
+                "autoScalingConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateAutoScalingConfigurationDetails(),
+                "updateAutoScalingConfigurationDetails is required");
+
+        return clientCall(request, UpdateAutoScalingConfigurationResponse::builder)
+                .logger(LOG, "updateAutoScalingConfiguration")
+                .serviceDetails(
                         "Bds",
                         "UpdateAutoScalingConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/UpdateAutoScalingConfiguration");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateAutoScalingConfigurationResponse>
-                transformer =
-                        UpdateAutoScalingConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateAutoScalingConfigurationDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/UpdateAutoScalingConfiguration")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateAutoScalingConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("autoScalingConfiguration")
+                .appendPathParam(request.getAutoScalingConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateAutoScalingConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateAutoScalingConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateBdsInstanceResponse updateBdsInstance(UpdateBdsInstanceRequest request) {
-        LOG.trace("Called updateBdsInstance");
-        final UpdateBdsInstanceRequest interceptedRequest =
-                UpdateBdsInstanceConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateBdsInstanceConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateBdsInstanceDetails(), "updateBdsInstanceDetails is required");
+
+        return clientCall(request, UpdateBdsInstanceResponse::builder)
+                .logger(LOG, "updateBdsInstance")
+                .serviceDetails(
                         "Bds",
                         "UpdateBdsInstance",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/UpdateBdsInstance");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateBdsInstanceResponse>
-                transformer =
-                        UpdateBdsInstanceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateBdsInstanceDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/UpdateBdsInstance")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateBdsInstanceRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateBdsInstanceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateBdsInstanceResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateBdsMetastoreConfigurationResponse updateBdsMetastoreConfiguration(
             UpdateBdsMetastoreConfigurationRequest request) {
-        LOG.trace("Called updateBdsMetastoreConfiguration");
-        final UpdateBdsMetastoreConfigurationRequest interceptedRequest =
-                UpdateBdsMetastoreConfigurationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateBdsMetastoreConfigurationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(request.getMetastoreConfigId(), "metastoreConfigId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateBdsMetastoreConfigurationDetails(),
+                "updateBdsMetastoreConfigurationDetails is required");
+
+        return clientCall(request, UpdateBdsMetastoreConfigurationResponse::builder)
+                .logger(LOG, "updateBdsMetastoreConfiguration")
+                .serviceDetails(
                         "Bds",
                         "UpdateBdsMetastoreConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/UpdateBdsMetastoreConfiguration");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateBdsMetastoreConfigurationResponse>
-                transformer =
-                        UpdateBdsMetastoreConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateBdsMetastoreConfigurationDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/UpdateBdsMetastoreConfiguration")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateBdsMetastoreConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("metastoreConfigs")
+                .appendPathParam(request.getMetastoreConfigId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateBdsMetastoreConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateBdsMetastoreConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
@@ -2092,5 +1423,209 @@ public class BdsClient implements Bds {
     @Override
     public BdsPaginators getPaginators() {
         return paginators;
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public BdsClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(builder(), authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public BdsClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(builder().configuration(configuration), authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public BdsClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                builder().configuration(configuration).clientConfigurator(clientConfigurator),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public BdsClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public BdsClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public BdsClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public BdsClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @param executorService {@link Builder#executorService}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public BdsClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider,
+                executorService);
     }
 }

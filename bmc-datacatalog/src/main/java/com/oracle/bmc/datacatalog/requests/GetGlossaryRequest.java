@@ -6,44 +6,32 @@ package com.oracle.bmc.datacatalog.requests;
 
 import com.oracle.bmc.datacatalog.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetGlossaryExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetGlossaryRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetGlossaryExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetGlossaryRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class GetGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * Unique catalog identifier.
-     */
+    /** Unique catalog identifier. */
     private String catalogId;
 
-    /**
-     * Unique catalog identifier.
-     */
+    /** Unique catalog identifier. */
     public String getCatalogId() {
         return catalogId;
     }
-    /**
-     * Unique glossary key.
-     */
+    /** Unique glossary key. */
     private String glossaryKey;
 
-    /**
-     * Unique glossary key.
-     */
+    /** Unique glossary key. */
     public String getGlossaryKey() {
         return glossaryKey;
     }
-    /**
-     * Specifies the fields to return in a glossary response.
-     *
-     */
+    /** Specifies the fields to return in a glossary response. */
     private java.util.List<Fields> fields;
 
-    /**
-     * Specifies the fields to return in a glossary response.
-     *
-     **/
-    public enum Fields {
+    /** Specifies the fields to return in a glossary response. */
+    public enum Fields implements com.oracle.bmc.http.internal.BmcEnum {
         Key("key"),
         DisplayName("displayName"),
         Description("description"),
@@ -86,21 +74,14 @@ public class GetGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
-    /**
-     * Specifies the fields to return in a glossary response.
-     *
-     */
+    /** Specifies the fields to return in a glossary response. */
     public java.util.List<Fields> getFields() {
         return fields;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -108,17 +89,15 @@ public class GetGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetGlossaryRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique catalog identifier.
-         */
+        /** Unique catalog identifier. */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         *
          * @param catalogId the value to set
          * @return this builder instance
          */
@@ -127,13 +106,12 @@ public class GetGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * Unique glossary key.
-         */
+        /** Unique glossary key. */
         private String glossaryKey = null;
 
         /**
          * Unique glossary key.
+         *
          * @param glossaryKey the value to set
          * @return this builder instance
          */
@@ -142,10 +120,7 @@ public class GetGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * Specifies the fields to return in a glossary response.
-         *
-         */
+        /** Specifies the fields to return in a glossary response. */
         private java.util.List<Fields> fields = null;
 
         /**
@@ -169,13 +144,12 @@ public class GetGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -186,18 +160,19 @@ public class GetGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -209,6 +184,7 @@ public class GetGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetGlossaryRequest o) {
@@ -224,10 +200,11 @@ public class GetGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of GetGlossaryRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetGlossaryRequest
          */
@@ -241,7 +218,8 @@ public class GetGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of GetGlossaryRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetGlossaryRequest
@@ -259,6 +237,7 @@ public class GetGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -271,6 +250,7 @@ public class GetGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

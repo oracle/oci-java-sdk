@@ -4,12 +4,6 @@
  */
 package com.oracle.bmc.circuitbreaker;
 
-import com.oracle.bmc.circuitbreaker.internal.JaxRsCircuitBreakerImpl;
-
-import javax.ws.rs.InternalServerErrorException;
-import javax.ws.rs.ProcessingException;
-import javax.ws.rs.ServiceUnavailableException;
-import javax.ws.rs.core.Response;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.Collections;
@@ -18,10 +12,10 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * A {@link CircuitBreakerConfiguration} configures a {@link JaxRsCircuitBreakerImpl}
+ * A {@link CircuitBreakerConfiguration} configures a circuit breaker
  *
- * Setting an invocation response timeout lower that the slow call threshold will bypass the intended effect of the circuit
- * breaker
+ * <p>Setting an invocation response timeout lower that the slow call threshold will bypass the
+ * intended effect of the circuit breaker
  */
 public class CircuitBreakerConfiguration {
 
@@ -33,14 +27,13 @@ public class CircuitBreakerConfiguration {
     public static final int DEFAULT_SLIDING_WINDOW_SIZE = 120;
     public static final int DEFAULT_SLOW_CALL_DURATION_THRESHOLD = 60; // Minutes
     public static final boolean DEFAULT_WRITABLE_STACK_TRACE_ENABLED = true;
+    public static final int NUMBER_OF_RECORDED_HISTORY_RESPONSES = 5;
 
-    public static final int TOO_MANY_REQUESTS = Response.Status.TOO_MANY_REQUESTS.getStatusCode();
-    public static final int INTERNAL_SERVER_ERROR =
-            Response.Status.INTERNAL_SERVER_ERROR.getStatusCode();
-    public static final int SERVICE_UNAVAILABLE =
-            Response.Status.SERVICE_UNAVAILABLE.getStatusCode();
-    public static final int BAD_GATEWAY = Response.Status.BAD_GATEWAY.getStatusCode();
-    public static final int GATEWAY_TIMEOUT = Response.Status.GATEWAY_TIMEOUT.getStatusCode();
+    public static final int TOO_MANY_REQUESTS = 429;
+    public static final int INTERNAL_SERVER_ERROR = 500;
+    public static final int SERVICE_UNAVAILABLE = 503;
+    public static final int BAD_GATEWAY = 502;
+    public static final int GATEWAY_TIMEOUT = 504;
 
     private final int failureRateThreshold;
 
@@ -58,24 +51,62 @@ public class CircuitBreakerConfiguration {
 
     private final boolean writableStackTraceEnabled;
 
-    /**
-     * List of default http error codes to record as circuit breaker failure
-     */
+    private final int numberOfRecordedHistoryResponses;
+
+    /** List of default http error codes to record as circuit breaker failure */
     private final Set<Integer> recordHttpStatuses;
 
-    public static final Class<ProcessingException> PROCESSING_EXCEPTION_CLASS =
-            ProcessingException.class;
-    public static final Class<ServiceUnavailableException> SERVICE_UNAVAILABLE_EXCEPTION_CLASS =
-            ServiceUnavailableException.class;
-    public static final Class<InternalServerErrorException> INTERNAL_SERVER_ERROR_EXCEPTION_CLASS =
-            InternalServerErrorException.class;
-
     /**
-     * List of exceptions for circuitBreaker to consider as failures, we are limiting the list to subclasses of
-     * RuntimeException because all JaxRs exceptions inherit from the RuntimeException
+     * List of exceptions for circuitBreaker to consider as failures, we are limiting the list to
+     * subclasses of RuntimeException because all JaxRs exceptions inherit from the RuntimeException
      */
     private final List<Class<? extends RuntimeException>> recordExceptions;
 
+    private final boolean recordProcessingFailures;
+
+    protected CircuitBreakerConfiguration(
+            int failureRateThreshold,
+            int slowCallRateThreshold,
+            Duration waitDurationInOpenState,
+            int permittedNumberOfCallsInHalfOpenState,
+            int minimumNumberOfCalls,
+            int slidingWindowSize,
+            Duration slowCallDurationThreshold,
+            boolean writableStackTraceEnabled,
+            Set<Integer> recordHttpStatuses,
+            List<Class<? extends RuntimeException>> recordExceptions,
+            boolean recordProcessingFailures) {
+        this(
+                failureRateThreshold,
+                slowCallRateThreshold,
+                waitDurationInOpenState,
+                permittedNumberOfCallsInHalfOpenState,
+                minimumNumberOfCalls,
+                slidingWindowSize,
+                slowCallDurationThreshold,
+                writableStackTraceEnabled,
+                recordHttpStatuses,
+                recordExceptions,
+                recordProcessingFailures,
+                NUMBER_OF_RECORDED_HISTORY_RESPONSES);
+    }
+
+    /**
+     * Use {@link #builder()} instead.
+     *
+     * @param failureRateThreshold
+     * @param slowCallRateThreshold
+     * @param waitDurationInOpenState
+     * @param permittedNumberOfCallsInHalfOpenState
+     * @param minimumNumberOfCalls
+     * @param slidingWindowSize
+     * @param slowCallDurationThreshold
+     * @param writableStackTraceEnabled
+     * @param recordHttpStatuses
+     * @param recordExceptions
+     * @param recordProcessingFailures
+     * @param numberOfRecordedHistoryResponses
+     */
     @java.beans.ConstructorProperties({
         "failureRateThreshold",
         "slowCallRateThreshold",
@@ -86,9 +117,10 @@ public class CircuitBreakerConfiguration {
         "slowCallDurationThreshold",
         "writableStackTraceEnabled",
         "recordHttpStatuses",
-        "recordExceptions"
+        "recordExceptions",
+        "numberOfRecordedHistoryResponses"
     })
-    public CircuitBreakerConfiguration(
+    protected CircuitBreakerConfiguration(
             int failureRateThreshold,
             int slowCallRateThreshold,
             Duration waitDurationInOpenState,
@@ -98,7 +130,9 @@ public class CircuitBreakerConfiguration {
             Duration slowCallDurationThreshold,
             boolean writableStackTraceEnabled,
             Set<Integer> recordHttpStatuses,
-            List<Class<? extends RuntimeException>> recordExceptions) {
+            List<Class<? extends RuntimeException>> recordExceptions,
+            boolean recordProcessingFailures,
+            int numberOfRecordedHistoryResponses) {
         this.failureRateThreshold = failureRateThreshold;
         this.slowCallRateThreshold = slowCallRateThreshold;
         this.waitDurationInOpenState = waitDurationInOpenState;
@@ -109,6 +143,8 @@ public class CircuitBreakerConfiguration {
         this.writableStackTraceEnabled = writableStackTraceEnabled;
         this.recordHttpStatuses = recordHttpStatuses;
         this.recordExceptions = recordExceptions;
+        this.recordProcessingFailures = recordProcessingFailures;
+        this.numberOfRecordedHistoryResponses = numberOfRecordedHistoryResponses;
     }
 
     public CircuitBreakerConfiguration() {
@@ -122,6 +158,8 @@ public class CircuitBreakerConfiguration {
         this.writableStackTraceEnabled = DEFAULT_WRITABLE_STACK_TRACE_ENABLED;
         this.recordHttpStatuses = defaultRecordHttpStatuses();
         this.recordExceptions = defaultRecordExceptions();
+        this.recordProcessingFailures = true;
+        this.numberOfRecordedHistoryResponses = NUMBER_OF_RECORDED_HISTORY_RESPONSES;
     }
 
     private static Set<Integer> defaultRecordHttpStatuses() {
@@ -136,11 +174,7 @@ public class CircuitBreakerConfiguration {
     }
 
     private static List<Class<? extends RuntimeException>> defaultRecordExceptions() {
-        return Collections.unmodifiableList(
-                Arrays.asList(
-                        PROCESSING_EXCEPTION_CLASS,
-                        SERVICE_UNAVAILABLE_EXCEPTION_CLASS,
-                        INTERNAL_SERVER_ERROR_EXCEPTION_CLASS));
+        return Collections.emptyList();
     }
 
     public static CircuitBreakerConfigurationBuilder builder() {
@@ -179,12 +213,20 @@ public class CircuitBreakerConfiguration {
         return this.writableStackTraceEnabled;
     }
 
+    public int getNumberOfRecordedHistoryResponses() {
+        return this.numberOfRecordedHistoryResponses;
+    }
+
     public Set<Integer> getRecordHttpStatuses() {
         return this.recordHttpStatuses;
     }
 
     public List<Class<? extends RuntimeException>> getRecordExceptions() {
         return this.recordExceptions;
+    }
+
+    public boolean isRecordProcessingFailures() {
+        return recordProcessingFailures;
     }
 
     public static class CircuitBreakerConfigurationBuilder {
@@ -208,6 +250,9 @@ public class CircuitBreakerConfiguration {
         private boolean recordHttpStatuses$set;
         private List<Class<? extends RuntimeException>> recordExceptions$value;
         private boolean recordExceptions$set;
+        private boolean recordProcessingFailures = true;
+        private int numberOfRecordedHistoryResponses$value;
+        private boolean numberOfRecordedHistoryResponses$set;
 
         CircuitBreakerConfigurationBuilder() {}
 
@@ -278,6 +323,19 @@ public class CircuitBreakerConfiguration {
             return this;
         }
 
+        public CircuitBreakerConfigurationBuilder recordProcessingFailures(
+                boolean recordProcessingFailures) {
+            this.recordProcessingFailures = recordProcessingFailures;
+            return this;
+        }
+
+        public CircuitBreakerConfigurationBuilder numberOfRecordedHistoryResponses(
+                int numberOfRecordedHistoryResponses) {
+            this.numberOfRecordedHistoryResponses$value = numberOfRecordedHistoryResponses;
+            this.numberOfRecordedHistoryResponses$set = true;
+            return this;
+        }
+
         public CircuitBreakerConfiguration build() {
             int failureRateThreshold$value = this.failureRateThreshold$value;
             if (!this.failureRateThreshold$set) {
@@ -325,6 +383,9 @@ public class CircuitBreakerConfiguration {
             if (!this.recordExceptions$set) {
                 recordExceptions$value = defaultRecordExceptions();
             }
+            if (!this.numberOfRecordedHistoryResponses$set) {
+                numberOfRecordedHistoryResponses$value = NUMBER_OF_RECORDED_HISTORY_RESPONSES;
+            }
             return new CircuitBreakerConfiguration(
                     failureRateThreshold$value,
                     slowCallRateThreshold$value,
@@ -335,7 +396,9 @@ public class CircuitBreakerConfiguration {
                     slowCallDurationThreshold$value,
                     writableStackTraceEnabled$value,
                     recordHttpStatuses$value,
-                    recordExceptions$value);
+                    recordExceptions$value,
+                    recordProcessingFailures,
+                    numberOfRecordedHistoryResponses$value);
         }
 
         public String toString() {
@@ -359,6 +422,10 @@ public class CircuitBreakerConfiguration {
                     + this.recordHttpStatuses$value
                     + ", recordExceptions$value="
                     + this.recordExceptions$value
+                    + ", recordExceptions$value="
+                    + this.recordExceptions$value
+                    + ", numberOfRecordedHistoryResponses$value="
+                    + this.numberOfRecordedHistoryResponses$value
                     + ")";
         }
     }

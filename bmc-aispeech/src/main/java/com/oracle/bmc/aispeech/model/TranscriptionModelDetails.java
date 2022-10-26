@@ -5,22 +5,22 @@
 package com.oracle.bmc.aispeech.model;
 
 /**
- * Model details.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Model details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = TranscriptionModelDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = TranscriptionModelDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class TranscriptionModelDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"domain", "languageCode"})
     public TranscriptionModelDetails(Domain domain, LanguageCode languageCode) {
@@ -31,55 +31,39 @@ public final class TranscriptionModelDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Domain for input files.
-         **/
+        /** Domain for input files. */
         @com.fasterxml.jackson.annotation.JsonProperty("domain")
         private Domain domain;
 
         /**
          * Domain for input files.
+         *
          * @param domain the value to set
          * @return this builder
-         **/
+         */
         public Builder domain(Domain domain) {
             this.domain = domain;
             this.__explicitlySet__.add("domain");
             return this;
         }
         /**
-         * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
-         * - en-US: English - United States
-         * - es-ES: Spanish - Spain
-         * - pt-BR: Portuguese - Brazil
-         * - en-GB: English - Great Britain
-         * - en-AU: English - Australia
-         * - en-IN: English - India
-         * - hi-IN: Hindi - India
-         * - fr-FR: French - France
-         * - de-DE: German - Germany
-         * - it-IT: Italian - Italy
-         *
-         **/
+         * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. - en-US:
+         * English - United States - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB:
+         * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN:
+         * Hindi - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private LanguageCode languageCode;
 
         /**
-         * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
-         * - en-US: English - United States
-         * - es-ES: Spanish - Spain
-         * - pt-BR: Portuguese - Brazil
-         * - en-GB: English - Great Britain
-         * - en-AU: English - Australia
-         * - en-IN: English - India
-         * - hi-IN: Hindi - India
-         * - fr-FR: French - France
-         * - de-DE: German - Germany
-         * - it-IT: Italian - Italy
+         * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. - en-US:
+         * English - United States - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB:
+         * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN:
+         * Hindi - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
          *
          * @param languageCode the value to set
          * @return this builder
-         **/
+         */
         public Builder languageCode(LanguageCode languageCode) {
             this.languageCode = languageCode;
             this.__explicitlySet__.add("languageCode");
@@ -110,9 +94,7 @@ public final class TranscriptionModelDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -121,15 +103,13 @@ public final class TranscriptionModelDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * Domain for input files.
-     **/
-    public enum Domain {
+    /** Domain for input files. */
+    public enum Domain implements com.oracle.bmc.http.internal.BmcEnum {
         Generic("GENERIC"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -167,35 +147,26 @@ public final class TranscriptionModelDetails
             return UnknownEnumValue;
         }
     };
-    /**
-     * Domain for input files.
-     **/
+    /** Domain for input files. */
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
     private final Domain domain;
 
     /**
      * Domain for input files.
+     *
      * @return the value
-     **/
+     */
     public Domain getDomain() {
         return domain;
     }
 
     /**
-     * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
-     * - en-US: English - United States
-     * - es-ES: Spanish - Spain
-     * - pt-BR: Portuguese - Brazil
-     * - en-GB: English - Great Britain
-     * - en-AU: English - Australia
-     * - en-IN: English - India
-     * - hi-IN: Hindi - India
-     * - fr-FR: French - France
-     * - de-DE: German - Germany
-     * - it-IT: Italian - Italy
-     *
-     **/
-    public enum LanguageCode {
+     * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. - en-US:
+     * English - United States - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB:
+     * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN: Hindi
+     * - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
+     */
+    public enum LanguageCode implements com.oracle.bmc.http.internal.BmcEnum {
         EnUs("en-US"),
         EsEs("es-ES"),
         PtBr("pt-BR"),
@@ -208,8 +179,8 @@ public final class TranscriptionModelDetails
         ItIt("it-IT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -249,37 +220,22 @@ public final class TranscriptionModelDetails
         }
     };
     /**
-     * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
-     * - en-US: English - United States
-     * - es-ES: Spanish - Spain
-     * - pt-BR: Portuguese - Brazil
-     * - en-GB: English - Great Britain
-     * - en-AU: English - Australia
-     * - en-IN: English - India
-     * - hi-IN: Hindi - India
-     * - fr-FR: French - France
-     * - de-DE: German - Germany
-     * - it-IT: Italian - Italy
-     *
-     **/
+     * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. - en-US:
+     * English - United States - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB:
+     * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN: Hindi
+     * - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final LanguageCode languageCode;
 
     /**
-     * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
-     * - en-US: English - United States
-     * - es-ES: Spanish - Spain
-     * - pt-BR: Portuguese - Brazil
-     * - en-GB: English - Great Britain
-     * - en-AU: English - Australia
-     * - en-IN: English - India
-     * - hi-IN: Hindi - India
-     * - fr-FR: French - France
-     * - de-DE: German - Germany
-     * - it-IT: Italian - Italy
+     * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. - en-US:
+     * English - United States - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB:
+     * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN: Hindi
+     * - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
      *
      * @return the value
-     **/
+     */
     public LanguageCode getLanguageCode() {
         return languageCode;
     }
@@ -291,6 +247,7 @@ public final class TranscriptionModelDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

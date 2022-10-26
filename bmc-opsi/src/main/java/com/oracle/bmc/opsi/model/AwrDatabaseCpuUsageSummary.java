@@ -5,22 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * A summary of the AWR CPU resource limits and metrics.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A summary of the AWR CPU resource limits and metrics. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AwrDatabaseCpuUsageSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AwrDatabaseCpuUsageSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AwrDatabaseCpuUsageSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timestamp", "avgUsageInSecs"})
     public AwrDatabaseCpuUsageSummary(java.util.Date timestamp, Double avgUsageInSecs) {
@@ -31,33 +31,31 @@ public final class AwrDatabaseCpuUsageSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The timestamp for the CPU summary data.
-         **/
+        /** The timestamp for the CPU summary data. */
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
          * The timestamp for the CPU summary data.
+         *
          * @param timestamp the value to set
          * @return this builder
-         **/
+         */
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-        /**
-         * The average CPU usage per second.
-         **/
+        /** The average CPU usage per second. */
         @com.fasterxml.jackson.annotation.JsonProperty("avgUsageInSecs")
         private Double avgUsageInSecs;
 
         /**
          * The average CPU usage per second.
+         *
          * @param avgUsageInSecs the value to set
          * @return this builder
-         **/
+         */
         public Builder avgUsageInSecs(Double avgUsageInSecs) {
             this.avgUsageInSecs = avgUsageInSecs;
             this.__explicitlySet__.add("avgUsageInSecs");
@@ -88,9 +86,7 @@ public final class AwrDatabaseCpuUsageSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -99,30 +95,28 @@ public final class AwrDatabaseCpuUsageSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * The timestamp for the CPU summary data.
-     **/
+    /** The timestamp for the CPU summary data. */
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
      * The timestamp for the CPU summary data.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimestamp() {
         return timestamp;
     }
 
-    /**
-     * The average CPU usage per second.
-     **/
+    /** The average CPU usage per second. */
     @com.fasterxml.jackson.annotation.JsonProperty("avgUsageInSecs")
     private final Double avgUsageInSecs;
 
     /**
      * The average CPU usage per second.
+     *
      * @return the value
-     **/
+     */
     public Double getAvgUsageInSecs() {
         return avgUsageInSecs;
     }
@@ -134,6 +128,7 @@ public final class AwrDatabaseCpuUsageSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

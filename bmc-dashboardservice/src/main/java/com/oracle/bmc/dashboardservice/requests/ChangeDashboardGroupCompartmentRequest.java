@@ -6,7 +6,10 @@ package com.oracle.bmc.dashboardservice.requests;
 
 import com.oracle.bmc.dashboardservice.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dashboardservice/ChangeDashboardGroupCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeDashboardGroupCompartmentRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dashboardservice/ChangeDashboardGroupCompartmentExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ChangeDashboardGroupCompartmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
 public class ChangeDashboardGroupCompartmentRequest
@@ -14,57 +17,53 @@ public class ChangeDashboardGroupCompartmentRequest
                 com.oracle.bmc.dashboardservice.model.ChangeDashboardGroupCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard group.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the dashboard group.
      */
     private String dashboardGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard group.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the dashboard group.
      */
     public String getDashboardGroupId() {
         return dashboardGroupId;
     }
-    /**
-     * The information to be updated.
-     */
+    /** The information to be updated. */
     private com.oracle.bmc.dashboardservice.model.ChangeDashboardGroupCompartmentDetails
             changeDashboardGroupCompartmentDetails;
 
-    /**
-     * The information to be updated.
-     */
+    /** The information to be updated. */
     public com.oracle.bmc.dashboardservice.model.ChangeDashboardGroupCompartmentDetails
             getChangeDashboardGroupCompartmentDetails() {
         return changeDashboardGroupCompartmentDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the {@code if-match} parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the {@code if-match} parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -72,6 +71,7 @@ public class ChangeDashboardGroupCompartmentRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -84,17 +84,19 @@ public class ChangeDashboardGroupCompartmentRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeDashboardGroupCompartmentRequest,
                     com.oracle.bmc.dashboardservice.model.ChangeDashboardGroupCompartmentDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard group.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the dashboard group.
          */
         private String dashboardGroupId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard group.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the dashboard group.
+         *
          * @param dashboardGroupId the value to set
          * @return this builder instance
          */
@@ -103,14 +105,13 @@ public class ChangeDashboardGroupCompartmentRequest
             return this;
         }
 
-        /**
-         * The information to be updated.
-         */
+        /** The information to be updated. */
         private com.oracle.bmc.dashboardservice.model.ChangeDashboardGroupCompartmentDetails
                 changeDashboardGroupCompartmentDetails = null;
 
         /**
          * The information to be updated.
+         *
          * @param changeDashboardGroupCompartmentDetails the value to set
          * @return this builder instance
          */
@@ -122,21 +123,18 @@ public class ChangeDashboardGroupCompartmentRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the {@code if-match} parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the {@code if-match} parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -147,12 +145,15 @@ public class ChangeDashboardGroupCompartmentRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -163,18 +164,19 @@ public class ChangeDashboardGroupCompartmentRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -186,6 +188,7 @@ public class ChangeDashboardGroupCompartmentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ChangeDashboardGroupCompartmentRequest o) {
@@ -199,12 +202,14 @@ public class ChangeDashboardGroupCompartmentRequest
         }
 
         /**
-         * Build the instance of ChangeDashboardGroupCompartmentRequest as configured by this builder
+         * Build the instance of ChangeDashboardGroupCompartmentRequest as configured by this
+         * builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ChangeDashboardGroupCompartmentRequest
          */
@@ -217,6 +222,7 @@ public class ChangeDashboardGroupCompartmentRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -228,9 +234,11 @@ public class ChangeDashboardGroupCompartmentRequest
         }
 
         /**
-         * Build the instance of ChangeDashboardGroupCompartmentRequest as configured by this builder
+         * Build the instance of ChangeDashboardGroupCompartmentRequest as configured by this
+         * builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ChangeDashboardGroupCompartmentRequest
@@ -243,12 +251,14 @@ public class ChangeDashboardGroupCompartmentRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ChangeDashboardGroupCompartmentRequest(dashboardGroupId, changeDashboardGroupCompartmentDetails, ifMatch, opcRequestId);
+            // new ChangeDashboardGroupCompartmentRequest(dashboardGroupId,
+            // changeDashboardGroupCompartmentDetails, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -261,6 +271,7 @@ public class ChangeDashboardGroupCompartmentRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

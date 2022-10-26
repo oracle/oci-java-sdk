@@ -4,336 +4,41 @@
  */
 package com.oracle.bmc.core;
 
-import com.oracle.bmc.core.internal.http.*;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
+import java.util.Objects;
+
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public class VirtualNetworkClient implements VirtualNetwork {
-    /**
-     * Service instance for VirtualNetwork.
-     */
+public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncClient
+        implements VirtualNetwork {
+    /** Service instance for VirtualNetwork. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("VIRTUALNETWORK")
                     .serviceEndpointPrefix("iaas")
                     .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
                     .build();
-    // attempt twice if it's instance principals, immediately failures will try to refresh the token
-    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(VirtualNetworkAsyncClient.class);
 
-    com.oracle.bmc.http.internal.RestClient getClient() {
-        return client;
-    }
-
+    protected final java.util.concurrent.ExecutorService executorService;
     private final VirtualNetworkWaiters waiters;
 
     private final VirtualNetworkPaginators paginators;
-    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-            authenticationDetailsProvider;
-    private final java.util.concurrent.ExecutorService executorService;
-    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
-    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
-            apacheConnectionClosingStrategy;
-    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
-    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
-    private final java.util.Map<
-                    com.oracle.bmc.http.signing.SigningStrategy,
-                    com.oracle.bmc.http.signing.RequestSignerFactory>
-            signingStrategyRequestSignerFactories;
-    private final boolean isNonBufferingApacheClient;
-    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
-    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-            circuitBreakerConfiguration;
 
-    /**
-     * Used to synchronize any updates on the `this.client` object.
-     */
-    private final Object clientUpdate = new Object();
-
-    /**
-     * Stores the actual client object used to make the API calls.
-     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
-     *       For any writes to the object, please synchronize on `this.clientUpdate`.
-     */
-    private volatile com.oracle.bmc.http.internal.RestClient client;
-
-    /**
-     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
-     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
-     */
-    private volatile String overrideEndpoint = null;
-
-    /**
-     * Creates a new service instance using the given authentication provider.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     */
-    public VirtualNetworkClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     */
-    public VirtualNetworkClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(authenticationDetailsProvider, configuration, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     */
-    public VirtualNetworkClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     */
-    public VirtualNetworkClient(
+    private VirtualNetworkClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public VirtualNetworkClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                additionalClientConfigurators,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public VirtualNetworkClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
-                        .createDefaultRequestSignerFactories(),
-                additionalClientConfigurators,
-                endpoint);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public VirtualNetworkClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
-     */
-    public VirtualNetworkClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
             java.util.concurrent.ExecutorService executorService) {
-        this(
+        super(
+                builder,
                 authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                executorService,
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * Use the {@link Builder} to get access to all these parameters.
-     *
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
-     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
-     */
-    protected VirtualNetworkClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            java.util.concurrent.ExecutorService executorService,
-            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
-        this.authenticationDetailsProvider = authenticationDetailsProvider;
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
-                new java.util.ArrayList<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
-            authenticationDetailsConfigurators.addAll(
-                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
-                                    this.authenticationDetailsProvider)
-                            .getClientConfigurators());
-        }
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
-                new java.util.ArrayList<>(additionalClientConfigurators);
-        allConfigurators.addAll(authenticationDetailsConfigurators);
-        this.restClientFactory =
-                restClientFactoryBuilder
-                        .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(allConfigurators)
-                        .build();
-        this.isNonBufferingApacheClient =
-                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        this.restClientFactory.getClientConfigurator());
-        this.apacheConnectionClosingStrategy =
-                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
-                        restClientFactory.getClientConfigurator());
-
-        this.clientConfigurationToUse =
-                (configuration != null)
-                        ? configuration
-                        : com.oracle.bmc.ClientConfiguration.builder().build();
-        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
-        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
-        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
-        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-                userCircuitBreakerConfiguration =
-                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
-                                configuration);
-        if (userCircuitBreakerConfiguration == null) {
-            this.circuitBreakerConfiguration =
-                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
-        } else {
-            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
-        }
-
-        this.refreshClient();
+                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -356,28 +61,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
         this.waiters = new VirtualNetworkWaiters(executorService, this);
 
         this.paginators = new VirtualNetworkPaginators(this);
-
-        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
-            com.oracle.bmc.auth.RegionProvider provider =
-                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
-
-            if (provider.getRegion() != null) {
-                this.setRegion(provider.getRegion());
-                if (endpoint != null) {
-                    LOG.info(
-                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
-                            provider.getRegion(),
-                            endpoint);
-                }
-            }
-        }
-        if (endpoint != null) {
-            setEndpoint(endpoint);
-        }
     }
 
     /**
      * Create a builder for this client.
+     *
      * @return builder
      */
     public static Builder builder() {
@@ -385,8 +73,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
+     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, VirtualNetworkClient> {
@@ -401,6 +89,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
 
         /**
          * Set the ExecutorService for the client to be created.
+         *
          * @param executorService executorService
          * @return this builder
          */
@@ -411,9620 +100,7157 @@ public class VirtualNetworkClient implements VirtualNetwork {
 
         /**
          * Build the client.
+         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public VirtualNetworkClient build(
                 @javax.annotation.Nonnull
-                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                        authenticationDetailsProvider) {
-            if (authenticationDetailsProvider == null) {
-                throw new NullPointerException(
-                        "authenticationDetailsProvider is marked non-null but is null");
-            }
-            return new VirtualNetworkClient(
-                    authenticationDetailsProvider,
-                    configuration,
-                    clientConfigurator,
-                    requestSignerFactory,
-                    signingStrategyRequestSignerFactories,
-                    additionalClientConfigurators,
-                    endpoint,
-                    executorService);
+                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                                authenticationDetailsProvider) {
+            return new VirtualNetworkClient(this, authenticationDetailsProvider, executorService);
         }
-    }
-
-    @Override
-    public void refreshClient() {
-        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                this.defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        this.signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
-            }
-        }
-
-        com.oracle.bmc.http.internal.RestClient refreshedClient =
-                this.restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        this.clientConfigurationToUse,
-                        this.isNonBufferingApacheClient,
-                        null,
-                        this.circuitBreakerConfiguration);
-
-        synchronized (clientUpdate) {
-            if (this.overrideEndpoint != null) {
-                refreshedClient.setEndpoint(this.overrideEndpoint);
-            }
-
-            this.client = refreshedClient;
-        }
-
-        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint) {
-        LOG.info("Setting endpoint to {}", endpoint);
-
-        synchronized (clientUpdate) {
-            this.overrideEndpoint = endpoint;
-            client.setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
-        }
-        return endpoint;
     }
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        java.util.Optional<String> endpoint =
-                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
-        if (endpoint.isPresent()) {
-            setEndpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + SERVICE + " is not known in region " + region);
-        }
+        super.setRegion(region);
     }
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
-        try {
-            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-            setRegion(region);
-        } catch (IllegalArgumentException e) {
-            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-            setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public void close() {
-        client.close();
+        super.setRegion(regionId);
     }
 
     @Override
     public AddDrgRouteDistributionStatementsResponse addDrgRouteDistributionStatements(
             AddDrgRouteDistributionStatementsRequest request) {
-        LOG.trace("Called addDrgRouteDistributionStatements");
-        final AddDrgRouteDistributionStatementsRequest interceptedRequest =
-                AddDrgRouteDistributionStatementsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AddDrgRouteDistributionStatementsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getDrgRouteDistributionId(), "drgRouteDistributionId must not be blank");
+        Objects.requireNonNull(
+                request.getAddDrgRouteDistributionStatementsDetails(),
+                "addDrgRouteDistributionStatementsDetails is required");
+
+        return clientCall(request, AddDrgRouteDistributionStatementsResponse::builder)
+                .logger(LOG, "addDrgRouteDistributionStatements")
+                .serviceDetails(
                         "VirtualNetwork",
                         "AddDrgRouteDistributionStatements",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/AddDrgRouteDistributionStatements");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, AddDrgRouteDistributionStatementsResponse>
-                transformer =
-                        AddDrgRouteDistributionStatementsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getAddDrgRouteDistributionStatementsDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/AddDrgRouteDistributionStatements")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddDrgRouteDistributionStatementsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteDistributions")
+                .appendPathParam(request.getDrgRouteDistributionId())
+                .appendPathParam("actions")
+                .appendPathParam("addDrgRouteDistributionStatements")
+                .accept("application/json")
+                .hasBody()
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DrgRouteDistributionStatement.class,
+                        AddDrgRouteDistributionStatementsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddDrgRouteDistributionStatementsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public AddDrgRouteRulesResponse addDrgRouteRules(AddDrgRouteRulesRequest request) {
-        LOG.trace("Called addDrgRouteRules");
-        final AddDrgRouteRulesRequest interceptedRequest =
-                AddDrgRouteRulesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AddDrgRouteRulesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getDrgRouteTableId(), "drgRouteTableId must not be blank");
+        Objects.requireNonNull(
+                request.getAddDrgRouteRulesDetails(), "addDrgRouteRulesDetails is required");
+
+        return clientCall(request, AddDrgRouteRulesResponse::builder)
+                .logger(LOG, "addDrgRouteRules")
+                .serviceDetails(
                         "VirtualNetwork",
                         "AddDrgRouteRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/AddDrgRouteRules");
-        java.util.function.Function<javax.ws.rs.core.Response, AddDrgRouteRulesResponse>
-                transformer =
-                        AddDrgRouteRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getAddDrgRouteRulesDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/AddDrgRouteRules")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddDrgRouteRulesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteTables")
+                .appendPathParam(request.getDrgRouteTableId())
+                .appendPathParam("actions")
+                .appendPathParam("addDrgRouteRules")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DrgRouteRule.class,
+                        AddDrgRouteRulesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddDrgRouteRulesResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public AddIpv6SubnetCidrResponse addIpv6SubnetCidr(AddIpv6SubnetCidrRequest request) {
-        LOG.trace("Called addIpv6SubnetCidr");
-        final AddIpv6SubnetCidrRequest interceptedRequest =
-                AddIpv6SubnetCidrConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AddIpv6SubnetCidrConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
+        Objects.requireNonNull(
+                request.getAddSubnetIpv6CidrDetails(), "addSubnetIpv6CidrDetails is required");
+
+        return clientCall(request, AddIpv6SubnetCidrResponse::builder)
+                .logger(LOG, "addIpv6SubnetCidr")
+                .serviceDetails(
                         "VirtualNetwork",
                         "AddIpv6SubnetCidr",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/AddIpv6SubnetCidr");
-        java.util.function.Function<javax.ws.rs.core.Response, AddIpv6SubnetCidrResponse>
-                transformer =
-                        AddIpv6SubnetCidrConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getAddSubnetIpv6CidrDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/AddIpv6SubnetCidr")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddIpv6SubnetCidrRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("subnets")
+                .appendPathParam(request.getSubnetId())
+                .appendPathParam("actions")
+                .appendPathParam("addIpv6Cidr")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString("etag", AddIpv6SubnetCidrResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddIpv6SubnetCidrResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", AddIpv6SubnetCidrResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public AddIpv6VcnCidrResponse addIpv6VcnCidr(AddIpv6VcnCidrRequest request) {
-        LOG.trace("Called addIpv6VcnCidr");
-        final AddIpv6VcnCidrRequest interceptedRequest =
-                AddIpv6VcnCidrConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AddIpv6VcnCidrConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
+
+        return clientCall(request, AddIpv6VcnCidrResponse::builder)
+                .logger(LOG, "addIpv6VcnCidr")
+                .serviceDetails(
                         "VirtualNetwork",
                         "AddIpv6VcnCidr",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/AddIpv6VcnCidr");
-        java.util.function.Function<javax.ws.rs.core.Response, AddIpv6VcnCidrResponse> transformer =
-                AddIpv6VcnCidrConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getAddVcnIpv6CidrDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/AddIpv6VcnCidr")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddIpv6VcnCidrRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .appendPathParam(request.getVcnId())
+                .appendPathParam("actions")
+                .appendPathParam("addIpv6Cidr")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", AddIpv6VcnCidrResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", AddIpv6VcnCidrResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public AddNetworkSecurityGroupSecurityRulesResponse addNetworkSecurityGroupSecurityRules(
             AddNetworkSecurityGroupSecurityRulesRequest request) {
-        LOG.trace("Called addNetworkSecurityGroupSecurityRules");
-        final AddNetworkSecurityGroupSecurityRulesRequest interceptedRequest =
-                AddNetworkSecurityGroupSecurityRulesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AddNetworkSecurityGroupSecurityRulesConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getAddNetworkSecurityGroupSecurityRulesDetails(),
+                "addNetworkSecurityGroupSecurityRulesDetails is required");
+
+        return clientCall(request, AddNetworkSecurityGroupSecurityRulesResponse::builder)
+                .logger(LOG, "addNetworkSecurityGroupSecurityRules")
+                .serviceDetails(
                         "VirtualNetwork",
                         "AddNetworkSecurityGroupSecurityRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/AddNetworkSecurityGroupSecurityRules");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, AddNetworkSecurityGroupSecurityRulesResponse>
-                transformer =
-                        AddNetworkSecurityGroupSecurityRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getAddNetworkSecurityGroupSecurityRulesDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/AddNetworkSecurityGroupSecurityRules")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddNetworkSecurityGroupSecurityRulesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkSecurityGroups")
+                .appendPathParam(request.getNetworkSecurityGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("addSecurityRules")
+                .accept("application/json")
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.AddedNetworkSecurityGroupSecurityRules.class,
+                        AddNetworkSecurityGroupSecurityRulesResponse.Builder
+                                ::addedNetworkSecurityGroupSecurityRules)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddNetworkSecurityGroupSecurityRulesResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public AddPublicIpPoolCapacityResponse addPublicIpPoolCapacity(
             AddPublicIpPoolCapacityRequest request) {
-        LOG.trace("Called addPublicIpPoolCapacity");
-        final AddPublicIpPoolCapacityRequest interceptedRequest =
-                AddPublicIpPoolCapacityConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AddPublicIpPoolCapacityConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getPublicIpPoolId(), "publicIpPoolId must not be blank");
+        Objects.requireNonNull(
+                request.getAddPublicIpPoolCapacityDetails(),
+                "addPublicIpPoolCapacityDetails is required");
+
+        return clientCall(request, AddPublicIpPoolCapacityResponse::builder)
+                .logger(LOG, "addPublicIpPoolCapacity")
+                .serviceDetails(
                         "VirtualNetwork",
                         "AddPublicIpPoolCapacity",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/AddPublicIpPoolCapacity");
-        java.util.function.Function<javax.ws.rs.core.Response, AddPublicIpPoolCapacityResponse>
-                transformer =
-                        AddPublicIpPoolCapacityConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getAddPublicIpPoolCapacityDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/AddPublicIpPoolCapacity")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddPublicIpPoolCapacityRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIpPools")
+                .appendPathParam(request.getPublicIpPoolId())
+                .appendPathParam("actions")
+                .appendPathParam("addCapacity")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.PublicIpPool.class,
+                        AddPublicIpPoolCapacityResponse.Builder::publicIpPool)
+                .handleResponseHeaderString("etag", AddPublicIpPoolCapacityResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddPublicIpPoolCapacityResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public AddVcnCidrResponse addVcnCidr(AddVcnCidrRequest request) {
-        LOG.trace("Called addVcnCidr");
-        final AddVcnCidrRequest interceptedRequest = AddVcnCidrConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AddVcnCidrConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
+        Objects.requireNonNull(request.getAddVcnCidrDetails(), "addVcnCidrDetails is required");
+
+        return clientCall(request, AddVcnCidrResponse::builder)
+                .logger(LOG, "addVcnCidr")
+                .serviceDetails(
                         "VirtualNetwork",
                         "AddVcnCidr",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/AddVcnCidr");
-        java.util.function.Function<javax.ws.rs.core.Response, AddVcnCidrResponse> transformer =
-                AddVcnCidrConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getAddVcnCidrDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/AddVcnCidr")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddVcnCidrRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .appendPathParam(request.getVcnId())
+                .appendPathParam("actions")
+                .appendPathParam("addCidr")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", AddVcnCidrResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", AddVcnCidrResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public AdvertiseByoipRangeResponse advertiseByoipRange(AdvertiseByoipRangeRequest request) {
-        LOG.trace("Called advertiseByoipRange");
-        final AdvertiseByoipRangeRequest interceptedRequest =
-                AdvertiseByoipRangeConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AdvertiseByoipRangeConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
+
+        return clientCall(request, AdvertiseByoipRangeResponse::builder)
+                .logger(LOG, "advertiseByoipRange")
+                .serviceDetails(
                         "VirtualNetwork",
                         "AdvertiseByoipRange",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/AdvertiseByoipRange");
-        java.util.function.Function<javax.ws.rs.core.Response, AdvertiseByoipRangeResponse>
-                transformer =
-                        AdvertiseByoipRangeConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/AdvertiseByoipRange")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AdvertiseByoipRangeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoipRanges")
+                .appendPathParam(request.getByoipRangeId())
+                .appendPathParam("actions")
+                .appendPathParam("advertise")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", AdvertiseByoipRangeResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public AttachServiceIdResponse attachServiceId(AttachServiceIdRequest request) {
-        LOG.trace("Called attachServiceId");
-        final AttachServiceIdRequest interceptedRequest =
-                AttachServiceIdConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AttachServiceIdConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getServiceGatewayId(), "serviceGatewayId must not be blank");
+        Objects.requireNonNull(
+                request.getAttachServiceDetails(), "attachServiceDetails is required");
+
+        return clientCall(request, AttachServiceIdResponse::builder)
+                .logger(LOG, "attachServiceId")
+                .serviceDetails(
                         "VirtualNetwork",
                         "AttachServiceId",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/AttachServiceId");
-        java.util.function.Function<javax.ws.rs.core.Response, AttachServiceIdResponse>
-                transformer =
-                        AttachServiceIdConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getAttachServiceDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/AttachServiceId")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AttachServiceIdRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("serviceGateways")
+                .appendPathParam(request.getServiceGatewayId())
+                .appendPathParam("actions")
+                .appendPathParam("attachService")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ServiceGateway.class,
+                        AttachServiceIdResponse.Builder::serviceGateway)
+                .handleResponseHeaderString(
+                        "opc-request-id", AttachServiceIdResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public BulkAddVirtualCircuitPublicPrefixesResponse bulkAddVirtualCircuitPublicPrefixes(
             BulkAddVirtualCircuitPublicPrefixesRequest request) {
-        LOG.trace("Called bulkAddVirtualCircuitPublicPrefixes");
-        final BulkAddVirtualCircuitPublicPrefixesRequest interceptedRequest =
-                BulkAddVirtualCircuitPublicPrefixesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                BulkAddVirtualCircuitPublicPrefixesConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
+        Objects.requireNonNull(
+                request.getBulkAddVirtualCircuitPublicPrefixesDetails(),
+                "bulkAddVirtualCircuitPublicPrefixesDetails is required");
+
+        return clientCall(request, BulkAddVirtualCircuitPublicPrefixesResponse::builder)
+                .logger(LOG, "bulkAddVirtualCircuitPublicPrefixes")
+                .serviceDetails(
                         "VirtualNetwork",
                         "BulkAddVirtualCircuitPublicPrefixes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/BulkAddVirtualCircuitPublicPrefixes");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, BulkAddVirtualCircuitPublicPrefixesResponse>
-                transformer =
-                        BulkAddVirtualCircuitPublicPrefixesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getBulkAddVirtualCircuitPublicPrefixesDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/BulkAddVirtualCircuitPublicPrefixes")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BulkAddVirtualCircuitPublicPrefixesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("virtualCircuits")
+                .appendPathParam(request.getVirtualCircuitId())
+                .appendPathParam("actions")
+                .appendPathParam("bulkAddPublicPrefixes")
+                .accept("application/json")
+                .hasBody()
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public BulkDeleteVirtualCircuitPublicPrefixesResponse bulkDeleteVirtualCircuitPublicPrefixes(
             BulkDeleteVirtualCircuitPublicPrefixesRequest request) {
-        LOG.trace("Called bulkDeleteVirtualCircuitPublicPrefixes");
-        final BulkDeleteVirtualCircuitPublicPrefixesRequest interceptedRequest =
-                BulkDeleteVirtualCircuitPublicPrefixesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                BulkDeleteVirtualCircuitPublicPrefixesConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
+        Objects.requireNonNull(
+                request.getBulkDeleteVirtualCircuitPublicPrefixesDetails(),
+                "bulkDeleteVirtualCircuitPublicPrefixesDetails is required");
+
+        return clientCall(request, BulkDeleteVirtualCircuitPublicPrefixesResponse::builder)
+                .logger(LOG, "bulkDeleteVirtualCircuitPublicPrefixes")
+                .serviceDetails(
                         "VirtualNetwork",
                         "BulkDeleteVirtualCircuitPublicPrefixes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/BulkDeleteVirtualCircuitPublicPrefixes");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, BulkDeleteVirtualCircuitPublicPrefixesResponse>
-                transformer =
-                        BulkDeleteVirtualCircuitPublicPrefixesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getBulkDeleteVirtualCircuitPublicPrefixesDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/BulkDeleteVirtualCircuitPublicPrefixes")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BulkDeleteVirtualCircuitPublicPrefixesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("virtualCircuits")
+                .appendPathParam(request.getVirtualCircuitId())
+                .appendPathParam("actions")
+                .appendPathParam("bulkDeletePublicPrefixes")
+                .accept("application/json")
+                .hasBody()
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ChangeByoipRangeCompartmentResponse changeByoipRangeCompartment(
             ChangeByoipRangeCompartmentRequest request) {
-        LOG.trace("Called changeByoipRangeCompartment");
-        final ChangeByoipRangeCompartmentRequest interceptedRequest =
-                ChangeByoipRangeCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeByoipRangeCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeByoipRangeCompartmentDetails(),
+                "changeByoipRangeCompartmentDetails is required");
+
+        return clientCall(request, ChangeByoipRangeCompartmentResponse::builder)
+                .logger(LOG, "changeByoipRangeCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeByoipRangeCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ChangeByoipRangeCompartment");
-        java.util.function.Function<javax.ws.rs.core.Response, ChangeByoipRangeCompartmentResponse>
-                transformer =
-                        ChangeByoipRangeCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeByoipRangeCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ChangeByoipRangeCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeByoipRangeCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoipRanges")
+                .appendPathParam(request.getByoipRangeId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeByoipRangeCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeCaptureFilterCompartmentResponse changeCaptureFilterCompartment(
             ChangeCaptureFilterCompartmentRequest request) {
-        LOG.trace("Called changeCaptureFilterCompartment");
-        final ChangeCaptureFilterCompartmentRequest interceptedRequest =
-                ChangeCaptureFilterCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeCaptureFilterCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getCaptureFilterId(), "captureFilterId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeCaptureFilterCompartmentDetails(),
+                "changeCaptureFilterCompartmentDetails is required");
+
+        return clientCall(request, ChangeCaptureFilterCompartmentResponse::builder)
+                .logger(LOG, "changeCaptureFilterCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeCaptureFilterCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/ChangeCaptureFilterCompartment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeCaptureFilterCompartmentResponse>
-                transformer =
-                        ChangeCaptureFilterCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeCaptureFilterCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/ChangeCaptureFilterCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeCaptureFilterCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("captureFilters")
+                .appendPathParam(request.getCaptureFilterId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeCaptureFilterCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeCaptureFilterCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeCaptureFilterCompartmentResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeCpeCompartmentResponse changeCpeCompartment(ChangeCpeCompartmentRequest request) {
-        LOG.trace("Called changeCpeCompartment");
-        final ChangeCpeCompartmentRequest interceptedRequest =
-                ChangeCpeCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeCpeCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getCpeId(), "cpeId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeCpeCompartmentDetails(),
+                "changeCpeCompartmentDetails is required");
+
+        return clientCall(request, ChangeCpeCompartmentResponse::builder)
+                .logger(LOG, "changeCpeCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeCpeCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/ChangeCpeCompartment");
-        java.util.function.Function<javax.ws.rs.core.Response, ChangeCpeCompartmentResponse>
-                transformer =
-                        ChangeCpeCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getChangeCpeCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/ChangeCpeCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeCpeCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cpes")
+                .appendPathParam(request.getCpeId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString("etag", ChangeCpeCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeCpeCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ChangeCrossConnectCompartmentResponse changeCrossConnectCompartment(
             ChangeCrossConnectCompartmentRequest request) {
-        LOG.trace("Called changeCrossConnectCompartment");
-        final ChangeCrossConnectCompartmentRequest interceptedRequest =
-                ChangeCrossConnectCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeCrossConnectCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getCrossConnectId(), "crossConnectId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeCrossConnectCompartmentDetails(),
+                "changeCrossConnectCompartmentDetails is required");
+
+        return clientCall(request, ChangeCrossConnectCompartmentResponse::builder)
+                .logger(LOG, "changeCrossConnectCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeCrossConnectCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/ChangeCrossConnectCompartment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeCrossConnectCompartmentResponse>
-                transformer =
-                        ChangeCrossConnectCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeCrossConnectCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/ChangeCrossConnectCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeCrossConnectCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnects")
+                .appendPathParam(request.getCrossConnectId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeCrossConnectCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeCrossConnectCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ChangeCrossConnectGroupCompartmentResponse changeCrossConnectGroupCompartment(
             ChangeCrossConnectGroupCompartmentRequest request) {
-        LOG.trace("Called changeCrossConnectGroupCompartment");
-        final ChangeCrossConnectGroupCompartmentRequest interceptedRequest =
-                ChangeCrossConnectGroupCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeCrossConnectGroupCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getCrossConnectGroupId(), "crossConnectGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeCrossConnectGroupCompartmentDetails(),
+                "changeCrossConnectGroupCompartmentDetails is required");
+
+        return clientCall(request, ChangeCrossConnectGroupCompartmentResponse::builder)
+                .logger(LOG, "changeCrossConnectGroupCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeCrossConnectGroupCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/ChangeCrossConnectGroupCompartment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeCrossConnectGroupCompartmentResponse>
-                transformer =
-                        ChangeCrossConnectGroupCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeCrossConnectGroupCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/ChangeCrossConnectGroupCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeCrossConnectGroupCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnectGroups")
+                .appendPathParam(request.getCrossConnectGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeCrossConnectGroupCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeCrossConnectGroupCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ChangeDhcpOptionsCompartmentResponse changeDhcpOptionsCompartment(
             ChangeDhcpOptionsCompartmentRequest request) {
-        LOG.trace("Called changeDhcpOptionsCompartment");
-        final ChangeDhcpOptionsCompartmentRequest interceptedRequest =
-                ChangeDhcpOptionsCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeDhcpOptionsCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getDhcpId(), "dhcpId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeDhcpOptionsCompartmentDetails(),
+                "changeDhcpOptionsCompartmentDetails is required");
+
+        return clientCall(request, ChangeDhcpOptionsCompartmentResponse::builder)
+                .logger(LOG, "changeDhcpOptionsCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeDhcpOptionsCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/ChangeDhcpOptionsCompartment");
-        java.util.function.Function<javax.ws.rs.core.Response, ChangeDhcpOptionsCompartmentResponse>
-                transformer =
-                        ChangeDhcpOptionsCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeDhcpOptionsCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/ChangeDhcpOptionsCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeDhcpOptionsCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dhcps")
+                .appendPathParam(request.getDhcpId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeDhcpOptionsCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeDhcpOptionsCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeDrgCompartmentResponse changeDrgCompartment(ChangeDrgCompartmentRequest request) {
-        LOG.trace("Called changeDrgCompartment");
-        final ChangeDrgCompartmentRequest interceptedRequest =
-                ChangeDrgCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeDrgCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getDrgId(), "drgId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeDrgCompartmentDetails(),
+                "changeDrgCompartmentDetails is required");
+
+        return clientCall(request, ChangeDrgCompartmentResponse::builder)
+                .logger(LOG, "changeDrgCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeDrgCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/ChangeDrgCompartment");
-        java.util.function.Function<javax.ws.rs.core.Response, ChangeDrgCompartmentResponse>
-                transformer =
-                        ChangeDrgCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getChangeDrgCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/ChangeDrgCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeDrgCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgs")
+                .appendPathParam(request.getDrgId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString("etag", ChangeDrgCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeDrgCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeDrgCompartmentResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeIPSecConnectionCompartmentResponse changeIPSecConnectionCompartment(
             ChangeIPSecConnectionCompartmentRequest request) {
-        LOG.trace("Called changeIPSecConnectionCompartment");
-        final ChangeIPSecConnectionCompartmentRequest interceptedRequest =
-                ChangeIPSecConnectionCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeIPSecConnectionCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeIPSecConnectionCompartmentDetails(),
+                "changeIPSecConnectionCompartmentDetails is required");
+
+        return clientCall(request, ChangeIPSecConnectionCompartmentResponse::builder)
+                .logger(LOG, "changeIPSecConnectionCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeIPSecConnectionCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/ChangeIPSecConnectionCompartment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeIPSecConnectionCompartmentResponse>
-                transformer =
-                        ChangeIPSecConnectionCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeIPSecConnectionCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/ChangeIPSecConnectionCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeIPSecConnectionCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeIPSecConnectionCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeIPSecConnectionCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ChangeInternetGatewayCompartmentResponse changeInternetGatewayCompartment(
             ChangeInternetGatewayCompartmentRequest request) {
-        LOG.trace("Called changeInternetGatewayCompartment");
-        final ChangeInternetGatewayCompartmentRequest interceptedRequest =
-                ChangeInternetGatewayCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeInternetGatewayCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getIgId(), "igId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeInternetGatewayCompartmentDetails(),
+                "changeInternetGatewayCompartmentDetails is required");
+
+        return clientCall(request, ChangeInternetGatewayCompartmentResponse::builder)
+                .logger(LOG, "changeInternetGatewayCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeInternetGatewayCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/ChangeInternetGatewayCompartment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeInternetGatewayCompartmentResponse>
-                transformer =
-                        ChangeInternetGatewayCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeInternetGatewayCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/ChangeInternetGatewayCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeInternetGatewayCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("internetGateways")
+                .appendPathParam(request.getIgId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeInternetGatewayCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeInternetGatewayCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeLocalPeeringGatewayCompartmentResponse changeLocalPeeringGatewayCompartment(
             ChangeLocalPeeringGatewayCompartmentRequest request) {
-        LOG.trace("Called changeLocalPeeringGatewayCompartment");
-        final ChangeLocalPeeringGatewayCompartmentRequest interceptedRequest =
-                ChangeLocalPeeringGatewayCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeLocalPeeringGatewayCompartmentConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getLocalPeeringGatewayId(), "localPeeringGatewayId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeLocalPeeringGatewayCompartmentDetails(),
+                "changeLocalPeeringGatewayCompartmentDetails is required");
+
+        return clientCall(request, ChangeLocalPeeringGatewayCompartmentResponse::builder)
+                .logger(LOG, "changeLocalPeeringGatewayCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeLocalPeeringGatewayCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ChangeLocalPeeringGatewayCompartment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeLocalPeeringGatewayCompartmentResponse>
-                transformer =
-                        ChangeLocalPeeringGatewayCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeLocalPeeringGatewayCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ChangeLocalPeeringGatewayCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeLocalPeeringGatewayCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("localPeeringGateways")
+                .appendPathParam(request.getLocalPeeringGatewayId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeLocalPeeringGatewayCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeLocalPeeringGatewayCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeNatGatewayCompartmentResponse changeNatGatewayCompartment(
             ChangeNatGatewayCompartmentRequest request) {
-        LOG.trace("Called changeNatGatewayCompartment");
-        final ChangeNatGatewayCompartmentRequest interceptedRequest =
-                ChangeNatGatewayCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeNatGatewayCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getNatGatewayId(), "natGatewayId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeNatGatewayCompartmentDetails(),
+                "changeNatGatewayCompartmentDetails is required");
+
+        return clientCall(request, ChangeNatGatewayCompartmentResponse::builder)
+                .logger(LOG, "changeNatGatewayCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeNatGatewayCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/ChangeNatGatewayCompartment");
-        java.util.function.Function<javax.ws.rs.core.Response, ChangeNatGatewayCompartmentResponse>
-                transformer =
-                        ChangeNatGatewayCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeNatGatewayCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/ChangeNatGatewayCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeNatGatewayCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("natGateways")
+                .appendPathParam(request.getNatGatewayId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeNatGatewayCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeNatGatewayCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeNetworkSecurityGroupCompartmentResponse changeNetworkSecurityGroupCompartment(
             ChangeNetworkSecurityGroupCompartmentRequest request) {
-        LOG.trace("Called changeNetworkSecurityGroupCompartment");
-        final ChangeNetworkSecurityGroupCompartmentRequest interceptedRequest =
-                ChangeNetworkSecurityGroupCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeNetworkSecurityGroupCompartmentConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeNetworkSecurityGroupCompartmentDetails(),
+                "changeNetworkSecurityGroupCompartmentDetails is required");
+
+        return clientCall(request, ChangeNetworkSecurityGroupCompartmentResponse::builder)
+                .logger(LOG, "changeNetworkSecurityGroupCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeNetworkSecurityGroupCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/ChangeNetworkSecurityGroupCompartment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeNetworkSecurityGroupCompartmentResponse>
-                transformer =
-                        ChangeNetworkSecurityGroupCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeNetworkSecurityGroupCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/ChangeNetworkSecurityGroupCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeNetworkSecurityGroupCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkSecurityGroups")
+                .appendPathParam(request.getNetworkSecurityGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeNetworkSecurityGroupCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeNetworkSecurityGroupCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangePublicIpCompartmentResponse changePublicIpCompartment(
             ChangePublicIpCompartmentRequest request) {
-        LOG.trace("Called changePublicIpCompartment");
-        final ChangePublicIpCompartmentRequest interceptedRequest =
-                ChangePublicIpCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangePublicIpCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getPublicIpId(), "publicIpId must not be blank");
+        Objects.requireNonNull(
+                request.getChangePublicIpCompartmentDetails(),
+                "changePublicIpCompartmentDetails is required");
+
+        return clientCall(request, ChangePublicIpCompartmentResponse::builder)
+                .logger(LOG, "changePublicIpCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangePublicIpCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/ChangePublicIpCompartment");
-        java.util.function.Function<javax.ws.rs.core.Response, ChangePublicIpCompartmentResponse>
-                transformer =
-                        ChangePublicIpCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangePublicIpCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/ChangePublicIpCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangePublicIpCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIps")
+                .appendPathParam(request.getPublicIpId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString("etag", ChangePublicIpCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangePublicIpCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangePublicIpPoolCompartmentResponse changePublicIpPoolCompartment(
             ChangePublicIpPoolCompartmentRequest request) {
-        LOG.trace("Called changePublicIpPoolCompartment");
-        final ChangePublicIpPoolCompartmentRequest interceptedRequest =
-                ChangePublicIpPoolCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangePublicIpPoolCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getPublicIpPoolId(), "publicIpPoolId must not be blank");
+        Objects.requireNonNull(
+                request.getChangePublicIpPoolCompartmentDetails(),
+                "changePublicIpPoolCompartmentDetails is required");
+
+        return clientCall(request, ChangePublicIpPoolCompartmentResponse::builder)
+                .logger(LOG, "changePublicIpPoolCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangePublicIpPoolCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/ChangePublicIpPoolCompartment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangePublicIpPoolCompartmentResponse>
-                transformer =
-                        ChangePublicIpPoolCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangePublicIpPoolCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/ChangePublicIpPoolCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangePublicIpPoolCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIpPools")
+                .appendPathParam(request.getPublicIpPoolId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangePublicIpPoolCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeRemotePeeringConnectionCompartmentResponse
             changeRemotePeeringConnectionCompartment(
                     ChangeRemotePeeringConnectionCompartmentRequest request) {
-        LOG.trace("Called changeRemotePeeringConnectionCompartment");
-        final ChangeRemotePeeringConnectionCompartmentRequest interceptedRequest =
-                ChangeRemotePeeringConnectionCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeRemotePeeringConnectionCompartmentConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getRemotePeeringConnectionId(),
+                "remotePeeringConnectionId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeRemotePeeringConnectionCompartmentDetails(),
+                "changeRemotePeeringConnectionCompartmentDetails is required");
+
+        return clientCall(request, ChangeRemotePeeringConnectionCompartmentResponse::builder)
+                .logger(LOG, "changeRemotePeeringConnectionCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeRemotePeeringConnectionCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ChangeRemotePeeringConnectionCompartment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeRemotePeeringConnectionCompartmentResponse>
-                transformer =
-                        ChangeRemotePeeringConnectionCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeRemotePeeringConnectionCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ChangeRemotePeeringConnectionCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeRemotePeeringConnectionCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("remotePeeringConnections")
+                .appendPathParam(request.getRemotePeeringConnectionId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeRemotePeeringConnectionCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeRemotePeeringConnectionCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ChangeRouteTableCompartmentResponse changeRouteTableCompartment(
             ChangeRouteTableCompartmentRequest request) {
-        LOG.trace("Called changeRouteTableCompartment");
-        final ChangeRouteTableCompartmentRequest interceptedRequest =
-                ChangeRouteTableCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeRouteTableCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getRtId(), "rtId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeRouteTableCompartmentDetails(),
+                "changeRouteTableCompartmentDetails is required");
+
+        return clientCall(request, ChangeRouteTableCompartmentResponse::builder)
+                .logger(LOG, "changeRouteTableCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeRouteTableCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/ChangeRouteTableCompartment");
-        java.util.function.Function<javax.ws.rs.core.Response, ChangeRouteTableCompartmentResponse>
-                transformer =
-                        ChangeRouteTableCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeRouteTableCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/ChangeRouteTableCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeRouteTableCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("routeTables")
+                .appendPathParam(request.getRtId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeRouteTableCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeRouteTableCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeSecurityListCompartmentResponse changeSecurityListCompartment(
             ChangeSecurityListCompartmentRequest request) {
-        LOG.trace("Called changeSecurityListCompartment");
-        final ChangeSecurityListCompartmentRequest interceptedRequest =
-                ChangeSecurityListCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeSecurityListCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getSecurityListId(), "securityListId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeSecurityListCompartmentDetails(),
+                "changeSecurityListCompartmentDetails is required");
+
+        return clientCall(request, ChangeSecurityListCompartmentResponse::builder)
+                .logger(LOG, "changeSecurityListCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeSecurityListCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/ChangeSecurityListCompartment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeSecurityListCompartmentResponse>
-                transformer =
-                        ChangeSecurityListCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeSecurityListCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/ChangeSecurityListCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSecurityListCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("securityLists")
+                .appendPathParam(request.getSecurityListId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeSecurityListCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeSecurityListCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeServiceGatewayCompartmentResponse changeServiceGatewayCompartment(
             ChangeServiceGatewayCompartmentRequest request) {
-        LOG.trace("Called changeServiceGatewayCompartment");
-        final ChangeServiceGatewayCompartmentRequest interceptedRequest =
-                ChangeServiceGatewayCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeServiceGatewayCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getServiceGatewayId(), "serviceGatewayId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeServiceGatewayCompartmentDetails(),
+                "changeServiceGatewayCompartmentDetails is required");
+
+        return clientCall(request, ChangeServiceGatewayCompartmentResponse::builder)
+                .logger(LOG, "changeServiceGatewayCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeServiceGatewayCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/ChangeServiceGatewayCompartment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeServiceGatewayCompartmentResponse>
-                transformer =
-                        ChangeServiceGatewayCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeServiceGatewayCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/ChangeServiceGatewayCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeServiceGatewayCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("serviceGateways")
+                .appendPathParam(request.getServiceGatewayId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeServiceGatewayCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeServiceGatewayCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeSubnetCompartmentResponse changeSubnetCompartment(
             ChangeSubnetCompartmentRequest request) {
-        LOG.trace("Called changeSubnetCompartment");
-        final ChangeSubnetCompartmentRequest interceptedRequest =
-                ChangeSubnetCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeSubnetCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeSubnetCompartmentDetails(),
+                "changeSubnetCompartmentDetails is required");
+
+        return clientCall(request, ChangeSubnetCompartmentResponse::builder)
+                .logger(LOG, "changeSubnetCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeSubnetCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/ChangeSubnetCompartment");
-        java.util.function.Function<javax.ws.rs.core.Response, ChangeSubnetCompartmentResponse>
-                transformer =
-                        ChangeSubnetCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getChangeSubnetCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/ChangeSubnetCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSubnetCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("subnets")
+                .appendPathParam(request.getSubnetId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString("etag", ChangeSubnetCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeSubnetCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeSubnetCompartmentResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeVcnCompartmentResponse changeVcnCompartment(ChangeVcnCompartmentRequest request) {
-        LOG.trace("Called changeVcnCompartment");
-        final ChangeVcnCompartmentRequest interceptedRequest =
-                ChangeVcnCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeVcnCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeVcnCompartmentDetails(),
+                "changeVcnCompartmentDetails is required");
+
+        return clientCall(request, ChangeVcnCompartmentResponse::builder)
+                .logger(LOG, "changeVcnCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeVcnCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ChangeVcnCompartment");
-        java.util.function.Function<javax.ws.rs.core.Response, ChangeVcnCompartmentResponse>
-                transformer =
-                        ChangeVcnCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getChangeVcnCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ChangeVcnCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeVcnCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .appendPathParam(request.getVcnId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString("etag", ChangeVcnCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeVcnCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeVcnCompartmentResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeVirtualCircuitCompartmentResponse changeVirtualCircuitCompartment(
             ChangeVirtualCircuitCompartmentRequest request) {
-        LOG.trace("Called changeVirtualCircuitCompartment");
-        final ChangeVirtualCircuitCompartmentRequest interceptedRequest =
-                ChangeVirtualCircuitCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeVirtualCircuitCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeVirtualCircuitCompartmentDetails(),
+                "changeVirtualCircuitCompartmentDetails is required");
+
+        return clientCall(request, ChangeVirtualCircuitCompartmentResponse::builder)
+                .logger(LOG, "changeVirtualCircuitCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeVirtualCircuitCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/ChangeVirtualCircuitCompartment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeVirtualCircuitCompartmentResponse>
-                transformer =
-                        ChangeVirtualCircuitCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeVirtualCircuitCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/ChangeVirtualCircuitCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeVirtualCircuitCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("virtualCircuits")
+                .appendPathParam(request.getVirtualCircuitId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeVirtualCircuitCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeVirtualCircuitCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ChangeVlanCompartmentResponse changeVlanCompartment(
             ChangeVlanCompartmentRequest request) {
-        LOG.trace("Called changeVlanCompartment");
-        final ChangeVlanCompartmentRequest interceptedRequest =
-                ChangeVlanCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeVlanCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVlanId(), "vlanId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeVlanCompartmentDetails(),
+                "changeVlanCompartmentDetails is required");
+
+        return clientCall(request, ChangeVlanCompartmentResponse::builder)
+                .logger(LOG, "changeVlanCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeVlanCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/ChangeVlanCompartment");
-        java.util.function.Function<javax.ws.rs.core.Response, ChangeVlanCompartmentResponse>
-                transformer =
-                        ChangeVlanCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getChangeVlanCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/ChangeVlanCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeVlanCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vlans")
+                .appendPathParam(request.getVlanId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeVlanCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeVlanCompartmentResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeVtapCompartmentResponse changeVtapCompartment(
             ChangeVtapCompartmentRequest request) {
-        LOG.trace("Called changeVtapCompartment");
-        final ChangeVtapCompartmentRequest interceptedRequest =
-                ChangeVtapCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeVtapCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVtapId(), "vtapId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeVtapCompartmentDetails(),
+                "changeVtapCompartmentDetails is required");
+
+        return clientCall(request, ChangeVtapCompartmentResponse::builder)
+                .logger(LOG, "changeVtapCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeVtapCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/ChangeVtapCompartment");
-        java.util.function.Function<javax.ws.rs.core.Response, ChangeVtapCompartmentResponse>
-                transformer =
-                        ChangeVtapCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getChangeVtapCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/ChangeVtapCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeVtapCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vtaps")
+                .appendPathParam(request.getVtapId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString("etag", ChangeVtapCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeVtapCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeVtapCompartmentResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public ConnectLocalPeeringGatewaysResponse connectLocalPeeringGateways(
             ConnectLocalPeeringGatewaysRequest request) {
-        LOG.trace("Called connectLocalPeeringGateways");
-        final ConnectLocalPeeringGatewaysRequest interceptedRequest =
-                ConnectLocalPeeringGatewaysConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ConnectLocalPeeringGatewaysConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getLocalPeeringGatewayId(), "localPeeringGatewayId must not be blank");
+        Objects.requireNonNull(
+                request.getConnectLocalPeeringGatewaysDetails(),
+                "connectLocalPeeringGatewaysDetails is required");
+
+        return clientCall(request, ConnectLocalPeeringGatewaysResponse::builder)
+                .logger(LOG, "connectLocalPeeringGateways")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ConnectLocalPeeringGateways",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ConnectLocalPeeringGateways");
-        java.util.function.Function<javax.ws.rs.core.Response, ConnectLocalPeeringGatewaysResponse>
-                transformer =
-                        ConnectLocalPeeringGatewaysConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getConnectLocalPeeringGatewaysDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ConnectLocalPeeringGateways")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConnectLocalPeeringGatewaysRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("localPeeringGateways")
+                .appendPathParam(request.getLocalPeeringGatewayId())
+                .appendPathParam("actions")
+                .appendPathParam("connect")
+                .accept("application/json")
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ConnectLocalPeeringGatewaysResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ConnectRemotePeeringConnectionsResponse connectRemotePeeringConnections(
             ConnectRemotePeeringConnectionsRequest request) {
-        LOG.trace("Called connectRemotePeeringConnections");
-        final ConnectRemotePeeringConnectionsRequest interceptedRequest =
-                ConnectRemotePeeringConnectionsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ConnectRemotePeeringConnectionsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getRemotePeeringConnectionId(),
+                "remotePeeringConnectionId must not be blank");
+        Objects.requireNonNull(
+                request.getConnectRemotePeeringConnectionsDetails(),
+                "connectRemotePeeringConnectionsDetails is required");
+
+        return clientCall(request, ConnectRemotePeeringConnectionsResponse::builder)
+                .logger(LOG, "connectRemotePeeringConnections")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ConnectRemotePeeringConnections",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ConnectRemotePeeringConnections");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ConnectRemotePeeringConnectionsResponse>
-                transformer =
-                        ConnectRemotePeeringConnectionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getConnectRemotePeeringConnectionsDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ConnectRemotePeeringConnections")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConnectRemotePeeringConnectionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("remotePeeringConnections")
+                .appendPathParam(request.getRemotePeeringConnectionId())
+                .appendPathParam("actions")
+                .appendPathParam("connect")
+                .accept("application/json")
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ConnectRemotePeeringConnectionsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public CreateByoipRangeResponse createByoipRange(CreateByoipRangeRequest request) {
-        LOG.trace("Called createByoipRange");
-        final CreateByoipRangeRequest interceptedRequest =
-                CreateByoipRangeConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateByoipRangeConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateByoipRangeDetails(), "createByoipRangeDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateByoipRangeResponse::builder)
+                .logger(LOG, "createByoipRange")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateByoipRange",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/CreateByoipRange");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateByoipRangeResponse>
-                transformer =
-                        CreateByoipRangeConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateByoipRangeDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/CreateByoipRange")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateByoipRangeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoipRanges")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ByoipRange.class,
+                        CreateByoipRangeResponse.Builder::byoipRange)
+                .handleResponseHeaderString("etag", CreateByoipRangeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateByoipRangeResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateCaptureFilterResponse createCaptureFilter(CreateCaptureFilterRequest request) {
-        LOG.trace("Called createCaptureFilter");
-        final CreateCaptureFilterRequest interceptedRequest =
-                CreateCaptureFilterConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateCaptureFilterConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateCaptureFilterDetails(), "createCaptureFilterDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateCaptureFilterResponse::builder)
+                .logger(LOG, "createCaptureFilter")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateCaptureFilter",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/CreateCaptureFilter");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateCaptureFilterResponse>
-                transformer =
-                        CreateCaptureFilterConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateCaptureFilterDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/CreateCaptureFilter")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCaptureFilterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("captureFilters")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.CaptureFilter.class,
+                        CreateCaptureFilterResponse.Builder::captureFilter)
+                .handleResponseHeaderString("etag", CreateCaptureFilterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCaptureFilterResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateCpeResponse createCpe(CreateCpeRequest request) {
-        LOG.trace("Called createCpe");
-        final CreateCpeRequest interceptedRequest = CreateCpeConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateCpeConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCreateCpeDetails(), "createCpeDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateCpeResponse::builder)
+                .logger(LOG, "createCpe")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateCpe",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/CreateCpe");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateCpeResponse> transformer =
-                CreateCpeConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateCpeDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/CreateCpe")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCpeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cpes")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Cpe.class, CreateCpeResponse.Builder::cpe)
+                .handleResponseHeaderString("etag", CreateCpeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCpeResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public CreateCrossConnectResponse createCrossConnect(CreateCrossConnectRequest request) {
-        LOG.trace("Called createCrossConnect");
-        final CreateCrossConnectRequest interceptedRequest =
-                CreateCrossConnectConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateCrossConnectConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateCrossConnectDetails(), "createCrossConnectDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateCrossConnectResponse::builder)
+                .logger(LOG, "createCrossConnect")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateCrossConnect",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/CreateCrossConnect");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateCrossConnectResponse>
-                transformer =
-                        CreateCrossConnectConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateCrossConnectDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/CreateCrossConnect")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCrossConnectRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnects")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.CrossConnect.class,
+                        CreateCrossConnectResponse.Builder::crossConnect)
+                .handleResponseHeaderString("etag", CreateCrossConnectResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCrossConnectResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public CreateCrossConnectGroupResponse createCrossConnectGroup(
             CreateCrossConnectGroupRequest request) {
-        LOG.trace("Called createCrossConnectGroup");
-        final CreateCrossConnectGroupRequest interceptedRequest =
-                CreateCrossConnectGroupConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateCrossConnectGroupConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateCrossConnectGroupDetails(),
+                "createCrossConnectGroupDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateCrossConnectGroupResponse::builder)
+                .logger(LOG, "createCrossConnectGroup")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateCrossConnectGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/CreateCrossConnectGroup");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateCrossConnectGroupResponse>
-                transformer =
-                        CreateCrossConnectGroupConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateCrossConnectGroupDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/CreateCrossConnectGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCrossConnectGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnectGroups")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.CrossConnectGroup.class,
+                        CreateCrossConnectGroupResponse.Builder::crossConnectGroup)
+                .handleResponseHeaderString("etag", CreateCrossConnectGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCrossConnectGroupResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public CreateDhcpOptionsResponse createDhcpOptions(CreateDhcpOptionsRequest request) {
-        LOG.trace("Called createDhcpOptions");
-        final CreateDhcpOptionsRequest interceptedRequest =
-                CreateDhcpOptionsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateDhcpOptionsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCreateDhcpDetails(), "createDhcpDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateDhcpOptionsResponse::builder)
+                .logger(LOG, "createDhcpOptions")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateDhcpOptions",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/CreateDhcpOptions");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateDhcpOptionsResponse>
-                transformer =
-                        CreateDhcpOptionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateDhcpDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/CreateDhcpOptions")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDhcpOptionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dhcps")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.DhcpOptions.class,
+                        CreateDhcpOptionsResponse.Builder::dhcpOptions)
+                .handleResponseHeaderString("etag", CreateDhcpOptionsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateDhcpOptionsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateDrgResponse createDrg(CreateDrgRequest request) {
-        LOG.trace("Called createDrg");
-        final CreateDrgRequest interceptedRequest = CreateDrgConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateDrgConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCreateDrgDetails(), "createDrgDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateDrgResponse::builder)
+                .logger(LOG, "createDrg")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateDrg",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/CreateDrg");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateDrgResponse> transformer =
-                CreateDrgConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateDrgDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/CreateDrg")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDrgRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgs")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Drg.class, CreateDrgResponse.Builder::drg)
+                .handleResponseHeaderString("etag", CreateDrgResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateDrgResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateDrgAttachmentResponse createDrgAttachment(CreateDrgAttachmentRequest request) {
-        LOG.trace("Called createDrgAttachment");
-        final CreateDrgAttachmentRequest interceptedRequest =
-                CreateDrgAttachmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateDrgAttachmentConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateDrgAttachmentDetails(), "createDrgAttachmentDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateDrgAttachmentResponse::builder)
+                .logger(LOG, "createDrgAttachment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateDrgAttachment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/CreateDrgAttachment");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateDrgAttachmentResponse>
-                transformer =
-                        CreateDrgAttachmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateDrgAttachmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/CreateDrgAttachment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDrgAttachmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgAttachments")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgAttachment.class,
+                        CreateDrgAttachmentResponse.Builder::drgAttachment)
+                .handleResponseHeaderString("etag", CreateDrgAttachmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateDrgAttachmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateDrgRouteDistributionResponse createDrgRouteDistribution(
             CreateDrgRouteDistributionRequest request) {
-        LOG.trace("Called createDrgRouteDistribution");
-        final CreateDrgRouteDistributionRequest interceptedRequest =
-                CreateDrgRouteDistributionConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateDrgRouteDistributionConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateDrgRouteDistributionDetails(),
+                "createDrgRouteDistributionDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateDrgRouteDistributionResponse::builder)
+                .logger(LOG, "createDrgRouteDistribution")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateDrgRouteDistribution",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/CreateDrgRouteDistribution");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateDrgRouteDistributionResponse>
-                transformer =
-                        CreateDrgRouteDistributionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getCreateDrgRouteDistributionDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/CreateDrgRouteDistribution")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDrgRouteDistributionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteDistributions")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgRouteDistribution.class,
+                        CreateDrgRouteDistributionResponse.Builder::drgRouteDistribution)
+                .handleResponseHeaderString(
+                        "etag", CreateDrgRouteDistributionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateDrgRouteDistributionResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateDrgRouteTableResponse createDrgRouteTable(CreateDrgRouteTableRequest request) {
-        LOG.trace("Called createDrgRouteTable");
-        final CreateDrgRouteTableRequest interceptedRequest =
-                CreateDrgRouteTableConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateDrgRouteTableConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateDrgRouteTableDetails(), "createDrgRouteTableDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateDrgRouteTableResponse::builder)
+                .logger(LOG, "createDrgRouteTable")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateDrgRouteTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/CreateDrgRouteTable");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateDrgRouteTableResponse>
-                transformer =
-                        CreateDrgRouteTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateDrgRouteTableDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/CreateDrgRouteTable")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDrgRouteTableRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteTables")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgRouteTable.class,
+                        CreateDrgRouteTableResponse.Builder::drgRouteTable)
+                .handleResponseHeaderString("etag", CreateDrgRouteTableResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateDrgRouteTableResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateIPSecConnectionResponse createIPSecConnection(
             CreateIPSecConnectionRequest request) {
-        LOG.trace("Called createIPSecConnection");
-        final CreateIPSecConnectionRequest interceptedRequest =
-                CreateIPSecConnectionConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateIPSecConnectionConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateIPSecConnectionDetails(),
+                "createIPSecConnectionDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateIPSecConnectionResponse::builder)
+                .logger(LOG, "createIPSecConnection")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateIPSecConnection",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/CreateIPSecConnection");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateIPSecConnectionResponse>
-                transformer =
-                        CreateIPSecConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateIPSecConnectionDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/CreateIPSecConnection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateIPSecConnectionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.IPSecConnection.class,
+                        CreateIPSecConnectionResponse.Builder::iPSecConnection)
+                .handleResponseHeaderString("etag", CreateIPSecConnectionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateIPSecConnectionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public CreateInternetGatewayResponse createInternetGateway(
             CreateInternetGatewayRequest request) {
-        LOG.trace("Called createInternetGateway");
-        final CreateInternetGatewayRequest interceptedRequest =
-                CreateInternetGatewayConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateInternetGatewayConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateInternetGatewayDetails(),
+                "createInternetGatewayDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateInternetGatewayResponse::builder)
+                .logger(LOG, "createInternetGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateInternetGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/CreateInternetGateway");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateInternetGatewayResponse>
-                transformer =
-                        CreateInternetGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateInternetGatewayDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/CreateInternetGateway")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateInternetGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("internetGateways")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.InternetGateway.class,
+                        CreateInternetGatewayResponse.Builder::internetGateway)
+                .handleResponseHeaderString("etag", CreateInternetGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateInternetGatewayResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateIpv6Response createIpv6(CreateIpv6Request request) {
-        LOG.trace("Called createIpv6");
-        final CreateIpv6Request interceptedRequest = CreateIpv6Converter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateIpv6Converter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCreateIpv6Details(), "createIpv6Details is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateIpv6Response::builder)
+                .logger(LOG, "createIpv6")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateIpv6",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/CreateIpv6");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateIpv6Response> transformer =
-                CreateIpv6Converter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateIpv6Details(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/CreateIpv6")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateIpv6Request::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipv6")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Ipv6.class, CreateIpv6Response.Builder::ipv6)
+                .handleResponseHeaderString("etag", CreateIpv6Response.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateIpv6Response.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateLocalPeeringGatewayResponse createLocalPeeringGateway(
             CreateLocalPeeringGatewayRequest request) {
-        LOG.trace("Called createLocalPeeringGateway");
-        final CreateLocalPeeringGatewayRequest interceptedRequest =
-                CreateLocalPeeringGatewayConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateLocalPeeringGatewayConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateLocalPeeringGatewayDetails(),
+                "createLocalPeeringGatewayDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateLocalPeeringGatewayResponse::builder)
+                .logger(LOG, "createLocalPeeringGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateLocalPeeringGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/CreateLocalPeeringGateway");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateLocalPeeringGatewayResponse>
-                transformer =
-                        CreateLocalPeeringGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getCreateLocalPeeringGatewayDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/CreateLocalPeeringGateway")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateLocalPeeringGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("localPeeringGateways")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.LocalPeeringGateway.class,
+                        CreateLocalPeeringGatewayResponse.Builder::localPeeringGateway)
+                .handleResponseHeaderString("etag", CreateLocalPeeringGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateLocalPeeringGatewayResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateNatGatewayResponse createNatGateway(CreateNatGatewayRequest request) {
-        LOG.trace("Called createNatGateway");
-        final CreateNatGatewayRequest interceptedRequest =
-                CreateNatGatewayConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateNatGatewayConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateNatGatewayDetails(), "createNatGatewayDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateNatGatewayResponse::builder)
+                .logger(LOG, "createNatGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateNatGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/CreateNatGateway");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateNatGatewayResponse>
-                transformer =
-                        CreateNatGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateNatGatewayDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/CreateNatGateway")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateNatGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("natGateways")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.NatGateway.class,
+                        CreateNatGatewayResponse.Builder::natGateway)
+                .handleResponseHeaderString("etag", CreateNatGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateNatGatewayResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateNetworkSecurityGroupResponse createNetworkSecurityGroup(
             CreateNetworkSecurityGroupRequest request) {
-        LOG.trace("Called createNetworkSecurityGroup");
-        final CreateNetworkSecurityGroupRequest interceptedRequest =
-                CreateNetworkSecurityGroupConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateNetworkSecurityGroupConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateNetworkSecurityGroupDetails(),
+                "createNetworkSecurityGroupDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateNetworkSecurityGroupResponse::builder)
+                .logger(LOG, "createNetworkSecurityGroup")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateNetworkSecurityGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/CreateNetworkSecurityGroup");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateNetworkSecurityGroupResponse>
-                transformer =
-                        CreateNetworkSecurityGroupConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getCreateNetworkSecurityGroupDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/CreateNetworkSecurityGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateNetworkSecurityGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkSecurityGroups")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.NetworkSecurityGroup.class,
+                        CreateNetworkSecurityGroupResponse.Builder::networkSecurityGroup)
+                .handleResponseHeaderString(
+                        "etag", CreateNetworkSecurityGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateNetworkSecurityGroupResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreatePrivateIpResponse createPrivateIp(CreatePrivateIpRequest request) {
-        LOG.trace("Called createPrivateIp");
-        final CreatePrivateIpRequest interceptedRequest =
-                CreatePrivateIpConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreatePrivateIpConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreatePrivateIpDetails(), "createPrivateIpDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreatePrivateIpResponse::builder)
+                .logger(LOG, "createPrivateIp")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreatePrivateIp",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/CreatePrivateIp");
-        java.util.function.Function<javax.ws.rs.core.Response, CreatePrivateIpResponse>
-                transformer =
-                        CreatePrivateIpConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreatePrivateIpDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/CreatePrivateIp")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreatePrivateIpRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("privateIps")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.PrivateIp.class,
+                        CreatePrivateIpResponse.Builder::privateIp)
+                .handleResponseHeaderString("etag", CreatePrivateIpResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreatePrivateIpResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreatePublicIpResponse createPublicIp(CreatePublicIpRequest request) {
-        LOG.trace("Called createPublicIp");
-        final CreatePublicIpRequest interceptedRequest =
-                CreatePublicIpConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreatePublicIpConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreatePublicIpDetails(), "createPublicIpDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreatePublicIpResponse::builder)
+                .logger(LOG, "createPublicIp")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreatePublicIp",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/CreatePublicIp");
-        java.util.function.Function<javax.ws.rs.core.Response, CreatePublicIpResponse> transformer =
-                CreatePublicIpConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreatePublicIpDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/CreatePublicIp")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreatePublicIpRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIps")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.PublicIp.class,
+                        CreatePublicIpResponse.Builder::publicIp)
+                .handleResponseHeaderString("etag", CreatePublicIpResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreatePublicIpResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreatePublicIpPoolResponse createPublicIpPool(CreatePublicIpPoolRequest request) {
-        LOG.trace("Called createPublicIpPool");
-        final CreatePublicIpPoolRequest interceptedRequest =
-                CreatePublicIpPoolConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreatePublicIpPoolConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreatePublicIpPoolDetails(), "createPublicIpPoolDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreatePublicIpPoolResponse::builder)
+                .logger(LOG, "createPublicIpPool")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreatePublicIpPool",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/CreatePublicIpPool");
-        java.util.function.Function<javax.ws.rs.core.Response, CreatePublicIpPoolResponse>
-                transformer =
-                        CreatePublicIpPoolConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreatePublicIpPoolDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/CreatePublicIpPool")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreatePublicIpPoolRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIpPools")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.PublicIpPool.class,
+                        CreatePublicIpPoolResponse.Builder::publicIpPool)
+                .handleResponseHeaderString("etag", CreatePublicIpPoolResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreatePublicIpPoolResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateRemotePeeringConnectionResponse createRemotePeeringConnection(
             CreateRemotePeeringConnectionRequest request) {
-        LOG.trace("Called createRemotePeeringConnection");
-        final CreateRemotePeeringConnectionRequest interceptedRequest =
-                CreateRemotePeeringConnectionConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateRemotePeeringConnectionConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateRemotePeeringConnectionDetails(),
+                "createRemotePeeringConnectionDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateRemotePeeringConnectionResponse::builder)
+                .logger(LOG, "createRemotePeeringConnection")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateRemotePeeringConnection",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/CreateRemotePeeringConnection");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateRemotePeeringConnectionResponse>
-                transformer =
-                        CreateRemotePeeringConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getCreateRemotePeeringConnectionDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/CreateRemotePeeringConnection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateRemotePeeringConnectionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("remotePeeringConnections")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.RemotePeeringConnection.class,
+                        CreateRemotePeeringConnectionResponse.Builder::remotePeeringConnection)
+                .handleResponseHeaderString(
+                        "etag", CreateRemotePeeringConnectionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateRemotePeeringConnectionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public CreateRouteTableResponse createRouteTable(CreateRouteTableRequest request) {
-        LOG.trace("Called createRouteTable");
-        final CreateRouteTableRequest interceptedRequest =
-                CreateRouteTableConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateRouteTableConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateRouteTableDetails(), "createRouteTableDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateRouteTableResponse::builder)
+                .logger(LOG, "createRouteTable")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateRouteTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/CreateRouteTable");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateRouteTableResponse>
-                transformer =
-                        CreateRouteTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateRouteTableDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/CreateRouteTable")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateRouteTableRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("routeTables")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.RouteTable.class,
+                        CreateRouteTableResponse.Builder::routeTable)
+                .handleResponseHeaderString("etag", CreateRouteTableResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateRouteTableResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateSecurityListResponse createSecurityList(CreateSecurityListRequest request) {
-        LOG.trace("Called createSecurityList");
-        final CreateSecurityListRequest interceptedRequest =
-                CreateSecurityListConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateSecurityListConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateSecurityListDetails(), "createSecurityListDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateSecurityListResponse::builder)
+                .logger(LOG, "createSecurityList")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateSecurityList",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/CreateSecurityList");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateSecurityListResponse>
-                transformer =
-                        CreateSecurityListConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateSecurityListDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/CreateSecurityList")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSecurityListRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("securityLists")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.SecurityList.class,
+                        CreateSecurityListResponse.Builder::securityList)
+                .handleResponseHeaderString("etag", CreateSecurityListResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSecurityListResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateServiceGatewayResponse createServiceGateway(CreateServiceGatewayRequest request) {
-        LOG.trace("Called createServiceGateway");
-        final CreateServiceGatewayRequest interceptedRequest =
-                CreateServiceGatewayConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateServiceGatewayConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateServiceGatewayDetails(),
+                "createServiceGatewayDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateServiceGatewayResponse::builder)
+                .logger(LOG, "createServiceGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateServiceGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/CreateServiceGateway");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateServiceGatewayResponse>
-                transformer =
-                        CreateServiceGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateServiceGatewayDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/CreateServiceGateway")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateServiceGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("serviceGateways")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ServiceGateway.class,
+                        CreateServiceGatewayResponse.Builder::serviceGateway)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateServiceGatewayResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateSubnetResponse createSubnet(CreateSubnetRequest request) {
-        LOG.trace("Called createSubnet");
-        final CreateSubnetRequest interceptedRequest =
-                CreateSubnetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateSubnetConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCreateSubnetDetails(), "createSubnetDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateSubnetResponse::builder)
+                .logger(LOG, "createSubnet")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateSubnet",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/CreateSubnet");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateSubnetResponse> transformer =
-                CreateSubnetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateSubnetDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/CreateSubnet")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSubnetRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("subnets")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.Subnet.class,
+                        CreateSubnetResponse.Builder::subnet)
+                .handleResponseHeaderString("etag", CreateSubnetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSubnetResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateVcnResponse createVcn(CreateVcnRequest request) {
-        LOG.trace("Called createVcn");
-        final CreateVcnRequest interceptedRequest = CreateVcnConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateVcnConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCreateVcnDetails(), "createVcnDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateVcnResponse::builder)
+                .logger(LOG, "createVcn")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateVcn",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/CreateVcn");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateVcnResponse> transformer =
-                CreateVcnConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateVcnDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/CreateVcn")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateVcnRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Vcn.class, CreateVcnResponse.Builder::vcn)
+                .handleResponseHeaderString("etag", CreateVcnResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateVcnResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateVirtualCircuitResponse createVirtualCircuit(CreateVirtualCircuitRequest request) {
-        LOG.trace("Called createVirtualCircuit");
-        final CreateVirtualCircuitRequest interceptedRequest =
-                CreateVirtualCircuitConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateVirtualCircuitConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateVirtualCircuitDetails(),
+                "createVirtualCircuitDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateVirtualCircuitResponse::builder)
+                .logger(LOG, "createVirtualCircuit")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateVirtualCircuit",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/CreateVirtualCircuit");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateVirtualCircuitResponse>
-                transformer =
-                        CreateVirtualCircuitConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateVirtualCircuitDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/CreateVirtualCircuit")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateVirtualCircuitRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("virtualCircuits")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.VirtualCircuit.class,
+                        CreateVirtualCircuitResponse.Builder::virtualCircuit)
+                .handleResponseHeaderString("etag", CreateVirtualCircuitResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateVirtualCircuitResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public CreateVlanResponse createVlan(CreateVlanRequest request) {
-        LOG.trace("Called createVlan");
-        final CreateVlanRequest interceptedRequest = CreateVlanConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateVlanConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCreateVlanDetails(), "createVlanDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateVlanResponse::builder)
+                .logger(LOG, "createVlan")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateVlan",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/CreateVlan");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateVlanResponse> transformer =
-                CreateVlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateVlanDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/CreateVlan")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateVlanRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vlans")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Vlan.class, CreateVlanResponse.Builder::vlan)
+                .handleResponseHeaderString("etag", CreateVlanResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateVlanResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateVtapResponse createVtap(CreateVtapRequest request) {
-        LOG.trace("Called createVtap");
-        final CreateVtapRequest interceptedRequest = CreateVtapConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateVtapConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCreateVtapDetails(), "createVtapDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateVtapResponse::builder)
+                .logger(LOG, "createVtap")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateVtap",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/CreateVtap");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateVtapResponse> transformer =
-                CreateVtapConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateVtapDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/CreateVtap")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateVtapRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vtaps")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Vtap.class, CreateVtapResponse.Builder::vtap)
+                .handleResponseHeaderString("etag", CreateVtapResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateVtapResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteByoipRangeResponse deleteByoipRange(DeleteByoipRangeRequest request) {
-        LOG.trace("Called deleteByoipRange");
-        final DeleteByoipRangeRequest interceptedRequest =
-                DeleteByoipRangeConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteByoipRangeConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
+
+        return clientCall(request, DeleteByoipRangeResponse::builder)
+                .logger(LOG, "deleteByoipRange")
+                .serviceDetails(
                         "VirtualNetwork",
                         "DeleteByoipRange",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/DeleteByoipRange");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteByoipRangeResponse>
-                transformer =
-                        DeleteByoipRangeConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/DeleteByoipRange")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteByoipRangeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoipRanges")
+                .appendPathParam(request.getByoipRangeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteByoipRangeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteByoipRangeResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteCaptureFilterResponse deleteCaptureFilter(DeleteCaptureFilterRequest request) {
-        LOG.trace("Called deleteCaptureFilter");
-        final DeleteCaptureFilterRequest interceptedRequest =
-                DeleteCaptureFilterConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteCaptureFilterConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getCaptureFilterId(), "captureFilterId must not be blank");
+
+        return clientCall(request, DeleteCaptureFilterResponse::builder)
+                .logger(LOG, "deleteCaptureFilter")
+                .serviceDetails(
                         "VirtualNetwork",
                         "DeleteCaptureFilter",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/DeleteCaptureFilter");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteCaptureFilterResponse>
-                transformer =
-                        DeleteCaptureFilterConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/DeleteCaptureFilter")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCaptureFilterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("captureFilters")
+                .appendPathParam(request.getCaptureFilterId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCaptureFilterResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteCpeResponse deleteCpe(DeleteCpeRequest request) {
-        LOG.trace("Called deleteCpe");
-        final DeleteCpeRequest interceptedRequest = DeleteCpeConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteCpeConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeleteCpe", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteCpeResponse> transformer =
-                DeleteCpeConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getCpeId(), "cpeId must not be blank");
+
+        return clientCall(request, DeleteCpeResponse::builder)
+                .logger(LOG, "deleteCpe")
+                .serviceDetails("VirtualNetwork", "DeleteCpe", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCpeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cpes")
+                .appendPathParam(request.getCpeId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCpeResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public DeleteCrossConnectResponse deleteCrossConnect(DeleteCrossConnectRequest request) {
-        LOG.trace("Called deleteCrossConnect");
-        final DeleteCrossConnectRequest interceptedRequest =
-                DeleteCrossConnectConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteCrossConnectConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeleteCrossConnect", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteCrossConnectResponse>
-                transformer =
-                        DeleteCrossConnectConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getCrossConnectId(), "crossConnectId must not be blank");
+
+        return clientCall(request, DeleteCrossConnectResponse::builder)
+                .logger(LOG, "deleteCrossConnect")
+                .serviceDetails("VirtualNetwork", "DeleteCrossConnect", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCrossConnectRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnects")
+                .appendPathParam(request.getCrossConnectId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCrossConnectResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public DeleteCrossConnectGroupResponse deleteCrossConnectGroup(
             DeleteCrossConnectGroupRequest request) {
-        LOG.trace("Called deleteCrossConnectGroup");
-        final DeleteCrossConnectGroupRequest interceptedRequest =
-                DeleteCrossConnectGroupConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteCrossConnectGroupConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork",
-                        "DeleteCrossConnectGroup",
-                        ib.getRequestUri().toString(),
-                        "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteCrossConnectGroupResponse>
-                transformer =
-                        DeleteCrossConnectGroupConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(
+                request.getCrossConnectGroupId(), "crossConnectGroupId must not be blank");
+
+        return clientCall(request, DeleteCrossConnectGroupResponse::builder)
+                .logger(LOG, "deleteCrossConnectGroup")
+                .serviceDetails("VirtualNetwork", "DeleteCrossConnectGroup", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCrossConnectGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnectGroups")
+                .appendPathParam(request.getCrossConnectGroupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCrossConnectGroupResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public DeleteDhcpOptionsResponse deleteDhcpOptions(DeleteDhcpOptionsRequest request) {
-        LOG.trace("Called deleteDhcpOptions");
-        final DeleteDhcpOptionsRequest interceptedRequest =
-                DeleteDhcpOptionsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteDhcpOptionsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeleteDhcpOptions", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteDhcpOptionsResponse>
-                transformer =
-                        DeleteDhcpOptionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getDhcpId(), "dhcpId must not be blank");
+
+        return clientCall(request, DeleteDhcpOptionsResponse::builder)
+                .logger(LOG, "deleteDhcpOptions")
+                .serviceDetails("VirtualNetwork", "DeleteDhcpOptions", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDhcpOptionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dhcps")
+                .appendPathParam(request.getDhcpId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDhcpOptionsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteDrgResponse deleteDrg(DeleteDrgRequest request) {
-        LOG.trace("Called deleteDrg");
-        final DeleteDrgRequest interceptedRequest = DeleteDrgConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteDrgConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeleteDrg", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteDrgResponse> transformer =
-                DeleteDrgConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getDrgId(), "drgId must not be blank");
+
+        return clientCall(request, DeleteDrgResponse::builder)
+                .logger(LOG, "deleteDrg")
+                .serviceDetails("VirtualNetwork", "DeleteDrg", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDrgRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgs")
+                .appendPathParam(request.getDrgId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDrgResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteDrgAttachmentResponse deleteDrgAttachment(DeleteDrgAttachmentRequest request) {
-        LOG.trace("Called deleteDrgAttachment");
-        final DeleteDrgAttachmentRequest interceptedRequest =
-                DeleteDrgAttachmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteDrgAttachmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeleteDrgAttachment", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteDrgAttachmentResponse>
-                transformer =
-                        DeleteDrgAttachmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getDrgAttachmentId(), "drgAttachmentId must not be blank");
+
+        return clientCall(request, DeleteDrgAttachmentResponse::builder)
+                .logger(LOG, "deleteDrgAttachment")
+                .serviceDetails("VirtualNetwork", "DeleteDrgAttachment", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDrgAttachmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgAttachments")
+                .appendPathParam(request.getDrgAttachmentId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDrgAttachmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteDrgRouteDistributionResponse deleteDrgRouteDistribution(
             DeleteDrgRouteDistributionRequest request) {
-        LOG.trace("Called deleteDrgRouteDistribution");
-        final DeleteDrgRouteDistributionRequest interceptedRequest =
-                DeleteDrgRouteDistributionConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteDrgRouteDistributionConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getDrgRouteDistributionId(), "drgRouteDistributionId must not be blank");
+
+        return clientCall(request, DeleteDrgRouteDistributionResponse::builder)
+                .logger(LOG, "deleteDrgRouteDistribution")
+                .serviceDetails(
                         "VirtualNetwork",
                         "DeleteDrgRouteDistribution",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/DeleteDrgRouteDistribution");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteDrgRouteDistributionResponse>
-                transformer =
-                        DeleteDrgRouteDistributionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/DeleteDrgRouteDistribution")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDrgRouteDistributionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteDistributions")
+                .appendPathParam(request.getDrgRouteDistributionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDrgRouteDistributionResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteDrgRouteTableResponse deleteDrgRouteTable(DeleteDrgRouteTableRequest request) {
-        LOG.trace("Called deleteDrgRouteTable");
-        final DeleteDrgRouteTableRequest interceptedRequest =
-                DeleteDrgRouteTableConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteDrgRouteTableConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getDrgRouteTableId(), "drgRouteTableId must not be blank");
+
+        return clientCall(request, DeleteDrgRouteTableResponse::builder)
+                .logger(LOG, "deleteDrgRouteTable")
+                .serviceDetails(
                         "VirtualNetwork",
                         "DeleteDrgRouteTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternalPublicIp/DeleteDrgRouteTable");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteDrgRouteTableResponse>
-                transformer =
-                        DeleteDrgRouteTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternalPublicIp/DeleteDrgRouteTable")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDrgRouteTableRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteTables")
+                .appendPathParam(request.getDrgRouteTableId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDrgRouteTableResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteIPSecConnectionResponse deleteIPSecConnection(
             DeleteIPSecConnectionRequest request) {
-        LOG.trace("Called deleteIPSecConnection");
-        final DeleteIPSecConnectionRequest interceptedRequest =
-                DeleteIPSecConnectionConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteIPSecConnectionConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork",
-                        "DeleteIPSecConnection",
-                        ib.getRequestUri().toString(),
-                        "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteIPSecConnectionResponse>
-                transformer =
-                        DeleteIPSecConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        return clientCall(request, DeleteIPSecConnectionResponse::builder)
+                .logger(LOG, "deleteIPSecConnection")
+                .serviceDetails("VirtualNetwork", "DeleteIPSecConnection", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteIPSecConnectionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteIPSecConnectionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public DeleteInternetGatewayResponse deleteInternetGateway(
             DeleteInternetGatewayRequest request) {
-        LOG.trace("Called deleteInternetGateway");
-        final DeleteInternetGatewayRequest interceptedRequest =
-                DeleteInternetGatewayConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteInternetGatewayConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork",
-                        "DeleteInternetGateway",
-                        ib.getRequestUri().toString(),
-                        "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteInternetGatewayResponse>
-                transformer =
-                        DeleteInternetGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getIgId(), "igId must not be blank");
+
+        return clientCall(request, DeleteInternetGatewayResponse::builder)
+                .logger(LOG, "deleteInternetGateway")
+                .serviceDetails("VirtualNetwork", "DeleteInternetGateway", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteInternetGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("internetGateways")
+                .appendPathParam(request.getIgId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteInternetGatewayResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteIpv6Response deleteIpv6(DeleteIpv6Request request) {
-        LOG.trace("Called deleteIpv6");
-        final DeleteIpv6Request interceptedRequest = DeleteIpv6Converter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteIpv6Converter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeleteIpv6", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteIpv6Response> transformer =
-                DeleteIpv6Converter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getIpv6Id(), "ipv6Id must not be blank");
+
+        return clientCall(request, DeleteIpv6Response::builder)
+                .logger(LOG, "deleteIpv6")
+                .serviceDetails("VirtualNetwork", "DeleteIpv6", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteIpv6Request::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipv6")
+                .appendPathParam(request.getIpv6Id())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteIpv6Response.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteLocalPeeringGatewayResponse deleteLocalPeeringGateway(
             DeleteLocalPeeringGatewayRequest request) {
-        LOG.trace("Called deleteLocalPeeringGateway");
-        final DeleteLocalPeeringGatewayRequest interceptedRequest =
-                DeleteLocalPeeringGatewayConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteLocalPeeringGatewayConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork",
-                        "DeleteLocalPeeringGateway",
-                        ib.getRequestUri().toString(),
-                        "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteLocalPeeringGatewayResponse>
-                transformer =
-                        DeleteLocalPeeringGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(
+                request.getLocalPeeringGatewayId(), "localPeeringGatewayId must not be blank");
+
+        return clientCall(request, DeleteLocalPeeringGatewayResponse::builder)
+                .logger(LOG, "deleteLocalPeeringGateway")
+                .serviceDetails("VirtualNetwork", "DeleteLocalPeeringGateway", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteLocalPeeringGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("localPeeringGateways")
+                .appendPathParam(request.getLocalPeeringGatewayId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteLocalPeeringGatewayResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteNatGatewayResponse deleteNatGateway(DeleteNatGatewayRequest request) {
-        LOG.trace("Called deleteNatGateway");
-        final DeleteNatGatewayRequest interceptedRequest =
-                DeleteNatGatewayConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteNatGatewayConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeleteNatGateway", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteNatGatewayResponse>
-                transformer =
-                        DeleteNatGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getNatGatewayId(), "natGatewayId must not be blank");
+
+        return clientCall(request, DeleteNatGatewayResponse::builder)
+                .logger(LOG, "deleteNatGateway")
+                .serviceDetails("VirtualNetwork", "DeleteNatGateway", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteNatGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("natGateways")
+                .appendPathParam(request.getNatGatewayId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteNatGatewayResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteNetworkSecurityGroupResponse deleteNetworkSecurityGroup(
             DeleteNetworkSecurityGroupRequest request) {
-        LOG.trace("Called deleteNetworkSecurityGroup");
-        final DeleteNetworkSecurityGroupRequest interceptedRequest =
-                DeleteNetworkSecurityGroupConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteNetworkSecurityGroupConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
+
+        return clientCall(request, DeleteNetworkSecurityGroupResponse::builder)
+                .logger(LOG, "deleteNetworkSecurityGroup")
+                .serviceDetails(
                         "VirtualNetwork",
                         "DeleteNetworkSecurityGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/DeleteNetworkSecurityGroup");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteNetworkSecurityGroupResponse>
-                transformer =
-                        DeleteNetworkSecurityGroupConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/DeleteNetworkSecurityGroup")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteNetworkSecurityGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkSecurityGroups")
+                .appendPathParam(request.getNetworkSecurityGroupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteNetworkSecurityGroupResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeletePrivateIpResponse deletePrivateIp(DeletePrivateIpRequest request) {
-        LOG.trace("Called deletePrivateIp");
-        final DeletePrivateIpRequest interceptedRequest =
-                DeletePrivateIpConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeletePrivateIpConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeletePrivateIp", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeletePrivateIpResponse>
-                transformer =
-                        DeletePrivateIpConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getPrivateIpId(), "privateIpId must not be blank");
+
+        return clientCall(request, DeletePrivateIpResponse::builder)
+                .logger(LOG, "deletePrivateIp")
+                .serviceDetails("VirtualNetwork", "DeletePrivateIp", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeletePrivateIpRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("privateIps")
+                .appendPathParam(request.getPrivateIpId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeletePrivateIpResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeletePublicIpResponse deletePublicIp(DeletePublicIpRequest request) {
-        LOG.trace("Called deletePublicIp");
-        final DeletePublicIpRequest interceptedRequest =
-                DeletePublicIpConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeletePublicIpConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeletePublicIp", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeletePublicIpResponse> transformer =
-                DeletePublicIpConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getPublicIpId(), "publicIpId must not be blank");
+
+        return clientCall(request, DeletePublicIpResponse::builder)
+                .logger(LOG, "deletePublicIp")
+                .serviceDetails("VirtualNetwork", "DeletePublicIp", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeletePublicIpRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIps")
+                .appendPathParam(request.getPublicIpId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeletePublicIpResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeletePublicIpPoolResponse deletePublicIpPool(DeletePublicIpPoolRequest request) {
-        LOG.trace("Called deletePublicIpPool");
-        final DeletePublicIpPoolRequest interceptedRequest =
-                DeletePublicIpPoolConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeletePublicIpPoolConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getPublicIpPoolId(), "publicIpPoolId must not be blank");
+
+        return clientCall(request, DeletePublicIpPoolResponse::builder)
+                .logger(LOG, "deletePublicIpPool")
+                .serviceDetails(
                         "VirtualNetwork",
                         "DeletePublicIpPool",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/DeletePublicIpPool");
-        java.util.function.Function<javax.ws.rs.core.Response, DeletePublicIpPoolResponse>
-                transformer =
-                        DeletePublicIpPoolConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/DeletePublicIpPool")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeletePublicIpPoolRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIpPools")
+                .appendPathParam(request.getPublicIpPoolId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeletePublicIpPoolResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteRemotePeeringConnectionResponse deleteRemotePeeringConnection(
             DeleteRemotePeeringConnectionRequest request) {
-        LOG.trace("Called deleteRemotePeeringConnection");
-        final DeleteRemotePeeringConnectionRequest interceptedRequest =
-                DeleteRemotePeeringConnectionConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteRemotePeeringConnectionConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork",
-                        "DeleteRemotePeeringConnection",
-                        ib.getRequestUri().toString(),
-                        "");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteRemotePeeringConnectionResponse>
-                transformer =
-                        DeleteRemotePeeringConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(
+                request.getRemotePeeringConnectionId(),
+                "remotePeeringConnectionId must not be blank");
+
+        return clientCall(request, DeleteRemotePeeringConnectionResponse::builder)
+                .logger(LOG, "deleteRemotePeeringConnection")
+                .serviceDetails("VirtualNetwork", "DeleteRemotePeeringConnection", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteRemotePeeringConnectionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("remotePeeringConnections")
+                .appendPathParam(request.getRemotePeeringConnectionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteRemotePeeringConnectionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public DeleteRouteTableResponse deleteRouteTable(DeleteRouteTableRequest request) {
-        LOG.trace("Called deleteRouteTable");
-        final DeleteRouteTableRequest interceptedRequest =
-                DeleteRouteTableConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteRouteTableConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeleteRouteTable", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteRouteTableResponse>
-                transformer =
-                        DeleteRouteTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getRtId(), "rtId must not be blank");
+
+        return clientCall(request, DeleteRouteTableResponse::builder)
+                .logger(LOG, "deleteRouteTable")
+                .serviceDetails("VirtualNetwork", "DeleteRouteTable", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteRouteTableRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("routeTables")
+                .appendPathParam(request.getRtId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteRouteTableResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteSecurityListResponse deleteSecurityList(DeleteSecurityListRequest request) {
-        LOG.trace("Called deleteSecurityList");
-        final DeleteSecurityListRequest interceptedRequest =
-                DeleteSecurityListConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteSecurityListConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeleteSecurityList", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteSecurityListResponse>
-                transformer =
-                        DeleteSecurityListConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getSecurityListId(), "securityListId must not be blank");
+
+        return clientCall(request, DeleteSecurityListResponse::builder)
+                .logger(LOG, "deleteSecurityList")
+                .serviceDetails("VirtualNetwork", "DeleteSecurityList", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSecurityListRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("securityLists")
+                .appendPathParam(request.getSecurityListId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSecurityListResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteServiceGatewayResponse deleteServiceGateway(DeleteServiceGatewayRequest request) {
-        LOG.trace("Called deleteServiceGateway");
-        final DeleteServiceGatewayRequest interceptedRequest =
-                DeleteServiceGatewayConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteServiceGatewayConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork",
-                        "DeleteServiceGateway",
-                        ib.getRequestUri().toString(),
-                        "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteServiceGatewayResponse>
-                transformer =
-                        DeleteServiceGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getServiceGatewayId(), "serviceGatewayId must not be blank");
+
+        return clientCall(request, DeleteServiceGatewayResponse::builder)
+                .logger(LOG, "deleteServiceGateway")
+                .serviceDetails("VirtualNetwork", "DeleteServiceGateway", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteServiceGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("serviceGateways")
+                .appendPathParam(request.getServiceGatewayId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteServiceGatewayResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteSubnetResponse deleteSubnet(DeleteSubnetRequest request) {
-        LOG.trace("Called deleteSubnet");
-        final DeleteSubnetRequest interceptedRequest =
-                DeleteSubnetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteSubnetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeleteSubnet", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteSubnetResponse> transformer =
-                DeleteSubnetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
+
+        return clientCall(request, DeleteSubnetResponse::builder)
+                .logger(LOG, "deleteSubnet")
+                .serviceDetails("VirtualNetwork", "DeleteSubnet", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSubnetRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("subnets")
+                .appendPathParam(request.getSubnetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSubnetResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteVcnResponse deleteVcn(DeleteVcnRequest request) {
-        LOG.trace("Called deleteVcn");
-        final DeleteVcnRequest interceptedRequest = DeleteVcnConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteVcnConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeleteVcn", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteVcnResponse> transformer =
-                DeleteVcnConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
+
+        return clientCall(request, DeleteVcnResponse::builder)
+                .logger(LOG, "deleteVcn")
+                .serviceDetails("VirtualNetwork", "DeleteVcn", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteVcnRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .appendPathParam(request.getVcnId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteVcnResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteVirtualCircuitResponse deleteVirtualCircuit(DeleteVirtualCircuitRequest request) {
-        LOG.trace("Called deleteVirtualCircuit");
-        final DeleteVirtualCircuitRequest interceptedRequest =
-                DeleteVirtualCircuitConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteVirtualCircuitConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork",
-                        "DeleteVirtualCircuit",
-                        ib.getRequestUri().toString(),
-                        "");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteVirtualCircuitResponse>
-                transformer =
-                        DeleteVirtualCircuitConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
+
+        return clientCall(request, DeleteVirtualCircuitResponse::builder)
+                .logger(LOG, "deleteVirtualCircuit")
+                .serviceDetails("VirtualNetwork", "DeleteVirtualCircuit", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteVirtualCircuitRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("virtualCircuits")
+                .appendPathParam(request.getVirtualCircuitId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteVirtualCircuitResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public DeleteVlanResponse deleteVlan(DeleteVlanRequest request) {
-        LOG.trace("Called deleteVlan");
-        final DeleteVlanRequest interceptedRequest = DeleteVlanConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteVlanConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVlanId(), "vlanId must not be blank");
+
+        return clientCall(request, DeleteVlanResponse::builder)
+                .logger(LOG, "deleteVlan")
+                .serviceDetails(
                         "VirtualNetwork",
                         "DeleteVlan",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/DeleteVlan");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteVlanResponse> transformer =
-                DeleteVlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/DeleteVlan")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteVlanRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vlans")
+                .appendPathParam(request.getVlanId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteVlanResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteVtapResponse deleteVtap(DeleteVtapRequest request) {
-        LOG.trace("Called deleteVtap");
-        final DeleteVtapRequest interceptedRequest = DeleteVtapConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteVtapConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVtapId(), "vtapId must not be blank");
+
+        return clientCall(request, DeleteVtapResponse::builder)
+                .logger(LOG, "deleteVtap")
+                .serviceDetails(
                         "VirtualNetwork",
                         "DeleteVtap",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/DeleteVtap");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteVtapResponse> transformer =
-                DeleteVtapConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/DeleteVtap")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteVtapRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vtaps")
+                .appendPathParam(request.getVtapId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteVtapResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteVtapResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public DetachServiceIdResponse detachServiceId(DetachServiceIdRequest request) {
-        LOG.trace("Called detachServiceId");
-        final DetachServiceIdRequest interceptedRequest =
-                DetachServiceIdConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DetachServiceIdConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getServiceGatewayId(), "serviceGatewayId must not be blank");
+        Objects.requireNonNull(
+                request.getDetachServiceDetails(), "detachServiceDetails is required");
+
+        return clientCall(request, DetachServiceIdResponse::builder)
+                .logger(LOG, "detachServiceId")
+                .serviceDetails(
                         "VirtualNetwork",
                         "DetachServiceId",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/DetachServiceId");
-        java.util.function.Function<javax.ws.rs.core.Response, DetachServiceIdResponse>
-                transformer =
-                        DetachServiceIdConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getDetachServiceDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/DetachServiceId")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DetachServiceIdRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("serviceGateways")
+                .appendPathParam(request.getServiceGatewayId())
+                .appendPathParam("actions")
+                .appendPathParam("detachService")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ServiceGateway.class,
+                        DetachServiceIdResponse.Builder::serviceGateway)
+                .handleResponseHeaderString(
+                        "opc-request-id", DetachServiceIdResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetAllDrgAttachmentsResponse getAllDrgAttachments(GetAllDrgAttachmentsRequest request) {
-        LOG.trace("Called getAllDrgAttachments");
-        final GetAllDrgAttachmentsRequest interceptedRequest =
-                GetAllDrgAttachmentsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetAllDrgAttachmentsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getDrgId(), "drgId must not be blank");
+
+        return clientCall(request, GetAllDrgAttachmentsResponse::builder)
+                .logger(LOG, "getAllDrgAttachments")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetAllDrgAttachments",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetAllDrgAttachments");
-        java.util.function.Function<javax.ws.rs.core.Response, GetAllDrgAttachmentsResponse>
-                transformer =
-                        GetAllDrgAttachmentsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetAllDrgAttachments")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GetAllDrgAttachmentsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgs")
+                .appendPathParam(request.getDrgId())
+                .appendPathParam("actions")
+                .appendPathParam("getAllDrgAttachments")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("attachmentType", request.getAttachmentType())
+                .appendQueryParam("isCrossTenancy", request.getIsCrossTenancy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DrgAttachmentInfo.class,
+                        GetAllDrgAttachmentsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", GetAllDrgAttachmentsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAllDrgAttachmentsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetAllowedIkeIPSecParametersResponse getAllowedIkeIPSecParameters(
             GetAllowedIkeIPSecParametersRequest request) {
-        LOG.trace("Called getAllowedIkeIPSecParameters");
-        final GetAllowedIkeIPSecParametersRequest interceptedRequest =
-                GetAllowedIkeIPSecParametersConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetAllowedIkeIPSecParametersConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, GetAllowedIkeIPSecParametersResponse::builder)
+                .logger(LOG, "getAllowedIkeIPSecParameters")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetAllowedIkeIPSecParameters",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AllowedIkeIPSecParameters/GetAllowedIkeIPSecParameters");
-        java.util.function.Function<javax.ws.rs.core.Response, GetAllowedIkeIPSecParametersResponse>
-                transformer =
-                        GetAllowedIkeIPSecParametersConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AllowedIkeIPSecParameters/GetAllowedIkeIPSecParameters")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAllowedIkeIPSecParametersRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecAlgorithms")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.AllowedIkeIPSecParameters.class,
+                        GetAllowedIkeIPSecParametersResponse.Builder::allowedIkeIPSecParameters)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetAllowedIkeIPSecParametersResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetByoipRangeResponse getByoipRange(GetByoipRangeRequest request) {
-        LOG.trace("Called getByoipRange");
-        final GetByoipRangeRequest interceptedRequest =
-                GetByoipRangeConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetByoipRangeConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
+
+        return clientCall(request, GetByoipRangeResponse::builder)
+                .logger(LOG, "getByoipRange")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetByoipRange",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/GetByoipRange");
-        java.util.function.Function<javax.ws.rs.core.Response, GetByoipRangeResponse> transformer =
-                GetByoipRangeConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/GetByoipRange")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetByoipRangeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoipRanges")
+                .appendPathParam(request.getByoipRangeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ByoipRange.class,
+                        GetByoipRangeResponse.Builder::byoipRange)
+                .handleResponseHeaderString("etag", GetByoipRangeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetByoipRangeResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetCaptureFilterResponse getCaptureFilter(GetCaptureFilterRequest request) {
-        LOG.trace("Called getCaptureFilter");
-        final GetCaptureFilterRequest interceptedRequest =
-                GetCaptureFilterConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetCaptureFilterConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getCaptureFilterId(), "captureFilterId must not be blank");
+
+        return clientCall(request, GetCaptureFilterResponse::builder)
+                .logger(LOG, "getCaptureFilter")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetCaptureFilter",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/GetCaptureFilter");
-        java.util.function.Function<javax.ws.rs.core.Response, GetCaptureFilterResponse>
-                transformer =
-                        GetCaptureFilterConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/GetCaptureFilter")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCaptureFilterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("captureFilters")
+                .appendPathParam(request.getCaptureFilterId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.CaptureFilter.class,
+                        GetCaptureFilterResponse.Builder::captureFilter)
+                .handleResponseHeaderString("etag", GetCaptureFilterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCaptureFilterResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetCpeResponse getCpe(GetCpeRequest request) {
-        LOG.trace("Called getCpe");
-        final GetCpeRequest interceptedRequest = GetCpeConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetCpeConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getCpeId(), "cpeId must not be blank");
+
+        return clientCall(request, GetCpeResponse::builder)
+                .logger(LOG, "getCpe")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetCpe",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/GetCpe");
-        java.util.function.Function<javax.ws.rs.core.Response, GetCpeResponse> transformer =
-                GetCpeConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/GetCpe")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCpeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cpes")
+                .appendPathParam(request.getCpeId())
+                .accept("application/json")
+                .handleBody(com.oracle.bmc.core.model.Cpe.class, GetCpeResponse.Builder::cpe)
+                .handleResponseHeaderString("etag", GetCpeResponse.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", GetCpeResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetCpeDeviceConfigContentResponse getCpeDeviceConfigContent(
             GetCpeDeviceConfigContentRequest request) {
-        LOG.trace("Called getCpeDeviceConfigContent");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "getCpeDeviceConfigContent returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
-        final GetCpeDeviceConfigContentRequest interceptedRequest =
-                GetCpeDeviceConfigContentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetCpeDeviceConfigContentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getCpeId(), "cpeId must not be blank");
+
+        return clientCall(request, GetCpeDeviceConfigContentResponse::builder)
+                .logger(LOG, "getCpeDeviceConfigContent")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetCpeDeviceConfigContent",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/GetCpeDeviceConfigContent");
-        java.util.function.Function<javax.ws.rs.core.Response, GetCpeDeviceConfigContentResponse>
-                transformer =
-                        GetCpeDeviceConfigContentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/GetCpeDeviceConfigContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCpeDeviceConfigContentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cpes")
+                .appendPathParam(request.getCpeId())
+                .appendPathParam("cpeConfigContent")
+                .accept("text/plain; charset=utf-8")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetCpeDeviceConfigContentResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCpeDeviceConfigContentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetCpeDeviceShapeResponse getCpeDeviceShape(GetCpeDeviceShapeRequest request) {
-        LOG.trace("Called getCpeDeviceShape");
-        final GetCpeDeviceShapeRequest interceptedRequest =
-                GetCpeDeviceShapeConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetCpeDeviceShapeConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getCpeDeviceShapeId(), "cpeDeviceShapeId must not be blank");
+
+        return clientCall(request, GetCpeDeviceShapeResponse::builder)
+                .logger(LOG, "getCpeDeviceShape")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetCpeDeviceShape",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CpeDeviceShapeDetail/GetCpeDeviceShape");
-        java.util.function.Function<javax.ws.rs.core.Response, GetCpeDeviceShapeResponse>
-                transformer =
-                        GetCpeDeviceShapeConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CpeDeviceShapeDetail/GetCpeDeviceShape")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCpeDeviceShapeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cpeDeviceShapes")
+                .appendPathParam(request.getCpeDeviceShapeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.CpeDeviceShapeDetail.class,
+                        GetCpeDeviceShapeResponse.Builder::cpeDeviceShapeDetail)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCpeDeviceShapeResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetCrossConnectResponse getCrossConnect(GetCrossConnectRequest request) {
-        LOG.trace("Called getCrossConnect");
-        final GetCrossConnectRequest interceptedRequest =
-                GetCrossConnectConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetCrossConnectConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getCrossConnectId(), "crossConnectId must not be blank");
+
+        return clientCall(request, GetCrossConnectResponse::builder)
+                .logger(LOG, "getCrossConnect")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetCrossConnect",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/GetCrossConnect");
-        java.util.function.Function<javax.ws.rs.core.Response, GetCrossConnectResponse>
-                transformer =
-                        GetCrossConnectConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/GetCrossConnect")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCrossConnectRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnects")
+                .appendPathParam(request.getCrossConnectId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.CrossConnect.class,
+                        GetCrossConnectResponse.Builder::crossConnect)
+                .handleResponseHeaderString("etag", GetCrossConnectResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCrossConnectResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetCrossConnectGroupResponse getCrossConnectGroup(GetCrossConnectGroupRequest request) {
-        LOG.trace("Called getCrossConnectGroup");
-        final GetCrossConnectGroupRequest interceptedRequest =
-                GetCrossConnectGroupConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetCrossConnectGroupConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getCrossConnectGroupId(), "crossConnectGroupId must not be blank");
+
+        return clientCall(request, GetCrossConnectGroupResponse::builder)
+                .logger(LOG, "getCrossConnectGroup")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetCrossConnectGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/GetCrossConnectGroup");
-        java.util.function.Function<javax.ws.rs.core.Response, GetCrossConnectGroupResponse>
-                transformer =
-                        GetCrossConnectGroupConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/GetCrossConnectGroup")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCrossConnectGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnectGroups")
+                .appendPathParam(request.getCrossConnectGroupId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.CrossConnectGroup.class,
+                        GetCrossConnectGroupResponse.Builder::crossConnectGroup)
+                .handleResponseHeaderString("etag", GetCrossConnectGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCrossConnectGroupResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetCrossConnectLetterOfAuthorityResponse getCrossConnectLetterOfAuthority(
             GetCrossConnectLetterOfAuthorityRequest request) {
-        LOG.trace("Called getCrossConnectLetterOfAuthority");
-        final GetCrossConnectLetterOfAuthorityRequest interceptedRequest =
-                GetCrossConnectLetterOfAuthorityConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetCrossConnectLetterOfAuthorityConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getCrossConnectId(), "crossConnectId must not be blank");
+
+        return clientCall(request, GetCrossConnectLetterOfAuthorityResponse::builder)
+                .logger(LOG, "getCrossConnectLetterOfAuthority")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetCrossConnectLetterOfAuthority",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LetterOfAuthority/GetCrossConnectLetterOfAuthority");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, GetCrossConnectLetterOfAuthorityResponse>
-                transformer =
-                        GetCrossConnectLetterOfAuthorityConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LetterOfAuthority/GetCrossConnectLetterOfAuthority")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCrossConnectLetterOfAuthorityRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnects")
+                .appendPathParam(request.getCrossConnectId())
+                .appendPathParam("letterOfAuthority")
+                .accept("application/json, text/html")
+                .handleBody(
+                        com.oracle.bmc.core.model.LetterOfAuthority.class,
+                        GetCrossConnectLetterOfAuthorityResponse.Builder::letterOfAuthority)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetCrossConnectLetterOfAuthorityResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetCrossConnectStatusResponse getCrossConnectStatus(
             GetCrossConnectStatusRequest request) {
-        LOG.trace("Called getCrossConnectStatus");
-        final GetCrossConnectStatusRequest interceptedRequest =
-                GetCrossConnectStatusConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetCrossConnectStatusConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getCrossConnectId(), "crossConnectId must not be blank");
+
+        return clientCall(request, GetCrossConnectStatusResponse::builder)
+                .logger(LOG, "getCrossConnectStatus")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetCrossConnectStatus",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectStatus/GetCrossConnectStatus");
-        java.util.function.Function<javax.ws.rs.core.Response, GetCrossConnectStatusResponse>
-                transformer =
-                        GetCrossConnectStatusConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectStatus/GetCrossConnectStatus")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCrossConnectStatusRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnects")
+                .appendPathParam(request.getCrossConnectId())
+                .appendPathParam("status")
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.CrossConnectStatus.class,
+                        GetCrossConnectStatusResponse.Builder::crossConnectStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCrossConnectStatusResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetDhcpOptionsResponse getDhcpOptions(GetDhcpOptionsRequest request) {
-        LOG.trace("Called getDhcpOptions");
-        final GetDhcpOptionsRequest interceptedRequest =
-                GetDhcpOptionsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDhcpOptionsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getDhcpId(), "dhcpId must not be blank");
+
+        return clientCall(request, GetDhcpOptionsResponse::builder)
+                .logger(LOG, "getDhcpOptions")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetDhcpOptions",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/GetDhcpOptions");
-        java.util.function.Function<javax.ws.rs.core.Response, GetDhcpOptionsResponse> transformer =
-                GetDhcpOptionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/GetDhcpOptions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDhcpOptionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dhcps")
+                .appendPathParam(request.getDhcpId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.DhcpOptions.class,
+                        GetDhcpOptionsResponse.Builder::dhcpOptions)
+                .handleResponseHeaderString("etag", GetDhcpOptionsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDhcpOptionsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetDrgResponse getDrg(GetDrgRequest request) {
-        LOG.trace("Called getDrg");
-        final GetDrgRequest interceptedRequest = GetDrgConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDrgConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getDrgId(), "drgId must not be blank");
+
+        return clientCall(request, GetDrgResponse::builder)
+                .logger(LOG, "getDrg")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetDrg",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetDrg");
-        java.util.function.Function<javax.ws.rs.core.Response, GetDrgResponse> transformer =
-                GetDrgConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetDrg")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDrgRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgs")
+                .appendPathParam(request.getDrgId())
+                .accept("application/json")
+                .handleBody(com.oracle.bmc.core.model.Drg.class, GetDrgResponse.Builder::drg)
+                .handleResponseHeaderString("etag", GetDrgResponse.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", GetDrgResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetDrgAttachmentResponse getDrgAttachment(GetDrgAttachmentRequest request) {
-        LOG.trace("Called getDrgAttachment");
-        final GetDrgAttachmentRequest interceptedRequest =
-                GetDrgAttachmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDrgAttachmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getDrgAttachmentId(), "drgAttachmentId must not be blank");
+
+        return clientCall(request, GetDrgAttachmentResponse::builder)
+                .logger(LOG, "getDrgAttachment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetDrgAttachment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/GetDrgAttachment");
-        java.util.function.Function<javax.ws.rs.core.Response, GetDrgAttachmentResponse>
-                transformer =
-                        GetDrgAttachmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/GetDrgAttachment")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDrgAttachmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgAttachments")
+                .appendPathParam(request.getDrgAttachmentId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgAttachment.class,
+                        GetDrgAttachmentResponse.Builder::drgAttachment)
+                .handleResponseHeaderString("etag", GetDrgAttachmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDrgAttachmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetDrgRedundancyStatusResponse getDrgRedundancyStatus(
             GetDrgRedundancyStatusRequest request) {
-        LOG.trace("Called getDrgRedundancyStatus");
-        final GetDrgRedundancyStatusRequest interceptedRequest =
-                GetDrgRedundancyStatusConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDrgRedundancyStatusConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getDrgId(), "drgId must not be blank");
+
+        return clientCall(request, GetDrgRedundancyStatusResponse::builder)
+                .logger(LOG, "getDrgRedundancyStatus")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetDrgRedundancyStatus",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRedundancyStatus/GetDrgRedundancyStatus");
-        java.util.function.Function<javax.ws.rs.core.Response, GetDrgRedundancyStatusResponse>
-                transformer =
-                        GetDrgRedundancyStatusConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRedundancyStatus/GetDrgRedundancyStatus")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDrgRedundancyStatusRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgs")
+                .appendPathParam(request.getDrgId())
+                .appendPathParam("redundancyStatus")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgRedundancyStatus.class,
+                        GetDrgRedundancyStatusResponse.Builder::drgRedundancyStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDrgRedundancyStatusResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetDrgRouteDistributionResponse getDrgRouteDistribution(
             GetDrgRouteDistributionRequest request) {
-        LOG.trace("Called getDrgRouteDistribution");
-        final GetDrgRouteDistributionRequest interceptedRequest =
-                GetDrgRouteDistributionConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDrgRouteDistributionConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getDrgRouteDistributionId(), "drgRouteDistributionId must not be blank");
+
+        return clientCall(request, GetDrgRouteDistributionResponse::builder)
+                .logger(LOG, "getDrgRouteDistribution")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetDrgRouteDistribution",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/GetDrgRouteDistribution");
-        java.util.function.Function<javax.ws.rs.core.Response, GetDrgRouteDistributionResponse>
-                transformer =
-                        GetDrgRouteDistributionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/GetDrgRouteDistribution")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDrgRouteDistributionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteDistributions")
+                .appendPathParam(request.getDrgRouteDistributionId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgRouteDistribution.class,
+                        GetDrgRouteDistributionResponse.Builder::drgRouteDistribution)
+                .handleResponseHeaderString("etag", GetDrgRouteDistributionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDrgRouteDistributionResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetDrgRouteTableResponse getDrgRouteTable(GetDrgRouteTableRequest request) {
-        LOG.trace("Called getDrgRouteTable");
-        final GetDrgRouteTableRequest interceptedRequest =
-                GetDrgRouteTableConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDrgRouteTableConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getDrgRouteTableId(), "drgRouteTableId must not be blank");
+
+        return clientCall(request, GetDrgRouteTableResponse::builder)
+                .logger(LOG, "getDrgRouteTable")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetDrgRouteTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/GetDrgRouteTable");
-        java.util.function.Function<javax.ws.rs.core.Response, GetDrgRouteTableResponse>
-                transformer =
-                        GetDrgRouteTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/GetDrgRouteTable")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDrgRouteTableRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteTables")
+                .appendPathParam(request.getDrgRouteTableId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgRouteTable.class,
+                        GetDrgRouteTableResponse.Builder::drgRouteTable)
+                .handleResponseHeaderString("etag", GetDrgRouteTableResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDrgRouteTableResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetFastConnectProviderServiceResponse getFastConnectProviderService(
             GetFastConnectProviderServiceRequest request) {
-        LOG.trace("Called getFastConnectProviderService");
-        final GetFastConnectProviderServiceRequest interceptedRequest =
-                GetFastConnectProviderServiceConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetFastConnectProviderServiceConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getProviderServiceId(), "providerServiceId must not be blank");
+
+        return clientCall(request, GetFastConnectProviderServiceResponse::builder)
+                .logger(LOG, "getFastConnectProviderService")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetFastConnectProviderService",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/GetFastConnectProviderService");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, GetFastConnectProviderServiceResponse>
-                transformer =
-                        GetFastConnectProviderServiceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/GetFastConnectProviderService")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetFastConnectProviderServiceRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("fastConnectProviderServices")
+                .appendPathParam(request.getProviderServiceId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.FastConnectProviderService.class,
+                        GetFastConnectProviderServiceResponse.Builder::fastConnectProviderService)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetFastConnectProviderServiceResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetFastConnectProviderServiceKeyResponse getFastConnectProviderServiceKey(
             GetFastConnectProviderServiceKeyRequest request) {
-        LOG.trace("Called getFastConnectProviderServiceKey");
-        final GetFastConnectProviderServiceKeyRequest interceptedRequest =
-                GetFastConnectProviderServiceKeyConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetFastConnectProviderServiceKeyConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getProviderServiceId(), "providerServiceId must not be blank");
+
+        Validate.notBlank(
+                request.getProviderServiceKeyName(), "providerServiceKeyName must not be blank");
+
+        return clientCall(request, GetFastConnectProviderServiceKeyResponse::builder)
+                .logger(LOG, "getFastConnectProviderServiceKey")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetFastConnectProviderServiceKey",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderServiceKey/GetFastConnectProviderServiceKey");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, GetFastConnectProviderServiceKeyResponse>
-                transformer =
-                        GetFastConnectProviderServiceKeyConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderServiceKey/GetFastConnectProviderServiceKey")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetFastConnectProviderServiceKeyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("fastConnectProviderServices")
+                .appendPathParam(request.getProviderServiceId())
+                .appendPathParam("providerServiceKeys")
+                .appendPathParam(request.getProviderServiceKeyName())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.FastConnectProviderServiceKey.class,
+                        GetFastConnectProviderServiceKeyResponse.Builder
+                                ::fastConnectProviderServiceKey)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetFastConnectProviderServiceKeyResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetIPSecConnectionResponse getIPSecConnection(GetIPSecConnectionRequest request) {
-        LOG.trace("Called getIPSecConnection");
-        final GetIPSecConnectionRequest interceptedRequest =
-                GetIPSecConnectionConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetIPSecConnectionConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        return clientCall(request, GetIPSecConnectionResponse::builder)
+                .logger(LOG, "getIPSecConnection")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetIPSecConnection",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/GetIPSecConnection");
-        java.util.function.Function<javax.ws.rs.core.Response, GetIPSecConnectionResponse>
-                transformer =
-                        GetIPSecConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/GetIPSecConnection")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIPSecConnectionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.IPSecConnection.class,
+                        GetIPSecConnectionResponse.Builder::iPSecConnection)
+                .handleResponseHeaderString("etag", GetIPSecConnectionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetIPSecConnectionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetIPSecConnectionDeviceConfigResponse getIPSecConnectionDeviceConfig(
             GetIPSecConnectionDeviceConfigRequest request) {
-        LOG.trace("Called getIPSecConnectionDeviceConfig");
-        final GetIPSecConnectionDeviceConfigRequest interceptedRequest =
-                GetIPSecConnectionDeviceConfigConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetIPSecConnectionDeviceConfigConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        return clientCall(request, GetIPSecConnectionDeviceConfigResponse::builder)
+                .logger(LOG, "getIPSecConnectionDeviceConfig")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetIPSecConnectionDeviceConfig",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionDeviceConfig/GetIPSecConnectionDeviceConfig");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, GetIPSecConnectionDeviceConfigResponse>
-                transformer =
-                        GetIPSecConnectionDeviceConfigConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionDeviceConfig/GetIPSecConnectionDeviceConfig")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIPSecConnectionDeviceConfigRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("deviceConfig")
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.IPSecConnectionDeviceConfig.class,
+                        GetIPSecConnectionDeviceConfigResponse.Builder::iPSecConnectionDeviceConfig)
+                .handleResponseHeaderString(
+                        "etag", GetIPSecConnectionDeviceConfigResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetIPSecConnectionDeviceConfigResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetIPSecConnectionDeviceStatusResponse getIPSecConnectionDeviceStatus(
             GetIPSecConnectionDeviceStatusRequest request) {
-        LOG.trace("Called getIPSecConnectionDeviceStatus");
-        final GetIPSecConnectionDeviceStatusRequest interceptedRequest =
-                GetIPSecConnectionDeviceStatusConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetIPSecConnectionDeviceStatusConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        return clientCall(request, GetIPSecConnectionDeviceStatusResponse::builder)
+                .logger(LOG, "getIPSecConnectionDeviceStatus")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetIPSecConnectionDeviceStatus",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionDeviceStatus/GetIPSecConnectionDeviceStatus");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, GetIPSecConnectionDeviceStatusResponse>
-                transformer =
-                        GetIPSecConnectionDeviceStatusConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionDeviceStatus/GetIPSecConnectionDeviceStatus")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIPSecConnectionDeviceStatusRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("deviceStatus")
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.IPSecConnectionDeviceStatus.class,
+                        GetIPSecConnectionDeviceStatusResponse.Builder::iPSecConnectionDeviceStatus)
+                .handleResponseHeaderString(
+                        "etag", GetIPSecConnectionDeviceStatusResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetIPSecConnectionDeviceStatusResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetIPSecConnectionTunnelResponse getIPSecConnectionTunnel(
             GetIPSecConnectionTunnelRequest request) {
-        LOG.trace("Called getIPSecConnectionTunnel");
-        final GetIPSecConnectionTunnelRequest interceptedRequest =
-                GetIPSecConnectionTunnelConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetIPSecConnectionTunnelConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
+
+        return clientCall(request, GetIPSecConnectionTunnelResponse::builder)
+                .logger(LOG, "getIPSecConnectionTunnel")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetIPSecConnectionTunnel",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/GetIPSecConnectionTunnel");
-        java.util.function.Function<javax.ws.rs.core.Response, GetIPSecConnectionTunnelResponse>
-                transformer =
-                        GetIPSecConnectionTunnelConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/GetIPSecConnectionTunnel")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIPSecConnectionTunnelRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("tunnels")
+                .appendPathParam(request.getTunnelId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.IPSecConnectionTunnel.class,
+                        GetIPSecConnectionTunnelResponse.Builder::iPSecConnectionTunnel)
+                .handleResponseHeaderString("etag", GetIPSecConnectionTunnelResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetIPSecConnectionTunnelResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetIPSecConnectionTunnelErrorResponse getIPSecConnectionTunnelError(
             GetIPSecConnectionTunnelErrorRequest request) {
-        LOG.trace("Called getIPSecConnectionTunnelError");
-        final GetIPSecConnectionTunnelErrorRequest interceptedRequest =
-                GetIPSecConnectionTunnelErrorConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetIPSecConnectionTunnelErrorConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
+
+        return clientCall(request, GetIPSecConnectionTunnelErrorResponse::builder)
+                .logger(LOG, "getIPSecConnectionTunnelError")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetIPSecConnectionTunnelError",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelErrorDetails/GetIPSecConnectionTunnelError");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, GetIPSecConnectionTunnelErrorResponse>
-                transformer =
-                        GetIPSecConnectionTunnelErrorConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelErrorDetails/GetIPSecConnectionTunnelError")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIPSecConnectionTunnelErrorRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("tunnels")
+                .appendPathParam(request.getTunnelId())
+                .appendPathParam("error")
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.IPSecConnectionTunnelErrorDetails.class,
+                        GetIPSecConnectionTunnelErrorResponse.Builder
+                                ::iPSecConnectionTunnelErrorDetails)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetIPSecConnectionTunnelErrorResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetIPSecConnectionTunnelSharedSecretResponse getIPSecConnectionTunnelSharedSecret(
             GetIPSecConnectionTunnelSharedSecretRequest request) {
-        LOG.trace("Called getIPSecConnectionTunnelSharedSecret");
-        final GetIPSecConnectionTunnelSharedSecretRequest interceptedRequest =
-                GetIPSecConnectionTunnelSharedSecretConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetIPSecConnectionTunnelSharedSecretConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
+
+        return clientCall(request, GetIPSecConnectionTunnelSharedSecretResponse::builder)
+                .logger(LOG, "getIPSecConnectionTunnelSharedSecret")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetIPSecConnectionTunnelSharedSecret",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/GetIPSecConnectionTunnelSharedSecret");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, GetIPSecConnectionTunnelSharedSecretResponse>
-                transformer =
-                        GetIPSecConnectionTunnelSharedSecretConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/GetIPSecConnectionTunnelSharedSecret")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIPSecConnectionTunnelSharedSecretRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("tunnels")
+                .appendPathParam(request.getTunnelId())
+                .appendPathParam("sharedSecret")
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.IPSecConnectionTunnelSharedSecret.class,
+                        GetIPSecConnectionTunnelSharedSecretResponse.Builder
+                                ::iPSecConnectionTunnelSharedSecret)
+                .handleResponseHeaderString(
+                        "etag", GetIPSecConnectionTunnelSharedSecretResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetIPSecConnectionTunnelSharedSecretResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetInternetGatewayResponse getInternetGateway(GetInternetGatewayRequest request) {
-        LOG.trace("Called getInternetGateway");
-        final GetInternetGatewayRequest interceptedRequest =
-                GetInternetGatewayConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetInternetGatewayConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getIgId(), "igId must not be blank");
+
+        return clientCall(request, GetInternetGatewayResponse::builder)
+                .logger(LOG, "getInternetGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetInternetGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/GetInternetGateway");
-        java.util.function.Function<javax.ws.rs.core.Response, GetInternetGatewayResponse>
-                transformer =
-                        GetInternetGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/GetInternetGateway")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetInternetGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("internetGateways")
+                .appendPathParam(request.getIgId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.InternetGateway.class,
+                        GetInternetGatewayResponse.Builder::internetGateway)
+                .handleResponseHeaderString("etag", GetInternetGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetInternetGatewayResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetIpsecCpeDeviceConfigContentResponse getIpsecCpeDeviceConfigContent(
             GetIpsecCpeDeviceConfigContentRequest request) {
-        LOG.trace("Called getIpsecCpeDeviceConfigContent");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "getIpsecCpeDeviceConfigContent returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
-        final GetIpsecCpeDeviceConfigContentRequest interceptedRequest =
-                GetIpsecCpeDeviceConfigContentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetIpsecCpeDeviceConfigContentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        return clientCall(request, GetIpsecCpeDeviceConfigContentResponse::builder)
+                .logger(LOG, "getIpsecCpeDeviceConfigContent")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetIpsecCpeDeviceConfigContent",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/GetIpsecCpeDeviceConfigContent");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, GetIpsecCpeDeviceConfigContentResponse>
-                transformer =
-                        GetIpsecCpeDeviceConfigContentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/GetIpsecCpeDeviceConfigContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIpsecCpeDeviceConfigContentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("cpeConfigContent")
+                .accept("text/plain; charset=utf-8")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetIpsecCpeDeviceConfigContentResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetIpsecCpeDeviceConfigContentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetIpv6Response getIpv6(GetIpv6Request request) {
-        LOG.trace("Called getIpv6");
-        final GetIpv6Request interceptedRequest = GetIpv6Converter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetIpv6Converter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getIpv6Id(), "ipv6Id must not be blank");
+
+        return clientCall(request, GetIpv6Response::builder)
+                .logger(LOG, "getIpv6")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetIpv6",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6");
-        java.util.function.Function<javax.ws.rs.core.Response, GetIpv6Response> transformer =
-                GetIpv6Converter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIpv6Request::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipv6")
+                .appendPathParam(request.getIpv6Id())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(com.oracle.bmc.core.model.Ipv6.class, GetIpv6Response.Builder::ipv6)
+                .handleResponseHeaderString("etag", GetIpv6Response.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", GetIpv6Response.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetLocalPeeringGatewayResponse getLocalPeeringGateway(
             GetLocalPeeringGatewayRequest request) {
-        LOG.trace("Called getLocalPeeringGateway");
-        final GetLocalPeeringGatewayRequest interceptedRequest =
-                GetLocalPeeringGatewayConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetLocalPeeringGatewayConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getLocalPeeringGatewayId(), "localPeeringGatewayId must not be blank");
+
+        return clientCall(request, GetLocalPeeringGatewayResponse::builder)
+                .logger(LOG, "getLocalPeeringGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetLocalPeeringGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/GetLocalPeeringGateway");
-        java.util.function.Function<javax.ws.rs.core.Response, GetLocalPeeringGatewayResponse>
-                transformer =
-                        GetLocalPeeringGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/GetLocalPeeringGateway")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetLocalPeeringGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("localPeeringGateways")
+                .appendPathParam(request.getLocalPeeringGatewayId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.LocalPeeringGateway.class,
+                        GetLocalPeeringGatewayResponse.Builder::localPeeringGateway)
+                .handleResponseHeaderString("etag", GetLocalPeeringGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetLocalPeeringGatewayResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetNatGatewayResponse getNatGateway(GetNatGatewayRequest request) {
-        LOG.trace("Called getNatGateway");
-        final GetNatGatewayRequest interceptedRequest =
-                GetNatGatewayConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetNatGatewayConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getNatGatewayId(), "natGatewayId must not be blank");
+
+        return clientCall(request, GetNatGatewayResponse::builder)
+                .logger(LOG, "getNatGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetNatGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/GetNatGateway");
-        java.util.function.Function<javax.ws.rs.core.Response, GetNatGatewayResponse> transformer =
-                GetNatGatewayConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/GetNatGateway")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNatGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("natGateways")
+                .appendPathParam(request.getNatGatewayId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.NatGateway.class,
+                        GetNatGatewayResponse.Builder::natGateway)
+                .handleResponseHeaderString("etag", GetNatGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetNatGatewayResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetNetworkSecurityGroupResponse getNetworkSecurityGroup(
             GetNetworkSecurityGroupRequest request) {
-        LOG.trace("Called getNetworkSecurityGroup");
-        final GetNetworkSecurityGroupRequest interceptedRequest =
-                GetNetworkSecurityGroupConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetNetworkSecurityGroupConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
+
+        return clientCall(request, GetNetworkSecurityGroupResponse::builder)
+                .logger(LOG, "getNetworkSecurityGroup")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetNetworkSecurityGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/GetNetworkSecurityGroup");
-        java.util.function.Function<javax.ws.rs.core.Response, GetNetworkSecurityGroupResponse>
-                transformer =
-                        GetNetworkSecurityGroupConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/GetNetworkSecurityGroup")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNetworkSecurityGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkSecurityGroups")
+                .appendPathParam(request.getNetworkSecurityGroupId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.NetworkSecurityGroup.class,
+                        GetNetworkSecurityGroupResponse.Builder::networkSecurityGroup)
+                .handleResponseHeaderString("etag", GetNetworkSecurityGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetNetworkSecurityGroupResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetNetworkingTopologyResponse getNetworkingTopology(
             GetNetworkingTopologyRequest request) {
-        LOG.trace("Called getNetworkingTopology");
-        final GetNetworkingTopologyRequest interceptedRequest =
-                GetNetworkingTopologyConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetNetworkingTopologyConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, GetNetworkingTopologyResponse::builder)
+                .logger(LOG, "getNetworkingTopology")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetNetworkingTopology",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkingTopology/GetNetworkingTopology");
-        java.util.function.Function<javax.ws.rs.core.Response, GetNetworkingTopologyResponse>
-                transformer =
-                        GetNetworkingTopologyConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkingTopology/GetNetworkingTopology")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNetworkingTopologyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkingTopology")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("queryCompartmentSubtree", request.getQueryCompartmentSubtree())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-none-match", request.getIfNoneMatch())
+                .appendHeader("cache-control", request.getCacheControl())
+                .handleBody(
+                        com.oracle.bmc.core.model.NetworkingTopology.class,
+                        GetNetworkingTopologyResponse.Builder::networkingTopology)
+                .handleResponseHeaderString("etag", GetNetworkingTopologyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetNetworkingTopologyResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetPrivateIpResponse getPrivateIp(GetPrivateIpRequest request) {
-        LOG.trace("Called getPrivateIp");
-        final GetPrivateIpRequest interceptedRequest =
-                GetPrivateIpConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetPrivateIpConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getPrivateIpId(), "privateIpId must not be blank");
+
+        return clientCall(request, GetPrivateIpResponse::builder)
+                .logger(LOG, "getPrivateIp")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetPrivateIp",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp");
-        java.util.function.Function<javax.ws.rs.core.Response, GetPrivateIpResponse> transformer =
-                GetPrivateIpConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPrivateIpRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("privateIps")
+                .appendPathParam(request.getPrivateIpId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.PrivateIp.class,
+                        GetPrivateIpResponse.Builder::privateIp)
+                .handleResponseHeaderString("etag", GetPrivateIpResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPrivateIpResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetPublicIpResponse getPublicIp(GetPublicIpRequest request) {
-        LOG.trace("Called getPublicIp");
-        final GetPublicIpRequest interceptedRequest =
-                GetPublicIpConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetPublicIpConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getPublicIpId(), "publicIpId must not be blank");
+
+        return clientCall(request, GetPublicIpResponse::builder)
+                .logger(LOG, "getPublicIp")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetPublicIp",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIp");
-        java.util.function.Function<javax.ws.rs.core.Response, GetPublicIpResponse> transformer =
-                GetPublicIpConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIp")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPublicIpRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIps")
+                .appendPathParam(request.getPublicIpId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.PublicIp.class,
+                        GetPublicIpResponse.Builder::publicIp)
+                .handleResponseHeaderString("etag", GetPublicIpResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPublicIpResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetPublicIpByIpAddressResponse getPublicIpByIpAddress(
             GetPublicIpByIpAddressRequest request) {
-        LOG.trace("Called getPublicIpByIpAddress");
-        final GetPublicIpByIpAddressRequest interceptedRequest =
-                GetPublicIpByIpAddressConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetPublicIpByIpAddressConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getGetPublicIpByIpAddressDetails(),
+                "getPublicIpByIpAddressDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, GetPublicIpByIpAddressResponse::builder)
+                .logger(LOG, "getPublicIpByIpAddress")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetPublicIpByIpAddress",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByIpAddress");
-        java.util.function.Function<javax.ws.rs.core.Response, GetPublicIpByIpAddressResponse>
-                transformer =
-                        GetPublicIpByIpAddressConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getGetPublicIpByIpAddressDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByIpAddress")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GetPublicIpByIpAddressRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIps")
+                .appendPathParam("actions")
+                .appendPathParam("getByIpAddress")
+                .accept("application/json")
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.PublicIp.class,
+                        GetPublicIpByIpAddressResponse.Builder::publicIp)
+                .handleResponseHeaderString("etag", GetPublicIpByIpAddressResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPublicIpByIpAddressResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetPublicIpByPrivateIpIdResponse getPublicIpByPrivateIpId(
             GetPublicIpByPrivateIpIdRequest request) {
-        LOG.trace("Called getPublicIpByPrivateIpId");
-        final GetPublicIpByPrivateIpIdRequest interceptedRequest =
-                GetPublicIpByPrivateIpIdConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetPublicIpByPrivateIpIdConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getGetPublicIpByPrivateIpIdDetails(),
+                "getPublicIpByPrivateIpIdDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, GetPublicIpByPrivateIpIdResponse::builder)
+                .logger(LOG, "getPublicIpByPrivateIpId")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetPublicIpByPrivateIpId",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId");
-        java.util.function.Function<javax.ws.rs.core.Response, GetPublicIpByPrivateIpIdResponse>
-                transformer =
-                        GetPublicIpByPrivateIpIdConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getGetPublicIpByPrivateIpIdDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GetPublicIpByPrivateIpIdRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIps")
+                .appendPathParam("actions")
+                .appendPathParam("getByPrivateIpId")
+                .accept("application/json")
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.PublicIp.class,
+                        GetPublicIpByPrivateIpIdResponse.Builder::publicIp)
+                .handleResponseHeaderString("etag", GetPublicIpByPrivateIpIdResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPublicIpByPrivateIpIdResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetPublicIpPoolResponse getPublicIpPool(GetPublicIpPoolRequest request) {
-        LOG.trace("Called getPublicIpPool");
-        final GetPublicIpPoolRequest interceptedRequest =
-                GetPublicIpPoolConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetPublicIpPoolConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getPublicIpPoolId(), "publicIpPoolId must not be blank");
+
+        return clientCall(request, GetPublicIpPoolResponse::builder)
+                .logger(LOG, "getPublicIpPool")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetPublicIpPool",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/GetPublicIpPool");
-        java.util.function.Function<javax.ws.rs.core.Response, GetPublicIpPoolResponse>
-                transformer =
-                        GetPublicIpPoolConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/GetPublicIpPool")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPublicIpPoolRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIpPools")
+                .appendPathParam(request.getPublicIpPoolId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.PublicIpPool.class,
+                        GetPublicIpPoolResponse.Builder::publicIpPool)
+                .handleResponseHeaderString("etag", GetPublicIpPoolResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPublicIpPoolResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetRemotePeeringConnectionResponse getRemotePeeringConnection(
             GetRemotePeeringConnectionRequest request) {
-        LOG.trace("Called getRemotePeeringConnection");
-        final GetRemotePeeringConnectionRequest interceptedRequest =
-                GetRemotePeeringConnectionConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetRemotePeeringConnectionConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getRemotePeeringConnectionId(),
+                "remotePeeringConnectionId must not be blank");
+
+        return clientCall(request, GetRemotePeeringConnectionResponse::builder)
+                .logger(LOG, "getRemotePeeringConnection")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetRemotePeeringConnection",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/GetRemotePeeringConnection");
-        java.util.function.Function<javax.ws.rs.core.Response, GetRemotePeeringConnectionResponse>
-                transformer =
-                        GetRemotePeeringConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/GetRemotePeeringConnection")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetRemotePeeringConnectionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("remotePeeringConnections")
+                .appendPathParam(request.getRemotePeeringConnectionId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.RemotePeeringConnection.class,
+                        GetRemotePeeringConnectionResponse.Builder::remotePeeringConnection)
+                .handleResponseHeaderString(
+                        "etag", GetRemotePeeringConnectionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetRemotePeeringConnectionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetRouteTableResponse getRouteTable(GetRouteTableRequest request) {
-        LOG.trace("Called getRouteTable");
-        final GetRouteTableRequest interceptedRequest =
-                GetRouteTableConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetRouteTableConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getRtId(), "rtId must not be blank");
+
+        return clientCall(request, GetRouteTableResponse::builder)
+                .logger(LOG, "getRouteTable")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetRouteTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/GetRouteTable");
-        java.util.function.Function<javax.ws.rs.core.Response, GetRouteTableResponse> transformer =
-                GetRouteTableConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/GetRouteTable")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetRouteTableRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("routeTables")
+                .appendPathParam(request.getRtId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.RouteTable.class,
+                        GetRouteTableResponse.Builder::routeTable)
+                .handleResponseHeaderString("etag", GetRouteTableResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetRouteTableResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetSecurityListResponse getSecurityList(GetSecurityListRequest request) {
-        LOG.trace("Called getSecurityList");
-        final GetSecurityListRequest interceptedRequest =
-                GetSecurityListConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetSecurityListConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getSecurityListId(), "securityListId must not be blank");
+
+        return clientCall(request, GetSecurityListResponse::builder)
+                .logger(LOG, "getSecurityList")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetSecurityList",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/GetSecurityList");
-        java.util.function.Function<javax.ws.rs.core.Response, GetSecurityListResponse>
-                transformer =
-                        GetSecurityListConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/GetSecurityList")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSecurityListRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("securityLists")
+                .appendPathParam(request.getSecurityListId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.SecurityList.class,
+                        GetSecurityListResponse.Builder::securityList)
+                .handleResponseHeaderString("etag", GetSecurityListResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSecurityListResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetServiceResponse getService(GetServiceRequest request) {
-        LOG.trace("Called getService");
-        final GetServiceRequest interceptedRequest = GetServiceConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetServiceConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getServiceId(), "serviceId must not be blank");
+
+        return clientCall(request, GetServiceResponse::builder)
+                .logger(LOG, "getService")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetService",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Service/GetService");
-        java.util.function.Function<javax.ws.rs.core.Response, GetServiceResponse> transformer =
-                GetServiceConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Service/GetService")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetServiceRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("services")
+                .appendPathParam(request.getServiceId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.Service.class,
+                        GetServiceResponse.Builder::service)
+                .handleResponseHeaderString("etag", GetServiceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetServiceResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetServiceGatewayResponse getServiceGateway(GetServiceGatewayRequest request) {
-        LOG.trace("Called getServiceGateway");
-        final GetServiceGatewayRequest interceptedRequest =
-                GetServiceGatewayConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetServiceGatewayConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getServiceGatewayId(), "serviceGatewayId must not be blank");
+
+        return clientCall(request, GetServiceGatewayResponse::builder)
+                .logger(LOG, "getServiceGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetServiceGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/GetServiceGateway");
-        java.util.function.Function<javax.ws.rs.core.Response, GetServiceGatewayResponse>
-                transformer =
-                        GetServiceGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/GetServiceGateway")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetServiceGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("serviceGateways")
+                .appendPathParam(request.getServiceGatewayId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.ServiceGateway.class,
+                        GetServiceGatewayResponse.Builder::serviceGateway)
+                .handleResponseHeaderString("etag", GetServiceGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetServiceGatewayResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetSubnetResponse getSubnet(GetSubnetRequest request) {
-        LOG.trace("Called getSubnet");
-        final GetSubnetRequest interceptedRequest = GetSubnetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetSubnetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
+
+        return clientCall(request, GetSubnetResponse::builder)
+                .logger(LOG, "getSubnet")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetSubnet",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/GetSubnet");
-        java.util.function.Function<javax.ws.rs.core.Response, GetSubnetResponse> transformer =
-                GetSubnetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/GetSubnet")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSubnetRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("subnets")
+                .appendPathParam(request.getSubnetId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.Subnet.class, GetSubnetResponse.Builder::subnet)
+                .handleResponseHeaderString("etag", GetSubnetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSubnetResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetSubnetTopologyResponse getSubnetTopology(GetSubnetTopologyRequest request) {
-        LOG.trace("Called getSubnetTopology");
-        final GetSubnetTopologyRequest interceptedRequest =
-                GetSubnetTopologyConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetSubnetTopologyConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getSubnetId(), "subnetId is required");
+
+        return clientCall(request, GetSubnetTopologyResponse::builder)
+                .logger(LOG, "getSubnetTopology")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetSubnetTopology",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SubnetTopology/GetSubnetTopology");
-        java.util.function.Function<javax.ws.rs.core.Response, GetSubnetTopologyResponse>
-                transformer =
-                        GetSubnetTopologyConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SubnetTopology/GetSubnetTopology")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSubnetTopologyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("subnetTopology")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("queryCompartmentSubtree", request.getQueryCompartmentSubtree())
+                .appendQueryParam("subnetId", request.getSubnetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-none-match", request.getIfNoneMatch())
+                .appendHeader("cache-control", request.getCacheControl())
+                .handleBody(
+                        com.oracle.bmc.core.model.SubnetTopology.class,
+                        GetSubnetTopologyResponse.Builder::subnetTopology)
+                .handleResponseHeaderString("etag", GetSubnetTopologyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSubnetTopologyResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetTunnelCpeDeviceConfigResponse getTunnelCpeDeviceConfig(
             GetTunnelCpeDeviceConfigRequest request) {
-        LOG.trace("Called getTunnelCpeDeviceConfig");
-        final GetTunnelCpeDeviceConfigRequest interceptedRequest =
-                GetTunnelCpeDeviceConfigConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetTunnelCpeDeviceConfigConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
+
+        return clientCall(request, GetTunnelCpeDeviceConfigResponse::builder)
+                .logger(LOG, "getTunnelCpeDeviceConfig")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetTunnelCpeDeviceConfig",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfig");
-        java.util.function.Function<javax.ws.rs.core.Response, GetTunnelCpeDeviceConfigResponse>
-                transformer =
-                        GetTunnelCpeDeviceConfigConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfig")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetTunnelCpeDeviceConfigRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("tunnels")
+                .appendPathParam(request.getTunnelId())
+                .appendPathParam("tunnelDeviceConfig")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.TunnelCpeDeviceConfig.class,
+                        GetTunnelCpeDeviceConfigResponse.Builder::tunnelCpeDeviceConfig)
+                .handleResponseHeaderString("etag", GetTunnelCpeDeviceConfigResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetTunnelCpeDeviceConfigResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetTunnelCpeDeviceConfigContentResponse getTunnelCpeDeviceConfigContent(
             GetTunnelCpeDeviceConfigContentRequest request) {
-        LOG.trace("Called getTunnelCpeDeviceConfigContent");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "getTunnelCpeDeviceConfigContent returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
-        final GetTunnelCpeDeviceConfigContentRequest interceptedRequest =
-                GetTunnelCpeDeviceConfigContentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetTunnelCpeDeviceConfigContentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
+
+        return clientCall(request, GetTunnelCpeDeviceConfigContentResponse::builder)
+                .logger(LOG, "getTunnelCpeDeviceConfigContent")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetTunnelCpeDeviceConfigContent",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, GetTunnelCpeDeviceConfigContentResponse>
-                transformer =
-                        GetTunnelCpeDeviceConfigContentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetTunnelCpeDeviceConfigContentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("tunnels")
+                .appendPathParam(request.getTunnelId())
+                .appendPathParam("tunnelDeviceConfig")
+                .appendPathParam("content")
+                .accept("text/plain; charset=utf-8")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetTunnelCpeDeviceConfigContentResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetTunnelCpeDeviceConfigContentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetUpgradeStatusResponse getUpgradeStatus(GetUpgradeStatusRequest request) {
-        LOG.trace("Called getUpgradeStatus");
-        final GetUpgradeStatusRequest interceptedRequest =
-                GetUpgradeStatusConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetUpgradeStatusConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getDrgId(), "drgId must not be blank");
+
+        return clientCall(request, GetUpgradeStatusResponse::builder)
+                .logger(LOG, "getUpgradeStatus")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetUpgradeStatus",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetUpgradeStatus");
-        java.util.function.Function<javax.ws.rs.core.Response, GetUpgradeStatusResponse>
-                transformer =
-                        GetUpgradeStatusConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetUpgradeStatus")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetUpgradeStatusRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgs")
+                .appendPathParam(request.getDrgId())
+                .appendPathParam("actions")
+                .appendPathParam("upgradeStatus")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.UpgradeStatus.class,
+                        GetUpgradeStatusResponse.Builder::upgradeStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetUpgradeStatusResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetVcnResponse getVcn(GetVcnRequest request) {
-        LOG.trace("Called getVcn");
-        final GetVcnRequest interceptedRequest = GetVcnConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVcnConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
+
+        return clientCall(request, GetVcnResponse::builder)
+                .logger(LOG, "getVcn")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetVcn",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/GetVcn");
-        java.util.function.Function<javax.ws.rs.core.Response, GetVcnResponse> transformer =
-                GetVcnConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/GetVcn")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVcnRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .appendPathParam(request.getVcnId())
+                .accept("application/json")
+                .handleBody(com.oracle.bmc.core.model.Vcn.class, GetVcnResponse.Builder::vcn)
+                .handleResponseHeaderString("etag", GetVcnResponse.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", GetVcnResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetVcnDnsResolverAssociationResponse getVcnDnsResolverAssociation(
             GetVcnDnsResolverAssociationRequest request) {
-        LOG.trace("Called getVcnDnsResolverAssociation");
-        final GetVcnDnsResolverAssociationRequest interceptedRequest =
-                GetVcnDnsResolverAssociationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVcnDnsResolverAssociationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
+
+        return clientCall(request, GetVcnDnsResolverAssociationResponse::builder)
+                .logger(LOG, "getVcnDnsResolverAssociation")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetVcnDnsResolverAssociation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VcnDnsResolverAssociation/GetVcnDnsResolverAssociation");
-        java.util.function.Function<javax.ws.rs.core.Response, GetVcnDnsResolverAssociationResponse>
-                transformer =
-                        GetVcnDnsResolverAssociationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VcnDnsResolverAssociation/GetVcnDnsResolverAssociation")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVcnDnsResolverAssociationRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .appendPathParam(request.getVcnId())
+                .appendPathParam("dnsResolverAssociation")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.VcnDnsResolverAssociation.class,
+                        GetVcnDnsResolverAssociationResponse.Builder::vcnDnsResolverAssociation)
+                .handleResponseHeaderString(
+                        "etag", GetVcnDnsResolverAssociationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetVcnDnsResolverAssociationResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetVcnTopologyResponse getVcnTopology(GetVcnTopologyRequest request) {
-        LOG.trace("Called getVcnTopology");
-        final GetVcnTopologyRequest interceptedRequest =
-                GetVcnTopologyConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVcnTopologyConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getVcnId(), "vcnId is required");
+
+        return clientCall(request, GetVcnTopologyResponse::builder)
+                .logger(LOG, "getVcnTopology")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetVcnTopology",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VcnTopology/GetVcnTopology");
-        java.util.function.Function<javax.ws.rs.core.Response, GetVcnTopologyResponse> transformer =
-                GetVcnTopologyConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VcnTopology/GetVcnTopology")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVcnTopologyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcnTopology")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("queryCompartmentSubtree", request.getQueryCompartmentSubtree())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-none-match", request.getIfNoneMatch())
+                .appendHeader("cache-control", request.getCacheControl())
+                .handleBody(
+                        com.oracle.bmc.core.model.VcnTopology.class,
+                        GetVcnTopologyResponse.Builder::vcnTopology)
+                .handleResponseHeaderString("etag", GetVcnTopologyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetVcnTopologyResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetVirtualCircuitResponse getVirtualCircuit(GetVirtualCircuitRequest request) {
-        LOG.trace("Called getVirtualCircuit");
-        final GetVirtualCircuitRequest interceptedRequest =
-                GetVirtualCircuitConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVirtualCircuitConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
+
+        return clientCall(request, GetVirtualCircuitResponse::builder)
+                .logger(LOG, "getVirtualCircuit")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetVirtualCircuit",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/GetVirtualCircuit");
-        java.util.function.Function<javax.ws.rs.core.Response, GetVirtualCircuitResponse>
-                transformer =
-                        GetVirtualCircuitConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/GetVirtualCircuit")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVirtualCircuitRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("virtualCircuits")
+                .appendPathParam(request.getVirtualCircuitId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.VirtualCircuit.class,
+                        GetVirtualCircuitResponse.Builder::virtualCircuit)
+                .handleResponseHeaderString("etag", GetVirtualCircuitResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetVirtualCircuitResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetVlanResponse getVlan(GetVlanRequest request) {
-        LOG.trace("Called getVlan");
-        final GetVlanRequest interceptedRequest = GetVlanConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVlanConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVlanId(), "vlanId must not be blank");
+
+        return clientCall(request, GetVlanResponse::builder)
+                .logger(LOG, "getVlan")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetVlan",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/GetVlan");
-        java.util.function.Function<javax.ws.rs.core.Response, GetVlanResponse> transformer =
-                GetVlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/GetVlan")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVlanRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vlans")
+                .appendPathParam(request.getVlanId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(com.oracle.bmc.core.model.Vlan.class, GetVlanResponse.Builder::vlan)
+                .handleResponseHeaderString("etag", GetVlanResponse.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", GetVlanResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetVnicResponse getVnic(GetVnicRequest request) {
-        LOG.trace("Called getVnic");
-        final GetVnicRequest interceptedRequest = GetVnicConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVnicConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVnicId(), "vnicId must not be blank");
+
+        return clientCall(request, GetVnicResponse::builder)
+                .logger(LOG, "getVnic")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetVnic",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vnic/GetVnic");
-        java.util.function.Function<javax.ws.rs.core.Response, GetVnicResponse> transformer =
-                GetVnicConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vnic/GetVnic")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVnicRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vnics")
+                .appendPathParam(request.getVnicId())
+                .accept("application/json")
+                .handleBody(com.oracle.bmc.core.model.Vnic.class, GetVnicResponse.Builder::vnic)
+                .handleResponseHeaderString("etag", GetVnicResponse.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", GetVnicResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetVtapResponse getVtap(GetVtapRequest request) {
-        LOG.trace("Called getVtap");
-        final GetVtapRequest interceptedRequest = GetVtapConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVtapConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVtapId(), "vtapId must not be blank");
+
+        return clientCall(request, GetVtapResponse::builder)
+                .logger(LOG, "getVtap")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetVtap",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/GetVtap");
-        java.util.function.Function<javax.ws.rs.core.Response, GetVtapResponse> transformer =
-                GetVtapConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/GetVtap")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVtapRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vtaps")
+                .appendPathParam(request.getVtapId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(com.oracle.bmc.core.model.Vtap.class, GetVtapResponse.Builder::vtap)
+                .handleResponseHeaderString("etag", GetVtapResponse.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", GetVtapResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListAllowedPeerRegionsForRemotePeeringResponse listAllowedPeerRegionsForRemotePeering(
             ListAllowedPeerRegionsForRemotePeeringRequest request) {
-        LOG.trace("Called listAllowedPeerRegionsForRemotePeering");
-        final ListAllowedPeerRegionsForRemotePeeringRequest interceptedRequest =
-                ListAllowedPeerRegionsForRemotePeeringConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListAllowedPeerRegionsForRemotePeeringConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListAllowedPeerRegionsForRemotePeeringResponse::builder)
+                .logger(LOG, "listAllowedPeerRegionsForRemotePeering")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListAllowedPeerRegionsForRemotePeering",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PeerRegionForRemotePeering/ListAllowedPeerRegionsForRemotePeering");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ListAllowedPeerRegionsForRemotePeeringResponse>
-                transformer =
-                        ListAllowedPeerRegionsForRemotePeeringConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PeerRegionForRemotePeering/ListAllowedPeerRegionsForRemotePeering")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAllowedPeerRegionsForRemotePeeringRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("allowedPeerRegionsForRemotePeering")
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.PeerRegionForRemotePeering.class,
+                        ListAllowedPeerRegionsForRemotePeeringResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListAllowedPeerRegionsForRemotePeeringResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListByoipAllocatedRangesResponse listByoipAllocatedRanges(
             ListByoipAllocatedRangesRequest request) {
-        LOG.trace("Called listByoipAllocatedRanges");
-        final ListByoipAllocatedRangesRequest interceptedRequest =
-                ListByoipAllocatedRangesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListByoipAllocatedRangesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
+
+        return clientCall(request, ListByoipAllocatedRangesResponse::builder)
+                .logger(LOG, "listByoipAllocatedRanges")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListByoipAllocatedRanges",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipAllocatedRangeSummary/ListByoipAllocatedRanges");
-        java.util.function.Function<javax.ws.rs.core.Response, ListByoipAllocatedRangesResponse>
-                transformer =
-                        ListByoipAllocatedRangesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipAllocatedRangeSummary/ListByoipAllocatedRanges")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListByoipAllocatedRangesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoipRanges")
+                .appendPathParam(request.getByoipRangeId())
+                .appendPathParam("byoipAllocatedRanges")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ByoipAllocatedRangeCollection.class,
+                        ListByoipAllocatedRangesResponse.Builder::byoipAllocatedRangeCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListByoipAllocatedRangesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListByoipAllocatedRangesResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListByoipRangesResponse listByoipRanges(ListByoipRangesRequest request) {
-        LOG.trace("Called listByoipRanges");
-        final ListByoipRangesRequest interceptedRequest =
-                ListByoipRangesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListByoipRangesConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListByoipRangesResponse::builder)
+                .logger(LOG, "listByoipRanges")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListByoipRanges",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ListByoipRanges");
-        java.util.function.Function<javax.ws.rs.core.Response, ListByoipRangesResponse>
-                transformer =
-                        ListByoipRangesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ListByoipRanges")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListByoipRangesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoipRanges")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ByoipRangeCollection.class,
+                        ListByoipRangesResponse.Builder::byoipRangeCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListByoipRangesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListByoipRangesResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListCaptureFiltersResponse listCaptureFilters(ListCaptureFiltersRequest request) {
-        LOG.trace("Called listCaptureFilters");
-        final ListCaptureFiltersRequest interceptedRequest =
-                ListCaptureFiltersConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListCaptureFiltersConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListCaptureFiltersResponse::builder)
+                .logger(LOG, "listCaptureFilters")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListCaptureFilters",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/ListCaptureFilters");
-        java.util.function.Function<javax.ws.rs.core.Response, ListCaptureFiltersResponse>
-                transformer =
-                        ListCaptureFiltersConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/ListCaptureFilters")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCaptureFiltersRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("captureFilters")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.CaptureFilter.class,
+                        ListCaptureFiltersResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCaptureFiltersResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCaptureFiltersResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListCpeDeviceShapesResponse listCpeDeviceShapes(ListCpeDeviceShapesRequest request) {
-        LOG.trace("Called listCpeDeviceShapes");
-        final ListCpeDeviceShapesRequest interceptedRequest =
-                ListCpeDeviceShapesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListCpeDeviceShapesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListCpeDeviceShapesResponse::builder)
+                .logger(LOG, "listCpeDeviceShapes")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListCpeDeviceShapes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CpeDeviceShapeSummary/ListCpeDeviceShapes");
-        java.util.function.Function<javax.ws.rs.core.Response, ListCpeDeviceShapesResponse>
-                transformer =
-                        ListCpeDeviceShapesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CpeDeviceShapeSummary/ListCpeDeviceShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCpeDeviceShapesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cpeDeviceShapes")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.CpeDeviceShapeSummary.class,
+                        ListCpeDeviceShapesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCpeDeviceShapesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCpeDeviceShapesResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListCpesResponse listCpes(ListCpesRequest request) {
-        LOG.trace("Called listCpes");
-        final ListCpesRequest interceptedRequest = ListCpesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListCpesConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListCpesResponse::builder)
+                .logger(LOG, "listCpes")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListCpes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/ListCpes");
-        java.util.function.Function<javax.ws.rs.core.Response, ListCpesResponse> transformer =
-                ListCpesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/ListCpes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCpesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cpes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.Cpe.class, ListCpesResponse.Builder::items)
+                .handleResponseHeaderString("opc-next-page", ListCpesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCpesResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListCrossConnectGroupsResponse listCrossConnectGroups(
             ListCrossConnectGroupsRequest request) {
-        LOG.trace("Called listCrossConnectGroups");
-        final ListCrossConnectGroupsRequest interceptedRequest =
-                ListCrossConnectGroupsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListCrossConnectGroupsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListCrossConnectGroupsResponse::builder)
+                .logger(LOG, "listCrossConnectGroups")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListCrossConnectGroups",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/ListCrossConnectGroups");
-        java.util.function.Function<javax.ws.rs.core.Response, ListCrossConnectGroupsResponse>
-                transformer =
-                        ListCrossConnectGroupsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/ListCrossConnectGroups")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCrossConnectGroupsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnectGroups")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.CrossConnectGroup.class,
+                        ListCrossConnectGroupsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCrossConnectGroupsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCrossConnectGroupsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListCrossConnectLocationsResponse listCrossConnectLocations(
             ListCrossConnectLocationsRequest request) {
-        LOG.trace("Called listCrossConnectLocations");
-        final ListCrossConnectLocationsRequest interceptedRequest =
-                ListCrossConnectLocationsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListCrossConnectLocationsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListCrossConnectLocationsResponse::builder)
+                .logger(LOG, "listCrossConnectLocations")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListCrossConnectLocations",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations");
-        java.util.function.Function<javax.ws.rs.core.Response, ListCrossConnectLocationsResponse>
-                transformer =
-                        ListCrossConnectLocationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCrossConnectLocationsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnectLocations")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.CrossConnectLocation.class,
+                        ListCrossConnectLocationsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCrossConnectLocationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCrossConnectLocationsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListCrossConnectMappingsResponse listCrossConnectMappings(
             ListCrossConnectMappingsRequest request) {
-        LOG.trace("Called listCrossConnectMappings");
-        final ListCrossConnectMappingsRequest interceptedRequest =
-                ListCrossConnectMappingsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListCrossConnectMappingsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
+
+        return clientCall(request, ListCrossConnectMappingsResponse::builder)
+                .logger(LOG, "listCrossConnectMappings")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListCrossConnectMappings",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectMappingDetailsCollection/ListCrossConnectMappings");
-        java.util.function.Function<javax.ws.rs.core.Response, ListCrossConnectMappingsResponse>
-                transformer =
-                        ListCrossConnectMappingsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectMappingDetailsCollection/ListCrossConnectMappings")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCrossConnectMappingsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("virtualCircuits")
+                .appendPathParam(request.getVirtualCircuitId())
+                .appendPathParam("crossConnectMappings")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.CrossConnectMappingDetailsCollection.class,
+                        ListCrossConnectMappingsResponse.Builder
+                                ::crossConnectMappingDetailsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCrossConnectMappingsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListCrossConnectsResponse listCrossConnects(ListCrossConnectsRequest request) {
-        LOG.trace("Called listCrossConnects");
-        final ListCrossConnectsRequest interceptedRequest =
-                ListCrossConnectsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListCrossConnectsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListCrossConnectsResponse::builder)
+                .logger(LOG, "listCrossConnects")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListCrossConnects",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/ListCrossConnects");
-        java.util.function.Function<javax.ws.rs.core.Response, ListCrossConnectsResponse>
-                transformer =
-                        ListCrossConnectsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/ListCrossConnects")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCrossConnectsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnects")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("crossConnectGroupId", request.getCrossConnectGroupId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.CrossConnect.class,
+                        ListCrossConnectsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCrossConnectsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCrossConnectsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListCrossconnectPortSpeedShapesResponse listCrossconnectPortSpeedShapes(
             ListCrossconnectPortSpeedShapesRequest request) {
-        LOG.trace("Called listCrossconnectPortSpeedShapes");
-        final ListCrossconnectPortSpeedShapesRequest interceptedRequest =
-                ListCrossconnectPortSpeedShapesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListCrossconnectPortSpeedShapesConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListCrossconnectPortSpeedShapesResponse::builder)
+                .logger(LOG, "listCrossconnectPortSpeedShapes")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListCrossconnectPortSpeedShapes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ListCrossconnectPortSpeedShapesResponse>
-                transformer =
-                        ListCrossconnectPortSpeedShapesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCrossconnectPortSpeedShapesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnectPortSpeedShapes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.CrossConnectPortSpeedShape.class,
+                        ListCrossconnectPortSpeedShapesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListCrossconnectPortSpeedShapesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListCrossconnectPortSpeedShapesResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListDhcpOptionsResponse listDhcpOptions(ListDhcpOptionsRequest request) {
-        LOG.trace("Called listDhcpOptions");
-        final ListDhcpOptionsRequest interceptedRequest =
-                ListDhcpOptionsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDhcpOptionsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListDhcpOptionsResponse::builder)
+                .logger(LOG, "listDhcpOptions")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListDhcpOptions",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/ListDhcpOptions");
-        java.util.function.Function<javax.ws.rs.core.Response, ListDhcpOptionsResponse>
-                transformer =
-                        ListDhcpOptionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/ListDhcpOptions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDhcpOptionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dhcps")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DhcpOptions.class,
+                        ListDhcpOptionsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDhcpOptionsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDhcpOptionsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListDrgAttachmentsResponse listDrgAttachments(ListDrgAttachmentsRequest request) {
-        LOG.trace("Called listDrgAttachments");
-        final ListDrgAttachmentsRequest interceptedRequest =
-                ListDrgAttachmentsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDrgAttachmentsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListDrgAttachmentsResponse::builder)
+                .logger(LOG, "listDrgAttachments")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListDrgAttachments",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/ListDrgAttachments");
-        java.util.function.Function<javax.ws.rs.core.Response, ListDrgAttachmentsResponse>
-                transformer =
-                        ListDrgAttachmentsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/ListDrgAttachments")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDrgAttachmentsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgAttachments")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .appendQueryParam("drgId", request.getDrgId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("networkId", request.getNetworkId())
+                .appendEnumQueryParam("attachmentType", request.getAttachmentType())
+                .appendQueryParam("drgRouteTableId", request.getDrgRouteTableId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DrgAttachment.class,
+                        ListDrgAttachmentsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDrgAttachmentsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDrgAttachmentsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListDrgRouteDistributionStatementsResponse listDrgRouteDistributionStatements(
             ListDrgRouteDistributionStatementsRequest request) {
-        LOG.trace("Called listDrgRouteDistributionStatements");
-        final ListDrgRouteDistributionStatementsRequest interceptedRequest =
-                ListDrgRouteDistributionStatementsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDrgRouteDistributionStatementsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getDrgRouteDistributionId(), "drgRouteDistributionId must not be blank");
+
+        return clientCall(request, ListDrgRouteDistributionStatementsResponse::builder)
+                .logger(LOG, "listDrgRouteDistributionStatements")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListDrgRouteDistributionStatements",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/ListDrgRouteDistributionStatements");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ListDrgRouteDistributionStatementsResponse>
-                transformer =
-                        ListDrgRouteDistributionStatementsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/ListDrgRouteDistributionStatements")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDrgRouteDistributionStatementsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteDistributions")
+                .appendPathParam(request.getDrgRouteDistributionId())
+                .appendPathParam("drgRouteDistributionStatements")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DrgRouteDistributionStatement.class,
+                        ListDrgRouteDistributionStatementsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListDrgRouteDistributionStatementsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListDrgRouteDistributionStatementsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListDrgRouteDistributionsResponse listDrgRouteDistributions(
             ListDrgRouteDistributionsRequest request) {
-        LOG.trace("Called listDrgRouteDistributions");
-        final ListDrgRouteDistributionsRequest interceptedRequest =
-                ListDrgRouteDistributionsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDrgRouteDistributionsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getDrgId(), "drgId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListDrgRouteDistributionsResponse::builder)
+                .logger(LOG, "listDrgRouteDistributions")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListDrgRouteDistributions",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/ListDrgRouteDistributions");
-        java.util.function.Function<javax.ws.rs.core.Response, ListDrgRouteDistributionsResponse>
-                transformer =
-                        ListDrgRouteDistributionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/ListDrgRouteDistributions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDrgRouteDistributionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteDistributions")
+                .appendQueryParam("drgId", request.getDrgId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DrgRouteDistribution.class,
+                        ListDrgRouteDistributionsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDrgRouteDistributionsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDrgRouteDistributionsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListDrgRouteRulesResponse listDrgRouteRules(ListDrgRouteRulesRequest request) {
-        LOG.trace("Called listDrgRouteRules");
-        final ListDrgRouteRulesRequest interceptedRequest =
-                ListDrgRouteRulesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDrgRouteRulesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getDrgRouteTableId(), "drgRouteTableId must not be blank");
+
+        return clientCall(request, ListDrgRouteRulesResponse::builder)
+                .logger(LOG, "listDrgRouteRules")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListDrgRouteRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/ListDrgRouteRules");
-        java.util.function.Function<javax.ws.rs.core.Response, ListDrgRouteRulesResponse>
-                transformer =
-                        ListDrgRouteRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/ListDrgRouteRules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDrgRouteRulesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteTables")
+                .appendPathParam(request.getDrgRouteTableId())
+                .appendPathParam("drgRouteRules")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("routeType", request.getRouteType())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DrgRouteRule.class,
+                        ListDrgRouteRulesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDrgRouteRulesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDrgRouteRulesResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListDrgRouteTablesResponse listDrgRouteTables(ListDrgRouteTablesRequest request) {
-        LOG.trace("Called listDrgRouteTables");
-        final ListDrgRouteTablesRequest interceptedRequest =
-                ListDrgRouteTablesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDrgRouteTablesConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getDrgId(), "drgId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListDrgRouteTablesResponse::builder)
+                .logger(LOG, "listDrgRouteTables")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListDrgRouteTables",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/ListDrgRouteTables");
-        java.util.function.Function<javax.ws.rs.core.Response, ListDrgRouteTablesResponse>
-                transformer =
-                        ListDrgRouteTablesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/ListDrgRouteTables")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDrgRouteTablesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteTables")
+                .appendQueryParam("drgId", request.getDrgId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam(
+                        "importDrgRouteDistributionId", request.getImportDrgRouteDistributionId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DrgRouteTable.class,
+                        ListDrgRouteTablesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDrgRouteTablesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDrgRouteTablesResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListDrgsResponse listDrgs(ListDrgsRequest request) {
-        LOG.trace("Called listDrgs");
-        final ListDrgsRequest interceptedRequest = ListDrgsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDrgsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListDrgsResponse::builder)
+                .logger(LOG, "listDrgs")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListDrgs",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/ListDrgs");
-        java.util.function.Function<javax.ws.rs.core.Response, ListDrgsResponse> transformer =
-                ListDrgsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/ListDrgs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDrgsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgs")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.Drg.class, ListDrgsResponse.Builder::items)
+                .handleResponseHeaderString("opc-next-page", ListDrgsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDrgsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListFastConnectProviderServicesResponse listFastConnectProviderServices(
             ListFastConnectProviderServicesRequest request) {
-        LOG.trace("Called listFastConnectProviderServices");
-        final ListFastConnectProviderServicesRequest interceptedRequest =
-                ListFastConnectProviderServicesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListFastConnectProviderServicesConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListFastConnectProviderServicesResponse::builder)
+                .logger(LOG, "listFastConnectProviderServices")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListFastConnectProviderServices",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/ListFastConnectProviderServices");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ListFastConnectProviderServicesResponse>
-                transformer =
-                        ListFastConnectProviderServicesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/ListFastConnectProviderServices")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListFastConnectProviderServicesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("fastConnectProviderServices")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.FastConnectProviderService.class,
+                        ListFastConnectProviderServicesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListFastConnectProviderServicesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListFastConnectProviderServicesResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListFastConnectProviderVirtualCircuitBandwidthShapesResponse
             listFastConnectProviderVirtualCircuitBandwidthShapes(
                     ListFastConnectProviderVirtualCircuitBandwidthShapesRequest request) {
-        LOG.trace("Called listFastConnectProviderVirtualCircuitBandwidthShapes");
-        final ListFastConnectProviderVirtualCircuitBandwidthShapesRequest interceptedRequest =
-                ListFastConnectProviderVirtualCircuitBandwidthShapesConverter.interceptRequest(
-                        request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListFastConnectProviderVirtualCircuitBandwidthShapesConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getProviderServiceId(), "providerServiceId must not be blank");
+
+        return clientCall(
+                        request,
+                        ListFastConnectProviderVirtualCircuitBandwidthShapesResponse::builder)
+                .logger(LOG, "listFastConnectProviderVirtualCircuitBandwidthShapes")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListFastConnectProviderVirtualCircuitBandwidthShapes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        ListFastConnectProviderVirtualCircuitBandwidthShapesResponse>
-                transformer =
-                        ListFastConnectProviderVirtualCircuitBandwidthShapesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(
+                        ListFastConnectProviderVirtualCircuitBandwidthShapesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("fastConnectProviderServices")
+                .appendPathParam(request.getProviderServiceId())
+                .appendPathParam("virtualCircuitBandwidthShapes")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.VirtualCircuitBandwidthShape.class,
+                        ListFastConnectProviderVirtualCircuitBandwidthShapesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListFastConnectProviderVirtualCircuitBandwidthShapesResponse.Builder
+                                ::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListFastConnectProviderVirtualCircuitBandwidthShapesResponse.Builder
+                                ::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListIPSecConnectionTunnelRoutesResponse listIPSecConnectionTunnelRoutes(
             ListIPSecConnectionTunnelRoutesRequest request) {
-        LOG.trace("Called listIPSecConnectionTunnelRoutes");
-        final ListIPSecConnectionTunnelRoutesRequest interceptedRequest =
-                ListIPSecConnectionTunnelRoutesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListIPSecConnectionTunnelRoutesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
+
+        return clientCall(request, ListIPSecConnectionTunnelRoutesResponse::builder)
+                .logger(LOG, "listIPSecConnectionTunnelRoutes")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListIPSecConnectionTunnelRoutes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelRouteSummary/ListIPSecConnectionTunnelRoutes");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ListIPSecConnectionTunnelRoutesResponse>
-                transformer =
-                        ListIPSecConnectionTunnelRoutesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelRouteSummary/ListIPSecConnectionTunnelRoutes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListIPSecConnectionTunnelRoutesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("tunnels")
+                .appendPathParam(request.getTunnelId())
+                .appendPathParam("routes")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("advertiser", request.getAdvertiser())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.TunnelRouteSummary.class,
+                        ListIPSecConnectionTunnelRoutesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListIPSecConnectionTunnelRoutesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListIPSecConnectionTunnelRoutesResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "opc-total-items",
+                        ListIPSecConnectionTunnelRoutesResponse.Builder::opcTotalItems)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListIPSecConnectionTunnelSecurityAssociationsResponse
             listIPSecConnectionTunnelSecurityAssociations(
                     ListIPSecConnectionTunnelSecurityAssociationsRequest request) {
-        LOG.trace("Called listIPSecConnectionTunnelSecurityAssociations");
-        final ListIPSecConnectionTunnelSecurityAssociationsRequest interceptedRequest =
-                ListIPSecConnectionTunnelSecurityAssociationsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListIPSecConnectionTunnelSecurityAssociationsConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
+
+        return clientCall(request, ListIPSecConnectionTunnelSecurityAssociationsResponse::builder)
+                .logger(LOG, "listIPSecConnectionTunnelSecurityAssociations")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListIPSecConnectionTunnelSecurityAssociations",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelSecurityAssociationSummary/ListIPSecConnectionTunnelSecurityAssociations");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        ListIPSecConnectionTunnelSecurityAssociationsResponse>
-                transformer =
-                        ListIPSecConnectionTunnelSecurityAssociationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelSecurityAssociationSummary/ListIPSecConnectionTunnelSecurityAssociations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListIPSecConnectionTunnelSecurityAssociationsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("tunnels")
+                .appendPathParam(request.getTunnelId())
+                .appendPathParam("tunnelSecurityAssociations")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.TunnelSecurityAssociationSummary.class,
+                        ListIPSecConnectionTunnelSecurityAssociationsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListIPSecConnectionTunnelSecurityAssociationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListIPSecConnectionTunnelSecurityAssociationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "opc-total-items",
+                        ListIPSecConnectionTunnelSecurityAssociationsResponse.Builder
+                                ::opcTotalItems)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListIPSecConnectionTunnelsResponse listIPSecConnectionTunnels(
             ListIPSecConnectionTunnelsRequest request) {
-        LOG.trace("Called listIPSecConnectionTunnels");
-        final ListIPSecConnectionTunnelsRequest interceptedRequest =
-                ListIPSecConnectionTunnelsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListIPSecConnectionTunnelsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        return clientCall(request, ListIPSecConnectionTunnelsResponse::builder)
+                .logger(LOG, "listIPSecConnectionTunnels")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListIPSecConnectionTunnels",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/ListIPSecConnectionTunnels");
-        java.util.function.Function<javax.ws.rs.core.Response, ListIPSecConnectionTunnelsResponse>
-                transformer =
-                        ListIPSecConnectionTunnelsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/ListIPSecConnectionTunnels")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListIPSecConnectionTunnelsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("tunnels")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.IPSecConnectionTunnel.class,
+                        ListIPSecConnectionTunnelsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListIPSecConnectionTunnelsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListIPSecConnectionTunnelsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListIPSecConnectionsResponse listIPSecConnections(ListIPSecConnectionsRequest request) {
-        LOG.trace("Called listIPSecConnections");
-        final ListIPSecConnectionsRequest interceptedRequest =
-                ListIPSecConnectionsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListIPSecConnectionsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListIPSecConnectionsResponse::builder)
+                .logger(LOG, "listIPSecConnections")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListIPSecConnections",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/ListIPSecConnections");
-        java.util.function.Function<javax.ws.rs.core.Response, ListIPSecConnectionsResponse>
-                transformer =
-                        ListIPSecConnectionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/ListIPSecConnections")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListIPSecConnectionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("drgId", request.getDrgId())
+                .appendQueryParam("cpeId", request.getCpeId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.IPSecConnection.class,
+                        ListIPSecConnectionsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListIPSecConnectionsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListIPSecConnectionsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListInternetGatewaysResponse listInternetGateways(ListInternetGatewaysRequest request) {
-        LOG.trace("Called listInternetGateways");
-        final ListInternetGatewaysRequest interceptedRequest =
-                ListInternetGatewaysConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListInternetGatewaysConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListInternetGatewaysResponse::builder)
+                .logger(LOG, "listInternetGateways")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListInternetGateways",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/ListInternetGateways");
-        java.util.function.Function<javax.ws.rs.core.Response, ListInternetGatewaysResponse>
-                transformer =
-                        ListInternetGatewaysConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/ListInternetGateways")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListInternetGatewaysRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("internetGateways")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.InternetGateway.class,
+                        ListInternetGatewaysResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListInternetGatewaysResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListInternetGatewaysResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListIpv6sResponse listIpv6s(ListIpv6sRequest request) {
-        LOG.trace("Called listIpv6s");
-        final ListIpv6sRequest interceptedRequest = ListIpv6sConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListIpv6sConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListIpv6sResponse::builder)
+                .logger(LOG, "listIpv6s")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListIpv6s",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/ListIpv6s");
-        java.util.function.Function<javax.ws.rs.core.Response, ListIpv6sResponse> transformer =
-                ListIpv6sConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/ListIpv6s")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListIpv6sRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipv6")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("ipAddress", request.getIpAddress())
+                .appendQueryParam("subnetId", request.getSubnetId())
+                .appendQueryParam("vnicId", request.getVnicId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.Ipv6.class, ListIpv6sResponse.Builder::items)
+                .handleResponseHeaderString("opc-next-page", ListIpv6sResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListIpv6sResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListLocalPeeringGatewaysResponse listLocalPeeringGateways(
             ListLocalPeeringGatewaysRequest request) {
-        LOG.trace("Called listLocalPeeringGateways");
-        final ListLocalPeeringGatewaysRequest interceptedRequest =
-                ListLocalPeeringGatewaysConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListLocalPeeringGatewaysConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListLocalPeeringGatewaysResponse::builder)
+                .logger(LOG, "listLocalPeeringGateways")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListLocalPeeringGateways",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ListLocalPeeringGateways");
-        java.util.function.Function<javax.ws.rs.core.Response, ListLocalPeeringGatewaysResponse>
-                transformer =
-                        ListLocalPeeringGatewaysConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ListLocalPeeringGateways")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListLocalPeeringGatewaysRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("localPeeringGateways")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.LocalPeeringGateway.class,
+                        ListLocalPeeringGatewaysResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListLocalPeeringGatewaysResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListLocalPeeringGatewaysResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListNatGatewaysResponse listNatGateways(ListNatGatewaysRequest request) {
-        LOG.trace("Called listNatGateways");
-        final ListNatGatewaysRequest interceptedRequest =
-                ListNatGatewaysConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListNatGatewaysConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListNatGatewaysResponse::builder)
+                .logger(LOG, "listNatGateways")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListNatGateways",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/ListNatGateways");
-        java.util.function.Function<javax.ws.rs.core.Response, ListNatGatewaysResponse>
-                transformer =
-                        ListNatGatewaysConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/ListNatGateways")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNatGatewaysRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("natGateways")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.NatGateway.class,
+                        ListNatGatewaysResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNatGatewaysResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListNatGatewaysResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListNetworkSecurityGroupSecurityRulesResponse listNetworkSecurityGroupSecurityRules(
             ListNetworkSecurityGroupSecurityRulesRequest request) {
-        LOG.trace("Called listNetworkSecurityGroupSecurityRules");
-        final ListNetworkSecurityGroupSecurityRulesRequest interceptedRequest =
-                ListNetworkSecurityGroupSecurityRulesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListNetworkSecurityGroupSecurityRulesConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
+
+        return clientCall(request, ListNetworkSecurityGroupSecurityRulesResponse::builder)
+                .logger(LOG, "listNetworkSecurityGroupSecurityRules")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListNetworkSecurityGroupSecurityRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/ListNetworkSecurityGroupSecurityRules");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ListNetworkSecurityGroupSecurityRulesResponse>
-                transformer =
-                        ListNetworkSecurityGroupSecurityRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/ListNetworkSecurityGroupSecurityRules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNetworkSecurityGroupSecurityRulesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkSecurityGroups")
+                .appendPathParam(request.getNetworkSecurityGroupId())
+                .appendPathParam("securityRules")
+                .appendEnumQueryParam("direction", request.getDirection())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.SecurityRule.class,
+                        ListNetworkSecurityGroupSecurityRulesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListNetworkSecurityGroupSecurityRulesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListNetworkSecurityGroupSecurityRulesResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListNetworkSecurityGroupVnicsResponse listNetworkSecurityGroupVnics(
             ListNetworkSecurityGroupVnicsRequest request) {
-        LOG.trace("Called listNetworkSecurityGroupVnics");
-        final ListNetworkSecurityGroupVnicsRequest interceptedRequest =
-                ListNetworkSecurityGroupVnicsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListNetworkSecurityGroupVnicsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
+
+        return clientCall(request, ListNetworkSecurityGroupVnicsResponse::builder)
+                .logger(LOG, "listNetworkSecurityGroupVnics")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListNetworkSecurityGroupVnics",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroupVnic/ListNetworkSecurityGroupVnics");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ListNetworkSecurityGroupVnicsResponse>
-                transformer =
-                        ListNetworkSecurityGroupVnicsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroupVnic/ListNetworkSecurityGroupVnics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNetworkSecurityGroupVnicsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkSecurityGroups")
+                .appendPathParam(request.getNetworkSecurityGroupId())
+                .appendPathParam("vnics")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.NetworkSecurityGroupVnic.class,
+                        ListNetworkSecurityGroupVnicsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNetworkSecurityGroupVnicsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListNetworkSecurityGroupVnicsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListNetworkSecurityGroupsResponse listNetworkSecurityGroups(
             ListNetworkSecurityGroupsRequest request) {
-        LOG.trace("Called listNetworkSecurityGroups");
-        final ListNetworkSecurityGroupsRequest interceptedRequest =
-                ListNetworkSecurityGroupsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListNetworkSecurityGroupsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListNetworkSecurityGroupsResponse::builder)
+                .logger(LOG, "listNetworkSecurityGroups")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListNetworkSecurityGroups",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/ListNetworkSecurityGroups");
-        java.util.function.Function<javax.ws.rs.core.Response, ListNetworkSecurityGroupsResponse>
-                transformer =
-                        ListNetworkSecurityGroupsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/ListNetworkSecurityGroups")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNetworkSecurityGroupsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkSecurityGroups")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("vlanId", request.getVlanId())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.NetworkSecurityGroup.class,
+                        ListNetworkSecurityGroupsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNetworkSecurityGroupsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListNetworkSecurityGroupsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListPrivateIpsResponse listPrivateIps(ListPrivateIpsRequest request) {
-        LOG.trace("Called listPrivateIps");
-        final ListPrivateIpsRequest interceptedRequest =
-                ListPrivateIpsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListPrivateIpsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListPrivateIpsResponse::builder)
+                .logger(LOG, "listPrivateIps")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListPrivateIps",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/ListPrivateIps");
-        java.util.function.Function<javax.ws.rs.core.Response, ListPrivateIpsResponse> transformer =
-                ListPrivateIpsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/ListPrivateIps")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPrivateIpsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("privateIps")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("ipAddress", request.getIpAddress())
+                .appendQueryParam("subnetId", request.getSubnetId())
+                .appendQueryParam("vnicId", request.getVnicId())
+                .appendQueryParam("vlanId", request.getVlanId())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.PrivateIp.class,
+                        ListPrivateIpsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPrivateIpsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPrivateIpsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListPublicIpPoolsResponse listPublicIpPools(ListPublicIpPoolsRequest request) {
-        LOG.trace("Called listPublicIpPools");
-        final ListPublicIpPoolsRequest interceptedRequest =
-                ListPublicIpPoolsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListPublicIpPoolsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListPublicIpPoolsResponse::builder)
+                .logger(LOG, "listPublicIpPools")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListPublicIpPools",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/ListPublicIpPools");
-        java.util.function.Function<javax.ws.rs.core.Response, ListPublicIpPoolsResponse>
-                transformer =
-                        ListPublicIpPoolsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/ListPublicIpPools")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPublicIpPoolsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIpPools")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("byoipRangeId", request.getByoipRangeId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.PublicIpPoolCollection.class,
+                        ListPublicIpPoolsResponse.Builder::publicIpPoolCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPublicIpPoolsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPublicIpPoolsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListPublicIpsResponse listPublicIps(ListPublicIpsRequest request) {
-        LOG.trace("Called listPublicIps");
-        final ListPublicIpsRequest interceptedRequest =
-                ListPublicIpsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListPublicIpsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getScope(), "scope is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListPublicIpsResponse::builder)
+                .logger(LOG, "listPublicIps")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListPublicIps",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/ListPublicIps");
-        java.util.function.Function<javax.ws.rs.core.Response, ListPublicIpsResponse> transformer =
-                ListPublicIpsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/ListPublicIps")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPublicIpsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIps")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("scope", request.getScope())
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendEnumQueryParam("lifetime", request.getLifetime())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("publicIpPoolId", request.getPublicIpPoolId())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.PublicIp.class,
+                        ListPublicIpsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPublicIpsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPublicIpsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListRemotePeeringConnectionsResponse listRemotePeeringConnections(
             ListRemotePeeringConnectionsRequest request) {
-        LOG.trace("Called listRemotePeeringConnections");
-        final ListRemotePeeringConnectionsRequest interceptedRequest =
-                ListRemotePeeringConnectionsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListRemotePeeringConnectionsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListRemotePeeringConnectionsResponse::builder)
+                .logger(LOG, "listRemotePeeringConnections")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListRemotePeeringConnections",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ListRemotePeeringConnections");
-        java.util.function.Function<javax.ws.rs.core.Response, ListRemotePeeringConnectionsResponse>
-                transformer =
-                        ListRemotePeeringConnectionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ListRemotePeeringConnections")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRemotePeeringConnectionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("remotePeeringConnections")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("drgId", request.getDrgId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.RemotePeeringConnection.class,
+                        ListRemotePeeringConnectionsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRemotePeeringConnectionsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListRemotePeeringConnectionsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListRouteTablesResponse listRouteTables(ListRouteTablesRequest request) {
-        LOG.trace("Called listRouteTables");
-        final ListRouteTablesRequest interceptedRequest =
-                ListRouteTablesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListRouteTablesConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListRouteTablesResponse::builder)
+                .logger(LOG, "listRouteTables")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListRouteTables",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/ListRouteTables");
-        java.util.function.Function<javax.ws.rs.core.Response, ListRouteTablesResponse>
-                transformer =
-                        ListRouteTablesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/ListRouteTables")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRouteTablesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("routeTables")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.RouteTable.class,
+                        ListRouteTablesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRouteTablesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRouteTablesResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListSecurityListsResponse listSecurityLists(ListSecurityListsRequest request) {
-        LOG.trace("Called listSecurityLists");
-        final ListSecurityListsRequest interceptedRequest =
-                ListSecurityListsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListSecurityListsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListSecurityListsResponse::builder)
+                .logger(LOG, "listSecurityLists")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListSecurityLists",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/ListSecurityLists");
-        java.util.function.Function<javax.ws.rs.core.Response, ListSecurityListsResponse>
-                transformer =
-                        ListSecurityListsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/ListSecurityLists")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSecurityListsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("securityLists")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.SecurityList.class,
+                        ListSecurityListsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSecurityListsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSecurityListsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListServiceGatewaysResponse listServiceGateways(ListServiceGatewaysRequest request) {
-        LOG.trace("Called listServiceGateways");
-        final ListServiceGatewaysRequest interceptedRequest =
-                ListServiceGatewaysConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListServiceGatewaysConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListServiceGatewaysResponse::builder)
+                .logger(LOG, "listServiceGateways")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListServiceGateways",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/ListServiceGateways");
-        java.util.function.Function<javax.ws.rs.core.Response, ListServiceGatewaysResponse>
-                transformer =
-                        ListServiceGatewaysConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/ListServiceGateways")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListServiceGatewaysRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("serviceGateways")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.ServiceGateway.class,
+                        ListServiceGatewaysResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListServiceGatewaysResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListServiceGatewaysResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListServicesResponse listServices(ListServicesRequest request) {
-        LOG.trace("Called listServices");
-        final ListServicesRequest interceptedRequest =
-                ListServicesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListServicesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListServicesResponse::builder)
+                .logger(LOG, "listServices")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListServices",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Service/ListServices");
-        java.util.function.Function<javax.ws.rs.core.Response, ListServicesResponse> transformer =
-                ListServicesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Service/ListServices")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListServicesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("services")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.Service.class,
+                        ListServicesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListServicesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListServicesResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListSubnetsResponse listSubnets(ListSubnetsRequest request) {
-        LOG.trace("Called listSubnets");
-        final ListSubnetsRequest interceptedRequest =
-                ListSubnetsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListSubnetsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListSubnetsResponse::builder)
+                .logger(LOG, "listSubnets")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListSubnets",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/ListSubnets");
-        java.util.function.Function<javax.ws.rs.core.Response, ListSubnetsResponse> transformer =
-                ListSubnetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/ListSubnets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSubnetsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("subnets")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.Subnet.class, ListSubnetsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSubnetsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSubnetsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListVcnsResponse listVcns(ListVcnsRequest request) {
-        LOG.trace("Called listVcns");
-        final ListVcnsRequest interceptedRequest = ListVcnsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListVcnsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListVcnsResponse::builder)
+                .logger(LOG, "listVcns")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListVcns",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ListVcns");
-        java.util.function.Function<javax.ws.rs.core.Response, ListVcnsResponse> transformer =
-                ListVcnsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ListVcns")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVcnsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.Vcn.class, ListVcnsResponse.Builder::items)
+                .handleResponseHeaderString("opc-next-page", ListVcnsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListVcnsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListVirtualCircuitBandwidthShapesResponse listVirtualCircuitBandwidthShapes(
             ListVirtualCircuitBandwidthShapesRequest request) {
-        LOG.trace("Called listVirtualCircuitBandwidthShapes");
-        final ListVirtualCircuitBandwidthShapesRequest interceptedRequest =
-                ListVirtualCircuitBandwidthShapesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListVirtualCircuitBandwidthShapesConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListVirtualCircuitBandwidthShapesResponse::builder)
+                .logger(LOG, "listVirtualCircuitBandwidthShapes")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListVirtualCircuitBandwidthShapes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitBandwidthShape/ListVirtualCircuitBandwidthShapes");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ListVirtualCircuitBandwidthShapesResponse>
-                transformer =
-                        ListVirtualCircuitBandwidthShapesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitBandwidthShape/ListVirtualCircuitBandwidthShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVirtualCircuitBandwidthShapesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("virtualCircuitBandwidthShapes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.VirtualCircuitBandwidthShape.class,
+                        ListVirtualCircuitBandwidthShapesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListVirtualCircuitBandwidthShapesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListVirtualCircuitBandwidthShapesResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListVirtualCircuitPublicPrefixesResponse listVirtualCircuitPublicPrefixes(
             ListVirtualCircuitPublicPrefixesRequest request) {
-        LOG.trace("Called listVirtualCircuitPublicPrefixes");
-        final ListVirtualCircuitPublicPrefixesRequest interceptedRequest =
-                ListVirtualCircuitPublicPrefixesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListVirtualCircuitPublicPrefixesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
+
+        return clientCall(request, ListVirtualCircuitPublicPrefixesResponse::builder)
+                .logger(LOG, "listVirtualCircuitPublicPrefixes")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListVirtualCircuitPublicPrefixes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/ListVirtualCircuitPublicPrefixes");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ListVirtualCircuitPublicPrefixesResponse>
-                transformer =
-                        ListVirtualCircuitPublicPrefixesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/ListVirtualCircuitPublicPrefixes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVirtualCircuitPublicPrefixesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("virtualCircuits")
+                .appendPathParam(request.getVirtualCircuitId())
+                .appendPathParam("publicPrefixes")
+                .appendEnumQueryParam("verificationState", request.getVerificationState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.VirtualCircuitPublicPrefix.class,
+                        ListVirtualCircuitPublicPrefixesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListVirtualCircuitPublicPrefixesResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListVirtualCircuitsResponse listVirtualCircuits(ListVirtualCircuitsRequest request) {
-        LOG.trace("Called listVirtualCircuits");
-        final ListVirtualCircuitsRequest interceptedRequest =
-                ListVirtualCircuitsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListVirtualCircuitsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListVirtualCircuitsResponse::builder)
+                .logger(LOG, "listVirtualCircuits")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListVirtualCircuits",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/ListVirtualCircuits");
-        java.util.function.Function<javax.ws.rs.core.Response, ListVirtualCircuitsResponse>
-                transformer =
-                        ListVirtualCircuitsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/ListVirtualCircuits")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVirtualCircuitsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("virtualCircuits")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.VirtualCircuit.class,
+                        ListVirtualCircuitsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListVirtualCircuitsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListVirtualCircuitsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListVlansResponse listVlans(ListVlansRequest request) {
-        LOG.trace("Called listVlans");
-        final ListVlansRequest interceptedRequest = ListVlansConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListVlansConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListVlansResponse::builder)
+                .logger(LOG, "listVlans")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListVlans",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/ListVlans");
-        java.util.function.Function<javax.ws.rs.core.Response, ListVlansResponse> transformer =
-                ListVlansConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/ListVlans")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVlansRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vlans")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.Vlan.class, ListVlansResponse.Builder::items)
+                .handleResponseHeaderString("opc-next-page", ListVlansResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListVlansResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListVtapsResponse listVtaps(ListVtapsRequest request) {
-        LOG.trace("Called listVtaps");
-        final ListVtapsRequest interceptedRequest = ListVtapsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListVtapsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListVtapsResponse::builder)
+                .logger(LOG, "listVtaps")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListVtaps",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/ListVtaps");
-        java.util.function.Function<javax.ws.rs.core.Response, ListVtapsResponse> transformer =
-                ListVtapsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/ListVtaps")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVtapsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vtaps")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .appendQueryParam("source", request.getSource())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendQueryParam("targetIp", request.getTargetIp())
+                .appendQueryParam("isVtapEnabled", request.getIsVtapEnabled())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.Vtap.class, ListVtapsResponse.Builder::items)
+                .handleResponseHeaderString("opc-next-page", ListVtapsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListVtapsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ModifyVcnCidrResponse modifyVcnCidr(ModifyVcnCidrRequest request) {
-        LOG.trace("Called modifyVcnCidr");
-        final ModifyVcnCidrRequest interceptedRequest =
-                ModifyVcnCidrConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ModifyVcnCidrConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
+        Objects.requireNonNull(
+                request.getModifyVcnCidrDetails(), "modifyVcnCidrDetails is required");
+
+        return clientCall(request, ModifyVcnCidrResponse::builder)
+                .logger(LOG, "modifyVcnCidr")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ModifyVcnCidr",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ModifyVcnCidr");
-        java.util.function.Function<javax.ws.rs.core.Response, ModifyVcnCidrResponse> transformer =
-                ModifyVcnCidrConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getModifyVcnCidrDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ModifyVcnCidr")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ModifyVcnCidrRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .appendPathParam(request.getVcnId())
+                .appendPathParam("actions")
+                .appendPathParam("modifyCidr")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ModifyVcnCidrResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ModifyVcnCidrResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public RemoveDrgRouteDistributionStatementsResponse removeDrgRouteDistributionStatements(
             RemoveDrgRouteDistributionStatementsRequest request) {
-        LOG.trace("Called removeDrgRouteDistributionStatements");
-        final RemoveDrgRouteDistributionStatementsRequest interceptedRequest =
-                RemoveDrgRouteDistributionStatementsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemoveDrgRouteDistributionStatementsConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getDrgRouteDistributionId(), "drgRouteDistributionId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveDrgRouteDistributionStatementsDetails(),
+                "removeDrgRouteDistributionStatementsDetails is required");
+
+        return clientCall(request, RemoveDrgRouteDistributionStatementsResponse::builder)
+                .logger(LOG, "removeDrgRouteDistributionStatements")
+                .serviceDetails(
                         "VirtualNetwork",
                         "RemoveDrgRouteDistributionStatements",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/RemoveDrgRouteDistributionStatements");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, RemoveDrgRouteDistributionStatementsResponse>
-                transformer =
-                        RemoveDrgRouteDistributionStatementsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getRemoveDrgRouteDistributionStatementsDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/RemoveDrgRouteDistributionStatements")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveDrgRouteDistributionStatementsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteDistributions")
+                .appendPathParam(request.getDrgRouteDistributionId())
+                .appendPathParam("actions")
+                .appendPathParam("removeDrgRouteDistributionStatements")
+                .accept("application/json")
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveDrgRouteDistributionStatementsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public RemoveDrgRouteRulesResponse removeDrgRouteRules(RemoveDrgRouteRulesRequest request) {
-        LOG.trace("Called removeDrgRouteRules");
-        final RemoveDrgRouteRulesRequest interceptedRequest =
-                RemoveDrgRouteRulesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemoveDrgRouteRulesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getDrgRouteTableId(), "drgRouteTableId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveDrgRouteRulesDetails(), "removeDrgRouteRulesDetails is required");
+
+        return clientCall(request, RemoveDrgRouteRulesResponse::builder)
+                .logger(LOG, "removeDrgRouteRules")
+                .serviceDetails(
                         "VirtualNetwork",
                         "RemoveDrgRouteRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/RemoveDrgRouteRules");
-        java.util.function.Function<javax.ws.rs.core.Response, RemoveDrgRouteRulesResponse>
-                transformer =
-                        RemoveDrgRouteRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getRemoveDrgRouteRulesDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/RemoveDrgRouteRules")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveDrgRouteRulesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteTables")
+                .appendPathParam(request.getDrgRouteTableId())
+                .appendPathParam("actions")
+                .appendPathParam("removeDrgRouteRules")
+                .accept("application/json")
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveDrgRouteRulesResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public RemoveExportDrgRouteDistributionResponse removeExportDrgRouteDistribution(
             RemoveExportDrgRouteDistributionRequest request) {
-        LOG.trace("Called removeExportDrgRouteDistribution");
-        final RemoveExportDrgRouteDistributionRequest interceptedRequest =
-                RemoveExportDrgRouteDistributionConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemoveExportDrgRouteDistributionConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getDrgAttachmentId(), "drgAttachmentId must not be blank");
+
+        return clientCall(request, RemoveExportDrgRouteDistributionResponse::builder)
+                .logger(LOG, "removeExportDrgRouteDistribution")
+                .serviceDetails(
                         "VirtualNetwork",
                         "RemoveExportDrgRouteDistribution",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/RemoveExportDrgRouteDistribution");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, RemoveExportDrgRouteDistributionResponse>
-                transformer =
-                        RemoveExportDrgRouteDistributionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/RemoveExportDrgRouteDistribution")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveExportDrgRouteDistributionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgAttachments")
+                .appendPathParam(request.getDrgAttachmentId())
+                .appendPathParam("actions")
+                .appendPathParam("removeExportDrgRouteDistribution")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgAttachment.class,
+                        RemoveExportDrgRouteDistributionResponse.Builder::drgAttachment)
+                .handleResponseHeaderString(
+                        "etag", RemoveExportDrgRouteDistributionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveExportDrgRouteDistributionResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public RemoveImportDrgRouteDistributionResponse removeImportDrgRouteDistribution(
             RemoveImportDrgRouteDistributionRequest request) {
-        LOG.trace("Called removeImportDrgRouteDistribution");
-        final RemoveImportDrgRouteDistributionRequest interceptedRequest =
-                RemoveImportDrgRouteDistributionConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemoveImportDrgRouteDistributionConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getDrgRouteTableId(), "drgRouteTableId must not be blank");
+
+        return clientCall(request, RemoveImportDrgRouteDistributionResponse::builder)
+                .logger(LOG, "removeImportDrgRouteDistribution")
+                .serviceDetails(
                         "VirtualNetwork",
                         "RemoveImportDrgRouteDistribution",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/RemoveImportDrgRouteDistribution");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, RemoveImportDrgRouteDistributionResponse>
-                transformer =
-                        RemoveImportDrgRouteDistributionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/RemoveImportDrgRouteDistribution")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveImportDrgRouteDistributionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteTables")
+                .appendPathParam(request.getDrgRouteTableId())
+                .appendPathParam("actions")
+                .appendPathParam("removeImportDrgRouteDistribution")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgRouteTable.class,
+                        RemoveImportDrgRouteDistributionResponse.Builder::drgRouteTable)
+                .handleResponseHeaderString(
+                        "etag", RemoveImportDrgRouteDistributionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveImportDrgRouteDistributionResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public RemoveIpv6SubnetCidrResponse removeIpv6SubnetCidr(RemoveIpv6SubnetCidrRequest request) {
-        LOG.trace("Called removeIpv6SubnetCidr");
-        final RemoveIpv6SubnetCidrRequest interceptedRequest =
-                RemoveIpv6SubnetCidrConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemoveIpv6SubnetCidrConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveSubnetIpv6CidrDetails(),
+                "removeSubnetIpv6CidrDetails is required");
+
+        return clientCall(request, RemoveIpv6SubnetCidrResponse::builder)
+                .logger(LOG, "removeIpv6SubnetCidr")
+                .serviceDetails(
                         "VirtualNetwork",
                         "RemoveIpv6SubnetCidr",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/RemoveIpv6SubnetCidr");
-        java.util.function.Function<javax.ws.rs.core.Response, RemoveIpv6SubnetCidrResponse>
-                transformer =
-                        RemoveIpv6SubnetCidrConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getRemoveSubnetIpv6CidrDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/RemoveIpv6SubnetCidr")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveIpv6SubnetCidrRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("subnets")
+                .appendPathParam(request.getSubnetId())
+                .appendPathParam("actions")
+                .appendPathParam("removeIpv6Cidr")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString("etag", RemoveIpv6SubnetCidrResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveIpv6SubnetCidrResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RemoveIpv6SubnetCidrResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public RemoveIpv6VcnCidrResponse removeIpv6VcnCidr(RemoveIpv6VcnCidrRequest request) {
-        LOG.trace("Called removeIpv6VcnCidr");
-        final RemoveIpv6VcnCidrRequest interceptedRequest =
-                RemoveIpv6VcnCidrConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemoveIpv6VcnCidrConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
+
+        return clientCall(request, RemoveIpv6VcnCidrResponse::builder)
+                .logger(LOG, "removeIpv6VcnCidr")
+                .serviceDetails(
                         "VirtualNetwork",
                         "RemoveIpv6VcnCidr",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/RemoveIpv6VcnCidr");
-        java.util.function.Function<javax.ws.rs.core.Response, RemoveIpv6VcnCidrResponse>
-                transformer =
-                        RemoveIpv6VcnCidrConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getRemoveVcnIpv6CidrDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/RemoveIpv6VcnCidr")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveIpv6VcnCidrRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .appendPathParam(request.getVcnId())
+                .appendPathParam("actions")
+                .appendPathParam("removeIpv6Cidr")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString("etag", RemoveIpv6VcnCidrResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveIpv6VcnCidrResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", RemoveIpv6VcnCidrResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public RemoveNetworkSecurityGroupSecurityRulesResponse removeNetworkSecurityGroupSecurityRules(
             RemoveNetworkSecurityGroupSecurityRulesRequest request) {
-        LOG.trace("Called removeNetworkSecurityGroupSecurityRules");
-        final RemoveNetworkSecurityGroupSecurityRulesRequest interceptedRequest =
-                RemoveNetworkSecurityGroupSecurityRulesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemoveNetworkSecurityGroupSecurityRulesConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveNetworkSecurityGroupSecurityRulesDetails(),
+                "removeNetworkSecurityGroupSecurityRulesDetails is required");
+
+        return clientCall(request, RemoveNetworkSecurityGroupSecurityRulesResponse::builder)
+                .logger(LOG, "removeNetworkSecurityGroupSecurityRules")
+                .serviceDetails(
                         "VirtualNetwork",
                         "RemoveNetworkSecurityGroupSecurityRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/RemoveNetworkSecurityGroupSecurityRules");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, RemoveNetworkSecurityGroupSecurityRulesResponse>
-                transformer =
-                        RemoveNetworkSecurityGroupSecurityRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getRemoveNetworkSecurityGroupSecurityRulesDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/RemoveNetworkSecurityGroupSecurityRules")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveNetworkSecurityGroupSecurityRulesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkSecurityGroups")
+                .appendPathParam(request.getNetworkSecurityGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("removeSecurityRules")
+                .accept("application/json")
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveNetworkSecurityGroupSecurityRulesResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public RemovePublicIpPoolCapacityResponse removePublicIpPoolCapacity(
             RemovePublicIpPoolCapacityRequest request) {
-        LOG.trace("Called removePublicIpPoolCapacity");
-        final RemovePublicIpPoolCapacityRequest interceptedRequest =
-                RemovePublicIpPoolCapacityConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemovePublicIpPoolCapacityConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getPublicIpPoolId(), "publicIpPoolId must not be blank");
+        Objects.requireNonNull(
+                request.getRemovePublicIpPoolCapacityDetails(),
+                "removePublicIpPoolCapacityDetails is required");
+
+        return clientCall(request, RemovePublicIpPoolCapacityResponse::builder)
+                .logger(LOG, "removePublicIpPoolCapacity")
+                .serviceDetails(
                         "VirtualNetwork",
                         "RemovePublicIpPoolCapacity",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/RemovePublicIpPoolCapacity");
-        java.util.function.Function<javax.ws.rs.core.Response, RemovePublicIpPoolCapacityResponse>
-                transformer =
-                        RemovePublicIpPoolCapacityConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getRemovePublicIpPoolCapacityDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/RemovePublicIpPoolCapacity")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemovePublicIpPoolCapacityRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIpPools")
+                .appendPathParam(request.getPublicIpPoolId())
+                .appendPathParam("actions")
+                .appendPathParam("removeCapacity")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.PublicIpPool.class,
+                        RemovePublicIpPoolCapacityResponse.Builder::publicIpPool)
+                .handleResponseHeaderString(
+                        "etag", RemovePublicIpPoolCapacityResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemovePublicIpPoolCapacityResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public RemoveVcnCidrResponse removeVcnCidr(RemoveVcnCidrRequest request) {
-        LOG.trace("Called removeVcnCidr");
-        final RemoveVcnCidrRequest interceptedRequest =
-                RemoveVcnCidrConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemoveVcnCidrConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveVcnCidrDetails(), "removeVcnCidrDetails is required");
+
+        return clientCall(request, RemoveVcnCidrResponse::builder)
+                .logger(LOG, "removeVcnCidr")
+                .serviceDetails(
                         "VirtualNetwork",
                         "RemoveVcnCidr",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/RemoveVcnCidr");
-        java.util.function.Function<javax.ws.rs.core.Response, RemoveVcnCidrResponse> transformer =
-                RemoveVcnCidrConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getRemoveVcnCidrDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/RemoveVcnCidr")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveVcnCidrRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .appendPathParam(request.getVcnId())
+                .appendPathParam("actions")
+                .appendPathParam("removeCidr")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveVcnCidrResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", RemoveVcnCidrResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateByoipRangeResponse updateByoipRange(UpdateByoipRangeRequest request) {
-        LOG.trace("Called updateByoipRange");
-        final UpdateByoipRangeRequest interceptedRequest =
-                UpdateByoipRangeConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateByoipRangeConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateByoipRangeDetails(), "updateByoipRangeDetails is required");
+
+        return clientCall(request, UpdateByoipRangeResponse::builder)
+                .logger(LOG, "updateByoipRange")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateByoipRange",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/UpdateByoipRange");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateByoipRangeResponse>
-                transformer =
-                        UpdateByoipRangeConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateByoipRangeDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/UpdateByoipRange")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateByoipRangeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoipRanges")
+                .appendPathParam(request.getByoipRangeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ByoipRange.class,
+                        UpdateByoipRangeResponse.Builder::byoipRange)
+                .handleResponseHeaderString("etag", UpdateByoipRangeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateByoipRangeResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateCaptureFilterResponse updateCaptureFilter(UpdateCaptureFilterRequest request) {
-        LOG.trace("Called updateCaptureFilter");
-        final UpdateCaptureFilterRequest interceptedRequest =
-                UpdateCaptureFilterConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateCaptureFilterConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getCaptureFilterId(), "captureFilterId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateCaptureFilterDetails(), "updateCaptureFilterDetails is required");
+
+        return clientCall(request, UpdateCaptureFilterResponse::builder)
+                .logger(LOG, "updateCaptureFilter")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateCaptureFilter",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/UpdateCaptureFilter");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateCaptureFilterResponse>
-                transformer =
-                        UpdateCaptureFilterConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateCaptureFilterDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/UpdateCaptureFilter")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCaptureFilterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("captureFilters")
+                .appendPathParam(request.getCaptureFilterId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.CaptureFilter.class,
+                        UpdateCaptureFilterResponse.Builder::captureFilter)
+                .handleResponseHeaderString("etag", UpdateCaptureFilterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCaptureFilterResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateCpeResponse updateCpe(UpdateCpeRequest request) {
-        LOG.trace("Called updateCpe");
-        final UpdateCpeRequest interceptedRequest = UpdateCpeConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateCpeConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getCpeId(), "cpeId must not be blank");
+        Objects.requireNonNull(request.getUpdateCpeDetails(), "updateCpeDetails is required");
+
+        return clientCall(request, UpdateCpeResponse::builder)
+                .logger(LOG, "updateCpe")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateCpe",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/UpdateCpe");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateCpeResponse> transformer =
-                UpdateCpeConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateCpeDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/UpdateCpe")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCpeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cpes")
+                .appendPathParam(request.getCpeId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Cpe.class, UpdateCpeResponse.Builder::cpe)
+                .handleResponseHeaderString("etag", UpdateCpeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCpeResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public UpdateCrossConnectResponse updateCrossConnect(UpdateCrossConnectRequest request) {
-        LOG.trace("Called updateCrossConnect");
-        final UpdateCrossConnectRequest interceptedRequest =
-                UpdateCrossConnectConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateCrossConnectConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getCrossConnectId(), "crossConnectId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateCrossConnectDetails(), "updateCrossConnectDetails is required");
+
+        return clientCall(request, UpdateCrossConnectResponse::builder)
+                .logger(LOG, "updateCrossConnect")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateCrossConnect",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/UpdateCrossConnect");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateCrossConnectResponse>
-                transformer =
-                        UpdateCrossConnectConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateCrossConnectDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/UpdateCrossConnect")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCrossConnectRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnects")
+                .appendPathParam(request.getCrossConnectId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.CrossConnect.class,
+                        UpdateCrossConnectResponse.Builder::crossConnect)
+                .handleResponseHeaderString("etag", UpdateCrossConnectResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCrossConnectResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public UpdateCrossConnectGroupResponse updateCrossConnectGroup(
             UpdateCrossConnectGroupRequest request) {
-        LOG.trace("Called updateCrossConnectGroup");
-        final UpdateCrossConnectGroupRequest interceptedRequest =
-                UpdateCrossConnectGroupConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateCrossConnectGroupConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getCrossConnectGroupId(), "crossConnectGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateCrossConnectGroupDetails(),
+                "updateCrossConnectGroupDetails is required");
+
+        return clientCall(request, UpdateCrossConnectGroupResponse::builder)
+                .logger(LOG, "updateCrossConnectGroup")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateCrossConnectGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/UpdateCrossConnectGroup");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateCrossConnectGroupResponse>
-                transformer =
-                        UpdateCrossConnectGroupConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateCrossConnectGroupDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/UpdateCrossConnectGroup")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCrossConnectGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnectGroups")
+                .appendPathParam(request.getCrossConnectGroupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.CrossConnectGroup.class,
+                        UpdateCrossConnectGroupResponse.Builder::crossConnectGroup)
+                .handleResponseHeaderString("etag", UpdateCrossConnectGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCrossConnectGroupResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public UpdateDhcpOptionsResponse updateDhcpOptions(UpdateDhcpOptionsRequest request) {
-        LOG.trace("Called updateDhcpOptions");
-        final UpdateDhcpOptionsRequest interceptedRequest =
-                UpdateDhcpOptionsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateDhcpOptionsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getDhcpId(), "dhcpId must not be blank");
+        Objects.requireNonNull(request.getUpdateDhcpDetails(), "updateDhcpDetails is required");
+
+        return clientCall(request, UpdateDhcpOptionsResponse::builder)
+                .logger(LOG, "updateDhcpOptions")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateDhcpOptions",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/UpdateDhcpOptions");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateDhcpOptionsResponse>
-                transformer =
-                        UpdateDhcpOptionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateDhcpDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/UpdateDhcpOptions")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDhcpOptionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dhcps")
+                .appendPathParam(request.getDhcpId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.DhcpOptions.class,
+                        UpdateDhcpOptionsResponse.Builder::dhcpOptions)
+                .handleResponseHeaderString("etag", UpdateDhcpOptionsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDhcpOptionsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateDrgResponse updateDrg(UpdateDrgRequest request) {
-        LOG.trace("Called updateDrg");
-        final UpdateDrgRequest interceptedRequest = UpdateDrgConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateDrgConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getDrgId(), "drgId must not be blank");
+        Objects.requireNonNull(request.getUpdateDrgDetails(), "updateDrgDetails is required");
+
+        return clientCall(request, UpdateDrgResponse::builder)
+                .logger(LOG, "updateDrg")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateDrg",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/UpdateDrg");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateDrgResponse> transformer =
-                UpdateDrgConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateDrgDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/UpdateDrg")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDrgRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgs")
+                .appendPathParam(request.getDrgId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Drg.class, UpdateDrgResponse.Builder::drg)
+                .handleResponseHeaderString("etag", UpdateDrgResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDrgResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateDrgAttachmentResponse updateDrgAttachment(UpdateDrgAttachmentRequest request) {
-        LOG.trace("Called updateDrgAttachment");
-        final UpdateDrgAttachmentRequest interceptedRequest =
-                UpdateDrgAttachmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateDrgAttachmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getDrgAttachmentId(), "drgAttachmentId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDrgAttachmentDetails(), "updateDrgAttachmentDetails is required");
+
+        return clientCall(request, UpdateDrgAttachmentResponse::builder)
+                .logger(LOG, "updateDrgAttachment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateDrgAttachment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/UpdateDrgAttachment");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateDrgAttachmentResponse>
-                transformer =
-                        UpdateDrgAttachmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateDrgAttachmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/UpdateDrgAttachment")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDrgAttachmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgAttachments")
+                .appendPathParam(request.getDrgAttachmentId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgAttachment.class,
+                        UpdateDrgAttachmentResponse.Builder::drgAttachment)
+                .handleResponseHeaderString("etag", UpdateDrgAttachmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDrgAttachmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateDrgRouteDistributionResponse updateDrgRouteDistribution(
             UpdateDrgRouteDistributionRequest request) {
-        LOG.trace("Called updateDrgRouteDistribution");
-        final UpdateDrgRouteDistributionRequest interceptedRequest =
-                UpdateDrgRouteDistributionConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateDrgRouteDistributionConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getDrgRouteDistributionId(), "drgRouteDistributionId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDrgRouteDistributionDetails(),
+                "updateDrgRouteDistributionDetails is required");
+
+        return clientCall(request, UpdateDrgRouteDistributionResponse::builder)
+                .logger(LOG, "updateDrgRouteDistribution")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateDrgRouteDistribution",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/UpdateDrgRouteDistribution");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateDrgRouteDistributionResponse>
-                transformer =
-                        UpdateDrgRouteDistributionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateDrgRouteDistributionDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/UpdateDrgRouteDistribution")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDrgRouteDistributionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteDistributions")
+                .appendPathParam(request.getDrgRouteDistributionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgRouteDistribution.class,
+                        UpdateDrgRouteDistributionResponse.Builder::drgRouteDistribution)
+                .handleResponseHeaderString(
+                        "etag", UpdateDrgRouteDistributionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDrgRouteDistributionResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateDrgRouteDistributionStatementsResponse updateDrgRouteDistributionStatements(
             UpdateDrgRouteDistributionStatementsRequest request) {
-        LOG.trace("Called updateDrgRouteDistributionStatements");
-        final UpdateDrgRouteDistributionStatementsRequest interceptedRequest =
-                UpdateDrgRouteDistributionStatementsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateDrgRouteDistributionStatementsConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getDrgRouteDistributionId(), "drgRouteDistributionId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDrgRouteDistributionStatementsDetails(),
+                "updateDrgRouteDistributionStatementsDetails is required");
+
+        return clientCall(request, UpdateDrgRouteDistributionStatementsResponse::builder)
+                .logger(LOG, "updateDrgRouteDistributionStatements")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateDrgRouteDistributionStatements",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/UpdateDrgRouteDistributionStatements");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateDrgRouteDistributionStatementsResponse>
-                transformer =
-                        UpdateDrgRouteDistributionStatementsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateDrgRouteDistributionStatementsDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/UpdateDrgRouteDistributionStatements")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UpdateDrgRouteDistributionStatementsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteDistributions")
+                .appendPathParam(request.getDrgRouteDistributionId())
+                .appendPathParam("actions")
+                .appendPathParam("updateDrgRouteDistributionStatements")
+                .accept("application/json")
+                .hasBody()
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DrgRouteDistributionStatement.class,
+                        UpdateDrgRouteDistributionStatementsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateDrgRouteDistributionStatementsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateDrgRouteRulesResponse updateDrgRouteRules(UpdateDrgRouteRulesRequest request) {
-        LOG.trace("Called updateDrgRouteRules");
-        final UpdateDrgRouteRulesRequest interceptedRequest =
-                UpdateDrgRouteRulesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateDrgRouteRulesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getDrgRouteTableId(), "drgRouteTableId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDrgRouteRulesDetails(), "updateDrgRouteRulesDetails is required");
+
+        return clientCall(request, UpdateDrgRouteRulesResponse::builder)
+                .logger(LOG, "updateDrgRouteRules")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateDrgRouteRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/UpdateDrgRouteRules");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateDrgRouteRulesResponse>
-                transformer =
-                        UpdateDrgRouteRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getUpdateDrgRouteRulesDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/UpdateDrgRouteRules")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UpdateDrgRouteRulesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteTables")
+                .appendPathParam(request.getDrgRouteTableId())
+                .appendPathParam("actions")
+                .appendPathParam("updateDrgRouteRules")
+                .accept("application/json")
+                .hasBody()
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DrgRouteRule.class,
+                        UpdateDrgRouteRulesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDrgRouteRulesResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateDrgRouteTableResponse updateDrgRouteTable(UpdateDrgRouteTableRequest request) {
-        LOG.trace("Called updateDrgRouteTable");
-        final UpdateDrgRouteTableRequest interceptedRequest =
-                UpdateDrgRouteTableConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateDrgRouteTableConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getDrgRouteTableId(), "drgRouteTableId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDrgRouteTableDetails(), "updateDrgRouteTableDetails is required");
+
+        return clientCall(request, UpdateDrgRouteTableResponse::builder)
+                .logger(LOG, "updateDrgRouteTable")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateDrgRouteTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/UpdateDrgRouteTable");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateDrgRouteTableResponse>
-                transformer =
-                        UpdateDrgRouteTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateDrgRouteTableDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/UpdateDrgRouteTable")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDrgRouteTableRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteTables")
+                .appendPathParam(request.getDrgRouteTableId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgRouteTable.class,
+                        UpdateDrgRouteTableResponse.Builder::drgRouteTable)
+                .handleResponseHeaderString("etag", UpdateDrgRouteTableResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDrgRouteTableResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateIPSecConnectionResponse updateIPSecConnection(
             UpdateIPSecConnectionRequest request) {
-        LOG.trace("Called updateIPSecConnection");
-        final UpdateIPSecConnectionRequest interceptedRequest =
-                UpdateIPSecConnectionConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateIPSecConnectionConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateIPSecConnectionDetails(),
+                "updateIPSecConnectionDetails is required");
+
+        return clientCall(request, UpdateIPSecConnectionResponse::builder)
+                .logger(LOG, "updateIPSecConnection")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateIPSecConnection",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/UpdateIPSecConnection");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateIPSecConnectionResponse>
-                transformer =
-                        UpdateIPSecConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateIPSecConnectionDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/UpdateIPSecConnection")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateIPSecConnectionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.IPSecConnection.class,
+                        UpdateIPSecConnectionResponse.Builder::iPSecConnection)
+                .handleResponseHeaderString("etag", UpdateIPSecConnectionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateIPSecConnectionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public UpdateIPSecConnectionTunnelResponse updateIPSecConnectionTunnel(
             UpdateIPSecConnectionTunnelRequest request) {
-        LOG.trace("Called updateIPSecConnectionTunnel");
-        final UpdateIPSecConnectionTunnelRequest interceptedRequest =
-                UpdateIPSecConnectionTunnelConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateIPSecConnectionTunnelConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateIPSecConnectionTunnelDetails(),
+                "updateIPSecConnectionTunnelDetails is required");
+
+        return clientCall(request, UpdateIPSecConnectionTunnelResponse::builder)
+                .logger(LOG, "updateIPSecConnectionTunnel")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateIPSecConnectionTunnel",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/UpdateIPSecConnectionTunnel");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateIPSecConnectionTunnelResponse>
-                transformer =
-                        UpdateIPSecConnectionTunnelConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateIPSecConnectionTunnelDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/UpdateIPSecConnectionTunnel")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateIPSecConnectionTunnelRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("tunnels")
+                .appendPathParam(request.getTunnelId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.IPSecConnectionTunnel.class,
+                        UpdateIPSecConnectionTunnelResponse.Builder::iPSecConnectionTunnel)
+                .handleResponseHeaderString(
+                        "etag", UpdateIPSecConnectionTunnelResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateIPSecConnectionTunnelResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public UpdateIPSecConnectionTunnelSharedSecretResponse updateIPSecConnectionTunnelSharedSecret(
             UpdateIPSecConnectionTunnelSharedSecretRequest request) {
-        LOG.trace("Called updateIPSecConnectionTunnelSharedSecret");
-        final UpdateIPSecConnectionTunnelSharedSecretRequest interceptedRequest =
-                UpdateIPSecConnectionTunnelSharedSecretConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateIPSecConnectionTunnelSharedSecretConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateIPSecConnectionTunnelSharedSecretDetails(),
+                "updateIPSecConnectionTunnelSharedSecretDetails is required");
+
+        return clientCall(request, UpdateIPSecConnectionTunnelSharedSecretResponse::builder)
+                .logger(LOG, "updateIPSecConnectionTunnelSharedSecret")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateIPSecConnectionTunnelSharedSecret",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateIPSecConnectionTunnelSharedSecretResponse>
-                transformer =
-                        UpdateIPSecConnectionTunnelSharedSecretConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateIPSecConnectionTunnelSharedSecretDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateIPSecConnectionTunnelSharedSecretRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("tunnels")
+                .appendPathParam(request.getTunnelId())
+                .appendPathParam("sharedSecret")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.IPSecConnectionTunnelSharedSecret.class,
+                        UpdateIPSecConnectionTunnelSharedSecretResponse.Builder
+                                ::iPSecConnectionTunnelSharedSecret)
+                .handleResponseHeaderString(
+                        "etag", UpdateIPSecConnectionTunnelSharedSecretResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateIPSecConnectionTunnelSharedSecretResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public UpdateInternetGatewayResponse updateInternetGateway(
             UpdateInternetGatewayRequest request) {
-        LOG.trace("Called updateInternetGateway");
-        final UpdateInternetGatewayRequest interceptedRequest =
-                UpdateInternetGatewayConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateInternetGatewayConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getIgId(), "igId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateInternetGatewayDetails(),
+                "updateInternetGatewayDetails is required");
+
+        return clientCall(request, UpdateInternetGatewayResponse::builder)
+                .logger(LOG, "updateInternetGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateInternetGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/UpdateInternetGateway");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateInternetGatewayResponse>
-                transformer =
-                        UpdateInternetGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateInternetGatewayDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/UpdateInternetGateway")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateInternetGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("internetGateways")
+                .appendPathParam(request.getIgId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.InternetGateway.class,
+                        UpdateInternetGatewayResponse.Builder::internetGateway)
+                .handleResponseHeaderString("etag", UpdateInternetGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateInternetGatewayResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateIpv6Response updateIpv6(UpdateIpv6Request request) {
-        LOG.trace("Called updateIpv6");
-        final UpdateIpv6Request interceptedRequest = UpdateIpv6Converter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateIpv6Converter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getIpv6Id(), "ipv6Id must not be blank");
+        Objects.requireNonNull(request.getUpdateIpv6Details(), "updateIpv6Details is required");
+
+        return clientCall(request, UpdateIpv6Response::builder)
+                .logger(LOG, "updateIpv6")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateIpv6",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateIpv6Response> transformer =
-                UpdateIpv6Converter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateIpv6Details(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateIpv6Request::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipv6")
+                .appendPathParam(request.getIpv6Id())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Ipv6.class, UpdateIpv6Response.Builder::ipv6)
+                .handleResponseHeaderString("etag", UpdateIpv6Response.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateIpv6Response.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateLocalPeeringGatewayResponse updateLocalPeeringGateway(
             UpdateLocalPeeringGatewayRequest request) {
-        LOG.trace("Called updateLocalPeeringGateway");
-        final UpdateLocalPeeringGatewayRequest interceptedRequest =
-                UpdateLocalPeeringGatewayConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateLocalPeeringGatewayConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getLocalPeeringGatewayId(), "localPeeringGatewayId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateLocalPeeringGatewayDetails(),
+                "updateLocalPeeringGatewayDetails is required");
+
+        return clientCall(request, UpdateLocalPeeringGatewayResponse::builder)
+                .logger(LOG, "updateLocalPeeringGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateLocalPeeringGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/UpdateLocalPeeringGateway");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateLocalPeeringGatewayResponse>
-                transformer =
-                        UpdateLocalPeeringGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateLocalPeeringGatewayDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/UpdateLocalPeeringGateway")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateLocalPeeringGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("localPeeringGateways")
+                .appendPathParam(request.getLocalPeeringGatewayId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.LocalPeeringGateway.class,
+                        UpdateLocalPeeringGatewayResponse.Builder::localPeeringGateway)
+                .handleResponseHeaderString("etag", UpdateLocalPeeringGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateLocalPeeringGatewayResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateNatGatewayResponse updateNatGateway(UpdateNatGatewayRequest request) {
-        LOG.trace("Called updateNatGateway");
-        final UpdateNatGatewayRequest interceptedRequest =
-                UpdateNatGatewayConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateNatGatewayConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getNatGatewayId(), "natGatewayId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateNatGatewayDetails(), "updateNatGatewayDetails is required");
+
+        return clientCall(request, UpdateNatGatewayResponse::builder)
+                .logger(LOG, "updateNatGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateNatGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/UpdateNatGateway");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateNatGatewayResponse>
-                transformer =
-                        UpdateNatGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateNatGatewayDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/UpdateNatGateway")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateNatGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("natGateways")
+                .appendPathParam(request.getNatGatewayId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.NatGateway.class,
+                        UpdateNatGatewayResponse.Builder::natGateway)
+                .handleResponseHeaderString("etag", UpdateNatGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateNatGatewayResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateNetworkSecurityGroupResponse updateNetworkSecurityGroup(
             UpdateNetworkSecurityGroupRequest request) {
-        LOG.trace("Called updateNetworkSecurityGroup");
-        final UpdateNetworkSecurityGroupRequest interceptedRequest =
-                UpdateNetworkSecurityGroupConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateNetworkSecurityGroupConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateNetworkSecurityGroupDetails(),
+                "updateNetworkSecurityGroupDetails is required");
+
+        return clientCall(request, UpdateNetworkSecurityGroupResponse::builder)
+                .logger(LOG, "updateNetworkSecurityGroup")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateNetworkSecurityGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/UpdateNetworkSecurityGroup");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateNetworkSecurityGroupResponse>
-                transformer =
-                        UpdateNetworkSecurityGroupConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateNetworkSecurityGroupDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/UpdateNetworkSecurityGroup")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateNetworkSecurityGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkSecurityGroups")
+                .appendPathParam(request.getNetworkSecurityGroupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.NetworkSecurityGroup.class,
+                        UpdateNetworkSecurityGroupResponse.Builder::networkSecurityGroup)
+                .handleResponseHeaderString(
+                        "etag", UpdateNetworkSecurityGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateNetworkSecurityGroupResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateNetworkSecurityGroupSecurityRulesResponse updateNetworkSecurityGroupSecurityRules(
             UpdateNetworkSecurityGroupSecurityRulesRequest request) {
-        LOG.trace("Called updateNetworkSecurityGroupSecurityRules");
-        final UpdateNetworkSecurityGroupSecurityRulesRequest interceptedRequest =
-                UpdateNetworkSecurityGroupSecurityRulesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateNetworkSecurityGroupSecurityRulesConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateNetworkSecurityGroupSecurityRulesDetails(),
+                "updateNetworkSecurityGroupSecurityRulesDetails is required");
+
+        return clientCall(request, UpdateNetworkSecurityGroupSecurityRulesResponse::builder)
+                .logger(LOG, "updateNetworkSecurityGroupSecurityRules")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateNetworkSecurityGroupSecurityRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/UpdateNetworkSecurityGroupSecurityRules");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateNetworkSecurityGroupSecurityRulesResponse>
-                transformer =
-                        UpdateNetworkSecurityGroupSecurityRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateNetworkSecurityGroupSecurityRulesDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/UpdateNetworkSecurityGroupSecurityRules")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UpdateNetworkSecurityGroupSecurityRulesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkSecurityGroups")
+                .appendPathParam(request.getNetworkSecurityGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("updateSecurityRules")
+                .accept("application/json")
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.UpdatedNetworkSecurityGroupSecurityRules.class,
+                        UpdateNetworkSecurityGroupSecurityRulesResponse.Builder
+                                ::updatedNetworkSecurityGroupSecurityRules)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateNetworkSecurityGroupSecurityRulesResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdatePrivateIpResponse updatePrivateIp(UpdatePrivateIpRequest request) {
-        LOG.trace("Called updatePrivateIp");
-        final UpdatePrivateIpRequest interceptedRequest =
-                UpdatePrivateIpConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdatePrivateIpConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getPrivateIpId(), "privateIpId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdatePrivateIpDetails(), "updatePrivateIpDetails is required");
+
+        return clientCall(request, UpdatePrivateIpResponse::builder)
+                .logger(LOG, "updatePrivateIp")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdatePrivateIp",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdatePrivateIpResponse>
-                transformer =
-                        UpdatePrivateIpConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdatePrivateIpDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdatePrivateIpRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("privateIps")
+                .appendPathParam(request.getPrivateIpId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.PrivateIp.class,
+                        UpdatePrivateIpResponse.Builder::privateIp)
+                .handleResponseHeaderString("etag", UpdatePrivateIpResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdatePrivateIpResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdatePublicIpResponse updatePublicIp(UpdatePublicIpRequest request) {
-        LOG.trace("Called updatePublicIp");
-        final UpdatePublicIpRequest interceptedRequest =
-                UpdatePublicIpConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdatePublicIpConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getPublicIpId(), "publicIpId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdatePublicIpDetails(), "updatePublicIpDetails is required");
+
+        return clientCall(request, UpdatePublicIpResponse::builder)
+                .logger(LOG, "updatePublicIp")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdatePublicIp",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/UpdatePublicIp");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdatePublicIpResponse> transformer =
-                UpdatePublicIpConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdatePublicIpDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/UpdatePublicIp")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdatePublicIpRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIps")
+                .appendPathParam(request.getPublicIpId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.PublicIp.class,
+                        UpdatePublicIpResponse.Builder::publicIp)
+                .handleResponseHeaderString("etag", UpdatePublicIpResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdatePublicIpResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdatePublicIpPoolResponse updatePublicIpPool(UpdatePublicIpPoolRequest request) {
-        LOG.trace("Called updatePublicIpPool");
-        final UpdatePublicIpPoolRequest interceptedRequest =
-                UpdatePublicIpPoolConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdatePublicIpPoolConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getPublicIpPoolId(), "publicIpPoolId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdatePublicIpPoolDetails(), "updatePublicIpPoolDetails is required");
+
+        return clientCall(request, UpdatePublicIpPoolResponse::builder)
+                .logger(LOG, "updatePublicIpPool")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdatePublicIpPool",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/UpdatePublicIpPool");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdatePublicIpPoolResponse>
-                transformer =
-                        UpdatePublicIpPoolConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdatePublicIpPoolDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/UpdatePublicIpPool")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdatePublicIpPoolRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIpPools")
+                .appendPathParam(request.getPublicIpPoolId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.PublicIpPool.class,
+                        UpdatePublicIpPoolResponse.Builder::publicIpPool)
+                .handleResponseHeaderString("etag", UpdatePublicIpPoolResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdatePublicIpPoolResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateRemotePeeringConnectionResponse updateRemotePeeringConnection(
             UpdateRemotePeeringConnectionRequest request) {
-        LOG.trace("Called updateRemotePeeringConnection");
-        final UpdateRemotePeeringConnectionRequest interceptedRequest =
-                UpdateRemotePeeringConnectionConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateRemotePeeringConnectionConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getRemotePeeringConnectionId(),
+                "remotePeeringConnectionId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateRemotePeeringConnectionDetails(),
+                "updateRemotePeeringConnectionDetails is required");
+
+        return clientCall(request, UpdateRemotePeeringConnectionResponse::builder)
+                .logger(LOG, "updateRemotePeeringConnection")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateRemotePeeringConnection",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/UpdateRemotePeeringConnection");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateRemotePeeringConnectionResponse>
-                transformer =
-                        UpdateRemotePeeringConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateRemotePeeringConnectionDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/UpdateRemotePeeringConnection")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateRemotePeeringConnectionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("remotePeeringConnections")
+                .appendPathParam(request.getRemotePeeringConnectionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.RemotePeeringConnection.class,
+                        UpdateRemotePeeringConnectionResponse.Builder::remotePeeringConnection)
+                .handleResponseHeaderString(
+                        "etag", UpdateRemotePeeringConnectionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateRemotePeeringConnectionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public UpdateRouteTableResponse updateRouteTable(UpdateRouteTableRequest request) {
-        LOG.trace("Called updateRouteTable");
-        final UpdateRouteTableRequest interceptedRequest =
-                UpdateRouteTableConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateRouteTableConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getRtId(), "rtId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateRouteTableDetails(), "updateRouteTableDetails is required");
+
+        return clientCall(request, UpdateRouteTableResponse::builder)
+                .logger(LOG, "updateRouteTable")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateRouteTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/UpdateRouteTable");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateRouteTableResponse>
-                transformer =
-                        UpdateRouteTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateRouteTableDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/UpdateRouteTable")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateRouteTableRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("routeTables")
+                .appendPathParam(request.getRtId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.RouteTable.class,
+                        UpdateRouteTableResponse.Builder::routeTable)
+                .handleResponseHeaderString("etag", UpdateRouteTableResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateRouteTableResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateSecurityListResponse updateSecurityList(UpdateSecurityListRequest request) {
-        LOG.trace("Called updateSecurityList");
-        final UpdateSecurityListRequest interceptedRequest =
-                UpdateSecurityListConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateSecurityListConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getSecurityListId(), "securityListId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateSecurityListDetails(), "updateSecurityListDetails is required");
+
+        return clientCall(request, UpdateSecurityListResponse::builder)
+                .logger(LOG, "updateSecurityList")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateSecurityList",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/UpdateSecurityList");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateSecurityListResponse>
-                transformer =
-                        UpdateSecurityListConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateSecurityListDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/UpdateSecurityList")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSecurityListRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("securityLists")
+                .appendPathParam(request.getSecurityListId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.SecurityList.class,
+                        UpdateSecurityListResponse.Builder::securityList)
+                .handleResponseHeaderString("etag", UpdateSecurityListResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateSecurityListResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateServiceGatewayResponse updateServiceGateway(UpdateServiceGatewayRequest request) {
-        LOG.trace("Called updateServiceGateway");
-        final UpdateServiceGatewayRequest interceptedRequest =
-                UpdateServiceGatewayConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateServiceGatewayConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getServiceGatewayId(), "serviceGatewayId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateServiceGatewayDetails(),
+                "updateServiceGatewayDetails is required");
+
+        return clientCall(request, UpdateServiceGatewayResponse::builder)
+                .logger(LOG, "updateServiceGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateServiceGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/UpdateServiceGateway");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateServiceGatewayResponse>
-                transformer =
-                        UpdateServiceGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateServiceGatewayDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/UpdateServiceGateway")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateServiceGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("serviceGateways")
+                .appendPathParam(request.getServiceGatewayId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ServiceGateway.class,
+                        UpdateServiceGatewayResponse.Builder::serviceGateway)
+                .handleResponseHeaderString("etag", UpdateServiceGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateServiceGatewayResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateSubnetResponse updateSubnet(UpdateSubnetRequest request) {
-        LOG.trace("Called updateSubnet");
-        final UpdateSubnetRequest interceptedRequest =
-                UpdateSubnetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateSubnetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
+        Objects.requireNonNull(request.getUpdateSubnetDetails(), "updateSubnetDetails is required");
+
+        return clientCall(request, UpdateSubnetResponse::builder)
+                .logger(LOG, "updateSubnet")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateSubnet",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/UpdateSubnet");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateSubnetResponse> transformer =
-                UpdateSubnetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateSubnetDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/UpdateSubnet")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSubnetRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("subnets")
+                .appendPathParam(request.getSubnetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.Subnet.class,
+                        UpdateSubnetResponse.Builder::subnet)
+                .handleResponseHeaderString("etag", UpdateSubnetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateSubnetResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateTunnelCpeDeviceConfigResponse updateTunnelCpeDeviceConfig(
             UpdateTunnelCpeDeviceConfigRequest request) {
-        LOG.trace("Called updateTunnelCpeDeviceConfig");
-        final UpdateTunnelCpeDeviceConfigRequest interceptedRequest =
-                UpdateTunnelCpeDeviceConfigConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateTunnelCpeDeviceConfigConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateTunnelCpeDeviceConfigDetails(),
+                "updateTunnelCpeDeviceConfigDetails is required");
+
+        return clientCall(request, UpdateTunnelCpeDeviceConfigResponse::builder)
+                .logger(LOG, "updateTunnelCpeDeviceConfig")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateTunnelCpeDeviceConfig",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/UpdateTunnelCpeDeviceConfig");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateTunnelCpeDeviceConfigResponse>
-                transformer =
-                        UpdateTunnelCpeDeviceConfigConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateTunnelCpeDeviceConfigDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/UpdateTunnelCpeDeviceConfig")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateTunnelCpeDeviceConfigRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("tunnels")
+                .appendPathParam(request.getTunnelId())
+                .appendPathParam("tunnelDeviceConfig")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.TunnelCpeDeviceConfig.class,
+                        UpdateTunnelCpeDeviceConfigResponse.Builder::tunnelCpeDeviceConfig)
+                .handleResponseHeaderString(
+                        "etag", UpdateTunnelCpeDeviceConfigResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateTunnelCpeDeviceConfigResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public UpdateVcnResponse updateVcn(UpdateVcnRequest request) {
-        LOG.trace("Called updateVcn");
-        final UpdateVcnRequest interceptedRequest = UpdateVcnConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateVcnConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
+        Objects.requireNonNull(request.getUpdateVcnDetails(), "updateVcnDetails is required");
+
+        return clientCall(request, UpdateVcnResponse::builder)
+                .logger(LOG, "updateVcn")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateVcn",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/UpdateVcn");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateVcnResponse> transformer =
-                UpdateVcnConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateVcnDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/UpdateVcn")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateVcnRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .appendPathParam(request.getVcnId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Vcn.class, UpdateVcnResponse.Builder::vcn)
+                .handleResponseHeaderString("etag", UpdateVcnResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateVcnResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateVirtualCircuitResponse updateVirtualCircuit(UpdateVirtualCircuitRequest request) {
-        LOG.trace("Called updateVirtualCircuit");
-        final UpdateVirtualCircuitRequest interceptedRequest =
-                UpdateVirtualCircuitConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateVirtualCircuitConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateVirtualCircuitDetails(),
+                "updateVirtualCircuitDetails is required");
+
+        return clientCall(request, UpdateVirtualCircuitResponse::builder)
+                .logger(LOG, "updateVirtualCircuit")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateVirtualCircuit",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/UpdateVirtualCircuit");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateVirtualCircuitResponse>
-                transformer =
-                        UpdateVirtualCircuitConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateVirtualCircuitDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/UpdateVirtualCircuit")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateVirtualCircuitRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("virtualCircuits")
+                .appendPathParam(request.getVirtualCircuitId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.VirtualCircuit.class,
+                        UpdateVirtualCircuitResponse.Builder::virtualCircuit)
+                .handleResponseHeaderString("etag", UpdateVirtualCircuitResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateVirtualCircuitResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public UpdateVlanResponse updateVlan(UpdateVlanRequest request) {
-        LOG.trace("Called updateVlan");
-        final UpdateVlanRequest interceptedRequest = UpdateVlanConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateVlanConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVlanId(), "vlanId must not be blank");
+        Objects.requireNonNull(request.getUpdateVlanDetails(), "updateVlanDetails is required");
+
+        return clientCall(request, UpdateVlanResponse::builder)
+                .logger(LOG, "updateVlan")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateVlan",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/UpdateVlan");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateVlanResponse> transformer =
-                UpdateVlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateVlanDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/UpdateVlan")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateVlanRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vlans")
+                .appendPathParam(request.getVlanId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Vlan.class, UpdateVlanResponse.Builder::vlan)
+                .handleResponseHeaderString("etag", UpdateVlanResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateVlanResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateVnicResponse updateVnic(UpdateVnicRequest request) {
-        LOG.trace("Called updateVnic");
-        final UpdateVnicRequest interceptedRequest = UpdateVnicConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateVnicConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getVnicId(), "vnicId must not be blank");
+        Objects.requireNonNull(request.getUpdateVnicDetails(), "updateVnicDetails is required");
+
+        return clientCall(request, UpdateVnicResponse::builder)
+                .logger(LOG, "updateVnic")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateVnic",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vnic/UpdateVnic");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateVnicResponse> transformer =
-                UpdateVnicConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateVnicDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vnic/UpdateVnic")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateVnicRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vnics")
+                .appendPathParam(request.getVnicId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Vnic.class, UpdateVnicResponse.Builder::vnic)
+                .handleResponseHeaderString("etag", UpdateVnicResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateVnicResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateVtapResponse updateVtap(UpdateVtapRequest request) {
-        LOG.trace("Called updateVtap");
-        final UpdateVtapRequest interceptedRequest = UpdateVtapConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateVtapConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "UpdateVtap", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateVtapResponse> transformer =
-                UpdateVtapConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateVtapDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getVtapId(), "vtapId must not be blank");
+        Objects.requireNonNull(request.getUpdateVtapDetails(), "updateVtapDetails is required");
+
+        return clientCall(request, UpdateVtapResponse::builder)
+                .logger(LOG, "updateVtap")
+                .serviceDetails("VirtualNetwork", "UpdateVtap", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateVtapRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vtaps")
+                .appendPathParam(request.getVtapId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Vtap.class, UpdateVtapResponse.Builder::vtap)
+                .handleResponseHeaderString("etag", UpdateVtapResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateVtapResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateVtapResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public UpgradeDrgResponse upgradeDrg(UpgradeDrgRequest request) {
-        LOG.trace("Called upgradeDrg");
-        final UpgradeDrgRequest interceptedRequest = UpgradeDrgConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpgradeDrgConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getDrgId(), "drgId must not be blank");
+
+        return clientCall(request, UpgradeDrgResponse::builder)
+                .logger(LOG, "upgradeDrg")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpgradeDrg",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/UpgradeDrg");
-        java.util.function.Function<javax.ws.rs.core.Response, UpgradeDrgResponse> transformer =
-                UpgradeDrgConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/UpgradeDrg")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UpgradeDrgRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgs")
+                .appendPathParam(request.getDrgId())
+                .appendPathParam("actions")
+                .appendPathParam("upgrade")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", UpgradeDrgResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpgradeDrgResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public ValidateByoipRangeResponse validateByoipRange(ValidateByoipRangeRequest request) {
-        LOG.trace("Called validateByoipRange");
-        final ValidateByoipRangeRequest interceptedRequest =
-                ValidateByoipRangeConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ValidateByoipRangeConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
+
+        return clientCall(request, ValidateByoipRangeResponse::builder)
+                .logger(LOG, "validateByoipRange")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ValidateByoipRange",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ValidateByoipRange");
-        java.util.function.Function<javax.ws.rs.core.Response, ValidateByoipRangeResponse>
-                transformer =
-                        ValidateByoipRangeConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ValidateByoipRange")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ValidateByoipRangeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoipRanges")
+                .appendPathParam(request.getByoipRangeId())
+                .appendPathParam("actions")
+                .appendPathParam("validate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", ValidateByoipRangeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ValidateByoipRangeResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public WithdrawByoipRangeResponse withdrawByoipRange(WithdrawByoipRangeRequest request) {
-        LOG.trace("Called withdrawByoipRange");
-        final WithdrawByoipRangeRequest interceptedRequest =
-                WithdrawByoipRangeConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                WithdrawByoipRangeConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
+
+        return clientCall(request, WithdrawByoipRangeResponse::builder)
+                .logger(LOG, "withdrawByoipRange")
+                .serviceDetails(
                         "VirtualNetwork",
                         "WithdrawByoipRange",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/WithdrawByoipRange");
-        java.util.function.Function<javax.ws.rs.core.Response, WithdrawByoipRangeResponse>
-                transformer =
-                        WithdrawByoipRangeConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/WithdrawByoipRange")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(WithdrawByoipRangeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoipRanges")
+                .appendPathParam(request.getByoipRangeId())
+                .appendPathParam("actions")
+                .appendPathParam("withdraw")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", WithdrawByoipRangeResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
@@ -10041,5 +7267,209 @@ public class VirtualNetworkClient implements VirtualNetwork {
     @Override
     public VirtualNetworkPaginators getPaginators() {
         return paginators;
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public VirtualNetworkClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(builder(), authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public VirtualNetworkClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(builder().configuration(configuration), authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public VirtualNetworkClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                builder().configuration(configuration).clientConfigurator(clientConfigurator),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public VirtualNetworkClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public VirtualNetworkClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public VirtualNetworkClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public VirtualNetworkClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @param executorService {@link Builder#executorService}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public VirtualNetworkClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider,
+                executorService);
     }
 }

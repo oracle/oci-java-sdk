@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.ocvp.model;
 
-/**
- * Possible SDDC types.
- **/
+/** Possible SDDC types. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-public enum SddcTypes {
+public enum SddcTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Production("PRODUCTION"),
     NonProduction("NON_PRODUCTION"),
 

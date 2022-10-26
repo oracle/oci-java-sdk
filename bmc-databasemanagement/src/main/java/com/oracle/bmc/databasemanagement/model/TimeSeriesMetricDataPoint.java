@@ -5,22 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The metric values with dimension details.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The metric values with dimension details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = TimeSeriesMetricDataPoint.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = TimeSeriesMetricDataPoint.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class TimeSeriesMetricDataPoint
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timestamp", "value", "unit", "dimensions"})
     public TimeSeriesMetricDataPoint(
@@ -37,65 +37,61 @@ public final class TimeSeriesMetricDataPoint
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The date and time the metric was created.
-         **/
+        /** The date and time the metric was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
          * The date and time the metric was created.
+         *
          * @param timestamp the value to set
          * @return this builder
-         **/
+         */
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-        /**
-         * The value of the metric.
-         **/
+        /** The value of the metric. */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Double value;
 
         /**
          * The value of the metric.
+         *
          * @param value the value to set
          * @return this builder
-         **/
+         */
         public Builder value(Double value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /**
-         * The unit of the metric value.
-         **/
+        /** The unit of the metric value. */
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private String unit;
 
         /**
          * The unit of the metric value.
+         *
          * @param unit the value to set
          * @return this builder
-         **/
+         */
         public Builder unit(String unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
             return this;
         }
-        /**
-         * The dimensions of the metric.
-         **/
+        /** The dimensions of the metric. */
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.List<MetricDimensionDefinition> dimensions;
 
         /**
          * The dimensions of the metric.
+         *
          * @param dimensions the value to set
          * @return this builder
-         **/
+         */
         public Builder dimensions(java.util.List<MetricDimensionDefinition> dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
@@ -133,9 +129,7 @@ public final class TimeSeriesMetricDataPoint
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -144,58 +138,54 @@ public final class TimeSeriesMetricDataPoint
         return new Builder().copy(this);
     }
 
-    /**
-     * The date and time the metric was created.
-     **/
+    /** The date and time the metric was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
      * The date and time the metric was created.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimestamp() {
         return timestamp;
     }
 
-    /**
-     * The value of the metric.
-     **/
+    /** The value of the metric. */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Double value;
 
     /**
      * The value of the metric.
+     *
      * @return the value
-     **/
+     */
     public Double getValue() {
         return value;
     }
 
-    /**
-     * The unit of the metric value.
-     **/
+    /** The unit of the metric value. */
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final String unit;
 
     /**
      * The unit of the metric value.
+     *
      * @return the value
-     **/
+     */
     public String getUnit() {
         return unit;
     }
 
-    /**
-     * The dimensions of the metric.
-     **/
+    /** The dimensions of the metric. */
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.List<MetricDimensionDefinition> dimensions;
 
     /**
      * The dimensions of the metric.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<MetricDimensionDefinition> getDimensions() {
         return dimensions;
     }
@@ -207,6 +197,7 @@ public final class TimeSeriesMetricDataPoint
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

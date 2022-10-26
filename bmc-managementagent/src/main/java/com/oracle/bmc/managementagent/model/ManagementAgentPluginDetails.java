@@ -5,22 +5,22 @@
 package com.oracle.bmc.managementagent.model;
 
 /**
- * The information about the current management agent plugins that agent is having.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information about the current management agent plugins that agent is having. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ManagementAgentPluginDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ManagementAgentPluginDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ManagementAgentPluginDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "pluginId",
@@ -51,113 +51,106 @@ public final class ManagementAgentPluginDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Plugin Id
-         **/
+        /** Plugin Id */
         @com.fasterxml.jackson.annotation.JsonProperty("pluginId")
         private String pluginId;
 
         /**
          * Plugin Id
+         *
          * @param pluginId the value to set
          * @return this builder
-         **/
+         */
         public Builder pluginId(String pluginId) {
             this.pluginId = pluginId;
             this.__explicitlySet__.add("pluginId");
             return this;
         }
-        /**
-         * Management Agent Plugin Name
-         **/
+        /** Management Agent Plugin Name */
         @com.fasterxml.jackson.annotation.JsonProperty("pluginName")
         private String pluginName;
 
         /**
          * Management Agent Plugin Name
+         *
          * @param pluginName the value to set
          * @return this builder
-         **/
+         */
         public Builder pluginName(String pluginName) {
             this.pluginName = pluginName;
             this.__explicitlySet__.add("pluginName");
             return this;
         }
-        /**
-         * Management Agent Plugin Identifier, can be renamed
-         **/
+        /** Management Agent Plugin Identifier, can be renamed */
         @com.fasterxml.jackson.annotation.JsonProperty("pluginDisplayName")
         private String pluginDisplayName;
 
         /**
          * Management Agent Plugin Identifier, can be renamed
+         *
          * @param pluginDisplayName the value to set
          * @return this builder
-         **/
+         */
         public Builder pluginDisplayName(String pluginDisplayName) {
             this.pluginDisplayName = pluginDisplayName;
             this.__explicitlySet__.add("pluginDisplayName");
             return this;
         }
-        /**
-         * Plugin Version
-         **/
+        /** Plugin Version */
         @com.fasterxml.jackson.annotation.JsonProperty("pluginVersion")
         private String pluginVersion;
 
         /**
          * Plugin Version
+         *
          * @param pluginVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder pluginVersion(String pluginVersion) {
             this.pluginVersion = pluginVersion;
             this.__explicitlySet__.add("pluginVersion");
             return this;
         }
-        /**
-         * Plugin Status
-         **/
+        /** Plugin Status */
         @com.fasterxml.jackson.annotation.JsonProperty("pluginStatus")
         private PluginStatus pluginStatus;
 
         /**
          * Plugin Status
+         *
          * @param pluginStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder pluginStatus(PluginStatus pluginStatus) {
             this.pluginStatus = pluginStatus;
             this.__explicitlySet__.add("pluginStatus");
             return this;
         }
-        /**
-         * Status message of the Plugin
-         **/
+        /** Status message of the Plugin */
         @com.fasterxml.jackson.annotation.JsonProperty("pluginStatusMessage")
         private String pluginStatusMessage;
 
         /**
          * Status message of the Plugin
+         *
          * @param pluginStatusMessage the value to set
          * @return this builder
-         **/
+         */
         public Builder pluginStatusMessage(String pluginStatusMessage) {
             this.pluginStatusMessage = pluginStatusMessage;
             this.__explicitlySet__.add("pluginStatusMessage");
             return this;
         }
-        /**
-         * flag indicating whether the plugin is in enabled mode or disabled mode.
-         **/
+        /** flag indicating whether the plugin is in enabled mode or disabled mode. */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * flag indicating whether the plugin is in enabled mode or disabled mode.
+         *
          * @param isEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
@@ -210,9 +203,7 @@ public final class ManagementAgentPluginDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -221,100 +212,93 @@ public final class ManagementAgentPluginDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * Plugin Id
-     **/
+    /** Plugin Id */
     @com.fasterxml.jackson.annotation.JsonProperty("pluginId")
     private final String pluginId;
 
     /**
      * Plugin Id
+     *
      * @return the value
-     **/
+     */
     public String getPluginId() {
         return pluginId;
     }
 
-    /**
-     * Management Agent Plugin Name
-     **/
+    /** Management Agent Plugin Name */
     @com.fasterxml.jackson.annotation.JsonProperty("pluginName")
     private final String pluginName;
 
     /**
      * Management Agent Plugin Name
+     *
      * @return the value
-     **/
+     */
     public String getPluginName() {
         return pluginName;
     }
 
-    /**
-     * Management Agent Plugin Identifier, can be renamed
-     **/
+    /** Management Agent Plugin Identifier, can be renamed */
     @com.fasterxml.jackson.annotation.JsonProperty("pluginDisplayName")
     private final String pluginDisplayName;
 
     /**
      * Management Agent Plugin Identifier, can be renamed
+     *
      * @return the value
-     **/
+     */
     public String getPluginDisplayName() {
         return pluginDisplayName;
     }
 
-    /**
-     * Plugin Version
-     **/
+    /** Plugin Version */
     @com.fasterxml.jackson.annotation.JsonProperty("pluginVersion")
     private final String pluginVersion;
 
     /**
      * Plugin Version
+     *
      * @return the value
-     **/
+     */
     public String getPluginVersion() {
         return pluginVersion;
     }
 
-    /**
-     * Plugin Status
-     **/
+    /** Plugin Status */
     @com.fasterxml.jackson.annotation.JsonProperty("pluginStatus")
     private final PluginStatus pluginStatus;
 
     /**
      * Plugin Status
+     *
      * @return the value
-     **/
+     */
     public PluginStatus getPluginStatus() {
         return pluginStatus;
     }
 
-    /**
-     * Status message of the Plugin
-     **/
+    /** Status message of the Plugin */
     @com.fasterxml.jackson.annotation.JsonProperty("pluginStatusMessage")
     private final String pluginStatusMessage;
 
     /**
      * Status message of the Plugin
+     *
      * @return the value
-     **/
+     */
     public String getPluginStatusMessage() {
         return pluginStatusMessage;
     }
 
-    /**
-     * flag indicating whether the plugin is in enabled mode or disabled mode.
-     **/
+    /** flag indicating whether the plugin is in enabled mode or disabled mode. */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * flag indicating whether the plugin is in enabled mode or disabled mode.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -326,6 +310,7 @@ public final class ManagementAgentPluginDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

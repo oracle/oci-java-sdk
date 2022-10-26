@@ -5,19 +5,21 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Information about the approval action of DevOps deployment stages.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Information about the approval action of DevOps deployment stages. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ApprovalAction.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ApprovalAction extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ApprovalAction
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"subjectId", "action", "reason"})
     public ApprovalAction(String subjectId, Action action, String reason) {
@@ -29,49 +31,46 @@ public final class ApprovalAction extends com.oracle.bmc.http.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The subject ID of the user who approves or disapproves a DevOps deployment stage.
-         **/
+        /** The subject ID of the user who approves or disapproves a DevOps deployment stage. */
         @com.fasterxml.jackson.annotation.JsonProperty("subjectId")
         private String subjectId;
 
         /**
          * The subject ID of the user who approves or disapproves a DevOps deployment stage.
+         *
          * @param subjectId the value to set
          * @return this builder
-         **/
+         */
         public Builder subjectId(String subjectId) {
             this.subjectId = subjectId;
             this.__explicitlySet__.add("subjectId");
             return this;
         }
-        /**
-         * The action of the user on the DevOps deployment stage.
-         **/
+        /** The action of the user on the DevOps deployment stage. */
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
         /**
          * The action of the user on the DevOps deployment stage.
+         *
          * @param action the value to set
          * @return this builder
-         **/
+         */
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
             return this;
         }
-        /**
-         * The reason for approving or rejecting the deployment.
-         **/
+        /** The reason for approving or rejecting the deployment. */
         @com.fasterxml.jackson.annotation.JsonProperty("reason")
         private String reason;
 
         /**
          * The reason for approving or rejecting the deployment.
+         *
          * @param reason the value to set
          * @return this builder
-         **/
+         */
         public Builder reason(String reason) {
             this.reason = reason;
             this.__explicitlySet__.add("reason");
@@ -104,9 +103,7 @@ public final class ApprovalAction extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,30 +112,27 @@ public final class ApprovalAction extends com.oracle.bmc.http.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /**
-     * The subject ID of the user who approves or disapproves a DevOps deployment stage.
-     **/
+    /** The subject ID of the user who approves or disapproves a DevOps deployment stage. */
     @com.fasterxml.jackson.annotation.JsonProperty("subjectId")
     private final String subjectId;
 
     /**
      * The subject ID of the user who approves or disapproves a DevOps deployment stage.
+     *
      * @return the value
-     **/
+     */
     public String getSubjectId() {
         return subjectId;
     }
 
-    /**
-     * The action of the user on the DevOps deployment stage.
-     **/
-    public enum Action {
+    /** The action of the user on the DevOps deployment stage. */
+    public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
         Approve("APPROVE"),
         Reject("REJECT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -176,30 +170,28 @@ public final class ApprovalAction extends com.oracle.bmc.http.internal.Explicitl
             return UnknownEnumValue;
         }
     };
-    /**
-     * The action of the user on the DevOps deployment stage.
-     **/
+    /** The action of the user on the DevOps deployment stage. */
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
     /**
      * The action of the user on the DevOps deployment stage.
+     *
      * @return the value
-     **/
+     */
     public Action getAction() {
         return action;
     }
 
-    /**
-     * The reason for approving or rejecting the deployment.
-     **/
+    /** The reason for approving or rejecting the deployment. */
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
     private final String reason;
 
     /**
      * The reason for approving or rejecting the deployment.
+     *
      * @return the value
-     **/
+     */
     public String getReason() {
         return reason;
     }
@@ -211,6 +203,7 @@ public final class ApprovalAction extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

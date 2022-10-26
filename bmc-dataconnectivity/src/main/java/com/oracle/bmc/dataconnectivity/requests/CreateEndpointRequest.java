@@ -6,61 +6,51 @@ package com.oracle.bmc.dataconnectivity.requests;
 
 import com.oracle.bmc.dataconnectivity.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/CreateEndpointExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateEndpointRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/CreateEndpointExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateEndpointRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 public class CreateEndpointRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dataconnectivity.model.CreateEndpointDetails> {
 
-    /**
-     * Details of the new Data Connectivity Management endpoint.
-     */
+    /** Details of the new Data Connectivity Management endpoint. */
     private com.oracle.bmc.dataconnectivity.model.CreateEndpointDetails createEndpointDetails;
 
-    /**
-     * Details of the new Data Connectivity Management endpoint.
-     */
+    /** Details of the new Data Connectivity Management endpoint. */
     public com.oracle.bmc.dataconnectivity.model.CreateEndpointDetails getCreateEndpointDetails() {
         return createEndpointDetails;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
-     *
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without the risk of executing that same action again.
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
-     *
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without the risk of executing that same action again.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /**
-     * DCMS registry ID
-     */
+    /** DCMS registry ID */
     private String registryId;
 
-    /**
-     * DCMS registry ID
-     */
+    /** DCMS registry ID */
     public String getRegistryId() {
         return registryId;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -68,6 +58,7 @@ public class CreateEndpointRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -80,18 +71,16 @@ public class CreateEndpointRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateEndpointRequest,
                     com.oracle.bmc.dataconnectivity.model.CreateEndpointDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Details of the new Data Connectivity Management endpoint.
-         */
+        /** Details of the new Data Connectivity Management endpoint. */
         private com.oracle.bmc.dataconnectivity.model.CreateEndpointDetails createEndpointDetails =
                 null;
 
         /**
          * Details of the new Data Connectivity Management endpoint.
+         *
          * @param createEndpointDetails the value to set
          * @return this builder instance
          */
@@ -102,13 +91,14 @@ public class CreateEndpointRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
-         *
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without the risk of executing that same action again.
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without the risk of executing that same action again.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -118,13 +108,12 @@ public class CreateEndpointRequest
             return this;
         }
 
-        /**
-         * DCMS registry ID
-         */
+        /** DCMS registry ID */
         private String registryId = null;
 
         /**
          * DCMS registry ID
+         *
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -134,17 +123,14 @@ public class CreateEndpointRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -156,18 +142,19 @@ public class CreateEndpointRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -179,6 +166,7 @@ public class CreateEndpointRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(CreateEndpointRequest o) {
@@ -194,10 +182,11 @@ public class CreateEndpointRequest
         /**
          * Build the instance of CreateEndpointRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of CreateEndpointRequest
          */
@@ -210,6 +199,7 @@ public class CreateEndpointRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -222,7 +212,8 @@ public class CreateEndpointRequest
         /**
          * Build the instance of CreateEndpointRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateEndpointRequest
@@ -234,12 +225,14 @@ public class CreateEndpointRequest
             request.registryId = registryId;
             request.opcRequestId = opcRequestId;
             return request;
-            // new CreateEndpointRequest(createEndpointDetails, opcRetryToken, registryId, opcRequestId);
+            // new CreateEndpointRequest(createEndpointDetails, opcRetryToken, registryId,
+            // opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -252,6 +245,7 @@ public class CreateEndpointRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

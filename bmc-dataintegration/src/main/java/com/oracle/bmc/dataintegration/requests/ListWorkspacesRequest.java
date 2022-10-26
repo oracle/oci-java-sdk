@@ -6,75 +6,77 @@ package com.oracle.bmc.dataintegration.requests;
 
 import com.oracle.bmc.dataintegration.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListWorkspacesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkspacesRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListWorkspacesExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkspacesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class ListWorkspacesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The OCID of the compartment containing the resources you want to list.
-     */
+    /** The OCID of the compartment containing the resources you want to list. */
     private String compartmentId;
 
-    /**
-     * The OCID of the compartment containing the resources you want to list.
-     */
+    /** The OCID of the compartment containing the resources you want to list. */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * Used to filter by the name of the object.
-     */
+    /** Used to filter by the name of the object. */
     private String name;
 
-    /**
-     * Used to filter by the name of the object.
-     */
+    /** Used to filter by the name of the object. */
     public String getName() {
         return name;
     }
     /**
-     * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Sets the maximum number of results per page, or items to return in a paginated {@code List}
+     * call. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Sets the maximum number of results per page, or items to return in a paginated {@code List}
+     * call. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code
+     * opc-prev-page} response header from the previous {@code List} call. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code
+     * opc-prev-page} response header from the previous {@code List} call. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
     /**
-     * The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
+     * The lifecycle state of a resource. When specified, the operation only returns resources that
+     * match the given lifecycle state. When not specified, all lifecycle states are processed as a
+     * match.
      */
     private com.oracle.bmc.dataintegration.model.Workspace.LifecycleState lifecycleState;
 
     /**
-     * The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
+     * The lifecycle state of a resource. When specified, the operation only returns resources that
+     * match the given lifecycle state. When not specified, all lifecycle states are processed as a
+     * match.
      */
     public com.oracle.bmc.dataintegration.model.Workspace.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /**
-     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
-     */
+    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
     private SortOrder sortOrder;
 
-    /**
-     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
-     **/
-    public enum SortOrder {
+    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -107,21 +109,25 @@ public class ListWorkspacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
-    /**
-     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
-     */
+    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+     * fields, results are shown in descending order. All other fields default to ascending order.
+     * Sorting related parameters are ignored when parameter {@code query} is present (search
+     * operation and sorting order is by relevance score in descending order).
      */
     private SortBy sortBy;
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
-     **/
-    public enum SortBy {
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+     * fields, results are shown in descending order. All other fields default to ascending order.
+     * Sorting related parameters are ignored when parameter {@code query} is present (search
+     * operation and sorting order is by relevance score in descending order).
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TimeCreated("TIME_CREATED"),
         DisplayName("DISPLAY_NAME"),
         TimeUpdated("TIME_UPDATED"),
@@ -156,24 +162,23 @@ public class ListWorkspacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
     };
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+     * fields, results are shown in descending order. All other fields default to ascending order.
+     * Sorting related parameters are ignored when parameter {@code query} is present (search
+     * operation and sorting order is by relevance score in descending order).
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -182,17 +187,15 @@ public class ListWorkspacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListWorkspacesRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the compartment containing the resources you want to list.
-         */
+        /** The OCID of the compartment containing the resources you want to list. */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment containing the resources you want to list.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -201,13 +204,12 @@ public class ListWorkspacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * Used to filter by the name of the object.
-         */
+        /** Used to filter by the name of the object. */
         private String name = null;
 
         /**
          * Used to filter by the name of the object.
+         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -217,12 +219,17 @@ public class ListWorkspacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Sets the maximum number of results per page, or items to return in a paginated {@code
+         * List} call. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Sets the maximum number of results per page, or items to return in a paginated {@code
+         * List} call. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -232,12 +239,17 @@ public class ListWorkspacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the
+         * {@code opc-prev-page} response header from the previous {@code List} call. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the
+         * {@code opc-prev-page} response header from the previous {@code List} call. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -247,12 +259,17 @@ public class ListWorkspacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
+         * The lifecycle state of a resource. When specified, the operation only returns resources
+         * that match the given lifecycle state. When not specified, all lifecycle states are
+         * processed as a match.
          */
         private com.oracle.bmc.dataintegration.model.Workspace.LifecycleState lifecycleState = null;
 
         /**
-         * The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
+         * The lifecycle state of a resource. When specified, the operation only returns resources
+         * that match the given lifecycle state. When not specified, all lifecycle states are
+         * processed as a match.
+         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -269,6 +286,7 @@ public class ListWorkspacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -278,12 +296,19 @@ public class ListWorkspacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+         * fields, results are shown in descending order. All other fields default to ascending
+         * order. Sorting related parameters are ignored when parameter {@code query} is present
+         * (search operation and sorting order is by relevance score in descending order).
          */
         private SortBy sortBy = null;
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+         * fields, results are shown in descending order. All other fields default to ascending
+         * order. Sorting related parameters are ignored when parameter {@code query} is present
+         * (search operation and sorting order is by relevance score in descending order).
+         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -293,17 +318,14 @@ public class ListWorkspacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -315,18 +337,19 @@ public class ListWorkspacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -338,6 +361,7 @@ public class ListWorkspacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListWorkspacesRequest o) {
@@ -357,10 +381,11 @@ public class ListWorkspacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListWorkspacesRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListWorkspacesRequest
          */
@@ -374,7 +399,8 @@ public class ListWorkspacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListWorkspacesRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListWorkspacesRequest
@@ -390,12 +416,14 @@ public class ListWorkspacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListWorkspacesRequest(compartmentId, name, limit, page, lifecycleState, sortOrder, sortBy, opcRequestId);
+            // new ListWorkspacesRequest(compartmentId, name, limit, page, lifecycleState,
+            // sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -412,6 +440,7 @@ public class ListWorkspacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

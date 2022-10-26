@@ -5,78 +5,80 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * Network options specific to using the OCI VCN Native CNI
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Network options specific to using the OCI VCN Native CNI <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = OciVcnIpNativeNodePoolPodNetworkOptionDetails.Builder.class
-)
+        builder = OciVcnIpNativeNodePoolPodNetworkOptionDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "cniType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "cniType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class OciVcnIpNativeNodePoolPodNetworkOptionDetails
         extends NodePoolPodNetworkOptionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
-         *
-         **/
+         * The max number of pods per node in the node pool. This value will be limited by the
+         * number of VNICs attachable to the node pool shape
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("maxPodsPerNode")
         private Integer maxPodsPerNode;
 
         /**
-         * The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+         * The max number of pods per node in the node pool. This value will be limited by the
+         * number of VNICs attachable to the node pool shape
          *
          * @param maxPodsPerNode the value to set
          * @return this builder
-         **/
+         */
         public Builder maxPodsPerNode(Integer maxPodsPerNode) {
             this.maxPodsPerNode = maxPodsPerNode;
             this.__explicitlySet__.add("maxPodsPerNode");
             return this;
         }
         /**
-         * The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see {@link NetworkSecurityGroup}.
-         *
-         **/
+         * The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For
+         * more information about NSGs, see {@link NetworkSecurityGroup}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("podNsgIds")
         private java.util.List<String> podNsgIds;
 
         /**
-         * The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see {@link NetworkSecurityGroup}.
+         * The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For
+         * more information about NSGs, see {@link NetworkSecurityGroup}.
          *
          * @param podNsgIds the value to set
          * @return this builder
-         **/
+         */
         public Builder podNsgIds(java.util.List<String> podNsgIds) {
             this.podNsgIds = podNsgIds;
             this.__explicitlySet__.add("podNsgIds");
             return this;
         }
         /**
-         * The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
-         *
-         **/
+         * The OCIDs of the subnets in which to place pods for this node pool. This can be one of
+         * the node pool subnet IDs
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("podSubnetIds")
         private java.util.List<String> podSubnetIds;
 
         /**
-         * The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+         * The OCIDs of the subnets in which to place pods for this node pool. This can be one of
+         * the node pool subnet IDs
          *
          * @param podSubnetIds the value to set
          * @return this builder
-         **/
+         */
         public Builder podSubnetIds(java.util.List<String> podSubnetIds) {
             this.podSubnetIds = podSubnetIds;
             this.__explicitlySet__.add("podSubnetIds");
@@ -111,9 +113,7 @@ public final class OciVcnIpNativeNodePoolPodNetworkOptionDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -134,49 +134,52 @@ public final class OciVcnIpNativeNodePoolPodNetworkOptionDetails
     }
 
     /**
-     * The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
-     *
-     **/
+     * The max number of pods per node in the node pool. This value will be limited by the number of
+     * VNICs attachable to the node pool shape
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("maxPodsPerNode")
     private final Integer maxPodsPerNode;
 
     /**
-     * The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+     * The max number of pods per node in the node pool. This value will be limited by the number of
+     * VNICs attachable to the node pool shape
      *
      * @return the value
-     **/
+     */
     public Integer getMaxPodsPerNode() {
         return maxPodsPerNode;
     }
 
     /**
-     * The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see {@link NetworkSecurityGroup}.
-     *
-     **/
+     * The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For
+     * more information about NSGs, see {@link NetworkSecurityGroup}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("podNsgIds")
     private final java.util.List<String> podNsgIds;
 
     /**
-     * The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see {@link NetworkSecurityGroup}.
+     * The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For
+     * more information about NSGs, see {@link NetworkSecurityGroup}.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getPodNsgIds() {
         return podNsgIds;
     }
 
     /**
-     * The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
-     *
-     **/
+     * The OCIDs of the subnets in which to place pods for this node pool. This can be one of the
+     * node pool subnet IDs
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("podSubnetIds")
     private final java.util.List<String> podSubnetIds;
 
     /**
-     * The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+     * The OCIDs of the subnets in which to place pods for this node pool. This can be one of the
+     * node pool subnet IDs
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getPodSubnetIds() {
         return podSubnetIds;
     }
@@ -188,6 +191,7 @@ public final class OciVcnIpNativeNodePoolPodNetworkOptionDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

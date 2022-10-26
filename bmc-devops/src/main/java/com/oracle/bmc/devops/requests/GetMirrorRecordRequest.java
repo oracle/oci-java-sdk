@@ -6,37 +6,31 @@ package com.oracle.bmc.devops.requests;
 
 import com.oracle.bmc.devops.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetMirrorRecordExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetMirrorRecordRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetMirrorRecordExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetMirrorRecordRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class GetMirrorRecordRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * Unique repository identifier.
-     */
+    /** Unique repository identifier. */
     private String repositoryId;
 
-    /**
-     * Unique repository identifier.
-     */
+    /** Unique repository identifier. */
     public String getRepositoryId() {
         return repositoryId;
     }
     /**
-     * The field of mirror record type. Only one mirror record type can be provided:
-     * current - The current mirror record.
-     * lastSuccessful - The last successful mirror record.
-     *
+     * The field of mirror record type. Only one mirror record type can be provided: current - The
+     * current mirror record. lastSuccessful - The last successful mirror record.
      */
     private MirrorRecordType mirrorRecordType;
 
     /**
-     * The field of mirror record type. Only one mirror record type can be provided:
-     * current - The current mirror record.
-     * lastSuccessful - The last successful mirror record.
-     *
-     **/
-    public enum MirrorRecordType {
+     * The field of mirror record type. Only one mirror record type can be provided: current - The
+     * current mirror record. lastSuccessful - The last successful mirror record.
+     */
+    public enum MirrorRecordType implements com.oracle.bmc.http.internal.BmcEnum {
         Current("current"),
         LastSuccessful("lastSuccessful"),
         ;
@@ -70,21 +64,21 @@ public class GetMirrorRecordRequest extends com.oracle.bmc.requests.BmcRequest<j
     };
 
     /**
-     * The field of mirror record type. Only one mirror record type can be provided:
-     * current - The current mirror record.
-     * lastSuccessful - The last successful mirror record.
-     *
+     * The field of mirror record type. Only one mirror record type can be provided: current - The
+     * current mirror record. lastSuccessful - The last successful mirror record.
      */
     public MirrorRecordType getMirrorRecordType() {
         return mirrorRecordType;
     }
     /**
-     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -93,17 +87,15 @@ public class GetMirrorRecordRequest extends com.oracle.bmc.requests.BmcRequest<j
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetMirrorRecordRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique repository identifier.
-         */
+        /** Unique repository identifier. */
         private String repositoryId = null;
 
         /**
          * Unique repository identifier.
+         *
          * @param repositoryId the value to set
          * @return this builder instance
          */
@@ -113,17 +105,14 @@ public class GetMirrorRecordRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * The field of mirror record type. Only one mirror record type can be provided:
-         * current - The current mirror record.
-         * lastSuccessful - The last successful mirror record.
-         *
+         * The field of mirror record type. Only one mirror record type can be provided: current -
+         * The current mirror record. lastSuccessful - The last successful mirror record.
          */
         private MirrorRecordType mirrorRecordType = null;
 
         /**
-         * The field of mirror record type. Only one mirror record type can be provided:
-         * current - The current mirror record.
-         * lastSuccessful - The last successful mirror record.
+         * The field of mirror record type. Only one mirror record type can be provided: current -
+         * The current mirror record. lastSuccessful - The last successful mirror record.
          *
          * @param mirrorRecordType the value to set
          * @return this builder instance
@@ -134,12 +123,15 @@ public class GetMirrorRecordRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide the request ID.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -150,18 +142,19 @@ public class GetMirrorRecordRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -173,6 +166,7 @@ public class GetMirrorRecordRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetMirrorRecordRequest o) {
@@ -187,10 +181,11 @@ public class GetMirrorRecordRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of GetMirrorRecordRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetMirrorRecordRequest
          */
@@ -204,7 +199,8 @@ public class GetMirrorRecordRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of GetMirrorRecordRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetMirrorRecordRequest
@@ -221,6 +217,7 @@ public class GetMirrorRecordRequest extends com.oracle.bmc.requests.BmcRequest<j
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -232,6 +229,7 @@ public class GetMirrorRecordRequest extends com.oracle.bmc.requests.BmcRequest<j
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

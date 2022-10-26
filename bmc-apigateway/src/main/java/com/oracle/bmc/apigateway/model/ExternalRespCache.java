@@ -5,69 +5,66 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Connection details for an external RESP based cache store for Response Caching.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Connection details for an external RESP based cache store for Response Caching. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ExternalRespCache.Builder.class
-)
+        builder = ExternalRespCache.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ExternalRespCache extends ResponseCacheDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The set of cache store members to connect to. At present only a single server is supported.
-         *
-         **/
+         * The set of cache store members to connect to. At present only a single server is
+         * supported.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("servers")
         private java.util.List<ResponseCacheRespServer> servers;
 
         /**
-         * The set of cache store members to connect to. At present only a single server is supported.
+         * The set of cache store members to connect to. At present only a single server is
+         * supported.
          *
          * @param servers the value to set
          * @return this builder
-         **/
+         */
         public Builder servers(java.util.List<ResponseCacheRespServer> servers) {
             this.servers = servers;
             this.__explicitlySet__.add("servers");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Oracle Vault Service secret resource.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationSecretId")
         private String authenticationSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Oracle Vault Service secret resource.
          *
          * @param authenticationSecretId the value to set
          * @return this builder
-         **/
+         */
         public Builder authenticationSecretId(String authenticationSecretId) {
             this.authenticationSecretId = authenticationSecretId;
             this.__explicitlySet__.add("authenticationSecretId");
             return this;
         }
-        /**
-         * The version number of the authentication secret to use.
-         *
-         **/
+        /** The version number of the authentication secret to use. */
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationSecretVersionNumber")
         private Long authenticationSecretVersionNumber;
 
@@ -76,16 +73,13 @@ public final class ExternalRespCache extends ResponseCacheDetails {
          *
          * @param authenticationSecretVersionNumber the value to set
          * @return this builder
-         **/
+         */
         public Builder authenticationSecretVersionNumber(Long authenticationSecretVersionNumber) {
             this.authenticationSecretVersionNumber = authenticationSecretVersionNumber;
             this.__explicitlySet__.add("authenticationSecretVersionNumber");
             return this;
         }
-        /**
-         * Defines if the connection should be over SSL.
-         *
-         **/
+        /** Defines if the connection should be over SSL. */
         @com.fasterxml.jackson.annotation.JsonProperty("isSslEnabled")
         private Boolean isSslEnabled;
 
@@ -94,16 +88,13 @@ public final class ExternalRespCache extends ResponseCacheDetails {
          *
          * @param isSslEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isSslEnabled(Boolean isSslEnabled) {
             this.isSslEnabled = isSslEnabled;
             this.__explicitlySet__.add("isSslEnabled");
             return this;
         }
-        /**
-         * Defines whether or not to uphold SSL verification.
-         *
-         **/
+        /** Defines whether or not to uphold SSL verification. */
         @com.fasterxml.jackson.annotation.JsonProperty("isSslVerifyDisabled")
         private Boolean isSslVerifyDisabled;
 
@@ -112,16 +103,13 @@ public final class ExternalRespCache extends ResponseCacheDetails {
          *
          * @param isSslVerifyDisabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isSslVerifyDisabled(Boolean isSslVerifyDisabled) {
             this.isSslVerifyDisabled = isSslVerifyDisabled;
             this.__explicitlySet__.add("isSslVerifyDisabled");
             return this;
         }
-        /**
-         * Defines the timeout for establishing a connection with the Response Cache.
-         *
-         **/
+        /** Defines the timeout for establishing a connection with the Response Cache. */
         @com.fasterxml.jackson.annotation.JsonProperty("connectTimeoutInMs")
         private Integer connectTimeoutInMs;
 
@@ -130,16 +118,13 @@ public final class ExternalRespCache extends ResponseCacheDetails {
          *
          * @param connectTimeoutInMs the value to set
          * @return this builder
-         **/
+         */
         public Builder connectTimeoutInMs(Integer connectTimeoutInMs) {
             this.connectTimeoutInMs = connectTimeoutInMs;
             this.__explicitlySet__.add("connectTimeoutInMs");
             return this;
         }
-        /**
-         * Defines the timeout for reading data from the Response Cache.
-         *
-         **/
+        /** Defines the timeout for reading data from the Response Cache. */
         @com.fasterxml.jackson.annotation.JsonProperty("readTimeoutInMs")
         private Integer readTimeoutInMs;
 
@@ -148,16 +133,13 @@ public final class ExternalRespCache extends ResponseCacheDetails {
          *
          * @param readTimeoutInMs the value to set
          * @return this builder
-         **/
+         */
         public Builder readTimeoutInMs(Integer readTimeoutInMs) {
             this.readTimeoutInMs = readTimeoutInMs;
             this.__explicitlySet__.add("readTimeoutInMs");
             return this;
         }
-        /**
-         * Defines the timeout for transmitting data to the Response Cache.
-         *
-         **/
+        /** Defines the timeout for transmitting data to the Response Cache. */
         @com.fasterxml.jackson.annotation.JsonProperty("sendTimeoutInMs")
         private Integer sendTimeoutInMs;
 
@@ -166,7 +148,7 @@ public final class ExternalRespCache extends ResponseCacheDetails {
          *
          * @param sendTimeoutInMs the value to set
          * @return this builder
-         **/
+         */
         public Builder sendTimeoutInMs(Integer sendTimeoutInMs) {
             this.sendTimeoutInMs = sendTimeoutInMs;
             this.__explicitlySet__.add("sendTimeoutInMs");
@@ -224,9 +206,7 @@ public final class ExternalRespCache extends ResponseCacheDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -258,8 +238,7 @@ public final class ExternalRespCache extends ResponseCacheDetails {
 
     /**
      * The set of cache store members to connect to. At present only a single server is supported.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("servers")
     private final java.util.List<ResponseCacheRespServer> servers;
 
@@ -267,31 +246,29 @@ public final class ExternalRespCache extends ResponseCacheDetails {
      * The set of cache store members to connect to. At present only a single server is supported.
      *
      * @return the value
-     **/
+     */
     public java.util.List<ResponseCacheRespServer> getServers() {
         return servers;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Oracle Vault Service secret resource.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationSecretId")
     private final String authenticationSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Oracle Vault Service secret resource.
      *
      * @return the value
-     **/
+     */
     public String getAuthenticationSecretId() {
         return authenticationSecretId;
     }
 
-    /**
-     * The version number of the authentication secret to use.
-     *
-     **/
+    /** The version number of the authentication secret to use. */
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationSecretVersionNumber")
     private final Long authenticationSecretVersionNumber;
 
@@ -299,15 +276,12 @@ public final class ExternalRespCache extends ResponseCacheDetails {
      * The version number of the authentication secret to use.
      *
      * @return the value
-     **/
+     */
     public Long getAuthenticationSecretVersionNumber() {
         return authenticationSecretVersionNumber;
     }
 
-    /**
-     * Defines if the connection should be over SSL.
-     *
-     **/
+    /** Defines if the connection should be over SSL. */
     @com.fasterxml.jackson.annotation.JsonProperty("isSslEnabled")
     private final Boolean isSslEnabled;
 
@@ -315,15 +289,12 @@ public final class ExternalRespCache extends ResponseCacheDetails {
      * Defines if the connection should be over SSL.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsSslEnabled() {
         return isSslEnabled;
     }
 
-    /**
-     * Defines whether or not to uphold SSL verification.
-     *
-     **/
+    /** Defines whether or not to uphold SSL verification. */
     @com.fasterxml.jackson.annotation.JsonProperty("isSslVerifyDisabled")
     private final Boolean isSslVerifyDisabled;
 
@@ -331,15 +302,12 @@ public final class ExternalRespCache extends ResponseCacheDetails {
      * Defines whether or not to uphold SSL verification.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsSslVerifyDisabled() {
         return isSslVerifyDisabled;
     }
 
-    /**
-     * Defines the timeout for establishing a connection with the Response Cache.
-     *
-     **/
+    /** Defines the timeout for establishing a connection with the Response Cache. */
     @com.fasterxml.jackson.annotation.JsonProperty("connectTimeoutInMs")
     private final Integer connectTimeoutInMs;
 
@@ -347,15 +315,12 @@ public final class ExternalRespCache extends ResponseCacheDetails {
      * Defines the timeout for establishing a connection with the Response Cache.
      *
      * @return the value
-     **/
+     */
     public Integer getConnectTimeoutInMs() {
         return connectTimeoutInMs;
     }
 
-    /**
-     * Defines the timeout for reading data from the Response Cache.
-     *
-     **/
+    /** Defines the timeout for reading data from the Response Cache. */
     @com.fasterxml.jackson.annotation.JsonProperty("readTimeoutInMs")
     private final Integer readTimeoutInMs;
 
@@ -363,15 +328,12 @@ public final class ExternalRespCache extends ResponseCacheDetails {
      * Defines the timeout for reading data from the Response Cache.
      *
      * @return the value
-     **/
+     */
     public Integer getReadTimeoutInMs() {
         return readTimeoutInMs;
     }
 
-    /**
-     * Defines the timeout for transmitting data to the Response Cache.
-     *
-     **/
+    /** Defines the timeout for transmitting data to the Response Cache. */
     @com.fasterxml.jackson.annotation.JsonProperty("sendTimeoutInMs")
     private final Integer sendTimeoutInMs;
 
@@ -379,7 +341,7 @@ public final class ExternalRespCache extends ResponseCacheDetails {
      * Defines the timeout for transmitting data to the Response Cache.
      *
      * @return the value
-     **/
+     */
     public Integer getSendTimeoutInMs() {
         return sendTimeoutInMs;
     }
@@ -391,6 +353,7 @@ public final class ExternalRespCache extends ResponseCacheDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

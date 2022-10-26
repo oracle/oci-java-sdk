@@ -5,22 +5,22 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /**
- * Cost estimation for compute
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Cost estimation for compute <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ComputeCostEstimation.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ComputeCostEstimation.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ComputeCostEstimation
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "ocpuPerHour",
@@ -63,178 +63,167 @@ public final class ComputeCostEstimation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * OCPU per hour
-         **/
+        /** OCPU per hour */
         @com.fasterxml.jackson.annotation.JsonProperty("ocpuPerHour")
         private java.math.BigDecimal ocpuPerHour;
 
         /**
          * OCPU per hour
+         *
          * @param ocpuPerHour the value to set
          * @return this builder
-         **/
+         */
         public Builder ocpuPerHour(java.math.BigDecimal ocpuPerHour) {
             this.ocpuPerHour = ocpuPerHour;
             this.__explicitlySet__.add("ocpuPerHour");
             return this;
         }
-        /**
-         * OCPU per hour by subscription
-         **/
+        /** OCPU per hour by subscription */
         @com.fasterxml.jackson.annotation.JsonProperty("ocpuPerHourBySubscription")
         private java.math.BigDecimal ocpuPerHourBySubscription;
 
         /**
          * OCPU per hour by subscription
+         *
          * @param ocpuPerHourBySubscription the value to set
          * @return this builder
-         **/
+         */
         public Builder ocpuPerHourBySubscription(java.math.BigDecimal ocpuPerHourBySubscription) {
             this.ocpuPerHourBySubscription = ocpuPerHourBySubscription;
             this.__explicitlySet__.add("ocpuPerHourBySubscription");
             return this;
         }
-        /**
-         * Gigabyte per hour
-         **/
+        /** Gigabyte per hour */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryGbPerHour")
         private java.math.BigDecimal memoryGbPerHour;
 
         /**
          * Gigabyte per hour
+         *
          * @param memoryGbPerHour the value to set
          * @return this builder
-         **/
+         */
         public Builder memoryGbPerHour(java.math.BigDecimal memoryGbPerHour) {
             this.memoryGbPerHour = memoryGbPerHour;
             this.__explicitlySet__.add("memoryGbPerHour");
             return this;
         }
-        /**
-         * Gigabyte per hour by subscription
-         **/
+        /** Gigabyte per hour by subscription */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryGbPerHourBySubscription")
         private java.math.BigDecimal memoryGbPerHourBySubscription;
 
         /**
          * Gigabyte per hour by subscription
+         *
          * @param memoryGbPerHourBySubscription the value to set
          * @return this builder
-         **/
+         */
         public Builder memoryGbPerHourBySubscription(
                 java.math.BigDecimal memoryGbPerHourBySubscription) {
             this.memoryGbPerHourBySubscription = memoryGbPerHourBySubscription;
             this.__explicitlySet__.add("memoryGbPerHourBySubscription");
             return this;
         }
-        /**
-         * GPU per hour
-         **/
+        /** GPU per hour */
         @com.fasterxml.jackson.annotation.JsonProperty("gpuPerHour")
         private java.math.BigDecimal gpuPerHour;
 
         /**
          * GPU per hour
+         *
          * @param gpuPerHour the value to set
          * @return this builder
-         **/
+         */
         public Builder gpuPerHour(java.math.BigDecimal gpuPerHour) {
             this.gpuPerHour = gpuPerHour;
             this.__explicitlySet__.add("gpuPerHour");
             return this;
         }
-        /**
-         * GPU per hour by subscription
-         **/
+        /** GPU per hour by subscription */
         @com.fasterxml.jackson.annotation.JsonProperty("gpuPerHourBySubscription")
         private java.math.BigDecimal gpuPerHourBySubscription;
 
         /**
          * GPU per hour by subscription
+         *
          * @param gpuPerHourBySubscription the value to set
          * @return this builder
-         **/
+         */
         public Builder gpuPerHourBySubscription(java.math.BigDecimal gpuPerHourBySubscription) {
             this.gpuPerHourBySubscription = gpuPerHourBySubscription;
             this.__explicitlySet__.add("gpuPerHourBySubscription");
             return this;
         }
-        /**
-         * Total per hour
-         **/
+        /** Total per hour */
         @com.fasterxml.jackson.annotation.JsonProperty("totalPerHour")
         private java.math.BigDecimal totalPerHour;
 
         /**
          * Total per hour
+         *
          * @param totalPerHour the value to set
          * @return this builder
-         **/
+         */
         public Builder totalPerHour(java.math.BigDecimal totalPerHour) {
             this.totalPerHour = totalPerHour;
             this.__explicitlySet__.add("totalPerHour");
             return this;
         }
-        /**
-         * Total usage per hour by subscription
-         **/
+        /** Total usage per hour by subscription */
         @com.fasterxml.jackson.annotation.JsonProperty("totalPerHourBySubscription")
         private java.math.BigDecimal totalPerHourBySubscription;
 
         /**
          * Total usage per hour by subscription
+         *
          * @param totalPerHourBySubscription the value to set
          * @return this builder
-         **/
+         */
         public Builder totalPerHourBySubscription(java.math.BigDecimal totalPerHourBySubscription) {
             this.totalPerHourBySubscription = totalPerHourBySubscription;
             this.__explicitlySet__.add("totalPerHourBySubscription");
             return this;
         }
-        /**
-         * Total number of OCPUs
-         **/
+        /** Total number of OCPUs */
         @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
         private java.math.BigDecimal ocpuCount;
 
         /**
          * Total number of OCPUs
+         *
          * @param ocpuCount the value to set
          * @return this builder
-         **/
+         */
         public Builder ocpuCount(java.math.BigDecimal ocpuCount) {
             this.ocpuCount = ocpuCount;
             this.__explicitlySet__.add("ocpuCount");
             return this;
         }
-        /**
-         * Total usage of memory
-         **/
+        /** Total usage of memory */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryAmountGb")
         private java.math.BigDecimal memoryAmountGb;
 
         /**
          * Total usage of memory
+         *
          * @param memoryAmountGb the value to set
          * @return this builder
-         **/
+         */
         public Builder memoryAmountGb(java.math.BigDecimal memoryAmountGb) {
             this.memoryAmountGb = memoryAmountGb;
             this.__explicitlySet__.add("memoryAmountGb");
             return this;
         }
-        /**
-         * Total number of GPU
-         **/
+        /** Total number of GPU */
         @com.fasterxml.jackson.annotation.JsonProperty("gpuCount")
         private java.math.BigDecimal gpuCount;
 
         /**
          * Total number of GPU
+         *
          * @param gpuCount the value to set
          * @return this builder
-         **/
+         */
         public Builder gpuCount(java.math.BigDecimal gpuCount) {
             this.gpuCount = gpuCount;
             this.__explicitlySet__.add("gpuCount");
@@ -303,9 +292,7 @@ public final class ComputeCostEstimation
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -314,156 +301,145 @@ public final class ComputeCostEstimation
         return new Builder().copy(this);
     }
 
-    /**
-     * OCPU per hour
-     **/
+    /** OCPU per hour */
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuPerHour")
     private final java.math.BigDecimal ocpuPerHour;
 
     /**
      * OCPU per hour
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getOcpuPerHour() {
         return ocpuPerHour;
     }
 
-    /**
-     * OCPU per hour by subscription
-     **/
+    /** OCPU per hour by subscription */
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuPerHourBySubscription")
     private final java.math.BigDecimal ocpuPerHourBySubscription;
 
     /**
      * OCPU per hour by subscription
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getOcpuPerHourBySubscription() {
         return ocpuPerHourBySubscription;
     }
 
-    /**
-     * Gigabyte per hour
-     **/
+    /** Gigabyte per hour */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryGbPerHour")
     private final java.math.BigDecimal memoryGbPerHour;
 
     /**
      * Gigabyte per hour
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getMemoryGbPerHour() {
         return memoryGbPerHour;
     }
 
-    /**
-     * Gigabyte per hour by subscription
-     **/
+    /** Gigabyte per hour by subscription */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryGbPerHourBySubscription")
     private final java.math.BigDecimal memoryGbPerHourBySubscription;
 
     /**
      * Gigabyte per hour by subscription
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getMemoryGbPerHourBySubscription() {
         return memoryGbPerHourBySubscription;
     }
 
-    /**
-     * GPU per hour
-     **/
+    /** GPU per hour */
     @com.fasterxml.jackson.annotation.JsonProperty("gpuPerHour")
     private final java.math.BigDecimal gpuPerHour;
 
     /**
      * GPU per hour
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getGpuPerHour() {
         return gpuPerHour;
     }
 
-    /**
-     * GPU per hour by subscription
-     **/
+    /** GPU per hour by subscription */
     @com.fasterxml.jackson.annotation.JsonProperty("gpuPerHourBySubscription")
     private final java.math.BigDecimal gpuPerHourBySubscription;
 
     /**
      * GPU per hour by subscription
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getGpuPerHourBySubscription() {
         return gpuPerHourBySubscription;
     }
 
-    /**
-     * Total per hour
-     **/
+    /** Total per hour */
     @com.fasterxml.jackson.annotation.JsonProperty("totalPerHour")
     private final java.math.BigDecimal totalPerHour;
 
     /**
      * Total per hour
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getTotalPerHour() {
         return totalPerHour;
     }
 
-    /**
-     * Total usage per hour by subscription
-     **/
+    /** Total usage per hour by subscription */
     @com.fasterxml.jackson.annotation.JsonProperty("totalPerHourBySubscription")
     private final java.math.BigDecimal totalPerHourBySubscription;
 
     /**
      * Total usage per hour by subscription
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getTotalPerHourBySubscription() {
         return totalPerHourBySubscription;
     }
 
-    /**
-     * Total number of OCPUs
-     **/
+    /** Total number of OCPUs */
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
     private final java.math.BigDecimal ocpuCount;
 
     /**
      * Total number of OCPUs
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getOcpuCount() {
         return ocpuCount;
     }
 
-    /**
-     * Total usage of memory
-     **/
+    /** Total usage of memory */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryAmountGb")
     private final java.math.BigDecimal memoryAmountGb;
 
     /**
      * Total usage of memory
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getMemoryAmountGb() {
         return memoryAmountGb;
     }
 
-    /**
-     * Total number of GPU
-     **/
+    /** Total number of GPU */
     @com.fasterxml.jackson.annotation.JsonProperty("gpuCount")
     private final java.math.BigDecimal gpuCount;
 
     /**
      * Total number of GPU
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getGpuCount() {
         return gpuCount;
     }
@@ -475,6 +451,7 @@ public final class ComputeCostEstimation
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

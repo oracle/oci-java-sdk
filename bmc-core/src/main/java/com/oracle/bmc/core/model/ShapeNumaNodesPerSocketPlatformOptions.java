@@ -5,23 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Configuration options for NUMA nodes per socket.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Configuration options for NUMA nodes per socket. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ShapeNumaNodesPerSocketPlatformOptions.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ShapeNumaNodesPerSocketPlatformOptions.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ShapeNumaNodesPerSocketPlatformOptions
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"allowedValues", "defaultValue"})
     public ShapeNumaNodesPerSocketPlatformOptions(
@@ -33,10 +32,7 @@ public final class ShapeNumaNodesPerSocketPlatformOptions
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The supported values for this platform configuration property.
-         *
-         **/
+        /** The supported values for this platform configuration property. */
         @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
         private java.util.List<AllowedValues> allowedValues;
 
@@ -45,16 +41,13 @@ public final class ShapeNumaNodesPerSocketPlatformOptions
          *
          * @param allowedValues the value to set
          * @return this builder
-         **/
+         */
         public Builder allowedValues(java.util.List<AllowedValues> allowedValues) {
             this.allowedValues = allowedValues;
             this.__explicitlySet__.add("allowedValues");
             return this;
         }
-        /**
-         * The default NUMA nodes per socket configuration.
-         *
-         **/
+        /** The default NUMA nodes per socket configuration. */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private String defaultValue;
 
@@ -63,7 +56,7 @@ public final class ShapeNumaNodesPerSocketPlatformOptions
          *
          * @param defaultValue the value to set
          * @return this builder
-         **/
+         */
         public Builder defaultValue(String defaultValue) {
             this.defaultValue = defaultValue;
             this.__explicitlySet__.add("defaultValue");
@@ -95,9 +88,7 @@ public final class ShapeNumaNodesPerSocketPlatformOptions
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -106,17 +97,16 @@ public final class ShapeNumaNodesPerSocketPlatformOptions
         return new Builder().copy(this);
     }
 
-    /**
-     **/
-    public enum AllowedValues {
+    /** */
+    public enum AllowedValues implements com.oracle.bmc.http.internal.BmcEnum {
         Nps0("NPS0"),
         Nps1("NPS1"),
         Nps2("NPS2"),
         Nps4("NPS4"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -155,10 +145,7 @@ public final class ShapeNumaNodesPerSocketPlatformOptions
             return UnknownEnumValue;
         }
     };
-    /**
-     * The supported values for this platform configuration property.
-     *
-     **/
+    /** The supported values for this platform configuration property. */
     @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
     private final java.util.List<AllowedValues> allowedValues;
 
@@ -166,15 +153,12 @@ public final class ShapeNumaNodesPerSocketPlatformOptions
      * The supported values for this platform configuration property.
      *
      * @return the value
-     **/
+     */
     public java.util.List<AllowedValues> getAllowedValues() {
         return allowedValues;
     }
 
-    /**
-     * The default NUMA nodes per socket configuration.
-     *
-     **/
+    /** The default NUMA nodes per socket configuration. */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     private final String defaultValue;
 
@@ -182,7 +166,7 @@ public final class ShapeNumaNodesPerSocketPlatformOptions
      * The default NUMA nodes per socket configuration.
      *
      * @return the value
-     **/
+     */
     public String getDefaultValue() {
         return defaultValue;
     }
@@ -194,6 +178,7 @@ public final class ShapeNumaNodesPerSocketPlatformOptions
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

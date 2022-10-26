@@ -5,22 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Details to download a masking report.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details to download a masking report. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DownloadMaskingReportDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DownloadMaskingReportDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DownloadMaskingReportDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"reportId", "reportFormat"})
     public DownloadMaskingReportDetails(String reportId, ReportFormat reportFormat) {
@@ -31,33 +31,31 @@ public final class DownloadMaskingReportDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the masking report to be downloaded.
-         **/
+        /** The OCID of the masking report to be downloaded. */
         @com.fasterxml.jackson.annotation.JsonProperty("reportId")
         private String reportId;
 
         /**
          * The OCID of the masking report to be downloaded.
+         *
          * @param reportId the value to set
          * @return this builder
-         **/
+         */
         public Builder reportId(String reportId) {
             this.reportId = reportId;
             this.__explicitlySet__.add("reportId");
             return this;
         }
-        /**
-         * Format of the report.
-         **/
+        /** Format of the report. */
         @com.fasterxml.jackson.annotation.JsonProperty("reportFormat")
         private ReportFormat reportFormat;
 
         /**
          * Format of the report.
+         *
          * @param reportFormat the value to set
          * @return this builder
-         **/
+         */
         public Builder reportFormat(ReportFormat reportFormat) {
             this.reportFormat = reportFormat;
             this.__explicitlySet__.add("reportFormat");
@@ -88,9 +86,7 @@ public final class DownloadMaskingReportDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -99,24 +95,21 @@ public final class DownloadMaskingReportDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the masking report to be downloaded.
-     **/
+    /** The OCID of the masking report to be downloaded. */
     @com.fasterxml.jackson.annotation.JsonProperty("reportId")
     private final String reportId;
 
     /**
      * The OCID of the masking report to be downloaded.
+     *
      * @return the value
-     **/
+     */
     public String getReportId() {
         return reportId;
     }
 
-    /**
-     * Format of the report.
-     **/
-    public enum ReportFormat {
+    /** Format of the report. */
+    public enum ReportFormat implements com.oracle.bmc.http.internal.BmcEnum {
         Pdf("PDF"),
         Xls("XLS"),
         ;
@@ -148,16 +141,15 @@ public final class DownloadMaskingReportDetails
             throw new IllegalArgumentException("Invalid ReportFormat: " + key);
         }
     };
-    /**
-     * Format of the report.
-     **/
+    /** Format of the report. */
     @com.fasterxml.jackson.annotation.JsonProperty("reportFormat")
     private final ReportFormat reportFormat;
 
     /**
      * Format of the report.
+     *
      * @return the value
-     **/
+     */
     public ReportFormat getReportFormat() {
         return reportFormat;
     }
@@ -169,6 +161,7 @@ public final class DownloadMaskingReportDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

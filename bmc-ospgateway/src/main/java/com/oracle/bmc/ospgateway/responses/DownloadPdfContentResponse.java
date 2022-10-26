@@ -11,7 +11,6 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
@@ -25,52 +24,48 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /**
-     * Set content to download
-     */
+    /** Set content to download */
     private String contentDisposition;
 
     /**
      * Set content to download
+     *
      * @return the value
      */
     public String getContentDisposition() {
         return contentDisposition;
     }
 
-    /**
-     * Set the content type to download
-     */
+    /** Set the content type to download */
     private String contentType;
 
     /**
      * Set the content type to download
+     *
      * @return the value
      */
     public String getContentType() {
         return contentType;
     }
 
-    /**
-     * Set the content length to download
-     */
+    /** Set the content length to download */
     private Integer contentLength;
 
     /**
      * Set the content length to download
+     *
      * @return the value
      */
     public Integer getContentLength() {
         return contentLength;
     }
 
-    /**
-     * The returned java.io.InputStream instance.
-     */
+    /** The returned java.io.InputStream instance. */
     private java.io.InputStream inputStream;
 
     /**
      * The returned java.io.InputStream instance.
+     *
      * @return the value
      */
     public java.io.InputStream getInputStream() {
@@ -88,7 +83,7 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
     })
     private DownloadPdfContentResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String contentDisposition,
             String contentType,
@@ -102,17 +97,20 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
         this.inputStream = inputStream;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<DownloadPdfContentResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
@@ -120,7 +118,6 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId;
 
@@ -136,13 +133,12 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /**
-         * Set content to download
-         */
+        /** Set content to download */
         private String contentDisposition;
 
         /**
          * Set content to download
+         *
          * @param contentDisposition the value to set
          * @return this builder
          */
@@ -151,13 +147,12 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /**
-         * Set the content type to download
-         */
+        /** Set the content type to download */
         private String contentType;
 
         /**
          * Set the content type to download
+         *
          * @param contentType the value to set
          * @return this builder
          */
@@ -166,13 +161,12 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /**
-         * Set the content length to download
-         */
+        /** Set the content length to download */
         private Integer contentLength;
 
         /**
          * Set the content length to download
+         *
          * @param contentLength the value to set
          * @return this builder
          */
@@ -181,13 +175,12 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /**
-         * The returned java.io.InputStream instance.
-         */
+        /** The returned java.io.InputStream instance. */
         private java.io.InputStream inputStream;
 
         /**
          * The returned java.io.InputStream instance.
+         *
          * @param inputStream the value to set
          * @return this builder
          */
@@ -198,8 +191,10 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(DownloadPdfContentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -214,8 +209,10 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public DownloadPdfContentResponse build() {
             return new DownloadPdfContentResponse(
                     __httpStatusCode__,
@@ -230,6 +227,7 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

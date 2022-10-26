@@ -6,7 +6,10 @@ package com.oracle.bmc.databasemanagement.requests;
 
 import com.oracle.bmc.databasemanagement.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ChangeDatabaseParametersExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeDatabaseParametersRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ChangeDatabaseParametersExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ChangeDatabaseParametersRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class ChangeDatabaseParametersRequest
@@ -14,57 +17,49 @@ public class ChangeDatabaseParametersRequest
                 com.oracle.bmc.databasemanagement.model.ChangeDatabaseParametersDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Managed Database.
      */
     private String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Managed Database.
      */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
-    /**
-     * The details required to change database parameter values.
-     */
+    /** The details required to change database parameter values. */
     private com.oracle.bmc.databasemanagement.model.ChangeDatabaseParametersDetails
             changeDatabaseParametersDetails;
 
-    /**
-     * The details required to change database parameter values.
-     */
+    /** The details required to change database parameter values. */
     public com.oracle.bmc.databasemanagement.model.ChangeDatabaseParametersDetails
             getChangeDatabaseParametersDetails() {
         return changeDatabaseParametersDetails;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * might be rejected.
-     *
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * might be rejected.
-     *
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -72,6 +67,7 @@ public class ChangeDatabaseParametersRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -84,17 +80,19 @@ public class ChangeDatabaseParametersRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeDatabaseParametersRequest,
                     com.oracle.bmc.databasemanagement.model.ChangeDatabaseParametersDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Managed Database.
          */
         private String managedDatabaseId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Managed Database.
+         *
          * @param managedDatabaseId the value to set
          * @return this builder instance
          */
@@ -103,14 +101,13 @@ public class ChangeDatabaseParametersRequest
             return this;
         }
 
-        /**
-         * The details required to change database parameter values.
-         */
+        /** The details required to change database parameter values. */
         private com.oracle.bmc.databasemanagement.model.ChangeDatabaseParametersDetails
                 changeDatabaseParametersDetails = null;
 
         /**
          * The details required to change database parameter values.
+         *
          * @param changeDatabaseParametersDetails the value to set
          * @return this builder instance
          */
@@ -121,13 +118,12 @@ public class ChangeDatabaseParametersRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -138,20 +134,19 @@ public class ChangeDatabaseParametersRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * might be rejected.
-         *
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -163,18 +158,19 @@ public class ChangeDatabaseParametersRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -186,6 +182,7 @@ public class ChangeDatabaseParametersRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ChangeDatabaseParametersRequest o) {
@@ -201,10 +198,11 @@ public class ChangeDatabaseParametersRequest
         /**
          * Build the instance of ChangeDatabaseParametersRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ChangeDatabaseParametersRequest
          */
@@ -217,6 +215,7 @@ public class ChangeDatabaseParametersRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -230,7 +229,8 @@ public class ChangeDatabaseParametersRequest
         /**
          * Build the instance of ChangeDatabaseParametersRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ChangeDatabaseParametersRequest
@@ -242,12 +242,14 @@ public class ChangeDatabaseParametersRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new ChangeDatabaseParametersRequest(managedDatabaseId, changeDatabaseParametersDetails, opcRequestId, opcRetryToken);
+            // new ChangeDatabaseParametersRequest(managedDatabaseId,
+            // changeDatabaseParametersDetails, opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -260,6 +262,7 @@ public class ChangeDatabaseParametersRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

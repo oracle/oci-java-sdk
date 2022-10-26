@@ -6,21 +6,22 @@ package com.oracle.bmc.datalabelingservice.model;
 
 /**
  * Allows outputting the latest records paired with annotations and write them to object storage.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SnapshotDatasetDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SnapshotDatasetDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SnapshotDatasetDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "areAnnotationsIncluded",
@@ -42,17 +43,16 @@ public final class SnapshotDatasetDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Whether annotations are to be included in the export dataset digest.
-         **/
+        /** Whether annotations are to be included in the export dataset digest. */
         @com.fasterxml.jackson.annotation.JsonProperty("areAnnotationsIncluded")
         private Boolean areAnnotationsIncluded;
 
         /**
          * Whether annotations are to be included in the export dataset digest.
+         *
          * @param areAnnotationsIncluded the value to set
          * @return this builder
-         **/
+         */
         public Builder areAnnotationsIncluded(Boolean areAnnotationsIncluded) {
             this.areAnnotationsIncluded = areAnnotationsIncluded;
             this.__explicitlySet__.add("areAnnotationsIncluded");
@@ -60,15 +60,16 @@ public final class SnapshotDatasetDetails
         }
         /**
          * Whether to include records that have yet to be annotated in the export dataset digest.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("areUnannotatedRecordsIncluded")
         private Boolean areUnannotatedRecordsIncluded;
 
         /**
          * Whether to include records that have yet to be annotated in the export dataset digest.
+         *
          * @param areUnannotatedRecordsIncluded the value to set
          * @return this builder
-         **/
+         */
         public Builder areUnannotatedRecordsIncluded(Boolean areUnannotatedRecordsIncluded) {
             this.areUnannotatedRecordsIncluded = areUnannotatedRecordsIncluded;
             this.__explicitlySet__.add("areUnannotatedRecordsIncluded");
@@ -127,9 +128,7 @@ public final class SnapshotDatasetDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -138,30 +137,28 @@ public final class SnapshotDatasetDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * Whether annotations are to be included in the export dataset digest.
-     **/
+    /** Whether annotations are to be included in the export dataset digest. */
     @com.fasterxml.jackson.annotation.JsonProperty("areAnnotationsIncluded")
     private final Boolean areAnnotationsIncluded;
 
     /**
      * Whether annotations are to be included in the export dataset digest.
+     *
      * @return the value
-     **/
+     */
     public Boolean getAreAnnotationsIncluded() {
         return areAnnotationsIncluded;
     }
 
-    /**
-     * Whether to include records that have yet to be annotated in the export dataset digest.
-     **/
+    /** Whether to include records that have yet to be annotated in the export dataset digest. */
     @com.fasterxml.jackson.annotation.JsonProperty("areUnannotatedRecordsIncluded")
     private final Boolean areUnannotatedRecordsIncluded;
 
     /**
      * Whether to include records that have yet to be annotated in the export dataset digest.
+     *
      * @return the value
-     **/
+     */
     public Boolean getAreUnannotatedRecordsIncluded() {
         return areUnannotatedRecordsIncluded;
     }
@@ -187,6 +184,7 @@ public final class SnapshotDatasetDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

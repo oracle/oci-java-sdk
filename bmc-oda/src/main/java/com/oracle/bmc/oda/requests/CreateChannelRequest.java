@@ -6,64 +6,58 @@ package com.oracle.bmc.oda.requests;
 
 import com.oracle.bmc.oda.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateChannelExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateChannelRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateChannelExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateChannelRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class CreateChannelRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.oda.model.CreateChannelDetails> {
 
-    /**
-     * Unique Digital Assistant instance identifier.
-     */
+    /** Unique Digital Assistant instance identifier. */
     private String odaInstanceId;
 
-    /**
-     * Unique Digital Assistant instance identifier.
-     */
+    /** Unique Digital Assistant instance identifier. */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
-    /**
-     * Property values for creating the new Channel.
-     */
+    /** Property values for creating the new Channel. */
     private com.oracle.bmc.oda.model.CreateChannelDetails createChannelDetails;
 
-    /**
-     * Property values for creating the new Channel.
-     */
+    /** Property values for creating the new Channel. */
     public com.oracle.bmc.oda.model.CreateChannelDetails getCreateChannelDetails() {
         return createChannelDetails;
     }
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     * The client request ID for tracing. This value is included in the opc-request-id response
+     * header.
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     * The client request ID for tracing. This value is included in the opc-request-id response
+     * header.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so that you can retry the request if there's
-     * a timeout or server error without the risk of executing that same action again.
-     * <p>
-     * Retry tokens expire after 24 hours, but they can become invalid before then if there are
+     * A token that uniquely identifies a request so that you can retry the request if there's a
+     * timeout or server error without the risk of executing that same action again.
+     *
+     * <p>Retry tokens expire after 24 hours, but they can become invalid before then if there are
      * conflicting operations. For example, if an instance was deleted and purged from the system,
      * then the service might reject a retry of the original creation request.
-     *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so that you can retry the request if there's
-     * a timeout or server error without the risk of executing that same action again.
-     * <p>
-     * Retry tokens expire after 24 hours, but they can become invalid before then if there are
+     * A token that uniquely identifies a request so that you can retry the request if there's a
+     * timeout or server error without the risk of executing that same action again.
+     *
+     * <p>Retry tokens expire after 24 hours, but they can become invalid before then if there are
      * conflicting operations. For example, if an instance was deleted and purged from the system,
      * then the service might reject a retry of the original creation request.
-     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -71,6 +65,7 @@ public class CreateChannelRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -82,17 +77,15 @@ public class CreateChannelRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateChannelRequest, com.oracle.bmc.oda.model.CreateChannelDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique Digital Assistant instance identifier.
-         */
+        /** Unique Digital Assistant instance identifier. */
         private String odaInstanceId = null;
 
         /**
          * Unique Digital Assistant instance identifier.
+         *
          * @param odaInstanceId the value to set
          * @return this builder instance
          */
@@ -101,13 +94,12 @@ public class CreateChannelRequest
             return this;
         }
 
-        /**
-         * Property values for creating the new Channel.
-         */
+        /** Property values for creating the new Channel. */
         private com.oracle.bmc.oda.model.CreateChannelDetails createChannelDetails = null;
 
         /**
          * Property values for creating the new Channel.
+         *
          * @param createChannelDetails the value to set
          * @return this builder instance
          */
@@ -118,12 +110,15 @@ public class CreateChannelRequest
         }
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * The client request ID for tracing. This value is included in the opc-request-id response
+         * header.
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * The client request ID for tracing. This value is included in the opc-request-id response
+         * header.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -133,23 +128,22 @@ public class CreateChannelRequest
         }
 
         /**
-         * A token that uniquely identifies a request so that you can retry the request if there's
-         * a timeout or server error without the risk of executing that same action again.
-         * <p>
-         * Retry tokens expire after 24 hours, but they can become invalid before then if there are
-         * conflicting operations. For example, if an instance was deleted and purged from the system,
-         * then the service might reject a retry of the original creation request.
+         * A token that uniquely identifies a request so that you can retry the request if there's a
+         * timeout or server error without the risk of executing that same action again.
          *
+         * <p>Retry tokens expire after 24 hours, but they can become invalid before then if there
+         * are conflicting operations. For example, if an instance was deleted and purged from the
+         * system, then the service might reject a retry of the original creation request.
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so that you can retry the request if there's
-         * a timeout or server error without the risk of executing that same action again.
-         * <p>
-         * Retry tokens expire after 24 hours, but they can become invalid before then if there are
-         * conflicting operations. For example, if an instance was deleted and purged from the system,
-         * then the service might reject a retry of the original creation request.
+         * A token that uniquely identifies a request so that you can retry the request if there's a
+         * timeout or server error without the risk of executing that same action again.
+         *
+         * <p>Retry tokens expire after 24 hours, but they can become invalid before then if there
+         * are conflicting operations. For example, if an instance was deleted and purged from the
+         * system, then the service might reject a retry of the original creation request.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -161,18 +155,19 @@ public class CreateChannelRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -184,6 +179,7 @@ public class CreateChannelRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(CreateChannelRequest o) {
@@ -199,10 +195,11 @@ public class CreateChannelRequest
         /**
          * Build the instance of CreateChannelRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of CreateChannelRequest
          */
@@ -215,6 +212,7 @@ public class CreateChannelRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -227,7 +225,8 @@ public class CreateChannelRequest
         /**
          * Build the instance of CreateChannelRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateChannelRequest
@@ -239,12 +238,14 @@ public class CreateChannelRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new CreateChannelRequest(odaInstanceId, createChannelDetails, opcRequestId, opcRetryToken);
+            // new CreateChannelRequest(odaInstanceId, createChannelDetails, opcRequestId,
+            // opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -257,6 +258,7 @@ public class CreateChannelRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

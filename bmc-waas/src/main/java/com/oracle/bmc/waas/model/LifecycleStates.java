@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.waas.model;
 
-/**
- * The current status of the specified WAAS policy.
- **/
+/** The current status of the specified WAAS policy. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-public enum LifecycleStates {
+public enum LifecycleStates implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Active("ACTIVE"),
     Failed("FAILED"),

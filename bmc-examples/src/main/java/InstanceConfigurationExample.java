@@ -32,16 +32,13 @@ import java.util.Arrays;
 import java.util.Collections;
 
 /**
- * This class provides an example of how you can create an InstanceConfiguration and use the InstanceConfiguration
- * to launch an Instance.
- *  1) Create the InstanceConfiguration with a Block Volume
- *  2) Launch an Instance from an Instance Configuration
- *  3) Wait for the instance to go into running state
- *  4) Create the InstanceConfiguration from a running instance
- *  5) Create a partially defined InstanceConfiguration
- *  6) Launch an Instance from a partially defined InstanceConfiguration
- *  7) Wait for the instance to transition to the running state
- *  8) Create the InstanceConfiguration with FaultDomain
+ * This class provides an example of how you can create an InstanceConfiguration and use the
+ * InstanceConfiguration to launch an Instance. 1) Create the InstanceConfiguration with a Block
+ * Volume 2) Launch an Instance from an Instance Configuration 3) Wait for the instance to go into
+ * running state 4) Create the InstanceConfiguration from a running instance 5) Create a partially
+ * defined InstanceConfiguration 6) Launch an Instance from a partially defined
+ * InstanceConfiguration 7) Wait for the instance to transition to the running state 8) Create the
+ * InstanceConfiguration with FaultDomain
  */
 public class InstanceConfigurationExample {
 
@@ -201,13 +198,14 @@ public class InstanceConfigurationExample {
 
     /**
      * @param args Parameters to use for InstanceConfiguration as follows:
-     * <ul>
-     *   <li>The first argument is the ocid of the compartment for the config</li>
-     *   <li>The second is the availability domain to launch the instance.</li>
-     *   <li>Third parameter is the subnet for the launched instances.</li>
-     *   <li>The fourth parameter is the ocid for the image source for the instance.</li>
-     *   <li>The fifth parameter is the bootVolumeSizeInGBs that is optional</li>
-     * </ul>
+     *     <ul>
+     *       <li>The first argument is the ocid of the compartment for the config
+     *       <li>The second is the availability domain to launch the instance.
+     *       <li>Third parameter is the subnet for the launched instances.
+     *       <li>The fourth parameter is the ocid for the image source for the instance.
+     *       <li>The fifth parameter is the bootVolumeSizeInGBs that is optional
+     *     </ul>
+     *
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
@@ -231,8 +229,10 @@ public class InstanceConfigurationExample {
             bootVolumeSizeInGBs = Long.parseLong(args[4]);
         }
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();

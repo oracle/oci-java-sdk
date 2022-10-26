@@ -9,15 +9,14 @@ import com.oracle.bmc.networkfirewall.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public class ListNetworkFirewallsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -26,17 +25,16 @@ public class ListNetworkFirewallsResponse extends com.oracle.bmc.responses.BmcRe
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-     * subsequent GET request to get the next batch of items.
-     *
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then a partial list might have been returned. Include this value as the {@code
+     * page} parameter for the subsequent GET request to get the next batch of items.
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-     * subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then a partial list might have been returned. Include this value as the {@code
+     * page} parameter for the subsequent GET request to get the next batch of items.
      *
      * @return the value
      */
@@ -45,17 +43,16 @@ public class ListNetworkFirewallsResponse extends com.oracle.bmc.responses.BmcRe
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-     * subsequent GET request to get the previous batch of items.
-     *
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then a partial list might have been returned. Include this value as the {@code
+     * page} parameter for the subsequent GET request to get the previous batch of items.
      */
     private String opcPrevPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-     * subsequent GET request to get the previous batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then a partial list might have been returned. Include this value as the {@code
+     * page} parameter for the subsequent GET request to get the previous batch of items.
      *
      * @return the value
      */
@@ -64,15 +61,16 @@ public class ListNetworkFirewallsResponse extends com.oracle.bmc.responses.BmcRe
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. This is to get the page counts overall.
-     *
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then a partial list might have been returned. This is to get the page counts
+     * overall.
      */
     private String opcPageCount;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. This is to get the page counts overall.
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then a partial list might have been returned. This is to get the page counts
+     * overall.
      *
      * @return the value
      */
@@ -80,10 +78,7 @@ public class ListNetworkFirewallsResponse extends com.oracle.bmc.responses.BmcRe
         return opcPageCount;
     }
 
-    /**
-     * For pagination of a list of items. This provides the count of total items across pages.
-     *
-     */
+    /** For pagination of a list of items. This provides the count of total items across pages. */
     private Integer opcTotalItems;
 
     /**
@@ -95,14 +90,13 @@ public class ListNetworkFirewallsResponse extends com.oracle.bmc.responses.BmcRe
         return opcTotalItems;
     }
 
-    /**
-     * The returned NetworkFirewallCollection instance.
-     */
+    /** The returned NetworkFirewallCollection instance. */
     private com.oracle.bmc.networkfirewall.model.NetworkFirewallCollection
             networkFirewallCollection;
 
     /**
      * The returned NetworkFirewallCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.networkfirewall.model.NetworkFirewallCollection
@@ -122,7 +116,7 @@ public class ListNetworkFirewallsResponse extends com.oracle.bmc.responses.BmcRe
     })
     private ListNetworkFirewallsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcNextPage,
             String opcPrevPage,
@@ -139,31 +133,33 @@ public class ListNetworkFirewallsResponse extends com.oracle.bmc.responses.BmcRe
         this.networkFirewallCollection = networkFirewallCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<ListNetworkFirewallsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -174,17 +170,16 @@ public class ListNetworkFirewallsResponse extends com.oracle.bmc.responses.BmcRe
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-         * subsequent GET request to get the next batch of items.
-         *
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then a partial list might have been returned. Include this value as the
+         * {@code page} parameter for the subsequent GET request to get the next batch of items.
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-         * subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then a partial list might have been returned. Include this value as the
+         * {@code page} parameter for the subsequent GET request to get the next batch of items.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -195,17 +190,16 @@ public class ListNetworkFirewallsResponse extends com.oracle.bmc.responses.BmcRe
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-         * subsequent GET request to get the previous batch of items.
-         *
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then a partial list might have been returned. Include this value as the
+         * {@code page} parameter for the subsequent GET request to get the previous batch of items.
          */
         private String opcPrevPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-         * subsequent GET request to get the previous batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then a partial list might have been returned. Include this value as the
+         * {@code page} parameter for the subsequent GET request to get the previous batch of items.
          *
          * @param opcPrevPage the value to set
          * @return this builder
@@ -216,15 +210,16 @@ public class ListNetworkFirewallsResponse extends com.oracle.bmc.responses.BmcRe
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. This is to get the page counts overall.
-         *
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then a partial list might have been returned. This is to get the page
+         * counts overall.
          */
         private String opcPageCount;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. This is to get the page counts overall.
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then a partial list might have been returned. This is to get the page
+         * counts overall.
          *
          * @param opcPageCount the value to set
          * @return this builder
@@ -236,7 +231,6 @@ public class ListNetworkFirewallsResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * For pagination of a list of items. This provides the count of total items across pages.
-         *
          */
         private Integer opcTotalItems;
 
@@ -251,14 +245,13 @@ public class ListNetworkFirewallsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /**
-         * The returned NetworkFirewallCollection instance.
-         */
+        /** The returned NetworkFirewallCollection instance. */
         private com.oracle.bmc.networkfirewall.model.NetworkFirewallCollection
                 networkFirewallCollection;
 
         /**
          * The returned NetworkFirewallCollection instance.
+         *
          * @param networkFirewallCollection the value to set
          * @return this builder
          */
@@ -271,8 +264,10 @@ public class ListNetworkFirewallsResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListNetworkFirewallsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -288,8 +283,10 @@ public class ListNetworkFirewallsResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListNetworkFirewallsResponse build() {
             return new ListNetworkFirewallsResponse(
                     __httpStatusCode__,
@@ -305,6 +302,7 @@ public class ListNetworkFirewallsResponse extends com.oracle.bmc.responses.BmcRe
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

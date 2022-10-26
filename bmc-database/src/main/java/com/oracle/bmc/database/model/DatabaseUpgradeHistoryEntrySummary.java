@@ -6,29 +6,32 @@ package com.oracle.bmc.database.model;
 
 /**
  * The Database service supports the upgrade history of databases.
- * <p>
- * To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized, talk to an administrator. If you are an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
- * <p>
- * For information about access control and compartments, see
- * [Overview of the Identity Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>To use any of the API operations, you must be authorized in an IAM policy. If you are not
+ * authorized, talk to an administrator. If you are an administrator who needs to write policies to
+ * give users access, see [Getting Started with
+ * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+ *
+ * <p>For information about access control and compartments, see [Overview of the Identity
+ * Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
+ *
+ * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
+ * supply string values using the API. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DatabaseUpgradeHistoryEntrySummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DatabaseUpgradeHistoryEntrySummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DatabaseUpgradeHistoryEntrySummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -75,204 +78,216 @@ public final class DatabaseUpgradeHistoryEntrySummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database upgrade history.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * database upgrade history.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database upgrade history.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * database upgrade history.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The database upgrade action.
-         **/
+        /** The database upgrade action. */
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
         /**
          * The database upgrade action.
+         *
          * @param action the value to set
          * @return this builder
-         **/
+         */
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
             return this;
         }
         /**
-         * The source of the Oracle Database software to be used for the upgrade.
-         *  - Use {@code DB_HOME} to specify an existing Database Home to upgrade the database. The database is moved to the target Database Home and makes use of the Oracle Database software version of the target Database Home.
-         *  - Use {@code DB_VERSION} to specify a generally-available Oracle Database software version to upgrade the database.
-         *  - Use {@code DB_SOFTWARE_IMAGE} to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
-         *
-         **/
+         * The source of the Oracle Database software to be used for the upgrade. - Use {@code
+         * DB_HOME} to specify an existing Database Home to upgrade the database. The database is
+         * moved to the target Database Home and makes use of the Oracle Database software version
+         * of the target Database Home. - Use {@code DB_VERSION} to specify a generally-available
+         * Oracle Database software version to upgrade the database. - Use {@code DB_SOFTWARE_IMAGE}
+         * to specify a [database software
+         * image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm)
+         * to upgrade the database.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private Source source;
 
         /**
-         * The source of the Oracle Database software to be used for the upgrade.
-         *  - Use {@code DB_HOME} to specify an existing Database Home to upgrade the database. The database is moved to the target Database Home and makes use of the Oracle Database software version of the target Database Home.
-         *  - Use {@code DB_VERSION} to specify a generally-available Oracle Database software version to upgrade the database.
-         *  - Use {@code DB_SOFTWARE_IMAGE} to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
+         * The source of the Oracle Database software to be used for the upgrade. - Use {@code
+         * DB_HOME} to specify an existing Database Home to upgrade the database. The database is
+         * moved to the target Database Home and makes use of the Oracle Database software version
+         * of the target Database Home. - Use {@code DB_VERSION} to specify a generally-available
+         * Oracle Database software version to upgrade the database. - Use {@code DB_SOFTWARE_IMAGE}
+         * to specify a [database software
+         * image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm)
+         * to upgrade the database.
          *
          * @param source the value to set
          * @return this builder
-         **/
+         */
         public Builder source(Source source) {
             this.source = source;
             this.__explicitlySet__.add("source");
             return this;
         }
-        /**
-         * Status of database upgrade history SUCCEEDED|IN_PROGRESS|FAILED.
-         **/
+        /** Status of database upgrade history SUCCEEDED|IN_PROGRESS|FAILED. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * Status of database upgrade history SUCCEEDED|IN_PROGRESS|FAILED.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * Additional information about the current lifecycle state.
-         **/
+        /** Additional information about the current lifecycle state. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Additional information about the current lifecycle state.
+         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * A valid Oracle Database version. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
-         **/
+         * A valid Oracle Database version. To get a list of supported versions, use the {@link
+         * #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("targetDBVersion")
         private String targetDBVersion;
 
         /**
-         * A valid Oracle Database version. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
+         * A valid Oracle Database version. To get a list of supported versions, use the {@link
+         * #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
+         *
          * @param targetDBVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder targetDBVersion(String targetDBVersion) {
             this.targetDBVersion = targetDBVersion;
             this.__explicitlySet__.add("targetDBVersion");
             return this;
         }
-        /**
-         * the database software image used for upgrading database.
-         **/
+        /** the database software image used for upgrading database. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseSoftwareImageId")
         private String targetDatabaseSoftwareImageId;
 
         /**
          * the database software image used for upgrading database.
+         *
          * @param targetDatabaseSoftwareImageId the value to set
          * @return this builder
-         **/
+         */
         public Builder targetDatabaseSoftwareImageId(String targetDatabaseSoftwareImageId) {
             this.targetDatabaseSoftwareImageId = targetDatabaseSoftwareImageId;
             this.__explicitlySet__.add("targetDatabaseSoftwareImageId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Database Home.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("targetDbHomeId")
         private String targetDbHomeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Database Home.
+         *
          * @param targetDbHomeId the value to set
          * @return this builder
-         **/
+         */
         public Builder targetDbHomeId(String targetDbHomeId) {
             this.targetDbHomeId = targetDbHomeId;
             this.__explicitlySet__.add("targetDbHomeId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Database Home.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDbHomeId")
         private String sourceDbHomeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Database Home.
+         *
          * @param sourceDbHomeId the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceDbHomeId(String sourceDbHomeId) {
             this.sourceDbHomeId = sourceDbHomeId;
             this.__explicitlySet__.add("sourceDbHomeId");
             return this;
         }
-        /**
-         * The date and time when the database upgrade started.
-         **/
+        /** The date and time when the database upgrade started. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * The date and time when the database upgrade started.
+         *
          * @param timeStarted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /**
-         * The date and time when the database upgrade ended.
-         **/
+        /** The date and time when the database upgrade ended. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
         /**
          * The date and time when the database upgrade ended.
+         *
          * @param timeEnded the value to set
          * @return this builder
-         **/
+         */
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
         /**
-         * Additional upgrade options supported by DBUA(Database Upgrade Assistant).
-         * Example: "-upgradeTimezone false -keepEvents"
-         *
-         **/
+         * Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example:
+         * "-upgradeTimezone false -keepEvents"
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("options")
         private String options;
 
         /**
-         * Additional upgrade options supported by DBUA(Database Upgrade Assistant).
-         * Example: "-upgradeTimezone false -keepEvents"
+         * Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example:
+         * "-upgradeTimezone false -keepEvents"
          *
          * @param options the value to set
          * @return this builder
-         **/
+         */
         public Builder options(String options) {
             this.options = options;
             this.__explicitlySet__.add("options");
@@ -345,9 +360,7 @@ public final class DatabaseUpgradeHistoryEntrySummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -357,30 +370,31 @@ public final class DatabaseUpgradeHistoryEntrySummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database upgrade history.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * database upgrade history.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database upgrade history.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * database upgrade history.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The database upgrade action.
-     **/
-    public enum Action {
+    /** The database upgrade action. */
+    public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
         Precheck("PRECHECK"),
         Upgrade("UPGRADE"),
         Rollback("ROLLBACK"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -418,35 +432,37 @@ public final class DatabaseUpgradeHistoryEntrySummary
             return UnknownEnumValue;
         }
     };
-    /**
-     * The database upgrade action.
-     **/
+    /** The database upgrade action. */
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
     /**
      * The database upgrade action.
+     *
      * @return the value
-     **/
+     */
     public Action getAction() {
         return action;
     }
 
     /**
-     * The source of the Oracle Database software to be used for the upgrade.
-     *  - Use {@code DB_HOME} to specify an existing Database Home to upgrade the database. The database is moved to the target Database Home and makes use of the Oracle Database software version of the target Database Home.
-     *  - Use {@code DB_VERSION} to specify a generally-available Oracle Database software version to upgrade the database.
-     *  - Use {@code DB_SOFTWARE_IMAGE} to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
-     *
-     **/
-    public enum Source {
+     * The source of the Oracle Database software to be used for the upgrade. - Use {@code DB_HOME}
+     * to specify an existing Database Home to upgrade the database. The database is moved to the
+     * target Database Home and makes use of the Oracle Database software version of the target
+     * Database Home. - Use {@code DB_VERSION} to specify a generally-available Oracle Database
+     * software version to upgrade the database. - Use {@code DB_SOFTWARE_IMAGE} to specify a
+     * [database software
+     * image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm)
+     * to upgrade the database.
+     */
+    public enum Source implements com.oracle.bmc.http.internal.BmcEnum {
         DbHome("DB_HOME"),
         DbVersion("DB_VERSION"),
         DbSoftwareImage("DB_SOFTWARE_IMAGE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -485,38 +501,43 @@ public final class DatabaseUpgradeHistoryEntrySummary
         }
     };
     /**
-     * The source of the Oracle Database software to be used for the upgrade.
-     *  - Use {@code DB_HOME} to specify an existing Database Home to upgrade the database. The database is moved to the target Database Home and makes use of the Oracle Database software version of the target Database Home.
-     *  - Use {@code DB_VERSION} to specify a generally-available Oracle Database software version to upgrade the database.
-     *  - Use {@code DB_SOFTWARE_IMAGE} to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
-     *
-     **/
+     * The source of the Oracle Database software to be used for the upgrade. - Use {@code DB_HOME}
+     * to specify an existing Database Home to upgrade the database. The database is moved to the
+     * target Database Home and makes use of the Oracle Database software version of the target
+     * Database Home. - Use {@code DB_VERSION} to specify a generally-available Oracle Database
+     * software version to upgrade the database. - Use {@code DB_SOFTWARE_IMAGE} to specify a
+     * [database software
+     * image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm)
+     * to upgrade the database.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final Source source;
 
     /**
-     * The source of the Oracle Database software to be used for the upgrade.
-     *  - Use {@code DB_HOME} to specify an existing Database Home to upgrade the database. The database is moved to the target Database Home and makes use of the Oracle Database software version of the target Database Home.
-     *  - Use {@code DB_VERSION} to specify a generally-available Oracle Database software version to upgrade the database.
-     *  - Use {@code DB_SOFTWARE_IMAGE} to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
+     * The source of the Oracle Database software to be used for the upgrade. - Use {@code DB_HOME}
+     * to specify an existing Database Home to upgrade the database. The database is moved to the
+     * target Database Home and makes use of the Oracle Database software version of the target
+     * Database Home. - Use {@code DB_VERSION} to specify a generally-available Oracle Database
+     * software version to upgrade the database. - Use {@code DB_SOFTWARE_IMAGE} to specify a
+     * [database software
+     * image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm)
+     * to upgrade the database.
      *
      * @return the value
-     **/
+     */
     public Source getSource() {
         return source;
     }
 
-    /**
-     * Status of database upgrade history SUCCEEDED|IN_PROGRESS|FAILED.
-     **/
-    public enum LifecycleState {
+    /** Status of database upgrade history SUCCEEDED|IN_PROGRESS|FAILED. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Succeeded("SUCCEEDED"),
         Failed("FAILED"),
         InProgress("IN_PROGRESS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -555,132 +576,135 @@ public final class DatabaseUpgradeHistoryEntrySummary
             return UnknownEnumValue;
         }
     };
-    /**
-     * Status of database upgrade history SUCCEEDED|IN_PROGRESS|FAILED.
-     **/
+    /** Status of database upgrade history SUCCEEDED|IN_PROGRESS|FAILED. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * Status of database upgrade history SUCCEEDED|IN_PROGRESS|FAILED.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * Additional information about the current lifecycle state.
-     **/
+    /** Additional information about the current lifecycle state. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Additional information about the current lifecycle state.
+     *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * A valid Oracle Database version. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
-     **/
+     * A valid Oracle Database version. To get a list of supported versions, use the {@link
+     * #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("targetDBVersion")
     private final String targetDBVersion;
 
     /**
-     * A valid Oracle Database version. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
+     * A valid Oracle Database version. To get a list of supported versions, use the {@link
+     * #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
+     *
      * @return the value
-     **/
+     */
     public String getTargetDBVersion() {
         return targetDBVersion;
     }
 
-    /**
-     * the database software image used for upgrading database.
-     **/
+    /** the database software image used for upgrading database. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseSoftwareImageId")
     private final String targetDatabaseSoftwareImageId;
 
     /**
      * the database software image used for upgrading database.
+     *
      * @return the value
-     **/
+     */
     public String getTargetDatabaseSoftwareImageId() {
         return targetDatabaseSoftwareImageId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Database Home.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("targetDbHomeId")
     private final String targetDbHomeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Database Home.
+     *
      * @return the value
-     **/
+     */
     public String getTargetDbHomeId() {
         return targetDbHomeId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Database Home.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDbHomeId")
     private final String sourceDbHomeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Database Home.
+     *
      * @return the value
-     **/
+     */
     public String getSourceDbHomeId() {
         return sourceDbHomeId;
     }
 
-    /**
-     * The date and time when the database upgrade started.
-     **/
+    /** The date and time when the database upgrade started. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * The date and time when the database upgrade started.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /**
-     * The date and time when the database upgrade ended.
-     **/
+    /** The date and time when the database upgrade ended. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
     /**
      * The date and time when the database upgrade ended.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
 
     /**
-     * Additional upgrade options supported by DBUA(Database Upgrade Assistant).
-     * Example: "-upgradeTimezone false -keepEvents"
-     *
-     **/
+     * Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example:
+     * "-upgradeTimezone false -keepEvents"
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("options")
     private final String options;
 
     /**
-     * Additional upgrade options supported by DBUA(Database Upgrade Assistant).
-     * Example: "-upgradeTimezone false -keepEvents"
+     * Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example:
+     * "-upgradeTimezone false -keepEvents"
      *
      * @return the value
-     **/
+     */
     public String getOptions() {
         return options;
     }
@@ -692,6 +716,7 @@ public final class DatabaseUpgradeHistoryEntrySummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

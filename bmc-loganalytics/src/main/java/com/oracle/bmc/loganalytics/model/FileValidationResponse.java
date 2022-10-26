@@ -5,22 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Response object containing details about file upload eligibility.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Response object containing details about file upload eligibility. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = FileValidationResponse.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = FileValidationResponse.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class FileValidationResponse
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"inputFile", "objectLocation", "files"})
     public FileValidationResponse(
@@ -33,33 +33,31 @@ public final class FileValidationResponse
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Input File Name.
-         **/
+        /** Input File Name. */
         @com.fasterxml.jackson.annotation.JsonProperty("inputFile")
         private String inputFile;
 
         /**
          * Input File Name.
+         *
          * @param inputFile the value to set
          * @return this builder
-         **/
+         */
         public Builder inputFile(String inputFile) {
             this.inputFile = inputFile;
             this.__explicitlySet__.add("inputFile");
             return this;
         }
-        /**
-         * Object Location where file content is available.
-         **/
+        /** Object Location where file content is available. */
         @com.fasterxml.jackson.annotation.JsonProperty("objectLocation")
         private String objectLocation;
 
         /**
          * Object Location where file content is available.
+         *
          * @param objectLocation the value to set
          * @return this builder
-         **/
+         */
         public Builder objectLocation(String objectLocation) {
             this.objectLocation = objectLocation;
             this.__explicitlySet__.add("objectLocation");
@@ -67,15 +65,16 @@ public final class FileValidationResponse
         }
         /**
          * List of files inside the given archive file and their corresponding status information.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("files")
         private java.util.List<UploadFileStatus> files;
 
         /**
          * List of files inside the given archive file and their corresponding status information.
+         *
          * @param files the value to set
          * @return this builder
-         **/
+         */
         public Builder files(java.util.List<UploadFileStatus> files) {
             this.files = files;
             this.__explicitlySet__.add("files");
@@ -109,9 +108,7 @@ public final class FileValidationResponse
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -120,44 +117,41 @@ public final class FileValidationResponse
         return new Builder().copy(this);
     }
 
-    /**
-     * Input File Name.
-     **/
+    /** Input File Name. */
     @com.fasterxml.jackson.annotation.JsonProperty("inputFile")
     private final String inputFile;
 
     /**
      * Input File Name.
+     *
      * @return the value
-     **/
+     */
     public String getInputFile() {
         return inputFile;
     }
 
-    /**
-     * Object Location where file content is available.
-     **/
+    /** Object Location where file content is available. */
     @com.fasterxml.jackson.annotation.JsonProperty("objectLocation")
     private final String objectLocation;
 
     /**
      * Object Location where file content is available.
+     *
      * @return the value
-     **/
+     */
     public String getObjectLocation() {
         return objectLocation;
     }
 
-    /**
-     * List of files inside the given archive file and their corresponding status information.
-     **/
+    /** List of files inside the given archive file and their corresponding status information. */
     @com.fasterxml.jackson.annotation.JsonProperty("files")
     private final java.util.List<UploadFileStatus> files;
 
     /**
      * List of files inside the given archive file and their corresponding status information.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<UploadFileStatus> getFiles() {
         return files;
     }
@@ -169,6 +163,7 @@ public final class FileValidationResponse
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

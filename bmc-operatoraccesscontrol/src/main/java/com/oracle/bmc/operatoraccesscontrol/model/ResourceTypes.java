@@ -4,12 +4,9 @@
  */
 package com.oracle.bmc.operatoraccesscontrol.model;
 
-/**
- * Resource types available to be governed under operator control
- *
- **/
+/** Resource types available to be governed under operator control */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum ResourceTypes {
+public enum ResourceTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Exacc("EXACC"),
     Exadatainfrastructure("EXADATAINFRASTRUCTURE"),
     Autonomousvmcluster("AUTONOMOUSVMCLUSTER"),

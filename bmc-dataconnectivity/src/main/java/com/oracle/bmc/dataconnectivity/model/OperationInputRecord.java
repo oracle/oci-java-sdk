@@ -5,21 +5,22 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * Holder for IN/INOUT parameter values.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Holder for IN/INOUT parameter values. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = OperationInputRecord.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OperationInputRecord extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = OperationInputRecord.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class OperationInputRecord
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"fieldValues"})
     public OperationInputRecord(java.util.List<Object> fieldValues) {
@@ -29,17 +30,16 @@ public final class OperationInputRecord extends com.oracle.bmc.http.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Values of IN/INOUT parameter.
-         **/
+        /** Values of IN/INOUT parameter. */
         @com.fasterxml.jackson.annotation.JsonProperty("fieldValues")
         private java.util.List<Object> fieldValues;
 
         /**
          * Values of IN/INOUT parameter.
+         *
          * @param fieldValues the value to set
          * @return this builder
-         **/
+         */
         public Builder fieldValues(java.util.List<Object> fieldValues) {
             this.fieldValues = fieldValues;
             this.__explicitlySet__.add("fieldValues");
@@ -66,9 +66,7 @@ public final class OperationInputRecord extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -77,16 +75,15 @@ public final class OperationInputRecord extends com.oracle.bmc.http.internal.Exp
         return new Builder().copy(this);
     }
 
-    /**
-     * Values of IN/INOUT parameter.
-     **/
+    /** Values of IN/INOUT parameter. */
     @com.fasterxml.jackson.annotation.JsonProperty("fieldValues")
     private final java.util.List<Object> fieldValues;
 
     /**
      * Values of IN/INOUT parameter.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Object> getFieldValues() {
         return fieldValues;
     }
@@ -98,6 +95,7 @@ public final class OperationInputRecord extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

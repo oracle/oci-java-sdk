@@ -9,13 +9,14 @@ import com.oracle.bmc.datacatalog.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class ExpandTreeForGlossaryResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
-     *
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency
+     * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      */
     private String etag;
 
     /**
-     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency
+     * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      *
      * @return the value
      */
@@ -24,15 +25,14 @@ public class ExpandTreeForGlossaryResponse extends com.oracle.bmc.responses.BmcR
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,13 +40,12 @@ public class ExpandTreeForGlossaryResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /**
-     * A list of com.oracle.bmc.datacatalog.model.GlossaryTreeElement instances.
-     */
+    /** A list of com.oracle.bmc.datacatalog.model.GlossaryTreeElement instances. */
     private java.util.List<com.oracle.bmc.datacatalog.model.GlossaryTreeElement> items;
 
     /**
      * A list of com.oracle.bmc.datacatalog.model.GlossaryTreeElement instances.
+     *
      * @return the value
      */
     public java.util.List<com.oracle.bmc.datacatalog.model.GlossaryTreeElement> getItems() {
@@ -62,7 +61,7 @@ public class ExpandTreeForGlossaryResponse extends com.oracle.bmc.responses.BmcR
     })
     private ExpandTreeForGlossaryResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             java.util.List<com.oracle.bmc.datacatalog.model.GlossaryTreeElement> items) {
@@ -72,29 +71,33 @@ public class ExpandTreeForGlossaryResponse extends com.oracle.bmc.responses.BmcR
         this.items = items;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<ExpandTreeForGlossaryResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
-         *
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency
+         * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
          */
         private String etag;
 
         /**
-         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency
+         * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
          *
          * @param etag the value to set
          * @return this builder
@@ -105,15 +108,14 @@ public class ExpandTreeForGlossaryResponse extends com.oracle.bmc.responses.BmcR
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -123,13 +125,12 @@ public class ExpandTreeForGlossaryResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /**
-         * A list of com.oracle.bmc.datacatalog.model.GlossaryTreeElement instances.
-         */
+        /** A list of com.oracle.bmc.datacatalog.model.GlossaryTreeElement instances. */
         private java.util.List<com.oracle.bmc.datacatalog.model.GlossaryTreeElement> items;
 
         /**
          * A list of com.oracle.bmc.datacatalog.model.GlossaryTreeElement instances.
+         *
          * @param items the value to set
          * @return this builder
          */
@@ -141,8 +142,10 @@ public class ExpandTreeForGlossaryResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ExpandTreeForGlossaryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -155,8 +158,10 @@ public class ExpandTreeForGlossaryResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ExpandTreeForGlossaryResponse build() {
             return new ExpandTreeForGlossaryResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, items);
@@ -165,6 +170,7 @@ public class ExpandTreeForGlossaryResponse extends com.oracle.bmc.responses.BmcR
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

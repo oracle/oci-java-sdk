@@ -5,19 +5,21 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * The document information.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The document information. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DocumentMetadata.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DocumentMetadata extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class DocumentMetadata
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"pageCount", "mimeType"})
     public DocumentMetadata(Integer pageCount, String mimeType) {
@@ -28,33 +30,31 @@ public final class DocumentMetadata extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Teh number of pages in the document.
-         **/
+        /** Teh number of pages in the document. */
         @com.fasterxml.jackson.annotation.JsonProperty("pageCount")
         private Integer pageCount;
 
         /**
          * Teh number of pages in the document.
+         *
          * @param pageCount the value to set
          * @return this builder
-         **/
+         */
         public Builder pageCount(Integer pageCount) {
             this.pageCount = pageCount;
             this.__explicitlySet__.add("pageCount");
             return this;
         }
-        /**
-         * The result data format.
-         **/
+        /** The result data format. */
         @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
         private String mimeType;
 
         /**
          * The result data format.
+         *
          * @param mimeType the value to set
          * @return this builder
-         **/
+         */
         public Builder mimeType(String mimeType) {
             this.mimeType = mimeType;
             this.__explicitlySet__.add("mimeType");
@@ -84,9 +84,7 @@ public final class DocumentMetadata extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,30 +93,28 @@ public final class DocumentMetadata extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * Teh number of pages in the document.
-     **/
+    /** Teh number of pages in the document. */
     @com.fasterxml.jackson.annotation.JsonProperty("pageCount")
     private final Integer pageCount;
 
     /**
      * Teh number of pages in the document.
+     *
      * @return the value
-     **/
+     */
     public Integer getPageCount() {
         return pageCount;
     }
 
-    /**
-     * The result data format.
-     **/
+    /** The result data format. */
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
     private final String mimeType;
 
     /**
      * The result data format.
+     *
      * @return the value
-     **/
+     */
     public String getMimeType() {
         return mimeType;
     }
@@ -130,6 +126,7 @@ public final class DocumentMetadata extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

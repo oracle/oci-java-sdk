@@ -6,128 +6,98 @@ package com.oracle.bmc.devops.requests;
 
 import com.oracle.bmc.devops.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListCommitsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListCommitsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListCommitsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListCommitsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class ListCommitsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * Unique repository identifier.
-     */
+    /** Unique repository identifier. */
     private String repositoryId;
 
-    /**
-     * Unique repository identifier.
-     */
+    /** Unique repository identifier. */
     public String getRepositoryId() {
         return repositoryId;
     }
-    /**
-     * A filter to return only resources that match the given reference name.
-     */
+    /** A filter to return only resources that match the given reference name. */
     private String refName;
 
-    /**
-     * A filter to return only resources that match the given reference name.
-     */
+    /** A filter to return only resources that match the given reference name. */
     public String getRefName() {
         return refName;
     }
-    /**
-     * A filter to exclude commits that match the given reference name.
-     */
+    /** A filter to exclude commits that match the given reference name. */
     private String excludeRefName;
 
-    /**
-     * A filter to exclude commits that match the given reference name.
-     */
+    /** A filter to exclude commits that match the given reference name. */
     public String getExcludeRefName() {
         return excludeRefName;
     }
-    /**
-     * A filter to return only commits that affect any of the specified paths.
-     */
+    /** A filter to return only commits that affect any of the specified paths. */
     private String filePath;
 
-    /**
-     * A filter to return only commits that affect any of the specified paths.
-     */
+    /** A filter to return only commits that affect any of the specified paths. */
     public String getFilePath() {
         return filePath;
     }
-    /**
-     * A filter to return commits only created after the specified timestamp value.
-     */
+    /** A filter to return commits only created after the specified timestamp value. */
     private java.util.Date timestampGreaterThanOrEqualTo;
 
-    /**
-     * A filter to return commits only created after the specified timestamp value.
-     */
+    /** A filter to return commits only created after the specified timestamp value. */
     public java.util.Date getTimestampGreaterThanOrEqualTo() {
         return timestampGreaterThanOrEqualTo;
     }
-    /**
-     * A filter to return commits only created before the specified timestamp value.
-     */
+    /** A filter to return commits only created before the specified timestamp value. */
     private java.util.Date timestampLessThanOrEqualTo;
 
-    /**
-     * A filter to return commits only created before the specified timestamp value.
-     */
+    /** A filter to return commits only created before the specified timestamp value. */
     public java.util.Date getTimestampLessThanOrEqualTo() {
         return timestampLessThanOrEqualTo;
     }
-    /**
-     * A filter to return any commits that contains the given message.
-     */
+    /** A filter to return any commits that contains the given message. */
     private String commitMessage;
 
-    /**
-     * A filter to return any commits that contains the given message.
-     */
+    /** A filter to return any commits that contains the given message. */
     public String getCommitMessage() {
         return commitMessage;
     }
-    /**
-     * A filter to return any commits that are pushed by the requested author.
-     */
+    /** A filter to return any commits that are pushed by the requested author. */
     private String authorName;
 
-    /**
-     * A filter to return any commits that are pushed by the requested author.
-     */
+    /** A filter to return any commits that are pushed by the requested author. */
     public String getAuthorName() {
         return authorName;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
     /**
-     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -136,17 +106,15 @@ public class ListCommitsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListCommitsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique repository identifier.
-         */
+        /** Unique repository identifier. */
         private String repositoryId = null;
 
         /**
          * Unique repository identifier.
+         *
          * @param repositoryId the value to set
          * @return this builder instance
          */
@@ -155,13 +123,12 @@ public class ListCommitsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * A filter to return only resources that match the given reference name.
-         */
+        /** A filter to return only resources that match the given reference name. */
         private String refName = null;
 
         /**
          * A filter to return only resources that match the given reference name.
+         *
          * @param refName the value to set
          * @return this builder instance
          */
@@ -170,13 +137,12 @@ public class ListCommitsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * A filter to exclude commits that match the given reference name.
-         */
+        /** A filter to exclude commits that match the given reference name. */
         private String excludeRefName = null;
 
         /**
          * A filter to exclude commits that match the given reference name.
+         *
          * @param excludeRefName the value to set
          * @return this builder instance
          */
@@ -185,13 +151,12 @@ public class ListCommitsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * A filter to return only commits that affect any of the specified paths.
-         */
+        /** A filter to return only commits that affect any of the specified paths. */
         private String filePath = null;
 
         /**
          * A filter to return only commits that affect any of the specified paths.
+         *
          * @param filePath the value to set
          * @return this builder instance
          */
@@ -200,13 +165,12 @@ public class ListCommitsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * A filter to return commits only created after the specified timestamp value.
-         */
+        /** A filter to return commits only created after the specified timestamp value. */
         private java.util.Date timestampGreaterThanOrEqualTo = null;
 
         /**
          * A filter to return commits only created after the specified timestamp value.
+         *
          * @param timestampGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -215,13 +179,12 @@ public class ListCommitsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * A filter to return commits only created before the specified timestamp value.
-         */
+        /** A filter to return commits only created before the specified timestamp value. */
         private java.util.Date timestampLessThanOrEqualTo = null;
 
         /**
          * A filter to return commits only created before the specified timestamp value.
+         *
          * @param timestampLessThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -230,13 +193,12 @@ public class ListCommitsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * A filter to return any commits that contains the given message.
-         */
+        /** A filter to return any commits that contains the given message. */
         private String commitMessage = null;
 
         /**
          * A filter to return any commits that contains the given message.
+         *
          * @param commitMessage the value to set
          * @return this builder instance
          */
@@ -245,13 +207,12 @@ public class ListCommitsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * A filter to return any commits that are pushed by the requested author.
-         */
+        /** A filter to return any commits that are pushed by the requested author. */
         private String authorName = null;
 
         /**
          * A filter to return any commits that are pushed by the requested author.
+         *
          * @param authorName the value to set
          * @return this builder instance
          */
@@ -260,13 +221,12 @@ public class ListCommitsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -276,12 +236,15 @@ public class ListCommitsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -291,12 +254,15 @@ public class ListCommitsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide the request ID.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -307,18 +273,19 @@ public class ListCommitsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -330,6 +297,7 @@ public class ListCommitsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListCommitsRequest o) {
@@ -352,10 +320,11 @@ public class ListCommitsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListCommitsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListCommitsRequest
          */
@@ -369,7 +338,8 @@ public class ListCommitsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListCommitsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListCommitsRequest
@@ -388,12 +358,15 @@ public class ListCommitsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListCommitsRequest(repositoryId, refName, excludeRefName, filePath, timestampGreaterThanOrEqualTo, timestampLessThanOrEqualTo, commitMessage, authorName, limit, page, opcRequestId);
+            // new ListCommitsRequest(repositoryId, refName, excludeRefName, filePath,
+            // timestampGreaterThanOrEqualTo, timestampLessThanOrEqualTo, commitMessage, authorName,
+            // limit, page, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -413,6 +386,7 @@ public class ListCommitsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

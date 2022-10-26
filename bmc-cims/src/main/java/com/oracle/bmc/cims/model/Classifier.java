@@ -5,19 +5,20 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details about the incident classifier object.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details about the incident classifier object. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Classifier.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Classifier extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Classifier extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -48,113 +49,106 @@ public final class Classifier extends com.oracle.bmc.http.internal.ExplicitlySet
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Unique identifier of the classifier.
-         **/
+        /** Unique identifier of the classifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique identifier of the classifier.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The display name of the classifier.
-         **/
+        /** The display name of the classifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The display name of the classifier.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The label associated with the classifier.
-         **/
+        /** The label associated with the classifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("label")
         private String label;
 
         /**
          * The label associated with the classifier.
+         *
          * @param label the value to set
          * @return this builder
-         **/
+         */
         public Builder label(String label) {
             this.label = label;
             this.__explicitlySet__.add("label");
             return this;
         }
-        /**
-         * The description of the classifier.
-         **/
+        /** The description of the classifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the classifier.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The list of issues.
-         **/
+        /** The list of issues. */
         @com.fasterxml.jackson.annotation.JsonProperty("issueTypeList")
         private java.util.List<IssueType> issueTypeList;
 
         /**
          * The list of issues.
+         *
          * @param issueTypeList the value to set
          * @return this builder
-         **/
+         */
         public Builder issueTypeList(java.util.List<IssueType> issueTypeList) {
             this.issueTypeList = issueTypeList;
             this.__explicitlySet__.add("issueTypeList");
             return this;
         }
-        /**
-         * The scope of the service category or resource.
-         **/
+        /** The scope of the service category or resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private Scope scope;
 
         /**
          * The scope of the service category or resource.
+         *
          * @param scope the value to set
          * @return this builder
-         **/
+         */
         public Builder scope(Scope scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
             return this;
         }
-        /**
-         * The unit to use to measure the service category or resource.
-         **/
+        /** The unit to use to measure the service category or resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private Unit unit;
 
         /**
          * The unit to use to measure the service category or resource.
+         *
          * @param unit the value to set
          * @return this builder
-         **/
+         */
         public Builder unit(Unit unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
@@ -207,9 +201,7 @@ public final class Classifier extends com.oracle.bmc.http.internal.ExplicitlySet
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -218,88 +210,81 @@ public final class Classifier extends com.oracle.bmc.http.internal.ExplicitlySet
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique identifier of the classifier.
-     **/
+    /** Unique identifier of the classifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier of the classifier.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The display name of the classifier.
-     **/
+    /** The display name of the classifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The display name of the classifier.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The label associated with the classifier.
-     **/
+    /** The label associated with the classifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("label")
     private final String label;
 
     /**
      * The label associated with the classifier.
+     *
      * @return the value
-     **/
+     */
     public String getLabel() {
         return label;
     }
 
-    /**
-     * The description of the classifier.
-     **/
+    /** The description of the classifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the classifier.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The list of issues.
-     **/
+    /** The list of issues. */
     @com.fasterxml.jackson.annotation.JsonProperty("issueTypeList")
     private final java.util.List<IssueType> issueTypeList;
 
     /**
      * The list of issues.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<IssueType> getIssueTypeList() {
         return issueTypeList;
     }
 
-    /**
-     * The scope of the service category or resource.
-     **/
-    public enum Scope {
+    /** The scope of the service category or resource. */
+    public enum Scope implements com.oracle.bmc.http.internal.BmcEnum {
         Ad("AD"),
         Region("REGION"),
         Tenancy("TENANCY"),
         None("NONE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -337,31 +322,28 @@ public final class Classifier extends com.oracle.bmc.http.internal.ExplicitlySet
             return UnknownEnumValue;
         }
     };
-    /**
-     * The scope of the service category or resource.
-     **/
+    /** The scope of the service category or resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final Scope scope;
 
     /**
      * The scope of the service category or resource.
+     *
      * @return the value
-     **/
+     */
     public Scope getScope() {
         return scope;
     }
 
-    /**
-     * The unit to use to measure the service category or resource.
-     **/
-    public enum Unit {
+    /** The unit to use to measure the service category or resource. */
+    public enum Unit implements com.oracle.bmc.http.internal.BmcEnum {
         Count("COUNT"),
         Gb("GB"),
         None("NONE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -398,16 +380,15 @@ public final class Classifier extends com.oracle.bmc.http.internal.ExplicitlySet
             return UnknownEnumValue;
         }
     };
-    /**
-     * The unit to use to measure the service category or resource.
-     **/
+    /** The unit to use to measure the service category or resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final Unit unit;
 
     /**
      * The unit to use to measure the service category or resource.
+     *
      * @return the value
-     **/
+     */
     public Unit getUnit() {
         return unit;
     }
@@ -419,6 +400,7 @@ public final class Classifier extends com.oracle.bmc.http.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

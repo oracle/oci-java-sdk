@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.cloudmigrations.model;
 
-/**
- * Lifecycle state of a connection.
- **/
+/** Lifecycle state of a connection. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
-public enum AssetSourceConnectionLifecycleState {
+public enum AssetSourceConnectionLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Active("ACTIVE"),
     Updating("UPDATING"),
     NeedsAttention("NEEDS_ATTENTION"),

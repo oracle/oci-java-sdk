@@ -10,23 +10,23 @@ import java.util.NoSuchElementException;
 import java.util.function.Function;
 
 /**
- * An iterator for iterating over response objects returned from a list operation. This iterator handles
- * calling the service for additional data when needed. However, not every advancement of the iterator
- * (via its {@link #next()} method) will result in a method call. Instead, the logic of this iterator
- * can be described as:
+ * An iterator for iterating over response objects returned from a list operation. This iterator
+ * handles calling the service for additional data when needed. However, not every advancement of
+ * the iterator (via its {@link #next()} method) will result in a method call. Instead, the logic of
+ * this iterator can be described as:
  *
  * <ol>
- *   <li>Fetch a page of results from the service</li>
- *   <li>{@link #next()} will vend individual model/resource objects from that page until there are no more to vend</li>
- *   <li>Call the service for the next page of results</li>
- *   <li>Repeat steps 2 and 3 until there are no more results</li>
- * </ol>
- *
- * This iterator does not support removal of elements.
+ *   <li>Fetch a page of results from the service
+ *   <li>{@link #next()} will vend individual model/resource objects from that page until there are
+ *       no more to vend
+ *   <li>Call the service for the next page of results
+ *   <li>Repeat steps 2 and 3 until there are no more results
+ *       <ol>
+ *         This iterator does not support removal of elements.
  *
  * @param <REQUESTBUILDER> the type of a builder which can produce requests for a list operation
- * @param <REQUEST> the type of a request to a list operation. This type must match the type produced
- * by REQUESTBUILDER
+ * @param <REQUEST> the type of a request to a list operation. This type must match the type
+ *     produced by REQUESTBUILDER
  * @param <RESPONSE> the type of the response from a list operation
  * @param <ITEMTYPE> the type of the model/resource returned inside the response
  */
@@ -39,17 +39,18 @@ public class ResponseRecordIterator<REQUESTBUILDER, REQUEST, RESPONSE, ITEMTYPE>
     private List<ITEMTYPE> currentItems;
     private Iterator<ITEMTYPE> currentIterator;
 
-    /** Constructs a new ResponseRecordIterator.
+    /**
+     * Constructs a new ResponseRecordIterator.
      *
      * @param requestBuilder a builder object which can create requests for a list operation
      * @param nextPageTokenRetrievalFunction a function which can extract the next page token from a
-     * response produced by a list operation
-     * @param requestBuilderFunction a function which can build a request for a list operation based on
-     * a builder object and a pagination token to use
-     * @param pageRetrievalFunction a function which will call a list operation with a request and return
-     * the response of the call
-     * @param retrieveItemsFromResponseFunction a function which can extract the collection of results
-     * from a response produced by a list operation
+     *     response produced by a list operation
+     * @param requestBuilderFunction a function which can build a request for a list operation based
+     *     on a builder object and a pagination token to use
+     * @param pageRetrievalFunction a function which will call a list operation with a request and
+     *     return the response of the call
+     * @param retrieveItemsFromResponseFunction a function which can extract the collection of
+     *     results from a response produced by a list operation
      */
     public ResponseRecordIterator(
             final REQUESTBUILDER requestBuilder,
@@ -75,7 +76,8 @@ public class ResponseRecordIterator<REQUESTBUILDER, REQUEST, RESPONSE, ITEMTYPE>
         if (currentIterator.hasNext()) {
             return currentIterator.next();
         } else {
-            // If the current iterator doesn't have any items, then hasNext will advance us to the next
+            // If the current iterator doesn't have any items, then hasNext will advance us to the
+            // next
             // page of results (if there are any)
             if (hasNext()) {
                 return currentIterator.next();

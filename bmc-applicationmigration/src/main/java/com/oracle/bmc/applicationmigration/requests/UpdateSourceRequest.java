@@ -6,7 +6,9 @@ package com.oracle.bmc.applicationmigration.requests;
 
 import com.oracle.bmc.applicationmigration.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/applicationmigration/UpdateSourceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateSourceRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/applicationmigration/UpdateSourceExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateSourceRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 public class UpdateSourceRequest
@@ -14,57 +16,51 @@ public class UpdateSourceRequest
                 com.oracle.bmc.applicationmigration.model.UpdateSourceDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the source.
      */
     private String sourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the source.
      */
     public String getSourceId() {
         return sourceId;
     }
-    /**
-     * Updated configuration for the source.
-     *
-     */
+    /** Updated configuration for the source. */
     private com.oracle.bmc.applicationmigration.model.UpdateSourceDetails updateSourceDetails;
 
-    /**
-     * Updated configuration for the source.
-     *
-     */
+    /** Updated configuration for the source. */
     public com.oracle.bmc.applicationmigration.model.UpdateSourceDetails getUpdateSourceDetails() {
         return updateSourceDetails;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
-     * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource. The resource
-     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource,
+     * set the {@code if-match} parameter to the value of the etag from a previous {@code GET} or
+     * {@code POST} response for that resource. The resource will be updated or deleted only if the
+     * etag you provide matches the resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
-     * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource. The resource
-     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource,
+     * set the {@code if-match} parameter to the value of the etag from a previous {@code GET} or
+     * {@code POST} response for that resource. The resource will be updated or deleted only if the
+     * etag you provide matches the resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
@@ -72,6 +68,7 @@ public class UpdateSourceRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -84,17 +81,19 @@ public class UpdateSourceRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateSourceRequest,
                     com.oracle.bmc.applicationmigration.model.UpdateSourceDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the source.
          */
         private String sourceId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the source.
+         *
          * @param sourceId the value to set
          * @return this builder instance
          */
@@ -103,10 +102,7 @@ public class UpdateSourceRequest
             return this;
         }
 
-        /**
-         * Updated configuration for the source.
-         *
-         */
+        /** Updated configuration for the source. */
         private com.oracle.bmc.applicationmigration.model.UpdateSourceDetails updateSourceDetails =
                 null;
 
@@ -125,7 +121,6 @@ public class UpdateSourceRequest
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId = null;
 
@@ -142,17 +137,18 @@ public class UpdateSourceRequest
         }
 
         /**
-         * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
-         * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource. The resource
-         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a
+         * resource, set the {@code if-match} parameter to the value of the etag from a previous
+         * {@code GET} or {@code POST} response for that resource. The resource will be updated or
+         * deleted only if the etag you provide matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
-         * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource. The resource
-         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a
+         * resource, set the {@code if-match} parameter to the value of the etag from a previous
+         * {@code GET} or {@code POST} response for that resource. The resource will be updated or
+         * deleted only if the etag you provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -164,18 +160,19 @@ public class UpdateSourceRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -187,6 +184,7 @@ public class UpdateSourceRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateSourceRequest o) {
@@ -202,10 +200,11 @@ public class UpdateSourceRequest
         /**
          * Build the instance of UpdateSourceRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateSourceRequest
          */
@@ -218,6 +217,7 @@ public class UpdateSourceRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -230,7 +230,8 @@ public class UpdateSourceRequest
         /**
          * Build the instance of UpdateSourceRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateSourceRequest
@@ -248,6 +249,7 @@ public class UpdateSourceRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -260,6 +262,7 @@ public class UpdateSourceRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

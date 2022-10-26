@@ -5,23 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details for the create cloud VM cluster operation. Applies to Exadata Cloud Service instances only.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details for the create cloud VM cluster operation. Applies to Exadata Cloud Service instances
+ * only. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateCloudVmClusterDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateCloudVmClusterDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateCloudVmClusterDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -104,202 +104,226 @@ public final class CreateCloudVmClusterDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * subnet associated with the cloud VM cluster.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * subnet associated with the cloud VM cluster.
          *
          * @param subnetId the value to set
          * @return this builder
-         **/
+         */
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * backup network subnet associated with the cloud VM cluster.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("backupSubnetId")
         private String backupSubnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * backup network subnet associated with the cloud VM cluster.
          *
          * @param backupSubnetId the value to set
          * @return this builder
-         **/
+         */
         public Builder backupSubnetId(String backupSubnetId) {
             this.backupSubnetId = backupSubnetId;
             this.__explicitlySet__.add("backupSubnetId");
             return this;
         }
         /**
-         * The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
-         * <p>
-         * - Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
-         * - Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
-         * - Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
-         * - Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.
-         * - Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
-         * - Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
-         * - Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+         * The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the
+         * specified shape:
          *
-         **/
+         * <p>- Exadata.Base.48 - Specify a multiple of 2, from 0 to 48. - Exadata.Quarter1.84 -
+         * Specify a multiple of 2, from 22 to 84. - Exadata.Half1.168 - Specify a multiple of 4,
+         * from 44 to 168. - Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336. -
+         * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92. - Exadata.Half2.184 -
+         * Specify a multiple of 4, from 0 to 184. - Exadata.Full2.368 - Specify a multiple of 8,
+         * from 0 to 368.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
         /**
-         * The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
-         * <p>
-         * - Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
-         * - Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
-         * - Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
-         * - Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.
-         * - Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
-         * - Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
-         * - Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+         * The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the
+         * specified shape:
+         *
+         * <p>- Exadata.Base.48 - Specify a multiple of 2, from 0 to 48. - Exadata.Quarter1.84 -
+         * Specify a multiple of 2, from 22 to 84. - Exadata.Half1.168 - Specify a multiple of 4,
+         * from 44 to 168. - Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336. -
+         * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92. - Exadata.Half2.184 -
+         * Specify a multiple of 4, from 0 to 184. - Exadata.Full2.368 - Specify a multiple of 8,
+         * from 0 to 368.
          *
          * @param cpuCoreCount the value to set
          * @return this builder
-         **/
+         */
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = cpuCoreCount;
             this.__explicitlySet__.add("cpuCoreCount");
             return this;
         }
         /**
-         * The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
-         **/
+         * The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is
+         * allowed for the fractional part.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
         private Float ocpuCount;
 
         /**
-         * The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
+         * The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is
+         * allowed for the fractional part.
+         *
          * @param ocpuCount the value to set
          * @return this builder
-         **/
+         */
         public Builder ocpuCount(Float ocpuCount) {
             this.ocpuCount = ocpuCount;
             this.__explicitlySet__.add("ocpuCount");
             return this;
         }
         /**
-         * The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-         *
-         **/
+         * The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic
+         * character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster
+         * name can be no longer than 11 characters and is not case sensitive.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("clusterName")
         private String clusterName;
 
         /**
-         * The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+         * The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic
+         * character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster
+         * name can be no longer than 11 characters and is not case sensitive.
          *
          * @param clusterName the value to set
          * @return this builder
-         **/
+         */
         public Builder clusterName(String clusterName) {
             this.clusterName = clusterName;
             this.__explicitlySet__.add("clusterName");
             return this;
         }
         /**
-         * The percentage assigned to DATA storage (user data and database files).
-         * The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
-         *
-         **/
+         * The percentage assigned to DATA storage (user data and database files). The remaining
+         * percentage is assigned to RECO storage (database redo logs, archive logs, and recovery
+         * manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent
+         * assigned to DATA storage. See [Storage
+         * Configuration](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm#Exadata)
+         * in the Exadata documentation for details on the impact of the configuration settings on
+         * storage.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dataStoragePercentage")
         private Integer dataStoragePercentage;
 
         /**
-         * The percentage assigned to DATA storage (user data and database files).
-         * The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+         * The percentage assigned to DATA storage (user data and database files). The remaining
+         * percentage is assigned to RECO storage (database redo logs, archive logs, and recovery
+         * manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent
+         * assigned to DATA storage. See [Storage
+         * Configuration](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm#Exadata)
+         * in the Exadata documentation for details on the impact of the configuration settings on
+         * storage.
          *
          * @param dataStoragePercentage the value to set
          * @return this builder
-         **/
+         */
         public Builder dataStoragePercentage(Integer dataStoragePercentage) {
             this.dataStoragePercentage = dataStoragePercentage;
             this.__explicitlySet__.add("dataStoragePercentage");
             return this;
         }
-        /**
-         * The user-friendly name for the cloud VM cluster. The name does not need to be unique.
-         **/
+        /** The user-friendly name for the cloud VM cluster. The name does not need to be unique. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The user-friendly name for the cloud VM cluster. The name does not need to be unique.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * cloud Exadata infrastructure resource.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("cloudExadataInfrastructureId")
         private String cloudExadataInfrastructureId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * cloud Exadata infrastructure resource.
+         *
          * @param cloudExadataInfrastructureId the value to set
          * @return this builder
-         **/
+         */
         public Builder cloudExadataInfrastructureId(String cloudExadataInfrastructureId) {
             this.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
             this.__explicitlySet__.add("cloudExadataInfrastructureId");
             return this;
         }
         /**
-         * The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and
-         * can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
-         * <p>
-         * The maximum length of the combined hostname and domain is 63 characters.
-         * <p>
-         **Note:** The hostname must be unique within the subnet. If it is not unique,
-         * the cloud VM Cluster will fail to provision.
+         * The hostname for the cloud VM cluster. The hostname must begin with an alphabetic
+         * character, and can contain alphanumeric characters and hyphens (-). The maximum length of
+         * the hostname is 16 characters for bare metal and virtual machine DB systems, and 12
+         * characters for Exadata systems.
          *
-         **/
+         * <p>The maximum length of the combined hostname and domain is 63 characters.
+         *
+         * <p>*Note:** The hostname must be unique within the subnet. If it is not unique, the cloud
+         * VM Cluster will fail to provision.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
         /**
-         * The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and
-         * can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
-         * <p>
-         * The maximum length of the combined hostname and domain is 63 characters.
-         * <p>
-         **Note:** The hostname must be unique within the subnet. If it is not unique,
-         * the cloud VM Cluster will fail to provision.
+         * The hostname for the cloud VM cluster. The hostname must begin with an alphabetic
+         * character, and can contain alphanumeric characters and hyphens (-). The maximum length of
+         * the hostname is 16 characters for bare metal and virtual machine DB systems, and 12
+         * characters for Exadata systems.
+         *
+         * <p>The maximum length of the combined hostname and domain is 63 characters.
+         *
+         * <p>*Note:** The hostname must be unique within the subnet. If it is not unique, the cloud
+         * VM Cluster will fail to provision.
          *
          * @param hostname the value to set
          * @return this builder
-         **/
+         */
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
@@ -307,243 +331,268 @@ public final class CreateCloudVmClusterDetails
         }
         /**
          * A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN
-         * resolver is enabled for the specified subnet, the domain name for the subnet is used
-         * (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
-         * Applies to Exadata Cloud Service instances only.
-         *
-         **/
+         * resolver is enabled for the specified subnet, the domain name for the subnet is used (do
+         * not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not
+         * permitted. Applies to Exadata Cloud Service instances only.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("domain")
         private String domain;
 
         /**
          * A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN
-         * resolver is enabled for the specified subnet, the domain name for the subnet is used
-         * (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
-         * Applies to Exadata Cloud Service instances only.
+         * resolver is enabled for the specified subnet, the domain name for the subnet is used (do
+         * not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not
+         * permitted. Applies to Exadata Cloud Service instances only.
          *
          * @param domain the value to set
          * @return this builder
-         **/
+         */
         public Builder domain(String domain) {
             this.domain = domain;
             this.__explicitlySet__.add("domain");
             return this;
         }
         /**
-         * The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
-         **/
+         * The public key portion of one or more key pairs used for SSH access to the cloud VM
+         * cluster.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
         private java.util.List<String> sshPublicKeys;
 
         /**
-         * The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
+         * The public key portion of one or more key pairs used for SSH access to the cloud VM
+         * cluster.
+         *
          * @param sshPublicKeys the value to set
          * @return this builder
-         **/
+         */
         public Builder sshPublicKeys(java.util.List<String> sshPublicKeys) {
             this.sshPublicKeys = sshPublicKeys;
             this.__explicitlySet__.add("sshPublicKeys");
             return this;
         }
         /**
-         * The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
-         *
-         **/
+         * The Oracle license model that applies to the cloud VM cluster. The default is
+         * BRING_YOUR_OWN_LICENSE.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
         /**
-         * The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
+         * The Oracle license model that applies to the cloud VM cluster. The default is
+         * BRING_YOUR_OWN_LICENSE.
          *
          * @param licenseModel the value to set
          * @return this builder
-         **/
+         */
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
             return this;
         }
         /**
-         * If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
-         *
-         **/
+         * If true, the sparse disk group is configured for the cloud VM cluster. If false, the
+         * sparse disk group is not created.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isSparseDiskgroupEnabled")
         private Boolean isSparseDiskgroupEnabled;
 
         /**
-         * If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
+         * If true, the sparse disk group is configured for the cloud VM cluster. If false, the
+         * sparse disk group is not created.
          *
          * @param isSparseDiskgroupEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isSparseDiskgroupEnabled(Boolean isSparseDiskgroupEnabled) {
             this.isSparseDiskgroupEnabled = isSparseDiskgroupEnabled;
             this.__explicitlySet__.add("isSparseDiskgroupEnabled");
             return this;
         }
         /**
-         * If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
-         *
-         **/
+         * If true, database backup on local Exadata storage is configured for the cloud VM cluster.
+         * If false, database backup on local Exadata storage is not available in the cloud VM
+         * cluster.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isLocalBackupEnabled")
         private Boolean isLocalBackupEnabled;
 
         /**
-         * If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
+         * If true, database backup on local Exadata storage is configured for the cloud VM cluster.
+         * If false, database backup on local Exadata storage is not available in the cloud VM
+         * cluster.
          *
          * @param isLocalBackupEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isLocalBackupEnabled(Boolean isLocalBackupEnabled) {
             this.isLocalBackupEnabled = isLocalBackupEnabled;
             this.__explicitlySet__.add("isLocalBackupEnabled");
             return this;
         }
         /**
-         * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
-         *
-         **/
+         * The time zone to use for the cloud VM cluster. For details, see [Time
+         * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private String timeZone;
 
         /**
-         * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * The time zone to use for the cloud VM cluster. For details, see [Time
+         * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
          *
          * @param timeZone the value to set
          * @return this builder
-         **/
+         */
         public Builder timeZone(String timeZone) {
             this.timeZone = timeZone;
             this.__explicitlySet__.add("timeZone");
             return this;
         }
-        /**
-         * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
-         **/
+        /** The TCP Single Client Access Name (SCAN) port. The default port is 1521. */
         @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcp")
         private Integer scanListenerPortTcp;
 
         /**
          * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
+         *
          * @param scanListenerPortTcp the value to set
          * @return this builder
-         **/
+         */
         public Builder scanListenerPortTcp(Integer scanListenerPortTcp) {
             this.scanListenerPortTcp = scanListenerPortTcp;
             this.__explicitlySet__.add("scanListenerPortTcp");
             return this;
         }
-        /**
-         * The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
-         **/
+        /** The TCPS Single Client Access Name (SCAN) port. The default port is 2484. */
         @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcpSsl")
         private Integer scanListenerPortTcpSsl;
 
         /**
          * The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
+         *
          * @param scanListenerPortTcpSsl the value to set
          * @return this builder
-         **/
+         */
         public Builder scanListenerPortTcpSsl(Integer scanListenerPortTcpSsl) {
             this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
             this.__explicitlySet__.add("scanListenerPortTcpSsl");
             return this;
         }
         /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-         * **NsgIds restrictions:**
-         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
-         *
-         **/
+         * The list of
+         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+         * network security groups (NSGs) to which this resource belongs. Setting this to an empty
+         * list removes all resources from all NSGs. For more information about NSGs, see [Security
+         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+         * Databases with private access. The nsgIds list can be empty.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-         * **NsgIds restrictions:**
-         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         * The list of
+         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+         * network security groups (NSGs) to which this resource belongs. Setting this to an empty
+         * list removes all resources from all NSGs. For more information about NSGs, see [Security
+         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+         * Databases with private access. The nsgIds list can be empty.
          *
          * @param nsgIds the value to set
          * @return this builder
-         **/
+         */
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
         /**
-         * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-         *
-         **/
+         * A list of the
+         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * network security groups (NSGs) that the backup network of this DB system belongs to.
+         * Setting this to an empty array after the list is created removes the resource from all
+         * NSGs. For more information about NSGs, see [Security
+         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * Applicable only to Exadata systems.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
         private java.util.List<String> backupNetworkNsgIds;
 
         /**
-         * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         * A list of the
+         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * network security groups (NSGs) that the backup network of this DB system belongs to.
+         * Setting this to an empty array after the list is created removes the resource from all
+         * NSGs. For more information about NSGs, see [Security
+         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * Applicable only to Exadata systems.
          *
          * @param backupNetworkNsgIds the value to set
          * @return this builder
-         **/
+         */
         public Builder backupNetworkNsgIds(java.util.List<String> backupNetworkNsgIds) {
             this.backupNetworkNsgIds = backupNetworkNsgIds;
             this.__explicitlySet__.add("backupNetworkNsgIds");
             return this;
         }
-        /**
-         * A valid Oracle Grid Infrastructure (GI) software version.
-         **/
+        /** A valid Oracle Grid Infrastructure (GI) software version. */
         @com.fasterxml.jackson.annotation.JsonProperty("giVersion")
         private String giVersion;
 
         /**
          * A valid Oracle Grid Infrastructure (GI) software version.
+         *
          * @param giVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder giVersion(String giVersion) {
             this.giVersion = giVersion;
             this.__explicitlySet__.add("giVersion");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         *
-         **/
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -674,9 +723,7 @@ public final class CreateCloudVmClusterDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -686,228 +733,250 @@ public final class CreateCloudVmClusterDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * subnet associated with the cloud VM cluster.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * subnet associated with the cloud VM cluster.
      *
      * @return the value
-     **/
+     */
     public String getSubnetId() {
         return subnetId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * backup network subnet associated with the cloud VM cluster.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("backupSubnetId")
     private final String backupSubnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * backup network subnet associated with the cloud VM cluster.
      *
      * @return the value
-     **/
+     */
     public String getBackupSubnetId() {
         return backupSubnetId;
     }
 
     /**
-     * The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
-     * <p>
-     * - Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
-     * - Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
-     * - Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
-     * - Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.
-     * - Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
-     * - Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
-     * - Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+     * The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the
+     * specified shape:
      *
-     **/
+     * <p>- Exadata.Base.48 - Specify a multiple of 2, from 0 to 48. - Exadata.Quarter1.84 - Specify
+     * a multiple of 2, from 22 to 84. - Exadata.Half1.168 - Specify a multiple of 4, from 44 to
+     * 168. - Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336. - Exadata.Quarter2.92 -
+     * Specify a multiple of 2, from 0 to 92. - Exadata.Half2.184 - Specify a multiple of 4, from 0
+     * to 184. - Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
 
     /**
-     * The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
-     * <p>
-     * - Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
-     * - Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
-     * - Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
-     * - Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.
-     * - Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
-     * - Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
-     * - Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+     * The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the
+     * specified shape:
+     *
+     * <p>- Exadata.Base.48 - Specify a multiple of 2, from 0 to 48. - Exadata.Quarter1.84 - Specify
+     * a multiple of 2, from 22 to 84. - Exadata.Half1.168 - Specify a multiple of 4, from 44 to
+     * 168. - Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336. - Exadata.Quarter2.92 -
+     * Specify a multiple of 2, from 0 to 92. - Exadata.Half2.184 - Specify a multiple of 4, from 0
+     * to 184. - Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
      *
      * @return the value
-     **/
+     */
     public Integer getCpuCoreCount() {
         return cpuCoreCount;
     }
 
     /**
-     * The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
-     **/
+     * The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed
+     * for the fractional part.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
     private final Float ocpuCount;
 
     /**
-     * The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
+     * The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed
+     * for the fractional part.
+     *
      * @return the value
-     **/
+     */
     public Float getOcpuCount() {
         return ocpuCount;
     }
 
     /**
-     * The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-     *
-     **/
+     * The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic
+     * character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name
+     * can be no longer than 11 characters and is not case sensitive.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("clusterName")
     private final String clusterName;
 
     /**
-     * The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+     * The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic
+     * character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name
+     * can be no longer than 11 characters and is not case sensitive.
      *
      * @return the value
-     **/
+     */
     public String getClusterName() {
         return clusterName;
     }
 
     /**
-     * The percentage assigned to DATA storage (user data and database files).
-     * The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
-     *
-     **/
+     * The percentage assigned to DATA storage (user data and database files). The remaining
+     * percentage is assigned to RECO storage (database redo logs, archive logs, and recovery
+     * manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned
+     * to DATA storage. See [Storage
+     * Configuration](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm#Exadata)
+     * in the Exadata documentation for details on the impact of the configuration settings on
+     * storage.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dataStoragePercentage")
     private final Integer dataStoragePercentage;
 
     /**
-     * The percentage assigned to DATA storage (user data and database files).
-     * The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * The percentage assigned to DATA storage (user data and database files). The remaining
+     * percentage is assigned to RECO storage (database redo logs, archive logs, and recovery
+     * manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned
+     * to DATA storage. See [Storage
+     * Configuration](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm#Exadata)
+     * in the Exadata documentation for details on the impact of the configuration settings on
+     * storage.
      *
      * @return the value
-     **/
+     */
     public Integer getDataStoragePercentage() {
         return dataStoragePercentage;
     }
 
-    /**
-     * The user-friendly name for the cloud VM cluster. The name does not need to be unique.
-     **/
+    /** The user-friendly name for the cloud VM cluster. The name does not need to be unique. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The user-friendly name for the cloud VM cluster. The name does not need to be unique.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * cloud Exadata infrastructure resource.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("cloudExadataInfrastructureId")
     private final String cloudExadataInfrastructureId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * cloud Exadata infrastructure resource.
+     *
      * @return the value
-     **/
+     */
     public String getCloudExadataInfrastructureId() {
         return cloudExadataInfrastructureId;
     }
 
     /**
-     * The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and
-     * can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
-     * <p>
-     * The maximum length of the combined hostname and domain is 63 characters.
-     * <p>
-     **Note:** The hostname must be unique within the subnet. If it is not unique,
-     * the cloud VM Cluster will fail to provision.
+     * The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character,
+     * and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname
+     * is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata
+     * systems.
      *
-     **/
+     * <p>The maximum length of the combined hostname and domain is 63 characters.
+     *
+     * <p>*Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM
+     * Cluster will fail to provision.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
     /**
-     * The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and
-     * can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
-     * <p>
-     * The maximum length of the combined hostname and domain is 63 characters.
-     * <p>
-     **Note:** The hostname must be unique within the subnet. If it is not unique,
-     * the cloud VM Cluster will fail to provision.
+     * The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character,
+     * and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname
+     * is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata
+     * systems.
+     *
+     * <p>The maximum length of the combined hostname and domain is 63 characters.
+     *
+     * <p>*Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM
+     * Cluster will fail to provision.
      *
      * @return the value
-     **/
+     */
     public String getHostname() {
         return hostname;
     }
 
     /**
-     * A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN
-     * resolver is enabled for the specified subnet, the domain name for the subnet is used
-     * (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
-     * Applies to Exadata Cloud Service instances only.
-     *
-     **/
+     * A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver
+     * is enabled for the specified subnet, the domain name for the subnet is used (do not provide
+     * one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to
+     * Exadata Cloud Service instances only.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
     private final String domain;
 
     /**
-     * A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN
-     * resolver is enabled for the specified subnet, the domain name for the subnet is used
-     * (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
-     * Applies to Exadata Cloud Service instances only.
+     * A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver
+     * is enabled for the specified subnet, the domain name for the subnet is used (do not provide
+     * one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to
+     * Exadata Cloud Service instances only.
      *
      * @return the value
-     **/
+     */
     public String getDomain() {
         return domain;
     }
 
     /**
      * The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
     private final java.util.List<String> sshPublicKeys;
 
     /**
      * The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getSshPublicKeys() {
         return sshPublicKeys;
     }
 
     /**
-     * The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
-     *
-     **/
-    public enum LicenseModel {
+     * The Oracle license model that applies to the cloud VM cluster. The default is
+     * BRING_YOUR_OWN_LICENSE.
+     */
+    public enum LicenseModel implements com.oracle.bmc.http.internal.BmcEnum {
         LicenseIncluded("LICENSE_INCLUDED"),
         BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
         ;
@@ -940,183 +1009,200 @@ public final class CreateCloudVmClusterDetails
         }
     };
     /**
-     * The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
-     *
-     **/
+     * The Oracle license model that applies to the cloud VM cluster. The default is
+     * BRING_YOUR_OWN_LICENSE.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
     /**
-     * The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
+     * The Oracle license model that applies to the cloud VM cluster. The default is
+     * BRING_YOUR_OWN_LICENSE.
      *
      * @return the value
-     **/
+     */
     public LicenseModel getLicenseModel() {
         return licenseModel;
     }
 
     /**
-     * If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
-     *
-     **/
+     * If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse
+     * disk group is not created.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isSparseDiskgroupEnabled")
     private final Boolean isSparseDiskgroupEnabled;
 
     /**
-     * If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
+     * If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse
+     * disk group is not created.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsSparseDiskgroupEnabled() {
         return isSparseDiskgroupEnabled;
     }
 
     /**
-     * If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
-     *
-     **/
+     * If true, database backup on local Exadata storage is configured for the cloud VM cluster. If
+     * false, database backup on local Exadata storage is not available in the cloud VM cluster.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isLocalBackupEnabled")
     private final Boolean isLocalBackupEnabled;
 
     /**
-     * If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
+     * If true, database backup on local Exadata storage is configured for the cloud VM cluster. If
+     * false, database backup on local Exadata storage is not available in the cloud VM cluster.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsLocalBackupEnabled() {
         return isLocalBackupEnabled;
     }
 
     /**
-     * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
-     *
-     **/
+     * The time zone to use for the cloud VM cluster. For details, see [Time
+     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final String timeZone;
 
     /**
-     * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * The time zone to use for the cloud VM cluster. For details, see [Time
+     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
      *
      * @return the value
-     **/
+     */
     public String getTimeZone() {
         return timeZone;
     }
 
-    /**
-     * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
-     **/
+    /** The TCP Single Client Access Name (SCAN) port. The default port is 1521. */
     @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcp")
     private final Integer scanListenerPortTcp;
 
     /**
      * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
+     *
      * @return the value
-     **/
+     */
     public Integer getScanListenerPortTcp() {
         return scanListenerPortTcp;
     }
 
-    /**
-     * The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
-     **/
+    /** The TCPS Single Client Access Name (SCAN) port. The default port is 2484. */
     @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcpSsl")
     private final Integer scanListenerPortTcpSsl;
 
     /**
      * The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
+     *
      * @return the value
-     **/
+     */
     public Integer getScanListenerPortTcpSsl() {
         return scanListenerPortTcpSsl;
     }
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:**
-     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
-     *
-     **/
+     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * for the network security groups (NSGs) to which this resource belongs. Setting this to an
+     * empty list removes all resources from all NSGs. For more information about NSGs, see
+     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+     * Databases with private access. The nsgIds list can be empty.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:**
-     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * for the network security groups (NSGs) to which this resource belongs. Setting this to an
+     * empty list removes all resources from all NSGs. For more information about NSGs, see
+     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+     * Databases with private access. The nsgIds list can be empty.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
 
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-     *
-     **/
+     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * of the network security groups (NSGs) that the backup network of this DB system belongs to.
+     * Setting this to an empty array after the list is created removes the resource from all NSGs.
+     * For more information about NSGs, see [Security
+     * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable
+     * only to Exadata systems.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
     private final java.util.List<String> backupNetworkNsgIds;
 
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * of the network security groups (NSGs) that the backup network of this DB system belongs to.
+     * Setting this to an empty array after the list is created removes the resource from all NSGs.
+     * For more information about NSGs, see [Security
+     * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable
+     * only to Exadata systems.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getBackupNetworkNsgIds() {
         return backupNetworkNsgIds;
     }
 
-    /**
-     * A valid Oracle Grid Infrastructure (GI) software version.
-     **/
+    /** A valid Oracle Grid Infrastructure (GI) software version. */
     @com.fasterxml.jackson.annotation.JsonProperty("giVersion")
     private final String giVersion;
 
     /**
      * A valid Oracle Grid Infrastructure (GI) software version.
+     *
      * @return the value
-     **/
+     */
     public String getGiVersion() {
         return giVersion;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -1135,6 +1221,7 @@ public final class CreateCloudVmClusterDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

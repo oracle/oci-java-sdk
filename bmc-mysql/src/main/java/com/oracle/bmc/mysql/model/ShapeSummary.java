@@ -5,23 +5,23 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * The shape of the DB System. The shape determines resources to allocate
- * to the DB System - CPU cores and memory for VM shapes; CPU cores, memory
- * and storage for non-VM (or bare metal) shapes.  For a description of
- * shapes, see [DB System Shape Options](https://docs.cloud.oracle.com/mysql-database/doc/shapes.htm).
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The shape of the DB System. The shape determines resources to allocate to the DB System - CPU
+ * cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
+ * For a description of shapes, see [DB System Shape
+ * Options](https://docs.cloud.oracle.com/mysql-database/doc/shapes.htm). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ShapeSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ShapeSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ShapeSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "cpuCoreCount", "memorySizeInGBs", "isSupportedFor"})
     public ShapeSummary(
@@ -38,58 +38,52 @@ public final class ShapeSummary extends com.oracle.bmc.http.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the shape used for the DB System.
-         **/
+        /** The name of the shape used for the DB System. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the shape used for the DB System.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The number of CPU Cores the Instance provides. These are "OCPU"s.
-         **/
+        /** The number of CPU Cores the Instance provides. These are "OCPU"s. */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
         /**
          * The number of CPU Cores the Instance provides. These are "OCPU"s.
+         *
          * @param cpuCoreCount the value to set
          * @return this builder
-         **/
+         */
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = cpuCoreCount;
             this.__explicitlySet__.add("cpuCoreCount");
             return this;
         }
-        /**
-         * The amount of RAM the Instance provides. This is an IEC base-2 number.
-         **/
+        /** The amount of RAM the Instance provides. This is an IEC base-2 number. */
         @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
         private Integer memorySizeInGBs;
 
         /**
          * The amount of RAM the Instance provides. This is an IEC base-2 number.
+         *
          * @param memorySizeInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder memorySizeInGBs(Integer memorySizeInGBs) {
             this.memorySizeInGBs = memorySizeInGBs;
             this.__explicitlySet__.add("memorySizeInGBs");
             return this;
         }
-        /**
-         * What service features the shape is supported for.
-         *
-         **/
+        /** What service features the shape is supported for. */
         @com.fasterxml.jackson.annotation.JsonProperty("isSupportedFor")
         private java.util.List<IsSupportedFor> isSupportedFor;
 
@@ -98,7 +92,7 @@ public final class ShapeSummary extends com.oracle.bmc.http.internal.ExplicitlyS
          *
          * @param isSupportedFor the value to set
          * @return this builder
-         **/
+         */
         public Builder isSupportedFor(java.util.List<IsSupportedFor> isSupportedFor) {
             this.isSupportedFor = isSupportedFor;
             this.__explicitlySet__.add("isSupportedFor");
@@ -139,9 +133,7 @@ public final class ShapeSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -150,58 +142,54 @@ public final class ShapeSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the shape used for the DB System.
-     **/
+    /** The name of the shape used for the DB System. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the shape used for the DB System.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The number of CPU Cores the Instance provides. These are "OCPU"s.
-     **/
+    /** The number of CPU Cores the Instance provides. These are "OCPU"s. */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
 
     /**
      * The number of CPU Cores the Instance provides. These are "OCPU"s.
+     *
      * @return the value
-     **/
+     */
     public Integer getCpuCoreCount() {
         return cpuCoreCount;
     }
 
-    /**
-     * The amount of RAM the Instance provides. This is an IEC base-2 number.
-     **/
+    /** The amount of RAM the Instance provides. This is an IEC base-2 number. */
     @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
     private final Integer memorySizeInGBs;
 
     /**
      * The amount of RAM the Instance provides. This is an IEC base-2 number.
+     *
      * @return the value
-     **/
+     */
     public Integer getMemorySizeInGBs() {
         return memorySizeInGBs;
     }
 
-    /**
-     **/
-    public enum IsSupportedFor {
+    /** */
+    public enum IsSupportedFor implements com.oracle.bmc.http.internal.BmcEnum {
         Dbsystem("DBSYSTEM"),
         Analyticscluster("ANALYTICSCLUSTER"),
         Heatwavecluster("HEATWAVECLUSTER"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -240,10 +228,7 @@ public final class ShapeSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             return UnknownEnumValue;
         }
     };
-    /**
-     * What service features the shape is supported for.
-     *
-     **/
+    /** What service features the shape is supported for. */
     @com.fasterxml.jackson.annotation.JsonProperty("isSupportedFor")
     private final java.util.List<IsSupportedFor> isSupportedFor;
 
@@ -251,7 +236,7 @@ public final class ShapeSummary extends com.oracle.bmc.http.internal.ExplicitlyS
      * What service features the shape is supported for.
      *
      * @return the value
-     **/
+     */
     public java.util.List<IsSupportedFor> getIsSupportedFor() {
         return isSupportedFor;
     }
@@ -263,6 +248,7 @@ public final class ShapeSummary extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -9,13 +9,14 @@ import com.oracle.bmc.loganalytics.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class SetUnprocessedDataBucketResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      *
      * @return the value
      */
@@ -23,13 +24,12 @@ public class SetUnprocessedDataBucketResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /**
-     * The returned UnprocessedDataBucket instance.
-     */
+    /** The returned UnprocessedDataBucket instance. */
     private com.oracle.bmc.loganalytics.model.UnprocessedDataBucket unprocessedDataBucket;
 
     /**
      * The returned UnprocessedDataBucket instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.loganalytics.model.UnprocessedDataBucket getUnprocessedDataBucket() {
@@ -44,7 +44,7 @@ public class SetUnprocessedDataBucketResponse extends com.oracle.bmc.responses.B
     })
     private SetUnprocessedDataBucketResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.UnprocessedDataBucket unprocessedDataBucket) {
         super(__httpStatusCode__, headers);
@@ -52,29 +52,34 @@ public class SetUnprocessedDataBucketResponse extends com.oracle.bmc.responses.B
         this.unprocessedDataBucket = unprocessedDataBucket;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    SetUnprocessedDataBucketResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -84,13 +89,12 @@ public class SetUnprocessedDataBucketResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /**
-         * The returned UnprocessedDataBucket instance.
-         */
+        /** The returned UnprocessedDataBucket instance. */
         private com.oracle.bmc.loganalytics.model.UnprocessedDataBucket unprocessedDataBucket;
 
         /**
          * The returned UnprocessedDataBucket instance.
+         *
          * @param unprocessedDataBucket the value to set
          * @return this builder
          */
@@ -102,8 +106,10 @@ public class SetUnprocessedDataBucketResponse extends com.oracle.bmc.responses.B
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(SetUnprocessedDataBucketResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -115,8 +121,10 @@ public class SetUnprocessedDataBucketResponse extends com.oracle.bmc.responses.B
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public SetUnprocessedDataBucketResponse build() {
             return new SetUnprocessedDataBucketResponse(
                     __httpStatusCode__, headers, opcRequestId, unprocessedDataBucket);
@@ -125,6 +133,7 @@ public class SetUnprocessedDataBucketResponse extends com.oracle.bmc.responses.B
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

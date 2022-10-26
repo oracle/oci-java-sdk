@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.aivision.model;
 
-/**
- * The language of the document, abbreviated according to ISO 639-2.
- **/
+/** The language of the document, abbreviated according to ISO 639-2. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-public enum DocumentLanguage {
+public enum DocumentLanguage implements com.oracle.bmc.http.internal.BmcEnum {
     Eng("ENG"),
     Ces("CES"),
     Dan("DAN"),

@@ -5,34 +5,32 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * The endpoint for a data asset.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The endpoint for a data asset. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType",
-    defaultImpl = DpEndpoint.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType",
+        defaultImpl = DpEndpoint.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = DpEndpointFromPrivate.class,
-        name = "PRIVATE_END_POINT"
-    ),
+            value = DpEndpointFromPrivate.class,
+            name = "PRIVATE_END_POINT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = DpEndpointFromPublic.class,
-        name = "PUBLIC_END_POINT"
-    )
+            value = DpEndpointFromPublic.class,
+            name = "PUBLIC_END_POINT")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class DpEndpoint extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class DpEndpoint extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -68,29 +66,31 @@ public class DpEndpoint extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * Generated key that can be used in API calls to identify the endpoint. In scenarios where reference to the endpoint is required, a value can be passed in create.
-     **/
+     * Generated key that can be used in API calls to identify the endpoint. In scenarios where
+     * reference to the endpoint is required, a value can be passed in create.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * Generated key that can be used in API calls to identify the endpoint. In scenarios where reference to the endpoint is required, a value can be passed in create.
+     * Generated key that can be used in API calls to identify the endpoint. In scenarios where
+     * reference to the endpoint is required, a value can be passed in create.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * The model version of an object.
-     **/
+    /** The model version of an object. */
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The model version of an object.
+     *
      * @return the value
-     **/
+     */
     public String getModelVersion() {
         return modelVersion;
     }
@@ -103,85 +103,91 @@ public class DpEndpoint extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     **/
+     * Free form text without any restriction on the permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * User-defined description of the endpoint.
-     **/
+    /** User-defined description of the endpoint. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * User-defined description of the endpoint.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The version of the object that is used to track changes in the object instance.
-     **/
+    /** The version of the object that is used to track changes in the object instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
     /**
      * The version of the object that is used to track changes in the object instance.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectVersion() {
         return objectVersion;
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-     **/
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectStatus() {
         return objectStatus;
     }
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
-     **/
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an
+     * upper case letter or underscore. The value can be modified.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an
+     * upper case letter or underscore. The value can be modified.
+     *
      * @return the value
-     **/
+     */
     public String getIdentifier() {
         return identifier;
     }
 
-    /**
-     * The list of data assets that belong to the endpoint.
-     **/
+    /** The list of data assets that belong to the endpoint. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssets")
     private final java.util.List<DataAsset> dataAssets;
 
     /**
      * The list of data assets that belong to the endpoint.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<DataAsset> getDataAssets() {
         return dataAssets;
     }
@@ -193,6 +199,7 @@ public class DpEndpoint extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -254,16 +261,14 @@ public class DpEndpoint extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         return result;
     }
 
-    /**
-     * The type of the endpoint.
-     **/
-    public enum ModelType {
+    /** The type of the endpoint. */
+    public enum ModelType implements com.oracle.bmc.http.internal.BmcEnum {
         PrivateEndPoint("PRIVATE_END_POINT"),
         PublicEndPoint("PUBLIC_END_POINT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 

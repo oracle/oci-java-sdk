@@ -5,25 +5,24 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies the Kubernetes cluster environment.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Specifies the Kubernetes cluster environment. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateOkeClusterDeployEnvironmentDetails.Builder.class
-)
+        builder = CreateOkeClusterDeployEnvironmentDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "deployEnvironmentType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "deployEnvironmentType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateOkeClusterDeployEnvironmentDetails extends CreateDeployEnvironmentDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -72,17 +71,16 @@ public final class CreateOkeClusterDeployEnvironmentDetails extends CreateDeploy
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /**
-         * The OCID of the Kubernetes cluster.
-         **/
+        /** The OCID of the Kubernetes cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
         private String clusterId;
 
         /**
          * The OCID of the Kubernetes cluster.
+         *
          * @param clusterId the value to set
          * @return this builder
-         **/
+         */
         public Builder clusterId(String clusterId) {
             this.clusterId = clusterId;
             this.__explicitlySet__.add("clusterId");
@@ -144,9 +142,7 @@ public final class CreateOkeClusterDeployEnvironmentDetails extends CreateDeploy
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -169,16 +165,15 @@ public final class CreateOkeClusterDeployEnvironmentDetails extends CreateDeploy
         this.networkChannel = networkChannel;
     }
 
-    /**
-     * The OCID of the Kubernetes cluster.
-     **/
+    /** The OCID of the Kubernetes cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
     private final String clusterId;
 
     /**
      * The OCID of the Kubernetes cluster.
+     *
      * @return the value
-     **/
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -197,6 +192,7 @@ public final class CreateOkeClusterDeployEnvironmentDetails extends CreateDeploy
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

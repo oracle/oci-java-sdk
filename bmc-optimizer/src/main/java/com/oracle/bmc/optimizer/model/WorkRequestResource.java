@@ -5,21 +5,22 @@
 package com.oracle.bmc.optimizer.model;
 
 /**
- * Details about the resource entity.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details about the resource entity. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = WorkRequestResource.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WorkRequestResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = WorkRequestResource.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class WorkRequestResource
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "entityType",
@@ -44,17 +45,16 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The resource type the work request affects.
-         **/
+        /** The resource type the work request affects. */
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
         /**
          * The resource type the work request affects.
+         *
          * @param entityType the value to set
          * @return this builder
-         **/
+         */
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
@@ -62,73 +62,69 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
         }
         /**
          * The way in which this resource was affected by the work tracked by the work request.
-         * <p>
-         * A resource being created, updated, or deleted remains in the {@code IN_PROGRESS} state until
-         * work is complete for that resource. At that point, the resource transitions to the {@code CREATED}, {@code UPDATED},
-         * or {@code DELETED} state.
          *
-         **/
+         * <p>A resource being created, updated, or deleted remains in the {@code IN_PROGRESS} state
+         * until work is complete for that resource. At that point, the resource transitions to the
+         * {@code CREATED}, {@code UPDATED}, or {@code DELETED} state.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("actionType")
         private WorkRequestActionType actionType;
 
         /**
          * The way in which this resource was affected by the work tracked by the work request.
-         * <p>
-         * A resource being created, updated, or deleted remains in the {@code IN_PROGRESS} state until
-         * work is complete for that resource. At that point, the resource transitions to the {@code CREATED}, {@code UPDATED},
-         * or {@code DELETED} state.
+         *
+         * <p>A resource being created, updated, or deleted remains in the {@code IN_PROGRESS} state
+         * until work is complete for that resource. At that point, the resource transitions to the
+         * {@code CREATED}, {@code UPDATED}, or {@code DELETED} state.
          *
          * @param actionType the value to set
          * @return this builder
-         **/
+         */
         public Builder actionType(WorkRequestActionType actionType) {
             this.actionType = actionType;
             this.__explicitlySet__.add("actionType");
             return this;
         }
-        /**
-         * The resource identifier the work request affects.
-         **/
+        /** The resource identifier the work request affects. */
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
          * The resource identifier the work request affects.
+         *
          * @param identifier the value to set
          * @return this builder
-         **/
+         */
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-        /**
-         * The URI path that the user can do a GET on to access the resource metadata
-         **/
+        /** The URI path that the user can do a GET on to access the resource metadata */
         @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
         private String entityUri;
 
         /**
          * The URI path that the user can do a GET on to access the resource metadata
+         *
          * @param entityUri the value to set
          * @return this builder
-         **/
+         */
         public Builder entityUri(String entityUri) {
             this.entityUri = entityUri;
             this.__explicitlySet__.add("entityUri");
             return this;
         }
-        /**
-         * Additional information about the resource.
-         **/
+        /** Additional information about the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
 
         /**
          * Additional information about the resource.
+         *
          * @param metadata the value to set
          * @return this builder
-         **/
+         */
         public Builder metadata(java.util.Map<String, String> metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
@@ -173,9 +169,7 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -184,82 +178,77 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * The resource type the work request affects.
-     **/
+    /** The resource type the work request affects. */
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
     /**
      * The resource type the work request affects.
+     *
      * @return the value
-     **/
+     */
     public String getEntityType() {
         return entityType;
     }
 
     /**
      * The way in which this resource was affected by the work tracked by the work request.
-     * <p>
-     * A resource being created, updated, or deleted remains in the {@code IN_PROGRESS} state until
-     * work is complete for that resource. At that point, the resource transitions to the {@code CREATED}, {@code UPDATED},
-     * or {@code DELETED} state.
      *
-     **/
+     * <p>A resource being created, updated, or deleted remains in the {@code IN_PROGRESS} state
+     * until work is complete for that resource. At that point, the resource transitions to the
+     * {@code CREATED}, {@code UPDATED}, or {@code DELETED} state.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")
     private final WorkRequestActionType actionType;
 
     /**
      * The way in which this resource was affected by the work tracked by the work request.
-     * <p>
-     * A resource being created, updated, or deleted remains in the {@code IN_PROGRESS} state until
-     * work is complete for that resource. At that point, the resource transitions to the {@code CREATED}, {@code UPDATED},
-     * or {@code DELETED} state.
+     *
+     * <p>A resource being created, updated, or deleted remains in the {@code IN_PROGRESS} state
+     * until work is complete for that resource. At that point, the resource transitions to the
+     * {@code CREATED}, {@code UPDATED}, or {@code DELETED} state.
      *
      * @return the value
-     **/
+     */
     public WorkRequestActionType getActionType() {
         return actionType;
     }
 
-    /**
-     * The resource identifier the work request affects.
-     **/
+    /** The resource identifier the work request affects. */
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
      * The resource identifier the work request affects.
+     *
      * @return the value
-     **/
+     */
     public String getIdentifier() {
         return identifier;
     }
 
-    /**
-     * The URI path that the user can do a GET on to access the resource metadata
-     **/
+    /** The URI path that the user can do a GET on to access the resource metadata */
     @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
     private final String entityUri;
 
     /**
      * The URI path that the user can do a GET on to access the resource metadata
+     *
      * @return the value
-     **/
+     */
     public String getEntityUri() {
         return entityUri;
     }
 
-    /**
-     * Additional information about the resource.
-     **/
+    /** Additional information about the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final java.util.Map<String, String> metadata;
 
     /**
      * Additional information about the resource.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getMetadata() {
         return metadata;
     }
@@ -271,6 +260,7 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

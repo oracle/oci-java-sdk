@@ -20,17 +20,14 @@ import com.oracle.bmc.workrequests.requests.GetWorkRequestRequest;
 import com.oracle.bmc.workrequests.responses.GetWorkRequestResponse;
 
 /**
- * This example shows how to change the compartment in which an instance lives.
- * It makes use of the Work Request service to know that this operation has
- * completed and whether it was successful.
+ * This example shows how to change the compartment in which an instance lives. It makes use of the
+ * Work Request service to know that this operation has completed and whether it was successful.
  *
- * Requirements for running this example:
- *   - Java SDK 1.4.4 or later (you can check this by running oci --version)
- *   - An existing, functional CLI configuration. If it is not in the
- *     default location, you will need to change the code near the beginning
- *     of "main" to match your setup.
+ * <p>Requirements for running this example: - Java SDK 1.4.4 or later (you can check this by
+ * running oci --version) - An existing, functional CLI configuration. If it is not in the default
+ * location, you will need to change the code near the beginning of "main" to match your setup.
  *
- *  Usage: ChangeInstanceCompartmentExample instanceid compartmentid
+ * <p>Usage: ChangeInstanceCompartmentExample instanceid compartmentid
  */
 public class ChangeInstanceCompartmentExample {
 
@@ -48,8 +45,10 @@ public class ChangeInstanceCompartmentExample {
         String instanceId = args[0];
         String newCompartmentId = args[1];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();

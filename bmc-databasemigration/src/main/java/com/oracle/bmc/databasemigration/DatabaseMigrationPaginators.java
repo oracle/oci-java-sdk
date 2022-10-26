@@ -9,21 +9,29 @@ import com.oracle.bmc.databasemigration.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of DatabaseMigration where multiple pages of data may be fetched.
- * Two styles of iteration are supported:
+ * to any list operations of DatabaseMigration where multiple pages of data may be fetched. Two
+ * styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
- *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to
+ *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
+ *       <i>listUsersResponseIterator</i>
+ *   <li>Iterating over the resources/records being listed. These are referred to as
+ *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
+ *       <i>listUsersRecordIterator</i>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
- * They will automatically fetch more data from the service when required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping
+ * and using the page tokens. They will automatically fetch more data from the service when
+ * required.
  *
- * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
- * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
- * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
+ * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
+ * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
+ * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have
+ * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
+ * handled so we can iterate until there are no more responses or no more resources/records
+ * available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 public class DatabaseMigrationPaginators {
@@ -34,11 +42,12 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listAgentImages operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listAgentImages operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListAgentImagesResponse> listAgentImagesResponseIterator(
             final ListAgentImagesRequest request) {
@@ -83,18 +92,21 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemigration.model.AgentImageSummary} objects
-     * contained in responses from the listAgentImages operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemigration.model.AgentImageSummary} objects contained in responses from
+     * the listAgentImages operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemigration.model.AgentImageSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemigration.model.AgentImageSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.databasemigration.model.AgentImageSummary>
             listAgentImagesRecordIterator(final ListAgentImagesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAgentImagesRequest.Builder, ListAgentImagesRequest, ListAgentImagesResponse,
+                ListAgentImagesRequest.Builder,
+                ListAgentImagesRequest,
+                ListAgentImagesResponse,
                 com.oracle.bmc.databasemigration.model.AgentImageSummary>(
                 new java.util.function.Supplier<ListAgentImagesRequest.Builder>() {
                     @Override
@@ -145,11 +157,12 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listAgents operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listAgents
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListAgentsResponse> listAgentsResponseIterator(
             final ListAgentsRequest request) {
@@ -194,18 +207,21 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemigration.model.AgentSummary} objects
-     * contained in responses from the listAgents operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemigration.model.AgentSummary} objects contained in responses from the
+     * listAgents operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemigration.model.AgentSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemigration.model.AgentSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.databasemigration.model.AgentSummary> listAgentsRecordIterator(
             final ListAgentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAgentsRequest.Builder, ListAgentsRequest, ListAgentsResponse,
+                ListAgentsRequest.Builder,
+                ListAgentsRequest,
+                ListAgentsResponse,
                 com.oracle.bmc.databasemigration.model.AgentSummary>(
                 new java.util.function.Supplier<ListAgentsRequest.Builder>() {
                     @Override
@@ -255,11 +271,12 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listConnections operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listConnections operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListConnectionsResponse> listConnectionsResponseIterator(
             final ListConnectionsRequest request) {
@@ -304,18 +321,21 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemigration.model.ConnectionSummary} objects
-     * contained in responses from the listConnections operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemigration.model.ConnectionSummary} objects contained in responses from
+     * the listConnections operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemigration.model.ConnectionSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemigration.model.ConnectionSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.databasemigration.model.ConnectionSummary>
             listConnectionsRecordIterator(final ListConnectionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListConnectionsRequest.Builder, ListConnectionsRequest, ListConnectionsResponse,
+                ListConnectionsRequest.Builder,
+                ListConnectionsRequest,
+                ListConnectionsResponse,
                 com.oracle.bmc.databasemigration.model.ConnectionSummary>(
                 new java.util.function.Supplier<ListConnectionsRequest.Builder>() {
                     @Override
@@ -366,16 +386,18 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listExcludedObjects operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listExcludedObjects operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListExcludedObjectsResponse> listExcludedObjectsResponseIterator(
             final ListExcludedObjectsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListExcludedObjectsRequest.Builder, ListExcludedObjectsRequest,
+                ListExcludedObjectsRequest.Builder,
+                ListExcludedObjectsRequest,
                 ListExcludedObjectsResponse>(
                 new java.util.function.Supplier<ListExcludedObjectsRequest.Builder>() {
                     @Override
@@ -417,18 +439,21 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemigration.model.ExcludedObjectSummary} objects
-     * contained in responses from the listExcludedObjects operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemigration.model.ExcludedObjectSummary} objects contained in responses
+     * from the listExcludedObjects operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemigration.model.ExcludedObjectSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemigration.model.ExcludedObjectSummary} objects contained in
+     *     responses received from the service.
      */
     public Iterable<com.oracle.bmc.databasemigration.model.ExcludedObjectSummary>
             listExcludedObjectsRecordIterator(final ListExcludedObjectsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListExcludedObjectsRequest.Builder, ListExcludedObjectsRequest,
+                ListExcludedObjectsRequest.Builder,
+                ListExcludedObjectsRequest,
                 ListExcludedObjectsResponse,
                 com.oracle.bmc.databasemigration.model.ExcludedObjectSummary>(
                 new java.util.function.Supplier<ListExcludedObjectsRequest.Builder>() {
@@ -482,11 +507,12 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listJobOutputs operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listJobOutputs
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListJobOutputsResponse> listJobOutputsResponseIterator(
             final ListJobOutputsRequest request) {
@@ -531,18 +557,21 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemigration.model.JobOutputSummary} objects
-     * contained in responses from the listJobOutputs operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemigration.model.JobOutputSummary} objects contained in responses from
+     * the listJobOutputs operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemigration.model.JobOutputSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemigration.model.JobOutputSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.databasemigration.model.JobOutputSummary>
             listJobOutputsRecordIterator(final ListJobOutputsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListJobOutputsRequest.Builder, ListJobOutputsRequest, ListJobOutputsResponse,
+                ListJobOutputsRequest.Builder,
+                ListJobOutputsRequest,
+                ListJobOutputsResponse,
                 com.oracle.bmc.databasemigration.model.JobOutputSummary>(
                 new java.util.function.Supplier<ListJobOutputsRequest.Builder>() {
                     @Override
@@ -592,11 +621,12 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listJobs operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listJobs
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListJobsResponse> listJobsResponseIterator(final ListJobsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
@@ -640,18 +670,21 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemigration.model.JobSummary} objects
-     * contained in responses from the listJobs operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemigration.model.JobSummary} objects contained in responses from the
+     * listJobs operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemigration.model.JobSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemigration.model.JobSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.databasemigration.model.JobSummary> listJobsRecordIterator(
             final ListJobsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListJobsRequest.Builder, ListJobsRequest, ListJobsResponse,
+                ListJobsRequest.Builder,
+                ListJobsRequest,
+                ListJobsResponse,
                 com.oracle.bmc.databasemigration.model.JobSummary>(
                 new java.util.function.Supplier<ListJobsRequest.Builder>() {
                     @Override
@@ -701,16 +734,19 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listMigrationObjectTypes operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listMigrationObjectTypes operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListMigrationObjectTypesResponse> listMigrationObjectTypesResponseIterator(
             final ListMigrationObjectTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListMigrationObjectTypesRequest.Builder, ListMigrationObjectTypesRequest,
+                ListMigrationObjectTypesRequest.Builder,
+                ListMigrationObjectTypesRequest,
                 ListMigrationObjectTypesResponse>(
                 new java.util.function.Supplier<ListMigrationObjectTypesRequest.Builder>() {
                     @Override
@@ -753,18 +789,21 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemigration.model.MigrationObjectTypeSummary} objects
-     * contained in responses from the listMigrationObjectTypes operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemigration.model.MigrationObjectTypeSummary} objects contained in
+     * responses from the listMigrationObjectTypes operation. This iterable will fetch more data
+     * from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemigration.model.MigrationObjectTypeSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemigration.model.MigrationObjectTypeSummary} objects contained in
+     *     responses received from the service.
      */
     public Iterable<com.oracle.bmc.databasemigration.model.MigrationObjectTypeSummary>
             listMigrationObjectTypesRecordIterator(final ListMigrationObjectTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMigrationObjectTypesRequest.Builder, ListMigrationObjectTypesRequest,
+                ListMigrationObjectTypesRequest.Builder,
+                ListMigrationObjectTypesRequest,
                 ListMigrationObjectTypesResponse,
                 com.oracle.bmc.databasemigration.model.MigrationObjectTypeSummary>(
                 new java.util.function.Supplier<ListMigrationObjectTypesRequest.Builder>() {
@@ -821,16 +860,18 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listMigrationObjects operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listMigrationObjects operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListMigrationObjectsResponse> listMigrationObjectsResponseIterator(
             final ListMigrationObjectsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListMigrationObjectsRequest.Builder, ListMigrationObjectsRequest,
+                ListMigrationObjectsRequest.Builder,
+                ListMigrationObjectsRequest,
                 ListMigrationObjectsResponse>(
                 new java.util.function.Supplier<ListMigrationObjectsRequest.Builder>() {
                     @Override
@@ -872,18 +913,21 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemigration.model.MigrationObjectSummary} objects
-     * contained in responses from the listMigrationObjects operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemigration.model.MigrationObjectSummary} objects contained in responses
+     * from the listMigrationObjects operation. This iterable will fetch more data from the server
+     * as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemigration.model.MigrationObjectSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemigration.model.MigrationObjectSummary} objects contained in
+     *     responses received from the service.
      */
     public Iterable<com.oracle.bmc.databasemigration.model.MigrationObjectSummary>
             listMigrationObjectsRecordIterator(final ListMigrationObjectsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMigrationObjectsRequest.Builder, ListMigrationObjectsRequest,
+                ListMigrationObjectsRequest.Builder,
+                ListMigrationObjectsRequest,
                 ListMigrationObjectsResponse,
                 com.oracle.bmc.databasemigration.model.MigrationObjectSummary>(
                 new java.util.function.Supplier<ListMigrationObjectsRequest.Builder>() {
@@ -937,11 +981,12 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listMigrations operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listMigrations
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListMigrationsResponse> listMigrationsResponseIterator(
             final ListMigrationsRequest request) {
@@ -986,18 +1031,21 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemigration.model.MigrationSummary} objects
-     * contained in responses from the listMigrations operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemigration.model.MigrationSummary} objects contained in responses from
+     * the listMigrations operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemigration.model.MigrationSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemigration.model.MigrationSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.databasemigration.model.MigrationSummary>
             listMigrationsRecordIterator(final ListMigrationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMigrationsRequest.Builder, ListMigrationsRequest, ListMigrationsResponse,
+                ListMigrationsRequest.Builder,
+                ListMigrationsRequest,
+                ListMigrationsResponse,
                 com.oracle.bmc.databasemigration.model.MigrationSummary>(
                 new java.util.function.Supplier<ListMigrationsRequest.Builder>() {
                     @Override
@@ -1047,16 +1095,19 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListWorkRequestErrorsResponse> listWorkRequestErrorsResponseIterator(
             final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsRequest.Builder,
+                ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
@@ -1099,18 +1150,21 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemigration.model.WorkRequestError} objects
-     * contained in responses from the listWorkRequestErrors operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemigration.model.WorkRequestError} objects contained in responses from
+     * the listWorkRequestErrors operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemigration.model.WorkRequestError} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemigration.model.WorkRequestError} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.databasemigration.model.WorkRequestError>
             listWorkRequestErrorsRecordIterator(final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsRequest.Builder,
+                ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse,
                 com.oracle.bmc.databasemigration.model.WorkRequestError>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
@@ -1163,16 +1217,18 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listWorkRequestLogs operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListWorkRequestLogsResponse> listWorkRequestLogsResponseIterator(
             final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
+                ListWorkRequestLogsRequest.Builder,
+                ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
@@ -1214,18 +1270,21 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemigration.model.WorkRequestLogEntry} objects
-     * contained in responses from the listWorkRequestLogs operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemigration.model.WorkRequestLogEntry} objects contained in responses
+     * from the listWorkRequestLogs operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemigration.model.WorkRequestLogEntry} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemigration.model.WorkRequestLogEntry} objects contained in
+     *     responses received from the service.
      */
     public Iterable<com.oracle.bmc.databasemigration.model.WorkRequestLogEntry>
             listWorkRequestLogsRecordIterator(final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
+                ListWorkRequestLogsRequest.Builder,
+                ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse,
                 com.oracle.bmc.databasemigration.model.WorkRequestLogEntry>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
@@ -1279,11 +1338,12 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listWorkRequests operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListWorkRequestsResponse> listWorkRequestsResponseIterator(
             final ListWorkRequestsRequest request) {
@@ -1329,18 +1389,22 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemigration.model.WorkRequestSummary} objects
-     * contained in responses from the listWorkRequests operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemigration.model.WorkRequestSummary} objects contained in responses
+     * from the listWorkRequests operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemigration.model.WorkRequestSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemigration.model.WorkRequestSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.databasemigration.model.WorkRequestSummary>
             listWorkRequestsRecordIterator(final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
+                ListWorkRequestsRequest.Builder,
+                ListWorkRequestsRequest,
+                ListWorkRequestsResponse,
                 com.oracle.bmc.databasemigration.model.WorkRequestSummary>(
                 new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override

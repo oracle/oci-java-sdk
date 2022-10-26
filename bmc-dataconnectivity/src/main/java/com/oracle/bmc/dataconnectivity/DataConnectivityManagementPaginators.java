@@ -13,17 +13,25 @@ import com.oracle.bmc.dataconnectivity.responses.*;
  * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
- *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to
+ *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
+ *       <i>listUsersResponseIterator</i>
+ *   <li>Iterating over the resources/records being listed. These are referred to as
+ *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
+ *       <i>listUsersRecordIterator</i>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
- * They will automatically fetch more data from the service when required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping
+ * and using the page tokens. They will automatically fetch more data from the service when
+ * required.
  *
- * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
- * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
- * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
+ * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
+ * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
+ * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have
+ * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
+ * handled so we can iterate until there are no more responses or no more resources/records
+ * available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 public class DataConnectivityManagementPaginators {
@@ -34,11 +42,12 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listConnections operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listConnections operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListConnectionsResponse> listConnectionsResponseIterator(
             final ListConnectionsRequest request) {
@@ -83,18 +92,21 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataconnectivity.model.ConnectionSummary} objects
-     * contained in responses from the listConnections operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dataconnectivity.model.ConnectionSummary} objects contained in responses from
+     * the listConnections operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataconnectivity.model.ConnectionSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dataconnectivity.model.ConnectionSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.dataconnectivity.model.ConnectionSummary>
             listConnectionsRecordIterator(final ListConnectionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListConnectionsRequest.Builder, ListConnectionsRequest, ListConnectionsResponse,
+                ListConnectionsRequest.Builder,
+                ListConnectionsRequest,
+                ListConnectionsResponse,
                 com.oracle.bmc.dataconnectivity.model.ConnectionSummary>(
                 new java.util.function.Supplier<ListConnectionsRequest.Builder>() {
                     @Override
@@ -144,11 +156,12 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listDataAssets operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDataAssets
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListDataAssetsResponse> listDataAssetsResponseIterator(
             final ListDataAssetsRequest request) {
@@ -193,18 +206,21 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataconnectivity.model.DataAssetSummary} objects
-     * contained in responses from the listDataAssets operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dataconnectivity.model.DataAssetSummary} objects contained in responses from
+     * the listDataAssets operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataconnectivity.model.DataAssetSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dataconnectivity.model.DataAssetSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.dataconnectivity.model.DataAssetSummary>
             listDataAssetsRecordIterator(final ListDataAssetsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDataAssetsRequest.Builder, ListDataAssetsRequest, ListDataAssetsResponse,
+                ListDataAssetsRequest.Builder,
+                ListDataAssetsRequest,
+                ListDataAssetsResponse,
                 com.oracle.bmc.dataconnectivity.model.DataAssetSummary>(
                 new java.util.function.Supplier<ListDataAssetsRequest.Builder>() {
                     @Override
@@ -254,11 +270,12 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listDataEntities operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listDataEntities operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListDataEntitiesResponse> listDataEntitiesResponseIterator(
             final ListDataEntitiesRequest request) {
@@ -304,18 +321,21 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataconnectivity.model.DataEntitySummary} objects
-     * contained in responses from the listDataEntities operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dataconnectivity.model.DataEntitySummary} objects contained in responses from
+     * the listDataEntities operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataconnectivity.model.DataEntitySummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dataconnectivity.model.DataEntitySummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.dataconnectivity.model.DataEntitySummary>
             listDataEntitiesRecordIterator(final ListDataEntitiesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDataEntitiesRequest.Builder, ListDataEntitiesRequest, ListDataEntitiesResponse,
+                ListDataEntitiesRequest.Builder,
+                ListDataEntitiesRequest,
+                ListDataEntitiesResponse,
                 com.oracle.bmc.dataconnectivity.model.DataEntitySummary>(
                 new java.util.function.Supplier<ListDataEntitiesRequest.Builder>() {
                     @Override
@@ -366,11 +386,12 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listEndpoints operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listEndpoints
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListEndpointsResponse> listEndpointsResponseIterator(
             final ListEndpointsRequest request) {
@@ -415,18 +436,21 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataconnectivity.model.EndpointSummary} objects
-     * contained in responses from the listEndpoints operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dataconnectivity.model.EndpointSummary} objects contained in responses from
+     * the listEndpoints operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataconnectivity.model.EndpointSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dataconnectivity.model.EndpointSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.dataconnectivity.model.EndpointSummary>
             listEndpointsRecordIterator(final ListEndpointsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListEndpointsRequest.Builder, ListEndpointsRequest, ListEndpointsResponse,
+                ListEndpointsRequest.Builder,
+                ListEndpointsRequest,
+                ListEndpointsResponse,
                 com.oracle.bmc.dataconnectivity.model.EndpointSummary>(
                 new java.util.function.Supplier<ListEndpointsRequest.Builder>() {
                     @Override
@@ -476,11 +500,12 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listFolders operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listFolders
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListFoldersResponse> listFoldersResponseIterator(
             final ListFoldersRequest request) {
@@ -525,18 +550,21 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataconnectivity.model.FolderSummary} objects
-     * contained in responses from the listFolders operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dataconnectivity.model.FolderSummary} objects contained in responses from the
+     * listFolders operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataconnectivity.model.FolderSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dataconnectivity.model.FolderSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.dataconnectivity.model.FolderSummary> listFoldersRecordIterator(
             final ListFoldersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListFoldersRequest.Builder, ListFoldersRequest, ListFoldersResponse,
+                ListFoldersRequest.Builder,
+                ListFoldersRequest,
+                ListFoldersResponse,
                 com.oracle.bmc.dataconnectivity.model.FolderSummary>(
                 new java.util.function.Supplier<ListFoldersRequest.Builder>() {
                     @Override
@@ -586,11 +614,12 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listOperations operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listOperations
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListOperationsResponse> listOperationsResponseIterator(
             final ListOperationsRequest request) {
@@ -635,18 +664,21 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataconnectivity.model.OperationSummary} objects
-     * contained in responses from the listOperations operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dataconnectivity.model.OperationSummary} objects contained in responses from
+     * the listOperations operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataconnectivity.model.OperationSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dataconnectivity.model.OperationSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.dataconnectivity.model.OperationSummary>
             listOperationsRecordIterator(final ListOperationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListOperationsRequest.Builder, ListOperationsRequest, ListOperationsResponse,
+                ListOperationsRequest.Builder,
+                ListOperationsRequest,
+                ListOperationsResponse,
                 com.oracle.bmc.dataconnectivity.model.OperationSummary>(
                 new java.util.function.Supplier<ListOperationsRequest.Builder>() {
                     @Override
@@ -696,16 +728,19 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listReferenceArtifacts operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listReferenceArtifacts operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListReferenceArtifactsResponse> listReferenceArtifactsResponseIterator(
             final ListReferenceArtifactsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListReferenceArtifactsRequest.Builder, ListReferenceArtifactsRequest,
+                ListReferenceArtifactsRequest.Builder,
+                ListReferenceArtifactsRequest,
                 ListReferenceArtifactsResponse>(
                 new java.util.function.Supplier<ListReferenceArtifactsRequest.Builder>() {
                     @Override
@@ -748,18 +783,21 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataconnectivity.model.ReferenceArtifactSummary} objects
-     * contained in responses from the listReferenceArtifacts operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dataconnectivity.model.ReferenceArtifactSummary} objects contained in
+     * responses from the listReferenceArtifacts operation. This iterable will fetch more data from
+     * the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataconnectivity.model.ReferenceArtifactSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dataconnectivity.model.ReferenceArtifactSummary} objects contained in
+     *     responses received from the service.
      */
     public Iterable<com.oracle.bmc.dataconnectivity.model.ReferenceArtifactSummary>
             listReferenceArtifactsRecordIterator(final ListReferenceArtifactsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListReferenceArtifactsRequest.Builder, ListReferenceArtifactsRequest,
+                ListReferenceArtifactsRequest.Builder,
+                ListReferenceArtifactsRequest,
                 ListReferenceArtifactsResponse,
                 com.oracle.bmc.dataconnectivity.model.ReferenceArtifactSummary>(
                 new java.util.function.Supplier<ListReferenceArtifactsRequest.Builder>() {
@@ -814,11 +852,12 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listRegistries operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listRegistries
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListRegistriesResponse> listRegistriesResponseIterator(
             final ListRegistriesRequest request) {
@@ -863,18 +902,21 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataconnectivity.model.RegistrySummary} objects
-     * contained in responses from the listRegistries operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dataconnectivity.model.RegistrySummary} objects contained in responses from
+     * the listRegistries operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataconnectivity.model.RegistrySummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dataconnectivity.model.RegistrySummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.dataconnectivity.model.RegistrySummary>
             listRegistriesRecordIterator(final ListRegistriesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListRegistriesRequest.Builder, ListRegistriesRequest, ListRegistriesResponse,
+                ListRegistriesRequest.Builder,
+                ListRegistriesRequest,
+                ListRegistriesResponse,
                 com.oracle.bmc.dataconnectivity.model.RegistrySummary>(
                 new java.util.function.Supplier<ListRegistriesRequest.Builder>() {
                     @Override
@@ -924,11 +966,12 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listSchemas operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSchemas
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListSchemasResponse> listSchemasResponseIterator(
             final ListSchemasRequest request) {
@@ -973,18 +1016,21 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataconnectivity.model.SchemaSummary} objects
-     * contained in responses from the listSchemas operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dataconnectivity.model.SchemaSummary} objects contained in responses from the
+     * listSchemas operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataconnectivity.model.SchemaSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dataconnectivity.model.SchemaSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.dataconnectivity.model.SchemaSummary> listSchemasRecordIterator(
             final ListSchemasRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSchemasRequest.Builder, ListSchemasRequest, ListSchemasResponse,
+                ListSchemasRequest.Builder,
+                ListSchemasRequest,
+                ListSchemasResponse,
                 com.oracle.bmc.dataconnectivity.model.SchemaSummary>(
                 new java.util.function.Supplier<ListSchemasRequest.Builder>() {
                     @Override
@@ -1034,11 +1080,12 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listTypes operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listTypes
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListTypesResponse> listTypesResponseIterator(final ListTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
@@ -1082,18 +1129,21 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataconnectivity.model.TypeSummary} objects
-     * contained in responses from the listTypes operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dataconnectivity.model.TypeSummary} objects contained in responses from the
+     * listTypes operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataconnectivity.model.TypeSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dataconnectivity.model.TypeSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.dataconnectivity.model.TypeSummary> listTypesRecordIterator(
             final ListTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTypesRequest.Builder, ListTypesRequest, ListTypesResponse,
+                ListTypesRequest.Builder,
+                ListTypesRequest,
+                ListTypesResponse,
                 com.oracle.bmc.dataconnectivity.model.TypeSummary>(
                 new java.util.function.Supplier<ListTypesRequest.Builder>() {
                     @Override
@@ -1143,16 +1193,19 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListWorkRequestErrorsResponse> listWorkRequestErrorsResponseIterator(
             final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsRequest.Builder,
+                ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
@@ -1195,18 +1248,21 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataconnectivity.model.WorkRequestError} objects
-     * contained in responses from the listWorkRequestErrors operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dataconnectivity.model.WorkRequestError} objects contained in responses from
+     * the listWorkRequestErrors operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataconnectivity.model.WorkRequestError} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dataconnectivity.model.WorkRequestError} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.dataconnectivity.model.WorkRequestError>
             listWorkRequestErrorsRecordIterator(final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsRequest.Builder,
+                ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse,
                 com.oracle.bmc.dataconnectivity.model.WorkRequestError>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
@@ -1259,16 +1315,18 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listWorkRequestLogs operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListWorkRequestLogsResponse> listWorkRequestLogsResponseIterator(
             final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
+                ListWorkRequestLogsRequest.Builder,
+                ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
@@ -1310,19 +1368,22 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataconnectivity.model.WorkRequestLog} objects
-     * contained in responses from the listWorkRequestLogs operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dataconnectivity.model.WorkRequestLog} objects contained in responses from the
+     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataconnectivity.model.WorkRequestLog} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dataconnectivity.model.WorkRequestLog} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.dataconnectivity.model.WorkRequestLog>
             listWorkRequestLogsRecordIterator(final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
-                ListWorkRequestLogsResponse, com.oracle.bmc.dataconnectivity.model.WorkRequestLog>(
+                ListWorkRequestLogsRequest.Builder,
+                ListWorkRequestLogsRequest,
+                ListWorkRequestLogsResponse,
+                com.oracle.bmc.dataconnectivity.model.WorkRequestLog>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
@@ -1372,11 +1433,12 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listWorkRequests operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListWorkRequestsResponse> listWorkRequestsResponseIterator(
             final ListWorkRequestsRequest request) {
@@ -1422,18 +1484,21 @@ public class DataConnectivityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataconnectivity.model.WorkRequestSummary} objects
-     * contained in responses from the listWorkRequests operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dataconnectivity.model.WorkRequestSummary} objects contained in responses from
+     * the listWorkRequests operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataconnectivity.model.WorkRequestSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dataconnectivity.model.WorkRequestSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.dataconnectivity.model.WorkRequestSummary>
             listWorkRequestsRecordIterator(final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
+                ListWorkRequestsRequest.Builder,
+                ListWorkRequestsRequest,
+                ListWorkRequestsResponse,
                 com.oracle.bmc.dataconnectivity.model.WorkRequestSummary>(
                 new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override

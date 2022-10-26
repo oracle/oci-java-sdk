@@ -5,20 +5,20 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Represents querylanguage bucket command input arguments in parse output.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Represents querylanguage bucket command input arguments in parse output. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BucketRange.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BucketRange extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class BucketRange extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"lower", "upper", "alias"})
     public BucketRange(java.math.BigDecimal lower, java.math.BigDecimal upper, String alias) {
@@ -31,45 +31,44 @@ public final class BucketRange extends com.oracle.bmc.http.internal.ExplicitlySe
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Lower bound of the bucket range specified in the querystring for the numeric field referenced in tbe bucket command.
-         *
-         **/
+         * Lower bound of the bucket range specified in the querystring for the numeric field
+         * referenced in tbe bucket command.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lower")
         private java.math.BigDecimal lower;
 
         /**
-         * Lower bound of the bucket range specified in the querystring for the numeric field referenced in tbe bucket command.
+         * Lower bound of the bucket range specified in the querystring for the numeric field
+         * referenced in tbe bucket command.
          *
          * @param lower the value to set
          * @return this builder
-         **/
+         */
         public Builder lower(java.math.BigDecimal lower) {
             this.lower = lower;
             this.__explicitlySet__.add("lower");
             return this;
         }
         /**
-         * Upper bound of the bucket range specified in the querystring for the numeric field referenced in tbe bucket command.
-         *
-         **/
+         * Upper bound of the bucket range specified in the querystring for the numeric field
+         * referenced in tbe bucket command.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("upper")
         private java.math.BigDecimal upper;
 
         /**
-         * Upper bound of the bucket range specified in the querystring for the numeric field referenced in tbe bucket command.
+         * Upper bound of the bucket range specified in the querystring for the numeric field
+         * referenced in tbe bucket command.
          *
          * @param upper the value to set
          * @return this builder
-         **/
+         */
         public Builder upper(java.math.BigDecimal upper) {
             this.upper = upper;
             this.__explicitlySet__.add("upper");
             return this;
         }
-        /**
-         * Optional alias of the bucket range if specified in the querystring.
-         *
-         **/
+        /** Optional alias of the bucket range if specified in the querystring. */
         @com.fasterxml.jackson.annotation.JsonProperty("alias")
         private String alias;
 
@@ -78,7 +77,7 @@ public final class BucketRange extends com.oracle.bmc.http.internal.ExplicitlySe
          *
          * @param alias the value to set
          * @return this builder
-         **/
+         */
         public Builder alias(String alias) {
             this.alias = alias;
             this.__explicitlySet__.add("alias");
@@ -111,9 +110,7 @@ public final class BucketRange extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -123,41 +120,40 @@ public final class BucketRange extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * Lower bound of the bucket range specified in the querystring for the numeric field referenced in tbe bucket command.
-     *
-     **/
+     * Lower bound of the bucket range specified in the querystring for the numeric field referenced
+     * in tbe bucket command.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lower")
     private final java.math.BigDecimal lower;
 
     /**
-     * Lower bound of the bucket range specified in the querystring for the numeric field referenced in tbe bucket command.
+     * Lower bound of the bucket range specified in the querystring for the numeric field referenced
+     * in tbe bucket command.
      *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getLower() {
         return lower;
     }
 
     /**
-     * Upper bound of the bucket range specified in the querystring for the numeric field referenced in tbe bucket command.
-     *
-     **/
+     * Upper bound of the bucket range specified in the querystring for the numeric field referenced
+     * in tbe bucket command.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("upper")
     private final java.math.BigDecimal upper;
 
     /**
-     * Upper bound of the bucket range specified in the querystring for the numeric field referenced in tbe bucket command.
+     * Upper bound of the bucket range specified in the querystring for the numeric field referenced
+     * in tbe bucket command.
      *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getUpper() {
         return upper;
     }
 
-    /**
-     * Optional alias of the bucket range if specified in the querystring.
-     *
-     **/
+    /** Optional alias of the bucket range if specified in the querystring. */
     @com.fasterxml.jackson.annotation.JsonProperty("alias")
     private final String alias;
 
@@ -165,7 +161,7 @@ public final class BucketRange extends com.oracle.bmc.http.internal.ExplicitlySe
      * Optional alias of the bucket range if specified in the querystring.
      *
      * @return the value
-     **/
+     */
     public String getAlias() {
         return alias;
     }
@@ -177,6 +173,7 @@ public final class BucketRange extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

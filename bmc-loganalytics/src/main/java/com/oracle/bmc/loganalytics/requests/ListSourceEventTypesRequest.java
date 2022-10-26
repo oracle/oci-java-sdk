@@ -6,64 +6,48 @@ package com.oracle.bmc.loganalytics.requests;
 
 import com.oracle.bmc.loganalytics.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListSourceEventTypesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSourceEventTypesRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListSourceEventTypesExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSourceEventTypesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class ListSourceEventTypesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The Logging Analytics namespace used for the request.
-     *
-     */
+    /** The Logging Analytics namespace used for the request. */
     private String namespaceName;
 
-    /**
-     * The Logging Analytics namespace used for the request.
-     *
-     */
+    /** The Logging Analytics namespace used for the request. */
     public String getNamespaceName() {
         return namespaceName;
     }
-    /**
-     * The source name.
-     */
+    /** The source name. */
     private String sourceName;
 
-    /**
-     * The source name.
-     */
+    /** The source name. */
     public String getSourceName() {
         return sourceName;
     }
-    /**
-     * The text used for filtering event types by name or description.
-     *
-     */
+    /** The text used for filtering event types by name or description. */
     private String displayText;
 
-    /**
-     * The text used for filtering event types by name or description.
-     *
-     */
+    /** The text used for filtering event types by name or description. */
     public String getDisplayText() {
         return displayText;
     }
     /**
-     * The system value used for filtering.  Only items with the specified system value
-     * will be returned.  Valid values are built in, custom (for user defined items), or
-     * all (for all items, regardless of system value).
-     *
+     * The system value used for filtering. Only items with the specified system value will be
+     * returned. Valid values are built in, custom (for user defined items), or all (for all items,
+     * regardless of system value).
      */
     private IsSystem isSystem;
 
     /**
-     * The system value used for filtering.  Only items with the specified system value
-     * will be returned.  Valid values are built in, custom (for user defined items), or
-     * all (for all items, regardless of system value).
-     *
-     **/
-    public enum IsSystem {
+     * The system value used for filtering. Only items with the specified system value will be
+     * returned. Valid values are built in, custom (for user defined items), or all (for all items,
+     * regardless of system value).
+     */
+    public enum IsSystem implements com.oracle.bmc.http.internal.BmcEnum {
         All("ALL"),
         Custom("CUSTOM"),
         BuiltIn("BUILT_IN"),
@@ -98,60 +82,51 @@ public class ListSourceEventTypesRequest
     };
 
     /**
-     * The system value used for filtering.  Only items with the specified system value
-     * will be returned.  Valid values are built in, custom (for user defined items), or
-     * all (for all items, regardless of system value).
-     *
+     * The system value used for filtering. Only items with the specified system value will be
+     * returned. Valid values are built in, custom (for user defined items), or all (for all items,
+     * regardless of system value).
      */
     public IsSystem getIsSystem() {
         return isSystem;
     }
     /**
-     * The enabled flag used for filtering.  Only items with the specified enabled value
-     * will be returned.
-     *
+     * The enabled flag used for filtering. Only items with the specified enabled value will be
+     * returned.
      */
     private Boolean isEnabled;
 
     /**
-     * The enabled flag used for filtering.  Only items with the specified enabled value
-     * will be returned.
-     *
+     * The enabled flag used for filtering. Only items with the specified enabled value will be
+     * returned.
      */
     public Boolean getIsEnabled() {
         return isEnabled;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The attribute used to sort the returned source event types.
-     */
+    /** The attribute used to sort the returned source event types. */
     private SortBy sortBy;
 
-    /**
-     * The attribute used to sort the returned source event types.
-     **/
-    public enum SortBy {
+    /** The attribute used to sort the returned source event types. */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         EventType("eventType"),
         TimeUpdated("timeUpdated"),
         ;
@@ -184,23 +159,15 @@ public class ListSourceEventTypesRequest
         }
     };
 
-    /**
-     * The attribute used to sort the returned source event types.
-     */
+    /** The attribute used to sort the returned source event types. */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     private SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     **/
-    public enum SortOrder {
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -233,21 +200,14 @@ public class ListSourceEventTypesRequest
         }
     };
 
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -255,14 +215,10 @@ public class ListSourceEventTypesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSourceEventTypesRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The Logging Analytics namespace used for the request.
-         *
-         */
+        /** The Logging Analytics namespace used for the request. */
         private String namespaceName = null;
 
         /**
@@ -276,13 +232,12 @@ public class ListSourceEventTypesRequest
             return this;
         }
 
-        /**
-         * The source name.
-         */
+        /** The source name. */
         private String sourceName = null;
 
         /**
          * The source name.
+         *
          * @param sourceName the value to set
          * @return this builder instance
          */
@@ -291,10 +246,7 @@ public class ListSourceEventTypesRequest
             return this;
         }
 
-        /**
-         * The text used for filtering event types by name or description.
-         *
-         */
+        /** The text used for filtering event types by name or description. */
         private String displayText = null;
 
         /**
@@ -309,17 +261,16 @@ public class ListSourceEventTypesRequest
         }
 
         /**
-         * The system value used for filtering.  Only items with the specified system value
-         * will be returned.  Valid values are built in, custom (for user defined items), or
-         * all (for all items, regardless of system value).
-         *
+         * The system value used for filtering. Only items with the specified system value will be
+         * returned. Valid values are built in, custom (for user defined items), or all (for all
+         * items, regardless of system value).
          */
         private IsSystem isSystem = null;
 
         /**
-         * The system value used for filtering.  Only items with the specified system value
-         * will be returned.  Valid values are built in, custom (for user defined items), or
-         * all (for all items, regardless of system value).
+         * The system value used for filtering. Only items with the specified system value will be
+         * returned. Valid values are built in, custom (for user defined items), or all (for all
+         * items, regardless of system value).
          *
          * @param isSystem the value to set
          * @return this builder instance
@@ -330,15 +281,14 @@ public class ListSourceEventTypesRequest
         }
 
         /**
-         * The enabled flag used for filtering.  Only items with the specified enabled value
-         * will be returned.
-         *
+         * The enabled flag used for filtering. Only items with the specified enabled value will be
+         * returned.
          */
         private Boolean isEnabled = null;
 
         /**
-         * The enabled flag used for filtering.  Only items with the specified enabled value
-         * will be returned.
+         * The enabled flag used for filtering. Only items with the specified enabled value will be
+         * returned.
          *
          * @param isEnabled the value to set
          * @return this builder instance
@@ -348,13 +298,12 @@ public class ListSourceEventTypesRequest
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -364,12 +313,15 @@ public class ListSourceEventTypesRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -378,13 +330,12 @@ public class ListSourceEventTypesRequest
             return this;
         }
 
-        /**
-         * The attribute used to sort the returned source event types.
-         */
+        /** The attribute used to sort the returned source event types. */
         private SortBy sortBy = null;
 
         /**
          * The attribute used to sort the returned source event types.
+         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -393,10 +344,7 @@ public class ListSourceEventTypesRequest
             return this;
         }
 
-        /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-         *
-         */
+        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
         private SortOrder sortOrder = null;
 
         /**
@@ -410,13 +358,12 @@ public class ListSourceEventTypesRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -427,18 +374,19 @@ public class ListSourceEventTypesRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -450,6 +398,7 @@ public class ListSourceEventTypesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListSourceEventTypesRequest o) {
@@ -471,10 +420,11 @@ public class ListSourceEventTypesRequest
         /**
          * Build the instance of ListSourceEventTypesRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListSourceEventTypesRequest
          */
@@ -488,7 +438,8 @@ public class ListSourceEventTypesRequest
         /**
          * Build the instance of ListSourceEventTypesRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListSourceEventTypesRequest
@@ -506,12 +457,14 @@ public class ListSourceEventTypesRequest
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListSourceEventTypesRequest(namespaceName, sourceName, displayText, isSystem, isEnabled, limit, page, sortBy, sortOrder, opcRequestId);
+            // new ListSourceEventTypesRequest(namespaceName, sourceName, displayText, isSystem,
+            // isEnabled, limit, page, sortBy, sortOrder, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -530,6 +483,7 @@ public class ListSourceEventTypesRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

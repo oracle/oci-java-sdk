@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.budget.model;
 
-/**
- * The type of the budget processing period. Valid values are INVOICE and MONTH.
- **/
+/** The type of the budget processing period. Valid values are INVOICE and MONTH. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
-public enum ProcessingPeriodType {
+public enum ProcessingPeriodType implements com.oracle.bmc.http.internal.BmcEnum {
     Invoice("INVOICE"),
     Month("MONTH"),
 

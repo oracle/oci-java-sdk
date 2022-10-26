@@ -5,19 +5,20 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Partial information about a host which includes id, name, type.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Partial information about a host which includes id, name, type. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HostDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HostDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class HostDetails extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -46,104 +47,108 @@ public final class HostDetails extends com.oracle.bmc.http.internal.ExplicitlySe
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the host.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the host.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The host name. The host name is unique amongst the hosts managed by the same management agent.
-         **/
+         * The host name. The host name is unique amongst the hosts managed by the same management
+         * agent.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
         /**
-         * The host name. The host name is unique amongst the hosts managed by the same management agent.
+         * The host name. The host name is unique amongst the hosts managed by the same management
+         * agent.
+         *
          * @param hostName the value to set
          * @return this builder
-         **/
+         */
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-        /**
-         * The user-friendly name for the host. The name does not have to be unique.
-         **/
+        /** The user-friendly name for the host. The name does not have to be unique. */
         @com.fasterxml.jackson.annotation.JsonProperty("hostDisplayName")
         private String hostDisplayName;
 
         /**
          * The user-friendly name for the host. The name does not have to be unique.
+         *
          * @param hostDisplayName the value to set
          * @return this builder
-         **/
+         */
         public Builder hostDisplayName(String hostDisplayName) {
             this.hostDisplayName = hostDisplayName;
             this.__explicitlySet__.add("hostDisplayName");
             return this;
         }
         /**
-         * Platform type.
-         * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
-         *
-         **/
+         * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported
+         * platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("platformType")
         private PlatformType platformType;
 
         /**
-         * Platform type.
-         * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported
+         * platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
          *
          * @param platformType the value to set
          * @return this builder
-         **/
+         */
         public Builder platformType(PlatformType platformType) {
             this.platformType = platformType;
             this.__explicitlySet__.add("platformType");
             return this;
         }
-        /**
-         * The identifier of the agent.
-         **/
+        /** The identifier of the agent. */
         @com.fasterxml.jackson.annotation.JsonProperty("agentIdentifier")
         private String agentIdentifier;
 
         /**
          * The identifier of the agent.
+         *
          * @param agentIdentifier the value to set
          * @return this builder
-         **/
+         */
         public Builder agentIdentifier(String agentIdentifier) {
             this.agentIdentifier = agentIdentifier;
             this.__explicitlySet__.add("agentIdentifier");
@@ -192,9 +197,7 @@ public final class HostDetails extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -204,77 +207,83 @@ public final class HostDetails extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the host.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the host.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The host name. The host name is unique amongst the hosts managed by the same management agent.
-     **/
+     * The host name. The host name is unique amongst the hosts managed by the same management
+     * agent.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
-     * The host name. The host name is unique amongst the hosts managed by the same management agent.
+     * The host name. The host name is unique amongst the hosts managed by the same management
+     * agent.
+     *
      * @return the value
-     **/
+     */
     public String getHostName() {
         return hostName;
     }
 
-    /**
-     * The user-friendly name for the host. The name does not have to be unique.
-     **/
+    /** The user-friendly name for the host. The name does not have to be unique. */
     @com.fasterxml.jackson.annotation.JsonProperty("hostDisplayName")
     private final String hostDisplayName;
 
     /**
      * The user-friendly name for the host. The name does not have to be unique.
+     *
      * @return the value
-     **/
+     */
     public String getHostDisplayName() {
         return hostDisplayName;
     }
 
     /**
-     * Platform type.
-     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
-     *
-     **/
-    public enum PlatformType {
+     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported
+     * platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     */
+    public enum PlatformType implements com.oracle.bmc.http.internal.BmcEnum {
         Linux("LINUX"),
         Solaris("SOLARIS"),
         Sunos("SUNOS"),
         Zlinux("ZLINUX"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -314,37 +323,33 @@ public final class HostDetails extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     };
     /**
-     * Platform type.
-     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
-     *
-     **/
+     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported
+     * platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     private final PlatformType platformType;
 
     /**
-     * Platform type.
-     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported
+     * platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
      *
      * @return the value
-     **/
+     */
     public PlatformType getPlatformType() {
         return platformType;
     }
 
-    /**
-     * The identifier of the agent.
-     **/
+    /** The identifier of the agent. */
     @com.fasterxml.jackson.annotation.JsonProperty("agentIdentifier")
     private final String agentIdentifier;
 
     /**
      * The identifier of the agent.
+     *
      * @return the value
-     **/
+     */
     public String getAgentIdentifier() {
         return agentIdentifier;
     }
@@ -356,6 +361,7 @@ public final class HostDetails extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

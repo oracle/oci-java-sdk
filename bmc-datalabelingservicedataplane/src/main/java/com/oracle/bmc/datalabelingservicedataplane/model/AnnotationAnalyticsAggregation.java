@@ -5,22 +5,26 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * Aggregation entities are required by the API consistency guidelines for API Consistency Guidelines#AnalyticsAPIs.  These are used to summarize annotations for a given dataset and will be used to populate UI elements.  Aggregations need to have the fields that identify the exact scope that they're summarizing.  Any filters applied to the list API, have to show up in the aggregation.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Aggregation entities are required by the API consistency guidelines for API Consistency
+ * Guidelines#AnalyticsAPIs. These are used to summarize annotations for a given dataset and will be
+ * used to populate UI elements. Aggregations need to have the fields that identify the exact scope
+ * that they're summarizing. Any filters applied to the list API, have to show up in the
+ * aggregation. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AnnotationAnalyticsAggregation.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AnnotationAnalyticsAggregation.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AnnotationAnalyticsAggregation
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "count",
@@ -48,33 +52,31 @@ public final class AnnotationAnalyticsAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The count of the matching results.
-         **/
+        /** The count of the matching results. */
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private java.math.BigDecimal count;
 
         /**
          * The count of the matching results.
+         *
          * @param count the value to set
          * @return this builder
-         **/
+         */
         public Builder count(java.math.BigDecimal count) {
             this.count = count;
             this.__explicitlySet__.add("count");
             return this;
         }
-        /**
-         * The OCID of the dataset the annotations belong to.
-         **/
+        /** The OCID of the dataset the annotations belong to. */
         @com.fasterxml.jackson.annotation.JsonProperty("datasetId")
         private String datasetId;
 
         /**
          * The OCID of the dataset the annotations belong to.
+         *
          * @param datasetId the value to set
          * @return this builder
-         **/
+         */
         public Builder datasetId(String datasetId) {
             this.datasetId = datasetId;
             this.__explicitlySet__.add("datasetId");
@@ -89,49 +91,46 @@ public final class AnnotationAnalyticsAggregation
             this.__explicitlySet__.add("dimensions");
             return this;
         }
-        /**
-         * The OCID of the principal which updated the annotation.
-         **/
+        /** The OCID of the principal which updated the annotation. */
         @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
         private String updatedBy;
 
         /**
          * The OCID of the principal which updated the annotation.
+         *
          * @param updatedBy the value to set
          * @return this builder
-         **/
+         */
         public Builder updatedBy(String updatedBy) {
             this.updatedBy = updatedBy;
             this.__explicitlySet__.add("updatedBy");
             return this;
         }
-        /**
-         * The OCID of the compartment containing the annotations.
-         **/
+        /** The OCID of the compartment containing the annotations. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment containing the annotations.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * Describes the lifecycle state.
-         **/
+        /** Describes the lifecycle state. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Annotation.LifecycleState lifecycleState;
 
         /**
          * Describes the lifecycle state.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(Annotation.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -180,9 +179,7 @@ public final class AnnotationAnalyticsAggregation
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -191,30 +188,28 @@ public final class AnnotationAnalyticsAggregation
         return new Builder().copy(this);
     }
 
-    /**
-     * The count of the matching results.
-     **/
+    /** The count of the matching results. */
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final java.math.BigDecimal count;
 
     /**
      * The count of the matching results.
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getCount() {
         return count;
     }
 
-    /**
-     * The OCID of the dataset the annotations belong to.
-     **/
+    /** The OCID of the dataset the annotations belong to. */
     @com.fasterxml.jackson.annotation.JsonProperty("datasetId")
     private final String datasetId;
 
     /**
      * The OCID of the dataset the annotations belong to.
+     *
      * @return the value
-     **/
+     */
     public String getDatasetId() {
         return datasetId;
     }
@@ -226,44 +221,41 @@ public final class AnnotationAnalyticsAggregation
         return dimensions;
     }
 
-    /**
-     * The OCID of the principal which updated the annotation.
-     **/
+    /** The OCID of the principal which updated the annotation. */
     @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
     private final String updatedBy;
 
     /**
      * The OCID of the principal which updated the annotation.
+     *
      * @return the value
-     **/
+     */
     public String getUpdatedBy() {
         return updatedBy;
     }
 
-    /**
-     * The OCID of the compartment containing the annotations.
-     **/
+    /** The OCID of the compartment containing the annotations. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment containing the annotations.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * Describes the lifecycle state.
-     **/
+    /** Describes the lifecycle state. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Annotation.LifecycleState lifecycleState;
 
     /**
      * Describes the lifecycle state.
+     *
      * @return the value
-     **/
+     */
     public Annotation.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -275,6 +267,7 @@ public final class AnnotationAnalyticsAggregation
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

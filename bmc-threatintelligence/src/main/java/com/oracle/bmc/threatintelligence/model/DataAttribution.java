@@ -5,19 +5,23 @@
 package com.oracle.bmc.threatintelligence.model;
 
 /**
- * The confidence, source information, and visibility for a particular sighting or observation of some data associated with a threat indicator. This associated data can be the indicator's threat type, attribute, or relationship.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The confidence, source information, and visibility for a particular sighting or observation of
+ * some data associated with a threat indicator. This associated data can be the indicator's threat
+ * type, attribute, or relationship. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DataAttribution.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DataAttribution extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class DataAttribution
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "confidence",
@@ -43,16 +47,23 @@ public final class DataAttribution extends com.oracle.bmc.http.internal.Explicit
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * An integer from 0 to 100 that provides a measure of our certainty in the maliciousness of data attributed to an indicator. For example, if the source of the data being attributed is the Tor Project, our confidence that the associated indicator is a tor exit node would be 100.
-         **/
+         * An integer from 0 to 100 that provides a measure of our certainty in the maliciousness of
+         * data attributed to an indicator. For example, if the source of the data being attributed
+         * is the Tor Project, our confidence that the associated indicator is a tor exit node would
+         * be 100.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Integer confidence;
 
         /**
-         * An integer from 0 to 100 that provides a measure of our certainty in the maliciousness of data attributed to an indicator. For example, if the source of the data being attributed is the Tor Project, our confidence that the associated indicator is a tor exit node would be 100.
+         * An integer from 0 to 100 that provides a measure of our certainty in the maliciousness of
+         * data attributed to an indicator. For example, if the source of the data being attributed
+         * is the Tor Project, our confidence that the associated indicator is a tor exit node would
+         * be 100.
+         *
          * @param confidence the value to set
          * @return this builder
-         **/
+         */
         public Builder confidence(Integer confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
@@ -77,32 +88,40 @@ public final class DataAttribution extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The date and time the attribution data was first seen for this entity. If the data source does not provide this information, it is set to the last time it was seen. An RFC3339 formatted string.
-         **/
+         * The date and time the attribution data was first seen for this entity. If the data source
+         * does not provide this information, it is set to the last time it was seen. An RFC3339
+         * formatted string.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeFirstSeen")
         private java.util.Date timeFirstSeen;
 
         /**
-         * The date and time the attribution data was first seen for this entity. If the data source does not provide this information, it is set to the last time it was seen. An RFC3339 formatted string.
+         * The date and time the attribution data was first seen for this entity. If the data source
+         * does not provide this information, it is set to the last time it was seen. An RFC3339
+         * formatted string.
+         *
          * @param timeFirstSeen the value to set
          * @return this builder
-         **/
+         */
         public Builder timeFirstSeen(java.util.Date timeFirstSeen) {
             this.timeFirstSeen = timeFirstSeen;
             this.__explicitlySet__.add("timeFirstSeen");
             return this;
         }
         /**
-         * The last date and time the attribution data was seen for this entity. An RFC3339 formatted string.
-         **/
+         * The last date and time the attribution data was seen for this entity. An RFC3339
+         * formatted string.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
         private java.util.Date timeLastSeen;
 
         /**
-         * The last date and time the attribution data was seen for this entity. An RFC3339 formatted string.
+         * The last date and time the attribution data was seen for this entity. An RFC3339
+         * formatted string.
+         *
          * @param timeLastSeen the value to set
          * @return this builder
-         **/
+         */
         public Builder timeLastSeen(java.util.Date timeLastSeen) {
             this.timeLastSeen = timeLastSeen;
             this.__explicitlySet__.add("timeLastSeen");
@@ -147,9 +166,7 @@ public final class DataAttribution extends com.oracle.bmc.http.internal.Explicit
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -159,15 +176,22 @@ public final class DataAttribution extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * An integer from 0 to 100 that provides a measure of our certainty in the maliciousness of data attributed to an indicator. For example, if the source of the data being attributed is the Tor Project, our confidence that the associated indicator is a tor exit node would be 100.
-     **/
+     * An integer from 0 to 100 that provides a measure of our certainty in the maliciousness of
+     * data attributed to an indicator. For example, if the source of the data being attributed is
+     * the Tor Project, our confidence that the associated indicator is a tor exit node would be
+     * 100.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Integer confidence;
 
     /**
-     * An integer from 0 to 100 that provides a measure of our certainty in the maliciousness of data attributed to an indicator. For example, if the source of the data being attributed is the Tor Project, our confidence that the associated indicator is a tor exit node would be 100.
+     * An integer from 0 to 100 that provides a measure of our certainty in the maliciousness of
+     * data attributed to an indicator. For example, if the source of the data being attributed is
+     * the Tor Project, our confidence that the associated indicator is a tor exit node would be
+     * 100.
+     *
      * @return the value
-     **/
+     */
     public Integer getConfidence() {
         return confidence;
     }
@@ -187,29 +211,37 @@ public final class DataAttribution extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The date and time the attribution data was first seen for this entity. If the data source does not provide this information, it is set to the last time it was seen. An RFC3339 formatted string.
-     **/
+     * The date and time the attribution data was first seen for this entity. If the data source
+     * does not provide this information, it is set to the last time it was seen. An RFC3339
+     * formatted string.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstSeen")
     private final java.util.Date timeFirstSeen;
 
     /**
-     * The date and time the attribution data was first seen for this entity. If the data source does not provide this information, it is set to the last time it was seen. An RFC3339 formatted string.
+     * The date and time the attribution data was first seen for this entity. If the data source
+     * does not provide this information, it is set to the last time it was seen. An RFC3339
+     * formatted string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeFirstSeen() {
         return timeFirstSeen;
     }
 
     /**
-     * The last date and time the attribution data was seen for this entity. An RFC3339 formatted string.
-     **/
+     * The last date and time the attribution data was seen for this entity. An RFC3339 formatted
+     * string.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
     private final java.util.Date timeLastSeen;
 
     /**
-     * The last date and time the attribution data was seen for this entity. An RFC3339 formatted string.
+     * The last date and time the attribution data was seen for this entity. An RFC3339 formatted
+     * string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeLastSeen() {
         return timeLastSeen;
     }
@@ -221,6 +253,7 @@ public final class DataAttribution extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

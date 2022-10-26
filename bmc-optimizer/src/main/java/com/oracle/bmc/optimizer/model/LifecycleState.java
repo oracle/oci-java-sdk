@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.optimizer.model;
 
-/**
- * Possible lifecycle states.
- **/
+/** Possible lifecycle states. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-public enum LifecycleState {
+public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Active("ACTIVE"),
     Failed("FAILED"),
     Inactive("INACTIVE"),

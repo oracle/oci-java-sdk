@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.containerengine.model;
 
-/**
- * The types of work request operations.
- **/
+/** The types of work request operations. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
-public enum WorkRequestOperationType {
+public enum WorkRequestOperationType implements com.oracle.bmc.http.internal.BmcEnum {
     ClusterCreate("CLUSTER_CREATE"),
     ClusterUpdate("CLUSTER_UPDATE"),
     ClusterDelete("CLUSTER_DELETE"),

@@ -62,13 +62,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Sample to demonstrate how to add, update, delete, and list statements in a DRG Route Distribution for managing
- * dynamic route rules in DRG Route Tables
- * <p>
+ * Sample to demonstrate how to add, update, delete, and list statements in a DRG Route Distribution
+ * for managing dynamic route rules in DRG Route Tables
  *
- *  Details information on DRG: https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/managingDRGs.htm
+ * <p>Details information on DRG:
+ * https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/managingDRGs.htm
  *
- *  Details DrgRouteDistribution API: https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/DrgRouteDistribution
+ * <p>Details DrgRouteDistribution API:
+ * https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/DrgRouteDistribution
  */
 public class DRGRouteDistributionExample {
     private static final String TIMESTAMP_SUFFIX =
@@ -96,8 +97,10 @@ public class DRGRouteDistributionExample {
         VCN_CIDR_1 = args[1];
         VCN_CIDR_2 = args[2];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -350,8 +353,7 @@ public class DRGRouteDistributionExample {
                                         .displayName(
                                                 String.format(
                                                         "Drg-%s-%s",
-                                                        region.getRegionId(),
-                                                        TIMESTAMP_SUFFIX))
+                                                        region.getRegionId(), TIMESTAMP_SUFFIX))
                                         .build())
                         .build();
 
@@ -432,8 +434,7 @@ public class DRGRouteDistributionExample {
                                         .displayName(
                                                 String.format(
                                                         "DrgAttachment-%s-%s",
-                                                        region.getRegionId(),
-                                                        TIMESTAMP_SUFFIX))
+                                                        region.getRegionId(), TIMESTAMP_SUFFIX))
                                         .drgId(drg.getId())
                                         .vcnId(vcn.getId())
                                         .build())
@@ -457,7 +458,6 @@ public class DRGRouteDistributionExample {
      *
      * @param vcnClient the service client to use to delete the VCN
      * @param vcn the VCN to delete
-     *
      * @throws Exception if there is an error waiting on the VCN to be deleted
      */
     private static void deleteVcn(final VirtualNetworkClient vcnClient, final Vcn vcn)

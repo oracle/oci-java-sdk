@@ -5,30 +5,27 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * A library masking format to be used for masking. It can be either a
- * predefined or a user-defined library masking format. It enables reuse
- * of an existing library masking format and helps avoid defining the masking
- * logic again. Use the ListLibraryMaskingFormats operation to view the
- * existing library masking formats.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A library masking format to be used for masking. It can be either a predefined or a user-defined
+ * library masking format. It enables reuse of an existing library masking format and helps avoid
+ * defining the masking logic again. Use the ListLibraryMaskingFormats operation to view the
+ * existing library masking formats. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = LibraryMaskingFormatEntry.Builder.class
-)
+        builder = LibraryMaskingFormatEntry.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class LibraryMaskingFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -40,17 +37,16 @@ public final class LibraryMaskingFormatEntry extends FormatEntry {
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The OCID of the library masking format.
-         **/
+        /** The OCID of the library masking format. */
         @com.fasterxml.jackson.annotation.JsonProperty("libraryMaskingFormatId")
         private String libraryMaskingFormatId;
 
         /**
          * The OCID of the library masking format.
+         *
          * @param libraryMaskingFormatId the value to set
          * @return this builder
-         **/
+         */
         public Builder libraryMaskingFormatId(String libraryMaskingFormatId) {
             this.libraryMaskingFormatId = libraryMaskingFormatId;
             this.__explicitlySet__.add("libraryMaskingFormatId");
@@ -81,9 +77,7 @@ public final class LibraryMaskingFormatEntry extends FormatEntry {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -98,16 +92,15 @@ public final class LibraryMaskingFormatEntry extends FormatEntry {
         this.libraryMaskingFormatId = libraryMaskingFormatId;
     }
 
-    /**
-     * The OCID of the library masking format.
-     **/
+    /** The OCID of the library masking format. */
     @com.fasterxml.jackson.annotation.JsonProperty("libraryMaskingFormatId")
     private final String libraryMaskingFormatId;
 
     /**
      * The OCID of the library masking format.
+     *
      * @return the value
-     **/
+     */
     public String getLibraryMaskingFormatId() {
         return libraryMaskingFormatId;
     }
@@ -119,6 +112,7 @@ public final class LibraryMaskingFormatEntry extends FormatEntry {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

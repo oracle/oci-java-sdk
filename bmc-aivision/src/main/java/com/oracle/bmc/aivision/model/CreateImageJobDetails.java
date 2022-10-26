@@ -5,22 +5,22 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * The details of the batch image analysis.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details of the batch image analysis. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateImageJobDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateImageJobDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateImageJobDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "inputLocation",
@@ -57,17 +57,16 @@ public final class CreateImageJobDetails
             this.__explicitlySet__.add("inputLocation");
             return this;
         }
-        /**
-         * The list of requested image analysis types.
-         **/
+        /** The list of requested image analysis types. */
         @com.fasterxml.jackson.annotation.JsonProperty("features")
         private java.util.List<ImageFeature> features;
 
         /**
          * The list of requested image analysis types.
+         *
          * @param features the value to set
          * @return this builder
-         **/
+         */
         public Builder features(java.util.List<ImageFeature> features) {
             this.features = features;
             this.__explicitlySet__.add("features");
@@ -82,49 +81,46 @@ public final class CreateImageJobDetails
             this.__explicitlySet__.add("outputLocation");
             return this;
         }
-        /**
-         * The compartment identifier from the requester.
-         **/
+        /** The compartment identifier from the requester. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The compartment identifier from the requester.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The image job display name.
-         **/
+        /** The image job display name. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The image job display name.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Whether or not to generate a ZIP file containing the results.
-         **/
+        /** Whether or not to generate a ZIP file containing the results. */
         @com.fasterxml.jackson.annotation.JsonProperty("isZipOutputEnabled")
         private Boolean isZipOutputEnabled;
 
         /**
          * Whether or not to generate a ZIP file containing the results.
+         *
          * @param isZipOutputEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isZipOutputEnabled(Boolean isZipOutputEnabled) {
             this.isZipOutputEnabled = isZipOutputEnabled;
             this.__explicitlySet__.add("isZipOutputEnabled");
@@ -173,9 +169,7 @@ public final class CreateImageJobDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -191,16 +185,15 @@ public final class CreateImageJobDetails
         return inputLocation;
     }
 
-    /**
-     * The list of requested image analysis types.
-     **/
+    /** The list of requested image analysis types. */
     @com.fasterxml.jackson.annotation.JsonProperty("features")
     private final java.util.List<ImageFeature> features;
 
     /**
      * The list of requested image analysis types.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<ImageFeature> getFeatures() {
         return features;
     }
@@ -212,44 +205,41 @@ public final class CreateImageJobDetails
         return outputLocation;
     }
 
-    /**
-     * The compartment identifier from the requester.
-     **/
+    /** The compartment identifier from the requester. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The compartment identifier from the requester.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The image job display name.
-     **/
+    /** The image job display name. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The image job display name.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Whether or not to generate a ZIP file containing the results.
-     **/
+    /** Whether or not to generate a ZIP file containing the results. */
     @com.fasterxml.jackson.annotation.JsonProperty("isZipOutputEnabled")
     private final Boolean isZipOutputEnabled;
 
     /**
      * Whether or not to generate a ZIP file containing the results.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsZipOutputEnabled() {
         return isZipOutputEnabled;
     }
@@ -261,6 +251,7 @@ public final class CreateImageJobDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

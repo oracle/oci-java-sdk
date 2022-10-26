@@ -5,22 +5,22 @@
 package com.oracle.bmc.osmanagement.model;
 
 /**
- * Information to update a managed instance
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Information to update a managed instance <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateManagedInstanceDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateManagedInstanceDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateManagedInstanceDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"notificationTopicId", "isDataCollectionAuthorized"})
     public UpdateManagedInstanceDetails(
@@ -32,33 +32,31 @@ public final class UpdateManagedInstanceDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * OCID of the ONS topic used to send notification to users
-         **/
+        /** OCID of the ONS topic used to send notification to users */
         @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
         private String notificationTopicId;
 
         /**
          * OCID of the ONS topic used to send notification to users
+         *
          * @param notificationTopicId the value to set
          * @return this builder
-         **/
+         */
         public Builder notificationTopicId(String notificationTopicId) {
             this.notificationTopicId = notificationTopicId;
             this.__explicitlySet__.add("notificationTopicId");
             return this;
         }
-        /**
-         * True if user allow data collection for this instance
-         **/
+        /** True if user allow data collection for this instance */
         @com.fasterxml.jackson.annotation.JsonProperty("isDataCollectionAuthorized")
         private Boolean isDataCollectionAuthorized;
 
         /**
          * True if user allow data collection for this instance
+         *
          * @param isDataCollectionAuthorized the value to set
          * @return this builder
-         **/
+         */
         public Builder isDataCollectionAuthorized(Boolean isDataCollectionAuthorized) {
             this.isDataCollectionAuthorized = isDataCollectionAuthorized;
             this.__explicitlySet__.add("isDataCollectionAuthorized");
@@ -90,9 +88,7 @@ public final class UpdateManagedInstanceDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -101,30 +97,28 @@ public final class UpdateManagedInstanceDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * OCID of the ONS topic used to send notification to users
-     **/
+    /** OCID of the ONS topic used to send notification to users */
     @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
     private final String notificationTopicId;
 
     /**
      * OCID of the ONS topic used to send notification to users
+     *
      * @return the value
-     **/
+     */
     public String getNotificationTopicId() {
         return notificationTopicId;
     }
 
-    /**
-     * True if user allow data collection for this instance
-     **/
+    /** True if user allow data collection for this instance */
     @com.fasterxml.jackson.annotation.JsonProperty("isDataCollectionAuthorized")
     private final Boolean isDataCollectionAuthorized;
 
     /**
      * True if user allow data collection for this instance
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsDataCollectionAuthorized() {
         return isDataCollectionAuthorized;
     }
@@ -136,6 +130,7 @@ public final class UpdateManagedInstanceDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

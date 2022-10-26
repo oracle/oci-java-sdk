@@ -5,22 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Contact details for Exadata Infrastructure.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Contact details for Exadata Infrastructure. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ExadataInfrastructureContact.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ExadataInfrastructureContact.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ExadataInfrastructureContact
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -45,81 +45,86 @@ public final class ExadataInfrastructureContact
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the Exadata Infrastructure contact.
-         **/
+        /** The name of the Exadata Infrastructure contact. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the Exadata Infrastructure contact.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The phone number for the Exadata Infrastructure contact.
-         **/
+        /** The phone number for the Exadata Infrastructure contact. */
         @com.fasterxml.jackson.annotation.JsonProperty("phoneNumber")
         private String phoneNumber;
 
         /**
          * The phone number for the Exadata Infrastructure contact.
+         *
          * @param phoneNumber the value to set
          * @return this builder
-         **/
+         */
         public Builder phoneNumber(String phoneNumber) {
             this.phoneNumber = phoneNumber;
             this.__explicitlySet__.add("phoneNumber");
             return this;
         }
-        /**
-         * The email for the Exadata Infrastructure contact.
-         **/
+        /** The email for the Exadata Infrastructure contact. */
         @com.fasterxml.jackson.annotation.JsonProperty("email")
         private String email;
 
         /**
          * The email for the Exadata Infrastructure contact.
+         *
          * @param email the value to set
          * @return this builder
-         **/
+         */
         public Builder email(String email) {
             this.email = email;
             this.__explicitlySet__.add("email");
             return this;
         }
         /**
-         * If {@code true}, this Exadata Infrastructure contact is a primary contact. If {@code false}, this Exadata Infrastructure is a secondary contact.
-         **/
+         * If {@code true}, this Exadata Infrastructure contact is a primary contact. If {@code
+         * false}, this Exadata Infrastructure is a secondary contact.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
         private Boolean isPrimary;
 
         /**
-         * If {@code true}, this Exadata Infrastructure contact is a primary contact. If {@code false}, this Exadata Infrastructure is a secondary contact.
+         * If {@code true}, this Exadata Infrastructure contact is a primary contact. If {@code
+         * false}, this Exadata Infrastructure is a secondary contact.
+         *
          * @param isPrimary the value to set
          * @return this builder
-         **/
+         */
         public Builder isPrimary(Boolean isPrimary) {
             this.isPrimary = isPrimary;
             this.__explicitlySet__.add("isPrimary");
             return this;
         }
         /**
-         * If {@code true}, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If {@code false}, this Exadata Infrastructure contact is not a valid MOS contact.
-         **/
+         * If {@code true}, this Exadata Infrastructure contact is a valid My Oracle Support (MOS)
+         * contact. If {@code false}, this Exadata Infrastructure contact is not a valid MOS
+         * contact.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isContactMosValidated")
         private Boolean isContactMosValidated;
 
         /**
-         * If {@code true}, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If {@code false}, this Exadata Infrastructure contact is not a valid MOS contact.
+         * If {@code true}, this Exadata Infrastructure contact is a valid My Oracle Support (MOS)
+         * contact. If {@code false}, this Exadata Infrastructure contact is not a valid MOS
+         * contact.
+         *
          * @param isContactMosValidated the value to set
          * @return this builder
-         **/
+         */
         public Builder isContactMosValidated(Boolean isContactMosValidated) {
             this.isContactMosValidated = isContactMosValidated;
             this.__explicitlySet__.add("isContactMosValidated");
@@ -164,9 +169,7 @@ public final class ExadataInfrastructureContact
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -175,72 +178,75 @@ public final class ExadataInfrastructureContact
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the Exadata Infrastructure contact.
-     **/
+    /** The name of the Exadata Infrastructure contact. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the Exadata Infrastructure contact.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The phone number for the Exadata Infrastructure contact.
-     **/
+    /** The phone number for the Exadata Infrastructure contact. */
     @com.fasterxml.jackson.annotation.JsonProperty("phoneNumber")
     private final String phoneNumber;
 
     /**
      * The phone number for the Exadata Infrastructure contact.
+     *
      * @return the value
-     **/
+     */
     public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    /**
-     * The email for the Exadata Infrastructure contact.
-     **/
+    /** The email for the Exadata Infrastructure contact. */
     @com.fasterxml.jackson.annotation.JsonProperty("email")
     private final String email;
 
     /**
      * The email for the Exadata Infrastructure contact.
+     *
      * @return the value
-     **/
+     */
     public String getEmail() {
         return email;
     }
 
     /**
-     * If {@code true}, this Exadata Infrastructure contact is a primary contact. If {@code false}, this Exadata Infrastructure is a secondary contact.
-     **/
+     * If {@code true}, this Exadata Infrastructure contact is a primary contact. If {@code false},
+     * this Exadata Infrastructure is a secondary contact.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
     private final Boolean isPrimary;
 
     /**
-     * If {@code true}, this Exadata Infrastructure contact is a primary contact. If {@code false}, this Exadata Infrastructure is a secondary contact.
+     * If {@code true}, this Exadata Infrastructure contact is a primary contact. If {@code false},
+     * this Exadata Infrastructure is a secondary contact.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsPrimary() {
         return isPrimary;
     }
 
     /**
-     * If {@code true}, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If {@code false}, this Exadata Infrastructure contact is not a valid MOS contact.
-     **/
+     * If {@code true}, this Exadata Infrastructure contact is a valid My Oracle Support (MOS)
+     * contact. If {@code false}, this Exadata Infrastructure contact is not a valid MOS contact.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isContactMosValidated")
     private final Boolean isContactMosValidated;
 
     /**
-     * If {@code true}, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If {@code false}, this Exadata Infrastructure contact is not a valid MOS contact.
+     * If {@code true}, this Exadata Infrastructure contact is a valid My Oracle Support (MOS)
+     * contact. If {@code false}, this Exadata Infrastructure contact is not a valid MOS contact.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsContactMosValidated() {
         return isContactMosValidated;
     }
@@ -252,6 +258,7 @@ public final class ExadataInfrastructureContact
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,335 +4,40 @@
  */
 package com.oracle.bmc.keymanagement;
 
-import com.oracle.bmc.keymanagement.internal.http.*;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
+import java.util.Objects;
+
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-public class KmsManagementClient implements KmsManagement {
-    /**
-     * Service instance for KmsManagement.
-     */
+public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncClient
+        implements KmsManagement {
+    /** Service instance for KmsManagement. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("KMSMANAGEMENT")
                     .serviceEndpointPrefix("kms")
                     .serviceEndpointTemplate("https://kms.{region}.{secondLevelDomain}")
                     .build();
-    // attempt twice if it's instance principals, immediately failures will try to refresh the token
-    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(KmsManagementAsyncClient.class);
 
-    com.oracle.bmc.http.internal.RestClient getClient() {
-        return client;
-    }
-
     private final KmsManagementWaiters waiters;
 
     private final KmsManagementPaginators paginators;
-    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-            authenticationDetailsProvider;
-    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
-    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
-            apacheConnectionClosingStrategy;
-    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
-    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
-    private final java.util.Map<
-                    com.oracle.bmc.http.signing.SigningStrategy,
-                    com.oracle.bmc.http.signing.RequestSignerFactory>
-            signingStrategyRequestSignerFactories;
-    private final boolean isNonBufferingApacheClient;
-    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
-    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-            circuitBreakerConfiguration;
 
-    /**
-     * Used to synchronize any updates on the `this.client` object.
-     */
-    private final Object clientUpdate = new Object();
-
-    /**
-     * Stores the actual client object used to make the API calls.
-     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
-     *       For any writes to the object, please synchronize on `this.clientUpdate`.
-     */
-    private volatile com.oracle.bmc.http.internal.RestClient client;
-
-    /**
-     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
-     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
-     */
-    private volatile String overrideEndpoint = null;
-
-    /**
-     * Creates a new service instance using the given authentication provider.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     */
-    public KmsManagementClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     */
-    public KmsManagementClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(authenticationDetailsProvider, configuration, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     */
-    public KmsManagementClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     */
-    public KmsManagementClient(
+    private KmsManagementClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public KmsManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                additionalClientConfigurators,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public KmsManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
-                        .createDefaultRequestSignerFactories(),
-                additionalClientConfigurators,
-                endpoint);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public KmsManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
-     */
-    public KmsManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
             java.util.concurrent.ExecutorService executorService) {
-        this(
+        super(
+                builder,
                 authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                executorService,
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * Use the {@link Builder} to get access to all these parameters.
-     *
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
-     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
-     */
-    protected KmsManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            java.util.concurrent.ExecutorService executorService,
-            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
-        this.authenticationDetailsProvider = authenticationDetailsProvider;
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
-                new java.util.ArrayList<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
-            authenticationDetailsConfigurators.addAll(
-                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
-                                    this.authenticationDetailsProvider)
-                            .getClientConfigurators());
-        }
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
-                new java.util.ArrayList<>(additionalClientConfigurators);
-        allConfigurators.addAll(authenticationDetailsConfigurators);
-        this.restClientFactory =
-                restClientFactoryBuilder
-                        .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(allConfigurators)
-                        .build();
-        this.isNonBufferingApacheClient =
-                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        this.restClientFactory.getClientConfigurator());
-        this.apacheConnectionClosingStrategy =
-                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
-                        restClientFactory.getClientConfigurator());
-
-        this.clientConfigurationToUse =
-                (configuration != null)
-                        ? configuration
-                        : com.oracle.bmc.ClientConfiguration.builder().build();
-        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
-        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
-        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
-        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-                userCircuitBreakerConfiguration =
-                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
-                                configuration);
-        if (userCircuitBreakerConfiguration == null) {
-            this.circuitBreakerConfiguration =
-                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
-        } else {
-            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
-        }
-
-        this.refreshClient();
+                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -354,14 +59,11 @@ public class KmsManagementClient implements KmsManagement {
         this.waiters = new KmsManagementWaiters(executorService, this);
 
         this.paginators = new KmsManagementPaginators(this);
-
-        if (endpoint != null) {
-            setEndpoint(endpoint);
-        }
     }
 
     /**
      * Create a builder for this client.
+     *
      * @return builder
      */
     public static com.oracle.bmc.keymanagement.KmsManagementClientBuilder builder() {
@@ -369,866 +71,624 @@ public class KmsManagementClient implements KmsManagement {
     }
 
     @Override
-    public void refreshClient() {
-        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                this.defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        this.signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
-            }
-        }
-
-        com.oracle.bmc.http.internal.RestClient refreshedClient =
-                this.restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        this.clientConfigurationToUse,
-                        this.isNonBufferingApacheClient,
-                        null,
-                        this.circuitBreakerConfiguration);
-
-        synchronized (clientUpdate) {
-            if (this.overrideEndpoint != null) {
-                refreshedClient.setEndpoint(this.overrideEndpoint);
-            }
-
-            this.client = refreshedClient;
-        }
-
-        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint) {
-        LOG.info("Setting endpoint to {}", endpoint);
-
-        synchronized (clientUpdate) {
-            this.overrideEndpoint = endpoint;
-            client.setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
-        }
-        return endpoint;
-    }
-
-    @Override
-    public void close() {
-        client.close();
-    }
-
-    @Override
     public BackupKeyResponse backupKey(BackupKeyRequest request) {
-        LOG.trace("Called backupKey");
-        final BackupKeyRequest interceptedRequest = BackupKeyConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                BackupKeyConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "BackupKey", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, BackupKeyResponse> transformer =
-                BackupKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getBackupKeyDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getKeyId(), "keyId must not be blank");
+
+        return clientCall(request, BackupKeyResponse::builder)
+                .logger(LOG, "backupKey")
+                .serviceDetails("KmsManagement", "BackupKey", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BackupKeyRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("keys")
+                .appendPathParam(request.getKeyId())
+                .appendPathParam("actions")
+                .appendPathParam("backup")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.keymanagement.model.Key.class,
+                        BackupKeyResponse.Builder::key)
+                .handleResponseHeaderString("etag", BackupKeyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", BackupKeyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", BackupKeyResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public CancelKeyDeletionResponse cancelKeyDeletion(CancelKeyDeletionRequest request) {
-        LOG.trace("Called cancelKeyDeletion");
-        final CancelKeyDeletionRequest interceptedRequest =
-                CancelKeyDeletionConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CancelKeyDeletionConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "CancelKeyDeletion", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, CancelKeyDeletionResponse>
-                transformer =
-                        CancelKeyDeletionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getKeyId(), "keyId must not be blank");
+
+        return clientCall(request, CancelKeyDeletionResponse::builder)
+                .logger(LOG, "cancelKeyDeletion")
+                .serviceDetails("KmsManagement", "CancelKeyDeletion", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelKeyDeletionRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("keys")
+                .appendPathParam(request.getKeyId())
+                .appendPathParam("actions")
+                .appendPathParam("cancelDeletion")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.keymanagement.model.Key.class,
+                        CancelKeyDeletionResponse.Builder::key)
+                .handleResponseHeaderString("etag", CancelKeyDeletionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelKeyDeletionResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CancelKeyVersionDeletionResponse cancelKeyVersionDeletion(
             CancelKeyVersionDeletionRequest request) {
-        LOG.trace("Called cancelKeyVersionDeletion");
-        final CancelKeyVersionDeletionRequest interceptedRequest =
-                CancelKeyVersionDeletionConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CancelKeyVersionDeletionConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement",
-                        "CancelKeyVersionDeletion",
-                        ib.getRequestUri().toString(),
-                        "");
-        java.util.function.Function<javax.ws.rs.core.Response, CancelKeyVersionDeletionResponse>
-                transformer =
-                        CancelKeyVersionDeletionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getKeyId(), "keyId must not be blank");
+
+        Validate.notBlank(request.getKeyVersionId(), "keyVersionId must not be blank");
+
+        return clientCall(request, CancelKeyVersionDeletionResponse::builder)
+                .logger(LOG, "cancelKeyVersionDeletion")
+                .serviceDetails("KmsManagement", "CancelKeyVersionDeletion", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelKeyVersionDeletionRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("keys")
+                .appendPathParam(request.getKeyId())
+                .appendPathParam("keyVersions")
+                .appendPathParam(request.getKeyVersionId())
+                .appendPathParam("actions")
+                .appendPathParam("cancelDeletion")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.keymanagement.model.KeyVersion.class,
+                        CancelKeyVersionDeletionResponse.Builder::keyVersion)
+                .handleResponseHeaderString("etag", CancelKeyVersionDeletionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelKeyVersionDeletionResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeKeyCompartmentResponse changeKeyCompartment(ChangeKeyCompartmentRequest request) {
-        LOG.trace("Called changeKeyCompartment");
-        final ChangeKeyCompartmentRequest interceptedRequest =
-                ChangeKeyCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeKeyCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "ChangeKeyCompartment", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, ChangeKeyCompartmentResponse>
-                transformer =
-                        ChangeKeyCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getChangeKeyCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getKeyId(), "keyId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeKeyCompartmentDetails(),
+                "changeKeyCompartmentDetails is required");
+
+        return clientCall(request, ChangeKeyCompartmentResponse::builder)
+                .logger(LOG, "changeKeyCompartment")
+                .serviceDetails("KmsManagement", "ChangeKeyCompartment", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeKeyCompartmentRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("keys")
+                .appendPathParam(request.getKeyId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString("etag", ChangeKeyCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeKeyCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateKeyResponse createKey(CreateKeyRequest request) {
-        LOG.trace("Called createKey");
-        final CreateKeyRequest interceptedRequest = CreateKeyConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateKeyConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCreateKeyDetails(), "createKeyDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "CreateKey", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateKeyResponse> transformer =
-                CreateKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateKeyDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        return clientCall(request, CreateKeyResponse::builder)
+                .logger(LOG, "createKey")
+                .serviceDetails("KmsManagement", "CreateKey", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateKeyRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("keys")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.keymanagement.model.Key.class,
+                        CreateKeyResponse.Builder::key)
+                .handleResponseHeaderString("etag", CreateKeyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateKeyResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateKeyVersionResponse createKeyVersion(CreateKeyVersionRequest request) {
-        LOG.trace("Called createKeyVersion");
-        final CreateKeyVersionRequest interceptedRequest =
-                CreateKeyVersionConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateKeyVersionConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "CreateKeyVersion", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateKeyVersionResponse>
-                transformer =
-                        CreateKeyVersionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getKeyId(), "keyId must not be blank");
+
+        return clientCall(request, CreateKeyVersionResponse::builder)
+                .logger(LOG, "createKeyVersion")
+                .serviceDetails("KmsManagement", "CreateKeyVersion", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateKeyVersionRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("keys")
+                .appendPathParam(request.getKeyId())
+                .appendPathParam("keyVersions")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.keymanagement.model.KeyVersion.class,
+                        CreateKeyVersionResponse.Builder::keyVersion)
+                .handleResponseHeaderString("etag", CreateKeyVersionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateKeyVersionResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DisableKeyResponse disableKey(DisableKeyRequest request) {
-        LOG.trace("Called disableKey");
-        final DisableKeyRequest interceptedRequest = DisableKeyConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DisableKeyConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "DisableKey", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, DisableKeyResponse> transformer =
-                DisableKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getKeyId(), "keyId must not be blank");
+
+        return clientCall(request, DisableKeyResponse::builder)
+                .logger(LOG, "disableKey")
+                .serviceDetails("KmsManagement", "DisableKey", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableKeyRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("keys")
+                .appendPathParam(request.getKeyId())
+                .appendPathParam("actions")
+                .appendPathParam("disable")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.keymanagement.model.Key.class,
+                        DisableKeyResponse.Builder::key)
+                .handleResponseHeaderString("etag", DisableKeyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", DisableKeyResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public EnableKeyResponse enableKey(EnableKeyRequest request) {
-        LOG.trace("Called enableKey");
-        final EnableKeyRequest interceptedRequest = EnableKeyConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                EnableKeyConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "EnableKey", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, EnableKeyResponse> transformer =
-                EnableKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getKeyId(), "keyId must not be blank");
+
+        return clientCall(request, EnableKeyResponse::builder)
+                .logger(LOG, "enableKey")
+                .serviceDetails("KmsManagement", "EnableKey", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableKeyRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("keys")
+                .appendPathParam(request.getKeyId())
+                .appendPathParam("actions")
+                .appendPathParam("enable")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.keymanagement.model.Key.class,
+                        EnableKeyResponse.Builder::key)
+                .handleResponseHeaderString("etag", EnableKeyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", EnableKeyResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetKeyResponse getKey(GetKeyRequest request) {
-        LOG.trace("Called getKey");
-        final GetKeyRequest interceptedRequest = GetKeyConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetKeyConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "GetKey", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, GetKeyResponse> transformer =
-                GetKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getKeyId(), "keyId must not be blank");
+
+        return clientCall(request, GetKeyResponse::builder)
+                .logger(LOG, "getKey")
+                .serviceDetails("KmsManagement", "GetKey", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetKeyRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("keys")
+                .appendPathParam(request.getKeyId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.keymanagement.model.Key.class, GetKeyResponse.Builder::key)
+                .handleResponseHeaderString("etag", GetKeyResponse.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", GetKeyResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetKeyVersionResponse getKeyVersion(GetKeyVersionRequest request) {
-        LOG.trace("Called getKeyVersion");
-        final GetKeyVersionRequest interceptedRequest =
-                GetKeyVersionConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetKeyVersionConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "GetKeyVersion", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, GetKeyVersionResponse> transformer =
-                GetKeyVersionConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getKeyId(), "keyId must not be blank");
+
+        Validate.notBlank(request.getKeyVersionId(), "keyVersionId must not be blank");
+
+        return clientCall(request, GetKeyVersionResponse::builder)
+                .logger(LOG, "getKeyVersion")
+                .serviceDetails("KmsManagement", "GetKeyVersion", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetKeyVersionRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("keys")
+                .appendPathParam(request.getKeyId())
+                .appendPathParam("keyVersions")
+                .appendPathParam(request.getKeyVersionId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.keymanagement.model.KeyVersion.class,
+                        GetKeyVersionResponse.Builder::keyVersion)
+                .handleResponseHeaderString("etag", GetKeyVersionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetKeyVersionResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetReplicationStatusResponse getReplicationStatus(GetReplicationStatusRequest request) {
-        LOG.trace("Called getReplicationStatus");
-        final GetReplicationStatusRequest interceptedRequest =
-                GetReplicationStatusConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetReplicationStatusConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "GetReplicationStatus", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, GetReplicationStatusResponse>
-                transformer =
-                        GetReplicationStatusConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getReplicationId(), "replicationId must not be blank");
+
+        return clientCall(request, GetReplicationStatusResponse::builder)
+                .logger(LOG, "getReplicationStatus")
+                .serviceDetails("KmsManagement", "GetReplicationStatus", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetReplicationStatusRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("replicaOperations")
+                .appendPathParam(request.getReplicationId())
+                .appendPathParam("status")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.keymanagement.model.ReplicationStatusDetails.class,
+                        GetReplicationStatusResponse.Builder::replicationStatusDetails)
+                .handleResponseHeaderString("etag", GetReplicationStatusResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetReplicationStatusResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public GetWrappingKeyResponse getWrappingKey(GetWrappingKeyRequest request) {
-        LOG.trace("Called getWrappingKey");
-        final GetWrappingKeyRequest interceptedRequest =
-                GetWrappingKeyConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetWrappingKeyConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "GetWrappingKey", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, GetWrappingKeyResponse> transformer =
-                GetWrappingKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        return clientCall(request, GetWrappingKeyResponse::builder)
+                .logger(LOG, "getWrappingKey")
+                .serviceDetails("KmsManagement", "GetWrappingKey", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetWrappingKeyRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("wrappingKeys")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.keymanagement.model.WrappingKey.class,
+                        GetWrappingKeyResponse.Builder::wrappingKey)
+                .handleResponseHeaderString("etag", GetWrappingKeyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetWrappingKeyResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ImportKeyResponse importKey(ImportKeyRequest request) {
-        LOG.trace("Called importKey");
-        final ImportKeyRequest interceptedRequest = ImportKeyConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ImportKeyConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getImportKeyDetails(), "importKeyDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "ImportKey", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, ImportKeyResponse> transformer =
-                ImportKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getImportKeyDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        return clientCall(request, ImportKeyResponse::builder)
+                .logger(LOG, "importKey")
+                .serviceDetails("KmsManagement", "ImportKey", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ImportKeyRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("keys")
+                .appendPathParam("import")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.keymanagement.model.Key.class,
+                        ImportKeyResponse.Builder::key)
+                .handleResponseHeaderString("etag", ImportKeyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ImportKeyResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ImportKeyVersionResponse importKeyVersion(ImportKeyVersionRequest request) {
-        LOG.trace("Called importKeyVersion");
-        final ImportKeyVersionRequest interceptedRequest =
-                ImportKeyVersionConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ImportKeyVersionConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "ImportKeyVersion", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, ImportKeyVersionResponse>
-                transformer =
-                        ImportKeyVersionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getImportKeyVersionDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getKeyId(), "keyId must not be blank");
+        Objects.requireNonNull(
+                request.getImportKeyVersionDetails(), "importKeyVersionDetails is required");
+
+        return clientCall(request, ImportKeyVersionResponse::builder)
+                .logger(LOG, "importKeyVersion")
+                .serviceDetails("KmsManagement", "ImportKeyVersion", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ImportKeyVersionRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("keys")
+                .appendPathParam(request.getKeyId())
+                .appendPathParam("keyVersions")
+                .appendPathParam("import")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.keymanagement.model.KeyVersion.class,
+                        ImportKeyVersionResponse.Builder::keyVersion)
+                .handleResponseHeaderString("etag", ImportKeyVersionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ImportKeyVersionResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListKeyVersionsResponse listKeyVersions(ListKeyVersionsRequest request) {
-        LOG.trace("Called listKeyVersions");
-        final ListKeyVersionsRequest interceptedRequest =
-                ListKeyVersionsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListKeyVersionsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "ListKeyVersions", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, ListKeyVersionsResponse>
-                transformer =
-                        ListKeyVersionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getKeyId(), "keyId must not be blank");
+
+        return clientCall(request, ListKeyVersionsResponse::builder)
+                .logger(LOG, "listKeyVersions")
+                .serviceDetails("KmsManagement", "ListKeyVersions", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListKeyVersionsRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("keys")
+                .appendPathParam(request.getKeyId())
+                .appendPathParam("keyVersions")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.keymanagement.model.KeyVersionSummary.class,
+                        ListKeyVersionsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListKeyVersionsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListKeyVersionsResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ListKeysResponse listKeys(ListKeysRequest request) {
-        LOG.trace("Called listKeys");
-        final ListKeysRequest interceptedRequest = ListKeysConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListKeysConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "ListKeys", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, ListKeysResponse> transformer =
-                ListKeysConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        return clientCall(request, ListKeysResponse::builder)
+                .logger(LOG, "listKeys")
+                .serviceDetails("KmsManagement", "ListKeys", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListKeysRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("keys")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("protectionMode", request.getProtectionMode())
+                .appendEnumQueryParam("algorithm", request.getAlgorithm())
+                .appendQueryParam("length", request.getLength())
+                .appendEnumQueryParam("curveId", request.getCurveId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.keymanagement.model.KeySummary.class,
+                        ListKeysResponse.Builder::items)
+                .handleResponseHeaderString("opc-next-page", ListKeysResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListKeysResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public RestoreKeyFromFileResponse restoreKeyFromFile(RestoreKeyFromFileRequest request) {
-        LOG.trace("Called restoreKeyFromFile");
-        try {
-            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                            request.getRetryConfiguration(), retryConfiguration, false);
-            if (request.getRetryConfiguration() != null
-                    || retryConfiguration != null
-                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
-                    || authenticationDetailsProvider
-                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-                request =
-                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
-                                request, RestoreKeyFromFileRequest.builder());
-            }
-            final RestoreKeyFromFileRequest interceptedRequest =
-                    RestoreKeyFromFileConverter.interceptRequest(request);
-            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                    RestoreKeyFromFileConverter.fromRequest(client, interceptedRequest);
-            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-            com.oracle.bmc.ServiceDetails serviceDetails =
-                    new com.oracle.bmc.ServiceDetails(
-                            "KmsManagement",
-                            "RestoreKeyFromFile",
-                            ib.getRequestUri().toString(),
-                            "");
-            java.util.function.Function<javax.ws.rs.core.Response, RestoreKeyFromFileResponse>
-                    transformer =
-                            RestoreKeyFromFileConverter.fromResponse(
-                                    java.util.Optional.of(serviceDetails));
-            return retrier.execute(
-                    interceptedRequest,
-                    retryRequest -> {
-                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                        authenticationDetailsProvider);
-                        return tokenRefreshRetrier.execute(
-                                retryRequest,
-                                retriedRequest -> {
-                                    try {
-                                        javax.ws.rs.core.Response response =
-                                                client.post(
-                                                        ib,
-                                                        retriedRequest
-                                                                .getRestoreKeyFromFileDetails(),
-                                                        retriedRequest);
-                                        return transformer.apply(response);
-                                    } catch (RuntimeException e) {
-                                        if (interceptedRequest.getRetryConfiguration() != null
-                                                || retryConfiguration != null
-                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
-                                                || (e instanceof com.oracle.bmc.model.BmcException
-                                                        && tokenRefreshRetrier
-                                                                .getRetryCondition()
-                                                                .shouldBeRetried(
-                                                                        (com.oracle.bmc.model
-                                                                                        .BmcException)
-                                                                                e))) {
-                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
-                                                    interceptedRequest
-                                                            .getRestoreKeyFromFileDetails(),
-                                                    true);
-                                        }
-                                        throw e; // rethrow
-                                    }
-                                });
-                    });
-        } finally {
-            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
-                    request.getRestoreKeyFromFileDetails());
-        }
+        Objects.requireNonNull(
+                request.getRestoreKeyFromFileDetails(), "restoreKeyFromFileDetails is required");
+
+        return clientCall(request, RestoreKeyFromFileResponse::builder)
+                .logger(LOG, "restoreKeyFromFile")
+                .serviceDetails("KmsManagement", "RestoreKeyFromFile", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RestoreKeyFromFileRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("keys")
+                .appendPathParam("actions")
+                .appendPathParam("restoreFromFile")
+                .accept("application/json")
+                .appendHeader("content-length", request.getContentLength())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("content-md5", request.getContentMd5())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.keymanagement.model.Key.class,
+                        RestoreKeyFromFileResponse.Builder::key)
+                .handleResponseHeaderString("etag", RestoreKeyFromFileResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-content-md5", RestoreKeyFromFileResponse.Builder::opcContentMd5)
+                .handleResponseHeaderString(
+                        "opc-request-id", RestoreKeyFromFileResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", RestoreKeyFromFileResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public RestoreKeyFromObjectStoreResponse restoreKeyFromObjectStore(
             RestoreKeyFromObjectStoreRequest request) {
-        LOG.trace("Called restoreKeyFromObjectStore");
-        final RestoreKeyFromObjectStoreRequest interceptedRequest =
-                RestoreKeyFromObjectStoreConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RestoreKeyFromObjectStoreConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement",
-                        "RestoreKeyFromObjectStore",
-                        ib.getRequestUri().toString(),
-                        "");
-        java.util.function.Function<javax.ws.rs.core.Response, RestoreKeyFromObjectStoreResponse>
-                transformer =
-                        RestoreKeyFromObjectStoreConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getRestoreKeyFromObjectStoreDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        return clientCall(request, RestoreKeyFromObjectStoreResponse::builder)
+                .logger(LOG, "restoreKeyFromObjectStore")
+                .serviceDetails("KmsManagement", "RestoreKeyFromObjectStore", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RestoreKeyFromObjectStoreRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("keys")
+                .appendPathParam("actions")
+                .appendPathParam("restoreFromObjectStore")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.keymanagement.model.Key.class,
+                        RestoreKeyFromObjectStoreResponse.Builder::key)
+                .handleResponseHeaderString("etag", RestoreKeyFromObjectStoreResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RestoreKeyFromObjectStoreResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RestoreKeyFromObjectStoreResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public ScheduleKeyDeletionResponse scheduleKeyDeletion(ScheduleKeyDeletionRequest request) {
-        LOG.trace("Called scheduleKeyDeletion");
-        final ScheduleKeyDeletionRequest interceptedRequest =
-                ScheduleKeyDeletionConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ScheduleKeyDeletionConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "ScheduleKeyDeletion", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, ScheduleKeyDeletionResponse>
-                transformer =
-                        ScheduleKeyDeletionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getScheduleKeyDeletionDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getKeyId(), "keyId must not be blank");
+        Objects.requireNonNull(
+                request.getScheduleKeyDeletionDetails(), "scheduleKeyDeletionDetails is required");
+
+        return clientCall(request, ScheduleKeyDeletionResponse::builder)
+                .logger(LOG, "scheduleKeyDeletion")
+                .serviceDetails("KmsManagement", "ScheduleKeyDeletion", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ScheduleKeyDeletionRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("keys")
+                .appendPathParam(request.getKeyId())
+                .appendPathParam("actions")
+                .appendPathParam("scheduleDeletion")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.keymanagement.model.Key.class,
+                        ScheduleKeyDeletionResponse.Builder::key)
+                .handleResponseHeaderString("etag", ScheduleKeyDeletionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ScheduleKeyDeletionResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ScheduleKeyVersionDeletionResponse scheduleKeyVersionDeletion(
             ScheduleKeyVersionDeletionRequest request) {
-        LOG.trace("Called scheduleKeyVersionDeletion");
-        final ScheduleKeyVersionDeletionRequest interceptedRequest =
-                ScheduleKeyVersionDeletionConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ScheduleKeyVersionDeletionConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement",
-                        "ScheduleKeyVersionDeletion",
-                        ib.getRequestUri().toString(),
-                        "");
-        java.util.function.Function<javax.ws.rs.core.Response, ScheduleKeyVersionDeletionResponse>
-                transformer =
-                        ScheduleKeyVersionDeletionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getScheduleKeyVersionDeletionDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getKeyId(), "keyId must not be blank");
+
+        Validate.notBlank(request.getKeyVersionId(), "keyVersionId must not be blank");
+        Objects.requireNonNull(
+                request.getScheduleKeyVersionDeletionDetails(),
+                "scheduleKeyVersionDeletionDetails is required");
+
+        return clientCall(request, ScheduleKeyVersionDeletionResponse::builder)
+                .logger(LOG, "scheduleKeyVersionDeletion")
+                .serviceDetails("KmsManagement", "ScheduleKeyVersionDeletion", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ScheduleKeyVersionDeletionRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("keys")
+                .appendPathParam(request.getKeyId())
+                .appendPathParam("keyVersions")
+                .appendPathParam(request.getKeyVersionId())
+                .appendPathParam("actions")
+                .appendPathParam("scheduleDeletion")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.keymanagement.model.KeyVersion.class,
+                        ScheduleKeyVersionDeletionResponse.Builder::keyVersion)
+                .handleResponseHeaderString(
+                        "etag", ScheduleKeyVersionDeletionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ScheduleKeyVersionDeletionResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateKeyResponse updateKey(UpdateKeyRequest request) {
-        LOG.trace("Called updateKey");
-        final UpdateKeyRequest interceptedRequest = UpdateKeyConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateKeyConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "UpdateKey", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateKeyResponse> transformer =
-                UpdateKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateKeyDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+        Validate.notBlank(request.getKeyId(), "keyId must not be blank");
+        Objects.requireNonNull(request.getUpdateKeyDetails(), "updateKeyDetails is required");
+
+        return clientCall(request, UpdateKeyResponse::builder)
+                .logger(LOG, "updateKey")
+                .serviceDetails("KmsManagement", "UpdateKey", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateKeyRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("keys")
+                .appendPathParam(request.getKeyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.keymanagement.model.Key.class,
+                        UpdateKeyResponse.Builder::key)
+                .handleResponseHeaderString("etag", UpdateKeyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateKeyResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
@@ -1241,29 +701,207 @@ public class KmsManagementClient implements KmsManagement {
         return paginators;
     }
 
-    private static boolean shouldRetryBecauseOfWaiterConfiguration(
-            com.oracle.bmc.retrier.BmcGenericRetrier retrier) {
-        boolean hasTerminationStrategy = false;
-        boolean isMaxAttemptsTerminationStrategy = false;
-        if (retrier.getWaiter() != null && retrier.getWaiter().getWaiterConfiguration() != null) {
-            hasTerminationStrategy =
-                    retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy() != null;
-            if (hasTerminationStrategy) {
-                isMaxAttemptsTerminationStrategy =
-                        retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy()
-                                instanceof com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
-            }
-        }
-        final boolean shouldRetry =
-                hasTerminationStrategy
-                        && (!isMaxAttemptsTerminationStrategy
-                                || isMaxAttemptsTerminationStrategy
-                                        && ((com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy)
-                                                                retrier.getWaiter()
-                                                                        .getWaiterConfiguration()
-                                                                        .getTerminationStrategy())
-                                                        .getMaxAttempts()
-                                                > 1);
-        return shouldRetry;
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public KmsManagementClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(builder(), authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public KmsManagementClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(builder().configuration(configuration), authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public KmsManagementClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                builder().configuration(configuration).clientConfigurator(clientConfigurator),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public KmsManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public KmsManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public KmsManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public KmsManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @param executorService {@link Builder#executorService}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public KmsManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider,
+                executorService);
     }
 }

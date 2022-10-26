@@ -9,15 +9,14 @@ import com.oracle.bmc.bds.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 public class GetBdsMetastoreConfigurationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a request, provide this request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * request, provide this request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a request, provide this request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * request, provide this request ID.
      *
      * @return the value
      */
@@ -25,10 +24,7 @@ public class GetBdsMetastoreConfigurationResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -40,13 +36,12 @@ public class GetBdsMetastoreConfigurationResponse extends com.oracle.bmc.respons
         return etag;
     }
 
-    /**
-     * The returned BdsMetastoreConfiguration instance.
-     */
+    /** The returned BdsMetastoreConfiguration instance. */
     private com.oracle.bmc.bds.model.BdsMetastoreConfiguration bdsMetastoreConfiguration;
 
     /**
      * The returned BdsMetastoreConfiguration instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.bds.model.BdsMetastoreConfiguration getBdsMetastoreConfiguration() {
@@ -62,7 +57,7 @@ public class GetBdsMetastoreConfigurationResponse extends com.oracle.bmc.respons
     })
     private GetBdsMetastoreConfigurationResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.bds.model.BdsMetastoreConfiguration bdsMetastoreConfiguration) {
@@ -72,31 +67,34 @@ public class GetBdsMetastoreConfigurationResponse extends com.oracle.bmc.respons
         this.bdsMetastoreConfiguration = bdsMetastoreConfiguration;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetBdsMetastoreConfigurationResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a request, provide this request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * request, provide this request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a request, provide this request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * request, provide this request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -106,10 +104,7 @@ public class GetBdsMetastoreConfigurationResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -123,13 +118,12 @@ public class GetBdsMetastoreConfigurationResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /**
-         * The returned BdsMetastoreConfiguration instance.
-         */
+        /** The returned BdsMetastoreConfiguration instance. */
         private com.oracle.bmc.bds.model.BdsMetastoreConfiguration bdsMetastoreConfiguration;
 
         /**
          * The returned BdsMetastoreConfiguration instance.
+         *
          * @param bdsMetastoreConfiguration the value to set
          * @return this builder
          */
@@ -141,8 +135,10 @@ public class GetBdsMetastoreConfigurationResponse extends com.oracle.bmc.respons
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetBdsMetastoreConfigurationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -155,8 +151,10 @@ public class GetBdsMetastoreConfigurationResponse extends com.oracle.bmc.respons
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetBdsMetastoreConfigurationResponse build() {
             return new GetBdsMetastoreConfigurationResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, bdsMetastoreConfiguration);
@@ -165,6 +163,7 @@ public class GetBdsMetastoreConfigurationResponse extends com.oracle.bmc.respons
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

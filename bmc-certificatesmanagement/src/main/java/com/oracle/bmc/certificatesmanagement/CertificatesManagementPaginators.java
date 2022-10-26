@@ -9,21 +9,29 @@ import com.oracle.bmc.certificatesmanagement.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of CertificatesManagement where multiple pages of data may be fetched.
- * Two styles of iteration are supported:
+ * to any list operations of CertificatesManagement where multiple pages of data may be fetched. Two
+ * styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
- *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to
+ *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
+ *       <i>listUsersResponseIterator</i>
+ *   <li>Iterating over the resources/records being listed. These are referred to as
+ *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
+ *       <i>listUsersRecordIterator</i>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
- * They will automatically fetch more data from the service when required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping
+ * and using the page tokens. They will automatically fetch more data from the service when
+ * required.
  *
- * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
- * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
- * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
+ * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
+ * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
+ * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have
+ * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
+ * handled so we can iterate until there are no more responses or no more resources/records
+ * available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public class CertificatesManagementPaginators {
@@ -34,11 +42,12 @@ public class CertificatesManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listAssociations operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listAssociations operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListAssociationsResponse> listAssociationsResponseIterator(
             final ListAssociationsRequest request) {
@@ -84,18 +93,22 @@ public class CertificatesManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.certificatesmanagement.model.AssociationSummary} objects
-     * contained in responses from the listAssociations operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.certificatesmanagement.model.AssociationSummary} objects contained in
+     * responses from the listAssociations operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.certificatesmanagement.model.AssociationSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.certificatesmanagement.model.AssociationSummary} objects contained in
+     *     responses received from the service.
      */
     public Iterable<com.oracle.bmc.certificatesmanagement.model.AssociationSummary>
             listAssociationsRecordIterator(final ListAssociationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAssociationsRequest.Builder, ListAssociationsRequest, ListAssociationsResponse,
+                ListAssociationsRequest.Builder,
+                ListAssociationsRequest,
+                ListAssociationsResponse,
                 com.oracle.bmc.certificatesmanagement.model.AssociationSummary>(
                 new java.util.function.Supplier<ListAssociationsRequest.Builder>() {
                     @Override
@@ -148,11 +161,12 @@ public class CertificatesManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listCaBundles operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listCaBundles
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListCaBundlesResponse> listCaBundlesResponseIterator(
             final ListCaBundlesRequest request) {
@@ -197,18 +211,22 @@ public class CertificatesManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.certificatesmanagement.model.CaBundleSummary} objects
-     * contained in responses from the listCaBundles operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.certificatesmanagement.model.CaBundleSummary} objects contained in responses
+     * from the listCaBundles operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.certificatesmanagement.model.CaBundleSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.certificatesmanagement.model.CaBundleSummary} objects contained in
+     *     responses received from the service.
      */
     public Iterable<com.oracle.bmc.certificatesmanagement.model.CaBundleSummary>
             listCaBundlesRecordIterator(final ListCaBundlesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListCaBundlesRequest.Builder, ListCaBundlesRequest, ListCaBundlesResponse,
+                ListCaBundlesRequest.Builder,
+                ListCaBundlesRequest,
+                ListCaBundlesResponse,
                 com.oracle.bmc.certificatesmanagement.model.CaBundleSummary>(
                 new java.util.function.Supplier<ListCaBundlesRequest.Builder>() {
                     @Override
@@ -260,16 +278,19 @@ public class CertificatesManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listCertificateAuthorities operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCertificateAuthorities operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListCertificateAuthoritiesResponse> listCertificateAuthoritiesResponseIterator(
             final ListCertificateAuthoritiesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListCertificateAuthoritiesRequest.Builder, ListCertificateAuthoritiesRequest,
+                ListCertificateAuthoritiesRequest.Builder,
+                ListCertificateAuthoritiesRequest,
                 ListCertificateAuthoritiesResponse>(
                 new java.util.function.Supplier<ListCertificateAuthoritiesRequest.Builder>() {
                     @Override
@@ -312,19 +333,22 @@ public class CertificatesManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.certificatesmanagement.model.CertificateAuthoritySummary} objects
-     * contained in responses from the listCertificateAuthorities operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.certificatesmanagement.model.CertificateAuthoritySummary} objects contained in
+     * responses from the listCertificateAuthorities operation. This iterable will fetch more data
+     * from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.certificatesmanagement.model.CertificateAuthoritySummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.certificatesmanagement.model.CertificateAuthoritySummary} objects
+     *     contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.certificatesmanagement.model.CertificateAuthoritySummary>
             listCertificateAuthoritiesRecordIterator(
                     final ListCertificateAuthoritiesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListCertificateAuthoritiesRequest.Builder, ListCertificateAuthoritiesRequest,
+                ListCertificateAuthoritiesRequest.Builder,
+                ListCertificateAuthoritiesRequest,
                 ListCertificateAuthoritiesResponse,
                 com.oracle.bmc.certificatesmanagement.model.CertificateAuthoritySummary>(
                 new java.util.function.Supplier<ListCertificateAuthoritiesRequest.Builder>() {
@@ -381,18 +405,21 @@ public class CertificatesManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listCertificateAuthorityVersions operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCertificateAuthorityVersions operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListCertificateAuthorityVersionsResponse>
             listCertificateAuthorityVersionsResponseIterator(
                     final ListCertificateAuthorityVersionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListCertificateAuthorityVersionsRequest.Builder,
-                ListCertificateAuthorityVersionsRequest, ListCertificateAuthorityVersionsResponse>(
+                ListCertificateAuthorityVersionsRequest,
+                ListCertificateAuthorityVersionsResponse>(
                 new java.util.function.Supplier<ListCertificateAuthorityVersionsRequest.Builder>() {
                     @Override
                     public ListCertificateAuthorityVersionsRequest.Builder get() {
@@ -436,20 +463,23 @@ public class CertificatesManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.certificatesmanagement.model.CertificateAuthorityVersionSummary} objects
-     * contained in responses from the listCertificateAuthorityVersions operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.certificatesmanagement.model.CertificateAuthorityVersionSummary} objects
+     * contained in responses from the listCertificateAuthorityVersions operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.certificatesmanagement.model.CertificateAuthorityVersionSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.certificatesmanagement.model.CertificateAuthorityVersionSummary} objects
+     *     contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.certificatesmanagement.model.CertificateAuthorityVersionSummary>
             listCertificateAuthorityVersionsRecordIterator(
                     final ListCertificateAuthorityVersionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListCertificateAuthorityVersionsRequest.Builder,
-                ListCertificateAuthorityVersionsRequest, ListCertificateAuthorityVersionsResponse,
+                ListCertificateAuthorityVersionsRequest,
+                ListCertificateAuthorityVersionsResponse,
                 com.oracle.bmc.certificatesmanagement.model.CertificateAuthorityVersionSummary>(
                 new java.util.function.Supplier<ListCertificateAuthorityVersionsRequest.Builder>() {
                     @Override
@@ -507,16 +537,19 @@ public class CertificatesManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listCertificateVersions operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCertificateVersions operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListCertificateVersionsResponse> listCertificateVersionsResponseIterator(
             final ListCertificateVersionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListCertificateVersionsRequest.Builder, ListCertificateVersionsRequest,
+                ListCertificateVersionsRequest.Builder,
+                ListCertificateVersionsRequest,
                 ListCertificateVersionsResponse>(
                 new java.util.function.Supplier<ListCertificateVersionsRequest.Builder>() {
                     @Override
@@ -559,18 +592,21 @@ public class CertificatesManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.certificatesmanagement.model.CertificateVersionSummary} objects
-     * contained in responses from the listCertificateVersions operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.certificatesmanagement.model.CertificateVersionSummary} objects contained in
+     * responses from the listCertificateVersions operation. This iterable will fetch more data from
+     * the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.certificatesmanagement.model.CertificateVersionSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.certificatesmanagement.model.CertificateVersionSummary} objects contained
+     *     in responses received from the service.
      */
     public Iterable<com.oracle.bmc.certificatesmanagement.model.CertificateVersionSummary>
             listCertificateVersionsRecordIterator(final ListCertificateVersionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListCertificateVersionsRequest.Builder, ListCertificateVersionsRequest,
+                ListCertificateVersionsRequest.Builder,
+                ListCertificateVersionsRequest,
                 ListCertificateVersionsResponse,
                 com.oracle.bmc.certificatesmanagement.model.CertificateVersionSummary>(
                 new java.util.function.Supplier<ListCertificateVersionsRequest.Builder>() {
@@ -627,11 +663,12 @@ public class CertificatesManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listCertificates operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCertificates operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListCertificatesResponse> listCertificatesResponseIterator(
             final ListCertificatesRequest request) {
@@ -677,18 +714,22 @@ public class CertificatesManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.certificatesmanagement.model.CertificateSummary} objects
-     * contained in responses from the listCertificates operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.certificatesmanagement.model.CertificateSummary} objects contained in
+     * responses from the listCertificates operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.certificatesmanagement.model.CertificateSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.certificatesmanagement.model.CertificateSummary} objects contained in
+     *     responses received from the service.
      */
     public Iterable<com.oracle.bmc.certificatesmanagement.model.CertificateSummary>
             listCertificatesRecordIterator(final ListCertificatesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListCertificatesRequest.Builder, ListCertificatesRequest, ListCertificatesResponse,
+                ListCertificatesRequest.Builder,
+                ListCertificatesRequest,
+                ListCertificatesResponse,
                 com.oracle.bmc.certificatesmanagement.model.CertificateSummary>(
                 new java.util.function.Supplier<ListCertificatesRequest.Builder>() {
                     @Override

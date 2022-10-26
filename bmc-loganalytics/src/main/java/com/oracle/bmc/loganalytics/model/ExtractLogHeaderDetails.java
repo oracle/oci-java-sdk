@@ -5,22 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * log header values
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * log header values <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ExtractLogHeaderDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ExtractLogHeaderDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ExtractLogHeaderDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"logKey", "headerValues"})
     public ExtractLogHeaderDetails(String logKey, java.util.List<String> headerValues) {
@@ -31,33 +31,31 @@ public final class ExtractLogHeaderDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The log key.
-         **/
+        /** The log key. */
         @com.fasterxml.jackson.annotation.JsonProperty("logKey")
         private String logKey;
 
         /**
          * The log key.
+         *
          * @param logKey the value to set
          * @return this builder
-         **/
+         */
         public Builder logKey(String logKey) {
             this.logKey = logKey;
             this.__explicitlySet__.add("logKey");
             return this;
         }
-        /**
-         * The log header values.
-         **/
+        /** The log header values. */
         @com.fasterxml.jackson.annotation.JsonProperty("headerValues")
         private java.util.List<String> headerValues;
 
         /**
          * The log header values.
+         *
          * @param headerValues the value to set
          * @return this builder
-         **/
+         */
         public Builder headerValues(java.util.List<String> headerValues) {
             this.headerValues = headerValues;
             this.__explicitlySet__.add("headerValues");
@@ -88,9 +86,7 @@ public final class ExtractLogHeaderDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -99,30 +95,28 @@ public final class ExtractLogHeaderDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The log key.
-     **/
+    /** The log key. */
     @com.fasterxml.jackson.annotation.JsonProperty("logKey")
     private final String logKey;
 
     /**
      * The log key.
+     *
      * @return the value
-     **/
+     */
     public String getLogKey() {
         return logKey;
     }
 
-    /**
-     * The log header values.
-     **/
+    /** The log header values. */
     @com.fasterxml.jackson.annotation.JsonProperty("headerValues")
     private final java.util.List<String> headerValues;
 
     /**
      * The log header values.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getHeaderValues() {
         return headerValues;
     }
@@ -134,6 +128,7 @@ public final class ExtractLogHeaderDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

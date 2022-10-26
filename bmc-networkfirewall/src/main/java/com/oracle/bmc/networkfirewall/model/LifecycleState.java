@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.networkfirewall.model;
 
-/**
- * Possible lifecycle states.
- **/
+/** Possible lifecycle states. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
-public enum LifecycleState {
+public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Updating("UPDATING"),
     Active("ACTIVE"),

@@ -5,22 +5,22 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AuthenticateClientDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AuthenticateClientDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AuthenticateClientDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"requestHeaders"})
     public AuthenticateClientDetails(java.util.Map<String, java.util.List<String>> requestHeaders) {
@@ -30,17 +30,16 @@ public final class AuthenticateClientDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The signed headers of the original caller's request.
-         **/
+        /** The signed headers of the original caller's request. */
         @com.fasterxml.jackson.annotation.JsonProperty("requestHeaders")
         private java.util.Map<String, java.util.List<String>> requestHeaders;
 
         /**
          * The signed headers of the original caller's request.
+         *
          * @param requestHeaders the value to set
          * @return this builder
-         **/
+         */
         public Builder requestHeaders(
                 java.util.Map<String, java.util.List<String>> requestHeaders) {
             this.requestHeaders = requestHeaders;
@@ -68,9 +67,7 @@ public final class AuthenticateClientDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -79,16 +76,15 @@ public final class AuthenticateClientDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The signed headers of the original caller's request.
-     **/
+    /** The signed headers of the original caller's request. */
     @com.fasterxml.jackson.annotation.JsonProperty("requestHeaders")
     private final java.util.Map<String, java.util.List<String>> requestHeaders;
 
     /**
      * The signed headers of the original caller's request.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.List<String>> getRequestHeaders() {
         return requestHeaders;
     }
@@ -100,6 +96,7 @@ public final class AuthenticateClientDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

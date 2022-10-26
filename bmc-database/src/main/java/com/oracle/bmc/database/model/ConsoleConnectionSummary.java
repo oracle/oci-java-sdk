@@ -5,24 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The {@code InstanceConsoleConnection} API provides you with console access to dbnode
- * enabling you to troubleshoot malfunctioning dbnode.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The {@code InstanceConsoleConnection} API provides you with console access to dbnode enabling you
+ * to troubleshoot malfunctioning dbnode. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ConsoleConnectionSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ConsoleConnectionSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ConsoleConnectionSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -50,97 +49,91 @@ public final class ConsoleConnectionSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the console connection.
-         **/
+        /** The OCID of the console connection. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the console connection.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The OCID of the compartment to contain the console connection.
-         **/
+        /** The OCID of the compartment to contain the console connection. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment to contain the console connection.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The OCID of the database node.
-         **/
+        /** The OCID of the database node. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbNodeId")
         private String dbNodeId;
 
         /**
          * The OCID of the database node.
+         *
          * @param dbNodeId the value to set
          * @return this builder
-         **/
+         */
         public Builder dbNodeId(String dbNodeId) {
             this.dbNodeId = dbNodeId;
             this.__explicitlySet__.add("dbNodeId");
             return this;
         }
-        /**
-         * The SSH connection string for the console connection.
-         **/
+        /** The SSH connection string for the console connection. */
         @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
         private String connectionString;
 
         /**
          * The SSH connection string for the console connection.
+         *
          * @param connectionString the value to set
          * @return this builder
-         **/
+         */
         public Builder connectionString(String connectionString) {
             this.connectionString = connectionString;
             this.__explicitlySet__.add("connectionString");
             return this;
         }
-        /**
-         * The SSH public key fingerprint for the console connection.
-         **/
+        /** The SSH public key fingerprint for the console connection. */
         @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
         private String fingerprint;
 
         /**
          * The SSH public key fingerprint for the console connection.
+         *
          * @param fingerprint the value to set
          * @return this builder
-         **/
+         */
         public Builder fingerprint(String fingerprint) {
             this.fingerprint = fingerprint;
             this.__explicitlySet__.add("fingerprint");
             return this;
         }
-        /**
-         * The current state of the console connection.
-         **/
+        /** The current state of the console connection. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the console connection.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -189,9 +182,7 @@ public final class ConsoleConnectionSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -200,80 +191,73 @@ public final class ConsoleConnectionSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the console connection.
-     **/
+    /** The OCID of the console connection. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the console connection.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The OCID of the compartment to contain the console connection.
-     **/
+    /** The OCID of the compartment to contain the console connection. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment to contain the console connection.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The OCID of the database node.
-     **/
+    /** The OCID of the database node. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbNodeId")
     private final String dbNodeId;
 
     /**
      * The OCID of the database node.
+     *
      * @return the value
-     **/
+     */
     public String getDbNodeId() {
         return dbNodeId;
     }
 
-    /**
-     * The SSH connection string for the console connection.
-     **/
+    /** The SSH connection string for the console connection. */
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
     private final String connectionString;
 
     /**
      * The SSH connection string for the console connection.
+     *
      * @return the value
-     **/
+     */
     public String getConnectionString() {
         return connectionString;
     }
 
-    /**
-     * The SSH public key fingerprint for the console connection.
-     **/
+    /** The SSH public key fingerprint for the console connection. */
     @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
     private final String fingerprint;
 
     /**
      * The SSH public key fingerprint for the console connection.
+     *
      * @return the value
-     **/
+     */
     public String getFingerprint() {
         return fingerprint;
     }
 
-    /**
-     * The current state of the console connection.
-     **/
-    public enum LifecycleState {
+    /** The current state of the console connection. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Active("ACTIVE"),
         Creating("CREATING"),
         Deleted("DELETED"),
@@ -281,8 +265,8 @@ public final class ConsoleConnectionSummary
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -321,16 +305,15 @@ public final class ConsoleConnectionSummary
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current state of the console connection.
-     **/
+    /** The current state of the console connection. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the console connection.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -342,6 +325,7 @@ public final class ConsoleConnectionSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

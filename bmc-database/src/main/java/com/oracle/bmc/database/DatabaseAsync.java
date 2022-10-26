@@ -8,60 +8,61 @@ import com.oracle.bmc.database.requests.*;
 import com.oracle.bmc.database.responses.*;
 
 /**
- * The API for the Database Service. Use this API to manage resources such as databases and DB Systems. For more information, see [Overview of the Database Service](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm).
- *
+ * The API for the Database Service. Use this API to manage resources such as databases and DB
+ * Systems. For more information, see [Overview of the Database
+ * Service](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm).
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface DatabaseAsync extends AutoCloseable {
 
-    /**
-     * Rebuilds the client from scratch.
-     * Useful to refresh certificates.
-     */
+    /** Rebuilds the client from scratch. Useful to refresh certificates. */
     void refreshClient();
 
     /**
      * Sets the endpoint to call (ex, https://www.example.com).
+     *
      * @param endpoint The endpoint of the serice.
      */
     void setEndpoint(String endpoint);
 
-    /**
-     * Gets the set endpoint for REST call (ex, https://www.example.com)
-     */
+    /** Gets the set endpoint for REST call (ex, https://www.example.com) */
     String getEndpoint();
 
     /**
      * Sets the region to call (ex, Region.US_PHOENIX_1).
-     * <p>
-     * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
+     *
+     * <p>Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the
+     * endpoint. If the service is not available in this region, however, an
+     * IllegalArgumentException will be raised.
+     *
      * @param region The region of the service.
      */
     void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
-     * <p>
-     * Note, this will first try to map the region ID to a known Region and call
-     * {@link #setRegion(Region) setRegion}.
-     * <p>
-     * If no known Region could be determined, it will create an endpoint based on the
-     * default endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
+     *
+     * <p>Note, this will first try to map the region ID to a known Region and call {@link
+     * #setRegion(Region) setRegion}.
+     *
+     * <p>If no known Region could be determined, it will create an endpoint based on the default
+     * endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
      * and then call {@link #setEndpoint(String) setEndpoint}.
+     *
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
 
     /**
-     * Activates the specified Exadata infrastructure resource. Applies to Exadata Cloud@Customer instances only.
-     *
+     * Activates the specified Exadata infrastructure resource. Applies to Exadata Cloud@Customer
+     * instances only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ActivateExadataInfrastructureResponse>
             activateExadataInfrastructure(
@@ -72,15 +73,15 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Makes the storage capacity from additional storage servers available for VM Cluster consumption. Applies to Exadata Cloud@Customer instances only.
-     *
+     * Makes the storage capacity from additional storage servers available for VM Cluster
+     * consumption. Applies to Exadata Cloud@Customer instances only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<AddStorageCapacityExadataInfrastructureResponse>
             addStorageCapacityExadataInfrastructure(
@@ -93,13 +94,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Add Virtual Machines to the VM cluster. Applies to Exadata Cloud@Customer instances only.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<AddVirtualMachineToVmClusterResponse> addVirtualMachineToVmCluster(
             AddVirtualMachineToVmClusterRequest request,
@@ -109,15 +109,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Initiates a data refresh for an Autonomous Database refreshable clone. Data is refreshed from the source database to the point of a specified timestamp.
-     *
+     * Initiates a data refresh for an Autonomous Database refreshable clone. Data is refreshed from
+     * the source database to the point of a specified timestamp.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<AutonomousDatabaseManualRefreshResponse>
             autonomousDatabaseManualRefresh(
@@ -128,17 +128,17 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Move the Autonomous Container Database and its dependent resources to the specified compartment.
-     * For more information about moving Autonomous Container Databases, see
-     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
-     *
+     * Move the Autonomous Container Database and its dependent resources to the specified
+     * compartment. For more information about moving Autonomous Container Databases, see [Moving
+     * Database Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeAutonomousContainerDatabaseCompartmentResponse>
             changeAutonomousContainerDatabaseCompartment(
@@ -149,17 +149,17 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Move the Autonomous Database and its dependent resources to the specified compartment.
-     * For more information about moving Autonomous Databases, see
-     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
-     *
+     * Move the Autonomous Database and its dependent resources to the specified compartment. For
+     * more information about moving Autonomous Databases, see [Moving Database Resources to a
+     * Different
+     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeAutonomousDatabaseCompartmentResponse>
             changeAutonomousDatabaseCompartment(
@@ -170,17 +170,22 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * **Deprecated.** Use the {@link #changeCloudExadataInfrastructureCompartment(ChangeCloudExadataInfrastructureCompartmentRequest, Consumer, Consumer) changeCloudExadataInfrastructureCompartment} operation to move an Exadata infrastructure resource to a different compartment and  {@link #changeCloudAutonomousVmClusterCompartment(ChangeCloudAutonomousVmClusterCompartmentRequest, Consumer, Consumer) changeCloudAutonomousVmClusterCompartment} operation to move an Autonomous Exadata VM cluster to a different compartment.
-     * For more information, see
-     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
-     *
+     * **Deprecated.** Use the {@link
+     * #changeCloudExadataInfrastructureCompartment(ChangeCloudExadataInfrastructureCompartmentRequest,
+     * Consumer, Consumer) changeCloudExadataInfrastructureCompartment} operation to move an Exadata
+     * infrastructure resource to a different compartment and {@link
+     * #changeCloudAutonomousVmClusterCompartment(ChangeCloudAutonomousVmClusterCompartmentRequest,
+     * Consumer, Consumer) changeCloudAutonomousVmClusterCompartment} operation to move an
+     * Autonomous Exadata VM cluster to a different compartment. For more information, see [Moving
+     * Database Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeAutonomousExadataInfrastructureCompartmentResponse>
             changeAutonomousExadataInfrastructureCompartment(
@@ -191,15 +196,17 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves an Autonomous VM cluster and its dependent resources to another compartment. Applies to Exadata Cloud@Customer  only. For systems in the Oracle cloud, see {@link #changeAutonomousVmClusterCompartment(ChangeAutonomousVmClusterCompartmentRequest, Consumer, Consumer) changeAutonomousVmClusterCompartment}.
-     *
+     * Moves an Autonomous VM cluster and its dependent resources to another compartment. Applies to
+     * Exadata Cloud@Customer only. For systems in the Oracle cloud, see {@link
+     * #changeAutonomousVmClusterCompartment(ChangeAutonomousVmClusterCompartmentRequest, Consumer,
+     * Consumer) changeAutonomousVmClusterCompartment}.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeAutonomousVmClusterCompartmentResponse>
             changeAutonomousVmClusterCompartment(
@@ -210,17 +217,16 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Move the backup destination and its dependent resources to the specified compartment.
-     * For more information, see
-     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
-     *
+     * Move the backup destination and its dependent resources to the specified compartment. For
+     * more information, see [Moving Database Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeBackupDestinationCompartmentResponse>
             changeBackupDestinationCompartment(
@@ -231,15 +237,17 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves an Autonomous Exadata VM cluster in the Oracle cloud and its dependent resources to another compartment. For Exadata Cloud@Customer systems, see {@link #changeAutonomousVmClusterCompartment(ChangeAutonomousVmClusterCompartmentRequest, Consumer, Consumer) changeAutonomousVmClusterCompartment}.
-     *
+     * Moves an Autonomous Exadata VM cluster in the Oracle cloud and its dependent resources to
+     * another compartment. For Exadata Cloud@Customer systems, see {@link
+     * #changeAutonomousVmClusterCompartment(ChangeAutonomousVmClusterCompartmentRequest, Consumer,
+     * Consumer) changeAutonomousVmClusterCompartment}.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeCloudAutonomousVmClusterCompartmentResponse>
             changeCloudAutonomousVmClusterCompartment(
@@ -250,15 +258,18 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a cloud Exadata infrastructure resource and its dependent resources to another compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.For more information about moving resources to a different compartment, see [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
-     *
+     * Moves a cloud Exadata infrastructure resource and its dependent resources to another
+     * compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated
+     * Exadata infrastructure only.For more information about moving resources to a different
+     * compartment, see [Moving Database Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeCloudExadataInfrastructureCompartmentResponse>
             changeCloudExadataInfrastructureCompartment(
@@ -269,15 +280,16 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a cloud VM cluster and its dependent resources to another compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
-     *
+     * Moves a cloud VM cluster and its dependent resources to another compartment. Applies to
+     * Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure
+     * only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeCloudVmClusterCompartmentResponse>
             changeCloudVmClusterCompartment(
@@ -289,16 +301,16 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Move the Database Software Image and its dependent resources to the specified compartment.
-     * For more information about moving Databse Software Images, see
-     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
-     *
+     * For more information about moving Databse Software Images, see [Moving Database Resources to
+     * a Different
+     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeDatabaseSoftwareImageCompartmentResponse>
             changeDatabaseSoftwareImageCompartment(
@@ -309,17 +321,16 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves the DB system and its dependent resources to the specified compartment.
-     * For more information about moving DB systems, see
-     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
-     *
+     * Moves the DB system and its dependent resources to the specified compartment. For more
+     * information about moving DB systems, see [Moving Database Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeDbSystemCompartmentResponse> changeDbSystemCompartment(
             ChangeDbSystemCompartmentRequest request,
@@ -328,16 +339,18 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves an Exadata infrastructure resource and its dependent resources to another compartment. Applies to Exadata Cloud@Customer instances only.
-     * To move an Exadata Cloud Service infrastructure resource to another compartment, use the  {@link #changeCloudExadataInfrastructureCompartment(ChangeCloudExadataInfrastructureCompartmentRequest, Consumer, Consumer) changeCloudExadataInfrastructureCompartment} operation.
-     *
+     * Moves an Exadata infrastructure resource and its dependent resources to another compartment.
+     * Applies to Exadata Cloud@Customer instances only. To move an Exadata Cloud Service
+     * infrastructure resource to another compartment, use the {@link
+     * #changeCloudExadataInfrastructureCompartment(ChangeCloudExadataInfrastructureCompartmentRequest,
+     * Consumer, Consumer) changeCloudExadataInfrastructureCompartment} operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeExadataInfrastructureCompartmentResponse>
             changeExadataInfrastructureCompartment(
@@ -348,18 +361,19 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Move the {@link #createExternalContainerDatabaseDetails(CreateExternalContainerDatabaseDetailsRequest, Consumer, Consumer) createExternalContainerDatabaseDetails}
-     * and its dependent resources to the specified compartment.
-     * For more information about moving external container databases, see
-     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
-     *
+     * Move the {@link
+     * #createExternalContainerDatabaseDetails(CreateExternalContainerDatabaseDetailsRequest,
+     * Consumer, Consumer) createExternalContainerDatabaseDetails} and its dependent resources to
+     * the specified compartment. For more information about moving external container databases,
+     * see [Moving Database Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeExternalContainerDatabaseCompartmentResponse>
             changeExternalContainerDatabaseCompartment(
@@ -370,17 +384,17 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Move the external non-container database and its dependent resources to the specified compartment.
-     * For more information about moving external non-container databases, see
-     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
-     *
+     * Move the external non-container database and its dependent resources to the specified
+     * compartment. For more information about moving external non-container databases, see [Moving
+     * Database Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeExternalNonContainerDatabaseCompartmentResponse>
             changeExternalNonContainerDatabaseCompartment(
@@ -391,18 +405,19 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Move the {@link #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest, Consumer, Consumer) createExternalPluggableDatabaseDetails} and
-     * its dependent resources to the specified compartment.
-     * For more information about moving external pluggable databases, see
-     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
-     *
+     * Move the {@link
+     * #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest,
+     * Consumer, Consumer) createExternalPluggableDatabaseDetails} and its dependent resources to
+     * the specified compartment. For more information about moving external pluggable databases,
+     * see [Moving Database Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeExternalPluggableDatabaseCompartmentResponse>
             changeExternalPluggableDatabaseCompartment(
@@ -413,17 +428,16 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Move the key store resource to the specified compartment.
-     * For more information about moving key stores, see
-     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
-     *
+     * Move the key store resource to the specified compartment. For more information about moving
+     * key stores, see [Moving Database Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeKeyStoreCompartmentResponse> changeKeyStoreCompartment(
             ChangeKeyStoreCompartmentRequest request,
@@ -432,16 +446,18 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves a VM cluster and its dependent resources to another compartment. Applies to Exadata Cloud@Customer instances only.
-     * To move a cloud VM cluster in an Exadata Cloud Service instance to another compartment, use the {@link #changeCloudVmClusterCompartment(ChangeCloudVmClusterCompartmentRequest, Consumer, Consumer) changeCloudVmClusterCompartment} operation.
-     *
+     * Moves a VM cluster and its dependent resources to another compartment. Applies to Exadata
+     * Cloud@Customer instances only. To move a cloud VM cluster in an Exadata Cloud Service
+     * instance to another compartment, use the {@link
+     * #changeCloudVmClusterCompartment(ChangeCloudVmClusterCompartmentRequest, Consumer, Consumer)
+     * changeCloudVmClusterCompartment} operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeVmClusterCompartmentResponse> changeVmClusterCompartment(
             ChangeVmClusterCompartmentRequest request,
@@ -450,16 +466,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Check the status of the external database connection specified in this connector.
-     * This operation will refresh the connectionStatus and timeConnectionStatusLastUpdated fields.
-     *
+     * Check the status of the external database connection specified in this connector. This
+     * operation will refresh the connectionStatus and timeConnectionStatusLastUpdated fields.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CheckExternalDatabaseConnectorConnectionStatusResponse>
             checkExternalDatabaseConnectorConnectionStatus(
@@ -470,17 +485,22 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Changes the status of the standalone backup resource to `ACTIVE` after the backup is created from the on-premises database and placed in Oracle Cloud Infrastructure Object Storage.
-     * <p>
-     **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm) for more information.
+     * Changes the status of the standalone backup resource to `ACTIVE` after the backup is created
+     * from the on-premises database and placed in Oracle Cloud Infrastructure Object Storage.
      *
+     * <p>*Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged
+     * with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead
+     * using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure
+     * by Creating a Backup in the
+     * Cloud](https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm) for more
+     * information.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CompleteExternalBackupJobResponse> completeExternalBackupJob(
             CompleteExternalBackupJobRequest request,
@@ -489,15 +509,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Configures the Autonomous Database Vault service [key](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-     *
+     * Configures the Autonomous Database Vault service
+     * [key](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ConfigureAutonomousDatabaseVaultKeyResponse>
             configureAutonomousDatabaseVaultKey(
@@ -510,13 +530,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Converts a non-container database to a pluggable database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ConvertToPdbResponse> convertToPdb(
             ConvertToPdbRequest request,
@@ -526,13 +545,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateAutonomousContainerDatabaseResponse>
             createAutonomousContainerDatabase(
@@ -545,13 +563,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Creates a new Autonomous Database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateAutonomousDatabaseResponse> createAutonomousDatabase(
             CreateAutonomousDatabaseRequest request,
@@ -560,15 +577,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Autonomous Database backup for the specified database based on the provided request parameters.
-     *
+     * Creates a new Autonomous Database backup for the specified database based on the provided
+     * request parameters.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateAutonomousDatabaseBackupResponse>
             createAutonomousDatabaseBackup(
@@ -579,15 +596,17 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Creates an Autonomous VM cluster for Exadata Cloud@Customer. To create an Autonomous VM Cluster in the Oracle cloud, see {@link #createCloudAutonomousVmCluster(CreateCloudAutonomousVmClusterRequest, Consumer, Consumer) createCloudAutonomousVmCluster}.
-     *
+     * Creates an Autonomous VM cluster for Exadata Cloud@Customer. To create an Autonomous VM
+     * Cluster in the Oracle cloud, see {@link
+     * #createCloudAutonomousVmCluster(CreateCloudAutonomousVmClusterRequest, Consumer, Consumer)
+     * createCloudAutonomousVmCluster}.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateAutonomousVmClusterResponse> createAutonomousVmCluster(
             CreateAutonomousVmClusterRequest request,
@@ -596,15 +615,18 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new backup in the specified database based on the request parameters you provide. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-     *
+     * Creates a new backup in the specified database based on the request parameters you provide.
+     * If you previously used RMAN or dbcli to configure backups and then you switch to using the
+     * Console or the API for backups, a new backup configuration is created and associated with
+     * your database. This means that you can no longer rely on your previously configured unmanaged
+     * backups to work.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateBackupResponse> createBackup(
             CreateBackupRequest request,
@@ -614,13 +636,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Creates a backup destination in an Exadata Cloud@Customer system.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateBackupDestinationResponse> createBackupDestination(
             CreateBackupDestinationRequest request,
@@ -629,15 +650,16 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates an Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Customer systems, see {@link #createAutonomousVmCluster(CreateAutonomousVmClusterRequest, Consumer, Consumer) createAutonomousVmCluster}.
-     *
+     * Creates an Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Customer
+     * systems, see {@link #createAutonomousVmCluster(CreateAutonomousVmClusterRequest, Consumer,
+     * Consumer) createAutonomousVmCluster}.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateCloudAutonomousVmClusterResponse>
             createCloudAutonomousVmCluster(
@@ -648,15 +670,17 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Creates a cloud Exadata infrastructure resource. This resource is used to create either an [Exadata Cloud Service](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm) instance or an Autonomous Database on dedicated Exadata infrastructure.
-     *
+     * Creates a cloud Exadata infrastructure resource. This resource is used to create either an
+     * [Exadata Cloud
+     * Service](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm) instance or
+     * an Autonomous Database on dedicated Exadata infrastructure.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateCloudExadataInfrastructureResponse>
             createCloudExadataInfrastructure(
@@ -669,13 +693,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Creates a cloud VM cluster.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateCloudVmClusterResponse> createCloudVmCluster(
             CreateCloudVmClusterRequest request,
@@ -684,17 +707,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new console connection to the specified database node.
-     * After the console connection has been created and is available,
-     * you connect to the console using SSH.
-     *
+     * Creates a new console connection to the specified database node. After the console connection
+     * has been created and is available, you connect to the console using SSH.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateConsoleConnectionResponse> createConsoleConnection(
             CreateConsoleConnectionRequest request,
@@ -703,22 +724,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Data Guard association.  A Data Guard association represents the replication relationship between the
-     * specified database and a peer database. For more information, see [Using Oracle Data Guard](https://docs.cloud.oracle.com/Content/Database/Tasks/usingdataguard.htm).
-     * <p>
-     * All Oracle Cloud Infrastructure resources, including Data Guard associations, get an Oracle-assigned, unique ID
-     * called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response.
-     * You can also retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the
-     * resource in the Console. For more information, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Creates a new Data Guard association. A Data Guard association represents the replication
+     * relationship between the specified database and a peer database. For more information, see
+     * [Using Oracle Data
+     * Guard](https://docs.cloud.oracle.com/Content/Database/Tasks/usingdataguard.htm).
      *
+     * <p>All Oracle Cloud Infrastructure resources, including Data Guard associations, get an
+     * Oracle-assigned, unique ID called an Oracle Cloud Identifier (OCID). When you create a
+     * resource, you can find its OCID in the response. You can also retrieve a resource's OCID by
+     * using a List API operation on that resource type, or by viewing the resource in the Console.
+     * For more information, see [Resource
+     * Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateDataGuardAssociationResponse> createDataGuardAssociation(
             CreateDataGuardAssociationRequest request,
@@ -727,15 +750,16 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies to Exadata and Exadata Cloud@Customer systems.
-     *
+     * Creates a new database in the specified Database Home. If the database version is provided,
+     * it must match the version of the Database Home. Applies to Exadata and Exadata Cloud@Customer
+     * systems.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateDatabaseResponse> createDatabase(
             CreateDatabaseRequest request,
@@ -745,13 +769,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * create database software image in the specified compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateDatabaseSoftwareImageResponse> createDatabaseSoftwareImage(
             CreateDatabaseSoftwareImageRequest request,
@@ -760,15 +783,16 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Database Home in the specified database system based on the request parameters you provide. Applies to bare metal DB systems, Exadata systems, and Exadata Cloud@Customer systems.
-     *
+     * Creates a new Database Home in the specified database system based on the request parameters
+     * you provide. Applies to bare metal DB systems, Exadata systems, and Exadata Cloud@Customer
+     * systems.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateDbHomeResponse> createDbHome(
             CreateDbHomeRequest request,
@@ -777,15 +801,16 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Creates an Exadata infrastructure resource. Applies to Exadata Cloud@Customer instances only.
-     * To create an Exadata Cloud Service infrastructure resource, use the  {@link #createCloudExadataInfrastructure(CreateCloudExadataInfrastructureRequest, Consumer, Consumer) createCloudExadataInfrastructure} operation.
-     *
+     * To create an Exadata Cloud Service infrastructure resource, use the {@link
+     * #createCloudExadataInfrastructure(CreateCloudExadataInfrastructureRequest, Consumer,
+     * Consumer) createCloudExadataInfrastructure} operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateExadataInfrastructureResponse> createExadataInfrastructure(
             CreateExadataInfrastructureRequest request,
@@ -794,17 +819,22 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new backup resource and returns the information the caller needs to back up an on-premises Oracle Database to Oracle Cloud Infrastructure.
-     * <p>
-     **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm) for more information.
+     * Creates a new backup resource and returns the information the caller needs to back up an
+     * on-premises Oracle Database to Oracle Cloud Infrastructure.
      *
+     * <p>*Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged
+     * with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead
+     * using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure
+     * by Creating a Backup in the
+     * Cloud](https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm) for more
+     * information.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateExternalBackupJobResponse> createExternalBackupJob(
             CreateExternalBackupJobRequest request,
@@ -817,10 +847,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateExternalContainerDatabaseResponse>
             createExternalContainerDatabase(
@@ -835,10 +865,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateExternalDatabaseConnectorResponse>
             createExternalDatabaseConnector(
@@ -851,13 +881,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Creates a new ExternalNonContainerDatabase resource
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateExternalNonContainerDatabaseResponse>
             createExternalNonContainerDatabase(
@@ -868,16 +897,16 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Registers a new {@link #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest, Consumer, Consumer) createExternalPluggableDatabaseDetails}
-     * resource.
-     *
+     * Registers a new {@link
+     * #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest,
+     * Consumer, Consumer) createExternalPluggableDatabaseDetails} resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateExternalPluggableDatabaseResponse>
             createExternalPluggableDatabase(
@@ -890,13 +919,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Creates a Key Store.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateKeyStoreResponse> createKeyStore(
             CreateKeyStoreRequest request,
@@ -904,16 +932,17 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates and starts a pluggable database in the specified container database.
-     * Use the {@link #startPluggableDatabase(StartPluggableDatabaseRequest, Consumer, Consumer) startPluggableDatabase} and {@link #stopPluggableDatabase(StopPluggableDatabaseRequest, Consumer, Consumer) stopPluggableDatabase} APIs to start and stop the pluggable database.
-     *
+     * Creates and starts a pluggable database in the specified container database. Use the {@link
+     * #startPluggableDatabase(StartPluggableDatabaseRequest, Consumer, Consumer)
+     * startPluggableDatabase} and {@link #stopPluggableDatabase(StopPluggableDatabaseRequest,
+     * Consumer, Consumer) stopPluggableDatabase} APIs to start and stop the pluggable database.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreatePluggableDatabaseResponse> createPluggableDatabase(
             CreatePluggableDatabaseRequest request,
@@ -924,13 +953,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Creates an Exadata Cloud@Customer VM cluster.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateVmClusterResponse> createVmCluster(
             CreateVmClusterRequest request,
@@ -938,16 +966,17 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates the VM cluster network. Applies to Exadata Cloud@Customer instances only.
-     * To create a cloud VM cluster in an Exadata Cloud Service instance, use the {@link #createCloudVmCluster(CreateCloudVmClusterRequest, Consumer, Consumer) createCloudVmCluster} operation.
-     *
+     * Creates the VM cluster network. Applies to Exadata Cloud@Customer instances only. To create a
+     * cloud VM cluster in an Exadata Cloud Service instance, use the {@link
+     * #createCloudVmCluster(CreateCloudVmClusterRequest, Consumer, Consumer) createCloudVmCluster}
+     * operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateVmClusterNetworkResponse> createVmClusterNetwork(
             CreateVmClusterNetworkRequest request,
@@ -956,27 +985,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Performs one of the following power actions on the specified DB node:
-     * - start - power on
-     * - stop - power off
-     * - softreset - ACPI shutdown and power on
-     * - reset - power off and power on
-     * <p>
-     **Note:** Stopping a node affects billing differently, depending on the type of DB system:
-     * *Bare metal and Exadata systems* - The _stop_ state has no effect on the resources you consume.
-     * Billing continues for DB nodes that you stop, and related resources continue
-     * to apply against any relevant quotas. You must terminate the DB system
-     * ({@link #terminateDbSystem(TerminateDbSystemRequest, Consumer, Consumer) terminateDbSystem})
-     * to remove its resources from billing and quotas.
-     * *Virtual machine DB systems* - Stopping a node stops billing for all OCPUs associated with that node, and billing resumes when you restart the node.
+     * Performs one of the following power actions on the specified DB node: - start - power on -
+     * stop - power off - softreset - ACPI shutdown and power on - reset - power off and power on
      *
+     * <p>*Note:** Stopping a node affects billing differently, depending on the type of DB system:
+     * *Bare metal and Exadata systems* - The _stop_ state has no effect on the resources you
+     * consume. Billing continues for DB nodes that you stop, and related resources continue to
+     * apply against any relevant quotas. You must terminate the DB system ({@link
+     * #terminateDbSystem(TerminateDbSystemRequest, Consumer, Consumer) terminateDbSystem}) to
+     * remove its resources from billing and quotas. *Virtual machine DB systems* - Stopping a node
+     * stops billing for all OCPUs associated with that node, and billing resumes when you restart
+     * the node.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DbNodeActionResponse> dbNodeAction(
             DbNodeActionRequest request,
@@ -986,13 +1012,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Deletes the specified Autonomous Database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteAutonomousDatabaseResponse> deleteAutonomousDatabase(
             DeleteAutonomousDatabaseRequest request,
@@ -1001,15 +1026,17 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the specified Autonomous VM cluster in an Exadata Cloud@Customer system. To delete an Autonomous VM Cluster in the Oracle cloud, see {@link #deleteCloudAutonomousVmCluster(DeleteCloudAutonomousVmClusterRequest, Consumer, Consumer) deleteCloudAutonomousVmCluster}.
-     *
+     * Deletes the specified Autonomous VM cluster in an Exadata Cloud@Customer system. To delete an
+     * Autonomous VM Cluster in the Oracle cloud, see {@link
+     * #deleteCloudAutonomousVmCluster(DeleteCloudAutonomousVmClusterRequest, Consumer, Consumer)
+     * deleteCloudAutonomousVmCluster}.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteAutonomousVmClusterResponse> deleteAutonomousVmCluster(
             DeleteAutonomousVmClusterRequest request,
@@ -1022,10 +1049,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteBackupResponse> deleteBackup(
             DeleteBackupRequest request,
@@ -1035,13 +1062,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Deletes a backup destination in an Exadata Cloud@Customer system.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteBackupDestinationResponse> deleteBackupDestination(
             DeleteBackupDestinationRequest request,
@@ -1050,15 +1076,17 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Customer systems, see {@link #deleteAutonomousVmCluster(DeleteAutonomousVmClusterRequest, Consumer, Consumer) deleteAutonomousVmCluster}.
-     *
+     * Deletes the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata
+     * Cloud@Customer systems, see {@link
+     * #deleteAutonomousVmCluster(DeleteAutonomousVmClusterRequest, Consumer, Consumer)
+     * deleteAutonomousVmCluster}.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteCloudAutonomousVmClusterResponse>
             deleteCloudAutonomousVmCluster(
@@ -1069,15 +1097,15 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Deletes the cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
-     *
+     * Deletes the cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances
+     * and Autonomous Database on dedicated Exadata infrastructure only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteCloudExadataInfrastructureResponse>
             deleteCloudExadataInfrastructure(
@@ -1088,15 +1116,15 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Deletes the specified cloud VM cluster. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
-     *
+     * Deletes the specified cloud VM cluster. Applies to Exadata Cloud Service instances and
+     * Autonomous Database on dedicated Exadata infrastructure only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteCloudVmClusterResponse> deleteCloudVmCluster(
             DeleteCloudVmClusterRequest request,
@@ -1109,10 +1137,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteConsoleConnectionResponse> deleteConsoleConnection(
             DeleteConsoleConnectionRequest request,
@@ -1122,16 +1150,18 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Deletes the specified database. Applies only to Exadata systems.
-     * <p>
-     * The data in this database is local to the Exadata system and will be lost when the database is deleted. Oracle recommends that you back up any data in the Exadata system prior to deleting it. You can use the `performFinalBackup` parameter to have the Exadata system database backed up before it is deleted.
      *
+     * <p>The data in this database is local to the Exadata system and will be lost when the
+     * database is deleted. Oracle recommends that you back up any data in the Exadata system prior
+     * to deleting it. You can use the `performFinalBackup` parameter to have the Exadata system
+     * database backed up before it is deleted.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteDatabaseResponse> deleteDatabase(
             DeleteDatabaseRequest request,
@@ -1143,10 +1173,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteDatabaseSoftwareImageResponse> deleteDatabaseSoftwareImage(
             DeleteDatabaseSoftwareImageRequest request,
@@ -1155,17 +1185,21 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a Database Home. Applies to bare metal DB systems, Exadata Cloud Service, and Exadata Cloud@Customer systems.
-     * <p>
-     * Oracle recommends that you use the `performFinalBackup` parameter to back up any data on a bare metal DB system before you delete a Database Home. On an Exadata Cloud@Customer system or an Exadata Cloud Service system, you can delete a Database Home only when there are no databases in it and therefore you cannot use the `performFinalBackup` parameter to back up data.
+     * Deletes a Database Home. Applies to bare metal DB systems, Exadata Cloud Service, and Exadata
+     * Cloud@Customer systems.
      *
+     * <p>Oracle recommends that you use the `performFinalBackup` parameter to back up any data on a
+     * bare metal DB system before you delete a Database Home. On an Exadata Cloud@Customer system
+     * or an Exadata Cloud Service system, you can delete a Database Home only when there are no
+     * databases in it and therefore you cannot use the `performFinalBackup` parameter to back up
+     * data.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteDbHomeResponse> deleteDbHome(
             DeleteDbHomeRequest request,
@@ -1175,13 +1209,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Deletes the Exadata Cloud@Customer infrastructure.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteExadataInfrastructureResponse> deleteExadataInfrastructure(
             DeleteExadataInfrastructureRequest request,
@@ -1190,17 +1223,18 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the {@link #createExternalContainerDatabaseDetails(CreateExternalContainerDatabaseDetailsRequest, Consumer, Consumer) createExternalContainerDatabaseDetails}
-     * resource. Any external pluggable databases registered under this container database must be deleted in
-     * your Oracle Cloud Infrastructure tenancy prior to this operation.
-     *
+     * Deletes the {@link
+     * #createExternalContainerDatabaseDetails(CreateExternalContainerDatabaseDetailsRequest,
+     * Consumer, Consumer) createExternalContainerDatabaseDetails} resource. Any external pluggable
+     * databases registered under this container database must be deleted in your Oracle Cloud
+     * Infrastructure tenancy prior to this operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteExternalContainerDatabaseResponse>
             deleteExternalContainerDatabase(
@@ -1211,17 +1245,15 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Deletes an external database connector.
-     * Any services enabled using the external database connector must be
-     * deleted prior to this operation.
-     *
+     * Deletes an external database connector. Any services enabled using the external database
+     * connector must be deleted prior to this operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteExternalDatabaseConnectorResponse>
             deleteExternalDatabaseConnector(
@@ -1232,15 +1264,15 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Deletes the Oracle Cloud Infrastructure resource representing an external non-container database.
-     *
+     * Deletes the Oracle Cloud Infrastructure resource representing an external non-container
+     * database.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteExternalNonContainerDatabaseResponse>
             deleteExternalNonContainerDatabase(
@@ -1251,16 +1283,16 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Deletes the {@link #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest, Consumer, Consumer) createExternalPluggableDatabaseDetails}.
-     * resource.
-     *
+     * Deletes the {@link
+     * #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest,
+     * Consumer, Consumer) createExternalPluggableDatabaseDetails}. resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteExternalPluggableDatabaseResponse>
             deleteExternalPluggableDatabase(
@@ -1273,13 +1305,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Deletes a key store.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteKeyStoreResponse> deleteKeyStore(
             DeleteKeyStoreRequest request,
@@ -1291,10 +1322,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeletePluggableDatabaseResponse> deletePluggableDatabase(
             DeletePluggableDatabaseRequest request,
@@ -1305,13 +1336,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Deletes the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteVmClusterResponse> deleteVmCluster(
             DeleteVmClusterRequest request,
@@ -1320,15 +1350,16 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Deletes the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
-     * To delete a cloud VM cluster in an Exadata Cloud Service instance, use the {@link #deleteCloudVmCluster(DeleteCloudVmClusterRequest, Consumer, Consumer) deleteCloudVmCluster} operation.
-     *
+     * To delete a cloud VM cluster in an Exadata Cloud Service instance, use the {@link
+     * #deleteCloudVmCluster(DeleteCloudVmClusterRequest, Consumer, Consumer) deleteCloudVmCluster}
+     * operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteVmClusterNetworkResponse> deleteVmClusterNetwork(
             DeleteVmClusterNetworkRequest request,
@@ -1339,13 +1370,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Asynchronously deregisters this Autonomous Database with Data Safe.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeregisterAutonomousDatabaseDataSafeResponse>
             deregisterAutonomousDatabaseDataSafe(
@@ -1358,13 +1388,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Disables Database Management for the Autonomous Database resource.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DisableAutonomousDatabaseManagementResponse>
             disableAutonomousDatabaseManagement(
@@ -1377,13 +1406,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Disables Operations Insights for the Autonomous Database resource.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DisableAutonomousDatabaseOperationsInsightsResponse>
             disableAutonomousDatabaseOperationsInsights(
@@ -1396,13 +1424,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Disables the Database Management service for the database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DisableDatabaseManagementResponse> disableDatabaseManagement(
             DisableDatabaseManagementRequest request,
@@ -1413,13 +1440,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Disable Database Management service for the external container database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DisableExternalContainerDatabaseDatabaseManagementResponse>
             disableExternalContainerDatabaseDatabaseManagement(
@@ -1432,13 +1458,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Disable Stack Monitoring for the external container database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DisableExternalContainerDatabaseStackMonitoringResponse>
             disableExternalContainerDatabaseStackMonitoring(
@@ -1449,17 +1474,16 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Disable Database Management Service for the external non-container database.
-     * For more information about the Database Management Service, see
-     * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
-     *
+     * Disable Database Management Service for the external non-container database. For more
+     * information about the Database Management Service, see [Database Management
+     * Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DisableExternalNonContainerDatabaseDatabaseManagementResponse>
             disableExternalNonContainerDatabaseDatabaseManagement(
@@ -1472,13 +1496,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Disable Operations Insights for the external non-container database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DisableExternalNonContainerDatabaseOperationsInsightsResponse>
             disableExternalNonContainerDatabaseOperationsInsights(
@@ -1491,13 +1514,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Disable Stack Monitoring for the external non-container database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DisableExternalNonContainerDatabaseStackMonitoringResponse>
             disableExternalNonContainerDatabaseStackMonitoring(
@@ -1508,17 +1530,16 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Disable Database Management Service for the external pluggable database.
-     * For more information about the Database Management Service, see
-     * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
-     *
+     * Disable Database Management Service for the external pluggable database. For more information
+     * about the Database Management Service, see [Database Management
+     * Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DisableExternalPluggableDatabaseDatabaseManagementResponse>
             disableExternalPluggableDatabaseDatabaseManagement(
@@ -1531,13 +1552,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Disable Operations Insights for the external pluggable database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DisableExternalPluggableDatabaseOperationsInsightsResponse>
             disableExternalPluggableDatabaseOperationsInsights(
@@ -1550,13 +1570,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Disable Stack Monitoring for the external pluggable database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DisableExternalPluggableDatabaseStackMonitoringResponse>
             disableExternalPluggableDatabaseStackMonitoring(
@@ -1569,13 +1588,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DownloadExadataInfrastructureConfigFileResponse>
             downloadExadataInfrastructureConfigFile(
@@ -1586,15 +1604,15 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Downloads the network validation report file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
-     *
+     * Downloads the network validation report file for the specified VM cluster network. Applies to
+     * Exadata Cloud@Customer instances only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DownloadValidationReportResponse> downloadValidationReport(
             DownloadValidationReportRequest request,
@@ -1603,15 +1621,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Downloads the configuration file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
-     *
+     * Downloads the configuration file for the specified VM cluster network. Applies to Exadata
+     * Cloud@Customer instances only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DownloadVmClusterNetworkConfigFileResponse>
             downloadVmClusterNetworkConfigFile(
@@ -1624,13 +1642,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Enables Database Management for Autonomous Database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<EnableAutonomousDatabaseManagementResponse>
             enableAutonomousDatabaseManagement(
@@ -1643,13 +1660,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Enables the specified Autonomous Database with Operations Insights.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<EnableAutonomousDatabaseOperationsInsightsResponse>
             enableAutonomousDatabaseOperationsInsights(
@@ -1660,14 +1676,16 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Enables the Database Management service for an Oracle Database located in Oracle Cloud Infrastructure. This service allows the database to access tools including Metrics and Performance hub. Database Management is enabled at the container database (CDB) level.
+     * Enables the Database Management service for an Oracle Database located in Oracle Cloud
+     * Infrastructure. This service allows the database to access tools including Metrics and
+     * Performance hub. Database Management is enabled at the container database (CDB) level.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<EnableDatabaseManagementResponse> enableDatabaseManagement(
             EnableDatabaseManagementRequest request,
@@ -1676,17 +1694,16 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Enables Database Management Service for the external container database.
-     * For more information about the Database Management Service, see
-     * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
-     *
+     * Enables Database Management Service for the external container database. For more information
+     * about the Database Management Service, see [Database Management
+     * Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<EnableExternalContainerDatabaseDatabaseManagementResponse>
             enableExternalContainerDatabaseDatabaseManagement(
@@ -1699,13 +1716,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Enable Stack Monitoring for the external container database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<EnableExternalContainerDatabaseStackMonitoringResponse>
             enableExternalContainerDatabaseStackMonitoring(
@@ -1716,17 +1732,16 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Enable Database Management Service for the external non-container database.
-     * For more information about the Database Management Service, see
-     * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
-     *
+     * Enable Database Management Service for the external non-container database. For more
+     * information about the Database Management Service, see [Database Management
+     * Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<EnableExternalNonContainerDatabaseDatabaseManagementResponse>
             enableExternalNonContainerDatabaseDatabaseManagement(
@@ -1739,13 +1754,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Enable Operations Insights for the external non-container database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<EnableExternalNonContainerDatabaseOperationsInsightsResponse>
             enableExternalNonContainerDatabaseOperationsInsights(
@@ -1758,13 +1772,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Enable Stack Monitoring for the external non-container database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<EnableExternalNonContainerDatabaseStackMonitoringResponse>
             enableExternalNonContainerDatabaseStackMonitoring(
@@ -1775,17 +1788,16 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Enable Database Management Service for the external pluggable database.
-     * For more information about the Database Management Service, see
-     * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
-     *
+     * Enable Database Management Service for the external pluggable database. For more information
+     * about the Database Management Service, see [Database Management
+     * Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<EnableExternalPluggableDatabaseDatabaseManagementResponse>
             enableExternalPluggableDatabaseDatabaseManagement(
@@ -1798,13 +1810,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Enable Operations Insights for the external pluggable database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<EnableExternalPluggableDatabaseOperationsInsightsResponse>
             enableExternalPluggableDatabaseOperationsInsights(
@@ -1817,13 +1828,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Enable Stack Monitoring for the external pluggable database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<EnableExternalPluggableDatabaseStackMonitoringResponse>
             enableExternalPluggableDatabaseStackMonitoring(
@@ -1834,15 +1844,17 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Initiates a failover the specified Autonomous Database to a standby. To perform a failover to a standby located in a remote region, specify the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the remote standby using the `peerDbId` parameter.
-     *
+     * Initiates a failover the specified Autonomous Database to a standby. To perform a failover to
+     * a standby located in a remote region, specify the
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the remote
+     * standby using the `peerDbId` parameter.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<FailOverAutonomousDatabaseResponse> failOverAutonomousDatabase(
             FailOverAutonomousDatabaseRequest request,
@@ -1851,17 +1863,19 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Fails over the standby Autonomous Container Database identified by the autonomousContainerDatabaseId parameter to the primary Autonomous Container Database after the existing primary Autonomous Container Database fails or becomes unreachable.
-     * <p>
-     * A failover can result in data loss, depending on the protection mode in effect at the time the primary Autonomous Container Database fails.
+     * Fails over the standby Autonomous Container Database identified by the
+     * autonomousContainerDatabaseId parameter to the primary Autonomous Container Database after
+     * the existing primary Autonomous Container Database fails or becomes unreachable.
      *
+     * <p>A failover can result in data loss, depending on the protection mode in effect at the time
+     * the primary Autonomous Container Database fails.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<FailoverAutonomousContainerDatabaseDataguardAssociationResponse>
             failoverAutonomousContainerDatabaseDataguardAssociation(
@@ -1872,19 +1886,19 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Performs a failover to transition the standby database identified by the `databaseId` parameter into the
-     * specified Data Guard association's primary role after the existing primary database fails or becomes unreachable.
-     * <p>
-     * A failover might result in data loss depending on the protection mode in effect at the time of the primary
-     * database failure.
+     * Performs a failover to transition the standby database identified by the `databaseId`
+     * parameter into the specified Data Guard association's primary role after the existing primary
+     * database fails or becomes unreachable.
      *
+     * <p>A failover might result in data loss depending on the protection mode in effect at the
+     * time of the primary database failure.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<FailoverDataGuardAssociationResponse> failoverDataGuardAssociation(
             FailoverDataGuardAssociationRequest request,
@@ -1896,13 +1910,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Creates and downloads a wallet for the specified Autonomous Database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GenerateAutonomousDatabaseWalletResponse>
             generateAutonomousDatabaseWallet(
@@ -1915,13 +1928,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Generates a recommended Cloud@Customer VM cluster network configuration.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GenerateRecommendedVmClusterNetworkResponse>
             generateRecommendedVmClusterNetwork(
@@ -1936,10 +1948,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetAutonomousContainerDatabaseResponse>
             getAutonomousContainerDatabase(
@@ -1950,15 +1962,15 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
-     *
+     * Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the
+     * specified Autonomous Container Database.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetAutonomousContainerDatabaseDataguardAssociationResponse>
             getAutonomousContainerDatabaseDataguardAssociation(
@@ -1971,13 +1983,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets the details of the specified Autonomous Database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetAutonomousDatabaseResponse> getAutonomousDatabase(
             GetAutonomousDatabaseRequest request,
@@ -1990,10 +2001,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetAutonomousDatabaseBackupResponse> getAutonomousDatabaseBackup(
             GetAutonomousDatabaseBackupRequest request,
@@ -2002,15 +2013,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets an Autonomous Data Guard-enabled database associated with the specified Autonomous Database.
-     *
+     * Gets an Autonomous Data Guard-enabled database associated with the specified Autonomous
+     * Database.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetAutonomousDatabaseDataguardAssociationResponse>
             getAutonomousDatabaseDataguardAssociation(
@@ -2023,13 +2034,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets the Autonomous Database regional wallet details.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetAutonomousDatabaseRegionalWalletResponse>
             getAutonomousDatabaseRegionalWallet(
@@ -2042,13 +2052,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets the wallet details for the specified Autonomous Database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetAutonomousDatabaseWalletResponse> getAutonomousDatabaseWallet(
             GetAutonomousDatabaseWalletRequest request,
@@ -2057,15 +2066,19 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **Deprecated.** Use the {@link #getCloudExadataInfrastructure(GetCloudExadataInfrastructureRequest, Consumer, Consumer) getCloudExadataInfrastructure} operation to get details of an Exadata Infrastructure resource and the {@link #getCloudAutonomousVmCluster(GetCloudAutonomousVmClusterRequest, Consumer, Consumer) getCloudAutonomousVmCluster} operation to get details of an Autonomous Exadata VM cluster.
-     *
+     * **Deprecated.** Use the {@link
+     * #getCloudExadataInfrastructure(GetCloudExadataInfrastructureRequest, Consumer, Consumer)
+     * getCloudExadataInfrastructure} operation to get details of an Exadata Infrastructure resource
+     * and the {@link #getCloudAutonomousVmCluster(GetCloudAutonomousVmClusterRequest, Consumer,
+     * Consumer) getCloudAutonomousVmCluster} operation to get details of an Autonomous Exadata VM
+     * cluster.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetAutonomousExadataInfrastructureResponse>
             getAutonomousExadataInfrastructure(
@@ -2080,10 +2093,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetAutonomousPatchResponse> getAutonomousPatch(
             GetAutonomousPatchRequest request,
@@ -2092,15 +2105,17 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified Autonomous VM cluster for an Exadata Cloud@Customer system. To get information about an Autonomous VM Cluster in the Oracle cloud, see {@link #getCloudAutonomousVmCluster(GetCloudAutonomousVmClusterRequest, Consumer, Consumer) getCloudAutonomousVmCluster}.
-     *
+     * Gets information about the specified Autonomous VM cluster for an Exadata Cloud@Customer
+     * system. To get information about an Autonomous VM Cluster in the Oracle cloud, see {@link
+     * #getCloudAutonomousVmCluster(GetCloudAutonomousVmClusterRequest, Consumer, Consumer)
+     * getCloudAutonomousVmCluster}.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetAutonomousVmClusterResponse> getAutonomousVmCluster(
             GetAutonomousVmClusterRequest request,
@@ -2113,10 +2128,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetBackupResponse> getBackup(
             GetBackupRequest request,
@@ -2125,13 +2140,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets information about the specified backup destination in an Exadata Cloud@Customer system.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetBackupDestinationResponse> getBackupDestination(
             GetBackupDestinationRequest request,
@@ -2140,15 +2154,17 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Custustomer systems, see {@link #getAutonomousVmCluster(GetAutonomousVmClusterRequest, Consumer, Consumer) getAutonomousVmCluster}.
-     *
+     * Gets information about the specified Autonomous Exadata VM cluster in the Oracle cloud. For
+     * Exadata Cloud@Custustomer systems, see {@link
+     * #getAutonomousVmCluster(GetAutonomousVmClusterRequest, Consumer, Consumer)
+     * getAutonomousVmCluster}.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetCloudAutonomousVmClusterResponse> getCloudAutonomousVmCluster(
             GetCloudAutonomousVmClusterRequest request,
@@ -2157,15 +2173,16 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
-     *
+     * Gets information about the specified cloud Exadata infrastructure resource. Applies to
+     * Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure
+     * only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetCloudExadataInfrastructureResponse>
             getCloudExadataInfrastructure(
@@ -2176,15 +2193,15 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets information about the specified cloud VM cluster. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
-     *
+     * Gets information about the specified cloud VM cluster. Applies to Exadata Cloud Service
+     * instances and Autonomous Database on dedicated Exadata infrastructure only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetCloudVmClusterResponse> getCloudVmCluster(
             GetCloudVmClusterRequest request,
@@ -2193,16 +2210,16 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the IORM configuration for the specified cloud VM cluster in an Exadata Cloud Service instance.
-     * If you have not specified an IORM configuration, the default configuration is returned.
-     *
+     * Gets the IORM configuration for the specified cloud VM cluster in an Exadata Cloud Service
+     * instance. If you have not specified an IORM configuration, the default configuration is
+     * returned.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetCloudVmClusterIormConfigResponse> getCloudVmClusterIormConfig(
             GetCloudVmClusterIormConfigRequest request,
@@ -2211,15 +2228,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about a specified maintenance update package for a cloud VM cluster. Applies to Exadata Cloud Service instances only.
-     *
+     * Gets information about a specified maintenance update package for a cloud VM cluster. Applies
+     * to Exadata Cloud Service instances only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetCloudVmClusterUpdateResponse> getCloudVmClusterUpdate(
             GetCloudVmClusterUpdateRequest request,
@@ -2228,15 +2245,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the maintenance update history details for the specified update history entry. Applies to Exadata Cloud Service instances only.
-     *
+     * Gets the maintenance update history details for the specified update history entry. Applies
+     * to Exadata Cloud Service instances only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetCloudVmClusterUpdateHistoryEntryResponse>
             getCloudVmClusterUpdateHistoryEntry(
@@ -2251,10 +2268,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetConsoleConnectionResponse> getConsoleConnection(
             GetConsoleConnectionRequest request,
@@ -2265,13 +2282,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets the specified Data Guard association's configuration information.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDataGuardAssociationResponse> getDataGuardAssociation(
             GetDataGuardAssociationRequest request,
@@ -2284,10 +2300,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDatabaseResponse> getDatabase(
             GetDatabaseRequest request,
@@ -2298,10 +2314,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDatabaseSoftwareImageResponse> getDatabaseSoftwareImage(
             GetDatabaseSoftwareImageRequest request,
@@ -2312,13 +2328,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * gets the upgrade history for a specified database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDatabaseUpgradeHistoryEntryResponse>
             getDatabaseUpgradeHistoryEntry(
@@ -2333,10 +2348,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDbHomeResponse> getDbHome(
             GetDbHomeRequest request,
@@ -2345,13 +2360,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets information about a specified patch package.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDbHomePatchResponse> getDbHomePatch(
             GetDbHomePatchRequest request,
@@ -2361,13 +2375,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets the patch history details for the specified patchHistoryEntryId
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDbHomePatchHistoryEntryResponse> getDbHomePatchHistoryEntry(
             GetDbHomePatchHistoryEntryRequest request,
@@ -2380,10 +2393,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDbNodeResponse> getDbNode(
             GetDbNodeRequest request,
@@ -2392,13 +2405,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets information about the Exadata Db server.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDbServerResponse> getDbServer(
             GetDbServerRequest request,
@@ -2406,18 +2418,22 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Gets information about the specified DB system.
-     * <p>
-     **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
-     * <p>
-     * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
      *
+     * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
+     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * instead.
+     *
+     * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See
+     * [Switching an Exadata DB System to the New Resource Model and
+     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+     * for details on converting existing Exadata DB systems to the new resource model.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDbSystemResponse> getDbSystem(
             GetDbSystemRequest request,
@@ -2426,13 +2442,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets information the specified patch.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDbSystemPatchResponse> getDbSystemPatch(
             GetDbSystemPatchRequest request,
@@ -2442,13 +2457,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets the details of the specified patch operation on the specified DB system.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDbSystemPatchHistoryEntryResponse> getDbSystemPatchHistoryEntry(
             GetDbSystemPatchHistoryEntryRequest request,
@@ -2458,15 +2472,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the details of the specified operating system upgrade operation for the specified DB system.
-     *
+     * Gets the details of the specified operating system upgrade operation for the specified DB
+     * system.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDbSystemUpgradeHistoryEntryResponse>
             getDbSystemUpgradeHistoryEntry(
@@ -2477,16 +2491,17 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
-     * To get information on an Exadata Cloud Service infrastructure resource, use the  {@link #getCloudExadataInfrastructure(GetCloudExadataInfrastructureRequest, Consumer, Consumer) getCloudExadataInfrastructure} operation.
-     *
+     * Gets information about the specified Exadata infrastructure. Applies to Exadata
+     * Cloud@Customer instances only. To get information on an Exadata Cloud Service infrastructure
+     * resource, use the {@link #getCloudExadataInfrastructure(GetCloudExadataInfrastructureRequest,
+     * Consumer, Consumer) getCloudExadataInfrastructure} operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetExadataInfrastructureResponse> getExadataInfrastructure(
             GetExadataInfrastructureRequest request,
@@ -2495,15 +2510,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets details of the available and consumed OCPUs for the specified Autonomous Exadata Infrastructure resource.
-     *
+     * Gets details of the available and consumed OCPUs for the specified Autonomous Exadata
+     * Infrastructure resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetExadataInfrastructureOcpusResponse>
             getExadataInfrastructureOcpus(
@@ -2514,23 +2529,28 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the IORM configuration settings for the specified cloud Exadata DB system.
-     * All Exadata service instances have default IORM settings.
-     * <p>
-     **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
-     * <p>
-     * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
-     * <p>
-     * The {@link #getCloudVmClusterIormConfig(GetCloudVmClusterIormConfigRequest, Consumer, Consumer) getCloudVmClusterIormConfig} API is used for this operation with Exadata systems using the
-     * new resource model.
+     * Gets the IORM configuration settings for the specified cloud Exadata DB system. All Exadata
+     * service instances have default IORM settings.
      *
+     * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
+     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * instead.
+     *
+     * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See
+     * [Switching an Exadata DB System to the New Resource Model and
+     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+     * for details on converting existing Exadata DB systems to the new resource model.
+     *
+     * <p>The {@link #getCloudVmClusterIormConfig(GetCloudVmClusterIormConfigRequest, Consumer,
+     * Consumer) getCloudVmClusterIormConfig} API is used for this operation with Exadata systems
+     * using the new resource model.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetExadataIormConfigResponse> getExadataIormConfig(
             GetExadataIormConfigRequest request,
@@ -2540,16 +2560,20 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Gets information about the specified external backup job.
-     * <p>
-     **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm) for more information.
      *
+     * <p>*Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged
+     * with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead
+     * using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure
+     * by Creating a Backup in the
+     * Cloud](https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm) for more
+     * information.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetExternalBackupJobResponse> getExternalBackupJob(
             GetExternalBackupJobRequest request,
@@ -2562,10 +2586,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetExternalContainerDatabaseResponse> getExternalContainerDatabase(
             GetExternalContainerDatabaseRequest request,
@@ -2579,10 +2603,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetExternalDatabaseConnectorResponse> getExternalDatabaseConnector(
             GetExternalDatabaseConnectorRequest request,
@@ -2596,10 +2620,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetExternalNonContainerDatabaseResponse>
             getExternalNonContainerDatabase(
@@ -2610,16 +2634,16 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets information about a specific
-     * {@link #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest, Consumer, Consumer) createExternalPluggableDatabaseDetails} resource.
-     *
+     * Gets information about a specific {@link
+     * #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest,
+     * Consumer, Consumer) createExternalPluggableDatabaseDetails} resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetExternalPluggableDatabaseResponse> getExternalPluggableDatabase(
             GetExternalPluggableDatabaseRequest request,
@@ -2629,16 +2653,16 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets details of the Exadata Infrastructure target system software versions that can be applied to the specified infrastructure resource for maintenance updates.
-     * Applies to Exadata Cloud@Customer and Exadata Cloud instances only.
-     *
+     * Gets details of the Exadata Infrastructure target system software versions that can be
+     * applied to the specified infrastructure resource for maintenance updates. Applies to Exadata
+     * Cloud@Customer and Exadata Cloud instances only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetInfrastructureTargetVersionsResponse>
             getInfrastructureTargetVersions(
@@ -2651,13 +2675,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets information about the specified key store.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetKeyStoreResponse> getKeyStore(
             GetKeyStoreRequest request,
@@ -2668,10 +2691,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetMaintenanceRunResponse> getMaintenanceRun(
             GetMaintenanceRunRequest request,
@@ -2684,10 +2707,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetMaintenanceRunHistoryResponse> getMaintenanceRunHistory(
             GetMaintenanceRunHistoryRequest request,
@@ -2696,15 +2719,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the details of operations performed to convert the specified database from non-container (non-CDB) to pluggable (PDB).
-     *
+     * Gets the details of operations performed to convert the specified database from non-container
+     * (non-CDB) to pluggable (PDB).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetPdbConversionHistoryEntryResponse> getPdbConversionHistoryEntry(
             GetPdbConversionHistoryEntryRequest request,
@@ -2718,10 +2741,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetPluggableDatabaseResponse> getPluggableDatabase(
             GetPluggableDatabaseRequest request,
@@ -2732,13 +2755,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets information about the VM cluster. Applies to Exadata Cloud@Customer instances only.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetVmClusterResponse> getVmCluster(
             GetVmClusterRequest request,
@@ -2746,16 +2768,17 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
-     * To get information about a cloud VM cluster in an Exadata Cloud Service instance, use the {@link #getCloudVmCluster(GetCloudVmClusterRequest, Consumer, Consumer) getCloudVmCluster} operation.
-     *
+     * Gets information about the specified VM cluster network. Applies to Exadata Cloud@Customer
+     * instances only. To get information about a cloud VM cluster in an Exadata Cloud Service
+     * instance, use the {@link #getCloudVmCluster(GetCloudVmClusterRequest, Consumer, Consumer)
+     * getCloudVmCluster} operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetVmClusterNetworkResponse> getVmClusterNetwork(
             GetVmClusterNetworkRequest request,
@@ -2766,13 +2789,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets information about a specified patch package.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetVmClusterPatchResponse> getVmClusterPatch(
             GetVmClusterPatchRequest request,
@@ -2783,13 +2805,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets the patch history details for the specified patch history entry.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetVmClusterPatchHistoryEntryResponse>
             getVmClusterPatchHistoryEntry(
@@ -2800,15 +2821,15 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets information about a specified maintenance update package for a VM cluster. Applies to Exadata Cloud@Customer instances only.
-     *
+     * Gets information about a specified maintenance update package for a VM cluster. Applies to
+     * Exadata Cloud@Customer instances only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetVmClusterUpdateResponse> getVmClusterUpdate(
             GetVmClusterUpdateRequest request,
@@ -2817,15 +2838,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the maintenance update history details for the specified update history entry. Applies to Exadata Cloud@Customer instances only.
-     *
+     * Gets the maintenance update history details for the specified update history entry. Applies
+     * to Exadata Cloud@Customer instances only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetVmClusterUpdateHistoryEntryResponse>
             getVmClusterUpdateHistoryEntry(
@@ -2836,15 +2857,20 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * **Deprecated** To create a new Autonomous Database system on dedicated Exadata Infrastructure, use the {@link #createCloudExadataInfrastructure(CreateCloudExadataInfrastructureRequest, Consumer, Consumer) createCloudExadataInfrastructure} and {@link #createCloudAutonomousVmCluster(CreateCloudAutonomousVmClusterRequest, Consumer, Consumer) createCloudAutonomousVmCluster} operations instead. Note that to create an Autonomous VM cluster, you must have an existing Exadata Infrastructure resource to contain the VM cluster.
-     *
+     * **Deprecated** To create a new Autonomous Database system on dedicated Exadata
+     * Infrastructure, use the {@link
+     * #createCloudExadataInfrastructure(CreateCloudExadataInfrastructureRequest, Consumer,
+     * Consumer) createCloudExadataInfrastructure} and {@link
+     * #createCloudAutonomousVmCluster(CreateCloudAutonomousVmClusterRequest, Consumer, Consumer)
+     * createCloudAutonomousVmCluster} operations instead. Note that to create an Autonomous VM
+     * cluster, you must have an existing Exadata Infrastructure resource to contain the VM cluster.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<LaunchAutonomousExadataInfrastructureResponse>
             launchAutonomousExadataInfrastructure(
@@ -2856,24 +2882,34 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Creates a new DB system in the specified compartment and availability domain. The Oracle
-     * Database edition that you specify applies to all the databases on that DB system. The selected edition cannot be changed.
-     * <p>
-     * An initial database is created on the DB system based on the request parameters you provide and some default
-     * options. For detailed information about default options, see [Bare metal and virtual machine DB system default options.](https://docs.cloud.oracle.com/Content/Database/Tasks/creatingDBsystem.htm#Default)
-     * <p>
-     **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
-     * <p>
-     * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
-     * <p>
-     * Use the {@link #createCloudExadataInfrastructure(CreateCloudExadataInfrastructureRequest, Consumer, Consumer) createCloudExadataInfrastructure} and {@link #createCloudVmCluster(CreateCloudVmClusterRequest, Consumer, Consumer) createCloudVmCluster} APIs to provision a new Exadata Cloud Service instance.
+     * Database edition that you specify applies to all the databases on that DB system. The
+     * selected edition cannot be changed.
      *
+     * <p>An initial database is created on the DB system based on the request parameters you
+     * provide and some default options. For detailed information about default options, see [Bare
+     * metal and virtual machine DB system default
+     * options.](https://docs.cloud.oracle.com/Content/Database/Tasks/creatingDBsystem.htm#Default)
+     *
+     * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
+     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * instead.
+     *
+     * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See
+     * [Switching an Exadata DB System to the New Resource Model and
+     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+     * for details on converting existing Exadata DB systems to the new resource model.
+     *
+     * <p>Use the {@link #createCloudExadataInfrastructure(CreateCloudExadataInfrastructureRequest,
+     * Consumer, Consumer) createCloudExadataInfrastructure} and {@link
+     * #createCloudVmCluster(CreateCloudVmClusterRequest, Consumer, Consumer) createCloudVmCluster}
+     * APIs to provision a new Exadata Cloud Service instance.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<LaunchDbSystemResponse> launchDbSystem(
             LaunchDbSystemRequest request,
@@ -2881,15 +2917,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of the Autonomous Container Databases with Autonomous Data Guard-enabled associated with the specified Autonomous Container Database.
-     *
+     * Gets a list of the Autonomous Container Databases with Autonomous Data Guard-enabled
+     * associated with the specified Autonomous Container Database.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAutonomousContainerDatabaseDataguardAssociationsResponse>
             listAutonomousContainerDatabaseDataguardAssociations(
@@ -2902,13 +2938,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets a list of the Autonomous Container Databases in the specified compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAutonomousContainerDatabasesResponse>
             listAutonomousContainerDatabases(
@@ -2919,15 +2954,15 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
-     *
+     * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or
+     * `compartmentId` specified as a query parameter.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAutonomousDatabaseBackupsResponse>
             listAutonomousDatabaseBackups(
@@ -2942,10 +2977,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAutonomousDatabaseCharacterSetsResponse>
             listAutonomousDatabaseCharacterSets(
@@ -2958,13 +2993,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Lists the Autonomous Database clones for the specified Autonomous Database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAutonomousDatabaseClonesResponse> listAutonomousDatabaseClones(
             ListAutonomousDatabaseClonesRequest request,
@@ -2974,15 +3008,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
-     *
+     * Gets a list of the Autonomous Data Guard-enabled databases associated with the specified
+     * Autonomous Database.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAutonomousDatabaseDataguardAssociationsResponse>
             listAutonomousDatabaseDataguardAssociations(
@@ -2995,13 +3029,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets a list of Autonomous Databases based on the query parameters specified.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAutonomousDatabasesResponse> listAutonomousDatabases(
             ListAutonomousDatabasesRequest request,
@@ -3010,16 +3043,16 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-     * databases with [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
-     *
+     * Gets a list of supported Autonomous Database versions. Note that preview version software is
+     * only available for databases with [shared Exadata
+     * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAutonomousDbPreviewVersionsResponse>
             listAutonomousDbPreviewVersions(
@@ -3034,10 +3067,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAutonomousDbVersionsResponse> listAutonomousDbVersions(
             ListAutonomousDbVersionsRequest request,
@@ -3048,13 +3081,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * **Deprecated.**
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAutonomousExadataInfrastructureShapesResponse>
             listAutonomousExadataInfrastructureShapes(
@@ -3065,15 +3097,19 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * **Deprecated.** Use the {@link #listCloudExadataInfrastructures(ListCloudExadataInfrastructuresRequest, Consumer, Consumer) listCloudExadataInfrastructures} operation to list Exadata Infrastructures in the Oracle cloud and the  {@link #listCloudAutonomousVmClusters(ListCloudAutonomousVmClustersRequest, Consumer, Consumer) listCloudAutonomousVmClusters} operation to list Autonomous Exadata VM clusters.
-     *
+     * **Deprecated.** Use the {@link
+     * #listCloudExadataInfrastructures(ListCloudExadataInfrastructuresRequest, Consumer, Consumer)
+     * listCloudExadataInfrastructures} operation to list Exadata Infrastructures in the Oracle
+     * cloud and the {@link #listCloudAutonomousVmClusters(ListCloudAutonomousVmClustersRequest,
+     * Consumer, Consumer) listCloudAutonomousVmClusters} operation to list Autonomous Exadata VM
+     * clusters.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAutonomousExadataInfrastructuresResponse>
             listAutonomousExadataInfrastructures(
@@ -3084,15 +3120,17 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a list of Exadata Cloud@Customer Autonomous VM clusters in the specified compartment. To list Autonomous VM Clusters in the Oracle Cloud, see {@link #listCloudAutonomousVmClusters(ListCloudAutonomousVmClustersRequest, Consumer, Consumer) listCloudAutonomousVmClusters}.
-     *
+     * Gets a list of Exadata Cloud@Customer Autonomous VM clusters in the specified compartment. To
+     * list Autonomous VM Clusters in the Oracle Cloud, see {@link
+     * #listCloudAutonomousVmClusters(ListCloudAutonomousVmClustersRequest, Consumer, Consumer)
+     * listCloudAutonomousVmClusters}.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAutonomousVmClustersResponse> listAutonomousVmClusters(
             ListAutonomousVmClustersRequest request,
@@ -3103,13 +3141,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets a list of backup destinations in the specified compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListBackupDestinationResponse> listBackupDestination(
             ListBackupDestinationRequest request,
@@ -3118,30 +3155,31 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of backups based on the `databaseId` or `compartmentId` specified. Either one of these query parameters must be provided.
-     *
+     * Gets a list of backups based on the `databaseId` or `compartmentId` specified. Either one of
+     * these query parameters must be provided.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListBackupsResponse> listBackups(
             ListBackupsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListBackupsRequest, ListBackupsResponse> handler);
 
     /**
-     * Lists Autonomous Exadata VM clusters in the Oracle cloud. For Exadata Cloud@Customer systems, see {@link #listAutonomousVmClusters(ListAutonomousVmClustersRequest, Consumer, Consumer) listAutonomousVmClusters}.
-     *
+     * Lists Autonomous Exadata VM clusters in the Oracle cloud. For Exadata Cloud@Customer systems,
+     * see {@link #listAutonomousVmClusters(ListAutonomousVmClustersRequest, Consumer, Consumer)
+     * listAutonomousVmClusters}.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListCloudAutonomousVmClustersResponse>
             listCloudAutonomousVmClusters(
@@ -3152,15 +3190,16 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
-     *
+     * Gets a list of the cloud Exadata infrastructure resources in the specified compartment.
+     * Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata
+     * infrastructure only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListCloudExadataInfrastructuresResponse>
             listCloudExadataInfrastructures(
@@ -3171,15 +3210,15 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the history of the maintenance update actions performed on the specified cloud VM cluster. Applies to Exadata Cloud Service instances only.
-     *
+     * Gets the history of the maintenance update actions performed on the specified cloud VM
+     * cluster. Applies to Exadata Cloud Service instances only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListCloudVmClusterUpdateHistoryEntriesResponse>
             listCloudVmClusterUpdateHistoryEntries(
@@ -3190,15 +3229,15 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists the maintenance updates that can be applied to the specified cloud VM cluster. Applies to Exadata Cloud Service instances only.
-     *
+     * Lists the maintenance updates that can be applied to the specified cloud VM cluster. Applies
+     * to Exadata Cloud Service instances only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListCloudVmClusterUpdatesResponse> listCloudVmClusterUpdates(
             ListCloudVmClusterUpdatesRequest request,
@@ -3207,15 +3246,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of the cloud VM clusters in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
-     *
+     * Gets a list of the cloud VM clusters in the specified compartment. Applies to Exadata Cloud
+     * Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListCloudVmClustersResponse> listCloudVmClusters(
             ListCloudVmClustersRequest request,
@@ -3226,13 +3265,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Lists the console connections for the specified database node.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListConsoleConnectionsResponse> listConsoleConnections(
             ListConsoleConnectionsRequest request,
@@ -3243,13 +3281,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Lists the patches applicable to the requested container database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListContainerDatabasePatchesResponse> listContainerDatabasePatches(
             ListContainerDatabasePatchesRequest request,
@@ -3261,13 +3298,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Lists all Data Guard associations for the specified database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDataGuardAssociationsResponse> listDataGuardAssociations(
             ListDataGuardAssociationsRequest request,
@@ -3278,13 +3314,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets a list of the database software images in the specified compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDatabaseSoftwareImagesResponse> listDatabaseSoftwareImages(
             ListDatabaseSoftwareImagesRequest request,
@@ -3293,15 +3328,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the upgrade history for a specified database in a bare metal or virtual machine DB system.
-     *
+     * Gets the upgrade history for a specified database in a bare metal or virtual machine DB
+     * system.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDatabaseUpgradeHistoryEntriesResponse>
             listDatabaseUpgradeHistoryEntries(
@@ -3314,13 +3349,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets a list of the databases in the specified Database Home.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDatabasesResponse> listDatabases(
             ListDatabasesRequest request,
@@ -3330,13 +3364,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Lists the history of patch operations on the specified Database Home.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDbHomePatchHistoryEntriesResponse>
             listDbHomePatchHistoryEntries(
@@ -3349,13 +3382,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Lists patches applicable to the requested Database Home.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDbHomePatchesResponse> listDbHomePatches(
             ListDbHomePatchesRequest request,
@@ -3364,30 +3396,30 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the Database Homes in the specified DB system and compartment. A Database Home is a directory where Oracle Database software is installed.
-     *
+     * Lists the Database Homes in the specified DB system and compartment. A Database Home is a
+     * directory where Oracle Database software is installed.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDbHomesResponse> listDbHomes(
             ListDbHomesRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListDbHomesRequest, ListDbHomesResponse> handler);
 
     /**
-     * Lists the database nodes in the specified DB system and compartment. A database node is a server running database software.
-     *
+     * Lists the database nodes in the specified DB system and compartment. A database node is a
+     * server running database software.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDbNodesResponse> listDbNodes(
             ListDbNodesRequest request,
@@ -3396,13 +3428,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Lists the Exadata DB servers in the ExadataInfrastructureId and specified compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDbServersResponse> listDbServers(
             ListDbServersRequest request,
@@ -3410,15 +3441,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
-     *
+     * Gets a list of expected compute performance parameters for a virtual machine DB system based
+     * on system configuration.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDbSystemComputePerformancesResponse>
             listDbSystemComputePerformances(
@@ -3431,13 +3462,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets the history of the patch actions performed on the specified DB system.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDbSystemPatchHistoryEntriesResponse>
             listDbSystemPatchHistoryEntries(
@@ -3450,13 +3480,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Lists the patches applicable to the specified DB system.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDbSystemPatchesResponse> listDbSystemPatches(
             ListDbSystemPatchesRequest request,
@@ -3465,14 +3494,16 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of the shapes that can be used to launch a new DB system. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
+     * Gets a list of the shapes that can be used to launch a new DB system. The shape determines
+     * resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores,
+     * memory and storage for non-VM (or bare metal) shapes.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDbSystemShapesResponse> listDbSystemShapes(
             ListDbSystemShapesRequest request,
@@ -3481,15 +3512,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
-     *
+     * Gets a list of possible expected storage performance parameters of a VMDB System based on
+     * Configuration.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDbSystemStoragePerformancesResponse>
             listDbSystemStoragePerformances(
@@ -3502,13 +3533,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets the history of the upgrade actions performed on the specified DB system.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDbSystemUpgradeHistoryEntriesResponse>
             listDbSystemUpgradeHistoryEntries(
@@ -3519,19 +3549,24 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists the DB systems in the specified compartment. You can specify a `backupId` to list only the DB systems that support creating a database using this backup in this compartment.
-     * <p>
-     **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
-     * <p>
-     * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
+     * Lists the DB systems in the specified compartment. You can specify a `backupId` to list only
+     * the DB systems that support creating a database using this backup in this compartment.
      *
+     * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
+     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * instead.
+     *
+     * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See
+     * [Switching an Exadata DB System to the New Resource Model and
+     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+     * for details on converting existing Exadata DB systems to the new resource model.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDbSystemsResponse> listDbSystems(
             ListDbSystemsRequest request,
@@ -3543,10 +3578,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDbVersionsResponse> listDbVersions(
             ListDbVersionsRequest request,
@@ -3554,16 +3589,18 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud@Customer instances only.
-     * To list the Exadata Cloud Service infrastructure resources in a compartment, use the  {@link #listCloudExadataInfrastructures(ListCloudExadataInfrastructuresRequest, Consumer, Consumer) listCloudExadataInfrastructures} operation.
-     *
+     * Lists the Exadata infrastructure resources in the specified compartment. Applies to Exadata
+     * Cloud@Customer instances only. To list the Exadata Cloud Service infrastructure resources in
+     * a compartment, use the {@link
+     * #listCloudExadataInfrastructures(ListCloudExadataInfrastructuresRequest, Consumer, Consumer)
+     * listCloudExadataInfrastructures} operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListExadataInfrastructuresResponse> listExadataInfrastructures(
             ListExadataInfrastructuresRequest request,
@@ -3574,13 +3611,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets a list of the external container databases in the specified compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListExternalContainerDatabasesResponse>
             listExternalContainerDatabases(
@@ -3593,13 +3629,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets a list of the external database connectors in the specified compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListExternalDatabaseConnectorsResponse>
             listExternalDatabaseConnectors(
@@ -3612,13 +3647,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets a list of the ExternalNonContainerDatabases in the specified compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListExternalNonContainerDatabasesResponse>
             listExternalNonContainerDatabases(
@@ -3629,16 +3663,17 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a list of the {@link #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest, Consumer, Consumer) createExternalPluggableDatabaseDetails}
-     * resources in the specified compartment.
-     *
+     * Gets a list of the {@link
+     * #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest,
+     * Consumer, Consumer) createExternalPluggableDatabaseDetails} resources in the specified
+     * compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListExternalPluggableDatabasesResponse>
             listExternalPluggableDatabases(
@@ -3649,14 +3684,16 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a list of the flex components that can be used to launch a new DB system. The flex component determines resources to allocate to the DB system - Database Servers and Storage Servers.
+     * Gets a list of the flex components that can be used to launch a new DB system. The flex
+     * component determines resources to allocate to the DB system - Database Servers and Storage
+     * Servers.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListFlexComponentsResponse> listFlexComponents(
             ListFlexComponentsRequest request,
@@ -3669,10 +3706,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListGiVersionsResponse> listGiVersions(
             ListGiVersionsRequest request,
@@ -3682,13 +3719,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets a list of key stores in the specified compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListKeyStoresResponse> listKeyStores(
             ListKeyStoresRequest request,
@@ -3698,13 +3734,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets a list of the maintenance run histories in the specified compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListMaintenanceRunHistoryResponse> listMaintenanceRunHistory(
             ListMaintenanceRunHistoryRequest request,
@@ -3715,13 +3750,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Gets a list of the maintenance runs in the specified compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListMaintenanceRunsResponse> listMaintenanceRuns(
             ListMaintenanceRunsRequest request,
@@ -3730,15 +3764,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the pluggable database conversion history for a specified database in a bare metal or virtual machine DB system.
-     *
+     * Gets the pluggable database conversion history for a specified database in a bare metal or
+     * virtual machine DB system.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListPdbConversionHistoryEntriesResponse>
             listPdbConversionHistoryEntries(
@@ -3749,15 +3783,15 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
-     *
+     * Gets a list of the pluggable databases in a database or compartment. You must provide either
+     * a `databaseId` or `compartmentId` value.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListPluggableDatabasesResponse> listPluggableDatabases(
             ListPluggableDatabasesRequest request,
@@ -3766,15 +3800,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of the VM cluster networks in the specified compartment. Applies to Exadata Cloud@Customer instances only.
-     *
+     * Gets a list of the VM cluster networks in the specified compartment. Applies to Exadata
+     * Cloud@Customer instances only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListVmClusterNetworksResponse> listVmClusterNetworks(
             ListVmClusterNetworksRequest request,
@@ -3783,15 +3817,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the history of the patch actions performed on the specified VM cluster in an Exadata Cloud@Customer system.
-     *
+     * Gets the history of the patch actions performed on the specified VM cluster in an Exadata
+     * Cloud@Customer system.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListVmClusterPatchHistoryEntriesResponse>
             listVmClusterPatchHistoryEntries(
@@ -3804,13 +3838,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Lists the patches applicable to the specified VM cluster in an Exadata Cloud@Customer system.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListVmClusterPatchesResponse> listVmClusterPatches(
             ListVmClusterPatchesRequest request,
@@ -3819,15 +3852,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the history of the maintenance update actions performed on the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
-     *
+     * Gets the history of the maintenance update actions performed on the specified VM cluster.
+     * Applies to Exadata Cloud@Customer instances only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListVmClusterUpdateHistoryEntriesResponse>
             listVmClusterUpdateHistoryEntries(
@@ -3838,15 +3871,15 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists the maintenance updates that can be applied to the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
-     *
+     * Lists the maintenance updates that can be applied to the specified VM cluster. Applies to
+     * Exadata Cloud@Customer instances only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListVmClusterUpdatesResponse> listVmClusterUpdates(
             ListVmClusterUpdatesRequest request,
@@ -3855,16 +3888,17 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the VM clusters in the specified compartment. Applies to Exadata Cloud@Customer instances only.
-     * To list the cloud VM clusters in an Exadata Cloud Service instance, use the {@link #listCloudVmClusters(ListCloudVmClustersRequest, Consumer, Consumer) listCloudVmClusters} operation.
-     *
+     * Lists the VM clusters in the specified compartment. Applies to Exadata Cloud@Customer
+     * instances only. To list the cloud VM clusters in an Exadata Cloud Service instance, use the
+     * {@link #listCloudVmClusters(ListCloudVmClustersRequest, Consumer, Consumer)
+     * listCloudVmClusters} operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListVmClustersResponse> listVmClusters(
             ListVmClustersRequest request,
@@ -3872,15 +3906,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Clones and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation.
-     *
+     * Clones and starts a pluggable database (PDB) in the same database (CDB) as the source PDB.
+     * The source PDB must be in the `READ_WRITE` openMode to perform the clone operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<LocalClonePluggableDatabaseResponse> localClonePluggableDatabase(
             LocalClonePluggableDatabaseRequest request,
@@ -3889,16 +3923,16 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Migrates the Exadata DB system to the new [Exadata resource model](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model).
+     * Migrates the Exadata DB system to the new [Exadata resource
+     * model](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model).
      * All related resources will be migrated.
-     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<MigrateExadataDbSystemResourceModelResponse>
             migrateExadataDbSystemResourceModel(
@@ -3909,14 +3943,16 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Changes encryption key management from customer-managed, using the [Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm), to Oracle-managed.
+     * Changes encryption key management from customer-managed, using the [Vault
+     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm),
+     * to Oracle-managed.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<MigrateVaultKeyResponse> migrateVaultKey(
             MigrateVaultKeyRequest request,
@@ -3928,10 +3964,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ModifyDatabaseManagementResponse> modifyDatabaseManagement(
             ModifyDatabaseManagementRequest request,
@@ -3942,13 +3978,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Asynchronously registers this Autonomous Database with Data Safe.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RegisterAutonomousDatabaseDataSafeResponse>
             registerAutonomousDatabaseDataSafe(
@@ -3959,15 +3994,15 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Reinstates a disabled standby Autonomous Container Database, identified by the autonomousContainerDatabaseId parameter, to an active standby Autonomous Container Database.
-     *
+     * Reinstates a disabled standby Autonomous Container Database, identified by the
+     * autonomousContainerDatabaseId parameter, to an active standby Autonomous Container Database.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ReinstateAutonomousContainerDatabaseDataguardAssociationResponse>
             reinstateAutonomousContainerDatabaseDataguardAssociation(
@@ -3978,15 +4013,15 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Reinstates the database identified by the `databaseId` parameter into the standby role in a Data Guard association.
-     *
+     * Reinstates the database identified by the `databaseId` parameter into the standby role in a
+     * Data Guard association.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ReinstateDataGuardAssociationResponse>
             reinstateDataGuardAssociation(
@@ -3997,15 +4032,16 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Clones a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone.
-     *
+     * Clones a pluggable database (PDB) to a different database from the source PDB. The cloned PDB
+     * will be started upon completion of the clone operation. The source PDB must be in the
+     * `READ_WRITE` openMode when performing the clone.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RemoteClonePluggableDatabaseResponse> remoteClonePluggableDatabase(
             RemoteClonePluggableDatabaseRequest request,
@@ -4015,15 +4051,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Remove Virtual Machines from the VM cluster. Applies to Exadata Cloud@Customer instances only.
-     *
+     * Remove Virtual Machines from the VM cluster. Applies to Exadata Cloud@Customer instances
+     * only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RemoveVirtualMachineFromVmClusterResponse>
             removeVirtualMachineFromVmCluster(
@@ -4034,16 +4070,15 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Adds or removes Db server network nodes to extend or shrink the existing VM cluster network. Applies to Exadata
-     * Cloud@Customer instances only.
-     *
+     * Adds or removes Db server network nodes to extend or shrink the existing VM cluster network.
+     * Applies to Exadata Cloud@Customer instances only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ResizeVmClusterNetworkResponse> resizeVmClusterNetwork(
             ResizeVmClusterNetworkRequest request,
@@ -4054,13 +4089,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Rolling restarts the specified Autonomous Container Database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RestartAutonomousContainerDatabaseResponse>
             restartAutonomousContainerDatabase(
@@ -4073,13 +4107,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Restarts the specified Autonomous Database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RestartAutonomousDatabaseResponse> restartAutonomousDatabase(
             RestartAutonomousDatabaseRequest request,
@@ -4090,13 +4123,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Restores an Autonomous Database based on the provided request parameters.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RestoreAutonomousDatabaseResponse> restoreAutonomousDatabase(
             RestoreAutonomousDatabaseRequest request,
@@ -4107,13 +4139,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Restore a Database based on the request parameters you provide.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RestoreDatabaseResponse> restoreDatabase(
             RestoreDatabaseRequest request,
@@ -4121,14 +4152,16 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new version of an existing [Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
+     * Creates a new version of an existing [Vault
+     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
+     * key.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RotateAutonomousContainerDatabaseEncryptionKeyResponse>
             rotateAutonomousContainerDatabaseEncryptionKey(
@@ -4139,14 +4172,16 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Rotate existing AutonomousDatabase [Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
+     * Rotate existing AutonomousDatabase [Vault
+     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
+     * key.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RotateAutonomousDatabaseEncryptionKeyResponse>
             rotateAutonomousDatabaseEncryptionKey(
@@ -4157,15 +4192,15 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Rotates the Oracle REST Data Services (ORDS) certificates for a cloud Autonomous Exadata VM cluster.
-     *
+     * Rotates the Oracle REST Data Services (ORDS) certificates for a cloud Autonomous Exadata VM
+     * cluster.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RotateCloudAutonomousVmClusterOrdsCertsResponse>
             rotateCloudAutonomousVmClusterOrdsCerts(
@@ -4178,13 +4213,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Rotates the SSL certficates for a cloud Autonomous Exadata VM cluster.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RotateCloudAutonomousVmClusterSslCertsResponse>
             rotateCloudAutonomousVmClusterSslCerts(
@@ -4195,15 +4229,17 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * **Deprecated.** Use the {@link #rotateCloudAutonomousVmClusterOrdsCerts(RotateCloudAutonomousVmClusterOrdsCertsRequest, Consumer, Consumer) rotateCloudAutonomousVmClusterOrdsCerts} to rotate Oracle REST Data Services (ORDS) certs for an Autonomous Exadata VM cluster instead.
-     *
+     * **Deprecated.** Use the {@link
+     * #rotateCloudAutonomousVmClusterOrdsCerts(RotateCloudAutonomousVmClusterOrdsCertsRequest,
+     * Consumer, Consumer) rotateCloudAutonomousVmClusterOrdsCerts} to rotate Oracle REST Data
+     * Services (ORDS) certs for an Autonomous Exadata VM cluster instead.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RotateOrdsCertsResponse> rotateOrdsCerts(
             RotateOrdsCertsRequest request,
@@ -4211,15 +4247,17 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **Deprecated.** Use the {@link #rotateCloudAutonomousVmClusterSslCerts(RotateCloudAutonomousVmClusterSslCertsRequest, Consumer, Consumer) rotateCloudAutonomousVmClusterSslCerts} to rotate SSL certs for an Autonomous Exadata VM cluster instead.
-     *
+     * **Deprecated.** Use the {@link
+     * #rotateCloudAutonomousVmClusterSslCerts(RotateCloudAutonomousVmClusterSslCertsRequest,
+     * Consumer, Consumer) rotateCloudAutonomousVmClusterSslCerts} to rotate SSL certs for an
+     * Autonomous Exadata VM cluster instead.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RotateSslCertsResponse> rotateSslCerts(
             RotateSslCertsRequest request,
@@ -4227,14 +4265,16 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new version of an existing [Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
+     * Creates a new version of an existing [Vault
+     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
+     * key.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RotateVaultKeyResponse> rotateVaultKey(
             RotateVaultKeyRequest request,
@@ -4242,16 +4282,16 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Scans for pluggable databases in the specified external container database.
-     * This operation will return un-registered pluggable databases in the {@link #getWorkRequest(GetWorkRequestRequest, Consumer, Consumer) getWorkRequest} operation.
-     *
+     * Scans for pluggable databases in the specified external container database. This operation
+     * will return un-registered pluggable databases in the {@link
+     * #getWorkRequest(GetWorkRequestRequest, Consumer, Consumer) getWorkRequest} operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ScanExternalContainerDatabasePluggableDatabasesResponse>
             scanExternalContainerDatabasePluggableDatabases(
@@ -4262,15 +4302,17 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * This operation shrinks the current allocated storage down to the current actual used data storage (actualUsedDataStorageSizeInTBs). The if the base storage value for the database (dataStorageSizeInTBs) is larger than the actualUsedDataStorageSizeInTBs value, you are billed for the base storage value.
-     *
+     * This operation shrinks the current allocated storage down to the current actual used data
+     * storage (actualUsedDataStorageSizeInTBs). The if the base storage value for the database
+     * (dataStorageSizeInTBs) is larger than the actualUsedDataStorageSizeInTBs value, you are
+     * billed for the base storage value.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ShrinkAutonomousDatabaseResponse> shrinkAutonomousDatabase(
             ShrinkAutonomousDatabaseRequest request,
@@ -4281,13 +4323,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Starts the specified Autonomous Database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<StartAutonomousDatabaseResponse> startAutonomousDatabase(
             StartAutonomousDatabaseRequest request,
@@ -4296,14 +4337,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Starts a stopped pluggable database. The `openMode` value of the pluggable database will be `READ_WRITE` upon completion.
+     * Starts a stopped pluggable database. The `openMode` value of the pluggable database will be
+     * `READ_WRITE` upon completion.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<StartPluggableDatabaseResponse> startPluggableDatabase(
             StartPluggableDatabaseRequest request,
@@ -4314,13 +4356,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Stops the specified Autonomous Database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<StopAutonomousDatabaseResponse> stopAutonomousDatabase(
             StopAutonomousDatabaseRequest request,
@@ -4329,14 +4370,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Stops a pluggable database. The `openMode` value of the pluggable database will be `MOUNTED` upon completion.
+     * Stops a pluggable database. The `openMode` value of the pluggable database will be `MOUNTED`
+     * upon completion.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<StopPluggableDatabaseResponse> stopPluggableDatabase(
             StopPluggableDatabaseRequest request,
@@ -4345,17 +4387,19 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Switches over the primary Autonomous Container Database of an Autonomous Data Guard peer association to standby role. The standby Autonomous Container Database associated with autonomousContainerDatabaseDataguardAssociationId assumes the primary Autonomous Container Database role.
-     * <p>
-     * A switchover incurs no data loss.
+     * Switches over the primary Autonomous Container Database of an Autonomous Data Guard peer
+     * association to standby role. The standby Autonomous Container Database associated with
+     * autonomousContainerDatabaseDataguardAssociationId assumes the primary Autonomous Container
+     * Database role.
      *
+     * <p>A switchover incurs no data loss.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse>
             switchoverAutonomousContainerDatabaseDataguardAssociation(
@@ -4366,15 +4410,18 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Initiates a switchover of the specified Autonomous Database to the associated standby database. Applicable only to databases with Autonomous Data Guard enabled. To perform a switchover to a standby located in a remote region, specify the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the remote standby using the `peerDbId` parameter.
-     *
+     * Initiates a switchover of the specified Autonomous Database to the associated standby
+     * database. Applicable only to databases with Autonomous Data Guard enabled. To perform a
+     * switchover to a standby located in a remote region, specify the
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the remote
+     * standby using the `peerDbId` parameter.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<SwitchoverAutonomousDatabaseResponse> switchoverAutonomousDatabase(
             SwitchoverAutonomousDatabaseRequest request,
@@ -4384,18 +4431,18 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Performs a switchover to transition the primary database of a Data Guard association into a standby role. The
-     * standby database associated with the `dataGuardAssociationId` assumes the primary database role.
-     * <p>
-     * A switchover guarantees no data loss.
+     * Performs a switchover to transition the primary database of a Data Guard association into a
+     * standby role. The standby database associated with the `dataGuardAssociationId` assumes the
+     * primary database role.
      *
+     * <p>A switchover guarantees no data loss.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<SwitchoverDataGuardAssociationResponse>
             switchoverDataGuardAssociation(
@@ -4406,14 +4453,18 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Terminates an Autonomous Container Database, which permanently deletes the container database and any databases within the container database. The database data is local to the Autonomous Exadata Infrastructure and will be lost when the container database is terminated. Oracle recommends that you back up any data in the Autonomous Container Database prior to terminating it.
+     * Terminates an Autonomous Container Database, which permanently deletes the container database
+     * and any databases within the container database. The database data is local to the Autonomous
+     * Exadata Infrastructure and will be lost when the container database is terminated. Oracle
+     * recommends that you back up any data in the Autonomous Container Database prior to
+     * terminating it.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<TerminateAutonomousContainerDatabaseResponse>
             terminateAutonomousContainerDatabase(
@@ -4424,15 +4475,19 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * **Deprecated.** To terminate an Exadata Infrastructure resource in the Oracle cloud, use the {@link #deleteCloudExadataInfrastructure(DeleteCloudExadataInfrastructureRequest, Consumer, Consumer) deleteCloudExadataInfrastructure} operation. To delete an Autonomous Exadata VM cluster in the Oracle cloud, use the {@link #deleteCloudAutonomousVmCluster(DeleteCloudAutonomousVmClusterRequest, Consumer, Consumer) deleteCloudAutonomousVmCluster} operation.
-     *
+     * **Deprecated.** To terminate an Exadata Infrastructure resource in the Oracle cloud, use the
+     * {@link #deleteCloudExadataInfrastructure(DeleteCloudExadataInfrastructureRequest, Consumer,
+     * Consumer) deleteCloudExadataInfrastructure} operation. To delete an Autonomous Exadata VM
+     * cluster in the Oracle cloud, use the {@link
+     * #deleteCloudAutonomousVmCluster(DeleteCloudAutonomousVmClusterRequest, Consumer, Consumer)
+     * deleteCloudAutonomousVmCluster} operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<TerminateAutonomousExadataInfrastructureResponse>
             terminateAutonomousExadataInfrastructure(
@@ -4443,19 +4498,26 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Terminates a DB system and permanently deletes it and any databases running on it, and any storage volumes attached to it. The database data is local to the DB system and will be lost when the system is terminated. Oracle recommends that you back up any data in the DB system prior to terminating it.
-     * <p>
-     **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
-     * <p>
-     * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
+     * Terminates a DB system and permanently deletes it and any databases running on it, and any
+     * storage volumes attached to it. The database data is local to the DB system and will be lost
+     * when the system is terminated. Oracle recommends that you back up any data in the DB system
+     * prior to terminating it.
      *
+     * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
+     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * instead.
+     *
+     * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See
+     * [Switching an Exadata DB System to the New Resource Model and
+     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+     * for details on converting existing Exadata DB systems to the new resource model.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<TerminateDbSystemResponse> terminateDbSystem(
             TerminateDbSystemRequest request,
@@ -4464,14 +4526,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the properties of an Autonomous Container Database, such as the OCPU core count and storage size.
+     * Updates the properties of an Autonomous Container Database, such as the OCPU core count and
+     * storage size.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateAutonomousContainerDatabaseResponse>
             updateAutonomousContainerDatabase(
@@ -4484,13 +4547,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Update Autonomous Data Guard association.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateAutonomousContainerDatabaseDataguardAssociationResponse>
             updateAutonomousContainerDatabaseDataguardAssociation(
@@ -4501,15 +4563,15 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates one or more attributes of the specified Autonomous Database. See the UpdateAutonomousDatabaseDetails resource for a full list of attributes that can be updated.
-     *
+     * Updates one or more attributes of the specified Autonomous Database. See the
+     * UpdateAutonomousDatabaseDetails resource for a full list of attributes that can be updated.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateAutonomousDatabaseResponse> updateAutonomousDatabase(
             UpdateAutonomousDatabaseRequest request,
@@ -4520,13 +4582,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Updates the Autonomous Database regional wallet.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateAutonomousDatabaseRegionalWalletResponse>
             updateAutonomousDatabaseRegionalWallet(
@@ -4539,13 +4600,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Updates the wallet for the specified Autonomous Database.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateAutonomousDatabaseWalletResponse>
             updateAutonomousDatabaseWallet(
@@ -4556,15 +4616,19 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * **Deprecated.** Use the {@link #updateCloudExadataInfrastructure(UpdateCloudExadataInfrastructureRequest, Consumer, Consumer) updateCloudExadataInfrastructure} operation to update an Exadata Infrastructure resource and  {@link #updateCloudAutonomousVmCluster(UpdateCloudAutonomousVmClusterRequest, Consumer, Consumer) updateCloudAutonomousVmCluster} operation to update an Autonomous Exadata VM cluster.
-     *
+     * **Deprecated.** Use the {@link
+     * #updateCloudExadataInfrastructure(UpdateCloudExadataInfrastructureRequest, Consumer,
+     * Consumer) updateCloudExadataInfrastructure} operation to update an Exadata Infrastructure
+     * resource and {@link #updateCloudAutonomousVmCluster(UpdateCloudAutonomousVmClusterRequest,
+     * Consumer, Consumer) updateCloudAutonomousVmCluster} operation to update an Autonomous Exadata
+     * VM cluster.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateAutonomousExadataInfrastructureResponse>
             updateAutonomousExadataInfrastructure(
@@ -4575,15 +4639,17 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates the specified Autonomous VM cluster for the Exadata Cloud@Customer system.To update an Autonomous VM Cluster in the Oracle cloud, see {@link #updateCloudAutonomousVmCluster(UpdateCloudAutonomousVmClusterRequest, Consumer, Consumer) updateCloudAutonomousVmCluster}.
-     *
+     * Updates the specified Autonomous VM cluster for the Exadata Cloud@Customer system.To update
+     * an Autonomous VM Cluster in the Oracle cloud, see {@link
+     * #updateCloudAutonomousVmCluster(UpdateCloudAutonomousVmClusterRequest, Consumer, Consumer)
+     * updateCloudAutonomousVmCluster}.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateAutonomousVmClusterResponse> updateAutonomousVmCluster(
             UpdateAutonomousVmClusterRequest request,
@@ -4592,17 +4658,16 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * If no database is associated with the backup destination:
-     * - For a RECOVERY_APPLIANCE backup destination, updates the connection string and/or the list of VPC users.
-     * - For an NFS backup destination, updates the NFS location.
-     *
+     * If no database is associated with the backup destination: - For a RECOVERY_APPLIANCE backup
+     * destination, updates the connection string and/or the list of VPC users. - For an NFS backup
+     * destination, updates the NFS location.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateBackupDestinationResponse> updateBackupDestination(
             UpdateBackupDestinationRequest request,
@@ -4611,15 +4676,17 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Customer systems, see {@link #updateAutonomousVmCluster(UpdateAutonomousVmClusterRequest, Consumer, Consumer) updateAutonomousVmCluster}.
-     *
+     * Updates the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata
+     * Cloud@Customer systems, see {@link
+     * #updateAutonomousVmCluster(UpdateAutonomousVmClusterRequest, Consumer, Consumer)
+     * updateAutonomousVmCluster}.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateCloudAutonomousVmClusterResponse>
             updateCloudAutonomousVmCluster(
@@ -4630,15 +4697,15 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates the Cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
-     *
+     * Updates the Cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances
+     * and Autonomous Database on dedicated Exadata infrastructure only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateCloudExadataInfrastructureResponse>
             updateCloudExadataInfrastructure(
@@ -4649,15 +4716,15 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates the specified cloud VM cluster. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
-     *
+     * Updates the specified cloud VM cluster. Applies to Exadata Cloud Service instances and
+     * Autonomous Database on dedicated Exadata infrastructure only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateCloudVmClusterResponse> updateCloudVmCluster(
             UpdateCloudVmClusterRequest request,
@@ -4666,15 +4733,15 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the IORM settings for the specified cloud VM cluster in an Exadata Cloud Service instance.
-     *
+     * Updates the IORM settings for the specified cloud VM cluster in an Exadata Cloud Service
+     * instance.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateCloudVmClusterIormConfigResponse>
             updateCloudVmClusterIormConfig(
@@ -4685,15 +4752,15 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates the Data Guard association the specified database. This API can be used to change the `protectionMode` and `transportType` of the Data Guard association.
-     *
+     * Updates the Data Guard association the specified database. This API can be used to change the
+     * `protectionMode` and `transportType` of the Data Guard association.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateDataGuardAssociationResponse> updateDataGuardAssociation(
             UpdateDataGuardAssociationRequest request,
@@ -4704,13 +4771,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Update the specified database based on the request parameters provided.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateDatabaseResponse> updateDatabase(
             UpdateDatabaseRequest request,
@@ -4722,10 +4788,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateDatabaseSoftwareImageResponse> updateDatabaseSoftwareImage(
             UpdateDatabaseSoftwareImageRequest request,
@@ -4738,10 +4804,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateDbHomeResponse> updateDbHome(
             UpdateDbHomeRequest request,
@@ -4750,18 +4816,22 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Updates the properties of the specified DB system.
-     * <p>
-     **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
-     * <p>
-     * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
      *
+     * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
+     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * instead.
+     *
+     * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See
+     * [Switching an Exadata DB System to the New Resource Model and
+     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+     * for details on converting existing Exadata DB systems to the new resource model.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateDbSystemResponse> updateDbSystem(
             UpdateDbSystemRequest request,
@@ -4769,16 +4839,17 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the Exadata infrastructure resource. Applies to Exadata Cloud@Customer instances only.
-     * To update an Exadata Cloud Service infrastructure resource, use the  {@link #updateCloudExadataInfrastructure(UpdateCloudExadataInfrastructureRequest, Consumer, Consumer) updateCloudExadataInfrastructure} operation.
-     *
+     * Updates the Exadata infrastructure resource. Applies to Exadata Cloud@Customer instances
+     * only. To update an Exadata Cloud Service infrastructure resource, use the {@link
+     * #updateCloudExadataInfrastructure(UpdateCloudExadataInfrastructureRequest, Consumer,
+     * Consumer) updateCloudExadataInfrastructure} operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateExadataInfrastructureResponse> updateExadataInfrastructure(
             UpdateExadataInfrastructureRequest request,
@@ -4788,21 +4859,26 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Updates IORM settings for the specified Exadata DB system.
-     * <p>
-     **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
-     * <p>
-     * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
-     * <p>
-     * The {@link #updateCloudVmClusterIormConfig(UpdateCloudVmClusterIormConfigRequest, Consumer, Consumer) updateCloudVmClusterIormConfig} API is used for Exadata systems using the
-     * new resource model.
      *
+     * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
+     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * instead.
+     *
+     * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See
+     * [Switching an Exadata DB System to the New Resource Model and
+     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+     * for details on converting existing Exadata DB systems to the new resource model.
+     *
+     * <p>The {@link #updateCloudVmClusterIormConfig(UpdateCloudVmClusterIormConfigRequest,
+     * Consumer, Consumer) updateCloudVmClusterIormConfig} API is used for Exadata systems using the
+     * new resource model.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateExadataIormConfigResponse> updateExadataIormConfig(
             UpdateExadataIormConfigRequest request,
@@ -4811,17 +4887,17 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the properties of
-     * an {@link #createExternalContainerDatabaseDetails(CreateExternalContainerDatabaseDetailsRequest, Consumer, Consumer) createExternalContainerDatabaseDetails} resource,
-     * such as the display name.
-     *
+     * Updates the properties of an {@link
+     * #createExternalContainerDatabaseDetails(CreateExternalContainerDatabaseDetailsRequest,
+     * Consumer, Consumer) createExternalContainerDatabaseDetails} resource, such as the display
+     * name.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateExternalContainerDatabaseResponse>
             updateExternalContainerDatabase(
@@ -4836,10 +4912,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateExternalDatabaseConnectorResponse>
             updateExternalDatabaseConnector(
@@ -4854,10 +4930,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateExternalNonContainerDatabaseResponse>
             updateExternalNonContainerDatabase(
@@ -4868,17 +4944,17 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates the properties of an
-     * {@link #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest, Consumer, Consumer) createExternalPluggableDatabaseDetails} resource,
-     * such as the display name.
-     *
+     * Updates the properties of an {@link
+     * #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest,
+     * Consumer, Consumer) createExternalPluggableDatabaseDetails} resource, such as the display
+     * name.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateExternalPluggableDatabaseResponse>
             updateExternalPluggableDatabase(
@@ -4891,13 +4967,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * If no database is associated with the key store, edit the key store.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateKeyStoreResponse> updateKeyStore(
             UpdateKeyStoreRequest request,
@@ -4909,10 +4984,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateMaintenanceRunResponse> updateMaintenanceRun(
             UpdateMaintenanceRunRequest request,
@@ -4925,10 +5000,10 @@ public interface DatabaseAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdatePluggableDatabaseResponse> updatePluggableDatabase(
             UpdatePluggableDatabaseRequest request,
@@ -4939,13 +5014,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Updates the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateVmClusterResponse> updateVmCluster(
             UpdateVmClusterRequest request,
@@ -4954,15 +5028,16 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Updates the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
-     * To update a cloud VM cluster in an Exadata Cloud Service instance, use the {@link #updateCloudVmCluster(UpdateCloudVmClusterRequest, Consumer, Consumer) updateCloudVmCluster} operation.
-     *
+     * To update a cloud VM cluster in an Exadata Cloud Service instance, use the {@link
+     * #updateCloudVmCluster(UpdateCloudVmClusterRequest, Consumer, Consumer) updateCloudVmCluster}
+     * operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateVmClusterNetworkResponse> updateVmClusterNetwork(
             UpdateVmClusterNetworkRequest request,
@@ -4973,13 +5048,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Upgrades the specified Oracle Database instance.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpgradeDatabaseResponse> upgradeDatabase(
             UpgradeDatabaseRequest request,
@@ -4989,13 +5063,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Upgrades the operating system and grid infrastructure of the DB system.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpgradeDbSystemResponse> upgradeDbSystem(
             UpgradeDbSystemRequest request,
@@ -5005,13 +5078,12 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Validates the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ValidateVmClusterNetworkResponse> validateVmClusterNetwork(
             ValidateVmClusterNetworkRequest request,

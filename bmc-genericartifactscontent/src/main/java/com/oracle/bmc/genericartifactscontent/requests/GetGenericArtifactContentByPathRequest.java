@@ -6,78 +6,81 @@ package com.oracle.bmc.genericartifactscontent.requests;
 
 import com.oracle.bmc.genericartifactscontent.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/genericartifactscontent/GetGenericArtifactContentByPathExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetGenericArtifactContentByPathRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/genericartifactscontent/GetGenericArtifactContentByPathExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * GetGenericArtifactContentByPathRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetGenericArtifactContentByPathRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
-     * <p>
-     * Example: {@code ocid1.repository.oc1..exampleuniqueID}
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the repository.
      *
+     * <p>Example: {@code ocid1.repository.oc1..exampleuniqueID}
      */
     private String repositoryId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
-     * <p>
-     * Example: {@code ocid1.repository.oc1..exampleuniqueID}
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the repository.
      *
+     * <p>Example: {@code ocid1.repository.oc1..exampleuniqueID}
      */
     public String getRepositoryId() {
         return repositoryId;
     }
     /**
-     * A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
-     * <p>
-     * Example: {@code project01/my-web-app/artifact-abc}
+     * A user-defined path to describe the location of an artifact. You can use slashes to organize
+     * the repository, but slashes do not create a directory structure. An artifact path does not
+     * include an artifact version.
      *
+     * <p>Example: {@code project01/my-web-app/artifact-abc}
      */
     private String artifactPath;
 
     /**
-     * A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
-     * <p>
-     * Example: {@code project01/my-web-app/artifact-abc}
+     * A user-defined path to describe the location of an artifact. You can use slashes to organize
+     * the repository, but slashes do not create a directory structure. An artifact path does not
+     * include an artifact version.
      *
+     * <p>Example: {@code project01/my-web-app/artifact-abc}
      */
     public String getArtifactPath() {
         return artifactPath;
     }
     /**
      * A user-defined string to describe the artifact version.
-     * <p>
-     * Example: {@code 1.1.2} or {@code 1.2-beta-2}
      *
+     * <p>Example: {@code 1.1.2} or {@code 1.2-beta-2}
      */
     private String version;
 
     /**
      * A user-defined string to describe the artifact version.
-     * <p>
-     * Example: {@code 1.1.2} or {@code 1.2-beta-2}
      *
+     * <p>Example: {@code 1.1.2} or {@code 1.2-beta-2}
      */
     public String getVersion() {
         return version;
     }
     /**
-     * Unique Oracle-assigned [request ID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
-     * <p>
-     * Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx}
-     * If you contact Oracle about a request, provide this request ID.
+     * Unique Oracle-assigned [request
+     * ID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
      *
+     * <p>Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx} If you contact Oracle about a
+     * request, provide this request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned [request ID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
-     * <p>
-     * Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx}
-     * If you contact Oracle about a request, provide this request ID.
+     * Unique Oracle-assigned [request
+     * ID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
      *
+     * <p>Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx} If you contact Oracle about a
+     * request, provide this request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -86,22 +89,22 @@ public class GetGenericArtifactContentByPathRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetGenericArtifactContentByPathRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
-         * <p>
-         * Example: {@code ocid1.repository.oc1..exampleuniqueID}
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the repository.
          *
+         * <p>Example: {@code ocid1.repository.oc1..exampleuniqueID}
          */
         private String repositoryId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
-         * <p>
-         * Example: {@code ocid1.repository.oc1..exampleuniqueID}
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the repository.
+         *
+         * <p>Example: {@code ocid1.repository.oc1..exampleuniqueID}
          *
          * @param repositoryId the value to set
          * @return this builder instance
@@ -112,17 +115,20 @@ public class GetGenericArtifactContentByPathRequest
         }
 
         /**
-         * A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
-         * <p>
-         * Example: {@code project01/my-web-app/artifact-abc}
+         * A user-defined path to describe the location of an artifact. You can use slashes to
+         * organize the repository, but slashes do not create a directory structure. An artifact
+         * path does not include an artifact version.
          *
+         * <p>Example: {@code project01/my-web-app/artifact-abc}
          */
         private String artifactPath = null;
 
         /**
-         * A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
-         * <p>
-         * Example: {@code project01/my-web-app/artifact-abc}
+         * A user-defined path to describe the location of an artifact. You can use slashes to
+         * organize the repository, but slashes do not create a directory structure. An artifact
+         * path does not include an artifact version.
+         *
+         * <p>Example: {@code project01/my-web-app/artifact-abc}
          *
          * @param artifactPath the value to set
          * @return this builder instance
@@ -134,16 +140,15 @@ public class GetGenericArtifactContentByPathRequest
 
         /**
          * A user-defined string to describe the artifact version.
-         * <p>
-         * Example: {@code 1.1.2} or {@code 1.2-beta-2}
          *
+         * <p>Example: {@code 1.1.2} or {@code 1.2-beta-2}
          */
         private String version = null;
 
         /**
          * A user-defined string to describe the artifact version.
-         * <p>
-         * Example: {@code 1.1.2} or {@code 1.2-beta-2}
+         *
+         * <p>Example: {@code 1.1.2} or {@code 1.2-beta-2}
          *
          * @param version the value to set
          * @return this builder instance
@@ -154,19 +159,20 @@ public class GetGenericArtifactContentByPathRequest
         }
 
         /**
-         * Unique Oracle-assigned [request ID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
-         * <p>
-         * Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx}
-         * If you contact Oracle about a request, provide this request ID.
+         * Unique Oracle-assigned [request
+         * ID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
          *
+         * <p>Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx} If you contact Oracle about a
+         * request, provide this request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned [request ID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
-         * <p>
-         * Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx}
-         * If you contact Oracle about a request, provide this request ID.
+         * Unique Oracle-assigned [request
+         * ID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
+         *
+         * <p>Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx} If you contact Oracle about a
+         * request, provide this request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -178,18 +184,19 @@ public class GetGenericArtifactContentByPathRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -201,6 +208,7 @@ public class GetGenericArtifactContentByPathRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetGenericArtifactContentByPathRequest o) {
@@ -214,12 +222,14 @@ public class GetGenericArtifactContentByPathRequest
         }
 
         /**
-         * Build the instance of GetGenericArtifactContentByPathRequest as configured by this builder
+         * Build the instance of GetGenericArtifactContentByPathRequest as configured by this
+         * builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetGenericArtifactContentByPathRequest
          */
@@ -231,9 +241,11 @@ public class GetGenericArtifactContentByPathRequest
         }
 
         /**
-         * Build the instance of GetGenericArtifactContentByPathRequest as configured by this builder
+         * Build the instance of GetGenericArtifactContentByPathRequest as configured by this
+         * builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetGenericArtifactContentByPathRequest
@@ -246,12 +258,14 @@ public class GetGenericArtifactContentByPathRequest
             request.version = version;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetGenericArtifactContentByPathRequest(repositoryId, artifactPath, version, opcRequestId);
+            // new GetGenericArtifactContentByPathRequest(repositoryId, artifactPath, version,
+            // opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -264,6 +278,7 @@ public class GetGenericArtifactContentByPathRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

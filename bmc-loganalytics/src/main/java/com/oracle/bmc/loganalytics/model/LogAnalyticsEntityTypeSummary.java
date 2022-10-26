@@ -5,23 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Summary of a log analytics entity type.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary of a log analytics entity type. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = LogAnalyticsEntityTypeSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = LogAnalyticsEntityTypeSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class LogAnalyticsEntityTypeSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -55,10 +54,7 @@ public final class LogAnalyticsEntityTypeSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Log analytics entity type name.
-         *
-         **/
+        /** Log analytics entity type name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -67,16 +63,13 @@ public final class LogAnalyticsEntityTypeSummary
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Internal name for the log analytics entity type.
-         *
-         **/
+        /** Internal name for the log analytics entity type. */
         @com.fasterxml.jackson.annotation.JsonProperty("internalName")
         private String internalName;
 
@@ -85,16 +78,13 @@ public final class LogAnalyticsEntityTypeSummary
          *
          * @param internalName the value to set
          * @return this builder
-         **/
+         */
         public Builder internalName(String internalName) {
             this.internalName = internalName;
             this.__explicitlySet__.add("internalName");
             return this;
         }
-        /**
-         * Log analytics entity type category. Category will be used for grouping and filtering.
-         *
-         **/
+        /** Log analytics entity type category. Category will be used for grouping and filtering. */
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private String category;
 
@@ -103,16 +93,13 @@ public final class LogAnalyticsEntityTypeSummary
          *
          * @param category the value to set
          * @return this builder
-         **/
+         */
         public Builder category(String category) {
             this.category = category;
             this.__explicitlySet__.add("category");
             return this;
         }
-        /**
-         * Log analytics entity type group. This can be CLOUD (OCI) or NON_CLOUD otherwise.
-         *
-         **/
+        /** Log analytics entity type group. This can be CLOUD (OCI) or NON_CLOUD otherwise. */
         @com.fasterxml.jackson.annotation.JsonProperty("cloudType")
         private EntityCloudType cloudType;
 
@@ -121,16 +108,13 @@ public final class LogAnalyticsEntityTypeSummary
          *
          * @param cloudType the value to set
          * @return this builder
-         **/
+         */
         public Builder cloudType(EntityCloudType cloudType) {
             this.cloudType = cloudType;
             this.__explicitlySet__.add("cloudType");
             return this;
         }
-        /**
-         * The current lifecycle state of the log analytics entity type.
-         *
-         **/
+        /** The current lifecycle state of the log analytics entity type. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private EntityLifecycleStates lifecycleState;
 
@@ -139,16 +123,13 @@ public final class LogAnalyticsEntityTypeSummary
          *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(EntityLifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * Time the log analytics entity type was created. An RFC3339 formatted datetime string.
-         *
-         **/
+        /** Time the log analytics entity type was created. An RFC3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -157,16 +138,13 @@ public final class LogAnalyticsEntityTypeSummary
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * Time the log analytics entity type was updated. An RFC3339 formatted datetime string.
-         *
-         **/
+        /** Time the log analytics entity type was updated. An RFC3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
@@ -175,25 +153,26 @@ public final class LogAnalyticsEntityTypeSummary
          *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * This field indicates whether logs for entities of this type can be collected using a management agent.
-         *
-         **/
+         * This field indicates whether logs for entities of this type can be collected using a
+         * management agent.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentEligibilityStatus")
         private ManagementAgentEligibilityStatus managementAgentEligibilityStatus;
 
         /**
-         * This field indicates whether logs for entities of this type can be collected using a management agent.
+         * This field indicates whether logs for entities of this type can be collected using a
+         * management agent.
          *
          * @param managementAgentEligibilityStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder managementAgentEligibilityStatus(
                 ManagementAgentEligibilityStatus managementAgentEligibilityStatus) {
             this.managementAgentEligibilityStatus = managementAgentEligibilityStatus;
@@ -251,9 +230,7 @@ public final class LogAnalyticsEntityTypeSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -262,10 +239,7 @@ public final class LogAnalyticsEntityTypeSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * Log analytics entity type name.
-     *
-     **/
+    /** Log analytics entity type name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -273,15 +247,12 @@ public final class LogAnalyticsEntityTypeSummary
      * Log analytics entity type name.
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Internal name for the log analytics entity type.
-     *
-     **/
+    /** Internal name for the log analytics entity type. */
     @com.fasterxml.jackson.annotation.JsonProperty("internalName")
     private final String internalName;
 
@@ -289,15 +260,12 @@ public final class LogAnalyticsEntityTypeSummary
      * Internal name for the log analytics entity type.
      *
      * @return the value
-     **/
+     */
     public String getInternalName() {
         return internalName;
     }
 
-    /**
-     * Log analytics entity type category. Category will be used for grouping and filtering.
-     *
-     **/
+    /** Log analytics entity type category. Category will be used for grouping and filtering. */
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
@@ -305,15 +273,12 @@ public final class LogAnalyticsEntityTypeSummary
      * Log analytics entity type category. Category will be used for grouping and filtering.
      *
      * @return the value
-     **/
+     */
     public String getCategory() {
         return category;
     }
 
-    /**
-     * Log analytics entity type group. This can be CLOUD (OCI) or NON_CLOUD otherwise.
-     *
-     **/
+    /** Log analytics entity type group. This can be CLOUD (OCI) or NON_CLOUD otherwise. */
     @com.fasterxml.jackson.annotation.JsonProperty("cloudType")
     private final EntityCloudType cloudType;
 
@@ -321,15 +286,12 @@ public final class LogAnalyticsEntityTypeSummary
      * Log analytics entity type group. This can be CLOUD (OCI) or NON_CLOUD otherwise.
      *
      * @return the value
-     **/
+     */
     public EntityCloudType getCloudType() {
         return cloudType;
     }
 
-    /**
-     * The current lifecycle state of the log analytics entity type.
-     *
-     **/
+    /** The current lifecycle state of the log analytics entity type. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final EntityLifecycleStates lifecycleState;
 
@@ -337,15 +299,12 @@ public final class LogAnalyticsEntityTypeSummary
      * The current lifecycle state of the log analytics entity type.
      *
      * @return the value
-     **/
+     */
     public EntityLifecycleStates getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * Time the log analytics entity type was created. An RFC3339 formatted datetime string.
-     *
-     **/
+    /** Time the log analytics entity type was created. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -353,15 +312,12 @@ public final class LogAnalyticsEntityTypeSummary
      * Time the log analytics entity type was created. An RFC3339 formatted datetime string.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * Time the log analytics entity type was updated. An RFC3339 formatted datetime string.
-     *
-     **/
+    /** Time the log analytics entity type was updated. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
@@ -369,23 +325,23 @@ public final class LogAnalyticsEntityTypeSummary
      * Time the log analytics entity type was updated. An RFC3339 formatted datetime string.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * This field indicates whether logs for entities of this type can be collected using a management agent.
-     *
-     **/
-    public enum ManagementAgentEligibilityStatus {
+     * This field indicates whether logs for entities of this type can be collected using a
+     * management agent.
+     */
+    public enum ManagementAgentEligibilityStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Eligible("ELIGIBLE"),
         Ineligible("INELIGIBLE"),
         Unknown("UNKNOWN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -425,17 +381,18 @@ public final class LogAnalyticsEntityTypeSummary
         }
     };
     /**
-     * This field indicates whether logs for entities of this type can be collected using a management agent.
-     *
-     **/
+     * This field indicates whether logs for entities of this type can be collected using a
+     * management agent.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentEligibilityStatus")
     private final ManagementAgentEligibilityStatus managementAgentEligibilityStatus;
 
     /**
-     * This field indicates whether logs for entities of this type can be collected using a management agent.
+     * This field indicates whether logs for entities of this type can be collected using a
+     * management agent.
      *
      * @return the value
-     **/
+     */
     public ManagementAgentEligibilityStatus getManagementAgentEligibilityStatus() {
         return managementAgentEligibilityStatus;
     }
@@ -447,6 +404,7 @@ public final class LogAnalyticsEntityTypeSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

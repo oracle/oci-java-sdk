@@ -5,22 +5,22 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Configration for a metric based horizontal scale-in policy.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Configration for a metric based horizontal scale-in policy. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = MetricBasedHorizontalScaleInConfig.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = MetricBasedHorizontalScaleInConfig.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class MetricBasedHorizontalScaleInConfig
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"metric", "minNodeCount", "stepSize"})
     public MetricBasedHorizontalScaleInConfig(
@@ -42,33 +42,31 @@ public final class MetricBasedHorizontalScaleInConfig
             this.__explicitlySet__.add("metric");
             return this;
         }
-        /**
-         * This value is the minimum number of nodes the cluster can be scaled-in to.
-         **/
+        /** This value is the minimum number of nodes the cluster can be scaled-in to. */
         @com.fasterxml.jackson.annotation.JsonProperty("minNodeCount")
         private Integer minNodeCount;
 
         /**
          * This value is the minimum number of nodes the cluster can be scaled-in to.
+         *
          * @param minNodeCount the value to set
          * @return this builder
-         **/
+         */
         public Builder minNodeCount(Integer minNodeCount) {
             this.minNodeCount = minNodeCount;
             this.__explicitlySet__.add("minNodeCount");
             return this;
         }
-        /**
-         * This value is the number of nodes to remove during a scale-in event.
-         **/
+        /** This value is the number of nodes to remove during a scale-in event. */
         @com.fasterxml.jackson.annotation.JsonProperty("stepSize")
         private Integer stepSize;
 
         /**
          * This value is the number of nodes to remove during a scale-in event.
+         *
          * @param stepSize the value to set
          * @return this builder
-         **/
+         */
         public Builder stepSize(Integer stepSize) {
             this.stepSize = stepSize;
             this.__explicitlySet__.add("stepSize");
@@ -103,9 +101,7 @@ public final class MetricBasedHorizontalScaleInConfig
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -121,30 +117,28 @@ public final class MetricBasedHorizontalScaleInConfig
         return metric;
     }
 
-    /**
-     * This value is the minimum number of nodes the cluster can be scaled-in to.
-     **/
+    /** This value is the minimum number of nodes the cluster can be scaled-in to. */
     @com.fasterxml.jackson.annotation.JsonProperty("minNodeCount")
     private final Integer minNodeCount;
 
     /**
      * This value is the minimum number of nodes the cluster can be scaled-in to.
+     *
      * @return the value
-     **/
+     */
     public Integer getMinNodeCount() {
         return minNodeCount;
     }
 
-    /**
-     * This value is the number of nodes to remove during a scale-in event.
-     **/
+    /** This value is the number of nodes to remove during a scale-in event. */
     @com.fasterxml.jackson.annotation.JsonProperty("stepSize")
     private final Integer stepSize;
 
     /**
      * This value is the number of nodes to remove during a scale-in event.
+     *
      * @return the value
-     **/
+     */
     public Integer getStepSize() {
         return stepSize;
     }
@@ -156,6 +150,7 @@ public final class MetricBasedHorizontalScaleInConfig
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

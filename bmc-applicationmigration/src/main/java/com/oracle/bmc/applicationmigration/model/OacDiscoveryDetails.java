@@ -5,56 +5,60 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * Details about the Oracle Analytics Cloud - Classic application in the source environment.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details about the Oracle Analytics Cloud - Classic application in the source environment. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = OacDiscoveryDetails.Builder.class
-)
+        builder = OacDiscoveryDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class OacDiscoveryDetails extends DiscoveryDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * This field is currently not supported. You must enter a value, such as <code>unused</code>. However, the value that you enter is ignored.
-         **/
+         * This field is currently not supported. You must enter a value, such as <code>unused
+         * </code>. However, the value that you enter is ignored.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceInstanceUser")
         private String serviceInstanceUser;
 
         /**
-         * This field is currently not supported. You must enter a value, such as <code>unused</code>. However, the value that you enter is ignored.
+         * This field is currently not supported. You must enter a value, such as <code>unused
+         * </code>. However, the value that you enter is ignored.
+         *
          * @param serviceInstanceUser the value to set
          * @return this builder
-         **/
+         */
         public Builder serviceInstanceUser(String serviceInstanceUser) {
             this.serviceInstanceUser = serviceInstanceUser;
             this.__explicitlySet__.add("serviceInstanceUser");
             return this;
         }
         /**
-         * This field is currently not supported. You must enter a value, such as <code>unused</code>. However, the value that you enter is ignored.
-         **/
+         * This field is currently not supported. You must enter a value, such as <code>unused
+         * </code>. However, the value that you enter is ignored.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceInstancePassword")
         private String serviceInstancePassword;
 
         /**
-         * This field is currently not supported. You must enter a value, such as <code>unused</code>. However, the value that you enter is ignored.
+         * This field is currently not supported. You must enter a value, such as <code>unused
+         * </code>. However, the value that you enter is ignored.
+         *
          * @param serviceInstancePassword the value to set
          * @return this builder
-         **/
+         */
         public Builder serviceInstancePassword(String serviceInstancePassword) {
             this.serviceInstancePassword = serviceInstancePassword;
             this.__explicitlySet__.add("serviceInstancePassword");
@@ -85,9 +89,7 @@ public final class OacDiscoveryDetails extends DiscoveryDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -104,29 +106,35 @@ public final class OacDiscoveryDetails extends DiscoveryDetails {
     }
 
     /**
-     * This field is currently not supported. You must enter a value, such as <code>unused</code>. However, the value that you enter is ignored.
-     **/
+     * This field is currently not supported. You must enter a value, such as <code>unused</code>.
+     * However, the value that you enter is ignored.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceInstanceUser")
     private final String serviceInstanceUser;
 
     /**
-     * This field is currently not supported. You must enter a value, such as <code>unused</code>. However, the value that you enter is ignored.
+     * This field is currently not supported. You must enter a value, such as <code>unused</code>.
+     * However, the value that you enter is ignored.
+     *
      * @return the value
-     **/
+     */
     public String getServiceInstanceUser() {
         return serviceInstanceUser;
     }
 
     /**
-     * This field is currently not supported. You must enter a value, such as <code>unused</code>. However, the value that you enter is ignored.
-     **/
+     * This field is currently not supported. You must enter a value, such as <code>unused</code>.
+     * However, the value that you enter is ignored.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceInstancePassword")
     private final String serviceInstancePassword;
 
     /**
-     * This field is currently not supported. You must enter a value, such as <code>unused</code>. However, the value that you enter is ignored.
+     * This field is currently not supported. You must enter a value, such as <code>unused</code>.
+     * However, the value that you enter is ignored.
+     *
      * @return the value
-     **/
+     */
     public String getServiceInstancePassword() {
         return serviceInstancePassword;
     }
@@ -138,6 +146,7 @@ public final class OacDiscoveryDetails extends DiscoveryDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

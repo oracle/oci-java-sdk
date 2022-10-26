@@ -6,31 +6,26 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetLibraryMaskingFormatExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetLibraryMaskingFormatRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetLibraryMaskingFormatExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * GetLibraryMaskingFormatRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class GetLibraryMaskingFormatRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The OCID of the library masking format.
-     */
+    /** The OCID of the library masking format. */
     private String libraryMaskingFormatId;
 
-    /**
-     * The OCID of the library masking format.
-     */
+    /** The OCID of the library masking format. */
     public String getLibraryMaskingFormatId() {
         return libraryMaskingFormatId;
     }
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     private String opcRequestId;
 
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -38,17 +33,15 @@ public class GetLibraryMaskingFormatRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetLibraryMaskingFormatRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the library masking format.
-         */
+        /** The OCID of the library masking format. */
         private String libraryMaskingFormatId = null;
 
         /**
          * The OCID of the library masking format.
+         *
          * @param libraryMaskingFormatId the value to set
          * @return this builder instance
          */
@@ -57,13 +50,12 @@ public class GetLibraryMaskingFormatRequest
             return this;
         }
 
-        /**
-         * Unique identifier for the request.
-         */
+        /** Unique identifier for the request. */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -74,18 +66,19 @@ public class GetLibraryMaskingFormatRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -97,6 +90,7 @@ public class GetLibraryMaskingFormatRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetLibraryMaskingFormatRequest o) {
@@ -110,10 +104,11 @@ public class GetLibraryMaskingFormatRequest
         /**
          * Build the instance of GetLibraryMaskingFormatRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetLibraryMaskingFormatRequest
          */
@@ -127,7 +122,8 @@ public class GetLibraryMaskingFormatRequest
         /**
          * Build the instance of GetLibraryMaskingFormatRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetLibraryMaskingFormatRequest
@@ -143,6 +139,7 @@ public class GetLibraryMaskingFormatRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -153,6 +150,7 @@ public class GetLibraryMaskingFormatRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

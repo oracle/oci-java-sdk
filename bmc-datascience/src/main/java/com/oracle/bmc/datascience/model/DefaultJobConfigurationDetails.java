@@ -5,32 +5,28 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * The default job configuration.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The default job configuration. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DefaultJobConfigurationDetails.Builder.class
-)
+        builder = DefaultJobConfigurationDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "jobType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "jobType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DefaultJobConfigurationDetails extends JobConfigurationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Environment variables to set for the job.
-         *
-         **/
+        /** Environment variables to set for the job. */
         @com.fasterxml.jackson.annotation.JsonProperty("environmentVariables")
         private java.util.Map<String, String> environmentVariables;
 
@@ -39,16 +35,13 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
          *
          * @param environmentVariables the value to set
          * @return this builder
-         **/
+         */
         public Builder environmentVariables(java.util.Map<String, String> environmentVariables) {
             this.environmentVariables = environmentVariables;
             this.__explicitlySet__.add("environmentVariables");
             return this;
         }
-        /**
-         * The arguments to pass to the job.
-         *
-         **/
+        /** The arguments to pass to the job. */
         @com.fasterxml.jackson.annotation.JsonProperty("commandLineArguments")
         private String commandLineArguments;
 
@@ -57,16 +50,13 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
          *
          * @param commandLineArguments the value to set
          * @return this builder
-         **/
+         */
         public Builder commandLineArguments(String commandLineArguments) {
             this.commandLineArguments = commandLineArguments;
             this.__explicitlySet__.add("commandLineArguments");
             return this;
         }
-        /**
-         * A time bound for the execution of the job. Timer starts when the job becomes active.
-         *
-         **/
+        /** A time bound for the execution of the job. Timer starts when the job becomes active. */
         @com.fasterxml.jackson.annotation.JsonProperty("maximumRuntimeInMinutes")
         private Long maximumRuntimeInMinutes;
 
@@ -75,7 +65,7 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
          *
          * @param maximumRuntimeInMinutes the value to set
          * @return this builder
-         **/
+         */
         public Builder maximumRuntimeInMinutes(Long maximumRuntimeInMinutes) {
             this.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
             this.__explicitlySet__.add("maximumRuntimeInMinutes");
@@ -112,9 +102,7 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -134,10 +122,7 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
         this.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
     }
 
-    /**
-     * Environment variables to set for the job.
-     *
-     **/
+    /** Environment variables to set for the job. */
     @com.fasterxml.jackson.annotation.JsonProperty("environmentVariables")
     private final java.util.Map<String, String> environmentVariables;
 
@@ -145,15 +130,12 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
      * Environment variables to set for the job.
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getEnvironmentVariables() {
         return environmentVariables;
     }
 
-    /**
-     * The arguments to pass to the job.
-     *
-     **/
+    /** The arguments to pass to the job. */
     @com.fasterxml.jackson.annotation.JsonProperty("commandLineArguments")
     private final String commandLineArguments;
 
@@ -161,15 +143,12 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
      * The arguments to pass to the job.
      *
      * @return the value
-     **/
+     */
     public String getCommandLineArguments() {
         return commandLineArguments;
     }
 
-    /**
-     * A time bound for the execution of the job. Timer starts when the job becomes active.
-     *
-     **/
+    /** A time bound for the execution of the job. Timer starts when the job becomes active. */
     @com.fasterxml.jackson.annotation.JsonProperty("maximumRuntimeInMinutes")
     private final Long maximumRuntimeInMinutes;
 
@@ -177,7 +156,7 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
      * A time bound for the execution of the job. Timer starts when the job becomes active.
      *
      * @return the value
-     **/
+     */
     public Long getMaximumRuntimeInMinutes() {
         return maximumRuntimeInMinutes;
     }
@@ -189,6 +168,7 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

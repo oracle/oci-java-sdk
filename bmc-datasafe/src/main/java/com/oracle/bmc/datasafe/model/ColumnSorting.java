@@ -5,19 +5,20 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Sorting the data at the column level.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Sorting the data at the column level. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ColumnSorting.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ColumnSorting extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ColumnSorting extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"fieldName", "isAscending", "sortingOrder"})
     public ColumnSorting(String fieldName, Boolean isAscending, Integer sortingOrder) {
@@ -29,49 +30,50 @@ public final class ColumnSorting extends com.oracle.bmc.http.internal.Explicitly
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Name of the column that must be sorted.
-         **/
+        /** Name of the column that must be sorted. */
         @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
         private String fieldName;
 
         /**
          * Name of the column that must be sorted.
+         *
          * @param fieldName the value to set
          * @return this builder
-         **/
+         */
         public Builder fieldName(String fieldName) {
             this.fieldName = fieldName;
             this.__explicitlySet__.add("fieldName");
             return this;
         }
         /**
-         * Indicates if the column must be sorted in ascending order. Values can either be 'true' or 'false'.
-         **/
+         * Indicates if the column must be sorted in ascending order. Values can either be 'true' or
+         * 'false'.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isAscending")
         private Boolean isAscending;
 
         /**
-         * Indicates if the column must be sorted in ascending order. Values can either be 'true' or 'false'.
+         * Indicates if the column must be sorted in ascending order. Values can either be 'true' or
+         * 'false'.
+         *
          * @param isAscending the value to set
          * @return this builder
-         **/
+         */
         public Builder isAscending(Boolean isAscending) {
             this.isAscending = isAscending;
             this.__explicitlySet__.add("isAscending");
             return this;
         }
-        /**
-         * Indicates the order at which column must be sorted.
-         **/
+        /** Indicates the order at which column must be sorted. */
         @com.fasterxml.jackson.annotation.JsonProperty("sortingOrder")
         private Integer sortingOrder;
 
         /**
          * Indicates the order at which column must be sorted.
+         *
          * @param sortingOrder the value to set
          * @return this builder
-         **/
+         */
         public Builder sortingOrder(Integer sortingOrder) {
             this.sortingOrder = sortingOrder;
             this.__explicitlySet__.add("sortingOrder");
@@ -105,9 +107,7 @@ public final class ColumnSorting extends com.oracle.bmc.http.internal.Explicitly
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,44 +116,45 @@ public final class ColumnSorting extends com.oracle.bmc.http.internal.Explicitly
         return new Builder().copy(this);
     }
 
-    /**
-     * Name of the column that must be sorted.
-     **/
+    /** Name of the column that must be sorted. */
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     private final String fieldName;
 
     /**
      * Name of the column that must be sorted.
+     *
      * @return the value
-     **/
+     */
     public String getFieldName() {
         return fieldName;
     }
 
     /**
-     * Indicates if the column must be sorted in ascending order. Values can either be 'true' or 'false'.
-     **/
+     * Indicates if the column must be sorted in ascending order. Values can either be 'true' or
+     * 'false'.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isAscending")
     private final Boolean isAscending;
 
     /**
-     * Indicates if the column must be sorted in ascending order. Values can either be 'true' or 'false'.
+     * Indicates if the column must be sorted in ascending order. Values can either be 'true' or
+     * 'false'.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsAscending() {
         return isAscending;
     }
 
-    /**
-     * Indicates the order at which column must be sorted.
-     **/
+    /** Indicates the order at which column must be sorted. */
     @com.fasterxml.jackson.annotation.JsonProperty("sortingOrder")
     private final Integer sortingOrder;
 
     /**
      * Indicates the order at which column must be sorted.
+     *
      * @return the value
-     **/
+     */
     public Integer getSortingOrder() {
         return sortingOrder;
     }
@@ -165,6 +166,7 @@ public final class ColumnSorting extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

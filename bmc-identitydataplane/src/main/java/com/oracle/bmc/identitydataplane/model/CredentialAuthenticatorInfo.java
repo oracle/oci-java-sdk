@@ -5,22 +5,22 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CredentialAuthenticatorInfo.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CredentialAuthenticatorInfo.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CredentialAuthenticatorInfo
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "rawCredential",
@@ -57,145 +57,136 @@ public final class CredentialAuthenticatorInfo
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The raw credential.
-         **/
+        /** The raw credential. */
         @com.fasterxml.jackson.annotation.JsonProperty("rawCredential")
         private String rawCredential;
 
         /**
          * The raw credential.
+         *
          * @param rawCredential the value to set
          * @return this builder
-         **/
+         */
         public Builder rawCredential(String rawCredential) {
             this.rawCredential = rawCredential;
             this.__explicitlySet__.add("rawCredential");
             return this;
         }
-        /**
-         * The id of the user.
-         **/
+        /** The id of the user. */
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
         /**
          * The id of the user.
+         *
          * @param userId the value to set
          * @return this builder
-         **/
+         */
         public Builder userId(String userId) {
             this.userId = userId;
             this.__explicitlySet__.add("userId");
             return this;
         }
-        /**
-         * The id of the tenant.
-         **/
+        /** The id of the tenant. */
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
         /**
          * The id of the tenant.
+         *
          * @param tenantId the value to set
          * @return this builder
-         **/
+         */
         public Builder tenantId(String tenantId) {
             this.tenantId = tenantId;
             this.__explicitlySet__.add("tenantId");
             return this;
         }
-        /**
-         * The name of the user.
-         **/
+        /** The name of the user. */
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
         /**
          * The name of the user.
+         *
          * @param userName the value to set
          * @return this builder
-         **/
+         */
         public Builder userName(String userName) {
             this.userName = userName;
             this.__explicitlySet__.add("userName");
             return this;
         }
-        /**
-         * The name of the tenant.
-         **/
+        /** The name of the tenant. */
         @com.fasterxml.jackson.annotation.JsonProperty("tenantName")
         private String tenantName;
 
         /**
          * The name of the tenant.
+         *
          * @param tenantName the value to set
          * @return this builder
-         **/
+         */
         public Builder tenantName(String tenantName) {
             this.tenantName = tenantName;
             this.__explicitlySet__.add("tenantName");
             return this;
         }
-        /**
-         * The credential identifier.
-         **/
+        /** The credential identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("credentialIdentifier")
         private String credentialIdentifier;
 
         /**
          * The credential identifier.
+         *
          * @param credentialIdentifier the value to set
          * @return this builder
-         **/
+         */
         public Builder credentialIdentifier(String credentialIdentifier) {
             this.credentialIdentifier = credentialIdentifier;
             this.__explicitlySet__.add("credentialIdentifier");
             return this;
         }
-        /**
-         * The credential list.
-         **/
+        /** The credential list. */
         @com.fasterxml.jackson.annotation.JsonProperty("credentialList")
         private java.util.List<String> credentialList;
 
         /**
          * The credential list.
+         *
          * @param credentialList the value to set
          * @return this builder
-         **/
+         */
         public Builder credentialList(java.util.List<String> credentialList) {
             this.credentialList = credentialList;
             this.__explicitlySet__.add("credentialList");
             return this;
         }
-        /**
-         * The name of the service that is making this authorization request.
-         **/
+        /** The name of the service that is making this authorization request. */
         @com.fasterxml.jackson.annotation.JsonProperty("service")
         private String service;
 
         /**
          * The name of the service that is making this authorization request.
+         *
          * @param service the value to set
          * @return this builder
-         **/
+         */
         public Builder service(String service) {
             this.service = service;
             this.__explicitlySet__.add("service");
             return this;
         }
-        /**
-         * The id of the client.
-         **/
+        /** The id of the client. */
         @com.fasterxml.jackson.annotation.JsonProperty("clientId")
         private String clientId;
 
         /**
          * The id of the client.
+         *
          * @param clientId the value to set
          * @return this builder
-         **/
+         */
         public Builder clientId(String clientId) {
             this.clientId = clientId;
             this.__explicitlySet__.add("clientId");
@@ -256,9 +247,7 @@ public final class CredentialAuthenticatorInfo
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -267,128 +256,119 @@ public final class CredentialAuthenticatorInfo
         return new Builder().copy(this);
     }
 
-    /**
-     * The raw credential.
-     **/
+    /** The raw credential. */
     @com.fasterxml.jackson.annotation.JsonProperty("rawCredential")
     private final String rawCredential;
 
     /**
      * The raw credential.
+     *
      * @return the value
-     **/
+     */
     public String getRawCredential() {
         return rawCredential;
     }
 
-    /**
-     * The id of the user.
-     **/
+    /** The id of the user. */
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
 
     /**
      * The id of the user.
+     *
      * @return the value
-     **/
+     */
     public String getUserId() {
         return userId;
     }
 
-    /**
-     * The id of the tenant.
-     **/
+    /** The id of the tenant. */
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
     /**
      * The id of the tenant.
+     *
      * @return the value
-     **/
+     */
     public String getTenantId() {
         return tenantId;
     }
 
-    /**
-     * The name of the user.
-     **/
+    /** The name of the user. */
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
     /**
      * The name of the user.
+     *
      * @return the value
-     **/
+     */
     public String getUserName() {
         return userName;
     }
 
-    /**
-     * The name of the tenant.
-     **/
+    /** The name of the tenant. */
     @com.fasterxml.jackson.annotation.JsonProperty("tenantName")
     private final String tenantName;
 
     /**
      * The name of the tenant.
+     *
      * @return the value
-     **/
+     */
     public String getTenantName() {
         return tenantName;
     }
 
-    /**
-     * The credential identifier.
-     **/
+    /** The credential identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("credentialIdentifier")
     private final String credentialIdentifier;
 
     /**
      * The credential identifier.
+     *
      * @return the value
-     **/
+     */
     public String getCredentialIdentifier() {
         return credentialIdentifier;
     }
 
-    /**
-     * The credential list.
-     **/
+    /** The credential list. */
     @com.fasterxml.jackson.annotation.JsonProperty("credentialList")
     private final java.util.List<String> credentialList;
 
     /**
      * The credential list.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getCredentialList() {
         return credentialList;
     }
 
-    /**
-     * The name of the service that is making this authorization request.
-     **/
+    /** The name of the service that is making this authorization request. */
     @com.fasterxml.jackson.annotation.JsonProperty("service")
     private final String service;
 
     /**
      * The name of the service that is making this authorization request.
+     *
      * @return the value
-     **/
+     */
     public String getService() {
         return service;
     }
 
-    /**
-     * The id of the client.
-     **/
+    /** The id of the client. */
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
     private final String clientId;
 
     /**
      * The id of the client.
+     *
      * @return the value
-     **/
+     */
     public String getClientId() {
         return clientId;
     }
@@ -400,6 +380,7 @@ public final class CredentialAuthenticatorInfo
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

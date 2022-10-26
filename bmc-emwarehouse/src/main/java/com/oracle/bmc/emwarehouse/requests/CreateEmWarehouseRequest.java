@@ -6,59 +6,52 @@ package com.oracle.bmc.emwarehouse.requests;
 
 import com.oracle.bmc.emwarehouse.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/emwarehouse/CreateEmWarehouseExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateEmWarehouseRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/emwarehouse/CreateEmWarehouseExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateEmWarehouseRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public class CreateEmWarehouseRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.emwarehouse.model.CreateEmWarehouseDetails> {
 
-    /**
-     * Details for the new EmWarehouse.
-     */
+    /** Details for the new EmWarehouse. */
     private com.oracle.bmc.emwarehouse.model.CreateEmWarehouseDetails createEmWarehouseDetails;
 
-    /**
-     * Details for the new EmWarehouse.
-     */
+    /** Details for the new EmWarehouse. */
     public com.oracle.bmc.emwarehouse.model.CreateEmWarehouseDetails getCreateEmWarehouseDetails() {
         return createEmWarehouseDetails;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * might be rejected.
-     *
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * might be rejected.
-     *
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -71,18 +64,16 @@ public class CreateEmWarehouseRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateEmWarehouseRequest,
                     com.oracle.bmc.emwarehouse.model.CreateEmWarehouseDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Details for the new EmWarehouse.
-         */
+        /** Details for the new EmWarehouse. */
         private com.oracle.bmc.emwarehouse.model.CreateEmWarehouseDetails createEmWarehouseDetails =
                 null;
 
         /**
          * Details for the new EmWarehouse.
+         *
          * @param createEmWarehouseDetails the value to set
          * @return this builder instance
          */
@@ -95,20 +86,19 @@ public class CreateEmWarehouseRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * might be rejected.
-         *
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -118,13 +108,12 @@ public class CreateEmWarehouseRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -135,18 +124,19 @@ public class CreateEmWarehouseRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -158,6 +148,7 @@ public class CreateEmWarehouseRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(CreateEmWarehouseRequest o) {
@@ -172,10 +163,11 @@ public class CreateEmWarehouseRequest
         /**
          * Build the instance of CreateEmWarehouseRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of CreateEmWarehouseRequest
          */
@@ -188,6 +180,7 @@ public class CreateEmWarehouseRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -200,7 +193,8 @@ public class CreateEmWarehouseRequest
         /**
          * Build the instance of CreateEmWarehouseRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateEmWarehouseRequest
@@ -217,6 +211,7 @@ public class CreateEmWarehouseRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -228,6 +223,7 @@ public class CreateEmWarehouseRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

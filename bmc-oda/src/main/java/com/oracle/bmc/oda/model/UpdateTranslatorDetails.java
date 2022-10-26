@@ -5,22 +5,22 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * Properties to update a Translator.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Properties to update a Translator. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateTranslatorDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateTranslatorDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateTranslatorDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "baseUrl",
@@ -45,53 +45,50 @@ public final class UpdateTranslatorDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The base URL for invoking the Translation Service.
-         **/
+        /** The base URL for invoking the Translation Service. */
         @com.fasterxml.jackson.annotation.JsonProperty("baseUrl")
         private String baseUrl;
 
         /**
          * The base URL for invoking the Translation Service.
+         *
          * @param baseUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder baseUrl(String baseUrl) {
             this.baseUrl = baseUrl;
             this.__explicitlySet__.add("baseUrl");
             return this;
         }
-        /**
-         * The authentication token to use when invoking the Translation Service
-         **/
+        /** The authentication token to use when invoking the Translation Service */
         @com.fasterxml.jackson.annotation.JsonProperty("authToken")
         private String authToken;
 
         /**
          * The authentication token to use when invoking the Translation Service
+         *
          * @param authToken the value to set
          * @return this builder
-         **/
+         */
         public Builder authToken(String authToken) {
             this.authToken = authToken;
             this.__explicitlySet__.add("authToken");
             return this;
         }
         /**
-         * Properties used when invoking the translation service.
-         * Each property is a simple key-value pair.
-         *
-         **/
+         * Properties used when invoking the translation service. Each property is a simple
+         * key-value pair.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, String> properties;
 
         /**
-         * Properties used when invoking the translation service.
-         * Each property is a simple key-value pair.
+         * Properties used when invoking the translation service. Each property is a simple
+         * key-value pair.
          *
          * @param properties the value to set
          * @return this builder
-         **/
+         */
         public Builder properties(java.util.Map<String, String> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -100,8 +97,7 @@ public final class UpdateTranslatorDetails
         /**
          * Simple key-value pair that is applied without any predefined name, type, or scope.
          * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -111,27 +107,26 @@ public final class UpdateTranslatorDetails
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
+         * {@code {"foo-namespace": {"bar-key": "value"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
+         * {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -177,9 +172,7 @@ public final class UpdateTranslatorDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -188,84 +181,79 @@ public final class UpdateTranslatorDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The base URL for invoking the Translation Service.
-     **/
+    /** The base URL for invoking the Translation Service. */
     @com.fasterxml.jackson.annotation.JsonProperty("baseUrl")
     private final String baseUrl;
 
     /**
      * The base URL for invoking the Translation Service.
+     *
      * @return the value
-     **/
+     */
     public String getBaseUrl() {
         return baseUrl;
     }
 
-    /**
-     * The authentication token to use when invoking the Translation Service
-     **/
+    /** The authentication token to use when invoking the Translation Service */
     @com.fasterxml.jackson.annotation.JsonProperty("authToken")
     private final String authToken;
 
     /**
      * The authentication token to use when invoking the Translation Service
+     *
      * @return the value
-     **/
+     */
     public String getAuthToken() {
         return authToken;
     }
 
     /**
-     * Properties used when invoking the translation service.
-     * Each property is a simple key-value pair.
-     *
-     **/
+     * Properties used when invoking the translation service. Each property is a simple key-value
+     * pair.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.Map<String, String> properties;
 
     /**
-     * Properties used when invoking the translation service.
-     * Each property is a simple key-value pair.
+     * Properties used when invoking the translation service. Each property is a simple key-value
+     * pair.
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getProperties() {
         return properties;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Example:
+     * {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Example:
+     * {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -277,6 +265,7 @@ public final class UpdateTranslatorDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -285,7 +274,7 @@ public final class UpdateTranslatorDetails
         sb.append("UpdateTranslatorDetails(");
         sb.append("super=").append(super.toString());
         sb.append("baseUrl=").append(String.valueOf(this.baseUrl));
-        sb.append(", authToken=").append(String.valueOf(this.authToken));
+        sb.append(", authToken=").append("<redacted>");
         sb.append(", properties=").append(String.valueOf(this.properties));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));

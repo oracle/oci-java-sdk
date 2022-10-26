@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.applicationmigration.model;
 
-/**
- * Migration process state
- **/
+/** Migration process state */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
-public enum MigrationStates {
+public enum MigrationStates implements com.oracle.bmc.http.internal.BmcEnum {
     DiscoveringApplication("DISCOVERING_APPLICATION"),
     DiscoveryFailed("DISCOVERY_FAILED"),
     MissingConfigValues("MISSING_CONFIG_VALUES"),

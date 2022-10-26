@@ -5,21 +5,22 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * The request object for single derived Entity.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The request object for single derived Entity. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DeriveEntitiesItem.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DeriveEntitiesItem extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = DeriveEntitiesItem.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class DeriveEntitiesItem
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"modelType", "mode", "referencedDataObject"})
     public DeriveEntitiesItem(
@@ -32,33 +33,31 @@ public final class DeriveEntitiesItem extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The model type of DeriveEntitiesRequestItem
-         **/
+        /** The model type of DeriveEntitiesRequestItem */
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
         /**
          * The model type of DeriveEntitiesRequestItem
+         *
          * @param modelType the value to set
          * @return this builder
-         **/
+         */
         public Builder modelType(String modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
             return this;
         }
-        /**
-         * Determines whether derived entity is treated as source or target
-         **/
+        /** Determines whether derived entity is treated as source or target */
         @com.fasterxml.jackson.annotation.JsonProperty("mode")
         private Mode mode;
 
         /**
          * Determines whether derived entity is treated as source or target
+         *
          * @param mode the value to set
          * @return this builder
-         **/
+         */
         public Builder mode(Mode mode) {
             this.mode = mode;
             this.__explicitlySet__.add("mode");
@@ -101,9 +100,7 @@ public final class DeriveEntitiesItem extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -112,24 +109,21 @@ public final class DeriveEntitiesItem extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * The model type of DeriveEntitiesRequestItem
-     **/
+    /** The model type of DeriveEntitiesRequestItem */
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
     /**
      * The model type of DeriveEntitiesRequestItem
+     *
      * @return the value
-     **/
+     */
     public String getModelType() {
         return modelType;
     }
 
-    /**
-     * Determines whether derived entity is treated as source or target
-     **/
-    public enum Mode {
+    /** Determines whether derived entity is treated as source or target */
+    public enum Mode implements com.oracle.bmc.http.internal.BmcEnum {
         In("IN"),
         Out("OUT"),
         ;
@@ -161,16 +155,15 @@ public final class DeriveEntitiesItem extends com.oracle.bmc.http.internal.Expli
             throw new IllegalArgumentException("Invalid Mode: " + key);
         }
     };
-    /**
-     * Determines whether derived entity is treated as source or target
-     **/
+    /** Determines whether derived entity is treated as source or target */
     @com.fasterxml.jackson.annotation.JsonProperty("mode")
     private final Mode mode;
 
     /**
      * Determines whether derived entity is treated as source or target
+     *
      * @return the value
-     **/
+     */
     public Mode getMode() {
         return mode;
     }
@@ -189,6 +182,7 @@ public final class DeriveEntitiesItem extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

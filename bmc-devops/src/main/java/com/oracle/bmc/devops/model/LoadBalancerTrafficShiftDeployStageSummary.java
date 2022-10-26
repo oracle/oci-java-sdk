@@ -5,25 +5,24 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies load balancer traffic shift stage.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Specifies load balancer traffic shift stage. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = LoadBalancerTrafficShiftDeployStageSummary.Builder.class
-)
+        builder = LoadBalancerTrafficShiftDeployStageSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "deployStageType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "deployStageType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class LoadBalancerTrafficShiftDeployStageSummary extends DeployStageSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -172,17 +171,16 @@ public final class LoadBalancerTrafficShiftDeployStageSummary extends DeployStag
             this.__explicitlySet__.add("greenBackendIps");
             return this;
         }
-        /**
-         * Specifies the target or destination backend set.
-         **/
+        /** Specifies the target or destination backend set. */
         @com.fasterxml.jackson.annotation.JsonProperty("trafficShiftTarget")
         private LoadBalancerTrafficShiftDeployStage.TrafficShiftTarget trafficShiftTarget;
 
         /**
          * Specifies the target or destination backend set.
+         *
          * @param trafficShiftTarget the value to set
          * @return this builder
-         **/
+         */
         public Builder trafficShiftTarget(
                 LoadBalancerTrafficShiftDeployStage.TrafficShiftTarget trafficShiftTarget) {
             this.trafficShiftTarget = trafficShiftTarget;
@@ -315,9 +313,7 @@ public final class LoadBalancerTrafficShiftDeployStageSummary extends DeployStag
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -385,16 +381,15 @@ public final class LoadBalancerTrafficShiftDeployStageSummary extends DeployStag
         return greenBackendIps;
     }
 
-    /**
-     * Specifies the target or destination backend set.
-     **/
+    /** Specifies the target or destination backend set. */
     @com.fasterxml.jackson.annotation.JsonProperty("trafficShiftTarget")
     private final LoadBalancerTrafficShiftDeployStage.TrafficShiftTarget trafficShiftTarget;
 
     /**
      * Specifies the target or destination backend set.
+     *
      * @return the value
-     **/
+     */
     public LoadBalancerTrafficShiftDeployStage.TrafficShiftTarget getTrafficShiftTarget() {
         return trafficShiftTarget;
     }
@@ -427,6 +422,7 @@ public final class LoadBalancerTrafficShiftDeployStageSummary extends DeployStag
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

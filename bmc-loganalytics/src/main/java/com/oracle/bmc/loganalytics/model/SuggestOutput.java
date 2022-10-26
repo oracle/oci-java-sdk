@@ -5,20 +5,20 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Typeahead results
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Typeahead results <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SuggestOutput.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SuggestOutput extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class SuggestOutput extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "position",
@@ -49,10 +49,7 @@ public final class SuggestOutput extends com.oracle.bmc.http.internal.Explicitly
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Character position suggestion should be placed in queryString provided as input.
-         *
-         **/
+        /** Character position suggestion should be placed in queryString provided as input. */
         @com.fasterxml.jackson.annotation.JsonProperty("position")
         private Integer position;
 
@@ -61,7 +58,7 @@ public final class SuggestOutput extends com.oracle.bmc.http.internal.Explicitly
          *
          * @param position the value to set
          * @return this builder
-         **/
+         */
         public Builder position(Integer position) {
             this.position = position;
             this.__explicitlySet__.add("position");
@@ -69,8 +66,7 @@ public final class SuggestOutput extends com.oracle.bmc.http.internal.Explicitly
         }
         /**
          * Context specific list of querylanguage commands if input is seeking command suggestions.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("commands")
         private java.util.List<String> commands;
 
@@ -79,34 +75,32 @@ public final class SuggestOutput extends com.oracle.bmc.http.internal.Explicitly
          *
          * @param commands the value to set
          * @return this builder
-         **/
+         */
         public Builder commands(java.util.List<String> commands) {
             this.commands = commands;
             this.__explicitlySet__.add("commands");
             return this;
         }
         /**
-         * Context specific list of querylanguage fields / columns if input is seeking field / column suggestions.
-         *
-         **/
+         * Context specific list of querylanguage fields / columns if input is seeking field /
+         * column suggestions.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("fields")
         private java.util.List<String> fields;
 
         /**
-         * Context specific list of querylanguage fields / columns if input is seeking field / column suggestions.
+         * Context specific list of querylanguage fields / columns if input is seeking field /
+         * column suggestions.
          *
          * @param fields the value to set
          * @return this builder
-         **/
+         */
         public Builder fields(java.util.List<String> fields) {
             this.fields = fields;
             this.__explicitlySet__.add("fields");
             return this;
         }
-        /**
-         * Context specific list of field values if input is seeking field value suggestions.
-         *
-         **/
+        /** Context specific list of field values if input is seeking field value suggestions. */
         @com.fasterxml.jackson.annotation.JsonProperty("fieldValues")
         private java.util.List<String> fieldValues;
 
@@ -115,7 +109,7 @@ public final class SuggestOutput extends com.oracle.bmc.http.internal.Explicitly
          *
          * @param fieldValues the value to set
          * @return this builder
-         **/
+         */
         public Builder fieldValues(java.util.List<String> fieldValues) {
             this.fieldValues = fieldValues;
             this.__explicitlySet__.add("fieldValues");
@@ -123,8 +117,7 @@ public final class SuggestOutput extends com.oracle.bmc.http.internal.Explicitly
         }
         /**
          * Context specific list of terms / phrases if input is seeking terms / phrase suggestions.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("terms")
         private java.util.List<String> terms;
 
@@ -133,43 +126,45 @@ public final class SuggestOutput extends com.oracle.bmc.http.internal.Explicitly
          *
          * @param terms the value to set
          * @return this builder
-         **/
+         */
         public Builder terms(java.util.List<String> terms) {
             this.terms = terms;
             this.__explicitlySet__.add("terms");
             return this;
         }
         /**
-         * Context specific list of querylanguage command options if input is seeking command option suggestions.
-         *
-         **/
+         * Context specific list of querylanguage command options if input is seeking command option
+         * suggestions.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("options")
         private java.util.List<String> options;
 
         /**
-         * Context specific list of querylanguage command options if input is seeking command option suggestions.
+         * Context specific list of querylanguage command options if input is seeking command option
+         * suggestions.
          *
          * @param options the value to set
          * @return this builder
-         **/
+         */
         public Builder options(java.util.List<String> options) {
             this.options = options;
             this.__explicitlySet__.add("options");
             return this;
         }
         /**
-         * Context specific list of querylanguage querystring examples if input is seeking queryString example suggestions.
-         *
-         **/
+         * Context specific list of querylanguage querystring examples if input is seeking
+         * queryString example suggestions.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("examples")
         private java.util.List<String> examples;
 
         /**
-         * Context specific list of querylanguage querystring examples if input is seeking queryString example suggestions.
+         * Context specific list of querylanguage querystring examples if input is seeking
+         * queryString example suggestions.
          *
          * @param examples the value to set
          * @return this builder
-         **/
+         */
         public Builder examples(java.util.List<String> examples) {
             this.examples = examples;
             this.__explicitlySet__.add("examples");
@@ -222,9 +217,7 @@ public final class SuggestOutput extends com.oracle.bmc.http.internal.Explicitly
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -233,10 +226,7 @@ public final class SuggestOutput extends com.oracle.bmc.http.internal.Explicitly
         return new Builder().copy(this);
     }
 
-    /**
-     * Character position suggestion should be placed in queryString provided as input.
-     *
-     **/
+    /** Character position suggestion should be placed in queryString provided as input. */
     @com.fasterxml.jackson.annotation.JsonProperty("position")
     private final Integer position;
 
@@ -244,15 +234,12 @@ public final class SuggestOutput extends com.oracle.bmc.http.internal.Explicitly
      * Character position suggestion should be placed in queryString provided as input.
      *
      * @return the value
-     **/
+     */
     public Integer getPosition() {
         return position;
     }
 
-    /**
-     * Context specific list of querylanguage commands if input is seeking command suggestions.
-     *
-     **/
+    /** Context specific list of querylanguage commands if input is seeking command suggestions. */
     @com.fasterxml.jackson.annotation.JsonProperty("commands")
     private final java.util.List<String> commands;
 
@@ -260,31 +247,29 @@ public final class SuggestOutput extends com.oracle.bmc.http.internal.Explicitly
      * Context specific list of querylanguage commands if input is seeking command suggestions.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getCommands() {
         return commands;
     }
 
     /**
-     * Context specific list of querylanguage fields / columns if input is seeking field / column suggestions.
-     *
-     **/
+     * Context specific list of querylanguage fields / columns if input is seeking field / column
+     * suggestions.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
     private final java.util.List<String> fields;
 
     /**
-     * Context specific list of querylanguage fields / columns if input is seeking field / column suggestions.
+     * Context specific list of querylanguage fields / columns if input is seeking field / column
+     * suggestions.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getFields() {
         return fields;
     }
 
-    /**
-     * Context specific list of field values if input is seeking field value suggestions.
-     *
-     **/
+    /** Context specific list of field values if input is seeking field value suggestions. */
     @com.fasterxml.jackson.annotation.JsonProperty("fieldValues")
     private final java.util.List<String> fieldValues;
 
@@ -292,15 +277,12 @@ public final class SuggestOutput extends com.oracle.bmc.http.internal.Explicitly
      * Context specific list of field values if input is seeking field value suggestions.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getFieldValues() {
         return fieldValues;
     }
 
-    /**
-     * Context specific list of terms / phrases if input is seeking terms / phrase suggestions.
-     *
-     **/
+    /** Context specific list of terms / phrases if input is seeking terms / phrase suggestions. */
     @com.fasterxml.jackson.annotation.JsonProperty("terms")
     private final java.util.List<String> terms;
 
@@ -308,39 +290,41 @@ public final class SuggestOutput extends com.oracle.bmc.http.internal.Explicitly
      * Context specific list of terms / phrases if input is seeking terms / phrase suggestions.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getTerms() {
         return terms;
     }
 
     /**
-     * Context specific list of querylanguage command options if input is seeking command option suggestions.
-     *
-     **/
+     * Context specific list of querylanguage command options if input is seeking command option
+     * suggestions.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("options")
     private final java.util.List<String> options;
 
     /**
-     * Context specific list of querylanguage command options if input is seeking command option suggestions.
+     * Context specific list of querylanguage command options if input is seeking command option
+     * suggestions.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getOptions() {
         return options;
     }
 
     /**
-     * Context specific list of querylanguage querystring examples if input is seeking queryString example suggestions.
-     *
-     **/
+     * Context specific list of querylanguage querystring examples if input is seeking queryString
+     * example suggestions.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("examples")
     private final java.util.List<String> examples;
 
     /**
-     * Context specific list of querylanguage querystring examples if input is seeking queryString example suggestions.
+     * Context specific list of querylanguage querystring examples if input is seeking queryString
+     * example suggestions.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getExamples() {
         return examples;
     }
@@ -352,6 +336,7 @@ public final class SuggestOutput extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

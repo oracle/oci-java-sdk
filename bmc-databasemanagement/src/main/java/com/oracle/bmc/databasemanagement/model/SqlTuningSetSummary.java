@@ -5,21 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The summary information of a SQL tuning set.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The summary information of a SQL tuning set. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SqlTuningSetSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlTuningSetSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = SqlTuningSetSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class SqlTuningSetSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "owner", "description", "statementCounts"})
     public SqlTuningSetSummary(
@@ -33,65 +34,61 @@ public final class SqlTuningSetSummary extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the SQL tuning set.
-         **/
+        /** The name of the SQL tuning set. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the SQL tuning set.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The owner of the SQL tuning set.
-         **/
+        /** The owner of the SQL tuning set. */
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private String owner;
 
         /**
          * The owner of the SQL tuning set.
+         *
          * @param owner the value to set
          * @return this builder
-         **/
+         */
         public Builder owner(String owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
             return this;
         }
-        /**
-         * The description of the SQL tuning set.
-         **/
+        /** The description of the SQL tuning set. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the SQL tuning set.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The number of SQL statements in the SQL tuning set.
-         **/
+        /** The number of SQL statements in the SQL tuning set. */
         @com.fasterxml.jackson.annotation.JsonProperty("statementCounts")
         private Integer statementCounts;
 
         /**
          * The number of SQL statements in the SQL tuning set.
+         *
          * @param statementCounts the value to set
          * @return this builder
-         **/
+         */
         public Builder statementCounts(Integer statementCounts) {
             this.statementCounts = statementCounts;
             this.__explicitlySet__.add("statementCounts");
@@ -129,9 +126,7 @@ public final class SqlTuningSetSummary extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -140,58 +135,54 @@ public final class SqlTuningSetSummary extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the SQL tuning set.
-     **/
+    /** The name of the SQL tuning set. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the SQL tuning set.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The owner of the SQL tuning set.
-     **/
+    /** The owner of the SQL tuning set. */
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final String owner;
 
     /**
      * The owner of the SQL tuning set.
+     *
      * @return the value
-     **/
+     */
     public String getOwner() {
         return owner;
     }
 
-    /**
-     * The description of the SQL tuning set.
-     **/
+    /** The description of the SQL tuning set. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the SQL tuning set.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The number of SQL statements in the SQL tuning set.
-     **/
+    /** The number of SQL statements in the SQL tuning set. */
     @com.fasterxml.jackson.annotation.JsonProperty("statementCounts")
     private final Integer statementCounts;
 
     /**
      * The number of SQL statements in the SQL tuning set.
+     *
      * @return the value
-     **/
+     */
     public Integer getStatementCounts() {
         return statementCounts;
     }
@@ -203,6 +194,7 @@ public final class SqlTuningSetSummary extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

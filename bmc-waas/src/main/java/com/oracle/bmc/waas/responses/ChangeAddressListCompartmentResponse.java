@@ -9,12 +9,15 @@ import com.oracle.bmc.waas.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class ChangeAddressListCompartmentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
      * @return the value
      */
     public String getOpcRequestId() {
@@ -24,34 +27,41 @@ public class ChangeAddressListCompartmentResponse extends com.oracle.bmc.respons
     @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
     private ChangeAddressListCompartmentResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    ChangeAddressListCompartmentResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -62,8 +72,10 @@ public class ChangeAddressListCompartmentResponse extends com.oracle.bmc.respons
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ChangeAddressListCompartmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -74,8 +86,10 @@ public class ChangeAddressListCompartmentResponse extends com.oracle.bmc.respons
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ChangeAddressListCompartmentResponse build() {
             return new ChangeAddressListCompartmentResponse(
                     __httpStatusCode__, headers, opcRequestId);
@@ -84,6 +98,7 @@ public class ChangeAddressListCompartmentResponse extends com.oracle.bmc.respons
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

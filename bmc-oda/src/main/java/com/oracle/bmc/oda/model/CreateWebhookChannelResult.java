@@ -5,25 +5,24 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * The configuration for a Webhook channel.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The configuration for a Webhook channel. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateWebhookChannelResult.Builder.class
-)
+        builder = CreateWebhookChannelResult.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateWebhookChannelResult extends CreateChannelResult {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -119,88 +118,83 @@ public final class CreateWebhookChannelResult extends CreateChannelResult {
             return this;
         }
         /**
-         * The secret key used to verify the authenticity of received messages.
-         * This is only returned this once.  If it is lost the keys will need to be rotated to generate a new key.
-         *
-         **/
+         * The secret key used to verify the authenticity of received messages. This is only
+         * returned this once. If it is lost the keys will need to be rotated to generate a new key.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("secretKey")
         private String secretKey;
 
         /**
-         * The secret key used to verify the authenticity of received messages.
-         * This is only returned this once.  If it is lost the keys will need to be rotated to generate a new key.
+         * The secret key used to verify the authenticity of received messages. This is only
+         * returned this once. If it is lost the keys will need to be rotated to generate a new key.
          *
          * @param secretKey the value to set
          * @return this builder
-         **/
+         */
         public Builder secretKey(String secretKey) {
             this.secretKey = secretKey;
             this.__explicitlySet__.add("secretKey");
             return this;
         }
-        /**
-         * The URL to send responses to.
-         **/
+        /** The URL to send responses to. */
         @com.fasterxml.jackson.annotation.JsonProperty("outboundUrl")
         private String outboundUrl;
 
         /**
          * The URL to send responses to.
+         *
          * @param outboundUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder outboundUrl(String outboundUrl) {
             this.outboundUrl = outboundUrl;
             this.__explicitlySet__.add("outboundUrl");
             return this;
         }
-        /**
-         * The version for payloads.
-         **/
+        /** The version for payloads. */
         @com.fasterxml.jackson.annotation.JsonProperty("payloadVersion")
         private WebhookPayloadVersion payloadVersion;
 
         /**
          * The version for payloads.
+         *
          * @param payloadVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder payloadVersion(WebhookPayloadVersion payloadVersion) {
             this.payloadVersion = payloadVersion;
             this.__explicitlySet__.add("payloadVersion");
             return this;
         }
-        /**
-         * The ID of the Skill or Digital Assistant that the Channel is routed to.
-         **/
+        /** The ID of the Skill or Digital Assistant that the Channel is routed to. */
         @com.fasterxml.jackson.annotation.JsonProperty("botId")
         private String botId;
 
         /**
          * The ID of the Skill or Digital Assistant that the Channel is routed to.
+         *
          * @param botId the value to set
          * @return this builder
-         **/
+         */
         public Builder botId(String botId) {
             this.botId = botId;
             this.__explicitlySet__.add("botId");
             return this;
         }
         /**
-         * The URL to use to send messages to this channel.
-         * This will be generally be used to configure a webhook in a 3rd party messaging system to send messages to this channel.
-         *
-         **/
+         * The URL to use to send messages to this channel. This will be generally be used to
+         * configure a webhook in a 3rd party messaging system to send messages to this channel.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("webhookUrl")
         private String webhookUrl;
 
         /**
-         * The URL to use to send messages to this channel.
-         * This will be generally be used to configure a webhook in a 3rd party messaging system to send messages to this channel.
+         * The URL to use to send messages to this channel. This will be generally be used to
+         * configure a webhook in a 3rd party messaging system to send messages to this channel.
          *
          * @param webhookUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder webhookUrl(String webhookUrl) {
             this.webhookUrl = webhookUrl;
             this.__explicitlySet__.add("webhookUrl");
@@ -286,9 +280,7 @@ public final class CreateWebhookChannelResult extends CreateChannelResult {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -333,79 +325,74 @@ public final class CreateWebhookChannelResult extends CreateChannelResult {
     }
 
     /**
-     * The secret key used to verify the authenticity of received messages.
-     * This is only returned this once.  If it is lost the keys will need to be rotated to generate a new key.
-     *
-     **/
+     * The secret key used to verify the authenticity of received messages. This is only returned
+     * this once. If it is lost the keys will need to be rotated to generate a new key.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("secretKey")
     private final String secretKey;
 
     /**
-     * The secret key used to verify the authenticity of received messages.
-     * This is only returned this once.  If it is lost the keys will need to be rotated to generate a new key.
+     * The secret key used to verify the authenticity of received messages. This is only returned
+     * this once. If it is lost the keys will need to be rotated to generate a new key.
      *
      * @return the value
-     **/
+     */
     public String getSecretKey() {
         return secretKey;
     }
 
-    /**
-     * The URL to send responses to.
-     **/
+    /** The URL to send responses to. */
     @com.fasterxml.jackson.annotation.JsonProperty("outboundUrl")
     private final String outboundUrl;
 
     /**
      * The URL to send responses to.
+     *
      * @return the value
-     **/
+     */
     public String getOutboundUrl() {
         return outboundUrl;
     }
 
-    /**
-     * The version for payloads.
-     **/
+    /** The version for payloads. */
     @com.fasterxml.jackson.annotation.JsonProperty("payloadVersion")
     private final WebhookPayloadVersion payloadVersion;
 
     /**
      * The version for payloads.
+     *
      * @return the value
-     **/
+     */
     public WebhookPayloadVersion getPayloadVersion() {
         return payloadVersion;
     }
 
-    /**
-     * The ID of the Skill or Digital Assistant that the Channel is routed to.
-     **/
+    /** The ID of the Skill or Digital Assistant that the Channel is routed to. */
     @com.fasterxml.jackson.annotation.JsonProperty("botId")
     private final String botId;
 
     /**
      * The ID of the Skill or Digital Assistant that the Channel is routed to.
+     *
      * @return the value
-     **/
+     */
     public String getBotId() {
         return botId;
     }
 
     /**
-     * The URL to use to send messages to this channel.
-     * This will be generally be used to configure a webhook in a 3rd party messaging system to send messages to this channel.
-     *
-     **/
+     * The URL to use to send messages to this channel. This will be generally be used to configure
+     * a webhook in a 3rd party messaging system to send messages to this channel.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("webhookUrl")
     private final String webhookUrl;
 
     /**
-     * The URL to use to send messages to this channel.
-     * This will be generally be used to configure a webhook in a 3rd party messaging system to send messages to this channel.
+     * The URL to use to send messages to this channel. This will be generally be used to configure
+     * a webhook in a 3rd party messaging system to send messages to this channel.
      *
      * @return the value
-     **/
+     */
     public String getWebhookUrl() {
         return webhookUrl;
     }
@@ -417,6 +404,7 @@ public final class CreateWebhookChannelResult extends CreateChannelResult {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -424,7 +412,7 @@ public final class CreateWebhookChannelResult extends CreateChannelResult {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateWebhookChannelResult(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append(", secretKey=").append(String.valueOf(this.secretKey));
+        sb.append(", secretKey=").append("<redacted>");
         sb.append(", outboundUrl=").append(String.valueOf(this.outboundUrl));
         sb.append(", payloadVersion=").append(String.valueOf(this.payloadVersion));
         sb.append(", botId=").append(String.valueOf(this.botId));

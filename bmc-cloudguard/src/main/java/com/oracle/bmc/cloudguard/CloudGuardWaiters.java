@@ -10,8 +10,9 @@ import com.oracle.bmc.cloudguard.responses.*;
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
  * resources of CloudGuard.
- * <p>
- * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
+ *
+ * <p>The default configuration used is defined by {@link
+ * com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class CloudGuardWaiters {
@@ -28,7 +29,8 @@ public class CloudGuardWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDataMaskRuleRequest, GetDataMaskRuleResponse>
@@ -74,7 +76,8 @@ public class CloudGuardWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDataMaskRuleRequest, GetDataMaskRuleResponse>
@@ -130,7 +133,8 @@ public class CloudGuardWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDataSourceRequest, GetDataSourceResponse> forDataSource(
@@ -174,7 +178,8 @@ public class CloudGuardWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDataSourceRequest, GetDataSourceResponse> forDataSource(
@@ -228,7 +233,8 @@ public class CloudGuardWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDetectorRequest, GetDetectorResponse> forDetector(
@@ -272,7 +278,8 @@ public class CloudGuardWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDetectorRequest, GetDetectorResponse> forDetector(
@@ -325,7 +332,8 @@ public class CloudGuardWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDetectorRecipeRequest, GetDetectorRecipeResponse>
@@ -371,7 +379,8 @@ public class CloudGuardWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDetectorRecipeRequest, GetDetectorRecipeResponse>
@@ -428,7 +437,8 @@ public class CloudGuardWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -476,7 +486,8 @@ public class CloudGuardWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -537,7 +548,8 @@ public class CloudGuardWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDetectorRuleRequest, GetDetectorRuleResponse>
@@ -583,7 +595,8 @@ public class CloudGuardWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDetectorRuleRequest, GetDetectorRuleResponse>
@@ -639,7 +652,8 @@ public class CloudGuardWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetManagedListRequest, GetManagedListResponse>
@@ -685,7 +699,8 @@ public class CloudGuardWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetManagedListRequest, GetManagedListResponse>
@@ -741,7 +756,8 @@ public class CloudGuardWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetProblemRequest, GetProblemResponse> forProblem(
@@ -785,7 +801,8 @@ public class CloudGuardWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetProblemRequest, GetProblemResponse> forProblem(
@@ -837,7 +854,8 @@ public class CloudGuardWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetResponderRecipeRequest, GetResponderRecipeResponse>
@@ -883,7 +901,8 @@ public class CloudGuardWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetResponderRecipeRequest, GetResponderRecipeResponse>
@@ -940,7 +959,8 @@ public class CloudGuardWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -988,7 +1008,8 @@ public class CloudGuardWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -1050,7 +1071,8 @@ public class CloudGuardWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetResponderRuleRequest, GetResponderRuleResponse>
@@ -1096,7 +1118,8 @@ public class CloudGuardWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetResponderRuleRequest, GetResponderRuleResponse>
@@ -1152,7 +1175,8 @@ public class CloudGuardWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetSecurityPolicyRequest, GetSecurityPolicyResponse>
@@ -1198,7 +1222,8 @@ public class CloudGuardWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetSecurityPolicyRequest, GetSecurityPolicyResponse>
@@ -1255,7 +1280,8 @@ public class CloudGuardWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetSecurityRecipeRequest, GetSecurityRecipeResponse>
@@ -1301,7 +1327,8 @@ public class CloudGuardWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetSecurityRecipeRequest, GetSecurityRecipeResponse>
@@ -1358,7 +1385,8 @@ public class CloudGuardWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetSecurityZoneRequest, GetSecurityZoneResponse>
@@ -1404,7 +1432,8 @@ public class CloudGuardWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetSecurityZoneRequest, GetSecurityZoneResponse>
@@ -1460,7 +1489,8 @@ public class CloudGuardWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetTargetRequest, GetTargetResponse> forTarget(
@@ -1504,7 +1534,8 @@ public class CloudGuardWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetTargetRequest, GetTargetResponse> forTarget(
@@ -1557,7 +1588,8 @@ public class CloudGuardWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -1605,7 +1637,8 @@ public class CloudGuardWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -1664,7 +1697,8 @@ public class CloudGuardWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -1714,7 +1748,8 @@ public class CloudGuardWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -1779,7 +1814,8 @@ public class CloudGuardWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -1829,7 +1865,8 @@ public class CloudGuardWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<

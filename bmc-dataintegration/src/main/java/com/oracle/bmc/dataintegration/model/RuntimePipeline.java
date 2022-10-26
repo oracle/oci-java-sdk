@@ -5,19 +5,21 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Runtime pipeline model which holds the runtime metadata of the task executed.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Runtime pipeline model which holds the runtime metadata of the task executed. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RuntimePipeline.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RuntimePipeline extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class RuntimePipeline
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"pipeline", "runtimeOperators", "parentRuntimeOperatorKey"})
     public RuntimePipeline(
@@ -41,33 +43,31 @@ public final class RuntimePipeline extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("pipeline");
             return this;
         }
-        /**
-         * A list of RuntimeOperators attached to the RuntimePipeline.
-         **/
+        /** A list of RuntimeOperators attached to the RuntimePipeline. */
         @com.fasterxml.jackson.annotation.JsonProperty("runtimeOperators")
         private java.util.List<RuntimeOperator> runtimeOperators;
 
         /**
          * A list of RuntimeOperators attached to the RuntimePipeline.
+         *
          * @param runtimeOperators the value to set
          * @return this builder
-         **/
+         */
         public Builder runtimeOperators(java.util.List<RuntimeOperator> runtimeOperators) {
             this.runtimeOperators = runtimeOperators;
             this.__explicitlySet__.add("runtimeOperators");
             return this;
         }
-        /**
-         * The parent RuntimePipeline's RuntimeOperator key.
-         **/
+        /** The parent RuntimePipeline's RuntimeOperator key. */
         @com.fasterxml.jackson.annotation.JsonProperty("parentRuntimeOperatorKey")
         private String parentRuntimeOperatorKey;
 
         /**
          * The parent RuntimePipeline's RuntimeOperator key.
+         *
          * @param parentRuntimeOperatorKey the value to set
          * @return this builder
-         **/
+         */
         public Builder parentRuntimeOperatorKey(String parentRuntimeOperatorKey) {
             this.parentRuntimeOperatorKey = parentRuntimeOperatorKey;
             this.__explicitlySet__.add("parentRuntimeOperatorKey");
@@ -102,9 +102,7 @@ public final class RuntimePipeline extends com.oracle.bmc.http.internal.Explicit
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -120,30 +118,28 @@ public final class RuntimePipeline extends com.oracle.bmc.http.internal.Explicit
         return pipeline;
     }
 
-    /**
-     * A list of RuntimeOperators attached to the RuntimePipeline.
-     **/
+    /** A list of RuntimeOperators attached to the RuntimePipeline. */
     @com.fasterxml.jackson.annotation.JsonProperty("runtimeOperators")
     private final java.util.List<RuntimeOperator> runtimeOperators;
 
     /**
      * A list of RuntimeOperators attached to the RuntimePipeline.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<RuntimeOperator> getRuntimeOperators() {
         return runtimeOperators;
     }
 
-    /**
-     * The parent RuntimePipeline's RuntimeOperator key.
-     **/
+    /** The parent RuntimePipeline's RuntimeOperator key. */
     @com.fasterxml.jackson.annotation.JsonProperty("parentRuntimeOperatorKey")
     private final String parentRuntimeOperatorKey;
 
     /**
      * The parent RuntimePipeline's RuntimeOperator key.
+     *
      * @return the value
-     **/
+     */
     public String getParentRuntimeOperatorKey() {
         return parentRuntimeOperatorKey;
     }
@@ -155,6 +151,7 @@ public final class RuntimePipeline extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,28 +5,30 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * A logical subdivision of a VCN. Each subnet
- * consists of a contiguous range of IP addresses that do not overlap with
- * other subnets in the VCN. Example: 172.16.1.0/24. For more information, see
- * [Overview of the Networking Service](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm) and
- * [VCNs and Subnets](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm).
- * <p>
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
- * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ * A logical subdivision of a VCN. Each subnet consists of a contiguous range of IP addresses that
+ * do not overlap with other subnets in the VCN. Example: 172.16.1.0/24. For more information, see
+ * [Overview of the Networking
+ * Service](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm) and [VCNs and
+ * Subnets](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm).
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
+ * authorized, talk to an administrator. If you're an administrator who needs to write policies to
+ * give users access, see [Getting Started with
+ * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Subnet.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Subnet extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Subnet extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -101,21 +103,20 @@ public final class Subnet extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     public static class Builder {
         /**
          * The subnet's availability domain.
-         * <p>
-         * Example: {@code Uocm:PHX-AD-1}
          *
-         **/
+         * <p>Example: {@code Uocm:PHX-AD-1}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
          * The subnet's availability domain.
-         * <p>
-         * Example: {@code Uocm:PHX-AD-1}
+         *
+         * <p>Example: {@code Uocm:PHX-AD-1}
          *
          * @param availabilityDomain the value to set
          * @return this builder
-         **/
+         */
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
@@ -123,37 +124,39 @@ public final class Subnet extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         }
         /**
          * The subnet's CIDR block.
-         * <p>
-         * Example: {@code 10.0.1.0/24}
          *
-         **/
+         * <p>Example: {@code 10.0.1.0/24}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
         /**
          * The subnet's CIDR block.
-         * <p>
-         * Example: {@code 10.0.1.0/24}
+         *
+         * <p>Example: {@code 10.0.1.0/24}
          *
          * @param cidrBlock the value to set
          * @return this builder
-         **/
+         */
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = cidrBlock;
             this.__explicitlySet__.add("cidrBlock");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the subnet.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the subnet.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the subnet.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the subnet.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -162,8 +165,7 @@ public final class Subnet extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -173,7 +175,7 @@ public final class Subnet extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -181,170 +183,171 @@ public final class Subnet extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options that the subnet uses.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the set of DHCP options that the subnet uses.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dhcpOptionsId")
         private String dhcpOptionsId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options that the subnet uses.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the set of DHCP options that the subnet uses.
          *
          * @param dhcpOptionsId the value to set
          * @return this builder
-         **/
+         */
         public Builder dhcpOptionsId(String dhcpOptionsId) {
             this.dhcpOptionsId = dhcpOptionsId;
             this.__explicitlySet__.add("dhcpOptionsId");
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
-         *
-         **/
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * A DNS label for the subnet, used in conjunction with the VNIC's hostname and
-         * VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-         * within this subnet (for example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
-         * Must be an alphanumeric string that begins with a letter and is unique within the VCN.
-         * The value cannot be changed.
-         * <p>
-         * The absence of this parameter means the Internet and VCN Resolver
-         * will not resolve hostnames of instances in this subnet.
-         * <p>
-         * For more information, see
-         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-         * <p>
-         * Example: {@code subnet123}
+         * A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS
+         * label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for
+         * example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric
+         * string that begins with a letter and is unique within the VCN. The value cannot be
+         * changed.
          *
-         **/
+         * <p>The absence of this parameter means the Internet and VCN Resolver will not resolve
+         * hostnames of instances in this subnet.
+         *
+         * <p>For more information, see [DNS in Your Virtual Cloud
+         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         *
+         * <p>Example: {@code subnet123}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
         private String dnsLabel;
 
         /**
-         * A DNS label for the subnet, used in conjunction with the VNIC's hostname and
-         * VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-         * within this subnet (for example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
-         * Must be an alphanumeric string that begins with a letter and is unique within the VCN.
-         * The value cannot be changed.
-         * <p>
-         * The absence of this parameter means the Internet and VCN Resolver
-         * will not resolve hostnames of instances in this subnet.
-         * <p>
-         * For more information, see
-         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-         * <p>
-         * Example: {@code subnet123}
+         * A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS
+         * label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for
+         * example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric
+         * string that begins with a letter and is unique within the VCN. The value cannot be
+         * changed.
+         *
+         * <p>The absence of this parameter means the Internet and VCN Resolver will not resolve
+         * hostnames of instances in this subnet.
+         *
+         * <p>For more information, see [DNS in Your Virtual Cloud
+         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         *
+         * <p>Example: {@code subnet123}
          *
          * @param dnsLabel the value to set
          * @return this builder
-         **/
+         */
         public Builder dnsLabel(String dnsLabel) {
             this.dnsLabel = dnsLabel;
             this.__explicitlySet__.add("dnsLabel");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * The subnet's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-         **/
+         * The subnet's Oracle ID
+         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The subnet's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * The subnet's Oracle ID
+         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's private IP address
-         * space. The subnet size is always /64. IPv6 addressing is supported for all commercial and government regions.
-         * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-         * <p>
-         * Example: {@code 2001:0db8:0123:1111::/64}
+         * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's private IP
+         * address space. The subnet size is always /64. IPv6 addressing is supported for all
+         * commercial and government regions. See [IPv6
+         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
-         **/
+         * <p>Example: {@code 2001:0db8:0123:1111::/64}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
         private String ipv6CidrBlock;
 
         /**
-         * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's private IP address
-         * space. The subnet size is always /64. IPv6 addressing is supported for all commercial and government regions.
-         * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-         * <p>
-         * Example: {@code 2001:0db8:0123:1111::/64}
+         * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's private IP
+         * address space. The subnet size is always /64. IPv6 addressing is supported for all
+         * commercial and government regions. See [IPv6
+         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         *
+         * <p>Example: {@code 2001:0db8:0123:1111::/64}
          *
          * @param ipv6CidrBlock the value to set
          * @return this builder
-         **/
+         */
         public Builder ipv6CidrBlock(String ipv6CidrBlock) {
             this.ipv6CidrBlock = ipv6CidrBlock;
             this.__explicitlySet__.add("ipv6CidrBlock");
             return this;
         }
         /**
-         * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's public IP address
-         * space. The subnet size is always /64. The left 48 bits are inherited from the
-         * {@code ipv6PublicCidrBlock} of the {@link Vcn},
-         * and the remaining 16 bits are from the subnet's {@code ipv6CidrBlock}.
-         * <p>
-         * Example: {@code 2001:0db8:0123:1111::/64}
+         * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's public IP
+         * address space. The subnet size is always /64. The left 48 bits are inherited from the
+         * {@code ipv6PublicCidrBlock} of the {@link Vcn}, and the remaining 16 bits are from the
+         * subnet's {@code ipv6CidrBlock}.
          *
-         **/
+         * <p>Example: {@code 2001:0db8:0123:1111::/64}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6PublicCidrBlock")
         private String ipv6PublicCidrBlock;
 
         /**
-         * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's public IP address
-         * space. The subnet size is always /64. The left 48 bits are inherited from the
-         * {@code ipv6PublicCidrBlock} of the {@link Vcn},
-         * and the remaining 16 bits are from the subnet's {@code ipv6CidrBlock}.
-         * <p>
-         * Example: {@code 2001:0db8:0123:1111::/64}
+         * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's public IP
+         * address space. The subnet size is always /64. The left 48 bits are inherited from the
+         * {@code ipv6PublicCidrBlock} of the {@link Vcn}, and the remaining 16 bits are from the
+         * subnet's {@code ipv6CidrBlock}.
+         *
+         * <p>Example: {@code 2001:0db8:0123:1111::/64}
          *
          * @param ipv6PublicCidrBlock the value to set
          * @return this builder
-         **/
+         */
         public Builder ipv6PublicCidrBlock(String ipv6PublicCidrBlock) {
             this.ipv6PublicCidrBlock = ipv6PublicCidrBlock;
             this.__explicitlySet__.add("ipv6PublicCidrBlock");
@@ -352,181 +355,177 @@ public final class Subnet extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         }
         /**
          * For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.
-         * <p>
-         * Example: {@code 2001:0db8:0123:1111:89ab:cdef:1234:5678}
          *
-         **/
+         * <p>Example: {@code 2001:0db8:0123:1111:89ab:cdef:1234:5678}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6VirtualRouterIp")
         private String ipv6VirtualRouterIp;
 
         /**
          * For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.
-         * <p>
-         * Example: {@code 2001:0db8:0123:1111:89ab:cdef:1234:5678}
+         *
+         * <p>Example: {@code 2001:0db8:0123:1111:89ab:cdef:1234:5678}
          *
          * @param ipv6VirtualRouterIp the value to set
          * @return this builder
-         **/
+         */
         public Builder ipv6VirtualRouterIp(String ipv6VirtualRouterIp) {
             this.ipv6VirtualRouterIp = ipv6VirtualRouterIp;
             this.__explicitlySet__.add("ipv6VirtualRouterIp");
             return this;
         }
-        /**
-         * The subnet's current state.
-         **/
+        /** The subnet's current state. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The subnet's current state.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * Whether VNICs within this subnet can have public IP addresses.
-         * Defaults to false, which means VNICs created in this subnet will
-         * automatically be assigned public IP addresses unless specified
-         * otherwise during instance launch or VNIC creation (with the
-         * {@code assignPublicIp} flag in
-         * {@link CreateVnicDetails}).
-         * If {@code prohibitPublicIpOnVnic} is set to true, VNICs created in this
-         * subnet cannot have public IP addresses (that is, it's a private
-         * subnet).
-         * <p>
-         * Example: {@code true}
+         * Whether VNICs within this subnet can have public IP addresses. Defaults to false, which
+         * means VNICs created in this subnet will automatically be assigned public IP addresses
+         * unless specified otherwise during instance launch or VNIC creation (with the {@code
+         * assignPublicIp} flag in {@link CreateVnicDetails}). If {@code prohibitPublicIpOnVnic} is
+         * set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's
+         * a private subnet).
          *
-         **/
+         * <p>Example: {@code true}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("prohibitPublicIpOnVnic")
         private Boolean prohibitPublicIpOnVnic;
 
         /**
-         * Whether VNICs within this subnet can have public IP addresses.
-         * Defaults to false, which means VNICs created in this subnet will
-         * automatically be assigned public IP addresses unless specified
-         * otherwise during instance launch or VNIC creation (with the
-         * {@code assignPublicIp} flag in
-         * {@link CreateVnicDetails}).
-         * If {@code prohibitPublicIpOnVnic} is set to true, VNICs created in this
-         * subnet cannot have public IP addresses (that is, it's a private
-         * subnet).
-         * <p>
-         * Example: {@code true}
+         * Whether VNICs within this subnet can have public IP addresses. Defaults to false, which
+         * means VNICs created in this subnet will automatically be assigned public IP addresses
+         * unless specified otherwise during instance launch or VNIC creation (with the {@code
+         * assignPublicIp} flag in {@link CreateVnicDetails}). If {@code prohibitPublicIpOnVnic} is
+         * set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's
+         * a private subnet).
+         *
+         * <p>Example: {@code true}
          *
          * @param prohibitPublicIpOnVnic the value to set
          * @return this builder
-         **/
+         */
         public Builder prohibitPublicIpOnVnic(Boolean prohibitPublicIpOnVnic) {
             this.prohibitPublicIpOnVnic = prohibitPublicIpOnVnic;
             this.__explicitlySet__.add("prohibitPublicIpOnVnic");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that the subnet uses.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the route table that the subnet uses.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that the subnet uses.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the route table that the subnet uses.
+         *
          * @param routeTableId the value to set
          * @return this builder
-         **/
+         */
         public Builder routeTableId(String routeTableId) {
             this.routeTableId = routeTableId;
             this.__explicitlySet__.add("routeTableId");
             return this;
         }
         /**
-         * The OCIDs of the security list or lists that the subnet uses. Remember
-         * that security lists are associated *with the subnet*, but the
-         * rules are applied to the individual VNICs in the subnet.
-         *
-         **/
+         * The OCIDs of the security list or lists that the subnet uses. Remember that security
+         * lists are associated *with the subnet*, but the rules are applied to the individual VNICs
+         * in the subnet.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("securityListIds")
         private java.util.List<String> securityListIds;
 
         /**
-         * The OCIDs of the security list or lists that the subnet uses. Remember
-         * that security lists are associated *with the subnet*, but the
-         * rules are applied to the individual VNICs in the subnet.
+         * The OCIDs of the security list or lists that the subnet uses. Remember that security
+         * lists are associated *with the subnet*, but the rules are applied to the individual VNICs
+         * in the subnet.
          *
          * @param securityListIds the value to set
          * @return this builder
-         **/
+         */
         public Builder securityListIds(java.util.List<String> securityListIds) {
             this.securityListIds = securityListIds;
             this.__explicitlySet__.add("securityListIds");
             return this;
         }
         /**
-         * The subnet's domain name, which consists of the subnet's DNS label,
-         * the VCN's DNS label, and the {@code oraclevcn.com} domain.
-         * <p>
-         * For more information, see
-         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-         * <p>
-         * Example: {@code subnet123.vcn1.oraclevcn.com}
+         * The subnet's domain name, which consists of the subnet's DNS label, the VCN's DNS label,
+         * and the {@code oraclevcn.com} domain.
          *
-         **/
+         * <p>For more information, see [DNS in Your Virtual Cloud
+         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         *
+         * <p>Example: {@code subnet123.vcn1.oraclevcn.com}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetDomainName")
         private String subnetDomainName;
 
         /**
-         * The subnet's domain name, which consists of the subnet's DNS label,
-         * the VCN's DNS label, and the {@code oraclevcn.com} domain.
-         * <p>
-         * For more information, see
-         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-         * <p>
-         * Example: {@code subnet123.vcn1.oraclevcn.com}
+         * The subnet's domain name, which consists of the subnet's DNS label, the VCN's DNS label,
+         * and the {@code oraclevcn.com} domain.
+         *
+         * <p>For more information, see [DNS in Your Virtual Cloud
+         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         *
+         * <p>Example: {@code subnet123.vcn1.oraclevcn.com}
          *
          * @param subnetDomainName the value to set
          * @return this builder
-         **/
+         */
         public Builder subnetDomainName(String subnetDomainName) {
             this.subnetDomainName = subnetDomainName;
             this.__explicitlySet__.add("subnetDomainName");
             return this;
         }
         /**
-         * The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the subnet was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
-         **/
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the subnet was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the subnet is in.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the VCN the subnet is in.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the subnet is in.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the VCN the subnet is in.
+         *
          * @param vcnId the value to set
          * @return this builder
-         **/
+         */
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
@@ -534,21 +533,20 @@ public final class Subnet extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         }
         /**
          * The IP address of the virtual router.
-         * <p>
-         * Example: {@code 10.0.14.1}
          *
-         **/
+         * <p>Example: {@code 10.0.14.1}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("virtualRouterIp")
         private String virtualRouterIp;
 
         /**
          * The IP address of the virtual router.
-         * <p>
-         * Example: {@code 10.0.14.1}
+         *
+         * <p>Example: {@code 10.0.14.1}
          *
          * @param virtualRouterIp the value to set
          * @return this builder
-         **/
+         */
         public Builder virtualRouterIp(String virtualRouterIp) {
             this.virtualRouterIp = virtualRouterIp;
             this.__explicitlySet__.add("virtualRouterIp");
@@ -556,21 +554,20 @@ public final class Subnet extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         }
         /**
          * The MAC address of the virtual router.
-         * <p>
-         * Example: {@code 00:00:00:00:00:01}
          *
-         **/
+         * <p>Example: {@code 00:00:00:00:00:01}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("virtualRouterMac")
         private String virtualRouterMac;
 
         /**
          * The MAC address of the virtual router.
-         * <p>
-         * Example: {@code 00:00:00:00:00:01}
+         *
+         * <p>Example: {@code 00:00:00:00:00:01}
          *
          * @param virtualRouterMac the value to set
          * @return this builder
-         **/
+         */
         public Builder virtualRouterMac(String virtualRouterMac) {
             this.virtualRouterMac = virtualRouterMac;
             this.__explicitlySet__.add("virtualRouterMac");
@@ -679,9 +676,7 @@ public final class Subnet extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -692,256 +687,252 @@ public final class Subnet extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
 
     /**
      * The subnet's availability domain.
-     * <p>
-     * Example: {@code Uocm:PHX-AD-1}
      *
-     **/
+     * <p>Example: {@code Uocm:PHX-AD-1}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
      * The subnet's availability domain.
-     * <p>
-     * Example: {@code Uocm:PHX-AD-1}
+     *
+     * <p>Example: {@code Uocm:PHX-AD-1}
      *
      * @return the value
-     **/
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
     /**
      * The subnet's CIDR block.
-     * <p>
-     * Example: {@code 10.0.1.0/24}
      *
-     **/
+     * <p>Example: {@code 10.0.1.0/24}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     private final String cidrBlock;
 
     /**
      * The subnet's CIDR block.
-     * <p>
-     * Example: {@code 10.0.1.0/24}
+     *
+     * <p>Example: {@code 10.0.1.0/24}
      *
      * @return the value
-     **/
+     */
     public String getCidrBlock() {
         return cidrBlock;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the subnet.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the subnet.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the subnet.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the subnet.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options that the subnet uses.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the set of DHCP options that the subnet uses.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dhcpOptionsId")
     private final String dhcpOptionsId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options that the subnet uses.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the set of DHCP options that the subnet uses.
      *
      * @return the value
-     **/
+     */
     public String getDhcpOptionsId() {
         return dhcpOptionsId;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * A DNS label for the subnet, used in conjunction with the VNIC's hostname and
-     * VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-     * within this subnet (for example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
-     * Must be an alphanumeric string that begins with a letter and is unique within the VCN.
-     * The value cannot be changed.
-     * <p>
-     * The absence of this parameter means the Internet and VCN Resolver
-     * will not resolve hostnames of instances in this subnet.
-     * <p>
-     * For more information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-     * <p>
-     * Example: {@code subnet123}
+     * A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label
+     * to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example,
+     * {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric string that
+     * begins with a letter and is unique within the VCN. The value cannot be changed.
      *
-     **/
+     * <p>The absence of this parameter means the Internet and VCN Resolver will not resolve
+     * hostnames of instances in this subnet.
+     *
+     * <p>For more information, see [DNS in Your Virtual Cloud
+     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     *
+     * <p>Example: {@code subnet123}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
     private final String dnsLabel;
 
     /**
-     * A DNS label for the subnet, used in conjunction with the VNIC's hostname and
-     * VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-     * within this subnet (for example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
-     * Must be an alphanumeric string that begins with a letter and is unique within the VCN.
-     * The value cannot be changed.
-     * <p>
-     * The absence of this parameter means the Internet and VCN Resolver
-     * will not resolve hostnames of instances in this subnet.
-     * <p>
-     * For more information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-     * <p>
-     * Example: {@code subnet123}
+     * A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label
+     * to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example,
+     * {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric string that
+     * begins with a letter and is unique within the VCN. The value cannot be changed.
+     *
+     * <p>The absence of this parameter means the Internet and VCN Resolver will not resolve
+     * hostnames of instances in this subnet.
+     *
+     * <p>For more information, see [DNS in Your Virtual Cloud
+     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     *
+     * <p>Example: {@code subnet123}
      *
      * @return the value
-     **/
+     */
     public String getDnsLabel() {
         return dnsLabel;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * The subnet's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-     **/
+     * The subnet's Oracle ID
+     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The subnet's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * The subnet's Oracle ID
+     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
      * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's private IP address
-     * space. The subnet size is always /64. IPv6 addressing is supported for all commercial and government regions.
-     * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-     * <p>
-     * Example: {@code 2001:0db8:0123:1111::/64}
+     * space. The subnet size is always /64. IPv6 addressing is supported for all commercial and
+     * government regions. See [IPv6
+     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
-     **/
+     * <p>Example: {@code 2001:0db8:0123:1111::/64}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
     private final String ipv6CidrBlock;
 
     /**
      * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's private IP address
-     * space. The subnet size is always /64. IPv6 addressing is supported for all commercial and government regions.
-     * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-     * <p>
-     * Example: {@code 2001:0db8:0123:1111::/64}
+     * space. The subnet size is always /64. IPv6 addressing is supported for all commercial and
+     * government regions. See [IPv6
+     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     *
+     * <p>Example: {@code 2001:0db8:0123:1111::/64}
      *
      * @return the value
-     **/
+     */
     public String getIpv6CidrBlock() {
         return ipv6CidrBlock;
     }
 
     /**
      * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's public IP address
-     * space. The subnet size is always /64. The left 48 bits are inherited from the
-     * {@code ipv6PublicCidrBlock} of the {@link Vcn},
-     * and the remaining 16 bits are from the subnet's {@code ipv6CidrBlock}.
-     * <p>
-     * Example: {@code 2001:0db8:0123:1111::/64}
+     * space. The subnet size is always /64. The left 48 bits are inherited from the {@code
+     * ipv6PublicCidrBlock} of the {@link Vcn}, and the remaining 16 bits are from the subnet's
+     * {@code ipv6CidrBlock}.
      *
-     **/
+     * <p>Example: {@code 2001:0db8:0123:1111::/64}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6PublicCidrBlock")
     private final String ipv6PublicCidrBlock;
 
     /**
      * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's public IP address
-     * space. The subnet size is always /64. The left 48 bits are inherited from the
-     * {@code ipv6PublicCidrBlock} of the {@link Vcn},
-     * and the remaining 16 bits are from the subnet's {@code ipv6CidrBlock}.
-     * <p>
-     * Example: {@code 2001:0db8:0123:1111::/64}
+     * space. The subnet size is always /64. The left 48 bits are inherited from the {@code
+     * ipv6PublicCidrBlock} of the {@link Vcn}, and the remaining 16 bits are from the subnet's
+     * {@code ipv6CidrBlock}.
+     *
+     * <p>Example: {@code 2001:0db8:0123:1111::/64}
      *
      * @return the value
-     **/
+     */
     public String getIpv6PublicCidrBlock() {
         return ipv6PublicCidrBlock;
     }
 
     /**
      * For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.
-     * <p>
-     * Example: {@code 2001:0db8:0123:1111:89ab:cdef:1234:5678}
      *
-     **/
+     * <p>Example: {@code 2001:0db8:0123:1111:89ab:cdef:1234:5678}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6VirtualRouterIp")
     private final String ipv6VirtualRouterIp;
 
     /**
      * For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.
-     * <p>
-     * Example: {@code 2001:0db8:0123:1111:89ab:cdef:1234:5678}
+     *
+     * <p>Example: {@code 2001:0db8:0123:1111:89ab:cdef:1234:5678}
      *
      * @return the value
-     **/
+     */
     public String getIpv6VirtualRouterIp() {
         return ipv6VirtualRouterIp;
     }
 
-    /**
-     * The subnet's current state.
-     **/
-    public enum LifecycleState {
+    /** The subnet's current state. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
         Terminating("TERMINATING"),
@@ -975,188 +966,181 @@ public final class Subnet extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
-    /**
-     * The subnet's current state.
-     **/
+    /** The subnet's current state. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The subnet's current state.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * Whether VNICs within this subnet can have public IP addresses.
-     * Defaults to false, which means VNICs created in this subnet will
-     * automatically be assigned public IP addresses unless specified
-     * otherwise during instance launch or VNIC creation (with the
-     * {@code assignPublicIp} flag in
-     * {@link CreateVnicDetails}).
-     * If {@code prohibitPublicIpOnVnic} is set to true, VNICs created in this
-     * subnet cannot have public IP addresses (that is, it's a private
-     * subnet).
-     * <p>
-     * Example: {@code true}
+     * Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means
+     * VNICs created in this subnet will automatically be assigned public IP addresses unless
+     * specified otherwise during instance launch or VNIC creation (with the {@code assignPublicIp}
+     * flag in {@link CreateVnicDetails}). If {@code prohibitPublicIpOnVnic} is set to true, VNICs
+     * created in this subnet cannot have public IP addresses (that is, it's a private subnet).
      *
-     **/
+     * <p>Example: {@code true}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("prohibitPublicIpOnVnic")
     private final Boolean prohibitPublicIpOnVnic;
 
     /**
-     * Whether VNICs within this subnet can have public IP addresses.
-     * Defaults to false, which means VNICs created in this subnet will
-     * automatically be assigned public IP addresses unless specified
-     * otherwise during instance launch or VNIC creation (with the
-     * {@code assignPublicIp} flag in
-     * {@link CreateVnicDetails}).
-     * If {@code prohibitPublicIpOnVnic} is set to true, VNICs created in this
-     * subnet cannot have public IP addresses (that is, it's a private
-     * subnet).
-     * <p>
-     * Example: {@code true}
+     * Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means
+     * VNICs created in this subnet will automatically be assigned public IP addresses unless
+     * specified otherwise during instance launch or VNIC creation (with the {@code assignPublicIp}
+     * flag in {@link CreateVnicDetails}). If {@code prohibitPublicIpOnVnic} is set to true, VNICs
+     * created in this subnet cannot have public IP addresses (that is, it's a private subnet).
+     *
+     * <p>Example: {@code true}
      *
      * @return the value
-     **/
+     */
     public Boolean getProhibitPublicIpOnVnic() {
         return prohibitPublicIpOnVnic;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that the subnet uses.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the route table that the subnet uses.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     private final String routeTableId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that the subnet uses.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the route table that the subnet uses.
+     *
      * @return the value
-     **/
+     */
     public String getRouteTableId() {
         return routeTableId;
     }
 
     /**
-     * The OCIDs of the security list or lists that the subnet uses. Remember
-     * that security lists are associated *with the subnet*, but the
-     * rules are applied to the individual VNICs in the subnet.
-     *
-     **/
+     * The OCIDs of the security list or lists that the subnet uses. Remember that security lists
+     * are associated *with the subnet*, but the rules are applied to the individual VNICs in the
+     * subnet.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("securityListIds")
     private final java.util.List<String> securityListIds;
 
     /**
-     * The OCIDs of the security list or lists that the subnet uses. Remember
-     * that security lists are associated *with the subnet*, but the
-     * rules are applied to the individual VNICs in the subnet.
+     * The OCIDs of the security list or lists that the subnet uses. Remember that security lists
+     * are associated *with the subnet*, but the rules are applied to the individual VNICs in the
+     * subnet.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getSecurityListIds() {
         return securityListIds;
     }
 
     /**
-     * The subnet's domain name, which consists of the subnet's DNS label,
-     * the VCN's DNS label, and the {@code oraclevcn.com} domain.
-     * <p>
-     * For more information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-     * <p>
-     * Example: {@code subnet123.vcn1.oraclevcn.com}
+     * The subnet's domain name, which consists of the subnet's DNS label, the VCN's DNS label, and
+     * the {@code oraclevcn.com} domain.
      *
-     **/
+     * <p>For more information, see [DNS in Your Virtual Cloud
+     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     *
+     * <p>Example: {@code subnet123.vcn1.oraclevcn.com}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetDomainName")
     private final String subnetDomainName;
 
     /**
-     * The subnet's domain name, which consists of the subnet's DNS label,
-     * the VCN's DNS label, and the {@code oraclevcn.com} domain.
-     * <p>
-     * For more information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-     * <p>
-     * Example: {@code subnet123.vcn1.oraclevcn.com}
+     * The subnet's domain name, which consists of the subnet's DNS label, the VCN's DNS label, and
+     * the {@code oraclevcn.com} domain.
+     *
+     * <p>For more information, see [DNS in Your Virtual Cloud
+     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     *
+     * <p>Example: {@code subnet123.vcn1.oraclevcn.com}
      *
      * @return the value
-     **/
+     */
     public String getSubnetDomainName() {
         return subnetDomainName;
     }
 
     /**
-     * The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the subnet was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
-     **/
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the subnet was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the subnet is in.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the VCN the subnet is in.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the subnet is in.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the VCN the subnet is in.
+     *
      * @return the value
-     **/
+     */
     public String getVcnId() {
         return vcnId;
     }
 
     /**
      * The IP address of the virtual router.
-     * <p>
-     * Example: {@code 10.0.14.1}
      *
-     **/
+     * <p>Example: {@code 10.0.14.1}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("virtualRouterIp")
     private final String virtualRouterIp;
 
     /**
      * The IP address of the virtual router.
-     * <p>
-     * Example: {@code 10.0.14.1}
+     *
+     * <p>Example: {@code 10.0.14.1}
      *
      * @return the value
-     **/
+     */
     public String getVirtualRouterIp() {
         return virtualRouterIp;
     }
 
     /**
      * The MAC address of the virtual router.
-     * <p>
-     * Example: {@code 00:00:00:00:00:01}
      *
-     **/
+     * <p>Example: {@code 00:00:00:00:00:01}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("virtualRouterMac")
     private final String virtualRouterMac;
 
     /**
      * The MAC address of the virtual router.
-     * <p>
-     * Example: {@code 00:00:00:00:00:01}
+     *
+     * <p>Example: {@code 00:00:00:00:00:01}
      *
      * @return the value
-     **/
+     */
     public String getVirtualRouterMac() {
         return virtualRouterMac;
     }
@@ -1168,6 +1152,7 @@ public final class Subnet extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

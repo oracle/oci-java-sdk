@@ -6,70 +6,67 @@ package com.oracle.bmc.core.requests;
 
 import com.oracle.bmc.core.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListNetworkSecurityGroupVnicsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListNetworkSecurityGroupVnicsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListNetworkSecurityGroupVnicsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ListNetworkSecurityGroupVnicsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListNetworkSecurityGroupVnicsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the network security group.
      */
     private String networkSecurityGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the network security group.
      */
     public String getNetworkSecurityGroupId() {
         return networkSecurityGroupId;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a paginated
-     * "List" call. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     * <p>
-     * Example: {@code 50}
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
+     * <p>Example: {@code 50}
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a paginated
-     * "List" call. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     * <p>
-     * Example: {@code 50}
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
+     * <p>Example: {@code 50}
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
-     * call. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
-     * call. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The field to sort by.
-     */
+    /** The field to sort by. */
     private SortBy sortBy;
 
-    /**
-     * The field to sort by.
-     **/
-    public enum SortBy {
+    /** The field to sort by. */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Timeassociated("TIMEASSOCIATED"),
         ;
 
@@ -101,25 +98,21 @@ public class ListNetworkSecurityGroupVnicsRequest
         }
     };
 
-    /**
-     * The field to sort by.
-     */
+    /** The field to sort by. */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
-     * is case sensitive.
-     *
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
+     * DISPLAYNAME sort order is case sensitive.
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
-     * is case sensitive.
-     *
-     **/
-    public enum SortOrder {
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
+     * DISPLAYNAME sort order is case sensitive.
+     */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -153,9 +146,8 @@ public class ListNetworkSecurityGroupVnicsRequest
     };
 
     /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
-     * is case sensitive.
-     *
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
+     * DISPLAYNAME sort order is case sensitive.
      */
     public SortOrder getSortOrder() {
         return sortOrder;
@@ -164,17 +156,19 @@ public class ListNetworkSecurityGroupVnicsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListNetworkSecurityGroupVnicsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the network security group.
          */
         private String networkSecurityGroupId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the network security group.
+         *
          * @param networkSecurityGroupId the value to set
          * @return this builder instance
          */
@@ -184,21 +178,20 @@ public class ListNetworkSecurityGroupVnicsRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a paginated
-         * "List" call. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         * <p>
-         * Example: {@code 50}
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * <p>Example: {@code 50}
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a paginated
-         * "List" call. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         * <p>
-         * Example: {@code 50}
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * <p>Example: {@code 50}
          *
          * @param limit the value to set
          * @return this builder instance
@@ -209,17 +202,16 @@ public class ListNetworkSecurityGroupVnicsRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
-         * call. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
-         * call. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -229,13 +221,12 @@ public class ListNetworkSecurityGroupVnicsRequest
             return this;
         }
 
-        /**
-         * The field to sort by.
-         */
+        /** The field to sort by. */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by.
+         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -245,15 +236,14 @@ public class ListNetworkSecurityGroupVnicsRequest
         }
 
         /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
-         * is case sensitive.
-         *
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
+         * DISPLAYNAME sort order is case sensitive.
          */
         private SortOrder sortOrder = null;
 
         /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
-         * is case sensitive.
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
+         * DISPLAYNAME sort order is case sensitive.
          *
          * @param sortOrder the value to set
          * @return this builder instance
@@ -265,18 +255,19 @@ public class ListNetworkSecurityGroupVnicsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -288,6 +279,7 @@ public class ListNetworkSecurityGroupVnicsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListNetworkSecurityGroupVnicsRequest o) {
@@ -304,10 +296,11 @@ public class ListNetworkSecurityGroupVnicsRequest
         /**
          * Build the instance of ListNetworkSecurityGroupVnicsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListNetworkSecurityGroupVnicsRequest
          */
@@ -321,7 +314,8 @@ public class ListNetworkSecurityGroupVnicsRequest
         /**
          * Build the instance of ListNetworkSecurityGroupVnicsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListNetworkSecurityGroupVnicsRequest
@@ -335,12 +329,14 @@ public class ListNetworkSecurityGroupVnicsRequest
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             return request;
-            // new ListNetworkSecurityGroupVnicsRequest(networkSecurityGroupId, limit, page, sortBy, sortOrder);
+            // new ListNetworkSecurityGroupVnicsRequest(networkSecurityGroupId, limit, page, sortBy,
+            // sortOrder);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -354,6 +350,7 @@ public class ListNetworkSecurityGroupVnicsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

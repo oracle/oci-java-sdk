@@ -6,31 +6,25 @@ package com.oracle.bmc.logging.requests;
 
 import com.oracle.bmc.logging.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListLogsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListLogsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListLogsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListLogsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * OCID of a log group to work with.
-     */
+    /** OCID of a log group to work with. */
     private String logGroupId;
 
-    /**
-     * OCID of a log group to work with.
-     */
+    /** OCID of a log group to work with. */
     public String getLogGroupId() {
         return logGroupId;
     }
-    /**
-     * The logType that the log object is for, whether custom or service.
-     */
+    /** The logType that the log object is for, whether custom or service. */
     private LogType logType;
 
-    /**
-     * The logType that the log object is for, whether custom or service.
-     **/
-    public enum LogType {
+    /** The logType that the log object is for, whether custom or service. */
+    public enum LogType implements com.oracle.bmc.http.internal.BmcEnum {
         Custom("CUSTOM"),
         Service("SERVICE"),
         ;
@@ -63,97 +57,73 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
     };
 
-    /**
-     * The logType that the log object is for, whether custom or service.
-     */
+    /** The logType that the log object is for, whether custom or service. */
     public LogType getLogType() {
         return logType;
     }
-    /**
-     * Service that created the log object.
-     */
+    /** Service that created the log object. */
     private String sourceService;
 
-    /**
-     * Service that created the log object.
-     */
+    /** Service that created the log object. */
     public String getSourceService() {
         return sourceService;
     }
-    /**
-     * Log object resource.
-     */
+    /** Log object resource. */
     private String sourceResource;
 
-    /**
-     * Log object resource.
-     */
+    /** Log object resource. */
     public String getSourceResource() {
         return sourceResource;
     }
-    /**
-     * Resource name
-     */
+    /** Resource name */
     private String displayName;
 
-    /**
-     * Resource name
-     */
+    /** Resource name */
     public String getDisplayName() {
         return displayName;
     }
-    /**
-     * Lifecycle state of the log object
-     */
+    /** Lifecycle state of the log object */
     private com.oracle.bmc.logging.model.LogLifecycleState lifecycleState;
 
-    /**
-     * Lifecycle state of the log object
-     */
+    /** Lifecycle state of the log object */
     public com.oracle.bmc.logging.model.LogLifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page} response header from the previous "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page}
+     * response header from the previous "List" call. For important details about how pagination
+     * works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page} response header from the previous "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page}
+     * response header from the previous "List" call. For important details about how pagination
+     * works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The maximum number of items to return in a paginated "List" call.
-     *
-     */
+    /** The maximum number of items to return in a paginated "List" call. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return in a paginated "List" call.
-     *
-     */
+    /** The maximum number of items to return in a paginated "List" call. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The field to sort by (one column only). Default sort order is
-     * ascending exception of {@code timeCreated} and {@code timeLastModified} columns (descending).
-     *
+     * The field to sort by (one column only). Default sort order is ascending exception of {@code
+     * timeCreated} and {@code timeLastModified} columns (descending).
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by (one column only). Default sort order is
-     * ascending exception of {@code timeCreated} and {@code timeLastModified} columns (descending).
-     *
-     **/
-    public enum SortBy {
+     * The field to sort by (one column only). Default sort order is ascending exception of {@code
+     * timeCreated} and {@code timeLastModified} columns (descending).
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -187,24 +157,17 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     };
 
     /**
-     * The field to sort by (one column only). Default sort order is
-     * ascending exception of {@code timeCreated} and {@code timeLastModified} columns (descending).
-     *
+     * The field to sort by (one column only). Default sort order is ascending exception of {@code
+     * timeCreated} and {@code timeLastModified} columns (descending).
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The sort order to use, whether 'asc' or 'desc'.
-     *
-     */
+    /** The sort order to use, whether 'asc' or 'desc'. */
     private SortOrder sortOrder;
 
-    /**
-     * The sort order to use, whether 'asc' or 'desc'.
-     *
-     **/
-    public enum SortOrder {
+    /** The sort order to use, whether 'asc' or 'desc'. */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -237,24 +200,19 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
     };
 
-    /**
-     * The sort order to use, whether 'asc' or 'desc'.
-     *
-     */
+    /** The sort order to use, whether 'asc' or 'desc'. */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -262,17 +220,15 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<ListLogsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * OCID of a log group to work with.
-         */
+        /** OCID of a log group to work with. */
         private String logGroupId = null;
 
         /**
          * OCID of a log group to work with.
+         *
          * @param logGroupId the value to set
          * @return this builder instance
          */
@@ -281,13 +237,12 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /**
-         * The logType that the log object is for, whether custom or service.
-         */
+        /** The logType that the log object is for, whether custom or service. */
         private LogType logType = null;
 
         /**
          * The logType that the log object is for, whether custom or service.
+         *
          * @param logType the value to set
          * @return this builder instance
          */
@@ -296,13 +251,12 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /**
-         * Service that created the log object.
-         */
+        /** Service that created the log object. */
         private String sourceService = null;
 
         /**
          * Service that created the log object.
+         *
          * @param sourceService the value to set
          * @return this builder instance
          */
@@ -311,13 +265,12 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /**
-         * Log object resource.
-         */
+        /** Log object resource. */
         private String sourceResource = null;
 
         /**
          * Log object resource.
+         *
          * @param sourceResource the value to set
          * @return this builder instance
          */
@@ -326,13 +279,12 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /**
-         * Resource name
-         */
+        /** Resource name */
         private String displayName = null;
 
         /**
          * Resource name
+         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -341,13 +293,12 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /**
-         * Lifecycle state of the log object
-         */
+        /** Lifecycle state of the log object */
         private com.oracle.bmc.logging.model.LogLifecycleState lifecycleState = null;
 
         /**
          * Lifecycle state of the log object
+         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -358,15 +309,18 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page} response header from the previous "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page}
+         * response header from the previous "List" call. For important details about how pagination
+         * works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page} response header from the previous "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page}
+         * response header from the previous "List" call. For important details about how pagination
+         * works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -376,10 +330,7 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /**
-         * The maximum number of items to return in a paginated "List" call.
-         *
-         */
+        /** The maximum number of items to return in a paginated "List" call. */
         private Integer limit = null;
 
         /**
@@ -394,15 +345,14 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
-         * The field to sort by (one column only). Default sort order is
-         * ascending exception of {@code timeCreated} and {@code timeLastModified} columns (descending).
-         *
+         * The field to sort by (one column only). Default sort order is ascending exception of
+         * {@code timeCreated} and {@code timeLastModified} columns (descending).
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by (one column only). Default sort order is
-         * ascending exception of {@code timeCreated} and {@code timeLastModified} columns (descending).
+         * The field to sort by (one column only). Default sort order is ascending exception of
+         * {@code timeCreated} and {@code timeLastModified} columns (descending).
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -412,10 +362,7 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /**
-         * The sort order to use, whether 'asc' or 'desc'.
-         *
-         */
+        /** The sort order to use, whether 'asc' or 'desc'. */
         private SortOrder sortOrder = null;
 
         /**
@@ -430,15 +377,14 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -450,18 +396,19 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -473,6 +420,7 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListLogsRequest o) {
@@ -495,10 +443,11 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         /**
          * Build the instance of ListLogsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListLogsRequest
          */
@@ -512,7 +461,8 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         /**
          * Build the instance of ListLogsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListLogsRequest
@@ -531,12 +481,14 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListLogsRequest(logGroupId, logType, sourceService, sourceResource, displayName, lifecycleState, page, limit, sortBy, sortOrder, opcRequestId);
+            // new ListLogsRequest(logGroupId, logType, sourceService, sourceResource, displayName,
+            // lifecycleState, page, limit, sortBy, sortOrder, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -556,6 +508,7 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

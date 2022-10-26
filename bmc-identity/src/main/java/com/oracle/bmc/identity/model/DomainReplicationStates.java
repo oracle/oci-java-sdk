@@ -5,22 +5,23 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * (For tenancies that support identity domains) The identity domain replication log for all identity domains for a given region.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * (For tenancies that support identity domains) The identity domain replication log for all
+ * identity domains for a given region. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DomainReplicationStates.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DomainReplicationStates.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DomainReplicationStates
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"domainId", "state", "replicaRegion"})
     public DomainReplicationStates(String domainId, State state, String replicaRegion) {
@@ -32,26 +33,22 @@ public final class DomainReplicationStates
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the identity domain.
-         **/
+        /** The OCID of the identity domain. */
         @com.fasterxml.jackson.annotation.JsonProperty("domainId")
         private String domainId;
 
         /**
          * The OCID of the identity domain.
+         *
          * @param domainId the value to set
          * @return this builder
-         **/
+         */
         public Builder domainId(String domainId) {
             this.domainId = domainId;
             this.__explicitlySet__.add("domainId");
             return this;
         }
-        /**
-         * The IDCS-replicated region state.
-         *
-         **/
+        /** The IDCS-replicated region state. */
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private State state;
 
@@ -60,23 +57,22 @@ public final class DomainReplicationStates
          *
          * @param state the value to set
          * @return this builder
-         **/
+         */
         public Builder state(State state) {
             this.state = state;
             this.__explicitlySet__.add("state");
             return this;
         }
-        /**
-         * The replica region for the identity domain.
-         **/
+        /** The replica region for the identity domain. */
         @com.fasterxml.jackson.annotation.JsonProperty("replicaRegion")
         private String replicaRegion;
 
         /**
          * The replica region for the identity domain.
+         *
          * @param replicaRegion the value to set
          * @return this builder
-         **/
+         */
         public Builder replicaRegion(String replicaRegion) {
             this.replicaRegion = replicaRegion;
             this.__explicitlySet__.add("replicaRegion");
@@ -110,9 +106,7 @@ public final class DomainReplicationStates
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -121,25 +115,21 @@ public final class DomainReplicationStates
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the identity domain.
-     **/
+    /** The OCID of the identity domain. */
     @com.fasterxml.jackson.annotation.JsonProperty("domainId")
     private final String domainId;
 
     /**
      * The OCID of the identity domain.
+     *
      * @return the value
-     **/
+     */
     public String getDomainId() {
         return domainId;
     }
 
-    /**
-     * The IDCS-replicated region state.
-     *
-     **/
-    public enum State {
+    /** The IDCS-replicated region state. */
+    public enum State implements com.oracle.bmc.http.internal.BmcEnum {
         EnablingReplication("ENABLING_REPLICATION"),
         ReplicationEnabled("REPLICATION_ENABLED"),
         DisablingReplication("DISABLING_REPLICATION"),
@@ -174,10 +164,7 @@ public final class DomainReplicationStates
             throw new IllegalArgumentException("Invalid State: " + key);
         }
     };
-    /**
-     * The IDCS-replicated region state.
-     *
-     **/
+    /** The IDCS-replicated region state. */
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final State state;
 
@@ -185,21 +172,20 @@ public final class DomainReplicationStates
      * The IDCS-replicated region state.
      *
      * @return the value
-     **/
+     */
     public State getState() {
         return state;
     }
 
-    /**
-     * The replica region for the identity domain.
-     **/
+    /** The replica region for the identity domain. */
     @com.fasterxml.jackson.annotation.JsonProperty("replicaRegion")
     private final String replicaRegion;
 
     /**
      * The replica region for the identity domain.
+     *
      * @return the value
-     **/
+     */
     public String getReplicaRegion() {
         return replicaRegion;
     }
@@ -211,6 +197,7 @@ public final class DomainReplicationStates
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

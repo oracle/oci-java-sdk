@@ -5,25 +5,24 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * A package for image listings.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A package for image listings. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ImageListingPackage.Builder.class
-)
+        builder = ImageListingPackage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "packageType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "packageType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ImageListingPackage extends ListingPackage {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -90,68 +89,72 @@ public final class ImageListingPackage extends ListingPackage {
             return this;
         }
         /**
-         * The ID of the listing resource associated with this listing package. For more information, see [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/) in the Core Services API.
-         *
-         **/
+         * The ID of the listing resource associated with this listing package. For more
+         * information, see
+         * [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
+         * in the Core Services API.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("appCatalogListingId")
         private String appCatalogListingId;
 
         /**
-         * The ID of the listing resource associated with this listing package. For more information, see [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/) in the Core Services API.
+         * The ID of the listing resource associated with this listing package. For more
+         * information, see
+         * [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
+         * in the Core Services API.
          *
          * @param appCatalogListingId the value to set
          * @return this builder
-         **/
+         */
         public Builder appCatalogListingId(String appCatalogListingId) {
             this.appCatalogListingId = appCatalogListingId;
             this.__explicitlySet__.add("appCatalogListingId");
             return this;
         }
-        /**
-         * The resource version of the listing resource associated with this listing package.
-         **/
+        /** The resource version of the listing resource associated with this listing package. */
         @com.fasterxml.jackson.annotation.JsonProperty("appCatalogListingResourceVersion")
         private String appCatalogListingResourceVersion;
 
         /**
          * The resource version of the listing resource associated with this listing package.
+         *
          * @param appCatalogListingResourceVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder appCatalogListingResourceVersion(String appCatalogListingResourceVersion) {
             this.appCatalogListingResourceVersion = appCatalogListingResourceVersion;
             this.__explicitlySet__.add("appCatalogListingResourceVersion");
             return this;
         }
-        /**
-         * The ID of the image corresponding to the package.
-         **/
+        /** The ID of the image corresponding to the package. */
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
         /**
          * The ID of the image corresponding to the package.
+         *
          * @param imageId the value to set
          * @return this builder
-         **/
+         */
         public Builder imageId(String imageId) {
             this.imageId = imageId;
             this.__explicitlySet__.add("imageId");
             return this;
         }
         /**
-         * The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
-         *
-         **/
+         * The regions where you can deploy the listing package. (Some packages have restrictions
+         * that limit their deployment to United States regions only.)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("regions")
         private java.util.List<Region> regions;
 
         /**
-         * The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
+         * The regions where you can deploy the listing package. (Some packages have restrictions
+         * that limit their deployment to United States regions only.)
          *
          * @param regions the value to set
          * @return this builder
-         **/
+         */
         public Builder regions(java.util.List<Region> regions) {
             this.regions = regions;
             this.__explicitlySet__.add("regions");
@@ -220,9 +223,7 @@ public final class ImageListingPackage extends ListingPackage {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -252,61 +253,65 @@ public final class ImageListingPackage extends ListingPackage {
     }
 
     /**
-     * The ID of the listing resource associated with this listing package. For more information, see [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/) in the Core Services API.
-     *
-     **/
+     * The ID of the listing resource associated with this listing package. For more information,
+     * see
+     * [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
+     * in the Core Services API.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("appCatalogListingId")
     private final String appCatalogListingId;
 
     /**
-     * The ID of the listing resource associated with this listing package. For more information, see [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/) in the Core Services API.
+     * The ID of the listing resource associated with this listing package. For more information,
+     * see
+     * [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
+     * in the Core Services API.
      *
      * @return the value
-     **/
+     */
     public String getAppCatalogListingId() {
         return appCatalogListingId;
     }
 
-    /**
-     * The resource version of the listing resource associated with this listing package.
-     **/
+    /** The resource version of the listing resource associated with this listing package. */
     @com.fasterxml.jackson.annotation.JsonProperty("appCatalogListingResourceVersion")
     private final String appCatalogListingResourceVersion;
 
     /**
      * The resource version of the listing resource associated with this listing package.
+     *
      * @return the value
-     **/
+     */
     public String getAppCatalogListingResourceVersion() {
         return appCatalogListingResourceVersion;
     }
 
-    /**
-     * The ID of the image corresponding to the package.
-     **/
+    /** The ID of the image corresponding to the package. */
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     private final String imageId;
 
     /**
      * The ID of the image corresponding to the package.
+     *
      * @return the value
-     **/
+     */
     public String getImageId() {
         return imageId;
     }
 
     /**
-     * The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
-     *
-     **/
+     * The regions where you can deploy the listing package. (Some packages have restrictions that
+     * limit their deployment to United States regions only.)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     private final java.util.List<Region> regions;
 
     /**
-     * The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
+     * The regions where you can deploy the listing package. (Some packages have restrictions that
+     * limit their deployment to United States regions only.)
      *
      * @return the value
-     **/
+     */
     public java.util.List<Region> getRegions() {
         return regions;
     }
@@ -318,6 +323,7 @@ public final class ImageListingPackage extends ListingPackage {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

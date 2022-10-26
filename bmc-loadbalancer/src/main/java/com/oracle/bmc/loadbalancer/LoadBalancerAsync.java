@@ -8,62 +8,62 @@ import com.oracle.bmc.loadbalancer.requests.*;
 import com.oracle.bmc.loadbalancer.responses.*;
 
 /**
- * API for the Load Balancing service. Use this API to manage load balancers, backend sets, and related items. For more
- * information, see [Overview of Load Balancing](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm).
- *
+ * API for the Load Balancing service. Use this API to manage load balancers, backend sets, and
+ * related items. For more information, see [Overview of Load
+ * Balancing](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm).
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 public interface LoadBalancerAsync extends AutoCloseable {
 
-    /**
-     * Rebuilds the client from scratch.
-     * Useful to refresh certificates.
-     */
+    /** Rebuilds the client from scratch. Useful to refresh certificates. */
     void refreshClient();
 
     /**
      * Sets the endpoint to call (ex, https://www.example.com).
+     *
      * @param endpoint The endpoint of the serice.
      */
     void setEndpoint(String endpoint);
 
-    /**
-     * Gets the set endpoint for REST call (ex, https://www.example.com)
-     */
+    /** Gets the set endpoint for REST call (ex, https://www.example.com) */
     String getEndpoint();
 
     /**
      * Sets the region to call (ex, Region.US_PHOENIX_1).
-     * <p>
-     * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
+     *
+     * <p>Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the
+     * endpoint. If the service is not available in this region, however, an
+     * IllegalArgumentException will be raised.
+     *
      * @param region The region of the service.
      */
     void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
-     * <p>
-     * Note, this will first try to map the region ID to a known Region and call
-     * {@link #setRegion(Region) setRegion}.
-     * <p>
-     * If no known Region could be determined, it will create an endpoint based on the
-     * default endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
+     *
+     * <p>Note, this will first try to map the region ID to a known Region and call {@link
+     * #setRegion(Region) setRegion}.
+     *
+     * <p>If no known Region could be determined, it will create an endpoint based on the default
+     * endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
      * and then call {@link #setEndpoint(String) setEndpoint}.
+     *
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
 
     /**
-     * Moves a load balancer into a different compartment within the same tenancy. For information about moving resources
-     * between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
-     *
+     * Moves a load balancer into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeLoadBalancerCompartmentResponse>
             changeLoadBalancerCompartment(
@@ -78,10 +78,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateBackendResponse> createBackend(
             CreateBackendRequest request,
@@ -93,10 +93,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateBackendSetResponse> createBackendSet(
             CreateBackendSetRequest request,
@@ -108,10 +108,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateCertificateResponse> createCertificate(
             CreateCertificateRequest request,
@@ -120,16 +120,15 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Adds a hostname resource to the specified load balancer. For more information, see
-     * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
-     *
+     * Adds a hostname resource to the specified load balancer. For more information, see [Managing
+     * Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateHostnameResponse> createHostname(
             CreateHostnameRequest request,
@@ -141,10 +140,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateListenerResponse> createListener(
             CreateListenerRequest request,
@@ -152,41 +151,45 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new load balancer in the specified compartment. For general information about load balancers,
-     * see [Overview of the Load Balancing Service](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm).
-     * <p>
-     * For the purposes of access control, you must provide the OCID of the compartment where you want
-     * the load balancer to reside. Notice that the load balancer doesn't have to be in the same compartment as the VCN
-     * or backend set. If you're not sure which compartment to use, put the load balancer in the same compartment as the VCN.
-     * For information about access control and compartments, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
-     * <p>
-     * You must specify a display name for the load balancer. It does not have to be unique, and you can change it.
-     * <p>
-     * For information about Availability Domains, see
-     * [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm).
-     * To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
-     * in the Identity and Access Management Service API.
-     * <p>
-     * All Oracle Cloud Infrastructure resources, including load balancers, get an Oracle-assigned,
-     * unique ID called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID
-     * in the response. You can also retrieve a resource's OCID by using a List API operation on that resource type,
-     * or by viewing the resource in the Console. Fore more information, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
-     * <p>
-     * After you send your request, the new object's state will temporarily be PROVISIONING. Before using the
-     * object, first make sure its state has changed to RUNNING.
-     * <p>
-     * When you create a load balancer, the system assigns an IP address.
-     * To get the IP address, use the {@link #getLoadBalancer(GetLoadBalancerRequest, Consumer, Consumer) getLoadBalancer} operation.
+     * Creates a new load balancer in the specified compartment. For general information about load
+     * balancers, see [Overview of the Load Balancing
+     * Service](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm).
      *
+     * <p>For the purposes of access control, you must provide the OCID of the compartment where you
+     * want the load balancer to reside. Notice that the load balancer doesn't have to be in the
+     * same compartment as the VCN or backend set. If you're not sure which compartment to use, put
+     * the load balancer in the same compartment as the VCN. For information about access control
+     * and compartments, see [Overview of the IAM
+     * Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
+     *
+     * <p>You must specify a display name for the load balancer. It does not have to be unique, and
+     * you can change it.
+     *
+     * <p>For information about Availability Domains, see [Regions and Availability
+     * Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm). To get a list
+     * of Availability Domains, use the `ListAvailabilityDomains` operation in the Identity and
+     * Access Management Service API.
+     *
+     * <p>All Oracle Cloud Infrastructure resources, including load balancers, get an
+     * Oracle-assigned, unique ID called an Oracle Cloud Identifier (OCID). When you create a
+     * resource, you can find its OCID in the response. You can also retrieve a resource's OCID by
+     * using a List API operation on that resource type, or by viewing the resource in the Console.
+     * Fore more information, see [Resource
+     * Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     * <p>After you send your request, the new object's state will temporarily be PROVISIONING.
+     * Before using the object, first make sure its state has changed to RUNNING.
+     *
+     * <p>When you create a load balancer, the system assigns an IP address. To get the IP address,
+     * use the {@link #getLoadBalancer(GetLoadBalancerRequest, Consumer, Consumer) getLoadBalancer}
+     * operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateLoadBalancerResponse> createLoadBalancer(
             CreateLoadBalancerRequest request,
@@ -195,16 +198,15 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Adds a path route set to a load balancer. For more information, see
-     * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
-     *
+     * Adds a path route set to a load balancer. For more information, see [Managing Request
+     * Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreatePathRouteSetResponse> createPathRouteSet(
             CreatePathRouteSetRequest request,
@@ -213,16 +215,15 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Adds a routing policy to a load balancer. For more information, see
-     * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
-     *
+     * Adds a routing policy to a load balancer. For more information, see [Managing Request
+     * Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateRoutingPolicyResponse> createRoutingPolicy(
             CreateRoutingPolicyRequest request,
@@ -232,15 +233,15 @@ public interface LoadBalancerAsync extends AutoCloseable {
 
     /**
      * Creates a new rule set associated with the specified load balancer. For more information, see
-     * [Managing Rule Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm).
-     *
+     * [Managing Rule
+     * Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateRuleSetResponse> createRuleSet(
             CreateRuleSetRequest request,
@@ -252,10 +253,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateSSLCipherSuiteResponse> createSSLCipherSuite(
             CreateSSLCipherSuiteRequest request,
@@ -268,10 +269,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteBackendResponse> deleteBackend(
             DeleteBackendRequest request,
@@ -279,17 +280,17 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the specified backend set. Note that deleting a backend set removes its backend servers from the load balancer.
-     * <p>
-     * Before you can delete a backend set, you must remove it from any active listeners.
+     * Deletes the specified backend set. Note that deleting a backend set removes its backend
+     * servers from the load balancer.
      *
+     * <p>Before you can delete a backend set, you must remove it from any active listeners.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteBackendSetResponse> deleteBackendSet(
             DeleteBackendSetRequest request,
@@ -301,10 +302,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteCertificateResponse> deleteCertificate(
             DeleteCertificateRequest request,
@@ -315,13 +316,12 @@ public interface LoadBalancerAsync extends AutoCloseable {
     /**
      * Deletes a hostname resource from the specified load balancer.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteHostnameResponse> deleteHostname(
             DeleteHostnameRequest request,
@@ -333,10 +333,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteListenerResponse> deleteListener(
             DeleteListenerRequest request,
@@ -348,10 +348,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteLoadBalancerResponse> deleteLoadBalancer(
             DeleteLoadBalancerRequest request,
@@ -361,17 +361,17 @@ public interface LoadBalancerAsync extends AutoCloseable {
 
     /**
      * Deletes a path route set from the specified load balancer.
-     * <p>
-     * To delete a path route rule from a path route set, use the
-     * {@link #updatePathRouteSet(UpdatePathRouteSetRequest, Consumer, Consumer) updatePathRouteSet} operation.
      *
+     * <p>To delete a path route rule from a path route set, use the {@link
+     * #updatePathRouteSet(UpdatePathRouteSetRequest, Consumer, Consumer) updatePathRouteSet}
+     * operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeletePathRouteSetResponse> deletePathRouteSet(
             DeletePathRouteSetRequest request,
@@ -381,17 +381,17 @@ public interface LoadBalancerAsync extends AutoCloseable {
 
     /**
      * Deletes a routing policy from the specified load balancer.
-     * <p>
-     * To delete a routing rule from a routing policy, use the
-     * {@link #updateRoutingPolicy(UpdateRoutingPolicyRequest, Consumer, Consumer) updateRoutingPolicy} operation.
      *
+     * <p>To delete a routing rule from a routing policy, use the {@link
+     * #updateRoutingPolicy(UpdateRoutingPolicyRequest, Consumer, Consumer) updateRoutingPolicy}
+     * operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteRoutingPolicyResponse> deleteRoutingPolicy(
             DeleteRoutingPolicyRequest request,
@@ -401,17 +401,16 @@ public interface LoadBalancerAsync extends AutoCloseable {
 
     /**
      * Deletes a rule set from the specified load balancer.
-     * <p>
-     * To delete a rule from a rule set, use the
-     * {@link #updateRuleSet(UpdateRuleSetRequest, Consumer, Consumer) updateRuleSet} operation.
      *
+     * <p>To delete a rule from a rule set, use the {@link #updateRuleSet(UpdateRuleSetRequest,
+     * Consumer, Consumer) updateRuleSet} operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteRuleSetResponse> deleteRuleSet(
             DeleteRuleSetRequest request,
@@ -423,10 +422,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteSSLCipherSuiteResponse> deleteSSLCipherSuite(
             DeleteSSLCipherSuiteRequest request,
@@ -439,10 +438,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetBackendResponse> getBackend(
             GetBackendRequest request,
@@ -453,10 +452,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetBackendHealthResponse> getBackendHealth(
             GetBackendHealthRequest request,
@@ -468,10 +467,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetBackendSetResponse> getBackendSet(
             GetBackendSetRequest request,
@@ -483,10 +482,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetBackendSetHealthResponse> getBackendSetHealth(
             GetBackendSetHealthRequest request,
@@ -499,10 +498,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetHealthCheckerResponse> getHealthChecker(
             GetHealthCheckerRequest request,
@@ -514,10 +513,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetHostnameResponse> getHostname(
             GetHostnameRequest request,
@@ -528,10 +527,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetLoadBalancerResponse> getLoadBalancer(
             GetLoadBalancerRequest request,
@@ -543,10 +542,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetLoadBalancerHealthResponse> getLoadBalancerHealth(
             GetLoadBalancerHealthRequest request,
@@ -559,10 +558,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetPathRouteSetResponse> getPathRouteSet(
             GetPathRouteSetRequest request,
@@ -574,10 +573,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetRoutingPolicyResponse> getRoutingPolicy(
             GetRoutingPolicyRequest request,
@@ -589,10 +588,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetRuleSetResponse> getRuleSet(
             GetRuleSetRequest request,
@@ -603,10 +602,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetSSLCipherSuiteResponse> getSSLCipherSuite(
             GetSSLCipherSuiteRequest request,
@@ -619,10 +618,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
@@ -634,10 +633,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListBackendSetsResponse> listBackendSets(
             ListBackendSetsRequest request,
@@ -649,10 +648,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListBackendsResponse> listBackends(
             ListBackendsRequest request,
@@ -664,10 +663,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListCertificatesResponse> listCertificates(
             ListCertificatesRequest request,
@@ -679,10 +678,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListHostnamesResponse> listHostnames(
             ListHostnamesRequest request,
@@ -690,21 +689,17 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists all of the rules from all of the rule sets associated with the specified listener. The response organizes
-     * the rules in the following order:
-     * <p>
-     *  Access control rules
-     * *  Allow method rules
-     * *  Request header rules
-     * *  Response header rules
+     * Lists all of the rules from all of the rule sets associated with the specified listener. The
+     * response organizes the rules in the following order:
      *
+     * <p>Access control rules * Allow method rules * Request header rules * Response header rules
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListListenerRulesResponse> listListenerRules(
             ListListenerRulesRequest request,
@@ -717,10 +712,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListLoadBalancerHealthsResponse> listLoadBalancerHealths(
             ListLoadBalancerHealthsRequest request,
@@ -733,10 +728,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListLoadBalancersResponse> listLoadBalancers(
             ListLoadBalancersRequest request,
@@ -749,10 +744,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListPathRouteSetsResponse> listPathRouteSets(
             ListPathRouteSetsRequest request,
@@ -765,10 +760,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListPoliciesResponse> listPolicies(
             ListPoliciesRequest request,
@@ -780,10 +775,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListProtocolsResponse> listProtocols(
             ListProtocolsRequest request,
@@ -795,10 +790,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListRoutingPoliciesResponse> listRoutingPolicies(
             ListRoutingPoliciesRequest request,
@@ -811,10 +806,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListRuleSetsResponse> listRuleSets(
             ListRuleSetsRequest request,
@@ -826,10 +821,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListSSLCipherSuitesResponse> listSSLCipherSuites(
             ListSSLCipherSuitesRequest request,
@@ -842,10 +837,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListShapesResponse> listShapes(
             ListShapesRequest request,
@@ -856,10 +851,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
             ListWorkRequestsRequest request,
@@ -871,10 +866,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateBackendResponse> updateBackend(
             UpdateBackendRequest request,
@@ -886,10 +881,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateBackendSetResponse> updateBackendSet(
             UpdateBackendSetRequest request,
@@ -901,10 +896,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateHealthCheckerResponse> updateHealthChecker(
             UpdateHealthCheckerRequest request,
@@ -913,16 +908,15 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Overwrites an existing hostname resource on the specified load balancer. Use this operation to change a
-     * virtual hostname.
-     *
+     * Overwrites an existing hostname resource on the specified load balancer. Use this operation
+     * to change a virtual hostname.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateHostnameResponse> updateHostname(
             UpdateHostnameRequest request,
@@ -934,10 +928,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateListenerResponse> updateListener(
             UpdateListenerRequest request,
@@ -949,10 +943,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateLoadBalancerResponse> updateLoadBalancer(
             UpdateLoadBalancerRequest request,
@@ -961,20 +955,20 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update the shape of a load balancer. The new shape can be larger or smaller compared to existing shape of the
-     * LB. The service will try to perform this operation in the least disruptive way to existing connections, but
-     * there is a possibility that they might be lost during the LB resizing process. The new shape becomes effective
-     * as soon as the related work request completes successfully, i.e. when reshaping to a larger shape, the LB will
-     * start accepting larger bandwidth and when reshaping to a smaller one, the LB will be accepting smaller
-     * bandwidth.
-     *
+     * Update the shape of a load balancer. The new shape can be larger or smaller compared to
+     * existing shape of the LB. The service will try to perform this operation in the least
+     * disruptive way to existing connections, but there is a possibility that they might be lost
+     * during the LB resizing process. The new shape becomes effective as soon as the related work
+     * request completes successfully, i.e. when reshaping to a larger shape, the LB will start
+     * accepting larger bandwidth and when reshaping to a smaller one, the LB will be accepting
+     * smaller bandwidth.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateLoadBalancerShapeResponse> updateLoadBalancerShape(
             UpdateLoadBalancerShapeRequest request,
@@ -987,10 +981,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateNetworkSecurityGroupsResponse> updateNetworkSecurityGroups(
             UpdateNetworkSecurityGroupsRequest request,
@@ -999,20 +993,20 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Overwrites an existing path route set on the specified load balancer. Use this operation to add, delete, or alter
-     * path route rules in a path route set.
-     * <p>
-     * To add a new path route rule to a path route set, the `pathRoutes` in the
-     * {@link #updatePathRouteSetDetails(UpdatePathRouteSetDetailsRequest, Consumer, Consumer) updatePathRouteSetDetails} object must include
-     * both the new path route rule to add and the existing path route rules to retain.
+     * Overwrites an existing path route set on the specified load balancer. Use this operation to
+     * add, delete, or alter path route rules in a path route set.
      *
+     * <p>To add a new path route rule to a path route set, the `pathRoutes` in the {@link
+     * #updatePathRouteSetDetails(UpdatePathRouteSetDetailsRequest, Consumer, Consumer)
+     * updatePathRouteSetDetails} object must include both the new path route rule to add and the
+     * existing path route rules to retain.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdatePathRouteSetResponse> updatePathRouteSet(
             UpdatePathRouteSetRequest request,
@@ -1021,18 +1015,18 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Overwrites an existing routing policy on the specified load balancer. Use this operation to add, delete, or alter
-     * routing policy rules in a routing policy.
-     * <p>
-     * To add a new routing rule to a routing policy, the body must include both the new routing rule to add and the existing rules to retain.
+     * Overwrites an existing routing policy on the specified load balancer. Use this operation to
+     * add, delete, or alter routing policy rules in a routing policy.
      *
+     * <p>To add a new routing rule to a routing policy, the body must include both the new routing
+     * rule to add and the existing rules to retain.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateRoutingPolicyResponse> updateRoutingPolicy(
             UpdateRoutingPolicyRequest request,
@@ -1041,18 +1035,18 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Overwrites an existing set of rules on the specified load balancer. Use this operation to add or alter
-     * the rules in a rule set.
-     * <p>
-     * To add a new rule to a set, the body must include both the new rule to add and the existing rules to retain.
+     * Overwrites an existing set of rules on the specified load balancer. Use this operation to add
+     * or alter the rules in a rule set.
      *
+     * <p>To add a new rule to a set, the body must include both the new rule to add and the
+     * existing rules to retain.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateRuleSetResponse> updateRuleSet(
             UpdateRuleSetRequest request,
@@ -1064,10 +1058,10 @@ public interface LoadBalancerAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateSSLCipherSuiteResponse> updateSSLCipherSuite(
             UpdateSSLCipherSuiteRequest request,

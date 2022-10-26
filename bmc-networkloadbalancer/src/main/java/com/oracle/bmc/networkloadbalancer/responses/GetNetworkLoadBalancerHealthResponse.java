@@ -9,15 +9,14 @@ import com.oracle.bmc.networkloadbalancer.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class GetNetworkLoadBalancerHealthResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you must contact
-     * Oracle about a particular request, then provide the request identifier.
-     *
+     * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+     * particular request, then provide the request identifier.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you must contact
-     * Oracle about a particular request, then provide the request identifier.
+     * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+     * particular request, then provide the request identifier.
      *
      * @return the value
      */
@@ -25,14 +24,13 @@ public class GetNetworkLoadBalancerHealthResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /**
-     * The returned NetworkLoadBalancerHealth instance.
-     */
+    /** The returned NetworkLoadBalancerHealth instance. */
     private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerHealth
             networkLoadBalancerHealth;
 
     /**
      * The returned NetworkLoadBalancerHealth instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerHealth
@@ -48,7 +46,7 @@ public class GetNetworkLoadBalancerHealthResponse extends com.oracle.bmc.respons
     })
     private GetNetworkLoadBalancerHealthResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerHealth
                     networkLoadBalancerHealth) {
@@ -57,31 +55,34 @@ public class GetNetworkLoadBalancerHealthResponse extends com.oracle.bmc.respons
         this.networkLoadBalancerHealth = networkLoadBalancerHealth;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetNetworkLoadBalancerHealthResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you must contact
-         * Oracle about a particular request, then provide the request identifier.
-         *
+         * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+         * particular request, then provide the request identifier.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you must contact
-         * Oracle about a particular request, then provide the request identifier.
+         * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+         * particular request, then provide the request identifier.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -91,14 +92,13 @@ public class GetNetworkLoadBalancerHealthResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /**
-         * The returned NetworkLoadBalancerHealth instance.
-         */
+        /** The returned NetworkLoadBalancerHealth instance. */
         private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerHealth
                 networkLoadBalancerHealth;
 
         /**
          * The returned NetworkLoadBalancerHealth instance.
+         *
          * @param networkLoadBalancerHealth the value to set
          * @return this builder
          */
@@ -111,8 +111,10 @@ public class GetNetworkLoadBalancerHealthResponse extends com.oracle.bmc.respons
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetNetworkLoadBalancerHealthResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -124,8 +126,10 @@ public class GetNetworkLoadBalancerHealthResponse extends com.oracle.bmc.respons
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetNetworkLoadBalancerHealthResponse build() {
             return new GetNetworkLoadBalancerHealthResponse(
                     __httpStatusCode__, headers, opcRequestId, networkLoadBalancerHealth);
@@ -134,6 +138,7 @@ public class GetNetworkLoadBalancerHealthResponse extends com.oracle.bmc.respons
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

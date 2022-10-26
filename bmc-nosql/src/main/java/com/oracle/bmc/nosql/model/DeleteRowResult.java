@@ -5,19 +5,21 @@
 package com.oracle.bmc.nosql.model;
 
 /**
- * The result of a DeleteRow operation.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The result of a DeleteRow operation. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DeleteRowResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DeleteRowResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class DeleteRowResult
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isSuccess", "existingVersion", "existingValue", "usage"})
     public DeleteRowResult(
@@ -34,55 +36,50 @@ public final class DeleteRowResult extends com.oracle.bmc.http.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Convey the success or failure of the operation.
-         **/
+        /** Convey the success or failure of the operation. */
         @com.fasterxml.jackson.annotation.JsonProperty("isSuccess")
         private Boolean isSuccess;
 
         /**
          * Convey the success or failure of the operation.
+         *
          * @param isSuccess the value to set
          * @return this builder
-         **/
+         */
         public Builder isSuccess(Boolean isSuccess) {
             this.isSuccess = isSuccess;
             this.__explicitlySet__.add("isSuccess");
             return this;
         }
         /**
-         * The version string associated with the existing row.
-         * Returned if the delete fails due to options setting in the
-         * request.
-         *
-         **/
+         * The version string associated with the existing row. Returned if the delete fails due to
+         * options setting in the request.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("existingVersion")
         private String existingVersion;
 
         /**
-         * The version string associated with the existing row.
-         * Returned if the delete fails due to options setting in the
-         * request.
+         * The version string associated with the existing row. Returned if the delete fails due to
+         * options setting in the request.
          *
          * @param existingVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder existingVersion(String existingVersion) {
             this.existingVersion = existingVersion;
             this.__explicitlySet__.add("existingVersion");
             return this;
         }
-        /**
-         * The map of values from a row.
-         **/
+        /** The map of values from a row. */
         @com.fasterxml.jackson.annotation.JsonProperty("existingValue")
         private java.util.Map<String, Object> existingValue;
 
         /**
          * The map of values from a row.
+         *
          * @param existingValue the value to set
          * @return this builder
-         **/
+         */
         public Builder existingValue(java.util.Map<String, Object> existingValue) {
             this.existingValue = existingValue;
             this.__explicitlySet__.add("existingValue");
@@ -129,9 +126,7 @@ public final class DeleteRowResult extends com.oracle.bmc.http.internal.Explicit
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -140,50 +135,45 @@ public final class DeleteRowResult extends com.oracle.bmc.http.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /**
-     * Convey the success or failure of the operation.
-     **/
+    /** Convey the success or failure of the operation. */
     @com.fasterxml.jackson.annotation.JsonProperty("isSuccess")
     private final Boolean isSuccess;
 
     /**
      * Convey the success or failure of the operation.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsSuccess() {
         return isSuccess;
     }
 
     /**
-     * The version string associated with the existing row.
-     * Returned if the delete fails due to options setting in the
-     * request.
-     *
-     **/
+     * The version string associated with the existing row. Returned if the delete fails due to
+     * options setting in the request.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("existingVersion")
     private final String existingVersion;
 
     /**
-     * The version string associated with the existing row.
-     * Returned if the delete fails due to options setting in the
-     * request.
+     * The version string associated with the existing row. Returned if the delete fails due to
+     * options setting in the request.
      *
      * @return the value
-     **/
+     */
     public String getExistingVersion() {
         return existingVersion;
     }
 
-    /**
-     * The map of values from a row.
-     **/
+    /** The map of values from a row. */
     @com.fasterxml.jackson.annotation.JsonProperty("existingValue")
     private final java.util.Map<String, Object> existingValue;
 
     /**
      * The map of values from a row.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, Object> getExistingValue() {
         return existingValue;
     }
@@ -202,6 +192,7 @@ public final class DeleteRowResult extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

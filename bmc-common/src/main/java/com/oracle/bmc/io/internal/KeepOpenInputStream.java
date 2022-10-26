@@ -9,11 +9,11 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * A wrapper around an {@link InputStream} that turns the {@code close} method into a no-op, and requires the calling
- * of the {@code doClose} method instead.
+ * A wrapper around an {@link InputStream} that turns the {@code close} method into a no-op, and
+ * requires the calling of the {@code doClose} method instead.
  *
- * This is necessary, because Jersey closes a stream once it has been read, but we may want to reset and read it again
- * for retries.
+ * <p>This is necessary, because Jersey closes a stream once it has been read, but we may want to
+ * reset and read it again for retries.
  */
 public final class KeepOpenInputStream extends FilterInputStream {
     private static final org.slf4j.Logger LOG =
@@ -39,6 +39,7 @@ public final class KeepOpenInputStream extends FilterInputStream {
 
     /**
      * This method actually closes the stream, what {@code close()} is not doing.
+     *
      * @throws IOException
      */
     public void doClose() throws IOException {
@@ -48,6 +49,7 @@ public final class KeepOpenInputStream extends FilterInputStream {
 
     /**
      * Close a stream, dealing properly with {@link KeepOpenInputStream}s.
+     *
      * @param is input stream to close
      */
     public static void closeStream(InputStream is) {

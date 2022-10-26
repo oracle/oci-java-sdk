@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.apmsynthetics.model;
 
-/**
- * Type of protocol for network configuration.
- **/
+/** Type of protocol for network configuration. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum Protocol {
+public enum Protocol implements com.oracle.bmc.http.internal.BmcEnum {
     Icmp("ICMP"),
     Tcp("TCP"),
 

@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/**
- * The current state of the security assessment.
- **/
+/** The current state of the security assessment. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum SecurityAssessmentLifecycleState {
+public enum SecurityAssessmentLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Succeeded("SUCCEEDED"),
     Updating("UPDATING"),

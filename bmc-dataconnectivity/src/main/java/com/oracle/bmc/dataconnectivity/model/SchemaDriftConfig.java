@@ -5,21 +5,22 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * The configuration for handling schema drift in a Source or Target operator.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The configuration for handling schema drift in a Source or Target operator. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SchemaDriftConfig.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SchemaDriftConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = SchemaDriftConfig.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class SchemaDriftConfig
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "extraColumnHandling",
@@ -42,64 +43,68 @@ public final class SchemaDriftConfig extends com.oracle.bmc.http.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The setting to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
-         **/
+         * The setting to handle extra columns/fields. NULL_FILLUP means that nulls will be loaded
+         * into the target for extra columns.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("extraColumnHandling")
         private ExtraColumnHandling extraColumnHandling;
 
         /**
-         * The setting to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
+         * The setting to handle extra columns/fields. NULL_FILLUP means that nulls will be loaded
+         * into the target for extra columns.
+         *
          * @param extraColumnHandling the value to set
          * @return this builder
-         **/
+         */
         public Builder extraColumnHandling(ExtraColumnHandling extraColumnHandling) {
             this.extraColumnHandling = extraColumnHandling;
             this.__explicitlySet__.add("extraColumnHandling");
             return this;
         }
         /**
-         * The setting to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
-         **/
+         * The setting to handle missing columns/fields. NULL_SELECT means that null values will be
+         * selected from the source for missing columns.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("missingColumnHandling")
         private MissingColumnHandling missingColumnHandling;
 
         /**
-         * The setting to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
+         * The setting to handle missing columns/fields. NULL_SELECT means that null values will be
+         * selected from the source for missing columns.
+         *
          * @param missingColumnHandling the value to set
          * @return this builder
-         **/
+         */
         public Builder missingColumnHandling(MissingColumnHandling missingColumnHandling) {
             this.missingColumnHandling = missingColumnHandling;
             this.__explicitlySet__.add("missingColumnHandling");
             return this;
         }
-        /**
-         * The setting to handle columns/fields with changed data types.
-         **/
+        /** The setting to handle columns/fields with changed data types. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataTypeChangeHandling")
         private DataTypeChangeHandling dataTypeChangeHandling;
 
         /**
          * The setting to handle columns/fields with changed data types.
+         *
          * @param dataTypeChangeHandling the value to set
          * @return this builder
-         **/
+         */
         public Builder dataTypeChangeHandling(DataTypeChangeHandling dataTypeChangeHandling) {
             this.dataTypeChangeHandling = dataTypeChangeHandling;
             this.__explicitlySet__.add("dataTypeChangeHandling");
             return this;
         }
-        /**
-         * If true, display a validation warning for schema changes, even if they are allowed.
-         **/
+        /** If true, display a validation warning for schema changes, even if they are allowed. */
         @com.fasterxml.jackson.annotation.JsonProperty("isValidationWarningIfAllowed")
         private Boolean isValidationWarningIfAllowed;
 
         /**
          * If true, display a validation warning for schema changes, even if they are allowed.
+         *
          * @param isValidationWarningIfAllowed the value to set
          * @return this builder
-         **/
+         */
         public Builder isValidationWarningIfAllowed(Boolean isValidationWarningIfAllowed) {
             this.isValidationWarningIfAllowed = isValidationWarningIfAllowed;
             this.__explicitlySet__.add("isValidationWarningIfAllowed");
@@ -140,9 +145,7 @@ public final class SchemaDriftConfig extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -152,9 +155,10 @@ public final class SchemaDriftConfig extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The setting to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
-     **/
-    public enum ExtraColumnHandling {
+     * The setting to handle extra columns/fields. NULL_FILLUP means that nulls will be loaded into
+     * the target for extra columns.
+     */
+    public enum ExtraColumnHandling implements com.oracle.bmc.http.internal.BmcEnum {
         Allow("ALLOW"),
         NullFillup("NULL_FILLUP"),
         DoNotAllow("DO_NOT_ALLOW"),
@@ -188,23 +192,27 @@ public final class SchemaDriftConfig extends com.oracle.bmc.http.internal.Explic
         }
     };
     /**
-     * The setting to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
-     **/
+     * The setting to handle extra columns/fields. NULL_FILLUP means that nulls will be loaded into
+     * the target for extra columns.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("extraColumnHandling")
     private final ExtraColumnHandling extraColumnHandling;
 
     /**
-     * The setting to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
+     * The setting to handle extra columns/fields. NULL_FILLUP means that nulls will be loaded into
+     * the target for extra columns.
+     *
      * @return the value
-     **/
+     */
     public ExtraColumnHandling getExtraColumnHandling() {
         return extraColumnHandling;
     }
 
     /**
-     * The setting to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
-     **/
-    public enum MissingColumnHandling {
+     * The setting to handle missing columns/fields. NULL_SELECT means that null values will be
+     * selected from the source for missing columns.
+     */
+    public enum MissingColumnHandling implements com.oracle.bmc.http.internal.BmcEnum {
         Allow("ALLOW"),
         NullSelect("NULL_SELECT"),
         DoNotAllow("DO_NOT_ALLOW"),
@@ -238,23 +246,24 @@ public final class SchemaDriftConfig extends com.oracle.bmc.http.internal.Explic
         }
     };
     /**
-     * The setting to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
-     **/
+     * The setting to handle missing columns/fields. NULL_SELECT means that null values will be
+     * selected from the source for missing columns.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("missingColumnHandling")
     private final MissingColumnHandling missingColumnHandling;
 
     /**
-     * The setting to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
+     * The setting to handle missing columns/fields. NULL_SELECT means that null values will be
+     * selected from the source for missing columns.
+     *
      * @return the value
-     **/
+     */
     public MissingColumnHandling getMissingColumnHandling() {
         return missingColumnHandling;
     }
 
-    /**
-     * The setting to handle columns/fields with changed data types.
-     **/
-    public enum DataTypeChangeHandling {
+    /** The setting to handle columns/fields with changed data types. */
+    public enum DataTypeChangeHandling implements com.oracle.bmc.http.internal.BmcEnum {
         Allow("ALLOW"),
         DoCastIfPossible("DO_CAST_IF_POSSIBLE"),
         DoNotAllow("DO_NOT_ALLOW"),
@@ -287,30 +296,28 @@ public final class SchemaDriftConfig extends com.oracle.bmc.http.internal.Explic
             throw new IllegalArgumentException("Invalid DataTypeChangeHandling: " + key);
         }
     };
-    /**
-     * The setting to handle columns/fields with changed data types.
-     **/
+    /** The setting to handle columns/fields with changed data types. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataTypeChangeHandling")
     private final DataTypeChangeHandling dataTypeChangeHandling;
 
     /**
      * The setting to handle columns/fields with changed data types.
+     *
      * @return the value
-     **/
+     */
     public DataTypeChangeHandling getDataTypeChangeHandling() {
         return dataTypeChangeHandling;
     }
 
-    /**
-     * If true, display a validation warning for schema changes, even if they are allowed.
-     **/
+    /** If true, display a validation warning for schema changes, even if they are allowed. */
     @com.fasterxml.jackson.annotation.JsonProperty("isValidationWarningIfAllowed")
     private final Boolean isValidationWarningIfAllowed;
 
     /**
      * If true, display a validation warning for schema changes, even if they are allowed.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsValidationWarningIfAllowed() {
         return isValidationWarningIfAllowed;
     }
@@ -322,6 +329,7 @@ public final class SchemaDriftConfig extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

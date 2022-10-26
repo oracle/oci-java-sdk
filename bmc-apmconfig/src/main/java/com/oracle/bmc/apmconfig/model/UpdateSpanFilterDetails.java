@@ -5,25 +5,24 @@
 package com.oracle.bmc.apmconfig.model;
 
 /**
- * A named setting that specifies the filter criteria to match a subset of the spans.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A named setting that specifies the filter criteria to match a subset of the spans. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateSpanFilterDetails.Builder.class
-)
+        builder = UpdateSpanFilterDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "configType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "configType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateSpanFilterDetails extends UpdateConfigDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -45,26 +44,22 @@ public final class UpdateSpanFilterDetails extends UpdateConfigDetails {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /**
-         * The name by which a configuration entity is displayed to the end user.
-         **/
+        /** The name by which a configuration entity is displayed to the end user. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name by which a configuration entity is displayed to the end user.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The string that defines the Span Filter expression.
-         *
-         **/
+        /** The string that defines the Span Filter expression. */
         @com.fasterxml.jackson.annotation.JsonProperty("filterText")
         private String filterText;
 
@@ -73,23 +68,22 @@ public final class UpdateSpanFilterDetails extends UpdateConfigDetails {
          *
          * @param filterText the value to set
          * @return this builder
-         **/
+         */
         public Builder filterText(String filterText) {
             this.filterText = filterText;
             this.__explicitlySet__.add("filterText");
             return this;
         }
-        /**
-         * An optional string that describes what the filter is intended or used for.
-         **/
+        /** An optional string that describes what the filter is intended or used for. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * An optional string that describes what the filter is intended or used for.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -134,9 +128,7 @@ public final class UpdateSpanFilterDetails extends UpdateConfigDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -158,24 +150,20 @@ public final class UpdateSpanFilterDetails extends UpdateConfigDetails {
         this.description = description;
     }
 
-    /**
-     * The name by which a configuration entity is displayed to the end user.
-     **/
+    /** The name by which a configuration entity is displayed to the end user. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name by which a configuration entity is displayed to the end user.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The string that defines the Span Filter expression.
-     *
-     **/
+    /** The string that defines the Span Filter expression. */
     @com.fasterxml.jackson.annotation.JsonProperty("filterText")
     private final String filterText;
 
@@ -183,21 +171,20 @@ public final class UpdateSpanFilterDetails extends UpdateConfigDetails {
      * The string that defines the Span Filter expression.
      *
      * @return the value
-     **/
+     */
     public String getFilterText() {
         return filterText;
     }
 
-    /**
-     * An optional string that describes what the filter is intended or used for.
-     **/
+    /** An optional string that describes what the filter is intended or used for. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * An optional string that describes what the filter is intended or used for.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
@@ -209,6 +196,7 @@ public final class UpdateSpanFilterDetails extends UpdateConfigDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

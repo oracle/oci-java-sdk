@@ -6,76 +6,66 @@ package com.oracle.bmc.dataintegration.requests;
 
 import com.oracle.bmc.dataintegration.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateDataAssetExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateDataAssetRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateDataAssetExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateDataAssetRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class UpdateDataAssetRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dataintegration.model.UpdateDataAssetDetails> {
 
-    /**
-     * The workspace ID.
-     */
+    /** The workspace ID. */
     private String workspaceId;
 
-    /**
-     * The workspace ID.
-     */
+    /** The workspace ID. */
     public String getWorkspaceId() {
         return workspaceId;
     }
-    /**
-     * The data asset key.
-     */
+    /** The data asset key. */
     private String dataAssetKey;
 
-    /**
-     * The data asset key.
-     */
+    /** The data asset key. */
     public String getDataAssetKey() {
         return dataAssetKey;
     }
-    /**
-     * The information needed to update a data asset.
-     */
+    /** The information needed to update a data asset. */
     private com.oracle.bmc.dataintegration.model.UpdateDataAssetDetails updateDataAssetDetails;
 
-    /**
-     * The information needed to update a data asset.
-     */
+    /** The information needed to update a data asset. */
     public com.oracle.bmc.dataintegration.model.UpdateDataAssetDetails getUpdateDataAssetDetails() {
         return updateDataAssetDetails;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
-     * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the {@code etag} from a previous GET or POST response for
+     * that resource. The resource will be updated or deleted only if the {@code etag} you provide
+     * matches the resource's current {@code etag} value. When 'if-match' is provided and its value
+     * does not exactly match the 'etag' of the resource on the server, the request fails with the
+     * 412 response code.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
-     * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the {@code etag} from a previous GET or POST response for
+     * that resource. The resource will be updated or deleted only if the {@code etag} you provide
+     * matches the resource's current {@code etag} value. When 'if-match' is provided and its value
+     * does not exactly match the 'etag' of the resource on the server, the request fails with the
+     * 412 response code.
      */
     public String getIfMatch() {
         return ifMatch;
@@ -83,6 +73,7 @@ public class UpdateDataAssetRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -95,17 +86,15 @@ public class UpdateDataAssetRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateDataAssetRequest,
                     com.oracle.bmc.dataintegration.model.UpdateDataAssetDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The workspace ID.
-         */
+        /** The workspace ID. */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         *
          * @param workspaceId the value to set
          * @return this builder instance
          */
@@ -114,13 +103,12 @@ public class UpdateDataAssetRequest
             return this;
         }
 
-        /**
-         * The data asset key.
-         */
+        /** The data asset key. */
         private String dataAssetKey = null;
 
         /**
          * The data asset key.
+         *
          * @param dataAssetKey the value to set
          * @return this builder instance
          */
@@ -129,14 +117,13 @@ public class UpdateDataAssetRequest
             return this;
         }
 
-        /**
-         * The information needed to update a data asset.
-         */
+        /** The information needed to update a data asset. */
         private com.oracle.bmc.dataintegration.model.UpdateDataAssetDetails updateDataAssetDetails =
                 null;
 
         /**
          * The information needed to update a data asset.
+         *
          * @param updateDataAssetDetails the value to set
          * @return this builder instance
          */
@@ -148,17 +135,14 @@ public class UpdateDataAssetRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -169,17 +153,22 @@ public class UpdateDataAssetRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
-         * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST
+         * response for that resource. The resource will be updated or deleted only if the {@code
+         * etag} you provide matches the resource's current {@code etag} value. When 'if-match' is
+         * provided and its value does not exactly match the 'etag' of the resource on the server,
+         * the request fails with the 412 response code.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
-         * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST
+         * response for that resource. The resource will be updated or deleted only if the {@code
+         * etag} you provide matches the resource's current {@code etag} value. When 'if-match' is
+         * provided and its value does not exactly match the 'etag' of the resource on the server,
+         * the request fails with the 412 response code.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -191,18 +180,19 @@ public class UpdateDataAssetRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -214,6 +204,7 @@ public class UpdateDataAssetRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateDataAssetRequest o) {
@@ -230,10 +221,11 @@ public class UpdateDataAssetRequest
         /**
          * Build the instance of UpdateDataAssetRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateDataAssetRequest
          */
@@ -246,6 +238,7 @@ public class UpdateDataAssetRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -258,7 +251,8 @@ public class UpdateDataAssetRequest
         /**
          * Build the instance of UpdateDataAssetRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateDataAssetRequest
@@ -271,12 +265,14 @@ public class UpdateDataAssetRequest
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new UpdateDataAssetRequest(workspaceId, dataAssetKey, updateDataAssetDetails, opcRequestId, ifMatch);
+            // new UpdateDataAssetRequest(workspaceId, dataAssetKey, updateDataAssetDetails,
+            // opcRequestId, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -290,6 +286,7 @@ public class UpdateDataAssetRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

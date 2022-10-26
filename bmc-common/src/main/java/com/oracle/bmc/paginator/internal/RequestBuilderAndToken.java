@@ -7,18 +7,18 @@ package com.oracle.bmc.paginator.internal;
 import java.util.Optional;
 
 import com.oracle.bmc.InternalSdk;
-import com.oracle.bmc.internal.GuavaUtils;
 
 /**
  * A container class for a request builder and next page token. These pieces will be used to create
  * a request to a list operation.
  *
- * There are three possible values for the token:
+ * <p>There are three possible values for the token:
  *
  * <ul>
- *   <li>A null reference, in which case we should use the builder as-is to construct a request</li>
- *   <li>A populated Optional, in which case we should use the value in the Optional as the page token in the builder</li>
- *   <li>An empty/absent Optional, in which case we should use null as the page token in the builder</li>
+ *   <li>A null reference, in which case we should use the builder as-is to construct a request
+ *   <li>A populated Optional, in which case we should use the value in the Optional as the page
+ *       token in the builder
+ *   <li>An empty/absent Optional, in which case we should use null as the page token in the builder
  * </ul>
  *
  * @param <T> The type of the request builder object
@@ -47,15 +47,6 @@ public class RequestBuilderAndToken<T> {
         this.requestBuilder = requestBuilder;
     }
 
-    @Deprecated
-    @InternalSdk(backwardCompatibilityRequired = true)
-    public RequestBuilderAndToken(
-            final T requestBuilder,
-            final com.google.common /*Guava will be removed soon*/.base.Optional<String> token) {
-        this.requestBuilder = requestBuilder;
-        this.token = GuavaUtils.adaptFromGuava(token);
-    }
-
     public T getRequestBuilder() {
         return this.requestBuilder;
     }
@@ -63,11 +54,5 @@ public class RequestBuilderAndToken<T> {
     @InternalSdk(backwardCompatibilityRequired = true)
     public Optional<String> getNextPageToken() {
         return token;
-    }
-
-    @Deprecated
-    @InternalSdk(backwardCompatibilityRequired = true)
-    public com.google.common /*Guava will be removed soon*/.base.Optional<String> getToken() {
-        return GuavaUtils.adaptToGuava(token);
     }
 }

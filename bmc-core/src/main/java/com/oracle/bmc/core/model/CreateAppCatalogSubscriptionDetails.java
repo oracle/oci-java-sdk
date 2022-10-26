@@ -5,22 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * details for creating a subscription for a listing resource version.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * details for creating a subscription for a listing resource version. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateAppCatalogSubscriptionDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateAppCatalogSubscriptionDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateAppCatalogSubscriptionDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -51,117 +51,112 @@ public final class CreateAppCatalogSubscriptionDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The compartmentID for the subscription.
-         **/
+        /** The compartmentID for the subscription. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The compartmentID for the subscription.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The OCID of the listing.
-         **/
+        /** The OCID of the listing. */
         @com.fasterxml.jackson.annotation.JsonProperty("listingId")
         private String listingId;
 
         /**
          * The OCID of the listing.
+         *
          * @param listingId the value to set
          * @return this builder
-         **/
+         */
         public Builder listingId(String listingId) {
             this.listingId = listingId;
             this.__explicitlySet__.add("listingId");
             return this;
         }
-        /**
-         * Listing resource version.
-         **/
+        /** Listing resource version. */
         @com.fasterxml.jackson.annotation.JsonProperty("listingResourceVersion")
         private String listingResourceVersion;
 
         /**
          * Listing resource version.
+         *
          * @param listingResourceVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder listingResourceVersion(String listingResourceVersion) {
             this.listingResourceVersion = listingResourceVersion;
             this.__explicitlySet__.add("listingResourceVersion");
             return this;
         }
-        /**
-         * Oracle TOU link
-         **/
+        /** Oracle TOU link */
         @com.fasterxml.jackson.annotation.JsonProperty("oracleTermsOfUseLink")
         private String oracleTermsOfUseLink;
 
         /**
          * Oracle TOU link
+         *
          * @param oracleTermsOfUseLink the value to set
          * @return this builder
-         **/
+         */
         public Builder oracleTermsOfUseLink(String oracleTermsOfUseLink) {
             this.oracleTermsOfUseLink = oracleTermsOfUseLink;
             this.__explicitlySet__.add("oracleTermsOfUseLink");
             return this;
         }
-        /**
-         * EULA link
-         **/
+        /** EULA link */
         @com.fasterxml.jackson.annotation.JsonProperty("eulaLink")
         private String eulaLink;
 
         /**
          * EULA link
+         *
          * @param eulaLink the value to set
          * @return this builder
-         **/
+         */
         public Builder eulaLink(String eulaLink) {
             this.eulaLink = eulaLink;
             this.__explicitlySet__.add("eulaLink");
             return this;
         }
         /**
-         * Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
-         * Example: {@code 2018-03-20T12:32:53.532Z}
-         *
-         **/
+         * Date and time the agreements were retrieved, in
+         * [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: {@code
+         * 2018-03-20T12:32:53.532Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeRetrieved")
         private java.util.Date timeRetrieved;
 
         /**
-         * Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
-         * Example: {@code 2018-03-20T12:32:53.532Z}
+         * Date and time the agreements were retrieved, in
+         * [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: {@code
+         * 2018-03-20T12:32:53.532Z}
          *
          * @param timeRetrieved the value to set
          * @return this builder
-         **/
+         */
         public Builder timeRetrieved(java.util.Date timeRetrieved) {
             this.timeRetrieved = timeRetrieved;
             this.__explicitlySet__.add("timeRetrieved");
             return this;
         }
-        /**
-         * A generated signature for this listing resource version retrieved the agreements API.
-         **/
+        /** A generated signature for this listing resource version retrieved the agreements API. */
         @com.fasterxml.jackson.annotation.JsonProperty("signature")
         private String signature;
 
         /**
          * A generated signature for this listing resource version retrieved the agreements API.
+         *
          * @param signature the value to set
          * @return this builder
-         **/
+         */
         public Builder signature(String signature) {
             this.signature = signature;
             this.__explicitlySet__.add("signature");
@@ -214,9 +209,7 @@ public final class CreateAppCatalogSubscriptionDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -225,104 +218,99 @@ public final class CreateAppCatalogSubscriptionDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The compartmentID for the subscription.
-     **/
+    /** The compartmentID for the subscription. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The compartmentID for the subscription.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The OCID of the listing.
-     **/
+    /** The OCID of the listing. */
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
     private final String listingId;
 
     /**
      * The OCID of the listing.
+     *
      * @return the value
-     **/
+     */
     public String getListingId() {
         return listingId;
     }
 
-    /**
-     * Listing resource version.
-     **/
+    /** Listing resource version. */
     @com.fasterxml.jackson.annotation.JsonProperty("listingResourceVersion")
     private final String listingResourceVersion;
 
     /**
      * Listing resource version.
+     *
      * @return the value
-     **/
+     */
     public String getListingResourceVersion() {
         return listingResourceVersion;
     }
 
-    /**
-     * Oracle TOU link
-     **/
+    /** Oracle TOU link */
     @com.fasterxml.jackson.annotation.JsonProperty("oracleTermsOfUseLink")
     private final String oracleTermsOfUseLink;
 
     /**
      * Oracle TOU link
+     *
      * @return the value
-     **/
+     */
     public String getOracleTermsOfUseLink() {
         return oracleTermsOfUseLink;
     }
 
-    /**
-     * EULA link
-     **/
+    /** EULA link */
     @com.fasterxml.jackson.annotation.JsonProperty("eulaLink")
     private final String eulaLink;
 
     /**
      * EULA link
+     *
      * @return the value
-     **/
+     */
     public String getEulaLink() {
         return eulaLink;
     }
 
     /**
-     * Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
-     * Example: {@code 2018-03-20T12:32:53.532Z}
-     *
-     **/
+     * Date and time the agreements were retrieved, in
+     * [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: {@code
+     * 2018-03-20T12:32:53.532Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeRetrieved")
     private final java.util.Date timeRetrieved;
 
     /**
-     * Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
-     * Example: {@code 2018-03-20T12:32:53.532Z}
+     * Date and time the agreements were retrieved, in
+     * [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: {@code
+     * 2018-03-20T12:32:53.532Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeRetrieved() {
         return timeRetrieved;
     }
 
-    /**
-     * A generated signature for this listing resource version retrieved the agreements API.
-     **/
+    /** A generated signature for this listing resource version retrieved the agreements API. */
     @com.fasterxml.jackson.annotation.JsonProperty("signature")
     private final String signature;
 
     /**
      * A generated signature for this listing resource version retrieved the agreements API.
+     *
      * @return the value
-     **/
+     */
     public String getSignature() {
         return signature;
     }
@@ -334,6 +322,7 @@ public final class CreateAppCatalogSubscriptionDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

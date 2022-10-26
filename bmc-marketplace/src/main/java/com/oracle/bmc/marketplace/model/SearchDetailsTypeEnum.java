@@ -5,13 +5,12 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * Possible values for the type of SearchDetails.
- * FreeText - A request containing arbitrary text that must be present in the resource.
- * Structured - A request that uses Search's structured query language to specify filter conditions to apply to search results.
- *
- **/
+ * Possible values for the type of SearchDetails. FreeText - A request containing arbitrary text
+ * that must be present in the resource. Structured - A request that uses Search's structured query
+ * language to specify filter conditions to apply to search results.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-public enum SearchDetailsTypeEnum {
+public enum SearchDetailsTypeEnum implements com.oracle.bmc.http.internal.BmcEnum {
     FreeText("FreeText"),
     Structured("Structured"),
     ;

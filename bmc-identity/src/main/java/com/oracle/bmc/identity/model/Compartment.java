@@ -5,38 +5,41 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * A collection of related resources. Compartments are a fundamental component of Oracle Cloud Infrastructure
- * for organizing and isolating your cloud resources. You use them to clearly separate resources for the purposes
- * of measuring usage and billing, access (through the use of IAM Service policies), and isolation (separating the
- * resources for one project or business unit from another). A common approach is to create a compartment for each
- * major part of your organization. For more information, see
- * [Overview of IAM](https://docs.cloud.oracle.com//Content/Identity/getstarted/identity-domains.htm) and also
- * [Setting Up Your Tenancy](https://docs.cloud.oracle.com/Content/GSG/Concepts/settinguptenancy.htm).
- * <p>
- * To place a resource in a compartment, simply specify the compartment ID in the "Create" request object when
- * initially creating the resource. For example, to launch an instance into a particular compartment, specify
- * that compartment's OCID in the {@code LaunchInstance} request. You can't move an existing resource from one
- * compartment to another.
- * <p>
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
- * talk to an administrator. If you're an administrator who needs to write policies to give users access,
- * see [Get Started with Policies](https://docs.cloud.oracle.com/Content/Identity/policiesgs/get-started-with-policies.htm).
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values
- * using the API.
+ * A collection of related resources. Compartments are a fundamental component of Oracle Cloud
+ * Infrastructure for organizing and isolating your cloud resources. You use them to clearly
+ * separate resources for the purposes of measuring usage and billing, access (through the use of
+ * IAM Service policies), and isolation (separating the resources for one project or business unit
+ * from another). A common approach is to create a compartment for each major part of your
+ * organization. For more information, see [Overview of
+ * IAM](https://docs.cloud.oracle.com//Content/Identity/getstarted/identity-domains.htm) and also
+ * [Setting Up Your
+ * Tenancy](https://docs.cloud.oracle.com/Content/GSG/Concepts/settinguptenancy.htm).
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>To place a resource in a compartment, simply specify the compartment ID in the "Create"
+ * request object when initially creating the resource. For example, to launch an instance into a
+ * particular compartment, specify that compartment's OCID in the {@code LaunchInstance} request.
+ * You can't move an existing resource from one compartment to another.
+ *
+ * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
+ * authorized, talk to an administrator. If you're an administrator who needs to write policies to
+ * give users access, see [Get Started with
+ * Policies](https://docs.cloud.oracle.com/Content/Identity/policiesgs/get-started-with-policies.htm).
+ *
+ * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
+ * supply string values using the API. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Compartment.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Compartment extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Compartment extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -76,69 +79,69 @@ public final class Compartment extends com.oracle.bmc.http.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the compartment.
-         **/
+        /** The OCID of the compartment. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the compartment.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The OCID of the parent compartment containing the compartment.
-         **/
+        /** The OCID of the parent compartment containing the compartment. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the parent compartment containing the compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The name you assign to the compartment during creation. The name must be unique across all
-         * compartments in the parent. Avoid entering confidential information.
-         *
-         **/
+         * The name you assign to the compartment during creation. The name must be unique across
+         * all compartments in the parent. Avoid entering confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name you assign to the compartment during creation. The name must be unique across all
-         * compartments in the parent. Avoid entering confidential information.
+         * The name you assign to the compartment during creation. The name must be unique across
+         * all compartments in the parent. Avoid entering confidential information.
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The description you assign to the compartment. Does not have to be unique, and it's changeable.
-         **/
+         * The description you assign to the compartment. Does not have to be unique, and it's
+         * changeable.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * The description you assign to the compartment. Does not have to be unique, and it's changeable.
+         * The description you assign to the compartment. Does not have to be unique, and it's
+         * changeable.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -146,57 +149,54 @@ public final class Compartment extends com.oracle.bmc.http.internal.ExplicitlySe
         }
         /**
          * Date and time the compartment was created, in the format defined by RFC3339.
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         **/
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * Date and time the compartment was created, in the format defined by RFC3339.
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The compartment's current state. After creating a compartment, make sure its {@code lifecycleState} changes from
-         * CREATING to ACTIVE before using it.
-         *
-         **/
+         * The compartment's current state. After creating a compartment, make sure its {@code
+         * lifecycleState} changes from CREATING to ACTIVE before using it.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The compartment's current state. After creating a compartment, make sure its {@code lifecycleState} changes from
-         * CREATING to ACTIVE before using it.
+         * The compartment's current state. After creating a compartment, make sure its {@code
+         * lifecycleState} changes from CREATING to ACTIVE before using it.
          *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * The detailed status of INACTIVE lifecycleState.
-         **/
+        /** The detailed status of INACTIVE lifecycleState. */
         @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
         private Long inactiveStatus;
 
         /**
          * The detailed status of INACTIVE lifecycleState.
+         *
          * @param inactiveStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder inactiveStatus(Long inactiveStatus) {
             this.inactiveStatus = inactiveStatus;
             this.__explicitlySet__.add("inactiveStatus");
@@ -206,8 +206,7 @@ public final class Compartment extends com.oracle.bmc.http.internal.ExplicitlySe
          * Indicates whether or not the compartment is accessible for the user making the request.
          * Returns true when the user has INSPECT permissions directly on a resource in the
          * compartment or indirectly (permissions can be on a resource in a subcompartment).
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isAccessible")
         private Boolean isAccessible;
 
@@ -218,51 +217,53 @@ public final class Compartment extends com.oracle.bmc.http.internal.ExplicitlySe
          *
          * @param isAccessible the value to set
          * @return this builder
-         **/
+         */
         public Builder isAccessible(Boolean isAccessible) {
             this.isAccessible = isAccessible;
             this.__explicitlySet__.add("isAccessible");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
-         *
-         **/
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
-         *
-         **/
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -328,9 +329,7 @@ public final class Compartment extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -339,30 +338,28 @@ public final class Compartment extends com.oracle.bmc.http.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the compartment.
-     **/
+    /** The OCID of the compartment. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the compartment.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The OCID of the parent compartment containing the compartment.
-     **/
+    /** The OCID of the parent compartment containing the compartment. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the parent compartment containing the compartment.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -370,8 +367,7 @@ public final class Compartment extends com.oracle.bmc.http.internal.ExplicitlySe
     /**
      * The name you assign to the compartment during creation. The name must be unique across all
      * compartments in the parent. Avoid entering confidential information.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -380,51 +376,52 @@ public final class Compartment extends com.oracle.bmc.http.internal.ExplicitlySe
      * compartments in the parent. Avoid entering confidential information.
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
-     * The description you assign to the compartment. Does not have to be unique, and it's changeable.
-     **/
+     * The description you assign to the compartment. Does not have to be unique, and it's
+     * changeable.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * The description you assign to the compartment. Does not have to be unique, and it's changeable.
+     * The description you assign to the compartment. Does not have to be unique, and it's
+     * changeable.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
     /**
      * Date and time the compartment was created, in the format defined by RFC3339.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     **/
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * Date and time the compartment was created, in the format defined by RFC3339.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The compartment's current state. After creating a compartment, make sure its {@code lifecycleState} changes from
-     * CREATING to ACTIVE before using it.
-     *
-     **/
-    public enum LifecycleState {
+     * The compartment's current state. After creating a compartment, make sure its {@code
+     * lifecycleState} changes from CREATING to ACTIVE before using it.
+     */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Active("ACTIVE"),
         Inactive("INACTIVE"),
@@ -432,8 +429,8 @@ public final class Compartment extends com.oracle.bmc.http.internal.ExplicitlySe
         Deleted("DELETED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -473,93 +470,92 @@ public final class Compartment extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     };
     /**
-     * The compartment's current state. After creating a compartment, make sure its {@code lifecycleState} changes from
-     * CREATING to ACTIVE before using it.
-     *
-     **/
+     * The compartment's current state. After creating a compartment, make sure its {@code
+     * lifecycleState} changes from CREATING to ACTIVE before using it.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The compartment's current state. After creating a compartment, make sure its {@code lifecycleState} changes from
-     * CREATING to ACTIVE before using it.
+     * The compartment's current state. After creating a compartment, make sure its {@code
+     * lifecycleState} changes from CREATING to ACTIVE before using it.
      *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * The detailed status of INACTIVE lifecycleState.
-     **/
+    /** The detailed status of INACTIVE lifecycleState. */
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
     private final Long inactiveStatus;
 
     /**
      * The detailed status of INACTIVE lifecycleState.
+     *
      * @return the value
-     **/
+     */
     public Long getInactiveStatus() {
         return inactiveStatus;
     }
 
     /**
      * Indicates whether or not the compartment is accessible for the user making the request.
-     * Returns true when the user has INSPECT permissions directly on a resource in the
-     * compartment or indirectly (permissions can be on a resource in a subcompartment).
-     *
-     **/
+     * Returns true when the user has INSPECT permissions directly on a resource in the compartment
+     * or indirectly (permissions can be on a resource in a subcompartment).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isAccessible")
     private final Boolean isAccessible;
 
     /**
      * Indicates whether or not the compartment is accessible for the user making the request.
-     * Returns true when the user has INSPECT permissions directly on a resource in the
-     * compartment or indirectly (permissions can be on a resource in a subcompartment).
+     * Returns true when the user has INSPECT permissions directly on a resource in the compartment
+     * or indirectly (permissions can be on a resource in a subcompartment).
      *
      * @return the value
-     **/
+     */
     public Boolean getIsAccessible() {
         return isAccessible;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
-     *
-     **/
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -571,6 +567,7 @@ public final class Compartment extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

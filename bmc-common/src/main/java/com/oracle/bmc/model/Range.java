@@ -8,36 +8,30 @@ import com.oracle.bmc.util.internal.StringUtils;
 
 /**
  * Class specifying a range-request is being made. Request mostly follows
- * https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35, except only
- * one range is allowed. For the purposes of the SDK, three types of requests
- * are supported:
+ * https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35, except only one range is
+ * allowed. For the purposes of the SDK, three types of requests are supported:
+ *
  * <ol>
- * <li>Exact range (0-100): All bytes in the given range</li>
- * <li>Starts-at (100-): All bytes >= the start byte</li>
- * <li>Last (-100): The last X bytes</li>
+ *   <li>Exact range (0-100): All bytes in the given range
+ *   <li>Starts-at (100-): All bytes >= the start byte
+ *   <li>Last (-100): The last X bytes
  * </ol>
- * <p>
- * Also used to represent the range returned by the server (including the full
- * content length, if known).
+ *
+ * <p>Also used to represent the range returned by the server (including the full content length, if
+ * known).
  */
 public class Range {
     private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Range.class);
     private static final String HEADER_VALUE_FORMAT = "bytes=%s-%s";
     private static final String START_ONLY_HEADER_VALUE_FORMAT = "bytes=%s-";
     private static final String END_ONLY_HEADER_VALUE_FORMAT = "bytes=-%s";
-    /**
-     * The start byte, if given.
-     */
+    /** The start byte, if given. */
     private final Long startByte;
 
-    /**
-     * The end byte, if given.
-     */
+    /** The end byte, if given. */
     private final Long endByte;
 
-    /**
-     * The content length as returned by the server, or null if unknown.
-     */
+    /** The content length as returned by the server, or null if unknown. */
     private Long contentLength = null;
 
     // toString is used for header serialization by Jersey
@@ -59,8 +53,10 @@ public class Range {
 
     /**
      * Parse the "content-range" header per https://tools.ietf.org/html/rfc7233#section-4.2.
-     * <p>
-     * Note, this is only for successful responses (206).  It does not handle 416 (range not satisfiable).
+     *
+     * <p>Note, this is only for successful responses (206). It does not handle 416 (range not
+     * satisfiable).
+     *
      * @param value The response header value.
      * @return A new Range header.
      */
@@ -98,23 +94,17 @@ public class Range {
         this.endByte = endByte;
     }
 
-    /**
-     * The start byte, if given.
-     */
+    /** The start byte, if given. */
     public Long getStartByte() {
         return this.startByte;
     }
 
-    /**
-     * The end byte, if given.
-     */
+    /** The end byte, if given. */
     public Long getEndByte() {
         return this.endByte;
     }
 
-    /**
-     * The content length as returned by the server, or null if unknown.
-     */
+    /** The content length as returned by the server, or null if unknown. */
     public Long getContentLength() {
         return this.contentLength;
     }

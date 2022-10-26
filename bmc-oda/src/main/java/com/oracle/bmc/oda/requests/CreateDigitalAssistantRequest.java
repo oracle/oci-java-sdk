@@ -6,66 +6,61 @@ package com.oracle.bmc.oda.requests;
 
 import com.oracle.bmc.oda.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateDigitalAssistantExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateDigitalAssistantRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateDigitalAssistantExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * CreateDigitalAssistantRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class CreateDigitalAssistantRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.oda.model.CreateDigitalAssistantDetails> {
 
-    /**
-     * Unique Digital Assistant instance identifier.
-     */
+    /** Unique Digital Assistant instance identifier. */
     private String odaInstanceId;
 
-    /**
-     * Unique Digital Assistant instance identifier.
-     */
+    /** Unique Digital Assistant instance identifier. */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
-    /**
-     * Property values for creating the new Digital Assistant.
-     */
+    /** Property values for creating the new Digital Assistant. */
     private com.oracle.bmc.oda.model.CreateDigitalAssistantDetails createDigitalAssistantDetails;
 
-    /**
-     * Property values for creating the new Digital Assistant.
-     */
+    /** Property values for creating the new Digital Assistant. */
     public com.oracle.bmc.oda.model.CreateDigitalAssistantDetails
             getCreateDigitalAssistantDetails() {
         return createDigitalAssistantDetails;
     }
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     * The client request ID for tracing. This value is included in the opc-request-id response
+     * header.
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     * The client request ID for tracing. This value is included in the opc-request-id response
+     * header.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so that you can retry the request if there's
-     * a timeout or server error without the risk of executing that same action again.
-     * <p>
-     * Retry tokens expire after 24 hours, but they can become invalid before then if there are
+     * A token that uniquely identifies a request so that you can retry the request if there's a
+     * timeout or server error without the risk of executing that same action again.
+     *
+     * <p>Retry tokens expire after 24 hours, but they can become invalid before then if there are
      * conflicting operations. For example, if an instance was deleted and purged from the system,
      * then the service might reject a retry of the original creation request.
-     *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so that you can retry the request if there's
-     * a timeout or server error without the risk of executing that same action again.
-     * <p>
-     * Retry tokens expire after 24 hours, but they can become invalid before then if there are
+     * A token that uniquely identifies a request so that you can retry the request if there's a
+     * timeout or server error without the risk of executing that same action again.
+     *
+     * <p>Retry tokens expire after 24 hours, but they can become invalid before then if there are
      * conflicting operations. For example, if an instance was deleted and purged from the system,
      * then the service might reject a retry of the original creation request.
-     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -73,6 +68,7 @@ public class CreateDigitalAssistantRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -85,17 +81,15 @@ public class CreateDigitalAssistantRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateDigitalAssistantRequest,
                     com.oracle.bmc.oda.model.CreateDigitalAssistantDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique Digital Assistant instance identifier.
-         */
+        /** Unique Digital Assistant instance identifier. */
         private String odaInstanceId = null;
 
         /**
          * Unique Digital Assistant instance identifier.
+         *
          * @param odaInstanceId the value to set
          * @return this builder instance
          */
@@ -104,14 +98,13 @@ public class CreateDigitalAssistantRequest
             return this;
         }
 
-        /**
-         * Property values for creating the new Digital Assistant.
-         */
+        /** Property values for creating the new Digital Assistant. */
         private com.oracle.bmc.oda.model.CreateDigitalAssistantDetails
                 createDigitalAssistantDetails = null;
 
         /**
          * Property values for creating the new Digital Assistant.
+         *
          * @param createDigitalAssistantDetails the value to set
          * @return this builder instance
          */
@@ -123,12 +116,15 @@ public class CreateDigitalAssistantRequest
         }
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * The client request ID for tracing. This value is included in the opc-request-id response
+         * header.
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * The client request ID for tracing. This value is included in the opc-request-id response
+         * header.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -138,23 +134,22 @@ public class CreateDigitalAssistantRequest
         }
 
         /**
-         * A token that uniquely identifies a request so that you can retry the request if there's
-         * a timeout or server error without the risk of executing that same action again.
-         * <p>
-         * Retry tokens expire after 24 hours, but they can become invalid before then if there are
-         * conflicting operations. For example, if an instance was deleted and purged from the system,
-         * then the service might reject a retry of the original creation request.
+         * A token that uniquely identifies a request so that you can retry the request if there's a
+         * timeout or server error without the risk of executing that same action again.
          *
+         * <p>Retry tokens expire after 24 hours, but they can become invalid before then if there
+         * are conflicting operations. For example, if an instance was deleted and purged from the
+         * system, then the service might reject a retry of the original creation request.
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so that you can retry the request if there's
-         * a timeout or server error without the risk of executing that same action again.
-         * <p>
-         * Retry tokens expire after 24 hours, but they can become invalid before then if there are
-         * conflicting operations. For example, if an instance was deleted and purged from the system,
-         * then the service might reject a retry of the original creation request.
+         * A token that uniquely identifies a request so that you can retry the request if there's a
+         * timeout or server error without the risk of executing that same action again.
+         *
+         * <p>Retry tokens expire after 24 hours, but they can become invalid before then if there
+         * are conflicting operations. For example, if an instance was deleted and purged from the
+         * system, then the service might reject a retry of the original creation request.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -166,18 +161,19 @@ public class CreateDigitalAssistantRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -189,6 +185,7 @@ public class CreateDigitalAssistantRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(CreateDigitalAssistantRequest o) {
@@ -204,10 +201,11 @@ public class CreateDigitalAssistantRequest
         /**
          * Build the instance of CreateDigitalAssistantRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of CreateDigitalAssistantRequest
          */
@@ -220,6 +218,7 @@ public class CreateDigitalAssistantRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -232,7 +231,8 @@ public class CreateDigitalAssistantRequest
         /**
          * Build the instance of CreateDigitalAssistantRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateDigitalAssistantRequest
@@ -244,12 +244,14 @@ public class CreateDigitalAssistantRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new CreateDigitalAssistantRequest(odaInstanceId, createDigitalAssistantDetails, opcRequestId, opcRetryToken);
+            // new CreateDigitalAssistantRequest(odaInstanceId, createDigitalAssistantDetails,
+            // opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -262,6 +264,7 @@ public class CreateDigitalAssistantRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

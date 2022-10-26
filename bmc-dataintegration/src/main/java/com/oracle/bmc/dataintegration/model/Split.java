@@ -5,23 +5,25 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The information about the split operator. Split operator has one input and many output links. Split operator allows users to take one data set and based on conditions produce many different outputs.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information about the split operator. Split operator has one input and many output links.
+ * Split operator allows users to take one data set and based on conditions produce many different
+ * outputs. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Split.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class Split extends Operator {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -133,16 +135,21 @@ public final class Split extends Operator {
             return this;
         }
         /**
-         * Specify how to handle data that matches a split condition. Either data that matches the first condition should be removed from further processing by other conditions, or all matched data should be evaluated for all conditions.
-         **/
+         * Specify how to handle data that matches a split condition. Either data that matches the
+         * first condition should be removed from further processing by other conditions, or all
+         * matched data should be evaluated for all conditions.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dataRoutingStrategy")
         private DataRoutingStrategy dataRoutingStrategy;
 
         /**
-         * Specify how to handle data that matches a split condition. Either data that matches the first condition should be removed from further processing by other conditions, or all matched data should be evaluated for all conditions.
+         * Specify how to handle data that matches a split condition. Either data that matches the
+         * first condition should be removed from further processing by other conditions, or all
+         * matched data should be evaluated for all conditions.
+         *
          * @param dataRoutingStrategy the value to set
          * @return this builder
-         **/
+         */
         public Builder dataRoutingStrategy(DataRoutingStrategy dataRoutingStrategy) {
             this.dataRoutingStrategy = dataRoutingStrategy;
             this.__explicitlySet__.add("dataRoutingStrategy");
@@ -219,9 +226,7 @@ public final class Split extends Operator {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -262,15 +267,17 @@ public final class Split extends Operator {
     }
 
     /**
-     * Specify how to handle data that matches a split condition. Either data that matches the first condition should be removed from further processing by other conditions, or all matched data should be evaluated for all conditions.
-     **/
-    public enum DataRoutingStrategy {
+     * Specify how to handle data that matches a split condition. Either data that matches the first
+     * condition should be removed from further processing by other conditions, or all matched data
+     * should be evaluated for all conditions.
+     */
+    public enum DataRoutingStrategy implements com.oracle.bmc.http.internal.BmcEnum {
         First("FIRST"),
         All("ALL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -310,15 +317,20 @@ public final class Split extends Operator {
         }
     };
     /**
-     * Specify how to handle data that matches a split condition. Either data that matches the first condition should be removed from further processing by other conditions, or all matched data should be evaluated for all conditions.
-     **/
+     * Specify how to handle data that matches a split condition. Either data that matches the first
+     * condition should be removed from further processing by other conditions, or all matched data
+     * should be evaluated for all conditions.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dataRoutingStrategy")
     private final DataRoutingStrategy dataRoutingStrategy;
 
     /**
-     * Specify how to handle data that matches a split condition. Either data that matches the first condition should be removed from further processing by other conditions, or all matched data should be evaluated for all conditions.
+     * Specify how to handle data that matches a split condition. Either data that matches the first
+     * condition should be removed from further processing by other conditions, or all matched data
+     * should be evaluated for all conditions.
+     *
      * @return the value
-     **/
+     */
     public DataRoutingStrategy getDataRoutingStrategy() {
         return dataRoutingStrategy;
     }
@@ -330,6 +342,7 @@ public final class Split extends Operator {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

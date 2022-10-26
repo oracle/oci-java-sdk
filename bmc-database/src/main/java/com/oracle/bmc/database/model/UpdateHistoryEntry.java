@@ -5,21 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateHistoryEntry.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateHistoryEntry extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = UpdateHistoryEntry.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class UpdateHistoryEntry
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -54,89 +55,89 @@ public final class UpdateHistoryEntry extends com.oracle.bmc.http.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * maintenance update history entry.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * maintenance update history entry.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * maintenance update.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("updateId")
         private String updateId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * maintenance update.
+         *
          * @param updateId the value to set
          * @return this builder
-         **/
+         */
         public Builder updateId(String updateId) {
             this.updateId = updateId;
             this.__explicitlySet__.add("updateId");
             return this;
         }
-        /**
-         * The update action.
-         **/
+        /** The update action. */
         @com.fasterxml.jackson.annotation.JsonProperty("updateAction")
         private UpdateAction updateAction;
 
         /**
          * The update action.
+         *
          * @param updateAction the value to set
          * @return this builder
-         **/
+         */
         public Builder updateAction(UpdateAction updateAction) {
             this.updateAction = updateAction;
             this.__explicitlySet__.add("updateAction");
             return this;
         }
-        /**
-         * The type of cloud VM cluster maintenance update.
-         **/
+        /** The type of cloud VM cluster maintenance update. */
         @com.fasterxml.jackson.annotation.JsonProperty("updateType")
         private UpdateType updateType;
 
         /**
          * The type of cloud VM cluster maintenance update.
+         *
          * @param updateType the value to set
          * @return this builder
-         **/
+         */
         public Builder updateType(UpdateType updateType) {
             this.updateType = updateType;
             this.__explicitlySet__.add("updateType");
             return this;
         }
-        /**
-         * The current lifecycle state of the maintenance update operation.
-         **/
+        /** The current lifecycle state of the maintenance update operation. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current lifecycle state of the maintenance update operation.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * Descriptive text providing additional details about the lifecycle state.
-         *
-         **/
+        /** Descriptive text providing additional details about the lifecycle state. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
@@ -145,39 +146,37 @@ public final class UpdateHistoryEntry extends com.oracle.bmc.http.internal.Expli
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /**
-         * The date and time when the maintenance update action started.
-         **/
+        /** The date and time when the maintenance update action started. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * The date and time when the maintenance update action started.
+         *
          * @param timeStarted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /**
-         * The date and time when the maintenance update action completed.
-         **/
+        /** The date and time when the maintenance update action completed. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCompleted")
         private java.util.Date timeCompleted;
 
         /**
          * The date and time when the maintenance update action completed.
+         *
          * @param timeCompleted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCompleted(java.util.Date timeCompleted) {
             this.timeCompleted = timeCompleted;
             this.__explicitlySet__.add("timeCompleted");
@@ -234,9 +233,7 @@ public final class UpdateHistoryEntry extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -246,45 +243,49 @@ public final class UpdateHistoryEntry extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * maintenance update history entry.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * maintenance update history entry.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * maintenance update.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("updateId")
     private final String updateId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * maintenance update.
+     *
      * @return the value
-     **/
+     */
     public String getUpdateId() {
         return updateId;
     }
 
-    /**
-     * The update action.
-     **/
-    public enum UpdateAction {
+    /** The update action. */
+    public enum UpdateAction implements com.oracle.bmc.http.internal.BmcEnum {
         RollingApply("ROLLING_APPLY"),
         NonRollingApply("NON_ROLLING_APPLY"),
         Precheck("PRECHECK"),
         Rollback("ROLLBACK"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -323,31 +324,28 @@ public final class UpdateHistoryEntry extends com.oracle.bmc.http.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /**
-     * The update action.
-     **/
+    /** The update action. */
     @com.fasterxml.jackson.annotation.JsonProperty("updateAction")
     private final UpdateAction updateAction;
 
     /**
      * The update action.
+     *
      * @return the value
-     **/
+     */
     public UpdateAction getUpdateAction() {
         return updateAction;
     }
 
-    /**
-     * The type of cloud VM cluster maintenance update.
-     **/
-    public enum UpdateType {
+    /** The type of cloud VM cluster maintenance update. */
+    public enum UpdateType implements com.oracle.bmc.http.internal.BmcEnum {
         GiUpgrade("GI_UPGRADE"),
         GiPatch("GI_PATCH"),
         OsUpdate("OS_UPDATE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -386,31 +384,28 @@ public final class UpdateHistoryEntry extends com.oracle.bmc.http.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /**
-     * The type of cloud VM cluster maintenance update.
-     **/
+    /** The type of cloud VM cluster maintenance update. */
     @com.fasterxml.jackson.annotation.JsonProperty("updateType")
     private final UpdateType updateType;
 
     /**
      * The type of cloud VM cluster maintenance update.
+     *
      * @return the value
-     **/
+     */
     public UpdateType getUpdateType() {
         return updateType;
     }
 
-    /**
-     * The current lifecycle state of the maintenance update operation.
-     **/
-    public enum LifecycleState {
+    /** The current lifecycle state of the maintenance update operation. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         InProgress("IN_PROGRESS"),
         Succeeded("SUCCEEDED"),
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -449,24 +444,20 @@ public final class UpdateHistoryEntry extends com.oracle.bmc.http.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current lifecycle state of the maintenance update operation.
-     **/
+    /** The current lifecycle state of the maintenance update operation. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current lifecycle state of the maintenance update operation.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * Descriptive text providing additional details about the lifecycle state.
-     *
-     **/
+    /** Descriptive text providing additional details about the lifecycle state. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
@@ -474,35 +465,33 @@ public final class UpdateHistoryEntry extends com.oracle.bmc.http.internal.Expli
      * Descriptive text providing additional details about the lifecycle state.
      *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /**
-     * The date and time when the maintenance update action started.
-     **/
+    /** The date and time when the maintenance update action started. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * The date and time when the maintenance update action started.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /**
-     * The date and time when the maintenance update action completed.
-     **/
+    /** The date and time when the maintenance update action completed. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCompleted")
     private final java.util.Date timeCompleted;
 
     /**
      * The date and time when the maintenance update action completed.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCompleted() {
         return timeCompleted;
     }
@@ -514,6 +503,7 @@ public final class UpdateHistoryEntry extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

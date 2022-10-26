@@ -5,7 +5,7 @@
 package database_tools;
 
 import com.oracle.bmc.ConfigFileReader;
-import com.oracle.bmc.Options;
+import com.oracle.bmc.http.client.Options;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.database.DatabaseClient;
@@ -62,61 +62,28 @@ import java.util.zip.ZipInputStream;
 /**
  * Use Case: ADB-S with Public IP
  *
- * Creates a connection to an Autonomous Databases with Shared Exadata Infrastructure
- * with a Public IP. Note, since this connection will be against a public IP address,
- * a Database Tools Private Endpoint Reverse Connection is not required. However, mTLS
- * is required. This example serves as an academic exercise of the SDK and proof of
- * concept only.
+ * <p>Creates a connection to an Autonomous Databases with Shared Exadata Infrastructure with a
+ * Public IP. Note, since this connection will be against a public IP address, a Database Tools
+ * Private Endpoint Reverse Connection is not required. However, mTLS is required. This example
+ * serves as an academic exercise of the SDK and proof of concept only.
  *
- * Prerequisites:
- *  - The ability to create a new ADB-s in a tenancy (automated below)
- *  - An existing Vault for storage of secrets
- *  - A previously configured .oci/config file with a [DEFAULT] section
+ * <p>Prerequisites: - The ability to create a new ADB-s in a tenancy (automated below) - An
+ * existing Vault for storage of secrets - A previously configured .oci/config file with a [DEFAULT]
+ * section
  *
- * High-level Steps:
- *  1- Create a new Autonomous Database
- *  2- Create required secrets in the Vault
- *  3- Create a Database Tools connection
- *  4- Validate the connection
+ * <p>High-level Steps: 1- Create a new Autonomous Database 2- Create required secrets in the Vault
+ * 3- Create a Database Tools connection 4- Validate the connection
  *
- *  ... cleanup when done (delete the ADB, temporary secrets and connection)
+ * <p>... cleanup when done (delete the ADB, temporary secrets and connection)
  *
- *                       Client
- *                         |
- *                         |
- *  +----------------------+----------+
- *  |                      V          |
- *  |              +----------------+ |
- *  |              | Database Tools | |
- *  |              |    Service     | |
- *  |              +----------------+ |
- *  |                      |          |
- *  | Database             |          |
- *  | Tools                |          |
- *  | VCN                  |          |
- *  +----------------------+----------+
- *                         |
- *                         |
- *  +--------------+       |
- *  | Customer     |       |
- *  | VCN          |       |
- *  +--------------+       |
- *                         |
- *                         |
- *  +----------------------+----------+
- *  |                      |          |
- *  |                      V          |
- *  |                  ---------      |
- *  |                 /  ABD-S  \     |
- *  |                 \Public IP/     |
- *  |                  ---------      |
- *  |                                 |
- *  | ADB                             |
- *  | Shared                          |
- *  | VCN                             |
- *  +---------------------------------+
+ * <p>Client | | +----------------------+----------+ | V | | +----------------+ | | | Database Tools
+ * | | | | Service | | | +----------------+ | | | | | Database | | | Tools | | | VCN | |
+ * +----------------------+----------+ | | +--------------+ | | Customer | | | VCN | |
+ * +--------------+ | | | +----------------------+----------+ | | | | V | | --------- | | / ABD-S \
+ * | | \Public IP/ | | --------- | | | | ADB | | Shared | | VCN |
+ * +---------------------------------+
  *
- *  Note: We recommend that you activate the java assertion (-ea) when running this example.
+ * <p>Note: We recommend that you activate the java assertion (-ea) when running this example.
  */
 public class DatabaseToolsADBsConnectionPublicIpExample {
 
@@ -149,12 +116,13 @@ public class DatabaseToolsADBsConnectionPublicIpExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     * <ul>
-     *   <li>The OCID of the compartment where the vcn, autonomous database, vault and connection will reside</li>
-     *   <li>The OCID of a Vault created in KMS with at least one master key</li>
-     *   <li>The Name of the User in the ADB-S, like admin</li>
-     *   <li>The Password of the User in the ADB-S</li>
-     * </ul>
+     *     <ul>
+     *       <li>The OCID of the compartment where the vcn, autonomous database, vault and
+     *           connection will reside
+     *       <li>The OCID of a Vault created in KMS with at least one master key
+     *       <li>The Name of the User in the ADB-S, like admin
+     *       <li>The Password of the User in the ADB-S
+     *     </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 4) {
@@ -171,8 +139,10 @@ public class DatabaseToolsADBsConnectionPublicIpExample {
         dbUser = args[2];
         dbPassword = args[3];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, profile);
         provider = new ConfigFileAuthenticationDetailsProvider(ConfigFileReader.parseDefault());
 
@@ -223,9 +193,7 @@ public class DatabaseToolsADBsConnectionPublicIpExample {
         }
     }
 
-    /**
-     * Create an Autonomous Databases with Shared Exadata Infrastructure. With a Public IP.
-     */
+    /** Create an Autonomous Databases with Shared Exadata Infrastructure. With a Public IP. */
     private static void createADBs() throws Exception {
         System.out.println(String.format("Creating Database with name %s...", dbName));
 
@@ -261,9 +229,7 @@ public class DatabaseToolsADBsConnectionPublicIpExample {
                         "Created Database with name %s and OCID %s", dbName, autonomousDatabaseId));
     }
 
-    /**
-     * Obtain a SSO Wallet for the ADB-S.
-     */
+    /** Obtain a SSO Wallet for the ADB-S. */
     private static String getSsoWallet() {
         System.out.println(String.format("Getting Database %s info...", autonomousDatabaseId));
         GetAutonomousDatabaseResponse response =
@@ -290,8 +256,8 @@ public class DatabaseToolsADBsConnectionPublicIpExample {
                                 .autonomousDatabaseId(autonomousDatabaseId)
                                 .generateAutonomousDatabaseWalletDetails(
                                         GenerateAutonomousDatabaseWalletDetails.builder()
-                                                .password(
-                                                        dbPassword) // Should use a different password
+                                                .password(dbPassword) // Should use a different
+                                                // password
                                                 .build())
                                 .build());
 
@@ -304,6 +270,7 @@ public class DatabaseToolsADBsConnectionPublicIpExample {
 
     /**
      * Create a secret in a Vault
+     *
      * @param name Name of the Secret
      * @param base64Secret The content of the secret as a base 64 string
      * @return the OCID of the generated secret
@@ -322,8 +289,7 @@ public class DatabaseToolsADBsConnectionPublicIpExample {
             System.out.println(
                     String.format(
                             "Vault %s management endpoint is %s",
-                            vaultId,
-                            vault.getManagementEndpoint()));
+                            vaultId, vault.getManagementEndpoint()));
             KmsManagementClient kmsManagementClient =
                     KmsManagementClient.builder().vault(vault).build(provider);
             // This will only work if the key is in the same compartment as the vault
@@ -367,6 +333,7 @@ public class DatabaseToolsADBsConnectionPublicIpExample {
 
     /**
      * Create secrets (database wallet and database password) in the Vault
+     *
      * @param wallet wallet to Store in base64 string format
      * @throws Exception
      */
@@ -386,6 +353,7 @@ public class DatabaseToolsADBsConnectionPublicIpExample {
 
     /**
      * Get a specific file from a Zip file
+     *
      * @param inputStream Stream that contains the zip file.
      * @param fileName Name of the file to extract from the zip file
      * @return a ByteArrayOutputStream for the specified fileName
@@ -411,14 +379,11 @@ public class DatabaseToolsADBsConnectionPublicIpExample {
     }
 
     /**
-     * Create a Database Tools connection with:
-     * - ADB-S Compartment
-     * - Connection String extracted from the ADB-S
-     * - Database User
-     * - Database Password Stored in a Vault
-     * - Time generated display name
-     * - keyStore for the SSO Wallet extracted from the ADB-S and Stored in a Vault
-     * - Related Resource with a reference to the ADB-S OCID
+     * Create a Database Tools connection with: - ADB-S Compartment - Connection String extracted
+     * from the ADB-S - Database User - Database Password Stored in a Vault - Time generated display
+     * name - keyStore for the SSO Wallet extracted from the ADB-S and Stored in a Vault - Related
+     * Resource with a reference to the ADB-S OCID
+     *
      * @throws Exception
      */
     private static void createConnection() throws Exception {
@@ -428,10 +393,7 @@ public class DatabaseToolsADBsConnectionPublicIpExample {
         System.out.println("Creating a database tools connection...");
         // Get the mTls low connection string
         String connectionString =
-                autonomousDatabase
-                        .getConnectionStrings()
-                        .getProfiles()
-                        .stream()
+                autonomousDatabase.getConnectionStrings().getProfiles().stream()
                         .filter(
                                 p ->
                                         p.getTlsAuthentication()
@@ -457,7 +419,8 @@ public class DatabaseToolsADBsConnectionPublicIpExample {
                                                 .build())
                                 .build());
 
-        // Related Resource is optional, but will help provide additional information when querying the
+        // Related Resource is optional, but will help provide additional information when querying
+        // the
         // connection using the OCI Console, the SDKs and the CLI.
         CreateDatabaseToolsRelatedResourceDetails relatedResource =
                 CreateDatabaseToolsRelatedResourceDetails.builder()
@@ -492,8 +455,7 @@ public class DatabaseToolsADBsConnectionPublicIpExample {
         System.out.println(
                 String.format(
                         "=== Creating Connection %s using Work request: %s",
-                        displayName,
-                        createDatabaseToolsConnectionResponse.getOpcWorkRequestId()));
+                        displayName, createDatabaseToolsConnectionResponse.getOpcWorkRequestId()));
 
         // We wait for the response.
         waitForDatabaseToolsConnection(connectionId, LifecycleState.Active);
@@ -514,8 +476,9 @@ public class DatabaseToolsADBsConnectionPublicIpExample {
     }
 
     /**
-     * Validate a Database Tools Connection.
-     * The Validation is similar to the "Test Connection" in SQL Developer.
+     * Validate a Database Tools Connection. The Validation is similar to the "Test Connection" in
+     * SQL Developer.
+     *
      * @return true if the Connection is Valid
      */
     private static boolean validateConnection() {
@@ -541,6 +504,7 @@ public class DatabaseToolsADBsConnectionPublicIpExample {
 
     /**
      * Delete The database Tools Connection for the specified connectionId
+     *
      * @param connectionId The OCID of the Database Tools to delete
      * @throws Exception
      */
@@ -570,8 +534,9 @@ public class DatabaseToolsADBsConnectionPublicIpExample {
     }
 
     /**
-     * Delete a Secret in a Vault.
-     * Note that the secret is not actually deleted immediately, it is scheduled for deletion on a later date.
+     * Delete a Secret in a Vault. Note that the secret is not actually deleted immediately, it is
+     * scheduled for deletion on a later date.
+     *
      * @param secretId The OCID of the Secret to delete
      * @throws Exception
      */
@@ -605,6 +570,7 @@ public class DatabaseToolsADBsConnectionPublicIpExample {
 
     /**
      * Delete secrets in a Vault.
+     *
      * @param secretIds the list of Secret OCID to delete
      * @throws Exception
      */
@@ -618,6 +584,7 @@ public class DatabaseToolsADBsConnectionPublicIpExample {
 
     /**
      * Delete an Autonomous Database. Beware, this actually DELETES the specified DB
+     *
      * @param autonomousDatabaseId Autonomous Database Id
      * @throws Exception
      */
@@ -626,8 +593,7 @@ public class DatabaseToolsADBsConnectionPublicIpExample {
             System.out.println(
                     String.format(
                             "Terminating Database with name %s and OCID %s",
-                            dbName,
-                            autonomousDatabaseId));
+                            dbName, autonomousDatabaseId));
 
             DeleteAutonomousDatabaseRequest deleteAutonomousDatabaseRequest =
                     DeleteAutonomousDatabaseRequest.builder()
@@ -643,16 +609,15 @@ public class DatabaseToolsADBsConnectionPublicIpExample {
             System.out.println(
                     String.format(
                             "Terminated Database with name %s and OCID %s",
-                            dbName,
-                            autonomousDatabaseId));
+                            dbName, autonomousDatabaseId));
         } else {
             System.out.println("deleteADBs skipped");
         }
     }
 
     /**
-     * Wait for a specific Connection to get a specific state. Required for
-     * asynchronous operation.
+     * Wait for a specific Connection to get a specific state. Required for asynchronous operation.
+     *
      * @param connectionId The OCID of the database Tools Connection
      * @param targetState The LifeCycle state to reach
      * @throws Exception
@@ -663,8 +628,7 @@ public class DatabaseToolsADBsConnectionPublicIpExample {
         System.out.println(
                 String.format(
                         "=== Waiting for connection %s to match state -> %s",
-                        connectionId,
-                        targetState));
+                        connectionId, targetState));
 
         DatabaseToolsWaiters waiter = databaseToolsClient.getWaiters();
         waiter.forDatabaseToolsConnection(
@@ -677,8 +641,8 @@ public class DatabaseToolsADBsConnectionPublicIpExample {
     }
 
     /**
-     * Wait for a specific Secret to get a specific state. Required for
-     * asynchronous operation.
+     * Wait for a specific Secret to get a specific state. Required for asynchronous operation.
+     *
      * @param secretId The OCID of the Secret in a Vault
      * @param targetState The LifeCycle state to reach
      * @throws Exception
@@ -698,6 +662,7 @@ public class DatabaseToolsADBsConnectionPublicIpExample {
 
     /**
      * Wait for an Autonomous database to get a specific state. Required for asynchronous operation.
+     *
      * @param dbId Autonomous database Id
      * @param targetState The LifeCycle state to reach
      * @throws Exception

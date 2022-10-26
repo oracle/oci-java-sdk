@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.objectstorage.transfer.internal;
 
-import com.oracle.bmc.io.DuplicatableInputStream;
+import com.oracle.bmc.http.client.io.DuplicatableInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -25,9 +25,9 @@ public class StreamChunkCreator {
     }
 
     /**
-     * Test for whether or not the input stream can be read in parallel. If this returns true,
-     * then streams returned by {@link #next()} are safe to be read from in parallel.  If this
-     * returns false, then streams returned by {@link #next()} must be read from serially.
+     * Test for whether or not the input stream can be read in parallel. If this returns true, then
+     * streams returned by {@link #next()} are safe to be read from in parallel. If this returns
+     * false, then streams returned by {@link #next()} must be read from serially.
      *
      * @return true if parallel reads could be enabled, false if they could not.
      */
@@ -41,6 +41,7 @@ public class StreamChunkCreator {
 
     /**
      * Test for whether or not there are any more chunks that can be created.
+     *
      * @return true if there are additional chunks, false if all done
      */
     public boolean hasMore() {
@@ -48,11 +49,11 @@ public class StreamChunkCreator {
     }
 
     /**
-     * Returns the next chunk as a new stream.  Returned streams must be
-     * consumed in order unless {@link #supportsParallelReads()} returned true,
-     * in which case the returned streams can be read out of order.
-     * <p>
-     * Users should call {@link #hasMore()} before calling this.
+     * Returns the next chunk as a new stream. Returned streams must be consumed in order unless
+     * {@link #supportsParallelReads()} returned true, in which case the returned streams can be
+     * read out of order.
+     *
+     * <p>Users should call {@link #hasMore()} before calling this.
      *
      * @return The next chunk.
      */
@@ -77,7 +78,8 @@ public class StreamChunkCreator {
                             (DuplicatableInputStream) source, startPosition, endPosition);
         } else {
             // 1) the start will be whatever the previous end was
-            // 2) the stream should not be closed, the caller is responsible for closing the original stream when
+            // 2) the stream should not be closed, the caller is responsible for closing the
+            // original stream when
             // it is done with all of the chunks.
             rangeInputStream =
                     new SubRangeInputStream(
@@ -89,16 +91,16 @@ public class StreamChunkCreator {
     }
 
     /**
-     * Creates a new duplicated SubRangeInputStream.  This individual sub range can be duplicated multiple times
-     * (ex, for retries).
-     * <p>
-     * This class should be used in place of {@link SubRangeInputStream} directly when the underlying input stream itself
-     * is a DuplicatableInputStream.  This class will always duplicate the underlying stream while maintaining the desired
-     * start and end positions.
+     * Creates a new duplicated SubRangeInputStream. This individual sub range can be duplicated
+     * multiple times (ex, for retries).
      *
-     * Because this stream can be duplicated for each thread, it will support {@link InputStream#mark(int)} and
-     * {@link InputStream#reset()} whenever the source stream does so, because only one thread will reset it,
-     * and the threads will not interfere with each other.
+     * <p>This class should be used in place of {@link SubRangeInputStream} directly when the
+     * underlying input stream itself is a DuplicatableInputStream. This class will always duplicate
+     * the underlying stream while maintaining the desired start and end positions.
+     *
+     * <p>Because this stream can be duplicated for each thread, it will support {@link
+     * InputStream#mark(int)} and {@link InputStream#reset()} whenever the source stream does so,
+     * because only one thread will reset it, and the threads will not interfere with each other.
      */
     public static class DuplicatedSubRangeInputStream extends SubRangeInputStream
             implements DuplicatableInputStream {
@@ -158,20 +160,23 @@ public class StreamChunkCreator {
     }
 
     /**
-     * Creates a new SubRangeInputStream that represents a sub-range of bytes from another InputStream.
-     * It's assumed the sub range stream can only be read once, and a sub range of bytes from another input stream.
+     * Creates a new SubRangeInputStream that represents a sub-range of bytes from another
+     * InputStream. It's assumed the sub range stream can only be read once, and a sub range of
+     * bytes from another input stream.
      *
-     * Note: The behavior is a bit strange. A {@link SubRangeInputStream} doesn't guarantee that, if you read the
-     * chunks out of order, it will actually read the designated subrange. All it guarantees is that if you read all of
-     * the subranges, you have the entire source stream.
+     * <p>Note: The behavior is a bit strange. A {@link SubRangeInputStream} doesn't guarantee that,
+     * if you read the chunks out of order, it will actually read the designated subrange. All it
+     * guarantees is that if you read all of the subranges, you have the entire source stream.
      *
-     * For example, if you have the stream "AABB" with a chunk size of 2. chunk1 corresponds to [0,1) and chunk2
-     * corresponds to [2,3). If you read chunk2 first, you will get "AA" and not "BB". But if you read both chunks,
-     * in any order, and you concatenate the results, you will get "AABB".
+     * <p>For example, if you have the stream "AABB" with a chunk size of 2. chunk1 corresponds to
+     * [0,1) and chunk2 corresponds to [2,3). If you read chunk2 first, you will get "AA" and not
+     * "BB". But if you read both chunks, in any order, and you concatenate the results, you will
+     * get "AABB".
      *
-     * Because this stream cannot be duplicated for each thread, it does not support {@link InputStream#mark(int)} and
-     * {@link InputStream#reset()}, even if the source stream does. This is because all threads share the same stream,
-     * and resetting the stream in one thread would interfere with another thread reading from the stream.
+     * <p>Because this stream cannot be duplicated for each thread, it does not support {@link
+     * InputStream#mark(int)} and {@link InputStream#reset()}, even if the source stream does. This
+     * is because all threads share the same stream, and resetting the stream in one thread would
+     * interfere with another thread reading from the stream.
      */
     public static class SubRangeInputStream extends InputStream {
         // used to advance the start offset to the desired offset.
@@ -245,6 +250,7 @@ public class StreamChunkCreator {
 
         /**
          * Returns the length of this stream.
+         *
          * @return The length in bytes.
          */
         public long length() {

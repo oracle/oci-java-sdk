@@ -5,19 +5,21 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * A rule associated with a alert policy.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A rule associated with a alert policy. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AlertPolicyRule.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AlertPolicyRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class AlertPolicyRule
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "description", "expression"})
     public AlertPolicyRule(String key, String description, String expression) {
@@ -29,49 +31,46 @@ public final class AlertPolicyRule extends com.oracle.bmc.http.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The unique key of the alert policy rule.
-         **/
+        /** The unique key of the alert policy rule. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The unique key of the alert policy rule.
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /**
-         * Describes the alert policy rule.
-         **/
+        /** Describes the alert policy rule. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Describes the alert policy rule.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The conditional expression of the alert policy rule which evaluates to boolean value.
-         **/
+        /** The conditional expression of the alert policy rule which evaluates to boolean value. */
         @com.fasterxml.jackson.annotation.JsonProperty("expression")
         private String expression;
 
         /**
          * The conditional expression of the alert policy rule which evaluates to boolean value.
+         *
          * @param expression the value to set
          * @return this builder
-         **/
+         */
         public Builder expression(String expression) {
             this.expression = expression;
             this.__explicitlySet__.add("expression");
@@ -105,9 +104,7 @@ public final class AlertPolicyRule extends com.oracle.bmc.http.internal.Explicit
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,44 +113,41 @@ public final class AlertPolicyRule extends com.oracle.bmc.http.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /**
-     * The unique key of the alert policy rule.
-     **/
+    /** The unique key of the alert policy rule. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The unique key of the alert policy rule.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * Describes the alert policy rule.
-     **/
+    /** Describes the alert policy rule. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Describes the alert policy rule.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The conditional expression of the alert policy rule which evaluates to boolean value.
-     **/
+    /** The conditional expression of the alert policy rule which evaluates to boolean value. */
     @com.fasterxml.jackson.annotation.JsonProperty("expression")
     private final String expression;
 
     /**
      * The conditional expression of the alert policy rule which evaluates to boolean value.
+     *
      * @return the value
-     **/
+     */
     public String getExpression() {
         return expression;
     }
@@ -165,6 +159,7 @@ public final class AlertPolicyRule extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

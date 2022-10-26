@@ -24,9 +24,9 @@ import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import com.oracle.bmc.http.client.RequestInterceptor;
 import com.oracle.bmc.retrier.DefaultRetryCondition;
 import com.oracle.bmc.retrier.RetryConfiguration;
-import com.oracle.bmc.util.internal.Consumer;
 import com.oracle.bmc.waiter.ExponentialBackoffDelayStrategy;
 import org.junit.After;
 import org.junit.Before;
@@ -55,8 +55,6 @@ import com.oracle.bmc.objectstorage.responses.UploadPartResponse;
 import com.oracle.bmc.util.StreamUtils;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import javax.ws.rs.client.Invocation;
-
 @RunWith(MockitoJUnitRunner.class)
 public class MultipartObjectAssemblerTest {
     private static final String NAMESPACE = "namespace";
@@ -80,7 +78,7 @@ public class MultipartObjectAssemblerTest {
     private MultipartObjectAssembler assembler;
     private MultipartObjectAssembler assemblerWithRetryConfiguration;
 
-    @Mock private Consumer<Invocation.Builder> mockInvocationCallback;
+    @Mock private RequestInterceptor mockInvocationCallback;
 
     @Mock private ObjectStorage service;
 

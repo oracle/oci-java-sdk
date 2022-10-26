@@ -5,19 +5,21 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Summary details of a workspace.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary details of a workspace. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkspaceSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WorkspaceSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class WorkspaceSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -66,33 +68,31 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * A system-generated and immutable identifier assigned to the workspace upon creation.
-         **/
+        /** A system-generated and immutable identifier assigned to the workspace upon creation. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * A system-generated and immutable identifier assigned to the workspace upon creation.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * A user defined description for the workspace.
-         **/
+        /** A user defined description for the workspace. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A user defined description for the workspace.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -100,31 +100,31 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
         }
         /**
          * A user-friendly display name that is changeable. Avoid entering confidential information.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * A user-friendly display name that is changeable. Avoid entering confidential information.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The OCID of the compartment that contains the workspace.
-         **/
+        /** The OCID of the compartment that contains the workspace. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that contains the workspace.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -132,8 +132,7 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
         }
         /**
          * The date and time the workspace was created, in the timestamp format defined by RFC3339.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -142,7 +141,7 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -150,8 +149,7 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
         }
         /**
          * The date and time the workspace was updated, in the timestamp format defined by RFC3339.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
@@ -160,128 +158,129 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
          *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
+         * {@code {"foo-namespace": {"bar-key": "value"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
+         * {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /**
-         * The current state of the workspace.
-         **/
+        /** The current state of the workspace. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the workspace.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A detailed description about the current state of the workspace. Used to provide actionable information if the workspace is in a failed state.
-         **/
+         * A detailed description about the current state of the workspace. Used to provide
+         * actionable information if the workspace is in a failed state.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("stateMessage")
         private String stateMessage;
 
         /**
-         * A detailed description about the current state of the workspace. Used to provide actionable information if the workspace is in a failed state.
+         * A detailed description about the current state of the workspace. Used to provide
+         * actionable information if the workspace is in a failed state.
+         *
          * @param stateMessage the value to set
          * @return this builder
-         **/
+         */
         public Builder stateMessage(String stateMessage) {
             this.stateMessage = stateMessage;
             this.__explicitlySet__.add("stateMessage");
             return this;
         }
         /**
-         * Name of the private endpoint associated with the container/workspace. Returns null if there is none.
-         **/
+         * Name of the private endpoint associated with the container/workspace. Returns null if
+         * there is none.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("endpointName")
         private String endpointName;
 
         /**
-         * Name of the private endpoint associated with the container/workspace. Returns null if there is none.
+         * Name of the private endpoint associated with the container/workspace. Returns null if
+         * there is none.
+         *
          * @param endpointName the value to set
          * @return this builder
-         **/
+         */
         public Builder endpointName(String endpointName) {
             this.endpointName = endpointName;
             this.__explicitlySet__.add("endpointName");
             return this;
         }
-        /**
-         * DCMS endpoint associated with the container/workspace. Returns null if there is none.
-         **/
+        /** DCMS endpoint associated with the container/workspace. Returns null if there is none. */
         @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
         private String endpointId;
 
         /**
          * DCMS endpoint associated with the container/workspace. Returns null if there is none.
+         *
          * @param endpointId the value to set
          * @return this builder
-         **/
+         */
         public Builder endpointId(String endpointId) {
             this.endpointId = endpointId;
             this.__explicitlySet__.add("endpointId");
             return this;
         }
-        /**
-         * DCMS registry associated with the container/workspace. Returns null if there is none.
-         **/
+        /** DCMS registry associated with the container/workspace. Returns null if there is none. */
         @com.fasterxml.jackson.annotation.JsonProperty("registryId")
         private String registryId;
 
         /**
          * DCMS registry associated with the container/workspace. Returns null if there is none.
+         *
          * @param registryId the value to set
          * @return this builder
-         **/
+         */
         public Builder registryId(String registryId) {
             this.registryId = registryId;
             this.__explicitlySet__.add("registryId");
@@ -358,9 +357,7 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -369,66 +366,59 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * A system-generated and immutable identifier assigned to the workspace upon creation.
-     **/
+    /** A system-generated and immutable identifier assigned to the workspace upon creation. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * A system-generated and immutable identifier assigned to the workspace upon creation.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * A user defined description for the workspace.
-     **/
+    /** A user defined description for the workspace. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A user defined description for the workspace.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * A user-friendly display name that is changeable. Avoid entering confidential information.
-     **/
+    /** A user-friendly display name that is changeable. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A user-friendly display name that is changeable. Avoid entering confidential information.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The OCID of the compartment that contains the workspace.
-     **/
+    /** The OCID of the compartment that contains the workspace. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that contains the workspace.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The date and time the workspace was created, in the timestamp format defined by RFC3339.
-     *
-     **/
+    /** The date and time the workspace was created, in the timestamp format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -436,15 +426,12 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
      * The date and time the workspace was created, in the timestamp format defined by RFC3339.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The date and time the workspace was updated, in the timestamp format defined by RFC3339.
-     *
-     **/
+    /** The date and time the workspace was updated, in the timestamp format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
@@ -452,51 +439,47 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
      * The date and time the workspace was updated, in the timestamp format defined by RFC3339.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
-    /**
-     * The current state of the workspace.
-     **/
-    public enum LifecycleState {
+    /** The current state of the workspace. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Active("ACTIVE"),
         Inactive("INACTIVE"),
@@ -509,8 +492,8 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
         Stopped("STOPPED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -549,72 +532,75 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current state of the workspace.
-     **/
+    /** The current state of the workspace. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the workspace.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A detailed description about the current state of the workspace. Used to provide actionable information if the workspace is in a failed state.
-     **/
+     * A detailed description about the current state of the workspace. Used to provide actionable
+     * information if the workspace is in a failed state.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("stateMessage")
     private final String stateMessage;
 
     /**
-     * A detailed description about the current state of the workspace. Used to provide actionable information if the workspace is in a failed state.
+     * A detailed description about the current state of the workspace. Used to provide actionable
+     * information if the workspace is in a failed state.
+     *
      * @return the value
-     **/
+     */
     public String getStateMessage() {
         return stateMessage;
     }
 
     /**
-     * Name of the private endpoint associated with the container/workspace. Returns null if there is none.
-     **/
+     * Name of the private endpoint associated with the container/workspace. Returns null if there
+     * is none.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("endpointName")
     private final String endpointName;
 
     /**
-     * Name of the private endpoint associated with the container/workspace. Returns null if there is none.
+     * Name of the private endpoint associated with the container/workspace. Returns null if there
+     * is none.
+     *
      * @return the value
-     **/
+     */
     public String getEndpointName() {
         return endpointName;
     }
 
-    /**
-     * DCMS endpoint associated with the container/workspace. Returns null if there is none.
-     **/
+    /** DCMS endpoint associated with the container/workspace. Returns null if there is none. */
     @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
     private final String endpointId;
 
     /**
      * DCMS endpoint associated with the container/workspace. Returns null if there is none.
+     *
      * @return the value
-     **/
+     */
     public String getEndpointId() {
         return endpointId;
     }
 
-    /**
-     * DCMS registry associated with the container/workspace. Returns null if there is none.
-     **/
+    /** DCMS registry associated with the container/workspace. Returns null if there is none. */
     @com.fasterxml.jackson.annotation.JsonProperty("registryId")
     private final String registryId;
 
     /**
      * DCMS registry associated with the container/workspace. Returns null if there is none.
+     *
      * @return the value
-     **/
+     */
     public String getRegistryId() {
         return registryId;
     }
@@ -626,6 +612,7 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

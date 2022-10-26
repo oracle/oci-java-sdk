@@ -5,22 +5,22 @@
 package com.oracle.bmc.adm.model;
 
 /**
- * An Application Dependency resource creates a Vulnerability Audit.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * An Application Dependency resource creates a Vulnerability Audit. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ApplicationDependency.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ApplicationDependency.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ApplicationDependency
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"gav", "nodeId", "applicationDependencyNodeIds"})
     public ApplicationDependency(
@@ -34,48 +34,49 @@ public final class ApplicationDependency
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique Group Artifact Version (GAV) identifier (Group:Artifact:Version), e.g. org.graalvm.nativeimage:svm:21.1.0.
-         **/
+         * Unique Group Artifact Version (GAV) identifier (Group:Artifact:Version), e.g.
+         * org.graalvm.nativeimage:svm:21.1.0.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("gav")
         private String gav;
 
         /**
-         * Unique Group Artifact Version (GAV) identifier (Group:Artifact:Version), e.g. org.graalvm.nativeimage:svm:21.1.0.
+         * Unique Group Artifact Version (GAV) identifier (Group:Artifact:Version), e.g.
+         * org.graalvm.nativeimage:svm:21.1.0.
+         *
          * @param gav the value to set
          * @return this builder
-         **/
+         */
         public Builder gav(String gav) {
             this.gav = gav;
             this.__explicitlySet__.add("gav");
             return this;
         }
-        /**
-         * Unique identifier of an Application Dependency node, e.g. nodeId1.
-         **/
+        /** Unique identifier of an Application Dependency node, e.g. nodeId1. */
         @com.fasterxml.jackson.annotation.JsonProperty("nodeId")
         private String nodeId;
 
         /**
          * Unique identifier of an Application Dependency node, e.g. nodeId1.
+         *
          * @param nodeId the value to set
          * @return this builder
-         **/
+         */
         public Builder nodeId(String nodeId) {
             this.nodeId = nodeId;
             this.__explicitlySet__.add("nodeId");
             return this;
         }
-        /**
-         * List of (Application Dependencies) node identifiers on which this node depends.
-         **/
+        /** List of (Application Dependencies) node identifiers on which this node depends. */
         @com.fasterxml.jackson.annotation.JsonProperty("applicationDependencyNodeIds")
         private java.util.List<String> applicationDependencyNodeIds;
 
         /**
          * List of (Application Dependencies) node identifiers on which this node depends.
+         *
          * @param applicationDependencyNodeIds the value to set
          * @return this builder
-         **/
+         */
         public Builder applicationDependencyNodeIds(
                 java.util.List<String> applicationDependencyNodeIds) {
             this.applicationDependencyNodeIds = applicationDependencyNodeIds;
@@ -111,9 +112,7 @@ public final class ApplicationDependency
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -123,43 +122,44 @@ public final class ApplicationDependency
     }
 
     /**
-     * Unique Group Artifact Version (GAV) identifier (Group:Artifact:Version), e.g. org.graalvm.nativeimage:svm:21.1.0.
-     **/
+     * Unique Group Artifact Version (GAV) identifier (Group:Artifact:Version), e.g.
+     * org.graalvm.nativeimage:svm:21.1.0.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("gav")
     private final String gav;
 
     /**
-     * Unique Group Artifact Version (GAV) identifier (Group:Artifact:Version), e.g. org.graalvm.nativeimage:svm:21.1.0.
+     * Unique Group Artifact Version (GAV) identifier (Group:Artifact:Version), e.g.
+     * org.graalvm.nativeimage:svm:21.1.0.
+     *
      * @return the value
-     **/
+     */
     public String getGav() {
         return gav;
     }
 
-    /**
-     * Unique identifier of an Application Dependency node, e.g. nodeId1.
-     **/
+    /** Unique identifier of an Application Dependency node, e.g. nodeId1. */
     @com.fasterxml.jackson.annotation.JsonProperty("nodeId")
     private final String nodeId;
 
     /**
      * Unique identifier of an Application Dependency node, e.g. nodeId1.
+     *
      * @return the value
-     **/
+     */
     public String getNodeId() {
         return nodeId;
     }
 
-    /**
-     * List of (Application Dependencies) node identifiers on which this node depends.
-     **/
+    /** List of (Application Dependencies) node identifiers on which this node depends. */
     @com.fasterxml.jackson.annotation.JsonProperty("applicationDependencyNodeIds")
     private final java.util.List<String> applicationDependencyNodeIds;
 
     /**
      * List of (Application Dependencies) node identifiers on which this node depends.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getApplicationDependencyNodeIds() {
         return applicationDependencyNodeIds;
     }
@@ -171,6 +171,7 @@ public final class ApplicationDependency
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

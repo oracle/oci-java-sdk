@@ -6,92 +6,82 @@ package com.oracle.bmc.dataintegration.requests;
 
 import com.oracle.bmc.dataintegration.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListTaskRunLogsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTaskRunLogsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListTaskRunLogsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTaskRunLogsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class ListTaskRunLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The workspace ID.
-     */
+    /** The workspace ID. */
     private String workspaceId;
 
-    /**
-     * The workspace ID.
-     */
+    /** The workspace ID. */
     public String getWorkspaceId() {
         return workspaceId;
     }
-    /**
-     * The application key.
-     */
+    /** The application key. */
     private String applicationKey;
 
-    /**
-     * The application key.
-     */
+    /** The application key. */
     public String getApplicationKey() {
         return applicationKey;
     }
-    /**
-     * The task run key.
-     */
+    /** The task run key. */
     private String taskRunKey;
 
-    /**
-     * The task run key.
-     */
+    /** The task run key. */
     public String getTaskRunKey() {
         return taskRunKey;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code
+     * opc-prev-page} response header from the previous {@code List} call. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code
+     * opc-prev-page} response header from the previous {@code List} call. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
     /**
-     * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Sets the maximum number of results per page, or items to return in a paginated {@code List}
+     * call. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Sets the maximum number of results per page, or items to return in a paginated {@code List}
+     * call. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
-    /**
-     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
-     */
+    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
     private SortOrder sortOrder;
 
-    /**
-     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
-     **/
-    public enum SortOrder {
+    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -124,21 +114,25 @@ public class ListTaskRunLogsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
-    /**
-     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
-     */
+    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+     * fields, results are shown in descending order. All other fields default to ascending order.
+     * Sorting related parameters are ignored when parameter {@code query} is present (search
+     * operation and sorting order is by relevance score in descending order).
      */
     private SortBy sortBy;
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
-     **/
-    public enum SortBy {
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+     * fields, results are shown in descending order. All other fields default to ascending order.
+     * Sorting related parameters are ignored when parameter {@code query} is present (search
+     * operation and sorting order is by relevance score in descending order).
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TimeCreated("TIME_CREATED"),
         DisplayName("DISPLAY_NAME"),
         TimeUpdated("TIME_UPDATED"),
@@ -173,7 +167,10 @@ public class ListTaskRunLogsRequest extends com.oracle.bmc.requests.BmcRequest<j
     };
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+     * fields, results are shown in descending order. All other fields default to ascending order.
+     * Sorting related parameters are ignored when parameter {@code query} is present (search
+     * operation and sorting order is by relevance score in descending order).
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -182,17 +179,15 @@ public class ListTaskRunLogsRequest extends com.oracle.bmc.requests.BmcRequest<j
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListTaskRunLogsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The workspace ID.
-         */
+        /** The workspace ID. */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         *
          * @param workspaceId the value to set
          * @return this builder instance
          */
@@ -201,13 +196,12 @@ public class ListTaskRunLogsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /**
-         * The application key.
-         */
+        /** The application key. */
         private String applicationKey = null;
 
         /**
          * The application key.
+         *
          * @param applicationKey the value to set
          * @return this builder instance
          */
@@ -216,13 +210,12 @@ public class ListTaskRunLogsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /**
-         * The task run key.
-         */
+        /** The task run key. */
         private String taskRunKey = null;
 
         /**
          * The task run key.
+         *
          * @param taskRunKey the value to set
          * @return this builder instance
          */
@@ -232,17 +225,14 @@ public class ListTaskRunLogsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -253,12 +243,17 @@ public class ListTaskRunLogsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the
+         * {@code opc-prev-page} response header from the previous {@code List} call. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the
+         * {@code opc-prev-page} response header from the previous {@code List} call. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -268,12 +263,17 @@ public class ListTaskRunLogsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Sets the maximum number of results per page, or items to return in a paginated {@code
+         * List} call. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Sets the maximum number of results per page, or items to return in a paginated {@code
+         * List} call. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -289,6 +289,7 @@ public class ListTaskRunLogsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -298,12 +299,19 @@ public class ListTaskRunLogsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+         * fields, results are shown in descending order. All other fields default to ascending
+         * order. Sorting related parameters are ignored when parameter {@code query} is present
+         * (search operation and sorting order is by relevance score in descending order).
          */
         private SortBy sortBy = null;
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+         * fields, results are shown in descending order. All other fields default to ascending
+         * order. Sorting related parameters are ignored when parameter {@code query} is present
+         * (search operation and sorting order is by relevance score in descending order).
+         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -314,18 +322,19 @@ public class ListTaskRunLogsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -337,6 +346,7 @@ public class ListTaskRunLogsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListTaskRunLogsRequest o) {
@@ -356,10 +366,11 @@ public class ListTaskRunLogsRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of ListTaskRunLogsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListTaskRunLogsRequest
          */
@@ -373,7 +384,8 @@ public class ListTaskRunLogsRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of ListTaskRunLogsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListTaskRunLogsRequest
@@ -389,12 +401,14 @@ public class ListTaskRunLogsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListTaskRunLogsRequest(workspaceId, applicationKey, taskRunKey, opcRequestId, page, limit, sortOrder, sortBy);
+            // new ListTaskRunLogsRequest(workspaceId, applicationKey, taskRunKey, opcRequestId,
+            // page, limit, sortOrder, sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -411,6 +425,7 @@ public class ListTaskRunLogsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

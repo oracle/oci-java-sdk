@@ -5,21 +5,22 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Patch history of this cluster.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Patch history of this cluster. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = PatchHistorySummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PatchHistorySummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = PatchHistorySummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class PatchHistorySummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"version", "lifecycleState", "timeUpdated"})
     public PatchHistorySummary(
@@ -32,49 +33,46 @@ public final class PatchHistorySummary extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The version of the patch.
-         **/
+        /** The version of the patch. */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * The version of the patch.
+         *
          * @param version the value to set
          * @return this builder
-         **/
+         */
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /**
-         * The status of this patch.
-         **/
+        /** The status of this patch. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The status of this patch.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * The time when the patch history was last updated.
-         **/
+        /** The time when the patch history was last updated. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time when the patch history was last updated.
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -108,9 +106,7 @@ public final class PatchHistorySummary extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,31 +115,28 @@ public final class PatchHistorySummary extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * The version of the patch.
-     **/
+    /** The version of the patch. */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * The version of the patch.
+     *
      * @return the value
-     **/
+     */
     public String getVersion() {
         return version;
     }
 
-    /**
-     * The status of this patch.
-     **/
-    public enum LifecycleState {
+    /** The status of this patch. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Installing("INSTALLING"),
         Installed("INSTALLED"),
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -182,30 +175,28 @@ public final class PatchHistorySummary extends com.oracle.bmc.http.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /**
-     * The status of this patch.
-     **/
+    /** The status of this patch. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The status of this patch.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * The time when the patch history was last updated.
-     **/
+    /** The time when the patch history was last updated. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time when the patch history was last updated.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -217,6 +208,7 @@ public final class PatchHistorySummary extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

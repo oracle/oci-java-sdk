@@ -5,22 +5,23 @@
 package com.oracle.bmc.waas.model;
 
 /**
- * The device fingerprint challenge settings. The device fingerprint challenge generates hashed signatures of both virtual and real browsers to identify and block malicious bots.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The device fingerprint challenge settings. The device fingerprint challenge generates hashed
+ * signatures of both virtual and real browsers to identify and block malicious bots. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DeviceFingerprintChallenge.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DeviceFingerprintChallenge.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DeviceFingerprintChallenge
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isEnabled",
@@ -56,79 +57,92 @@ public final class DeviceFingerprintChallenge
     public static class Builder {
         /**
          * Enables or disables the device fingerprint challenge Web Application Firewall feature.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * Enables or disables the device fingerprint challenge Web Application Firewall feature.
+         *
          * @param isEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
         /**
-         * The action to take on requests from detected bots. If unspecified, defaults to {@code DETECT}.
-         **/
+         * The action to take on requests from detected bots. If unspecified, defaults to {@code
+         * DETECT}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
         /**
-         * The action to take on requests from detected bots. If unspecified, defaults to {@code DETECT}.
+         * The action to take on requests from detected bots. If unspecified, defaults to {@code
+         * DETECT}.
+         *
          * @param action the value to set
          * @return this builder
-         **/
+         */
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
             return this;
         }
         /**
-         * The number of failed requests allowed before taking action. If unspecified, defaults to {@code 10}.
-         **/
+         * The number of failed requests allowed before taking action. If unspecified, defaults to
+         * {@code 10}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("failureThreshold")
         private Integer failureThreshold;
 
         /**
-         * The number of failed requests allowed before taking action. If unspecified, defaults to {@code 10}.
+         * The number of failed requests allowed before taking action. If unspecified, defaults to
+         * {@code 10}.
+         *
          * @param failureThreshold the value to set
          * @return this builder
-         **/
+         */
         public Builder failureThreshold(Integer failureThreshold) {
             this.failureThreshold = failureThreshold;
             this.__explicitlySet__.add("failureThreshold");
             return this;
         }
         /**
-         * The number of seconds between challenges for the same IP address. If unspecified, defaults to {@code 60}.
-         **/
+         * The number of seconds between challenges for the same IP address. If unspecified,
+         * defaults to {@code 60}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("actionExpirationInSeconds")
         private Integer actionExpirationInSeconds;
 
         /**
-         * The number of seconds between challenges for the same IP address. If unspecified, defaults to {@code 60}.
+         * The number of seconds between challenges for the same IP address. If unspecified,
+         * defaults to {@code 60}.
+         *
          * @param actionExpirationInSeconds the value to set
          * @return this builder
-         **/
+         */
         public Builder actionExpirationInSeconds(Integer actionExpirationInSeconds) {
             this.actionExpirationInSeconds = actionExpirationInSeconds;
             this.__explicitlySet__.add("actionExpirationInSeconds");
             return this;
         }
         /**
-         * The number of seconds before the failure threshold resets. If unspecified, defaults to {@code 60}.
-         **/
+         * The number of seconds before the failure threshold resets. If unspecified, defaults to
+         * {@code 60}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("failureThresholdExpirationInSeconds")
         private Integer failureThresholdExpirationInSeconds;
 
         /**
-         * The number of seconds before the failure threshold resets. If unspecified, defaults to {@code 60}.
+         * The number of seconds before the failure threshold resets. If unspecified, defaults to
+         * {@code 60}.
+         *
          * @param failureThresholdExpirationInSeconds the value to set
          * @return this builder
-         **/
+         */
         public Builder failureThresholdExpirationInSeconds(
                 Integer failureThresholdExpirationInSeconds) {
             this.failureThresholdExpirationInSeconds = failureThresholdExpirationInSeconds;
@@ -136,32 +150,38 @@ public final class DeviceFingerprintChallenge
             return this;
         }
         /**
-         * The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to {@code 20}.
-         **/
+         * The maximum number of IP addresses permitted with the same device fingerprint. If
+         * unspecified, defaults to {@code 20}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("maxAddressCount")
         private Integer maxAddressCount;
 
         /**
-         * The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to {@code 20}.
+         * The maximum number of IP addresses permitted with the same device fingerprint. If
+         * unspecified, defaults to {@code 20}.
+         *
          * @param maxAddressCount the value to set
          * @return this builder
-         **/
+         */
         public Builder maxAddressCount(Integer maxAddressCount) {
             this.maxAddressCount = maxAddressCount;
             this.__explicitlySet__.add("maxAddressCount");
             return this;
         }
         /**
-         * The number of seconds before the maximum addresses count resets. If unspecified, defaults to {@code 60}.
-         **/
+         * The number of seconds before the maximum addresses count resets. If unspecified, defaults
+         * to {@code 60}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("maxAddressCountExpirationInSeconds")
         private Integer maxAddressCountExpirationInSeconds;
 
         /**
-         * The number of seconds before the maximum addresses count resets. If unspecified, defaults to {@code 60}.
+         * The number of seconds before the maximum addresses count resets. If unspecified, defaults
+         * to {@code 60}.
+         *
          * @param maxAddressCountExpirationInSeconds the value to set
          * @return this builder
-         **/
+         */
         public Builder maxAddressCountExpirationInSeconds(
                 Integer maxAddressCountExpirationInSeconds) {
             this.maxAddressCountExpirationInSeconds = maxAddressCountExpirationInSeconds;
@@ -230,9 +250,7 @@ public final class DeviceFingerprintChallenge
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -241,30 +259,30 @@ public final class DeviceFingerprintChallenge
         return new Builder().copy(this);
     }
 
-    /**
-     * Enables or disables the device fingerprint challenge Web Application Firewall feature.
-     **/
+    /** Enables or disables the device fingerprint challenge Web Application Firewall feature. */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * Enables or disables the device fingerprint challenge Web Application Firewall feature.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
     /**
-     * The action to take on requests from detected bots. If unspecified, defaults to {@code DETECT}.
-     **/
-    public enum Action {
+     * The action to take on requests from detected bots. If unspecified, defaults to {@code
+     * DETECT}.
+     */
+    public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
         Detect("DETECT"),
         Block("BLOCK"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -303,85 +321,103 @@ public final class DeviceFingerprintChallenge
         }
     };
     /**
-     * The action to take on requests from detected bots. If unspecified, defaults to {@code DETECT}.
-     **/
+     * The action to take on requests from detected bots. If unspecified, defaults to {@code
+     * DETECT}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
     /**
-     * The action to take on requests from detected bots. If unspecified, defaults to {@code DETECT}.
+     * The action to take on requests from detected bots. If unspecified, defaults to {@code
+     * DETECT}.
+     *
      * @return the value
-     **/
+     */
     public Action getAction() {
         return action;
     }
 
     /**
-     * The number of failed requests allowed before taking action. If unspecified, defaults to {@code 10}.
-     **/
+     * The number of failed requests allowed before taking action. If unspecified, defaults to
+     * {@code 10}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("failureThreshold")
     private final Integer failureThreshold;
 
     /**
-     * The number of failed requests allowed before taking action. If unspecified, defaults to {@code 10}.
+     * The number of failed requests allowed before taking action. If unspecified, defaults to
+     * {@code 10}.
+     *
      * @return the value
-     **/
+     */
     public Integer getFailureThreshold() {
         return failureThreshold;
     }
 
     /**
-     * The number of seconds between challenges for the same IP address. If unspecified, defaults to {@code 60}.
-     **/
+     * The number of seconds between challenges for the same IP address. If unspecified, defaults to
+     * {@code 60}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("actionExpirationInSeconds")
     private final Integer actionExpirationInSeconds;
 
     /**
-     * The number of seconds between challenges for the same IP address. If unspecified, defaults to {@code 60}.
+     * The number of seconds between challenges for the same IP address. If unspecified, defaults to
+     * {@code 60}.
+     *
      * @return the value
-     **/
+     */
     public Integer getActionExpirationInSeconds() {
         return actionExpirationInSeconds;
     }
 
     /**
-     * The number of seconds before the failure threshold resets. If unspecified, defaults to {@code 60}.
-     **/
+     * The number of seconds before the failure threshold resets. If unspecified, defaults to {@code
+     * 60}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("failureThresholdExpirationInSeconds")
     private final Integer failureThresholdExpirationInSeconds;
 
     /**
-     * The number of seconds before the failure threshold resets. If unspecified, defaults to {@code 60}.
+     * The number of seconds before the failure threshold resets. If unspecified, defaults to {@code
+     * 60}.
+     *
      * @return the value
-     **/
+     */
     public Integer getFailureThresholdExpirationInSeconds() {
         return failureThresholdExpirationInSeconds;
     }
 
     /**
-     * The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to {@code 20}.
-     **/
+     * The maximum number of IP addresses permitted with the same device fingerprint. If
+     * unspecified, defaults to {@code 20}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("maxAddressCount")
     private final Integer maxAddressCount;
 
     /**
-     * The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to {@code 20}.
+     * The maximum number of IP addresses permitted with the same device fingerprint. If
+     * unspecified, defaults to {@code 20}.
+     *
      * @return the value
-     **/
+     */
     public Integer getMaxAddressCount() {
         return maxAddressCount;
     }
 
     /**
-     * The number of seconds before the maximum addresses count resets. If unspecified, defaults to {@code 60}.
-     **/
+     * The number of seconds before the maximum addresses count resets. If unspecified, defaults to
+     * {@code 60}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("maxAddressCountExpirationInSeconds")
     private final Integer maxAddressCountExpirationInSeconds;
 
     /**
-     * The number of seconds before the maximum addresses count resets. If unspecified, defaults to {@code 60}.
+     * The number of seconds before the maximum addresses count resets. If unspecified, defaults to
+     * {@code 60}.
+     *
      * @return the value
-     **/
+     */
     public Integer getMaxAddressCountExpirationInSeconds() {
         return maxAddressCountExpirationInSeconds;
     }
@@ -400,6 +436,7 @@ public final class DeviceFingerprintChallenge
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

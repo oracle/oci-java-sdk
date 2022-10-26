@@ -5,58 +5,51 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The abstract write attribute.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The abstract write attribute. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType",
-    defaultImpl = AbstractWriteAttribute.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType",
+        defaultImpl = AbstractWriteAttribute.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = OracleAdwcWriteAttribute.class,
-        name = "ORACLEADWCWRITEATTRIBUTE"
-    ),
+            value = OracleAdwcWriteAttribute.class,
+            name = "ORACLEADWCWRITEATTRIBUTE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = OracleAtpWriteAttributes.class,
-        name = "ORACLE_ATP_WRITE_ATTRIBUTE"
-    ),
+            value = OracleAtpWriteAttributes.class,
+            name = "ORACLE_ATP_WRITE_ATTRIBUTE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = OracleWriteAttribute.class,
-        name = "ORACLEWRITEATTRIBUTE"
-    ),
+            value = OracleWriteAttribute.class,
+            name = "ORACLEWRITEATTRIBUTE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = OracleWriteAttributes.class,
-        name = "ORACLE_WRITE_ATTRIBUTE"
-    ),
+            value = OracleWriteAttributes.class,
+            name = "ORACLE_WRITE_ATTRIBUTE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = OracleAtpWriteAttribute.class,
-        name = "ORACLEATPWRITEATTRIBUTE"
-    ),
+            value = OracleAtpWriteAttribute.class,
+            name = "ORACLEATPWRITEATTRIBUTE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ObjectStorageWriteAttribute.class,
-        name = "OBJECTSTORAGEWRITEATTRIBUTE"
-    ),
+            value = ObjectStorageWriteAttribute.class,
+            name = "OBJECTSTORAGEWRITEATTRIBUTE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = OracleAdwcWriteAttributes.class,
-        name = "ORACLE_ADWC_WRITE_ATTRIBUTE"
-    ),
+            value = OracleAdwcWriteAttributes.class,
+            name = "ORACLE_ADWC_WRITE_ATTRIBUTE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ObjectStorageWriteAttributes.class,
-        name = "OBJECT_STORAGE_WRITE_ATTRIBUTE"
-    )
+            value = ObjectStorageWriteAttributes.class,
+            name = "OBJECT_STORAGE_WRITE_ATTRIBUTE")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class AbstractWriteAttribute extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class AbstractWriteAttribute
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected AbstractWriteAttribute() {
@@ -70,6 +63,7 @@ public class AbstractWriteAttribute extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -102,10 +96,8 @@ public class AbstractWriteAttribute extends com.oracle.bmc.http.internal.Explici
         return result;
     }
 
-    /**
-     * The type of the abstract write attribute.
-     **/
-    public enum ModelType {
+    /** The type of the abstract write attribute. */
+    public enum ModelType implements com.oracle.bmc.http.internal.BmcEnum {
         Oraclewriteattribute("ORACLEWRITEATTRIBUTE"),
         Oracleatpwriteattribute("ORACLEATPWRITEATTRIBUTE"),
         Oracleadwcwriteattribute("ORACLEADWCWRITEATTRIBUTE"),
@@ -116,8 +108,8 @@ public class AbstractWriteAttribute extends com.oracle.bmc.http.internal.Explici
         ObjectStorageWriteAttribute("OBJECT_STORAGE_WRITE_ATTRIBUTE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 

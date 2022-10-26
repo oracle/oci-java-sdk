@@ -5,25 +5,24 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Frequency details model to set cron-based frequency
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Frequency details model to set cron-based frequency <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CustomFrequencyDetails.Builder.class
-)
+        builder = CustomFrequencyDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CustomFrequencyDetails extends AbstractFrequencyDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -36,16 +35,21 @@ public final class CustomFrequencyDetails extends AbstractFrequencyDetails {
             return this;
         }
         /**
-         * This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
-         **/
+         * This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ?
+         * that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10
+         * am, etc.)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("customExpression")
         private String customExpression;
 
         /**
-         * This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+         * This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ?
+         * that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10
+         * am, etc.)
+         *
          * @param customExpression the value to set
          * @return this builder
-         **/
+         */
         public Builder customExpression(String customExpression) {
             this.customExpression = customExpression;
             this.__explicitlySet__.add("customExpression");
@@ -76,9 +80,7 @@ public final class CustomFrequencyDetails extends AbstractFrequencyDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -94,15 +96,18 @@ public final class CustomFrequencyDetails extends AbstractFrequencyDetails {
     }
 
     /**
-     * This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
-     **/
+     * This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that
+     * fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("customExpression")
     private final String customExpression;
 
     /**
-     * This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+     * This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that
+     * fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+     *
      * @return the value
-     **/
+     */
     public String getCustomExpression() {
         return customExpression;
     }
@@ -114,6 +119,7 @@ public final class CustomFrequencyDetails extends AbstractFrequencyDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

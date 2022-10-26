@@ -5,24 +5,24 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Result column, that contains time series data points in each row. The column includes the time stamps as additional field in column header.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Result column, that contains time series data points in each row. The column includes the time
+ * stamps as additional field in column header. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TrendColumn.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class TrendColumn extends AbstractColumn {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -124,10 +124,7 @@ public final class TrendColumn extends AbstractColumn {
             this.__explicitlySet__.add("internalName");
             return this;
         }
-        /**
-         * Time gap between each data pont in the series.
-         *
-         **/
+        /** Time gap between each data pont in the series. */
         @com.fasterxml.jackson.annotation.JsonProperty("intervalGap")
         private String intervalGap;
 
@@ -136,16 +133,13 @@ public final class TrendColumn extends AbstractColumn {
          *
          * @param intervalGap the value to set
          * @return this builder
-         **/
+         */
         public Builder intervalGap(String intervalGap) {
             this.intervalGap = intervalGap;
             this.__explicitlySet__.add("intervalGap");
             return this;
         }
-        /**
-         * Timestamps for each series data point
-         *
-         **/
+        /** Timestamps for each series data point */
         @com.fasterxml.jackson.annotation.JsonProperty("intervals")
         private java.util.List<Long> intervals;
 
@@ -154,16 +148,13 @@ public final class TrendColumn extends AbstractColumn {
          *
          * @param intervals the value to set
          * @return this builder
-         **/
+         */
         public Builder intervals(java.util.List<Long> intervals) {
             this.intervals = intervals;
             this.__explicitlySet__.add("intervals");
             return this;
         }
-        /**
-         * Sum across all column values for a given timestamp.
-         *
-         **/
+        /** Sum across all column values for a given timestamp. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalIntervalCounts")
         private java.util.List<Long> totalIntervalCounts;
 
@@ -172,7 +163,7 @@ public final class TrendColumn extends AbstractColumn {
          *
          * @param totalIntervalCounts the value to set
          * @return this builder
-         **/
+         */
         public Builder totalIntervalCounts(java.util.List<Long> totalIntervalCounts) {
             this.totalIntervalCounts = totalIntervalCounts;
             this.__explicitlySet__.add("totalIntervalCounts");
@@ -294,9 +285,7 @@ public final class TrendColumn extends AbstractColumn {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -344,10 +333,7 @@ public final class TrendColumn extends AbstractColumn {
         this.intervalGroupCountsAfterFilter = intervalGroupCountsAfterFilter;
     }
 
-    /**
-     * Time gap between each data pont in the series.
-     *
-     **/
+    /** Time gap between each data pont in the series. */
     @com.fasterxml.jackson.annotation.JsonProperty("intervalGap")
     private final String intervalGap;
 
@@ -355,15 +341,12 @@ public final class TrendColumn extends AbstractColumn {
      * Time gap between each data pont in the series.
      *
      * @return the value
-     **/
+     */
     public String getIntervalGap() {
         return intervalGap;
     }
 
-    /**
-     * Timestamps for each series data point
-     *
-     **/
+    /** Timestamps for each series data point */
     @com.fasterxml.jackson.annotation.JsonProperty("intervals")
     private final java.util.List<Long> intervals;
 
@@ -371,15 +354,12 @@ public final class TrendColumn extends AbstractColumn {
      * Timestamps for each series data point
      *
      * @return the value
-     **/
+     */
     public java.util.List<Long> getIntervals() {
         return intervals;
     }
 
-    /**
-     * Sum across all column values for a given timestamp.
-     *
-     **/
+    /** Sum across all column values for a given timestamp. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalIntervalCounts")
     private final java.util.List<Long> totalIntervalCounts;
 
@@ -387,7 +367,7 @@ public final class TrendColumn extends AbstractColumn {
      * Sum across all column values for a given timestamp.
      *
      * @return the value
-     **/
+     */
     public java.util.List<Long> getTotalIntervalCounts() {
         return totalIntervalCounts;
     }
@@ -420,6 +400,7 @@ public final class TrendColumn extends AbstractColumn {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,22 +5,22 @@
 package com.oracle.bmc.dns.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SteeringPolicyPriorityRuleCase.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SteeringPolicyPriorityRuleCase.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SteeringPolicyPriorityRuleCase
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"caseCondition", "answerData"})
     public SteeringPolicyPriorityRuleCase(
@@ -33,44 +33,42 @@ public final class SteeringPolicyPriorityRuleCase
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * An expression that uses conditions at the time of a DNS query to indicate
-         * whether a case matches. Conditions may include the geographical location, IP
-         * subnet, or ASN the DNS query originated. **Example:** If you have an
-         * office that uses the subnet {@code 192.0.2.0/24} you could use a {@code caseCondition}
-         * expression {@code query.client.address in ('192.0.2.0/24')} to define a case that
-         * matches queries from that office.
-         *
-         **/
+         * An expression that uses conditions at the time of a DNS query to indicate whether a case
+         * matches. Conditions may include the geographical location, IP subnet, or ASN the DNS
+         * query originated. **Example:** If you have an office that uses the subnet {@code
+         * 192.0.2.0/24} you could use a {@code caseCondition} expression {@code
+         * query.client.address in ('192.0.2.0/24')} to define a case that matches queries from that
+         * office.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("caseCondition")
         private String caseCondition;
 
         /**
-         * An expression that uses conditions at the time of a DNS query to indicate
-         * whether a case matches. Conditions may include the geographical location, IP
-         * subnet, or ASN the DNS query originated. **Example:** If you have an
-         * office that uses the subnet {@code 192.0.2.0/24} you could use a {@code caseCondition}
-         * expression {@code query.client.address in ('192.0.2.0/24')} to define a case that
-         * matches queries from that office.
+         * An expression that uses conditions at the time of a DNS query to indicate whether a case
+         * matches. Conditions may include the geographical location, IP subnet, or ASN the DNS
+         * query originated. **Example:** If you have an office that uses the subnet {@code
+         * 192.0.2.0/24} you could use a {@code caseCondition} expression {@code
+         * query.client.address in ('192.0.2.0/24')} to define a case that matches queries from that
+         * office.
          *
          * @param caseCondition the value to set
          * @return this builder
-         **/
+         */
         public Builder caseCondition(String caseCondition) {
             this.caseCondition = caseCondition;
             this.__explicitlySet__.add("caseCondition");
             return this;
         }
-        /**
-         * An array of {@code SteeringPolicyPriorityAnswerData} objects.
-         **/
+        /** An array of {@code SteeringPolicyPriorityAnswerData} objects. */
         @com.fasterxml.jackson.annotation.JsonProperty("answerData")
         private java.util.List<SteeringPolicyPriorityAnswerData> answerData;
 
         /**
          * An array of {@code SteeringPolicyPriorityAnswerData} objects.
+         *
          * @param answerData the value to set
          * @return this builder
-         **/
+         */
         public Builder answerData(java.util.List<SteeringPolicyPriorityAnswerData> answerData) {
             this.answerData = answerData;
             this.__explicitlySet__.add("answerData");
@@ -101,9 +99,7 @@ public final class SteeringPolicyPriorityRuleCase
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -113,41 +109,37 @@ public final class SteeringPolicyPriorityRuleCase
     }
 
     /**
-     * An expression that uses conditions at the time of a DNS query to indicate
-     * whether a case matches. Conditions may include the geographical location, IP
-     * subnet, or ASN the DNS query originated. **Example:** If you have an
-     * office that uses the subnet {@code 192.0.2.0/24} you could use a {@code caseCondition}
-     * expression {@code query.client.address in ('192.0.2.0/24')} to define a case that
-     * matches queries from that office.
-     *
-     **/
+     * An expression that uses conditions at the time of a DNS query to indicate whether a case
+     * matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query
+     * originated. **Example:** If you have an office that uses the subnet {@code 192.0.2.0/24} you
+     * could use a {@code caseCondition} expression {@code query.client.address in ('192.0.2.0/24')}
+     * to define a case that matches queries from that office.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("caseCondition")
     private final String caseCondition;
 
     /**
-     * An expression that uses conditions at the time of a DNS query to indicate
-     * whether a case matches. Conditions may include the geographical location, IP
-     * subnet, or ASN the DNS query originated. **Example:** If you have an
-     * office that uses the subnet {@code 192.0.2.0/24} you could use a {@code caseCondition}
-     * expression {@code query.client.address in ('192.0.2.0/24')} to define a case that
-     * matches queries from that office.
+     * An expression that uses conditions at the time of a DNS query to indicate whether a case
+     * matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query
+     * originated. **Example:** If you have an office that uses the subnet {@code 192.0.2.0/24} you
+     * could use a {@code caseCondition} expression {@code query.client.address in ('192.0.2.0/24')}
+     * to define a case that matches queries from that office.
      *
      * @return the value
-     **/
+     */
     public String getCaseCondition() {
         return caseCondition;
     }
 
-    /**
-     * An array of {@code SteeringPolicyPriorityAnswerData} objects.
-     **/
+    /** An array of {@code SteeringPolicyPriorityAnswerData} objects. */
     @com.fasterxml.jackson.annotation.JsonProperty("answerData")
     private final java.util.List<SteeringPolicyPriorityAnswerData> answerData;
 
     /**
      * An array of {@code SteeringPolicyPriorityAnswerData} objects.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<SteeringPolicyPriorityAnswerData> getAnswerData() {
         return answerData;
     }
@@ -159,6 +151,7 @@ public final class SteeringPolicyPriorityRuleCase
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

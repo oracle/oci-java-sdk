@@ -5,21 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary of ResourceType
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary of ResourceType <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ResourceTypeSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResourceTypeSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ResourceTypeSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ResourceTypeSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "displayName", "rules"})
     public ResourceTypeSummary(String name, String displayName, java.util.List<RuleSummary> rules) {
@@ -31,49 +32,46 @@ public final class ResourceTypeSummary extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * name of the resource
-         **/
+        /** name of the resource */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * name of the resource
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * display name of the resource
-         **/
+        /** display name of the resource */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * display name of the resource
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * List of rules
-         **/
+        /** List of rules */
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<RuleSummary> rules;
 
         /**
          * List of rules
+         *
          * @param rules the value to set
          * @return this builder
-         **/
+         */
         public Builder rules(java.util.List<RuleSummary> rules) {
             this.rules = rules;
             this.__explicitlySet__.add("rules");
@@ -107,9 +105,7 @@ public final class ResourceTypeSummary extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -118,44 +114,41 @@ public final class ResourceTypeSummary extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * name of the resource
-     **/
+    /** name of the resource */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * name of the resource
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * display name of the resource
-     **/
+    /** display name of the resource */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * display name of the resource
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * List of rules
-     **/
+    /** List of rules */
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
     private final java.util.List<RuleSummary> rules;
 
     /**
      * List of rules
+     *
      * @return the value
-     **/
+     */
     public java.util.List<RuleSummary> getRules() {
         return rules;
     }
@@ -167,6 +160,7 @@ public final class ResourceTypeSummary extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

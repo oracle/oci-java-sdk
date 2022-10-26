@@ -9,13 +9,14 @@ import com.oracle.bmc.loganalytics.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class GetLogSetsCountResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      *
      * @return the value
      */
@@ -23,13 +24,12 @@ public class GetLogSetsCountResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /**
-     * The returned LogSetsCount instance.
-     */
+    /** The returned LogSetsCount instance. */
     private com.oracle.bmc.loganalytics.model.LogSetsCount logSetsCount;
 
     /**
      * The returned LogSetsCount instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.loganalytics.model.LogSetsCount getLogSetsCount() {
@@ -44,7 +44,7 @@ public class GetLogSetsCountResponse extends com.oracle.bmc.responses.BmcRespons
     })
     private GetLogSetsCountResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.LogSetsCount logSetsCount) {
         super(__httpStatusCode__, headers);
@@ -52,29 +52,33 @@ public class GetLogSetsCountResponse extends com.oracle.bmc.responses.BmcRespons
         this.logSetsCount = logSetsCount;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetLogSetsCountResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -84,13 +88,12 @@ public class GetLogSetsCountResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /**
-         * The returned LogSetsCount instance.
-         */
+        /** The returned LogSetsCount instance. */
         private com.oracle.bmc.loganalytics.model.LogSetsCount logSetsCount;
 
         /**
          * The returned LogSetsCount instance.
+         *
          * @param logSetsCount the value to set
          * @return this builder
          */
@@ -101,8 +104,10 @@ public class GetLogSetsCountResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetLogSetsCountResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -114,8 +119,10 @@ public class GetLogSetsCountResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetLogSetsCountResponse build() {
             return new GetLogSetsCountResponse(
                     __httpStatusCode__, headers, opcRequestId, logSetsCount);
@@ -124,6 +131,7 @@ public class GetLogSetsCountResponse extends com.oracle.bmc.responses.BmcRespons
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

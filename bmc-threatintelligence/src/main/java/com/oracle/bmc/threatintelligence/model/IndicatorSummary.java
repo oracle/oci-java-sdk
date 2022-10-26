@@ -5,19 +5,22 @@
 package com.oracle.bmc.threatintelligence.model;
 
 /**
- * Summary of a data signature observed on a network or host that indicates a potential security threat.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary of a data signature observed on a network or host that indicates a potential security
+ * threat. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IndicatorSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class IndicatorSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class IndicatorSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -63,181 +66,192 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the indicator.
-         **/
+        /** The OCID of the indicator. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the indicator.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The type of indicator.
-         **/
+        /** The type of indicator. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private IndicatorType type;
 
         /**
          * The type of indicator.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(IndicatorType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * The indicator data value.
-         **/
+        /** The indicator data value. */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * The indicator data value.
+         *
          * @param value the value to set
          * @return this builder
-         **/
+         */
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
         /**
-         * An integer from 0 to 100 that represents how certain we are that the indicator is malicious and a potential threat if it is detected communicating with your cloud resources. This confidence value is aggregated from the confidence in the threat types, attributes, and relationships to create an overall value for the indicator.
-         **/
+         * An integer from 0 to 100 that represents how certain we are that the indicator is
+         * malicious and a potential threat if it is detected communicating with your cloud
+         * resources. This confidence value is aggregated from the confidence in the threat types,
+         * attributes, and relationships to create an overall value for the indicator.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Integer confidence;
 
         /**
-         * An integer from 0 to 100 that represents how certain we are that the indicator is malicious and a potential threat if it is detected communicating with your cloud resources. This confidence value is aggregated from the confidence in the threat types, attributes, and relationships to create an overall value for the indicator.
+         * An integer from 0 to 100 that represents how certain we are that the indicator is
+         * malicious and a potential threat if it is detected communicating with your cloud
+         * resources. This confidence value is aggregated from the confidence in the threat types,
+         * attributes, and relationships to create an overall value for the indicator.
+         *
          * @param confidence the value to set
          * @return this builder
-         **/
+         */
         public Builder confidence(Integer confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
             return this;
         }
-        /**
-         * The OCID of the compartment that contains this indicator.
-         **/
+        /** The OCID of the compartment that contains this indicator. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that contains this indicator.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Characteristics of the threat indicator based on previous observations or behavior. May include related tactics, techniques, and procedures.
-         **/
+         * Characteristics of the threat indicator based on previous observations or behavior. May
+         * include related tactics, techniques, and procedures.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("threatTypes")
         private java.util.List<String> threatTypes;
 
         /**
-         * Characteristics of the threat indicator based on previous observations or behavior. May include related tactics, techniques, and procedures.
+         * Characteristics of the threat indicator based on previous observations or behavior. May
+         * include related tactics, techniques, and procedures.
+         *
          * @param threatTypes the value to set
          * @return this builder
-         **/
+         */
         public Builder threatTypes(java.util.List<String> threatTypes) {
             this.threatTypes = threatTypes;
             this.__explicitlySet__.add("threatTypes");
             return this;
         }
         /**
-         * A map of attributes with additional information about the indicator.
-         * Each attribute has a name (string), value (string), and attribution (supporting data).
-         *
-         **/
+         * A map of attributes with additional information about the indicator. Each attribute has a
+         * name (string), value (string), and attribution (supporting data).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("attributes")
         private java.util.List<IndicatorAttributeSummary> attributes;
 
         /**
-         * A map of attributes with additional information about the indicator.
-         * Each attribute has a name (string), value (string), and attribution (supporting data).
+         * A map of attributes with additional information about the indicator. Each attribute has a
+         * name (string), value (string), and attribution (supporting data).
          *
          * @param attributes the value to set
          * @return this builder
-         **/
+         */
         public Builder attributes(java.util.List<IndicatorAttributeSummary> attributes) {
             this.attributes = attributes;
             this.__explicitlySet__.add("attributes");
             return this;
         }
-        /**
-         * The state of the indicator. It will always be {@code ACTIVE}.
-         **/
+        /** The state of the indicator. It will always be {@code ACTIVE}. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The state of the indicator. It will always be {@code ACTIVE}.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * The date and time that the indicator was first detected. An RFC3339 formatted string.
-         **/
+        /** The date and time that the indicator was first detected. An RFC3339 formatted string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time that the indicator was first detected. An RFC3339 formatted string.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time that this indicator was last updated by the system.  Updates can include new reports or regular updates in confidence. The value is the same as {@code timeCreated} for a new indicator. An RFC3339 formatted string.
-         **/
+         * The date and time that this indicator was last updated by the system. Updates can include
+         * new reports or regular updates in confidence. The value is the same as {@code
+         * timeCreated} for a new indicator. An RFC3339 formatted string.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time that this indicator was last updated by the system.  Updates can include new reports or regular updates in confidence. The value is the same as {@code timeCreated} for a new indicator. An RFC3339 formatted string.
+         * The date and time that this indicator was last updated by the system. Updates can include
+         * new reports or regular updates in confidence. The value is the same as {@code
+         * timeCreated} for a new indicator. An RFC3339 formatted string.
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * The date and time that this indicator was last seen. The value is the same as {@code timeCreated} for a new indicator. An RFC3339 formatted string.
-         **/
+         * The date and time that this indicator was last seen. The value is the same as {@code
+         * timeCreated} for a new indicator. An RFC3339 formatted string.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
         private java.util.Date timeLastSeen;
 
         /**
-         * The date and time that this indicator was last seen. The value is the same as {@code timeCreated} for a new indicator. An RFC3339 formatted string.
+         * The date and time that this indicator was last seen. The value is the same as {@code
+         * timeCreated} for a new indicator. An RFC3339 formatted string.
+         *
          * @param timeLastSeen the value to set
          * @return this builder
-         **/
+         */
         public Builder timeLastSeen(java.util.Date timeLastSeen) {
             this.timeLastSeen = timeLastSeen;
             this.__explicitlySet__.add("timeLastSeen");
@@ -319,9 +333,7 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -330,160 +342,171 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the indicator.
-     **/
+    /** The OCID of the indicator. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the indicator.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The type of indicator.
-     **/
+    /** The type of indicator. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final IndicatorType type;
 
     /**
      * The type of indicator.
+     *
      * @return the value
-     **/
+     */
     public IndicatorType getType() {
         return type;
     }
 
-    /**
-     * The indicator data value.
-     **/
+    /** The indicator data value. */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * The indicator data value.
+     *
      * @return the value
-     **/
+     */
     public String getValue() {
         return value;
     }
 
     /**
-     * An integer from 0 to 100 that represents how certain we are that the indicator is malicious and a potential threat if it is detected communicating with your cloud resources. This confidence value is aggregated from the confidence in the threat types, attributes, and relationships to create an overall value for the indicator.
-     **/
+     * An integer from 0 to 100 that represents how certain we are that the indicator is malicious
+     * and a potential threat if it is detected communicating with your cloud resources. This
+     * confidence value is aggregated from the confidence in the threat types, attributes, and
+     * relationships to create an overall value for the indicator.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Integer confidence;
 
     /**
-     * An integer from 0 to 100 that represents how certain we are that the indicator is malicious and a potential threat if it is detected communicating with your cloud resources. This confidence value is aggregated from the confidence in the threat types, attributes, and relationships to create an overall value for the indicator.
+     * An integer from 0 to 100 that represents how certain we are that the indicator is malicious
+     * and a potential threat if it is detected communicating with your cloud resources. This
+     * confidence value is aggregated from the confidence in the threat types, attributes, and
+     * relationships to create an overall value for the indicator.
+     *
      * @return the value
-     **/
+     */
     public Integer getConfidence() {
         return confidence;
     }
 
-    /**
-     * The OCID of the compartment that contains this indicator.
-     **/
+    /** The OCID of the compartment that contains this indicator. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that contains this indicator.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Characteristics of the threat indicator based on previous observations or behavior. May include related tactics, techniques, and procedures.
-     **/
+     * Characteristics of the threat indicator based on previous observations or behavior. May
+     * include related tactics, techniques, and procedures.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("threatTypes")
     private final java.util.List<String> threatTypes;
 
     /**
-     * Characteristics of the threat indicator based on previous observations or behavior. May include related tactics, techniques, and procedures.
+     * Characteristics of the threat indicator based on previous observations or behavior. May
+     * include related tactics, techniques, and procedures.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getThreatTypes() {
         return threatTypes;
     }
 
     /**
-     * A map of attributes with additional information about the indicator.
-     * Each attribute has a name (string), value (string), and attribution (supporting data).
-     *
-     **/
+     * A map of attributes with additional information about the indicator. Each attribute has a
+     * name (string), value (string), and attribution (supporting data).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("attributes")
     private final java.util.List<IndicatorAttributeSummary> attributes;
 
     /**
-     * A map of attributes with additional information about the indicator.
-     * Each attribute has a name (string), value (string), and attribution (supporting data).
+     * A map of attributes with additional information about the indicator. Each attribute has a
+     * name (string), value (string), and attribution (supporting data).
      *
      * @return the value
-     **/
+     */
     public java.util.List<IndicatorAttributeSummary> getAttributes() {
         return attributes;
     }
 
-    /**
-     * The state of the indicator. It will always be {@code ACTIVE}.
-     **/
+    /** The state of the indicator. It will always be {@code ACTIVE}. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The state of the indicator. It will always be {@code ACTIVE}.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * The date and time that the indicator was first detected. An RFC3339 formatted string.
-     **/
+    /** The date and time that the indicator was first detected. An RFC3339 formatted string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time that the indicator was first detected. An RFC3339 formatted string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time that this indicator was last updated by the system.  Updates can include new reports or regular updates in confidence. The value is the same as {@code timeCreated} for a new indicator. An RFC3339 formatted string.
-     **/
+     * The date and time that this indicator was last updated by the system. Updates can include new
+     * reports or regular updates in confidence. The value is the same as {@code timeCreated} for a
+     * new indicator. An RFC3339 formatted string.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time that this indicator was last updated by the system.  Updates can include new reports or regular updates in confidence. The value is the same as {@code timeCreated} for a new indicator. An RFC3339 formatted string.
+     * The date and time that this indicator was last updated by the system. Updates can include new
+     * reports or regular updates in confidence. The value is the same as {@code timeCreated} for a
+     * new indicator. An RFC3339 formatted string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * The date and time that this indicator was last seen. The value is the same as {@code timeCreated} for a new indicator. An RFC3339 formatted string.
-     **/
+     * The date and time that this indicator was last seen. The value is the same as {@code
+     * timeCreated} for a new indicator. An RFC3339 formatted string.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
     private final java.util.Date timeLastSeen;
 
     /**
-     * The date and time that this indicator was last seen. The value is the same as {@code timeCreated} for a new indicator. An RFC3339 formatted string.
+     * The date and time that this indicator was last seen. The value is the same as {@code
+     * timeCreated} for a new indicator. An RFC3339 formatted string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeLastSeen() {
         return timeLastSeen;
     }
@@ -502,6 +525,7 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

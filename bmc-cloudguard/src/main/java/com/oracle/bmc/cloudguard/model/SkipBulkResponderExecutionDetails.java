@@ -5,22 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * List of responder execution ids to skip the execution
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * List of responder execution ids to skip the execution <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SkipBulkResponderExecutionDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SkipBulkResponderExecutionDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SkipBulkResponderExecutionDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"responderExecutionIds"})
     public SkipBulkResponderExecutionDetails(java.util.List<String> responderExecutionIds) {
@@ -30,17 +30,16 @@ public final class SkipBulkResponderExecutionDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * List of responder execution ids to skip the execution
-         **/
+        /** List of responder execution ids to skip the execution */
         @com.fasterxml.jackson.annotation.JsonProperty("responderExecutionIds")
         private java.util.List<String> responderExecutionIds;
 
         /**
          * List of responder execution ids to skip the execution
+         *
          * @param responderExecutionIds the value to set
          * @return this builder
-         **/
+         */
         public Builder responderExecutionIds(java.util.List<String> responderExecutionIds) {
             this.responderExecutionIds = responderExecutionIds;
             this.__explicitlySet__.add("responderExecutionIds");
@@ -68,9 +67,7 @@ public final class SkipBulkResponderExecutionDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -79,16 +76,15 @@ public final class SkipBulkResponderExecutionDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * List of responder execution ids to skip the execution
-     **/
+    /** List of responder execution ids to skip the execution */
     @com.fasterxml.jackson.annotation.JsonProperty("responderExecutionIds")
     private final java.util.List<String> responderExecutionIds;
 
     /**
      * List of responder execution ids to skip the execution
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getResponderExecutionIds() {
         return responderExecutionIds;
     }
@@ -100,6 +96,7 @@ public final class SkipBulkResponderExecutionDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,72 +6,61 @@ package com.oracle.bmc.cloudguard.requests;
 
 import com.oracle.bmc.cloudguard.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedProblemsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RequestSummarizedProblemsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedProblemsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * RequestSummarizedProblemsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class RequestSummarizedProblemsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The possible attributes based on which the problems can be distinguished.
-     */
+    /** The possible attributes based on which the problems can be distinguished. */
     private java.util.List<com.oracle.bmc.cloudguard.model.ProblemDimension> listDimensions;
 
-    /**
-     * The possible attributes based on which the problems can be distinguished.
-     */
+    /** The possible attributes based on which the problems can be distinguished. */
     public java.util.List<com.oracle.bmc.cloudguard.model.ProblemDimension> getListDimensions() {
         return listDimensions;
     }
-    /**
-     * The ID of the compartment in which to list resources.
-     */
+    /** The ID of the compartment in which to list resources. */
     private String compartmentId;
 
-    /**
-     * The ID of the compartment in which to list resources.
-     */
+    /** The ID of the compartment in which to list resources. */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Default is false.
-     * When set to true, the hierarchy of compartments is traversed
-     * and all compartments and subcompartments in the tenancy are
-     * returned depending on the the setting of {@code accessLevel}.
-     *
+     * Default is false. When set to true, the hierarchy of compartments is traversed and all
+     * compartments and subcompartments in the tenancy are returned depending on the the setting of
+     * {@code accessLevel}.
      */
     private Boolean compartmentIdInSubtree;
 
     /**
-     * Default is false.
-     * When set to true, the hierarchy of compartments is traversed
-     * and all compartments and subcompartments in the tenancy are
-     * returned depending on the the setting of {@code accessLevel}.
-     *
+     * Default is false. When set to true, the hierarchy of compartments is traversed and all
+     * compartments and subcompartments in the tenancy are returned depending on the the setting of
+     * {@code accessLevel}.
      */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
     /**
      * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
-     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
-     * user has INSPECT permissions directly or indirectly (permissions can be on a
-     * resource in a subcompartment).
-     * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
-     *
+     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the user has
+     * INSPECT permissions directly or indirectly (permissions can be on a resource in a
+     * subcompartment). When set to {@code RESTRICTED} permissions are checked and no partial
+     * results are displayed.
      */
     private AccessLevel accessLevel;
 
     /**
      * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
-     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
-     * user has INSPECT permissions directly or indirectly (permissions can be on a
-     * resource in a subcompartment).
-     * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
-     *
-     **/
-    public enum AccessLevel {
+     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the user has
+     * INSPECT permissions directly or indirectly (permissions can be on a resource in a
+     * subcompartment). When set to {@code RESTRICTED} permissions are checked and no partial
+     * results are displayed.
+     */
+    public enum AccessLevel implements com.oracle.bmc.http.internal.BmcEnum {
         Restricted("RESTRICTED"),
         Accessible("ACCESSIBLE"),
         ;
@@ -106,45 +95,38 @@ public class RequestSummarizedProblemsRequest
 
     /**
      * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
-     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
-     * user has INSPECT permissions directly or indirectly (permissions can be on a
-     * resource in a subcompartment).
-     * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
-     *
+     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the user has
+     * INSPECT permissions directly or indirectly (permissions can be on a resource in a
+     * subcompartment). When set to {@code RESTRICTED} permissions are checked and no partial
+     * results are displayed.
      */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -152,18 +134,16 @@ public class RequestSummarizedProblemsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RequestSummarizedProblemsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The possible attributes based on which the problems can be distinguished.
-         */
+        /** The possible attributes based on which the problems can be distinguished. */
         private java.util.List<com.oracle.bmc.cloudguard.model.ProblemDimension> listDimensions =
                 null;
 
         /**
          * The possible attributes based on which the problems can be distinguished.
+         *
          * @param listDimensions the value to set
          * @return this builder instance
          */
@@ -174,7 +154,9 @@ public class RequestSummarizedProblemsRequest
         }
 
         /**
-         * Singular setter. The possible attributes based on which the problems can be distinguished.
+         * Singular setter. The possible attributes based on which the problems can be
+         * distinguished.
+         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -182,13 +164,12 @@ public class RequestSummarizedProblemsRequest
             return this.listDimensions(java.util.Arrays.asList(singularValue));
         }
 
-        /**
-         * The ID of the compartment in which to list resources.
-         */
+        /** The ID of the compartment in which to list resources. */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -198,19 +179,16 @@ public class RequestSummarizedProblemsRequest
         }
 
         /**
-         * Default is false.
-         * When set to true, the hierarchy of compartments is traversed
-         * and all compartments and subcompartments in the tenancy are
-         * returned depending on the the setting of {@code accessLevel}.
-         *
+         * Default is false. When set to true, the hierarchy of compartments is traversed and all
+         * compartments and subcompartments in the tenancy are returned depending on the the setting
+         * of {@code accessLevel}.
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
-         * Default is false.
-         * When set to true, the hierarchy of compartments is traversed
-         * and all compartments and subcompartments in the tenancy are
-         * returned depending on the the setting of {@code accessLevel}.
+         * Default is false. When set to true, the hierarchy of compartments is traversed and all
+         * compartments and subcompartments in the tenancy are returned depending on the the setting
+         * of {@code accessLevel}.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -221,21 +199,20 @@ public class RequestSummarizedProblemsRequest
         }
 
         /**
-         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
-         * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
-         * user has INSPECT permissions directly or indirectly (permissions can be on a
-         * resource in a subcompartment).
-         * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
-         *
+         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code
+         * RESTRICTED}. Setting this to {@code ACCESSIBLE} returns only those compartments for which
+         * the user has INSPECT permissions directly or indirectly (permissions can be on a resource
+         * in a subcompartment). When set to {@code RESTRICTED} permissions are checked and no
+         * partial results are displayed.
          */
         private AccessLevel accessLevel = null;
 
         /**
-         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
-         * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
-         * user has INSPECT permissions directly or indirectly (permissions can be on a
-         * resource in a subcompartment).
-         * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code
+         * RESTRICTED}. Setting this to {@code ACCESSIBLE} returns only those compartments for which
+         * the user has INSPECT permissions directly or indirectly (permissions can be on a resource
+         * in a subcompartment). When set to {@code RESTRICTED} permissions are checked and no
+         * partial results are displayed.
          *
          * @param accessLevel the value to set
          * @return this builder instance
@@ -245,13 +222,12 @@ public class RequestSummarizedProblemsRequest
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -261,12 +237,15 @@ public class RequestSummarizedProblemsRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -275,13 +254,12 @@ public class RequestSummarizedProblemsRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -292,18 +270,19 @@ public class RequestSummarizedProblemsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -315,6 +294,7 @@ public class RequestSummarizedProblemsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(RequestSummarizedProblemsRequest o) {
@@ -333,10 +313,11 @@ public class RequestSummarizedProblemsRequest
         /**
          * Build the instance of RequestSummarizedProblemsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of RequestSummarizedProblemsRequest
          */
@@ -350,7 +331,8 @@ public class RequestSummarizedProblemsRequest
         /**
          * Build the instance of RequestSummarizedProblemsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of RequestSummarizedProblemsRequest
@@ -365,12 +347,14 @@ public class RequestSummarizedProblemsRequest
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new RequestSummarizedProblemsRequest(listDimensions, compartmentId, compartmentIdInSubtree, accessLevel, limit, page, opcRequestId);
+            // new RequestSummarizedProblemsRequest(listDimensions, compartmentId,
+            // compartmentIdInSubtree, accessLevel, limit, page, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -386,6 +370,7 @@ public class RequestSummarizedProblemsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

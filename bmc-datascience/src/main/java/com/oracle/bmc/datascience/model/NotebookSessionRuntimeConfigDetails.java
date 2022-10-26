@@ -5,22 +5,22 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * Notebook Session runtime configuration details.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Notebook Session runtime configuration details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = NotebookSessionRuntimeConfigDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = NotebookSessionRuntimeConfigDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class NotebookSessionRuntimeConfigDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "customEnvironmentVariables",
@@ -37,16 +37,19 @@ public final class NotebookSessionRuntimeConfigDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-         **/
+         * Custom environment variables for Notebook Session. These key-value pairs will be
+         * available for customers in Notebook Sessions.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("customEnvironmentVariables")
         private java.util.Map<String, String> customEnvironmentVariables;
 
         /**
-         * Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+         * Custom environment variables for Notebook Session. These key-value pairs will be
+         * available for customers in Notebook Sessions.
+         *
          * @param customEnvironmentVariables the value to set
          * @return this builder
-         **/
+         */
         public Builder customEnvironmentVariables(
                 java.util.Map<String, String> customEnvironmentVariables) {
             this.customEnvironmentVariables = customEnvironmentVariables;
@@ -89,9 +92,7 @@ public final class NotebookSessionRuntimeConfigDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -101,15 +102,18 @@ public final class NotebookSessionRuntimeConfigDetails
     }
 
     /**
-     * Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-     **/
+     * Custom environment variables for Notebook Session. These key-value pairs will be available
+     * for customers in Notebook Sessions.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("customEnvironmentVariables")
     private final java.util.Map<String, String> customEnvironmentVariables;
 
     /**
-     * Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+     * Custom environment variables for Notebook Session. These key-value pairs will be available
+     * for customers in Notebook Sessions.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getCustomEnvironmentVariables() {
         return customEnvironmentVariables;
     }
@@ -128,6 +132,7 @@ public final class NotebookSessionRuntimeConfigDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

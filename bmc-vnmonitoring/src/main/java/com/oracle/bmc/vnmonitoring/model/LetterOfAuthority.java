@@ -5,23 +5,23 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * The Letter of Authority for the cross-connect. You must submit this letter when
- * requesting cabling for the cross-connect at the FastConnect location.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The Letter of Authority for the cross-connect. You must submit this letter when requesting
+ * cabling for the cross-connect at the FastConnect location. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = LetterOfAuthority.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LetterOfAuthority extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = LetterOfAuthority.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class LetterOfAuthority
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "authorizedEntityName",
@@ -52,121 +52,122 @@ public final class LetterOfAuthority extends com.oracle.bmc.http.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the entity authorized by this Letter of Authority.
-         **/
+        /** The name of the entity authorized by this Letter of Authority. */
         @com.fasterxml.jackson.annotation.JsonProperty("authorizedEntityName")
         private String authorizedEntityName;
 
         /**
          * The name of the entity authorized by this Letter of Authority.
+         *
          * @param authorizedEntityName the value to set
          * @return this builder
-         **/
+         */
         public Builder authorizedEntityName(String authorizedEntityName) {
             this.authorizedEntityName = authorizedEntityName;
             this.__explicitlySet__.add("authorizedEntityName");
             return this;
         }
-        /**
-         * The type of cross-connect fiber, termination, and optical specification.
-         **/
+        /** The type of cross-connect fiber, termination, and optical specification. */
         @com.fasterxml.jackson.annotation.JsonProperty("circuitType")
         private CircuitType circuitType;
 
         /**
          * The type of cross-connect fiber, termination, and optical specification.
+         *
          * @param circuitType the value to set
          * @return this builder
-         **/
+         */
         public Builder circuitType(CircuitType circuitType) {
             this.circuitType = circuitType;
             this.__explicitlySet__.add("circuitType");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the cross-connect.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("crossConnectId")
         private String crossConnectId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the cross-connect.
+         *
          * @param crossConnectId the value to set
          * @return this builder
-         **/
+         */
         public Builder crossConnectId(String crossConnectId) {
             this.crossConnectId = crossConnectId;
             this.__explicitlySet__.add("crossConnectId");
             return this;
         }
-        /**
-         * The address of the FastConnect location.
-         **/
+        /** The address of the FastConnect location. */
         @com.fasterxml.jackson.annotation.JsonProperty("facilityLocation")
         private String facilityLocation;
 
         /**
          * The address of the FastConnect location.
+         *
          * @param facilityLocation the value to set
          * @return this builder
-         **/
+         */
         public Builder facilityLocation(String facilityLocation) {
             this.facilityLocation = facilityLocation;
             this.__explicitlySet__.add("facilityLocation");
             return this;
         }
-        /**
-         * The meet-me room port for this cross-connect.
-         **/
+        /** The meet-me room port for this cross-connect. */
         @com.fasterxml.jackson.annotation.JsonProperty("portName")
         private String portName;
 
         /**
          * The meet-me room port for this cross-connect.
+         *
          * @param portName the value to set
          * @return this builder
-         **/
+         */
         public Builder portName(String portName) {
             this.portName = portName;
             this.__explicitlySet__.add("portName");
             return this;
         }
         /**
-         * The date and time when the Letter of Authority expires, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
-         **/
+         * The date and time when the Letter of Authority expires, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
         private java.util.Date timeExpires;
 
         /**
-         * The date and time when the Letter of Authority expires, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time when the Letter of Authority expires, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeExpires the value to set
          * @return this builder
-         **/
+         */
         public Builder timeExpires(java.util.Date timeExpires) {
             this.timeExpires = timeExpires;
             this.__explicitlySet__.add("timeExpires");
             return this;
         }
         /**
-         * The date and time the Letter of Authority was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the Letter of Authority was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
-         **/
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeIssued")
         private java.util.Date timeIssued;
 
         /**
-         * The date and time the Letter of Authority was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the Letter of Authority was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeIssued the value to set
          * @return this builder
-         **/
+         */
         public Builder timeIssued(java.util.Date timeIssued) {
             this.timeIssued = timeIssued;
             this.__explicitlySet__.add("timeIssued");
@@ -219,9 +220,7 @@ public final class LetterOfAuthority extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -230,24 +229,21 @@ public final class LetterOfAuthority extends com.oracle.bmc.http.internal.Explic
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the entity authorized by this Letter of Authority.
-     **/
+    /** The name of the entity authorized by this Letter of Authority. */
     @com.fasterxml.jackson.annotation.JsonProperty("authorizedEntityName")
     private final String authorizedEntityName;
 
     /**
      * The name of the entity authorized by this Letter of Authority.
+     *
      * @return the value
-     **/
+     */
     public String getAuthorizedEntityName() {
         return authorizedEntityName;
     }
 
-    /**
-     * The type of cross-connect fiber, termination, and optical specification.
-     **/
-    public enum CircuitType {
+    /** The type of cross-connect fiber, termination, and optical specification. */
+    public enum CircuitType implements com.oracle.bmc.http.internal.BmcEnum {
         SingleModeLc("Single_mode_LC"),
         SingleModeSc("Single_mode_SC"),
         ;
@@ -279,94 +275,96 @@ public final class LetterOfAuthority extends com.oracle.bmc.http.internal.Explic
             throw new IllegalArgumentException("Invalid CircuitType: " + key);
         }
     };
-    /**
-     * The type of cross-connect fiber, termination, and optical specification.
-     **/
+    /** The type of cross-connect fiber, termination, and optical specification. */
     @com.fasterxml.jackson.annotation.JsonProperty("circuitType")
     private final CircuitType circuitType;
 
     /**
      * The type of cross-connect fiber, termination, and optical specification.
+     *
      * @return the value
-     **/
+     */
     public CircuitType getCircuitType() {
         return circuitType;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the cross-connect.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("crossConnectId")
     private final String crossConnectId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the cross-connect.
+     *
      * @return the value
-     **/
+     */
     public String getCrossConnectId() {
         return crossConnectId;
     }
 
-    /**
-     * The address of the FastConnect location.
-     **/
+    /** The address of the FastConnect location. */
     @com.fasterxml.jackson.annotation.JsonProperty("facilityLocation")
     private final String facilityLocation;
 
     /**
      * The address of the FastConnect location.
+     *
      * @return the value
-     **/
+     */
     public String getFacilityLocation() {
         return facilityLocation;
     }
 
-    /**
-     * The meet-me room port for this cross-connect.
-     **/
+    /** The meet-me room port for this cross-connect. */
     @com.fasterxml.jackson.annotation.JsonProperty("portName")
     private final String portName;
 
     /**
      * The meet-me room port for this cross-connect.
+     *
      * @return the value
-     **/
+     */
     public String getPortName() {
         return portName;
     }
 
     /**
-     * The date and time when the Letter of Authority expires, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
-     **/
+     * The date and time when the Letter of Authority expires, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
     private final java.util.Date timeExpires;
 
     /**
-     * The date and time when the Letter of Authority expires, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time when the Letter of Authority expires, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeExpires() {
         return timeExpires;
     }
 
     /**
-     * The date and time the Letter of Authority was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the Letter of Authority was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
-     **/
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeIssued")
     private final java.util.Date timeIssued;
 
     /**
-     * The date and time the Letter of Authority was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the Letter of Authority was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeIssued() {
         return timeIssued;
     }
@@ -378,6 +376,7 @@ public final class LetterOfAuthority extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

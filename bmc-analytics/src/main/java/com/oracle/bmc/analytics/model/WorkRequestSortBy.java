@@ -4,12 +4,9 @@
  */
 package com.oracle.bmc.analytics.model;
 
-/**
- * The supported work request {@code sort by} columns.
- *
- **/
+/** The supported work request {@code sort by} columns. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
-public enum WorkRequestSortBy {
+public enum WorkRequestSortBy implements com.oracle.bmc.http.internal.BmcEnum {
     Id("id"),
     OperationType("operationType"),
     Status("status"),

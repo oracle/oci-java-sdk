@@ -6,78 +6,67 @@ package com.oracle.bmc.cloudbridge.requests;
 
 import com.oracle.bmc.cloudbridge.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListHistoricalMetricsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListHistoricalMetricsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListHistoricalMetricsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ListHistoricalMetricsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public class ListHistoricalMetricsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * Unique asset identifier.
-     */
+    /** Unique asset identifier. */
     private String assetId;
 
-    /**
-     * Unique asset identifier.
-     */
+    /** Unique asset identifier. */
     public String getAssetId() {
         return assetId;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from
+     * the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from
+     * the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order to use, either 'ASC' or 'DESC'.
-     */
+    /** The sort order to use, either 'ASC' or 'DESC'. */
     private com.oracle.bmc.cloudbridge.model.SortOrders sortOrder;
 
-    /**
-     * The sort order to use, either 'ASC' or 'DESC'.
-     */
+    /** The sort order to use, either 'ASC' or 'DESC'. */
     public com.oracle.bmc.cloudbridge.model.SortOrders getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
-     *
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
+     * descending. Default order for displayName is ascending.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
-     *
-     **/
-    public enum SortBy {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
+     * descending. Default order for displayName is ascending.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TimeCreated("timeCreated"),
         TimeUpdated("timeUpdated"),
         DisplayName("displayName"),
@@ -112,8 +101,8 @@ public class ListHistoricalMetricsRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
-     *
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
+     * descending. Default order for displayName is ascending.
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -122,17 +111,15 @@ public class ListHistoricalMetricsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListHistoricalMetricsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique asset identifier.
-         */
+        /** Unique asset identifier. */
         private String assetId = null;
 
         /**
          * Unique asset identifier.
+         *
          * @param assetId the value to set
          * @return this builder instance
          */
@@ -141,13 +128,12 @@ public class ListHistoricalMetricsRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -156,13 +142,12 @@ public class ListHistoricalMetricsRequest
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -172,12 +157,15 @@ public class ListHistoricalMetricsRequest
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come
+         * from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come
+         * from the {@code opc-next-page} header field of a previous response.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -186,13 +174,12 @@ public class ListHistoricalMetricsRequest
             return this;
         }
 
-        /**
-         * The sort order to use, either 'ASC' or 'DESC'.
-         */
+        /** The sort order to use, either 'ASC' or 'DESC'. */
         private com.oracle.bmc.cloudbridge.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -202,13 +189,14 @@ public class ListHistoricalMetricsRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
-         *
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
+         * is descending. Default order for displayName is ascending.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
+         * is descending. Default order for displayName is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -220,18 +208,19 @@ public class ListHistoricalMetricsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -243,6 +232,7 @@ public class ListHistoricalMetricsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListHistoricalMetricsRequest o) {
@@ -260,10 +250,11 @@ public class ListHistoricalMetricsRequest
         /**
          * Build the instance of ListHistoricalMetricsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListHistoricalMetricsRequest
          */
@@ -277,7 +268,8 @@ public class ListHistoricalMetricsRequest
         /**
          * Build the instance of ListHistoricalMetricsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListHistoricalMetricsRequest
@@ -291,12 +283,14 @@ public class ListHistoricalMetricsRequest
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListHistoricalMetricsRequest(assetId, opcRequestId, limit, page, sortOrder, sortBy);
+            // new ListHistoricalMetricsRequest(assetId, opcRequestId, limit, page, sortOrder,
+            // sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -311,6 +305,7 @@ public class ListHistoricalMetricsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

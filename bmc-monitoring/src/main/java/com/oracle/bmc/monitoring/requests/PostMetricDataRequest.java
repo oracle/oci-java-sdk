@@ -6,7 +6,9 @@ package com.oracle.bmc.monitoring.requests;
 
 import com.oracle.bmc.monitoring.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/PostMetricDataExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use PostMetricDataRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/PostMetricDataExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use PostMetricDataRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 public class PostMetricDataRequest
@@ -14,42 +16,40 @@ public class PostMetricDataRequest
                 com.oracle.bmc.monitoring.model.PostMetricDataDetails> {
 
     /**
-     * An array of metric objects containing raw metric data points to be posted to the Monitoring service.
-     *
+     * An array of metric objects containing raw metric data points to be posted to the Monitoring
+     * service.
      */
     private com.oracle.bmc.monitoring.model.PostMetricDataDetails postMetricDataDetails;
 
     /**
-     * An array of metric objects containing raw metric data points to be posted to the Monitoring service.
-     *
+     * An array of metric objects containing raw metric data points to be posted to the Monitoring
+     * service.
      */
     public com.oracle.bmc.monitoring.model.PostMetricDataDetails getPostMetricDataDetails() {
         return postMetricDataDetails;
     }
     /**
-     * Customer part of the request identifier token. If you need to contact Oracle about a particular
-     * request, please provide the complete request ID.
-     *
+     * Customer part of the request identifier token. If you need to contact Oracle about a
+     * particular request, please provide the complete request ID.
      */
     private String opcRequestId;
 
     /**
-     * Customer part of the request identifier token. If you need to contact Oracle about a particular
-     * request, please provide the complete request ID.
-     *
+     * Customer part of the request identifier token. If you need to contact Oracle about a
+     * particular request, please provide the complete request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The optional Content-Encoding header that defines the content encodings that were applied to the payload.
-     *
+     * The optional Content-Encoding header that defines the content encodings that were applied to
+     * the payload.
      */
     private String contentEncoding;
 
     /**
-     * The optional Content-Encoding header that defines the content encodings that were applied to the payload.
-     *
+     * The optional Content-Encoding header that defines the content encodings that were applied to
+     * the payload.
      */
     public String getContentEncoding() {
         return contentEncoding;
@@ -57,6 +57,7 @@ public class PostMetricDataRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -68,18 +69,18 @@ public class PostMetricDataRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     PostMetricDataRequest, com.oracle.bmc.monitoring.model.PostMetricDataDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * An array of metric objects containing raw metric data points to be posted to the Monitoring service.
-         *
+         * An array of metric objects containing raw metric data points to be posted to the
+         * Monitoring service.
          */
         private com.oracle.bmc.monitoring.model.PostMetricDataDetails postMetricDataDetails = null;
 
         /**
-         * An array of metric objects containing raw metric data points to be posted to the Monitoring service.
+         * An array of metric objects containing raw metric data points to be posted to the
+         * Monitoring service.
          *
          * @param postMetricDataDetails the value to set
          * @return this builder instance
@@ -91,15 +92,14 @@ public class PostMetricDataRequest
         }
 
         /**
-         * Customer part of the request identifier token. If you need to contact Oracle about a particular
-         * request, please provide the complete request ID.
-         *
+         * Customer part of the request identifier token. If you need to contact Oracle about a
+         * particular request, please provide the complete request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Customer part of the request identifier token. If you need to contact Oracle about a particular
-         * request, please provide the complete request ID.
+         * Customer part of the request identifier token. If you need to contact Oracle about a
+         * particular request, please provide the complete request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -110,13 +110,14 @@ public class PostMetricDataRequest
         }
 
         /**
-         * The optional Content-Encoding header that defines the content encodings that were applied to the payload.
-         *
+         * The optional Content-Encoding header that defines the content encodings that were applied
+         * to the payload.
          */
         private String contentEncoding = null;
 
         /**
-         * The optional Content-Encoding header that defines the content encodings that were applied to the payload.
+         * The optional Content-Encoding header that defines the content encodings that were applied
+         * to the payload.
          *
          * @param contentEncoding the value to set
          * @return this builder instance
@@ -128,18 +129,19 @@ public class PostMetricDataRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -151,6 +153,7 @@ public class PostMetricDataRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(PostMetricDataRequest o) {
@@ -165,10 +168,11 @@ public class PostMetricDataRequest
         /**
          * Build the instance of PostMetricDataRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of PostMetricDataRequest
          */
@@ -181,6 +185,7 @@ public class PostMetricDataRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -193,7 +198,8 @@ public class PostMetricDataRequest
         /**
          * Build the instance of PostMetricDataRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of PostMetricDataRequest
@@ -210,6 +216,7 @@ public class PostMetricDataRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -221,6 +228,7 @@ public class PostMetricDataRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

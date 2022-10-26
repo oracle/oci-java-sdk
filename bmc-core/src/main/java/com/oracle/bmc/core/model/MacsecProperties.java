@@ -5,19 +5,21 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Properties used for MACsec (if capable).
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Properties used for MACsec (if capable). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MacsecProperties.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MacsecProperties extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class MacsecProperties
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"state", "primaryKey", "encryptionCipher"})
     public MacsecProperties(
@@ -30,17 +32,16 @@ public final class MacsecProperties extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Indicates whether or not MACsec is enabled.
-         **/
+        /** Indicates whether or not MACsec is enabled. */
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private MacsecState state;
 
         /**
          * Indicates whether or not MACsec is enabled.
+         *
          * @param state the value to set
          * @return this builder
-         **/
+         */
         public Builder state(MacsecState state) {
             this.state = state;
             this.__explicitlySet__.add("state");
@@ -55,17 +56,16 @@ public final class MacsecProperties extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("primaryKey");
             return this;
         }
-        /**
-         * Type of encryption cipher suite to use for the MACsec connection.
-         **/
+        /** Type of encryption cipher suite to use for the MACsec connection. */
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionCipher")
         private MacsecEncryptionCipher encryptionCipher;
 
         /**
          * Type of encryption cipher suite to use for the MACsec connection.
+         *
          * @param encryptionCipher the value to set
          * @return this builder
-         **/
+         */
         public Builder encryptionCipher(MacsecEncryptionCipher encryptionCipher) {
             this.encryptionCipher = encryptionCipher;
             this.__explicitlySet__.add("encryptionCipher");
@@ -99,9 +99,7 @@ public final class MacsecProperties extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -110,16 +108,15 @@ public final class MacsecProperties extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * Indicates whether or not MACsec is enabled.
-     **/
+    /** Indicates whether or not MACsec is enabled. */
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final MacsecState state;
 
     /**
      * Indicates whether or not MACsec is enabled.
+     *
      * @return the value
-     **/
+     */
     public MacsecState getState() {
         return state;
     }
@@ -131,16 +128,15 @@ public final class MacsecProperties extends com.oracle.bmc.http.internal.Explici
         return primaryKey;
     }
 
-    /**
-     * Type of encryption cipher suite to use for the MACsec connection.
-     **/
+    /** Type of encryption cipher suite to use for the MACsec connection. */
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionCipher")
     private final MacsecEncryptionCipher encryptionCipher;
 
     /**
      * Type of encryption cipher suite to use for the MACsec connection.
+     *
      * @return the value
-     **/
+     */
     public MacsecEncryptionCipher getEncryptionCipher() {
         return encryptionCipher;
     }
@@ -152,6 +148,7 @@ public final class MacsecProperties extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,54 +6,50 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSensitiveTypesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSensitiveTypesRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSensitiveTypesExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSensitiveTypesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * A filter to return only resources that match the specified compartment OCID.
-     */
+    /** A filter to return only resources that match the specified compartment OCID. */
     private String compartmentId;
 
-    /**
-     * A filter to return only resources that match the specified compartment OCID.
-     */
+    /** A filter to return only resources that match the specified compartment OCID. */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Default is false.
-     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-     *
+     * Default is false. When set to true, the hierarchy of compartments is traversed and all
+     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
+     * setting.
      */
     private Boolean compartmentIdInSubtree;
 
     /**
-     * Default is false.
-     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-     *
+     * Default is false. When set to true, the hierarchy of compartments is traversed and all
+     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
+     * setting.
      */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
-     * Setting this to ACCESSIBLE returns only those compartments for which the
-     * user has INSPECT permissions directly or indirectly (permissions can be on a
-     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-     *
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
+     * returns only those compartments for which the user has INSPECT permissions directly or
+     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
+     * permissions are checked and no partial results are displayed.
      */
     private AccessLevel accessLevel;
 
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
-     * Setting this to ACCESSIBLE returns only those compartments for which the
-     * user has INSPECT permissions directly or indirectly (permissions can be on a
-     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-     *
-     **/
-    public enum AccessLevel {
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
+     * returns only those compartments for which the user has INSPECT permissions directly or
+     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
+     * permissions are checked and no partial results are displayed.
+     */
+    public enum AccessLevel implements com.oracle.bmc.http.internal.BmcEnum {
         Restricted("RESTRICTED"),
         Accessible("ACCESSIBLE"),
         ;
@@ -87,36 +83,25 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
     };
 
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
-     * Setting this to ACCESSIBLE returns only those compartments for which the
-     * user has INSPECT permissions directly or indirectly (permissions can be on a
-     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-     *
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
+     * returns only those compartments for which the user has INSPECT permissions directly or
+     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
+     * permissions are checked and no partial results are displayed.
      */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
-    /**
-     * A filter to return only resources that match the specified display name.
-     *
-     */
+    /** A filter to return only resources that match the specified display name. */
     private String displayName;
 
-    /**
-     * A filter to return only resources that match the specified display name.
-     *
-     */
+    /** A filter to return only resources that match the specified display name. */
     public String getDisplayName() {
         return displayName;
     }
-    /**
-     * A filter to return only items related to a specific sensitive type OCID.
-     */
+    /** A filter to return only items related to a specific sensitive type OCID. */
     private String sensitiveTypeId;
 
-    /**
-     * A filter to return only items related to a specific sensitive type OCID.
-     */
+    /** A filter to return only items related to a specific sensitive type OCID. */
     public String getSensitiveTypeId() {
         return sensitiveTypeId;
     }
@@ -132,91 +117,91 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
         return sensitiveTypeSource;
     }
     /**
-     * A filter to return the sensitive type resources based on the value of their entityType attribute.
+     * A filter to return the sensitive type resources based on the value of their entityType
+     * attribute.
      */
     private com.oracle.bmc.datasafe.model.SensitiveTypeEntity entityType;
 
     /**
-     * A filter to return the sensitive type resources based on the value of their entityType attribute.
+     * A filter to return the sensitive type resources based on the value of their entityType
+     * attribute.
      */
     public com.oracle.bmc.datasafe.model.SensitiveTypeEntity getEntityType() {
         return entityType;
     }
     /**
-     * A filter to return only the sensitive types that are children of the sensitive category identified by the specified OCID.
+     * A filter to return only the sensitive types that are children of the sensitive category
+     * identified by the specified OCID.
      */
     private String parentCategoryId;
 
     /**
-     * A filter to return only the sensitive types that are children of the sensitive category identified by the specified OCID.
+     * A filter to return only the sensitive types that are children of the sensitive category
+     * identified by the specified OCID.
      */
     public String getParentCategoryId() {
         return parentCategoryId;
     }
     /**
-     * A filter to return only the sensitive types that have the default masking format identified by the specified OCID.
+     * A filter to return only the sensitive types that have the default masking format identified
+     * by the specified OCID.
      */
     private String defaultMaskingFormatId;
 
     /**
-     * A filter to return only the sensitive types that have the default masking format identified by the specified OCID.
+     * A filter to return only the sensitive types that have the default masking format identified
+     * by the specified OCID.
      */
     public String getDefaultMaskingFormatId() {
         return defaultMaskingFormatId;
     }
     /**
-     * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-     * <p>
-     **Example:** 2016-12-19T16:39:57.600Z
+     * A filter to return only the resources that were created after the specified date and time, as
+     * defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using
+     * TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after
+     * that date.
      *
+     * <p>*Example:** 2016-12-19T16:39:57.600Z
      */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
     /**
-     * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-     * <p>
-     **Example:** 2016-12-19T16:39:57.600Z
+     * A filter to return only the resources that were created after the specified date and time, as
+     * defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using
+     * TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after
+     * that date.
      *
+     * <p>*Example:** 2016-12-19T16:39:57.600Z
      */
     public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
         return timeCreatedGreaterThanOrEqualTo;
     }
     /**
-     * Search for resources that were created before a specific date.
-     * Specifying this parameter corresponding {@code timeCreatedLessThan}
-     * parameter will retrieve all resources created before the
-     * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
-     * defined by RFC 3339.
-     * <p>
-     **Example:** 2016-12-19T16:39:57.600Z
+     * Search for resources that were created before a specific date. Specifying this parameter
+     * corresponding {@code timeCreatedLessThan} parameter will retrieve all resources created
+     * before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined
+     * by RFC 3339.
      *
+     * <p>*Example:** 2016-12-19T16:39:57.600Z
      */
     private java.util.Date timeCreatedLessThan;
 
     /**
-     * Search for resources that were created before a specific date.
-     * Specifying this parameter corresponding {@code timeCreatedLessThan}
-     * parameter will retrieve all resources created before the
-     * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
-     * defined by RFC 3339.
-     * <p>
-     **Example:** 2016-12-19T16:39:57.600Z
+     * Search for resources that were created before a specific date. Specifying this parameter
+     * corresponding {@code timeCreatedLessThan} parameter will retrieve all resources created
+     * before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined
+     * by RFC 3339.
      *
+     * <p>*Example:** 2016-12-19T16:39:57.600Z
      */
     public java.util.Date getTimeCreatedLessThan() {
         return timeCreatedLessThan;
     }
-    /**
-     * The sort order to use, either ascending (ASC) or descending (DESC).
-     */
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
     private SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either ascending (ASC) or descending (DESC).
-     **/
-    public enum SortOrder {
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -249,25 +234,21 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
 
-    /**
-     * The sort order to use, either ascending (ASC) or descending (DESC).
-     */
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeCreated is descending.
-     * The default order for displayName is ascending.
-     *
+     * The field to sort by. You can specify only one sort order (sortOrder). The default order for
+     * timeCreated is descending. The default order for displayName is ascending.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeCreated is descending.
-     * The default order for displayName is ascending.
-     *
-     **/
-    public enum SortBy {
+     * The field to sort by. You can specify only one sort order (sortOrder). The default order for
+     * timeCreated is descending. The default order for displayName is ascending.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -301,54 +282,55 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
     };
 
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeCreated is descending.
-     * The default order for displayName is ascending.
-     *
+     * The field to sort by. You can specify only one sort order (sortOrder). The default order for
+     * timeCreated is descending. The default order for displayName is ascending.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     private String opcRequestId;
 
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List"
+     * call. For details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List"
+     * call. For details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving
+     * results. It is usually retrieved from a previous "List" call. For details about how
+     * pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving
+     * results. It is usually retrieved from a previous "List" call. For details about how
+     * pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /**
-     * A filter to return only the resources that match the specified lifecycle state.
-     */
+    /** A filter to return only the resources that match the specified lifecycle state. */
     private com.oracle.bmc.datasafe.model.DiscoveryLifecycleState lifecycleState;
 
-    /**
-     * A filter to return only the resources that match the specified lifecycle state.
-     */
+    /** A filter to return only the resources that match the specified lifecycle state. */
     public com.oracle.bmc.datasafe.model.DiscoveryLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -356,17 +338,15 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSensitiveTypesRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * A filter to return only resources that match the specified compartment OCID.
-         */
+        /** A filter to return only resources that match the specified compartment OCID. */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -376,15 +356,16 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * Default is false.
-         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-         *
+         * Default is false. When set to true, the hierarchy of compartments is traversed and all
+         * compartments and subcompartments in the tenancy are returned. Depends on the
+         * 'accessLevel' setting.
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
-         * Default is false.
-         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         * Default is false. When set to true, the hierarchy of compartments is traversed and all
+         * compartments and subcompartments in the tenancy are returned. Depends on the
+         * 'accessLevel' setting.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -395,19 +376,18 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
-         * Setting this to ACCESSIBLE returns only those compartments for which the
-         * user has INSPECT permissions directly or indirectly (permissions can be on a
-         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-         *
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
+         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
+         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
+         * to RESTRICTED permissions are checked and no partial results are displayed.
          */
         private AccessLevel accessLevel = null;
 
         /**
-         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
-         * Setting this to ACCESSIBLE returns only those compartments for which the
-         * user has INSPECT permissions directly or indirectly (permissions can be on a
-         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
+         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
+         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
+         * to RESTRICTED permissions are checked and no partial results are displayed.
          *
          * @param accessLevel the value to set
          * @return this builder instance
@@ -417,10 +397,7 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /**
-         * A filter to return only resources that match the specified display name.
-         *
-         */
+        /** A filter to return only resources that match the specified display name. */
         private String displayName = null;
 
         /**
@@ -434,13 +411,12 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /**
-         * A filter to return only items related to a specific sensitive type OCID.
-         */
+        /** A filter to return only items related to a specific sensitive type OCID. */
         private String sensitiveTypeId = null;
 
         /**
          * A filter to return only items related to a specific sensitive type OCID.
+         *
          * @param sensitiveTypeId the value to set
          * @return this builder instance
          */
@@ -450,12 +426,15 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * A filter to return the sensitive type resources based on the value of their source attribute.
+         * A filter to return the sensitive type resources based on the value of their source
+         * attribute.
          */
         private com.oracle.bmc.datasafe.model.SensitiveTypeSource sensitiveTypeSource = null;
 
         /**
-         * A filter to return the sensitive type resources based on the value of their source attribute.
+         * A filter to return the sensitive type resources based on the value of their source
+         * attribute.
+         *
          * @param sensitiveTypeSource the value to set
          * @return this builder instance
          */
@@ -466,12 +445,15 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * A filter to return the sensitive type resources based on the value of their entityType attribute.
+         * A filter to return the sensitive type resources based on the value of their entityType
+         * attribute.
          */
         private com.oracle.bmc.datasafe.model.SensitiveTypeEntity entityType = null;
 
         /**
-         * A filter to return the sensitive type resources based on the value of their entityType attribute.
+         * A filter to return the sensitive type resources based on the value of their entityType
+         * attribute.
+         *
          * @param entityType the value to set
          * @return this builder instance
          */
@@ -481,12 +463,15 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * A filter to return only the sensitive types that are children of the sensitive category identified by the specified OCID.
+         * A filter to return only the sensitive types that are children of the sensitive category
+         * identified by the specified OCID.
          */
         private String parentCategoryId = null;
 
         /**
-         * A filter to return only the sensitive types that are children of the sensitive category identified by the specified OCID.
+         * A filter to return only the sensitive types that are children of the sensitive category
+         * identified by the specified OCID.
+         *
          * @param parentCategoryId the value to set
          * @return this builder instance
          */
@@ -496,12 +481,15 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * A filter to return only the sensitive types that have the default masking format identified by the specified OCID.
+         * A filter to return only the sensitive types that have the default masking format
+         * identified by the specified OCID.
          */
         private String defaultMaskingFormatId = null;
 
         /**
-         * A filter to return only the sensitive types that have the default masking format identified by the specified OCID.
+         * A filter to return only the sensitive types that have the default masking format
+         * identified by the specified OCID.
+         *
          * @param defaultMaskingFormatId the value to set
          * @return this builder instance
          */
@@ -511,19 +499,22 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-         * <p>
-         **Example:** 2016-12-19T16:39:57.600Z
+         * A filter to return only the resources that were created after the specified date and
+         * time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using
+         * TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after
+         * that date.
          *
+         * <p>*Example:** 2016-12-19T16:39:57.600Z
          */
         private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
 
         /**
-         * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-         * <p>
-         **Example:** 2016-12-19T16:39:57.600Z
+         * A filter to return only the resources that were created after the specified date and
+         * time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using
+         * TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after
+         * that date.
+         *
+         * <p>*Example:** 2016-12-19T16:39:57.600Z
          *
          * @param timeCreatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
@@ -535,25 +526,22 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * Search for resources that were created before a specific date.
-         * Specifying this parameter corresponding {@code timeCreatedLessThan}
-         * parameter will retrieve all resources created before the
-         * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * Search for resources that were created before a specific date. Specifying this parameter
+         * corresponding {@code timeCreatedLessThan} parameter will retrieve all resources created
+         * before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
          * defined by RFC 3339.
-         * <p>
-         **Example:** 2016-12-19T16:39:57.600Z
          *
+         * <p>*Example:** 2016-12-19T16:39:57.600Z
          */
         private java.util.Date timeCreatedLessThan = null;
 
         /**
-         * Search for resources that were created before a specific date.
-         * Specifying this parameter corresponding {@code timeCreatedLessThan}
-         * parameter will retrieve all resources created before the
-         * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * Search for resources that were created before a specific date. Specifying this parameter
+         * corresponding {@code timeCreatedLessThan} parameter will retrieve all resources created
+         * before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
          * defined by RFC 3339.
-         * <p>
-         **Example:** 2016-12-19T16:39:57.600Z
+         *
+         * <p>*Example:** 2016-12-19T16:39:57.600Z
          *
          * @param timeCreatedLessThan the value to set
          * @return this builder instance
@@ -563,13 +551,12 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /**
-         * The sort order to use, either ascending (ASC) or descending (DESC).
-         */
+        /** The sort order to use, either ascending (ASC) or descending (DESC). */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -579,15 +566,14 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeCreated is descending.
-         * The default order for displayName is ascending.
-         *
+         * The field to sort by. You can specify only one sort order (sortOrder). The default order
+         * for timeCreated is descending. The default order for displayName is ascending.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeCreated is descending.
-         * The default order for displayName is ascending.
+         * The field to sort by. You can specify only one sort order (sortOrder). The default order
+         * for timeCreated is descending. The default order for displayName is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -597,13 +583,12 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /**
-         * Unique identifier for the request.
-         */
+        /** Unique identifier for the request. */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -613,12 +598,17 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List"
+         * call. For details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List"
+         * call. For details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -628,12 +618,19 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving
+         * results. It is usually retrieved from a previous "List" call. For details about how
+         * pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving
+         * results. It is usually retrieved from a previous "List" call. For details about how
+         * pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -642,13 +639,12 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /**
-         * A filter to return only the resources that match the specified lifecycle state.
-         */
+        /** A filter to return only the resources that match the specified lifecycle state. */
         private com.oracle.bmc.datasafe.model.DiscoveryLifecycleState lifecycleState = null;
 
         /**
          * A filter to return only the resources that match the specified lifecycle state.
+         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -660,18 +656,19 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -683,6 +680,7 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListSensitiveTypesRequest o) {
@@ -711,10 +709,11 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * Build the instance of ListSensitiveTypesRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListSensitiveTypesRequest
          */
@@ -728,7 +727,8 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * Build the instance of ListSensitiveTypesRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListSensitiveTypesRequest
@@ -753,12 +753,16 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
             request.page = page;
             request.lifecycleState = lifecycleState;
             return request;
-            // new ListSensitiveTypesRequest(compartmentId, compartmentIdInSubtree, accessLevel, displayName, sensitiveTypeId, sensitiveTypeSource, entityType, parentCategoryId, defaultMaskingFormatId, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, sortOrder, sortBy, opcRequestId, limit, page, lifecycleState);
+            // new ListSensitiveTypesRequest(compartmentId, compartmentIdInSubtree, accessLevel,
+            // displayName, sensitiveTypeId, sensitiveTypeSource, entityType, parentCategoryId,
+            // defaultMaskingFormatId, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan,
+            // sortOrder, sortBy, opcRequestId, limit, page, lifecycleState);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -784,6 +788,7 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

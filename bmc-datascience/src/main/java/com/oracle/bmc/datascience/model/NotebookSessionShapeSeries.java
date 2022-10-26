@@ -4,12 +4,9 @@
  */
 package com.oracle.bmc.datascience.model;
 
-/**
- * The family that the compute shape belongs to.
- *
- **/
+/** The family that the compute shape belongs to. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-public enum NotebookSessionShapeSeries {
+public enum NotebookSessionShapeSeries implements com.oracle.bmc.http.internal.BmcEnum {
     AmdRome("AMD_ROME"),
     IntelSkylake("INTEL_SKYLAKE"),
     NvidiaGpu("NVIDIA_GPU"),

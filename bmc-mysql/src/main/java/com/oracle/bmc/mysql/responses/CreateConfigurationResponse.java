@@ -8,23 +8,19 @@ import com.oracle.bmc.mysql.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * The URI for the entity being described in the response body.
-     */
+    /** The URI for the entity being described in the response body. */
     private String location;
 
     /**
      * The URI for the entity being described in the response body.
+     *
      * @return the value
      */
     public String getLocation() {
         return location;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -37,15 +33,14 @@ public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -54,13 +49,14 @@ public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-     *
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      *
      * @return the value
      */
@@ -68,13 +64,12 @@ public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
         return opcWorkRequestId;
     }
 
-    /**
-     * The returned Configuration instance.
-     */
+    /** The returned Configuration instance. */
     private com.oracle.bmc.mysql.model.Configuration configuration;
 
     /**
      * The returned Configuration instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.mysql.model.Configuration getConfiguration() {
@@ -92,7 +87,7 @@ public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
     })
     private CreateConfigurationResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String location,
             String etag,
             String opcRequestId,
@@ -106,28 +101,30 @@ public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
         this.configuration = configuration;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateConfigurationResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * The URI for the entity being described in the response body.
-         */
+        /** The URI for the entity being described in the response body. */
         private String location;
 
         /**
          * The URI for the entity being described in the response body.
+         *
          * @param location the value to set
          * @return this builder
          */
@@ -136,10 +133,7 @@ public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -154,15 +148,14 @@ public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -173,13 +166,14 @@ public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-         *
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -189,13 +183,12 @@ public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /**
-         * The returned Configuration instance.
-         */
+        /** The returned Configuration instance. */
         private com.oracle.bmc.mysql.model.Configuration configuration;
 
         /**
          * The returned Configuration instance.
+         *
          * @param configuration the value to set
          * @return this builder
          */
@@ -206,8 +199,10 @@ public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateConfigurationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -222,8 +217,10 @@ public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateConfigurationResponse build() {
             return new CreateConfigurationResponse(
                     __httpStatusCode__,
@@ -238,6 +235,7 @@ public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -4,28 +4,31 @@
  */
 package com.oracle.bmc.streaming;
 
-import com.oracle.bmc.streaming.internal.http.*;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.streaming.requests.*;
 import com.oracle.bmc.streaming.responses.*;
 
+import java.util.Objects;
+
 /**
- * Async client implementation for StreamAdmin service. <br/>
- * There are two ways to use async client:
- * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
- * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
- * because the stream will be closed right after the AsyncHandler is invoked. <br/>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
- * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
- * is used, it is still safe to use the Future to determine whether or not the request was completed via
- * Future.isDone/isCancelled.<br/>
- * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for StreamAdmin service. <br>
+ * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
+ * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
+ * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
+ * will be closed right after the AsyncHandler is invoked. <br>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
+ * with the Java Future.<br>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or
+ * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
+ * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
+ * whether or not the request was completed via Future.isDone/isCancelled.<br>
+ * Please refer to
+ * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
-public class StreamAdminAsyncClient implements StreamAdminAsync {
-    /**
-     * Service instance for StreamAdmin.
-     */
+public class StreamAdminAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
+        implements StreamAdminAsync {
+    /** Service instance for StreamAdmin. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("STREAMADMIN")
@@ -36,268 +39,16 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(StreamAdminAsyncClient.class);
 
-    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-            authenticationDetailsProvider;
-
-    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
-            apacheConnectionClosingStrategy;
-    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
-    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
-    private final java.util.Map<
-                    com.oracle.bmc.http.signing.SigningStrategy,
-                    com.oracle.bmc.http.signing.RequestSignerFactory>
-            signingStrategyRequestSignerFactories;
-    private final boolean isNonBufferingApacheClient;
-    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
-
-    /**
-     * Used to synchronize any updates on the `this.client` object.
-     */
-    private final Object clientUpdate = new Object();
-
-    /**
-     * Stores the actual client object used to make the API calls.
-     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
-     *       For any writes to the object, please synchronize on `this.clientUpdate`.
-     */
-    private volatile com.oracle.bmc.http.internal.RestClient client;
-
-    /**
-     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
-     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
-     */
-    private volatile String overrideEndpoint = null;
-
-    /**
-     * Creates a new service instance using the given authentication provider.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     */
-    public StreamAdminAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     */
-    public StreamAdminAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(authenticationDetailsProvider, configuration, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     */
-    public StreamAdminAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     */
-    public StreamAdminAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public StreamAdminAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                additionalClientConfigurators,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public StreamAdminAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
-                        .createDefaultRequestSignerFactories(),
-                additionalClientConfigurators,
-                endpoint);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public StreamAdminAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
-     */
-    public StreamAdminAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
-        this.authenticationDetailsProvider = authenticationDetailsProvider;
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
-                new java.util.ArrayList<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
-            authenticationDetailsConfigurators.addAll(
-                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
-                                    this.authenticationDetailsProvider)
-                            .getClientConfigurators());
-        }
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
-                new java.util.ArrayList<>(additionalClientConfigurators);
-        allConfigurators.addAll(authenticationDetailsConfigurators);
-        this.restClientFactory =
-                restClientFactoryBuilder
-                        .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(allConfigurators)
-                        .build();
-        this.isNonBufferingApacheClient =
-                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        restClientFactory.getClientConfigurator());
-        this.apacheConnectionClosingStrategy =
-                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
-                        restClientFactory.getClientConfigurator());
-        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
-        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
-        this.clientConfigurationToUse = configuration;
-
-        this.refreshClient();
-
-        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
-            com.oracle.bmc.auth.RegionProvider provider =
-                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
-
-            if (provider.getRegion() != null) {
-                this.setRegion(provider.getRegion());
-                if (endpoint != null) {
-                    LOG.info(
-                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
-                            provider.getRegion(),
-                            endpoint);
-                }
-            }
-        }
-        if (endpoint != null) {
-            setEndpoint(endpoint);
-        }
+    private StreamAdminAsyncClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                    authenticationDetailsProvider) {
+        super(builder, authenticationDetailsProvider);
     }
 
     /**
      * Create a builder for this client.
+     *
      * @return builder
      */
     public static Builder builder() {
@@ -305,8 +56,8 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
+     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, StreamAdminAsyncClient> {
@@ -319,121 +70,26 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
 
         /**
          * Build the client.
+         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public StreamAdminAsyncClient build(
                 @javax.annotation.Nonnull
-                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                        authenticationDetailsProvider) {
-            if (authenticationDetailsProvider == null) {
-                throw new NullPointerException(
-                        "authenticationDetailsProvider is marked non-null but is null");
-            }
-            return new StreamAdminAsyncClient(
-                    authenticationDetailsProvider,
-                    configuration,
-                    clientConfigurator,
-                    requestSignerFactory,
-                    signingStrategyRequestSignerFactories,
-                    additionalClientConfigurators,
-                    endpoint);
+                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                                authenticationDetailsProvider) {
+            return new StreamAdminAsyncClient(this, authenticationDetailsProvider);
         }
-    }
-
-    com.oracle.bmc.http.internal.RestClient getClient() {
-        return client;
-    }
-
-    @Override
-    public void refreshClient() {
-        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                this.defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        this.signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
-            }
-        }
-
-        com.oracle.bmc.http.internal.RestClient refreshedClient =
-                this.restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        this.clientConfigurationToUse,
-                        this.isNonBufferingApacheClient);
-
-        synchronized (clientUpdate) {
-            if (this.overrideEndpoint != null) {
-                refreshedClient.setEndpoint(this.overrideEndpoint);
-            }
-
-            this.client = refreshedClient;
-        }
-
-        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint) {
-        LOG.info("Setting endpoint to {}", endpoint);
-
-        synchronized (clientUpdate) {
-            this.overrideEndpoint = endpoint;
-            client.setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
-        }
-        return endpoint;
     }
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        java.util.Optional<String> endpoint =
-                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
-        if (endpoint.isPresent()) {
-            setEndpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + SERVICE + " is not known in region " + region);
-        }
+        super.setRegion(region);
     }
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
-        try {
-            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-            setRegion(region);
-        } catch (IllegalArgumentException e) {
-            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-            setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public void close() {
-        client.close();
+        super.setRegion(regionId);
     }
 
     @Override
@@ -444,54 +100,33 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                                     ChangeConnectHarnessCompartmentRequest,
                                     ChangeConnectHarnessCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeConnectHarnessCompartment");
-        final ChangeConnectHarnessCompartmentRequest interceptedRequest =
-                ChangeConnectHarnessCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeConnectHarnessCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getConnectHarnessId(), "connectHarnessId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeConnectHarnessCompartmentDetails(),
+                "changeConnectHarnessCompartmentDetails is required");
+
+        return clientCall(request, ChangeConnectHarnessCompartmentResponse::builder)
+                .logger(LOG, "changeConnectHarnessCompartment")
+                .serviceDetails(
                         "StreamAdmin",
                         "ChangeConnectHarnessCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/ChangeConnectHarnessCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeConnectHarnessCompartmentResponse>
-                transformer =
-                        ChangeConnectHarnessCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeConnectHarnessCompartmentRequest,
-                        ChangeConnectHarnessCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeConnectHarnessCompartmentRequest,
-                                ChangeConnectHarnessCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeConnectHarnessCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeConnectHarnessCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeConnectHarnessCompartmentRequest,
-                    ChangeConnectHarnessCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/ChangeConnectHarnessCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeConnectHarnessCompartmentRequest::builder)
+                .basePath("/20180418")
+                .appendPathParam("connectharnesses")
+                .appendPathParam(request.getConnectHarnessId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeConnectHarnessCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -500,51 +135,32 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ChangeStreamCompartmentRequest, ChangeStreamCompartmentResponse>
                     handler) {
-        LOG.trace("Called async changeStreamCompartment");
-        final ChangeStreamCompartmentRequest interceptedRequest =
-                ChangeStreamCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeStreamCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getStreamId(), "streamId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeStreamCompartmentDetails(),
+                "changeStreamCompartmentDetails is required");
+
+        return clientCall(request, ChangeStreamCompartmentResponse::builder)
+                .logger(LOG, "changeStreamCompartment")
+                .serviceDetails(
                         "StreamAdmin",
                         "ChangeStreamCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/ChangeStreamCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeStreamCompartmentResponse>
-                transformer =
-                        ChangeStreamCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeStreamCompartmentRequest, ChangeStreamCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeStreamCompartmentRequest, ChangeStreamCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeStreamCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeStreamCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeStreamCompartmentRequest, ChangeStreamCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/ChangeStreamCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeStreamCompartmentRequest::builder)
+                .basePath("/20180418")
+                .appendPathParam("streams")
+                .appendPathParam(request.getStreamId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeStreamCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -555,52 +171,32 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                                     ChangeStreamPoolCompartmentRequest,
                                     ChangeStreamPoolCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeStreamPoolCompartment");
-        final ChangeStreamPoolCompartmentRequest interceptedRequest =
-                ChangeStreamPoolCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeStreamPoolCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getStreamPoolId(), "streamPoolId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeStreamPoolCompartmentDetails(),
+                "changeStreamPoolCompartmentDetails is required");
+
+        return clientCall(request, ChangeStreamPoolCompartmentResponse::builder)
+                .logger(LOG, "changeStreamPoolCompartment")
+                .serviceDetails(
                         "StreamAdmin",
                         "ChangeStreamPoolCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/ChangeStreamPoolCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeStreamPoolCompartmentResponse>
-                transformer =
-                        ChangeStreamPoolCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeStreamPoolCompartmentRequest, ChangeStreamPoolCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeStreamPoolCompartmentRequest,
-                                ChangeStreamPoolCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeStreamPoolCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeStreamPoolCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeStreamPoolCompartmentRequest, ChangeStreamPoolCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/ChangeStreamPoolCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeStreamPoolCompartmentRequest::builder)
+                .basePath("/20180418")
+                .appendPathParam("streampools")
+                .appendPathParam(request.getStreamPoolId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeStreamPoolCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -609,51 +205,31 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateConnectHarnessRequest, CreateConnectHarnessResponse>
                     handler) {
-        LOG.trace("Called async createConnectHarness");
-        final CreateConnectHarnessRequest interceptedRequest =
-                CreateConnectHarnessConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateConnectHarnessConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateConnectHarnessDetails(),
+                "createConnectHarnessDetails is required");
+
+        return clientCall(request, CreateConnectHarnessResponse::builder)
+                .logger(LOG, "createConnectHarness")
+                .serviceDetails(
                         "StreamAdmin",
                         "CreateConnectHarness",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/CreateConnectHarness");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateConnectHarnessResponse>
-                transformer =
-                        CreateConnectHarnessConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateConnectHarnessRequest, CreateConnectHarnessResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateConnectHarnessRequest, CreateConnectHarnessResponse>,
-                        java.util.concurrent.Future<CreateConnectHarnessResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateConnectHarnessDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateConnectHarnessRequest, CreateConnectHarnessResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/CreateConnectHarness")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateConnectHarnessRequest::builder)
+                .basePath("/20180418")
+                .appendPathParam("connectharnesses")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.streaming.model.ConnectHarness.class,
+                        CreateConnectHarnessResponse.Builder::connectHarness)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateConnectHarnessResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateConnectHarnessResponse.Builder::etag)
+                .callAsync(handler);
     }
 
     @Override
@@ -661,48 +237,28 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
             CreateStreamRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateStreamRequest, CreateStreamResponse>
                     handler) {
-        LOG.trace("Called async createStream");
-        final CreateStreamRequest interceptedRequest =
-                CreateStreamConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateStreamConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCreateStreamDetails(), "createStreamDetails is required");
+
+        return clientCall(request, CreateStreamResponse::builder)
+                .logger(LOG, "createStream")
+                .serviceDetails(
                         "StreamAdmin",
                         "CreateStream",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/CreateStream");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateStreamResponse>
-                transformer =
-                        CreateStreamConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateStreamRequest, CreateStreamResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateStreamRequest, CreateStreamResponse>,
-                        java.util.concurrent.Future<CreateStreamResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateStreamDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateStreamRequest, CreateStreamResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/CreateStream")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateStreamRequest::builder)
+                .basePath("/20180418")
+                .appendPathParam("streams")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.streaming.model.Stream.class,
+                        CreateStreamResponse.Builder::stream)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateStreamResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateStreamResponse.Builder::etag)
+                .callAsync(handler);
     }
 
     @Override
@@ -711,50 +267,30 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateStreamPoolRequest, CreateStreamPoolResponse>
                     handler) {
-        LOG.trace("Called async createStreamPool");
-        final CreateStreamPoolRequest interceptedRequest =
-                CreateStreamPoolConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateStreamPoolConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateStreamPoolDetails(), "createStreamPoolDetails is required");
+
+        return clientCall(request, CreateStreamPoolResponse::builder)
+                .logger(LOG, "createStreamPool")
+                .serviceDetails(
                         "StreamAdmin",
                         "CreateStreamPool",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/CreateStreamPool");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateStreamPoolResponse>
-                transformer =
-                        CreateStreamPoolConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateStreamPoolRequest, CreateStreamPoolResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateStreamPoolRequest, CreateStreamPoolResponse>,
-                        java.util.concurrent.Future<CreateStreamPoolResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateStreamPoolDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateStreamPoolRequest, CreateStreamPoolResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/CreateStreamPool")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateStreamPoolRequest::builder)
+                .basePath("/20180418")
+                .appendPathParam("streampools")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.streaming.model.StreamPool.class,
+                        CreateStreamPoolResponse.Builder::streamPool)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateStreamPoolResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateStreamPoolResponse.Builder::etag)
+                .callAsync(handler);
     }
 
     @Override
@@ -763,45 +299,26 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteConnectHarnessRequest, DeleteConnectHarnessResponse>
                     handler) {
-        LOG.trace("Called async deleteConnectHarness");
-        final DeleteConnectHarnessRequest interceptedRequest =
-                DeleteConnectHarnessConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteConnectHarnessConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getConnectHarnessId(), "connectHarnessId must not be blank");
+
+        return clientCall(request, DeleteConnectHarnessResponse::builder)
+                .logger(LOG, "deleteConnectHarness")
+                .serviceDetails(
                         "StreamAdmin",
                         "DeleteConnectHarness",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/DeleteConnectHarness");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteConnectHarnessResponse>
-                transformer =
-                        DeleteConnectHarnessConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteConnectHarnessRequest, DeleteConnectHarnessResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteConnectHarnessRequest, DeleteConnectHarnessResponse>,
-                        java.util.concurrent.Future<DeleteConnectHarnessResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteConnectHarnessRequest, DeleteConnectHarnessResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/DeleteConnectHarness")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteConnectHarnessRequest::builder)
+                .basePath("/20180418")
+                .appendPathParam("connectharnesses")
+                .appendPathParam(request.getConnectHarnessId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteConnectHarnessResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -809,43 +326,26 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
             DeleteStreamRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteStreamRequest, DeleteStreamResponse>
                     handler) {
-        LOG.trace("Called async deleteStream");
-        final DeleteStreamRequest interceptedRequest =
-                DeleteStreamConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteStreamConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getStreamId(), "streamId must not be blank");
+
+        return clientCall(request, DeleteStreamResponse::builder)
+                .logger(LOG, "deleteStream")
+                .serviceDetails(
                         "StreamAdmin",
                         "DeleteStream",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/DeleteStream");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteStreamResponse>
-                transformer =
-                        DeleteStreamConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteStreamRequest, DeleteStreamResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteStreamRequest, DeleteStreamResponse>,
-                        java.util.concurrent.Future<DeleteStreamResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteStreamRequest, DeleteStreamResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/DeleteStream")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteStreamRequest::builder)
+                .basePath("/20180418")
+                .appendPathParam("streams")
+                .appendPathParam(request.getStreamId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteStreamResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -854,44 +354,26 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteStreamPoolRequest, DeleteStreamPoolResponse>
                     handler) {
-        LOG.trace("Called async deleteStreamPool");
-        final DeleteStreamPoolRequest interceptedRequest =
-                DeleteStreamPoolConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteStreamPoolConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getStreamPoolId(), "streamPoolId must not be blank");
+
+        return clientCall(request, DeleteStreamPoolResponse::builder)
+                .logger(LOG, "deleteStreamPool")
+                .serviceDetails(
                         "StreamAdmin",
                         "DeleteStreamPool",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/DeleteStreamPool");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteStreamPoolResponse>
-                transformer =
-                        DeleteStreamPoolConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteStreamPoolRequest, DeleteStreamPoolResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteStreamPoolRequest, DeleteStreamPoolResponse>,
-                        java.util.concurrent.Future<DeleteStreamPoolResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteStreamPoolRequest, DeleteStreamPoolResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/DeleteStreamPool")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteStreamPoolRequest::builder)
+                .basePath("/20180418")
+                .appendPathParam("streampools")
+                .appendPathParam(request.getStreamPoolId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteStreamPoolResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -900,44 +382,29 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetConnectHarnessRequest, GetConnectHarnessResponse>
                     handler) {
-        LOG.trace("Called async getConnectHarness");
-        final GetConnectHarnessRequest interceptedRequest =
-                GetConnectHarnessConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetConnectHarnessConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getConnectHarnessId(), "connectHarnessId must not be blank");
+
+        return clientCall(request, GetConnectHarnessResponse::builder)
+                .logger(LOG, "getConnectHarness")
+                .serviceDetails(
                         "StreamAdmin",
                         "GetConnectHarness",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/GetConnectHarness");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetConnectHarnessResponse>
-                transformer =
-                        GetConnectHarnessConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetConnectHarnessRequest, GetConnectHarnessResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetConnectHarnessRequest, GetConnectHarnessResponse>,
-                        java.util.concurrent.Future<GetConnectHarnessResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetConnectHarnessRequest, GetConnectHarnessResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/GetConnectHarness")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetConnectHarnessRequest::builder)
+                .basePath("/20180418")
+                .appendPathParam("connectharnesses")
+                .appendPathParam(request.getConnectHarnessId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.streaming.model.ConnectHarness.class,
+                        GetConnectHarnessResponse.Builder::connectHarness)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetConnectHarnessResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetConnectHarnessResponse.Builder::etag)
+                .callAsync(handler);
     }
 
     @Override
@@ -945,41 +412,29 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
             GetStreamRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetStreamRequest, GetStreamResponse>
                     handler) {
-        LOG.trace("Called async getStream");
-        final GetStreamRequest interceptedRequest = GetStreamConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetStreamConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getStreamId(), "streamId must not be blank");
+
+        return clientCall(request, GetStreamResponse::builder)
+                .logger(LOG, "getStream")
+                .serviceDetails(
                         "StreamAdmin",
                         "GetStream",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/GetStream");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetStreamResponse>
-                transformer =
-                        GetStreamConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetStreamRequest, GetStreamResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<GetStreamRequest, GetStreamResponse>,
-                        java.util.concurrent.Future<GetStreamResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetStreamRequest, GetStreamResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/GetStream")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetStreamRequest::builder)
+                .basePath("/20180418")
+                .appendPathParam("streams")
+                .appendPathParam(request.getStreamId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.streaming.model.Stream.class,
+                        GetStreamResponse.Builder::stream)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetStreamResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetStreamResponse.Builder::etag)
+                .callAsync(handler);
     }
 
     @Override
@@ -987,43 +442,29 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
             GetStreamPoolRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetStreamPoolRequest, GetStreamPoolResponse>
                     handler) {
-        LOG.trace("Called async getStreamPool");
-        final GetStreamPoolRequest interceptedRequest =
-                GetStreamPoolConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetStreamPoolConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getStreamPoolId(), "streamPoolId must not be blank");
+
+        return clientCall(request, GetStreamPoolResponse::builder)
+                .logger(LOG, "getStreamPool")
+                .serviceDetails(
                         "StreamAdmin",
                         "GetStreamPool",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetStreamPoolResponse>
-                transformer =
-                        GetStreamPoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetStreamPoolRequest, GetStreamPoolResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetStreamPoolRequest, GetStreamPoolResponse>,
-                        java.util.concurrent.Future<GetStreamPoolResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetStreamPoolRequest, GetStreamPoolResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetStreamPoolRequest::builder)
+                .basePath("/20180418")
+                .appendPathParam("streampools")
+                .appendPathParam(request.getStreamPoolId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.streaming.model.StreamPool.class,
+                        GetStreamPoolResponse.Builder::streamPool)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetStreamPoolResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetStreamPoolResponse.Builder::etag)
+                .callAsync(handler);
     }
 
     @Override
@@ -1032,45 +473,38 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListConnectHarnessesRequest, ListConnectHarnessesResponse>
                     handler) {
-        LOG.trace("Called async listConnectHarnesses");
-        final ListConnectHarnessesRequest interceptedRequest =
-                ListConnectHarnessesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListConnectHarnessesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListConnectHarnessesResponse::builder)
+                .logger(LOG, "listConnectHarnesses")
+                .serviceDetails(
                         "StreamAdmin",
                         "ListConnectHarnesses",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarnessSummary/ListConnectHarnesses");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListConnectHarnessesResponse>
-                transformer =
-                        ListConnectHarnessesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListConnectHarnessesRequest, ListConnectHarnessesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListConnectHarnessesRequest, ListConnectHarnessesResponse>,
-                        java.util.concurrent.Future<ListConnectHarnessesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListConnectHarnessesRequest, ListConnectHarnessesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarnessSummary/ListConnectHarnesses")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListConnectHarnessesRequest::builder)
+                .basePath("/20180418")
+                .appendPathParam("connectharnesses")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.streaming.model.ConnectHarnessSummary.class,
+                        ListConnectHarnessesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListConnectHarnessesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListConnectHarnessesResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListConnectHarnessesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1079,44 +513,38 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListStreamPoolsRequest, ListStreamPoolsResponse>
                     handler) {
-        LOG.trace("Called async listStreamPools");
-        final ListStreamPoolsRequest interceptedRequest =
-                ListStreamPoolsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListStreamPoolsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListStreamPoolsResponse::builder)
+                .logger(LOG, "listStreamPools")
+                .serviceDetails(
                         "StreamAdmin",
                         "ListStreamPools",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPoolSummary/ListStreamPools");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListStreamPoolsResponse>
-                transformer =
-                        ListStreamPoolsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListStreamPoolsRequest, ListStreamPoolsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListStreamPoolsRequest, ListStreamPoolsResponse>,
-                        java.util.concurrent.Future<ListStreamPoolsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListStreamPoolsRequest, ListStreamPoolsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPoolSummary/ListStreamPools")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListStreamPoolsRequest::builder)
+                .basePath("/20180418")
+                .appendPathParam("streampools")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.streaming.model.StreamPoolSummary.class,
+                        ListStreamPoolsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListStreamPoolsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListStreamPoolsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListStreamPoolsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1124,43 +552,38 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
             ListStreamsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListStreamsRequest, ListStreamsResponse>
                     handler) {
-        LOG.trace("Called async listStreams");
-        final ListStreamsRequest interceptedRequest =
-                ListStreamsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListStreamsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        return clientCall(request, ListStreamsResponse::builder)
+                .logger(LOG, "listStreams")
+                .serviceDetails(
                         "StreamAdmin",
                         "ListStreams",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamSummary/ListStreams");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListStreamsResponse>
-                transformer =
-                        ListStreamsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListStreamsRequest, ListStreamsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListStreamsRequest, ListStreamsResponse>,
-                        java.util.concurrent.Future<ListStreamsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListStreamsRequest, ListStreamsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamSummary/ListStreams")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListStreamsRequest::builder)
+                .basePath("/20180418")
+                .appendPathParam("streams")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("streamPoolId", request.getStreamPoolId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.streaming.model.StreamSummary.class,
+                        ListStreamsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListStreamsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListStreamsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListStreamsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1169,50 +592,34 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateConnectHarnessRequest, UpdateConnectHarnessResponse>
                     handler) {
-        LOG.trace("Called async updateConnectHarness");
-        final UpdateConnectHarnessRequest interceptedRequest =
-                UpdateConnectHarnessConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateConnectHarnessConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getConnectHarnessId(), "connectHarnessId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateConnectHarnessDetails(),
+                "updateConnectHarnessDetails is required");
+
+        return clientCall(request, UpdateConnectHarnessResponse::builder)
+                .logger(LOG, "updateConnectHarness")
+                .serviceDetails(
                         "StreamAdmin",
                         "UpdateConnectHarness",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/UpdateConnectHarness");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateConnectHarnessResponse>
-                transformer =
-                        UpdateConnectHarnessConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateConnectHarnessRequest, UpdateConnectHarnessResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateConnectHarnessRequest, UpdateConnectHarnessResponse>,
-                        java.util.concurrent.Future<UpdateConnectHarnessResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateConnectHarnessDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateConnectHarnessRequest, UpdateConnectHarnessResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/UpdateConnectHarness")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateConnectHarnessRequest::builder)
+                .basePath("/20180418")
+                .appendPathParam("connectharnesses")
+                .appendPathParam(request.getConnectHarnessId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.streaming.model.ConnectHarness.class,
+                        UpdateConnectHarnessResponse.Builder::connectHarness)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateConnectHarnessResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateConnectHarnessResponse.Builder::etag)
+                .callAsync(handler);
     }
 
     @Override
@@ -1220,48 +627,32 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
             UpdateStreamRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateStreamRequest, UpdateStreamResponse>
                     handler) {
-        LOG.trace("Called async updateStream");
-        final UpdateStreamRequest interceptedRequest =
-                UpdateStreamConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateStreamConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getStreamId(), "streamId must not be blank");
+        Objects.requireNonNull(request.getUpdateStreamDetails(), "updateStreamDetails is required");
+
+        return clientCall(request, UpdateStreamResponse::builder)
+                .logger(LOG, "updateStream")
+                .serviceDetails(
                         "StreamAdmin",
                         "UpdateStream",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/UpdateStream");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateStreamResponse>
-                transformer =
-                        UpdateStreamConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateStreamRequest, UpdateStreamResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateStreamRequest, UpdateStreamResponse>,
-                        java.util.concurrent.Future<UpdateStreamResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateStreamDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateStreamRequest, UpdateStreamResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/UpdateStream")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateStreamRequest::builder)
+                .basePath("/20180418")
+                .appendPathParam("streams")
+                .appendPathParam(request.getStreamId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.streaming.model.Stream.class,
+                        UpdateStreamResponse.Builder::stream)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateStreamResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateStreamResponse.Builder::etag)
+                .callAsync(handler);
     }
 
     @Override
@@ -1270,48 +661,191 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateStreamPoolRequest, UpdateStreamPoolResponse>
                     handler) {
-        LOG.trace("Called async updateStreamPool");
-        final UpdateStreamPoolRequest interceptedRequest =
-                UpdateStreamPoolConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateStreamPoolConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getStreamPoolId(), "streamPoolId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateStreamPoolDetails(), "updateStreamPoolDetails is required");
+
+        return clientCall(request, UpdateStreamPoolResponse::builder)
+                .logger(LOG, "updateStreamPool")
+                .serviceDetails(
                         "StreamAdmin",
                         "UpdateStreamPool",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/UpdateStreamPool");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateStreamPoolResponse>
-                transformer =
-                        UpdateStreamPoolConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateStreamPoolRequest, UpdateStreamPoolResponse>
-                handlerToUse = handler;
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/UpdateStreamPool")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateStreamPoolRequest::builder)
+                .basePath("/20180418")
+                .appendPathParam("streampools")
+                .appendPathParam(request.getStreamPoolId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.streaming.model.StreamPool.class,
+                        UpdateStreamPoolResponse.Builder::streamPool)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateStreamPoolResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateStreamPoolResponse.Builder::etag)
+                .callAsync(handler);
+    }
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateStreamPoolRequest, UpdateStreamPoolResponse>,
-                        java.util.concurrent.Future<UpdateStreamPoolResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateStreamPoolDetails(),
-                                ib,
-                                transformer);
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public StreamAdminAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(builder(), authenticationDetailsProvider);
+    }
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateStreamPoolRequest, UpdateStreamPoolResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public StreamAdminAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(builder().configuration(configuration), authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public StreamAdminAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                builder().configuration(configuration).clientConfigurator(clientConfigurator),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public StreamAdminAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public StreamAdminAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public StreamAdminAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public StreamAdminAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider);
     }
 }

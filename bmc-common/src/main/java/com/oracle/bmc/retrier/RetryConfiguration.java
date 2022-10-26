@@ -16,9 +16,9 @@ import java.util.concurrent.TimeUnit;
 /**
  * Configuration used for retrying.
  *
- * The default termination strategy is a single attempt (i.e. no retry).
- * The default delay strategy is an exponential backoff strategy to a max wait of 30 seconds.
- * The default retry condition is {@link DefaultRetryCondition}.
+ * <p>The default termination strategy is a single attempt (i.e. no retry). The default delay
+ * strategy is an exponential backoff strategy to a max wait of 30 seconds. The default retry
+ * condition is {@link DefaultRetryCondition}.
  */
 public class RetryConfiguration extends WaiterConfiguration {
     public static final RetryConfiguration NO_RETRY_CONFIGURATION =
@@ -29,6 +29,8 @@ public class RetryConfiguration extends WaiterConfiguration {
 
     public static final RetryConfiguration SDK_DEFAULT_RETRY_CONFIGURATION =
             RetryConfiguration.builder()
+                    .terminationStrategy(new MaxAttemptsTerminationStrategy(8))
+                    .delayStrategy(new ExponentialBackoffDelayStrategyWithJitter(30))
                     .terminationStrategy(
                             new MaxAttemptsTerminationStrategy(DEFAULT_MAX_RETRY_ATTEMPTS))
                     .delayStrategy(
@@ -67,15 +69,14 @@ public class RetryConfiguration extends WaiterConfiguration {
 
     /**
      * Create a builder for retry configuration
+     *
      * @return builder
      */
     public static Builder builder() {
         return new Builder();
     }
 
-    /**
-     * Builder class for retry configuration.
-     */
+    /** Builder class for retry configuration. */
     public static class Builder {
         private static final TerminationStrategy NO_RETRY_TERMINATION_STRATEGY =
                 new MaxAttemptsTerminationStrategy(1);
@@ -127,6 +128,7 @@ public class RetryConfiguration extends WaiterConfiguration {
 
         /**
          * Build the retry configuration
+         *
          * @return the retry configuration
          */
         public RetryConfiguration build() {

@@ -6,111 +6,88 @@ package com.oracle.bmc.cloudbridge.requests;
 
 import com.oracle.bmc.cloudbridge.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListAgentDependenciesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAgentDependenciesRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListAgentDependenciesExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ListAgentDependenciesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public class ListAgentDependenciesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The ID of the compartment in which to list resources.
-     */
+    /** The ID of the compartment in which to list resources. */
     private String compartmentId;
 
-    /**
-     * The ID of the compartment in which to list resources.
-     */
+    /** The ID of the compartment in which to list resources. */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * A filter to return only resources that match the given Agent ID.
-     */
+    /** A filter to return only resources that match the given Agent ID. */
     private String agentId;
 
-    /**
-     * A filter to return only resources that match the given Agent ID.
-     */
+    /** A filter to return only resources that match the given Agent ID. */
     public String getAgentId() {
         return agentId;
     }
-    /**
-     * A filter to return only resources that match the given environment ID.
-     */
+    /** A filter to return only resources that match the given environment ID. */
     private String environmentId;
 
-    /**
-     * A filter to return only resources that match the given environment ID.
-     */
+    /** A filter to return only resources that match the given environment ID. */
     public String getEnvironmentId() {
         return environmentId;
     }
-    /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
-     */
+    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
     private com.oracle.bmc.cloudbridge.model.AgentDependency.LifecycleState lifecycleState;
 
-    /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
-     */
+    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
     public com.oracle.bmc.cloudbridge.model.AgentDependency.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /**
-     * A filter to return only resources that match the entire display name given.
-     */
+    /** A filter to return only resources that match the entire display name given. */
     private String displayName;
 
-    /**
-     * A filter to return only resources that match the entire display name given.
-     */
+    /** A filter to return only resources that match the entire display name given. */
     public String getDisplayName() {
         return displayName;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from
+     * the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from
+     * the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order to use, either 'ASC' or 'DESC'.
-     */
+    /** The sort order to use, either 'ASC' or 'DESC'. */
     private com.oracle.bmc.cloudbridge.model.SortOrders sortOrder;
 
-    /**
-     * The sort order to use, either 'ASC' or 'DESC'.
-     */
+    /** The sort order to use, either 'ASC' or 'DESC'. */
     public com.oracle.bmc.cloudbridge.model.SortOrders getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
-     *
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
+     * descending. Default order for displayName is ascending.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
-     *
-     **/
-    public enum SortBy {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
+     * descending. Default order for displayName is ascending.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TimeCreated("timeCreated"),
         TimeUpdated("timeUpdated"),
         DisplayName("displayName"),
@@ -145,20 +122,16 @@ public class ListAgentDependenciesRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
-     *
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
+     * descending. Default order for displayName is ascending.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -166,17 +139,15 @@ public class ListAgentDependenciesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListAgentDependenciesRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The ID of the compartment in which to list resources.
-         */
+        /** The ID of the compartment in which to list resources. */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -185,13 +156,12 @@ public class ListAgentDependenciesRequest
             return this;
         }
 
-        /**
-         * A filter to return only resources that match the given Agent ID.
-         */
+        /** A filter to return only resources that match the given Agent ID. */
         private String agentId = null;
 
         /**
          * A filter to return only resources that match the given Agent ID.
+         *
          * @param agentId the value to set
          * @return this builder instance
          */
@@ -200,13 +170,12 @@ public class ListAgentDependenciesRequest
             return this;
         }
 
-        /**
-         * A filter to return only resources that match the given environment ID.
-         */
+        /** A filter to return only resources that match the given environment ID. */
         private String environmentId = null;
 
         /**
          * A filter to return only resources that match the given environment ID.
+         *
          * @param environmentId the value to set
          * @return this builder instance
          */
@@ -223,6 +192,7 @@ public class ListAgentDependenciesRequest
 
         /**
          * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -232,13 +202,12 @@ public class ListAgentDependenciesRequest
             return this;
         }
 
-        /**
-         * A filter to return only resources that match the entire display name given.
-         */
+        /** A filter to return only resources that match the entire display name given. */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
+         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -247,13 +216,12 @@ public class ListAgentDependenciesRequest
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -263,12 +231,15 @@ public class ListAgentDependenciesRequest
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come
+         * from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come
+         * from the {@code opc-next-page} header field of a previous response.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -277,13 +248,12 @@ public class ListAgentDependenciesRequest
             return this;
         }
 
-        /**
-         * The sort order to use, either 'ASC' or 'DESC'.
-         */
+        /** The sort order to use, either 'ASC' or 'DESC'. */
         private com.oracle.bmc.cloudbridge.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -293,13 +263,14 @@ public class ListAgentDependenciesRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
-         *
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
+         * is descending. Default order for displayName is ascending.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
+         * is descending. Default order for displayName is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -309,13 +280,12 @@ public class ListAgentDependenciesRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -326,18 +296,19 @@ public class ListAgentDependenciesRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -349,6 +320,7 @@ public class ListAgentDependenciesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListAgentDependenciesRequest o) {
@@ -370,10 +342,11 @@ public class ListAgentDependenciesRequest
         /**
          * Build the instance of ListAgentDependenciesRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListAgentDependenciesRequest
          */
@@ -387,7 +360,8 @@ public class ListAgentDependenciesRequest
         /**
          * Build the instance of ListAgentDependenciesRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListAgentDependenciesRequest
@@ -405,12 +379,14 @@ public class ListAgentDependenciesRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListAgentDependenciesRequest(compartmentId, agentId, environmentId, lifecycleState, displayName, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListAgentDependenciesRequest(compartmentId, agentId, environmentId,
+            // lifecycleState, displayName, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -429,6 +405,7 @@ public class ListAgentDependenciesRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,19 +5,20 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * The domain model that is associated with a tenancy.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The domain model that is associated with a tenancy. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Domain.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Domain extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Domain extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -60,81 +61,76 @@ public final class Domain extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the domain.
-         **/
+        /** The OCID of the domain. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the domain.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The domain name.
-         **/
+        /** The domain name. */
         @com.fasterxml.jackson.annotation.JsonProperty("domainName")
         private String domainName;
 
         /**
          * The domain name.
+         *
          * @param domainName the value to set
          * @return this builder
-         **/
+         */
         public Builder domainName(String domainName) {
             this.domainName = domainName;
             this.__explicitlySet__.add("domainName");
             return this;
         }
-        /**
-         * The OCID of the tenancy that has started the registration process for this domain.
-         **/
+        /** The OCID of the tenancy that has started the registration process for this domain. */
         @com.fasterxml.jackson.annotation.JsonProperty("ownerId")
         private String ownerId;
 
         /**
          * The OCID of the tenancy that has started the registration process for this domain.
+         *
          * @param ownerId the value to set
          * @return this builder
-         **/
+         */
         public Builder ownerId(String ownerId) {
             this.ownerId = ownerId;
             this.__explicitlySet__.add("ownerId");
             return this;
         }
-        /**
-         * Lifecycle state of the domain.
-         **/
+        /** Lifecycle state of the domain. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * Lifecycle state of the domain.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * Status of the domain.
-         **/
+        /** Status of the domain. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * Status of the domain.
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -142,31 +138,31 @@ public final class Domain extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         }
         /**
          * The code that the owner of the domain will need to add as a TXT record to their domain.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("txtRecord")
         private String txtRecord;
 
         /**
          * The code that the owner of the domain will need to add as a TXT record to their domain.
+         *
          * @param txtRecord the value to set
          * @return this builder
-         **/
+         */
         public Builder txtRecord(String txtRecord) {
             this.txtRecord = txtRecord;
             this.__explicitlySet__.add("txtRecord");
             return this;
         }
-        /**
-         * Date-time when this domain was created. An RFC 3339-formatted date and time string.
-         **/
+        /** Date-time when this domain was created. An RFC 3339-formatted date and time string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * Date-time when this domain was created. An RFC 3339-formatted date and time string.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -174,35 +170,35 @@ public final class Domain extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         }
         /**
          * Date-time when this domain was last updated. An RFC 3339-formatted date and time string.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * Date-time when this domain was last updated. An RFC 3339-formatted date and time string.
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -211,8 +207,7 @@ public final class Domain extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -222,7 +217,7 @@ public final class Domain extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -230,20 +225,19 @@ public final class Domain extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         *
-         **/
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         **/
+         */
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -312,9 +306,7 @@ public final class Domain extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -323,59 +315,54 @@ public final class Domain extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the domain.
-     **/
+    /** The OCID of the domain. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the domain.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The domain name.
-     **/
+    /** The domain name. */
     @com.fasterxml.jackson.annotation.JsonProperty("domainName")
     private final String domainName;
 
     /**
      * The domain name.
+     *
      * @return the value
-     **/
+     */
     public String getDomainName() {
         return domainName;
     }
 
-    /**
-     * The OCID of the tenancy that has started the registration process for this domain.
-     **/
+    /** The OCID of the tenancy that has started the registration process for this domain. */
     @com.fasterxml.jackson.annotation.JsonProperty("ownerId")
     private final String ownerId;
 
     /**
      * The OCID of the tenancy that has started the registration process for this domain.
+     *
      * @return the value
-     **/
+     */
     public String getOwnerId() {
         return ownerId;
     }
 
-    /**
-     * Lifecycle state of the domain.
-     **/
-    public enum LifecycleState {
+    /** Lifecycle state of the domain. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Active("ACTIVE"),
         Deleted("DELETED"),
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -414,24 +401,21 @@ public final class Domain extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return UnknownEnumValue;
         }
     };
-    /**
-     * Lifecycle state of the domain.
-     **/
+    /** Lifecycle state of the domain. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * Lifecycle state of the domain.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * Status of the domain.
-     **/
-    public enum Status {
+    /** Status of the domain. */
+    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Pending("PENDING"),
         Releasing("RELEASING"),
         Released("RELEASED"),
@@ -442,8 +426,8 @@ public final class Domain extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -481,112 +465,105 @@ public final class Domain extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return UnknownEnumValue;
         }
     };
-    /**
-     * Status of the domain.
-     **/
+    /** Status of the domain. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * Status of the domain.
+     *
      * @return the value
-     **/
+     */
     public Status getStatus() {
         return status;
     }
 
-    /**
-     * The code that the owner of the domain will need to add as a TXT record to their domain.
-     **/
+    /** The code that the owner of the domain will need to add as a TXT record to their domain. */
     @com.fasterxml.jackson.annotation.JsonProperty("txtRecord")
     private final String txtRecord;
 
     /**
      * The code that the owner of the domain will need to add as a TXT record to their domain.
+     *
      * @return the value
-     **/
+     */
     public String getTxtRecord() {
         return txtRecord;
     }
 
-    /**
-     * Date-time when this domain was created. An RFC 3339-formatted date and time string.
-     **/
+    /** Date-time when this domain was created. An RFC 3339-formatted date and time string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * Date-time when this domain was created. An RFC 3339-formatted date and time string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * Date-time when this domain was last updated. An RFC 3339-formatted date and time string.
-     **/
+    /** Date-time when this domain was last updated. An RFC 3339-formatted date and time string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * Date-time when this domain was last updated. An RFC 3339-formatted date and time string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     *
-     **/
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -598,6 +575,7 @@ public final class Domain extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

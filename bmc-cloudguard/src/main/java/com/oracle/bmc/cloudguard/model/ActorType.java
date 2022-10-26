@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/**
- * Actor type who performed the operation
- **/
+/** Actor type who performed the operation */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum ActorType {
+public enum ActorType implements com.oracle.bmc.http.internal.BmcEnum {
     CloudGuardService("CLOUD_GUARD_SERVICE"),
     Correlation("CORRELATION"),
     Responder("RESPONDER"),

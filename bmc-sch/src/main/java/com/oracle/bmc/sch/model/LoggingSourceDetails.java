@@ -5,35 +5,30 @@
 package com.oracle.bmc.sch.model;
 
 /**
- * The Logging source.
- * For configuration instructions, see
- * [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The Logging source. For configuration instructions, see [To create a service
+ * connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = LoggingSourceDetails.Builder.class
-)
+        builder = LoggingSourceDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "kind"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "kind")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class LoggingSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The logs for this Logging source.
-         *
-         **/
+        /** The logs for this Logging source. */
         @com.fasterxml.jackson.annotation.JsonProperty("logSources")
         private java.util.List<LogSource> logSources;
 
@@ -42,7 +37,7 @@ public final class LoggingSourceDetails extends SourceDetails {
          *
          * @param logSources the value to set
          * @return this builder
-         **/
+         */
         public Builder logSources(java.util.List<LogSource> logSources) {
             this.logSources = logSources;
             this.__explicitlySet__.add("logSources");
@@ -69,9 +64,7 @@ public final class LoggingSourceDetails extends SourceDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -86,10 +79,7 @@ public final class LoggingSourceDetails extends SourceDetails {
         this.logSources = logSources;
     }
 
-    /**
-     * The logs for this Logging source.
-     *
-     **/
+    /** The logs for this Logging source. */
     @com.fasterxml.jackson.annotation.JsonProperty("logSources")
     private final java.util.List<LogSource> logSources;
 
@@ -97,7 +87,7 @@ public final class LoggingSourceDetails extends SourceDetails {
      * The logs for this Logging source.
      *
      * @return the value
-     **/
+     */
     public java.util.List<LogSource> getLogSources() {
         return logSources;
     }
@@ -109,6 +99,7 @@ public final class LoggingSourceDetails extends SourceDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

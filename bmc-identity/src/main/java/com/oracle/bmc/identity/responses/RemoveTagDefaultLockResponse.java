@@ -8,39 +8,28 @@ import com.oracle.bmc.identity.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class RemoveTagDefaultLockResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     *
-     */
+    /** */
     private String opcRequestId;
 
-    /**
-     *
-     * @return the value
-     */
+    /** @return the value */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /**
-     *
-     */
+    /** */
     private String etag;
 
-    /**
-     *
-     * @return the value
-     */
+    /** @return the value */
     public String getEtag() {
         return etag;
     }
 
-    /**
-     * The returned TagDefault instance.
-     */
+    /** The returned TagDefault instance. */
     private com.oracle.bmc.identity.model.TagDefault tagDefault;
 
     /**
      * The returned TagDefault instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.identity.model.TagDefault getTagDefault() {
@@ -56,7 +45,7 @@ public class RemoveTagDefaultLockResponse extends com.oracle.bmc.responses.BmcRe
     })
     private RemoveTagDefaultLockResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.identity.model.TagDefault tagDefault) {
@@ -66,28 +55,28 @@ public class RemoveTagDefaultLockResponse extends com.oracle.bmc.responses.BmcRe
         this.tagDefault = tagDefault;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<RemoveTagDefaultLockResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         *
-         */
+        /** */
         private String opcRequestId;
 
         /**
-         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -96,13 +85,10 @@ public class RemoveTagDefaultLockResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /**
-         *
-         */
+        /** */
         private String etag;
 
         /**
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -111,13 +97,12 @@ public class RemoveTagDefaultLockResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /**
-         * The returned TagDefault instance.
-         */
+        /** The returned TagDefault instance. */
         private com.oracle.bmc.identity.model.TagDefault tagDefault;
 
         /**
          * The returned TagDefault instance.
+         *
          * @param tagDefault the value to set
          * @return this builder
          */
@@ -128,8 +113,10 @@ public class RemoveTagDefaultLockResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(RemoveTagDefaultLockResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -142,8 +129,10 @@ public class RemoveTagDefaultLockResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public RemoveTagDefaultLockResponse build() {
             return new RemoveTagDefaultLockResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, tagDefault);
@@ -152,6 +141,7 @@ public class RemoveTagDefaultLockResponse extends com.oracle.bmc.responses.BmcRe
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

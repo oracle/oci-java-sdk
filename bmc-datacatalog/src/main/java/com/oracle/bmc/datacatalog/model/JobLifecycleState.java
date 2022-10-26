@@ -5,14 +5,13 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Lifecycle state for jobs.
- * ACTIVE    - The job is active and will execute based on it's schedule information.
- * INACTIVE  - The job is inactive and will not execute based on it's schedule until it is ACTIVE.
- * EXPIRED - The job's schedule has expired and will not result in any further executions. This is a terminal state.
- *
- **/
+ * Lifecycle state for jobs. ACTIVE - The job is active and will execute based on it's schedule
+ * information. INACTIVE - The job is inactive and will not execute based on it's schedule until it
+ * is ACTIVE. EXPIRED - The job's schedule has expired and will not result in any further
+ * executions. This is a terminal state.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-public enum JobLifecycleState {
+public enum JobLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Active("ACTIVE"),
     Inactive("INACTIVE"),
     Expired("EXPIRED"),

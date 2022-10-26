@@ -5,23 +5,22 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * User.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * User. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SubscribedServiceUser.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SubscribedServiceUser.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SubscribedServiceUser
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -55,10 +54,7 @@ public final class SubscribedServiceUser
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Name.
-         *
-         **/
+        /** Name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -67,16 +63,13 @@ public final class SubscribedServiceUser
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Username.
-         *
-         **/
+        /** Username. */
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
@@ -85,16 +78,13 @@ public final class SubscribedServiceUser
          *
          * @param username the value to set
          * @return this builder
-         **/
+         */
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
-        /**
-         * First name.
-         *
-         **/
+        /** First name. */
         @com.fasterxml.jackson.annotation.JsonProperty("firstName")
         private String firstName;
 
@@ -103,16 +93,13 @@ public final class SubscribedServiceUser
          *
          * @param firstName the value to set
          * @return this builder
-         **/
+         */
         public Builder firstName(String firstName) {
             this.firstName = firstName;
             this.__explicitlySet__.add("firstName");
             return this;
         }
-        /**
-         * Last name.
-         *
-         **/
+        /** Last name. */
         @com.fasterxml.jackson.annotation.JsonProperty("lastName")
         private String lastName;
 
@@ -121,16 +108,13 @@ public final class SubscribedServiceUser
          *
          * @param lastName the value to set
          * @return this builder
-         **/
+         */
         public Builder lastName(String lastName) {
             this.lastName = lastName;
             this.__explicitlySet__.add("lastName");
             return this;
         }
-        /**
-         * Email.
-         *
-         **/
+        /** Email. */
         @com.fasterxml.jackson.annotation.JsonProperty("email")
         private String email;
 
@@ -139,16 +123,13 @@ public final class SubscribedServiceUser
          *
          * @param email the value to set
          * @return this builder
-         **/
+         */
         public Builder email(String email) {
             this.email = email;
             this.__explicitlySet__.add("email");
             return this;
         }
-        /**
-         * TCA contact ID.
-         *
-         **/
+        /** TCA contact ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("tcaContactId")
         private Long tcaContactId;
 
@@ -157,16 +138,13 @@ public final class SubscribedServiceUser
          *
          * @param tcaContactId the value to set
          * @return this builder
-         **/
+         */
         public Builder tcaContactId(Long tcaContactId) {
             this.tcaContactId = tcaContactId;
             this.__explicitlySet__.add("tcaContactId");
             return this;
         }
-        /**
-         * TCA customer account site ID.
-         *
-         **/
+        /** TCA customer account site ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("tcaCustAccntSiteId")
         private Long tcaCustAccntSiteId;
 
@@ -175,16 +153,13 @@ public final class SubscribedServiceUser
          *
          * @param tcaCustAccntSiteId the value to set
          * @return this builder
-         **/
+         */
         public Builder tcaCustAccntSiteId(Long tcaCustAccntSiteId) {
             this.tcaCustAccntSiteId = tcaCustAccntSiteId;
             this.__explicitlySet__.add("tcaCustAccntSiteId");
             return this;
         }
-        /**
-         * TCA party ID.
-         *
-         **/
+        /** TCA party ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("tcaPartyId")
         private Long tcaPartyId;
 
@@ -193,7 +168,7 @@ public final class SubscribedServiceUser
          *
          * @param tcaPartyId the value to set
          * @return this builder
-         **/
+         */
         public Builder tcaPartyId(Long tcaPartyId) {
             this.tcaPartyId = tcaPartyId;
             this.__explicitlySet__.add("tcaPartyId");
@@ -250,9 +225,7 @@ public final class SubscribedServiceUser
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -261,10 +234,7 @@ public final class SubscribedServiceUser
         return new Builder().copy(this);
     }
 
-    /**
-     * Name.
-     *
-     **/
+    /** Name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -272,15 +242,12 @@ public final class SubscribedServiceUser
      * Name.
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Username.
-     *
-     **/
+    /** Username. */
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
@@ -288,15 +255,12 @@ public final class SubscribedServiceUser
      * Username.
      *
      * @return the value
-     **/
+     */
     public String getUsername() {
         return username;
     }
 
-    /**
-     * First name.
-     *
-     **/
+    /** First name. */
     @com.fasterxml.jackson.annotation.JsonProperty("firstName")
     private final String firstName;
 
@@ -304,15 +268,12 @@ public final class SubscribedServiceUser
      * First name.
      *
      * @return the value
-     **/
+     */
     public String getFirstName() {
         return firstName;
     }
 
-    /**
-     * Last name.
-     *
-     **/
+    /** Last name. */
     @com.fasterxml.jackson.annotation.JsonProperty("lastName")
     private final String lastName;
 
@@ -320,15 +281,12 @@ public final class SubscribedServiceUser
      * Last name.
      *
      * @return the value
-     **/
+     */
     public String getLastName() {
         return lastName;
     }
 
-    /**
-     * Email.
-     *
-     **/
+    /** Email. */
     @com.fasterxml.jackson.annotation.JsonProperty("email")
     private final String email;
 
@@ -336,15 +294,12 @@ public final class SubscribedServiceUser
      * Email.
      *
      * @return the value
-     **/
+     */
     public String getEmail() {
         return email;
     }
 
-    /**
-     * TCA contact ID.
-     *
-     **/
+    /** TCA contact ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("tcaContactId")
     private final Long tcaContactId;
 
@@ -352,15 +307,12 @@ public final class SubscribedServiceUser
      * TCA contact ID.
      *
      * @return the value
-     **/
+     */
     public Long getTcaContactId() {
         return tcaContactId;
     }
 
-    /**
-     * TCA customer account site ID.
-     *
-     **/
+    /** TCA customer account site ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("tcaCustAccntSiteId")
     private final Long tcaCustAccntSiteId;
 
@@ -368,15 +320,12 @@ public final class SubscribedServiceUser
      * TCA customer account site ID.
      *
      * @return the value
-     **/
+     */
     public Long getTcaCustAccntSiteId() {
         return tcaCustAccntSiteId;
     }
 
-    /**
-     * TCA party ID.
-     *
-     **/
+    /** TCA party ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("tcaPartyId")
     private final Long tcaPartyId;
 
@@ -384,7 +333,7 @@ public final class SubscribedServiceUser
      * TCA party ID.
      *
      * @return the value
-     **/
+     */
     public Long getTcaPartyId() {
         return tcaPartyId;
     }
@@ -396,6 +345,7 @@ public final class SubscribedServiceUser
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

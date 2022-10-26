@@ -5,24 +5,23 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * The value will be a copy of the original value of the source header and will not be affected by any other
- * transformation policies applied to that header.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The value will be a copy of the original value of the source header and will not be affected by
+ * any other transformation policies applied to that header. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = RenameHeaderPolicyItem.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = RenameHeaderPolicyItem.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class RenameHeaderPolicyItem
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"from", "to"})
     public RenameHeaderPolicyItem(String from, String to) {
@@ -34,36 +33,34 @@ public final class RenameHeaderPolicyItem
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The original case-insensitive name of the header.  This name must be unique across transformation policies.
-         *
-         **/
+         * The original case-insensitive name of the header. This name must be unique across
+         * transformation policies.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("from")
         private String from;
 
         /**
-         * The original case-insensitive name of the header.  This name must be unique across transformation policies.
+         * The original case-insensitive name of the header. This name must be unique across
+         * transformation policies.
          *
          * @param from the value to set
          * @return this builder
-         **/
+         */
         public Builder from(String from) {
             this.from = from;
             this.__explicitlySet__.add("from");
             return this;
         }
-        /**
-         * The new name of the header.  This name must be unique across transformation policies.
-         *
-         **/
+        /** The new name of the header. This name must be unique across transformation policies. */
         @com.fasterxml.jackson.annotation.JsonProperty("to")
         private String to;
 
         /**
-         * The new name of the header.  This name must be unique across transformation policies.
+         * The new name of the header. This name must be unique across transformation policies.
          *
          * @param to the value to set
          * @return this builder
-         **/
+         */
         public Builder to(String to) {
             this.to = to;
             this.__explicitlySet__.add("to");
@@ -93,9 +90,7 @@ public final class RenameHeaderPolicyItem
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -105,33 +100,31 @@ public final class RenameHeaderPolicyItem
     }
 
     /**
-     * The original case-insensitive name of the header.  This name must be unique across transformation policies.
-     *
-     **/
+     * The original case-insensitive name of the header. This name must be unique across
+     * transformation policies.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("from")
     private final String from;
 
     /**
-     * The original case-insensitive name of the header.  This name must be unique across transformation policies.
+     * The original case-insensitive name of the header. This name must be unique across
+     * transformation policies.
      *
      * @return the value
-     **/
+     */
     public String getFrom() {
         return from;
     }
 
-    /**
-     * The new name of the header.  This name must be unique across transformation policies.
-     *
-     **/
+    /** The new name of the header. This name must be unique across transformation policies. */
     @com.fasterxml.jackson.annotation.JsonProperty("to")
     private final String to;
 
     /**
-     * The new name of the header.  This name must be unique across transformation policies.
+     * The new name of the header. This name must be unique across transformation policies.
      *
      * @return the value
-     **/
+     */
     public String getTo() {
         return to;
     }
@@ -143,6 +136,7 @@ public final class RenameHeaderPolicyItem
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -15,11 +15,13 @@ import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 
+import com.oracle.bmc.http.client.internal.RFC3339DateFormat;
+
 /**
  * Date parsing utils.
- * <p>
- * Handles reusing date formatters, as well as which date formats that will be
- * used to parse various headers.
+ *
+ * <p>Handles reusing date formatters, as well as which date formats that will be used to parse
+ * various headers.
  */
 public class HttpDateUtils {
     private static final org.slf4j.Logger LOG =
@@ -79,10 +81,8 @@ public class HttpDateUtils {
     /**
      * Attempts to parse the given header into a Date instance.
      *
-     * @param headerName
-     *            The header name.
-     * @param value
-     *            The header value.
+     * @param headerName The header name.
+     * @param value The header value.
      * @return A new Date instance, or null if it could not be parsed.
      */
     static Date parse(String headerName, String value) {
@@ -110,8 +110,7 @@ public class HttpDateUtils {
     /**
      * Format the given date into Swagger RFC3339 date-time format.
      *
-     * @param date
-     *            The date to format.
+     * @param date The date to format.
      * @return The formatted date.
      */
     public static String format(Date date) {

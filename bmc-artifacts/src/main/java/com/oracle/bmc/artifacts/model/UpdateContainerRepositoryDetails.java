@@ -5,22 +5,22 @@
 package com.oracle.bmc.artifacts.model;
 
 /**
- * Update container repository request details.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Update container repository request details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateContainerRepositoryDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateContainerRepositoryDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateContainerRepositoryDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isImmutable", "isPublic", "readme"})
     public UpdateContainerRepositoryDetails(
@@ -34,32 +34,34 @@ public final class UpdateContainerRepositoryDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
-         **/
+         * Whether the repository is immutable. Images cannot be overwritten in an immutable
+         * repository.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isImmutable")
         private Boolean isImmutable;
 
         /**
-         * Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+         * Whether the repository is immutable. Images cannot be overwritten in an immutable
+         * repository.
+         *
          * @param isImmutable the value to set
          * @return this builder
-         **/
+         */
         public Builder isImmutable(Boolean isImmutable) {
             this.isImmutable = isImmutable;
             this.__explicitlySet__.add("isImmutable");
             return this;
         }
-        /**
-         * Whether the repository is public. A public repository allows unauthenticated access.
-         **/
+        /** Whether the repository is public. A public repository allows unauthenticated access. */
         @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
         private Boolean isPublic;
 
         /**
          * Whether the repository is public. A public repository allows unauthenticated access.
+         *
          * @param isPublic the value to set
          * @return this builder
-         **/
+         */
         public Builder isPublic(Boolean isPublic) {
             this.isPublic = isPublic;
             this.__explicitlySet__.add("isPublic");
@@ -103,9 +105,7 @@ public final class UpdateContainerRepositoryDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,28 +116,28 @@ public final class UpdateContainerRepositoryDetails
 
     /**
      * Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isImmutable")
     private final Boolean isImmutable;
 
     /**
      * Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsImmutable() {
         return isImmutable;
     }
 
-    /**
-     * Whether the repository is public. A public repository allows unauthenticated access.
-     **/
+    /** Whether the repository is public. A public repository allows unauthenticated access. */
     @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
     private final Boolean isPublic;
 
     /**
      * Whether the repository is public. A public repository allows unauthenticated access.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsPublic() {
         return isPublic;
     }
@@ -156,6 +156,7 @@ public final class UpdateContainerRepositoryDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

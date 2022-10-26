@@ -5,39 +5,41 @@
 package com.oracle.bmc.bastion.model;
 
 /**
- * Details about a managed SSH session for a target resource.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details about a managed SSH session for a target resource. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ManagedSshSessionTargetResourceDetails.Builder.class
-)
+        builder = ManagedSshSessionTargetResourceDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "sessionType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "sessionType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ManagedSshSessionTargetResourceDetails extends TargetResourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The name of the user on the target resource operating system that the session uses for the connection.
-         **/
+         * The name of the user on the target resource operating system that the session uses for
+         * the connection.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourceOperatingSystemUserName")
         private String targetResourceOperatingSystemUserName;
 
         /**
-         * The name of the user on the target resource operating system that the session uses for the connection.
+         * The name of the user on the target resource operating system that the session uses for
+         * the connection.
+         *
          * @param targetResourceOperatingSystemUserName the value to set
          * @return this builder
-         **/
+         */
         public Builder targetResourceOperatingSystemUserName(
                 String targetResourceOperatingSystemUserName) {
             this.targetResourceOperatingSystemUserName = targetResourceOperatingSystemUserName;
@@ -45,64 +47,64 @@ public final class ManagedSshSessionTargetResourceDetails extends TargetResource
             return this;
         }
         /**
-         * The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
-         **/
+         * The unique identifier (OCID) of the target resource (a Compute instance, for example)
+         * that the session connects to.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourceId")
         private String targetResourceId;
 
         /**
-         * The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
+         * The unique identifier (OCID) of the target resource (a Compute instance, for example)
+         * that the session connects to.
+         *
          * @param targetResourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder targetResourceId(String targetResourceId) {
             this.targetResourceId = targetResourceId;
             this.__explicitlySet__.add("targetResourceId");
             return this;
         }
-        /**
-         * The private IP address of the target resource that the session connects to.
-         **/
+        /** The private IP address of the target resource that the session connects to. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePrivateIpAddress")
         private String targetResourcePrivateIpAddress;
 
         /**
          * The private IP address of the target resource that the session connects to.
+         *
          * @param targetResourcePrivateIpAddress the value to set
          * @return this builder
-         **/
+         */
         public Builder targetResourcePrivateIpAddress(String targetResourcePrivateIpAddress) {
             this.targetResourcePrivateIpAddress = targetResourcePrivateIpAddress;
             this.__explicitlySet__.add("targetResourcePrivateIpAddress");
             return this;
         }
-        /**
-         * The display name of the target Compute instance that the session connects to.
-         **/
+        /** The display name of the target Compute instance that the session connects to. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourceDisplayName")
         private String targetResourceDisplayName;
 
         /**
          * The display name of the target Compute instance that the session connects to.
+         *
          * @param targetResourceDisplayName the value to set
          * @return this builder
-         **/
+         */
         public Builder targetResourceDisplayName(String targetResourceDisplayName) {
             this.targetResourceDisplayName = targetResourceDisplayName;
             this.__explicitlySet__.add("targetResourceDisplayName");
             return this;
         }
-        /**
-         * The port number to connect to on the target resource.
-         **/
+        /** The port number to connect to on the target resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePort")
         private Integer targetResourcePort;
 
         /**
          * The port number to connect to on the target resource.
+         *
          * @param targetResourcePort the value to set
          * @return this builder
-         **/
+         */
         public Builder targetResourcePort(Integer targetResourcePort) {
             this.targetResourcePort = targetResourcePort;
             this.__explicitlySet__.add("targetResourcePort");
@@ -148,9 +150,7 @@ public final class ManagedSshSessionTargetResourceDetails extends TargetResource
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -175,71 +175,74 @@ public final class ManagedSshSessionTargetResourceDetails extends TargetResource
     }
 
     /**
-     * The name of the user on the target resource operating system that the session uses for the connection.
-     **/
+     * The name of the user on the target resource operating system that the session uses for the
+     * connection.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceOperatingSystemUserName")
     private final String targetResourceOperatingSystemUserName;
 
     /**
-     * The name of the user on the target resource operating system that the session uses for the connection.
+     * The name of the user on the target resource operating system that the session uses for the
+     * connection.
+     *
      * @return the value
-     **/
+     */
     public String getTargetResourceOperatingSystemUserName() {
         return targetResourceOperatingSystemUserName;
     }
 
     /**
-     * The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
-     **/
+     * The unique identifier (OCID) of the target resource (a Compute instance, for example) that
+     * the session connects to.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceId")
     private final String targetResourceId;
 
     /**
-     * The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
+     * The unique identifier (OCID) of the target resource (a Compute instance, for example) that
+     * the session connects to.
+     *
      * @return the value
-     **/
+     */
     public String getTargetResourceId() {
         return targetResourceId;
     }
 
-    /**
-     * The private IP address of the target resource that the session connects to.
-     **/
+    /** The private IP address of the target resource that the session connects to. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePrivateIpAddress")
     private final String targetResourcePrivateIpAddress;
 
     /**
      * The private IP address of the target resource that the session connects to.
+     *
      * @return the value
-     **/
+     */
     public String getTargetResourcePrivateIpAddress() {
         return targetResourcePrivateIpAddress;
     }
 
-    /**
-     * The display name of the target Compute instance that the session connects to.
-     **/
+    /** The display name of the target Compute instance that the session connects to. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceDisplayName")
     private final String targetResourceDisplayName;
 
     /**
      * The display name of the target Compute instance that the session connects to.
+     *
      * @return the value
-     **/
+     */
     public String getTargetResourceDisplayName() {
         return targetResourceDisplayName;
     }
 
-    /**
-     * The port number to connect to on the target resource.
-     **/
+    /** The port number to connect to on the target resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePort")
     private final Integer targetResourcePort;
 
     /**
      * The port number to connect to on the target resource.
+     *
      * @return the value
-     **/
+     */
     public Integer getTargetResourcePort() {
         return targetResourcePort;
     }
@@ -251,6 +254,7 @@ public final class ManagedSshSessionTargetResourceDetails extends TargetResource
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

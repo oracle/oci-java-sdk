@@ -5,19 +5,21 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * An error encountered while executing a work request.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * An error encountered while executing a work request. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkRequestError.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WorkRequestError extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class WorkRequestError
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -45,33 +47,31 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The identifier of the work request error.
-         **/
+        /** The identifier of the work request error. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The identifier of the work request error.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The OCID of the work request.
-         **/
+        /** The OCID of the work request. */
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
         private String workRequestId;
 
         /**
          * The OCID of the work request.
+         *
          * @param workRequestId the value to set
          * @return this builder
-         **/
+         */
         public Builder workRequestId(String workRequestId) {
             this.workRequestId = workRequestId;
             this.__explicitlySet__.add("workRequestId");
@@ -80,8 +80,7 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
         /**
          * A machine-usable code for the error that occurred. Error codes are listed on
          * (https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm).
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
@@ -91,57 +90,58 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
          *
          * @param code the value to set
          * @return this builder
-         **/
+         */
         public Builder code(String code) {
             this.code = code;
             this.__explicitlySet__.add("code");
             return this;
         }
-        /**
-         * A human-readable description of the issue that occurred.
-         **/
+        /** A human-readable description of the issue that occurred. */
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
          * A human-readable description of the issue that occurred.
+         *
          * @param message the value to set
          * @return this builder
-         **/
+         */
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
-        /**
-         * Determines if the work request error can be reproduced and tried again.
-         **/
+        /** Determines if the work request error can be reproduced and tried again. */
         @com.fasterxml.jackson.annotation.JsonProperty("isRetryable")
         private Boolean isRetryable;
 
         /**
          * Determines if the work request error can be reproduced and tried again.
+         *
          * @param isRetryable the value to set
          * @return this builder
-         **/
+         */
         public Builder isRetryable(Boolean isRetryable) {
             this.isRetryable = isRetryable;
             this.__explicitlySet__.add("isRetryable");
             return this;
         }
         /**
-         * The date and time the error occurred as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339). The precision for the time object is in milliseconds.
-         *
-         **/
+         * The date and time the error occurred as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339). The precision for the time object is in
+         * milliseconds.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
-         * The date and time the error occurred as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339). The precision for the time object is in milliseconds.
+         * The date and time the error occurred as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339). The precision for the time object is in
+         * milliseconds.
          *
          * @param timestamp the value to set
          * @return this builder
-         **/
+         */
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
@@ -190,9 +190,7 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -201,30 +199,28 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * The identifier of the work request error.
-     **/
+    /** The identifier of the work request error. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The identifier of the work request error.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The OCID of the work request.
-     **/
+    /** The OCID of the work request. */
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
     private final String workRequestId;
 
     /**
      * The OCID of the work request.
+     *
      * @return the value
-     **/
+     */
     public String getWorkRequestId() {
         return workRequestId;
     }
@@ -232,8 +228,7 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
     /**
      * A machine-usable code for the error that occurred. Error codes are listed on
      * (https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm).
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
@@ -242,51 +237,52 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
      * (https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm).
      *
      * @return the value
-     **/
+     */
     public String getCode() {
         return code;
     }
 
-    /**
-     * A human-readable description of the issue that occurred.
-     **/
+    /** A human-readable description of the issue that occurred. */
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
      * A human-readable description of the issue that occurred.
+     *
      * @return the value
-     **/
+     */
     public String getMessage() {
         return message;
     }
 
-    /**
-     * Determines if the work request error can be reproduced and tried again.
-     **/
+    /** Determines if the work request error can be reproduced and tried again. */
     @com.fasterxml.jackson.annotation.JsonProperty("isRetryable")
     private final Boolean isRetryable;
 
     /**
      * Determines if the work request error can be reproduced and tried again.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsRetryable() {
         return isRetryable;
     }
 
     /**
-     * The date and time the error occurred as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339). The precision for the time object is in milliseconds.
-     *
-     **/
+     * The date and time the error occurred as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339). The precision for the time object is in
+     * milliseconds.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
-     * The date and time the error occurred as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339). The precision for the time object is in milliseconds.
+     * The date and time the error occurred as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339). The precision for the time object is in
+     * milliseconds.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimestamp() {
         return timestamp;
     }
@@ -298,6 +294,7 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

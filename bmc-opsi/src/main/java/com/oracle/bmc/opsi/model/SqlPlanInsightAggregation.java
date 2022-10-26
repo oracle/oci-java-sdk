@@ -5,22 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * SQL execution plan Performance statistics.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * SQL execution plan Performance statistics. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SqlPlanInsightAggregation.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SqlPlanInsightAggregation.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SqlPlanInsightAggregation
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "planHash",
@@ -45,81 +45,76 @@ public final class SqlPlanInsightAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Plan hash value for the SQL Execution Plan
-         **/
+        /** Plan hash value for the SQL Execution Plan */
         @com.fasterxml.jackson.annotation.JsonProperty("planHash")
         private Long planHash;
 
         /**
          * Plan hash value for the SQL Execution Plan
+         *
          * @param planHash the value to set
          * @return this builder
-         **/
+         */
         public Builder planHash(Long planHash) {
             this.planHash = planHash;
             this.__explicitlySet__.add("planHash");
             return this;
         }
-        /**
-         * IO Time in seconds
-         **/
+        /** IO Time in seconds */
         @com.fasterxml.jackson.annotation.JsonProperty("ioTimeInSec")
         private Double ioTimeInSec;
 
         /**
          * IO Time in seconds
+         *
          * @param ioTimeInSec the value to set
          * @return this builder
-         **/
+         */
         public Builder ioTimeInSec(Double ioTimeInSec) {
             this.ioTimeInSec = ioTimeInSec;
             this.__explicitlySet__.add("ioTimeInSec");
             return this;
         }
-        /**
-         * CPU Time in seconds
-         **/
+        /** CPU Time in seconds */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuTimeInSec")
         private Double cpuTimeInSec;
 
         /**
          * CPU Time in seconds
+         *
          * @param cpuTimeInSec the value to set
          * @return this builder
-         **/
+         */
         public Builder cpuTimeInSec(Double cpuTimeInSec) {
             this.cpuTimeInSec = cpuTimeInSec;
             this.__explicitlySet__.add("cpuTimeInSec");
             return this;
         }
-        /**
-         * Inefficient Wait Time in seconds
-         **/
+        /** Inefficient Wait Time in seconds */
         @com.fasterxml.jackson.annotation.JsonProperty("inefficientWaitTimeInSec")
         private Double inefficientWaitTimeInSec;
 
         /**
          * Inefficient Wait Time in seconds
+         *
          * @param inefficientWaitTimeInSec the value to set
          * @return this builder
-         **/
+         */
         public Builder inefficientWaitTimeInSec(Double inefficientWaitTimeInSec) {
             this.inefficientWaitTimeInSec = inefficientWaitTimeInSec;
             this.__explicitlySet__.add("inefficientWaitTimeInSec");
             return this;
         }
-        /**
-         * Total number of executions
-         **/
+        /** Total number of executions */
         @com.fasterxml.jackson.annotation.JsonProperty("executionsCount")
         private Long executionsCount;
 
         /**
          * Total number of executions
+         *
          * @param executionsCount the value to set
          * @return this builder
-         **/
+         */
         public Builder executionsCount(Long executionsCount) {
             this.executionsCount = executionsCount;
             this.__explicitlySet__.add("executionsCount");
@@ -164,9 +159,7 @@ public final class SqlPlanInsightAggregation
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -175,72 +168,67 @@ public final class SqlPlanInsightAggregation
         return new Builder().copy(this);
     }
 
-    /**
-     * Plan hash value for the SQL Execution Plan
-     **/
+    /** Plan hash value for the SQL Execution Plan */
     @com.fasterxml.jackson.annotation.JsonProperty("planHash")
     private final Long planHash;
 
     /**
      * Plan hash value for the SQL Execution Plan
+     *
      * @return the value
-     **/
+     */
     public Long getPlanHash() {
         return planHash;
     }
 
-    /**
-     * IO Time in seconds
-     **/
+    /** IO Time in seconds */
     @com.fasterxml.jackson.annotation.JsonProperty("ioTimeInSec")
     private final Double ioTimeInSec;
 
     /**
      * IO Time in seconds
+     *
      * @return the value
-     **/
+     */
     public Double getIoTimeInSec() {
         return ioTimeInSec;
     }
 
-    /**
-     * CPU Time in seconds
-     **/
+    /** CPU Time in seconds */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuTimeInSec")
     private final Double cpuTimeInSec;
 
     /**
      * CPU Time in seconds
+     *
      * @return the value
-     **/
+     */
     public Double getCpuTimeInSec() {
         return cpuTimeInSec;
     }
 
-    /**
-     * Inefficient Wait Time in seconds
-     **/
+    /** Inefficient Wait Time in seconds */
     @com.fasterxml.jackson.annotation.JsonProperty("inefficientWaitTimeInSec")
     private final Double inefficientWaitTimeInSec;
 
     /**
      * Inefficient Wait Time in seconds
+     *
      * @return the value
-     **/
+     */
     public Double getInefficientWaitTimeInSec() {
         return inefficientWaitTimeInSec;
     }
 
-    /**
-     * Total number of executions
-     **/
+    /** Total number of executions */
     @com.fasterxml.jackson.annotation.JsonProperty("executionsCount")
     private final Long executionsCount;
 
     /**
      * Total number of executions
+     *
      * @return the value
-     **/
+     */
     public Long getExecutionsCount() {
         return executionsCount;
     }
@@ -252,6 +240,7 @@ public final class SqlPlanInsightAggregation
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

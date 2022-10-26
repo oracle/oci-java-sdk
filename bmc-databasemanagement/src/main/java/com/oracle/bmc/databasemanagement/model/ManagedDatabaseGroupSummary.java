@@ -5,22 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A group of Managed Databases that will be managed together.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A group of Managed Databases that will be managed together. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ManagedDatabaseGroupSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ManagedDatabaseGroupSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ManagedDatabaseGroupSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -51,113 +51,114 @@ public final class ManagedDatabaseGroupSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the Managed Database Group.
-         **/
+        /** The name of the Managed Database Group. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the Managed Database Group.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Managed Database Group.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Managed Database Group.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The information specified by the user about the Managed Database Group.
-         **/
+        /** The information specified by the user about the Managed Database Group. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The information specified by the user about the Managed Database Group.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The number of Managed Databases in the Managed Database Group.
-         **/
+        /** The number of Managed Databases in the Managed Database Group. */
         @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseCount")
         private Integer managedDatabaseCount;
 
         /**
          * The number of Managed Databases in the Managed Database Group.
+         *
          * @param managedDatabaseCount the value to set
          * @return this builder
-         **/
+         */
         public Builder managedDatabaseCount(Integer managedDatabaseCount) {
             this.managedDatabaseCount = managedDatabaseCount;
             this.__explicitlySet__.add("managedDatabaseCount");
             return this;
         }
-        /**
-         * The current lifecycle state of the Managed Database Group.
-         **/
+        /** The current lifecycle state of the Managed Database Group. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleStates lifecycleState;
 
         /**
          * The current lifecycle state of the Managed Database Group.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * The date and time the Managed Database Group was created.
-         **/
+        /** The date and time the Managed Database Group was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the Managed Database Group was created.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -210,9 +211,7 @@ public final class ManagedDatabaseGroupSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -221,100 +220,101 @@ public final class ManagedDatabaseGroupSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the Managed Database Group.
-     **/
+    /** The name of the Managed Database Group. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the Managed Database Group.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Managed Database Group.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Managed Database Group.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The information specified by the user about the Managed Database Group.
-     **/
+    /** The information specified by the user about the Managed Database Group. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The information specified by the user about the Managed Database Group.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The number of Managed Databases in the Managed Database Group.
-     **/
+    /** The number of Managed Databases in the Managed Database Group. */
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseCount")
     private final Integer managedDatabaseCount;
 
     /**
      * The number of Managed Databases in the Managed Database Group.
+     *
      * @return the value
-     **/
+     */
     public Integer getManagedDatabaseCount() {
         return managedDatabaseCount;
     }
 
-    /**
-     * The current lifecycle state of the Managed Database Group.
-     **/
+    /** The current lifecycle state of the Managed Database Group. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleStates lifecycleState;
 
     /**
      * The current lifecycle state of the Managed Database Group.
+     *
      * @return the value
-     **/
+     */
     public LifecycleStates getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * The date and time the Managed Database Group was created.
-     **/
+    /** The date and time the Managed Database Group was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the Managed Database Group was created.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -326,6 +326,7 @@ public final class ManagedDatabaseGroupSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

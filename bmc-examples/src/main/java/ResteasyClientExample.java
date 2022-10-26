@@ -26,9 +26,7 @@ import com.oracle.bmc.responses.AsyncHandler;
 import javax.ws.rs.client.ClientBuilder;
 import java.util.concurrent.CountDownLatch;
 
-/**
- * An example to demonstrate how to use resteasy client with JavaSDK.
- */
+/** An example to demonstrate how to use resteasy client with JavaSDK. */
 public class ResteasyClientExample {
     private static final String CONFIG_LOCATION = "~/.oci/config";
     private static final String CONFIG_PROFILE = "DEFAULT";
@@ -37,8 +35,10 @@ public class ResteasyClientExample {
 
         final String compartmentId = args[0];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -48,7 +48,8 @@ public class ResteasyClientExample {
 
         // The following line is only necessary for this example because of our configuration in
         // resources/META-INF/services/javax.ws.rs.client.ClientBuilder
-        // which enables Jersey by default. If you are using Resteasy by default, this line is not necessary
+        // which enables Jersey by default. If you are using Resteasy by default, this line is not
+        // necessary
         System.setProperty(
                 ClientBuilder.JAXRS_DEFAULT_CLIENT_BUILDER_PROPERTY,
                 "org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder");
@@ -104,13 +105,16 @@ public class ResteasyClientExample {
 
             identityClient.deleteUser(deleteUserRequest);
 
-            // Due to https://jira.oci.oraclecorp.com/browse/DEX-4844, the following code does not work yet.
+            // Due to https://jira.oci.oraclecorp.com/browse/DEX-4844, the following code does not
+            // work yet.
             //            System.out.println();
             //            System.out.println();
             //            System.out.println(
-            //                    "*************Asynchronous List Availability Domains with Futures*************************");
+            //                    "*************Asynchronous List Availability Domains with
+            // Futures*************************");
             //            final ListAvailabilityDomainsRequest request =
-            //                    ListAvailabilityDomainsRequest.builder().compartmentId(compartmentId).build();
+            //
+            // ListAvailabilityDomainsRequest.builder().compartmentId(compartmentId).build();
             //
             //            final Future<ListAvailabilityDomainsResponse> future =
             //                    identityAsyncClient.listAvailabilityDomains(request, null);
@@ -120,7 +124,8 @@ public class ResteasyClientExample {
             //                System.out.println(domain.toString());
             //            }
             //            System.out.println(
-            //                    "*****************************************************************************************");
+            //
+            // "*****************************************************************************************");
 
             System.out.println();
             System.out.println();

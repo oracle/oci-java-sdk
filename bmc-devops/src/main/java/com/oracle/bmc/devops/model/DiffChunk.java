@@ -5,19 +5,20 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Details about a group of changes.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details about a group of changes. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DiffChunk.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DiffChunk extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class DiffChunk extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "baseLine",
@@ -42,81 +43,76 @@ public final class DiffChunk extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Line number in base version where changes begin.
-         **/
+        /** Line number in base version where changes begin. */
         @com.fasterxml.jackson.annotation.JsonProperty("baseLine")
         private Integer baseLine;
 
         /**
          * Line number in base version where changes begin.
+         *
          * @param baseLine the value to set
          * @return this builder
-         **/
+         */
         public Builder baseLine(Integer baseLine) {
             this.baseLine = baseLine;
             this.__explicitlySet__.add("baseLine");
             return this;
         }
-        /**
-         * Number of lines chunk spans in base version.
-         **/
+        /** Number of lines chunk spans in base version. */
         @com.fasterxml.jackson.annotation.JsonProperty("baseSpan")
         private Integer baseSpan;
 
         /**
          * Number of lines chunk spans in base version.
+         *
          * @param baseSpan the value to set
          * @return this builder
-         **/
+         */
         public Builder baseSpan(Integer baseSpan) {
             this.baseSpan = baseSpan;
             this.__explicitlySet__.add("baseSpan");
             return this;
         }
-        /**
-         * Line number in target version where changes begin.
-         **/
+        /** Line number in target version where changes begin. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetLine")
         private Integer targetLine;
 
         /**
          * Line number in target version where changes begin.
+         *
          * @param targetLine the value to set
          * @return this builder
-         **/
+         */
         public Builder targetLine(Integer targetLine) {
             this.targetLine = targetLine;
             this.__explicitlySet__.add("targetLine");
             return this;
         }
-        /**
-         * Number of lines chunk spans in target version.
-         **/
+        /** Number of lines chunk spans in target version. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetSpan")
         private Integer targetSpan;
 
         /**
          * Number of lines chunk spans in target version.
+         *
          * @param targetSpan the value to set
          * @return this builder
-         **/
+         */
         public Builder targetSpan(Integer targetSpan) {
             this.targetSpan = targetSpan;
             this.__explicitlySet__.add("targetSpan");
             return this;
         }
-        /**
-         * List of difference section.
-         **/
+        /** List of difference section. */
         @com.fasterxml.jackson.annotation.JsonProperty("diffSections")
         private java.util.List<DiffSection> diffSections;
 
         /**
          * List of difference section.
+         *
          * @param diffSections the value to set
          * @return this builder
-         **/
+         */
         public Builder diffSections(java.util.List<DiffSection> diffSections) {
             this.diffSections = diffSections;
             this.__explicitlySet__.add("diffSections");
@@ -161,9 +157,7 @@ public final class DiffChunk extends com.oracle.bmc.http.internal.ExplicitlySetB
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -172,72 +166,67 @@ public final class DiffChunk extends com.oracle.bmc.http.internal.ExplicitlySetB
         return new Builder().copy(this);
     }
 
-    /**
-     * Line number in base version where changes begin.
-     **/
+    /** Line number in base version where changes begin. */
     @com.fasterxml.jackson.annotation.JsonProperty("baseLine")
     private final Integer baseLine;
 
     /**
      * Line number in base version where changes begin.
+     *
      * @return the value
-     **/
+     */
     public Integer getBaseLine() {
         return baseLine;
     }
 
-    /**
-     * Number of lines chunk spans in base version.
-     **/
+    /** Number of lines chunk spans in base version. */
     @com.fasterxml.jackson.annotation.JsonProperty("baseSpan")
     private final Integer baseSpan;
 
     /**
      * Number of lines chunk spans in base version.
+     *
      * @return the value
-     **/
+     */
     public Integer getBaseSpan() {
         return baseSpan;
     }
 
-    /**
-     * Line number in target version where changes begin.
-     **/
+    /** Line number in target version where changes begin. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetLine")
     private final Integer targetLine;
 
     /**
      * Line number in target version where changes begin.
+     *
      * @return the value
-     **/
+     */
     public Integer getTargetLine() {
         return targetLine;
     }
 
-    /**
-     * Number of lines chunk spans in target version.
-     **/
+    /** Number of lines chunk spans in target version. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetSpan")
     private final Integer targetSpan;
 
     /**
      * Number of lines chunk spans in target version.
+     *
      * @return the value
-     **/
+     */
     public Integer getTargetSpan() {
         return targetSpan;
     }
 
-    /**
-     * List of difference section.
-     **/
+    /** List of difference section. */
     @com.fasterxml.jackson.annotation.JsonProperty("diffSections")
     private final java.util.List<DiffSection> diffSections;
 
     /**
      * List of difference section.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<DiffSection> getDiffSections() {
         return diffSections;
     }
@@ -249,6 +238,7 @@ public final class DiffChunk extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

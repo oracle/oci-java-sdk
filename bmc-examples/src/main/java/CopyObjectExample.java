@@ -30,13 +30,13 @@ public class CopyObjectExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     * <ul>
-     *   <li>The first argument is the OCID of the compartment.</li>
-     *   <li>The second is the name of source bucket to create</li>
-     *   <li>The third is the name of source object to copy from</li>
-     *   <li>The fourth is the name of destination bucket to create</li>
-     *   <li>The fifth is the name of destination object to copy to</li>
-     * </ul>
+     *     <ul>
+     *       <li>The first argument is the OCID of the compartment.
+     *       <li>The second is the name of source bucket to create
+     *       <li>The third is the name of source object to copy from
+     *       <li>The fourth is the name of destination bucket to create
+     *       <li>The fifth is the name of destination object to copy to
+     *     </ul>
      */
     public static void main(String[] args) throws Exception {
 
@@ -54,8 +54,10 @@ public class CopyObjectExample {
         final String destBucket = args[3];
         final String destObject = args[4];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();

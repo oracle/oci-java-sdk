@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/**
- * Possible dimensions for distinguishing resource risk score
- **/
+/** Possible dimensions for distinguishing resource risk score */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum ResourceRiskScoreDimension {
+public enum ResourceRiskScoreDimension implements com.oracle.bmc.http.internal.BmcEnum {
     ProblemId("PROBLEM_ID"),
     ResourceProfileId("RESOURCE_PROFILE_ID"),
     ;

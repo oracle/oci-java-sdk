@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.servicemanagerproxy.model;
 
-/**
- * Service Entitlement registration status
- **/
+/** Service Entitlement registration status */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210914")
-public enum ServiceEntitlementRegistrationStatus {
+public enum ServiceEntitlementRegistrationStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Initialized("INITIALIZED"),
     BeginActivation("BEGIN_ACTIVATION"),
     Active("ACTIVE"),

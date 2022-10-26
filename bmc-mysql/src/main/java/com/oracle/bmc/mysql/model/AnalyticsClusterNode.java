@@ -5,23 +5,23 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * DEPRECATED -- please use HeatWave API instead.
- * An Analytics Cluster Node is a compute host that is part of an Analytics Cluster.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * DEPRECATED -- please use HeatWave API instead. An Analytics Cluster Node is a compute host that
+ * is part of an Analytics Cluster. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AnalyticsClusterNode.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AnalyticsClusterNode extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = AnalyticsClusterNode.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class AnalyticsClusterNode
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"nodeId", "lifecycleState", "timeCreated", "timeUpdated"})
     public AnalyticsClusterNode(
@@ -38,65 +38,69 @@ public final class AnalyticsClusterNode extends com.oracle.bmc.http.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The ID of the node within MySQL Analytics Cluster.
-         **/
+        /** The ID of the node within MySQL Analytics Cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("nodeId")
         private String nodeId;
 
         /**
          * The ID of the node within MySQL Analytics Cluster.
+         *
          * @param nodeId the value to set
          * @return this builder
-         **/
+         */
         public Builder nodeId(String nodeId) {
             this.nodeId = nodeId;
             this.__explicitlySet__.add("nodeId");
             return this;
         }
-        /**
-         * The current state of the MySQL Analytics Cluster node.
-         **/
+        /** The current state of the MySQL Analytics Cluster node. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the MySQL Analytics Cluster node.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * The date and time the MySQL Analytics Cluster node was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-         **/
+         * The date and time the MySQL Analytics Cluster node was created, as described by [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the MySQL Analytics Cluster node was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         * The date and time the MySQL Analytics Cluster node was created, as described by [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339).
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time the MySQL Analytics Cluster node was updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-         **/
+         * The date and time the MySQL Analytics Cluster node was updated, as described by [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the MySQL Analytics Cluster node was updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         * The date and time the MySQL Analytics Cluster node was updated, as described by [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339).
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -134,9 +138,7 @@ public final class AnalyticsClusterNode extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -145,24 +147,21 @@ public final class AnalyticsClusterNode extends com.oracle.bmc.http.internal.Exp
         return new Builder().copy(this);
     }
 
-    /**
-     * The ID of the node within MySQL Analytics Cluster.
-     **/
+    /** The ID of the node within MySQL Analytics Cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("nodeId")
     private final String nodeId;
 
     /**
      * The ID of the node within MySQL Analytics Cluster.
+     *
      * @return the value
-     **/
+     */
     public String getNodeId() {
         return nodeId;
     }
 
-    /**
-     * The current state of the MySQL Analytics Cluster node.
-     **/
-    public enum LifecycleState {
+    /** The current state of the MySQL Analytics Cluster node. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Active("ACTIVE"),
         Inactive("INACTIVE"),
@@ -172,8 +171,8 @@ public final class AnalyticsClusterNode extends com.oracle.bmc.http.internal.Exp
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -212,44 +211,49 @@ public final class AnalyticsClusterNode extends com.oracle.bmc.http.internal.Exp
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current state of the MySQL Analytics Cluster node.
-     **/
+    /** The current state of the MySQL Analytics Cluster node. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the MySQL Analytics Cluster node.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * The date and time the MySQL Analytics Cluster node was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-     **/
+     * The date and time the MySQL Analytics Cluster node was created, as described by [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the MySQL Analytics Cluster node was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * The date and time the MySQL Analytics Cluster node was created, as described by [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339).
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time the MySQL Analytics Cluster node was updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-     **/
+     * The date and time the MySQL Analytics Cluster node was updated, as described by [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the MySQL Analytics Cluster node was updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * The date and time the MySQL Analytics Cluster node was updated, as described by [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339).
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -261,6 +265,7 @@ public final class AnalyticsClusterNode extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,89 +6,83 @@ package com.oracle.bmc.containerengine.requests;
 
 import com.oracle.bmc.containerengine.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/UpdateNodePoolExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateNodePoolRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/UpdateNodePoolExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateNodePoolRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 public class UpdateNodePoolRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.containerengine.model.UpdateNodePoolDetails> {
 
-    /**
-     * The OCID of the node pool.
-     */
+    /** The OCID of the node pool. */
     private String nodePoolId;
 
-    /**
-     * The OCID of the node pool.
-     */
+    /** The OCID of the node pool. */
     public String getNodePoolId() {
         return nodePoolId;
     }
-    /**
-     * The fields to update in a node pool.
-     */
+    /** The fields to update in a node pool. */
     private com.oracle.bmc.containerengine.model.UpdateNodePoolDetails updateNodePoolDetails;
 
-    /**
-     * The fields to update in a node pool.
-     */
+    /** The fields to update in a node pool. */
     public com.oracle.bmc.containerengine.model.UpdateNodePoolDetails getUpdateNodePoolDetails() {
         return updateNodePoolDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * Duration after which OKE will give up eviction of the pods on the node.
-     * PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
-     *
+     * Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate
+     * you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M.
+     * Format ISO 8601 e.g PT30M
      */
     private String overrideEvictionGraceDuration;
 
     /**
-     * Duration after which OKE will give up eviction of the pods on the node.
-     * PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
-     *
+     * Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate
+     * you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M.
+     * Format ISO 8601 e.g PT30M
      */
     public String getOverrideEvictionGraceDuration() {
         return overrideEvictionGraceDuration;
     }
     /**
-     * If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+     * If the underlying compute instance should be deleted if you cannot evict all the pods in
+     * grace period
      */
     private Boolean isForceDeletionAfterOverrideGraceDuration;
 
     /**
-     * If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+     * If the underlying compute instance should be deleted if you cannot evict all the pods in
+     * grace period
      */
     public Boolean getIsForceDeletionAfterOverrideGraceDuration() {
         return isForceDeletionAfterOverrideGraceDuration;
@@ -96,6 +90,7 @@ public class UpdateNodePoolRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -108,17 +103,15 @@ public class UpdateNodePoolRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateNodePoolRequest,
                     com.oracle.bmc.containerengine.model.UpdateNodePoolDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the node pool.
-         */
+        /** The OCID of the node pool. */
         private String nodePoolId = null;
 
         /**
          * The OCID of the node pool.
+         *
          * @param nodePoolId the value to set
          * @return this builder instance
          */
@@ -127,14 +120,13 @@ public class UpdateNodePoolRequest
             return this;
         }
 
-        /**
-         * The fields to update in a node pool.
-         */
+        /** The fields to update in a node pool. */
         private com.oracle.bmc.containerengine.model.UpdateNodePoolDetails updateNodePoolDetails =
                 null;
 
         /**
          * The fields to update in a node pool.
+         *
          * @param updateNodePoolDetails the value to set
          * @return this builder instance
          */
@@ -145,17 +137,18 @@ public class UpdateNodePoolRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -166,15 +159,14 @@ public class UpdateNodePoolRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -185,15 +177,16 @@ public class UpdateNodePoolRequest
         }
 
         /**
-         * Duration after which OKE will give up eviction of the pods on the node.
-         * PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
-         *
+         * Duration after which OKE will give up eviction of the pods on the node. PT0M will
+         * indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M,
+         * Max: PT60M. Format ISO 8601 e.g PT30M
          */
         private String overrideEvictionGraceDuration = null;
 
         /**
-         * Duration after which OKE will give up eviction of the pods on the node.
-         * PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+         * Duration after which OKE will give up eviction of the pods on the node. PT0M will
+         * indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M,
+         * Max: PT60M. Format ISO 8601 e.g PT30M
          *
          * @param overrideEvictionGraceDuration the value to set
          * @return this builder instance
@@ -204,12 +197,15 @@ public class UpdateNodePoolRequest
         }
 
         /**
-         * If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+         * If the underlying compute instance should be deleted if you cannot evict all the pods in
+         * grace period
          */
         private Boolean isForceDeletionAfterOverrideGraceDuration = null;
 
         /**
-         * If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+         * If the underlying compute instance should be deleted if you cannot evict all the pods in
+         * grace period
+         *
          * @param isForceDeletionAfterOverrideGraceDuration the value to set
          * @return this builder instance
          */
@@ -222,18 +218,19 @@ public class UpdateNodePoolRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -245,6 +242,7 @@ public class UpdateNodePoolRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateNodePoolRequest o) {
@@ -263,10 +261,11 @@ public class UpdateNodePoolRequest
         /**
          * Build the instance of UpdateNodePoolRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateNodePoolRequest
          */
@@ -279,6 +278,7 @@ public class UpdateNodePoolRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -291,7 +291,8 @@ public class UpdateNodePoolRequest
         /**
          * Build the instance of UpdateNodePoolRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateNodePoolRequest
@@ -306,12 +307,14 @@ public class UpdateNodePoolRequest
             request.isForceDeletionAfterOverrideGraceDuration =
                     isForceDeletionAfterOverrideGraceDuration;
             return request;
-            // new UpdateNodePoolRequest(nodePoolId, updateNodePoolDetails, ifMatch, opcRequestId, overrideEvictionGraceDuration, isForceDeletionAfterOverrideGraceDuration);
+            // new UpdateNodePoolRequest(nodePoolId, updateNodePoolDetails, ifMatch, opcRequestId,
+            // overrideEvictionGraceDuration, isForceDeletionAfterOverrideGraceDuration);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -327,6 +330,7 @@ public class UpdateNodePoolRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

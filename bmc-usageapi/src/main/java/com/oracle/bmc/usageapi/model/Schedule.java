@@ -5,19 +5,20 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * The schedule.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The schedule. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Schedule.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Schedule extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -75,49 +76,46 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID representing a unique shedule.
-         **/
+        /** The OCID representing a unique shedule. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID representing a unique shedule.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The unique name of the schedule created by the user.
-         **/
+        /** The unique name of the schedule created by the user. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The unique name of the schedule created by the user.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The customer tenancy.
-         **/
+        /** The customer tenancy. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The customer tenancy.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -132,103 +130,99 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
             this.__explicitlySet__.add("resultLocation");
             return this;
         }
-        /**
-         * The description of the schedule.
-         **/
+        /** The description of the schedule. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the schedule.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The date and time of the next job execution.
-         **/
+        /** The date and time of the next job execution. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeNextRun")
         private java.util.Date timeNextRun;
 
         /**
          * The date and time of the next job execution.
+         *
          * @param timeNextRun the value to set
          * @return this builder
-         **/
+         */
         public Builder timeNextRun(java.util.Date timeNextRun) {
             this.timeNextRun = timeNextRun;
             this.__explicitlySet__.add("timeNextRun");
             return this;
         }
-        /**
-         * Specifies supported output file format.
-         **/
+        /** Specifies supported output file format. */
         @com.fasterxml.jackson.annotation.JsonProperty("outputFileFormat")
         private OutputFileFormat outputFileFormat;
 
         /**
          * Specifies supported output file format.
+         *
          * @param outputFileFormat the value to set
          * @return this builder
-         **/
+         */
         public Builder outputFileFormat(OutputFileFormat outputFileFormat) {
             this.outputFileFormat = outputFileFormat;
             this.__explicitlySet__.add("outputFileFormat");
             return this;
         }
-        /**
-         * The saved report id which can also be used to generate query.
-         **/
+        /** The saved report id which can also be used to generate query. */
         @com.fasterxml.jackson.annotation.JsonProperty("savedReportId")
         private String savedReportId;
 
         /**
          * The saved report id which can also be used to generate query.
+         *
          * @param savedReportId the value to set
          * @return this builder
-         **/
+         */
         public Builder savedReportId(String savedReportId) {
             this.savedReportId = savedReportId;
             this.__explicitlySet__.add("savedReportId");
             return this;
         }
         /**
-         * Specifies the frequency according to when the schedule will be run,
-         * in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10).
-         * Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
-         *
-         **/
+         * Specifies the frequency according to when the schedule will be run, in the
+         * x-obmcs-recurring-time format described in [RFC 5545 section
+         * 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values
+         * are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleRecurrences")
         private String scheduleRecurrences;
 
         /**
-         * Specifies the frequency according to when the schedule will be run,
-         * in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10).
-         * Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+         * Specifies the frequency according to when the schedule will be run, in the
+         * x-obmcs-recurring-time format described in [RFC 5545 section
+         * 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values
+         * are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
          *
          * @param scheduleRecurrences the value to set
          * @return this builder
-         **/
+         */
         public Builder scheduleRecurrences(String scheduleRecurrences) {
             this.scheduleRecurrences = scheduleRecurrences;
             this.__explicitlySet__.add("scheduleRecurrences");
             return this;
         }
-        /**
-         * The date and time of the first time job execution.
-         **/
+        /** The date and time of the first time job execution. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
         private java.util.Date timeScheduled;
 
         /**
          * The date and time of the first time job execution.
+         *
          * @param timeScheduled the value to set
          * @return this builder
-         **/
+         */
         public Builder timeScheduled(java.util.Date timeScheduled) {
             this.timeScheduled = timeScheduled;
             this.__explicitlySet__.add("timeScheduled");
@@ -243,71 +237,75 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
             this.__explicitlySet__.add("queryProperties");
             return this;
         }
-        /**
-         * The date and time the schedule was created.
-         **/
+        /** The date and time the schedule was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the schedule was created.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * The schedule lifecycle state.
-         **/
+        /** The schedule lifecycle state. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The schedule lifecycle state.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. See [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. See [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
+         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
+         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -315,18 +313,21 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         *
-         **/
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         **/
+         */
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -415,9 +416,7 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -426,44 +425,41 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID representing a unique shedule.
-     **/
+    /** The OCID representing a unique shedule. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID representing a unique shedule.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The unique name of the schedule created by the user.
-     **/
+    /** The unique name of the schedule created by the user. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The unique name of the schedule created by the user.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The customer tenancy.
-     **/
+    /** The customer tenancy. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The customer tenancy.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -475,44 +471,40 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return resultLocation;
     }
 
-    /**
-     * The description of the schedule.
-     **/
+    /** The description of the schedule. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the schedule.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The date and time of the next job execution.
-     **/
+    /** The date and time of the next job execution. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeNextRun")
     private final java.util.Date timeNextRun;
 
     /**
      * The date and time of the next job execution.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeNextRun() {
         return timeNextRun;
     }
 
-    /**
-     * Specifies supported output file format.
-     **/
-    public enum OutputFileFormat {
+    /** Specifies supported output file format. */
+    public enum OutputFileFormat implements com.oracle.bmc.http.internal.BmcEnum {
         Csv("CSV"),
         Pdf("PDF"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -551,64 +543,62 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return UnknownEnumValue;
         }
     };
-    /**
-     * Specifies supported output file format.
-     **/
+    /** Specifies supported output file format. */
     @com.fasterxml.jackson.annotation.JsonProperty("outputFileFormat")
     private final OutputFileFormat outputFileFormat;
 
     /**
      * Specifies supported output file format.
+     *
      * @return the value
-     **/
+     */
     public OutputFileFormat getOutputFileFormat() {
         return outputFileFormat;
     }
 
-    /**
-     * The saved report id which can also be used to generate query.
-     **/
+    /** The saved report id which can also be used to generate query. */
     @com.fasterxml.jackson.annotation.JsonProperty("savedReportId")
     private final String savedReportId;
 
     /**
      * The saved report id which can also be used to generate query.
+     *
      * @return the value
-     **/
+     */
     public String getSavedReportId() {
         return savedReportId;
     }
 
     /**
-     * Specifies the frequency according to when the schedule will be run,
-     * in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10).
-     * Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
-     *
-     **/
+     * Specifies the frequency according to when the schedule will be run, in the
+     * x-obmcs-recurring-time format described in [RFC 5545 section
+     * 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are :
+     * ONE_TIME, DAILY, WEEKLY and MONTHLY.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleRecurrences")
     private final String scheduleRecurrences;
 
     /**
-     * Specifies the frequency according to when the schedule will be run,
-     * in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10).
-     * Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+     * Specifies the frequency according to when the schedule will be run, in the
+     * x-obmcs-recurring-time format described in [RFC 5545 section
+     * 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are :
+     * ONE_TIME, DAILY, WEEKLY and MONTHLY.
      *
      * @return the value
-     **/
+     */
     public String getScheduleRecurrences() {
         return scheduleRecurrences;
     }
 
-    /**
-     * The date and time of the first time job execution.
-     **/
+    /** The date and time of the first time job execution. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
     private final java.util.Date timeScheduled;
 
     /**
      * The date and time of the first time job execution.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeScheduled() {
         return timeScheduled;
     }
@@ -620,30 +610,27 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return queryProperties;
     }
 
-    /**
-     * The date and time the schedule was created.
-     **/
+    /** The date and time the schedule was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the schedule was created.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The schedule lifecycle state.
-     **/
-    public enum LifecycleState {
+    /** The schedule lifecycle state. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Active("ACTIVE"),
         Inactive("INACTIVE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -682,66 +669,74 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return UnknownEnumValue;
         }
     };
-    /**
-     * The schedule lifecycle state.
-     **/
+    /** The schedule lifecycle state. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The schedule lifecycle state.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. See [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. See [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
+     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
+     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     *
-     **/
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -753,6 +748,7 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

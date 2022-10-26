@@ -5,19 +5,21 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * Describes a refresh of a fusion environment
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Describes a refresh of a fusion environment <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RefreshDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RefreshDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class RefreshDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sourceFusionEnvironmentId",
@@ -36,49 +38,46 @@ public final class RefreshDetails extends com.oracle.bmc.http.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The source environment id for the last refresh
-         **/
+        /** The source environment id for the last refresh */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceFusionEnvironmentId")
         private String sourceFusionEnvironmentId;
 
         /**
          * The source environment id for the last refresh
+         *
          * @param sourceFusionEnvironmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceFusionEnvironmentId(String sourceFusionEnvironmentId) {
             this.sourceFusionEnvironmentId = sourceFusionEnvironmentId;
             this.__explicitlySet__.add("sourceFusionEnvironmentId");
             return this;
         }
-        /**
-         * The time of when the last refresh finish
-         **/
+        /** The time of when the last refresh finish */
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
          * The time of when the last refresh finish
+         *
          * @param timeFinished the value to set
          * @return this builder
-         **/
+         */
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
-        /**
-         * The point of time of the latest DB backup for the last refresh
-         **/
+        /** The point of time of the latest DB backup for the last refresh */
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfRestorationPoint")
         private java.util.Date timeOfRestorationPoint;
 
         /**
          * The point of time of the latest DB backup for the last refresh
+         *
          * @param timeOfRestorationPoint the value to set
          * @return this builder
-         **/
+         */
         public Builder timeOfRestorationPoint(java.util.Date timeOfRestorationPoint) {
             this.timeOfRestorationPoint = timeOfRestorationPoint;
             this.__explicitlySet__.add("timeOfRestorationPoint");
@@ -115,9 +114,7 @@ public final class RefreshDetails extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -126,44 +123,41 @@ public final class RefreshDetails extends com.oracle.bmc.http.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /**
-     * The source environment id for the last refresh
-     **/
+    /** The source environment id for the last refresh */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceFusionEnvironmentId")
     private final String sourceFusionEnvironmentId;
 
     /**
      * The source environment id for the last refresh
+     *
      * @return the value
-     **/
+     */
     public String getSourceFusionEnvironmentId() {
         return sourceFusionEnvironmentId;
     }
 
-    /**
-     * The time of when the last refresh finish
-     **/
+    /** The time of when the last refresh finish */
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
      * The time of when the last refresh finish
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
 
-    /**
-     * The point of time of the latest DB backup for the last refresh
-     **/
+    /** The point of time of the latest DB backup for the last refresh */
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfRestorationPoint")
     private final java.util.Date timeOfRestorationPoint;
 
     /**
      * The point of time of the latest DB backup for the last refresh
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeOfRestorationPoint() {
         return timeOfRestorationPoint;
     }
@@ -175,6 +169,7 @@ public final class RefreshDetails extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

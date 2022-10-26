@@ -7,10 +7,9 @@ package com.oracle.bmc.databasemanagement.model;
 /**
  * The time period to be considered from compareBaselineTime and CompareTargetTime to compute
  * percentage change of different metrics.
- *
- **/
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum CompareType {
+public enum CompareType implements com.oracle.bmc.http.internal.BmcEnum {
     Hour("HOUR"),
     Day("DAY"),
     Week("WEEK"),

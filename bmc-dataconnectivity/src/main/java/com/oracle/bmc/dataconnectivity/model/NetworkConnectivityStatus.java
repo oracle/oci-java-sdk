@@ -5,22 +5,22 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * The network validation status for a Private Endpoint - Data Asset pair.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The network validation status for a Private Endpoint - Data Asset pair. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = NetworkConnectivityStatus.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = NetworkConnectivityStatus.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class NetworkConnectivityStatus
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dataAssetKey",
@@ -45,81 +45,88 @@ public final class NetworkConnectivityStatus
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * DataAsset key to which the NetworkValidationStatus belongs to.
-         **/
+        /** DataAsset key to which the NetworkValidationStatus belongs to. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
         private String dataAssetKey;
 
         /**
          * DataAsset key to which the NetworkValidationStatus belongs to.
+         *
          * @param dataAssetKey the value to set
          * @return this builder
-         **/
+         */
         public Builder dataAssetKey(String dataAssetKey) {
             this.dataAssetKey = dataAssetKey;
             this.__explicitlySet__.add("dataAssetKey");
             return this;
         }
-        /**
-         * PrivateEndpoint key, if any, to which the NetworkValidationStatus belongs to.
-         **/
+        /** PrivateEndpoint key, if any, to which the NetworkValidationStatus belongs to. */
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndPointKey")
         private String privateEndPointKey;
 
         /**
          * PrivateEndpoint key, if any, to which the NetworkValidationStatus belongs to.
+         *
          * @param privateEndPointKey the value to set
          * @return this builder
-         **/
+         */
         public Builder privateEndPointKey(String privateEndPointKey) {
             this.privateEndPointKey = privateEndPointKey;
             this.__explicitlySet__.add("privateEndPointKey");
             return this;
         }
         /**
-         * Exception or error message encountered while testing network reachability for the data asset.
-         **/
+         * Exception or error message encountered while testing network reachability for the data
+         * asset.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
         /**
-         * Exception or error message encountered while testing network reachability for the data asset.
+         * Exception or error message encountered while testing network reachability for the data
+         * asset.
+         *
          * @param errorMessage the value to set
          * @return this builder
-         **/
+         */
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
             return this;
         }
         /**
-         * The timestamp when the network validation was last updated for the given DataAsset-PrivateEndpoint pair.
-         **/
+         * The timestamp when the network validation was last updated for the given
+         * DataAsset-PrivateEndpoint pair.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdated")
         private java.util.Date timeLastUpdated;
 
         /**
-         * The timestamp when the network validation was last updated for the given DataAsset-PrivateEndpoint pair.
+         * The timestamp when the network validation was last updated for the given
+         * DataAsset-PrivateEndpoint pair.
+         *
          * @param timeLastUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeLastUpdated(java.util.Date timeLastUpdated) {
             this.timeLastUpdated = timeLastUpdated;
             this.__explicitlySet__.add("timeLastUpdated");
             return this;
         }
         /**
-         * Exception or error message encountered while testing network reachability for the data asset.
-         **/
+         * Exception or error message encountered while testing network reachability for the data
+         * asset.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("networkValidationStatusEnum")
         private NetworkValidationStatusEnum networkValidationStatusEnum;
 
         /**
-         * Exception or error message encountered while testing network reachability for the data asset.
+         * Exception or error message encountered while testing network reachability for the data
+         * asset.
+         *
          * @param networkValidationStatusEnum the value to set
          * @return this builder
-         **/
+         */
         public Builder networkValidationStatusEnum(
                 NetworkValidationStatusEnum networkValidationStatusEnum) {
             this.networkValidationStatusEnum = networkValidationStatusEnum;
@@ -165,9 +172,7 @@ public final class NetworkConnectivityStatus
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -176,73 +181,75 @@ public final class NetworkConnectivityStatus
         return new Builder().copy(this);
     }
 
-    /**
-     * DataAsset key to which the NetworkValidationStatus belongs to.
-     **/
+    /** DataAsset key to which the NetworkValidationStatus belongs to. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
     private final String dataAssetKey;
 
     /**
      * DataAsset key to which the NetworkValidationStatus belongs to.
+     *
      * @return the value
-     **/
+     */
     public String getDataAssetKey() {
         return dataAssetKey;
     }
 
-    /**
-     * PrivateEndpoint key, if any, to which the NetworkValidationStatus belongs to.
-     **/
+    /** PrivateEndpoint key, if any, to which the NetworkValidationStatus belongs to. */
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndPointKey")
     private final String privateEndPointKey;
 
     /**
      * PrivateEndpoint key, if any, to which the NetworkValidationStatus belongs to.
+     *
      * @return the value
-     **/
+     */
     public String getPrivateEndPointKey() {
         return privateEndPointKey;
     }
 
     /**
      * Exception or error message encountered while testing network reachability for the data asset.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
     /**
      * Exception or error message encountered while testing network reachability for the data asset.
+     *
      * @return the value
-     **/
+     */
     public String getErrorMessage() {
         return errorMessage;
     }
 
     /**
-     * The timestamp when the network validation was last updated for the given DataAsset-PrivateEndpoint pair.
-     **/
+     * The timestamp when the network validation was last updated for the given
+     * DataAsset-PrivateEndpoint pair.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdated")
     private final java.util.Date timeLastUpdated;
 
     /**
-     * The timestamp when the network validation was last updated for the given DataAsset-PrivateEndpoint pair.
+     * The timestamp when the network validation was last updated for the given
+     * DataAsset-PrivateEndpoint pair.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeLastUpdated() {
         return timeLastUpdated;
     }
 
     /**
      * Exception or error message encountered while testing network reachability for the data asset.
-     **/
-    public enum NetworkValidationStatusEnum {
+     */
+    public enum NetworkValidationStatusEnum implements com.oracle.bmc.http.internal.BmcEnum {
         Reachable("REACHABLE"),
         NotReachable("NOT_REACHABLE"),
         Error("ERROR"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -283,14 +290,15 @@ public final class NetworkConnectivityStatus
     };
     /**
      * Exception or error message encountered while testing network reachability for the data asset.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("networkValidationStatusEnum")
     private final NetworkValidationStatusEnum networkValidationStatusEnum;
 
     /**
      * Exception or error message encountered while testing network reachability for the data asset.
+     *
      * @return the value
-     **/
+     */
     public NetworkValidationStatusEnum getNetworkValidationStatusEnum() {
         return networkValidationStatusEnum;
     }
@@ -302,6 +310,7 @@ public final class NetworkConnectivityStatus
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

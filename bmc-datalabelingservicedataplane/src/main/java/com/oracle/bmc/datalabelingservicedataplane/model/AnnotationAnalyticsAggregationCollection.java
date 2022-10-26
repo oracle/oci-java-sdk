@@ -5,22 +5,26 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * Aggregation entities are required by the API consistency guidelines for API Consistency Guidelines#AnalyticsAPIs.  These are used to summarize annotations for a given dataset and will be used to populate UI elements.  Aggregations need to have the fields that identify the exact scope that they're summarizing.  Any filters applied to the list API, have to show up in the aggregation.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Aggregation entities are required by the API consistency guidelines for API Consistency
+ * Guidelines#AnalyticsAPIs. These are used to summarize annotations for a given dataset and will be
+ * used to populate UI elements. Aggregations need to have the fields that identify the exact scope
+ * that they're summarizing. Any filters applied to the list API, have to show up in the
+ * aggregation. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AnnotationAnalyticsAggregationCollection.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AnnotationAnalyticsAggregationCollection.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AnnotationAnalyticsAggregationCollection
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items"})
     public AnnotationAnalyticsAggregationCollection(
@@ -31,17 +35,16 @@ public final class AnnotationAnalyticsAggregationCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The list of annotation entities.
-         **/
+        /** The list of annotation entities. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AnnotationAnalyticsAggregation> items;
 
         /**
          * The list of annotation entities.
+         *
          * @param items the value to set
          * @return this builder
-         **/
+         */
         public Builder items(java.util.List<AnnotationAnalyticsAggregation> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -69,9 +72,7 @@ public final class AnnotationAnalyticsAggregationCollection
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -80,16 +81,15 @@ public final class AnnotationAnalyticsAggregationCollection
         return new Builder().copy(this);
     }
 
-    /**
-     * The list of annotation entities.
-     **/
+    /** The list of annotation entities. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AnnotationAnalyticsAggregation> items;
 
     /**
      * The list of annotation entities.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<AnnotationAnalyticsAggregation> getItems() {
         return items;
     }
@@ -101,6 +101,7 @@ public final class AnnotationAnalyticsAggregationCollection
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

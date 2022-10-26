@@ -6,7 +6,10 @@ package com.oracle.bmc.filestorage.requests;
 
 import com.oracle.bmc.filestorage.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ChangeReplicationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeReplicationCompartmentRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ChangeReplicationCompartmentExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ChangeReplicationCompartmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 public class ChangeReplicationCompartmentRequest
@@ -14,61 +17,53 @@ public class ChangeReplicationCompartmentRequest
                 com.oracle.bmc.filestorage.model.ChangeReplicationCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the replication.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * replication.
      */
     private String replicationId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the replication.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * replication.
      */
     public String getReplicationId() {
         return replicationId;
     }
-    /**
-     * Details for changing the compartment.
-     */
+    /** Details for changing the compartment. */
     private com.oracle.bmc.filestorage.model.ChangeReplicationCompartmentDetails
             changeReplicationCompartmentDetails;
 
-    /**
-     * Details for changing the compartment.
-     */
+    /** Details for changing the compartment. */
     public com.oracle.bmc.filestorage.model.ChangeReplicationCompartmentDetails
             getChangeReplicationCompartmentDetails() {
         return changeReplicationCompartmentDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the {@code if-match} parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the {@code if-match} parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * Unique identifier for the request.
-     * If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique identifier for the request.
-     * If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -76,6 +71,7 @@ public class ChangeReplicationCompartmentRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -88,17 +84,19 @@ public class ChangeReplicationCompartmentRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeReplicationCompartmentRequest,
                     com.oracle.bmc.filestorage.model.ChangeReplicationCompartmentDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the replication.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * replication.
          */
         private String replicationId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the replication.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * replication.
+         *
          * @param replicationId the value to set
          * @return this builder instance
          */
@@ -107,14 +105,13 @@ public class ChangeReplicationCompartmentRequest
             return this;
         }
 
-        /**
-         * Details for changing the compartment.
-         */
+        /** Details for changing the compartment. */
         private com.oracle.bmc.filestorage.model.ChangeReplicationCompartmentDetails
                 changeReplicationCompartmentDetails = null;
 
         /**
          * Details for changing the compartment.
+         *
          * @param changeReplicationCompartmentDetails the value to set
          * @return this builder instance
          */
@@ -126,21 +123,18 @@ public class ChangeReplicationCompartmentRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the {@code if-match} parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the {@code if-match} parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -151,15 +145,14 @@ public class ChangeReplicationCompartmentRequest
         }
 
         /**
-         * Unique identifier for the request.
-         * If you need to contact Oracle about a particular request, please provide the request ID.
-         *
+         * Unique identifier for the request. If you need to contact Oracle about a particular
+         * request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique identifier for the request.
-         * If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique identifier for the request. If you need to contact Oracle about a particular
+         * request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -171,18 +164,19 @@ public class ChangeReplicationCompartmentRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -194,6 +188,7 @@ public class ChangeReplicationCompartmentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ChangeReplicationCompartmentRequest o) {
@@ -209,10 +204,11 @@ public class ChangeReplicationCompartmentRequest
         /**
          * Build the instance of ChangeReplicationCompartmentRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ChangeReplicationCompartmentRequest
          */
@@ -225,6 +221,7 @@ public class ChangeReplicationCompartmentRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -238,7 +235,8 @@ public class ChangeReplicationCompartmentRequest
         /**
          * Build the instance of ChangeReplicationCompartmentRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ChangeReplicationCompartmentRequest
@@ -250,12 +248,14 @@ public class ChangeReplicationCompartmentRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ChangeReplicationCompartmentRequest(replicationId, changeReplicationCompartmentDetails, ifMatch, opcRequestId);
+            // new ChangeReplicationCompartmentRequest(replicationId,
+            // changeReplicationCompartmentDetails, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -268,6 +268,7 @@ public class ChangeReplicationCompartmentRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

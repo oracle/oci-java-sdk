@@ -5,23 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A summary of the IPSec tunnel security association details.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A summary of the IPSec tunnel security association details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = TunnelSecurityAssociationSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = TunnelSecurityAssociationSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class TunnelSecurityAssociationSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "cpeSubnet",
@@ -48,15 +47,16 @@ public final class TunnelSecurityAssociationSummary
     public static class Builder {
         /**
          * The IP address and mask of the partner subnet used in policy based VPNs or static routes.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("cpeSubnet")
         private String cpeSubnet;
 
         /**
          * The IP address and mask of the partner subnet used in policy based VPNs or static routes.
+         *
          * @param cpeSubnet the value to set
          * @return this builder
-         **/
+         */
         public Builder cpeSubnet(String cpeSubnet) {
             this.cpeSubnet = cpeSubnet;
             this.__explicitlySet__.add("cpeSubnet");
@@ -64,65 +64,65 @@ public final class TunnelSecurityAssociationSummary
         }
         /**
          * The IP address and mask of the local subnet used in policy based VPNs or static routes.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("oracleSubnet")
         private String oracleSubnet;
 
         /**
          * The IP address and mask of the local subnet used in policy based VPNs or static routes.
+         *
          * @param oracleSubnet the value to set
          * @return this builder
-         **/
+         */
         public Builder oracleSubnet(String oracleSubnet) {
             this.oracleSubnet = oracleSubnet;
             this.__explicitlySet__.add("oracleSubnet");
             return this;
         }
-        /**
-         * The IPSec tunnel's phase one status.
-         **/
+        /** The IPSec tunnel's phase one status. */
         @com.fasterxml.jackson.annotation.JsonProperty("tunnelSaStatus")
         private TunnelSaStatus tunnelSaStatus;
 
         /**
          * The IPSec tunnel's phase one status.
+         *
          * @param tunnelSaStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder tunnelSaStatus(TunnelSaStatus tunnelSaStatus) {
             this.tunnelSaStatus = tunnelSaStatus;
             this.__explicitlySet__.add("tunnelSaStatus");
             return this;
         }
         /**
-         * Current state if the IPSec tunnel status is not {@code UP}, including phase one and phase two details and a possible reason the tunnel is not {@code UP}.
-         *
-         **/
+         * Current state if the IPSec tunnel status is not {@code UP}, including phase one and phase
+         * two details and a possible reason the tunnel is not {@code UP}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("tunnelSaErrorInfo")
         private String tunnelSaErrorInfo;
 
         /**
-         * Current state if the IPSec tunnel status is not {@code UP}, including phase one and phase two details and a possible reason the tunnel is not {@code UP}.
+         * Current state if the IPSec tunnel status is not {@code UP}, including phase one and phase
+         * two details and a possible reason the tunnel is not {@code UP}.
          *
          * @param tunnelSaErrorInfo the value to set
          * @return this builder
-         **/
+         */
         public Builder tunnelSaErrorInfo(String tunnelSaErrorInfo) {
             this.tunnelSaErrorInfo = tunnelSaErrorInfo;
             this.__explicitlySet__.add("tunnelSaErrorInfo");
             return this;
         }
-        /**
-         * Time in the current state, in seconds.
-         **/
+        /** Time in the current state, in seconds. */
         @com.fasterxml.jackson.annotation.JsonProperty("time")
         private String time;
 
         /**
          * Time in the current state, in seconds.
+         *
          * @param time the value to set
          * @return this builder
-         **/
+         */
         public Builder time(String time) {
             this.time = time;
             this.__explicitlySet__.add("time");
@@ -167,9 +167,7 @@ public final class TunnelSecurityAssociationSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -178,38 +176,34 @@ public final class TunnelSecurityAssociationSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * The IP address and mask of the partner subnet used in policy based VPNs or static routes.
-     **/
+    /** The IP address and mask of the partner subnet used in policy based VPNs or static routes. */
     @com.fasterxml.jackson.annotation.JsonProperty("cpeSubnet")
     private final String cpeSubnet;
 
     /**
      * The IP address and mask of the partner subnet used in policy based VPNs or static routes.
+     *
      * @return the value
-     **/
+     */
     public String getCpeSubnet() {
         return cpeSubnet;
     }
 
-    /**
-     * The IP address and mask of the local subnet used in policy based VPNs or static routes.
-     **/
+    /** The IP address and mask of the local subnet used in policy based VPNs or static routes. */
     @com.fasterxml.jackson.annotation.JsonProperty("oracleSubnet")
     private final String oracleSubnet;
 
     /**
      * The IP address and mask of the local subnet used in policy based VPNs or static routes.
+     *
      * @return the value
-     **/
+     */
     public String getOracleSubnet() {
         return oracleSubnet;
     }
 
-    /**
-     * The IPSec tunnel's phase one status.
-     **/
-    public enum TunnelSaStatus {
+    /** The IPSec tunnel's phase one status. */
+    public enum TunnelSaStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Initiating("INITIATING"),
         Listening("LISTENING"),
         Up("UP"),
@@ -218,8 +212,8 @@ public final class TunnelSecurityAssociationSummary
         Unknown("UNKNOWN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -258,46 +252,45 @@ public final class TunnelSecurityAssociationSummary
             return UnknownEnumValue;
         }
     };
-    /**
-     * The IPSec tunnel's phase one status.
-     **/
+    /** The IPSec tunnel's phase one status. */
     @com.fasterxml.jackson.annotation.JsonProperty("tunnelSaStatus")
     private final TunnelSaStatus tunnelSaStatus;
 
     /**
      * The IPSec tunnel's phase one status.
+     *
      * @return the value
-     **/
+     */
     public TunnelSaStatus getTunnelSaStatus() {
         return tunnelSaStatus;
     }
 
     /**
-     * Current state if the IPSec tunnel status is not {@code UP}, including phase one and phase two details and a possible reason the tunnel is not {@code UP}.
-     *
-     **/
+     * Current state if the IPSec tunnel status is not {@code UP}, including phase one and phase two
+     * details and a possible reason the tunnel is not {@code UP}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("tunnelSaErrorInfo")
     private final String tunnelSaErrorInfo;
 
     /**
-     * Current state if the IPSec tunnel status is not {@code UP}, including phase one and phase two details and a possible reason the tunnel is not {@code UP}.
+     * Current state if the IPSec tunnel status is not {@code UP}, including phase one and phase two
+     * details and a possible reason the tunnel is not {@code UP}.
      *
      * @return the value
-     **/
+     */
     public String getTunnelSaErrorInfo() {
         return tunnelSaErrorInfo;
     }
 
-    /**
-     * Time in the current state, in seconds.
-     **/
+    /** Time in the current state, in seconds. */
     @com.fasterxml.jackson.annotation.JsonProperty("time")
     private final String time;
 
     /**
      * Time in the current state, in seconds.
+     *
      * @return the value
-     **/
+     */
     public String getTime() {
         return time;
     }
@@ -309,6 +302,7 @@ public final class TunnelSecurityAssociationSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

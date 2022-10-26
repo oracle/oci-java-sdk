@@ -5,22 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A rule for allowing inbound (INGRESS) or outbound (EGRESS) IP packets.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A rule for allowing inbound (INGRESS) or outbound (EGRESS) IP packets. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AddSecurityRuleDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AddSecurityRuleDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AddSecurityRuleDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "description",
@@ -64,66 +64,70 @@ public final class AddSecurityRuleDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * An optional description of your choice for the rule. Avoid entering confidential information.
-         *
-         **/
+         * An optional description of your choice for the rule. Avoid entering confidential
+         * information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * An optional description of your choice for the rule. Avoid entering confidential information.
+         * An optional description of your choice for the rule. Avoid entering confidential
+         * information.
          *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * Conceptually, this is the range of IP addresses that a packet originating from the instance
-         * can go to.
-         * <p>
-         * Allowed values:
-         * <p>
-         * An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}
-         *     IPv6 addressing is supported for all commercial and government regions. See
-         *     [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-         * <p>
-         * The {@code cidrBlock} value for a {@link Service}, if you're
-         *     setting up a security rule for traffic destined for a particular {@code Service} through
-         *     a service gateway. For example: {@code oci-phx-objectstorage}.
-         * <p>
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a {@link NetworkSecurityGroup} in the same
-         *     VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
-         *     traffic between VNICs in the same NSG.
+         * Conceptually, this is the range of IP addresses that a packet originating from the
+         * instance can go to.
          *
-         **/
+         * <p>Allowed values:
+         *
+         * <p>An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code
+         * 2001:0db8:0123:45::/56} IPv6 addressing is supported for all commercial and government
+         * regions. See [IPv6
+         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         *
+         * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a security
+         * rule for traffic destined for a particular {@code Service} through a service gateway. For
+         * example: {@code oci-phx-objectstorage}.
+         *
+         * <p>The
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * {@link NetworkSecurityGroup} in the same VCN. The value can be the NSG that the rule
+         * belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("destination")
         private String destination;
 
         /**
-         * Conceptually, this is the range of IP addresses that a packet originating from the instance
-         * can go to.
-         * <p>
-         * Allowed values:
-         * <p>
-         * An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}
-         *     IPv6 addressing is supported for all commercial and government regions. See
-         *     [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-         * <p>
-         * The {@code cidrBlock} value for a {@link Service}, if you're
-         *     setting up a security rule for traffic destined for a particular {@code Service} through
-         *     a service gateway. For example: {@code oci-phx-objectstorage}.
-         * <p>
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a {@link NetworkSecurityGroup} in the same
-         *     VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
-         *     traffic between VNICs in the same NSG.
+         * Conceptually, this is the range of IP addresses that a packet originating from the
+         * instance can go to.
+         *
+         * <p>Allowed values:
+         *
+         * <p>An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code
+         * 2001:0db8:0123:45::/56} IPv6 addressing is supported for all commercial and government
+         * regions. See [IPv6
+         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         *
+         * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a security
+         * rule for traffic destined for a particular {@code Service} through a service gateway. For
+         * example: {@code oci-phx-objectstorage}.
+         *
+         * <p>The
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * {@link NetworkSecurityGroup} in the same VCN. The value can be the NSG that the rule
+         * belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
          *
          * @param destination the value to set
          * @return this builder
-         **/
+         */
         public Builder destination(String destination) {
             this.destination = destination;
             this.__explicitlySet__.add("destination");
@@ -131,59 +135,61 @@ public final class AddSecurityRuleDetails
         }
         /**
          * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}.
-         * <p>
-         * Allowed values:
-         * <p>
-         * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
-         * <p>
-         * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code cidrBlock} value for a
-         *     {@link Service} (the rule is for traffic destined for a
-         *     particular {@code Service} through a service gateway).
-         * <p>
-         * {@code NETWORK_SECURITY_GROUP}: If the rule's {@code destination} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         *     {@link NetworkSecurityGroup}.
          *
-         **/
+         * <p>Allowed values:
+         *
+         * <p>{@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR
+         * notation.
+         *
+         * <p>{@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code cidrBlock}
+         * value for a {@link Service} (the rule is for traffic destined for a particular {@code
+         * Service} through a service gateway).
+         *
+         * <p>{@code NETWORK_SECURITY_GROUP}: If the rule's {@code destination} is the
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * {@link NetworkSecurityGroup}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
         private DestinationType destinationType;
 
         /**
          * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}.
-         * <p>
-         * Allowed values:
-         * <p>
-         * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
-         * <p>
-         * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code cidrBlock} value for a
-         *     {@link Service} (the rule is for traffic destined for a
-         *     particular {@code Service} through a service gateway).
-         * <p>
-         * {@code NETWORK_SECURITY_GROUP}: If the rule's {@code destination} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         *     {@link NetworkSecurityGroup}.
+         *
+         * <p>Allowed values:
+         *
+         * <p>{@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR
+         * notation.
+         *
+         * <p>{@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code cidrBlock}
+         * value for a {@link Service} (the rule is for traffic destined for a particular {@code
+         * Service} through a service gateway).
+         *
+         * <p>{@code NETWORK_SECURITY_GROUP}: If the rule's {@code destination} is the
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * {@link NetworkSecurityGroup}.
          *
          * @param destinationType the value to set
          * @return this builder
-         **/
+         */
         public Builder destinationType(DestinationType destinationType) {
             this.destinationType = destinationType;
             this.__explicitlySet__.add("destinationType");
             return this;
         }
         /**
-         * Direction of the security rule. Set to {@code EGRESS} for rules to allow outbound IP packets,
-         * or {@code INGRESS} for rules to allow inbound IP packets.
-         *
-         **/
+         * Direction of the security rule. Set to {@code EGRESS} for rules to allow outbound IP
+         * packets, or {@code INGRESS} for rules to allow inbound IP packets.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("direction")
         private Direction direction;
 
         /**
-         * Direction of the security rule. Set to {@code EGRESS} for rules to allow outbound IP packets,
-         * or {@code INGRESS} for rules to allow inbound IP packets.
+         * Direction of the security rule. Set to {@code EGRESS} for rules to allow outbound IP
+         * packets, or {@code INGRESS} for rules to allow inbound IP packets.
          *
          * @param direction the value to set
          * @return this builder
-         **/
+         */
         public Builder direction(Direction direction) {
             this.direction = direction;
             this.__explicitlySet__.add("direction");
@@ -202,10 +208,9 @@ public final class AddSecurityRuleDetails
          * A stateless rule allows traffic in one direction. Remember to add a corresponding
          * stateless rule in the other direction if you need to support bidirectional traffic. For
          * example, if egress traffic allows TCP destination port 80, there should be an ingress
-         * rule to allow TCP source port 80. Defaults to false, which means the rule is stateful
-         * and a corresponding rule is not necessary for bidirectional traffic.
-         *
-         **/
+         * rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and
+         * a corresponding rule is not necessary for bidirectional traffic.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isStateless")
         private Boolean isStateless;
 
@@ -213,36 +218,35 @@ public final class AddSecurityRuleDetails
          * A stateless rule allows traffic in one direction. Remember to add a corresponding
          * stateless rule in the other direction if you need to support bidirectional traffic. For
          * example, if egress traffic allows TCP destination port 80, there should be an ingress
-         * rule to allow TCP source port 80. Defaults to false, which means the rule is stateful
-         * and a corresponding rule is not necessary for bidirectional traffic.
+         * rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and
+         * a corresponding rule is not necessary for bidirectional traffic.
          *
          * @param isStateless the value to set
          * @return this builder
-         **/
+         */
         public Builder isStateless(Boolean isStateless) {
             this.isStateless = isStateless;
             this.__explicitlySet__.add("isStateless");
             return this;
         }
         /**
-         * The transport protocol. Specify either {@code all} or an IPv4 protocol number as
-         * defined in
-         * [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).
+         * The transport protocol. Specify either {@code all} or an IPv4 protocol number as defined
+         * in [Protocol
+         * Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).
          * Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private String protocol;
 
         /**
-         * The transport protocol. Specify either {@code all} or an IPv4 protocol number as
-         * defined in
-         * [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).
+         * The transport protocol. Specify either {@code all} or an IPv4 protocol number as defined
+         * in [Protocol
+         * Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).
          * Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
          *
          * @param protocol the value to set
          * @return this builder
-         **/
+         */
         public Builder protocol(String protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
@@ -251,46 +255,49 @@ public final class AddSecurityRuleDetails
         /**
          * Conceptually, this is the range of IP addresses that a packet coming into the instance
          * can come from.
-         * <p>
-         * Allowed values:
-         * <p>
-         * An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}
-         *     IPv6 addressing is supported for all commercial and government regions. See
-         *     [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-         * <p>
-         * The {@code cidrBlock} value for a {@link Service}, if you're
-         *     setting up a security rule for traffic coming from a particular {@code Service} through
-         *     a service gateway. For example: {@code oci-phx-objectstorage}.
-         * <p>
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a {@link NetworkSecurityGroup} in the same
-         *     VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
-         *     traffic between VNICs in the same NSG.
          *
-         **/
+         * <p>Allowed values:
+         *
+         * <p>An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code
+         * 2001:0db8:0123:45::/56} IPv6 addressing is supported for all commercial and government
+         * regions. See [IPv6
+         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         *
+         * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a security
+         * rule for traffic coming from a particular {@code Service} through a service gateway. For
+         * example: {@code oci-phx-objectstorage}.
+         *
+         * <p>The
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * {@link NetworkSecurityGroup} in the same VCN. The value can be the NSG that the rule
+         * belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private String source;
 
         /**
          * Conceptually, this is the range of IP addresses that a packet coming into the instance
          * can come from.
-         * <p>
-         * Allowed values:
-         * <p>
-         * An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}
-         *     IPv6 addressing is supported for all commercial and government regions. See
-         *     [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-         * <p>
-         * The {@code cidrBlock} value for a {@link Service}, if you're
-         *     setting up a security rule for traffic coming from a particular {@code Service} through
-         *     a service gateway. For example: {@code oci-phx-objectstorage}.
-         * <p>
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a {@link NetworkSecurityGroup} in the same
-         *     VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
-         *     traffic between VNICs in the same NSG.
+         *
+         * <p>Allowed values:
+         *
+         * <p>An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code
+         * 2001:0db8:0123:45::/56} IPv6 addressing is supported for all commercial and government
+         * regions. See [IPv6
+         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         *
+         * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a security
+         * rule for traffic coming from a particular {@code Service} through a service gateway. For
+         * example: {@code oci-phx-objectstorage}.
+         *
+         * <p>The
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * {@link NetworkSecurityGroup} in the same VCN. The value can be the NSG that the rule
+         * belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
          *
          * @param source the value to set
          * @return this builder
-         **/
+         */
         public Builder source(String source) {
             this.source = source;
             this.__explicitlySet__.add("source");
@@ -298,35 +305,38 @@ public final class AddSecurityRuleDetails
         }
         /**
          * Type of source for the rule. Required if {@code direction} = {@code INGRESS}.
-         * <p>
-         * {@code CIDR_BLOCK}: If the rule's {@code source} is an IP address range in CIDR notation.
-         * <p>
-         * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code source} is the {@code cidrBlock} value for a
-         *     {@link Service} (the rule is for traffic coming from a
-         *     particular {@code Service} through a service gateway).
-         * <p>
-         * {@code NETWORK_SECURITY_GROUP}: If the rule's {@code source} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         *     {@link NetworkSecurityGroup}.
          *
-         **/
+         * <p>{@code CIDR_BLOCK}: If the rule's {@code source} is an IP address range in CIDR
+         * notation.
+         *
+         * <p>{@code SERVICE_CIDR_BLOCK}: If the rule's {@code source} is the {@code cidrBlock}
+         * value for a {@link Service} (the rule is for traffic coming from a particular {@code
+         * Service} through a service gateway).
+         *
+         * <p>{@code NETWORK_SECURITY_GROUP}: If the rule's {@code source} is the
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * {@link NetworkSecurityGroup}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
         private SourceType sourceType;
 
         /**
          * Type of source for the rule. Required if {@code direction} = {@code INGRESS}.
-         * <p>
-         * {@code CIDR_BLOCK}: If the rule's {@code source} is an IP address range in CIDR notation.
-         * <p>
-         * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code source} is the {@code cidrBlock} value for a
-         *     {@link Service} (the rule is for traffic coming from a
-         *     particular {@code Service} through a service gateway).
-         * <p>
-         * {@code NETWORK_SECURITY_GROUP}: If the rule's {@code source} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         *     {@link NetworkSecurityGroup}.
+         *
+         * <p>{@code CIDR_BLOCK}: If the rule's {@code source} is an IP address range in CIDR
+         * notation.
+         *
+         * <p>{@code SERVICE_CIDR_BLOCK}: If the rule's {@code source} is the {@code cidrBlock}
+         * value for a {@link Service} (the rule is for traffic coming from a particular {@code
+         * Service} through a service gateway).
+         *
+         * <p>{@code NETWORK_SECURITY_GROUP}: If the rule's {@code source} is the
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * {@link NetworkSecurityGroup}.
          *
          * @param sourceType the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceType(SourceType sourceType) {
             this.sourceType = sourceType;
             this.__explicitlySet__.add("sourceType");
@@ -413,9 +423,7 @@ public final class AddSecurityRuleDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -426,8 +434,7 @@ public final class AddSecurityRuleDetails
 
     /**
      * An optional description of your choice for the rule. Avoid entering confidential information.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
@@ -435,7 +442,7 @@ public final class AddSecurityRuleDetails
      * An optional description of your choice for the rule. Avoid entering confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
@@ -443,65 +450,67 @@ public final class AddSecurityRuleDetails
     /**
      * Conceptually, this is the range of IP addresses that a packet originating from the instance
      * can go to.
-     * <p>
-     * Allowed values:
-     * <p>
-     * An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}
-     *     IPv6 addressing is supported for all commercial and government regions. See
-     *     [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-     * <p>
-     * The {@code cidrBlock} value for a {@link Service}, if you're
-     *     setting up a security rule for traffic destined for a particular {@code Service} through
-     *     a service gateway. For example: {@code oci-phx-objectstorage}.
-     * <p>
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a {@link NetworkSecurityGroup} in the same
-     *     VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
-     *     traffic between VNICs in the same NSG.
      *
-     **/
+     * <p>Allowed values:
+     *
+     * <p>An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code
+     * 2001:0db8:0123:45::/56} IPv6 addressing is supported for all commercial and government
+     * regions. See [IPv6
+     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     *
+     * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a security rule
+     * for traffic destined for a particular {@code Service} through a service gateway. For example:
+     * {@code oci-phx-objectstorage}.
+     *
+     * <p>The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * a {@link NetworkSecurityGroup} in the same VCN. The value can be the NSG that the rule
+     * belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
     private final String destination;
 
     /**
      * Conceptually, this is the range of IP addresses that a packet originating from the instance
      * can go to.
-     * <p>
-     * Allowed values:
-     * <p>
-     * An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}
-     *     IPv6 addressing is supported for all commercial and government regions. See
-     *     [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-     * <p>
-     * The {@code cidrBlock} value for a {@link Service}, if you're
-     *     setting up a security rule for traffic destined for a particular {@code Service} through
-     *     a service gateway. For example: {@code oci-phx-objectstorage}.
-     * <p>
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a {@link NetworkSecurityGroup} in the same
-     *     VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
-     *     traffic between VNICs in the same NSG.
+     *
+     * <p>Allowed values:
+     *
+     * <p>An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code
+     * 2001:0db8:0123:45::/56} IPv6 addressing is supported for all commercial and government
+     * regions. See [IPv6
+     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     *
+     * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a security rule
+     * for traffic destined for a particular {@code Service} through a service gateway. For example:
+     * {@code oci-phx-objectstorage}.
+     *
+     * <p>The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * a {@link NetworkSecurityGroup} in the same VCN. The value can be the NSG that the rule
+     * belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
      *
      * @return the value
-     **/
+     */
     public String getDestination() {
         return destination;
     }
 
     /**
      * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}.
-     * <p>
-     * Allowed values:
-     * <p>
-     * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
-     * <p>
-     * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code cidrBlock} value for a
-     *     {@link Service} (the rule is for traffic destined for a
-     *     particular {@code Service} through a service gateway).
-     * <p>
-     * {@code NETWORK_SECURITY_GROUP}: If the rule's {@code destination} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     *     {@link NetworkSecurityGroup}.
      *
-     **/
-    public enum DestinationType {
+     * <p>Allowed values:
+     *
+     * <p>{@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR
+     * notation.
+     *
+     * <p>{@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code cidrBlock}
+     * value for a {@link Service} (the rule is for traffic destined for a particular {@code
+     * Service} through a service gateway).
+     *
+     * <p>{@code NETWORK_SECURITY_GROUP}: If the rule's {@code destination} is the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * {@link NetworkSecurityGroup}.
+     */
+    public enum DestinationType implements com.oracle.bmc.http.internal.BmcEnum {
         CidrBlock("CIDR_BLOCK"),
         ServiceCidrBlock("SERVICE_CIDR_BLOCK"),
         NetworkSecurityGroup("NETWORK_SECURITY_GROUP"),
@@ -536,38 +545,41 @@ public final class AddSecurityRuleDetails
     };
     /**
      * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}.
-     * <p>
-     * Allowed values:
-     * <p>
-     * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
-     * <p>
-     * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code cidrBlock} value for a
-     *     {@link Service} (the rule is for traffic destined for a
-     *     particular {@code Service} through a service gateway).
-     * <p>
-     * {@code NETWORK_SECURITY_GROUP}: If the rule's {@code destination} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     *     {@link NetworkSecurityGroup}.
      *
-     **/
+     * <p>Allowed values:
+     *
+     * <p>{@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR
+     * notation.
+     *
+     * <p>{@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code cidrBlock}
+     * value for a {@link Service} (the rule is for traffic destined for a particular {@code
+     * Service} through a service gateway).
+     *
+     * <p>{@code NETWORK_SECURITY_GROUP}: If the rule's {@code destination} is the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * {@link NetworkSecurityGroup}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
     private final DestinationType destinationType;
 
     /**
      * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}.
-     * <p>
-     * Allowed values:
-     * <p>
-     * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
-     * <p>
-     * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code cidrBlock} value for a
-     *     {@link Service} (the rule is for traffic destined for a
-     *     particular {@code Service} through a service gateway).
-     * <p>
-     * {@code NETWORK_SECURITY_GROUP}: If the rule's {@code destination} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     *     {@link NetworkSecurityGroup}.
+     *
+     * <p>Allowed values:
+     *
+     * <p>{@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR
+     * notation.
+     *
+     * <p>{@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code cidrBlock}
+     * value for a {@link Service} (the rule is for traffic destined for a particular {@code
+     * Service} through a service gateway).
+     *
+     * <p>{@code NETWORK_SECURITY_GROUP}: If the rule's {@code destination} is the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * {@link NetworkSecurityGroup}.
      *
      * @return the value
-     **/
+     */
     public DestinationType getDestinationType() {
         return destinationType;
     }
@@ -575,9 +587,8 @@ public final class AddSecurityRuleDetails
     /**
      * Direction of the security rule. Set to {@code EGRESS} for rules to allow outbound IP packets,
      * or {@code INGRESS} for rules to allow inbound IP packets.
-     *
-     **/
-    public enum Direction {
+     */
+    public enum Direction implements com.oracle.bmc.http.internal.BmcEnum {
         Egress("EGRESS"),
         Ingress("INGRESS"),
         ;
@@ -612,8 +623,7 @@ public final class AddSecurityRuleDetails
     /**
      * Direction of the security rule. Set to {@code EGRESS} for rules to allow outbound IP packets,
      * or {@code INGRESS} for rules to allow inbound IP packets.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("direction")
     private final Direction direction;
 
@@ -622,7 +632,7 @@ public final class AddSecurityRuleDetails
      * or {@code INGRESS} for rules to allow inbound IP packets.
      *
      * @return the value
-     **/
+     */
     public Direction getDirection() {
         return direction;
     }
@@ -635,111 +645,108 @@ public final class AddSecurityRuleDetails
     }
 
     /**
-     * A stateless rule allows traffic in one direction. Remember to add a corresponding
-     * stateless rule in the other direction if you need to support bidirectional traffic. For
-     * example, if egress traffic allows TCP destination port 80, there should be an ingress
-     * rule to allow TCP source port 80. Defaults to false, which means the rule is stateful
-     * and a corresponding rule is not necessary for bidirectional traffic.
-     *
-     **/
+     * A stateless rule allows traffic in one direction. Remember to add a corresponding stateless
+     * rule in the other direction if you need to support bidirectional traffic. For example, if
+     * egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP
+     * source port 80. Defaults to false, which means the rule is stateful and a corresponding rule
+     * is not necessary for bidirectional traffic.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isStateless")
     private final Boolean isStateless;
 
     /**
-     * A stateless rule allows traffic in one direction. Remember to add a corresponding
-     * stateless rule in the other direction if you need to support bidirectional traffic. For
-     * example, if egress traffic allows TCP destination port 80, there should be an ingress
-     * rule to allow TCP source port 80. Defaults to false, which means the rule is stateful
-     * and a corresponding rule is not necessary for bidirectional traffic.
+     * A stateless rule allows traffic in one direction. Remember to add a corresponding stateless
+     * rule in the other direction if you need to support bidirectional traffic. For example, if
+     * egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP
+     * source port 80. Defaults to false, which means the rule is stateful and a corresponding rule
+     * is not necessary for bidirectional traffic.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsStateless() {
         return isStateless;
     }
 
     /**
-     * The transport protocol. Specify either {@code all} or an IPv4 protocol number as
-     * defined in
+     * The transport protocol. Specify either {@code all} or an IPv4 protocol number as defined in
      * [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).
      * Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final String protocol;
 
     /**
-     * The transport protocol. Specify either {@code all} or an IPv4 protocol number as
-     * defined in
+     * The transport protocol. Specify either {@code all} or an IPv4 protocol number as defined in
      * [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).
      * Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
      *
      * @return the value
-     **/
+     */
     public String getProtocol() {
         return protocol;
     }
 
     /**
-     * Conceptually, this is the range of IP addresses that a packet coming into the instance
-     * can come from.
-     * <p>
-     * Allowed values:
-     * <p>
-     * An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}
-     *     IPv6 addressing is supported for all commercial and government regions. See
-     *     [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-     * <p>
-     * The {@code cidrBlock} value for a {@link Service}, if you're
-     *     setting up a security rule for traffic coming from a particular {@code Service} through
-     *     a service gateway. For example: {@code oci-phx-objectstorage}.
-     * <p>
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a {@link NetworkSecurityGroup} in the same
-     *     VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
-     *     traffic between VNICs in the same NSG.
+     * Conceptually, this is the range of IP addresses that a packet coming into the instance can
+     * come from.
      *
-     **/
+     * <p>Allowed values:
+     *
+     * <p>An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code
+     * 2001:0db8:0123:45::/56} IPv6 addressing is supported for all commercial and government
+     * regions. See [IPv6
+     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     *
+     * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a security rule
+     * for traffic coming from a particular {@code Service} through a service gateway. For example:
+     * {@code oci-phx-objectstorage}.
+     *
+     * <p>The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * a {@link NetworkSecurityGroup} in the same VCN. The value can be the NSG that the rule
+     * belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final String source;
 
     /**
-     * Conceptually, this is the range of IP addresses that a packet coming into the instance
-     * can come from.
-     * <p>
-     * Allowed values:
-     * <p>
-     * An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}
-     *     IPv6 addressing is supported for all commercial and government regions. See
-     *     [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-     * <p>
-     * The {@code cidrBlock} value for a {@link Service}, if you're
-     *     setting up a security rule for traffic coming from a particular {@code Service} through
-     *     a service gateway. For example: {@code oci-phx-objectstorage}.
-     * <p>
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a {@link NetworkSecurityGroup} in the same
-     *     VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
-     *     traffic between VNICs in the same NSG.
+     * Conceptually, this is the range of IP addresses that a packet coming into the instance can
+     * come from.
+     *
+     * <p>Allowed values:
+     *
+     * <p>An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code
+     * 2001:0db8:0123:45::/56} IPv6 addressing is supported for all commercial and government
+     * regions. See [IPv6
+     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     *
+     * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a security rule
+     * for traffic coming from a particular {@code Service} through a service gateway. For example:
+     * {@code oci-phx-objectstorage}.
+     *
+     * <p>The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * a {@link NetworkSecurityGroup} in the same VCN. The value can be the NSG that the rule
+     * belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
      *
      * @return the value
-     **/
+     */
     public String getSource() {
         return source;
     }
 
     /**
      * Type of source for the rule. Required if {@code direction} = {@code INGRESS}.
-     * <p>
-     * {@code CIDR_BLOCK}: If the rule's {@code source} is an IP address range in CIDR notation.
-     * <p>
-     * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code source} is the {@code cidrBlock} value for a
-     *     {@link Service} (the rule is for traffic coming from a
-     *     particular {@code Service} through a service gateway).
-     * <p>
-     * {@code NETWORK_SECURITY_GROUP}: If the rule's {@code source} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     *     {@link NetworkSecurityGroup}.
      *
-     **/
-    public enum SourceType {
+     * <p>{@code CIDR_BLOCK}: If the rule's {@code source} is an IP address range in CIDR notation.
+     *
+     * <p>{@code SERVICE_CIDR_BLOCK}: If the rule's {@code source} is the {@code cidrBlock} value
+     * for a {@link Service} (the rule is for traffic coming from a particular {@code Service}
+     * through a service gateway).
+     *
+     * <p>{@code NETWORK_SECURITY_GROUP}: If the rule's {@code source} is the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * {@link NetworkSecurityGroup}.
+     */
+    public enum SourceType implements com.oracle.bmc.http.internal.BmcEnum {
         CidrBlock("CIDR_BLOCK"),
         ServiceCidrBlock("SERVICE_CIDR_BLOCK"),
         NetworkSecurityGroup("NETWORK_SECURITY_GROUP"),
@@ -774,34 +781,35 @@ public final class AddSecurityRuleDetails
     };
     /**
      * Type of source for the rule. Required if {@code direction} = {@code INGRESS}.
-     * <p>
-     * {@code CIDR_BLOCK}: If the rule's {@code source} is an IP address range in CIDR notation.
-     * <p>
-     * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code source} is the {@code cidrBlock} value for a
-     *     {@link Service} (the rule is for traffic coming from a
-     *     particular {@code Service} through a service gateway).
-     * <p>
-     * {@code NETWORK_SECURITY_GROUP}: If the rule's {@code source} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     *     {@link NetworkSecurityGroup}.
      *
-     **/
+     * <p>{@code CIDR_BLOCK}: If the rule's {@code source} is an IP address range in CIDR notation.
+     *
+     * <p>{@code SERVICE_CIDR_BLOCK}: If the rule's {@code source} is the {@code cidrBlock} value
+     * for a {@link Service} (the rule is for traffic coming from a particular {@code Service}
+     * through a service gateway).
+     *
+     * <p>{@code NETWORK_SECURITY_GROUP}: If the rule's {@code source} is the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * {@link NetworkSecurityGroup}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     private final SourceType sourceType;
 
     /**
      * Type of source for the rule. Required if {@code direction} = {@code INGRESS}.
-     * <p>
-     * {@code CIDR_BLOCK}: If the rule's {@code source} is an IP address range in CIDR notation.
-     * <p>
-     * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code source} is the {@code cidrBlock} value for a
-     *     {@link Service} (the rule is for traffic coming from a
-     *     particular {@code Service} through a service gateway).
-     * <p>
-     * {@code NETWORK_SECURITY_GROUP}: If the rule's {@code source} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     *     {@link NetworkSecurityGroup}.
+     *
+     * <p>{@code CIDR_BLOCK}: If the rule's {@code source} is an IP address range in CIDR notation.
+     *
+     * <p>{@code SERVICE_CIDR_BLOCK}: If the rule's {@code source} is the {@code cidrBlock} value
+     * for a {@link Service} (the rule is for traffic coming from a particular {@code Service}
+     * through a service gateway).
+     *
+     * <p>{@code NETWORK_SECURITY_GROUP}: If the rule's {@code source} is the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * {@link NetworkSecurityGroup}.
      *
      * @return the value
-     **/
+     */
     public SourceType getSourceType() {
         return sourceType;
     }
@@ -827,6 +835,7 @@ public final class AddSecurityRuleDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

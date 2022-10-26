@@ -5,20 +5,21 @@
 package com.oracle.bmc.ons.model;
 
 /**
- * The content of the message to be published.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The content of the message to be published. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MessageDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MessageDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class MessageDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"title", "body"})
     public MessageDetails(String title, String body) {
@@ -29,37 +30,31 @@ public final class MessageDetails extends com.oracle.bmc.http.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The title of the message to be published. Avoid entering confidential information.
-         **/
+        /** The title of the message to be published. Avoid entering confidential information. */
         @com.fasterxml.jackson.annotation.JsonProperty("title")
         private String title;
 
         /**
          * The title of the message to be published. Avoid entering confidential information.
+         *
          * @param title the value to set
          * @return this builder
-         **/
+         */
         public Builder title(String title) {
             this.title = title;
             this.__explicitlySet__.add("title");
             return this;
         }
-        /**
-         * The body of the message to be published.
-         * Avoid entering confidential information.
-         *
-         **/
+        /** The body of the message to be published. Avoid entering confidential information. */
         @com.fasterxml.jackson.annotation.JsonProperty("body")
         private String body;
 
         /**
-         * The body of the message to be published.
-         * Avoid entering confidential information.
+         * The body of the message to be published. Avoid entering confidential information.
          *
          * @param body the value to set
          * @return this builder
-         **/
+         */
         public Builder body(String body) {
             this.body = body;
             this.__explicitlySet__.add("body");
@@ -89,9 +84,7 @@ public final class MessageDetails extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,34 +93,28 @@ public final class MessageDetails extends com.oracle.bmc.http.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /**
-     * The title of the message to be published. Avoid entering confidential information.
-     **/
+    /** The title of the message to be published. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("title")
     private final String title;
 
     /**
      * The title of the message to be published. Avoid entering confidential information.
+     *
      * @return the value
-     **/
+     */
     public String getTitle() {
         return title;
     }
 
-    /**
-     * The body of the message to be published.
-     * Avoid entering confidential information.
-     *
-     **/
+    /** The body of the message to be published. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("body")
     private final String body;
 
     /**
-     * The body of the message to be published.
-     * Avoid entering confidential information.
+     * The body of the message to be published. Avoid entering confidential information.
      *
      * @return the value
-     **/
+     */
     public String getBody() {
         return body;
     }
@@ -139,6 +126,7 @@ public final class MessageDetails extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

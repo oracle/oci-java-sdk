@@ -5,23 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The estimated total time required in minutes for all patching operations (database server,
+ * storage server, and network switch patching). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = EstimatedPatchingTime.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = EstimatedPatchingTime.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class EstimatedPatchingTime
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "totalEstimatedPatchingTime",
@@ -43,66 +43,62 @@ public final class EstimatedPatchingTime
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The estimated total time required in minutes for all patching operations.
-         **/
+        /** The estimated total time required in minutes for all patching operations. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalEstimatedPatchingTime")
         private Integer totalEstimatedPatchingTime;
 
         /**
          * The estimated total time required in minutes for all patching operations.
+         *
          * @param totalEstimatedPatchingTime the value to set
          * @return this builder
-         **/
+         */
         public Builder totalEstimatedPatchingTime(Integer totalEstimatedPatchingTime) {
             this.totalEstimatedPatchingTime = totalEstimatedPatchingTime;
             this.__explicitlySet__.add("totalEstimatedPatchingTime");
             return this;
         }
-        /**
-         * The estimated time required in minutes for database server patching.
-         **/
+        /** The estimated time required in minutes for database server patching. */
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedDbServerPatchingTime")
         private Integer estimatedDbServerPatchingTime;
 
         /**
          * The estimated time required in minutes for database server patching.
+         *
          * @param estimatedDbServerPatchingTime the value to set
          * @return this builder
-         **/
+         */
         public Builder estimatedDbServerPatchingTime(Integer estimatedDbServerPatchingTime) {
             this.estimatedDbServerPatchingTime = estimatedDbServerPatchingTime;
             this.__explicitlySet__.add("estimatedDbServerPatchingTime");
             return this;
         }
-        /**
-         * The estimated time required in minutes for storage server patching.
-         **/
+        /** The estimated time required in minutes for storage server patching. */
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedStorageServerPatchingTime")
         private Integer estimatedStorageServerPatchingTime;
 
         /**
          * The estimated time required in minutes for storage server patching.
+         *
          * @param estimatedStorageServerPatchingTime the value to set
          * @return this builder
-         **/
+         */
         public Builder estimatedStorageServerPatchingTime(
                 Integer estimatedStorageServerPatchingTime) {
             this.estimatedStorageServerPatchingTime = estimatedStorageServerPatchingTime;
             this.__explicitlySet__.add("estimatedStorageServerPatchingTime");
             return this;
         }
-        /**
-         * The estimated time required in minutes for network switch patching.
-         **/
+        /** The estimated time required in minutes for network switch patching. */
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedNetworkSwitchesPatchingTime")
         private Integer estimatedNetworkSwitchesPatchingTime;
 
         /**
          * The estimated time required in minutes for network switch patching.
+         *
          * @param estimatedNetworkSwitchesPatchingTime the value to set
          * @return this builder
-         **/
+         */
         public Builder estimatedNetworkSwitchesPatchingTime(
                 Integer estimatedNetworkSwitchesPatchingTime) {
             this.estimatedNetworkSwitchesPatchingTime = estimatedNetworkSwitchesPatchingTime;
@@ -146,9 +142,7 @@ public final class EstimatedPatchingTime
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -157,58 +151,54 @@ public final class EstimatedPatchingTime
         return new Builder().copy(this);
     }
 
-    /**
-     * The estimated total time required in minutes for all patching operations.
-     **/
+    /** The estimated total time required in minutes for all patching operations. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalEstimatedPatchingTime")
     private final Integer totalEstimatedPatchingTime;
 
     /**
      * The estimated total time required in minutes for all patching operations.
+     *
      * @return the value
-     **/
+     */
     public Integer getTotalEstimatedPatchingTime() {
         return totalEstimatedPatchingTime;
     }
 
-    /**
-     * The estimated time required in minutes for database server patching.
-     **/
+    /** The estimated time required in minutes for database server patching. */
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedDbServerPatchingTime")
     private final Integer estimatedDbServerPatchingTime;
 
     /**
      * The estimated time required in minutes for database server patching.
+     *
      * @return the value
-     **/
+     */
     public Integer getEstimatedDbServerPatchingTime() {
         return estimatedDbServerPatchingTime;
     }
 
-    /**
-     * The estimated time required in minutes for storage server patching.
-     **/
+    /** The estimated time required in minutes for storage server patching. */
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedStorageServerPatchingTime")
     private final Integer estimatedStorageServerPatchingTime;
 
     /**
      * The estimated time required in minutes for storage server patching.
+     *
      * @return the value
-     **/
+     */
     public Integer getEstimatedStorageServerPatchingTime() {
         return estimatedStorageServerPatchingTime;
     }
 
-    /**
-     * The estimated time required in minutes for network switch patching.
-     **/
+    /** The estimated time required in minutes for network switch patching. */
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedNetworkSwitchesPatchingTime")
     private final Integer estimatedNetworkSwitchesPatchingTime;
 
     /**
      * The estimated time required in minutes for network switch patching.
+     *
      * @return the value
-     **/
+     */
     public Integer getEstimatedNetworkSwitchesPatchingTime() {
         return estimatedNetworkSwitchesPatchingTime;
     }
@@ -220,6 +210,7 @@ public final class EstimatedPatchingTime
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.aianomalydetection.model;
 
-/**
- * Possible data sources
- **/
+/** Possible data sources */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-public enum DataSourceType {
+public enum DataSourceType implements com.oracle.bmc.http.internal.BmcEnum {
     OracleObjectStorage("ORACLE_OBJECT_STORAGE"),
     OracleAtp("ORACLE_ATP"),
     Influx("INFLUX"),

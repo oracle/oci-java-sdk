@@ -9,12 +9,15 @@ import com.oracle.bmc.objectstorage.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class HeadBucketResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when
+     * debugging.
      */
     private String opcClientRequestId;
 
     /**
-     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when
+     * debugging.
+     *
      * @return the value
      */
     public String getOpcClientRequestId() {
@@ -22,15 +25,14 @@ public class HeadBucketResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
-     * request, provide this request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide this request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
-     * request, provide this request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide this request ID.
      *
      * @return the value
      */
@@ -38,13 +40,12 @@ public class HeadBucketResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /**
-     * The current entity tag (ETag) for the bucket.
-     */
+    /** The current entity tag (ETag) for the bucket. */
     private String eTag;
 
     /**
      * The current entity tag (ETag) for the bucket.
+     *
      * @return the value
      */
     public String getETag() {
@@ -52,18 +53,17 @@ public class HeadBucketResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Flag to indicate whether or not the object was modified.  If this is true,
-     * the getter for the object itself will return null.  Callers should check this
-     * if they specified one of the request params that might result in a conditional
-     * response (like 'if-match'/'if-none-match').
+     * Flag to indicate whether or not the object was modified. If this is true, the getter for the
+     * object itself will return null. Callers should check this if they specified one of the
+     * request params that might result in a conditional response (like 'if-match'/'if-none-match').
      */
     private boolean isNotModified;
 
     /**
-     * Flag to indicate whether or not the object was modified.  If this is true,
-     * the getter for the object itself will return null.  Callers should check this
-     * if they specified one of the request params that might result in a conditional
-     * response (like 'if-match'/'if-none-match').
+     * Flag to indicate whether or not the object was modified. If this is true, the getter for the
+     * object itself will return null. Callers should check this if they specified one of the
+     * request params that might result in a conditional response (like 'if-match'/'if-none-match').
+     *
      * @param true if the object was not modified
      */
     public boolean isNotModified() {
@@ -80,7 +80,7 @@ public class HeadBucketResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private HeadBucketResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcClientRequestId,
             String opcRequestId,
             String eTag,
@@ -92,28 +92,34 @@ public class HeadBucketResponse extends com.oracle.bmc.responses.BmcResponse {
         this.isNotModified = isNotModified;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<HeadBucketResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when
+         * debugging.
          */
         private String opcClientRequestId;
 
         /**
-         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when
+         * debugging.
+         *
          * @param opcClientRequestId the value to set
          * @return this builder
          */
@@ -123,15 +129,14 @@ public class HeadBucketResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
-         * request, provide this request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide this request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
-         * request, provide this request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide this request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -141,13 +146,12 @@ public class HeadBucketResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * The current entity tag (ETag) for the bucket.
-         */
+        /** The current entity tag (ETag) for the bucket. */
         private String eTag;
 
         /**
          * The current entity tag (ETag) for the bucket.
+         *
          * @param eTag the value to set
          * @return this builder
          */
@@ -157,18 +161,19 @@ public class HeadBucketResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Flag to indicate whether or not the object was modified.  If this is true,
-         * the getter for the object itself will return null.  Callers should check this
-         * if they specified one of the request params that might result in a conditional
-         * response (like 'if-match'/'if-none-match').
+         * Flag to indicate whether or not the object was modified. If this is true, the getter for
+         * the object itself will return null. Callers should check this if they specified one of
+         * the request params that might result in a conditional response (like
+         * 'if-match'/'if-none-match').
          */
         private boolean isNotModified;
 
         /**
-         * Flag to indicate whether or not the object was modified.  If this is true,
-         * the getter for the object itself will return null.  Callers should check this
-         * if they specified one of the request params that might result in a conditional
-         * response (like 'if-match'/'if-none-match').
+         * Flag to indicate whether or not the object was modified. If this is true, the getter for
+         * the object itself will return null. Callers should check this if they specified one of
+         * the request params that might result in a conditional response (like
+         * 'if-match'/'if-none-match').
+         *
          * @param true if the object was not modified
          */
         public Builder isNotModified(boolean isNotModified) {
@@ -178,8 +183,10 @@ public class HeadBucketResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(HeadBucketResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -193,8 +200,10 @@ public class HeadBucketResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public HeadBucketResponse build() {
             return new HeadBucketResponse(
                     __httpStatusCode__,
@@ -208,6 +217,7 @@ public class HeadBucketResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

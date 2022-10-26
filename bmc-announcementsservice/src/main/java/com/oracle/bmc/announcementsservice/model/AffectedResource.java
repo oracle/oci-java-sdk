@@ -5,20 +5,21 @@
 package com.oracle.bmc.announcementsservice.model;
 
 /**
- * The resource affected by the event described in the announcement.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The resource affected by the event described in the announcement. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AffectedResource.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AffectedResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class AffectedResource
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "resourceId",
@@ -40,65 +41,61 @@ public final class AffectedResource extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the affected resource.
-         **/
+        /** The OCID of the affected resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
          * The OCID of the affected resource.
+         *
          * @param resourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /**
-         * The friendly name of the resource.
-         **/
+        /** The friendly name of the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
         /**
          * The friendly name of the resource.
+         *
          * @param resourceName the value to set
          * @return this builder
-         **/
+         */
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-        /**
-         * The region where the affected resource exists.
-         **/
+        /** The region where the affected resource exists. */
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
          * The region where the affected resource exists.
+         *
          * @param region the value to set
          * @return this builder
-         **/
+         */
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-        /**
-         * Additional properties associated with the resource.
-         **/
+        /** Additional properties associated with the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("additionalProperties")
         private java.util.List<Property> additionalProperties;
 
         /**
          * Additional properties associated with the resource.
+         *
          * @param additionalProperties the value to set
          * @return this builder
-         **/
+         */
         public Builder additionalProperties(java.util.List<Property> additionalProperties) {
             this.additionalProperties = additionalProperties;
             this.__explicitlySet__.add("additionalProperties");
@@ -139,9 +136,7 @@ public final class AffectedResource extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -150,58 +145,54 @@ public final class AffectedResource extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the affected resource.
-     **/
+    /** The OCID of the affected resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
      * The OCID of the affected resource.
+     *
      * @return the value
-     **/
+     */
     public String getResourceId() {
         return resourceId;
     }
 
-    /**
-     * The friendly name of the resource.
-     **/
+    /** The friendly name of the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
     /**
      * The friendly name of the resource.
+     *
      * @return the value
-     **/
+     */
     public String getResourceName() {
         return resourceName;
     }
 
-    /**
-     * The region where the affected resource exists.
-     **/
+    /** The region where the affected resource exists. */
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
      * The region where the affected resource exists.
+     *
      * @return the value
-     **/
+     */
     public String getRegion() {
         return region;
     }
 
-    /**
-     * Additional properties associated with the resource.
-     **/
+    /** Additional properties associated with the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("additionalProperties")
     private final java.util.List<Property> additionalProperties;
 
     /**
      * Additional properties associated with the resource.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Property> getAdditionalProperties() {
         return additionalProperties;
     }
@@ -213,6 +204,7 @@ public final class AffectedResource extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -10,7 +10,9 @@ import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.responses.AsyncHandler;
 
 /**
- * A wrapper around an async handler that closes the stream at the end of a request, if the body is a stream.
+ * A wrapper around an async handler that closes the stream at the end of a request, if the body is
+ * a stream.
+ *
  * @param <REQUEST> type of the request
  * @param <RESPONSE> type of the response
  */

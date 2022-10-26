@@ -5,23 +5,19 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * The InnoDB shutdown mode. If the value is "SLOW", InnoDB does a slow
- * shutdown, a full purge and a change buffer merge before shutting
- * down. If the value is "FAST", InnoDB skips these operations at shutdown,
- * a process known as a fast shutdown. If the value is "IMMEDIATE", InnoDB
- * flushes its logs and shuts down cold, as if MySQL had crashed; no
- * committed transactions are lost, but the crash recovery operation makes
- * the next startup take longer.
- * <p>
- * The slow shutdown can take minutes, or even hours in extreme cases where
- * substantial amounts of data are still buffered. Use the slow shutdown
- * technique before upgrading or downgrading between MySQL major releases,
- * so that all data files are fully prepared in case the upgrade process
- * updates the file format.
+ * The InnoDB shutdown mode. If the value is "SLOW", InnoDB does a slow shutdown, a full purge and a
+ * change buffer merge before shutting down. If the value is "FAST", InnoDB skips these operations
+ * at shutdown, a process known as a fast shutdown. If the value is "IMMEDIATE", InnoDB flushes its
+ * logs and shuts down cold, as if MySQL had crashed; no committed transactions are lost, but the
+ * crash recovery operation makes the next startup take longer.
  *
- **/
+ * <p>The slow shutdown can take minutes, or even hours in extreme cases where substantial amounts
+ * of data are still buffered. Use the slow shutdown technique before upgrading or downgrading
+ * between MySQL major releases, so that all data files are fully prepared in case the upgrade
+ * process updates the file format.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-public enum InnoDbShutdownMode {
+public enum InnoDbShutdownMode implements com.oracle.bmc.http.internal.BmcEnum {
     Immediate("IMMEDIATE"),
     Fast("FAST"),
     Slow("SLOW"),

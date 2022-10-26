@@ -5,19 +5,20 @@
 package com.oracle.bmc.nosql.model;
 
 /**
- * A column of a table.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A column of a table. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Column.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Column extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Column extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -45,90 +46,82 @@ public final class Column extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The column name.
-         **/
+        /** The column name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The column name.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The column type.
-         **/
+        /** The column type. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * The column type.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * The column nullable flag.
-         **/
+        /** The column nullable flag. */
         @com.fasterxml.jackson.annotation.JsonProperty("isNullable")
         private Boolean isNullable;
 
         /**
          * The column nullable flag.
+         *
          * @param isNullable the value to set
          * @return this builder
-         **/
+         */
         public Builder isNullable(Boolean isNullable) {
             this.isNullable = isNullable;
             this.__explicitlySet__.add("isNullable");
             return this;
         }
-        /**
-         * The column default value.
-         **/
+        /** The column default value. */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private String defaultValue;
 
         /**
          * The column default value.
+         *
          * @param defaultValue the value to set
          * @return this builder
-         **/
+         */
         public Builder defaultValue(String defaultValue) {
             this.defaultValue = defaultValue;
             this.__explicitlySet__.add("defaultValue");
             return this;
         }
-        /**
-         * True if the STRING column was declared AS UUID.
-         **/
+        /** True if the STRING column was declared AS UUID. */
         @com.fasterxml.jackson.annotation.JsonProperty("isAsUuid")
         private Boolean isAsUuid;
 
         /**
          * True if the STRING column was declared AS UUID.
+         *
          * @param isAsUuid the value to set
          * @return this builder
-         **/
+         */
         public Builder isAsUuid(Boolean isAsUuid) {
             this.isAsUuid = isAsUuid;
             this.__explicitlySet__.add("isAsUuid");
             return this;
         }
-        /**
-         * True if the STRING AS UUID column is also GENERATED BY DEFAULT.
-         *
-         **/
+        /** True if the STRING AS UUID column is also GENERATED BY DEFAULT. */
         @com.fasterxml.jackson.annotation.JsonProperty("isGenerated")
         private Boolean isGenerated;
 
@@ -137,7 +130,7 @@ public final class Column extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
          *
          * @param isGenerated the value to set
          * @return this builder
-         **/
+         */
         public Builder isGenerated(Boolean isGenerated) {
             this.isGenerated = isGenerated;
             this.__explicitlySet__.add("isGenerated");
@@ -186,9 +179,7 @@ public final class Column extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -197,80 +188,72 @@ public final class Column extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         return new Builder().copy(this);
     }
 
-    /**
-     * The column name.
-     **/
+    /** The column name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The column name.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The column type.
-     **/
+    /** The column type. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * The column type.
+     *
      * @return the value
-     **/
+     */
     public String getType() {
         return type;
     }
 
-    /**
-     * The column nullable flag.
-     **/
+    /** The column nullable flag. */
     @com.fasterxml.jackson.annotation.JsonProperty("isNullable")
     private final Boolean isNullable;
 
     /**
      * The column nullable flag.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsNullable() {
         return isNullable;
     }
 
-    /**
-     * The column default value.
-     **/
+    /** The column default value. */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     private final String defaultValue;
 
     /**
      * The column default value.
+     *
      * @return the value
-     **/
+     */
     public String getDefaultValue() {
         return defaultValue;
     }
 
-    /**
-     * True if the STRING column was declared AS UUID.
-     **/
+    /** True if the STRING column was declared AS UUID. */
     @com.fasterxml.jackson.annotation.JsonProperty("isAsUuid")
     private final Boolean isAsUuid;
 
     /**
      * True if the STRING column was declared AS UUID.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsAsUuid() {
         return isAsUuid;
     }
 
-    /**
-     * True if the STRING AS UUID column is also GENERATED BY DEFAULT.
-     *
-     **/
+    /** True if the STRING AS UUID column is also GENERATED BY DEFAULT. */
     @com.fasterxml.jackson.annotation.JsonProperty("isGenerated")
     private final Boolean isGenerated;
 
@@ -278,7 +261,7 @@ public final class Column extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
      * True if the STRING AS UUID column is also GENERATED BY DEFAULT.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsGenerated() {
         return isGenerated;
     }
@@ -290,6 +273,7 @@ public final class Column extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

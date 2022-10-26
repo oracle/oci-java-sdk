@@ -5,22 +5,22 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * aggregated network data.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * aggregated network data. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AggregatedNetworkData.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AggregatedNetworkData.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AggregatedNetworkData
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "resultState",
@@ -45,81 +45,76 @@ public final class AggregatedNetworkData
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * state of the result
-         **/
+        /** state of the result */
         @com.fasterxml.jackson.annotation.JsonProperty("resultState")
         private ResultState resultState;
 
         /**
          * state of the result
+         *
          * @param resultState the value to set
          * @return this builder
-         **/
+         */
         public Builder resultState(ResultState resultState) {
             this.resultState = resultState;
             this.__explicitlySet__.add("resultState");
             return this;
         }
-        /**
-         * List of VantagePointNode items.
-         **/
+        /** List of VantagePointNode items. */
         @com.fasterxml.jackson.annotation.JsonProperty("vantagePointNodes")
         private java.util.List<VantagePointNode> vantagePointNodes;
 
         /**
          * List of VantagePointNode items.
+         *
          * @param vantagePointNodes the value to set
          * @return this builder
-         **/
+         */
         public Builder vantagePointNodes(java.util.List<VantagePointNode> vantagePointNodes) {
             this.vantagePointNodes = vantagePointNodes;
             this.__explicitlySet__.add("vantagePointNodes");
             return this;
         }
-        /**
-         * 2d array of nodes where each internal array corresponds to 1 level
-         **/
+        /** 2d array of nodes where each internal array corresponds to 1 level */
         @com.fasterxml.jackson.annotation.JsonProperty("nodesByLevel")
         private java.util.List<java.util.List<Node>> nodesByLevel;
 
         /**
          * 2d array of nodes where each internal array corresponds to 1 level
+         *
          * @param nodesByLevel the value to set
          * @return this builder
-         **/
+         */
         public Builder nodesByLevel(java.util.List<java.util.List<Node>> nodesByLevel) {
             this.nodesByLevel = nodesByLevel;
             this.__explicitlySet__.add("nodesByLevel");
             return this;
         }
-        /**
-         * map of Link objects
-         **/
+        /** map of Link objects */
         @com.fasterxml.jackson.annotation.JsonProperty("links")
         private java.util.Map<String, Link> links;
 
         /**
          * map of Link objects
+         *
          * @param links the value to set
          * @return this builder
-         **/
+         */
         public Builder links(java.util.Map<String, Link> links) {
             this.links = links;
             this.__explicitlySet__.add("links");
             return this;
         }
-        /**
-         * string contaiing error details
-         **/
+        /** string contaiing error details */
         @com.fasterxml.jackson.annotation.JsonProperty("errorDetails")
         private String errorDetails;
 
         /**
          * string contaiing error details
+         *
          * @param errorDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder errorDetails(String errorDetails) {
             this.errorDetails = errorDetails;
             this.__explicitlySet__.add("errorDetails");
@@ -164,9 +159,7 @@ public final class AggregatedNetworkData
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -175,17 +168,15 @@ public final class AggregatedNetworkData
         return new Builder().copy(this);
     }
 
-    /**
-     * state of the result
-     **/
-    public enum ResultState {
+    /** state of the result */
+    public enum ResultState implements com.oracle.bmc.http.internal.BmcEnum {
         Success("SUCCESS"),
         Failure("FAILURE"),
         Partial("PARTIAL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -224,72 +215,67 @@ public final class AggregatedNetworkData
             return UnknownEnumValue;
         }
     };
-    /**
-     * state of the result
-     **/
+    /** state of the result */
     @com.fasterxml.jackson.annotation.JsonProperty("resultState")
     private final ResultState resultState;
 
     /**
      * state of the result
+     *
      * @return the value
-     **/
+     */
     public ResultState getResultState() {
         return resultState;
     }
 
-    /**
-     * List of VantagePointNode items.
-     **/
+    /** List of VantagePointNode items. */
     @com.fasterxml.jackson.annotation.JsonProperty("vantagePointNodes")
     private final java.util.List<VantagePointNode> vantagePointNodes;
 
     /**
      * List of VantagePointNode items.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<VantagePointNode> getVantagePointNodes() {
         return vantagePointNodes;
     }
 
-    /**
-     * 2d array of nodes where each internal array corresponds to 1 level
-     **/
+    /** 2d array of nodes where each internal array corresponds to 1 level */
     @com.fasterxml.jackson.annotation.JsonProperty("nodesByLevel")
     private final java.util.List<java.util.List<Node>> nodesByLevel;
 
     /**
      * 2d array of nodes where each internal array corresponds to 1 level
+     *
      * @return the value
-     **/
+     */
     public java.util.List<java.util.List<Node>> getNodesByLevel() {
         return nodesByLevel;
     }
 
-    /**
-     * map of Link objects
-     **/
+    /** map of Link objects */
     @com.fasterxml.jackson.annotation.JsonProperty("links")
     private final java.util.Map<String, Link> links;
 
     /**
      * map of Link objects
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, Link> getLinks() {
         return links;
     }
 
-    /**
-     * string contaiing error details
-     **/
+    /** string contaiing error details */
     @com.fasterxml.jackson.annotation.JsonProperty("errorDetails")
     private final String errorDetails;
 
     /**
      * string contaiing error details
+     *
      * @return the value
-     **/
+     */
     public String getErrorDetails() {
         return errorDetails;
     }
@@ -301,6 +287,7 @@ public final class AggregatedNetworkData
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

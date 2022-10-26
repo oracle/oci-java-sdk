@@ -5,25 +5,26 @@
 package com.oracle.bmc.filestorage.model;
 
 /**
- * Replications are the primary resource that governs the policy of cross-region replication between source
- * and target file systems. Replications are associated with a secondary resource called a {@link ReplicationTarget}
- * located in another availability domain in the same or different region.
- * The replication retrieves the delta of data between two snapshots of a source file system
- * and sends it to the associated {@code ReplicationTarget}, which applies it to the target
- * file system. For more information, see [File System Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/FSreplication.htm).
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Replications are the primary resource that governs the policy of cross-region replication between
+ * source and target file systems. Replications are associated with a secondary resource called a
+ * {@link ReplicationTarget} located in another availability domain in the same or different region.
+ * The replication retrieves the delta of data between two snapshots of a source file system and
+ * sends it to the associated {@code ReplicationTarget}, which applies it to the target file system.
+ * For more information, see [File System
+ * Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/FSreplication.htm). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Replication.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Replication extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Replication extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -85,269 +86,268 @@ public final class Replication extends com.oracle.bmc.http.internal.ExplicitlySe
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the replication.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the replication.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The availability domain that contains the replication. May be unset as a blank or {@code NULL} value.
-         * Example: {@code Uocm:PHX-AD-2}
-         *
-         **/
+         * The availability domain that contains the replication. May be unset as a blank or {@code
+         * NULL} value. Example: {@code Uocm:PHX-AD-2}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * The availability domain that contains the replication. May be unset as a blank or {@code NULL} value.
-         * Example: {@code Uocm:PHX-AD-2}
+         * The availability domain that contains the replication. May be unset as a blank or {@code
+         * NULL} value. Example: {@code Uocm:PHX-AD-2}
          *
          * @param availabilityDomain the value to set
          * @return this builder
-         **/
+         */
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the replication.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * replication.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the replication.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * replication.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The current lifecycle state of the replication.
-         **/
+        /** The current lifecycle state of the replication. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current lifecycle state of the replication.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A user-friendly name. It does not have to be unique, and it is changeable.
-         * Avoid entering confidential information.
-         * <p>
-         * Example: {@code My replication}
+         * A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering
+         * confidential information.
          *
-         **/
+         * <p>Example: {@code My replication}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. It does not have to be unique, and it is changeable.
-         * Avoid entering confidential information.
-         * <p>
-         * Example: {@code My replication}
+         * A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering
+         * confidential information.
+         *
+         * <p>Example: {@code My replication}
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The date and time the replication was created
-         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-         * <p>
-         * Example: {@code 2021-01-04T20:01:29.100Z}
+         * The date and time the replication was created in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
          *
-         **/
+         * <p>Example: {@code 2021-01-04T20:01:29.100Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the replication was created
-         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-         * <p>
-         * Example: {@code 2021-01-04T20:01:29.100Z}
+         * The date and time the replication was created in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2021-01-04T20:01:29.100Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source file system.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * source file system.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source file system.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * source file system.
          *
          * @param sourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceId(String sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the target file system.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * target file system.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the target file system.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * target file system.
          *
          * @param targetId the value to set
          * @return this builder
-         **/
+         */
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the {@link ReplicationTarget}.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * {@link ReplicationTarget}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("replicationTargetId")
         private String replicationTargetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the {@link ReplicationTarget}.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * {@link ReplicationTarget}.
          *
          * @param replicationTargetId the value to set
          * @return this builder
-         **/
+         */
         public Builder replicationTargetId(String replicationTargetId) {
             this.replicationTargetId = replicationTargetId;
             this.__explicitlySet__.add("replicationTargetId");
             return this;
         }
-        /**
-         * Duration in minutes between replication snapshots.
-         **/
+        /** Duration in minutes between replication snapshots. */
         @com.fasterxml.jackson.annotation.JsonProperty("replicationInterval")
         private Long replicationInterval;
 
         /**
          * Duration in minutes between replication snapshots.
+         *
          * @param replicationInterval the value to set
          * @return this builder
-         **/
+         */
         public Builder replicationInterval(Long replicationInterval) {
             this.replicationInterval = replicationInterval;
             this.__explicitlySet__.add("replicationInterval");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely.
-         * Empty if the copy of the initial snapshot is not complete.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * last snapshot that has been replicated completely. Empty if the copy of the initial
+         * snapshot is not complete.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lastSnapshotId")
         private String lastSnapshotId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely.
-         * Empty if the copy of the initial snapshot is not complete.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * last snapshot that has been replicated completely. Empty if the copy of the initial
+         * snapshot is not complete.
          *
          * @param lastSnapshotId the value to set
          * @return this builder
-         **/
+         */
         public Builder lastSnapshotId(String lastSnapshotId) {
             this.lastSnapshotId = lastSnapshotId;
             this.__explicitlySet__.add("lastSnapshotId");
             return this;
         }
         /**
-         * The {@link #snapshotTime(SnapshotTimeRequest) snapshotTime} of the most recent recoverable replication snapshot
-         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-         * Example: {@code 2021-04-04T20:01:29.100Z}
-         *
-         **/
+         * The {@link #snapshotTime(SnapshotTimeRequest) snapshotTime} of the most recent
+         * recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+         * timestamp format. Example: {@code 2021-04-04T20:01:29.100Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("recoveryPointTime")
         private java.util.Date recoveryPointTime;
 
         /**
-         * The {@link #snapshotTime(SnapshotTimeRequest) snapshotTime} of the most recent recoverable replication snapshot
-         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-         * Example: {@code 2021-04-04T20:01:29.100Z}
+         * The {@link #snapshotTime(SnapshotTimeRequest) snapshotTime} of the most recent
+         * recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+         * timestamp format. Example: {@code 2021-04-04T20:01:29.100Z}
          *
          * @param recoveryPointTime the value to set
          * @return this builder
-         **/
+         */
         public Builder recoveryPointTime(java.util.Date recoveryPointTime) {
             this.recoveryPointTime = recoveryPointTime;
             this.__explicitlySet__.add("recoveryPointTime");
             return this;
         }
-        /**
-         * The current state of the snapshot during replication operations.
-         **/
+        /** The current state of the snapshot during replication operations. */
         @com.fasterxml.jackson.annotation.JsonProperty("deltaStatus")
         private DeltaStatus deltaStatus;
 
         /**
          * The current state of the snapshot during replication operations.
+         *
          * @param deltaStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder deltaStatus(DeltaStatus deltaStatus) {
             this.deltaStatus = deltaStatus;
             this.__explicitlySet__.add("deltaStatus");
             return this;
         }
-        /**
-         * Additional information about the current 'lifecycleState'.
-         **/
+        /** Additional information about the current 'lifecycleState'. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Additional information about the current 'lifecycleState'.
+         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /**
-         * Percentage progress of the current replication cycle.
-         *
-         **/
+        /** Percentage progress of the current replication cycle. */
         @com.fasterxml.jackson.annotation.JsonProperty("deltaProgress")
         private Long deltaProgress;
 
@@ -356,53 +356,53 @@ public final class Replication extends com.oracle.bmc.http.internal.ExplicitlySe
          *
          * @param deltaProgress the value to set
          * @return this builder
-         **/
+         */
         public Builder deltaProgress(Long deltaProgress) {
             this.deltaProgress = deltaProgress;
             this.__explicitlySet__.add("deltaProgress");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair
-         *  with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
-         *
-         **/
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair
-         *  with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
-         *
-         **/
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -496,9 +496,7 @@ public final class Replication extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -508,55 +506,58 @@ public final class Replication extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the replication.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the replication.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The availability domain that contains the replication. May be unset as a blank or {@code NULL} value.
-     * Example: {@code Uocm:PHX-AD-2}
-     *
-     **/
+     * The availability domain that contains the replication. May be unset as a blank or {@code
+     * NULL} value. Example: {@code Uocm:PHX-AD-2}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * The availability domain that contains the replication. May be unset as a blank or {@code NULL} value.
-     * Example: {@code Uocm:PHX-AD-2}
+     * The availability domain that contains the replication. May be unset as a blank or {@code
+     * NULL} value. Example: {@code Uocm:PHX-AD-2}
      *
      * @return the value
-     **/
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the replication.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * replication.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the replication.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * replication.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The current lifecycle state of the replication.
-     **/
-    public enum LifecycleState {
+    /** The current lifecycle state of the replication. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Active("ACTIVE"),
         Deleting("DELETING"),
@@ -564,8 +565,8 @@ public final class Replication extends com.oracle.bmc.http.internal.ExplicitlySe
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -604,168 +605,165 @@ public final class Replication extends com.oracle.bmc.http.internal.ExplicitlySe
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current lifecycle state of the replication.
-     **/
+    /** The current lifecycle state of the replication. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current lifecycle state of the replication.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A user-friendly name. It does not have to be unique, and it is changeable.
-     * Avoid entering confidential information.
-     * <p>
-     * Example: {@code My replication}
+     * A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering
+     * confidential information.
      *
-     **/
+     * <p>Example: {@code My replication}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. It does not have to be unique, and it is changeable.
-     * Avoid entering confidential information.
-     * <p>
-     * Example: {@code My replication}
+     * A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering
+     * confidential information.
+     *
+     * <p>Example: {@code My replication}
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The date and time the replication was created
-     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-     * <p>
-     * Example: {@code 2021-01-04T20:01:29.100Z}
+     * The date and time the replication was created in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
      *
-     **/
+     * <p>Example: {@code 2021-01-04T20:01:29.100Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the replication was created
-     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-     * <p>
-     * Example: {@code 2021-01-04T20:01:29.100Z}
+     * The date and time the replication was created in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2021-01-04T20:01:29.100Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source file system.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * source file system.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source file system.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * source file system.
      *
      * @return the value
-     **/
+     */
     public String getSourceId() {
         return sourceId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the target file system.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * target file system.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the target file system.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * target file system.
      *
      * @return the value
-     **/
+     */
     public String getTargetId() {
         return targetId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the {@link ReplicationTarget}.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * {@link ReplicationTarget}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("replicationTargetId")
     private final String replicationTargetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the {@link ReplicationTarget}.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * {@link ReplicationTarget}.
      *
      * @return the value
-     **/
+     */
     public String getReplicationTargetId() {
         return replicationTargetId;
     }
 
-    /**
-     * Duration in minutes between replication snapshots.
-     **/
+    /** Duration in minutes between replication snapshots. */
     @com.fasterxml.jackson.annotation.JsonProperty("replicationInterval")
     private final Long replicationInterval;
 
     /**
      * Duration in minutes between replication snapshots.
+     *
      * @return the value
-     **/
+     */
     public Long getReplicationInterval() {
         return replicationInterval;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely.
-     * Empty if the copy of the initial snapshot is not complete.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * last snapshot that has been replicated completely. Empty if the copy of the initial snapshot
+     * is not complete.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lastSnapshotId")
     private final String lastSnapshotId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely.
-     * Empty if the copy of the initial snapshot is not complete.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * last snapshot that has been replicated completely. Empty if the copy of the initial snapshot
+     * is not complete.
      *
      * @return the value
-     **/
+     */
     public String getLastSnapshotId() {
         return lastSnapshotId;
     }
 
     /**
-     * The {@link #snapshotTime(SnapshotTimeRequest) snapshotTime} of the most recent recoverable replication snapshot
-     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * The {@link #snapshotTime(SnapshotTimeRequest) snapshotTime} of the most recent recoverable
+     * replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
      * Example: {@code 2021-04-04T20:01:29.100Z}
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("recoveryPointTime")
     private final java.util.Date recoveryPointTime;
 
     /**
-     * The {@link #snapshotTime(SnapshotTimeRequest) snapshotTime} of the most recent recoverable replication snapshot
-     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * The {@link #snapshotTime(SnapshotTimeRequest) snapshotTime} of the most recent recoverable
+     * replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
      * Example: {@code 2021-04-04T20:01:29.100Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getRecoveryPointTime() {
         return recoveryPointTime;
     }
 
-    /**
-     * The current state of the snapshot during replication operations.
-     **/
-    public enum DeltaStatus {
+    /** The current state of the snapshot during replication operations. */
+    public enum DeltaStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Idle("IDLE"),
         Capturing("CAPTURING"),
         Applying("APPLYING"),
@@ -775,8 +773,8 @@ public final class Replication extends com.oracle.bmc.http.internal.ExplicitlySe
         Transferring("TRANSFERRING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -815,38 +813,33 @@ public final class Replication extends com.oracle.bmc.http.internal.ExplicitlySe
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current state of the snapshot during replication operations.
-     **/
+    /** The current state of the snapshot during replication operations. */
     @com.fasterxml.jackson.annotation.JsonProperty("deltaStatus")
     private final DeltaStatus deltaStatus;
 
     /**
      * The current state of the snapshot during replication operations.
+     *
      * @return the value
-     **/
+     */
     public DeltaStatus getDeltaStatus() {
         return deltaStatus;
     }
 
-    /**
-     * Additional information about the current 'lifecycleState'.
-     **/
+    /** Additional information about the current 'lifecycleState'. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Additional information about the current 'lifecycleState'.
+     *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /**
-     * Percentage progress of the current replication cycle.
-     *
-     **/
+    /** Percentage progress of the current replication cycle. */
     @com.fasterxml.jackson.annotation.JsonProperty("deltaProgress")
     private final Long deltaProgress;
 
@@ -854,49 +847,49 @@ public final class Replication extends com.oracle.bmc.http.internal.ExplicitlySe
      * Percentage progress of the current replication cycle.
      *
      * @return the value
-     **/
+     */
     public Long getDeltaProgress() {
         return deltaProgress;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair
-     *  with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
-     *
-     **/
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair
-     *  with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -908,6 +901,7 @@ public final class Replication extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -8,10 +8,7 @@ import com.oracle.bmc.datalabelingservice.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public class GetDatasetResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,15 +21,14 @@ public class GetDatasetResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,13 +36,12 @@ public class GetDatasetResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /**
-     * The returned Dataset instance.
-     */
+    /** The returned Dataset instance. */
     private com.oracle.bmc.datalabelingservice.model.Dataset dataset;
 
     /**
      * The returned Dataset instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.datalabelingservice.model.Dataset getDataset() {
@@ -62,7 +57,7 @@ public class GetDatasetResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private GetDatasetResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datalabelingservice.model.Dataset dataset) {
@@ -72,25 +67,25 @@ public class GetDatasetResponse extends com.oracle.bmc.responses.BmcResponse {
         this.dataset = dataset;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetDatasetResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -105,15 +100,14 @@ public class GetDatasetResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -123,13 +117,12 @@ public class GetDatasetResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * The returned Dataset instance.
-         */
+        /** The returned Dataset instance. */
         private com.oracle.bmc.datalabelingservice.model.Dataset dataset;
 
         /**
          * The returned Dataset instance.
+         *
          * @param dataset the value to set
          * @return this builder
          */
@@ -140,8 +133,10 @@ public class GetDatasetResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetDatasetResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -154,8 +149,10 @@ public class GetDatasetResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetDatasetResponse build() {
             return new GetDatasetResponse(__httpStatusCode__, headers, etag, opcRequestId, dataset);
         }
@@ -163,6 +160,7 @@ public class GetDatasetResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

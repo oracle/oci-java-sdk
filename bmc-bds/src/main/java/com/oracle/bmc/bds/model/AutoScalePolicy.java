@@ -5,20 +5,22 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the {@code AutoScalePolicyDetails} model to manage autoscale policy details for ODH clusters.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the
+ * {@code AutoScalePolicyDetails} model to manage autoscale policy details for ODH clusters. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AutoScalePolicy.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AutoScalePolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class AutoScalePolicy
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"policyType", "rules"})
     public AutoScalePolicy(PolicyType policyType, java.util.List<AutoScalePolicyRule> rules) {
@@ -30,32 +32,38 @@ public final class AutoScalePolicy extends com.oracle.bmc.http.internal.Explicit
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
-         **/
+         * Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only
+         * THRESHOLD-BASED is supported in this release.)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("policyType")
         private PolicyType policyType;
 
         /**
-         * Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
+         * Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only
+         * THRESHOLD-BASED is supported in this release.)
+         *
          * @param policyType the value to set
          * @return this builder
-         **/
+         */
         public Builder policyType(PolicyType policyType) {
             this.policyType = policyType;
             this.__explicitlySet__.add("policyType");
             return this;
         }
         /**
-         * The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
-         **/
+         * The list of rules for autoscaling. If an action has multiple rules, the last rule in the
+         * array will be applied.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<AutoScalePolicyRule> rules;
 
         /**
-         * The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
+         * The list of rules for autoscaling. If an action has multiple rules, the last rule in the
+         * array will be applied.
+         *
          * @param rules the value to set
          * @return this builder
-         **/
+         */
         public Builder rules(java.util.List<AutoScalePolicyRule> rules) {
             this.rules = rules;
             this.__explicitlySet__.add("rules");
@@ -85,9 +93,7 @@ public final class AutoScalePolicy extends com.oracle.bmc.http.internal.Explicit
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -97,16 +103,17 @@ public final class AutoScalePolicy extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
-     **/
-    public enum PolicyType {
+     * Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only
+     * THRESHOLD-BASED is supported in this release.)
+     */
+    public enum PolicyType implements com.oracle.bmc.http.internal.BmcEnum {
         ThresholdBased("THRESHOLD_BASED"),
         ScheduleBased("SCHEDULE_BASED"),
         None("NONE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -146,29 +153,35 @@ public final class AutoScalePolicy extends com.oracle.bmc.http.internal.Explicit
         }
     };
     /**
-     * Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
-     **/
+     * Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only
+     * THRESHOLD-BASED is supported in this release.)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("policyType")
     private final PolicyType policyType;
 
     /**
-     * Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
+     * Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only
+     * THRESHOLD-BASED is supported in this release.)
+     *
      * @return the value
-     **/
+     */
     public PolicyType getPolicyType() {
         return policyType;
     }
 
     /**
-     * The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
-     **/
+     * The list of rules for autoscaling. If an action has multiple rules, the last rule in the
+     * array will be applied.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
     private final java.util.List<AutoScalePolicyRule> rules;
 
     /**
-     * The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
+     * The list of rules for autoscaling. If an action has multiple rules, the last rule in the
+     * array will be applied.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<AutoScalePolicyRule> getRules() {
         return rules;
     }
@@ -180,6 +193,7 @@ public final class AutoScalePolicy extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

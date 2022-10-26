@@ -6,72 +6,60 @@ package com.oracle.bmc.datacatalog.requests;
 
 import com.oracle.bmc.datacatalog.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateCatalogPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateCatalogPrivateEndpointRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateCatalogPrivateEndpointExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * UpdateCatalogPrivateEndpointRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class UpdateCatalogPrivateEndpointRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datacatalog.model.UpdateCatalogPrivateEndpointDetails> {
 
-    /**
-     * Unique private reverse connection identifier.
-     */
+    /** Unique private reverse connection identifier. */
     private String catalogPrivateEndpointId;
 
-    /**
-     * Unique private reverse connection identifier.
-     */
+    /** Unique private reverse connection identifier. */
     public String getCatalogPrivateEndpointId() {
         return catalogPrivateEndpointId;
     }
-    /**
-     * The information to be updated in private reverse connection
-     */
+    /** The information to be updated in private reverse connection */
     private com.oracle.bmc.datacatalog.model.UpdateCatalogPrivateEndpointDetails
             updateCatalogPrivateEndpointDetails;
 
-    /**
-     * The information to be updated in private reverse connection
-     */
+    /** The information to be updated in private reverse connection */
     public com.oracle.bmc.datacatalog.model.UpdateCatalogPrivateEndpointDetails
             getUpdateCatalogPrivateEndpointDetails() {
         return updateCatalogPrivateEndpointDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the {@code if-match} parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the {@code if-match} parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -84,17 +72,15 @@ public class UpdateCatalogPrivateEndpointRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateCatalogPrivateEndpointRequest,
                     com.oracle.bmc.datacatalog.model.UpdateCatalogPrivateEndpointDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique private reverse connection identifier.
-         */
+        /** Unique private reverse connection identifier. */
         private String catalogPrivateEndpointId = null;
 
         /**
          * Unique private reverse connection identifier.
+         *
          * @param catalogPrivateEndpointId the value to set
          * @return this builder instance
          */
@@ -103,14 +89,13 @@ public class UpdateCatalogPrivateEndpointRequest
             return this;
         }
 
-        /**
-         * The information to be updated in private reverse connection
-         */
+        /** The information to be updated in private reverse connection */
         private com.oracle.bmc.datacatalog.model.UpdateCatalogPrivateEndpointDetails
                 updateCatalogPrivateEndpointDetails = null;
 
         /**
          * The information to be updated in private reverse connection
+         *
          * @param updateCatalogPrivateEndpointDetails the value to set
          * @return this builder instance
          */
@@ -122,21 +107,18 @@ public class UpdateCatalogPrivateEndpointRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the {@code if-match} parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the {@code if-match} parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -146,13 +128,12 @@ public class UpdateCatalogPrivateEndpointRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -163,18 +144,19 @@ public class UpdateCatalogPrivateEndpointRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -186,6 +168,7 @@ public class UpdateCatalogPrivateEndpointRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateCatalogPrivateEndpointRequest o) {
@@ -201,10 +184,11 @@ public class UpdateCatalogPrivateEndpointRequest
         /**
          * Build the instance of UpdateCatalogPrivateEndpointRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateCatalogPrivateEndpointRequest
          */
@@ -217,6 +201,7 @@ public class UpdateCatalogPrivateEndpointRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -230,7 +215,8 @@ public class UpdateCatalogPrivateEndpointRequest
         /**
          * Build the instance of UpdateCatalogPrivateEndpointRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateCatalogPrivateEndpointRequest
@@ -242,12 +228,14 @@ public class UpdateCatalogPrivateEndpointRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateCatalogPrivateEndpointRequest(catalogPrivateEndpointId, updateCatalogPrivateEndpointDetails, ifMatch, opcRequestId);
+            // new UpdateCatalogPrivateEndpointRequest(catalogPrivateEndpointId,
+            // updateCatalogPrivateEndpointDetails, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -260,6 +248,7 @@ public class UpdateCatalogPrivateEndpointRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -10,9 +10,7 @@ import com.oracle.bmc.identity.IdentityClient;
 import com.oracle.bmc.identity.requests.ListRegionsRequest;
 import com.oracle.bmc.identity.responses.ListRegionsResponse;
 
-/**
- * A sample to demonstrate how to use the SimpleAuthenticationDetailsProvider to create a client
- */
+/** A sample to demonstrate how to use the SimpleAuthenticationDetailsProvider to create a client */
 public class SimpleAuthenticationDetailsProviderExample {
     public static void main(String[] args) {
         if (args.length != 5) {

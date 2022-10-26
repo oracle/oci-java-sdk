@@ -5,19 +5,21 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Details about a line within the difference.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details about a line within the difference. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DiffLineDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DiffLineDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class DiffLineDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"baseLine", "targetLine", "lineContent", "conflictMarker"})
     public DiffLineDetails(
@@ -34,65 +36,67 @@ public final class DiffLineDetails extends com.oracle.bmc.http.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The number of a line in the base version.
-         **/
+        /** The number of a line in the base version. */
         @com.fasterxml.jackson.annotation.JsonProperty("baseLine")
         private Integer baseLine;
 
         /**
          * The number of a line in the base version.
+         *
          * @param baseLine the value to set
          * @return this builder
-         **/
+         */
         public Builder baseLine(Integer baseLine) {
             this.baseLine = baseLine;
             this.__explicitlySet__.add("baseLine");
             return this;
         }
-        /**
-         * The number of a line in the target version.
-         **/
+        /** The number of a line in the target version. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetLine")
         private Integer targetLine;
 
         /**
          * The number of a line in the target version.
+         *
          * @param targetLine the value to set
          * @return this builder
-         **/
+         */
         public Builder targetLine(Integer targetLine) {
             this.targetLine = targetLine;
             this.__explicitlySet__.add("targetLine");
             return this;
         }
-        /**
-         * The contents of a line.
-         **/
+        /** The contents of a line. */
         @com.fasterxml.jackson.annotation.JsonProperty("lineContent")
         private String lineContent;
 
         /**
          * The contents of a line.
+         *
          * @param lineContent the value to set
          * @return this builder
-         **/
+         */
         public Builder lineContent(String lineContent) {
             this.lineContent = lineContent;
             this.__explicitlySet__.add("lineContent");
             return this;
         }
         /**
-         * Indicates whether a line in a conflicted section of the difference is from the base version, the target version, or if its just a marker indicating the beginning, middle, or end of a conflicted section.
-         **/
+         * Indicates whether a line in a conflicted section of the difference is from the base
+         * version, the target version, or if its just a marker indicating the beginning, middle, or
+         * end of a conflicted section.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("conflictMarker")
         private ConflictMarker conflictMarker;
 
         /**
-         * Indicates whether a line in a conflicted section of the difference is from the base version, the target version, or if its just a marker indicating the beginning, middle, or end of a conflicted section.
+         * Indicates whether a line in a conflicted section of the difference is from the base
+         * version, the target version, or if its just a marker indicating the beginning, middle, or
+         * end of a conflicted section.
+         *
          * @param conflictMarker the value to set
          * @return this builder
-         **/
+         */
         public Builder conflictMarker(ConflictMarker conflictMarker) {
             this.conflictMarker = conflictMarker;
             this.__explicitlySet__.add("conflictMarker");
@@ -130,9 +134,7 @@ public final class DiffLineDetails extends com.oracle.bmc.http.internal.Explicit
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -141,60 +143,59 @@ public final class DiffLineDetails extends com.oracle.bmc.http.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /**
-     * The number of a line in the base version.
-     **/
+    /** The number of a line in the base version. */
     @com.fasterxml.jackson.annotation.JsonProperty("baseLine")
     private final Integer baseLine;
 
     /**
      * The number of a line in the base version.
+     *
      * @return the value
-     **/
+     */
     public Integer getBaseLine() {
         return baseLine;
     }
 
-    /**
-     * The number of a line in the target version.
-     **/
+    /** The number of a line in the target version. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetLine")
     private final Integer targetLine;
 
     /**
      * The number of a line in the target version.
+     *
      * @return the value
-     **/
+     */
     public Integer getTargetLine() {
         return targetLine;
     }
 
-    /**
-     * The contents of a line.
-     **/
+    /** The contents of a line. */
     @com.fasterxml.jackson.annotation.JsonProperty("lineContent")
     private final String lineContent;
 
     /**
      * The contents of a line.
+     *
      * @return the value
-     **/
+     */
     public String getLineContent() {
         return lineContent;
     }
 
     /**
-     * Indicates whether a line in a conflicted section of the difference is from the base version, the target version, or if its just a marker indicating the beginning, middle, or end of a conflicted section.
-     **/
-    public enum ConflictMarker {
+     * Indicates whether a line in a conflicted section of the difference is from the base version,
+     * the target version, or if its just a marker indicating the beginning, middle, or end of a
+     * conflicted section.
+     */
+    public enum ConflictMarker implements com.oracle.bmc.http.internal.BmcEnum {
         Base("BASE"),
         Target("TARGET"),
         Marker("MARKER"),
         None("NONE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -234,15 +235,20 @@ public final class DiffLineDetails extends com.oracle.bmc.http.internal.Explicit
         }
     };
     /**
-     * Indicates whether a line in a conflicted section of the difference is from the base version, the target version, or if its just a marker indicating the beginning, middle, or end of a conflicted section.
-     **/
+     * Indicates whether a line in a conflicted section of the difference is from the base version,
+     * the target version, or if its just a marker indicating the beginning, middle, or end of a
+     * conflicted section.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("conflictMarker")
     private final ConflictMarker conflictMarker;
 
     /**
-     * Indicates whether a line in a conflicted section of the difference is from the base version, the target version, or if its just a marker indicating the beginning, middle, or end of a conflicted section.
+     * Indicates whether a line in a conflicted section of the difference is from the base version,
+     * the target version, or if its just a marker indicating the beginning, middle, or end of a
+     * conflicted section.
+     *
      * @return the value
-     **/
+     */
     public ConflictMarker getConflictMarker() {
         return conflictMarker;
     }
@@ -254,6 +260,7 @@ public final class DiffLineDetails extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

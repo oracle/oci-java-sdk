@@ -5,23 +5,23 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Reserved for future use.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Reserved for future use. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LimitItem.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class LimitItem extends Item {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -69,65 +69,61 @@ public final class LimitItem extends Item {
             this.__explicitlySet__.add("issueType");
             return this;
         }
-        /**
-         * The currently available limit of the resource.
-         **/
+        /** The currently available limit of the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("currentLimit")
         private Integer currentLimit;
 
         /**
          * The currently available limit of the resource.
+         *
          * @param currentLimit the value to set
          * @return this builder
-         **/
+         */
         public Builder currentLimit(Integer currentLimit) {
             this.currentLimit = currentLimit;
             this.__explicitlySet__.add("currentLimit");
             return this;
         }
-        /**
-         * The current usage of the resource.
-         **/
+        /** The current usage of the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("currentUsage")
         private Integer currentUsage;
 
         /**
          * The current usage of the resource.
+         *
          * @param currentUsage the value to set
          * @return this builder
-         **/
+         */
         public Builder currentUsage(Integer currentUsage) {
             this.currentUsage = currentUsage;
             this.__explicitlySet__.add("currentUsage");
             return this;
         }
-        /**
-         * The requested limit for the resource.
-         **/
+        /** The requested limit for the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("requestedLimit")
         private Integer requestedLimit;
 
         /**
          * The requested limit for the resource.
+         *
          * @param requestedLimit the value to set
          * @return this builder
-         **/
+         */
         public Builder requestedLimit(Integer requestedLimit) {
             this.requestedLimit = requestedLimit;
             this.__explicitlySet__.add("requestedLimit");
             return this;
         }
-        /**
-         * The status of the request.
-         **/
+        /** The status of the request. */
         @com.fasterxml.jackson.annotation.JsonProperty("limitStatus")
         private LimitStatus limitStatus;
 
         /**
          * The status of the request.
+         *
          * @param limitStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder limitStatus(LimitStatus limitStatus) {
             this.limitStatus = limitStatus;
             this.__explicitlySet__.add("limitStatus");
@@ -188,9 +184,7 @@ public final class LimitItem extends Item {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -217,59 +211,54 @@ public final class LimitItem extends Item {
         this.limitStatus = limitStatus;
     }
 
-    /**
-     * The currently available limit of the resource.
-     **/
+    /** The currently available limit of the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("currentLimit")
     private final Integer currentLimit;
 
     /**
      * The currently available limit of the resource.
+     *
      * @return the value
-     **/
+     */
     public Integer getCurrentLimit() {
         return currentLimit;
     }
 
-    /**
-     * The current usage of the resource.
-     **/
+    /** The current usage of the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("currentUsage")
     private final Integer currentUsage;
 
     /**
      * The current usage of the resource.
+     *
      * @return the value
-     **/
+     */
     public Integer getCurrentUsage() {
         return currentUsage;
     }
 
-    /**
-     * The requested limit for the resource.
-     **/
+    /** The requested limit for the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("requestedLimit")
     private final Integer requestedLimit;
 
     /**
      * The requested limit for the resource.
+     *
      * @return the value
-     **/
+     */
     public Integer getRequestedLimit() {
         return requestedLimit;
     }
 
-    /**
-     * The status of the request.
-     **/
-    public enum LimitStatus {
+    /** The status of the request. */
+    public enum LimitStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Approved("APPROVED"),
         PartiallyApproved("PARTIALLY_APPROVED"),
         NotApproved("NOT_APPROVED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -308,16 +297,15 @@ public final class LimitItem extends Item {
             return UnknownEnumValue;
         }
     };
-    /**
-     * The status of the request.
-     **/
+    /** The status of the request. */
     @com.fasterxml.jackson.annotation.JsonProperty("limitStatus")
     private final LimitStatus limitStatus;
 
     /**
      * The status of the request.
+     *
      * @return the value
-     **/
+     */
     public LimitStatus getLimitStatus() {
         return limitStatus;
     }
@@ -329,6 +317,7 @@ public final class LimitItem extends Item {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,118 +6,90 @@ package com.oracle.bmc.opsi.requests;
 
 import com.oracle.bmc.opsi.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/GetAwrReportExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetAwrReportRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/GetAwrReportExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetAwrReportRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * Unique Awr Hub identifier
-     */
+    /** Unique Awr Hub identifier */
     private String awrHubId;
 
-    /**
-     * Unique Awr Hub identifier
-     */
+    /** Unique Awr Hub identifier */
     public String getAwrHubId() {
         return awrHubId;
     }
-    /**
-     * AWR source database identifier.
-     */
+    /** AWR source database identifier. */
     private String awrSourceDatabaseIdentifier;
 
-    /**
-     * AWR source database identifier.
-     */
+    /** AWR source database identifier. */
     public String getAwrSourceDatabaseIdentifier() {
         return awrSourceDatabaseIdentifier;
     }
-    /**
-     * The format of the AWR report. Default report format is HTML.
-     */
+    /** The format of the AWR report. Default report format is HTML. */
     private com.oracle.bmc.opsi.model.AwrReportFormatType reportFormat;
 
-    /**
-     * The format of the AWR report. Default report format is HTML.
-     */
+    /** The format of the AWR report. Default report format is HTML. */
     public com.oracle.bmc.opsi.model.AwrReportFormatType getReportFormat() {
         return reportFormat;
     }
-    /**
-     * The optional single value query parameter to filter by database instance number.
-     */
+    /** The optional single value query parameter to filter by database instance number. */
     private String instanceNumber;
 
-    /**
-     * The optional single value query parameter to filter by database instance number.
-     */
+    /** The optional single value query parameter to filter by database instance number. */
     public String getInstanceNumber() {
         return instanceNumber;
     }
-    /**
-     * The optional greater than or equal to filter on the snapshot ID.
-     *
-     */
+    /** The optional greater than or equal to filter on the snapshot ID. */
     private Integer beginSnapshotIdentifierGreaterThanOrEqualTo;
 
-    /**
-     * The optional greater than or equal to filter on the snapshot ID.
-     *
-     */
+    /** The optional greater than or equal to filter on the snapshot ID. */
     public Integer getBeginSnapshotIdentifierGreaterThanOrEqualTo() {
         return beginSnapshotIdentifierGreaterThanOrEqualTo;
     }
-    /**
-     * The optional less than or equal to query parameter to filter the snapshot Identifier.
-     *
-     */
+    /** The optional less than or equal to query parameter to filter the snapshot Identifier. */
     private Integer endSnapshotIdentifierLessThanOrEqualTo;
 
-    /**
-     * The optional less than or equal to query parameter to filter the snapshot Identifier.
-     *
-     */
+    /** The optional less than or equal to query parameter to filter the snapshot Identifier. */
     public Integer getEndSnapshotIdentifierLessThanOrEqualTo() {
         return endSnapshotIdentifierLessThanOrEqualTo;
     }
     /**
-     * The optional greater than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
-     *
+     * The optional greater than or equal to query parameter to filter the timestamp. The timestamp
+     * format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
      */
     private java.util.Date timeGreaterThanOrEqualTo;
 
     /**
-     * The optional greater than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
-     *
+     * The optional greater than or equal to query parameter to filter the timestamp. The timestamp
+     * format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
      */
     public java.util.Date getTimeGreaterThanOrEqualTo() {
         return timeGreaterThanOrEqualTo;
     }
     /**
-     * The optional less than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
-     *
+     * The optional less than or equal to query parameter to filter the timestamp. The timestamp
+     * format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
      */
     private java.util.Date timeLessThanOrEqualTo;
 
     /**
-     * The optional less than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
-     *
+     * The optional less than or equal to query parameter to filter the timestamp. The timestamp
+     * format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
      */
     public java.util.Date getTimeLessThanOrEqualTo() {
         return timeLessThanOrEqualTo;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -126,17 +98,15 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetAwrReportRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique Awr Hub identifier
-         */
+        /** Unique Awr Hub identifier */
         private String awrHubId = null;
 
         /**
          * Unique Awr Hub identifier
+         *
          * @param awrHubId the value to set
          * @return this builder instance
          */
@@ -145,13 +115,12 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * AWR source database identifier.
-         */
+        /** AWR source database identifier. */
         private String awrSourceDatabaseIdentifier = null;
 
         /**
          * AWR source database identifier.
+         *
          * @param awrSourceDatabaseIdentifier the value to set
          * @return this builder instance
          */
@@ -160,13 +129,12 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The format of the AWR report. Default report format is HTML.
-         */
+        /** The format of the AWR report. Default report format is HTML. */
         private com.oracle.bmc.opsi.model.AwrReportFormatType reportFormat = null;
 
         /**
          * The format of the AWR report. Default report format is HTML.
+         *
          * @param reportFormat the value to set
          * @return this builder instance
          */
@@ -175,13 +143,12 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The optional single value query parameter to filter by database instance number.
-         */
+        /** The optional single value query parameter to filter by database instance number. */
         private String instanceNumber = null;
 
         /**
          * The optional single value query parameter to filter by database instance number.
+         *
          * @param instanceNumber the value to set
          * @return this builder instance
          */
@@ -190,10 +157,7 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The optional greater than or equal to filter on the snapshot ID.
-         *
-         */
+        /** The optional greater than or equal to filter on the snapshot ID. */
         private Integer beginSnapshotIdentifierGreaterThanOrEqualTo = null;
 
         /**
@@ -209,10 +173,7 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The optional less than or equal to query parameter to filter the snapshot Identifier.
-         *
-         */
+        /** The optional less than or equal to query parameter to filter the snapshot Identifier. */
         private Integer endSnapshotIdentifierLessThanOrEqualTo = null;
 
         /**
@@ -228,13 +189,14 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The optional greater than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
-         *
+         * The optional greater than or equal to query parameter to filter the timestamp. The
+         * timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
          */
         private java.util.Date timeGreaterThanOrEqualTo = null;
 
         /**
-         * The optional greater than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
+         * The optional greater than or equal to query parameter to filter the timestamp. The
+         * timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
          *
          * @param timeGreaterThanOrEqualTo the value to set
          * @return this builder instance
@@ -245,13 +207,14 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The optional less than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
-         *
+         * The optional less than or equal to query parameter to filter the timestamp. The timestamp
+         * format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
          */
         private java.util.Date timeLessThanOrEqualTo = null;
 
         /**
-         * The optional less than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
+         * The optional less than or equal to query parameter to filter the timestamp. The timestamp
+         * format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
          *
          * @param timeLessThanOrEqualTo the value to set
          * @return this builder instance
@@ -262,15 +225,14 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -282,18 +244,19 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -305,6 +268,7 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetAwrReportRequest o) {
@@ -326,10 +290,11 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of GetAwrReportRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetAwrReportRequest
          */
@@ -343,7 +308,8 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of GetAwrReportRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetAwrReportRequest
@@ -361,12 +327,16 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetAwrReportRequest(awrHubId, awrSourceDatabaseIdentifier, reportFormat, instanceNumber, beginSnapshotIdentifierGreaterThanOrEqualTo, endSnapshotIdentifierLessThanOrEqualTo, timeGreaterThanOrEqualTo, timeLessThanOrEqualTo, opcRequestId);
+            // new GetAwrReportRequest(awrHubId, awrSourceDatabaseIdentifier, reportFormat,
+            // instanceNumber, beginSnapshotIdentifierGreaterThanOrEqualTo,
+            // endSnapshotIdentifierLessThanOrEqualTo, timeGreaterThanOrEqualTo,
+            // timeLessThanOrEqualTo, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -385,6 +355,7 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

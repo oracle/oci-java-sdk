@@ -9,15 +9,14 @@ import com.oracle.bmc.usage.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class CreateRedeemableUserResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,26 +24,24 @@ public class CreateRedeemableUserResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
+     *
      * @return the value
      */
     public String getEtag() {
         return etag;
     }
 
-    /**
-     * The returned RedeemableUserCollection instance.
-     */
+    /** The returned RedeemableUserCollection instance. */
     private com.oracle.bmc.usage.model.RedeemableUserCollection redeemableUserCollection;
 
     /**
      * The returned RedeemableUserCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.usage.model.RedeemableUserCollection getRedeemableUserCollection() {
@@ -60,7 +57,7 @@ public class CreateRedeemableUserResponse extends com.oracle.bmc.responses.BmcRe
     })
     private CreateRedeemableUserResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.usage.model.RedeemableUserCollection redeemableUserCollection) {
@@ -70,31 +67,33 @@ public class CreateRedeemableUserResponse extends com.oracle.bmc.responses.BmcRe
         this.redeemableUserCollection = redeemableUserCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateRedeemableUserResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -104,13 +103,12 @@ public class CreateRedeemableUserResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -119,13 +117,12 @@ public class CreateRedeemableUserResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /**
-         * The returned RedeemableUserCollection instance.
-         */
+        /** The returned RedeemableUserCollection instance. */
         private com.oracle.bmc.usage.model.RedeemableUserCollection redeemableUserCollection;
 
         /**
          * The returned RedeemableUserCollection instance.
+         *
          * @param redeemableUserCollection the value to set
          * @return this builder
          */
@@ -137,8 +134,10 @@ public class CreateRedeemableUserResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateRedeemableUserResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,8 +150,10 @@ public class CreateRedeemableUserResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateRedeemableUserResponse build() {
             return new CreateRedeemableUserResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, redeemableUserCollection);
@@ -161,6 +162,7 @@ public class CreateRedeemableUserResponse extends com.oracle.bmc.responses.BmcRe
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

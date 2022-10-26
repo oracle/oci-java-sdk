@@ -5,19 +5,21 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * The custom table for Cost Analysis UI rendering.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The custom table for Cost Analysis UI rendering. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SavedCustomTable.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SavedCustomTable extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class SavedCustomTable
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -45,69 +47,62 @@ public final class SavedCustomTable extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the custom table.
-         **/
+        /** The name of the custom table. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name of the custom table.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The row groupBy key list.
-         * example:
-         *   {@code ["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit",
-         *     "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd",
-         *     "resourceId", "tenantId", "tenantName"]}
-         *
-         **/
+         * The row groupBy key list. example: {@code ["tagNamespace", "tagKey", "tagValue",
+         * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
+         * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId",
+         * "tenantName"]}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("rowGroupBy")
         private java.util.List<String> rowGroupBy;
 
         /**
-         * The row groupBy key list.
-         * example:
-         *   {@code ["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit",
-         *     "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd",
-         *     "resourceId", "tenantId", "tenantName"]}
+         * The row groupBy key list. example: {@code ["tagNamespace", "tagKey", "tagValue",
+         * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
+         * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId",
+         * "tenantName"]}
          *
          * @param rowGroupBy the value to set
          * @return this builder
-         **/
+         */
         public Builder rowGroupBy(java.util.List<String> rowGroupBy) {
             this.rowGroupBy = rowGroupBy;
             this.__explicitlySet__.add("rowGroupBy");
             return this;
         }
         /**
-         * The column groupBy key list.
-         * example:
-         *   {@code ["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit",
-         *     "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd",
-         *     "resourceId", "tenantId", "tenantName"]}
-         *
-         **/
+         * The column groupBy key list. example: {@code ["tagNamespace", "tagKey", "tagValue",
+         * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
+         * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId",
+         * "tenantName"]}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("columnGroupBy")
         private java.util.List<String> columnGroupBy;
 
         /**
-         * The column groupBy key list.
-         * example:
-         *   {@code ["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit",
-         *     "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd",
-         *     "resourceId", "tenantId", "tenantName"]}
+         * The column groupBy key list. example: {@code ["tagNamespace", "tagKey", "tagValue",
+         * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
+         * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId",
+         * "tenantName"]}
          *
          * @param columnGroupBy the value to set
          * @return this builder
-         **/
+         */
         public Builder columnGroupBy(java.util.List<String> columnGroupBy) {
             this.columnGroupBy = columnGroupBy;
             this.__explicitlySet__.add("columnGroupBy");
@@ -135,33 +130,31 @@ public final class SavedCustomTable extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("groupByTag");
             return this;
         }
-        /**
-         * The compartment depth level.
-         **/
+        /** The compartment depth level. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentDepth")
         private java.math.BigDecimal compartmentDepth;
 
         /**
          * The compartment depth level.
+         *
          * @param compartmentDepth the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentDepth(java.math.BigDecimal compartmentDepth) {
             this.compartmentDepth = compartmentDepth;
             this.__explicitlySet__.add("compartmentDepth");
             return this;
         }
-        /**
-         * The version of the custom table.
-         **/
+        /** The version of the custom table. */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private java.math.BigDecimal version;
 
         /**
          * The version of the custom table.
+         *
          * @param version the value to set
          * @return this builder
-         **/
+         */
         public Builder version(java.math.BigDecimal version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -210,9 +203,7 @@ public final class SavedCustomTable extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -221,64 +212,53 @@ public final class SavedCustomTable extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the custom table.
-     **/
+    /** The name of the custom table. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name of the custom table.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The row groupBy key list.
-     * example:
-     *   {@code ["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit",
-     *     "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd",
-     *     "resourceId", "tenantId", "tenantName"]}
-     *
-     **/
+     * The row groupBy key list. example: {@code ["tagNamespace", "tagKey", "tagValue", "service",
+     * "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId",
+     * "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("rowGroupBy")
     private final java.util.List<String> rowGroupBy;
 
     /**
-     * The row groupBy key list.
-     * example:
-     *   {@code ["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit",
-     *     "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd",
-     *     "resourceId", "tenantId", "tenantName"]}
+     * The row groupBy key list. example: {@code ["tagNamespace", "tagKey", "tagValue", "service",
+     * "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId",
+     * "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]}
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getRowGroupBy() {
         return rowGroupBy;
     }
 
     /**
-     * The column groupBy key list.
-     * example:
-     *   {@code ["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit",
-     *     "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd",
-     *     "resourceId", "tenantId", "tenantName"]}
-     *
-     **/
+     * The column groupBy key list. example: {@code ["tagNamespace", "tagKey", "tagValue",
+     * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
+     * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("columnGroupBy")
     private final java.util.List<String> columnGroupBy;
 
     /**
-     * The column groupBy key list.
-     * example:
-     *   {@code ["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit",
-     *     "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd",
-     *     "resourceId", "tenantId", "tenantName"]}
+     * The column groupBy key list. example: {@code ["tagNamespace", "tagKey", "tagValue",
+     * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
+     * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]}
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getColumnGroupBy() {
         return columnGroupBy;
     }
@@ -303,30 +283,28 @@ public final class SavedCustomTable extends com.oracle.bmc.http.internal.Explici
         return groupByTag;
     }
 
-    /**
-     * The compartment depth level.
-     **/
+    /** The compartment depth level. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentDepth")
     private final java.math.BigDecimal compartmentDepth;
 
     /**
      * The compartment depth level.
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getCompartmentDepth() {
         return compartmentDepth;
     }
 
-    /**
-     * The version of the custom table.
-     **/
+    /** The version of the custom table. */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final java.math.BigDecimal version;
 
     /**
      * The version of the custom table.
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getVersion() {
         return version;
     }
@@ -338,6 +316,7 @@ public final class SavedCustomTable extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -9,13 +9,14 @@ import com.oracle.bmc.loganalytics.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      *
      * @return the value
      */
@@ -23,10 +24,7 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -39,25 +37,27 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
     }
 
     /**
-     * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
+     * A decimal number representing the number of seconds the client should wait before polling
+     * this endpoint again.
      */
     private Float retryAfter;
 
     /**
-     * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
+     * A decimal number representing the number of seconds the client should wait before polling
+     * this endpoint again.
+     *
      * @return the value
      */
     public Float getRetryAfter() {
         return retryAfter;
     }
 
-    /**
-     * The returned StorageWorkRequest instance.
-     */
+    /** The returned StorageWorkRequest instance. */
     private com.oracle.bmc.loganalytics.model.StorageWorkRequest storageWorkRequest;
 
     /**
      * The returned StorageWorkRequest instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.loganalytics.model.StorageWorkRequest getStorageWorkRequest() {
@@ -74,7 +74,7 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
     })
     private GetStorageWorkRequestResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String etag,
             Float retryAfter,
@@ -86,29 +86,33 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
         this.storageWorkRequest = storageWorkRequest;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetStorageWorkRequestResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -118,10 +122,7 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -136,12 +137,15 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
         }
 
         /**
-         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
+         * A decimal number representing the number of seconds the client should wait before polling
+         * this endpoint again.
          */
         private Float retryAfter;
 
         /**
-         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
+         * A decimal number representing the number of seconds the client should wait before polling
+         * this endpoint again.
+         *
          * @param retryAfter the value to set
          * @return this builder
          */
@@ -150,13 +154,12 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /**
-         * The returned StorageWorkRequest instance.
-         */
+        /** The returned StorageWorkRequest instance. */
         private com.oracle.bmc.loganalytics.model.StorageWorkRequest storageWorkRequest;
 
         /**
          * The returned StorageWorkRequest instance.
+         *
          * @param storageWorkRequest the value to set
          * @return this builder
          */
@@ -168,8 +171,10 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetStorageWorkRequestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -183,8 +188,10 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetStorageWorkRequestResponse build() {
             return new GetStorageWorkRequestResponse(
                     __httpStatusCode__,
@@ -198,6 +205,7 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

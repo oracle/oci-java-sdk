@@ -4,28 +4,31 @@
  */
 package com.oracle.bmc.dataintegration;
 
-import com.oracle.bmc.dataintegration.internal.http.*;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.dataintegration.requests.*;
 import com.oracle.bmc.dataintegration.responses.*;
 
+import java.util.Objects;
+
 /**
- * Async client implementation for DataIntegration service. <br/>
- * There are two ways to use async client:
- * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
- * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
- * because the stream will be closed right after the AsyncHandler is invoked. <br/>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
- * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
- * is used, it is still safe to use the Future to determine whether or not the request was completed via
- * Future.isDone/isCancelled.<br/>
- * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for DataIntegration service. <br>
+ * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
+ * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
+ * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
+ * will be closed right after the AsyncHandler is invoked. <br>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
+ * with the Java Future.<br>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or
+ * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
+ * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
+ * whether or not the request was completed via Future.isDone/isCancelled.<br>
+ * Please refer to
+ * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-public class DataIntegrationAsyncClient implements DataIntegrationAsync {
-    /**
-     * Service instance for DataIntegration.
-     */
+public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
+        implements DataIntegrationAsync {
+    /** Service instance for DataIntegration. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("DATAINTEGRATION")
@@ -37,268 +40,16 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(DataIntegrationAsyncClient.class);
 
-    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-            authenticationDetailsProvider;
-
-    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
-            apacheConnectionClosingStrategy;
-    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
-    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
-    private final java.util.Map<
-                    com.oracle.bmc.http.signing.SigningStrategy,
-                    com.oracle.bmc.http.signing.RequestSignerFactory>
-            signingStrategyRequestSignerFactories;
-    private final boolean isNonBufferingApacheClient;
-    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
-
-    /**
-     * Used to synchronize any updates on the `this.client` object.
-     */
-    private final Object clientUpdate = new Object();
-
-    /**
-     * Stores the actual client object used to make the API calls.
-     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
-     *       For any writes to the object, please synchronize on `this.clientUpdate`.
-     */
-    private volatile com.oracle.bmc.http.internal.RestClient client;
-
-    /**
-     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
-     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
-     */
-    private volatile String overrideEndpoint = null;
-
-    /**
-     * Creates a new service instance using the given authentication provider.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     */
-    public DataIntegrationAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     */
-    public DataIntegrationAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(authenticationDetailsProvider, configuration, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     */
-    public DataIntegrationAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     */
-    public DataIntegrationAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public DataIntegrationAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                additionalClientConfigurators,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public DataIntegrationAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
-                        .createDefaultRequestSignerFactories(),
-                additionalClientConfigurators,
-                endpoint);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public DataIntegrationAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
-     */
-    public DataIntegrationAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
-        this.authenticationDetailsProvider = authenticationDetailsProvider;
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
-                new java.util.ArrayList<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
-            authenticationDetailsConfigurators.addAll(
-                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
-                                    this.authenticationDetailsProvider)
-                            .getClientConfigurators());
-        }
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
-                new java.util.ArrayList<>(additionalClientConfigurators);
-        allConfigurators.addAll(authenticationDetailsConfigurators);
-        this.restClientFactory =
-                restClientFactoryBuilder
-                        .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(allConfigurators)
-                        .build();
-        this.isNonBufferingApacheClient =
-                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        restClientFactory.getClientConfigurator());
-        this.apacheConnectionClosingStrategy =
-                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
-                        restClientFactory.getClientConfigurator());
-        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
-        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
-        this.clientConfigurationToUse = configuration;
-
-        this.refreshClient();
-
-        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
-            com.oracle.bmc.auth.RegionProvider provider =
-                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
-
-            if (provider.getRegion() != null) {
-                this.setRegion(provider.getRegion());
-                if (endpoint != null) {
-                    LOG.info(
-                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
-                            provider.getRegion(),
-                            endpoint);
-                }
-            }
-        }
-        if (endpoint != null) {
-            setEndpoint(endpoint);
-        }
+    private DataIntegrationAsyncClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                    authenticationDetailsProvider) {
+        super(builder, authenticationDetailsProvider);
     }
 
     /**
      * Create a builder for this client.
+     *
      * @return builder
      */
     public static Builder builder() {
@@ -306,8 +57,8 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
+     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<
@@ -321,121 +72,26 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
 
         /**
          * Build the client.
+         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public DataIntegrationAsyncClient build(
                 @javax.annotation.Nonnull
-                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                        authenticationDetailsProvider) {
-            if (authenticationDetailsProvider == null) {
-                throw new NullPointerException(
-                        "authenticationDetailsProvider is marked non-null but is null");
-            }
-            return new DataIntegrationAsyncClient(
-                    authenticationDetailsProvider,
-                    configuration,
-                    clientConfigurator,
-                    requestSignerFactory,
-                    signingStrategyRequestSignerFactories,
-                    additionalClientConfigurators,
-                    endpoint);
+                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                                authenticationDetailsProvider) {
+            return new DataIntegrationAsyncClient(this, authenticationDetailsProvider);
         }
-    }
-
-    com.oracle.bmc.http.internal.RestClient getClient() {
-        return client;
-    }
-
-    @Override
-    public void refreshClient() {
-        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                this.defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        this.signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
-            }
-        }
-
-        com.oracle.bmc.http.internal.RestClient refreshedClient =
-                this.restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        this.clientConfigurationToUse,
-                        this.isNonBufferingApacheClient);
-
-        synchronized (clientUpdate) {
-            if (this.overrideEndpoint != null) {
-                refreshedClient.setEndpoint(this.overrideEndpoint);
-            }
-
-            this.client = refreshedClient;
-        }
-
-        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint) {
-        LOG.info("Setting endpoint to {}", endpoint);
-
-        synchronized (clientUpdate) {
-            this.overrideEndpoint = endpoint;
-            client.setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
-        }
-        return endpoint;
     }
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        java.util.Optional<String> endpoint =
-                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
-        if (endpoint.isPresent()) {
-            setEndpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + SERVICE + " is not known in region " + region);
-        }
+        super.setRegion(region);
     }
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
-        try {
-            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-            setRegion(region);
-        } catch (IllegalArgumentException e) {
-            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-            setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public void close() {
-        client.close();
+        super.setRegion(regionId);
     }
 
     @Override
@@ -444,50 +100,34 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ChangeCompartmentRequest, ChangeCompartmentResponse>
                     handler) {
-        LOG.trace("Called async changeCompartment");
-        final ChangeCompartmentRequest interceptedRequest =
-                ChangeCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeCompartmentDetails(), "changeCompartmentDetails is required");
+
+        return clientCall(request, ChangeCompartmentResponse::builder)
+                .logger(LOG, "changeCompartment")
+                .serviceDetails(
                         "DataIntegration",
                         "ChangeCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/ChangeCompartment");
-        final java.util.function.Function<javax.ws.rs.core.Response, ChangeCompartmentResponse>
-                transformer =
-                        ChangeCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ChangeCompartmentRequest, ChangeCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeCompartmentRequest, ChangeCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeCompartmentRequest, ChangeCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/ChangeCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeCompartmentRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ChangeCompartmentResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -498,55 +138,41 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                                     ChangeDisApplicationCompartmentRequest,
                                     ChangeDisApplicationCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeDisApplicationCompartment");
-        final ChangeDisApplicationCompartmentRequest interceptedRequest =
-                ChangeDisApplicationCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeDisApplicationCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getDisApplicationId(), "disApplicationId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeDisApplicationCompartmentDetails(),
+                "changeDisApplicationCompartmentDetails is required");
+
+        return clientCall(request, ChangeDisApplicationCompartmentResponse::builder)
+                .logger(LOG, "changeDisApplicationCompartment")
+                .serviceDetails(
                         "DataIntegration",
                         "ChangeDisApplicationCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/ChangeDisApplicationCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeDisApplicationCompartmentResponse>
-                transformer =
-                        ChangeDisApplicationCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeDisApplicationCompartmentRequest,
-                        ChangeDisApplicationCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeDisApplicationCompartmentRequest,
-                                ChangeDisApplicationCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeDisApplicationCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeDisApplicationCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeDisApplicationCompartmentRequest,
-                    ChangeDisApplicationCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/ChangeDisApplicationCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeDisApplicationCompartmentRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("disApplications")
+                .appendPathParam(request.getDisApplicationId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeDisApplicationCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeDisApplicationCompartmentResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -555,50 +181,34 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateApplicationRequest, CreateApplicationResponse>
                     handler) {
-        LOG.trace("Called async createApplication");
-        final CreateApplicationRequest interceptedRequest =
-                CreateApplicationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateApplicationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateApplicationDetails(), "createApplicationDetails is required");
+
+        return clientCall(request, CreateApplicationResponse::builder)
+                .logger(LOG, "createApplication")
+                .serviceDetails(
                         "DataIntegration",
                         "CreateApplication",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/CreateApplication");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateApplicationResponse>
-                transformer =
-                        CreateApplicationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateApplicationRequest, CreateApplicationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateApplicationRequest, CreateApplicationResponse>,
-                        java.util.concurrent.Future<CreateApplicationResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateApplicationDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateApplicationRequest, CreateApplicationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/CreateApplication")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateApplicationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Application.class,
+                        CreateApplicationResponse.Builder::application)
+                .handleResponseHeaderString("etag", CreateApplicationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateApplicationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -607,50 +217,34 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateConnectionRequest, CreateConnectionResponse>
                     handler) {
-        LOG.trace("Called async createConnection");
-        final CreateConnectionRequest interceptedRequest =
-                CreateConnectionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateConnectionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateConnectionDetails(), "createConnectionDetails is required");
+
+        return clientCall(request, CreateConnectionResponse::builder)
+                .logger(LOG, "createConnection")
+                .serviceDetails(
                         "DataIntegration",
                         "CreateConnection",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/CreateConnection");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateConnectionResponse>
-                transformer =
-                        CreateConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateConnectionRequest, CreateConnectionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateConnectionRequest, CreateConnectionResponse>,
-                        java.util.concurrent.Future<CreateConnectionResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateConnectionDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateConnectionRequest, CreateConnectionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/CreateConnection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateConnectionRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("connections")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Connection.class,
+                        CreateConnectionResponse.Builder::connection)
+                .handleResponseHeaderString("etag", CreateConnectionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateConnectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -661,53 +255,36 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                                     CreateConnectionValidationRequest,
                                     CreateConnectionValidationResponse>
                             handler) {
-        LOG.trace("Called async createConnectionValidation");
-        final CreateConnectionValidationRequest interceptedRequest =
-                CreateConnectionValidationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateConnectionValidationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateConnectionValidationDetails(),
+                "createConnectionValidationDetails is required");
+
+        return clientCall(request, CreateConnectionValidationResponse::builder)
+                .logger(LOG, "createConnectionValidation")
+                .serviceDetails(
                         "DataIntegration",
                         "CreateConnectionValidation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/CreateConnectionValidation");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateConnectionValidationResponse>
-                transformer =
-                        CreateConnectionValidationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateConnectionValidationRequest, CreateConnectionValidationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateConnectionValidationRequest,
-                                CreateConnectionValidationResponse>,
-                        java.util.concurrent.Future<CreateConnectionValidationResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateConnectionValidationDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateConnectionValidationRequest, CreateConnectionValidationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/CreateConnectionValidation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateConnectionValidationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("connectionValidations")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.ConnectionValidation.class,
+                        CreateConnectionValidationResponse.Builder::connectionValidation)
+                .handleResponseHeaderString(
+                        "etag", CreateConnectionValidationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateConnectionValidationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -716,50 +293,34 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateDataAssetRequest, CreateDataAssetResponse>
                     handler) {
-        LOG.trace("Called async createDataAsset");
-        final CreateDataAssetRequest interceptedRequest =
-                CreateDataAssetConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateDataAssetConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateDataAssetDetails(), "createDataAssetDetails is required");
+
+        return clientCall(request, CreateDataAssetResponse::builder)
+                .logger(LOG, "createDataAsset")
+                .serviceDetails(
                         "DataIntegration",
                         "CreateDataAsset",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/CreateDataAsset");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateDataAssetResponse>
-                transformer =
-                        CreateDataAssetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateDataAssetRequest, CreateDataAssetResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateDataAssetRequest, CreateDataAssetResponse>,
-                        java.util.concurrent.Future<CreateDataAssetResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateDataAssetDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateDataAssetRequest, CreateDataAssetResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/CreateDataAsset")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDataAssetRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("dataAssets")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DataAsset.class,
+                        CreateDataAssetResponse.Builder::dataAsset)
+                .handleResponseHeaderString("etag", CreateDataAssetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateDataAssetResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -768,49 +329,34 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateDataFlowRequest, CreateDataFlowResponse>
                     handler) {
-        LOG.trace("Called async createDataFlow");
-        final CreateDataFlowRequest interceptedRequest =
-                CreateDataFlowConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateDataFlowConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateDataFlowDetails(), "createDataFlowDetails is required");
+
+        return clientCall(request, CreateDataFlowResponse::builder)
+                .logger(LOG, "createDataFlow")
+                .serviceDetails(
                         "DataIntegration",
                         "CreateDataFlow",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/CreateDataFlow");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateDataFlowResponse>
-                transformer =
-                        CreateDataFlowConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateDataFlowRequest, CreateDataFlowResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateDataFlowRequest, CreateDataFlowResponse>,
-                        java.util.concurrent.Future<CreateDataFlowResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateDataFlowDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateDataFlowRequest, CreateDataFlowResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/CreateDataFlow")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDataFlowRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("dataFlows")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DataFlow.class,
+                        CreateDataFlowResponse.Builder::dataFlow)
+                .handleResponseHeaderString("etag", CreateDataFlowResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateDataFlowResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -819,52 +365,35 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateDataFlowValidationRequest, CreateDataFlowValidationResponse>
                     handler) {
-        LOG.trace("Called async createDataFlowValidation");
-        final CreateDataFlowValidationRequest interceptedRequest =
-                CreateDataFlowValidationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateDataFlowValidationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateDataFlowValidationDetails(),
+                "createDataFlowValidationDetails is required");
+
+        return clientCall(request, CreateDataFlowValidationResponse::builder)
+                .logger(LOG, "createDataFlowValidation")
+                .serviceDetails(
                         "DataIntegration",
                         "CreateDataFlowValidation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/CreateDataFlowValidation");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateDataFlowValidationResponse>
-                transformer =
-                        CreateDataFlowValidationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateDataFlowValidationRequest, CreateDataFlowValidationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateDataFlowValidationRequest, CreateDataFlowValidationResponse>,
-                        java.util.concurrent.Future<CreateDataFlowValidationResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateDataFlowValidationDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateDataFlowValidationRequest, CreateDataFlowValidationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/CreateDataFlowValidation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDataFlowValidationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("dataFlowValidations")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DataFlowValidation.class,
+                        CreateDataFlowValidationResponse.Builder::dataFlowValidation)
+                .handleResponseHeaderString("etag", CreateDataFlowValidationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateDataFlowValidationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -873,51 +402,35 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateDisApplicationRequest, CreateDisApplicationResponse>
                     handler) {
-        LOG.trace("Called async createDisApplication");
-        final CreateDisApplicationRequest interceptedRequest =
-                CreateDisApplicationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateDisApplicationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateDisApplicationDetails(),
+                "createDisApplicationDetails is required");
+
+        return clientCall(request, CreateDisApplicationResponse::builder)
+                .logger(LOG, "createDisApplication")
+                .serviceDetails(
                         "DataIntegration",
                         "CreateDisApplication",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/CreateDisApplication");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateDisApplicationResponse>
-                transformer =
-                        CreateDisApplicationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateDisApplicationRequest, CreateDisApplicationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateDisApplicationRequest, CreateDisApplicationResponse>,
-                        java.util.concurrent.Future<CreateDisApplicationResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateDisApplicationDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateDisApplicationRequest, CreateDisApplicationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/CreateDisApplication")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDisApplicationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("disApplications")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DisApplication.class,
+                        CreateDisApplicationResponse.Builder::disApplication)
+                .handleResponseHeaderString("etag", CreateDisApplicationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateDisApplicationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -926,50 +439,42 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateEntityShapeRequest, CreateEntityShapeResponse>
                     handler) {
-        LOG.trace("Called async createEntityShape");
-        final CreateEntityShapeRequest interceptedRequest =
-                CreateEntityShapeConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateEntityShapeConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getConnectionKey(), "connectionKey must not be blank");
+
+        Validate.notBlank(request.getSchemaResourceName(), "schemaResourceName must not be blank");
+        Objects.requireNonNull(
+                request.getCreateEntityShapeDetails(), "createEntityShapeDetails is required");
+
+        return clientCall(request, CreateEntityShapeResponse::builder)
+                .logger(LOG, "createEntityShape")
+                .serviceDetails(
                         "DataIntegration",
                         "CreateEntityShape",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataEntity/CreateEntityShape");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateEntityShapeResponse>
-                transformer =
-                        CreateEntityShapeConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateEntityShapeRequest, CreateEntityShapeResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateEntityShapeRequest, CreateEntityShapeResponse>,
-                        java.util.concurrent.Future<CreateEntityShapeResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateEntityShapeDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateEntityShapeRequest, CreateEntityShapeResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataEntity/CreateEntityShape")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateEntityShapeRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("connections")
+                .appendPathParam(request.getConnectionKey())
+                .appendPathParam("schemas")
+                .appendPathParam(request.getSchemaResourceName())
+                .appendPathParam("entityShapes")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.EntityShape.class,
+                        CreateEntityShapeResponse.Builder::entityShape)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateEntityShapeResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -978,53 +483,39 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateExternalPublicationRequest, CreateExternalPublicationResponse>
                     handler) {
-        LOG.trace("Called async createExternalPublication");
-        final CreateExternalPublicationRequest interceptedRequest =
-                CreateExternalPublicationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateExternalPublicationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getTaskKey(), "taskKey must not be blank");
+        Objects.requireNonNull(
+                request.getCreateExternalPublicationDetails(),
+                "createExternalPublicationDetails is required");
+
+        return clientCall(request, CreateExternalPublicationResponse::builder)
+                .logger(LOG, "createExternalPublication")
+                .serviceDetails(
                         "DataIntegration",
                         "CreateExternalPublication",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/CreateExternalPublication");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateExternalPublicationResponse>
-                transformer =
-                        CreateExternalPublicationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateExternalPublicationRequest, CreateExternalPublicationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateExternalPublicationRequest,
-                                CreateExternalPublicationResponse>,
-                        java.util.concurrent.Future<CreateExternalPublicationResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateExternalPublicationDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateExternalPublicationRequest, CreateExternalPublicationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/CreateExternalPublication")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateExternalPublicationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("tasks")
+                .appendPathParam(request.getTaskKey())
+                .appendPathParam("externalPublications")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.ExternalPublication.class,
+                        CreateExternalPublicationResponse.Builder::externalPublication)
+                .handleResponseHeaderString("etag", CreateExternalPublicationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateExternalPublicationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1035,56 +526,42 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                                     CreateExternalPublicationValidationRequest,
                                     CreateExternalPublicationValidationResponse>
                             handler) {
-        LOG.trace("Called async createExternalPublicationValidation");
-        final CreateExternalPublicationValidationRequest interceptedRequest =
-                CreateExternalPublicationValidationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateExternalPublicationValidationConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getTaskKey(), "taskKey must not be blank");
+        Objects.requireNonNull(
+                request.getCreateExternalPublicationValidationDetails(),
+                "createExternalPublicationValidationDetails is required");
+
+        return clientCall(request, CreateExternalPublicationValidationResponse::builder)
+                .logger(LOG, "createExternalPublicationValidation")
+                .serviceDetails(
                         "DataIntegration",
                         "CreateExternalPublicationValidation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/CreateExternalPublicationValidation");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateExternalPublicationValidationResponse>
-                transformer =
-                        CreateExternalPublicationValidationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateExternalPublicationValidationRequest,
-                        CreateExternalPublicationValidationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateExternalPublicationValidationRequest,
-                                CreateExternalPublicationValidationResponse>,
-                        java.util.concurrent.Future<CreateExternalPublicationValidationResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateExternalPublicationValidationDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateExternalPublicationValidationRequest,
-                    CreateExternalPublicationValidationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/CreateExternalPublicationValidation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateExternalPublicationValidationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("tasks")
+                .appendPathParam(request.getTaskKey())
+                .appendPathParam("externalPublicationValidations")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.ExternalPublicationValidation.class,
+                        CreateExternalPublicationValidationResponse.Builder
+                                ::externalPublicationValidation)
+                .handleResponseHeaderString(
+                        "etag", CreateExternalPublicationValidationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateExternalPublicationValidationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1092,49 +569,33 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             CreateFolderRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateFolderRequest, CreateFolderResponse>
                     handler) {
-        LOG.trace("Called async createFolder");
-        final CreateFolderRequest interceptedRequest =
-                CreateFolderConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateFolderConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+        Objects.requireNonNull(request.getCreateFolderDetails(), "createFolderDetails is required");
+
+        return clientCall(request, CreateFolderResponse::builder)
+                .logger(LOG, "createFolder")
+                .serviceDetails(
                         "DataIntegration",
                         "CreateFolder",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/CreateFolder");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateFolderResponse>
-                transformer =
-                        CreateFolderConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateFolderRequest, CreateFolderResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateFolderRequest, CreateFolderResponse>,
-                        java.util.concurrent.Future<CreateFolderResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateFolderDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateFolderRequest, CreateFolderResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/CreateFolder")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateFolderRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("folders")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Folder.class,
+                        CreateFolderResponse.Builder::folder)
+                .handleResponseHeaderString("etag", CreateFolderResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateFolderResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1143,51 +604,35 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateFunctionLibraryRequest, CreateFunctionLibraryResponse>
                     handler) {
-        LOG.trace("Called async createFunctionLibrary");
-        final CreateFunctionLibraryRequest interceptedRequest =
-                CreateFunctionLibraryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateFunctionLibraryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateFunctionLibraryDetails(),
+                "createFunctionLibraryDetails is required");
+
+        return clientCall(request, CreateFunctionLibraryResponse::builder)
+                .logger(LOG, "createFunctionLibrary")
+                .serviceDetails(
                         "DataIntegration",
                         "CreateFunctionLibrary",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/CreateFunctionLibrary");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateFunctionLibraryResponse>
-                transformer =
-                        CreateFunctionLibraryConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateFunctionLibraryRequest, CreateFunctionLibraryResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateFunctionLibraryRequest, CreateFunctionLibraryResponse>,
-                        java.util.concurrent.Future<CreateFunctionLibraryResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateFunctionLibraryDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateFunctionLibraryRequest, CreateFunctionLibraryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/CreateFunctionLibrary")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateFunctionLibraryRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("functionLibraries")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.FunctionLibrary.class,
+                        CreateFunctionLibraryResponse.Builder::functionLibrary)
+                .handleResponseHeaderString("etag", CreateFunctionLibraryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateFunctionLibraryResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1195,49 +640,37 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             CreatePatchRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreatePatchRequest, CreatePatchResponse>
                     handler) {
-        LOG.trace("Called async createPatch");
-        final CreatePatchRequest interceptedRequest =
-                CreatePatchConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreatePatchConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+        Objects.requireNonNull(request.getCreatePatchDetails(), "createPatchDetails is required");
+
+        return clientCall(request, CreatePatchResponse::builder)
+                .logger(LOG, "createPatch")
+                .serviceDetails(
                         "DataIntegration",
                         "CreatePatch",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/CreatePatch");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreatePatchResponse>
-                transformer =
-                        CreatePatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreatePatchRequest, CreatePatchResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreatePatchRequest, CreatePatchResponse>,
-                        java.util.concurrent.Future<CreatePatchResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreatePatchDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreatePatchRequest, CreatePatchResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/CreatePatch")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreatePatchRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("patches")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Patch.class,
+                        CreatePatchResponse.Builder::patch)
+                .handleResponseHeaderString("etag", CreatePatchResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreatePatchResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1246,49 +679,34 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreatePipelineRequest, CreatePipelineResponse>
                     handler) {
-        LOG.trace("Called async createPipeline");
-        final CreatePipelineRequest interceptedRequest =
-                CreatePipelineConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreatePipelineConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreatePipelineDetails(), "createPipelineDetails is required");
+
+        return clientCall(request, CreatePipelineResponse::builder)
+                .logger(LOG, "createPipeline")
+                .serviceDetails(
                         "DataIntegration",
                         "CreatePipeline",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/CreatePipeline");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreatePipelineResponse>
-                transformer =
-                        CreatePipelineConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreatePipelineRequest, CreatePipelineResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreatePipelineRequest, CreatePipelineResponse>,
-                        java.util.concurrent.Future<CreatePipelineResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreatePipelineDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreatePipelineRequest, CreatePipelineResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/CreatePipeline")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreatePipelineRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("pipelines")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Pipeline.class,
+                        CreatePipelineResponse.Builder::pipeline)
+                .handleResponseHeaderString("etag", CreatePipelineResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreatePipelineResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1297,52 +715,35 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreatePipelineValidationRequest, CreatePipelineValidationResponse>
                     handler) {
-        LOG.trace("Called async createPipelineValidation");
-        final CreatePipelineValidationRequest interceptedRequest =
-                CreatePipelineValidationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreatePipelineValidationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreatePipelineValidationDetails(),
+                "createPipelineValidationDetails is required");
+
+        return clientCall(request, CreatePipelineValidationResponse::builder)
+                .logger(LOG, "createPipelineValidation")
+                .serviceDetails(
                         "DataIntegration",
                         "CreatePipelineValidation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/CreatePipelineValidation");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreatePipelineValidationResponse>
-                transformer =
-                        CreatePipelineValidationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreatePipelineValidationRequest, CreatePipelineValidationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreatePipelineValidationRequest, CreatePipelineValidationResponse>,
-                        java.util.concurrent.Future<CreatePipelineValidationResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreatePipelineValidationDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreatePipelineValidationRequest, CreatePipelineValidationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/CreatePipelineValidation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreatePipelineValidationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("pipelineValidations")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.PipelineValidation.class,
+                        CreatePipelineValidationResponse.Builder::pipelineValidation)
+                .handleResponseHeaderString("etag", CreatePipelineValidationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreatePipelineValidationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1350,49 +751,34 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             CreateProjectRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateProjectRequest, CreateProjectResponse>
                     handler) {
-        LOG.trace("Called async createProject");
-        final CreateProjectRequest interceptedRequest =
-                CreateProjectConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateProjectConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateProjectDetails(), "createProjectDetails is required");
+
+        return clientCall(request, CreateProjectResponse::builder)
+                .logger(LOG, "createProject")
+                .serviceDetails(
                         "DataIntegration",
                         "CreateProject",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/CreateProject");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateProjectResponse>
-                transformer =
-                        CreateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateProjectRequest, CreateProjectResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateProjectRequest, CreateProjectResponse>,
-                        java.util.concurrent.Future<CreateProjectResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateProjectDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateProjectRequest, CreateProjectResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/CreateProject")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateProjectRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("projects")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Project.class,
+                        CreateProjectResponse.Builder::project)
+                .handleResponseHeaderString("etag", CreateProjectResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateProjectResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1401,49 +787,38 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateScheduleRequest, CreateScheduleResponse>
                     handler) {
-        LOG.trace("Called async createSchedule");
-        final CreateScheduleRequest interceptedRequest =
-                CreateScheduleConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateScheduleConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+        Objects.requireNonNull(
+                request.getCreateScheduleDetails(), "createScheduleDetails is required");
+
+        return clientCall(request, CreateScheduleResponse::builder)
+                .logger(LOG, "createSchedule")
+                .serviceDetails(
                         "DataIntegration",
                         "CreateSchedule",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/CreateSchedule");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateScheduleResponse>
-                transformer =
-                        CreateScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateScheduleRequest, CreateScheduleResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateScheduleRequest, CreateScheduleResponse>,
-                        java.util.concurrent.Future<CreateScheduleResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateScheduleDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateScheduleRequest, CreateScheduleResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/CreateSchedule")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateScheduleRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("schedules")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Schedule.class,
+                        CreateScheduleResponse.Builder::schedule)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateScheduleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateScheduleResponse.Builder::etag)
+                .callAsync(handler);
     }
 
     @Override
@@ -1451,48 +826,33 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             CreateTaskRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateTaskRequest, CreateTaskResponse>
                     handler) {
-        LOG.trace("Called async createTask");
-        final CreateTaskRequest interceptedRequest = CreateTaskConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateTaskConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+        Objects.requireNonNull(request.getCreateTaskDetails(), "createTaskDetails is required");
+
+        return clientCall(request, CreateTaskResponse::builder)
+                .logger(LOG, "createTask")
+                .serviceDetails(
                         "DataIntegration",
                         "CreateTask",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/CreateTask");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateTaskResponse>
-                transformer =
-                        CreateTaskConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateTaskRequest, CreateTaskResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateTaskRequest, CreateTaskResponse>,
-                        java.util.concurrent.Future<CreateTaskResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateTaskDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateTaskRequest, CreateTaskResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/CreateTask")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateTaskRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("tasks")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Task.class,
+                        CreateTaskResponse.Builder::task)
+                .handleResponseHeaderString("etag", CreateTaskResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateTaskResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1500,49 +860,38 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             CreateTaskRunRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateTaskRunRequest, CreateTaskRunResponse>
                     handler) {
-        LOG.trace("Called async createTaskRun");
-        final CreateTaskRunRequest interceptedRequest =
-                CreateTaskRunConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateTaskRunConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+        Objects.requireNonNull(
+                request.getCreateTaskRunDetails(), "createTaskRunDetails is required");
+
+        return clientCall(request, CreateTaskRunResponse::builder)
+                .logger(LOG, "createTaskRun")
+                .serviceDetails(
                         "DataIntegration",
                         "CreateTaskRun",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/CreateTaskRun");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateTaskRunResponse>
-                transformer =
-                        CreateTaskRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateTaskRunRequest, CreateTaskRunResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateTaskRunRequest, CreateTaskRunResponse>,
-                        java.util.concurrent.Future<CreateTaskRunResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateTaskRunDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateTaskRunRequest, CreateTaskRunResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/CreateTaskRun")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateTaskRunRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("taskRuns")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.TaskRun.class,
+                        CreateTaskRunResponse.Builder::taskRun)
+                .handleResponseHeaderString("etag", CreateTaskRunResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateTaskRunResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1551,50 +900,38 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateTaskScheduleRequest, CreateTaskScheduleResponse>
                     handler) {
-        LOG.trace("Called async createTaskSchedule");
-        final CreateTaskScheduleRequest interceptedRequest =
-                CreateTaskScheduleConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateTaskScheduleConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+        Objects.requireNonNull(
+                request.getCreateTaskScheduleDetails(), "createTaskScheduleDetails is required");
+
+        return clientCall(request, CreateTaskScheduleResponse::builder)
+                .logger(LOG, "createTaskSchedule")
+                .serviceDetails(
                         "DataIntegration",
                         "CreateTaskSchedule",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/CreateTaskSchedule");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateTaskScheduleResponse>
-                transformer =
-                        CreateTaskScheduleConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateTaskScheduleRequest, CreateTaskScheduleResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateTaskScheduleRequest, CreateTaskScheduleResponse>,
-                        java.util.concurrent.Future<CreateTaskScheduleResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateTaskScheduleDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateTaskScheduleRequest, CreateTaskScheduleResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/CreateTaskSchedule")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateTaskScheduleRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("taskSchedules")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.TaskSchedule.class,
+                        CreateTaskScheduleResponse.Builder::taskSchedule)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateTaskScheduleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateTaskScheduleResponse.Builder::etag)
+                .callAsync(handler);
     }
 
     @Override
@@ -1603,51 +940,35 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateTaskValidationRequest, CreateTaskValidationResponse>
                     handler) {
-        LOG.trace("Called async createTaskValidation");
-        final CreateTaskValidationRequest interceptedRequest =
-                CreateTaskValidationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateTaskValidationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateTaskValidationDetails(),
+                "createTaskValidationDetails is required");
+
+        return clientCall(request, CreateTaskValidationResponse::builder)
+                .logger(LOG, "createTaskValidation")
+                .serviceDetails(
                         "DataIntegration",
                         "CreateTaskValidation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/CreateTaskValidation");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateTaskValidationResponse>
-                transformer =
-                        CreateTaskValidationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateTaskValidationRequest, CreateTaskValidationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateTaskValidationRequest, CreateTaskValidationResponse>,
-                        java.util.concurrent.Future<CreateTaskValidationResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateTaskValidationDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateTaskValidationRequest, CreateTaskValidationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/CreateTaskValidation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateTaskValidationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("taskValidations")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.TaskValidation.class,
+                        CreateTaskValidationResponse.Builder::taskValidation)
+                .handleResponseHeaderString("etag", CreateTaskValidationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateTaskValidationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1656,53 +977,35 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateUserDefinedFunctionRequest, CreateUserDefinedFunctionResponse>
                     handler) {
-        LOG.trace("Called async createUserDefinedFunction");
-        final CreateUserDefinedFunctionRequest interceptedRequest =
-                CreateUserDefinedFunctionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateUserDefinedFunctionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateUserDefinedFunctionDetails(),
+                "createUserDefinedFunctionDetails is required");
+
+        return clientCall(request, CreateUserDefinedFunctionResponse::builder)
+                .logger(LOG, "createUserDefinedFunction")
+                .serviceDetails(
                         "DataIntegration",
                         "CreateUserDefinedFunction",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/CreateUserDefinedFunction");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateUserDefinedFunctionResponse>
-                transformer =
-                        CreateUserDefinedFunctionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateUserDefinedFunctionRequest, CreateUserDefinedFunctionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateUserDefinedFunctionRequest,
-                                CreateUserDefinedFunctionResponse>,
-                        java.util.concurrent.Future<CreateUserDefinedFunctionResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateUserDefinedFunctionDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateUserDefinedFunctionRequest, CreateUserDefinedFunctionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/CreateUserDefinedFunction")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateUserDefinedFunctionRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("userDefinedFunctions")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.UserDefinedFunction.class,
+                        CreateUserDefinedFunctionResponse.Builder::userDefinedFunction)
+                .handleResponseHeaderString("etag", CreateUserDefinedFunctionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateUserDefinedFunctionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1713,56 +1016,38 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                                     CreateUserDefinedFunctionValidationRequest,
                                     CreateUserDefinedFunctionValidationResponse>
                             handler) {
-        LOG.trace("Called async createUserDefinedFunctionValidation");
-        final CreateUserDefinedFunctionValidationRequest interceptedRequest =
-                CreateUserDefinedFunctionValidationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateUserDefinedFunctionValidationConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateUserDefinedFunctionValidationDetails(),
+                "createUserDefinedFunctionValidationDetails is required");
+
+        return clientCall(request, CreateUserDefinedFunctionValidationResponse::builder)
+                .logger(LOG, "createUserDefinedFunctionValidation")
+                .serviceDetails(
                         "DataIntegration",
                         "CreateUserDefinedFunctionValidation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/CreateUserDefinedFunctionValidation");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateUserDefinedFunctionValidationResponse>
-                transformer =
-                        CreateUserDefinedFunctionValidationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateUserDefinedFunctionValidationRequest,
-                        CreateUserDefinedFunctionValidationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateUserDefinedFunctionValidationRequest,
-                                CreateUserDefinedFunctionValidationResponse>,
-                        java.util.concurrent.Future<CreateUserDefinedFunctionValidationResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateUserDefinedFunctionValidationDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateUserDefinedFunctionValidationRequest,
-                    CreateUserDefinedFunctionValidationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/CreateUserDefinedFunctionValidation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateUserDefinedFunctionValidationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("userDefinedFunctionValidations")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.UserDefinedFunctionValidation.class,
+                        CreateUserDefinedFunctionValidationResponse.Builder
+                                ::userDefinedFunctionValidation)
+                .handleResponseHeaderString(
+                        "etag", CreateUserDefinedFunctionValidationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateUserDefinedFunctionValidationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1771,50 +1056,28 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateWorkspaceRequest, CreateWorkspaceResponse>
                     handler) {
-        LOG.trace("Called async createWorkspace");
-        final CreateWorkspaceRequest interceptedRequest =
-                CreateWorkspaceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateWorkspaceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateWorkspaceDetails(), "createWorkspaceDetails is required");
+
+        return clientCall(request, CreateWorkspaceResponse::builder)
+                .logger(LOG, "createWorkspace")
+                .serviceDetails(
                         "DataIntegration",
                         "CreateWorkspace",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/CreateWorkspace");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateWorkspaceResponse>
-                transformer =
-                        CreateWorkspaceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateWorkspaceRequest, CreateWorkspaceResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateWorkspaceRequest, CreateWorkspaceResponse>,
-                        java.util.concurrent.Future<CreateWorkspaceResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateWorkspaceDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateWorkspaceRequest, CreateWorkspaceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/CreateWorkspace")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateWorkspaceRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateWorkspaceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateWorkspaceResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1823,44 +1086,30 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteApplicationRequest, DeleteApplicationResponse>
                     handler) {
-        LOG.trace("Called async deleteApplication");
-        final DeleteApplicationRequest interceptedRequest =
-                DeleteApplicationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteApplicationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        return clientCall(request, DeleteApplicationResponse::builder)
+                .logger(LOG, "deleteApplication")
+                .serviceDetails(
                         "DataIntegration",
                         "DeleteApplication",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/DeleteApplication");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteApplicationResponse>
-                transformer =
-                        DeleteApplicationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteApplicationRequest, DeleteApplicationResponse>,
-                        java.util.concurrent.Future<DeleteApplicationResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteApplicationRequest, DeleteApplicationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/DeleteApplication")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteApplicationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteApplicationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1869,44 +1118,30 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteConnectionRequest, DeleteConnectionResponse>
                     handler) {
-        LOG.trace("Called async deleteConnection");
-        final DeleteConnectionRequest interceptedRequest =
-                DeleteConnectionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteConnectionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getConnectionKey(), "connectionKey must not be blank");
+
+        return clientCall(request, DeleteConnectionResponse::builder)
+                .logger(LOG, "deleteConnection")
+                .serviceDetails(
                         "DataIntegration",
                         "DeleteConnection",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/DeleteConnection");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteConnectionResponse>
-                transformer =
-                        DeleteConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteConnectionRequest, DeleteConnectionResponse>,
-                        java.util.concurrent.Future<DeleteConnectionResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteConnectionRequest, DeleteConnectionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/DeleteConnection")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteConnectionRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("connections")
+                .appendPathParam(request.getConnectionKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteConnectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1917,47 +1152,31 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                                     DeleteConnectionValidationRequest,
                                     DeleteConnectionValidationResponse>
                             handler) {
-        LOG.trace("Called async deleteConnectionValidation");
-        final DeleteConnectionValidationRequest interceptedRequest =
-                DeleteConnectionValidationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteConnectionValidationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(
+                request.getConnectionValidationKey(), "connectionValidationKey must not be blank");
+
+        return clientCall(request, DeleteConnectionValidationResponse::builder)
+                .logger(LOG, "deleteConnectionValidation")
+                .serviceDetails(
                         "DataIntegration",
                         "DeleteConnectionValidation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/DeleteConnectionValidation");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteConnectionValidationResponse>
-                transformer =
-                        DeleteConnectionValidationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteConnectionValidationRequest, DeleteConnectionValidationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteConnectionValidationRequest,
-                                DeleteConnectionValidationResponse>,
-                        java.util.concurrent.Future<DeleteConnectionValidationResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteConnectionValidationRequest, DeleteConnectionValidationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/DeleteConnectionValidation")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteConnectionValidationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("connectionValidations")
+                .appendPathParam(request.getConnectionValidationKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteConnectionValidationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1966,44 +1185,30 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteDataAssetRequest, DeleteDataAssetResponse>
                     handler) {
-        LOG.trace("Called async deleteDataAsset");
-        final DeleteDataAssetRequest interceptedRequest =
-                DeleteDataAssetConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteDataAssetConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
+
+        return clientCall(request, DeleteDataAssetResponse::builder)
+                .logger(LOG, "deleteDataAsset")
+                .serviceDetails(
                         "DataIntegration",
                         "DeleteDataAsset",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/DeleteDataAsset");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDataAssetResponse>
-                transformer =
-                        DeleteDataAssetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteDataAssetRequest, DeleteDataAssetResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteDataAssetRequest, DeleteDataAssetResponse>,
-                        java.util.concurrent.Future<DeleteDataAssetResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteDataAssetRequest, DeleteDataAssetResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/DeleteDataAsset")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDataAssetRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("dataAssets")
+                .appendPathParam(request.getDataAssetKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDataAssetResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2012,43 +1217,30 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteDataFlowRequest, DeleteDataFlowResponse>
                     handler) {
-        LOG.trace("Called async deleteDataFlow");
-        final DeleteDataFlowRequest interceptedRequest =
-                DeleteDataFlowConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteDataFlowConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getDataFlowKey(), "dataFlowKey must not be blank");
+
+        return clientCall(request, DeleteDataFlowResponse::builder)
+                .logger(LOG, "deleteDataFlow")
+                .serviceDetails(
                         "DataIntegration",
                         "DeleteDataFlow",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/DeleteDataFlow");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDataFlowResponse>
-                transformer =
-                        DeleteDataFlowConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteDataFlowRequest, DeleteDataFlowResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteDataFlowRequest, DeleteDataFlowResponse>,
-                        java.util.concurrent.Future<DeleteDataFlowResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteDataFlowRequest, DeleteDataFlowResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/DeleteDataFlow")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDataFlowRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("dataFlows")
+                .appendPathParam(request.getDataFlowKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDataFlowResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2057,46 +1249,31 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteDataFlowValidationRequest, DeleteDataFlowValidationResponse>
                     handler) {
-        LOG.trace("Called async deleteDataFlowValidation");
-        final DeleteDataFlowValidationRequest interceptedRequest =
-                DeleteDataFlowValidationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteDataFlowValidationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(
+                request.getDataFlowValidationKey(), "dataFlowValidationKey must not be blank");
+
+        return clientCall(request, DeleteDataFlowValidationResponse::builder)
+                .logger(LOG, "deleteDataFlowValidation")
+                .serviceDetails(
                         "DataIntegration",
                         "DeleteDataFlowValidation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/DeleteDataFlowValidation");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteDataFlowValidationResponse>
-                transformer =
-                        DeleteDataFlowValidationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteDataFlowValidationRequest, DeleteDataFlowValidationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteDataFlowValidationRequest, DeleteDataFlowValidationResponse>,
-                        java.util.concurrent.Future<DeleteDataFlowValidationResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteDataFlowValidationRequest, DeleteDataFlowValidationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/DeleteDataFlowValidation")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDataFlowValidationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("dataFlowValidations")
+                .appendPathParam(request.getDataFlowValidationKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDataFlowValidationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2105,45 +1282,30 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteDisApplicationRequest, DeleteDisApplicationResponse>
                     handler) {
-        LOG.trace("Called async deleteDisApplication");
-        final DeleteDisApplicationRequest interceptedRequest =
-                DeleteDisApplicationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteDisApplicationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getDisApplicationId(), "disApplicationId must not be blank");
+
+        return clientCall(request, DeleteDisApplicationResponse::builder)
+                .logger(LOG, "deleteDisApplication")
+                .serviceDetails(
                         "DataIntegration",
                         "DeleteDisApplication",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/DeleteDisApplication");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDisApplicationResponse>
-                transformer =
-                        DeleteDisApplicationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteDisApplicationRequest, DeleteDisApplicationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteDisApplicationRequest, DeleteDisApplicationResponse>,
-                        java.util.concurrent.Future<DeleteDisApplicationResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteDisApplicationRequest, DeleteDisApplicationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/DeleteDisApplication")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDisApplicationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("disApplications")
+                .appendPathParam(request.getDisApplicationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDisApplicationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2152,47 +1314,35 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteExternalPublicationRequest, DeleteExternalPublicationResponse>
                     handler) {
-        LOG.trace("Called async deleteExternalPublication");
-        final DeleteExternalPublicationRequest interceptedRequest =
-                DeleteExternalPublicationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteExternalPublicationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getTaskKey(), "taskKey must not be blank");
+
+        Validate.notBlank(
+                request.getExternalPublicationsKey(), "externalPublicationsKey must not be blank");
+
+        return clientCall(request, DeleteExternalPublicationResponse::builder)
+                .logger(LOG, "deleteExternalPublication")
+                .serviceDetails(
                         "DataIntegration",
                         "DeleteExternalPublication",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/DeleteExternalPublication");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteExternalPublicationResponse>
-                transformer =
-                        DeleteExternalPublicationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteExternalPublicationRequest, DeleteExternalPublicationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteExternalPublicationRequest,
-                                DeleteExternalPublicationResponse>,
-                        java.util.concurrent.Future<DeleteExternalPublicationResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteExternalPublicationRequest, DeleteExternalPublicationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/DeleteExternalPublication")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteExternalPublicationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("tasks")
+                .appendPathParam(request.getTaskKey())
+                .appendPathParam("externalPublications")
+                .appendPathParam(request.getExternalPublicationsKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteExternalPublicationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2203,50 +1353,37 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                                     DeleteExternalPublicationValidationRequest,
                                     DeleteExternalPublicationValidationResponse>
                             handler) {
-        LOG.trace("Called async deleteExternalPublicationValidation");
-        final DeleteExternalPublicationValidationRequest interceptedRequest =
-                DeleteExternalPublicationValidationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteExternalPublicationValidationConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getTaskKey(), "taskKey must not be blank");
+
+        Validate.notBlank(
+                request.getExternalPublicationValidationKey(),
+                "externalPublicationValidationKey must not be blank");
+
+        return clientCall(request, DeleteExternalPublicationValidationResponse::builder)
+                .logger(LOG, "deleteExternalPublicationValidation")
+                .serviceDetails(
                         "DataIntegration",
                         "DeleteExternalPublicationValidation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/DeleteExternalPublicationValidation");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteExternalPublicationValidationResponse>
-                transformer =
-                        DeleteExternalPublicationValidationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteExternalPublicationValidationRequest,
-                        DeleteExternalPublicationValidationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteExternalPublicationValidationRequest,
-                                DeleteExternalPublicationValidationResponse>,
-                        java.util.concurrent.Future<DeleteExternalPublicationValidationResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteExternalPublicationValidationRequest,
-                    DeleteExternalPublicationValidationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/DeleteExternalPublicationValidation")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteExternalPublicationValidationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("tasks")
+                .appendPathParam(request.getTaskKey())
+                .appendPathParam("externalPublicationValidations")
+                .appendPathParam(request.getExternalPublicationValidationKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteExternalPublicationValidationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2254,43 +1391,30 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             DeleteFolderRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteFolderRequest, DeleteFolderResponse>
                     handler) {
-        LOG.trace("Called async deleteFolder");
-        final DeleteFolderRequest interceptedRequest =
-                DeleteFolderConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteFolderConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getFolderKey(), "folderKey must not be blank");
+
+        return clientCall(request, DeleteFolderResponse::builder)
+                .logger(LOG, "deleteFolder")
+                .serviceDetails(
                         "DataIntegration",
                         "DeleteFolder",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/DeleteFolder");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteFolderResponse>
-                transformer =
-                        DeleteFolderConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteFolderRequest, DeleteFolderResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteFolderRequest, DeleteFolderResponse>,
-                        java.util.concurrent.Future<DeleteFolderResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteFolderRequest, DeleteFolderResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/DeleteFolder")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteFolderRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("folders")
+                .appendPathParam(request.getFolderKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteFolderResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2299,45 +1423,30 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteFunctionLibraryRequest, DeleteFunctionLibraryResponse>
                     handler) {
-        LOG.trace("Called async deleteFunctionLibrary");
-        final DeleteFunctionLibraryRequest interceptedRequest =
-                DeleteFunctionLibraryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteFunctionLibraryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getFunctionLibraryKey(), "functionLibraryKey must not be blank");
+
+        return clientCall(request, DeleteFunctionLibraryResponse::builder)
+                .logger(LOG, "deleteFunctionLibrary")
+                .serviceDetails(
                         "DataIntegration",
                         "DeleteFunctionLibrary",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/DeleteFunctionLibrary");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteFunctionLibraryResponse>
-                transformer =
-                        DeleteFunctionLibraryConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteFunctionLibraryRequest, DeleteFunctionLibraryResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteFunctionLibraryRequest, DeleteFunctionLibraryResponse>,
-                        java.util.concurrent.Future<DeleteFunctionLibraryResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteFunctionLibraryRequest, DeleteFunctionLibraryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/DeleteFunctionLibrary")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteFunctionLibraryRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("functionLibraries")
+                .appendPathParam(request.getFunctionLibraryKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteFunctionLibraryResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2345,43 +1454,34 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             DeletePatchRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeletePatchRequest, DeletePatchResponse>
                     handler) {
-        LOG.trace("Called async deletePatch");
-        final DeletePatchRequest interceptedRequest =
-                DeletePatchConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeletePatchConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        Validate.notBlank(request.getPatchKey(), "patchKey must not be blank");
+
+        return clientCall(request, DeletePatchResponse::builder)
+                .logger(LOG, "deletePatch")
+                .serviceDetails(
                         "DataIntegration",
                         "DeletePatch",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/DeletePatch");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeletePatchResponse>
-                transformer =
-                        DeletePatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeletePatchRequest, DeletePatchResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeletePatchRequest, DeletePatchResponse>,
-                        java.util.concurrent.Future<DeletePatchResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeletePatchRequest, DeletePatchResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/DeletePatch")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeletePatchRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("patches")
+                .appendPathParam(request.getPatchKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeletePatchResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2390,43 +1490,30 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeletePipelineRequest, DeletePipelineResponse>
                     handler) {
-        LOG.trace("Called async deletePipeline");
-        final DeletePipelineRequest interceptedRequest =
-                DeletePipelineConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeletePipelineConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getPipelineKey(), "pipelineKey must not be blank");
+
+        return clientCall(request, DeletePipelineResponse::builder)
+                .logger(LOG, "deletePipeline")
+                .serviceDetails(
                         "DataIntegration",
                         "DeletePipeline",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/DeletePipeline");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeletePipelineResponse>
-                transformer =
-                        DeletePipelineConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeletePipelineRequest, DeletePipelineResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeletePipelineRequest, DeletePipelineResponse>,
-                        java.util.concurrent.Future<DeletePipelineResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeletePipelineRequest, DeletePipelineResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/DeletePipeline")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeletePipelineRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeletePipelineResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2435,46 +1522,31 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeletePipelineValidationRequest, DeletePipelineValidationResponse>
                     handler) {
-        LOG.trace("Called async deletePipelineValidation");
-        final DeletePipelineValidationRequest interceptedRequest =
-                DeletePipelineValidationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeletePipelineValidationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(
+                request.getPipelineValidationKey(), "pipelineValidationKey must not be blank");
+
+        return clientCall(request, DeletePipelineValidationResponse::builder)
+                .logger(LOG, "deletePipelineValidation")
+                .serviceDetails(
                         "DataIntegration",
                         "DeletePipelineValidation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/DeletePipelineValidation");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeletePipelineValidationResponse>
-                transformer =
-                        DeletePipelineValidationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeletePipelineValidationRequest, DeletePipelineValidationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeletePipelineValidationRequest, DeletePipelineValidationResponse>,
-                        java.util.concurrent.Future<DeletePipelineValidationResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeletePipelineValidationRequest, DeletePipelineValidationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/DeletePipelineValidation")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeletePipelineValidationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("pipelineValidations")
+                .appendPathParam(request.getPipelineValidationKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeletePipelineValidationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2482,43 +1554,30 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             DeleteProjectRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteProjectRequest, DeleteProjectResponse>
                     handler) {
-        LOG.trace("Called async deleteProject");
-        final DeleteProjectRequest interceptedRequest =
-                DeleteProjectConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteProjectConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getProjectKey(), "projectKey must not be blank");
+
+        return clientCall(request, DeleteProjectResponse::builder)
+                .logger(LOG, "deleteProject")
+                .serviceDetails(
                         "DataIntegration",
                         "DeleteProject",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/DeleteProject");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteProjectResponse>
-                transformer =
-                        DeleteProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteProjectRequest, DeleteProjectResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteProjectRequest, DeleteProjectResponse>,
-                        java.util.concurrent.Future<DeleteProjectResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteProjectRequest, DeleteProjectResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/DeleteProject")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteProjectRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("projects")
+                .appendPathParam(request.getProjectKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteProjectResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2527,43 +1586,34 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteScheduleRequest, DeleteScheduleResponse>
                     handler) {
-        LOG.trace("Called async deleteSchedule");
-        final DeleteScheduleRequest interceptedRequest =
-                DeleteScheduleConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteScheduleConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        Validate.notBlank(request.getScheduleKey(), "scheduleKey must not be blank");
+
+        return clientCall(request, DeleteScheduleResponse::builder)
+                .logger(LOG, "deleteSchedule")
+                .serviceDetails(
                         "DataIntegration",
                         "DeleteSchedule",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/DeleteSchedule");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteScheduleResponse>
-                transformer =
-                        DeleteScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteScheduleRequest, DeleteScheduleResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteScheduleRequest, DeleteScheduleResponse>,
-                        java.util.concurrent.Future<DeleteScheduleResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteScheduleRequest, DeleteScheduleResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/DeleteSchedule")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteScheduleRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("schedules")
+                .appendPathParam(request.getScheduleKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteScheduleResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2571,42 +1621,30 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             DeleteTaskRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteTaskRequest, DeleteTaskResponse>
                     handler) {
-        LOG.trace("Called async deleteTask");
-        final DeleteTaskRequest interceptedRequest = DeleteTaskConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteTaskConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getTaskKey(), "taskKey must not be blank");
+
+        return clientCall(request, DeleteTaskResponse::builder)
+                .logger(LOG, "deleteTask")
+                .serviceDetails(
                         "DataIntegration",
                         "DeleteTask",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/DeleteTask");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteTaskResponse>
-                transformer =
-                        DeleteTaskConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteTaskRequest, DeleteTaskResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteTaskRequest, DeleteTaskResponse>,
-                        java.util.concurrent.Future<DeleteTaskResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteTaskRequest, DeleteTaskResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/DeleteTask")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteTaskRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("tasks")
+                .appendPathParam(request.getTaskKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteTaskResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2614,43 +1652,34 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             DeleteTaskRunRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteTaskRunRequest, DeleteTaskRunResponse>
                     handler) {
-        LOG.trace("Called async deleteTaskRun");
-        final DeleteTaskRunRequest interceptedRequest =
-                DeleteTaskRunConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteTaskRunConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        Validate.notBlank(request.getTaskRunKey(), "taskRunKey must not be blank");
+
+        return clientCall(request, DeleteTaskRunResponse::builder)
+                .logger(LOG, "deleteTaskRun")
+                .serviceDetails(
                         "DataIntegration",
                         "DeleteTaskRun",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/DeleteTaskRun");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteTaskRunResponse>
-                transformer =
-                        DeleteTaskRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteTaskRunRequest, DeleteTaskRunResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteTaskRunRequest, DeleteTaskRunResponse>,
-                        java.util.concurrent.Future<DeleteTaskRunResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteTaskRunRequest, DeleteTaskRunResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/DeleteTaskRun")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteTaskRunRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("taskRuns")
+                .appendPathParam(request.getTaskRunKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteTaskRunResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2659,44 +1688,34 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteTaskScheduleRequest, DeleteTaskScheduleResponse>
                     handler) {
-        LOG.trace("Called async deleteTaskSchedule");
-        final DeleteTaskScheduleRequest interceptedRequest =
-                DeleteTaskScheduleConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteTaskScheduleConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        Validate.notBlank(request.getTaskScheduleKey(), "taskScheduleKey must not be blank");
+
+        return clientCall(request, DeleteTaskScheduleResponse::builder)
+                .logger(LOG, "deleteTaskSchedule")
+                .serviceDetails(
                         "DataIntegration",
                         "DeleteTaskSchedule",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/DeleteTaskSchedule");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteTaskScheduleResponse>
-                transformer =
-                        DeleteTaskScheduleConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteTaskScheduleRequest, DeleteTaskScheduleResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteTaskScheduleRequest, DeleteTaskScheduleResponse>,
-                        java.util.concurrent.Future<DeleteTaskScheduleResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteTaskScheduleRequest, DeleteTaskScheduleResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/DeleteTaskSchedule")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteTaskScheduleRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("taskSchedules")
+                .appendPathParam(request.getTaskScheduleKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteTaskScheduleResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2705,45 +1724,30 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteTaskValidationRequest, DeleteTaskValidationResponse>
                     handler) {
-        LOG.trace("Called async deleteTaskValidation");
-        final DeleteTaskValidationRequest interceptedRequest =
-                DeleteTaskValidationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteTaskValidationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getTaskValidationKey(), "taskValidationKey must not be blank");
+
+        return clientCall(request, DeleteTaskValidationResponse::builder)
+                .logger(LOG, "deleteTaskValidation")
+                .serviceDetails(
                         "DataIntegration",
                         "DeleteTaskValidation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/DeleteTaskValidation");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteTaskValidationResponse>
-                transformer =
-                        DeleteTaskValidationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteTaskValidationRequest, DeleteTaskValidationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteTaskValidationRequest, DeleteTaskValidationResponse>,
-                        java.util.concurrent.Future<DeleteTaskValidationResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteTaskValidationRequest, DeleteTaskValidationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/DeleteTaskValidation")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteTaskValidationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("taskValidations")
+                .appendPathParam(request.getTaskValidationKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteTaskValidationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2752,47 +1756,31 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteUserDefinedFunctionRequest, DeleteUserDefinedFunctionResponse>
                     handler) {
-        LOG.trace("Called async deleteUserDefinedFunction");
-        final DeleteUserDefinedFunctionRequest interceptedRequest =
-                DeleteUserDefinedFunctionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteUserDefinedFunctionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(
+                request.getUserDefinedFunctionKey(), "userDefinedFunctionKey must not be blank");
+
+        return clientCall(request, DeleteUserDefinedFunctionResponse::builder)
+                .logger(LOG, "deleteUserDefinedFunction")
+                .serviceDetails(
                         "DataIntegration",
                         "DeleteUserDefinedFunction",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/DeleteUserDefinedFunction");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteUserDefinedFunctionResponse>
-                transformer =
-                        DeleteUserDefinedFunctionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteUserDefinedFunctionRequest, DeleteUserDefinedFunctionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteUserDefinedFunctionRequest,
-                                DeleteUserDefinedFunctionResponse>,
-                        java.util.concurrent.Future<DeleteUserDefinedFunctionResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteUserDefinedFunctionRequest, DeleteUserDefinedFunctionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/DeleteUserDefinedFunction")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteUserDefinedFunctionRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("userDefinedFunctions")
+                .appendPathParam(request.getUserDefinedFunctionKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteUserDefinedFunctionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2803,50 +1791,33 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                                     DeleteUserDefinedFunctionValidationRequest,
                                     DeleteUserDefinedFunctionValidationResponse>
                             handler) {
-        LOG.trace("Called async deleteUserDefinedFunctionValidation");
-        final DeleteUserDefinedFunctionValidationRequest interceptedRequest =
-                DeleteUserDefinedFunctionValidationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteUserDefinedFunctionValidationConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(
+                request.getUserDefinedFunctionValidationKey(),
+                "userDefinedFunctionValidationKey must not be blank");
+
+        return clientCall(request, DeleteUserDefinedFunctionValidationResponse::builder)
+                .logger(LOG, "deleteUserDefinedFunctionValidation")
+                .serviceDetails(
                         "DataIntegration",
                         "DeleteUserDefinedFunctionValidation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/DeleteUserDefinedFunctionValidation");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteUserDefinedFunctionValidationResponse>
-                transformer =
-                        DeleteUserDefinedFunctionValidationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteUserDefinedFunctionValidationRequest,
-                        DeleteUserDefinedFunctionValidationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteUserDefinedFunctionValidationRequest,
-                                DeleteUserDefinedFunctionValidationResponse>,
-                        java.util.concurrent.Future<DeleteUserDefinedFunctionValidationResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteUserDefinedFunctionValidationRequest,
-                    DeleteUserDefinedFunctionValidationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/DeleteUserDefinedFunctionValidation")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteUserDefinedFunctionValidationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("userDefinedFunctionValidations")
+                .appendPathParam(request.getUserDefinedFunctionValidationKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteUserDefinedFunctionValidationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2855,44 +1826,30 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteWorkspaceRequest, DeleteWorkspaceResponse>
                     handler) {
-        LOG.trace("Called async deleteWorkspace");
-        final DeleteWorkspaceRequest interceptedRequest =
-                DeleteWorkspaceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteWorkspaceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        return clientCall(request, DeleteWorkspaceResponse::builder)
+                .logger(LOG, "deleteWorkspace")
+                .serviceDetails(
                         "DataIntegration",
                         "DeleteWorkspace",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/DeleteWorkspace");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteWorkspaceResponse>
-                transformer =
-                        DeleteWorkspaceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteWorkspaceRequest, DeleteWorkspaceResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteWorkspaceRequest, DeleteWorkspaceResponse>,
-                        java.util.concurrent.Future<DeleteWorkspaceResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteWorkspaceRequest, DeleteWorkspaceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/DeleteWorkspace")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteWorkspaceRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendQueryParam("quiesceTimeout", request.getQuiesceTimeout())
+                .appendQueryParam("isForceOperation", request.getIsForceOperation())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteWorkspaceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteWorkspaceResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2901,43 +1858,33 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetApplicationRequest, GetApplicationResponse>
                     handler) {
-        LOG.trace("Called async getApplication");
-        final GetApplicationRequest interceptedRequest =
-                GetApplicationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetApplicationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        return clientCall(request, GetApplicationResponse::builder)
+                .logger(LOG, "getApplication")
+                .serviceDetails(
                         "DataIntegration",
                         "GetApplication",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetApplication");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetApplicationResponse>
-                transformer =
-                        GetApplicationConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetApplicationRequest, GetApplicationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetApplicationRequest, GetApplicationResponse>,
-                        java.util.concurrent.Future<GetApplicationResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetApplicationRequest, GetApplicationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetApplication")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetApplicationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Application.class,
+                        GetApplicationResponse.Builder::application)
+                .handleResponseHeaderString("etag", GetApplicationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetApplicationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2945,43 +1892,33 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             GetConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetConnectionRequest, GetConnectionResponse>
                     handler) {
-        LOG.trace("Called async getConnection");
-        final GetConnectionRequest interceptedRequest =
-                GetConnectionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetConnectionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getConnectionKey(), "connectionKey must not be blank");
+
+        return clientCall(request, GetConnectionResponse::builder)
+                .logger(LOG, "getConnection")
+                .serviceDetails(
                         "DataIntegration",
                         "GetConnection",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/GetConnection");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetConnectionResponse>
-                transformer =
-                        GetConnectionConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetConnectionRequest, GetConnectionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetConnectionRequest, GetConnectionResponse>,
-                        java.util.concurrent.Future<GetConnectionResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetConnectionRequest, GetConnectionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/GetConnection")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetConnectionRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("connections")
+                .appendPathParam(request.getConnectionKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Connection.class,
+                        GetConnectionResponse.Builder::connection)
+                .handleResponseHeaderString("etag", GetConnectionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetConnectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2990,46 +1927,34 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetConnectionValidationRequest, GetConnectionValidationResponse>
                     handler) {
-        LOG.trace("Called async getConnectionValidation");
-        final GetConnectionValidationRequest interceptedRequest =
-                GetConnectionValidationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetConnectionValidationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(
+                request.getConnectionValidationKey(), "connectionValidationKey must not be blank");
+
+        return clientCall(request, GetConnectionValidationResponse::builder)
+                .logger(LOG, "getConnectionValidation")
+                .serviceDetails(
                         "DataIntegration",
                         "GetConnectionValidation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/GetConnectionValidation");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetConnectionValidationResponse>
-                transformer =
-                        GetConnectionValidationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetConnectionValidationRequest, GetConnectionValidationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetConnectionValidationRequest, GetConnectionValidationResponse>,
-                        java.util.concurrent.Future<GetConnectionValidationResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetConnectionValidationRequest, GetConnectionValidationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/GetConnectionValidation")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetConnectionValidationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("connectionValidations")
+                .appendPathParam(request.getConnectionValidationKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.ConnectionValidation.class,
+                        GetConnectionValidationResponse.Builder::connectionValidation)
+                .handleResponseHeaderString("etag", GetConnectionValidationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetConnectionValidationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3038,44 +1963,34 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetCountStatisticRequest, GetCountStatisticResponse>
                     handler) {
-        LOG.trace("Called async getCountStatistic");
-        final GetCountStatisticRequest interceptedRequest =
-                GetCountStatisticConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetCountStatisticConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getCountStatisticKey(), "countStatisticKey must not be blank");
+
+        return clientCall(request, GetCountStatisticResponse::builder)
+                .logger(LOG, "getCountStatistic")
+                .serviceDetails(
                         "DataIntegration",
                         "GetCountStatistic",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/GetCountStatistic");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetCountStatisticResponse>
-                transformer =
-                        GetCountStatisticConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetCountStatisticRequest, GetCountStatisticResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetCountStatisticRequest, GetCountStatisticResponse>,
-                        java.util.concurrent.Future<GetCountStatisticResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetCountStatisticRequest, GetCountStatisticResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/GetCountStatistic")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCountStatisticRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("countStatistics")
+                .appendPathParam(request.getCountStatisticKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.CountStatistic.class,
+                        GetCountStatisticResponse.Builder::countStatistic)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCountStatisticResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", GetCountStatisticResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -3083,43 +1998,33 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             GetDataAssetRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetDataAssetRequest, GetDataAssetResponse>
                     handler) {
-        LOG.trace("Called async getDataAsset");
-        final GetDataAssetRequest interceptedRequest =
-                GetDataAssetConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDataAssetConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
+
+        return clientCall(request, GetDataAssetResponse::builder)
+                .logger(LOG, "getDataAsset")
+                .serviceDetails(
                         "DataIntegration",
                         "GetDataAsset",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/GetDataAsset");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetDataAssetResponse>
-                transformer =
-                        GetDataAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetDataAssetRequest, GetDataAssetResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetDataAssetRequest, GetDataAssetResponse>,
-                        java.util.concurrent.Future<GetDataAssetResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetDataAssetRequest, GetDataAssetResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/GetDataAsset")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDataAssetRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("dataAssets")
+                .appendPathParam(request.getDataAssetKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DataAsset.class,
+                        GetDataAssetResponse.Builder::dataAsset)
+                .handleResponseHeaderString("etag", GetDataAssetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDataAssetResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3127,43 +2032,40 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             GetDataEntityRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetDataEntityRequest, GetDataEntityResponse>
                     handler) {
-        LOG.trace("Called async getDataEntity");
-        final GetDataEntityRequest interceptedRequest =
-                GetDataEntityConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDataEntityConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getConnectionKey(), "connectionKey must not be blank");
+
+        Validate.notBlank(request.getSchemaResourceName(), "schemaResourceName must not be blank");
+
+        Validate.notBlank(request.getDataEntityKey(), "dataEntityKey must not be blank");
+
+        return clientCall(request, GetDataEntityResponse::builder)
+                .logger(LOG, "getDataEntity")
+                .serviceDetails(
                         "DataIntegration",
                         "GetDataEntity",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataEntity/GetDataEntity");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetDataEntityResponse>
-                transformer =
-                        GetDataEntityConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetDataEntityRequest, GetDataEntityResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetDataEntityRequest, GetDataEntityResponse>,
-                        java.util.concurrent.Future<GetDataEntityResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetDataEntityRequest, GetDataEntityResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataEntity/GetDataEntity")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDataEntityRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("connections")
+                .appendPathParam(request.getConnectionKey())
+                .appendPathParam("schemas")
+                .appendPathParam(request.getSchemaResourceName())
+                .appendPathParam("dataEntities")
+                .appendPathParam(request.getDataEntityKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DataEntity.class,
+                        GetDataEntityResponse.Builder::dataEntity)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDataEntityResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3171,43 +2073,34 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             GetDataFlowRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetDataFlowRequest, GetDataFlowResponse>
                     handler) {
-        LOG.trace("Called async getDataFlow");
-        final GetDataFlowRequest interceptedRequest =
-                GetDataFlowConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDataFlowConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getDataFlowKey(), "dataFlowKey must not be blank");
+
+        return clientCall(request, GetDataFlowResponse::builder)
+                .logger(LOG, "getDataFlow")
+                .serviceDetails(
                         "DataIntegration",
                         "GetDataFlow",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/GetDataFlow");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetDataFlowResponse>
-                transformer =
-                        GetDataFlowConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetDataFlowRequest, GetDataFlowResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetDataFlowRequest, GetDataFlowResponse>,
-                        java.util.concurrent.Future<GetDataFlowResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetDataFlowRequest, GetDataFlowResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/GetDataFlow")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDataFlowRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("dataFlows")
+                .appendPathParam(request.getDataFlowKey())
+                .appendQueryParam("expandReferences", request.getExpandReferences())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DataFlow.class,
+                        GetDataFlowResponse.Builder::dataFlow)
+                .handleResponseHeaderString("etag", GetDataFlowResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDataFlowResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3216,45 +2109,34 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetDataFlowValidationRequest, GetDataFlowValidationResponse>
                     handler) {
-        LOG.trace("Called async getDataFlowValidation");
-        final GetDataFlowValidationRequest interceptedRequest =
-                GetDataFlowValidationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDataFlowValidationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(
+                request.getDataFlowValidationKey(), "dataFlowValidationKey must not be blank");
+
+        return clientCall(request, GetDataFlowValidationResponse::builder)
+                .logger(LOG, "getDataFlowValidation")
+                .serviceDetails(
                         "DataIntegration",
                         "GetDataFlowValidation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/GetDataFlowValidation");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetDataFlowValidationResponse>
-                transformer =
-                        GetDataFlowValidationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetDataFlowValidationRequest, GetDataFlowValidationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetDataFlowValidationRequest, GetDataFlowValidationResponse>,
-                        java.util.concurrent.Future<GetDataFlowValidationResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetDataFlowValidationRequest, GetDataFlowValidationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/GetDataFlowValidation")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDataFlowValidationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("dataFlowValidations")
+                .appendPathParam(request.getDataFlowValidationKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DataFlowValidation.class,
+                        GetDataFlowValidationResponse.Builder::dataFlowValidation)
+                .handleResponseHeaderString("etag", GetDataFlowValidationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDataFlowValidationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3263,44 +2145,37 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetDependentObjectRequest, GetDependentObjectResponse>
                     handler) {
-        LOG.trace("Called async getDependentObject");
-        final GetDependentObjectRequest interceptedRequest =
-                GetDependentObjectConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDependentObjectConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        Validate.notBlank(request.getDependentObjectKey(), "dependentObjectKey must not be blank");
+
+        return clientCall(request, GetDependentObjectResponse::builder)
+                .logger(LOG, "getDependentObject")
+                .serviceDetails(
                         "DataIntegration",
                         "GetDependentObject",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetDependentObject");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetDependentObjectResponse>
-                transformer =
-                        GetDependentObjectConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetDependentObjectRequest, GetDependentObjectResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetDependentObjectRequest, GetDependentObjectResponse>,
-                        java.util.concurrent.Future<GetDependentObjectResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetDependentObjectRequest, GetDependentObjectResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetDependentObject")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDependentObjectRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("dependentObjects")
+                .appendPathParam(request.getDependentObjectKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DependentObject.class,
+                        GetDependentObjectResponse.Builder::dependentObject)
+                .handleResponseHeaderString("etag", GetDependentObjectResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDependentObjectResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3309,44 +2184,33 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetDisApplicationRequest, GetDisApplicationResponse>
                     handler) {
-        LOG.trace("Called async getDisApplication");
-        final GetDisApplicationRequest interceptedRequest =
-                GetDisApplicationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDisApplicationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getDisApplicationId(), "disApplicationId must not be blank");
+
+        return clientCall(request, GetDisApplicationResponse::builder)
+                .logger(LOG, "getDisApplication")
+                .serviceDetails(
                         "DataIntegration",
                         "GetDisApplication",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/GetDisApplication");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetDisApplicationResponse>
-                transformer =
-                        GetDisApplicationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetDisApplicationRequest, GetDisApplicationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetDisApplicationRequest, GetDisApplicationResponse>,
-                        java.util.concurrent.Future<GetDisApplicationResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetDisApplicationRequest, GetDisApplicationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/GetDisApplication")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDisApplicationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("disApplications")
+                .appendPathParam(request.getDisApplicationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DisApplication.class,
+                        GetDisApplicationResponse.Builder::disApplication)
+                .handleResponseHeaderString("etag", GetDisApplicationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDisApplicationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3355,45 +2219,38 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetExternalPublicationRequest, GetExternalPublicationResponse>
                     handler) {
-        LOG.trace("Called async getExternalPublication");
-        final GetExternalPublicationRequest interceptedRequest =
-                GetExternalPublicationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetExternalPublicationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getTaskKey(), "taskKey must not be blank");
+
+        Validate.notBlank(
+                request.getExternalPublicationsKey(), "externalPublicationsKey must not be blank");
+
+        return clientCall(request, GetExternalPublicationResponse::builder)
+                .logger(LOG, "getExternalPublication")
+                .serviceDetails(
                         "DataIntegration",
                         "GetExternalPublication",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/GetExternalPublication");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetExternalPublicationResponse>
-                transformer =
-                        GetExternalPublicationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetExternalPublicationRequest, GetExternalPublicationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetExternalPublicationRequest, GetExternalPublicationResponse>,
-                        java.util.concurrent.Future<GetExternalPublicationResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetExternalPublicationRequest, GetExternalPublicationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/GetExternalPublication")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExternalPublicationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("tasks")
+                .appendPathParam(request.getTaskKey())
+                .appendPathParam("externalPublications")
+                .appendPathParam(request.getExternalPublicationsKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.ExternalPublication.class,
+                        GetExternalPublicationResponse.Builder::externalPublication)
+                .handleResponseHeaderString("etag", GetExternalPublicationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExternalPublicationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3404,49 +2261,42 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                                     GetExternalPublicationValidationRequest,
                                     GetExternalPublicationValidationResponse>
                             handler) {
-        LOG.trace("Called async getExternalPublicationValidation");
-        final GetExternalPublicationValidationRequest interceptedRequest =
-                GetExternalPublicationValidationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetExternalPublicationValidationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getTaskKey(), "taskKey must not be blank");
+
+        Validate.notBlank(
+                request.getExternalPublicationValidationKey(),
+                "externalPublicationValidationKey must not be blank");
+
+        return clientCall(request, GetExternalPublicationValidationResponse::builder)
+                .logger(LOG, "getExternalPublicationValidation")
+                .serviceDetails(
                         "DataIntegration",
                         "GetExternalPublicationValidation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/GetExternalPublicationValidation");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetExternalPublicationValidationResponse>
-                transformer =
-                        GetExternalPublicationValidationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetExternalPublicationValidationRequest,
-                        GetExternalPublicationValidationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetExternalPublicationValidationRequest,
-                                GetExternalPublicationValidationResponse>,
-                        java.util.concurrent.Future<GetExternalPublicationValidationResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetExternalPublicationValidationRequest,
-                    GetExternalPublicationValidationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/GetExternalPublicationValidation")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExternalPublicationValidationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("tasks")
+                .appendPathParam(request.getTaskKey())
+                .appendPathParam("externalPublicationValidations")
+                .appendPathParam(request.getExternalPublicationValidationKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.ExternalPublicationValidation.class,
+                        GetExternalPublicationValidationResponse.Builder
+                                ::externalPublicationValidation)
+                .handleResponseHeaderString(
+                        "etag", GetExternalPublicationValidationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetExternalPublicationValidationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3454,41 +2304,37 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             GetFolderRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetFolderRequest, GetFolderResponse>
                     handler) {
-        LOG.trace("Called async getFolder");
-        final GetFolderRequest interceptedRequest = GetFolderConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetFolderConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getFolderKey(), "folderKey must not be blank");
+
+        return clientCall(request, GetFolderResponse::builder)
+                .logger(LOG, "getFolder")
+                .serviceDetails(
                         "DataIntegration",
                         "GetFolder",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/GetFolder");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetFolderResponse>
-                transformer =
-                        GetFolderConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetFolderRequest, GetFolderResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<GetFolderRequest, GetFolderResponse>,
-                        java.util.concurrent.Future<GetFolderResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetFolderRequest, GetFolderResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/GetFolder")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetFolderRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("folders")
+                .appendPathParam(request.getFolderKey())
+                .appendListQueryParam(
+                        "projection",
+                        request.getProjection(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Folder.class,
+                        GetFolderResponse.Builder::folder)
+                .handleResponseHeaderString("etag", GetFolderResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetFolderResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3497,44 +2343,37 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetFunctionLibraryRequest, GetFunctionLibraryResponse>
                     handler) {
-        LOG.trace("Called async getFunctionLibrary");
-        final GetFunctionLibraryRequest interceptedRequest =
-                GetFunctionLibraryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetFunctionLibraryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getFunctionLibraryKey(), "functionLibraryKey must not be blank");
+
+        return clientCall(request, GetFunctionLibraryResponse::builder)
+                .logger(LOG, "getFunctionLibrary")
+                .serviceDetails(
                         "DataIntegration",
                         "GetFunctionLibrary",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/GetFunctionLibrary");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetFunctionLibraryResponse>
-                transformer =
-                        GetFunctionLibraryConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetFunctionLibraryRequest, GetFunctionLibraryResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetFunctionLibraryRequest, GetFunctionLibraryResponse>,
-                        java.util.concurrent.Future<GetFunctionLibraryResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetFunctionLibraryRequest, GetFunctionLibraryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/GetFunctionLibrary")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetFunctionLibraryRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("functionLibraries")
+                .appendPathParam(request.getFunctionLibraryKey())
+                .appendListQueryParam(
+                        "projection",
+                        request.getProjection(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.FunctionLibrary.class,
+                        GetFunctionLibraryResponse.Builder::functionLibrary)
+                .handleResponseHeaderString("etag", GetFunctionLibraryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetFunctionLibraryResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3542,40 +2381,37 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             GetPatchRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetPatchRequest, GetPatchResponse>
                     handler) {
-        LOG.trace("Called async getPatch");
-        final GetPatchRequest interceptedRequest = GetPatchConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetPatchConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        Validate.notBlank(request.getPatchKey(), "patchKey must not be blank");
+
+        return clientCall(request, GetPatchResponse::builder)
+                .logger(LOG, "getPatch")
+                .serviceDetails(
                         "DataIntegration",
                         "GetPatch",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetPatch");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetPatchResponse> transformer =
-                GetPatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetPatchRequest, GetPatchResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<GetPatchRequest, GetPatchResponse>,
-                        java.util.concurrent.Future<GetPatchResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetPatchRequest, GetPatchResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetPatch")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPatchRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("patches")
+                .appendPathParam(request.getPatchKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Patch.class,
+                        GetPatchResponse.Builder::patch)
+                .handleResponseHeaderString("etag", GetPatchResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPatchResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3583,43 +2419,34 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             GetPipelineRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetPipelineRequest, GetPipelineResponse>
                     handler) {
-        LOG.trace("Called async getPipeline");
-        final GetPipelineRequest interceptedRequest =
-                GetPipelineConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetPipelineConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getPipelineKey(), "pipelineKey must not be blank");
+
+        return clientCall(request, GetPipelineResponse::builder)
+                .logger(LOG, "getPipeline")
+                .serviceDetails(
                         "DataIntegration",
                         "GetPipeline",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/GetPipeline");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetPipelineResponse>
-                transformer =
-                        GetPipelineConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetPipelineRequest, GetPipelineResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetPipelineRequest, GetPipelineResponse>,
-                        java.util.concurrent.Future<GetPipelineResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetPipelineRequest, GetPipelineResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/GetPipeline")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPipelineRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineKey())
+                .appendQueryParam("expandReferences", request.getExpandReferences())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Pipeline.class,
+                        GetPipelineResponse.Builder::pipeline)
+                .handleResponseHeaderString("etag", GetPipelineResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPipelineResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3628,45 +2455,34 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetPipelineValidationRequest, GetPipelineValidationResponse>
                     handler) {
-        LOG.trace("Called async getPipelineValidation");
-        final GetPipelineValidationRequest interceptedRequest =
-                GetPipelineValidationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetPipelineValidationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(
+                request.getPipelineValidationKey(), "pipelineValidationKey must not be blank");
+
+        return clientCall(request, GetPipelineValidationResponse::builder)
+                .logger(LOG, "getPipelineValidation")
+                .serviceDetails(
                         "DataIntegration",
                         "GetPipelineValidation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/GetPipelineValidation");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetPipelineValidationResponse>
-                transformer =
-                        GetPipelineValidationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetPipelineValidationRequest, GetPipelineValidationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetPipelineValidationRequest, GetPipelineValidationResponse>,
-                        java.util.concurrent.Future<GetPipelineValidationResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetPipelineValidationRequest, GetPipelineValidationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/GetPipelineValidation")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPipelineValidationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("pipelineValidations")
+                .appendPathParam(request.getPipelineValidationKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.PipelineValidation.class,
+                        GetPipelineValidationResponse.Builder::pipelineValidation)
+                .handleResponseHeaderString("etag", GetPipelineValidationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPipelineValidationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3674,42 +2490,37 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             GetProjectRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetProjectRequest, GetProjectResponse>
                     handler) {
-        LOG.trace("Called async getProject");
-        final GetProjectRequest interceptedRequest = GetProjectConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetProjectConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getProjectKey(), "projectKey must not be blank");
+
+        return clientCall(request, GetProjectResponse::builder)
+                .logger(LOG, "getProject")
+                .serviceDetails(
                         "DataIntegration",
                         "GetProject",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/GetProject");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetProjectResponse>
-                transformer =
-                        GetProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetProjectRequest, GetProjectResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetProjectRequest, GetProjectResponse>,
-                        java.util.concurrent.Future<GetProjectResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetProjectRequest, GetProjectResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/GetProject")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetProjectRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("projects")
+                .appendPathParam(request.getProjectKey())
+                .appendListQueryParam(
+                        "projection",
+                        request.getProjection(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Project.class,
+                        GetProjectResponse.Builder::project)
+                .handleResponseHeaderString("etag", GetProjectResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetProjectResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3718,44 +2529,38 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetPublishedObjectRequest, GetPublishedObjectResponse>
                     handler) {
-        LOG.trace("Called async getPublishedObject");
-        final GetPublishedObjectRequest interceptedRequest =
-                GetPublishedObjectConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetPublishedObjectConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        Validate.notBlank(request.getPublishedObjectKey(), "publishedObjectKey must not be blank");
+
+        return clientCall(request, GetPublishedObjectResponse::builder)
+                .logger(LOG, "getPublishedObject")
+                .serviceDetails(
                         "DataIntegration",
                         "GetPublishedObject",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetPublishedObject");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetPublishedObjectResponse>
-                transformer =
-                        GetPublishedObjectConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetPublishedObjectRequest, GetPublishedObjectResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetPublishedObjectRequest, GetPublishedObjectResponse>,
-                        java.util.concurrent.Future<GetPublishedObjectResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetPublishedObjectRequest, GetPublishedObjectResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetPublishedObject")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPublishedObjectRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("publishedObjects")
+                .appendPathParam(request.getPublishedObjectKey())
+                .appendQueryParam("expandReferences", request.getExpandReferences())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.PublishedObject.class,
+                        GetPublishedObjectResponse.Builder::publishedObject)
+                .handleResponseHeaderString("etag", GetPublishedObjectResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPublishedObjectResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3763,43 +2568,37 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             GetReferenceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetReferenceRequest, GetReferenceResponse>
                     handler) {
-        LOG.trace("Called async getReference");
-        final GetReferenceRequest interceptedRequest =
-                GetReferenceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetReferenceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        Validate.notBlank(request.getReferenceKey(), "referenceKey must not be blank");
+
+        return clientCall(request, GetReferenceResponse::builder)
+                .logger(LOG, "getReference")
+                .serviceDetails(
                         "DataIntegration",
                         "GetReference",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Reference/GetReference");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetReferenceResponse>
-                transformer =
-                        GetReferenceConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetReferenceRequest, GetReferenceResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetReferenceRequest, GetReferenceResponse>,
-                        java.util.concurrent.Future<GetReferenceResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetReferenceRequest, GetReferenceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Reference/GetReference")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetReferenceRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("references")
+                .appendPathParam(request.getReferenceKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Reference.class,
+                        GetReferenceResponse.Builder::reference)
+                .handleResponseHeaderString("etag", GetReferenceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetReferenceResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3808,44 +2607,41 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetRuntimeOperatorRequest, GetRuntimeOperatorResponse>
                     handler) {
-        LOG.trace("Called async getRuntimeOperator");
-        final GetRuntimeOperatorRequest interceptedRequest =
-                GetRuntimeOperatorConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetRuntimeOperatorConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        Validate.notBlank(request.getRuntimePipelineKey(), "runtimePipelineKey must not be blank");
+
+        Validate.notBlank(request.getRuntimeOperatorKey(), "runtimeOperatorKey must not be blank");
+
+        return clientCall(request, GetRuntimeOperatorResponse::builder)
+                .logger(LOG, "getRuntimeOperator")
+                .serviceDetails(
                         "DataIntegration",
                         "GetRuntimeOperator",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/RuntimeOperator/GetRuntimeOperator");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetRuntimeOperatorResponse>
-                transformer =
-                        GetRuntimeOperatorConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetRuntimeOperatorRequest, GetRuntimeOperatorResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetRuntimeOperatorRequest, GetRuntimeOperatorResponse>,
-                        java.util.concurrent.Future<GetRuntimeOperatorResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetRuntimeOperatorRequest, GetRuntimeOperatorResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/RuntimeOperator/GetRuntimeOperator")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetRuntimeOperatorRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("runtimePipelines")
+                .appendPathParam(request.getRuntimePipelineKey())
+                .appendPathParam("runtimeOperators")
+                .appendPathParam(request.getRuntimeOperatorKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.RuntimeOperator.class,
+                        GetRuntimeOperatorResponse.Builder::runtimeOperator)
+                .handleResponseHeaderString("etag", GetRuntimeOperatorResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetRuntimeOperatorResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3854,44 +2650,38 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetRuntimePipelineRequest, GetRuntimePipelineResponse>
                     handler) {
-        LOG.trace("Called async getRuntimePipeline");
-        final GetRuntimePipelineRequest interceptedRequest =
-                GetRuntimePipelineConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetRuntimePipelineConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        Validate.notBlank(request.getRuntimePipelineKey(), "runtimePipelineKey must not be blank");
+
+        return clientCall(request, GetRuntimePipelineResponse::builder)
+                .logger(LOG, "getRuntimePipeline")
+                .serviceDetails(
                         "DataIntegration",
                         "GetRuntimePipeline",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/RuntimePipeline/GetRuntimePipeline");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetRuntimePipelineResponse>
-                transformer =
-                        GetRuntimePipelineConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetRuntimePipelineRequest, GetRuntimePipelineResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetRuntimePipelineRequest, GetRuntimePipelineResponse>,
-                        java.util.concurrent.Future<GetRuntimePipelineResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetRuntimePipelineRequest, GetRuntimePipelineResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/RuntimePipeline/GetRuntimePipeline")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetRuntimePipelineRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("runtimePipelines")
+                .appendPathParam(request.getRuntimePipelineKey())
+                .appendQueryParam("expandReferences", request.getExpandReferences())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.RuntimePipeline.class,
+                        GetRuntimePipelineResponse.Builder::runtimePipeline)
+                .handleResponseHeaderString("etag", GetRuntimePipelineResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetRuntimePipelineResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3899,43 +2689,37 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             GetScheduleRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetScheduleRequest, GetScheduleResponse>
                     handler) {
-        LOG.trace("Called async getSchedule");
-        final GetScheduleRequest interceptedRequest =
-                GetScheduleConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetScheduleConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        Validate.notBlank(request.getScheduleKey(), "scheduleKey must not be blank");
+
+        return clientCall(request, GetScheduleResponse::builder)
+                .logger(LOG, "getSchedule")
+                .serviceDetails(
                         "DataIntegration",
                         "GetSchedule",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/GetSchedule");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetScheduleResponse>
-                transformer =
-                        GetScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetScheduleRequest, GetScheduleResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetScheduleRequest, GetScheduleResponse>,
-                        java.util.concurrent.Future<GetScheduleResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetScheduleRequest, GetScheduleResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/GetSchedule")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetScheduleRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("schedules")
+                .appendPathParam(request.getScheduleKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Schedule.class,
+                        GetScheduleResponse.Builder::schedule)
+                .handleResponseHeaderString("etag", GetScheduleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetScheduleResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3943,81 +2727,69 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             GetSchemaRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetSchemaRequest, GetSchemaResponse>
                     handler) {
-        LOG.trace("Called async getSchema");
-        final GetSchemaRequest interceptedRequest = GetSchemaConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetSchemaConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getConnectionKey(), "connectionKey must not be blank");
+
+        Validate.notBlank(request.getSchemaResourceName(), "schemaResourceName must not be blank");
+
+        return clientCall(request, GetSchemaResponse::builder)
+                .logger(LOG, "getSchema")
+                .serviceDetails(
                         "DataIntegration",
                         "GetSchema",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schema/GetSchema");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetSchemaResponse>
-                transformer =
-                        GetSchemaConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetSchemaRequest, GetSchemaResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<GetSchemaRequest, GetSchemaResponse>,
-                        java.util.concurrent.Future<GetSchemaResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetSchemaRequest, GetSchemaResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schema/GetSchema")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSchemaRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("connections")
+                .appendPathParam(request.getConnectionKey())
+                .appendPathParam("schemas")
+                .appendPathParam(request.getSchemaResourceName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Schema.class,
+                        GetSchemaResponse.Builder::schema)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSchemaResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
     public java.util.concurrent.Future<GetTaskResponse> getTask(
             GetTaskRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetTaskRequest, GetTaskResponse> handler) {
-        LOG.trace("Called async getTask");
-        final GetTaskRequest interceptedRequest = GetTaskConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetTaskConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getTaskKey(), "taskKey must not be blank");
+
+        return clientCall(request, GetTaskResponse::builder)
+                .logger(LOG, "getTask")
+                .serviceDetails(
                         "DataIntegration",
                         "GetTask",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/GetTask");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetTaskResponse> transformer =
-                GetTaskConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetTaskRequest, GetTaskResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<GetTaskRequest, GetTaskResponse>,
-                        java.util.concurrent.Future<GetTaskResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetTaskRequest, GetTaskResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/GetTask")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetTaskRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("tasks")
+                .appendPathParam(request.getTaskKey())
+                .appendQueryParam("expandReferences", request.getExpandReferences())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Task.class,
+                        GetTaskResponse.Builder::task)
+                .handleResponseHeaderString("etag", GetTaskResponse.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", GetTaskResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4025,42 +2797,37 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             GetTaskRunRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetTaskRunRequest, GetTaskRunResponse>
                     handler) {
-        LOG.trace("Called async getTaskRun");
-        final GetTaskRunRequest interceptedRequest = GetTaskRunConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetTaskRunConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        Validate.notBlank(request.getTaskRunKey(), "taskRunKey must not be blank");
+
+        return clientCall(request, GetTaskRunResponse::builder)
+                .logger(LOG, "getTaskRun")
+                .serviceDetails(
                         "DataIntegration",
                         "GetTaskRun",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/GetTaskRun");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetTaskRunResponse>
-                transformer =
-                        GetTaskRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetTaskRunRequest, GetTaskRunResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetTaskRunRequest, GetTaskRunResponse>,
-                        java.util.concurrent.Future<GetTaskRunResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetTaskRunRequest, GetTaskRunResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/GetTaskRun")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetTaskRunRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("taskRuns")
+                .appendPathParam(request.getTaskRunKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.TaskRun.class,
+                        GetTaskRunResponse.Builder::taskRun)
+                .handleResponseHeaderString("etag", GetTaskRunResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetTaskRunResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4069,44 +2836,37 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetTaskScheduleRequest, GetTaskScheduleResponse>
                     handler) {
-        LOG.trace("Called async getTaskSchedule");
-        final GetTaskScheduleRequest interceptedRequest =
-                GetTaskScheduleConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetTaskScheduleConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        Validate.notBlank(request.getTaskScheduleKey(), "taskScheduleKey must not be blank");
+
+        return clientCall(request, GetTaskScheduleResponse::builder)
+                .logger(LOG, "getTaskSchedule")
+                .serviceDetails(
                         "DataIntegration",
                         "GetTaskSchedule",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/GetTaskSchedule");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetTaskScheduleResponse>
-                transformer =
-                        GetTaskScheduleConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetTaskScheduleRequest, GetTaskScheduleResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetTaskScheduleRequest, GetTaskScheduleResponse>,
-                        java.util.concurrent.Future<GetTaskScheduleResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetTaskScheduleRequest, GetTaskScheduleResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/GetTaskSchedule")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetTaskScheduleRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("taskSchedules")
+                .appendPathParam(request.getTaskScheduleKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.TaskSchedule.class,
+                        GetTaskScheduleResponse.Builder::taskSchedule)
+                .handleResponseHeaderString("etag", GetTaskScheduleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetTaskScheduleResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4115,44 +2875,33 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetTaskValidationRequest, GetTaskValidationResponse>
                     handler) {
-        LOG.trace("Called async getTaskValidation");
-        final GetTaskValidationRequest interceptedRequest =
-                GetTaskValidationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetTaskValidationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getTaskValidationKey(), "taskValidationKey must not be blank");
+
+        return clientCall(request, GetTaskValidationResponse::builder)
+                .logger(LOG, "getTaskValidation")
+                .serviceDetails(
                         "DataIntegration",
                         "GetTaskValidation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/GetTaskValidation");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetTaskValidationResponse>
-                transformer =
-                        GetTaskValidationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetTaskValidationRequest, GetTaskValidationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetTaskValidationRequest, GetTaskValidationResponse>,
-                        java.util.concurrent.Future<GetTaskValidationResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetTaskValidationRequest, GetTaskValidationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/GetTaskValidation")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetTaskValidationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("taskValidations")
+                .appendPathParam(request.getTaskValidationKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.TaskValidation.class,
+                        GetTaskValidationResponse.Builder::taskValidation)
+                .handleResponseHeaderString("etag", GetTaskValidationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetTaskValidationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4161,45 +2910,34 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetUserDefinedFunctionRequest, GetUserDefinedFunctionResponse>
                     handler) {
-        LOG.trace("Called async getUserDefinedFunction");
-        final GetUserDefinedFunctionRequest interceptedRequest =
-                GetUserDefinedFunctionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetUserDefinedFunctionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(
+                request.getUserDefinedFunctionKey(), "userDefinedFunctionKey must not be blank");
+
+        return clientCall(request, GetUserDefinedFunctionResponse::builder)
+                .logger(LOG, "getUserDefinedFunction")
+                .serviceDetails(
                         "DataIntegration",
                         "GetUserDefinedFunction",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/GetUserDefinedFunction");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetUserDefinedFunctionResponse>
-                transformer =
-                        GetUserDefinedFunctionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetUserDefinedFunctionRequest, GetUserDefinedFunctionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetUserDefinedFunctionRequest, GetUserDefinedFunctionResponse>,
-                        java.util.concurrent.Future<GetUserDefinedFunctionResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetUserDefinedFunctionRequest, GetUserDefinedFunctionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/GetUserDefinedFunction")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetUserDefinedFunctionRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("userDefinedFunctions")
+                .appendPathParam(request.getUserDefinedFunctionKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.UserDefinedFunction.class,
+                        GetUserDefinedFunctionResponse.Builder::userDefinedFunction)
+                .handleResponseHeaderString("etag", GetUserDefinedFunctionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetUserDefinedFunctionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4210,49 +2948,38 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                                     GetUserDefinedFunctionValidationRequest,
                                     GetUserDefinedFunctionValidationResponse>
                             handler) {
-        LOG.trace("Called async getUserDefinedFunctionValidation");
-        final GetUserDefinedFunctionValidationRequest interceptedRequest =
-                GetUserDefinedFunctionValidationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetUserDefinedFunctionValidationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(
+                request.getUserDefinedFunctionValidationKey(),
+                "userDefinedFunctionValidationKey must not be blank");
+
+        return clientCall(request, GetUserDefinedFunctionValidationResponse::builder)
+                .logger(LOG, "getUserDefinedFunctionValidation")
+                .serviceDetails(
                         "DataIntegration",
                         "GetUserDefinedFunctionValidation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/GetUserDefinedFunctionValidation");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetUserDefinedFunctionValidationResponse>
-                transformer =
-                        GetUserDefinedFunctionValidationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetUserDefinedFunctionValidationRequest,
-                        GetUserDefinedFunctionValidationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetUserDefinedFunctionValidationRequest,
-                                GetUserDefinedFunctionValidationResponse>,
-                        java.util.concurrent.Future<GetUserDefinedFunctionValidationResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetUserDefinedFunctionValidationRequest,
-                    GetUserDefinedFunctionValidationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/GetUserDefinedFunctionValidation")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetUserDefinedFunctionValidationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("userDefinedFunctionValidations")
+                .appendPathParam(request.getUserDefinedFunctionValidationKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.UserDefinedFunctionValidation.class,
+                        GetUserDefinedFunctionValidationResponse.Builder
+                                ::userDefinedFunctionValidation)
+                .handleResponseHeaderString(
+                        "etag", GetUserDefinedFunctionValidationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetUserDefinedFunctionValidationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4261,43 +2988,31 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetWorkRequestRequest, GetWorkRequestResponse>
                     handler) {
-        LOG.trace("Called async getWorkRequest");
-        final GetWorkRequestRequest interceptedRequest =
-                GetWorkRequestConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, GetWorkRequestResponse::builder)
+                .logger(LOG, "getWorkRequest")
+                .serviceDetails(
                         "DataIntegration",
                         "GetWorkRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/GetWorkRequest");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetWorkRequestRequest, GetWorkRequestResponse>,
-                        java.util.concurrent.Future<GetWorkRequestResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetWorkRequestRequest, GetWorkRequestResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/GetWorkRequest")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetWorkRequestRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.WorkRequest.class,
+                        GetWorkRequestResponse.Builder::workRequest)
+                .handleResponseHeaderString("etag", GetWorkRequestResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callAsync(handler);
     }
 
     @Override
@@ -4305,43 +3020,29 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             GetWorkspaceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetWorkspaceRequest, GetWorkspaceResponse>
                     handler) {
-        LOG.trace("Called async getWorkspace");
-        final GetWorkspaceRequest interceptedRequest =
-                GetWorkspaceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetWorkspaceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        return clientCall(request, GetWorkspaceResponse::builder)
+                .logger(LOG, "getWorkspace")
+                .serviceDetails(
                         "DataIntegration",
                         "GetWorkspace",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/GetWorkspace");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkspaceResponse>
-                transformer =
-                        GetWorkspaceConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetWorkspaceRequest, GetWorkspaceResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetWorkspaceRequest, GetWorkspaceResponse>,
-                        java.util.concurrent.Future<GetWorkspaceResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetWorkspaceRequest, GetWorkspaceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/GetWorkspace")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetWorkspaceRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Workspace.class,
+                        GetWorkspaceResponse.Builder::workspace)
+                .handleResponseHeaderString("etag", GetWorkspaceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetWorkspaceResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4350,44 +3051,49 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListApplicationsRequest, ListApplicationsResponse>
                     handler) {
-        LOG.trace("Called async listApplications");
-        final ListApplicationsRequest interceptedRequest =
-                ListApplicationsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListApplicationsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        return clientCall(request, ListApplicationsResponse::builder)
+                .logger(LOG, "listApplications")
+                .serviceDetails(
                         "DataIntegration",
                         "ListApplications",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListApplications");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListApplicationsResponse>
-                transformer =
-                        ListApplicationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListApplicationsRequest, ListApplicationsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListApplicationsRequest, ListApplicationsResponse>,
-                        java.util.concurrent.Future<ListApplicationsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListApplicationsRequest, ListApplicationsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListApplications")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListApplicationsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("nameContains", request.getNameContains())
+                .appendListQueryParam(
+                        "identifier",
+                        request.getIdentifier(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.ApplicationSummaryCollection.class,
+                        ListApplicationsResponse.Builder::applicationSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListApplicationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListApplicationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListApplicationsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListApplicationsResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -4396,47 +3102,48 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListConnectionValidationsRequest, ListConnectionValidationsResponse>
                     handler) {
-        LOG.trace("Called async listConnectionValidations");
-        final ListConnectionValidationsRequest interceptedRequest =
-                ListConnectionValidationsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListConnectionValidationsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        return clientCall(request, ListConnectionValidationsResponse::builder)
+                .logger(LOG, "listConnectionValidations")
+                .serviceDetails(
                         "DataIntegration",
                         "ListConnectionValidations",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/ListConnectionValidations");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListConnectionValidationsResponse>
-                transformer =
-                        ListConnectionValidationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListConnectionValidationsRequest, ListConnectionValidationsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListConnectionValidationsRequest,
-                                ListConnectionValidationsResponse>,
-                        java.util.concurrent.Future<ListConnectionValidationsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListConnectionValidationsRequest, ListConnectionValidationsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/ListConnectionValidations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListConnectionValidationsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("connectionValidations")
+                .appendQueryParam("key", request.getKey())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("identifier", request.getIdentifier())
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.ConnectionValidationSummaryCollection
+                                .class,
+                        ListConnectionValidationsResponse.Builder
+                                ::connectionValidationSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListConnectionValidationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListConnectionValidationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListConnectionValidationsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListConnectionValidationsResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -4445,44 +3152,47 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListConnectionsRequest, ListConnectionsResponse>
                     handler) {
-        LOG.trace("Called async listConnections");
-        final ListConnectionsRequest interceptedRequest =
-                ListConnectionsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListConnectionsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+        Objects.requireNonNull(request.getDataAssetKey(), "dataAssetKey is required");
+
+        return clientCall(request, ListConnectionsResponse::builder)
+                .logger(LOG, "listConnections")
+                .serviceDetails(
                         "DataIntegration",
                         "ListConnections",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/ListConnections");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListConnectionsResponse>
-                transformer =
-                        ListConnectionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListConnectionsRequest, ListConnectionsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListConnectionsRequest, ListConnectionsResponse>,
-                        java.util.concurrent.Future<ListConnectionsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListConnectionsRequest, ListConnectionsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/ListConnections")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListConnectionsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("connections")
+                .appendQueryParam("dataAssetKey", request.getDataAssetKey())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("type", request.getType())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.ConnectionSummaryCollection.class,
+                        ListConnectionsResponse.Builder::connectionSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListConnectionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListConnectionsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListConnectionsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListConnectionsResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -4491,43 +3201,45 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListDataAssetsRequest, ListDataAssetsResponse>
                     handler) {
-        LOG.trace("Called async listDataAssets");
-        final ListDataAssetsRequest interceptedRequest =
-                ListDataAssetsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDataAssetsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        return clientCall(request, ListDataAssetsResponse::builder)
+                .logger(LOG, "listDataAssets")
+                .serviceDetails(
                         "DataIntegration",
                         "ListDataAssets",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/ListDataAssets");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListDataAssetsResponse>
-                transformer =
-                        ListDataAssetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListDataAssetsRequest, ListDataAssetsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListDataAssetsRequest, ListDataAssetsResponse>,
-                        java.util.concurrent.Future<ListDataAssetsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListDataAssetsRequest, ListDataAssetsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/ListDataAssets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDataAssetsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("dataAssets")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("type", request.getType())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("name", request.getName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DataAssetSummaryCollection.class,
+                        ListDataAssetsResponse.Builder::dataAssetSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDataAssetsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDataAssetsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListDataAssetsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListDataAssetsResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -4536,44 +3248,62 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListDataEntitiesRequest, ListDataEntitiesResponse>
                     handler) {
-        LOG.trace("Called async listDataEntities");
-        final ListDataEntitiesRequest interceptedRequest =
-                ListDataEntitiesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDataEntitiesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getConnectionKey(), "connectionKey must not be blank");
+
+        Validate.notBlank(request.getSchemaResourceName(), "schemaResourceName must not be blank");
+
+        return clientCall(request, ListDataEntitiesResponse::builder)
+                .logger(LOG, "listDataEntities")
+                .serviceDetails(
                         "DataIntegration",
                         "ListDataEntities",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataEntity/ListDataEntities");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListDataEntitiesResponse>
-                transformer =
-                        ListDataEntitiesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListDataEntitiesRequest, ListDataEntitiesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListDataEntitiesRequest, ListDataEntitiesResponse>,
-                        java.util.concurrent.Future<ListDataEntitiesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListDataEntitiesRequest, ListDataEntitiesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataEntity/ListDataEntities")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDataEntitiesRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("connections")
+                .appendPathParam(request.getConnectionKey())
+                .appendPathParam("schemas")
+                .appendPathParam(request.getSchemaResourceName())
+                .appendPathParam("dataEntities")
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("type", request.getType())
+                .appendQueryParam("limit", request.getLimit())
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendListQueryParam(
+                        "nameList",
+                        request.getNameList(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("isPattern", request.getIsPattern())
+                .appendListQueryParam(
+                        "includeTypes",
+                        request.getIncludeTypes(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DataEntitySummaryCollection.class,
+                        ListDataEntitiesResponse.Builder::dataEntitySummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDataEntitiesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDataEntitiesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListDataEntitiesResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListDataEntitiesResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -4582,46 +3312,48 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListDataFlowValidationsRequest, ListDataFlowValidationsResponse>
                     handler) {
-        LOG.trace("Called async listDataFlowValidations");
-        final ListDataFlowValidationsRequest interceptedRequest =
-                ListDataFlowValidationsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDataFlowValidationsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        return clientCall(request, ListDataFlowValidationsResponse::builder)
+                .logger(LOG, "listDataFlowValidations")
+                .serviceDetails(
                         "DataIntegration",
                         "ListDataFlowValidations",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/ListDataFlowValidations");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListDataFlowValidationsResponse>
-                transformer =
-                        ListDataFlowValidationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListDataFlowValidationsRequest, ListDataFlowValidationsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListDataFlowValidationsRequest, ListDataFlowValidationsResponse>,
-                        java.util.concurrent.Future<ListDataFlowValidationsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListDataFlowValidationsRequest, ListDataFlowValidationsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/ListDataFlowValidations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDataFlowValidationsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("dataFlowValidations")
+                .appendQueryParam("key", request.getKey())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("identifier", request.getIdentifier())
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DataFlowValidationSummaryCollection
+                                .class,
+                        ListDataFlowValidationsResponse.Builder
+                                ::dataFlowValidationSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDataFlowValidationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDataFlowValidationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListDataFlowValidationsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListDataFlowValidationsResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -4629,43 +3361,49 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             ListDataFlowsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListDataFlowsRequest, ListDataFlowsResponse>
                     handler) {
-        LOG.trace("Called async listDataFlows");
-        final ListDataFlowsRequest interceptedRequest =
-                ListDataFlowsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDataFlowsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        return clientCall(request, ListDataFlowsResponse::builder)
+                .logger(LOG, "listDataFlows")
+                .serviceDetails(
                         "DataIntegration",
                         "ListDataFlows",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/ListDataFlows");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListDataFlowsResponse>
-                transformer =
-                        ListDataFlowsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListDataFlowsRequest, ListDataFlowsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListDataFlowsRequest, ListDataFlowsResponse>,
-                        java.util.concurrent.Future<ListDataFlowsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListDataFlowsRequest, ListDataFlowsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/ListDataFlows")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDataFlowsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("dataFlows")
+                .appendQueryParam("folderId", request.getFolderId())
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("name", request.getName())
+                .appendListQueryParam(
+                        "identifier",
+                        request.getIdentifier(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DataFlowSummaryCollection.class,
+                        ListDataFlowsResponse.Builder::dataFlowSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDataFlowsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDataFlowsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListDataFlowsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListDataFlowsResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -4674,45 +3412,58 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListDependentObjectsRequest, ListDependentObjectsResponse>
                     handler) {
-        LOG.trace("Called async listDependentObjects");
-        final ListDependentObjectsRequest interceptedRequest =
-                ListDependentObjectsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDependentObjectsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        return clientCall(request, ListDependentObjectsResponse::builder)
+                .logger(LOG, "listDependentObjects")
+                .serviceDetails(
                         "DataIntegration",
                         "ListDependentObjects",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListDependentObjects");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListDependentObjectsResponse>
-                transformer =
-                        ListDependentObjectsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListDependentObjectsRequest, ListDependentObjectsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListDependentObjectsRequest, ListDependentObjectsResponse>,
-                        java.util.concurrent.Future<ListDependentObjectsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListDependentObjectsRequest, ListDependentObjectsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListDependentObjects")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDependentObjectsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("dependentObjects")
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("nameContains", request.getNameContains())
+                .appendListQueryParam(
+                        "identifier",
+                        request.getIdentifier(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "type",
+                        request.getType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("typeInSubtree", request.getTypeInSubtree())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DependentObjectSummaryCollection.class,
+                        ListDependentObjectsResponse.Builder::dependentObjectSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDependentObjectsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDependentObjectsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListDependentObjectsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListDependentObjectsResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -4723,49 +3474,57 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                                     ListDisApplicationTaskRunLineagesRequest,
                                     ListDisApplicationTaskRunLineagesResponse>
                             handler) {
-        LOG.trace("Called async listDisApplicationTaskRunLineages");
-        final ListDisApplicationTaskRunLineagesRequest interceptedRequest =
-                ListDisApplicationTaskRunLineagesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDisApplicationTaskRunLineagesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getDisApplicationId(), "disApplicationId must not be blank");
+
+        return clientCall(request, ListDisApplicationTaskRunLineagesResponse::builder)
+                .logger(LOG, "listDisApplicationTaskRunLineages")
+                .serviceDetails(
                         "DataIntegration",
                         "ListDisApplicationTaskRunLineages",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRunLineageSummaryCollection/ListDisApplicationTaskRunLineages");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListDisApplicationTaskRunLineagesResponse>
-                transformer =
-                        ListDisApplicationTaskRunLineagesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListDisApplicationTaskRunLineagesRequest,
-                        ListDisApplicationTaskRunLineagesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListDisApplicationTaskRunLineagesRequest,
-                                ListDisApplicationTaskRunLineagesResponse>,
-                        java.util.concurrent.Future<ListDisApplicationTaskRunLineagesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListDisApplicationTaskRunLineagesRequest,
-                    ListDisApplicationTaskRunLineagesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRunLineageSummaryCollection/ListDisApplicationTaskRunLineages")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDisApplicationTaskRunLineagesRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("disApplications")
+                .appendPathParam(request.getDisApplicationId())
+                .appendPathParam("taskRunLineages")
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "filter",
+                        request.getFilter(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("timeUpdatedGreaterThan", request.getTimeUpdatedGreaterThan())
+                .appendQueryParam(
+                        "timeUpdatedGreaterThanOrEqualTo",
+                        request.getTimeUpdatedGreaterThanOrEqualTo())
+                .appendQueryParam("timeUpatedLessThan", request.getTimeUpatedLessThan())
+                .appendQueryParam(
+                        "timeUpatedLessThanOrEqualTo", request.getTimeUpatedLessThanOrEqualTo())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.TaskRunLineageSummaryCollection.class,
+                        ListDisApplicationTaskRunLineagesResponse.Builder
+                                ::taskRunLineageSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListDisApplicationTaskRunLineagesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListDisApplicationTaskRunLineagesResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -4774,45 +3533,51 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListDisApplicationsRequest, ListDisApplicationsResponse>
                     handler) {
-        LOG.trace("Called async listDisApplications");
-        final ListDisApplicationsRequest interceptedRequest =
-                ListDisApplicationsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDisApplicationsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDisApplicationsResponse::builder)
+                .logger(LOG, "listDisApplications")
+                .serviceDetails(
                         "DataIntegration",
                         "ListDisApplications",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/ListDisApplications");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListDisApplicationsResponse>
-                transformer =
-                        ListDisApplicationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListDisApplicationsRequest, ListDisApplicationsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListDisApplicationsRequest, ListDisApplicationsResponse>,
-                        java.util.concurrent.Future<ListDisApplicationsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListDisApplicationsRequest, ListDisApplicationsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/ListDisApplications")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDisApplicationsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("disApplications")
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("nameContains", request.getNameContains())
+                .appendListQueryParam(
+                        "identifier",
+                        request.getIdentifier(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DisApplicationSummaryCollection.class,
+                        ListDisApplicationsResponse.Builder::disApplicationSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDisApplicationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDisApplicationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListDisApplicationsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListDisApplicationsResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -4823,49 +3588,58 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                                     ListExternalPublicationValidationsRequest,
                                     ListExternalPublicationValidationsResponse>
                             handler) {
-        LOG.trace("Called async listExternalPublicationValidations");
-        final ListExternalPublicationValidationsRequest interceptedRequest =
-                ListExternalPublicationValidationsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListExternalPublicationValidationsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getTaskKey(), "taskKey must not be blank");
+
+        return clientCall(request, ListExternalPublicationValidationsResponse::builder)
+                .logger(LOG, "listExternalPublicationValidations")
+                .serviceDetails(
                         "DataIntegration",
                         "ListExternalPublicationValidations",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/ListExternalPublicationValidations");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListExternalPublicationValidationsResponse>
-                transformer =
-                        ListExternalPublicationValidationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListExternalPublicationValidationsRequest,
-                        ListExternalPublicationValidationsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListExternalPublicationValidationsRequest,
-                                ListExternalPublicationValidationsResponse>,
-                        java.util.concurrent.Future<ListExternalPublicationValidationsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListExternalPublicationValidationsRequest,
-                    ListExternalPublicationValidationsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/ListExternalPublicationValidations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExternalPublicationValidationsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("tasks")
+                .appendPathParam(request.getTaskKey())
+                .appendPathParam("externalPublicationValidations")
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("name", request.getName())
+                .appendListQueryParam(
+                        "identifier",
+                        request.getIdentifier(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model
+                                .ExternalPublicationValidationSummaryCollection.class,
+                        ListExternalPublicationValidationsResponse.Builder
+                                ::externalPublicationValidationSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListExternalPublicationValidationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListExternalPublicationValidationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListExternalPublicationValidationsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items",
+                        ListExternalPublicationValidationsResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -4874,46 +3648,50 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListExternalPublicationsRequest, ListExternalPublicationsResponse>
                     handler) {
-        LOG.trace("Called async listExternalPublications");
-        final ListExternalPublicationsRequest interceptedRequest =
-                ListExternalPublicationsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListExternalPublicationsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getTaskKey(), "taskKey must not be blank");
+
+        return clientCall(request, ListExternalPublicationsResponse::builder)
+                .logger(LOG, "listExternalPublications")
+                .serviceDetails(
                         "DataIntegration",
                         "ListExternalPublications",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/ListExternalPublications");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListExternalPublicationsResponse>
-                transformer =
-                        ListExternalPublicationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListExternalPublicationsRequest, ListExternalPublicationsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListExternalPublicationsRequest, ListExternalPublicationsResponse>,
-                        java.util.concurrent.Future<ListExternalPublicationsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListExternalPublicationsRequest, ListExternalPublicationsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/ListExternalPublications")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExternalPublicationsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("tasks")
+                .appendPathParam(request.getTaskKey())
+                .appendPathParam("externalPublications")
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.ExternalPublicationSummaryCollection
+                                .class,
+                        ListExternalPublicationsResponse.Builder
+                                ::externalPublicationSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExternalPublicationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExternalPublicationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListExternalPublicationsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListExternalPublicationsResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -4921,43 +3699,50 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             ListFoldersRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListFoldersRequest, ListFoldersResponse>
                     handler) {
-        LOG.trace("Called async listFolders");
-        final ListFoldersRequest interceptedRequest =
-                ListFoldersConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListFoldersConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        return clientCall(request, ListFoldersResponse::builder)
+                .logger(LOG, "listFolders")
+                .serviceDetails(
                         "DataIntegration",
                         "ListFolders",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/ListFolders");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListFoldersResponse>
-                transformer =
-                        ListFoldersConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListFoldersRequest, ListFoldersResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListFoldersRequest, ListFoldersResponse>,
-                        java.util.concurrent.Future<ListFoldersResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListFoldersRequest, ListFoldersResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/ListFolders")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListFoldersRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("folders")
+                .appendQueryParam("aggregatorKey", request.getAggregatorKey())
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("nameContains", request.getNameContains())
+                .appendListQueryParam(
+                        "identifier",
+                        request.getIdentifier(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.FolderSummaryCollection.class,
+                        ListFoldersResponse.Builder::folderSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListFoldersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListFoldersResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListFoldersResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListFoldersResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -4966,45 +3751,49 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListFunctionLibrariesRequest, ListFunctionLibrariesResponse>
                     handler) {
-        LOG.trace("Called async listFunctionLibraries");
-        final ListFunctionLibrariesRequest interceptedRequest =
-                ListFunctionLibrariesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListFunctionLibrariesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        return clientCall(request, ListFunctionLibrariesResponse::builder)
+                .logger(LOG, "listFunctionLibraries")
+                .serviceDetails(
                         "DataIntegration",
                         "ListFunctionLibraries",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/ListFunctionLibraries");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListFunctionLibrariesResponse>
-                transformer =
-                        ListFunctionLibrariesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListFunctionLibrariesRequest, ListFunctionLibrariesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListFunctionLibrariesRequest, ListFunctionLibrariesResponse>,
-                        java.util.concurrent.Future<ListFunctionLibrariesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListFunctionLibrariesRequest, ListFunctionLibrariesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/ListFunctionLibraries")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListFunctionLibrariesRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("functionLibraries")
+                .appendQueryParam("aggregatorKey", request.getAggregatorKey())
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("name", request.getName())
+                .appendListQueryParam(
+                        "identifier",
+                        request.getIdentifier(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.FunctionLibrarySummaryCollection.class,
+                        ListFunctionLibrariesResponse.Builder::functionLibrarySummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListFunctionLibrariesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListFunctionLibrariesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListFunctionLibrariesResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListFunctionLibrariesResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -5013,44 +3802,46 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListPatchChangesRequest, ListPatchChangesResponse>
                     handler) {
-        LOG.trace("Called async listPatchChanges");
-        final ListPatchChangesRequest interceptedRequest =
-                ListPatchChangesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListPatchChangesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        return clientCall(request, ListPatchChangesResponse::builder)
+                .logger(LOG, "listPatchChanges")
+                .serviceDetails(
                         "DataIntegration",
                         "ListPatchChanges",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListPatchChanges");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListPatchChangesResponse>
-                transformer =
-                        ListPatchChangesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListPatchChangesRequest, ListPatchChangesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListPatchChangesRequest, ListPatchChangesResponse>,
-                        java.util.concurrent.Future<ListPatchChangesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListPatchChangesRequest, ListPatchChangesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListPatchChanges")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPatchChangesRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("patchChanges")
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("sincePatch", request.getSincePatch())
+                .appendQueryParam("toPatch", request.getToPatch())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.PatchChangeSummaryCollection.class,
+                        ListPatchChangesResponse.Builder::patchChangeSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPatchChangesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPatchChangesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListPatchChangesResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListPatchChangesResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -5058,43 +3849,52 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             ListPatchesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListPatchesRequest, ListPatchesResponse>
                     handler) {
-        LOG.trace("Called async listPatches");
-        final ListPatchesRequest interceptedRequest =
-                ListPatchesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListPatchesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        return clientCall(request, ListPatchesResponse::builder)
+                .logger(LOG, "listPatches")
+                .serviceDetails(
                         "DataIntegration",
                         "ListPatches",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListPatches");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListPatchesResponse>
-                transformer =
-                        ListPatchesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListPatchesRequest, ListPatchesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListPatchesRequest, ListPatchesResponse>,
-                        java.util.concurrent.Future<ListPatchesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListPatchesRequest, ListPatchesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListPatches")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPatchesRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("patches")
+                .appendQueryParam("name", request.getName())
+                .appendListQueryParam(
+                        "identifier",
+                        request.getIdentifier(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.PatchSummaryCollection.class,
+                        ListPatchesResponse.Builder::patchSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPatchesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPatchesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListPatchesResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListPatchesResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -5103,46 +3903,48 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListPipelineValidationsRequest, ListPipelineValidationsResponse>
                     handler) {
-        LOG.trace("Called async listPipelineValidations");
-        final ListPipelineValidationsRequest interceptedRequest =
-                ListPipelineValidationsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListPipelineValidationsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        return clientCall(request, ListPipelineValidationsResponse::builder)
+                .logger(LOG, "listPipelineValidations")
+                .serviceDetails(
                         "DataIntegration",
                         "ListPipelineValidations",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/ListPipelineValidations");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListPipelineValidationsResponse>
-                transformer =
-                        ListPipelineValidationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListPipelineValidationsRequest, ListPipelineValidationsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListPipelineValidationsRequest, ListPipelineValidationsResponse>,
-                        java.util.concurrent.Future<ListPipelineValidationsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListPipelineValidationsRequest, ListPipelineValidationsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/ListPipelineValidations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPipelineValidationsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("pipelineValidations")
+                .appendQueryParam("key", request.getKey())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("identifier", request.getIdentifier())
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.PipelineValidationSummaryCollection
+                                .class,
+                        ListPipelineValidationsResponse.Builder
+                                ::pipelineValidationSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPipelineValidationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPipelineValidationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListPipelineValidationsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListPipelineValidationsResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -5150,43 +3952,49 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             ListPipelinesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListPipelinesRequest, ListPipelinesResponse>
                     handler) {
-        LOG.trace("Called async listPipelines");
-        final ListPipelinesRequest interceptedRequest =
-                ListPipelinesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListPipelinesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        return clientCall(request, ListPipelinesResponse::builder)
+                .logger(LOG, "listPipelines")
+                .serviceDetails(
                         "DataIntegration",
                         "ListPipelines",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/ListPipelines");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListPipelinesResponse>
-                transformer =
-                        ListPipelinesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListPipelinesRequest, ListPipelinesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListPipelinesRequest, ListPipelinesResponse>,
-                        java.util.concurrent.Future<ListPipelinesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListPipelinesRequest, ListPipelinesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/ListPipelines")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPipelinesRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("pipelines")
+                .appendQueryParam("aggregatorKey", request.getAggregatorKey())
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("name", request.getName())
+                .appendListQueryParam(
+                        "identifier",
+                        request.getIdentifier(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.PipelineSummaryCollection.class,
+                        ListPipelinesResponse.Builder::pipelineSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPipelinesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPipelinesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListPipelinesResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListPipelinesResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -5194,43 +4002,49 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             ListProjectsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListProjectsRequest, ListProjectsResponse>
                     handler) {
-        LOG.trace("Called async listProjects");
-        final ListProjectsRequest interceptedRequest =
-                ListProjectsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListProjectsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        return clientCall(request, ListProjectsResponse::builder)
+                .logger(LOG, "listProjects")
+                .serviceDetails(
                         "DataIntegration",
                         "ListProjects",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/ListProjects");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListProjectsResponse>
-                transformer =
-                        ListProjectsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListProjectsRequest, ListProjectsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListProjectsRequest, ListProjectsResponse>,
-                        java.util.concurrent.Future<ListProjectsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListProjectsRequest, ListProjectsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/ListProjects")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListProjectsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("projects")
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("nameContains", request.getNameContains())
+                .appendListQueryParam(
+                        "identifier",
+                        request.getIdentifier(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.ProjectSummaryCollection.class,
+                        ListProjectsResponse.Builder::projectSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListProjectsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListProjectsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListProjectsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListProjectsResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -5239,45 +4053,59 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListPublishedObjectsRequest, ListPublishedObjectsResponse>
                     handler) {
-        LOG.trace("Called async listPublishedObjects");
-        final ListPublishedObjectsRequest interceptedRequest =
-                ListPublishedObjectsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListPublishedObjectsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        return clientCall(request, ListPublishedObjectsResponse::builder)
+                .logger(LOG, "listPublishedObjects")
+                .serviceDetails(
                         "DataIntegration",
                         "ListPublishedObjects",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListPublishedObjects");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListPublishedObjectsResponse>
-                transformer =
-                        ListPublishedObjectsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListPublishedObjectsRequest, ListPublishedObjectsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListPublishedObjectsRequest, ListPublishedObjectsResponse>,
-                        java.util.concurrent.Future<ListPublishedObjectsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListPublishedObjectsRequest, ListPublishedObjectsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListPublishedObjects")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPublishedObjectsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("publishedObjects")
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("nameStartsWith", request.getNameStartsWith())
+                .appendQueryParam("nameContains", request.getNameContains())
+                .appendListQueryParam(
+                        "identifier",
+                        request.getIdentifier(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "type",
+                        request.getType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("typeInSubtree", request.getTypeInSubtree())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.PublishedObjectSummaryCollection.class,
+                        ListPublishedObjectsResponse.Builder::publishedObjectSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPublishedObjectsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPublishedObjectsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListPublishedObjectsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListPublishedObjectsResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -5286,43 +4114,45 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListReferencesRequest, ListReferencesResponse>
                     handler) {
-        LOG.trace("Called async listReferences");
-        final ListReferencesRequest interceptedRequest =
-                ListReferencesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListReferencesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        return clientCall(request, ListReferencesResponse::builder)
+                .logger(LOG, "listReferences")
+                .serviceDetails(
                         "DataIntegration",
                         "ListReferences",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Reference/ListReferences");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListReferencesResponse>
-                transformer =
-                        ListReferencesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListReferencesRequest, ListReferencesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListReferencesRequest, ListReferencesResponse>,
-                        java.util.concurrent.Future<ListReferencesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListReferencesRequest, ListReferencesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Reference/ListReferences")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListReferencesRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("references")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.ReferenceSummaryCollection.class,
+                        ListReferencesResponse.Builder::referenceSummaryCollection)
+                .handleResponseHeaderString("etag", ListReferencesResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListReferencesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListReferencesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListReferencesResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListReferencesResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -5331,45 +4161,60 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListRuntimeOperatorsRequest, ListRuntimeOperatorsResponse>
                     handler) {
-        LOG.trace("Called async listRuntimeOperators");
-        final ListRuntimeOperatorsRequest interceptedRequest =
-                ListRuntimeOperatorsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListRuntimeOperatorsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        Validate.notBlank(request.getRuntimePipelineKey(), "runtimePipelineKey must not be blank");
+
+        return clientCall(request, ListRuntimeOperatorsResponse::builder)
+                .logger(LOG, "listRuntimeOperators")
+                .serviceDetails(
                         "DataIntegration",
                         "ListRuntimeOperators",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/RuntimeOperatorSummaryCollection/ListRuntimeOperators");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListRuntimeOperatorsResponse>
-                transformer =
-                        ListRuntimeOperatorsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListRuntimeOperatorsRequest, ListRuntimeOperatorsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListRuntimeOperatorsRequest, ListRuntimeOperatorsResponse>,
-                        java.util.concurrent.Future<ListRuntimeOperatorsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListRuntimeOperatorsRequest, ListRuntimeOperatorsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/RuntimeOperatorSummaryCollection/ListRuntimeOperators")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRuntimeOperatorsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("runtimePipelines")
+                .appendPathParam(request.getRuntimePipelineKey())
+                .appendPathParam("runtimeOperators")
+                .appendListQueryParam(
+                        "key",
+                        request.getKey(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("name", request.getName())
+                .appendListQueryParam(
+                        "identifier",
+                        request.getIdentifier(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "aggregatorType",
+                        request.getAggregatorType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.RuntimeOperatorSummaryCollection.class,
+                        ListRuntimeOperatorsResponse.Builder::runtimeOperatorSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRuntimeOperatorsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRuntimeOperatorsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -5378,45 +4223,61 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListRuntimePipelinesRequest, ListRuntimePipelinesResponse>
                     handler) {
-        LOG.trace("Called async listRuntimePipelines");
-        final ListRuntimePipelinesRequest interceptedRequest =
-                ListRuntimePipelinesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListRuntimePipelinesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        return clientCall(request, ListRuntimePipelinesResponse::builder)
+                .logger(LOG, "listRuntimePipelines")
+                .serviceDetails(
                         "DataIntegration",
                         "ListRuntimePipelines",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/RuntimePipelineSummaryCollection/ListRuntimePipelines");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListRuntimePipelinesResponse>
-                transformer =
-                        ListRuntimePipelinesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListRuntimePipelinesRequest, ListRuntimePipelinesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListRuntimePipelinesRequest, ListRuntimePipelinesResponse>,
-                        java.util.concurrent.Future<ListRuntimePipelinesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListRuntimePipelinesRequest, ListRuntimePipelinesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/RuntimePipelineSummaryCollection/ListRuntimePipelines")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRuntimePipelinesRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("runtimePipelines")
+                .appendListQueryParam(
+                        "key",
+                        request.getKey(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("aggregatorKey", request.getAggregatorKey())
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("name", request.getName())
+                .appendListQueryParam(
+                        "identifier",
+                        request.getIdentifier(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "aggregatorType",
+                        request.getAggregatorType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "filter",
+                        request.getFilter(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.RuntimePipelineSummaryCollection.class,
+                        ListRuntimePipelinesResponse.Builder::runtimePipelineSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRuntimePipelinesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRuntimePipelinesResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -5424,43 +4285,56 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             ListSchedulesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListSchedulesRequest, ListSchedulesResponse>
                     handler) {
-        LOG.trace("Called async listSchedules");
-        final ListSchedulesRequest interceptedRequest =
-                ListSchedulesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListSchedulesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        return clientCall(request, ListSchedulesResponse::builder)
+                .logger(LOG, "listSchedules")
+                .serviceDetails(
                         "DataIntegration",
                         "ListSchedules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/ListSchedules");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListSchedulesResponse>
-                transformer =
-                        ListSchedulesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListSchedulesRequest, ListSchedulesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListSchedulesRequest, ListSchedulesResponse>,
-                        java.util.concurrent.Future<ListSchedulesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListSchedulesRequest, ListSchedulesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/ListSchedules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSchedulesRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("schedules")
+                .appendListQueryParam(
+                        "key",
+                        request.getKey(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("name", request.getName())
+                .appendListQueryParam(
+                        "identifier",
+                        request.getIdentifier(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "type",
+                        request.getType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.ScheduleSummaryCollection.class,
+                        ListSchedulesResponse.Builder::scheduleSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSchedulesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSchedulesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSchedulesResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListSchedulesResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -5468,43 +4342,58 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             ListSchemasRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListSchemasRequest, ListSchemasResponse>
                     handler) {
-        LOG.trace("Called async listSchemas");
-        final ListSchemasRequest interceptedRequest =
-                ListSchemasConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListSchemasConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getConnectionKey(), "connectionKey must not be blank");
+        Objects.requireNonNull(request.getSchemaResourceName(), "schemaResourceName is required");
+
+        return clientCall(request, ListSchemasResponse::builder)
+                .logger(LOG, "listSchemas")
+                .serviceDetails(
                         "DataIntegration",
                         "ListSchemas",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schema/ListSchemas");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListSchemasResponse>
-                transformer =
-                        ListSchemasConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListSchemasRequest, ListSchemasResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListSchemasRequest, ListSchemasResponse>,
-                        java.util.concurrent.Future<ListSchemasResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListSchemasRequest, ListSchemasResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schema/ListSchemas")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSchemasRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("connections")
+                .appendPathParam(request.getConnectionKey())
+                .appendPathParam("schemas")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("schemaResourceName", request.getSchemaResourceName())
+                .appendQueryParam("name", request.getName())
+                .appendListQueryParam(
+                        "nameList",
+                        request.getNameList(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "includeTypes",
+                        request.getIncludeTypes(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.SchemaSummaryCollection.class,
+                        ListSchemasResponse.Builder::schemaSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSchemasResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSchemasResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSchemasResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListSchemasResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -5513,45 +4402,54 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListTaskRunLineagesRequest, ListTaskRunLineagesResponse>
                     handler) {
-        LOG.trace("Called async listTaskRunLineages");
-        final ListTaskRunLineagesRequest interceptedRequest =
-                ListTaskRunLineagesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListTaskRunLineagesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        return clientCall(request, ListTaskRunLineagesResponse::builder)
+                .logger(LOG, "listTaskRunLineages")
+                .serviceDetails(
                         "DataIntegration",
                         "ListTaskRunLineages",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRunLineageSummaryCollection/ListTaskRunLineages");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListTaskRunLineagesResponse>
-                transformer =
-                        ListTaskRunLineagesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListTaskRunLineagesRequest, ListTaskRunLineagesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListTaskRunLineagesRequest, ListTaskRunLineagesResponse>,
-                        java.util.concurrent.Future<ListTaskRunLineagesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListTaskRunLineagesRequest, ListTaskRunLineagesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRunLineageSummaryCollection/ListTaskRunLineages")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListTaskRunLineagesRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("taskRunLineages")
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "filter",
+                        request.getFilter(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("timeUpdatedGreaterThan", request.getTimeUpdatedGreaterThan())
+                .appendQueryParam(
+                        "timeUpdatedGreaterThanOrEqualTo",
+                        request.getTimeUpdatedGreaterThanOrEqualTo())
+                .appendQueryParam("timeUpatedLessThan", request.getTimeUpatedLessThan())
+                .appendQueryParam(
+                        "timeUpatedLessThanOrEqualTo", request.getTimeUpatedLessThanOrEqualTo())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.TaskRunLineageSummaryCollection.class,
+                        ListTaskRunLineagesResponse.Builder::taskRunLineageSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListTaskRunLineagesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListTaskRunLineagesResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -5560,44 +4458,47 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListTaskRunLogsRequest, ListTaskRunLogsResponse>
                     handler) {
-        LOG.trace("Called async listTaskRunLogs");
-        final ListTaskRunLogsRequest interceptedRequest =
-                ListTaskRunLogsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListTaskRunLogsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        Validate.notBlank(request.getTaskRunKey(), "taskRunKey must not be blank");
+
+        return clientCall(request, ListTaskRunLogsResponse::builder)
+                .logger(LOG, "listTaskRunLogs")
+                .serviceDetails(
                         "DataIntegration",
                         "ListTaskRunLogs",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRunLogSummary/ListTaskRunLogs");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListTaskRunLogsResponse>
-                transformer =
-                        ListTaskRunLogsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListTaskRunLogsRequest, ListTaskRunLogsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListTaskRunLogsRequest, ListTaskRunLogsResponse>,
-                        java.util.concurrent.Future<ListTaskRunLogsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListTaskRunLogsRequest, ListTaskRunLogsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRunLogSummary/ListTaskRunLogs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListTaskRunLogsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("taskRuns")
+                .appendPathParam(request.getTaskRunKey())
+                .appendPathParam("logs")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.dataintegration.model.TaskRunLogSummary.class,
+                        ListTaskRunLogsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListTaskRunLogsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListTaskRunLogsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListTaskRunLogsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListTaskRunLogsResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -5605,43 +4506,62 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             ListTaskRunsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListTaskRunsRequest, ListTaskRunsResponse>
                     handler) {
-        LOG.trace("Called async listTaskRuns");
-        final ListTaskRunsRequest interceptedRequest =
-                ListTaskRunsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListTaskRunsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        return clientCall(request, ListTaskRunsResponse::builder)
+                .logger(LOG, "listTaskRuns")
+                .serviceDetails(
                         "DataIntegration",
                         "ListTaskRuns",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/ListTaskRuns");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListTaskRunsResponse>
-                transformer =
-                        ListTaskRunsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListTaskRunsRequest, ListTaskRunsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListTaskRunsRequest, ListTaskRunsResponse>,
-                        java.util.concurrent.Future<ListTaskRunsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListTaskRunsRequest, ListTaskRunsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/ListTaskRuns")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListTaskRunsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("taskRuns")
+                .appendListQueryParam(
+                        "key",
+                        request.getKey(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("aggregatorKey", request.getAggregatorKey())
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("name", request.getName())
+                .appendListQueryParam(
+                        "identifier",
+                        request.getIdentifier(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "filter",
+                        request.getFilter(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("nameStartsWith", request.getNameStartsWith())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.TaskRunSummaryCollection.class,
+                        ListTaskRunsResponse.Builder::taskRunSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListTaskRunsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListTaskRunsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListTaskRunsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListTaskRunsResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -5650,44 +4570,57 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListTaskSchedulesRequest, ListTaskSchedulesResponse>
                     handler) {
-        LOG.trace("Called async listTaskSchedules");
-        final ListTaskSchedulesRequest interceptedRequest =
-                ListTaskSchedulesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListTaskSchedulesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        return clientCall(request, ListTaskSchedulesResponse::builder)
+                .logger(LOG, "listTaskSchedules")
+                .serviceDetails(
                         "DataIntegration",
                         "ListTaskSchedules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/ListTaskSchedules");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListTaskSchedulesResponse>
-                transformer =
-                        ListTaskSchedulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListTaskSchedulesRequest, ListTaskSchedulesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListTaskSchedulesRequest, ListTaskSchedulesResponse>,
-                        java.util.concurrent.Future<ListTaskSchedulesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListTaskSchedulesRequest, ListTaskSchedulesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/ListTaskSchedules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListTaskSchedulesRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("taskSchedules")
+                .appendListQueryParam(
+                        "key",
+                        request.getKey(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("name", request.getName())
+                .appendListQueryParam(
+                        "identifier",
+                        request.getIdentifier(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "type",
+                        request.getType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("isEnabled", request.getIsEnabled())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.TaskScheduleSummaryCollection.class,
+                        ListTaskSchedulesResponse.Builder::taskScheduleSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListTaskSchedulesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListTaskSchedulesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListTaskSchedulesResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListTaskSchedulesResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -5696,45 +4629,46 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListTaskValidationsRequest, ListTaskValidationsResponse>
                     handler) {
-        LOG.trace("Called async listTaskValidations");
-        final ListTaskValidationsRequest interceptedRequest =
-                ListTaskValidationsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListTaskValidationsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        return clientCall(request, ListTaskValidationsResponse::builder)
+                .logger(LOG, "listTaskValidations")
+                .serviceDetails(
                         "DataIntegration",
                         "ListTaskValidations",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/ListTaskValidations");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListTaskValidationsResponse>
-                transformer =
-                        ListTaskValidationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListTaskValidationsRequest, ListTaskValidationsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListTaskValidationsRequest, ListTaskValidationsResponse>,
-                        java.util.concurrent.Future<ListTaskValidationsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListTaskValidationsRequest, ListTaskValidationsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/ListTaskValidations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListTaskValidationsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("taskValidations")
+                .appendQueryParam("key", request.getKey())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("identifier", request.getIdentifier())
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.TaskValidationSummaryCollection.class,
+                        ListTaskValidationsResponse.Builder::taskValidationSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListTaskValidationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListTaskValidationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListTaskValidationsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListTaskValidationsResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -5742,41 +4676,55 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             ListTasksRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListTasksRequest, ListTasksResponse>
                     handler) {
-        LOG.trace("Called async listTasks");
-        final ListTasksRequest interceptedRequest = ListTasksConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListTasksConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        return clientCall(request, ListTasksResponse::builder)
+                .logger(LOG, "listTasks")
+                .serviceDetails(
                         "DataIntegration",
                         "ListTasks",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/ListTasks");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListTasksResponse>
-                transformer =
-                        ListTasksConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListTasksRequest, ListTasksResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<ListTasksRequest, ListTasksResponse>,
-                        java.util.concurrent.Future<ListTasksResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListTasksRequest, ListTasksResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/ListTasks")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListTasksRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("tasks")
+                .appendQueryParam("folderId", request.getFolderId())
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("name", request.getName())
+                .appendListQueryParam(
+                        "key",
+                        request.getKey(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "identifier",
+                        request.getIdentifier(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "type",
+                        request.getType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.TaskSummaryCollection.class,
+                        ListTasksResponse.Builder::taskSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListTasksResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("opc-next-page", ListTasksResponse.Builder::opcNextPage)
+                .handleResponseHeaderString("opc-prev-page", ListTasksResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListTasksResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -5787,49 +4735,52 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                                     ListUserDefinedFunctionValidationsRequest,
                                     ListUserDefinedFunctionValidationsResponse>
                             handler) {
-        LOG.trace("Called async listUserDefinedFunctionValidations");
-        final ListUserDefinedFunctionValidationsRequest interceptedRequest =
-                ListUserDefinedFunctionValidationsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListUserDefinedFunctionValidationsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        return clientCall(request, ListUserDefinedFunctionValidationsResponse::builder)
+                .logger(LOG, "listUserDefinedFunctionValidations")
+                .serviceDetails(
                         "DataIntegration",
                         "ListUserDefinedFunctionValidations",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/ListUserDefinedFunctionValidations");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListUserDefinedFunctionValidationsResponse>
-                transformer =
-                        ListUserDefinedFunctionValidationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListUserDefinedFunctionValidationsRequest,
-                        ListUserDefinedFunctionValidationsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListUserDefinedFunctionValidationsRequest,
-                                ListUserDefinedFunctionValidationsResponse>,
-                        java.util.concurrent.Future<ListUserDefinedFunctionValidationsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListUserDefinedFunctionValidationsRequest,
-                    ListUserDefinedFunctionValidationsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/ListUserDefinedFunctionValidations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListUserDefinedFunctionValidationsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("userDefinedFunctionValidations")
+                .appendQueryParam("key", request.getKey())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("identifier", request.getIdentifier())
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model
+                                .UserDefinedFunctionValidationSummaryCollection.class,
+                        ListUserDefinedFunctionValidationsResponse.Builder
+                                ::userDefinedFunctionValidationSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListUserDefinedFunctionValidationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListUserDefinedFunctionValidationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListUserDefinedFunctionValidationsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items",
+                        ListUserDefinedFunctionValidationsResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -5838,46 +4789,51 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListUserDefinedFunctionsRequest, ListUserDefinedFunctionsResponse>
                     handler) {
-        LOG.trace("Called async listUserDefinedFunctions");
-        final ListUserDefinedFunctionsRequest interceptedRequest =
-                ListUserDefinedFunctionsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListUserDefinedFunctionsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        return clientCall(request, ListUserDefinedFunctionsResponse::builder)
+                .logger(LOG, "listUserDefinedFunctions")
+                .serviceDetails(
                         "DataIntegration",
                         "ListUserDefinedFunctions",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/ListUserDefinedFunctions");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListUserDefinedFunctionsResponse>
-                transformer =
-                        ListUserDefinedFunctionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListUserDefinedFunctionsRequest, ListUserDefinedFunctionsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListUserDefinedFunctionsRequest, ListUserDefinedFunctionsResponse>,
-                        java.util.concurrent.Future<ListUserDefinedFunctionsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListUserDefinedFunctionsRequest, ListUserDefinedFunctionsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/ListUserDefinedFunctions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListUserDefinedFunctionsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("userDefinedFunctions")
+                .appendQueryParam("functionLibraryKey", request.getFunctionLibraryKey())
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("name", request.getName())
+                .appendListQueryParam(
+                        "identifier",
+                        request.getIdentifier(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.UserDefinedFunctionSummaryCollection
+                                .class,
+                        ListUserDefinedFunctionsResponse.Builder
+                                ::userDefinedFunctionSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListUserDefinedFunctionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListUserDefinedFunctionsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListUserDefinedFunctionsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListUserDefinedFunctionsResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -5886,45 +4842,35 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
                     handler) {
-        LOG.trace("Called async listWorkRequestErrors");
-        final ListWorkRequestErrorsRequest interceptedRequest =
-                ListWorkRequestErrorsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, ListWorkRequestErrorsResponse::builder)
+                .logger(LOG, "listWorkRequestErrors")
+                .serviceDetails(
                         "DataIntegration",
                         "ListWorkRequestErrors",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/ListWorkRequestErrors");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
-                transformer =
-                        ListWorkRequestErrorsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>,
-                        java.util.concurrent.Future<ListWorkRequestErrorsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/ListWorkRequestErrors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestErrorsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .appendPathParam("workRequestErrors")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.dataintegration.model.WorkRequestError.class,
+                        ListWorkRequestErrorsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -5933,45 +4879,35 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
                     handler) {
-        LOG.trace("Called async listWorkRequestLogs");
-        final ListWorkRequestLogsRequest interceptedRequest =
-                ListWorkRequestLogsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, ListWorkRequestLogsResponse::builder)
+                .logger(LOG, "listWorkRequestLogs")
+                .serviceDetails(
                         "DataIntegration",
                         "ListWorkRequestLogs",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/ListWorkRequestLogs");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
-                transformer =
-                        ListWorkRequestLogsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>,
-                        java.util.concurrent.Future<ListWorkRequestLogsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/ListWorkRequestLogs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestLogsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .appendPathParam("logs")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.dataintegration.model.WorkRequestLogEntry.class,
+                        ListWorkRequestLogsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -5980,44 +4916,35 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListWorkRequestsRequest, ListWorkRequestsResponse>
                     handler) {
-        LOG.trace("Called async listWorkRequests");
-        final ListWorkRequestsRequest interceptedRequest =
-                ListWorkRequestsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListWorkRequestsResponse::builder)
+                .logger(LOG, "listWorkRequests")
+                .serviceDetails(
                         "DataIntegration",
                         "ListWorkRequests",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/ListWorkRequests");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer =
-                        ListWorkRequestsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListWorkRequestsRequest, ListWorkRequestsResponse>,
-                        java.util.concurrent.Future<ListWorkRequestsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListWorkRequestsRequest, ListWorkRequestsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/ListWorkRequests")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workRequests")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("workspaceId", request.getWorkspaceId())
+                .appendEnumQueryParam("workRequestStatus", request.getWorkRequestStatus())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.dataintegration.model.WorkRequestSummary.class,
+                        ListWorkRequestsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -6026,43 +4953,35 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListWorkspacesRequest, ListWorkspacesResponse>
                     handler) {
-        LOG.trace("Called async listWorkspaces");
-        final ListWorkspacesRequest interceptedRequest =
-                ListWorkspacesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkspacesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListWorkspacesResponse::builder)
+                .logger(LOG, "listWorkspaces")
+                .serviceDetails(
                         "DataIntegration",
                         "ListWorkspaces",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/ListWorkspaces");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkspacesResponse>
-                transformer =
-                        ListWorkspacesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListWorkspacesRequest, ListWorkspacesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListWorkspacesRequest, ListWorkspacesResponse>,
-                        java.util.concurrent.Future<ListWorkspacesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListWorkspacesRequest, ListWorkspacesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/ListWorkspaces")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkspacesRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.dataintegration.model.WorkspaceSummary.class,
+                        ListWorkspacesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkspacesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkspacesResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -6071,44 +4990,31 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             StartWorkspaceRequest, StartWorkspaceResponse>
                     handler) {
-        LOG.trace("Called async startWorkspace");
-        final StartWorkspaceRequest interceptedRequest =
-                StartWorkspaceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                StartWorkspaceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        return clientCall(request, StartWorkspaceResponse::builder)
+                .logger(LOG, "startWorkspace")
+                .serviceDetails(
                         "DataIntegration",
                         "StartWorkspace",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/StartWorkspace");
-        final java.util.function.Function<javax.ws.rs.core.Response, StartWorkspaceResponse>
-                transformer =
-                        StartWorkspaceConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<StartWorkspaceRequest, StartWorkspaceResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                StartWorkspaceRequest, StartWorkspaceResponse>,
-                        java.util.concurrent.Future<StartWorkspaceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    StartWorkspaceRequest, StartWorkspaceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/StartWorkspace")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StartWorkspaceRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("actions")
+                .appendPathParam("start")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", StartWorkspaceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StartWorkspaceResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6116,44 +5022,33 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             StopWorkspaceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<StopWorkspaceRequest, StopWorkspaceResponse>
                     handler) {
-        LOG.trace("Called async stopWorkspace");
-        final StopWorkspaceRequest interceptedRequest =
-                StopWorkspaceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                StopWorkspaceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        return clientCall(request, StopWorkspaceResponse::builder)
+                .logger(LOG, "stopWorkspace")
+                .serviceDetails(
                         "DataIntegration",
                         "StopWorkspace",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/StopWorkspace");
-        final java.util.function.Function<javax.ws.rs.core.Response, StopWorkspaceResponse>
-                transformer =
-                        StopWorkspaceConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<StopWorkspaceRequest, StopWorkspaceResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                StopWorkspaceRequest, StopWorkspaceResponse>,
-                        java.util.concurrent.Future<StopWorkspaceResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    StopWorkspaceRequest, StopWorkspaceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/StopWorkspace")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StopWorkspaceRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("actions")
+                .appendPathParam("stop")
+                .appendQueryParam("quiesceTimeout", request.getQuiesceTimeout())
+                .appendQueryParam("isForceOperation", request.getIsForceOperation())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", StopWorkspaceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StopWorkspaceResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6162,49 +5057,37 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateApplicationRequest, UpdateApplicationResponse>
                     handler) {
-        LOG.trace("Called async updateApplication");
-        final UpdateApplicationRequest interceptedRequest =
-                UpdateApplicationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateApplicationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateApplicationDetails(), "updateApplicationDetails is required");
+
+        return clientCall(request, UpdateApplicationResponse::builder)
+                .logger(LOG, "updateApplication")
+                .serviceDetails(
                         "DataIntegration",
                         "UpdateApplication",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/UpdateApplication");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateApplicationResponse>
-                transformer =
-                        UpdateApplicationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateApplicationRequest, UpdateApplicationResponse>,
-                        java.util.concurrent.Future<UpdateApplicationResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateApplicationDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateApplicationRequest, UpdateApplicationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/UpdateApplication")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateApplicationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Application.class,
+                        UpdateApplicationResponse.Builder::application)
+                .handleResponseHeaderString("etag", UpdateApplicationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateApplicationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6213,49 +5096,37 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateConnectionRequest, UpdateConnectionResponse>
                     handler) {
-        LOG.trace("Called async updateConnection");
-        final UpdateConnectionRequest interceptedRequest =
-                UpdateConnectionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateConnectionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getConnectionKey(), "connectionKey must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateConnectionDetails(), "updateConnectionDetails is required");
+
+        return clientCall(request, UpdateConnectionResponse::builder)
+                .logger(LOG, "updateConnection")
+                .serviceDetails(
                         "DataIntegration",
                         "UpdateConnection",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/UpdateConnection");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateConnectionResponse>
-                transformer =
-                        UpdateConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateConnectionRequest, UpdateConnectionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateConnectionRequest, UpdateConnectionResponse>,
-                        java.util.concurrent.Future<UpdateConnectionResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateConnectionDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateConnectionRequest, UpdateConnectionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/UpdateConnection")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateConnectionRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("connections")
+                .appendPathParam(request.getConnectionKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Connection.class,
+                        UpdateConnectionResponse.Builder::connection)
+                .handleResponseHeaderString("etag", UpdateConnectionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateConnectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6264,49 +5135,37 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateDataAssetRequest, UpdateDataAssetResponse>
                     handler) {
-        LOG.trace("Called async updateDataAsset");
-        final UpdateDataAssetRequest interceptedRequest =
-                UpdateDataAssetConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateDataAssetConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDataAssetDetails(), "updateDataAssetDetails is required");
+
+        return clientCall(request, UpdateDataAssetResponse::builder)
+                .logger(LOG, "updateDataAsset")
+                .serviceDetails(
                         "DataIntegration",
                         "UpdateDataAsset",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/UpdateDataAsset");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDataAssetResponse>
-                transformer =
-                        UpdateDataAssetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateDataAssetRequest, UpdateDataAssetResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateDataAssetRequest, UpdateDataAssetResponse>,
-                        java.util.concurrent.Future<UpdateDataAssetResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateDataAssetDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateDataAssetRequest, UpdateDataAssetResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/UpdateDataAsset")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDataAssetRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("dataAssets")
+                .appendPathParam(request.getDataAssetKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DataAsset.class,
+                        UpdateDataAssetResponse.Builder::dataAsset)
+                .handleResponseHeaderString("etag", UpdateDataAssetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDataAssetResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6315,48 +5174,37 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateDataFlowRequest, UpdateDataFlowResponse>
                     handler) {
-        LOG.trace("Called async updateDataFlow");
-        final UpdateDataFlowRequest interceptedRequest =
-                UpdateDataFlowConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateDataFlowConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getDataFlowKey(), "dataFlowKey must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDataFlowDetails(), "updateDataFlowDetails is required");
+
+        return clientCall(request, UpdateDataFlowResponse::builder)
+                .logger(LOG, "updateDataFlow")
+                .serviceDetails(
                         "DataIntegration",
                         "UpdateDataFlow",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/UpdateDataFlow");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDataFlowResponse>
-                transformer =
-                        UpdateDataFlowConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateDataFlowRequest, UpdateDataFlowResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateDataFlowRequest, UpdateDataFlowResponse>,
-                        java.util.concurrent.Future<UpdateDataFlowResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateDataFlowDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateDataFlowRequest, UpdateDataFlowResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/UpdateDataFlow")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDataFlowRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("dataFlows")
+                .appendPathParam(request.getDataFlowKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DataFlow.class,
+                        UpdateDataFlowResponse.Builder::dataFlow)
+                .handleResponseHeaderString("etag", UpdateDataFlowResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDataFlowResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6365,50 +5213,38 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateDisApplicationRequest, UpdateDisApplicationResponse>
                     handler) {
-        LOG.trace("Called async updateDisApplication");
-        final UpdateDisApplicationRequest interceptedRequest =
-                UpdateDisApplicationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateDisApplicationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getDisApplicationId(), "disApplicationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDisApplicationDetails(),
+                "updateDisApplicationDetails is required");
+
+        return clientCall(request, UpdateDisApplicationResponse::builder)
+                .logger(LOG, "updateDisApplication")
+                .serviceDetails(
                         "DataIntegration",
                         "UpdateDisApplication",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/UpdateDisApplication");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDisApplicationResponse>
-                transformer =
-                        UpdateDisApplicationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateDisApplicationRequest, UpdateDisApplicationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateDisApplicationRequest, UpdateDisApplicationResponse>,
-                        java.util.concurrent.Future<UpdateDisApplicationResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateDisApplicationDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateDisApplicationRequest, UpdateDisApplicationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/UpdateDisApplication")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDisApplicationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("disApplications")
+                .appendPathParam(request.getDisApplicationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DisApplication.class,
+                        UpdateDisApplicationResponse.Builder::disApplication)
+                .handleResponseHeaderString("etag", UpdateDisApplicationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDisApplicationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6417,52 +5253,43 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateExternalPublicationRequest, UpdateExternalPublicationResponse>
                     handler) {
-        LOG.trace("Called async updateExternalPublication");
-        final UpdateExternalPublicationRequest interceptedRequest =
-                UpdateExternalPublicationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateExternalPublicationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getTaskKey(), "taskKey must not be blank");
+
+        Validate.notBlank(
+                request.getExternalPublicationsKey(), "externalPublicationsKey must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalPublicationDetails(),
+                "updateExternalPublicationDetails is required");
+
+        return clientCall(request, UpdateExternalPublicationResponse::builder)
+                .logger(LOG, "updateExternalPublication")
+                .serviceDetails(
                         "DataIntegration",
                         "UpdateExternalPublication",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/UpdateExternalPublication");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateExternalPublicationResponse>
-                transformer =
-                        UpdateExternalPublicationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateExternalPublicationRequest, UpdateExternalPublicationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateExternalPublicationRequest,
-                                UpdateExternalPublicationResponse>,
-                        java.util.concurrent.Future<UpdateExternalPublicationResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateExternalPublicationDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateExternalPublicationRequest, UpdateExternalPublicationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/UpdateExternalPublication")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalPublicationRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("tasks")
+                .appendPathParam(request.getTaskKey())
+                .appendPathParam("externalPublications")
+                .appendPathParam(request.getExternalPublicationsKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.ExternalPublication.class,
+                        UpdateExternalPublicationResponse.Builder::externalPublication)
+                .handleResponseHeaderString("etag", UpdateExternalPublicationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExternalPublicationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6470,48 +5297,36 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             UpdateFolderRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateFolderRequest, UpdateFolderResponse>
                     handler) {
-        LOG.trace("Called async updateFolder");
-        final UpdateFolderRequest interceptedRequest =
-                UpdateFolderConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateFolderConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getFolderKey(), "folderKey must not be blank");
+        Objects.requireNonNull(request.getUpdateFolderDetails(), "updateFolderDetails is required");
+
+        return clientCall(request, UpdateFolderResponse::builder)
+                .logger(LOG, "updateFolder")
+                .serviceDetails(
                         "DataIntegration",
                         "UpdateFolder",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/UpdateFolder");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateFolderResponse>
-                transformer =
-                        UpdateFolderConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateFolderRequest, UpdateFolderResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateFolderRequest, UpdateFolderResponse>,
-                        java.util.concurrent.Future<UpdateFolderResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateFolderDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateFolderRequest, UpdateFolderResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/UpdateFolder")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateFolderRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("folders")
+                .appendPathParam(request.getFolderKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Folder.class,
+                        UpdateFolderResponse.Builder::folder)
+                .handleResponseHeaderString("etag", UpdateFolderResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateFolderResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6520,50 +5335,38 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateFunctionLibraryRequest, UpdateFunctionLibraryResponse>
                     handler) {
-        LOG.trace("Called async updateFunctionLibrary");
-        final UpdateFunctionLibraryRequest interceptedRequest =
-                UpdateFunctionLibraryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateFunctionLibraryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getFunctionLibraryKey(), "functionLibraryKey must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateFunctionLibraryDetails(),
+                "updateFunctionLibraryDetails is required");
+
+        return clientCall(request, UpdateFunctionLibraryResponse::builder)
+                .logger(LOG, "updateFunctionLibrary")
+                .serviceDetails(
                         "DataIntegration",
                         "UpdateFunctionLibrary",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/UpdateFunctionLibrary");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateFunctionLibraryResponse>
-                transformer =
-                        UpdateFunctionLibraryConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateFunctionLibraryRequest, UpdateFunctionLibraryResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateFunctionLibraryRequest, UpdateFunctionLibraryResponse>,
-                        java.util.concurrent.Future<UpdateFunctionLibraryResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateFunctionLibraryDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateFunctionLibraryRequest, UpdateFunctionLibraryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/UpdateFunctionLibrary")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateFunctionLibraryRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("functionLibraries")
+                .appendPathParam(request.getFunctionLibraryKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.FunctionLibrary.class,
+                        UpdateFunctionLibraryResponse.Builder::functionLibrary)
+                .handleResponseHeaderString("etag", UpdateFunctionLibraryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateFunctionLibraryResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6572,48 +5375,37 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdatePipelineRequest, UpdatePipelineResponse>
                     handler) {
-        LOG.trace("Called async updatePipeline");
-        final UpdatePipelineRequest interceptedRequest =
-                UpdatePipelineConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdatePipelineConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getPipelineKey(), "pipelineKey must not be blank");
+        Objects.requireNonNull(
+                request.getUpdatePipelineDetails(), "updatePipelineDetails is required");
+
+        return clientCall(request, UpdatePipelineResponse::builder)
+                .logger(LOG, "updatePipeline")
+                .serviceDetails(
                         "DataIntegration",
                         "UpdatePipeline",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/UpdatePipeline");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdatePipelineResponse>
-                transformer =
-                        UpdatePipelineConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdatePipelineRequest, UpdatePipelineResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdatePipelineRequest, UpdatePipelineResponse>,
-                        java.util.concurrent.Future<UpdatePipelineResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdatePipelineDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdatePipelineRequest, UpdatePipelineResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/UpdatePipeline")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdatePipelineRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Pipeline.class,
+                        UpdatePipelineResponse.Builder::pipeline)
+                .handleResponseHeaderString("etag", UpdatePipelineResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdatePipelineResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6621,48 +5413,37 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             UpdateProjectRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateProjectRequest, UpdateProjectResponse>
                     handler) {
-        LOG.trace("Called async updateProject");
-        final UpdateProjectRequest interceptedRequest =
-                UpdateProjectConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateProjectConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getProjectKey(), "projectKey must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateProjectDetails(), "updateProjectDetails is required");
+
+        return clientCall(request, UpdateProjectResponse::builder)
+                .logger(LOG, "updateProject")
+                .serviceDetails(
                         "DataIntegration",
                         "UpdateProject",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/UpdateProject");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateProjectResponse>
-                transformer =
-                        UpdateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateProjectRequest, UpdateProjectResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateProjectRequest, UpdateProjectResponse>,
-                        java.util.concurrent.Future<UpdateProjectResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateProjectDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateProjectRequest, UpdateProjectResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/UpdateProject")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateProjectRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("projects")
+                .appendPathParam(request.getProjectKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Project.class,
+                        UpdateProjectResponse.Builder::project)
+                .handleResponseHeaderString("etag", UpdateProjectResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateProjectResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6671,50 +5452,42 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateReferenceRequest, UpdateReferenceResponse>
                     handler) {
-        LOG.trace("Called async updateReference");
-        final UpdateReferenceRequest interceptedRequest =
-                UpdateReferenceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateReferenceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        Validate.notBlank(request.getReferenceKey(), "referenceKey must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateReferenceDetails(), "updateReferenceDetails is required");
+
+        return clientCall(request, UpdateReferenceResponse::builder)
+                .logger(LOG, "updateReference")
+                .serviceDetails(
                         "DataIntegration",
                         "UpdateReference",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Reference/UpdateReference");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateReferenceResponse>
-                transformer =
-                        UpdateReferenceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateReferenceRequest, UpdateReferenceResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateReferenceRequest, UpdateReferenceResponse>,
-                        java.util.concurrent.Future<UpdateReferenceResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateReferenceDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateReferenceRequest, UpdateReferenceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Reference/UpdateReference")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateReferenceRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("references")
+                .appendPathParam(request.getReferenceKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Reference.class,
+                        UpdateReferenceResponse.Builder::reference)
+                .handleResponseHeaderString("etag", UpdateReferenceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateReferenceResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6723,48 +5496,41 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateScheduleRequest, UpdateScheduleResponse>
                     handler) {
-        LOG.trace("Called async updateSchedule");
-        final UpdateScheduleRequest interceptedRequest =
-                UpdateScheduleConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateScheduleConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        Validate.notBlank(request.getScheduleKey(), "scheduleKey must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateScheduleDetails(), "updateScheduleDetails is required");
+
+        return clientCall(request, UpdateScheduleResponse::builder)
+                .logger(LOG, "updateSchedule")
+                .serviceDetails(
                         "DataIntegration",
                         "UpdateSchedule",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/UpdateSchedule");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateScheduleResponse>
-                transformer =
-                        UpdateScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateScheduleRequest, UpdateScheduleResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateScheduleRequest, UpdateScheduleResponse>,
-                        java.util.concurrent.Future<UpdateScheduleResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateScheduleDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateScheduleRequest, UpdateScheduleResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/UpdateSchedule")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateScheduleRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("schedules")
+                .appendPathParam(request.getScheduleKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Schedule.class,
+                        UpdateScheduleResponse.Builder::schedule)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateScheduleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateScheduleResponse.Builder::etag)
+                .callAsync(handler);
     }
 
     @Override
@@ -6772,47 +5538,36 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             UpdateTaskRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateTaskRequest, UpdateTaskResponse>
                     handler) {
-        LOG.trace("Called async updateTask");
-        final UpdateTaskRequest interceptedRequest = UpdateTaskConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateTaskConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getTaskKey(), "taskKey must not be blank");
+        Objects.requireNonNull(request.getUpdateTaskDetails(), "updateTaskDetails is required");
+
+        return clientCall(request, UpdateTaskResponse::builder)
+                .logger(LOG, "updateTask")
+                .serviceDetails(
                         "DataIntegration",
                         "UpdateTask",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/UpdateTask");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateTaskResponse>
-                transformer =
-                        UpdateTaskConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateTaskRequest, UpdateTaskResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateTaskRequest, UpdateTaskResponse>,
-                        java.util.concurrent.Future<UpdateTaskResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateTaskDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateTaskRequest, UpdateTaskResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/UpdateTask")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateTaskRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("tasks")
+                .appendPathParam(request.getTaskKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Task.class,
+                        UpdateTaskResponse.Builder::task)
+                .handleResponseHeaderString("etag", UpdateTaskResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateTaskResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6820,48 +5575,41 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             UpdateTaskRunRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateTaskRunRequest, UpdateTaskRunResponse>
                     handler) {
-        LOG.trace("Called async updateTaskRun");
-        final UpdateTaskRunRequest interceptedRequest =
-                UpdateTaskRunConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateTaskRunConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        Validate.notBlank(request.getTaskRunKey(), "taskRunKey must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateTaskRunDetails(), "updateTaskRunDetails is required");
+
+        return clientCall(request, UpdateTaskRunResponse::builder)
+                .logger(LOG, "updateTaskRun")
+                .serviceDetails(
                         "DataIntegration",
                         "UpdateTaskRun",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/UpdateTaskRun");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateTaskRunResponse>
-                transformer =
-                        UpdateTaskRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateTaskRunRequest, UpdateTaskRunResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateTaskRunRequest, UpdateTaskRunResponse>,
-                        java.util.concurrent.Future<UpdateTaskRunResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateTaskRunDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateTaskRunRequest, UpdateTaskRunResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/UpdateTaskRun")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateTaskRunRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("taskRuns")
+                .appendPathParam(request.getTaskRunKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.TaskRunDetails.class,
+                        UpdateTaskRunResponse.Builder::taskRunDetails)
+                .handleResponseHeaderString("etag", UpdateTaskRunResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateTaskRunResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6870,49 +5618,41 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateTaskScheduleRequest, UpdateTaskScheduleResponse>
                     handler) {
-        LOG.trace("Called async updateTaskSchedule");
-        final UpdateTaskScheduleRequest interceptedRequest =
-                UpdateTaskScheduleConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateTaskScheduleConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        Validate.notBlank(request.getTaskScheduleKey(), "taskScheduleKey must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateTaskScheduleDetails(), "updateTaskScheduleDetails is required");
+
+        return clientCall(request, UpdateTaskScheduleResponse::builder)
+                .logger(LOG, "updateTaskSchedule")
+                .serviceDetails(
                         "DataIntegration",
                         "UpdateTaskSchedule",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/UpdateTaskSchedule");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateTaskScheduleResponse>
-                transformer =
-                        UpdateTaskScheduleConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateTaskScheduleRequest, UpdateTaskScheduleResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateTaskScheduleRequest, UpdateTaskScheduleResponse>,
-                        java.util.concurrent.Future<UpdateTaskScheduleResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateTaskScheduleDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateTaskScheduleRequest, UpdateTaskScheduleResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/UpdateTaskSchedule")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateTaskScheduleRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("taskSchedules")
+                .appendPathParam(request.getTaskScheduleKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.TaskSchedule.class,
+                        UpdateTaskScheduleResponse.Builder::taskSchedule)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateTaskScheduleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateTaskScheduleResponse.Builder::etag)
+                .callAsync(handler);
     }
 
     @Override
@@ -6921,52 +5661,39 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateUserDefinedFunctionRequest, UpdateUserDefinedFunctionResponse>
                     handler) {
-        LOG.trace("Called async updateUserDefinedFunction");
-        final UpdateUserDefinedFunctionRequest interceptedRequest =
-                UpdateUserDefinedFunctionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateUserDefinedFunctionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(
+                request.getUserDefinedFunctionKey(), "userDefinedFunctionKey must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateUserDefinedFunctionDetails(),
+                "updateUserDefinedFunctionDetails is required");
+
+        return clientCall(request, UpdateUserDefinedFunctionResponse::builder)
+                .logger(LOG, "updateUserDefinedFunction")
+                .serviceDetails(
                         "DataIntegration",
                         "UpdateUserDefinedFunction",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/UpdateUserDefinedFunction");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateUserDefinedFunctionResponse>
-                transformer =
-                        UpdateUserDefinedFunctionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateUserDefinedFunctionRequest, UpdateUserDefinedFunctionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateUserDefinedFunctionRequest,
-                                UpdateUserDefinedFunctionResponse>,
-                        java.util.concurrent.Future<UpdateUserDefinedFunctionResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateUserDefinedFunctionDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateUserDefinedFunctionRequest, UpdateUserDefinedFunctionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/UpdateUserDefinedFunction")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateUserDefinedFunctionRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("userDefinedFunctions")
+                .appendPathParam(request.getUserDefinedFunctionKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.UserDefinedFunction.class,
+                        UpdateUserDefinedFunctionResponse.Builder::userDefinedFunction)
+                .handleResponseHeaderString("etag", UpdateUserDefinedFunctionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateUserDefinedFunctionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6975,48 +5702,193 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateWorkspaceRequest, UpdateWorkspaceResponse>
                     handler) {
-        LOG.trace("Called async updateWorkspace");
-        final UpdateWorkspaceRequest interceptedRequest =
-                UpdateWorkspaceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateWorkspaceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateWorkspaceDetails(), "updateWorkspaceDetails is required");
+
+        return clientCall(request, UpdateWorkspaceResponse::builder)
+                .logger(LOG, "updateWorkspace")
+                .serviceDetails(
                         "DataIntegration",
                         "UpdateWorkspace",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/UpdateWorkspace");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateWorkspaceResponse>
-                transformer =
-                        UpdateWorkspaceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateWorkspaceRequest, UpdateWorkspaceResponse>
-                handlerToUse = handler;
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/UpdateWorkspace")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateWorkspaceRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Workspace.class,
+                        UpdateWorkspaceResponse.Builder::workspace)
+                .handleResponseHeaderString("etag", UpdateWorkspaceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateWorkspaceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateWorkspaceResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateWorkspaceRequest, UpdateWorkspaceResponse>,
-                        java.util.concurrent.Future<UpdateWorkspaceResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateWorkspaceDetails(),
-                                ib,
-                                transformer);
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public DataIntegrationAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(builder(), authenticationDetailsProvider);
+    }
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateWorkspaceRequest, UpdateWorkspaceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public DataIntegrationAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(builder().configuration(configuration), authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public DataIntegrationAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                builder().configuration(configuration).clientConfigurator(clientConfigurator),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public DataIntegrationAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public DataIntegrationAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public DataIntegrationAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public DataIntegrationAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider);
     }
 }

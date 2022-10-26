@@ -5,20 +5,22 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * A backup of the current state of the GoldenGate deployment. Can be used to restore a deployment, or create a new deployment with that state as the starting deployment state.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A backup of the current state of the GoldenGate deployment. Can be used to restore a deployment,
+ * or create a new deployment with that state as the starting deployment state. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DeploymentBackup.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DeploymentBackup extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class DeploymentBackup
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -89,63 +91,63 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup being referenced.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * backup being referenced.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup being referenced.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * backup being referenced.
          *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * deployment being referenced.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
         private String deploymentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * deployment being referenced.
          *
          * @param deploymentId the value to set
          * @return this builder
-         **/
+         */
         public Builder deploymentId(String deploymentId) {
             this.deploymentId = deploymentId;
             this.__explicitlySet__.add("deploymentId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment being referenced.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment being referenced.
          *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * An object's Display Name.
-         *
-         **/
+        /** An object's Display Name. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -154,16 +156,13 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * True if this object is automatically created
-         *
-         **/
+        /** True if this object is automatically created */
         @com.fasterxml.jackson.annotation.JsonProperty("isAutomatic")
         private Boolean isAutomatic;
 
@@ -172,16 +171,13 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
          *
          * @param isAutomatic the value to set
          * @return this builder
-         **/
+         */
         public Builder isAutomatic(Boolean isAutomatic) {
             this.isAutomatic = isAutomatic;
             this.__explicitlySet__.add("isAutomatic");
             return this;
         }
-        /**
-         * Possible lifecycle states.
-         *
-         **/
+        /** Possible lifecycle states. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -190,70 +186,70 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
          *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-         *
-         **/
+         * Describes the object's current state in detail. For example, it can be used to provide
+         * actionable information for a resource in a Failed state.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+         * Describes the object's current state in detail. For example, it can be used to provide
+         * actionable information for a resource in a Failed state.
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         *
-         **/
+         * The time of the resource backup. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfBackup")
         private java.util.Date timeOfBackup;
 
         /**
-         * The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The time of the resource backup. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          * @param timeOfBackup the value to set
          * @return this builder
-         **/
+         */
         public Builder timeOfBackup(java.util.Date timeOfBackup) {
             this.timeOfBackup = timeOfBackup;
             this.__explicitlySet__.add("timeOfBackup");
             return this;
         }
         /**
-         * The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         *
-         **/
+         * The time of the resource backup finish. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeBackupFinished")
         private java.util.Date timeBackupFinished;
 
         /**
-         * The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The time of the resource backup finish. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          * @param timeBackupFinished the value to set
          * @return this builder
-         **/
+         */
         public Builder timeBackupFinished(java.util.Date timeBackupFinished) {
             this.timeBackupFinished = timeBackupFinished;
             this.__explicitlySet__.add("timeBackupFinished");
             return this;
         }
-        /**
-         * The size of the backup stored in object storage (in bytes)
-         *
-         **/
+        /** The size of the backup stored in object storage (in bytes) */
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
         private java.math.BigDecimal sizeInBytes;
 
@@ -262,16 +258,13 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
          *
          * @param sizeInBytes the value to set
          * @return this builder
-         **/
+         */
         public Builder sizeInBytes(java.math.BigDecimal sizeInBytes) {
             this.sizeInBytes = sizeInBytes;
             this.__explicitlySet__.add("sizeInBytes");
             return this;
         }
-        /**
-         * Possible Deployment backup types.
-         *
-         **/
+        /** Possible Deployment backup types. */
         @com.fasterxml.jackson.annotation.JsonProperty("backupType")
         private DeploymentBackupType backupType;
 
@@ -280,16 +273,13 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
          *
          * @param backupType the value to set
          * @return this builder
-         **/
+         */
         public Builder backupType(DeploymentBackupType backupType) {
             this.backupType = backupType;
             this.__explicitlySet__.add("backupType");
             return this;
         }
-        /**
-         * Version of OGG
-         *
-         **/
+        /** Version of OGG */
         @com.fasterxml.jackson.annotation.JsonProperty("oggVersion")
         private String oggVersion;
 
@@ -298,111 +288,109 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
          *
          * @param oggVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder oggVersion(String oggVersion) {
             this.oggVersion = oggVersion;
             this.__explicitlySet__.add("oggVersion");
             return this;
         }
-        /**
-         * Name of namespace that serves as a container for all of your buckets
-         **/
+        /** Name of namespace that serves as a container for all of your buckets */
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
         private String namespaceName;
 
         /**
          * Name of namespace that serves as a container for all of your buckets
+         *
          * @param namespaceName the value to set
          * @return this builder
-         **/
+         */
         public Builder namespaceName(String namespaceName) {
             this.namespaceName = namespaceName;
             this.__explicitlySet__.add("namespaceName");
             return this;
         }
-        /**
-         * Name of the bucket where the object is to be uploaded in the object storage
-         **/
+        /** Name of the bucket where the object is to be uploaded in the object storage */
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
         /**
          * Name of the bucket where the object is to be uploaded in the object storage
+         *
          * @param bucketName the value to set
          * @return this builder
-         **/
+         */
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
             return this;
         }
-        /**
-         * Name of the object to be uploaded to object storage
-         **/
+        /** Name of the object to be uploaded to object storage */
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
         /**
          * Name of the object to be uploaded to object storage
+         *
          * @param objectName the value to set
          * @return this builder
-         **/
+         */
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
             return this;
         }
         /**
-         * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         *
-         **/
+         * The time the resource was created. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The time the resource was created. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         *
-         **/
+         * The time the resource was last updated. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The time the resource was last updated. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * A simple key-value pair that is applied without any predefined name, type, or scope.
+         * Exists for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * A simple key-value pair that is applied without any predefined name, type, or scope.
+         * Exists for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -411,8 +399,7 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -422,7 +409,7 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -430,20 +417,25 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * The system tags associated with this resource, if any. The system tags are set by Oracle
+         * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
+         * information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * The system tags associated with this resource, if any. The system tags are set by Oracle
+         * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
+         * information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         **/
+         */
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -548,9 +540,7 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -560,57 +550,57 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup being referenced.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * backup being referenced.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup being referenced.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * backup being referenced.
      *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * deployment being referenced.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
     private final String deploymentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * deployment being referenced.
      *
      * @return the value
-     **/
+     */
     public String getDeploymentId() {
         return deploymentId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment being referenced.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment being referenced.
      *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * An object's Display Name.
-     *
-     **/
+    /** An object's Display Name. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -618,15 +608,12 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
      * An object's Display Name.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * True if this object is automatically created
-     *
-     **/
+    /** True if this object is automatically created */
     @com.fasterxml.jackson.annotation.JsonProperty("isAutomatic")
     private final Boolean isAutomatic;
 
@@ -634,15 +621,12 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
      * True if this object is automatically created
      *
      * @return the value
-     **/
+     */
     public Boolean getIsAutomatic() {
         return isAutomatic;
     }
 
-    /**
-     * Possible lifecycle states.
-     *
-     **/
+    /** Possible lifecycle states. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
@@ -650,63 +634,63 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
      * Possible lifecycle states.
      *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-     *
-     **/
+     * Describes the object's current state in detail. For example, it can be used to provide
+     * actionable information for a resource in a Failed state.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+     * Describes the object's current state in detail. For example, it can be used to provide
+     * actionable information for a resource in a Failed state.
      *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     *
-     **/
+     * The time of the resource backup. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfBackup")
     private final java.util.Date timeOfBackup;
 
     /**
-     * The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The time of the resource backup. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeOfBackup() {
         return timeOfBackup;
     }
 
     /**
-     * The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     *
-     **/
+     * The time of the resource backup finish. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeBackupFinished")
     private final java.util.Date timeBackupFinished;
 
     /**
-     * The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The time of the resource backup finish. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeBackupFinished() {
         return timeBackupFinished;
     }
 
-    /**
-     * The size of the backup stored in object storage (in bytes)
-     *
-     **/
+    /** The size of the backup stored in object storage (in bytes) */
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
     private final java.math.BigDecimal sizeInBytes;
 
@@ -714,15 +698,12 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
      * The size of the backup stored in object storage (in bytes)
      *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getSizeInBytes() {
         return sizeInBytes;
     }
 
-    /**
-     * Possible Deployment backup types.
-     *
-     **/
+    /** Possible Deployment backup types. */
     @com.fasterxml.jackson.annotation.JsonProperty("backupType")
     private final DeploymentBackupType backupType;
 
@@ -730,15 +711,12 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
      * Possible Deployment backup types.
      *
      * @return the value
-     **/
+     */
     public DeploymentBackupType getBackupType() {
         return backupType;
     }
 
-    /**
-     * Version of OGG
-     *
-     **/
+    /** Version of OGG */
     @com.fasterxml.jackson.annotation.JsonProperty("oggVersion")
     private final String oggVersion;
 
@@ -746,135 +724,137 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
      * Version of OGG
      *
      * @return the value
-     **/
+     */
     public String getOggVersion() {
         return oggVersion;
     }
 
-    /**
-     * Name of namespace that serves as a container for all of your buckets
-     **/
+    /** Name of namespace that serves as a container for all of your buckets */
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
     private final String namespaceName;
 
     /**
      * Name of namespace that serves as a container for all of your buckets
+     *
      * @return the value
-     **/
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
 
-    /**
-     * Name of the bucket where the object is to be uploaded in the object storage
-     **/
+    /** Name of the bucket where the object is to be uploaded in the object storage */
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
     /**
      * Name of the bucket where the object is to be uploaded in the object storage
+     *
      * @return the value
-     **/
+     */
     public String getBucketName() {
         return bucketName;
     }
 
-    /**
-     * Name of the object to be uploaded to object storage
-     **/
+    /** Name of the object to be uploaded to object storage */
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
     /**
      * Name of the object to be uploaded to object storage
+     *
      * @return the value
-     **/
+     */
     public String getObjectName() {
         return objectName;
     }
 
     /**
-     * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     *
-     **/
+     * The time the resource was created. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The time the resource was created. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     *
-     **/
+     * The time the resource was last updated. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The time the resource was last updated. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+     * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+     * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Tags defined for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Tags defined for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Tags defined for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Tags defined for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
-     *
-     **/
+     * The system tags associated with this resource, if any. The system tags are set by Oracle
+     * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {orcl-cloud: {free-tier-retain: true}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+     * The system tags associated with this resource, if any. The system tags are set by Oracle
+     * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {orcl-cloud: {free-tier-retain: true}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -886,6 +866,7 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

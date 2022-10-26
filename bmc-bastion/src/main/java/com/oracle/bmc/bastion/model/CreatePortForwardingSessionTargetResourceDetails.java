@@ -5,88 +5,87 @@
 package com.oracle.bmc.bastion.model;
 
 /**
- * Details about a port forwarding session for a target resource.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details about a port forwarding session for a target resource. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreatePortForwardingSessionTargetResourceDetails.Builder.class
-)
+        builder = CreatePortForwardingSessionTargetResourceDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "sessionType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "sessionType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreatePortForwardingSessionTargetResourceDetails
         extends CreateSessionTargetResourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
-         **/
+         * The unique identifier (OCID) of the target resource (a Compute instance, for example)
+         * that the session connects to.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourceId")
         private String targetResourceId;
 
         /**
-         * The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
+         * The unique identifier (OCID) of the target resource (a Compute instance, for example)
+         * that the session connects to.
+         *
          * @param targetResourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder targetResourceId(String targetResourceId) {
             this.targetResourceId = targetResourceId;
             this.__explicitlySet__.add("targetResourceId");
             return this;
         }
-        /**
-         * The private IP address of the target resource that the session connects to.
-         **/
+        /** The private IP address of the target resource that the session connects to. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePrivateIpAddress")
         private String targetResourcePrivateIpAddress;
 
         /**
          * The private IP address of the target resource that the session connects to.
+         *
          * @param targetResourcePrivateIpAddress the value to set
          * @return this builder
-         **/
+         */
         public Builder targetResourcePrivateIpAddress(String targetResourcePrivateIpAddress) {
             this.targetResourcePrivateIpAddress = targetResourcePrivateIpAddress;
             this.__explicitlySet__.add("targetResourcePrivateIpAddress");
             return this;
         }
-        /**
-         * The Fully Qualified Domain Name of the target resource that the session connects to.
-         **/
+        /** The Fully Qualified Domain Name of the target resource that the session connects to. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourceFqdn")
         private String targetResourceFqdn;
 
         /**
          * The Fully Qualified Domain Name of the target resource that the session connects to.
+         *
          * @param targetResourceFqdn the value to set
          * @return this builder
-         **/
+         */
         public Builder targetResourceFqdn(String targetResourceFqdn) {
             this.targetResourceFqdn = targetResourceFqdn;
             this.__explicitlySet__.add("targetResourceFqdn");
             return this;
         }
-        /**
-         * The port number to connect to on the target resource.
-         **/
+        /** The port number to connect to on the target resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePort")
         private Integer targetResourcePort;
 
         /**
          * The port number to connect to on the target resource.
+         *
          * @param targetResourcePort the value to set
          * @return this builder
-         **/
+         */
         public Builder targetResourcePort(Integer targetResourcePort) {
             this.targetResourcePort = targetResourcePort;
             this.__explicitlySet__.add("targetResourcePort");
@@ -127,9 +126,7 @@ public final class CreatePortForwardingSessionTargetResourceDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -152,57 +149,57 @@ public final class CreatePortForwardingSessionTargetResourceDetails
     }
 
     /**
-     * The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
-     **/
+     * The unique identifier (OCID) of the target resource (a Compute instance, for example) that
+     * the session connects to.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceId")
     private final String targetResourceId;
 
     /**
-     * The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
+     * The unique identifier (OCID) of the target resource (a Compute instance, for example) that
+     * the session connects to.
+     *
      * @return the value
-     **/
+     */
     public String getTargetResourceId() {
         return targetResourceId;
     }
 
-    /**
-     * The private IP address of the target resource that the session connects to.
-     **/
+    /** The private IP address of the target resource that the session connects to. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePrivateIpAddress")
     private final String targetResourcePrivateIpAddress;
 
     /**
      * The private IP address of the target resource that the session connects to.
+     *
      * @return the value
-     **/
+     */
     public String getTargetResourcePrivateIpAddress() {
         return targetResourcePrivateIpAddress;
     }
 
-    /**
-     * The Fully Qualified Domain Name of the target resource that the session connects to.
-     **/
+    /** The Fully Qualified Domain Name of the target resource that the session connects to. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceFqdn")
     private final String targetResourceFqdn;
 
     /**
      * The Fully Qualified Domain Name of the target resource that the session connects to.
+     *
      * @return the value
-     **/
+     */
     public String getTargetResourceFqdn() {
         return targetResourceFqdn;
     }
 
-    /**
-     * The port number to connect to on the target resource.
-     **/
+    /** The port number to connect to on the target resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePort")
     private final Integer targetResourcePort;
 
     /**
      * The port number to connect to on the target resource.
+     *
      * @return the value
-     **/
+     */
     public Integer getTargetResourcePort() {
         return targetResourcePort;
     }
@@ -214,6 +211,7 @@ public final class CreatePortForwardingSessionTargetResourceDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

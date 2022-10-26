@@ -5,19 +5,20 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * An asynchronous work request.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * An asynchronous work request. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkRequest.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class WorkRequest extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "operationType",
@@ -54,151 +55,156 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The asynchronous operation tracked by this work request.
-         **/
+        /** The asynchronous operation tracked by this work request. */
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationTypes operationType;
 
         /**
          * The asynchronous operation tracked by this work request.
+         *
          * @param operationType the value to set
          * @return this builder
-         **/
+         */
         public Builder operationType(OperationTypes operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
-        /**
-         * The status of the work request.
-         **/
+        /** The status of the work request. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private OperationStatus status;
 
         /**
          * The status of the work request.
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(OperationStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the work request.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the work request.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the work request.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment that contains the work request.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the work request.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment that contains the work request.
          *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The resources affected by this work request.
-         **/
+        /** The resources affected by this work request. */
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<WorkRequestResource> resources;
 
         /**
          * The resources affected by this work request.
+         *
          * @param resources the value to set
          * @return this builder
-         **/
+         */
         public Builder resources(java.util.List<WorkRequestResource> resources) {
             this.resources = resources;
             this.__explicitlySet__.add("resources");
             return this;
         }
         /**
-         * The percentage completion of the operation relative to the total amount of work that is tracked by this work request.
-         **/
+         * The percentage completion of the operation relative to the total amount of work that is
+         * tracked by this work request.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Float percentComplete;
 
         /**
-         * The percentage completion of the operation relative to the total amount of work that is tracked by this work request.
+         * The percentage completion of the operation relative to the total amount of work that is
+         * tracked by this work request.
+         *
          * @param percentComplete the value to set
          * @return this builder
-         **/
+         */
         public Builder percentComplete(Float percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
             return this;
         }
-        /**
-         * The date and time the work request was created, in the format defined by RFC3339.
-         **/
+        /** The date and time the work request was created, in the format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
         /**
          * The date and time the work request was created, in the format defined by RFC3339.
+         *
          * @param timeAccepted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
             return this;
         }
         /**
-         * The date and time the work request transitioned from {@code ACCEPTED} to {@code IN_PROGRESS}, in the format defined by RFC3339.
-         *
-         **/
+         * The date and time the work request transitioned from {@code ACCEPTED} to {@code
+         * IN_PROGRESS}, in the format defined by RFC3339.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
-         * The date and time the work request transitioned from {@code ACCEPTED} to {@code IN_PROGRESS}, in the format defined by RFC3339.
+         * The date and time the work request transitioned from {@code ACCEPTED} to {@code
+         * IN_PROGRESS}, in the format defined by RFC3339.
          *
          * @param timeStarted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
         /**
-         * The date and time the work request reached a terminal state, either {@code FAILED} or {@code SUCCEEDED}. Format is defined by RFC3339.
-         *
-         **/
+         * The date and time the work request reached a terminal state, either {@code FAILED} or
+         * {@code SUCCEEDED}. Format is defined by RFC3339.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
-         * The date and time the work request reached a terminal state, either {@code FAILED} or {@code SUCCEEDED}. Format is defined by RFC3339.
+         * The date and time the work request reached a terminal state, either {@code FAILED} or
+         * {@code SUCCEEDED}. Format is defined by RFC3339.
          *
          * @param timeFinished the value to set
          * @return this builder
-         **/
+         */
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
@@ -259,9 +265,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -270,134 +274,139 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /**
-     * The asynchronous operation tracked by this work request.
-     **/
+    /** The asynchronous operation tracked by this work request. */
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationTypes operationType;
 
     /**
      * The asynchronous operation tracked by this work request.
+     *
      * @return the value
-     **/
+     */
     public OperationTypes getOperationType() {
         return operationType;
     }
 
-    /**
-     * The status of the work request.
-     **/
+    /** The status of the work request. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final OperationStatus status;
 
     /**
      * The status of the work request.
+     *
      * @return the value
-     **/
+     */
     public OperationStatus getStatus() {
         return status;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the work request.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the work request.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the work request.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment that contains the work request.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the work request.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment that contains the work request.
      *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The resources affected by this work request.
-     **/
+    /** The resources affected by this work request. */
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<WorkRequestResource> resources;
 
     /**
      * The resources affected by this work request.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<WorkRequestResource> getResources() {
         return resources;
     }
 
     /**
-     * The percentage completion of the operation relative to the total amount of work that is tracked by this work request.
-     **/
+     * The percentage completion of the operation relative to the total amount of work that is
+     * tracked by this work request.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Float percentComplete;
 
     /**
-     * The percentage completion of the operation relative to the total amount of work that is tracked by this work request.
+     * The percentage completion of the operation relative to the total amount of work that is
+     * tracked by this work request.
+     *
      * @return the value
-     **/
+     */
     public Float getPercentComplete() {
         return percentComplete;
     }
 
-    /**
-     * The date and time the work request was created, in the format defined by RFC3339.
-     **/
+    /** The date and time the work request was created, in the format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
     /**
      * The date and time the work request was created, in the format defined by RFC3339.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
 
     /**
-     * The date and time the work request transitioned from {@code ACCEPTED} to {@code IN_PROGRESS}, in the format defined by RFC3339.
-     *
-     **/
+     * The date and time the work request transitioned from {@code ACCEPTED} to {@code IN_PROGRESS},
+     * in the format defined by RFC3339.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
-     * The date and time the work request transitioned from {@code ACCEPTED} to {@code IN_PROGRESS}, in the format defined by RFC3339.
+     * The date and time the work request transitioned from {@code ACCEPTED} to {@code IN_PROGRESS},
+     * in the format defined by RFC3339.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
     /**
-     * The date and time the work request reached a terminal state, either {@code FAILED} or {@code SUCCEEDED}. Format is defined by RFC3339.
-     *
-     **/
+     * The date and time the work request reached a terminal state, either {@code FAILED} or {@code
+     * SUCCEEDED}. Format is defined by RFC3339.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
-     * The date and time the work request reached a terminal state, either {@code FAILED} or {@code SUCCEEDED}. Format is defined by RFC3339.
+     * The date and time the work request reached a terminal state, either {@code FAILED} or {@code
+     * SUCCEEDED}. Format is defined by RFC3339.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
@@ -409,6 +418,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

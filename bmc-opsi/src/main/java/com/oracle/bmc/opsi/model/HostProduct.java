@@ -5,24 +5,23 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Product metric for the host
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Product metric for the host <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HostProduct.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "metricName"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "metricName")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class HostProduct extends HostConfigurationMetricGroup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -34,49 +33,46 @@ public final class HostProduct extends HostConfigurationMetricGroup {
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-        /**
-         * Vendor of the product
-         **/
+        /** Vendor of the product */
         @com.fasterxml.jackson.annotation.JsonProperty("vendor")
         private String vendor;
 
         /**
          * Vendor of the product
+         *
          * @param vendor the value to set
          * @return this builder
-         **/
+         */
         public Builder vendor(String vendor) {
             this.vendor = vendor;
             this.__explicitlySet__.add("vendor");
             return this;
         }
-        /**
-         * Name of the product
-         **/
+        /** Name of the product */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of the product
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Version of the product
-         **/
+        /** Version of the product */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * Version of the product
+         *
          * @param version the value to set
          * @return this builder
-         **/
+         */
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -113,9 +109,7 @@ public final class HostProduct extends HostConfigurationMetricGroup {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -132,44 +126,41 @@ public final class HostProduct extends HostConfigurationMetricGroup {
         this.version = version;
     }
 
-    /**
-     * Vendor of the product
-     **/
+    /** Vendor of the product */
     @com.fasterxml.jackson.annotation.JsonProperty("vendor")
     private final String vendor;
 
     /**
      * Vendor of the product
+     *
      * @return the value
-     **/
+     */
     public String getVendor() {
         return vendor;
     }
 
-    /**
-     * Name of the product
-     **/
+    /** Name of the product */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of the product
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Version of the product
-     **/
+    /** Version of the product */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * Version of the product
+     *
      * @return the value
-     **/
+     */
     public String getVersion() {
         return version;
     }
@@ -181,6 +172,7 @@ public final class HostProduct extends HostConfigurationMetricGroup {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

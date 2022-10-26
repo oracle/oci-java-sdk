@@ -5,22 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of the fleet health metrics.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details of the fleet health metrics. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DatabaseFleetHealthMetrics.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DatabaseFleetHealthMetrics.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DatabaseFleetHealthMetrics
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compareBaselineTime",
@@ -46,58 +46,57 @@ public final class DatabaseFleetHealthMetrics
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The baseline date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-         * This is the date and time against which percentage change is calculated.
-         *
-         **/
+         * The baseline date and time in UTC in ISO-8601 format, which is
+         * "yyyy-MM-dd'T'hh:mm:ss.sss'Z'". This is the date and time against which percentage change
+         * is calculated.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compareBaselineTime")
         private String compareBaselineTime;
 
         /**
-         * The baseline date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-         * This is the date and time against which percentage change is calculated.
+         * The baseline date and time in UTC in ISO-8601 format, which is
+         * "yyyy-MM-dd'T'hh:mm:ss.sss'Z'". This is the date and time against which percentage change
+         * is calculated.
          *
          * @param compareBaselineTime the value to set
          * @return this builder
-         **/
+         */
         public Builder compareBaselineTime(String compareBaselineTime) {
             this.compareBaselineTime = compareBaselineTime;
             this.__explicitlySet__.add("compareBaselineTime");
             return this;
         }
         /**
-         * The target date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-         * All the metrics are returned for the target date and time and the percentage change
-         * is calculated against the baseline date and time.
-         *
-         **/
+         * The target date and time in UTC in ISO-8601 format, which is
+         * "yyyy-MM-dd'T'hh:mm:ss.sss'Z'". All the metrics are returned for the target date and time
+         * and the percentage change is calculated against the baseline date and time.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compareTargetTime")
         private String compareTargetTime;
 
         /**
-         * The target date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-         * All the metrics are returned for the target date and time and the percentage change
-         * is calculated against the baseline date and time.
+         * The target date and time in UTC in ISO-8601 format, which is
+         * "yyyy-MM-dd'T'hh:mm:ss.sss'Z'". All the metrics are returned for the target date and time
+         * and the percentage change is calculated against the baseline date and time.
          *
          * @param compareTargetTime the value to set
          * @return this builder
-         **/
+         */
         public Builder compareTargetTime(String compareTargetTime) {
             this.compareTargetTime = compareTargetTime;
             this.__explicitlySet__.add("compareTargetTime");
             return this;
         }
-        /**
-         * The time window used for metrics comparison.
-         **/
+        /** The time window used for metrics comparison. */
         @com.fasterxml.jackson.annotation.JsonProperty("compareType")
         private CompareType compareType;
 
         /**
          * The time window used for metrics comparison.
+         *
          * @param compareType the value to set
          * @return this builder
-         **/
+         */
         public Builder compareType(CompareType compareType) {
             this.compareType = compareType;
             this.__explicitlySet__.add("compareType");
@@ -112,17 +111,16 @@ public final class DatabaseFleetHealthMetrics
             this.__explicitlySet__.add("fleetSummary");
             return this;
         }
-        /**
-         * A list of the databases present in the fleet and their usage metrics.
-         **/
+        /** A list of the databases present in the fleet and their usage metrics. */
         @com.fasterxml.jackson.annotation.JsonProperty("fleetDatabases")
         private java.util.List<DatabaseUsageMetrics> fleetDatabases;
 
         /**
          * A list of the databases present in the fleet and their usage metrics.
+         *
          * @param fleetDatabases the value to set
          * @return this builder
-         **/
+         */
         public Builder fleetDatabases(java.util.List<DatabaseUsageMetrics> fleetDatabases) {
             this.fleetDatabases = fleetDatabases;
             this.__explicitlySet__.add("fleetDatabases");
@@ -167,9 +165,7 @@ public final class DatabaseFleetHealthMetrics
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -179,53 +175,52 @@ public final class DatabaseFleetHealthMetrics
     }
 
     /**
-     * The baseline date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-     * This is the date and time against which percentage change is calculated.
-     *
-     **/
+     * The baseline date and time in UTC in ISO-8601 format, which is
+     * "yyyy-MM-dd'T'hh:mm:ss.sss'Z'". This is the date and time against which percentage change is
+     * calculated.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compareBaselineTime")
     private final String compareBaselineTime;
 
     /**
-     * The baseline date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-     * This is the date and time against which percentage change is calculated.
+     * The baseline date and time in UTC in ISO-8601 format, which is
+     * "yyyy-MM-dd'T'hh:mm:ss.sss'Z'". This is the date and time against which percentage change is
+     * calculated.
      *
      * @return the value
-     **/
+     */
     public String getCompareBaselineTime() {
         return compareBaselineTime;
     }
 
     /**
      * The target date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-     * All the metrics are returned for the target date and time and the percentage change
-     * is calculated against the baseline date and time.
-     *
-     **/
+     * All the metrics are returned for the target date and time and the percentage change is
+     * calculated against the baseline date and time.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compareTargetTime")
     private final String compareTargetTime;
 
     /**
      * The target date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-     * All the metrics are returned for the target date and time and the percentage change
-     * is calculated against the baseline date and time.
+     * All the metrics are returned for the target date and time and the percentage change is
+     * calculated against the baseline date and time.
      *
      * @return the value
-     **/
+     */
     public String getCompareTargetTime() {
         return compareTargetTime;
     }
 
-    /**
-     * The time window used for metrics comparison.
-     **/
+    /** The time window used for metrics comparison. */
     @com.fasterxml.jackson.annotation.JsonProperty("compareType")
     private final CompareType compareType;
 
     /**
      * The time window used for metrics comparison.
+     *
      * @return the value
-     **/
+     */
     public CompareType getCompareType() {
         return compareType;
     }
@@ -237,16 +232,15 @@ public final class DatabaseFleetHealthMetrics
         return fleetSummary;
     }
 
-    /**
-     * A list of the databases present in the fleet and their usage metrics.
-     **/
+    /** A list of the databases present in the fleet and their usage metrics. */
     @com.fasterxml.jackson.annotation.JsonProperty("fleetDatabases")
     private final java.util.List<DatabaseUsageMetrics> fleetDatabases;
 
     /**
      * A list of the databases present in the fleet and their usage metrics.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<DatabaseUsageMetrics> getFleetDatabases() {
         return fleetDatabases;
     }
@@ -258,6 +252,7 @@ public final class DatabaseFleetHealthMetrics
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

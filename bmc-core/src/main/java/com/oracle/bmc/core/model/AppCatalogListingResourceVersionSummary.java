@@ -5,22 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Listing Resource Version summary
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Listing Resource Version summary <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AppCatalogListingResourceVersionSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AppCatalogListingResourceVersionSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AppCatalogListingResourceVersionSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "listingId",
@@ -42,69 +42,67 @@ public final class AppCatalogListingResourceVersionSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the listing this resource version belongs to.
-         **/
+        /** The OCID of the listing this resource version belongs to. */
         @com.fasterxml.jackson.annotation.JsonProperty("listingId")
         private String listingId;
 
         /**
          * The OCID of the listing this resource version belongs to.
+         *
          * @param listingId the value to set
          * @return this builder
-         **/
+         */
         public Builder listingId(String listingId) {
             this.listingId = listingId;
             this.__explicitlySet__.add("listingId");
             return this;
         }
         /**
-         * Date and time the listing resource version was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
-         * Example: {@code 2018-03-20T12:32:53.532Z}
-         *
-         **/
+         * Date and time the listing resource version was published, in
+         * [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: {@code
+         * 2018-03-20T12:32:53.532Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timePublished")
         private java.util.Date timePublished;
 
         /**
-         * Date and time the listing resource version was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
-         * Example: {@code 2018-03-20T12:32:53.532Z}
+         * Date and time the listing resource version was published, in
+         * [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: {@code
+         * 2018-03-20T12:32:53.532Z}
          *
          * @param timePublished the value to set
          * @return this builder
-         **/
+         */
         public Builder timePublished(java.util.Date timePublished) {
             this.timePublished = timePublished;
             this.__explicitlySet__.add("timePublished");
             return this;
         }
-        /**
-         * OCID of the listing resource.
-         **/
+        /** OCID of the listing resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("listingResourceId")
         private String listingResourceId;
 
         /**
          * OCID of the listing resource.
+         *
          * @param listingResourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder listingResourceId(String listingResourceId) {
             this.listingResourceId = listingResourceId;
             this.__explicitlySet__.add("listingResourceId");
             return this;
         }
-        /**
-         * Resource Version.
-         **/
+        /** Resource Version. */
         @com.fasterxml.jackson.annotation.JsonProperty("listingResourceVersion")
         private String listingResourceVersion;
 
         /**
          * Resource Version.
+         *
          * @param listingResourceVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder listingResourceVersion(String listingResourceVersion) {
             this.listingResourceVersion = listingResourceVersion;
             this.__explicitlySet__.add("listingResourceVersion");
@@ -145,9 +143,7 @@ public final class AppCatalogListingResourceVersionSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -156,62 +152,60 @@ public final class AppCatalogListingResourceVersionSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the listing this resource version belongs to.
-     **/
+    /** The OCID of the listing this resource version belongs to. */
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
     private final String listingId;
 
     /**
      * The OCID of the listing this resource version belongs to.
+     *
      * @return the value
-     **/
+     */
     public String getListingId() {
         return listingId;
     }
 
     /**
-     * Date and time the listing resource version was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
-     * Example: {@code 2018-03-20T12:32:53.532Z}
-     *
-     **/
+     * Date and time the listing resource version was published, in
+     * [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: {@code
+     * 2018-03-20T12:32:53.532Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timePublished")
     private final java.util.Date timePublished;
 
     /**
-     * Date and time the listing resource version was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
-     * Example: {@code 2018-03-20T12:32:53.532Z}
+     * Date and time the listing resource version was published, in
+     * [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: {@code
+     * 2018-03-20T12:32:53.532Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimePublished() {
         return timePublished;
     }
 
-    /**
-     * OCID of the listing resource.
-     **/
+    /** OCID of the listing resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("listingResourceId")
     private final String listingResourceId;
 
     /**
      * OCID of the listing resource.
+     *
      * @return the value
-     **/
+     */
     public String getListingResourceId() {
         return listingResourceId;
     }
 
-    /**
-     * Resource Version.
-     **/
+    /** Resource Version. */
     @com.fasterxml.jackson.annotation.JsonProperty("listingResourceVersion")
     private final String listingResourceVersion;
 
     /**
      * Resource Version.
+     *
      * @return the value
-     **/
+     */
     public String getListingResourceVersion() {
         return listingResourceVersion;
     }
@@ -223,6 +217,7 @@ public final class AppCatalogListingResourceVersionSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

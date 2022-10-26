@@ -5,21 +5,25 @@
 package com.oracle.bmc.bastion.model;
 
 /**
- * The configuration details for a new bastion session. A session lets authorized users connect to a target resource for a predetermined amount of time. The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The configuration details for a new bastion session. A session lets authorized users connect to a
+ * target resource for a predetermined amount of time. The Bastion service recognizes two types of
+ * sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require
+ * that the target resource has an OpenSSH server and the Oracle Cloud Agent both running. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateSessionDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateSessionDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = CreateSessionDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class CreateSessionDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -47,33 +51,31 @@ public final class CreateSessionDetails extends com.oracle.bmc.http.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the session.
-         **/
+        /** The name of the session. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name of the session.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The unique identifier (OCID) of the bastion on which to create this session.
-         **/
+        /** The unique identifier (OCID) of the bastion on which to create this session. */
         @com.fasterxml.jackson.annotation.JsonProperty("bastionId")
         private String bastionId;
 
         /**
          * The unique identifier (OCID) of the bastion on which to create this session.
+         *
          * @param bastionId the value to set
          * @return this builder
-         **/
+         */
         public Builder bastionId(String bastionId) {
             this.bastionId = bastionId;
             this.__explicitlySet__.add("bastionId");
@@ -90,16 +92,19 @@ public final class CreateSessionDetails extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
-         **/
+         * The type of the key used to connect to the session. PUB is a standard public key in
+         * OpenSSH format.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("keyType")
         private KeyType keyType;
 
         /**
-         * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
+         * The type of the key used to connect to the session. PUB is a standard public key in
+         * OpenSSH format.
+         *
          * @param keyType the value to set
          * @return this builder
-         **/
+         */
         public Builder keyType(KeyType keyType) {
             this.keyType = keyType;
             this.__explicitlySet__.add("keyType");
@@ -114,17 +119,16 @@ public final class CreateSessionDetails extends com.oracle.bmc.http.internal.Exp
             this.__explicitlySet__.add("keyDetails");
             return this;
         }
-        /**
-         * The amount of time the session can remain active.
-         **/
+        /** The amount of time the session can remain active. */
         @com.fasterxml.jackson.annotation.JsonProperty("sessionTtlInSeconds")
         private Integer sessionTtlInSeconds;
 
         /**
          * The amount of time the session can remain active.
+         *
          * @param sessionTtlInSeconds the value to set
          * @return this builder
-         **/
+         */
         public Builder sessionTtlInSeconds(Integer sessionTtlInSeconds) {
             this.sessionTtlInSeconds = sessionTtlInSeconds;
             this.__explicitlySet__.add("sessionTtlInSeconds");
@@ -173,9 +177,7 @@ public final class CreateSessionDetails extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -184,30 +186,28 @@ public final class CreateSessionDetails extends com.oracle.bmc.http.internal.Exp
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the session.
-     **/
+    /** The name of the session. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name of the session.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The unique identifier (OCID) of the bastion on which to create this session.
-     **/
+    /** The unique identifier (OCID) of the bastion on which to create this session. */
     @com.fasterxml.jackson.annotation.JsonProperty("bastionId")
     private final String bastionId;
 
     /**
      * The unique identifier (OCID) of the bastion on which to create this session.
+     *
      * @return the value
-     **/
+     */
     public String getBastionId() {
         return bastionId;
     }
@@ -220,9 +220,10 @@ public final class CreateSessionDetails extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
-     **/
-    public enum KeyType {
+     * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH
+     * format.
+     */
+    public enum KeyType implements com.oracle.bmc.http.internal.BmcEnum {
         Pub("PUB"),
         ;
 
@@ -254,15 +255,18 @@ public final class CreateSessionDetails extends com.oracle.bmc.http.internal.Exp
         }
     };
     /**
-     * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
-     **/
+     * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH
+     * format.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("keyType")
     private final KeyType keyType;
 
     /**
-     * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
+     * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH
+     * format.
+     *
      * @return the value
-     **/
+     */
     public KeyType getKeyType() {
         return keyType;
     }
@@ -274,16 +278,15 @@ public final class CreateSessionDetails extends com.oracle.bmc.http.internal.Exp
         return keyDetails;
     }
 
-    /**
-     * The amount of time the session can remain active.
-     **/
+    /** The amount of time the session can remain active. */
     @com.fasterxml.jackson.annotation.JsonProperty("sessionTtlInSeconds")
     private final Integer sessionTtlInSeconds;
 
     /**
      * The amount of time the session can remain active.
+     *
      * @return the value
-     **/
+     */
     public Integer getSessionTtlInSeconds() {
         return sessionTtlInSeconds;
     }
@@ -295,6 +298,7 @@ public final class CreateSessionDetails extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

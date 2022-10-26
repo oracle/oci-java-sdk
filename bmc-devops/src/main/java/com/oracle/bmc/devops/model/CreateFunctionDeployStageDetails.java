@@ -5,25 +5,24 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies the Function stage.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Specifies the Function stage. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateFunctionDeployStageDetails.Builder.class
-)
+        builder = CreateFunctionDeployStageDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "deployStageType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "deployStageType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateFunctionDeployStageDetails extends CreateDeployStageDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -82,81 +81,80 @@ public final class CreateFunctionDeployStageDetails extends CreateDeployStageDet
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /**
-         * Function environment OCID.
-         **/
+        /** Function environment OCID. */
         @com.fasterxml.jackson.annotation.JsonProperty("functionDeployEnvironmentId")
         private String functionDeployEnvironmentId;
 
         /**
          * Function environment OCID.
+         *
          * @param functionDeployEnvironmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder functionDeployEnvironmentId(String functionDeployEnvironmentId) {
             this.functionDeployEnvironmentId = functionDeployEnvironmentId;
             this.__explicitlySet__.add("functionDeployEnvironmentId");
             return this;
         }
-        /**
-         * A Docker image artifact OCID.
-         **/
+        /** A Docker image artifact OCID. */
         @com.fasterxml.jackson.annotation.JsonProperty("dockerImageDeployArtifactId")
         private String dockerImageDeployArtifactId;
 
         /**
          * A Docker image artifact OCID.
+         *
          * @param dockerImageDeployArtifactId the value to set
          * @return this builder
-         **/
+         */
         public Builder dockerImageDeployArtifactId(String dockerImageDeployArtifactId) {
             this.dockerImageDeployArtifactId = dockerImageDeployArtifactId;
             this.__explicitlySet__.add("dockerImageDeployArtifactId");
             return this;
         }
         /**
-         * User provided key and value pair configuration, which is assigned through constants or parameter.
-         **/
+         * User provided key and value pair configuration, which is assigned through constants or
+         * parameter.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("config")
         private java.util.Map<String, String> config;
 
         /**
-         * User provided key and value pair configuration, which is assigned through constants or parameter.
+         * User provided key and value pair configuration, which is assigned through constants or
+         * parameter.
+         *
          * @param config the value to set
          * @return this builder
-         **/
+         */
         public Builder config(java.util.Map<String, String> config) {
             this.config = config;
             this.__explicitlySet__.add("config");
             return this;
         }
-        /**
-         * Maximum usable memory for the Function (in MB).
-         **/
+        /** Maximum usable memory for the Function (in MB). */
         @com.fasterxml.jackson.annotation.JsonProperty("maxMemoryInMBs")
         private Long maxMemoryInMBs;
 
         /**
          * Maximum usable memory for the Function (in MB).
+         *
          * @param maxMemoryInMBs the value to set
          * @return this builder
-         **/
+         */
         public Builder maxMemoryInMBs(Long maxMemoryInMBs) {
             this.maxMemoryInMBs = maxMemoryInMBs;
             this.__explicitlySet__.add("maxMemoryInMBs");
             return this;
         }
-        /**
-         * Timeout for execution of the Function. Value in seconds.
-         **/
+        /** Timeout for execution of the Function. Value in seconds. */
         @com.fasterxml.jackson.annotation.JsonProperty("functionTimeoutInSeconds")
         private Integer functionTimeoutInSeconds;
 
         /**
          * Timeout for execution of the Function. Value in seconds.
+         *
          * @param functionTimeoutInSeconds the value to set
          * @return this builder
-         **/
+         */
         public Builder functionTimeoutInSeconds(Integer functionTimeoutInSeconds) {
             this.functionTimeoutInSeconds = functionTimeoutInSeconds;
             this.__explicitlySet__.add("functionTimeoutInSeconds");
@@ -225,9 +223,7 @@ public final class CreateFunctionDeployStageDetails extends CreateDeployStageDet
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -263,72 +259,71 @@ public final class CreateFunctionDeployStageDetails extends CreateDeployStageDet
         this.functionTimeoutInSeconds = functionTimeoutInSeconds;
     }
 
-    /**
-     * Function environment OCID.
-     **/
+    /** Function environment OCID. */
     @com.fasterxml.jackson.annotation.JsonProperty("functionDeployEnvironmentId")
     private final String functionDeployEnvironmentId;
 
     /**
      * Function environment OCID.
+     *
      * @return the value
-     **/
+     */
     public String getFunctionDeployEnvironmentId() {
         return functionDeployEnvironmentId;
     }
 
-    /**
-     * A Docker image artifact OCID.
-     **/
+    /** A Docker image artifact OCID. */
     @com.fasterxml.jackson.annotation.JsonProperty("dockerImageDeployArtifactId")
     private final String dockerImageDeployArtifactId;
 
     /**
      * A Docker image artifact OCID.
+     *
      * @return the value
-     **/
+     */
     public String getDockerImageDeployArtifactId() {
         return dockerImageDeployArtifactId;
     }
 
     /**
-     * User provided key and value pair configuration, which is assigned through constants or parameter.
-     **/
+     * User provided key and value pair configuration, which is assigned through constants or
+     * parameter.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("config")
     private final java.util.Map<String, String> config;
 
     /**
-     * User provided key and value pair configuration, which is assigned through constants or parameter.
+     * User provided key and value pair configuration, which is assigned through constants or
+     * parameter.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getConfig() {
         return config;
     }
 
-    /**
-     * Maximum usable memory for the Function (in MB).
-     **/
+    /** Maximum usable memory for the Function (in MB). */
     @com.fasterxml.jackson.annotation.JsonProperty("maxMemoryInMBs")
     private final Long maxMemoryInMBs;
 
     /**
      * Maximum usable memory for the Function (in MB).
+     *
      * @return the value
-     **/
+     */
     public Long getMaxMemoryInMBs() {
         return maxMemoryInMBs;
     }
 
-    /**
-     * Timeout for execution of the Function. Value in seconds.
-     **/
+    /** Timeout for execution of the Function. Value in seconds. */
     @com.fasterxml.jackson.annotation.JsonProperty("functionTimeoutInSeconds")
     private final Integer functionTimeoutInSeconds;
 
     /**
      * Timeout for execution of the Function. Value in seconds.
+     *
      * @return the value
-     **/
+     */
     public Integer getFunctionTimeoutInSeconds() {
         return functionTimeoutInSeconds;
     }
@@ -340,6 +335,7 @@ public final class CreateFunctionDeployStageDetails extends CreateDeployStageDet
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

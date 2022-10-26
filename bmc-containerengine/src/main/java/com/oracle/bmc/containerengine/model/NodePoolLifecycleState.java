@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.containerengine.model;
 
-/**
- * The lifecycle state of a cluster.
- **/
+/** The lifecycle state of a cluster. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
-public enum NodePoolLifecycleState {
+public enum NodePoolLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Deleted("DELETED"),
     Creating("CREATING"),
     Active("ACTIVE"),

@@ -4,12 +4,9 @@
  */
 package com.oracle.bmc.databasemigration.model;
 
-/**
- * Possible ODMS Job Phases.
- *
- **/
+/** Possible ODMS Job Phases. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-public enum OdmsJobPhases {
+public enum OdmsJobPhases implements com.oracle.bmc.http.internal.BmcEnum {
     OdmsValidateTgt("ODMS_VALIDATE_TGT"),
     OdmsValidateSrc("ODMS_VALIDATE_SRC"),
     OdmsValidatePremigrationAdvisor("ODMS_VALIDATE_PREMIGRATION_ADVISOR"),

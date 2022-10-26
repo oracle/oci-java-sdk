@@ -9,15 +9,14 @@ import com.oracle.bmc.datalabelingservicedataplane.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public class ListRecordsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -26,17 +25,16 @@ public class ListRecordsResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * For the pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-     * subsequent GET request to get the next batch of items.
-     *
+     * For the pagination of a list of items. When paging through a list, if this header appears in
+     * the response, then a partial list might have been returned. Include this value as the {@code
+     * page} parameter for the subsequent GET request to get the next batch of items.
      */
     private String opcNextPage;
 
     /**
-     * For the pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-     * subsequent GET request to get the next batch of items.
+     * For the pagination of a list of items. When paging through a list, if this header appears in
+     * the response, then a partial list might have been returned. Include this value as the {@code
+     * page} parameter for the subsequent GET request to get the next batch of items.
      *
      * @return the value
      */
@@ -44,13 +42,12 @@ public class ListRecordsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /**
-     * The returned RecordCollection instance.
-     */
+    /** The returned RecordCollection instance. */
     private com.oracle.bmc.datalabelingservicedataplane.model.RecordCollection recordCollection;
 
     /**
      * The returned RecordCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.datalabelingservicedataplane.model.RecordCollection
@@ -67,7 +64,7 @@ public class ListRecordsResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private ListRecordsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.datalabelingservicedataplane.model.RecordCollection recordCollection) {
@@ -77,31 +74,33 @@ public class ListRecordsResponse extends com.oracle.bmc.responses.BmcResponse {
         this.recordCollection = recordCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<ListRecordsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -112,17 +111,16 @@ public class ListRecordsResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * For the pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-         * subsequent GET request to get the next batch of items.
-         *
+         * For the pagination of a list of items. When paging through a list, if this header appears
+         * in the response, then a partial list might have been returned. Include this value as the
+         * {@code page} parameter for the subsequent GET request to get the next batch of items.
          */
         private String opcNextPage;
 
         /**
-         * For the pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-         * subsequent GET request to get the next batch of items.
+         * For the pagination of a list of items. When paging through a list, if this header appears
+         * in the response, then a partial list might have been returned. Include this value as the
+         * {@code page} parameter for the subsequent GET request to get the next batch of items.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -132,13 +130,12 @@ public class ListRecordsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * The returned RecordCollection instance.
-         */
+        /** The returned RecordCollection instance. */
         private com.oracle.bmc.datalabelingservicedataplane.model.RecordCollection recordCollection;
 
         /**
          * The returned RecordCollection instance.
+         *
          * @param recordCollection the value to set
          * @return this builder
          */
@@ -151,8 +148,10 @@ public class ListRecordsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListRecordsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -165,8 +164,10 @@ public class ListRecordsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListRecordsResponse build() {
             return new ListRecordsResponse(
                     __httpStatusCode__, headers, opcRequestId, opcNextPage, recordCollection);
@@ -175,6 +176,7 @@ public class ListRecordsResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

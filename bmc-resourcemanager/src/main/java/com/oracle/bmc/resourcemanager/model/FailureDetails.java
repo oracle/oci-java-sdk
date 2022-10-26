@@ -5,19 +5,21 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FailureDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FailureDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class FailureDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"code", "message"})
     public FailureDetails(Code code, String message) {
@@ -28,33 +30,31 @@ public final class FailureDetails extends com.oracle.bmc.http.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Job failure reason.
-         **/
+        /** Job failure reason. */
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private Code code;
 
         /**
          * Job failure reason.
+         *
          * @param code the value to set
          * @return this builder
-         **/
+         */
         public Builder code(Code code) {
             this.code = code;
             this.__explicitlySet__.add("code");
             return this;
         }
-        /**
-         * A human-readable error string.
-         **/
+        /** A human-readable error string. */
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
          * A human-readable error string.
+         *
          * @param message the value to set
          * @return this builder
-         **/
+         */
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
@@ -84,9 +84,7 @@ public final class FailureDetails extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,10 +93,8 @@ public final class FailureDetails extends com.oracle.bmc.http.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /**
-     * Job failure reason.
-     **/
-    public enum Code {
+    /** Job failure reason. */
+    public enum Code implements com.oracle.bmc.http.internal.BmcEnum {
         InternalServiceError("INTERNAL_SERVICE_ERROR"),
         TerraformExecutionError("TERRAFORM_EXECUTION_ERROR"),
         TerraformConfigUnzipFailed("TERRAFORM_CONFIG_UNZIP_FAILED"),
@@ -118,8 +114,8 @@ public final class FailureDetails extends com.oracle.bmc.http.internal.Explicitl
                 "CUSTOM_TERRAFORM_PROVIDER_UNSUPPORTED_OBJECT_SIZE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -156,30 +152,28 @@ public final class FailureDetails extends com.oracle.bmc.http.internal.Explicitl
             return UnknownEnumValue;
         }
     };
-    /**
-     * Job failure reason.
-     **/
+    /** Job failure reason. */
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final Code code;
 
     /**
      * Job failure reason.
+     *
      * @return the value
-     **/
+     */
     public Code getCode() {
         return code;
     }
 
-    /**
-     * A human-readable error string.
-     **/
+    /** A human-readable error string. */
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
      * A human-readable error string.
+     *
      * @return the value
-     **/
+     */
     public String getMessage() {
         return message;
     }
@@ -191,6 +185,7 @@ public final class FailureDetails extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

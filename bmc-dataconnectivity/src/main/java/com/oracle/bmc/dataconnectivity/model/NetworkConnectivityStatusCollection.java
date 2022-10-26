@@ -5,22 +5,22 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * This is a collection of NetworkConnectivityStatus.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * This is a collection of NetworkConnectivityStatus. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = NetworkConnectivityStatusCollection.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = NetworkConnectivityStatusCollection.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class NetworkConnectivityStatusCollection
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"networkConnectivityStatusList"})
     public NetworkConnectivityStatusCollection(
@@ -31,17 +31,16 @@ public final class NetworkConnectivityStatusCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The array of NetworkConnectivityStatus.
-         **/
+        /** The array of NetworkConnectivityStatus. */
         @com.fasterxml.jackson.annotation.JsonProperty("networkConnectivityStatusList")
         private java.util.List<NetworkConnectivityStatus> networkConnectivityStatusList;
 
         /**
          * The array of NetworkConnectivityStatus.
+         *
          * @param networkConnectivityStatusList the value to set
          * @return this builder
-         **/
+         */
         public Builder networkConnectivityStatusList(
                 java.util.List<NetworkConnectivityStatus> networkConnectivityStatusList) {
             this.networkConnectivityStatusList = networkConnectivityStatusList;
@@ -70,9 +69,7 @@ public final class NetworkConnectivityStatusCollection
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -81,16 +78,15 @@ public final class NetworkConnectivityStatusCollection
         return new Builder().copy(this);
     }
 
-    /**
-     * The array of NetworkConnectivityStatus.
-     **/
+    /** The array of NetworkConnectivityStatus. */
     @com.fasterxml.jackson.annotation.JsonProperty("networkConnectivityStatusList")
     private final java.util.List<NetworkConnectivityStatus> networkConnectivityStatusList;
 
     /**
      * The array of NetworkConnectivityStatus.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<NetworkConnectivityStatus> getNetworkConnectivityStatusList() {
         return networkConnectivityStatusList;
     }
@@ -102,6 +98,7 @@ public final class NetworkConnectivityStatusCollection
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

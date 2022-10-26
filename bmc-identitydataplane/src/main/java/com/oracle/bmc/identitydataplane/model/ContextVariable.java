@@ -5,19 +5,21 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ContextVariable.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ContextVariable extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ContextVariable
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "value", "type"})
     public ContextVariable(String name, String value, Type type) {
@@ -29,49 +31,46 @@ public final class ContextVariable extends com.oracle.bmc.http.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the variable.
-         **/
+        /** The name of the variable. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the variable.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The value of the variable.
-         **/
+        /** The value of the variable. */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * The value of the variable.
+         *
          * @param value the value to set
          * @return this builder
-         **/
+         */
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /**
-         * The type of the variable.
-         **/
+        /** The type of the variable. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * The type of the variable.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -104,9 +103,7 @@ public final class ContextVariable extends com.oracle.bmc.http.internal.Explicit
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,38 +112,34 @@ public final class ContextVariable extends com.oracle.bmc.http.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the variable.
-     **/
+    /** The name of the variable. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the variable.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The value of the variable.
-     **/
+    /** The value of the variable. */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * The value of the variable.
+     *
      * @return the value
-     **/
+     */
     public String getValue() {
         return value;
     }
 
-    /**
-     * The type of the variable.
-     **/
-    public enum Type {
+    /** The type of the variable. */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         String("STRING"),
         Number("NUMBER"),
         Entity("ENTITY"),
@@ -181,16 +174,15 @@ public final class ContextVariable extends com.oracle.bmc.http.internal.Explicit
             throw new IllegalArgumentException("Invalid Type: " + key);
         }
     };
-    /**
-     * The type of the variable.
-     **/
+    /** The type of the variable. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * The type of the variable.
+     *
      * @return the value
-     **/
+     */
     public Type getType() {
         return type;
     }
@@ -202,6 +194,7 @@ public final class ContextVariable extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

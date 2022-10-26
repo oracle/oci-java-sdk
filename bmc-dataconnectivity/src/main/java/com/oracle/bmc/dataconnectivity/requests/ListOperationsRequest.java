@@ -6,103 +6,99 @@ package com.oracle.bmc.dataconnectivity.requests;
 
 import com.oracle.bmc.dataconnectivity.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/ListOperationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListOperationsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/ListOperationsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListOperationsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The registry OCID.
-     */
+    /** The registry OCID. */
     private String registryId;
 
-    /**
-     * The registry OCID.
-     */
+    /** The registry OCID. */
     public String getRegistryId() {
         return registryId;
     }
-    /**
-     * The connection key.
-     */
+    /** The connection key. */
     private String connectionKey;
 
-    /**
-     * The connection key.
-     */
+    /** The connection key. */
     public String getConnectionKey() {
         return connectionKey;
     }
-    /**
-     * The schema resource name used for retrieving schemas.
-     */
+    /** The schema resource name used for retrieving schemas. */
     private String schemaResourceName;
 
-    /**
-     * The schema resource name used for retrieving schemas.
-     */
+    /** The schema resource name used for retrieving schemas. */
     public String getSchemaResourceName() {
         return schemaResourceName;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * Used to filter by the name of the object.
-     */
+    /** Used to filter by the name of the object. */
     private String name;
 
-    /**
-     * Used to filter by the name of the object.
-     */
+    /** Used to filter by the name of the object. */
     public String getName() {
         return name;
     }
     /**
-     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code
+     * opc-prev-page} response header from the previous {@code List} call. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code
+     * opc-prev-page} response header from the previous {@code List} call. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
     /**
-     * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Sets the maximum number of results per page, or items to return in a paginated {@code List}
+     * call. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Sets the maximum number of results per page, or items to return in a paginated {@code List}
+     * call. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+     * fields, results are shown in descending order. All other fields default to ascending order.
+     * Sorting related parameters are ignored when parameter {@code query} is present (search
+     * operation and sorting order are by relevance score in descending order).
      */
     private SortBy sortBy;
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
-     **/
-    public enum SortBy {
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+     * fields, results are shown in descending order. All other fields default to ascending order.
+     * Sorting related parameters are ignored when parameter {@code query} is present (search
+     * operation and sorting order are by relevance score in descending order).
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Id("id"),
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
@@ -137,20 +133,19 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     };
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+     * fields, results are shown in descending order. All other fields default to ascending order.
+     * Sorting related parameters are ignored when parameter {@code query} is present (search
+     * operation and sorting order are by relevance score in descending order).
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
-     */
+    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
     private SortOrder sortOrder;
 
-    /**
-     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
-     **/
-    public enum SortOrder {
+    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -183,20 +178,14 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
-    /**
-     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
-     */
+    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /**
-     * Endpoint ID used for getDataAssetFullDetails.
-     */
+    /** Endpoint ID used for getDataAssetFullDetails. */
     private String endpointId;
 
-    /**
-     * Endpoint ID used for getDataAssetFullDetails.
-     */
+    /** Endpoint ID used for getDataAssetFullDetails. */
     public String getEndpointId() {
         return endpointId;
     }
@@ -204,17 +193,15 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListOperationsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The registry OCID.
-         */
+        /** The registry OCID. */
         private String registryId = null;
 
         /**
          * The registry OCID.
+         *
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -223,13 +210,12 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * The connection key.
-         */
+        /** The connection key. */
         private String connectionKey = null;
 
         /**
          * The connection key.
+         *
          * @param connectionKey the value to set
          * @return this builder instance
          */
@@ -238,13 +224,12 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * The schema resource name used for retrieving schemas.
-         */
+        /** The schema resource name used for retrieving schemas. */
         private String schemaResourceName = null;
 
         /**
          * The schema resource name used for retrieving schemas.
+         *
          * @param schemaResourceName the value to set
          * @return this builder instance
          */
@@ -254,17 +239,14 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -274,13 +256,12 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * Used to filter by the name of the object.
-         */
+        /** Used to filter by the name of the object. */
         private String name = null;
 
         /**
          * Used to filter by the name of the object.
+         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -290,12 +271,17 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the
+         * {@code opc-prev-page} response header from the previous {@code List} call. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the
+         * {@code opc-prev-page} response header from the previous {@code List} call. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -305,12 +291,17 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Sets the maximum number of results per page, or items to return in a paginated {@code
+         * List} call. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Sets the maximum number of results per page, or items to return in a paginated {@code
+         * List} call. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -320,12 +311,19 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+         * fields, results are shown in descending order. All other fields default to ascending
+         * order. Sorting related parameters are ignored when parameter {@code query} is present
+         * (search operation and sorting order are by relevance score in descending order).
          */
         private SortBy sortBy = null;
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+         * fields, results are shown in descending order. All other fields default to ascending
+         * order. Sorting related parameters are ignored when parameter {@code query} is present
+         * (search operation and sorting order are by relevance score in descending order).
+         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -341,6 +339,7 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -349,13 +348,12 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * Endpoint ID used for getDataAssetFullDetails.
-         */
+        /** Endpoint ID used for getDataAssetFullDetails. */
         private String endpointId = null;
 
         /**
          * Endpoint ID used for getDataAssetFullDetails.
+         *
          * @param endpointId the value to set
          * @return this builder instance
          */
@@ -366,18 +364,19 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -389,6 +388,7 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListOperationsRequest o) {
@@ -410,10 +410,11 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListOperationsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListOperationsRequest
          */
@@ -427,7 +428,8 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListOperationsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListOperationsRequest
@@ -445,12 +447,14 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.sortOrder = sortOrder;
             request.endpointId = endpointId;
             return request;
-            // new ListOperationsRequest(registryId, connectionKey, schemaResourceName, opcRequestId, name, page, limit, sortBy, sortOrder, endpointId);
+            // new ListOperationsRequest(registryId, connectionKey, schemaResourceName,
+            // opcRequestId, name, page, limit, sortBy, sortOrder, endpointId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -469,6 +473,7 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

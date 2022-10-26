@@ -5,48 +5,46 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * A *private IP* is a conceptual term that refers to an IPv4 private IP address and related properties.
- * The {@code privateIp} object is the API representation of a private IP.
- * <p>
- **Note:** For information about IPv6 addresses, see {@link Ipv6}.
- * <p>
- * Each instance has a *primary private IP* that is automatically created and
- * assigned to the primary VNIC during instance launch. If you add a secondary
- * VNIC to the instance, it also automatically gets a primary private IP. You
- * can't remove a primary private IP from its VNIC. The primary private IP is
- * automatically deleted when the VNIC is terminated.
- * <p>
- * You can add *secondary private IPs* to a VNIC after it's created. For more
- * information, see the {@code privateIp} operations and also
- * [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
- * <p>
- **Note:** Only
- * {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps} and
- * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp} work with
- * *primary* private IPs. To create and update primary private IPs, you instead
- * work with instance and VNIC operations. For example, a primary private IP's
- * properties come from the values you specify in
- * {@link CreateVnicDetails} when calling either
- * {@link #launchInstance(LaunchInstanceRequest) launchInstance} or
- * {@link #attachVnic(AttachVnicRequest) attachVnic}. To update the hostname
- * for a primary private IP, you use {@link #updateVnic(UpdateVnicRequest) updateVnic}.
- * <p>
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
- * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ * A *private IP* is a conceptual term that refers to an IPv4 private IP address and related
+ * properties. The {@code privateIp} object is the API representation of a private IP.
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>*Note:** For information about IPv6 addresses, see {@link Ipv6}.
+ *
+ * <p>Each instance has a *primary private IP* that is automatically created and assigned to the
+ * primary VNIC during instance launch. If you add a secondary VNIC to the instance, it also
+ * automatically gets a primary private IP. You can't remove a primary private IP from its VNIC. The
+ * primary private IP is automatically deleted when the VNIC is terminated.
+ *
+ * <p>You can add *secondary private IPs* to a VNIC after it's created. For more information, see
+ * the {@code privateIp} operations and also [IP
+ * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+ *
+ * <p>*Note:** Only {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps} and {@link
+ * #getPrivateIp(GetPrivateIpRequest) getPrivateIp} work with *primary* private IPs. To create and
+ * update primary private IPs, you instead work with instance and VNIC operations. For example, a
+ * primary private IP's properties come from the values you specify in {@link CreateVnicDetails}
+ * when calling either {@link #launchInstance(LaunchInstanceRequest) launchInstance} or {@link
+ * #attachVnic(AttachVnicRequest) attachVnic}. To update the hostname for a primary private IP, you
+ * use {@link #updateVnic(UpdateVnicRequest) updateVnic}.
+ *
+ * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
+ * authorized, talk to an administrator. If you're an administrator who needs to write policies to
+ * give users access, see [Getting Started with
+ * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PrivateIp.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PrivateIp extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class PrivateIp extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -94,37 +92,39 @@ public final class PrivateIp extends com.oracle.bmc.http.internal.ExplicitlySetB
     public static class Builder {
         /**
          * The private IP's availability domain.
-         * <p>
-         * Example: {@code Uocm:PHX-AD-1}
          *
-         **/
+         * <p>Example: {@code Uocm:PHX-AD-1}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
          * The private IP's availability domain.
-         * <p>
-         * Example: {@code Uocm:PHX-AD-1}
+         *
+         * <p>Example: {@code Uocm:PHX-AD-1}
          *
          * @param availabilityDomain the value to set
          * @return this builder
-         **/
+         */
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the private IP.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the private IP.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -133,8 +133,7 @@ public final class PrivateIp extends com.oracle.bmc.http.internal.ExplicitlySetB
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -144,7 +143,7 @@ public final class PrivateIp extends com.oracle.bmc.http.internal.ExplicitlySetB
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -152,204 +151,201 @@ public final class PrivateIp extends com.oracle.bmc.http.internal.ExplicitlySetB
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
-         *
-         **/
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * The hostname for the private IP. Used for DNS. The value is the hostname
-         * portion of the private IP's fully qualified domain name (FQDN)
-         * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
-         * Must be unique across all VNICs in the subnet and comply with
-         * [RFC 952](https://tools.ietf.org/html/rfc952) and
-         * [RFC 1123](https://tools.ietf.org/html/rfc1123).
-         * <p>
-         * For more information, see
-         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-         * <p>
-         * Example: {@code bminstance-1}
+         * The hostname for the private IP. Used for DNS. The value is the hostname portion of the
+         * private IP's fully qualified domain name (FQDN) (for example, {@code bminstance-1} in
+         * FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be unique across all VNICs
+         * in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC
+         * 1123](https://tools.ietf.org/html/rfc1123).
          *
-         **/
+         * <p>For more information, see [DNS in Your Virtual Cloud
+         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         *
+         * <p>Example: {@code bminstance-1}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
         private String hostnameLabel;
 
         /**
-         * The hostname for the private IP. Used for DNS. The value is the hostname
-         * portion of the private IP's fully qualified domain name (FQDN)
-         * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
-         * Must be unique across all VNICs in the subnet and comply with
-         * [RFC 952](https://tools.ietf.org/html/rfc952) and
-         * [RFC 1123](https://tools.ietf.org/html/rfc1123).
-         * <p>
-         * For more information, see
-         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-         * <p>
-         * Example: {@code bminstance-1}
+         * The hostname for the private IP. Used for DNS. The value is the hostname portion of the
+         * private IP's fully qualified domain name (FQDN) (for example, {@code bminstance-1} in
+         * FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be unique across all VNICs
+         * in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC
+         * 1123](https://tools.ietf.org/html/rfc1123).
+         *
+         * <p>For more information, see [DNS in Your Virtual Cloud
+         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         *
+         * <p>Example: {@code bminstance-1}
          *
          * @param hostnameLabel the value to set
          * @return this builder
-         **/
+         */
         public Builder hostnameLabel(String hostnameLabel) {
             this.hostnameLabel = hostnameLabel;
             this.__explicitlySet__.add("hostnameLabel");
             return this;
         }
         /**
-         * The private IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-         **/
+         * The private IP's Oracle ID
+         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The private IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * The private IP's Oracle ID
+         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The private IP address of the {@code privateIp} object. The address is within the CIDR
-         * of the VNIC's subnet.
-         * <p>
+         * The private IP address of the {@code privateIp} object. The address is within the CIDR of
+         * the VNIC's subnet.
          *
-         * Example: {@code 10.0.3.3}
-         *
-         **/
+         * <p>Example: {@code 10.0.3.3}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
-         * The private IP address of the {@code privateIp} object. The address is within the CIDR
-         * of the VNIC's subnet.
-         * <p>
+         * The private IP address of the {@code privateIp} object. The address is within the CIDR of
+         * the VNIC's subnet.
          *
-         * Example: {@code 10.0.3.3}
+         * <p>Example: {@code 10.0.3.3}
          *
          * @param ipAddress the value to set
          * @return this builder
-         **/
+         */
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
         /**
-         * Whether this private IP is the primary one on the VNIC. Primary private IPs
-         * are unassigned and deleted automatically when the VNIC is terminated.
-         * <p>
-         * Example: {@code true}
+         * Whether this private IP is the primary one on the VNIC. Primary private IPs are
+         * unassigned and deleted automatically when the VNIC is terminated.
          *
-         **/
+         * <p>Example: {@code true}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
         private Boolean isPrimary;
 
         /**
-         * Whether this private IP is the primary one on the VNIC. Primary private IPs
-         * are unassigned and deleted automatically when the VNIC is terminated.
-         * <p>
-         * Example: {@code true}
+         * Whether this private IP is the primary one on the VNIC. Primary private IPs are
+         * unassigned and deleted automatically when the VNIC is terminated.
+         *
+         * <p>Example: {@code true}
          *
          * @param isPrimary the value to set
          * @return this builder
-         **/
+         */
         public Builder isPrimary(Boolean isPrimary) {
             this.isPrimary = isPrimary;
             this.__explicitlySet__.add("isPrimary");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the subnet the VNIC is in.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the subnet the VNIC is in.
          *
          * @param subnetId the value to set
          * @return this builder
-         **/
+         */
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
         /**
-         * The date and time the private IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the private IP was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
-         **/
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the private IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the private IP was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC the private IP is assigned to. The VNIC and private IP
-         * must be in the same subnet.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the VNIC the private IP is assigned to. The VNIC and private IP must be in the same
+         * subnet.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC the private IP is assigned to. The VNIC and private IP
-         * must be in the same subnet.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the VNIC the private IP is assigned to. The VNIC and private IP must be in the same
+         * subnet.
          *
          * @param vnicId the value to set
          * @return this builder
-         **/
+         */
         public Builder vnicId(String vnicId) {
             this.vnicId = vnicId;
             this.__explicitlySet__.add("vnicId");
@@ -422,9 +418,7 @@ public final class PrivateIp extends com.oracle.bmc.http.internal.ExplicitlySetB
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -435,238 +429,234 @@ public final class PrivateIp extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     /**
      * The private IP's availability domain.
-     * <p>
-     * Example: {@code Uocm:PHX-AD-1}
      *
-     **/
+     * <p>Example: {@code Uocm:PHX-AD-1}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
      * The private IP's availability domain.
-     * <p>
-     * Example: {@code Uocm:PHX-AD-1}
+     *
+     * <p>Example: {@code Uocm:PHX-AD-1}
      *
      * @return the value
-     **/
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the private IP.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the private IP.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * The hostname for the private IP. Used for DNS. The value is the hostname
-     * portion of the private IP's fully qualified domain name (FQDN)
-     * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
-     * Must be unique across all VNICs in the subnet and comply with
-     * [RFC 952](https://tools.ietf.org/html/rfc952) and
-     * [RFC 1123](https://tools.ietf.org/html/rfc1123).
-     * <p>
-     * For more information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-     * <p>
-     * Example: {@code bminstance-1}
+     * The hostname for the private IP. Used for DNS. The value is the hostname portion of the
+     * private IP's fully qualified domain name (FQDN) (for example, {@code bminstance-1} in FQDN
+     * {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be unique across all VNICs in the
+     * subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC
+     * 1123](https://tools.ietf.org/html/rfc1123).
      *
-     **/
+     * <p>For more information, see [DNS in Your Virtual Cloud
+     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     *
+     * <p>Example: {@code bminstance-1}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
     private final String hostnameLabel;
 
     /**
-     * The hostname for the private IP. Used for DNS. The value is the hostname
-     * portion of the private IP's fully qualified domain name (FQDN)
-     * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
-     * Must be unique across all VNICs in the subnet and comply with
-     * [RFC 952](https://tools.ietf.org/html/rfc952) and
-     * [RFC 1123](https://tools.ietf.org/html/rfc1123).
-     * <p>
-     * For more information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-     * <p>
-     * Example: {@code bminstance-1}
+     * The hostname for the private IP. Used for DNS. The value is the hostname portion of the
+     * private IP's fully qualified domain name (FQDN) (for example, {@code bminstance-1} in FQDN
+     * {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be unique across all VNICs in the
+     * subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC
+     * 1123](https://tools.ietf.org/html/rfc1123).
+     *
+     * <p>For more information, see [DNS in Your Virtual Cloud
+     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     *
+     * <p>Example: {@code bminstance-1}
      *
      * @return the value
-     **/
+     */
     public String getHostnameLabel() {
         return hostnameLabel;
     }
 
     /**
-     * The private IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-     **/
+     * The private IP's Oracle ID
+     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The private IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * The private IP's Oracle ID
+     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * The private IP address of the {@code privateIp} object. The address is within the CIDR
-     * of the VNIC's subnet.
-     * <p>
+     * The private IP address of the {@code privateIp} object. The address is within the CIDR of the
+     * VNIC's subnet.
      *
-     * Example: {@code 10.0.3.3}
-     *
-     **/
+     * <p>Example: {@code 10.0.3.3}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
-     * The private IP address of the {@code privateIp} object. The address is within the CIDR
-     * of the VNIC's subnet.
-     * <p>
+     * The private IP address of the {@code privateIp} object. The address is within the CIDR of the
+     * VNIC's subnet.
      *
-     * Example: {@code 10.0.3.3}
+     * <p>Example: {@code 10.0.3.3}
      *
      * @return the value
-     **/
+     */
     public String getIpAddress() {
         return ipAddress;
     }
 
     /**
-     * Whether this private IP is the primary one on the VNIC. Primary private IPs
-     * are unassigned and deleted automatically when the VNIC is terminated.
-     * <p>
-     * Example: {@code true}
+     * Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned
+     * and deleted automatically when the VNIC is terminated.
      *
-     **/
+     * <p>Example: {@code true}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
     private final Boolean isPrimary;
 
     /**
-     * Whether this private IP is the primary one on the VNIC. Primary private IPs
-     * are unassigned and deleted automatically when the VNIC is terminated.
-     * <p>
-     * Example: {@code true}
+     * Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned
+     * and deleted automatically when the VNIC is terminated.
+     *
+     * <p>Example: {@code true}
      *
      * @return the value
-     **/
+     */
     public Boolean getIsPrimary() {
         return isPrimary;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the subnet the VNIC is in.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the subnet the VNIC is in.
      *
      * @return the value
-     **/
+     */
     public String getSubnetId() {
         return subnetId;
     }
 
     /**
-     * The date and time the private IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the private IP was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
-     **/
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the private IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the private IP was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC the private IP is assigned to. The VNIC and private IP
-     * must be in the same subnet.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the VNIC the private IP is assigned to. The VNIC and private IP must be in the same subnet.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     private final String vnicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC the private IP is assigned to. The VNIC and private IP
-     * must be in the same subnet.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the VNIC the private IP is assigned to. The VNIC and private IP must be in the same subnet.
      *
      * @return the value
-     **/
+     */
     public String getVnicId() {
         return vnicId;
     }
@@ -678,6 +668,7 @@ public final class PrivateIp extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

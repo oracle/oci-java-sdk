@@ -5,25 +5,25 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * Properties that are required to create a new Digital Assistant by extending an existing Digital Assistant.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Properties that are required to create a new Digital Assistant by extending an existing Digital
+ * Assistant. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ExtendDigitalAssistantDetails.Builder.class
-)
+        builder = ExtendDigitalAssistantDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "kind"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "kind")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ExtendDigitalAssistantDetails extends CreateDigitalAssistantDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -90,44 +90,41 @@ public final class ExtendDigitalAssistantDetails extends CreateDigitalAssistantD
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /**
-         * The unique identifier of the Digital Assistant to extend.
-         **/
+        /** The unique identifier of the Digital Assistant to extend. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique identifier of the Digital Assistant to extend.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The reource's name. The name can contain only letters, numbers, periods, and underscores. The name must begin with a letter.
-         *
-         **/
+         * The reource's name. The name can contain only letters, numbers, periods, and underscores.
+         * The name must begin with a letter.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The reource's name. The name can contain only letters, numbers, periods, and underscores. The name must begin with a letter.
+         * The reource's name. The name can contain only letters, numbers, periods, and underscores.
+         * The name must begin with a letter.
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The resource's display name.
-         *
-         **/
+        /** The resource's display name. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -136,25 +133,26 @@ public final class ExtendDigitalAssistantDetails extends CreateDigitalAssistantD
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The resource's version. The version can only contain numbers, letters, periods, underscores, dashes or spaces.  The version must begin with a letter or a number.
-         *
-         **/
+         * The resource's version. The version can only contain numbers, letters, periods,
+         * underscores, dashes or spaces. The version must begin with a letter or a number.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
-         * The resource's version. The version can only contain numbers, letters, periods, underscores, dashes or spaces.  The version must begin with a letter or a number.
+         * The resource's version. The version can only contain numbers, letters, periods,
+         * underscores, dashes or spaces. The version must begin with a letter or a number.
          *
          * @param version the value to set
          * @return this builder
-         **/
+         */
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -223,9 +221,7 @@ public final class ExtendDigitalAssistantDetails extends CreateDigitalAssistantD
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -261,40 +257,37 @@ public final class ExtendDigitalAssistantDetails extends CreateDigitalAssistantD
         this.version = version;
     }
 
-    /**
-     * The unique identifier of the Digital Assistant to extend.
-     **/
+    /** The unique identifier of the Digital Assistant to extend. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique identifier of the Digital Assistant to extend.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * The reource's name. The name can contain only letters, numbers, periods, and underscores. The name must begin with a letter.
-     *
-     **/
+     * The reource's name. The name can contain only letters, numbers, periods, and underscores. The
+     * name must begin with a letter.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The reource's name. The name can contain only letters, numbers, periods, and underscores. The name must begin with a letter.
+     * The reource's name. The name can contain only letters, numbers, periods, and underscores. The
+     * name must begin with a letter.
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The resource's display name.
-     *
-     **/
+    /** The resource's display name. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -302,23 +295,24 @@ public final class ExtendDigitalAssistantDetails extends CreateDigitalAssistantD
      * The resource's display name.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The resource's version. The version can only contain numbers, letters, periods, underscores, dashes or spaces.  The version must begin with a letter or a number.
-     *
-     **/
+     * The resource's version. The version can only contain numbers, letters, periods, underscores,
+     * dashes or spaces. The version must begin with a letter or a number.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
-     * The resource's version. The version can only contain numbers, letters, periods, underscores, dashes or spaces.  The version must begin with a letter or a number.
+     * The resource's version. The version can only contain numbers, letters, periods, underscores,
+     * dashes or spaces. The version must begin with a letter or a number.
      *
      * @return the value
-     **/
+     */
     public String getVersion() {
         return version;
     }
@@ -330,6 +324,7 @@ public final class ExtendDigitalAssistantDetails extends CreateDigitalAssistantD
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

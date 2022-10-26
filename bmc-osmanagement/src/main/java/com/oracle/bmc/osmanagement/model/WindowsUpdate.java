@@ -5,19 +5,20 @@
 package com.oracle.bmc.osmanagement.model;
 
 /**
- * An update available for a Windows managed instance.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * An update available for a Windows managed instance. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WindowsUpdate.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WindowsUpdate extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class WindowsUpdate extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -54,153 +55,142 @@ public final class WindowsUpdate extends com.oracle.bmc.http.internal.Explicitly
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Windows Update name.
-         **/
+        /** Windows Update name. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Windows Update name.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Unique identifier for the Windows update. NOTE - This is not an OCID,
-         * but is a unique identifier assigned by Microsoft.
-         * Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
-         *
-         **/
+         * Unique identifier for the Windows update. NOTE - This is not an OCID, but is a unique
+         * identifier assigned by Microsoft. Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Unique identifier for the Windows update. NOTE - This is not an OCID,
-         * but is a unique identifier assigned by Microsoft.
-         * Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
+         * Unique identifier for the Windows update. NOTE - This is not an OCID, but is a unique
+         * identifier assigned by Microsoft. Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Information about the Windows Update.
-         **/
+        /** Information about the Windows Update. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Information about the Windows Update.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The purpose of this update.
-         **/
+        /** The purpose of this update. */
         @com.fasterxml.jackson.annotation.JsonProperty("updateType")
         private UpdateTypes updateType;
 
         /**
          * The purpose of this update.
+         *
          * @param updateType the value to set
          * @return this builder
-         **/
+         */
         public Builder updateType(UpdateTypes updateType) {
             this.updateType = updateType;
             this.__explicitlySet__.add("updateType");
             return this;
         }
-        /**
-         * size of the package in bytes
-         **/
+        /** size of the package in bytes */
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
         private Long sizeInBytes;
 
         /**
          * size of the package in bytes
+         *
          * @param sizeInBytes the value to set
          * @return this builder
-         **/
+         */
         public Builder sizeInBytes(Long sizeInBytes) {
             this.sizeInBytes = sizeInBytes;
             this.__explicitlySet__.add("sizeInBytes");
             return this;
         }
-        /**
-         * Indicates whether the update can be installed using OSMS.
-         **/
+        /** Indicates whether the update can be installed using OSMS. */
         @com.fasterxml.jackson.annotation.JsonProperty("isEligibleForInstallation")
         private IsEligibleForInstallation isEligibleForInstallation;
 
         /**
          * Indicates whether the update can be installed using OSMS.
+         *
          * @param isEligibleForInstallation the value to set
          * @return this builder
-         **/
+         */
         public Builder isEligibleForInstallation(
                 IsEligibleForInstallation isEligibleForInstallation) {
             this.isEligibleForInstallation = isEligibleForInstallation;
             this.__explicitlySet__.add("isEligibleForInstallation");
             return this;
         }
-        /**
-         * List of requirements forinstalling on a managed instances
-         **/
+        /** List of requirements forinstalling on a managed instances */
         @com.fasterxml.jackson.annotation.JsonProperty("installationRequirements")
         private java.util.List<InstallationRequirements> installationRequirements;
 
         /**
          * List of requirements forinstalling on a managed instances
+         *
          * @param installationRequirements the value to set
          * @return this builder
-         **/
+         */
         public Builder installationRequirements(
                 java.util.List<InstallationRequirements> installationRequirements) {
             this.installationRequirements = installationRequirements;
             this.__explicitlySet__.add("installationRequirements");
             return this;
         }
-        /**
-         * Indicates whether a reboot may be required to complete installation of this update.
-         **/
+        /** Indicates whether a reboot may be required to complete installation of this update. */
         @com.fasterxml.jackson.annotation.JsonProperty("isRebootRequiredForInstallation")
         private Boolean isRebootRequiredForInstallation;
 
         /**
          * Indicates whether a reboot may be required to complete installation of this update.
+         *
          * @param isRebootRequiredForInstallation the value to set
          * @return this builder
-         **/
+         */
         public Builder isRebootRequiredForInstallation(Boolean isRebootRequiredForInstallation) {
             this.isRebootRequiredForInstallation = isRebootRequiredForInstallation;
             this.__explicitlySet__.add("isRebootRequiredForInstallation");
             return this;
         }
-        /**
-         * List of the Microsoft Knowledge Base Article Ids related to this Windows Update.
-         **/
+        /** List of the Microsoft Knowledge Base Article Ids related to this Windows Update. */
         @com.fasterxml.jackson.annotation.JsonProperty("kbArticleIds")
         private java.util.List<String> kbArticleIds;
 
         /**
          * List of the Microsoft Knowledge Base Article Ids related to this Windows Update.
+         *
          * @param kbArticleIds the value to set
          * @return this builder
-         **/
+         */
         public Builder kbArticleIds(java.util.List<String> kbArticleIds) {
             this.kbArticleIds = kbArticleIds;
             this.__explicitlySet__.add("kbArticleIds");
@@ -261,9 +251,7 @@ public final class WindowsUpdate extends com.oracle.bmc.http.internal.Explicitly
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -272,106 +260,97 @@ public final class WindowsUpdate extends com.oracle.bmc.http.internal.Explicitly
         return new Builder().copy(this);
     }
 
-    /**
-     * Windows Update name.
-     **/
+    /** Windows Update name. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Windows Update name.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Unique identifier for the Windows update. NOTE - This is not an OCID,
-     * but is a unique identifier assigned by Microsoft.
-     * Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
-     *
-     **/
+     * Unique identifier for the Windows update. NOTE - This is not an OCID, but is a unique
+     * identifier assigned by Microsoft. Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Unique identifier for the Windows update. NOTE - This is not an OCID,
-     * but is a unique identifier assigned by Microsoft.
-     * Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
+     * Unique identifier for the Windows update. NOTE - This is not an OCID, but is a unique
+     * identifier assigned by Microsoft. Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Information about the Windows Update.
-     **/
+    /** Information about the Windows Update. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Information about the Windows Update.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The purpose of this update.
-     **/
+    /** The purpose of this update. */
     @com.fasterxml.jackson.annotation.JsonProperty("updateType")
     private final UpdateTypes updateType;
 
     /**
      * The purpose of this update.
+     *
      * @return the value
-     **/
+     */
     public UpdateTypes getUpdateType() {
         return updateType;
     }
 
-    /**
-     * size of the package in bytes
-     **/
+    /** size of the package in bytes */
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
     private final Long sizeInBytes;
 
     /**
      * size of the package in bytes
+     *
      * @return the value
-     **/
+     */
     public Long getSizeInBytes() {
         return sizeInBytes;
     }
 
-    /**
-     * Indicates whether the update can be installed using OSMS.
-     **/
+    /** Indicates whether the update can be installed using OSMS. */
     @com.fasterxml.jackson.annotation.JsonProperty("isEligibleForInstallation")
     private final IsEligibleForInstallation isEligibleForInstallation;
 
     /**
      * Indicates whether the update can be installed using OSMS.
+     *
      * @return the value
-     **/
+     */
     public IsEligibleForInstallation getIsEligibleForInstallation() {
         return isEligibleForInstallation;
     }
 
-    /**
-     **/
-    public enum InstallationRequirements {
+    /** */
+    public enum InstallationRequirements implements com.oracle.bmc.http.internal.BmcEnum {
         EulaAcceptanceRequired("EULA_ACCEPTANCE_REQUIRED"),
         SoftwareMediaRequired("SOFTWARE_MEDIA_REQUIRED"),
         UserInteractionRequired("USER_INTERACTION_REQUIRED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -410,44 +389,41 @@ public final class WindowsUpdate extends com.oracle.bmc.http.internal.Explicitly
             return UnknownEnumValue;
         }
     };
-    /**
-     * List of requirements forinstalling on a managed instances
-     **/
+    /** List of requirements forinstalling on a managed instances */
     @com.fasterxml.jackson.annotation.JsonProperty("installationRequirements")
     private final java.util.List<InstallationRequirements> installationRequirements;
 
     /**
      * List of requirements forinstalling on a managed instances
+     *
      * @return the value
-     **/
+     */
     public java.util.List<InstallationRequirements> getInstallationRequirements() {
         return installationRequirements;
     }
 
-    /**
-     * Indicates whether a reboot may be required to complete installation of this update.
-     **/
+    /** Indicates whether a reboot may be required to complete installation of this update. */
     @com.fasterxml.jackson.annotation.JsonProperty("isRebootRequiredForInstallation")
     private final Boolean isRebootRequiredForInstallation;
 
     /**
      * Indicates whether a reboot may be required to complete installation of this update.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsRebootRequiredForInstallation() {
         return isRebootRequiredForInstallation;
     }
 
-    /**
-     * List of the Microsoft Knowledge Base Article Ids related to this Windows Update.
-     **/
+    /** List of the Microsoft Knowledge Base Article Ids related to this Windows Update. */
     @com.fasterxml.jackson.annotation.JsonProperty("kbArticleIds")
     private final java.util.List<String> kbArticleIds;
 
     /**
      * List of the Microsoft Knowledge Base Article Ids related to this Windows Update.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getKbArticleIds() {
         return kbArticleIds;
     }
@@ -459,6 +435,7 @@ public final class WindowsUpdate extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

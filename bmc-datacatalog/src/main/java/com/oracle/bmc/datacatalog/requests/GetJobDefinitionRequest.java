@@ -6,44 +6,32 @@ package com.oracle.bmc.datacatalog.requests;
 
 import com.oracle.bmc.datacatalog.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetJobDefinitionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetJobDefinitionRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetJobDefinitionExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetJobDefinitionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class GetJobDefinitionRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * Unique catalog identifier.
-     */
+    /** Unique catalog identifier. */
     private String catalogId;
 
-    /**
-     * Unique catalog identifier.
-     */
+    /** Unique catalog identifier. */
     public String getCatalogId() {
         return catalogId;
     }
-    /**
-     * Unique job definition key.
-     */
+    /** Unique job definition key. */
     private String jobDefinitionKey;
 
-    /**
-     * Unique job definition key.
-     */
+    /** Unique job definition key. */
     public String getJobDefinitionKey() {
         return jobDefinitionKey;
     }
-    /**
-     * Specifies the fields to return in a job definition response.
-     *
-     */
+    /** Specifies the fields to return in a job definition response. */
     private java.util.List<Fields> fields;
 
-    /**
-     * Specifies the fields to return in a job definition response.
-     *
-     **/
-    public enum Fields {
+    /** Specifies the fields to return in a job definition response. */
+    public enum Fields implements com.oracle.bmc.http.internal.BmcEnum {
         Key("key"),
         DisplayName("displayName"),
         Description("description"),
@@ -96,21 +84,14 @@ public class GetJobDefinitionRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
-    /**
-     * Specifies the fields to return in a job definition response.
-     *
-     */
+    /** Specifies the fields to return in a job definition response. */
     public java.util.List<Fields> getFields() {
         return fields;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -118,17 +99,15 @@ public class GetJobDefinitionRequest extends com.oracle.bmc.requests.BmcRequest<
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetJobDefinitionRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique catalog identifier.
-         */
+        /** Unique catalog identifier. */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         *
          * @param catalogId the value to set
          * @return this builder instance
          */
@@ -137,13 +116,12 @@ public class GetJobDefinitionRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * Unique job definition key.
-         */
+        /** Unique job definition key. */
         private String jobDefinitionKey = null;
 
         /**
          * Unique job definition key.
+         *
          * @param jobDefinitionKey the value to set
          * @return this builder instance
          */
@@ -152,10 +130,7 @@ public class GetJobDefinitionRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * Specifies the fields to return in a job definition response.
-         *
-         */
+        /** Specifies the fields to return in a job definition response. */
         private java.util.List<Fields> fields = null;
 
         /**
@@ -179,13 +154,12 @@ public class GetJobDefinitionRequest extends com.oracle.bmc.requests.BmcRequest<
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -196,18 +170,19 @@ public class GetJobDefinitionRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -219,6 +194,7 @@ public class GetJobDefinitionRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetJobDefinitionRequest o) {
@@ -234,10 +210,11 @@ public class GetJobDefinitionRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of GetJobDefinitionRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetJobDefinitionRequest
          */
@@ -251,7 +228,8 @@ public class GetJobDefinitionRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of GetJobDefinitionRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetJobDefinitionRequest
@@ -269,6 +247,7 @@ public class GetJobDefinitionRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -281,6 +260,7 @@ public class GetJobDefinitionRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

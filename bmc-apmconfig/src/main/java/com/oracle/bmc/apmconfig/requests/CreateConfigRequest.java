@@ -6,84 +6,70 @@ package com.oracle.bmc.apmconfig.requests;
 
 import com.oracle.bmc.apmconfig.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/CreateConfigExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateConfigRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/CreateConfigExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateConfigRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 public class CreateConfigRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.apmconfig.model.CreateConfigDetails> {
 
-    /**
-     * The APM Domain ID the request is intended for.
-     *
-     */
+    /** The APM Domain ID the request is intended for. */
     private String apmDomainId;
 
-    /**
-     * The APM Domain ID the request is intended for.
-     *
-     */
+    /** The APM Domain ID the request is intended for. */
     public String getApmDomainId() {
         return apmDomainId;
     }
-    /**
-     * The configuration details of the new item.
-     */
+    /** The configuration details of the new item. */
     private com.oracle.bmc.apmconfig.model.CreateConfigDetails createConfigDetails;
 
-    /**
-     * The configuration details of the new item.
-     */
+    /** The configuration details of the new item. */
     public com.oracle.bmc.apmconfig.model.CreateConfigDetails getCreateConfigDetails() {
         return createConfigDetails;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * might be rejected.
-     *
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * might be rejected.
-     *
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
     /**
-     * Unique identifier for the request.
-     * If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique identifier for the request.
-     * If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * Indicates that the request is a dry run, if set to "true". A dry run request does not modify the
-     * configuration item details and is used only to perform validation on the submitted data.
-     *
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not modify
+     * the configuration item details and is used only to perform validation on the submitted data.
      */
     private String opcDryRun;
 
     /**
-     * Indicates that the request is a dry run, if set to "true". A dry run request does not modify the
-     * configuration item details and is used only to perform validation on the submitted data.
-     *
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not modify
+     * the configuration item details and is used only to perform validation on the submitted data.
      */
     public String getOpcDryRun() {
         return opcDryRun;
@@ -91,6 +77,7 @@ public class CreateConfigRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -102,14 +89,10 @@ public class CreateConfigRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateConfigRequest, com.oracle.bmc.apmconfig.model.CreateConfigDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The APM Domain ID the request is intended for.
-         *
-         */
+        /** The APM Domain ID the request is intended for. */
         private String apmDomainId = null;
 
         /**
@@ -123,13 +106,12 @@ public class CreateConfigRequest
             return this;
         }
 
-        /**
-         * The configuration details of the new item.
-         */
+        /** The configuration details of the new item. */
         private com.oracle.bmc.apmconfig.model.CreateConfigDetails createConfigDetails = null;
 
         /**
          * The configuration details of the new item.
+         *
          * @param createConfigDetails the value to set
          * @return this builder instance
          */
@@ -141,20 +123,19 @@ public class CreateConfigRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * might be rejected.
-         *
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -165,15 +146,14 @@ public class CreateConfigRequest
         }
 
         /**
-         * Unique identifier for the request.
-         * If you need to contact Oracle about a particular request, please provide the request ID.
-         *
+         * Unique identifier for the request. If you need to contact Oracle about a particular
+         * request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique identifier for the request.
-         * If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique identifier for the request. If you need to contact Oracle about a particular
+         * request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -184,15 +164,16 @@ public class CreateConfigRequest
         }
 
         /**
-         * Indicates that the request is a dry run, if set to "true". A dry run request does not modify the
-         * configuration item details and is used only to perform validation on the submitted data.
-         *
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not
+         * modify the configuration item details and is used only to perform validation on the
+         * submitted data.
          */
         private String opcDryRun = null;
 
         /**
-         * Indicates that the request is a dry run, if set to "true". A dry run request does not modify the
-         * configuration item details and is used only to perform validation on the submitted data.
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not
+         * modify the configuration item details and is used only to perform validation on the
+         * submitted data.
          *
          * @param opcDryRun the value to set
          * @return this builder instance
@@ -204,18 +185,19 @@ public class CreateConfigRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -227,6 +209,7 @@ public class CreateConfigRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(CreateConfigRequest o) {
@@ -243,10 +226,11 @@ public class CreateConfigRequest
         /**
          * Build the instance of CreateConfigRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of CreateConfigRequest
          */
@@ -259,6 +243,7 @@ public class CreateConfigRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -271,7 +256,8 @@ public class CreateConfigRequest
         /**
          * Build the instance of CreateConfigRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateConfigRequest
@@ -284,12 +270,14 @@ public class CreateConfigRequest
             request.opcRequestId = opcRequestId;
             request.opcDryRun = opcDryRun;
             return request;
-            // new CreateConfigRequest(apmDomainId, createConfigDetails, opcRetryToken, opcRequestId, opcDryRun);
+            // new CreateConfigRequest(apmDomainId, createConfigDetails, opcRetryToken,
+            // opcRequestId, opcDryRun);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -303,6 +291,7 @@ public class CreateConfigRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

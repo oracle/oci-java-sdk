@@ -5,25 +5,24 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * Specifies the VCN Attachment
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Specifies the VCN Attachment <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = VcnDrgAttachmentNetworkCreateDetails.Builder.class
-)
+        builder = VcnDrgAttachmentNetworkCreateDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class VcnDrgAttachmentNetworkCreateDetails extends DrgAttachmentNetworkCreateDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -36,32 +35,43 @@ public final class VcnDrgAttachmentNetworkCreateDetails extends DrgAttachmentNet
             return this;
         }
         /**
-         * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that is used to route the traffic as it enters a VCN through this attachment.
-         * <p>
-         * For information about why you would associate a route table with a DRG attachment, see
-         * [Advanced Scenario: Transit Routing](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
-         * For information about why you would associate a route table with a DRG attachment, see:
-         * <p>
-         * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-         *   * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+         * This is the
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * the route table that is used to route the traffic as it enters a VCN through this
+         * attachment.
          *
-         **/
+         * <p>For information about why you would associate a route table with a DRG attachment, see
+         * [Advanced Scenario: Transit
+         * Routing](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
+         * For information about why you would associate a route table with a DRG attachment, see:
+         *
+         * <p>[Transit Routing: Access to Multiple VCNs in Same
+         * Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) *
+         * [Transit Routing: Private Access to Oracle
+         * Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
         /**
-         * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that is used to route the traffic as it enters a VCN through this attachment.
-         * <p>
-         * For information about why you would associate a route table with a DRG attachment, see
-         * [Advanced Scenario: Transit Routing](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
+         * This is the
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * the route table that is used to route the traffic as it enters a VCN through this
+         * attachment.
+         *
+         * <p>For information about why you would associate a route table with a DRG attachment, see
+         * [Advanced Scenario: Transit
+         * Routing](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
          * For information about why you would associate a route table with a DRG attachment, see:
-         * <p>
-         * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-         *   * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+         *
+         * <p>[Transit Routing: Access to Multiple VCNs in Same
+         * Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) *
+         * [Transit Routing: Private Access to Oracle
+         * Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
          *
          * @param routeTableId the value to set
          * @return this builder
-         **/
+         */
         public Builder routeTableId(String routeTableId) {
             this.routeTableId = routeTableId;
             this.__explicitlySet__.add("routeTableId");
@@ -92,9 +102,7 @@ public final class VcnDrgAttachmentNetworkCreateDetails extends DrgAttachmentNet
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -110,31 +118,40 @@ public final class VcnDrgAttachmentNetworkCreateDetails extends DrgAttachmentNet
     }
 
     /**
-     * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that is used to route the traffic as it enters a VCN through this attachment.
-     * <p>
-     * For information about why you would associate a route table with a DRG attachment, see
-     * [Advanced Scenario: Transit Routing](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
-     * For information about why you would associate a route table with a DRG attachment, see:
-     * <p>
-     * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-     *   * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+     * This is the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table that is used to route the traffic as it enters a VCN through this attachment.
      *
-     **/
+     * <p>For information about why you would associate a route table with a DRG attachment, see
+     * [Advanced Scenario: Transit
+     * Routing](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm). For
+     * information about why you would associate a route table with a DRG attachment, see:
+     *
+     * <p>[Transit Routing: Access to Multiple VCNs in Same
+     * Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) *
+     * [Transit Routing: Private Access to Oracle
+     * Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     private final String routeTableId;
 
     /**
-     * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that is used to route the traffic as it enters a VCN through this attachment.
-     * <p>
-     * For information about why you would associate a route table with a DRG attachment, see
-     * [Advanced Scenario: Transit Routing](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
-     * For information about why you would associate a route table with a DRG attachment, see:
-     * <p>
-     * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-     *   * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+     * This is the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table that is used to route the traffic as it enters a VCN through this attachment.
+     *
+     * <p>For information about why you would associate a route table with a DRG attachment, see
+     * [Advanced Scenario: Transit
+     * Routing](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm). For
+     * information about why you would associate a route table with a DRG attachment, see:
+     *
+     * <p>[Transit Routing: Access to Multiple VCNs in Same
+     * Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) *
+     * [Transit Routing: Private Access to Oracle
+     * Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
      *
      * @return the value
-     **/
+     */
     public String getRouteTableId() {
         return routeTableId;
     }
@@ -146,6 +163,7 @@ public final class VcnDrgAttachmentNetworkCreateDetails extends DrgAttachmentNet
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

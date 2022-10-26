@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/**
- * Possible cloud guard list types
- **/
+/** Possible cloud guard list types */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum ManagedListType {
+public enum ManagedListType implements com.oracle.bmc.http.internal.BmcEnum {
     CidrBlock("CIDR_BLOCK"),
     Users("USERS"),
     Groups("GROUPS"),

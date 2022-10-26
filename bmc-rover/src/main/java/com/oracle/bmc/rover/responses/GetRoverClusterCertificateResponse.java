@@ -8,10 +8,7 @@ import com.oracle.bmc.rover.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 public class GetRoverClusterCertificateResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,15 +21,14 @@ public class GetRoverClusterCertificateResponse extends com.oracle.bmc.responses
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,13 +36,12 @@ public class GetRoverClusterCertificateResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /**
-     * The returned RoverClusterCertificate instance.
-     */
+    /** The returned RoverClusterCertificate instance. */
     private com.oracle.bmc.rover.model.RoverClusterCertificate roverClusterCertificate;
 
     /**
      * The returned RoverClusterCertificate instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.rover.model.RoverClusterCertificate getRoverClusterCertificate() {
@@ -62,7 +57,7 @@ public class GetRoverClusterCertificateResponse extends com.oracle.bmc.responses
     })
     private GetRoverClusterCertificateResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.rover.model.RoverClusterCertificate roverClusterCertificate) {
@@ -72,25 +67,26 @@ public class GetRoverClusterCertificateResponse extends com.oracle.bmc.responses
         this.roverClusterCertificate = roverClusterCertificate;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetRoverClusterCertificateResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -105,15 +101,14 @@ public class GetRoverClusterCertificateResponse extends com.oracle.bmc.responses
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -123,13 +118,12 @@ public class GetRoverClusterCertificateResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /**
-         * The returned RoverClusterCertificate instance.
-         */
+        /** The returned RoverClusterCertificate instance. */
         private com.oracle.bmc.rover.model.RoverClusterCertificate roverClusterCertificate;
 
         /**
          * The returned RoverClusterCertificate instance.
+         *
          * @param roverClusterCertificate the value to set
          * @return this builder
          */
@@ -141,8 +135,10 @@ public class GetRoverClusterCertificateResponse extends com.oracle.bmc.responses
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetRoverClusterCertificateResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -155,8 +151,10 @@ public class GetRoverClusterCertificateResponse extends com.oracle.bmc.responses
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetRoverClusterCertificateResponse build() {
             return new GetRoverClusterCertificateResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, roverClusterCertificate);
@@ -165,6 +163,7 @@ public class GetRoverClusterCertificateResponse extends com.oracle.bmc.responses
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

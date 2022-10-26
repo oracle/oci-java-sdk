@@ -6,140 +6,100 @@ package com.oracle.bmc.cloudbridge.requests;
 
 import com.oracle.bmc.cloudbridge.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/AnalyzeAssetsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use AnalyzeAssetsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/AnalyzeAssetsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use AnalyzeAssetsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The ID of the compartment in which to list resources.
-     */
+    /** The ID of the compartment in which to list resources. */
     private String compartmentId;
 
-    /**
-     * The ID of the compartment in which to list resources.
-     */
+    /** The ID of the compartment in which to list resources. */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * An array of properties on which to aggregate.
-     */
+    /** An array of properties on which to aggregate. */
     private java.util.List<String> aggregationProperties;
 
-    /**
-     * An array of properties on which to aggregate.
-     */
+    /** An array of properties on which to aggregate. */
     public java.util.List<String> getAggregationProperties() {
         return aggregationProperties;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from
+     * the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from
+     * the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * A filter to return only assets whose lifecycleState matches the given lifecycleState.
-     */
+    /** A filter to return only assets whose lifecycleState matches the given lifecycleState. */
     private com.oracle.bmc.cloudbridge.model.Asset.LifecycleState lifecycleState;
 
-    /**
-     * A filter to return only assets whose lifecycleState matches the given lifecycleState.
-     */
+    /** A filter to return only assets whose lifecycleState matches the given lifecycleState. */
     public com.oracle.bmc.cloudbridge.model.Asset.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /**
-     * Source key from where the assets originate.
-     */
+    /** Source key from where the assets originate. */
     private String sourceKey;
 
-    /**
-     * Source key from where the assets originate.
-     */
+    /** Source key from where the assets originate. */
     public String getSourceKey() {
         return sourceKey;
     }
-    /**
-     * External asset key.
-     */
+    /** External asset key. */
     private String externalAssetKey;
 
-    /**
-     * External asset key.
-     */
+    /** External asset key. */
     public String getExternalAssetKey() {
         return externalAssetKey;
     }
-    /**
-     * The type of asset.
-     */
+    /** The type of asset. */
     private com.oracle.bmc.cloudbridge.model.AssetType assetType;
 
-    /**
-     * The type of asset.
-     */
+    /** The type of asset. */
     public com.oracle.bmc.cloudbridge.model.AssetType getAssetType() {
         return assetType;
     }
-    /**
-     * The sort order to use, either 'ASC' or 'DESC'.
-     */
+    /** The sort order to use, either 'ASC' or 'DESC'. */
     private com.oracle.bmc.cloudbridge.model.SortOrders sortOrder;
 
-    /**
-     * The sort order to use, either 'ASC' or 'DESC'.
-     */
+    /** The sort order to use, either 'ASC' or 'DESC'. */
     public com.oracle.bmc.cloudbridge.model.SortOrders getSortOrder() {
         return sortOrder;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * The dimensions in which to group the aggregations.
-     */
+    /** The dimensions in which to group the aggregations. */
     private java.util.List<String> groupBy;
 
-    /**
-     * The dimensions in which to group the aggregations.
-     */
+    /** The dimensions in which to group the aggregations. */
     public java.util.List<String> getGroupBy() {
         return groupBy;
     }
-    /**
-     * Unique Inventory identifier.
-     */
+    /** Unique Inventory identifier. */
     private String inventoryId;
 
-    /**
-     * Unique Inventory identifier.
-     */
+    /** Unique Inventory identifier. */
     public String getInventoryId() {
         return inventoryId;
     }
@@ -147,17 +107,15 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     AnalyzeAssetsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The ID of the compartment in which to list resources.
-         */
+        /** The ID of the compartment in which to list resources. */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -166,13 +124,12 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * An array of properties on which to aggregate.
-         */
+        /** An array of properties on which to aggregate. */
         private java.util.List<String> aggregationProperties = null;
 
         /**
          * An array of properties on which to aggregate.
+         *
          * @param aggregationProperties the value to set
          * @return this builder instance
          */
@@ -183,6 +140,7 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Singular setter. An array of properties on which to aggregate.
+         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -190,13 +148,12 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this.aggregationProperties(java.util.Arrays.asList(singularValue));
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -206,12 +163,15 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come
+         * from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come
+         * from the {@code opc-next-page} header field of a previous response.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -220,13 +180,12 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * A filter to return only assets whose lifecycleState matches the given lifecycleState.
-         */
+        /** A filter to return only assets whose lifecycleState matches the given lifecycleState. */
         private com.oracle.bmc.cloudbridge.model.Asset.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only assets whose lifecycleState matches the given lifecycleState.
+         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -236,13 +195,12 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * Source key from where the assets originate.
-         */
+        /** Source key from where the assets originate. */
         private String sourceKey = null;
 
         /**
          * Source key from where the assets originate.
+         *
          * @param sourceKey the value to set
          * @return this builder instance
          */
@@ -251,13 +209,12 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * External asset key.
-         */
+        /** External asset key. */
         private String externalAssetKey = null;
 
         /**
          * External asset key.
+         *
          * @param externalAssetKey the value to set
          * @return this builder instance
          */
@@ -266,13 +223,12 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The type of asset.
-         */
+        /** The type of asset. */
         private com.oracle.bmc.cloudbridge.model.AssetType assetType = null;
 
         /**
          * The type of asset.
+         *
          * @param assetType the value to set
          * @return this builder instance
          */
@@ -281,13 +237,12 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The sort order to use, either 'ASC' or 'DESC'.
-         */
+        /** The sort order to use, either 'ASC' or 'DESC'. */
         private com.oracle.bmc.cloudbridge.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -296,13 +251,12 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -311,13 +265,12 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The dimensions in which to group the aggregations.
-         */
+        /** The dimensions in which to group the aggregations. */
         private java.util.List<String> groupBy = null;
 
         /**
          * The dimensions in which to group the aggregations.
+         *
          * @param groupBy the value to set
          * @return this builder instance
          */
@@ -328,6 +281,7 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Singular setter. The dimensions in which to group the aggregations.
+         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -335,13 +289,12 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this.groupBy(java.util.Arrays.asList(singularValue));
         }
 
-        /**
-         * Unique Inventory identifier.
-         */
+        /** Unique Inventory identifier. */
         private String inventoryId = null;
 
         /**
          * Unique Inventory identifier.
+         *
          * @param inventoryId the value to set
          * @return this builder instance
          */
@@ -352,18 +305,19 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -375,6 +329,7 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(AnalyzeAssetsRequest o) {
@@ -398,10 +353,11 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of AnalyzeAssetsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of AnalyzeAssetsRequest
          */
@@ -415,7 +371,8 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of AnalyzeAssetsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of AnalyzeAssetsRequest
@@ -435,12 +392,15 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.groupBy = groupBy;
             request.inventoryId = inventoryId;
             return request;
-            // new AnalyzeAssetsRequest(compartmentId, aggregationProperties, limit, page, lifecycleState, sourceKey, externalAssetKey, assetType, sortOrder, opcRequestId, groupBy, inventoryId);
+            // new AnalyzeAssetsRequest(compartmentId, aggregationProperties, limit, page,
+            // lifecycleState, sourceKey, externalAssetKey, assetType, sortOrder, opcRequestId,
+            // groupBy, inventoryId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -461,6 +421,7 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

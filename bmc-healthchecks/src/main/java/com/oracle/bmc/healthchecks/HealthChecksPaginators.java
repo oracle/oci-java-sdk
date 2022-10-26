@@ -9,21 +9,29 @@ import com.oracle.bmc.healthchecks.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of HealthChecks where multiple pages of data may be fetched.
- * Two styles of iteration are supported:
+ * to any list operations of HealthChecks where multiple pages of data may be fetched. Two styles of
+ * iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
- *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to
+ *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
+ *       <i>listUsersResponseIterator</i>
+ *   <li>Iterating over the resources/records being listed. These are referred to as
+ *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
+ *       <i>listUsersRecordIterator</i>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
- * They will automatically fetch more data from the service when required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping
+ * and using the page tokens. They will automatically fetch more data from the service when
+ * required.
  *
- * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
- * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
- * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
+ * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
+ * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
+ * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have
+ * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
+ * handled so we can iterate until there are no more responses or no more resources/records
+ * available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 public class HealthChecksPaginators {
@@ -34,17 +42,20 @@ public class HealthChecksPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listHealthChecksVantagePoints operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listHealthChecksVantagePoints operation. This iterable will fetch more data from the server
+     * as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListHealthChecksVantagePointsResponse>
             listHealthChecksVantagePointsResponseIterator(
                     final ListHealthChecksVantagePointsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListHealthChecksVantagePointsRequest.Builder, ListHealthChecksVantagePointsRequest,
+                ListHealthChecksVantagePointsRequest.Builder,
+                ListHealthChecksVantagePointsRequest,
                 ListHealthChecksVantagePointsResponse>(
                 new java.util.function.Supplier<ListHealthChecksVantagePointsRequest.Builder>() {
                     @Override
@@ -88,19 +99,22 @@ public class HealthChecksPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary} objects
-     * contained in responses from the listHealthChecksVantagePoints operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary} objects contained in
+     * responses from the listHealthChecksVantagePoints operation. This iterable will fetch more
+     * data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary} objects contained in
+     *     responses received from the service.
      */
     public Iterable<com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary>
             listHealthChecksVantagePointsRecordIterator(
                     final ListHealthChecksVantagePointsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListHealthChecksVantagePointsRequest.Builder, ListHealthChecksVantagePointsRequest,
+                ListHealthChecksVantagePointsRequest.Builder,
+                ListHealthChecksVantagePointsRequest,
                 ListHealthChecksVantagePointsResponse,
                 com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary>(
                 new java.util.function.Supplier<ListHealthChecksVantagePointsRequest.Builder>() {
@@ -158,11 +172,12 @@ public class HealthChecksPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listHttpMonitors operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listHttpMonitors operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListHttpMonitorsResponse> listHttpMonitorsResponseIterator(
             final ListHttpMonitorsRequest request) {
@@ -208,18 +223,21 @@ public class HealthChecksPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.healthchecks.model.HttpMonitorSummary} objects
-     * contained in responses from the listHttpMonitors operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.healthchecks.model.HttpMonitorSummary} objects contained in responses from the
+     * listHttpMonitors operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.healthchecks.model.HttpMonitorSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.healthchecks.model.HttpMonitorSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.healthchecks.model.HttpMonitorSummary>
             listHttpMonitorsRecordIterator(final ListHttpMonitorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListHttpMonitorsRequest.Builder, ListHttpMonitorsRequest, ListHttpMonitorsResponse,
+                ListHttpMonitorsRequest.Builder,
+                ListHttpMonitorsRequest,
+                ListHttpMonitorsResponse,
                 com.oracle.bmc.healthchecks.model.HttpMonitorSummary>(
                 new java.util.function.Supplier<ListHttpMonitorsRequest.Builder>() {
                     @Override
@@ -270,16 +288,18 @@ public class HealthChecksPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listHttpProbeResults operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listHttpProbeResults operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListHttpProbeResultsResponse> listHttpProbeResultsResponseIterator(
             final ListHttpProbeResultsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListHttpProbeResultsRequest.Builder, ListHttpProbeResultsRequest,
+                ListHttpProbeResultsRequest.Builder,
+                ListHttpProbeResultsRequest,
                 ListHttpProbeResultsResponse>(
                 new java.util.function.Supplier<ListHttpProbeResultsRequest.Builder>() {
                     @Override
@@ -321,18 +341,21 @@ public class HealthChecksPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.healthchecks.model.HttpProbeResultSummary} objects
-     * contained in responses from the listHttpProbeResults operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.healthchecks.model.HttpProbeResultSummary} objects contained in responses from
+     * the listHttpProbeResults operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.healthchecks.model.HttpProbeResultSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.healthchecks.model.HttpProbeResultSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.healthchecks.model.HttpProbeResultSummary>
             listHttpProbeResultsRecordIterator(final ListHttpProbeResultsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListHttpProbeResultsRequest.Builder, ListHttpProbeResultsRequest,
+                ListHttpProbeResultsRequest.Builder,
+                ListHttpProbeResultsRequest,
                 ListHttpProbeResultsResponse,
                 com.oracle.bmc.healthchecks.model.HttpProbeResultSummary>(
                 new java.util.function.Supplier<ListHttpProbeResultsRequest.Builder>() {
@@ -385,11 +408,12 @@ public class HealthChecksPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listPingMonitors operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listPingMonitors operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListPingMonitorsResponse> listPingMonitorsResponseIterator(
             final ListPingMonitorsRequest request) {
@@ -435,18 +459,21 @@ public class HealthChecksPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.healthchecks.model.PingMonitorSummary} objects
-     * contained in responses from the listPingMonitors operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.healthchecks.model.PingMonitorSummary} objects contained in responses from the
+     * listPingMonitors operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.healthchecks.model.PingMonitorSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.healthchecks.model.PingMonitorSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.healthchecks.model.PingMonitorSummary>
             listPingMonitorsRecordIterator(final ListPingMonitorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListPingMonitorsRequest.Builder, ListPingMonitorsRequest, ListPingMonitorsResponse,
+                ListPingMonitorsRequest.Builder,
+                ListPingMonitorsRequest,
+                ListPingMonitorsResponse,
                 com.oracle.bmc.healthchecks.model.PingMonitorSummary>(
                 new java.util.function.Supplier<ListPingMonitorsRequest.Builder>() {
                     @Override
@@ -497,16 +524,18 @@ public class HealthChecksPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listPingProbeResults operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listPingProbeResults operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListPingProbeResultsResponse> listPingProbeResultsResponseIterator(
             final ListPingProbeResultsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListPingProbeResultsRequest.Builder, ListPingProbeResultsRequest,
+                ListPingProbeResultsRequest.Builder,
+                ListPingProbeResultsRequest,
                 ListPingProbeResultsResponse>(
                 new java.util.function.Supplier<ListPingProbeResultsRequest.Builder>() {
                     @Override
@@ -548,18 +577,21 @@ public class HealthChecksPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.healthchecks.model.PingProbeResultSummary} objects
-     * contained in responses from the listPingProbeResults operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.healthchecks.model.PingProbeResultSummary} objects contained in responses from
+     * the listPingProbeResults operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.healthchecks.model.PingProbeResultSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.healthchecks.model.PingProbeResultSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.healthchecks.model.PingProbeResultSummary>
             listPingProbeResultsRecordIterator(final ListPingProbeResultsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListPingProbeResultsRequest.Builder, ListPingProbeResultsRequest,
+                ListPingProbeResultsRequest.Builder,
+                ListPingProbeResultsRequest,
                 ListPingProbeResultsResponse,
                 com.oracle.bmc.healthchecks.model.PingProbeResultSummary>(
                 new java.util.function.Supplier<ListPingProbeResultsRequest.Builder>() {

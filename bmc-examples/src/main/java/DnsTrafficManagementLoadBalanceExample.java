@@ -38,20 +38,19 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * This class provides a basic example of how to use the DNS Traffic Management features in the Java SDK. This
- * program takes the following required arguments:
- * <p>
- * - The first is the OCID of the compartment where we'll create the DNS Zone, Steering Policy, and Steering Policy
- * Attachment.
- * - The second is the name of the DNS Zone (e.g. my-example-zone.com)
- * - The third is the name of the Steering Policy (e.g. "Priority Policy")
- * - The fourth is the domain name to attach the Steering Policy to within the Zone we created
- * (e.g. www.my-example-zone.com)
- * - The fifth is the OCID of the compartment where the DNS Steering Policy will be moved.
- * <p>
- * The program checks if the specified zone already exists and creates it if does not. It then creates a steering
- * policy that uses the LOAD_BALANCE template and attaches it to a domain within the zone. Afterwards, it moves the
- * steering policy to a different compartment.
+ * This class provides a basic example of how to use the DNS Traffic Management features in the Java
+ * SDK. This program takes the following required arguments:
+ *
+ * <p>- The first is the OCID of the compartment where we'll create the DNS Zone, Steering Policy,
+ * and Steering Policy Attachment. - The second is the name of the DNS Zone (e.g.
+ * my-example-zone.com) - The third is the name of the Steering Policy (e.g. "Priority Policy") -
+ * The fourth is the domain name to attach the Steering Policy to within the Zone we created (e.g.
+ * www.my-example-zone.com) - The fifth is the OCID of the compartment where the DNS Steering Policy
+ * will be moved.
+ *
+ * <p>The program checks if the specified zone already exists and creates it if does not. It then
+ * creates a steering policy that uses the LOAD_BALANCE template and attaches it to a domain within
+ * the zone. Afterwards, it moves the steering policy to a different compartment.
  */
 public class DnsTrafficManagementLoadBalanceExample {
     public static void main(String[] args) throws Exception {
@@ -61,8 +60,10 @@ public class DnsTrafficManagementLoadBalanceExample {
         // TODO: Update to the name of the profile to use
         final String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -156,8 +157,10 @@ public class DnsTrafficManagementLoadBalanceExample {
                                 .isDisabled(true)
                                 .build());
 
-        // The first rule in a LOAD_BALANCE policy template is a FILTER rule that only keeps answers that
-        // do not have their isDisabled property set to true. Answers without an isDisable property defined are
+        // The first rule in a LOAD_BALANCE policy template is a FILTER rule that only keeps answers
+        // that
+        // do not have their isDisabled property set to true. Answers without an isDisable property
+        // defined are
         // kept.
         SteeringPolicyFilterRule filterRule =
                 SteeringPolicyFilterRule.builder()
@@ -169,16 +172,22 @@ public class DnsTrafficManagementLoadBalanceExample {
                                                 .build()))
                         .build();
 
-        // If we need to remove answers for unhealthy hosts then we would define a health check monitor for the
-        // policy using the healthCheckMonitorId property in the steering policy details and the next rule would be a
+        // If we need to remove answers for unhealthy hosts then we would define a health check
+        // monitor for the
+        // policy using the healthCheckMonitorId property in the steering policy details and the
+        // next rule would be a
         // HEALTH rule:
         // SteeringPolicyHealthRule healthRule = SteeringPolicyHealthRule.builder().build();
 
-        // The next rule in a LOAD_BALANCE policy template is a WEIGHTED rule where we define the weights for each
-        // answer by the answer's name property to determine how often an answer will be at the beginning of the list
-        // of answers in response to a DNS query. This rule is the main point of a LOAD_BALANCE policy.
+        // The next rule in a LOAD_BALANCE policy template is a WEIGHTED rule where we define the
+        // weights for each
+        // answer by the answer's name property to determine how often an answer will be at the
+        // beginning of the list
+        // of answers in response to a DNS query. This rule is the main point of a LOAD_BALANCE
+        // policy.
         //
-        // In this example, we want to return Server 1 first in the list three times as often as Server 2.
+        // In this example, we want to return Server 1 first in the list three times as often as
+        // Server 2.
         SteeringPolicyWeightedRule weightedRule =
                 SteeringPolicyWeightedRule.builder()
                         .defaultAnswerData(
@@ -197,7 +206,8 @@ public class DnsTrafficManagementLoadBalanceExample {
                                                 .build()))
                         .build();
 
-        // The final rule in a LOAD_BALANCE policy template is a LIMIT rule that limits the number of answers returned
+        // The final rule in a LOAD_BALANCE policy template is a LIMIT rule that limits the number
+        // of answers returned
         // in the response to a DNS query.
         SteeringPolicyLimitRule limitRule =
                 SteeringPolicyLimitRule.builder().defaultCount(1).build();
@@ -211,7 +221,8 @@ public class DnsTrafficManagementLoadBalanceExample {
                         .compartmentId(compartmentId)
                         .displayName(steeringPolicyName)
                         .template(CreateSteeringPolicyDetails.Template.LoadBalance)
-                        // If we were going to remove unhealthy servers from the policy then we would add the
+                        // If we were going to remove unhealthy servers from the policy then we
+                        // would add the
                         // healthCheckMonitorId here:
                         // .healthCheckMonitorId("ocid...")
                         .answers(answerList)
@@ -229,11 +240,14 @@ public class DnsTrafficManagementLoadBalanceExample {
         String policyID = policy.getId();
         System.out.println("Created steering policy " + policyID);
 
-        // In order to activate a policy for a domain within a zone we have to create a steering policy attachment that
+        // In order to activate a policy for a domain within a zone we have to create a steering
+        // policy attachment that
         // references the policy, the zone, and the domain within the zone to attach to.
 
-        // Before we can create the attachment we need to check to see if there is already an attachment on this domain
-        // because only one policy can be attached to a domain at a time. We accomplish that by listing available
+        // Before we can create the attachment we need to check to see if there is already an
+        // attachment on this domain
+        // because only one policy can be attached to a domain at a time. We accomplish that by
+        // listing available
         // attachments and filtering for the domain name that we're going to attach to.
         System.out.print("Checking for existing attachment at " + domainName + "... ");
         final ListSteeringPolicyAttachmentsResponse attachmentsResponse =
@@ -243,7 +257,8 @@ public class DnsTrafficManagementLoadBalanceExample {
                                 .domain(domainName)
                                 .build());
         if (attachmentsResponse.getOpcTotalItems() > 0) {
-            // There's already an attachment at the domain, so we can't attach the new policy we created.
+            // There's already an attachment at the domain, so we can't attach the new policy we
+            // created.
             System.out.println("found.");
             System.out.println(
                     "You will need to delete the existing attachment at "
@@ -251,7 +266,8 @@ public class DnsTrafficManagementLoadBalanceExample {
                             + " before you can "
                             + "attach a new policy.");
         } else {
-            // We didn't find an attachment at the domain, so we can go ahead and create the attachment for our
+            // We didn't find an attachment at the domain, so we can go ahead and create the
+            // attachment for our
             // policy.
             System.out.println("not found.");
             System.out.print("Attaching steering policy to " + domainName + "... ");
@@ -281,9 +297,7 @@ public class DnsTrafficManagementLoadBalanceExample {
         client.close();
     }
 
-    /**
-     * We can change the compartment for a DNS Steering Policy.
-     */
+    /** We can change the compartment for a DNS Steering Policy. */
     private static void changeCompartment(
             Dns client, SteeringPolicy policy, String targetCompartmentId) throws Exception {
         final ChangeSteeringPolicyCompartmentDetails policyDetails =

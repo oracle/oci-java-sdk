@@ -5,19 +5,20 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = GeneratedKey.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class GeneratedKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class GeneratedKey extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ciphertext", "plaintext", "plaintextChecksum"})
     public GeneratedKey(String ciphertext, String plaintext, String plaintextChecksum) {
@@ -29,17 +30,16 @@ public final class GeneratedKey extends com.oracle.bmc.http.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The encrypted data encryption key generated from a master encryption key.
-         **/
+        /** The encrypted data encryption key generated from a master encryption key. */
         @com.fasterxml.jackson.annotation.JsonProperty("ciphertext")
         private String ciphertext;
 
         /**
          * The encrypted data encryption key generated from a master encryption key.
+         *
          * @param ciphertext the value to set
          * @return this builder
-         **/
+         */
         public Builder ciphertext(String ciphertext) {
             this.ciphertext = ciphertext;
             this.__explicitlySet__.add("ciphertext");
@@ -47,21 +47,22 @@ public final class GeneratedKey extends com.oracle.bmc.http.internal.ExplicitlyS
         }
         /**
          * The plaintext data encryption key, a base64-encoded sequence of random bytes, which is
-         * included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+         * included if the
+         * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
          * request includes the {@code includePlaintextKey} parameter and sets its value to "true".
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("plaintext")
         private String plaintext;
 
         /**
          * The plaintext data encryption key, a base64-encoded sequence of random bytes, which is
-         * included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+         * included if the
+         * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
          * request includes the {@code includePlaintextKey} parameter and sets its value to "true".
          *
          * @param plaintext the value to set
          * @return this builder
-         **/
+         */
         public Builder plaintext(String plaintext) {
             this.plaintext = plaintext;
             this.__explicitlySet__.add("plaintext");
@@ -71,8 +72,7 @@ public final class GeneratedKey extends com.oracle.bmc.http.internal.ExplicitlyS
          * The checksum of the plaintext data encryption key, which is included if the
          * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
          * request includes the {@code includePlaintextKey} parameter and sets its value to "true".
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("plaintextChecksum")
         private String plaintextChecksum;
 
@@ -83,7 +83,7 @@ public final class GeneratedKey extends com.oracle.bmc.http.internal.ExplicitlyS
          *
          * @param plaintextChecksum the value to set
          * @return this builder
-         **/
+         */
         public Builder plaintextChecksum(String plaintextChecksum) {
             this.plaintextChecksum = plaintextChecksum;
             this.__explicitlySet__.add("plaintextChecksum");
@@ -117,9 +117,7 @@ public final class GeneratedKey extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -128,36 +126,36 @@ public final class GeneratedKey extends com.oracle.bmc.http.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /**
-     * The encrypted data encryption key generated from a master encryption key.
-     **/
+    /** The encrypted data encryption key generated from a master encryption key. */
     @com.fasterxml.jackson.annotation.JsonProperty("ciphertext")
     private final String ciphertext;
 
     /**
      * The encrypted data encryption key generated from a master encryption key.
+     *
      * @return the value
-     **/
+     */
     public String getCiphertext() {
         return ciphertext;
     }
 
     /**
      * The plaintext data encryption key, a base64-encoded sequence of random bytes, which is
-     * included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+     * included if the
+     * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
      * request includes the {@code includePlaintextKey} parameter and sets its value to "true".
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("plaintext")
     private final String plaintext;
 
     /**
      * The plaintext data encryption key, a base64-encoded sequence of random bytes, which is
-     * included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+     * included if the
+     * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
      * request includes the {@code includePlaintextKey} parameter and sets its value to "true".
      *
      * @return the value
-     **/
+     */
     public String getPlaintext() {
         return plaintext;
     }
@@ -166,8 +164,7 @@ public final class GeneratedKey extends com.oracle.bmc.http.internal.ExplicitlyS
      * The checksum of the plaintext data encryption key, which is included if the
      * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
      * request includes the {@code includePlaintextKey} parameter and sets its value to "true".
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("plaintextChecksum")
     private final String plaintextChecksum;
 
@@ -177,7 +174,7 @@ public final class GeneratedKey extends com.oracle.bmc.http.internal.ExplicitlyS
      * request includes the {@code includePlaintextKey} parameter and sets its value to "true".
      *
      * @return the value
-     **/
+     */
     public String getPlaintextChecksum() {
         return plaintextChecksum;
     }
@@ -189,6 +186,7 @@ public final class GeneratedKey extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/**
- * The source of the library masking format.
- **/
+/** The source of the library masking format. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum LibraryMaskingFormatSource {
+public enum LibraryMaskingFormatSource implements com.oracle.bmc.http.internal.BmcEnum {
     Oracle("ORACLE"),
     User("USER"),
 

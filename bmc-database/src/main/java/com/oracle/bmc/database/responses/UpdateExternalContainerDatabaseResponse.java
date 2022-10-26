@@ -9,13 +9,18 @@ import com.oracle.bmc.database.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class UpdateExternalContainerDatabaseResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
-     *
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * work request. Multiple OCID values are returned in a comma-separated list. Use {@link
+     * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the
+     * status of the request.
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * work request. Multiple OCID values are returned in a comma-separated list. Use {@link
+     * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the
+     * status of the request.
      *
      * @return the value
      */
@@ -24,15 +29,14 @@ public class UpdateExternalContainerDatabaseResponse extends com.oracle.bmc.resp
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,26 +44,24 @@ public class UpdateExternalContainerDatabaseResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
+     *
      * @return the value
      */
     public String getEtag() {
         return etag;
     }
 
-    /**
-     * The returned ExternalContainerDatabase instance.
-     */
+    /** The returned ExternalContainerDatabase instance. */
     private com.oracle.bmc.database.model.ExternalContainerDatabase externalContainerDatabase;
 
     /**
      * The returned ExternalContainerDatabase instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.database.model.ExternalContainerDatabase getExternalContainerDatabase() {
@@ -76,7 +78,7 @@ public class UpdateExternalContainerDatabaseResponse extends com.oracle.bmc.resp
     })
     private UpdateExternalContainerDatabaseResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcWorkRequestId,
             String opcRequestId,
             String etag,
@@ -88,29 +90,38 @@ public class UpdateExternalContainerDatabaseResponse extends com.oracle.bmc.resp
         this.externalContainerDatabase = externalContainerDatabase;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    UpdateExternalContainerDatabaseResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
-         *
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * work request. Multiple OCID values are returned in a comma-separated list. Use {@link
+         * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track
+         * the status of the request.
          */
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * work request. Multiple OCID values are returned in a comma-separated list. Use {@link
+         * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track
+         * the status of the request.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -121,15 +132,14 @@ public class UpdateExternalContainerDatabaseResponse extends com.oracle.bmc.resp
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -139,13 +149,12 @@ public class UpdateExternalContainerDatabaseResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -154,13 +163,12 @@ public class UpdateExternalContainerDatabaseResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /**
-         * The returned ExternalContainerDatabase instance.
-         */
+        /** The returned ExternalContainerDatabase instance. */
         private com.oracle.bmc.database.model.ExternalContainerDatabase externalContainerDatabase;
 
         /**
          * The returned ExternalContainerDatabase instance.
+         *
          * @param externalContainerDatabase the value to set
          * @return this builder
          */
@@ -172,8 +180,10 @@ public class UpdateExternalContainerDatabaseResponse extends com.oracle.bmc.resp
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(UpdateExternalContainerDatabaseResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -187,8 +197,10 @@ public class UpdateExternalContainerDatabaseResponse extends com.oracle.bmc.resp
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public UpdateExternalContainerDatabaseResponse build() {
             return new UpdateExternalContainerDatabaseResponse(
                     __httpStatusCode__,
@@ -202,6 +214,7 @@ public class UpdateExternalContainerDatabaseResponse extends com.oracle.bmc.resp
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

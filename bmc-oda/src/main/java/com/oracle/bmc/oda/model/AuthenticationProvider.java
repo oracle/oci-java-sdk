@@ -5,22 +5,22 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * Settings for the Authentication Provider.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Settings for the Authentication Provider. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AuthenticationProvider.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AuthenticationProvider.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AuthenticationProvider
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -88,295 +88,300 @@ public final class AuthenticationProvider
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique immutable identifier that was assigned when the Authentication Provider was created.
-         **/
+         * Unique immutable identifier that was assigned when the Authentication Provider was
+         * created.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique immutable identifier that was assigned when the Authentication Provider was created.
+         * Unique immutable identifier that was assigned when the Authentication Provider was
+         * created.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The grant type for the Authentication Provider.
-         **/
+        /** The grant type for the Authentication Provider. */
         @com.fasterxml.jackson.annotation.JsonProperty("grantType")
         private AuthenticationGrantType grantType;
 
         /**
          * The grant type for the Authentication Provider.
+         *
          * @param grantType the value to set
          * @return this builder
-         **/
+         */
         public Builder grantType(AuthenticationGrantType grantType) {
             this.grantType = grantType;
             this.__explicitlySet__.add("grantType");
             return this;
         }
-        /**
-         * Which type of Identity Provider (IDP) you are using.
-         **/
+        /** Which type of Identity Provider (IDP) you are using. */
         @com.fasterxml.jackson.annotation.JsonProperty("identityProvider")
         private AuthenticationIdentityProvider identityProvider;
 
         /**
          * Which type of Identity Provider (IDP) you are using.
+         *
          * @param identityProvider the value to set
          * @return this builder
-         **/
+         */
         public Builder identityProvider(AuthenticationIdentityProvider identityProvider) {
             this.identityProvider = identityProvider;
             this.__explicitlySet__.add("identityProvider");
             return this;
         }
-        /**
-         * A name to identify the Authentication Provider.
-         **/
+        /** A name to identify the Authentication Provider. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * A name to identify the Authentication Provider.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The IDPs URL for requesting access tokens.
-         **/
+        /** The IDPs URL for requesting access tokens. */
         @com.fasterxml.jackson.annotation.JsonProperty("tokenEndpointUrl")
         private String tokenEndpointUrl;
 
         /**
          * The IDPs URL for requesting access tokens.
+         *
          * @param tokenEndpointUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder tokenEndpointUrl(String tokenEndpointUrl) {
             this.tokenEndpointUrl = tokenEndpointUrl;
             this.__explicitlySet__.add("tokenEndpointUrl");
             return this;
         }
         /**
-         * The IDPs URL for the page that users authenticate with by entering the user name and password.
-         **/
+         * The IDPs URL for the page that users authenticate with by entering the user name and
+         * password.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("authorizationEndpointUrl")
         private String authorizationEndpointUrl;
 
         /**
-         * The IDPs URL for the page that users authenticate with by entering the user name and password.
+         * The IDPs URL for the page that users authenticate with by entering the user name and
+         * password.
+         *
          * @param authorizationEndpointUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder authorizationEndpointUrl(String authorizationEndpointUrl) {
             this.authorizationEndpointUrl = authorizationEndpointUrl;
             this.__explicitlySet__.add("authorizationEndpointUrl");
             return this;
         }
         /**
-         * A shortened version of the authorization URL, which you can get from a URL shortener service (one that allows
-         * you to send query parameters).  You might need this because the generated authorization-code-request URL
-         * could be too long for SMS and older smart phones.
-         *
-         **/
+         * A shortened version of the authorization URL, which you can get from a URL shortener
+         * service (one that allows you to send query parameters). You might need this because the
+         * generated authorization-code-request URL could be too long for SMS and older smart
+         * phones.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("shortAuthorizationCodeRequestUrl")
         private String shortAuthorizationCodeRequestUrl;
 
         /**
-         * A shortened version of the authorization URL, which you can get from a URL shortener service (one that allows
-         * you to send query parameters).  You might need this because the generated authorization-code-request URL
-         * could be too long for SMS and older smart phones.
+         * A shortened version of the authorization URL, which you can get from a URL shortener
+         * service (one that allows you to send query parameters). You might need this because the
+         * generated authorization-code-request URL could be too long for SMS and older smart
+         * phones.
          *
          * @param shortAuthorizationCodeRequestUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder shortAuthorizationCodeRequestUrl(String shortAuthorizationCodeRequestUrl) {
             this.shortAuthorizationCodeRequestUrl = shortAuthorizationCodeRequestUrl;
             this.__explicitlySet__.add("shortAuthorizationCodeRequestUrl");
             return this;
         }
         /**
-         * If you want to revoke all the refresh tokens and access tokens of the logged-in user from a dialog flow, then
-         * you need the IDP's revoke refresh token URL. If you provide this URL, then you can use the System.OAuth2ResetTokens
-         * component to revoke the user's tokens for this service.
-         *
-         **/
+         * If you want to revoke all the refresh tokens and access tokens of the logged-in user from
+         * a dialog flow, then you need the IDP's revoke refresh token URL. If you provide this URL,
+         * then you can use the System.OAuth2ResetTokens component to revoke the user's tokens for
+         * this service.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("revokeTokenEndpointUrl")
         private String revokeTokenEndpointUrl;
 
         /**
-         * If you want to revoke all the refresh tokens and access tokens of the logged-in user from a dialog flow, then
-         * you need the IDP's revoke refresh token URL. If you provide this URL, then you can use the System.OAuth2ResetTokens
-         * component to revoke the user's tokens for this service.
+         * If you want to revoke all the refresh tokens and access tokens of the logged-in user from
+         * a dialog flow, then you need the IDP's revoke refresh token URL. If you provide this URL,
+         * then you can use the System.OAuth2ResetTokens component to revoke the user's tokens for
+         * this service.
          *
          * @param revokeTokenEndpointUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder revokeTokenEndpointUrl(String revokeTokenEndpointUrl) {
             this.revokeTokenEndpointUrl = revokeTokenEndpointUrl;
             this.__explicitlySet__.add("revokeTokenEndpointUrl");
             return this;
         }
         /**
-         * The client ID for the IDP application (OAuth Client) that was registered as described in Identity Provider Registration.
-         * With Microsoft identity platform, use the application ID.
-         *
-         **/
+         * The client ID for the IDP application (OAuth Client) that was registered as described in
+         * Identity Provider Registration. With Microsoft identity platform, use the application ID.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("clientId")
         private String clientId;
 
         /**
-         * The client ID for the IDP application (OAuth Client) that was registered as described in Identity Provider Registration.
-         * With Microsoft identity platform, use the application ID.
+         * The client ID for the IDP application (OAuth Client) that was registered as described in
+         * Identity Provider Registration. With Microsoft identity platform, use the application ID.
          *
          * @param clientId the value to set
          * @return this builder
-         **/
+         */
         public Builder clientId(String clientId) {
             this.clientId = clientId;
             this.__explicitlySet__.add("clientId");
             return this;
         }
         /**
-         * A space-separated list of the scopes that must be included when Digital Assistant requests an access token from
-         * the provider. Include all the scopes that are required to access the resources. If refresh tokens are enabled,
-         * include the scope that\u2019s necessary to get the refresh token (typically offline_access).
-         *
-         **/
+         * A space-separated list of the scopes that must be included when Digital Assistant
+         * requests an access token from the provider. Include all the scopes that are required to
+         * access the resources. If refresh tokens are enabled, include the scope that\u2019s
+         * necessary to get the refresh token (typically offline_access).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("scopes")
         private String scopes;
 
         /**
-         * A space-separated list of the scopes that must be included when Digital Assistant requests an access token from
-         * the provider. Include all the scopes that are required to access the resources. If refresh tokens are enabled,
-         * include the scope that\u2019s necessary to get the refresh token (typically offline_access).
+         * A space-separated list of the scopes that must be included when Digital Assistant
+         * requests an access token from the provider. Include all the scopes that are required to
+         * access the resources. If refresh tokens are enabled, include the scope that\u2019s
+         * necessary to get the refresh token (typically offline_access).
          *
          * @param scopes the value to set
          * @return this builder
-         **/
+         */
         public Builder scopes(String scopes) {
             this.scopes = scopes;
             this.__explicitlySet__.add("scopes");
             return this;
         }
-        /**
-         * The access-token profile claim to use to identify the user.
-         **/
+        /** The access-token profile claim to use to identify the user. */
         @com.fasterxml.jackson.annotation.JsonProperty("subjectClaim")
         private String subjectClaim;
 
         /**
          * The access-token profile claim to use to identify the user.
+         *
          * @param subjectClaim the value to set
          * @return this builder
-         **/
+         */
         public Builder subjectClaim(String subjectClaim) {
             this.subjectClaim = subjectClaim;
             this.__explicitlySet__.add("subjectClaim");
             return this;
         }
-        /**
-         * The number of days to keep the refresh token in the Digital Assistant cache.
-         **/
+        /** The number of days to keep the refresh token in the Digital Assistant cache. */
         @com.fasterxml.jackson.annotation.JsonProperty("refreshTokenRetentionPeriodInDays")
         private Integer refreshTokenRetentionPeriodInDays;
 
         /**
          * The number of days to keep the refresh token in the Digital Assistant cache.
+         *
          * @param refreshTokenRetentionPeriodInDays the value to set
          * @return this builder
-         **/
+         */
         public Builder refreshTokenRetentionPeriodInDays(
                 Integer refreshTokenRetentionPeriodInDays) {
             this.refreshTokenRetentionPeriodInDays = refreshTokenRetentionPeriodInDays;
             this.__explicitlySet__.add("refreshTokenRetentionPeriodInDays");
             return this;
         }
-        /**
-         * The OAuth Redirect URL.
-         **/
+        /** The OAuth Redirect URL. */
         @com.fasterxml.jackson.annotation.JsonProperty("redirectUrl")
         private String redirectUrl;
 
         /**
          * The OAuth Redirect URL.
+         *
          * @param redirectUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder redirectUrl(String redirectUrl) {
             this.redirectUrl = redirectUrl;
             this.__explicitlySet__.add("redirectUrl");
             return this;
         }
-        /**
-         * Whether this Authentication Provider is visible in the ODA UI.
-         **/
+        /** Whether this Authentication Provider is visible in the ODA UI. */
         @com.fasterxml.jackson.annotation.JsonProperty("isVisible")
         private Boolean isVisible;
 
         /**
          * Whether this Authentication Provider is visible in the ODA UI.
+         *
          * @param isVisible the value to set
          * @return this builder
-         **/
+         */
         public Builder isVisible(Boolean isVisible) {
             this.isVisible = isVisible;
             this.__explicitlySet__.add("isVisible");
             return this;
         }
-        /**
-         * The Authentication Provider's current state.
-         **/
+        /** The Authentication Provider's current state. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The Authentication Provider's current state.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-         **/
+         * When the resource was created. A date-time string as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * When the resource was created. A date-time string as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-         **/
+         * When the resource was last updated. A date-time string as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * When the resource was last updated. A date-time string as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -385,8 +390,7 @@ public final class AuthenticationProvider
         /**
          * Simple key-value pair that is applied without any predefined name, type, or scope.
          * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -396,27 +400,26 @@ public final class AuthenticationProvider
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
+         * {@code {"foo-namespace": {"bar-key": "value"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
+         * {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -519,9 +522,7 @@ public final class AuthenticationProvider
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -532,296 +533,295 @@ public final class AuthenticationProvider
 
     /**
      * Unique immutable identifier that was assigned when the Authentication Provider was created.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique immutable identifier that was assigned when the Authentication Provider was created.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The grant type for the Authentication Provider.
-     **/
+    /** The grant type for the Authentication Provider. */
     @com.fasterxml.jackson.annotation.JsonProperty("grantType")
     private final AuthenticationGrantType grantType;
 
     /**
      * The grant type for the Authentication Provider.
+     *
      * @return the value
-     **/
+     */
     public AuthenticationGrantType getGrantType() {
         return grantType;
     }
 
-    /**
-     * Which type of Identity Provider (IDP) you are using.
-     **/
+    /** Which type of Identity Provider (IDP) you are using. */
     @com.fasterxml.jackson.annotation.JsonProperty("identityProvider")
     private final AuthenticationIdentityProvider identityProvider;
 
     /**
      * Which type of Identity Provider (IDP) you are using.
+     *
      * @return the value
-     **/
+     */
     public AuthenticationIdentityProvider getIdentityProvider() {
         return identityProvider;
     }
 
-    /**
-     * A name to identify the Authentication Provider.
-     **/
+    /** A name to identify the Authentication Provider. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * A name to identify the Authentication Provider.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The IDPs URL for requesting access tokens.
-     **/
+    /** The IDPs URL for requesting access tokens. */
     @com.fasterxml.jackson.annotation.JsonProperty("tokenEndpointUrl")
     private final String tokenEndpointUrl;
 
     /**
      * The IDPs URL for requesting access tokens.
+     *
      * @return the value
-     **/
+     */
     public String getTokenEndpointUrl() {
         return tokenEndpointUrl;
     }
 
     /**
-     * The IDPs URL for the page that users authenticate with by entering the user name and password.
-     **/
+     * The IDPs URL for the page that users authenticate with by entering the user name and
+     * password.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("authorizationEndpointUrl")
     private final String authorizationEndpointUrl;
 
     /**
-     * The IDPs URL for the page that users authenticate with by entering the user name and password.
+     * The IDPs URL for the page that users authenticate with by entering the user name and
+     * password.
+     *
      * @return the value
-     **/
+     */
     public String getAuthorizationEndpointUrl() {
         return authorizationEndpointUrl;
     }
 
     /**
-     * A shortened version of the authorization URL, which you can get from a URL shortener service (one that allows
-     * you to send query parameters).  You might need this because the generated authorization-code-request URL
-     * could be too long for SMS and older smart phones.
-     *
-     **/
+     * A shortened version of the authorization URL, which you can get from a URL shortener service
+     * (one that allows you to send query parameters). You might need this because the generated
+     * authorization-code-request URL could be too long for SMS and older smart phones.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("shortAuthorizationCodeRequestUrl")
     private final String shortAuthorizationCodeRequestUrl;
 
     /**
-     * A shortened version of the authorization URL, which you can get from a URL shortener service (one that allows
-     * you to send query parameters).  You might need this because the generated authorization-code-request URL
-     * could be too long for SMS and older smart phones.
+     * A shortened version of the authorization URL, which you can get from a URL shortener service
+     * (one that allows you to send query parameters). You might need this because the generated
+     * authorization-code-request URL could be too long for SMS and older smart phones.
      *
      * @return the value
-     **/
+     */
     public String getShortAuthorizationCodeRequestUrl() {
         return shortAuthorizationCodeRequestUrl;
     }
 
     /**
-     * If you want to revoke all the refresh tokens and access tokens of the logged-in user from a dialog flow, then
-     * you need the IDP's revoke refresh token URL. If you provide this URL, then you can use the System.OAuth2ResetTokens
-     * component to revoke the user's tokens for this service.
-     *
-     **/
+     * If you want to revoke all the refresh tokens and access tokens of the logged-in user from a
+     * dialog flow, then you need the IDP's revoke refresh token URL. If you provide this URL, then
+     * you can use the System.OAuth2ResetTokens component to revoke the user's tokens for this
+     * service.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("revokeTokenEndpointUrl")
     private final String revokeTokenEndpointUrl;
 
     /**
-     * If you want to revoke all the refresh tokens and access tokens of the logged-in user from a dialog flow, then
-     * you need the IDP's revoke refresh token URL. If you provide this URL, then you can use the System.OAuth2ResetTokens
-     * component to revoke the user's tokens for this service.
+     * If you want to revoke all the refresh tokens and access tokens of the logged-in user from a
+     * dialog flow, then you need the IDP's revoke refresh token URL. If you provide this URL, then
+     * you can use the System.OAuth2ResetTokens component to revoke the user's tokens for this
+     * service.
      *
      * @return the value
-     **/
+     */
     public String getRevokeTokenEndpointUrl() {
         return revokeTokenEndpointUrl;
     }
 
     /**
-     * The client ID for the IDP application (OAuth Client) that was registered as described in Identity Provider Registration.
-     * With Microsoft identity platform, use the application ID.
-     *
-     **/
+     * The client ID for the IDP application (OAuth Client) that was registered as described in
+     * Identity Provider Registration. With Microsoft identity platform, use the application ID.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
     private final String clientId;
 
     /**
-     * The client ID for the IDP application (OAuth Client) that was registered as described in Identity Provider Registration.
-     * With Microsoft identity platform, use the application ID.
+     * The client ID for the IDP application (OAuth Client) that was registered as described in
+     * Identity Provider Registration. With Microsoft identity platform, use the application ID.
      *
      * @return the value
-     **/
+     */
     public String getClientId() {
         return clientId;
     }
 
     /**
-     * A space-separated list of the scopes that must be included when Digital Assistant requests an access token from
-     * the provider. Include all the scopes that are required to access the resources. If refresh tokens are enabled,
-     * include the scope that\u2019s necessary to get the refresh token (typically offline_access).
-     *
-     **/
+     * A space-separated list of the scopes that must be included when Digital Assistant requests an
+     * access token from the provider. Include all the scopes that are required to access the
+     * resources. If refresh tokens are enabled, include the scope that\u2019s necessary to get the
+     * refresh token (typically offline_access).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("scopes")
     private final String scopes;
 
     /**
-     * A space-separated list of the scopes that must be included when Digital Assistant requests an access token from
-     * the provider. Include all the scopes that are required to access the resources. If refresh tokens are enabled,
-     * include the scope that\u2019s necessary to get the refresh token (typically offline_access).
+     * A space-separated list of the scopes that must be included when Digital Assistant requests an
+     * access token from the provider. Include all the scopes that are required to access the
+     * resources. If refresh tokens are enabled, include the scope that\u2019s necessary to get the
+     * refresh token (typically offline_access).
      *
      * @return the value
-     **/
+     */
     public String getScopes() {
         return scopes;
     }
 
-    /**
-     * The access-token profile claim to use to identify the user.
-     **/
+    /** The access-token profile claim to use to identify the user. */
     @com.fasterxml.jackson.annotation.JsonProperty("subjectClaim")
     private final String subjectClaim;
 
     /**
      * The access-token profile claim to use to identify the user.
+     *
      * @return the value
-     **/
+     */
     public String getSubjectClaim() {
         return subjectClaim;
     }
 
-    /**
-     * The number of days to keep the refresh token in the Digital Assistant cache.
-     **/
+    /** The number of days to keep the refresh token in the Digital Assistant cache. */
     @com.fasterxml.jackson.annotation.JsonProperty("refreshTokenRetentionPeriodInDays")
     private final Integer refreshTokenRetentionPeriodInDays;
 
     /**
      * The number of days to keep the refresh token in the Digital Assistant cache.
+     *
      * @return the value
-     **/
+     */
     public Integer getRefreshTokenRetentionPeriodInDays() {
         return refreshTokenRetentionPeriodInDays;
     }
 
-    /**
-     * The OAuth Redirect URL.
-     **/
+    /** The OAuth Redirect URL. */
     @com.fasterxml.jackson.annotation.JsonProperty("redirectUrl")
     private final String redirectUrl;
 
     /**
      * The OAuth Redirect URL.
+     *
      * @return the value
-     **/
+     */
     public String getRedirectUrl() {
         return redirectUrl;
     }
 
-    /**
-     * Whether this Authentication Provider is visible in the ODA UI.
-     **/
+    /** Whether this Authentication Provider is visible in the ODA UI. */
     @com.fasterxml.jackson.annotation.JsonProperty("isVisible")
     private final Boolean isVisible;
 
     /**
      * Whether this Authentication Provider is visible in the ODA UI.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsVisible() {
         return isVisible;
     }
 
-    /**
-     * The Authentication Provider's current state.
-     **/
+    /** The Authentication Provider's current state. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The Authentication Provider's current state.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-     **/
+     * When the resource was created. A date-time string as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * When the resource was created. A date-time string as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-     **/
+     * When the resource was last updated. A date-time string as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * When the resource was last updated. A date-time string as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Example:
+     * {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Example:
+     * {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -833,6 +833,7 @@ public final class AuthenticationProvider
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

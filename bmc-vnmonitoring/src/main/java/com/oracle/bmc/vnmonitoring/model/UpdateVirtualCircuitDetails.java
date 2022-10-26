@@ -5,22 +5,22 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateVirtualCircuitDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateVirtualCircuitDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateVirtualCircuitDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "bandwidthShapeName",
@@ -52,52 +52,50 @@ public final class UpdateVirtualCircuitDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The provisioned data rate of the connection. To get a list of the
-         * available bandwidth levels (that is, shapes), see
-         * {@link #listFastConnectProviderVirtualCircuitBandwidthShapes(ListFastConnectProviderVirtualCircuitBandwidthShapesRequest) listFastConnectProviderVirtualCircuitBandwidthShapes}.
-         * To be updated only by the customer who owns the virtual circuit.
-         *
-         **/
+         * The provisioned data rate of the connection. To get a list of the available bandwidth
+         * levels (that is, shapes), see {@link
+         * #listFastConnectProviderVirtualCircuitBandwidthShapes(ListFastConnectProviderVirtualCircuitBandwidthShapesRequest)
+         * listFastConnectProviderVirtualCircuitBandwidthShapes}. To be updated only by the customer
+         * who owns the virtual circuit.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("bandwidthShapeName")
         private String bandwidthShapeName;
 
         /**
-         * The provisioned data rate of the connection. To get a list of the
-         * available bandwidth levels (that is, shapes), see
-         * {@link #listFastConnectProviderVirtualCircuitBandwidthShapes(ListFastConnectProviderVirtualCircuitBandwidthShapesRequest) listFastConnectProviderVirtualCircuitBandwidthShapes}.
-         * To be updated only by the customer who owns the virtual circuit.
+         * The provisioned data rate of the connection. To get a list of the available bandwidth
+         * levels (that is, shapes), see {@link
+         * #listFastConnectProviderVirtualCircuitBandwidthShapes(ListFastConnectProviderVirtualCircuitBandwidthShapesRequest)
+         * listFastConnectProviderVirtualCircuitBandwidthShapes}. To be updated only by the customer
+         * who owns the virtual circuit.
          *
          * @param bandwidthShapeName the value to set
          * @return this builder
-         **/
+         */
         public Builder bandwidthShapeName(String bandwidthShapeName) {
             this.bandwidthShapeName = bandwidthShapeName;
             this.__explicitlySet__.add("bandwidthShapeName");
             return this;
         }
         /**
-         * An array of mappings, each containing properties for a cross-connect or
-         * cross-connect group associated with this virtual circuit.
-         * <p>
-         * The customer and provider can update different properties in the mapping
-         * depending on the situation. See the description of the
-         * {@link CrossConnectMapping}.
+         * An array of mappings, each containing properties for a cross-connect or cross-connect
+         * group associated with this virtual circuit.
          *
-         **/
+         * <p>The customer and provider can update different properties in the mapping depending on
+         * the situation. See the description of the {@link CrossConnectMapping}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("crossConnectMappings")
         private java.util.List<CrossConnectMapping> crossConnectMappings;
 
         /**
-         * An array of mappings, each containing properties for a cross-connect or
-         * cross-connect group associated with this virtual circuit.
-         * <p>
-         * The customer and provider can update different properties in the mapping
-         * depending on the situation. See the description of the
-         * {@link CrossConnectMapping}.
+         * An array of mappings, each containing properties for a cross-connect or cross-connect
+         * group associated with this virtual circuit.
+         *
+         * <p>The customer and provider can update different properties in the mapping depending on
+         * the situation. See the description of the {@link CrossConnectMapping}.
          *
          * @param crossConnectMappings the value to set
          * @return this builder
-         **/
+         */
         public Builder crossConnectMappings(
                 java.util.List<CrossConnectMapping> crossConnectMappings) {
             this.crossConnectMappings = crossConnectMappings;
@@ -105,134 +103,121 @@ public final class UpdateVirtualCircuitDetails
             return this;
         }
         /**
-         * The BGP ASN of the network at the other end of the BGP
-         * session from Oracle.
-         * <p>
-         * If the BGP session is from the customer's edge router to Oracle, the
-         * required value is the customer's ASN, and it can be updated only
-         * by the customer.
-         * <p>
-         * If the BGP session is from the provider's edge router to Oracle, the
-         * required value is the provider's ASN, and it can be updated only
-         * by the provider.
+         * The BGP ASN of the network at the other end of the BGP session from Oracle.
          *
-         **/
+         * <p>If the BGP session is from the customer's edge router to Oracle, the required value is
+         * the customer's ASN, and it can be updated only by the customer.
+         *
+         * <p>If the BGP session is from the provider's edge router to Oracle, the required value is
+         * the provider's ASN, and it can be updated only by the provider.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("customerBgpAsn")
         private Integer customerBgpAsn;
 
         /**
-         * The BGP ASN of the network at the other end of the BGP
-         * session from Oracle.
-         * <p>
-         * If the BGP session is from the customer's edge router to Oracle, the
-         * required value is the customer's ASN, and it can be updated only
-         * by the customer.
-         * <p>
-         * If the BGP session is from the provider's edge router to Oracle, the
-         * required value is the provider's ASN, and it can be updated only
-         * by the provider.
+         * The BGP ASN of the network at the other end of the BGP session from Oracle.
+         *
+         * <p>If the BGP session is from the customer's edge router to Oracle, the required value is
+         * the customer's ASN, and it can be updated only by the customer.
+         *
+         * <p>If the BGP session is from the provider's edge router to Oracle, the required value is
+         * the provider's ASN, and it can be updated only by the provider.
          *
          * @param customerBgpAsn the value to set
          * @return this builder
-         **/
+         */
         public Builder customerBgpAsn(Integer customerBgpAsn) {
             this.customerBgpAsn = customerBgpAsn;
             this.__explicitlySet__.add("customerBgpAsn");
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
-         *
-         **/
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Drg}
-         * that this private virtual circuit uses.
-         * <p>
-         * To be updated only by the customer who owns the virtual circuit.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the {@link Drg} that this private virtual circuit uses.
          *
-         **/
+         * <p>To be updated only by the customer who owns the virtual circuit.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("gatewayId")
         private String gatewayId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Drg}
-         * that this private virtual circuit uses.
-         * <p>
-         * To be updated only by the customer who owns the virtual circuit.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the {@link Drg} that this private virtual circuit uses.
+         *
+         * <p>To be updated only by the customer who owns the virtual circuit.
          *
          * @param gatewayId the value to set
          * @return this builder
-         **/
+         */
         public Builder gatewayId(String gatewayId) {
             this.gatewayId = gatewayId;
             this.__explicitlySet__.add("gatewayId");
             return this;
         }
         /**
-         * The provider's state in relation to this virtual circuit. Relevant only
-         * if the customer is using FastConnect via a provider. ACTIVE
-         * means the provider has provisioned the virtual circuit from their
-         * end. INACTIVE means the provider has not yet provisioned the virtual
-         * circuit, or has de-provisioned it.
-         * <p>
-         * To be updated only by the provider.
+         * The provider's state in relation to this virtual circuit. Relevant only if the customer
+         * is using FastConnect via a provider. ACTIVE means the provider has provisioned the
+         * virtual circuit from their end. INACTIVE means the provider has not yet provisioned the
+         * virtual circuit, or has de-provisioned it.
          *
-         **/
+         * <p>To be updated only by the provider.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("providerState")
         private ProviderState providerState;
 
         /**
-         * The provider's state in relation to this virtual circuit. Relevant only
-         * if the customer is using FastConnect via a provider. ACTIVE
-         * means the provider has provisioned the virtual circuit from their
-         * end. INACTIVE means the provider has not yet provisioned the virtual
-         * circuit, or has de-provisioned it.
-         * <p>
-         * To be updated only by the provider.
+         * The provider's state in relation to this virtual circuit. Relevant only if the customer
+         * is using FastConnect via a provider. ACTIVE means the provider has provisioned the
+         * virtual circuit from their end. INACTIVE means the provider has not yet provisioned the
+         * virtual circuit, or has de-provisioned it.
+         *
+         * <p>To be updated only by the provider.
          *
          * @param providerState the value to set
          * @return this builder
-         **/
+         */
         public Builder providerState(ProviderState providerState) {
             this.providerState = providerState;
             this.__explicitlySet__.add("providerState");
             return this;
         }
         /**
-         * Provider-supplied reference information about this virtual circuit.
-         * Relevant only if the customer is using FastConnect via a provider.
-         * <p>
-         * To be updated only by the provider.
+         * Provider-supplied reference information about this virtual circuit. Relevant only if the
+         * customer is using FastConnect via a provider.
          *
-         **/
+         * <p>To be updated only by the provider.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("referenceComment")
         private String referenceComment;
 
         /**
-         * Provider-supplied reference information about this virtual circuit.
-         * Relevant only if the customer is using FastConnect via a provider.
-         * <p>
-         * To be updated only by the provider.
+         * Provider-supplied reference information about this virtual circuit. Relevant only if the
+         * customer is using FastConnect via a provider.
+         *
+         * <p>To be updated only by the provider.
          *
          * @param referenceComment the value to set
          * @return this builder
-         **/
+         */
         public Builder referenceComment(String referenceComment) {
             this.referenceComment = referenceComment;
             this.__explicitlySet__.add("referenceComment");
@@ -285,9 +270,7 @@ public final class UpdateVirtualCircuitDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -297,138 +280,125 @@ public final class UpdateVirtualCircuitDetails
     }
 
     /**
-     * The provisioned data rate of the connection. To get a list of the
-     * available bandwidth levels (that is, shapes), see
-     * {@link #listFastConnectProviderVirtualCircuitBandwidthShapes(ListFastConnectProviderVirtualCircuitBandwidthShapesRequest) listFastConnectProviderVirtualCircuitBandwidthShapes}.
-     * To be updated only by the customer who owns the virtual circuit.
-     *
-     **/
+     * The provisioned data rate of the connection. To get a list of the available bandwidth levels
+     * (that is, shapes), see {@link
+     * #listFastConnectProviderVirtualCircuitBandwidthShapes(ListFastConnectProviderVirtualCircuitBandwidthShapesRequest)
+     * listFastConnectProviderVirtualCircuitBandwidthShapes}. To be updated only by the customer who
+     * owns the virtual circuit.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("bandwidthShapeName")
     private final String bandwidthShapeName;
 
     /**
-     * The provisioned data rate of the connection. To get a list of the
-     * available bandwidth levels (that is, shapes), see
-     * {@link #listFastConnectProviderVirtualCircuitBandwidthShapes(ListFastConnectProviderVirtualCircuitBandwidthShapesRequest) listFastConnectProviderVirtualCircuitBandwidthShapes}.
-     * To be updated only by the customer who owns the virtual circuit.
+     * The provisioned data rate of the connection. To get a list of the available bandwidth levels
+     * (that is, shapes), see {@link
+     * #listFastConnectProviderVirtualCircuitBandwidthShapes(ListFastConnectProviderVirtualCircuitBandwidthShapesRequest)
+     * listFastConnectProviderVirtualCircuitBandwidthShapes}. To be updated only by the customer who
+     * owns the virtual circuit.
      *
      * @return the value
-     **/
+     */
     public String getBandwidthShapeName() {
         return bandwidthShapeName;
     }
 
     /**
-     * An array of mappings, each containing properties for a cross-connect or
-     * cross-connect group associated with this virtual circuit.
-     * <p>
-     * The customer and provider can update different properties in the mapping
-     * depending on the situation. See the description of the
-     * {@link CrossConnectMapping}.
+     * An array of mappings, each containing properties for a cross-connect or cross-connect group
+     * associated with this virtual circuit.
      *
-     **/
+     * <p>The customer and provider can update different properties in the mapping depending on the
+     * situation. See the description of the {@link CrossConnectMapping}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("crossConnectMappings")
     private final java.util.List<CrossConnectMapping> crossConnectMappings;
 
     /**
-     * An array of mappings, each containing properties for a cross-connect or
-     * cross-connect group associated with this virtual circuit.
-     * <p>
-     * The customer and provider can update different properties in the mapping
-     * depending on the situation. See the description of the
-     * {@link CrossConnectMapping}.
+     * An array of mappings, each containing properties for a cross-connect or cross-connect group
+     * associated with this virtual circuit.
+     *
+     * <p>The customer and provider can update different properties in the mapping depending on the
+     * situation. See the description of the {@link CrossConnectMapping}.
      *
      * @return the value
-     **/
+     */
     public java.util.List<CrossConnectMapping> getCrossConnectMappings() {
         return crossConnectMappings;
     }
 
     /**
-     * The BGP ASN of the network at the other end of the BGP
-     * session from Oracle.
-     * <p>
-     * If the BGP session is from the customer's edge router to Oracle, the
-     * required value is the customer's ASN, and it can be updated only
-     * by the customer.
-     * <p>
-     * If the BGP session is from the provider's edge router to Oracle, the
-     * required value is the provider's ASN, and it can be updated only
-     * by the provider.
+     * The BGP ASN of the network at the other end of the BGP session from Oracle.
      *
-     **/
+     * <p>If the BGP session is from the customer's edge router to Oracle, the required value is the
+     * customer's ASN, and it can be updated only by the customer.
+     *
+     * <p>If the BGP session is from the provider's edge router to Oracle, the required value is the
+     * provider's ASN, and it can be updated only by the provider.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("customerBgpAsn")
     private final Integer customerBgpAsn;
 
     /**
-     * The BGP ASN of the network at the other end of the BGP
-     * session from Oracle.
-     * <p>
-     * If the BGP session is from the customer's edge router to Oracle, the
-     * required value is the customer's ASN, and it can be updated only
-     * by the customer.
-     * <p>
-     * If the BGP session is from the provider's edge router to Oracle, the
-     * required value is the provider's ASN, and it can be updated only
-     * by the provider.
+     * The BGP ASN of the network at the other end of the BGP session from Oracle.
+     *
+     * <p>If the BGP session is from the customer's edge router to Oracle, the required value is the
+     * customer's ASN, and it can be updated only by the customer.
+     *
+     * <p>If the BGP session is from the provider's edge router to Oracle, the required value is the
+     * provider's ASN, and it can be updated only by the provider.
      *
      * @return the value
-     **/
+     */
     public Integer getCustomerBgpAsn() {
         return customerBgpAsn;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Drg}
-     * that this private virtual circuit uses.
-     * <p>
-     * To be updated only by the customer who owns the virtual circuit.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the {@link Drg} that this private virtual circuit uses.
      *
-     **/
+     * <p>To be updated only by the customer who owns the virtual circuit.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("gatewayId")
     private final String gatewayId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Drg}
-     * that this private virtual circuit uses.
-     * <p>
-     * To be updated only by the customer who owns the virtual circuit.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the {@link Drg} that this private virtual circuit uses.
+     *
+     * <p>To be updated only by the customer who owns the virtual circuit.
      *
      * @return the value
-     **/
+     */
     public String getGatewayId() {
         return gatewayId;
     }
 
     /**
-     * The provider's state in relation to this virtual circuit. Relevant only
-     * if the customer is using FastConnect via a provider. ACTIVE
-     * means the provider has provisioned the virtual circuit from their
-     * end. INACTIVE means the provider has not yet provisioned the virtual
+     * The provider's state in relation to this virtual circuit. Relevant only if the customer is
+     * using FastConnect via a provider. ACTIVE means the provider has provisioned the virtual
+     * circuit from their end. INACTIVE means the provider has not yet provisioned the virtual
      * circuit, or has de-provisioned it.
-     * <p>
-     * To be updated only by the provider.
      *
-     **/
-    public enum ProviderState {
+     * <p>To be updated only by the provider.
+     */
+    public enum ProviderState implements com.oracle.bmc.http.internal.BmcEnum {
         Active("ACTIVE"),
         Inactive("INACTIVE"),
         ;
@@ -461,51 +431,47 @@ public final class UpdateVirtualCircuitDetails
         }
     };
     /**
-     * The provider's state in relation to this virtual circuit. Relevant only
-     * if the customer is using FastConnect via a provider. ACTIVE
-     * means the provider has provisioned the virtual circuit from their
-     * end. INACTIVE means the provider has not yet provisioned the virtual
+     * The provider's state in relation to this virtual circuit. Relevant only if the customer is
+     * using FastConnect via a provider. ACTIVE means the provider has provisioned the virtual
+     * circuit from their end. INACTIVE means the provider has not yet provisioned the virtual
      * circuit, or has de-provisioned it.
-     * <p>
-     * To be updated only by the provider.
      *
-     **/
+     * <p>To be updated only by the provider.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("providerState")
     private final ProviderState providerState;
 
     /**
-     * The provider's state in relation to this virtual circuit. Relevant only
-     * if the customer is using FastConnect via a provider. ACTIVE
-     * means the provider has provisioned the virtual circuit from their
-     * end. INACTIVE means the provider has not yet provisioned the virtual
+     * The provider's state in relation to this virtual circuit. Relevant only if the customer is
+     * using FastConnect via a provider. ACTIVE means the provider has provisioned the virtual
+     * circuit from their end. INACTIVE means the provider has not yet provisioned the virtual
      * circuit, or has de-provisioned it.
-     * <p>
-     * To be updated only by the provider.
+     *
+     * <p>To be updated only by the provider.
      *
      * @return the value
-     **/
+     */
     public ProviderState getProviderState() {
         return providerState;
     }
 
     /**
-     * Provider-supplied reference information about this virtual circuit.
-     * Relevant only if the customer is using FastConnect via a provider.
-     * <p>
-     * To be updated only by the provider.
+     * Provider-supplied reference information about this virtual circuit. Relevant only if the
+     * customer is using FastConnect via a provider.
      *
-     **/
+     * <p>To be updated only by the provider.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("referenceComment")
     private final String referenceComment;
 
     /**
-     * Provider-supplied reference information about this virtual circuit.
-     * Relevant only if the customer is using FastConnect via a provider.
-     * <p>
-     * To be updated only by the provider.
+     * Provider-supplied reference information about this virtual circuit. Relevant only if the
+     * customer is using FastConnect via a provider.
+     *
+     * <p>To be updated only by the provider.
      *
      * @return the value
-     **/
+     */
     public String getReferenceComment() {
         return referenceComment;
     }
@@ -517,6 +483,7 @@ public final class UpdateVirtualCircuitDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,19 +5,20 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Tenant.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Tenant extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Tenant extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "name", "serviceNamespace"})
     public Tenant(String id, String name, String serviceNamespace) {
@@ -29,49 +30,46 @@ public final class Tenant extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The tenant's Oracle ID (OCID).
-         **/
+        /** The tenant's Oracle ID (OCID). */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The tenant's Oracle ID (OCID).
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The name of the tenancy.
-         **/
+        /** The name of the tenancy. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the tenancy.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The service namespace.
-         **/
+        /** The service namespace. */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceNamespace")
         private String serviceNamespace;
 
         /**
          * The service namespace.
+         *
          * @param serviceNamespace the value to set
          * @return this builder
-         **/
+         */
         public Builder serviceNamespace(String serviceNamespace) {
             this.serviceNamespace = serviceNamespace;
             this.__explicitlySet__.add("serviceNamespace");
@@ -104,9 +102,7 @@ public final class Tenant extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,44 +111,41 @@ public final class Tenant extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         return new Builder().copy(this);
     }
 
-    /**
-     * The tenant's Oracle ID (OCID).
-     **/
+    /** The tenant's Oracle ID (OCID). */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The tenant's Oracle ID (OCID).
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The name of the tenancy.
-     **/
+    /** The name of the tenancy. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the tenancy.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The service namespace.
-     **/
+    /** The service namespace. */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceNamespace")
     private final String serviceNamespace;
 
     /**
      * The service namespace.
+     *
      * @return the value
-     **/
+     */
     public String getServiceNamespace() {
         return serviceNamespace;
     }
@@ -164,6 +157,7 @@ public final class Tenant extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

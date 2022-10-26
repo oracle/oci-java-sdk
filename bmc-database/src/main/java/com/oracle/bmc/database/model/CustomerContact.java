@@ -5,20 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Customer contact information that will be used by Oracle to provide notifications needed by database and infrastructure administrators.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Customer contact information that will be used by Oracle to provide notifications needed by
+ * database and infrastructure administrators. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CustomerContact.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CustomerContact extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class CustomerContact
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"email"})
     public CustomerContact(String email) {
@@ -29,16 +31,19 @@ public final class CustomerContact extends com.oracle.bmc.http.internal.Explicit
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The email address used by Oracle to send notifications regarding databases and infrastructure.
-         **/
+         * The email address used by Oracle to send notifications regarding databases and
+         * infrastructure.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("email")
         private String email;
 
         /**
-         * The email address used by Oracle to send notifications regarding databases and infrastructure.
+         * The email address used by Oracle to send notifications regarding databases and
+         * infrastructure.
+         *
          * @param email the value to set
          * @return this builder
-         **/
+         */
         public Builder email(String email) {
             this.email = email;
             this.__explicitlySet__.add("email");
@@ -65,9 +70,7 @@ public final class CustomerContact extends com.oracle.bmc.http.internal.Explicit
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -77,15 +80,18 @@ public final class CustomerContact extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The email address used by Oracle to send notifications regarding databases and infrastructure.
-     **/
+     * The email address used by Oracle to send notifications regarding databases and
+     * infrastructure.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("email")
     private final String email;
 
     /**
-     * The email address used by Oracle to send notifications regarding databases and infrastructure.
+     * The email address used by Oracle to send notifications regarding databases and
+     * infrastructure.
+     *
      * @return the value
-     **/
+     */
     public String getEmail() {
         return email;
     }
@@ -97,6 +103,7 @@ public final class CustomerContact extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

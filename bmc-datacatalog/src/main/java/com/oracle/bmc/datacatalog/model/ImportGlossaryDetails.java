@@ -5,22 +5,22 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Import glossary from the contents of the glossary definition file.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Import glossary from the contents of the glossary definition file. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ImportGlossaryDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ImportGlossaryDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ImportGlossaryDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"glossaryFileContents"})
     public ImportGlossaryDetails(byte[] glossaryFileContents) {
@@ -30,17 +30,16 @@ public final class ImportGlossaryDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The file contents used for the import of glossary.
-         **/
+        /** The file contents used for the import of glossary. */
         @com.fasterxml.jackson.annotation.JsonProperty("glossaryFileContents")
         private byte[] glossaryFileContents;
 
         /**
          * The file contents used for the import of glossary.
+         *
          * @param glossaryFileContents the value to set
          * @return this builder
-         **/
+         */
         public Builder glossaryFileContents(byte[] glossaryFileContents) {
             this.glossaryFileContents = glossaryFileContents;
             this.__explicitlySet__.add("glossaryFileContents");
@@ -67,9 +66,7 @@ public final class ImportGlossaryDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -78,16 +75,15 @@ public final class ImportGlossaryDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The file contents used for the import of glossary.
-     **/
+    /** The file contents used for the import of glossary. */
     @com.fasterxml.jackson.annotation.JsonProperty("glossaryFileContents")
     private final byte[] glossaryFileContents;
 
     /**
      * The file contents used for the import of glossary.
+     *
      * @return the value
-     **/
+     */
     public byte[] getGlossaryFileContents() {
         return glossaryFileContents;
     }
@@ -99,6 +95,7 @@ public final class ImportGlossaryDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

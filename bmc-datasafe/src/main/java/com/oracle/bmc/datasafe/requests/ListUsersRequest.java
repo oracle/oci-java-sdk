@@ -6,65 +6,65 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListUsersExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListUsersRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListUsersExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListUsersRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The OCID of the user assessment.
-     */
+    /** The OCID of the user assessment. */
     private String userAssessmentId;
 
-    /**
-     * The OCID of the user assessment.
-     */
+    /** The OCID of the user assessment. */
     public String getUserAssessmentId() {
         return userAssessmentId;
     }
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List"
+     * call. For details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List"
+     * call. For details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * Default is false.
-     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-     *
+     * Default is false. When set to true, the hierarchy of compartments is traversed and all
+     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
+     * setting.
      */
     private Boolean compartmentIdInSubtree;
 
     /**
-     * Default is false.
-     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-     *
+     * Default is false. When set to true, the hierarchy of compartments is traversed and all
+     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
+     * setting.
      */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
-     * Setting this to ACCESSIBLE returns only those compartments for which the
-     * user has INSPECT permissions directly or indirectly (permissions can be on a
-     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-     *
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
+     * returns only those compartments for which the user has INSPECT permissions directly or
+     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
+     * permissions are checked and no partial results are displayed.
      */
     private AccessLevel accessLevel;
 
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
-     * Setting this to ACCESSIBLE returns only those compartments for which the
-     * user has INSPECT permissions directly or indirectly (permissions can be on a
-     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-     *
-     **/
-    public enum AccessLevel {
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
+     * returns only those compartments for which the user has INSPECT permissions directly or
+     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
+     * permissions are checked and no partial results are displayed.
+     */
+    public enum AccessLevel implements com.oracle.bmc.http.internal.BmcEnum {
         Restricted("RESTRICTED"),
         Accessible("ACCESSIBLE"),
         ;
@@ -98,197 +98,178 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     };
 
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
-     * Setting this to ACCESSIBLE returns only those compartments for which the
-     * user has INSPECT permissions directly or indirectly (permissions can be on a
-     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-     *
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
+     * returns only those compartments for which the user has INSPECT permissions directly or
+     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
+     * permissions are checked and no partial results are displayed.
      */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
-    /**
-     * A filter to return only items that match the specified user category.
-     */
+    /** A filter to return only items that match the specified user category. */
     private String userCategory;
 
-    /**
-     * A filter to return only items that match the specified user category.
-     */
+    /** A filter to return only items that match the specified user category. */
     public String getUserCategory() {
         return userCategory;
     }
-    /**
-     * A filter to return only items that match the specified user key.
-     */
+    /** A filter to return only items that match the specified user key. */
     private String userKey;
 
-    /**
-     * A filter to return only items that match the specified user key.
-     */
+    /** A filter to return only items that match the specified user key. */
     public String getUserKey() {
         return userKey;
     }
-    /**
-     * A filter to return only items that match the specified account status.
-     */
+    /** A filter to return only items that match the specified account status. */
     private String accountStatus;
 
-    /**
-     * A filter to return only items that match the specified account status.
-     */
+    /** A filter to return only items that match the specified account status. */
     public String getAccountStatus() {
         return accountStatus;
     }
-    /**
-     * A filter to return only items that match the specified authentication type.
-     */
+    /** A filter to return only items that match the specified authentication type. */
     private String authenticationType;
 
-    /**
-     * A filter to return only items that match the specified authentication type.
-     */
+    /** A filter to return only items that match the specified authentication type. */
     public String getAuthenticationType() {
         return authenticationType;
     }
-    /**
-     * A filter to return only items that match the specified user name.
-     */
+    /** A filter to return only items that match the specified user name. */
     private String userName;
 
-    /**
-     * A filter to return only items that match the specified user name.
-     */
+    /** A filter to return only items that match the specified user name. */
     public String getUserName() {
         return userName;
     }
-    /**
-     * A filter to return only items related to a specific target OCID.
-     */
+    /** A filter to return only items related to a specific target OCID. */
     private String targetId;
 
-    /**
-     * A filter to return only items related to a specific target OCID.
-     */
+    /** A filter to return only items related to a specific target OCID. */
     public String getTargetId() {
         return targetId;
     }
     /**
-     * A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     **Example:** 2016-12-19T16:39:57.600Z
+     * A filter to return users whose last login time in the database is greater than or equal to
+     * the date and time specified, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
+     * <p>*Example:** 2016-12-19T16:39:57.600Z
      */
     private java.util.Date timeLastLoginGreaterThanOrEqualTo;
 
     /**
-     * A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     **Example:** 2016-12-19T16:39:57.600Z
+     * A filter to return users whose last login time in the database is greater than or equal to
+     * the date and time specified, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
+     * <p>*Example:** 2016-12-19T16:39:57.600Z
      */
     public java.util.Date getTimeLastLoginGreaterThanOrEqualTo() {
         return timeLastLoginGreaterThanOrEqualTo;
     }
     /**
-     * A filter to return users whose last login time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * A filter to return users whose last login time in the database is less than the date and time
+     * specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * **Example:** 2016-12-19T16:39:57.600Z
-     *
      */
     private java.util.Date timeLastLoginLessThan;
 
     /**
-     * A filter to return users whose last login time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * A filter to return users whose last login time in the database is less than the date and time
+     * specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * **Example:** 2016-12-19T16:39:57.600Z
-     *
      */
     public java.util.Date getTimeLastLoginLessThan() {
         return timeLastLoginLessThan;
     }
     /**
-     * A filter to return users whose creation time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * **Example:** 2016-12-19T16:39:57.600Z
-     *
+     * A filter to return users whose creation time in the database is greater than or equal to the
+     * date and time specified, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
      */
     private java.util.Date timeUserCreatedGreaterThanOrEqualTo;
 
     /**
-     * A filter to return users whose creation time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * **Example:** 2016-12-19T16:39:57.600Z
-     *
+     * A filter to return users whose creation time in the database is greater than or equal to the
+     * date and time specified, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
      */
     public java.util.Date getTimeUserCreatedGreaterThanOrEqualTo() {
         return timeUserCreatedGreaterThanOrEqualTo;
     }
     /**
-     * A filter to return users whose creation time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * A filter to return users whose creation time in the database is less than the date and time
+     * specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * **Example:** 2016-12-19T16:39:57.600Z
-     *
      */
     private java.util.Date timeUserCreatedLessThan;
 
     /**
-     * A filter to return users whose creation time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * A filter to return users whose creation time in the database is less than the date and time
+     * specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * **Example:** 2016-12-19T16:39:57.600Z
-     *
      */
     public java.util.Date getTimeUserCreatedLessThan() {
         return timeUserCreatedLessThan;
     }
     /**
-     * A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     **Example:** 2016-12-19T16:39:57.600Z
+     * A filter to return users whose last password change in the database is greater than or equal
+     * to the date and time specified, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
+     * <p>*Example:** 2016-12-19T16:39:57.600Z
      */
     private java.util.Date timePasswordLastChangedGreaterThanOrEqualTo;
 
     /**
-     * A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     **Example:** 2016-12-19T16:39:57.600Z
+     * A filter to return users whose last password change in the database is greater than or equal
+     * to the date and time specified, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
+     * <p>*Example:** 2016-12-19T16:39:57.600Z
      */
     public java.util.Date getTimePasswordLastChangedGreaterThanOrEqualTo() {
         return timePasswordLastChangedGreaterThanOrEqualTo;
     }
     /**
-     * A filter to return users whose last password change in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     **Example:** 2016-12-19T16:39:57.600Z
+     * A filter to return users whose last password change in the database is less than the date and
+     * time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
+     * <p>*Example:** 2016-12-19T16:39:57.600Z
      */
     private java.util.Date timePasswordLastChangedLessThan;
 
     /**
-     * A filter to return users whose last password change in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     **Example:** 2016-12-19T16:39:57.600Z
+     * A filter to return users whose last password change in the database is less than the date and
+     * time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
+     * <p>*Example:** 2016-12-19T16:39:57.600Z
      */
     public java.util.Date getTimePasswordLastChangedLessThan() {
         return timePasswordLastChangedLessThan;
     }
     /**
-     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving
+     * results. It is usually retrieved from a previous "List" call. For details about how
+     * pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving
+     * results. It is usually retrieved from a previous "List" call. For details about how
+     * pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order to use, either ascending (ASC) or descending (DESC).
-     */
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
     private SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either ascending (ASC) or descending (DESC).
-     **/
-    public enum SortOrder {
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -321,23 +302,21 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
 
-    /**
-     * The sort order to use, either ascending (ASC) or descending (DESC).
-     */
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for userName is ascending.
-     *
+     * The field to sort by. You can specify only one sort order (sortOrder). The default order for
+     * userName is ascending.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for userName is ascending.
-     *
-     **/
-    public enum SortBy {
+     * The field to sort by. You can specify only one sort order (sortOrder). The default order for
+     * userName is ascending.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         UserName("userName"),
         UserCategory("userCategory"),
         AccountStatus("accountStatus"),
@@ -377,20 +356,16 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     };
 
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for userName is ascending.
-     *
+     * The field to sort by. You can specify only one sort order (sortOrder). The default order for
+     * userName is ascending.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     private String opcRequestId;
 
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -398,17 +373,15 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListUsersRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the user assessment.
-         */
+        /** The OCID of the user assessment. */
         private String userAssessmentId = null;
 
         /**
          * The OCID of the user assessment.
+         *
          * @param userAssessmentId the value to set
          * @return this builder instance
          */
@@ -418,12 +391,17 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List"
+         * call. For details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List"
+         * call. For details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -433,15 +411,16 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * Default is false.
-         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-         *
+         * Default is false. When set to true, the hierarchy of compartments is traversed and all
+         * compartments and subcompartments in the tenancy are returned. Depends on the
+         * 'accessLevel' setting.
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
-         * Default is false.
-         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         * Default is false. When set to true, the hierarchy of compartments is traversed and all
+         * compartments and subcompartments in the tenancy are returned. Depends on the
+         * 'accessLevel' setting.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -452,19 +431,18 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
-         * Setting this to ACCESSIBLE returns only those compartments for which the
-         * user has INSPECT permissions directly or indirectly (permissions can be on a
-         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-         *
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
+         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
+         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
+         * to RESTRICTED permissions are checked and no partial results are displayed.
          */
         private AccessLevel accessLevel = null;
 
         /**
-         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
-         * Setting this to ACCESSIBLE returns only those compartments for which the
-         * user has INSPECT permissions directly or indirectly (permissions can be on a
-         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
+         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
+         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
+         * to RESTRICTED permissions are checked and no partial results are displayed.
          *
          * @param accessLevel the value to set
          * @return this builder instance
@@ -474,13 +452,12 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /**
-         * A filter to return only items that match the specified user category.
-         */
+        /** A filter to return only items that match the specified user category. */
         private String userCategory = null;
 
         /**
          * A filter to return only items that match the specified user category.
+         *
          * @param userCategory the value to set
          * @return this builder instance
          */
@@ -489,13 +466,12 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /**
-         * A filter to return only items that match the specified user key.
-         */
+        /** A filter to return only items that match the specified user key. */
         private String userKey = null;
 
         /**
          * A filter to return only items that match the specified user key.
+         *
          * @param userKey the value to set
          * @return this builder instance
          */
@@ -504,13 +480,12 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /**
-         * A filter to return only items that match the specified account status.
-         */
+        /** A filter to return only items that match the specified account status. */
         private String accountStatus = null;
 
         /**
          * A filter to return only items that match the specified account status.
+         *
          * @param accountStatus the value to set
          * @return this builder instance
          */
@@ -519,13 +494,12 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /**
-         * A filter to return only items that match the specified authentication type.
-         */
+        /** A filter to return only items that match the specified authentication type. */
         private String authenticationType = null;
 
         /**
          * A filter to return only items that match the specified authentication type.
+         *
          * @param authenticationType the value to set
          * @return this builder instance
          */
@@ -534,13 +508,12 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /**
-         * A filter to return only items that match the specified user name.
-         */
+        /** A filter to return only items that match the specified user name. */
         private String userName = null;
 
         /**
          * A filter to return only items that match the specified user name.
+         *
          * @param userName the value to set
          * @return this builder instance
          */
@@ -549,13 +522,12 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /**
-         * A filter to return only items related to a specific target OCID.
-         */
+        /** A filter to return only items related to a specific target OCID. */
         private String targetId = null;
 
         /**
          * A filter to return only items related to a specific target OCID.
+         *
          * @param targetId the value to set
          * @return this builder instance
          */
@@ -565,17 +537,20 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         **Example:** 2016-12-19T16:39:57.600Z
+         * A filter to return users whose last login time in the database is greater than or equal
+         * to the date and time specified, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
+         * <p>*Example:** 2016-12-19T16:39:57.600Z
          */
         private java.util.Date timeLastLoginGreaterThanOrEqualTo = null;
 
         /**
-         * A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         **Example:** 2016-12-19T16:39:57.600Z
+         * A filter to return users whose last login time in the database is greater than or equal
+         * to the date and time specified, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * <p>*Example:** 2016-12-19T16:39:57.600Z
          *
          * @param timeLastLoginGreaterThanOrEqualTo the value to set
          * @return this builder instance
@@ -587,14 +562,15 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * A filter to return users whose last login time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * A filter to return users whose last login time in the database is less than the date and
+         * time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * **Example:** 2016-12-19T16:39:57.600Z
-         *
          */
         private java.util.Date timeLastLoginLessThan = null;
 
         /**
-         * A filter to return users whose last login time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * A filter to return users whose last login time in the database is less than the date and
+         * time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * **Example:** 2016-12-19T16:39:57.600Z
          *
          * @param timeLastLoginLessThan the value to set
@@ -606,15 +582,16 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * A filter to return users whose creation time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * **Example:** 2016-12-19T16:39:57.600Z
-         *
+         * A filter to return users whose creation time in the database is greater than or equal to
+         * the date and time specified, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
          */
         private java.util.Date timeUserCreatedGreaterThanOrEqualTo = null;
 
         /**
-         * A filter to return users whose creation time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * **Example:** 2016-12-19T16:39:57.600Z
+         * A filter to return users whose creation time in the database is greater than or equal to
+         * the date and time specified, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
          *
          * @param timeUserCreatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
@@ -626,14 +603,15 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * A filter to return users whose creation time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * A filter to return users whose creation time in the database is less than the date and
+         * time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * **Example:** 2016-12-19T16:39:57.600Z
-         *
          */
         private java.util.Date timeUserCreatedLessThan = null;
 
         /**
-         * A filter to return users whose creation time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * A filter to return users whose creation time in the database is less than the date and
+         * time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * **Example:** 2016-12-19T16:39:57.600Z
          *
          * @param timeUserCreatedLessThan the value to set
@@ -645,17 +623,20 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         **Example:** 2016-12-19T16:39:57.600Z
+         * A filter to return users whose last password change in the database is greater than or
+         * equal to the date and time specified, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
+         * <p>*Example:** 2016-12-19T16:39:57.600Z
          */
         private java.util.Date timePasswordLastChangedGreaterThanOrEqualTo = null;
 
         /**
-         * A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         **Example:** 2016-12-19T16:39:57.600Z
+         * A filter to return users whose last password change in the database is greater than or
+         * equal to the date and time specified, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * <p>*Example:** 2016-12-19T16:39:57.600Z
          *
          * @param timePasswordLastChangedGreaterThanOrEqualTo the value to set
          * @return this builder instance
@@ -668,17 +649,20 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * A filter to return users whose last password change in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         **Example:** 2016-12-19T16:39:57.600Z
+         * A filter to return users whose last password change in the database is less than the date
+         * and time specified, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
+         * <p>*Example:** 2016-12-19T16:39:57.600Z
          */
         private java.util.Date timePasswordLastChangedLessThan = null;
 
         /**
-         * A filter to return users whose last password change in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         **Example:** 2016-12-19T16:39:57.600Z
+         * A filter to return users whose last password change in the database is less than the date
+         * and time specified, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * <p>*Example:** 2016-12-19T16:39:57.600Z
          *
          * @param timePasswordLastChangedLessThan the value to set
          * @return this builder instance
@@ -690,12 +674,19 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving
+         * results. It is usually retrieved from a previous "List" call. For details about how
+         * pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving
+         * results. It is usually retrieved from a previous "List" call. For details about how
+         * pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -704,13 +695,12 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /**
-         * The sort order to use, either ascending (ASC) or descending (DESC).
-         */
+        /** The sort order to use, either ascending (ASC) or descending (DESC). */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -720,13 +710,14 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * The field to sort by. You can specify only one sort order (sortOrder). The default order for userName is ascending.
-         *
+         * The field to sort by. You can specify only one sort order (sortOrder). The default order
+         * for userName is ascending.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can specify only one sort order (sortOrder). The default order for userName is ascending.
+         * The field to sort by. You can specify only one sort order (sortOrder). The default order
+         * for userName is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -736,13 +727,12 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /**
-         * Unique identifier for the request.
-         */
+        /** Unique identifier for the request. */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -753,18 +743,19 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -776,6 +767,7 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListUsersRequest o) {
@@ -808,10 +800,11 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * Build the instance of ListUsersRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListUsersRequest
          */
@@ -825,7 +818,8 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * Build the instance of ListUsersRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListUsersRequest
@@ -854,12 +848,18 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListUsersRequest(userAssessmentId, limit, compartmentIdInSubtree, accessLevel, userCategory, userKey, accountStatus, authenticationType, userName, targetId, timeLastLoginGreaterThanOrEqualTo, timeLastLoginLessThan, timeUserCreatedGreaterThanOrEqualTo, timeUserCreatedLessThan, timePasswordLastChangedGreaterThanOrEqualTo, timePasswordLastChangedLessThan, page, sortOrder, sortBy, opcRequestId);
+            // new ListUsersRequest(userAssessmentId, limit, compartmentIdInSubtree, accessLevel,
+            // userCategory, userKey, accountStatus, authenticationType, userName, targetId,
+            // timeLastLoginGreaterThanOrEqualTo, timeLastLoginLessThan,
+            // timeUserCreatedGreaterThanOrEqualTo, timeUserCreatedLessThan,
+            // timePasswordLastChangedGreaterThanOrEqualTo, timePasswordLastChangedLessThan, page,
+            // sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -889,6 +889,7 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

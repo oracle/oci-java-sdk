@@ -5,23 +5,22 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * The list of resource types that support bulk editing of tags.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The list of resource types that support bulk editing of tags. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = BulkEditTagsResourceTypeCollection.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = BulkEditTagsResourceTypeCollection.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class BulkEditTagsResourceTypeCollection
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items"})
     public BulkEditTagsResourceTypeCollection(java.util.List<BulkEditTagsResourceType> items) {
@@ -31,17 +30,16 @@ public final class BulkEditTagsResourceTypeCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The collection of resource types that support bulk editing of tags.
-         **/
+        /** The collection of resource types that support bulk editing of tags. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<BulkEditTagsResourceType> items;
 
         /**
          * The collection of resource types that support bulk editing of tags.
+         *
          * @param items the value to set
          * @return this builder
-         **/
+         */
         public Builder items(java.util.List<BulkEditTagsResourceType> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -69,9 +67,7 @@ public final class BulkEditTagsResourceTypeCollection
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -80,16 +76,15 @@ public final class BulkEditTagsResourceTypeCollection
         return new Builder().copy(this);
     }
 
-    /**
-     * The collection of resource types that support bulk editing of tags.
-     **/
+    /** The collection of resource types that support bulk editing of tags. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<BulkEditTagsResourceType> items;
 
     /**
      * The collection of resource types that support bulk editing of tags.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<BulkEditTagsResourceType> getItems() {
         return items;
     }
@@ -101,6 +96,7 @@ public final class BulkEditTagsResourceTypeCollection
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,46 +5,30 @@
 package com.oracle.bmc;
 
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
-import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
 import com.oracle.bmc.retrier.RetryConfiguration;
 
-/**
- * This class provides configuration options for client requests.
- */
+/** This class provides configuration options for client requests. */
 public class ClientConfiguration {
     private static final int CONNECTION_TIMEOUT_MILLIS = 10000;
     private static final int READ_TIMEOUT_MILLIS = 60000;
     private static final int MAX_ASYNC_THREADS = 50;
 
-    /**
-     * The max time to wait for a connection, in millis. Default is 10000.
-     */
+    /** The max time to wait for a connection, in millis. Default is 10000. */
     private final int connectionTimeoutMillis;
-    /**
-     * The max time to wait for data, in millis. Default is 60000;
-     */
+    /** The max time to wait for data, in millis. Default is 60000; */
     private final int readTimeoutMillis;
     /**
-     * The max number of async threads to use. Default is 50;
-     * Note: This property is only supported for Jersey default HttpUrlConnector
-     * To configure connection pool for Apache client, use ApacheConnectorProperties
+     * The max number of async threads to use. Default is 50; Note: This property is only supported
+     * for Jersey default HttpUrlConnector To configure connection pool for Apache client, use
+     * ApacheConnectorProperties
      */
     private final int maxAsyncThreads;
 
-    /**
-     * The retry configuration to use. Default is no retry.
-     */
+    /** The retry configuration to use. Default is no retry. */
     private final RetryConfiguration retryConfiguration;
 
-    /**
-     * The circuit-breaker configuration to use. Default is no circuit-breaker.
-     */
+    /** The circuit-breaker configuration to use. Default is no circuit-breaker. */
     private final CircuitBreakerConfiguration circuitBreakerConfiguration;
-
-    /**
-     * The circuit-breaker to use. Default is no circuit-breaker.
-     */
-    private final JaxRsCircuitBreaker circuitBreaker;
 
     // Explicit @Builder on constructor so we can enforce default values.
     private ClientConfiguration(
@@ -53,13 +37,7 @@ public class ClientConfiguration {
             Integer maxAsyncThreads,
             Boolean disableDataBufferingOnUpload,
             RetryConfiguration retryConfiguration,
-            CircuitBreakerConfiguration circuitBreakerConfiguration,
-            JaxRsCircuitBreaker circuitBreaker) {
-
-        if (circuitBreakerConfiguration != null && circuitBreaker != null) {
-            throw new IllegalArgumentException(
-                    "Invalid CircuitBreaker setting. Please provide either CircuitBreaker configuration or CircuitBreaker and not both");
-        }
+            CircuitBreakerConfiguration circuitBreakerConfiguration) {
 
         this.connectionTimeoutMillis =
                 getOrDefault(connectionTimeoutMillis, CONNECTION_TIMEOUT_MILLIS);
@@ -67,7 +45,6 @@ public class ClientConfiguration {
         this.maxAsyncThreads = getOrDefault(maxAsyncThreads, MAX_ASYNC_THREADS);
         this.retryConfiguration = retryConfiguration;
         this.circuitBreakerConfiguration = circuitBreakerConfiguration;
-        this.circuitBreaker = circuitBreaker;
     }
 
     private static <T> T getOrDefault(T value, T defaultValue) {
@@ -98,10 +75,6 @@ public class ClientConfiguration {
         return this.circuitBreakerConfiguration;
     }
 
-    public JaxRsCircuitBreaker getCircuitBreaker() {
-        return this.circuitBreaker;
-    }
-
     public String toString() {
         return "ClientConfiguration(connectionTimeoutMillis="
                 + this.getConnectionTimeoutMillis()
@@ -113,8 +86,6 @@ public class ClientConfiguration {
                 + this.getRetryConfiguration()
                 + ", circuitBreakerConfiguration="
                 + this.getCircuitBreakerConfiguration()
-                + ", circuitBreaker="
-                + this.getCircuitBreaker()
                 + ")";
     }
 
@@ -125,7 +96,6 @@ public class ClientConfiguration {
         private Boolean disableDataBufferingOnUpload;
         private RetryConfiguration retryConfiguration;
         private CircuitBreakerConfiguration circuitBreakerConfiguration;
-        private JaxRsCircuitBreaker circuitBreaker;
 
         ClientConfigurationBuilder() {}
 
@@ -162,11 +132,6 @@ public class ClientConfiguration {
             return this;
         }
 
-        public ClientConfigurationBuilder circuitBreaker(JaxRsCircuitBreaker circuitBreaker) {
-            this.circuitBreaker = circuitBreaker;
-            return this;
-        }
-
         public ClientConfiguration build() {
             return new ClientConfiguration(
                     connectionTimeoutMillis,
@@ -174,8 +139,7 @@ public class ClientConfiguration {
                     maxAsyncThreads,
                     disableDataBufferingOnUpload,
                     retryConfiguration,
-                    circuitBreakerConfiguration,
-                    circuitBreaker);
+                    circuitBreakerConfiguration);
         }
 
         public String toString() {
@@ -191,8 +155,6 @@ public class ClientConfiguration {
                     + this.retryConfiguration
                     + ", circuitBreakerConfiguration="
                     + this.circuitBreakerConfiguration
-                    + ", circuitBreaker="
-                    + this.circuitBreaker
                     + ")";
         }
     }

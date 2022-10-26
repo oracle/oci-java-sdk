@@ -5,26 +5,30 @@
 package com.oracle.bmc.database.model;
 
 /**
- * A pluggable database (PDB) is portable collection of schemas, schema objects, and non-schema objects that appears to an Oracle client as a non-container database. To use a PDB, it needs to be plugged into a CDB.
- * To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized, talk to a tenancy administrator. If you are an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+ * A pluggable database (PDB) is portable collection of schemas, schema objects, and non-schema
+ * objects that appears to an Oracle client as a non-container database. To use a PDB, it needs to
+ * be plugged into a CDB. To use any of the API operations, you must be authorized in an IAM policy.
+ * If you are not authorized, talk to a tenancy administrator. If you are an administrator who needs
+ * to write policies to give users access, see [Getting Started with
+ * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
+ * supply string values using the API. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = PluggableDatabaseSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = PluggableDatabaseSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class PluggableDatabaseSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -71,96 +75,106 @@ public final class PluggableDatabaseSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the pluggable database.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * pluggable database.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the pluggable database.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * pluggable database.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the CDB.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * CDB.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("containerDatabaseId")
         private String containerDatabaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the CDB.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * CDB.
+         *
          * @param containerDatabaseId the value to set
          * @return this builder
-         **/
+         */
         public Builder containerDatabaseId(String containerDatabaseId) {
             this.containerDatabaseId = containerDatabaseId;
             this.__explicitlySet__.add("containerDatabaseId");
             return this;
         }
         /**
-         * The name for the pluggable database (PDB). The name is unique in the context of a {@link Database}. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
-         **/
+         * The name for the pluggable database (PDB). The name is unique in the context of a {@link
+         * Database}. The name must begin with an alphabetic character and can contain a maximum of
+         * thirty alphanumeric characters. Special characters are not permitted. The pluggable
+         * database name should not be same as the container database name.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("pdbName")
         private String pdbName;
 
         /**
-         * The name for the pluggable database (PDB). The name is unique in the context of a {@link Database}. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
+         * The name for the pluggable database (PDB). The name is unique in the context of a {@link
+         * Database}. The name must begin with an alphabetic character and can contain a maximum of
+         * thirty alphanumeric characters. Special characters are not permitted. The pluggable
+         * database name should not be same as the container database name.
+         *
          * @param pdbName the value to set
          * @return this builder
-         **/
+         */
         public Builder pdbName(String pdbName) {
             this.pdbName = pdbName;
             this.__explicitlySet__.add("pdbName");
             return this;
         }
-        /**
-         * The current state of the pluggable database.
-         **/
+        /** The current state of the pluggable database. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the pluggable database.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * Detailed message for the lifecycle state.
-         **/
+        /** Detailed message for the lifecycle state. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Detailed message for the lifecycle state.
+         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /**
-         * The date and time the pluggable database was created.
-         **/
+        /** The date and time the pluggable database was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the pluggable database was created.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -176,98 +190,105 @@ public final class PluggableDatabaseSummary
             return this;
         }
         /**
-         * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-         *
-         **/
+         * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or
+         * MIGRATE directly from the backend (within the Oracle Database software).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("openMode")
         private OpenMode openMode;
 
         /**
-         * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
+         * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or
+         * MIGRATE directly from the backend (within the Oracle Database software).
          *
          * @param openMode the value to set
          * @return this builder
-         **/
+         */
         public Builder openMode(OpenMode openMode) {
             this.openMode = openMode;
             this.__explicitlySet__.add("openMode");
             return this;
         }
         /**
-         * The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode,
-         * the user needs both create a session and have restricted session privileges to connect to it.
-         *
-         **/
+         * The restricted mode of the pluggable database. If a pluggable database is opened in
+         * restricted mode, the user needs both create a session and have restricted session
+         * privileges to connect to it.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isRestricted")
         private Boolean isRestricted;
 
         /**
-         * The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode,
-         * the user needs both create a session and have restricted session privileges to connect to it.
+         * The restricted mode of the pluggable database. If a pluggable database is opened in
+         * restricted mode, the user needs both create a session and have restricted session
+         * privileges to connect to it.
          *
          * @param isRestricted the value to set
          * @return this builder
-         **/
+         */
         public Builder isRestricted(Boolean isRestricted) {
             this.isRestricted = isRestricted;
             this.__explicitlySet__.add("isRestricted");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         *
-         **/
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -341,9 +362,7 @@ public final class PluggableDatabaseSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -353,51 +372,62 @@ public final class PluggableDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the pluggable database.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * pluggable database.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the pluggable database.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * pluggable database.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the CDB.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * CDB.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("containerDatabaseId")
     private final String containerDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the CDB.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * CDB.
+     *
      * @return the value
-     **/
+     */
     public String getContainerDatabaseId() {
         return containerDatabaseId;
     }
 
     /**
-     * The name for the pluggable database (PDB). The name is unique in the context of a {@link Database}. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
-     **/
+     * The name for the pluggable database (PDB). The name is unique in the context of a {@link
+     * Database}. The name must begin with an alphabetic character and can contain a maximum of
+     * thirty alphanumeric characters. Special characters are not permitted. The pluggable database
+     * name should not be same as the container database name.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("pdbName")
     private final String pdbName;
 
     /**
-     * The name for the pluggable database (PDB). The name is unique in the context of a {@link Database}. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
+     * The name for the pluggable database (PDB). The name is unique in the context of a {@link
+     * Database}. The name must begin with an alphabetic character and can contain a maximum of
+     * thirty alphanumeric characters. Special characters are not permitted. The pluggable database
+     * name should not be same as the container database name.
+     *
      * @return the value
-     **/
+     */
     public String getPdbName() {
         return pdbName;
     }
 
-    /**
-     * The current state of the pluggable database.
-     **/
-    public enum LifecycleState {
+    /** The current state of the pluggable database. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
         Terminating("TERMINATING"),
@@ -406,8 +436,8 @@ public final class PluggableDatabaseSummary
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -446,44 +476,41 @@ public final class PluggableDatabaseSummary
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current state of the pluggable database.
-     **/
+    /** The current state of the pluggable database. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the pluggable database.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * Detailed message for the lifecycle state.
-     **/
+    /** Detailed message for the lifecycle state. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Detailed message for the lifecycle state.
+     *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /**
-     * The date and time the pluggable database was created.
-     **/
+    /** The date and time the pluggable database was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the pluggable database was created.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -496,18 +523,18 @@ public final class PluggableDatabaseSummary
     }
 
     /**
-     * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-     *
-     **/
-    public enum OpenMode {
+     * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE
+     * directly from the backend (within the Oracle Database software).
+     */
+    public enum OpenMode implements com.oracle.bmc.http.internal.BmcEnum {
         ReadOnly("READ_ONLY"),
         ReadWrite("READ_WRITE"),
         Mounted("MOUNTED"),
         Migrate("MIGRATE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -547,89 +574,96 @@ public final class PluggableDatabaseSummary
         }
     };
     /**
-     * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-     *
-     **/
+     * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE
+     * directly from the backend (within the Oracle Database software).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("openMode")
     private final OpenMode openMode;
 
     /**
-     * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
+     * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE
+     * directly from the backend (within the Oracle Database software).
      *
      * @return the value
-     **/
+     */
     public OpenMode getOpenMode() {
         return openMode;
     }
 
     /**
-     * The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode,
-     * the user needs both create a session and have restricted session privileges to connect to it.
-     *
-     **/
+     * The restricted mode of the pluggable database. If a pluggable database is opened in
+     * restricted mode, the user needs both create a session and have restricted session privileges
+     * to connect to it.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isRestricted")
     private final Boolean isRestricted;
 
     /**
-     * The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode,
-     * the user needs both create a session and have restricted session privileges to connect to it.
+     * The restricted mode of the pluggable database. If a pluggable database is opened in
+     * restricted mode, the user needs both create a session and have restricted session privileges
+     * to connect to it.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsRestricted() {
         return isRestricted;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -641,6 +675,7 @@ public final class PluggableDatabaseSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Database objects to include or exclude from migration
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Database objects to include or exclude from migration <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = MigrationObjectSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = MigrationObjectSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class MigrationObjectSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"owner", "objectName", "type", "objectStatus"})
     public MigrationObjectSummary(
@@ -35,10 +34,7 @@ public final class MigrationObjectSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Owner of the object (regular expression is allowed)
-         *
-         **/
+        /** Owner of the object (regular expression is allowed) */
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private String owner;
 
@@ -47,16 +43,13 @@ public final class MigrationObjectSummary
          *
          * @param owner the value to set
          * @return this builder
-         **/
+         */
         public Builder owner(String owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
             return this;
         }
-        /**
-         * Name of the object (regular expression is allowed)
-         *
-         **/
+        /** Name of the object (regular expression is allowed) */
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
@@ -65,36 +58,32 @@ public final class MigrationObjectSummary
          *
          * @param objectName the value to set
          * @return this builder
-         **/
+         */
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
             return this;
         }
         /**
-         * Type of object to exclude.
-         * If not specified, matching owners and object names of type TABLE would be excluded.
-         *
-         **/
+         * Type of object to exclude. If not specified, matching owners and object names of type
+         * TABLE would be excluded.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
-         * Type of object to exclude.
-         * If not specified, matching owners and object names of type TABLE would be excluded.
+         * Type of object to exclude. If not specified, matching owners and object names of type
+         * TABLE would be excluded.
          *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * Object status.
-         *
-         **/
+        /** Object status. */
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private ObjectStatus objectStatus;
 
@@ -103,7 +92,7 @@ public final class MigrationObjectSummary
          *
          * @param objectStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder objectStatus(ObjectStatus objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
@@ -141,9 +130,7 @@ public final class MigrationObjectSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -152,10 +139,7 @@ public final class MigrationObjectSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * Owner of the object (regular expression is allowed)
-     *
-     **/
+    /** Owner of the object (regular expression is allowed) */
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final String owner;
 
@@ -163,15 +147,12 @@ public final class MigrationObjectSummary
      * Owner of the object (regular expression is allowed)
      *
      * @return the value
-     **/
+     */
     public String getOwner() {
         return owner;
     }
 
-    /**
-     * Name of the object (regular expression is allowed)
-     *
-     **/
+    /** Name of the object (regular expression is allowed) */
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
@@ -179,33 +160,29 @@ public final class MigrationObjectSummary
      * Name of the object (regular expression is allowed)
      *
      * @return the value
-     **/
+     */
     public String getObjectName() {
         return objectName;
     }
 
     /**
-     * Type of object to exclude.
-     * If not specified, matching owners and object names of type TABLE would be excluded.
-     *
-     **/
+     * Type of object to exclude. If not specified, matching owners and object names of type TABLE
+     * would be excluded.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
-     * Type of object to exclude.
-     * If not specified, matching owners and object names of type TABLE would be excluded.
+     * Type of object to exclude. If not specified, matching owners and object names of type TABLE
+     * would be excluded.
      *
      * @return the value
-     **/
+     */
     public String getType() {
         return type;
     }
 
-    /**
-     * Object status.
-     *
-     **/
+    /** Object status. */
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final ObjectStatus objectStatus;
 
@@ -213,7 +190,7 @@ public final class MigrationObjectSummary
      * Object status.
      *
      * @return the value
-     **/
+     */
     public ObjectStatus getObjectStatus() {
         return objectStatus;
     }
@@ -225,6 +202,7 @@ public final class MigrationObjectSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

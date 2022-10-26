@@ -5,22 +5,22 @@
 package com.oracle.bmc.dts.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = MultipleTransferDevices.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = MultipleTransferDevices.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class MultipleTransferDevices
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"transferDeviceObjects"})
     public MultipleTransferDevices(java.util.List<TransferDeviceSummary> transferDeviceObjects) {
@@ -30,17 +30,16 @@ public final class MultipleTransferDevices
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * List of TransferDeviceObject's
-         **/
+        /** List of TransferDeviceObject's */
         @com.fasterxml.jackson.annotation.JsonProperty("transferDeviceObjects")
         private java.util.List<TransferDeviceSummary> transferDeviceObjects;
 
         /**
          * List of TransferDeviceObject's
+         *
          * @param transferDeviceObjects the value to set
          * @return this builder
-         **/
+         */
         public Builder transferDeviceObjects(
                 java.util.List<TransferDeviceSummary> transferDeviceObjects) {
             this.transferDeviceObjects = transferDeviceObjects;
@@ -68,9 +67,7 @@ public final class MultipleTransferDevices
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -79,16 +76,15 @@ public final class MultipleTransferDevices
         return new Builder().copy(this);
     }
 
-    /**
-     * List of TransferDeviceObject's
-     **/
+    /** List of TransferDeviceObject's */
     @com.fasterxml.jackson.annotation.JsonProperty("transferDeviceObjects")
     private final java.util.List<TransferDeviceSummary> transferDeviceObjects;
 
     /**
      * List of TransferDeviceObject's
+     *
      * @return the value
-     **/
+     */
     public java.util.List<TransferDeviceSummary> getTransferDeviceObjects() {
         return transferDeviceObjects;
     }
@@ -100,6 +96,7 @@ public final class MultipleTransferDevices
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,22 +6,21 @@ package com.oracle.bmc.healthchecks.requests;
 
 import com.oracle.bmc.healthchecks.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/CreateOnDemandPingProbeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateOnDemandPingProbeRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/CreateOnDemandPingProbeExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * CreateOnDemandPingProbeRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 public class CreateOnDemandPingProbeRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.healthchecks.model.CreateOnDemandPingProbeDetails> {
 
-    /**
-     * Configuration details for creating an on-demand ping probe.
-     */
+    /** Configuration details for creating an on-demand ping probe. */
     private com.oracle.bmc.healthchecks.model.CreateOnDemandPingProbeDetails
             createOnDemandPingProbeDetails;
 
-    /**
-     * Configuration details for creating an on-demand ping probe.
-     */
+    /** Configuration details for creating an on-demand ping probe. */
     public com.oracle.bmc.healthchecks.model.CreateOnDemandPingProbeDetails
             getCreateOnDemandPingProbeDetails() {
         return createOnDemandPingProbeDetails;
@@ -29,14 +28,12 @@ public class CreateOnDemandPingProbeRequest
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -44,6 +41,7 @@ public class CreateOnDemandPingProbeRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -56,18 +54,16 @@ public class CreateOnDemandPingProbeRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateOnDemandPingProbeRequest,
                     com.oracle.bmc.healthchecks.model.CreateOnDemandPingProbeDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Configuration details for creating an on-demand ping probe.
-         */
+        /** Configuration details for creating an on-demand ping probe. */
         private com.oracle.bmc.healthchecks.model.CreateOnDemandPingProbeDetails
                 createOnDemandPingProbeDetails = null;
 
         /**
          * Configuration details for creating an on-demand ping probe.
+         *
          * @param createOnDemandPingProbeDetails the value to set
          * @return this builder instance
          */
@@ -81,7 +77,6 @@ public class CreateOnDemandPingProbeRequest
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId = null;
 
@@ -99,18 +94,19 @@ public class CreateOnDemandPingProbeRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -122,6 +118,7 @@ public class CreateOnDemandPingProbeRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(CreateOnDemandPingProbeRequest o) {
@@ -135,10 +132,11 @@ public class CreateOnDemandPingProbeRequest
         /**
          * Build the instance of CreateOnDemandPingProbeRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of CreateOnDemandPingProbeRequest
          */
@@ -151,6 +149,7 @@ public class CreateOnDemandPingProbeRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -164,7 +163,8 @@ public class CreateOnDemandPingProbeRequest
         /**
          * Build the instance of CreateOnDemandPingProbeRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateOnDemandPingProbeRequest
@@ -180,6 +180,7 @@ public class CreateOnDemandPingProbeRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -190,6 +191,7 @@ public class CreateOnDemandPingProbeRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

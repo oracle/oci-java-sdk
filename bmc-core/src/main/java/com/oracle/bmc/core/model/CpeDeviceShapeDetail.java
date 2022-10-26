@@ -5,23 +5,23 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The detailed information about a particular CPE device type. Compare with
- * {@link CpeDeviceShapeSummary}.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The detailed information about a particular CPE device type. Compare with {@link
+ * CpeDeviceShapeSummary}. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CpeDeviceShapeDetail.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CpeDeviceShapeDetail extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = CpeDeviceShapeDetail.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class CpeDeviceShapeDetail
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "cpeDeviceShapeId",
@@ -44,20 +44,19 @@ public final class CpeDeviceShapeDetail extends com.oracle.bmc.http.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device shape.
-         * This value uniquely identifies the type of CPE device.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the CPE device shape. This value uniquely identifies the type of CPE device.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("cpeDeviceShapeId")
         private String cpeDeviceShapeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device shape.
-         * This value uniquely identifies the type of CPE device.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the CPE device shape. This value uniquely identifies the type of CPE device.
          *
          * @param cpeDeviceShapeId the value to set
          * @return this builder
-         **/
+         */
         public Builder cpeDeviceShapeId(String cpeDeviceShapeId) {
             this.cpeDeviceShapeId = cpeDeviceShapeId;
             this.__explicitlySet__.add("cpeDeviceShapeId");
@@ -73,56 +72,62 @@ public final class CpeDeviceShapeDetail extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * For certain CPE devices types, the customer can provide answers to
-         * questions that are specific to the device type. This attribute contains
-         * a list of those questions. The Networking service merges the answers with
-         * other information and renders a set of CPE configuration content. To
-         * provide the answers, use
-         * {@link #updateTunnelCpeDeviceConfig(UpdateTunnelCpeDeviceConfigRequest) updateTunnelCpeDeviceConfig}.
-         *
-         **/
+         * For certain CPE devices types, the customer can provide answers to questions that are
+         * specific to the device type. This attribute contains a list of those questions. The
+         * Networking service merges the answers with other information and renders a set of CPE
+         * configuration content. To provide the answers, use {@link
+         * #updateTunnelCpeDeviceConfig(UpdateTunnelCpeDeviceConfigRequest)
+         * updateTunnelCpeDeviceConfig}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.List<CpeDeviceConfigQuestion> parameters;
 
         /**
-         * For certain CPE devices types, the customer can provide answers to
-         * questions that are specific to the device type. This attribute contains
-         * a list of those questions. The Networking service merges the answers with
-         * other information and renders a set of CPE configuration content. To
-         * provide the answers, use
-         * {@link #updateTunnelCpeDeviceConfig(UpdateTunnelCpeDeviceConfigRequest) updateTunnelCpeDeviceConfig}.
+         * For certain CPE devices types, the customer can provide answers to questions that are
+         * specific to the device type. This attribute contains a list of those questions. The
+         * Networking service merges the answers with other information and renders a set of CPE
+         * configuration content. To provide the answers, use {@link
+         * #updateTunnelCpeDeviceConfig(UpdateTunnelCpeDeviceConfigRequest)
+         * updateTunnelCpeDeviceConfig}.
          *
          * @param parameters the value to set
          * @return this builder
-         **/
+         */
         public Builder parameters(java.util.List<CpeDeviceConfigQuestion> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
             return this;
         }
         /**
-         * A template of CPE device configuration information that will be merged with the customer's
-         * answers to the questions to render the final CPE device configuration content. Also see:
-         * <p>
-         * {@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest) getCpeDeviceConfigContent}
-         *   * {@link #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest) getIpsecCpeDeviceConfigContent}
-         *   * {@link #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest) getTunnelCpeDeviceConfigContent}
+         * A template of CPE device configuration information that will be merged with the
+         * customer's answers to the questions to render the final CPE device configuration content.
+         * Also see:
          *
-         **/
+         * <p>{@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest)
+         * getCpeDeviceConfigContent} * {@link
+         * #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest)
+         * getIpsecCpeDeviceConfigContent} * {@link
+         * #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest)
+         * getTunnelCpeDeviceConfigContent}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("template")
         private String template;
 
         /**
-         * A template of CPE device configuration information that will be merged with the customer's
-         * answers to the questions to render the final CPE device configuration content. Also see:
-         * <p>
-         * {@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest) getCpeDeviceConfigContent}
-         *   * {@link #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest) getIpsecCpeDeviceConfigContent}
-         *   * {@link #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest) getTunnelCpeDeviceConfigContent}
+         * A template of CPE device configuration information that will be merged with the
+         * customer's answers to the questions to render the final CPE device configuration content.
+         * Also see:
+         *
+         * <p>{@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest)
+         * getCpeDeviceConfigContent} * {@link
+         * #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest)
+         * getIpsecCpeDeviceConfigContent} * {@link
+         * #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest)
+         * getTunnelCpeDeviceConfigContent}
          *
          * @param template the value to set
          * @return this builder
-         **/
+         */
         public Builder template(String template) {
             this.template = template;
             this.__explicitlySet__.add("template");
@@ -163,9 +168,7 @@ public final class CpeDeviceShapeDetail extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -175,19 +178,18 @@ public final class CpeDeviceShapeDetail extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device shape.
-     * This value uniquely identifies the type of CPE device.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the CPE device shape. This value uniquely identifies the type of CPE device.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("cpeDeviceShapeId")
     private final String cpeDeviceShapeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device shape.
-     * This value uniquely identifies the type of CPE device.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the CPE device shape. This value uniquely identifies the type of CPE device.
      *
      * @return the value
-     **/
+     */
     public String getCpeDeviceShapeId() {
         return cpeDeviceShapeId;
     }
@@ -200,27 +202,26 @@ public final class CpeDeviceShapeDetail extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * For certain CPE devices types, the customer can provide answers to
-     * questions that are specific to the device type. This attribute contains
-     * a list of those questions. The Networking service merges the answers with
-     * other information and renders a set of CPE configuration content. To
-     * provide the answers, use
-     * {@link #updateTunnelCpeDeviceConfig(UpdateTunnelCpeDeviceConfigRequest) updateTunnelCpeDeviceConfig}.
-     *
-     **/
+     * For certain CPE devices types, the customer can provide answers to questions that are
+     * specific to the device type. This attribute contains a list of those questions. The
+     * Networking service merges the answers with other information and renders a set of CPE
+     * configuration content. To provide the answers, use {@link
+     * #updateTunnelCpeDeviceConfig(UpdateTunnelCpeDeviceConfigRequest)
+     * updateTunnelCpeDeviceConfig}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.List<CpeDeviceConfigQuestion> parameters;
 
     /**
-     * For certain CPE devices types, the customer can provide answers to
-     * questions that are specific to the device type. This attribute contains
-     * a list of those questions. The Networking service merges the answers with
-     * other information and renders a set of CPE configuration content. To
-     * provide the answers, use
-     * {@link #updateTunnelCpeDeviceConfig(UpdateTunnelCpeDeviceConfigRequest) updateTunnelCpeDeviceConfig}.
+     * For certain CPE devices types, the customer can provide answers to questions that are
+     * specific to the device type. This attribute contains a list of those questions. The
+     * Networking service merges the answers with other information and renders a set of CPE
+     * configuration content. To provide the answers, use {@link
+     * #updateTunnelCpeDeviceConfig(UpdateTunnelCpeDeviceConfigRequest)
+     * updateTunnelCpeDeviceConfig}.
      *
      * @return the value
-     **/
+     */
     public java.util.List<CpeDeviceConfigQuestion> getParameters() {
         return parameters;
     }
@@ -228,25 +229,30 @@ public final class CpeDeviceShapeDetail extends com.oracle.bmc.http.internal.Exp
     /**
      * A template of CPE device configuration information that will be merged with the customer's
      * answers to the questions to render the final CPE device configuration content. Also see:
-     * <p>
-     * {@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest) getCpeDeviceConfigContent}
-     *   * {@link #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest) getIpsecCpeDeviceConfigContent}
-     *   * {@link #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest) getTunnelCpeDeviceConfigContent}
      *
-     **/
+     * <p>{@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest)
+     * getCpeDeviceConfigContent} * {@link
+     * #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest)
+     * getIpsecCpeDeviceConfigContent} * {@link
+     * #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest)
+     * getTunnelCpeDeviceConfigContent}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("template")
     private final String template;
 
     /**
      * A template of CPE device configuration information that will be merged with the customer's
      * answers to the questions to render the final CPE device configuration content. Also see:
-     * <p>
-     * {@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest) getCpeDeviceConfigContent}
-     *   * {@link #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest) getIpsecCpeDeviceConfigContent}
-     *   * {@link #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest) getTunnelCpeDeviceConfigContent}
+     *
+     * <p>{@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest)
+     * getCpeDeviceConfigContent} * {@link
+     * #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest)
+     * getIpsecCpeDeviceConfigContent} * {@link
+     * #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest)
+     * getTunnelCpeDeviceConfigContent}
      *
      * @return the value
-     **/
+     */
     public String getTemplate() {
         return template;
     }
@@ -258,6 +264,7 @@ public final class CpeDeviceShapeDetail extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

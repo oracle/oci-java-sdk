@@ -6,106 +6,84 @@ package com.oracle.bmc.opsi.requests;
 
 import com.oracle.bmc.opsi.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListOpsiDataObjectsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListOpsiDataObjectsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListOpsiDataObjectsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListOpsiDataObjectsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * OPSI data object types.
-     */
+    /** OPSI data object types. */
     private java.util.List<com.oracle.bmc.opsi.model.OpsiDataObjectType> dataObjectType;
 
-    /**
-     * OPSI data object types.
-     */
+    /** OPSI data object types. */
     public java.util.List<com.oracle.bmc.opsi.model.OpsiDataObjectType> getDataObjectType() {
         return dataObjectType;
     }
-    /**
-     * A filter to return only resources that match the entire display name.
-     */
+    /** A filter to return only resources that match the entire display name. */
     private String displayName;
 
-    /**
-     * A filter to return only resources that match the entire display name.
-     */
+    /** A filter to return only resources that match the entire display name. */
     public String getDisplayName() {
         return displayName;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to
-     * return in a paginated "List" call.
-     * For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-     * Example: {@code 50}
-     *
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example:
+     * {@code 50}
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to
-     * return in a paginated "List" call.
-     * For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-     * Example: {@code 50}
-     *
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example:
+     * {@code 50}
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from
-     * the previous "List" call. For important details about how pagination works,
-     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from
-     * the previous "List" call. For important details about how pagination works,
-     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     private com.oracle.bmc.opsi.model.SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     public com.oracle.bmc.opsi.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /**
-     * OPSI data object list sort options.
-     *
-     */
+    /** OPSI data object list sort options. */
     private SortBy sortBy;
 
-    /**
-     * OPSI data object list sort options.
-     *
-     **/
-    public enum SortBy {
+    /** OPSI data object list sort options. */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         DisplayName("displayName"),
         DataObjectType("dataObjectType"),
         ;
@@ -138,24 +116,19 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
-    /**
-     * OPSI data object list sort options.
-     *
-     */
+    /** OPSI data object list sort options. */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -164,17 +137,19 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListOpsiDataObjectsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -183,13 +158,12 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /**
-         * OPSI data object types.
-         */
+        /** OPSI data object types. */
         private java.util.List<com.oracle.bmc.opsi.model.OpsiDataObjectType> dataObjectType = null;
 
         /**
          * OPSI data object types.
+         *
          * @param dataObjectType the value to set
          * @return this builder instance
          */
@@ -201,6 +175,7 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Singular setter. OPSI data object types.
+         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -208,13 +183,12 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
             return this.dataObjectType(java.util.Arrays.asList(singularValue));
         }
 
-        /**
-         * A filter to return only resources that match the entire display name.
-         */
+        /** A filter to return only resources that match the entire display name. */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name.
+         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -224,20 +198,17 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to
-         * return in a paginated "List" call.
-         * For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
-         *
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to
-         * return in a paginated "List" call.
-         * For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
          * @param limit the value to set
@@ -249,17 +220,16 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from
-         * the previous "List" call. For important details about how pagination works,
-         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from
-         * the previous "List" call. For important details about how pagination works,
-         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -269,10 +239,7 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-         *
-         */
+        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
         private com.oracle.bmc.opsi.model.SortOrder sortOrder = null;
 
         /**
@@ -286,10 +253,7 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /**
-         * OPSI data object list sort options.
-         *
-         */
+        /** OPSI data object list sort options. */
         private SortBy sortBy = null;
 
         /**
@@ -304,15 +268,14 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -324,18 +287,19 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -347,6 +311,7 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListOpsiDataObjectsRequest o) {
@@ -366,10 +331,11 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of ListOpsiDataObjectsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListOpsiDataObjectsRequest
          */
@@ -383,7 +349,8 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of ListOpsiDataObjectsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListOpsiDataObjectsRequest
@@ -399,12 +366,14 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListOpsiDataObjectsRequest(compartmentId, dataObjectType, displayName, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListOpsiDataObjectsRequest(compartmentId, dataObjectType, displayName, limit,
+            // page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -421,6 +390,7 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

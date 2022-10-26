@@ -10,17 +10,16 @@ import com.oracle.bmc.core.model.*;
 public class ListComputeGlobalImageCapabilitySchemasResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For list pagination. When this header appears in the response, additional pages
-     * of results remain. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. When this header appears in the response, additional pages of results
+     * remain. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
     /**
-     * For list pagination. When this header appears in the response, additional pages
-     * of results remain. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages of results
+     * remain. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -29,15 +28,14 @@ public class ListComputeGlobalImageCapabilitySchemasResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -45,14 +43,13 @@ public class ListComputeGlobalImageCapabilitySchemasResponse
         return opcRequestId;
     }
 
-    /**
-     * A list of com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary instances.
-     */
+    /** A list of com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary instances. */
     private java.util.List<com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary>
             items;
 
     /**
      * A list of com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary instances.
+     *
      * @return the value
      */
     public java.util.List<com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary>
@@ -69,7 +66,7 @@ public class ListComputeGlobalImageCapabilitySchemasResponse
     })
     private ListComputeGlobalImageCapabilitySchemasResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcNextPage,
             String opcRequestId,
             java.util.List<com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary>
@@ -80,33 +77,36 @@ public class ListComputeGlobalImageCapabilitySchemasResponse
         this.items = items;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    ListComputeGlobalImageCapabilitySchemasResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For list pagination. When this header appears in the response, additional pages
-         * of results remain. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. When this header appears in the response, additional pages of
+         * results remain. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
         /**
-         * For list pagination. When this header appears in the response, additional pages
-         * of results remain. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages of
+         * results remain. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -117,15 +117,14 @@ public class ListComputeGlobalImageCapabilitySchemasResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -143,6 +142,7 @@ public class ListComputeGlobalImageCapabilitySchemasResponse
 
         /**
          * A list of com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary instances.
+         *
          * @param items the value to set
          * @return this builder
          */
@@ -155,8 +155,10 @@ public class ListComputeGlobalImageCapabilitySchemasResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListComputeGlobalImageCapabilitySchemasResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -169,8 +171,10 @@ public class ListComputeGlobalImageCapabilitySchemasResponse
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListComputeGlobalImageCapabilitySchemasResponse build() {
             return new ListComputeGlobalImageCapabilitySchemasResponse(
                     __httpStatusCode__, headers, opcNextPage, opcRequestId, items);
@@ -179,6 +183,7 @@ public class ListComputeGlobalImageCapabilitySchemasResponse
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

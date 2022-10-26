@@ -6,115 +6,99 @@ package com.oracle.bmc.events.requests;
 
 import com.oracle.bmc.events.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/events/ListRulesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListRulesRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/events/ListRulesExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListRulesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-     *
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment to which this rule belongs.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-     *
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment to which this rule belongs.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
-     * Default: 10
-     *
-     */
+    /** The maximum number of items to return. 1 is the minimum, 50 is the maximum. Default: 10 */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
-     * Default: 10
-     *
-     */
+    /** The maximum number of items to return. 1 is the minimum, 50 is the maximum. Default: 10 */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the opc-next-page response header from the previous
-     * "List" call. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the opc-next-page response header from the previous "List"
+     * call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value of the opc-next-page response header from the previous
-     * "List" call. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the opc-next-page response header from the previous "List"
+     * call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
     /**
      * A filter to return only rules that match the lifecycle state in this parameter.
-     * <p>
-     * Example: {@code Creating}
      *
+     * <p>Example: {@code Creating}
      */
     private com.oracle.bmc.events.model.Rule.LifecycleState lifecycleState;
 
     /**
      * A filter to return only rules that match the lifecycle state in this parameter.
-     * <p>
-     * Example: {@code Creating}
      *
+     * <p>Example: {@code Creating}
      */
     public com.oracle.bmc.events.model.Rule.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * A filter to return only rules with descriptions that match the displayName string
-     * in this parameter.
-     * <p>
-     * Example: {@code "This rule sends a notification upon completion of DbaaS backup."}
+     * A filter to return only rules with descriptions that match the displayName string in this
+     * parameter.
      *
+     * <p>Example: {@code "This rule sends a notification upon completion of DbaaS backup."}
      */
     private String displayName;
 
     /**
-     * A filter to return only rules with descriptions that match the displayName string
-     * in this parameter.
-     * <p>
-     * Example: {@code "This rule sends a notification upon completion of DbaaS backup."}
+     * A filter to return only rules with descriptions that match the displayName string in this
+     * parameter.
      *
+     * <p>Example: {@code "This rule sends a notification upon completion of DbaaS backup."}
      */
     public String getDisplayName() {
         return displayName;
     }
     /**
      * Specifies the attribute with which to sort the rules.
-     * <p>
-     * Default: {@code timeCreated}
-     * <p>
-     * **TIME_CREATED:** Sorts by timeCreated.
-     * * **DISPLAY_NAME:** Sorts by displayName.
-     * * **ID:** Sorts by id.
      *
+     * <p>Default: {@code timeCreated}
+     *
+     * <p>**TIME_CREATED:** Sorts by timeCreated. * **DISPLAY_NAME:** Sorts by displayName. *
+     * **ID:** Sorts by id.
      */
     private SortBy sortBy;
 
     /**
      * Specifies the attribute with which to sort the rules.
-     * <p>
-     * Default: {@code timeCreated}
-     * <p>
-     * **TIME_CREATED:** Sorts by timeCreated.
-     * * **DISPLAY_NAME:** Sorts by displayName.
-     * * **ID:** Sorts by id.
      *
-     **/
-    public enum SortBy {
+     * <p>Default: {@code timeCreated}
+     *
+     * <p>**TIME_CREATED:** Sorts by timeCreated. * **DISPLAY_NAME:** Sorts by displayName. *
+     * **ID:** Sorts by id.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TimeCreated("TIME_CREATED"),
         Id("ID"),
         DisplayName("DISPLAY_NAME"),
@@ -150,34 +134,28 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
     /**
      * Specifies the attribute with which to sort the rules.
-     * <p>
-     * Default: {@code timeCreated}
-     * <p>
-     * **TIME_CREATED:** Sorts by timeCreated.
-     * * **DISPLAY_NAME:** Sorts by displayName.
-     * * **ID:** Sorts by id.
      *
+     * <p>Default: {@code timeCreated}
+     *
+     * <p>**TIME_CREATED:** Sorts by timeCreated. * **DISPLAY_NAME:** Sorts by displayName. *
+     * **ID:** Sorts by id.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
      * Specifies sort order.
-     * <p>
-     * **ASC:** Ascending sort order.
-     * * **DESC:** Descending sort order.
      *
+     * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
      */
     private SortOrder sortOrder;
 
     /**
      * Specifies sort order.
-     * <p>
-     * **ASC:** Ascending sort order.
-     * * **DESC:** Descending sort order.
      *
-     **/
-    public enum SortOrder {
+     * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
+     */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -212,10 +190,8 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
     /**
      * Specifies sort order.
-     * <p>
-     * **ASC:** Ascending sort order.
-     * * **DESC:** Descending sort order.
      *
+     * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
      */
     public SortOrder getSortOrder() {
         return sortOrder;
@@ -223,14 +199,12 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -239,18 +213,18 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListRulesRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-         *
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment to which this rule belongs.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment to which this rule belongs.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -261,15 +235,12 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
-         * Default: 10
-         *
+         * The maximum number of items to return. 1 is the minimum, 50 is the maximum. Default: 10
          */
         private Integer limit = null;
 
         /**
-         * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
-         * Default: 10
+         * The maximum number of items to return. 1 is the minimum, 50 is the maximum. Default: 10
          *
          * @param limit the value to set
          * @return this builder instance
@@ -281,16 +252,15 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * For list pagination. The value of the opc-next-page response header from the previous
-         * "List" call. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the opc-next-page response header from the previous
-         * "List" call. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -302,16 +272,15 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * A filter to return only rules that match the lifecycle state in this parameter.
-         * <p>
-         * Example: {@code Creating}
          *
+         * <p>Example: {@code Creating}
          */
         private com.oracle.bmc.events.model.Rule.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only rules that match the lifecycle state in this parameter.
-         * <p>
-         * Example: {@code Creating}
+         *
+         * <p>Example: {@code Creating}
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -323,19 +292,18 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * A filter to return only rules with descriptions that match the displayName string
-         * in this parameter.
-         * <p>
-         * Example: {@code "This rule sends a notification upon completion of DbaaS backup."}
+         * A filter to return only rules with descriptions that match the displayName string in this
+         * parameter.
          *
+         * <p>Example: {@code "This rule sends a notification upon completion of DbaaS backup."}
          */
         private String displayName = null;
 
         /**
-         * A filter to return only rules with descriptions that match the displayName string
-         * in this parameter.
-         * <p>
-         * Example: {@code "This rule sends a notification upon completion of DbaaS backup."}
+         * A filter to return only rules with descriptions that match the displayName string in this
+         * parameter.
+         *
+         * <p>Example: {@code "This rule sends a notification upon completion of DbaaS backup."}
          *
          * @param displayName the value to set
          * @return this builder instance
@@ -347,24 +315,21 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * Specifies the attribute with which to sort the rules.
-         * <p>
-         * Default: {@code timeCreated}
-         * <p>
-         * **TIME_CREATED:** Sorts by timeCreated.
-         * * **DISPLAY_NAME:** Sorts by displayName.
-         * * **ID:** Sorts by id.
          *
+         * <p>Default: {@code timeCreated}
+         *
+         * <p>**TIME_CREATED:** Sorts by timeCreated. * **DISPLAY_NAME:** Sorts by displayName. *
+         * **ID:** Sorts by id.
          */
         private SortBy sortBy = null;
 
         /**
          * Specifies the attribute with which to sort the rules.
-         * <p>
-         * Default: {@code timeCreated}
-         * <p>
-         * **TIME_CREATED:** Sorts by timeCreated.
-         * * **DISPLAY_NAME:** Sorts by displayName.
-         * * **ID:** Sorts by id.
+         *
+         * <p>Default: {@code timeCreated}
+         *
+         * <p>**TIME_CREATED:** Sorts by timeCreated. * **DISPLAY_NAME:** Sorts by displayName. *
+         * **ID:** Sorts by id.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -376,18 +341,15 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * Specifies sort order.
-         * <p>
-         * **ASC:** Ascending sort order.
-         * * **DESC:** Descending sort order.
          *
+         * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
          */
         private SortOrder sortOrder = null;
 
         /**
          * Specifies sort order.
-         * <p>
-         * **ASC:** Ascending sort order.
-         * * **DESC:** Descending sort order.
+         *
+         * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
          *
          * @param sortOrder the value to set
          * @return this builder instance
@@ -398,15 +360,14 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
+         * about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
+         * about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -418,18 +379,19 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -441,6 +403,7 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListRulesRequest o) {
@@ -460,10 +423,11 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * Build the instance of ListRulesRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListRulesRequest
          */
@@ -477,7 +441,8 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * Build the instance of ListRulesRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListRulesRequest
@@ -493,12 +458,14 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListRulesRequest(compartmentId, limit, page, lifecycleState, displayName, sortBy, sortOrder, opcRequestId);
+            // new ListRulesRequest(compartmentId, limit, page, lifecycleState, displayName, sortBy,
+            // sortOrder, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -515,6 +482,7 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

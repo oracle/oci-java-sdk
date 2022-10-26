@@ -5,25 +5,24 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Details for the Lakehouse data asset type.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details for the Lakehouse data asset type. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DataAssetFromLakehouseDetails.Builder.class
-)
+        builder = DataAssetFromLakehouseDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DataAssetFromLakehouseDetails extends DataAsset {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -143,49 +142,46 @@ public final class DataAssetFromLakehouseDetails extends DataAsset {
             this.__explicitlySet__.add("keyMap");
             return this;
         }
-        /**
-         * The Lakehouse Ocid.
-         **/
+        /** The Lakehouse Ocid. */
         @com.fasterxml.jackson.annotation.JsonProperty("lakehouseOcid")
         private String lakehouseOcid;
 
         /**
          * The Lakehouse Ocid.
+         *
          * @param lakehouseOcid the value to set
          * @return this builder
-         **/
+         */
         public Builder lakehouseOcid(String lakehouseOcid) {
             this.lakehouseOcid = lakehouseOcid;
             this.__explicitlySet__.add("lakehouseOcid");
             return this;
         }
-        /**
-         * The metastoreId for the specified Lakehouse Resource.
-         **/
+        /** The metastoreId for the specified Lakehouse Resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
         private String metastoreId;
 
         /**
          * The metastoreId for the specified Lakehouse Resource.
+         *
          * @param metastoreId the value to set
          * @return this builder
-         **/
+         */
         public Builder metastoreId(String metastoreId) {
             this.metastoreId = metastoreId;
             this.__explicitlySet__.add("metastoreId");
             return this;
         }
-        /**
-         * The rangerEndpoint for the specified Lakehouse Resource.
-         **/
+        /** The rangerEndpoint for the specified Lakehouse Resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("rangerEndpoint")
         private String rangerEndpoint;
 
         /**
          * The rangerEndpoint for the specified Lakehouse Resource.
+         *
          * @param rangerEndpoint the value to set
          * @return this builder
-         **/
+         */
         public Builder rangerEndpoint(String rangerEndpoint) {
             this.rangerEndpoint = rangerEndpoint;
             this.__explicitlySet__.add("rangerEndpoint");
@@ -287,9 +283,7 @@ public final class DataAssetFromLakehouseDetails extends DataAsset {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -337,44 +331,41 @@ public final class DataAssetFromLakehouseDetails extends DataAsset {
         this.defaultConnection = defaultConnection;
     }
 
-    /**
-     * The Lakehouse Ocid.
-     **/
+    /** The Lakehouse Ocid. */
     @com.fasterxml.jackson.annotation.JsonProperty("lakehouseOcid")
     private final String lakehouseOcid;
 
     /**
      * The Lakehouse Ocid.
+     *
      * @return the value
-     **/
+     */
     public String getLakehouseOcid() {
         return lakehouseOcid;
     }
 
-    /**
-     * The metastoreId for the specified Lakehouse Resource.
-     **/
+    /** The metastoreId for the specified Lakehouse Resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
     private final String metastoreId;
 
     /**
      * The metastoreId for the specified Lakehouse Resource.
+     *
      * @return the value
-     **/
+     */
     public String getMetastoreId() {
         return metastoreId;
     }
 
-    /**
-     * The rangerEndpoint for the specified Lakehouse Resource.
-     **/
+    /** The rangerEndpoint for the specified Lakehouse Resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("rangerEndpoint")
     private final String rangerEndpoint;
 
     /**
      * The rangerEndpoint for the specified Lakehouse Resource.
+     *
      * @return the value
-     **/
+     */
     public String getRangerEndpoint() {
         return rangerEndpoint;
     }
@@ -393,6 +384,7 @@ public final class DataAssetFromLakehouseDetails extends DataAsset {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

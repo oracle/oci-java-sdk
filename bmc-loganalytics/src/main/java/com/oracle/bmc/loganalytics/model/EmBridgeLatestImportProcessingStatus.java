@@ -5,11 +5,11 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Processing status of the latest upload from enterprise manager. Supported values are NOT_STARTED, SUCCESS, IN_PROGRESS, FAILED, PARTIAL_SUCCESS
- *
- **/
+ * Processing status of the latest upload from enterprise manager. Supported values are NOT_STARTED,
+ * SUCCESS, IN_PROGRESS, FAILED, PARTIAL_SUCCESS
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-public enum EmBridgeLatestImportProcessingStatus {
+public enum EmBridgeLatestImportProcessingStatus implements com.oracle.bmc.http.internal.BmcEnum {
     NotStarted("NOT_STARTED"),
     Success("SUCCESS"),
     InProgress("IN_PROGRESS"),

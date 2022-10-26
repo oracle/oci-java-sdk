@@ -5,20 +5,20 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The Single Client Access Name (SCAN) details.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The Single Client Access Name (SCAN) details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ScanDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ScanDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ScanDetails extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "hostname",
@@ -43,81 +43,76 @@ public final class ScanDetails extends com.oracle.bmc.http.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The SCAN hostname.
-         **/
+        /** The SCAN hostname. */
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
         /**
          * The SCAN hostname.
+         *
          * @param hostname the value to set
          * @return this builder
-         **/
+         */
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
             return this;
         }
-        /**
-         * The SCAN TCPIP port. Default is 1521.
-         **/
+        /** The SCAN TCPIP port. Default is 1521. */
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
          * The SCAN TCPIP port. Default is 1521.
+         *
          * @param port the value to set
          * @return this builder
-         **/
+         */
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-        /**
-         * The SCAN TCPIP port. Default is 1521.
-         **/
+        /** The SCAN TCPIP port. Default is 1521. */
         @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcp")
         private Integer scanListenerPortTcp;
 
         /**
          * The SCAN TCPIP port. Default is 1521.
+         *
          * @param scanListenerPortTcp the value to set
          * @return this builder
-         **/
+         */
         public Builder scanListenerPortTcp(Integer scanListenerPortTcp) {
             this.scanListenerPortTcp = scanListenerPortTcp;
             this.__explicitlySet__.add("scanListenerPortTcp");
             return this;
         }
-        /**
-         * The SCAN TCPIP SSL port. Default is 2484.
-         **/
+        /** The SCAN TCPIP SSL port. Default is 2484. */
         @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcpSsl")
         private Integer scanListenerPortTcpSsl;
 
         /**
          * The SCAN TCPIP SSL port. Default is 2484.
+         *
          * @param scanListenerPortTcpSsl the value to set
          * @return this builder
-         **/
+         */
         public Builder scanListenerPortTcpSsl(Integer scanListenerPortTcpSsl) {
             this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
             this.__explicitlySet__.add("scanListenerPortTcpSsl");
             return this;
         }
-        /**
-         * The list of SCAN IP addresses. Three addresses should be provided.
-         **/
+        /** The list of SCAN IP addresses. Three addresses should be provided. */
         @com.fasterxml.jackson.annotation.JsonProperty("ips")
         private java.util.List<String> ips;
 
         /**
          * The list of SCAN IP addresses. Three addresses should be provided.
+         *
          * @param ips the value to set
          * @return this builder
-         **/
+         */
         public Builder ips(java.util.List<String> ips) {
             this.ips = ips;
             this.__explicitlySet__.add("ips");
@@ -162,9 +157,7 @@ public final class ScanDetails extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -173,72 +166,67 @@ public final class ScanDetails extends com.oracle.bmc.http.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /**
-     * The SCAN hostname.
-     **/
+    /** The SCAN hostname. */
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
     /**
      * The SCAN hostname.
+     *
      * @return the value
-     **/
+     */
     public String getHostname() {
         return hostname;
     }
 
-    /**
-     * The SCAN TCPIP port. Default is 1521.
-     **/
+    /** The SCAN TCPIP port. Default is 1521. */
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
      * The SCAN TCPIP port. Default is 1521.
+     *
      * @return the value
-     **/
+     */
     public Integer getPort() {
         return port;
     }
 
-    /**
-     * The SCAN TCPIP port. Default is 1521.
-     **/
+    /** The SCAN TCPIP port. Default is 1521. */
     @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcp")
     private final Integer scanListenerPortTcp;
 
     /**
      * The SCAN TCPIP port. Default is 1521.
+     *
      * @return the value
-     **/
+     */
     public Integer getScanListenerPortTcp() {
         return scanListenerPortTcp;
     }
 
-    /**
-     * The SCAN TCPIP SSL port. Default is 2484.
-     **/
+    /** The SCAN TCPIP SSL port. Default is 2484. */
     @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcpSsl")
     private final Integer scanListenerPortTcpSsl;
 
     /**
      * The SCAN TCPIP SSL port. Default is 2484.
+     *
      * @return the value
-     **/
+     */
     public Integer getScanListenerPortTcpSsl() {
         return scanListenerPortTcpSsl;
     }
 
-    /**
-     * The list of SCAN IP addresses. Three addresses should be provided.
-     **/
+    /** The list of SCAN IP addresses. Three addresses should be provided. */
     @com.fasterxml.jackson.annotation.JsonProperty("ips")
     private final java.util.List<String> ips;
 
     /**
      * The list of SCAN IP addresses. Three addresses should be provided.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getIps() {
         return ips;
     }
@@ -250,6 +238,7 @@ public final class ScanDetails extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

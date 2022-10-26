@@ -6,82 +6,69 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/RefreshUserAssessmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RefreshUserAssessmentRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/RefreshUserAssessmentExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * RefreshUserAssessmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class RefreshUserAssessmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datasafe.model.RunUserAssessmentDetails> {
 
-    /**
-     * The OCID of the user assessment.
-     */
+    /** The OCID of the user assessment. */
     private String userAssessmentId;
 
-    /**
-     * The OCID of the user assessment.
-     */
+    /** The OCID of the user assessment. */
     public String getUserAssessmentId() {
         return userAssessmentId;
     }
-    /**
-     * The details required to create an on-demand saved user assessment.
-     */
+    /** The details required to create an on-demand saved user assessment. */
     private com.oracle.bmc.datasafe.model.RunUserAssessmentDetails runUserAssessmentDetails;
 
-    /**
-     * The details required to create an on-demand saved user assessment.
-     */
+    /** The details required to create an on-demand saved user assessment. */
     public com.oracle.bmc.datasafe.model.RunUserAssessmentDetails getRunUserAssessmentDetails() {
         return runUserAssessmentDetails;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
-     *
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
-     *
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     private String opcRequestId;
 
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the if-match parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+     * if-match parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the if-match parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+     * if-match parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
@@ -89,6 +76,7 @@ public class RefreshUserAssessmentRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -101,17 +89,15 @@ public class RefreshUserAssessmentRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RefreshUserAssessmentRequest,
                     com.oracle.bmc.datasafe.model.RunUserAssessmentDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the user assessment.
-         */
+        /** The OCID of the user assessment. */
         private String userAssessmentId = null;
 
         /**
          * The OCID of the user assessment.
+         *
          * @param userAssessmentId the value to set
          * @return this builder instance
          */
@@ -120,14 +106,13 @@ public class RefreshUserAssessmentRequest
             return this;
         }
 
-        /**
-         * The details required to create an on-demand saved user assessment.
-         */
+        /** The details required to create an on-demand saved user assessment. */
         private com.oracle.bmc.datasafe.model.RunUserAssessmentDetails runUserAssessmentDetails =
                 null;
 
         /**
          * The details required to create an on-demand saved user assessment.
+         *
          * @param runUserAssessmentDetails the value to set
          * @return this builder instance
          */
@@ -139,18 +124,19 @@ public class RefreshUserAssessmentRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
-         *
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -160,13 +146,12 @@ public class RefreshUserAssessmentRequest
             return this;
         }
 
-        /**
-         * Unique identifier for the request.
-         */
+        /** Unique identifier for the request. */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -176,21 +161,18 @@ public class RefreshUserAssessmentRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the if-match parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * if-match parameter to the value of the etag from a previous GET or POST response for that
+         * resource. The resource will be updated or deleted only if the etag you provide matches
+         * the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the if-match parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * if-match parameter to the value of the etag from a previous GET or POST response for that
+         * resource. The resource will be updated or deleted only if the etag you provide matches
+         * the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -202,18 +184,19 @@ public class RefreshUserAssessmentRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -225,6 +208,7 @@ public class RefreshUserAssessmentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(RefreshUserAssessmentRequest o) {
@@ -241,10 +225,11 @@ public class RefreshUserAssessmentRequest
         /**
          * Build the instance of RefreshUserAssessmentRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of RefreshUserAssessmentRequest
          */
@@ -257,6 +242,7 @@ public class RefreshUserAssessmentRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -269,7 +255,8 @@ public class RefreshUserAssessmentRequest
         /**
          * Build the instance of RefreshUserAssessmentRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of RefreshUserAssessmentRequest
@@ -282,12 +269,14 @@ public class RefreshUserAssessmentRequest
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new RefreshUserAssessmentRequest(userAssessmentId, runUserAssessmentDetails, opcRetryToken, opcRequestId, ifMatch);
+            // new RefreshUserAssessmentRequest(userAssessmentId, runUserAssessmentDetails,
+            // opcRetryToken, opcRequestId, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -301,6 +290,7 @@ public class RefreshUserAssessmentRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,21 +5,22 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * Properties used in the update operations of the folder.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Properties used in the update operations of the folder. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateFolderDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateFolderDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = UpdateFolderDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class UpdateFolderDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "modelType",
@@ -59,49 +60,50 @@ public final class UpdateFolderDetails extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The type of the folder.
-         **/
+        /** The type of the folder. */
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
         /**
          * The type of the folder.
+         *
          * @param modelType the value to set
          * @return this builder
-         **/
+         */
         public Builder modelType(String modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
             return this;
         }
         /**
-         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
-         **/
+         * Generated key that can be used in API calls to identify the folder. In scenarios where
+         * reference to the folder is required, a value can be passed in create.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where
+         * reference to the folder is required, a value can be passed in create.
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /**
-         * The model version of an object.
-         **/
+        /** The model version of an object. */
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
          * The model version of an object.
+         *
          * @param modelVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -117,96 +119,104 @@ public final class UpdateFolderDetails extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         **/
+         * Free form text without any restriction on the permitted characters. Name can have
+         * letters, numbers, and special characters. The value is editable and is restricted to 1000
+         * characters.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have
+         * letters, numbers, and special characters. The value is editable and is restricted to 1000
+         * characters.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * User-defined description of the folder.
-         **/
+        /** User-defined description of the folder. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * User-defined description of the folder.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-         **/
+         * The status of an object that can be set to value 1 for shallow references across objects,
+         * other values reserved.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         * The status of an object that can be set to value 1 for shallow references across objects,
+         * other values reserved.
+         *
          * @param objectStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
             return this;
         }
-        /**
-         * The version of the object that is used to track changes in the object instance.
-         **/
+        /** The version of the object that is used to track changes in the object instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
         private Integer objectVersion;
 
         /**
          * The version of the object that is used to track changes in the object instance.
+         *
          * @param objectVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = objectVersion;
             this.__explicitlySet__.add("objectVersion");
             return this;
         }
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
-         **/
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with
+         * an upper case letter or underscore. The value can be modified.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with
+         * an upper case letter or underscore. The value can be modified.
+         *
          * @param identifier the value to set
          * @return this builder
-         **/
+         */
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-        /**
-         * The list of data assets that belong to the folder.
-         **/
+        /** The list of data assets that belong to the folder. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataAssets")
         private java.util.List<DataAsset> dataAssets;
 
         /**
          * The list of data assets that belong to the folder.
+         *
          * @param dataAssets the value to set
          * @return this builder
-         **/
+         */
         public Builder dataAssets(java.util.List<DataAsset> dataAssets) {
             this.dataAssets = dataAssets;
             this.__explicitlySet__.add("dataAssets");
@@ -271,9 +281,7 @@ public final class UpdateFolderDetails extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -282,44 +290,45 @@ public final class UpdateFolderDetails extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * The type of the folder.
-     **/
+    /** The type of the folder. */
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
     /**
      * The type of the folder.
+     *
      * @return the value
-     **/
+     */
     public String getModelType() {
         return modelType;
     }
 
     /**
-     * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
-     **/
+     * Generated key that can be used in API calls to identify the folder. In scenarios where
+     * reference to the folder is required, a value can be passed in create.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+     * Generated key that can be used in API calls to identify the folder. In scenarios where
+     * reference to the folder is required, a value can be passed in create.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * The model version of an object.
-     **/
+    /** The model version of an object. */
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The model version of an object.
+     *
      * @return the value
-     **/
+     */
     public String getModelVersion() {
         return modelVersion;
     }
@@ -332,85 +341,91 @@ public final class UpdateFolderDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     **/
+     * Free form text without any restriction on the permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * User-defined description of the folder.
-     **/
+    /** User-defined description of the folder. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * User-defined description of the folder.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-     **/
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectStatus() {
         return objectStatus;
     }
 
-    /**
-     * The version of the object that is used to track changes in the object instance.
-     **/
+    /** The version of the object that is used to track changes in the object instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
     /**
      * The version of the object that is used to track changes in the object instance.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectVersion() {
         return objectVersion;
     }
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
-     **/
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an
+     * upper case letter or underscore. The value can be modified.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an
+     * upper case letter or underscore. The value can be modified.
+     *
      * @return the value
-     **/
+     */
     public String getIdentifier() {
         return identifier;
     }
 
-    /**
-     * The list of data assets that belong to the folder.
-     **/
+    /** The list of data assets that belong to the folder. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssets")
     private final java.util.List<DataAsset> dataAssets;
 
     /**
      * The list of data assets that belong to the folder.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<DataAsset> getDataAssets() {
         return dataAssets;
     }
@@ -422,6 +437,7 @@ public final class UpdateFolderDetails extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

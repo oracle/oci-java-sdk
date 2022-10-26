@@ -10,14 +10,21 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * A {@link javax.security.auth.spi.LoginModule} that will use User Principals to fill the {@link javax.security.auth.Subject} credentials.
- * Possible parameters are:
+ * A {@link javax.security.auth.spi.LoginModule} that will use User Principals to fill the {@link
+ * javax.security.auth.Subject} credentials. Possible parameters are:
+ *
  * <ul>
- *   <li>config: the path the your OCI SDK configuration file - if not specified the configuration will be looked in <i>~/.oci/config</i></li>
- *   <li>profile: the profile to use inside the config - if not specified <i>DEFAULT</i> profile will be used</li>
- *   <li>intent: the intent of the authentication - this service specific and is documented on a per-service basis</li>
+ *   <li>config: the path the your OCI SDK configuration file - if not specified the configuration
+ *       will be looked in <i>~/.oci/config</i>
+ *   <li>profile: the profile to use inside the config - if not specified <i>DEFAULT</i> profile
+ *       will be used
+ *   <li>intent: the intent of the authentication - this service specific and is documented on a
+ *       per-service basis
  * </ul>
- * <pre>{@code com.oracle.bmc.auth.sasl.UserPrincipalsLoginModule required config="<optionalConfigPath>" profile="<optionalProfile>" intent="<intent>";}</pre>
+ *
+ * <pre>
+ * {@code com.oracle.bmc.auth.sasl.UserPrincipalsLoginModule required config="<optionalConfigPath>" profile="<optionalProfile>" intent="<intent>";}
+ * </pre>
  */
 public class UserPrincipalsLoginModule extends OciLoginModule {
 

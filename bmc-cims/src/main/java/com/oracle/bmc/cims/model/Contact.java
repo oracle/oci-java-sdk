@@ -5,19 +5,20 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Contact details for the customer.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Contact details for the customer. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Contact.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Contact extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Contact extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "contactName",
@@ -36,65 +37,61 @@ public final class Contact extends com.oracle.bmc.http.internal.ExplicitlySetBmc
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the contact person.
-         **/
+        /** The name of the contact person. */
         @com.fasterxml.jackson.annotation.JsonProperty("contactName")
         private String contactName;
 
         /**
          * The name of the contact person.
+         *
          * @param contactName the value to set
          * @return this builder
-         **/
+         */
         public Builder contactName(String contactName) {
             this.contactName = contactName;
             this.__explicitlySet__.add("contactName");
             return this;
         }
-        /**
-         * The email of the contact person.
-         **/
+        /** The email of the contact person. */
         @com.fasterxml.jackson.annotation.JsonProperty("contactEmail")
         private String contactEmail;
 
         /**
          * The email of the contact person.
+         *
          * @param contactEmail the value to set
          * @return this builder
-         **/
+         */
         public Builder contactEmail(String contactEmail) {
             this.contactEmail = contactEmail;
             this.__explicitlySet__.add("contactEmail");
             return this;
         }
-        /**
-         * The phone number of the contact person.
-         **/
+        /** The phone number of the contact person. */
         @com.fasterxml.jackson.annotation.JsonProperty("contactPhone")
         private String contactPhone;
 
         /**
          * The phone number of the contact person.
+         *
          * @param contactPhone the value to set
          * @return this builder
-         **/
+         */
         public Builder contactPhone(String contactPhone) {
             this.contactPhone = contactPhone;
             this.__explicitlySet__.add("contactPhone");
             return this;
         }
-        /**
-         * The type of contact, such as primary or alternate.
-         **/
+        /** The type of contact, such as primary or alternate. */
         @com.fasterxml.jackson.annotation.JsonProperty("contactType")
         private ContactType contactType;
 
         /**
          * The type of contact, such as primary or alternate.
+         *
          * @param contactType the value to set
          * @return this builder
-         **/
+         */
         public Builder contactType(ContactType contactType) {
             this.contactType = contactType;
             this.__explicitlySet__.add("contactType");
@@ -135,9 +132,7 @@ public final class Contact extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -146,52 +141,47 @@ public final class Contact extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the contact person.
-     **/
+    /** The name of the contact person. */
     @com.fasterxml.jackson.annotation.JsonProperty("contactName")
     private final String contactName;
 
     /**
      * The name of the contact person.
+     *
      * @return the value
-     **/
+     */
     public String getContactName() {
         return contactName;
     }
 
-    /**
-     * The email of the contact person.
-     **/
+    /** The email of the contact person. */
     @com.fasterxml.jackson.annotation.JsonProperty("contactEmail")
     private final String contactEmail;
 
     /**
      * The email of the contact person.
+     *
      * @return the value
-     **/
+     */
     public String getContactEmail() {
         return contactEmail;
     }
 
-    /**
-     * The phone number of the contact person.
-     **/
+    /** The phone number of the contact person. */
     @com.fasterxml.jackson.annotation.JsonProperty("contactPhone")
     private final String contactPhone;
 
     /**
      * The phone number of the contact person.
+     *
      * @return the value
-     **/
+     */
     public String getContactPhone() {
         return contactPhone;
     }
 
-    /**
-     * The type of contact, such as primary or alternate.
-     **/
-    public enum ContactType {
+    /** The type of contact, such as primary or alternate. */
+    public enum ContactType implements com.oracle.bmc.http.internal.BmcEnum {
         Primary("PRIMARY"),
         Alternate("ALTERNATE"),
         Secondary("SECONDARY"),
@@ -199,8 +189,8 @@ public final class Contact extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         Manager("MANAGER"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -239,16 +229,15 @@ public final class Contact extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return UnknownEnumValue;
         }
     };
-    /**
-     * The type of contact, such as primary or alternate.
-     **/
+    /** The type of contact, such as primary or alternate. */
     @com.fasterxml.jackson.annotation.JsonProperty("contactType")
     private final ContactType contactType;
 
     /**
      * The type of contact, such as primary or alternate.
+     *
      * @return the value
-     **/
+     */
     public ContactType getContactType() {
         return contactType;
     }
@@ -260,6 +249,7 @@ public final class Contact extends com.oracle.bmc.http.internal.ExplicitlySetBmc
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

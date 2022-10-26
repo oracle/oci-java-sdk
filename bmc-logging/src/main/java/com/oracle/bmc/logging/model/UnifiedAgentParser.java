@@ -5,78 +5,65 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * source parser object.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * source parser object. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "parserType",
-    defaultImpl = UnifiedAgentParser.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "parserType",
+        defaultImpl = UnifiedAgentParser.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UnifiedAgentMultilineGrokParser.class,
-        name = "MULTILINE_GROK"
-    ),
+            value = UnifiedAgentMultilineGrokParser.class,
+            name = "MULTILINE_GROK"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UnifiedJSONParser.class,
-        name = "JSON"
-    ),
+            value = UnifiedJSONParser.class,
+            name = "JSON"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UnifiedAgentGrokParser.class,
-        name = "GROK"
-    ),
+            value = UnifiedAgentGrokParser.class,
+            name = "GROK"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UnifiedAgentNoneParser.class,
-        name = "NONE"
-    ),
+            value = UnifiedAgentNoneParser.class,
+            name = "NONE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UnifiedAgentSyslogParser.class,
-        name = "SYSLOG"
-    ),
+            value = UnifiedAgentSyslogParser.class,
+            name = "SYSLOG"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UnifiedAgentAuditdParser.class,
-        name = "AUDITD"
-    ),
+            value = UnifiedAgentAuditdParser.class,
+            name = "AUDITD"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UnifiedAgentApache2Parser.class,
-        name = "APACHE2"
-    ),
+            value = UnifiedAgentApache2Parser.class,
+            name = "APACHE2"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UnifiedAgentRegexParser.class,
-        name = "REGEXP"
-    ),
+            value = UnifiedAgentRegexParser.class,
+            name = "REGEXP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UnifiedAgentMultilineParser.class,
-        name = "MULTILINE"
-    ),
+            value = UnifiedAgentMultilineParser.class,
+            name = "MULTILINE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UnifiedAgentTsvParser.class,
-        name = "TSV"
-    ),
+            value = UnifiedAgentTsvParser.class,
+            name = "TSV"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UnifiedAgentApacheErrorParser.class,
-        name = "APACHE_ERROR"
-    ),
+            value = UnifiedAgentApacheErrorParser.class,
+            name = "APACHE_ERROR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UnifiedAgentMsgpackParser.class,
-        name = "MSGPACK"
-    ),
+            value = UnifiedAgentMsgpackParser.class,
+            name = "MSGPACK"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UnifiedAgentCsvParser.class,
-        name = "CSV"
-    )
+            value = UnifiedAgentCsvParser.class,
+            name = "CSV")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class UnifiedAgentParser extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class UnifiedAgentParser extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "fieldTimeKey",
@@ -106,99 +93,102 @@ public class UnifiedAgentParser extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Specify time field for the event time. If the event doesn't have this field, the current time is used.
-     **/
+     * Specify time field for the event time. If the event doesn't have this field, the current time
+     * is used.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("fieldTimeKey")
     private final String fieldTimeKey;
 
     /**
-     * Specify time field for the event time. If the event doesn't have this field, the current time is used.
+     * Specify time field for the event time. If the event doesn't have this field, the current time
+     * is used.
+     *
      * @return the value
-     **/
+     */
     public String getFieldTimeKey() {
         return fieldTimeKey;
     }
 
-    /**
-     * Specify types for converting a field into another type.
-     **/
+    /** Specify types for converting a field into another type. */
     @com.fasterxml.jackson.annotation.JsonProperty("types")
     private final java.util.Map<String, String> types;
 
     /**
      * Specify types for converting a field into another type.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getTypes() {
         return types;
     }
 
-    /**
-     * Specify the null value pattern.
-     **/
+    /** Specify the null value pattern. */
     @com.fasterxml.jackson.annotation.JsonProperty("nullValuePattern")
     private final String nullValuePattern;
 
     /**
      * Specify the null value pattern.
+     *
      * @return the value
-     **/
+     */
     public String getNullValuePattern() {
         return nullValuePattern;
     }
 
-    /**
-     * If true, an empty string field is replaced with nil.
-     **/
+    /** If true, an empty string field is replaced with nil. */
     @com.fasterxml.jackson.annotation.JsonProperty("isNullEmptyString")
     private final Boolean isNullEmptyString;
 
     /**
      * If true, an empty string field is replaced with nil.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsNullEmptyString() {
         return isNullEmptyString;
     }
 
     /**
      * If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isEstimateCurrentEvent")
     private final Boolean isEstimateCurrentEvent;
 
     /**
      * If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsEstimateCurrentEvent() {
         return isEstimateCurrentEvent;
     }
 
-    /**
-     * If true, keep time field in the record.
-     **/
+    /** If true, keep time field in the record. */
     @com.fasterxml.jackson.annotation.JsonProperty("isKeepTimeKey")
     private final Boolean isKeepTimeKey;
 
     /**
      * If true, keep time field in the record.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsKeepTimeKey() {
         return isKeepTimeKey;
     }
 
     /**
-     * Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
-     **/
+     * Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp
+     * pattern.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInMilliseconds")
     private final Integer timeoutInMilliseconds;
 
     /**
-     * Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
+     * Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp
+     * pattern.
+     *
      * @return the value
-     **/
+     */
     public Integer getTimeoutInMilliseconds() {
         return timeoutInMilliseconds;
     }
@@ -210,6 +200,7 @@ public class UnifiedAgentParser extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -278,10 +269,8 @@ public class UnifiedAgentParser extends com.oracle.bmc.http.internal.ExplicitlyS
         return result;
     }
 
-    /**
-     * Type of fluent parser.
-     **/
-    public enum ParserType {
+    /** Type of fluent parser. */
+    public enum ParserType implements com.oracle.bmc.http.internal.BmcEnum {
         Auditd("AUDITD"),
         Json("JSON"),
         Tsv("TSV"),
@@ -297,8 +286,8 @@ public class UnifiedAgentParser extends com.oracle.bmc.http.internal.ExplicitlyS
         MultilineGrok("MULTILINE_GROK"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 

@@ -5,54 +5,51 @@
 package com.oracle.bmc.sch.model;
 
 /**
- * The Functions task.
- * Batch input for a function can be limited by either size or time. The first limit reached determines the boundary of the batch.
- * For configuration instructions, see
- * [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The Functions task. Batch input for a function can be limited by either size or time. The first
+ * limit reached determines the boundary of the batch. For configuration instructions, see [To
+ * create a service
+ * connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = FunctionTaskDetails.Builder.class
-)
+        builder = FunctionTaskDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "kind"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "kind")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class FunctionTaskDetails extends TaskDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the function to be used as a task.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("functionId")
         private String functionId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the function to be used as a task.
          *
          * @param functionId the value to set
          * @return this builder
-         **/
+         */
         public Builder functionId(String functionId) {
             this.functionId = functionId;
             this.__explicitlySet__.add("functionId");
             return this;
         }
-        /**
-         * Size limit (kilobytes) for batch sent to invoke the function.
-         *
-         **/
+        /** Size limit (kilobytes) for batch sent to invoke the function. */
         @com.fasterxml.jackson.annotation.JsonProperty("batchSizeInKbs")
         private Integer batchSizeInKbs;
 
@@ -61,16 +58,13 @@ public final class FunctionTaskDetails extends TaskDetails {
          *
          * @param batchSizeInKbs the value to set
          * @return this builder
-         **/
+         */
         public Builder batchSizeInKbs(Integer batchSizeInKbs) {
             this.batchSizeInKbs = batchSizeInKbs;
             this.__explicitlySet__.add("batchSizeInKbs");
             return this;
         }
-        /**
-         * Time limit (seconds) for batch sent to invoke the function.
-         *
-         **/
+        /** Time limit (seconds) for batch sent to invoke the function. */
         @com.fasterxml.jackson.annotation.JsonProperty("batchTimeInSec")
         private Integer batchTimeInSec;
 
@@ -79,7 +73,7 @@ public final class FunctionTaskDetails extends TaskDetails {
          *
          * @param batchTimeInSec the value to set
          * @return this builder
-         **/
+         */
         public Builder batchTimeInSec(Integer batchTimeInSec) {
             this.batchTimeInSec = batchTimeInSec;
             this.__explicitlySet__.add("batchTimeInSec");
@@ -114,9 +108,7 @@ public final class FunctionTaskDetails extends TaskDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -134,25 +126,23 @@ public final class FunctionTaskDetails extends TaskDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the function to be used as a task.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("functionId")
     private final String functionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the function to be used as a task.
      *
      * @return the value
-     **/
+     */
     public String getFunctionId() {
         return functionId;
     }
 
-    /**
-     * Size limit (kilobytes) for batch sent to invoke the function.
-     *
-     **/
+    /** Size limit (kilobytes) for batch sent to invoke the function. */
     @com.fasterxml.jackson.annotation.JsonProperty("batchSizeInKbs")
     private final Integer batchSizeInKbs;
 
@@ -160,15 +150,12 @@ public final class FunctionTaskDetails extends TaskDetails {
      * Size limit (kilobytes) for batch sent to invoke the function.
      *
      * @return the value
-     **/
+     */
     public Integer getBatchSizeInKbs() {
         return batchSizeInKbs;
     }
 
-    /**
-     * Time limit (seconds) for batch sent to invoke the function.
-     *
-     **/
+    /** Time limit (seconds) for batch sent to invoke the function. */
     @com.fasterxml.jackson.annotation.JsonProperty("batchTimeInSec")
     private final Integer batchTimeInSec;
 
@@ -176,7 +163,7 @@ public final class FunctionTaskDetails extends TaskDetails {
      * Time limit (seconds) for batch sent to invoke the function.
      *
      * @return the value
-     **/
+     */
     public Integer getBatchTimeInSec() {
         return batchTimeInSec;
     }
@@ -188,6 +175,7 @@ public final class FunctionTaskDetails extends TaskDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

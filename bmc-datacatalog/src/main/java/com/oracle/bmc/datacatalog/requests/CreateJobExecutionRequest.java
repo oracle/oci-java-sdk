@@ -6,75 +6,59 @@ package com.oracle.bmc.datacatalog.requests;
 
 import com.oracle.bmc.datacatalog.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateJobExecutionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateJobExecutionRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateJobExecutionExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateJobExecutionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class CreateJobExecutionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datacatalog.model.CreateJobExecutionDetails> {
 
-    /**
-     * Unique catalog identifier.
-     */
+    /** Unique catalog identifier. */
     private String catalogId;
 
-    /**
-     * Unique catalog identifier.
-     */
+    /** Unique catalog identifier. */
     public String getCatalogId() {
         return catalogId;
     }
-    /**
-     * Unique job key.
-     */
+    /** Unique job key. */
     private String jobKey;
 
-    /**
-     * Unique job key.
-     */
+    /** Unique job key. */
     public String getJobKey() {
         return jobKey;
     }
-    /**
-     * The information used to create the job execution.
-     */
+    /** The information used to create the job execution. */
     private com.oracle.bmc.datacatalog.model.CreateJobExecutionDetails createJobExecutionDetails;
 
-    /**
-     * The information used to create the job execution.
-     */
+    /** The information used to create the job execution. */
     public com.oracle.bmc.datacatalog.model.CreateJobExecutionDetails
             getCreateJobExecutionDetails() {
         return createJobExecutionDetails;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * might be rejected.
-     *
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * might be rejected.
-     *
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -82,6 +66,7 @@ public class CreateJobExecutionRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -94,17 +79,15 @@ public class CreateJobExecutionRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateJobExecutionRequest,
                     com.oracle.bmc.datacatalog.model.CreateJobExecutionDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique catalog identifier.
-         */
+        /** Unique catalog identifier. */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         *
          * @param catalogId the value to set
          * @return this builder instance
          */
@@ -113,13 +96,12 @@ public class CreateJobExecutionRequest
             return this;
         }
 
-        /**
-         * Unique job key.
-         */
+        /** Unique job key. */
         private String jobKey = null;
 
         /**
          * Unique job key.
+         *
          * @param jobKey the value to set
          * @return this builder instance
          */
@@ -128,14 +110,13 @@ public class CreateJobExecutionRequest
             return this;
         }
 
-        /**
-         * The information used to create the job execution.
-         */
+        /** The information used to create the job execution. */
         private com.oracle.bmc.datacatalog.model.CreateJobExecutionDetails
                 createJobExecutionDetails = null;
 
         /**
          * The information used to create the job execution.
+         *
          * @param createJobExecutionDetails the value to set
          * @return this builder instance
          */
@@ -146,13 +127,12 @@ public class CreateJobExecutionRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -163,20 +143,19 @@ public class CreateJobExecutionRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * might be rejected.
-         *
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -188,18 +167,19 @@ public class CreateJobExecutionRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -211,6 +191,7 @@ public class CreateJobExecutionRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(CreateJobExecutionRequest o) {
@@ -227,10 +208,11 @@ public class CreateJobExecutionRequest
         /**
          * Build the instance of CreateJobExecutionRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of CreateJobExecutionRequest
          */
@@ -243,6 +225,7 @@ public class CreateJobExecutionRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -255,7 +238,8 @@ public class CreateJobExecutionRequest
         /**
          * Build the instance of CreateJobExecutionRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateJobExecutionRequest
@@ -268,12 +252,14 @@ public class CreateJobExecutionRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new CreateJobExecutionRequest(catalogId, jobKey, createJobExecutionDetails, opcRequestId, opcRetryToken);
+            // new CreateJobExecutionRequest(catalogId, jobKey, createJobExecutionDetails,
+            // opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -287,6 +273,7 @@ public class CreateJobExecutionRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

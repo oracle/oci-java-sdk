@@ -5,22 +5,22 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateNetworkSecurityGroupSecurityRulesDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateNetworkSecurityGroupSecurityRulesDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateNetworkSecurityGroupSecurityRulesDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"securityRules"})
     public UpdateNetworkSecurityGroupSecurityRulesDetails(
@@ -31,17 +31,16 @@ public final class UpdateNetworkSecurityGroupSecurityRulesDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The NSG security rules to update.
-         **/
+        /** The NSG security rules to update. */
         @com.fasterxml.jackson.annotation.JsonProperty("securityRules")
         private java.util.List<UpdateSecurityRuleDetails> securityRules;
 
         /**
          * The NSG security rules to update.
+         *
          * @param securityRules the value to set
          * @return this builder
-         **/
+         */
         public Builder securityRules(java.util.List<UpdateSecurityRuleDetails> securityRules) {
             this.securityRules = securityRules;
             this.__explicitlySet__.add("securityRules");
@@ -69,9 +68,7 @@ public final class UpdateNetworkSecurityGroupSecurityRulesDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -80,16 +77,15 @@ public final class UpdateNetworkSecurityGroupSecurityRulesDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The NSG security rules to update.
-     **/
+    /** The NSG security rules to update. */
     @com.fasterxml.jackson.annotation.JsonProperty("securityRules")
     private final java.util.List<UpdateSecurityRuleDetails> securityRules;
 
     /**
      * The NSG security rules to update.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<UpdateSecurityRuleDetails> getSecurityRules() {
         return securityRules;
     }
@@ -101,6 +97,7 @@ public final class UpdateNetworkSecurityGroupSecurityRulesDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

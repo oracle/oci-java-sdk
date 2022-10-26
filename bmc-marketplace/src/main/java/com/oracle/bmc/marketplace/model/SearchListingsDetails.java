@@ -5,35 +5,33 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * A base request type that contains common criteria for Marketplace Search Listings details.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A base request type that contains common criteria for Marketplace Search Listings details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type",
-    defaultImpl = SearchListingsDetails.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type",
+        defaultImpl = SearchListingsDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = StructuredSearchDetails.class,
-        name = "Structured"
-    ),
+            value = StructuredSearchDetails.class,
+            name = "Structured"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = FreeTextSearchDetails.class,
-        name = "FreeText"
-    )
+            value = FreeTextSearchDetails.class,
+            name = "FreeText")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class SearchListingsDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class SearchListingsDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"matchingContextType"})
     protected SearchListingsDetails(MatchingContextTypeEnum matchingContextType) {
@@ -42,17 +40,18 @@ public class SearchListingsDetails extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The type of matching context returned in the response. If you specify HIGHLIGHTS, then the service will highlight fragments in its response. The default value is NONE.
-     *
-     **/
+     * The type of matching context returned in the response. If you specify HIGHLIGHTS, then the
+     * service will highlight fragments in its response. The default value is NONE.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("matchingContextType")
     private final MatchingContextTypeEnum matchingContextType;
 
     /**
-     * The type of matching context returned in the response. If you specify HIGHLIGHTS, then the service will highlight fragments in its response. The default value is NONE.
+     * The type of matching context returned in the response. If you specify HIGHLIGHTS, then the
+     * service will highlight fragments in its response. The default value is NONE.
      *
      * @return the value
-     **/
+     */
     public MatchingContextTypeEnum getMatchingContextType() {
         return matchingContextType;
     }
@@ -64,6 +63,7 @@ public class SearchListingsDetails extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

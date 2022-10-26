@@ -5,22 +5,22 @@
 package com.oracle.bmc.opensearch.model;
 
 /**
- * Information about the OpenSearch cluster backup to restore.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Information about the OpenSearch cluster backup to restore. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = RestoreOpensearchClusterDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = RestoreOpensearchClusterDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class RestoreOpensearchClusterDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"opensearchClusterBackupId", "compartmentId", "prefix"})
     public RestoreOpensearchClusterDetails(
@@ -33,49 +33,46 @@ public final class RestoreOpensearchClusterDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the cluster backup to restore.
-         **/
+        /** The OCID of the cluster backup to restore. */
         @com.fasterxml.jackson.annotation.JsonProperty("opensearchClusterBackupId")
         private String opensearchClusterBackupId;
 
         /**
          * The OCID of the cluster backup to restore.
+         *
          * @param opensearchClusterBackupId the value to set
          * @return this builder
-         **/
+         */
         public Builder opensearchClusterBackupId(String opensearchClusterBackupId) {
             this.opensearchClusterBackupId = opensearchClusterBackupId;
             this.__explicitlySet__.add("opensearchClusterBackupId");
             return this;
         }
-        /**
-         * The OCID of the compartment where the cluster backup is located.
-         **/
+        /** The OCID of the compartment where the cluster backup is located. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment where the cluster backup is located.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The prefix for the indices in the cluster backup.
-         **/
+        /** The prefix for the indices in the cluster backup. */
         @com.fasterxml.jackson.annotation.JsonProperty("prefix")
         private String prefix;
 
         /**
          * The prefix for the indices in the cluster backup.
+         *
          * @param prefix the value to set
          * @return this builder
-         **/
+         */
         public Builder prefix(String prefix) {
             this.prefix = prefix;
             this.__explicitlySet__.add("prefix");
@@ -110,9 +107,7 @@ public final class RestoreOpensearchClusterDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -121,44 +116,41 @@ public final class RestoreOpensearchClusterDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the cluster backup to restore.
-     **/
+    /** The OCID of the cluster backup to restore. */
     @com.fasterxml.jackson.annotation.JsonProperty("opensearchClusterBackupId")
     private final String opensearchClusterBackupId;
 
     /**
      * The OCID of the cluster backup to restore.
+     *
      * @return the value
-     **/
+     */
     public String getOpensearchClusterBackupId() {
         return opensearchClusterBackupId;
     }
 
-    /**
-     * The OCID of the compartment where the cluster backup is located.
-     **/
+    /** The OCID of the compartment where the cluster backup is located. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment where the cluster backup is located.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The prefix for the indices in the cluster backup.
-     **/
+    /** The prefix for the indices in the cluster backup. */
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
     private final String prefix;
 
     /**
      * The prefix for the indices in the cluster backup.
+     *
      * @return the value
-     **/
+     */
     public String getPrefix() {
         return prefix;
     }
@@ -170,6 +162,7 @@ public final class RestoreOpensearchClusterDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

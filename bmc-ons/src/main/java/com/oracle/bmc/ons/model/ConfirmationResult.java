@@ -5,24 +5,25 @@
 package com.oracle.bmc.ons.model;
 
 /**
- * The confirmation details for the specified subscription.
- * For information about confirming subscriptions, see
- * [To confirm a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#confirmSub).
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The confirmation details for the specified subscription. For information about confirming
+ * subscriptions, see [To confirm a
+ * subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#confirmSub).
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ConfirmationResult.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ConfirmationResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ConfirmationResult.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ConfirmationResult
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "topicName",
@@ -50,10 +51,7 @@ public final class ConfirmationResult extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the subscribed topic.
-         *
-         **/
+        /** The name of the subscribed topic. */
         @com.fasterxml.jackson.annotation.JsonProperty("topicName")
         private String topicName;
 
@@ -62,93 +60,96 @@ public final class ConfirmationResult extends com.oracle.bmc.http.internal.Expli
          *
          * @param topicName the value to set
          * @return this builder
-         **/
+         */
         public Builder topicName(String topicName) {
             this.topicName = topicName;
             this.__explicitlySet__.add("topicName");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic associated with the specified subscription.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the topic associated with the specified subscription.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("topicId")
         private String topicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic associated with the specified subscription.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the topic associated with the specified subscription.
          *
          * @param topicId the value to set
          * @return this builder
-         **/
+         */
         public Builder topicId(String topicId) {
             this.topicId = topicId;
             this.__explicitlySet__.add("topicId");
             return this;
         }
         /**
-         * A locator that corresponds to the subscription protocol.
-         * For example, an email address for a subscription that uses the {@code EMAIL} protocol, or a URL for a subscription that uses an HTTP-based protocol.
-         *
-         **/
+         * A locator that corresponds to the subscription protocol. For example, an email address
+         * for a subscription that uses the {@code EMAIL} protocol, or a URL for a subscription that
+         * uses an HTTP-based protocol.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
         private String endpoint;
 
         /**
-         * A locator that corresponds to the subscription protocol.
-         * For example, an email address for a subscription that uses the {@code EMAIL} protocol, or a URL for a subscription that uses an HTTP-based protocol.
+         * A locator that corresponds to the subscription protocol. For example, an email address
+         * for a subscription that uses the {@code EMAIL} protocol, or a URL for a subscription that
+         * uses an HTTP-based protocol.
          *
          * @param endpoint the value to set
          * @return this builder
-         **/
+         */
         public Builder endpoint(String endpoint) {
             this.endpoint = endpoint;
             this.__explicitlySet__.add("endpoint");
             return this;
         }
-        /**
-         * The URL for unsubscribing from the topic.
-         **/
+        /** The URL for unsubscribing from the topic. */
         @com.fasterxml.jackson.annotation.JsonProperty("unsubscribeUrl")
         private String unsubscribeUrl;
 
         /**
          * The URL for unsubscribing from the topic.
+         *
          * @param unsubscribeUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder unsubscribeUrl(String unsubscribeUrl) {
             this.unsubscribeUrl = unsubscribeUrl;
             this.__explicitlySet__.add("unsubscribeUrl");
             return this;
         }
-        /**
-         * A human-readable string indicating the status of the subscription confirmation.
-         **/
+        /** A human-readable string indicating the status of the subscription confirmation. */
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
          * A human-readable string indicating the status of the subscription confirmation.
+         *
          * @param message the value to set
          * @return this builder
-         **/
+         */
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription specified in the request.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the subscription specified in the request.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription specified in the request.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the subscription specified in the request.
+         *
          * @param subscriptionId the value to set
          * @return this builder
-         **/
+         */
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = subscriptionId;
             this.__explicitlySet__.add("subscriptionId");
@@ -197,9 +198,7 @@ public final class ConfirmationResult extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -208,10 +207,7 @@ public final class ConfirmationResult extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the subscribed topic.
-     *
-     **/
+    /** The name of the subscribed topic. */
     @com.fasterxml.jackson.annotation.JsonProperty("topicName")
     private final String topicName;
 
@@ -219,83 +215,86 @@ public final class ConfirmationResult extends com.oracle.bmc.http.internal.Expli
      * The name of the subscribed topic.
      *
      * @return the value
-     **/
+     */
     public String getTopicName() {
         return topicName;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic associated with the specified subscription.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the topic associated with the specified subscription.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("topicId")
     private final String topicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic associated with the specified subscription.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the topic associated with the specified subscription.
      *
      * @return the value
-     **/
+     */
     public String getTopicId() {
         return topicId;
     }
 
     /**
-     * A locator that corresponds to the subscription protocol.
-     * For example, an email address for a subscription that uses the {@code EMAIL} protocol, or a URL for a subscription that uses an HTTP-based protocol.
-     *
-     **/
+     * A locator that corresponds to the subscription protocol. For example, an email address for a
+     * subscription that uses the {@code EMAIL} protocol, or a URL for a subscription that uses an
+     * HTTP-based protocol.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
     private final String endpoint;
 
     /**
-     * A locator that corresponds to the subscription protocol.
-     * For example, an email address for a subscription that uses the {@code EMAIL} protocol, or a URL for a subscription that uses an HTTP-based protocol.
+     * A locator that corresponds to the subscription protocol. For example, an email address for a
+     * subscription that uses the {@code EMAIL} protocol, or a URL for a subscription that uses an
+     * HTTP-based protocol.
      *
      * @return the value
-     **/
+     */
     public String getEndpoint() {
         return endpoint;
     }
 
-    /**
-     * The URL for unsubscribing from the topic.
-     **/
+    /** The URL for unsubscribing from the topic. */
     @com.fasterxml.jackson.annotation.JsonProperty("unsubscribeUrl")
     private final String unsubscribeUrl;
 
     /**
      * The URL for unsubscribing from the topic.
+     *
      * @return the value
-     **/
+     */
     public String getUnsubscribeUrl() {
         return unsubscribeUrl;
     }
 
-    /**
-     * A human-readable string indicating the status of the subscription confirmation.
-     **/
+    /** A human-readable string indicating the status of the subscription confirmation. */
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
      * A human-readable string indicating the status of the subscription confirmation.
+     *
      * @return the value
-     **/
+     */
     public String getMessage() {
         return message;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription specified in the request.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the subscription specified in the request.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription specified in the request.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the subscription specified in the request.
+     *
      * @return the value
-     **/
+     */
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -307,6 +306,7 @@ public final class ConfirmationResult extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

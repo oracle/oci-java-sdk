@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details for updating the cloud VM cluster. Applies to Exadata Cloud Service instances only.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details for updating the cloud VM cluster. Applies to Exadata Cloud Service instances only. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateCloudVmClusterDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateCloudVmClusterDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateCloudVmClusterDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -70,10 +69,7 @@ public final class UpdateCloudVmClusterDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The user-friendly name for the cloud VM cluster. The name does not need to be unique.
-         *
-         **/
+        /** The user-friendly name for the cloud VM cluster. The name does not need to be unique. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -82,73 +78,79 @@ public final class UpdateCloudVmClusterDetails
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The number of CPU cores to enable for the cloud VM cluster.
-         **/
+        /** The number of CPU cores to enable for the cloud VM cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
         /**
          * The number of CPU cores to enable for the cloud VM cluster.
+         *
          * @param cpuCoreCount the value to set
          * @return this builder
-         **/
+         */
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = cpuCoreCount;
             this.__explicitlySet__.add("cpuCoreCount");
             return this;
         }
         /**
-         * The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
-         **/
+         * The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is
+         * allowed for the fractional part.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
         private Float ocpuCount;
 
         /**
-         * The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
+         * The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is
+         * allowed for the fractional part.
+         *
          * @param ocpuCount the value to set
          * @return this builder
-         **/
+         */
         public Builder ocpuCount(Float ocpuCount) {
             this.ocpuCount = ocpuCount;
             this.__explicitlySet__.add("ocpuCount");
             return this;
         }
         /**
-         * The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE. Applies to Exadata Cloud Service instances only.
-         *
-         **/
+         * The Oracle license model that applies to the cloud VM cluster. The default is
+         * BRING_YOUR_OWN_LICENSE. Applies to Exadata Cloud Service instances only.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
         /**
-         * The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE. Applies to Exadata Cloud Service instances only.
+         * The Oracle license model that applies to the cloud VM cluster. The default is
+         * BRING_YOUR_OWN_LICENSE. Applies to Exadata Cloud Service instances only.
          *
          * @param licenseModel the value to set
          * @return this builder
-         **/
+         */
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
             return this;
         }
         /**
-         * The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
-         **/
+         * The public key portion of one or more key pairs used for SSH access to the cloud VM
+         * cluster.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
         private java.util.List<String> sshPublicKeys;
 
         /**
-         * The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
+         * The public key portion of one or more key pairs used for SSH access to the cloud VM
+         * cluster.
+         *
          * @param sshPublicKeys the value to set
          * @return this builder
-         **/
+         */
         public Builder sshPublicKeys(java.util.List<String> sshPublicKeys) {
             this.sshPublicKeys = sshPublicKeys;
             this.__explicitlySet__.add("sshPublicKeys");
@@ -164,116 +166,134 @@ public final class UpdateCloudVmClusterDetails
             return this;
         }
         /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-         * **NsgIds restrictions:**
-         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
-         *
-         **/
+         * The list of
+         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+         * network security groups (NSGs) to which this resource belongs. Setting this to an empty
+         * list removes all resources from all NSGs. For more information about NSGs, see [Security
+         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+         * Databases with private access. The nsgIds list can be empty.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-         * **NsgIds restrictions:**
-         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         * The list of
+         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+         * network security groups (NSGs) to which this resource belongs. Setting this to an empty
+         * list removes all resources from all NSGs. For more information about NSGs, see [Security
+         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+         * Databases with private access. The nsgIds list can be empty.
          *
          * @param nsgIds the value to set
          * @return this builder
-         **/
+         */
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
         /**
-         * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-         *
-         **/
+         * A list of the
+         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * network security groups (NSGs) that the backup network of this DB system belongs to.
+         * Setting this to an empty array after the list is created removes the resource from all
+         * NSGs. For more information about NSGs, see [Security
+         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * Applicable only to Exadata systems.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
         private java.util.List<String> backupNetworkNsgIds;
 
         /**
-         * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         * A list of the
+         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * network security groups (NSGs) that the backup network of this DB system belongs to.
+         * Setting this to an empty array after the list is created removes the resource from all
+         * NSGs. For more information about NSGs, see [Security
+         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * Applicable only to Exadata systems.
          *
          * @param backupNetworkNsgIds the value to set
          * @return this builder
-         **/
+         */
         public Builder backupNetworkNsgIds(java.util.List<String> backupNetworkNsgIds) {
             this.backupNetworkNsgIds = backupNetworkNsgIds;
             this.__explicitlySet__.add("backupNetworkNsgIds");
             return this;
         }
-        /**
-         * The list of compute servers to be added to the cloud VM cluster.
-         **/
+        /** The list of compute servers to be added to the cloud VM cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("computeNodes")
         private java.util.List<String> computeNodes;
 
         /**
          * The list of compute servers to be added to the cloud VM cluster.
+         *
          * @param computeNodes the value to set
          * @return this builder
-         **/
+         */
         public Builder computeNodes(java.util.List<String> computeNodes) {
             this.computeNodes = computeNodes;
             this.__explicitlySet__.add("computeNodes");
             return this;
         }
-        /**
-         * The disk group size to be allocated in GBs.
-         **/
+        /** The disk group size to be allocated in GBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("storageSizeInGBs")
         private Integer storageSizeInGBs;
 
         /**
          * The disk group size to be allocated in GBs.
+         *
          * @param storageSizeInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder storageSizeInGBs(Integer storageSizeInGBs) {
             this.storageSizeInGBs = storageSizeInGBs;
             this.__explicitlySet__.add("storageSizeInGBs");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         *
-         **/
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -360,9 +380,7 @@ public final class UpdateCloudVmClusterDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -371,10 +389,7 @@ public final class UpdateCloudVmClusterDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The user-friendly name for the cloud VM cluster. The name does not need to be unique.
-     *
-     **/
+    /** The user-friendly name for the cloud VM cluster. The name does not need to be unique. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -382,44 +397,46 @@ public final class UpdateCloudVmClusterDetails
      * The user-friendly name for the cloud VM cluster. The name does not need to be unique.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The number of CPU cores to enable for the cloud VM cluster.
-     **/
+    /** The number of CPU cores to enable for the cloud VM cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
 
     /**
      * The number of CPU cores to enable for the cloud VM cluster.
+     *
      * @return the value
-     **/
+     */
     public Integer getCpuCoreCount() {
         return cpuCoreCount;
     }
 
     /**
-     * The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
-     **/
+     * The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed
+     * for the fractional part.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
     private final Float ocpuCount;
 
     /**
-     * The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
+     * The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed
+     * for the fractional part.
+     *
      * @return the value
-     **/
+     */
     public Float getOcpuCount() {
         return ocpuCount;
     }
 
     /**
-     * The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE. Applies to Exadata Cloud Service instances only.
-     *
-     **/
-    public enum LicenseModel {
+     * The Oracle license model that applies to the cloud VM cluster. The default is
+     * BRING_YOUR_OWN_LICENSE. Applies to Exadata Cloud Service instances only.
+     */
+    public enum LicenseModel implements com.oracle.bmc.http.internal.BmcEnum {
         LicenseIncluded("LICENSE_INCLUDED"),
         BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
         ;
@@ -452,31 +469,33 @@ public final class UpdateCloudVmClusterDetails
         }
     };
     /**
-     * The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE. Applies to Exadata Cloud Service instances only.
-     *
-     **/
+     * The Oracle license model that applies to the cloud VM cluster. The default is
+     * BRING_YOUR_OWN_LICENSE. Applies to Exadata Cloud Service instances only.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
     /**
-     * The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE. Applies to Exadata Cloud Service instances only.
+     * The Oracle license model that applies to the cloud VM cluster. The default is
+     * BRING_YOUR_OWN_LICENSE. Applies to Exadata Cloud Service instances only.
      *
      * @return the value
-     **/
+     */
     public LicenseModel getLicenseModel() {
         return licenseModel;
     }
 
     /**
      * The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
     private final java.util.List<String> sshPublicKeys;
 
     /**
      * The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getSshPublicKeys() {
         return sshPublicKeys;
     }
@@ -489,105 +508,119 @@ public final class UpdateCloudVmClusterDetails
     }
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:**
-     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
-     *
-     **/
+     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * for the network security groups (NSGs) to which this resource belongs. Setting this to an
+     * empty list removes all resources from all NSGs. For more information about NSGs, see
+     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+     * Databases with private access. The nsgIds list can be empty.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:**
-     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * for the network security groups (NSGs) to which this resource belongs. Setting this to an
+     * empty list removes all resources from all NSGs. For more information about NSGs, see
+     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+     * Databases with private access. The nsgIds list can be empty.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
 
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-     *
-     **/
+     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * of the network security groups (NSGs) that the backup network of this DB system belongs to.
+     * Setting this to an empty array after the list is created removes the resource from all NSGs.
+     * For more information about NSGs, see [Security
+     * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable
+     * only to Exadata systems.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
     private final java.util.List<String> backupNetworkNsgIds;
 
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * of the network security groups (NSGs) that the backup network of this DB system belongs to.
+     * Setting this to an empty array after the list is created removes the resource from all NSGs.
+     * For more information about NSGs, see [Security
+     * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable
+     * only to Exadata systems.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getBackupNetworkNsgIds() {
         return backupNetworkNsgIds;
     }
 
-    /**
-     * The list of compute servers to be added to the cloud VM cluster.
-     **/
+    /** The list of compute servers to be added to the cloud VM cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("computeNodes")
     private final java.util.List<String> computeNodes;
 
     /**
      * The list of compute servers to be added to the cloud VM cluster.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getComputeNodes() {
         return computeNodes;
     }
 
-    /**
-     * The disk group size to be allocated in GBs.
-     **/
+    /** The disk group size to be allocated in GBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("storageSizeInGBs")
     private final Integer storageSizeInGBs;
 
     /**
      * The disk group size to be allocated in GBs.
+     *
      * @return the value
-     **/
+     */
     public Integer getStorageSizeInGBs() {
         return storageSizeInGBs;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -606,6 +639,7 @@ public final class UpdateCloudVmClusterDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

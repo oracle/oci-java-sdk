@@ -11,7 +11,6 @@ public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcR
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
@@ -25,10 +24,7 @@ public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /**
-     * The number of seconds that the client should wait before polling again.
-     *
-     */
+    /** The number of seconds that the client should wait before polling again. */
     private Float retryAfter;
 
     /**
@@ -40,13 +36,12 @@ public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcR
         return retryAfter;
     }
 
-    /**
-     * The returned TaggingWorkRequest instance.
-     */
+    /** The returned TaggingWorkRequest instance. */
     private com.oracle.bmc.identity.model.TaggingWorkRequest taggingWorkRequest;
 
     /**
      * The returned TaggingWorkRequest instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.identity.model.TaggingWorkRequest getTaggingWorkRequest() {
@@ -62,7 +57,7 @@ public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcR
     })
     private GetTaggingWorkRequestResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             Float retryAfter,
             com.oracle.bmc.identity.model.TaggingWorkRequest taggingWorkRequest) {
@@ -72,17 +67,20 @@ public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcR
         this.taggingWorkRequest = taggingWorkRequest;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetTaggingWorkRequestResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
@@ -90,7 +88,6 @@ public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcR
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId;
 
@@ -106,10 +103,7 @@ public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /**
-         * The number of seconds that the client should wait before polling again.
-         *
-         */
+        /** The number of seconds that the client should wait before polling again. */
         private Float retryAfter;
 
         /**
@@ -123,13 +117,12 @@ public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /**
-         * The returned TaggingWorkRequest instance.
-         */
+        /** The returned TaggingWorkRequest instance. */
         private com.oracle.bmc.identity.model.TaggingWorkRequest taggingWorkRequest;
 
         /**
          * The returned TaggingWorkRequest instance.
+         *
          * @param taggingWorkRequest the value to set
          * @return this builder
          */
@@ -141,8 +134,10 @@ public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetTaggingWorkRequestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -155,8 +150,10 @@ public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetTaggingWorkRequestResponse build() {
             return new GetTaggingWorkRequestResponse(
                     __httpStatusCode__, headers, opcRequestId, retryAfter, taggingWorkRequest);
@@ -165,6 +162,7 @@ public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcR
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -5,20 +5,20 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Parameters for Replicat processes.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Parameters for Replicat processes. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Replicat.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Replicat extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Replicat extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "mapParallelism",
@@ -35,10 +35,7 @@ public final class Replicat extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Number of threads used to read trail files (valid for Parallel Replicat)
-         *
-         **/
+        /** Number of threads used to read trail files (valid for Parallel Replicat) */
         @com.fasterxml.jackson.annotation.JsonProperty("mapParallelism")
         private Integer mapParallelism;
 
@@ -47,43 +44,45 @@ public final class Replicat extends com.oracle.bmc.http.internal.ExplicitlySetBm
          *
          * @param mapParallelism the value to set
          * @return this builder
-         **/
+         */
         public Builder mapParallelism(Integer mapParallelism) {
             this.mapParallelism = mapParallelism;
             this.__explicitlySet__.add("mapParallelism");
             return this;
         }
         /**
-         * Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
-         *
-         **/
+         * Defines the range in which Replicat automatically adjusts its apply parallelism (valid
+         * for Parallel Replicat)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("minApplyParallelism")
         private Integer minApplyParallelism;
 
         /**
-         * Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+         * Defines the range in which Replicat automatically adjusts its apply parallelism (valid
+         * for Parallel Replicat)
          *
          * @param minApplyParallelism the value to set
          * @return this builder
-         **/
+         */
         public Builder minApplyParallelism(Integer minApplyParallelism) {
             this.minApplyParallelism = minApplyParallelism;
             this.__explicitlySet__.add("minApplyParallelism");
             return this;
         }
         /**
-         * Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
-         *
-         **/
+         * Defines the range in which Replicat automatically adjusts its apply parallelism (valid
+         * for Parallel Replicat)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("maxApplyParallelism")
         private Integer maxApplyParallelism;
 
         /**
-         * Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+         * Defines the range in which Replicat automatically adjusts its apply parallelism (valid
+         * for Parallel Replicat)
          *
          * @param maxApplyParallelism the value to set
          * @return this builder
-         **/
+         */
         public Builder maxApplyParallelism(Integer maxApplyParallelism) {
             this.maxApplyParallelism = maxApplyParallelism;
             this.__explicitlySet__.add("maxApplyParallelism");
@@ -120,9 +119,7 @@ public final class Replicat extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -131,10 +128,7 @@ public final class Replicat extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return new Builder().copy(this);
     }
 
-    /**
-     * Number of threads used to read trail files (valid for Parallel Replicat)
-     *
-     **/
+    /** Number of threads used to read trail files (valid for Parallel Replicat) */
     @com.fasterxml.jackson.annotation.JsonProperty("mapParallelism")
     private final Integer mapParallelism;
 
@@ -142,39 +136,41 @@ public final class Replicat extends com.oracle.bmc.http.internal.ExplicitlySetBm
      * Number of threads used to read trail files (valid for Parallel Replicat)
      *
      * @return the value
-     **/
+     */
     public Integer getMapParallelism() {
         return mapParallelism;
     }
 
     /**
-     * Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
-     *
-     **/
+     * Defines the range in which Replicat automatically adjusts its apply parallelism (valid for
+     * Parallel Replicat)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("minApplyParallelism")
     private final Integer minApplyParallelism;
 
     /**
-     * Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+     * Defines the range in which Replicat automatically adjusts its apply parallelism (valid for
+     * Parallel Replicat)
      *
      * @return the value
-     **/
+     */
     public Integer getMinApplyParallelism() {
         return minApplyParallelism;
     }
 
     /**
-     * Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
-     *
-     **/
+     * Defines the range in which Replicat automatically adjusts its apply parallelism (valid for
+     * Parallel Replicat)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("maxApplyParallelism")
     private final Integer maxApplyParallelism;
 
     /**
-     * Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+     * Defines the range in which Replicat automatically adjusts its apply parallelism (valid for
+     * Parallel Replicat)
      *
      * @return the value
-     **/
+     */
     public Integer getMaxApplyParallelism() {
         return maxApplyParallelism;
     }
@@ -186,6 +182,7 @@ public final class Replicat extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

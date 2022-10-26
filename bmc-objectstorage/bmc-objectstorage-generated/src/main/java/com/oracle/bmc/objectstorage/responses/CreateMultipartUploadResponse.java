@@ -9,12 +9,15 @@ import com.oracle.bmc.objectstorage.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class CreateMultipartUploadResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when
+     * debugging.
      */
     private String opcClientRequestId;
 
     /**
-     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when
+     * debugging.
+     *
      * @return the value
      */
     public String getOpcClientRequestId() {
@@ -22,15 +25,14 @@ public class CreateMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
-     * request, provide this request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide this request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
-     * request, provide this request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide this request ID.
      *
      * @return the value
      */
@@ -38,26 +40,24 @@ public class CreateMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /**
-     * The full path to the new upload.
-     */
+    /** The full path to the new upload. */
     private String location;
 
     /**
      * The full path to the new upload.
+     *
      * @return the value
      */
     public String getLocation() {
         return location;
     }
 
-    /**
-     * The returned MultipartUpload instance.
-     */
+    /** The returned MultipartUpload instance. */
     private com.oracle.bmc.objectstorage.model.MultipartUpload multipartUpload;
 
     /**
      * The returned MultipartUpload instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.objectstorage.model.MultipartUpload getMultipartUpload() {
@@ -74,7 +74,7 @@ public class CreateMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
     })
     private CreateMultipartUploadResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcClientRequestId,
             String opcRequestId,
             String location,
@@ -86,28 +86,34 @@ public class CreateMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
         this.multipartUpload = multipartUpload;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateMultipartUploadResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when
+         * debugging.
          */
         private String opcClientRequestId;
 
         /**
-         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when
+         * debugging.
+         *
          * @param opcClientRequestId the value to set
          * @return this builder
          */
@@ -117,15 +123,14 @@ public class CreateMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
-         * request, provide this request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide this request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
-         * request, provide this request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide this request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -135,13 +140,12 @@ public class CreateMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /**
-         * The full path to the new upload.
-         */
+        /** The full path to the new upload. */
         private String location;
 
         /**
          * The full path to the new upload.
+         *
          * @param location the value to set
          * @return this builder
          */
@@ -150,13 +154,12 @@ public class CreateMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /**
-         * The returned MultipartUpload instance.
-         */
+        /** The returned MultipartUpload instance. */
         private com.oracle.bmc.objectstorage.model.MultipartUpload multipartUpload;
 
         /**
          * The returned MultipartUpload instance.
+         *
          * @param multipartUpload the value to set
          * @return this builder
          */
@@ -168,8 +171,10 @@ public class CreateMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateMultipartUploadResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -183,8 +188,10 @@ public class CreateMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateMultipartUploadResponse build() {
             return new CreateMultipartUploadResponse(
                     __httpStatusCode__,
@@ -198,6 +205,7 @@ public class CreateMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

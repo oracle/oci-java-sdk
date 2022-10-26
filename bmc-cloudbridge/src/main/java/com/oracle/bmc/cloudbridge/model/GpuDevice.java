@@ -5,19 +5,20 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * GPU device details.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * GPU device details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = GpuDevice.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class GpuDevice extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class GpuDevice extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -42,81 +43,76 @@ public final class GpuDevice extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * GPU device name.
-         **/
+        /** GPU device name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * GPU device name.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * GPU device description.
-         **/
+        /** GPU device description. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * GPU device description.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * Number of GPU cores.
-         **/
+        /** Number of GPU cores. */
         @com.fasterxml.jackson.annotation.JsonProperty("coresCount")
         private Integer coresCount;
 
         /**
          * Number of GPU cores.
+         *
          * @param coresCount the value to set
          * @return this builder
-         **/
+         */
         public Builder coresCount(Integer coresCount) {
             this.coresCount = coresCount;
             this.__explicitlySet__.add("coresCount");
             return this;
         }
-        /**
-         * GPU memory size in MBs.
-         **/
+        /** GPU memory size in MBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInMBs")
         private Long memoryInMBs;
 
         /**
          * GPU memory size in MBs.
+         *
          * @param memoryInMBs the value to set
          * @return this builder
-         **/
+         */
         public Builder memoryInMBs(Long memoryInMBs) {
             this.memoryInMBs = memoryInMBs;
             this.__explicitlySet__.add("memoryInMBs");
             return this;
         }
-        /**
-         * The manufacturer of GPU.
-         **/
+        /** The manufacturer of GPU. */
         @com.fasterxml.jackson.annotation.JsonProperty("manufacturer")
         private String manufacturer;
 
         /**
          * The manufacturer of GPU.
+         *
          * @param manufacturer the value to set
          * @return this builder
-         **/
+         */
         public Builder manufacturer(String manufacturer) {
             this.manufacturer = manufacturer;
             this.__explicitlySet__.add("manufacturer");
@@ -161,9 +157,7 @@ public final class GpuDevice extends com.oracle.bmc.http.internal.ExplicitlySetB
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -172,72 +166,67 @@ public final class GpuDevice extends com.oracle.bmc.http.internal.ExplicitlySetB
         return new Builder().copy(this);
     }
 
-    /**
-     * GPU device name.
-     **/
+    /** GPU device name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * GPU device name.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * GPU device description.
-     **/
+    /** GPU device description. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * GPU device description.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * Number of GPU cores.
-     **/
+    /** Number of GPU cores. */
     @com.fasterxml.jackson.annotation.JsonProperty("coresCount")
     private final Integer coresCount;
 
     /**
      * Number of GPU cores.
+     *
      * @return the value
-     **/
+     */
     public Integer getCoresCount() {
         return coresCount;
     }
 
-    /**
-     * GPU memory size in MBs.
-     **/
+    /** GPU memory size in MBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInMBs")
     private final Long memoryInMBs;
 
     /**
      * GPU memory size in MBs.
+     *
      * @return the value
-     **/
+     */
     public Long getMemoryInMBs() {
         return memoryInMBs;
     }
 
-    /**
-     * The manufacturer of GPU.
-     **/
+    /** The manufacturer of GPU. */
     @com.fasterxml.jackson.annotation.JsonProperty("manufacturer")
     private final String manufacturer;
 
     /**
      * The manufacturer of GPU.
+     *
      * @return the value
-     **/
+     */
     public String getManufacturer() {
         return manufacturer;
     }
@@ -249,6 +238,7 @@ public final class GpuDevice extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

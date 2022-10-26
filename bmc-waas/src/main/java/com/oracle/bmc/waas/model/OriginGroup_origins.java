@@ -5,21 +5,22 @@
 package com.oracle.bmc.waas.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = OriginGroup_origins.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OriginGroup_origins extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = OriginGroup_origins.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class OriginGroup_origins
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"origin", "weight"})
     public OriginGroup_origins(String origin, Integer weight) {
@@ -30,33 +31,35 @@ public final class OriginGroup_origins extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The IP address or CIDR notation of the origin server.
-         **/
+        /** The IP address or CIDR notation of the origin server. */
         @com.fasterxml.jackson.annotation.JsonProperty("origin")
         private String origin;
 
         /**
          * The IP address or CIDR notation of the origin server.
+         *
          * @param origin the value to set
          * @return this builder
-         **/
+         */
         public Builder origin(String origin) {
             this.origin = origin;
             this.__explicitlySet__.add("origin");
             return this;
         }
         /**
-         * The weight of the origin used in load balancing. Origins with higher weights will receive larger proportions of client requests.
-         **/
+         * The weight of the origin used in load balancing. Origins with higher weights will receive
+         * larger proportions of client requests.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("weight")
         private Integer weight;
 
         /**
-         * The weight of the origin used in load balancing. Origins with higher weights will receive larger proportions of client requests.
+         * The weight of the origin used in load balancing. Origins with higher weights will receive
+         * larger proportions of client requests.
+         *
          * @param weight the value to set
          * @return this builder
-         **/
+         */
         public Builder weight(Integer weight) {
             this.weight = weight;
             this.__explicitlySet__.add("weight");
@@ -86,9 +89,7 @@ public final class OriginGroup_origins extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -97,30 +98,32 @@ public final class OriginGroup_origins extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * The IP address or CIDR notation of the origin server.
-     **/
+    /** The IP address or CIDR notation of the origin server. */
     @com.fasterxml.jackson.annotation.JsonProperty("origin")
     private final String origin;
 
     /**
      * The IP address or CIDR notation of the origin server.
+     *
      * @return the value
-     **/
+     */
     public String getOrigin() {
         return origin;
     }
 
     /**
-     * The weight of the origin used in load balancing. Origins with higher weights will receive larger proportions of client requests.
-     **/
+     * The weight of the origin used in load balancing. Origins with higher weights will receive
+     * larger proportions of client requests.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
     private final Integer weight;
 
     /**
-     * The weight of the origin used in load balancing. Origins with higher weights will receive larger proportions of client requests.
+     * The weight of the origin used in load balancing. Origins with higher weights will receive
+     * larger proportions of client requests.
+     *
      * @return the value
-     **/
+     */
     public Integer getWeight() {
         return weight;
     }
@@ -132,6 +135,7 @@ public final class OriginGroup_origins extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

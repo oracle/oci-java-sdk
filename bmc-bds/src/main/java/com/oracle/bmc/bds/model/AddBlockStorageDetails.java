@@ -5,22 +5,22 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * The information about added block volumes.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information about added block volumes. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AddBlockStorageDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AddBlockStorageDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AddBlockStorageDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"clusterAdminPassword", "blockVolumeSizeInGBs", "nodeType"})
     public AddBlockStorageDetails(
@@ -33,53 +33,50 @@ public final class AddBlockStorageDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
-         **/
+        /** Base-64 encoded password for the cluster (and Cloudera Manager) admin user. */
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
         private String clusterAdminPassword;
 
         /**
          * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+         *
          * @param clusterAdminPassword the value to set
          * @return this builder
-         **/
+         */
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
             return this;
         }
         /**
-         * The size of block volume in GB to be added to each worker node. All the
-         * details needed for attaching the block volume are managed by service itself.
-         *
-         **/
+         * The size of block volume in GB to be added to each worker node. All the details needed
+         * for attaching the block volume are managed by service itself.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
         private Long blockVolumeSizeInGBs;
 
         /**
-         * The size of block volume in GB to be added to each worker node. All the
-         * details needed for attaching the block volume are managed by service itself.
+         * The size of block volume in GB to be added to each worker node. All the details needed
+         * for attaching the block volume are managed by service itself.
          *
          * @param blockVolumeSizeInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder blockVolumeSizeInGBs(Long blockVolumeSizeInGBs) {
             this.blockVolumeSizeInGBs = blockVolumeSizeInGBs;
             this.__explicitlySet__.add("blockVolumeSizeInGBs");
             return this;
         }
-        /**
-         * Worker node types, can either be Worker Data node or Compute only worker node.
-         **/
+        /** Worker node types, can either be Worker Data node or Compute only worker node. */
         @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
         private NodeType nodeType;
 
         /**
          * Worker node types, can either be Worker Data node or Compute only worker node.
+         *
          * @param nodeType the value to set
          * @return this builder
-         **/
+         */
         public Builder nodeType(NodeType nodeType) {
             this.nodeType = nodeType;
             this.__explicitlySet__.add("nodeType");
@@ -114,9 +111,7 @@ public final class AddBlockStorageDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -125,42 +120,38 @@ public final class AddBlockStorageDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
-     **/
+    /** Base-64 encoded password for the cluster (and Cloudera Manager) admin user. */
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
     private final String clusterAdminPassword;
 
     /**
      * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+     *
      * @return the value
-     **/
+     */
     public String getClusterAdminPassword() {
         return clusterAdminPassword;
     }
 
     /**
-     * The size of block volume in GB to be added to each worker node. All the
-     * details needed for attaching the block volume are managed by service itself.
-     *
-     **/
+     * The size of block volume in GB to be added to each worker node. All the details needed for
+     * attaching the block volume are managed by service itself.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
     private final Long blockVolumeSizeInGBs;
 
     /**
-     * The size of block volume in GB to be added to each worker node. All the
-     * details needed for attaching the block volume are managed by service itself.
+     * The size of block volume in GB to be added to each worker node. All the details needed for
+     * attaching the block volume are managed by service itself.
      *
      * @return the value
-     **/
+     */
     public Long getBlockVolumeSizeInGBs() {
         return blockVolumeSizeInGBs;
     }
 
-    /**
-     * Worker node types, can either be Worker Data node or Compute only worker node.
-     **/
-    public enum NodeType {
+    /** Worker node types, can either be Worker Data node or Compute only worker node. */
+    public enum NodeType implements com.oracle.bmc.http.internal.BmcEnum {
         Worker("WORKER"),
         ComputeOnlyWorker("COMPUTE_ONLY_WORKER"),
         ;
@@ -192,16 +183,15 @@ public final class AddBlockStorageDetails
             throw new IllegalArgumentException("Invalid NodeType: " + key);
         }
     };
-    /**
-     * Worker node types, can either be Worker Data node or Compute only worker node.
-     **/
+    /** Worker node types, can either be Worker Data node or Compute only worker node. */
     @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
     private final NodeType nodeType;
 
     /**
      * Worker node types, can either be Worker Data node or Compute only worker node.
+     *
      * @return the value
-     **/
+     */
     public NodeType getNodeType() {
         return nodeType;
     }
@@ -213,6 +203,7 @@ public final class AddBlockStorageDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -220,7 +211,7 @@ public final class AddBlockStorageDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AddBlockStorageDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
+        sb.append("clusterAdminPassword=").append("<redacted>");
         sb.append(", blockVolumeSizeInGBs=").append(String.valueOf(this.blockVolumeSizeInGBs));
         sb.append(", nodeType=").append(String.valueOf(this.nodeType));
         sb.append(")");

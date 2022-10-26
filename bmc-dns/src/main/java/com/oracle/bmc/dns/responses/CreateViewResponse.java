@@ -9,17 +9,14 @@ import com.oracle.bmc.dns.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public class CreateViewResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * The current version of the resource, ending with a
-     * representation-specific suffix. This value may be used in If-Match
-     * and If-None-Match headers for later requests of the same resource.
-     *
+     * The current version of the resource, ending with a representation-specific suffix. This value
+     * may be used in If-Match and If-None-Match headers for later requests of the same resource.
      */
     private String etag;
 
     /**
-     * The current version of the resource, ending with a
-     * representation-specific suffix. This value may be used in If-Match
-     * and If-None-Match headers for later requests of the same resource.
+     * The current version of the resource, ending with a representation-specific suffix. This value
+     * may be used in If-Match and If-None-Match headers for later requests of the same resource.
      *
      * @return the value
      */
@@ -27,10 +24,7 @@ public class CreateViewResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /**
-     * The full URI of the resource related to the request.
-     *
-     */
+    /** The full URI of the resource related to the request. */
     private String location;
 
     /**
@@ -43,15 +37,14 @@ public class CreateViewResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to
-     * contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to
-     * contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -60,15 +53,14 @@ public class CreateViewResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request.
-     * You can use this to query status of the asynchronous operation.
-     *
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request.
-     * You can use this to query status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      *
      * @return the value
      */
@@ -76,13 +68,12 @@ public class CreateViewResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcWorkRequestId;
     }
 
-    /**
-     * The returned View instance.
-     */
+    /** The returned View instance. */
     private com.oracle.bmc.dns.model.View view;
 
     /**
      * The returned View instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.dns.model.View getView() {
@@ -100,7 +91,7 @@ public class CreateViewResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private CreateViewResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String location,
             String opcRequestId,
@@ -114,33 +105,35 @@ public class CreateViewResponse extends com.oracle.bmc.responses.BmcResponse {
         this.view = view;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateViewResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * The current version of the resource, ending with a
-         * representation-specific suffix. This value may be used in If-Match
-         * and If-None-Match headers for later requests of the same resource.
-         *
+         * The current version of the resource, ending with a representation-specific suffix. This
+         * value may be used in If-Match and If-None-Match headers for later requests of the same
+         * resource.
          */
         private String etag;
 
         /**
-         * The current version of the resource, ending with a
-         * representation-specific suffix. This value may be used in If-Match
-         * and If-None-Match headers for later requests of the same resource.
+         * The current version of the resource, ending with a representation-specific suffix. This
+         * value may be used in If-Match and If-None-Match headers for later requests of the same
+         * resource.
          *
          * @param etag the value to set
          * @return this builder
@@ -150,10 +143,7 @@ public class CreateViewResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * The full URI of the resource related to the request.
-         *
-         */
+        /** The full URI of the resource related to the request. */
         private String location;
 
         /**
@@ -168,15 +158,14 @@ public class CreateViewResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to
-         * contact Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to
-         * contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -187,15 +176,14 @@ public class CreateViewResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request.
-         * You can use this to query status of the asynchronous operation.
-         *
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request.
-         * You can use this to query status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -205,13 +193,12 @@ public class CreateViewResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * The returned View instance.
-         */
+        /** The returned View instance. */
         private com.oracle.bmc.dns.model.View view;
 
         /**
          * The returned View instance.
+         *
          * @param view the value to set
          * @return this builder
          */
@@ -222,8 +209,10 @@ public class CreateViewResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateViewResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -238,8 +227,10 @@ public class CreateViewResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateViewResponse build() {
             return new CreateViewResponse(
                     __httpStatusCode__,
@@ -254,6 +245,7 @@ public class CreateViewResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

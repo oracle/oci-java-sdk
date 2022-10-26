@@ -5,25 +5,25 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
- * To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized,
- * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * To use any of the API operations, you must be authorized in an IAM policy. If you are not
+ * authorized, talk to an administrator. If you are an administrator who needs to write policies to
+ * give users access, see [Getting Started with
+ * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ObjectVersionCollection.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ObjectVersionCollection.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ObjectVersionCollection
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items", "prefixes"})
     public ObjectVersionCollection(
@@ -35,10 +35,7 @@ public final class ObjectVersionCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * An array of object version summaries.
-         *
-         **/
+        /** An array of object version summaries. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ObjectVersionSummary> items;
 
@@ -47,25 +44,26 @@ public final class ObjectVersionCollection
          *
          * @param items the value to set
          * @return this builder
-         **/
+         */
         public Builder items(java.util.List<ObjectVersionSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
             return this;
         }
         /**
-         * Prefixes that are common to the results returned by the request if the request specified a delimiter.
-         *
-         **/
+         * Prefixes that are common to the results returned by the request if the request specified
+         * a delimiter.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("prefixes")
         private java.util.List<String> prefixes;
 
         /**
-         * Prefixes that are common to the results returned by the request if the request specified a delimiter.
+         * Prefixes that are common to the results returned by the request if the request specified
+         * a delimiter.
          *
          * @param prefixes the value to set
          * @return this builder
-         **/
+         */
         public Builder prefixes(java.util.List<String> prefixes) {
             this.prefixes = prefixes;
             this.__explicitlySet__.add("prefixes");
@@ -95,9 +93,7 @@ public final class ObjectVersionCollection
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -106,10 +102,7 @@ public final class ObjectVersionCollection
         return new Builder().copy(this);
     }
 
-    /**
-     * An array of object version summaries.
-     *
-     **/
+    /** An array of object version summaries. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ObjectVersionSummary> items;
 
@@ -117,23 +110,24 @@ public final class ObjectVersionCollection
      * An array of object version summaries.
      *
      * @return the value
-     **/
+     */
     public java.util.List<ObjectVersionSummary> getItems() {
         return items;
     }
 
     /**
-     * Prefixes that are common to the results returned by the request if the request specified a delimiter.
-     *
-     **/
+     * Prefixes that are common to the results returned by the request if the request specified a
+     * delimiter.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("prefixes")
     private final java.util.List<String> prefixes;
 
     /**
-     * Prefixes that are common to the results returned by the request if the request specified a delimiter.
+     * Prefixes that are common to the results returned by the request if the request specified a
+     * delimiter.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getPrefixes() {
         return prefixes;
     }
@@ -145,6 +139,7 @@ public final class ObjectVersionCollection
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

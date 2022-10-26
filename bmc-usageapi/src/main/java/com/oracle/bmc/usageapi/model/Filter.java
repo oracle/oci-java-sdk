@@ -5,19 +5,20 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * The filter object for query usage.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The filter object for query usage. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Filter.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Filter extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Filter extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"operator", "dimensions", "tags", "filters"})
     public Filter(
@@ -34,65 +35,61 @@ public final class Filter extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The filter operator. Example: 'AND', 'OR', 'NOT'.
-         **/
+        /** The filter operator. Example: 'AND', 'OR', 'NOT'. */
         @com.fasterxml.jackson.annotation.JsonProperty("operator")
         private Operator operator;
 
         /**
          * The filter operator. Example: 'AND', 'OR', 'NOT'.
+         *
          * @param operator the value to set
          * @return this builder
-         **/
+         */
         public Builder operator(Operator operator) {
             this.operator = operator;
             this.__explicitlySet__.add("operator");
             return this;
         }
-        /**
-         * The dimensions to filter on.
-         **/
+        /** The dimensions to filter on. */
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.List<Dimension> dimensions;
 
         /**
          * The dimensions to filter on.
+         *
          * @param dimensions the value to set
          * @return this builder
-         **/
+         */
         public Builder dimensions(java.util.List<Dimension> dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
             return this;
         }
-        /**
-         * The tags to filter on.
-         **/
+        /** The tags to filter on. */
         @com.fasterxml.jackson.annotation.JsonProperty("tags")
         private java.util.List<Tag> tags;
 
         /**
          * The tags to filter on.
+         *
          * @param tags the value to set
          * @return this builder
-         **/
+         */
         public Builder tags(java.util.List<Tag> tags) {
             this.tags = tags;
             this.__explicitlySet__.add("tags");
             return this;
         }
-        /**
-         * The nested filter object.
-         **/
+        /** The nested filter object. */
         @com.fasterxml.jackson.annotation.JsonProperty("filters")
         private java.util.List<Filter> filters;
 
         /**
          * The nested filter object.
+         *
          * @param filters the value to set
          * @return this builder
-         **/
+         */
         public Builder filters(java.util.List<Filter> filters) {
             this.filters = filters;
             this.__explicitlySet__.add("filters");
@@ -128,9 +125,7 @@ public final class Filter extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -139,17 +134,15 @@ public final class Filter extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         return new Builder().copy(this);
     }
 
-    /**
-     * The filter operator. Example: 'AND', 'OR', 'NOT'.
-     **/
-    public enum Operator {
+    /** The filter operator. Example: 'AND', 'OR', 'NOT'. */
+    public enum Operator implements com.oracle.bmc.http.internal.BmcEnum {
         And("AND"),
         Not("NOT"),
         Or("OR"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -188,58 +181,54 @@ public final class Filter extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return UnknownEnumValue;
         }
     };
-    /**
-     * The filter operator. Example: 'AND', 'OR', 'NOT'.
-     **/
+    /** The filter operator. Example: 'AND', 'OR', 'NOT'. */
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
     private final Operator operator;
 
     /**
      * The filter operator. Example: 'AND', 'OR', 'NOT'.
+     *
      * @return the value
-     **/
+     */
     public Operator getOperator() {
         return operator;
     }
 
-    /**
-     * The dimensions to filter on.
-     **/
+    /** The dimensions to filter on. */
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.List<Dimension> dimensions;
 
     /**
      * The dimensions to filter on.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Dimension> getDimensions() {
         return dimensions;
     }
 
-    /**
-     * The tags to filter on.
-     **/
+    /** The tags to filter on. */
     @com.fasterxml.jackson.annotation.JsonProperty("tags")
     private final java.util.List<Tag> tags;
 
     /**
      * The tags to filter on.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Tag> getTags() {
         return tags;
     }
 
-    /**
-     * The nested filter object.
-     **/
+    /** The nested filter object. */
     @com.fasterxml.jackson.annotation.JsonProperty("filters")
     private final java.util.List<Filter> filters;
 
     /**
      * The nested filter object.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Filter> getFilters() {
         return filters;
     }
@@ -251,6 +240,7 @@ public final class Filter extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

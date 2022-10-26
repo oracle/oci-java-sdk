@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.opensearch.model;
 
-/**
- * The status of the operation that spawned the work request.
- **/
+/** The status of the operation that spawned the work request. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
-public enum OperationStatus {
+public enum OperationStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),
     Failed("FAILED"),

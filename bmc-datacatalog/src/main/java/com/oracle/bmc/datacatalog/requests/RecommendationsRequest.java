@@ -6,75 +6,65 @@ package com.oracle.bmc.datacatalog.requests;
 
 import com.oracle.bmc.datacatalog.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/RecommendationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RecommendationsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/RecommendationsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use RecommendationsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class RecommendationsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * Unique catalog identifier.
-     */
+    /** Unique catalog identifier. */
     private String catalogId;
 
-    /**
-     * Unique catalog identifier.
-     */
+    /** Unique catalog identifier. */
     public String getCatalogId() {
         return catalogId;
     }
-    /**
-     * A filter used to return only recommendations of the specified type.
-     */
+    /** A filter used to return only recommendations of the specified type. */
     private java.util.List<com.oracle.bmc.datacatalog.model.RecommendationType> recommendationType;
 
-    /**
-     * A filter used to return only recommendations of the specified type.
-     */
+    /** A filter used to return only recommendations of the specified type. */
     public java.util.List<com.oracle.bmc.datacatalog.model.RecommendationType>
             getRecommendationType() {
         return recommendationType;
     }
     /**
-     * A filter used to provide the unique identifier of the source object, for which a list of recommendations will be returned for review.
+     * A filter used to provide the unique identifier of the source object, for which a list of
+     * recommendations will be returned for review.
      */
     private String sourceObjectKey;
 
     /**
-     * A filter used to provide the unique identifier of the source object, for which a list of recommendations will be returned for review.
+     * A filter used to provide the unique identifier of the source object, for which a list of
+     * recommendations will be returned for review.
      */
     public String getSourceObjectKey() {
         return sourceObjectKey;
     }
     /**
-     * A filter used to provide the type of the source object, for which a list of recommendations will be returned for review.
+     * A filter used to provide the type of the source object, for which a list of recommendations
+     * will be returned for review.
      */
     private com.oracle.bmc.datacatalog.model.RecommendationResourceType sourceObjectType;
 
     /**
-     * A filter used to provide the type of the source object, for which a list of recommendations will be returned for review.
+     * A filter used to provide the type of the source object, for which a list of recommendations
+     * will be returned for review.
      */
     public com.oracle.bmc.datacatalog.model.RecommendationResourceType getSourceObjectType() {
         return sourceObjectType;
     }
-    /**
-     * A filter used to return only recommendations having the requested status.
-     */
+    /** A filter used to return only recommendations having the requested status. */
     private com.oracle.bmc.datacatalog.model.RecommendationStatus recommendationStatus;
 
-    /**
-     * A filter used to return only recommendations having the requested status.
-     */
+    /** A filter used to return only recommendations having the requested status. */
     public com.oracle.bmc.datacatalog.model.RecommendationStatus getRecommendationStatus() {
         return recommendationStatus;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -82,17 +72,15 @@ public class RecommendationsRequest extends com.oracle.bmc.requests.BmcRequest<j
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RecommendationsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique catalog identifier.
-         */
+        /** Unique catalog identifier. */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         *
          * @param catalogId the value to set
          * @return this builder instance
          */
@@ -101,14 +89,13 @@ public class RecommendationsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /**
-         * A filter used to return only recommendations of the specified type.
-         */
+        /** A filter used to return only recommendations of the specified type. */
         private java.util.List<com.oracle.bmc.datacatalog.model.RecommendationType>
                 recommendationType = null;
 
         /**
          * A filter used to return only recommendations of the specified type.
+         *
          * @param recommendationType the value to set
          * @return this builder instance
          */
@@ -121,6 +108,7 @@ public class RecommendationsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Singular setter. A filter used to return only recommendations of the specified type.
+         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -129,12 +117,15 @@ public class RecommendationsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * A filter used to provide the unique identifier of the source object, for which a list of recommendations will be returned for review.
+         * A filter used to provide the unique identifier of the source object, for which a list of
+         * recommendations will be returned for review.
          */
         private String sourceObjectKey = null;
 
         /**
-         * A filter used to provide the unique identifier of the source object, for which a list of recommendations will be returned for review.
+         * A filter used to provide the unique identifier of the source object, for which a list of
+         * recommendations will be returned for review.
+         *
          * @param sourceObjectKey the value to set
          * @return this builder instance
          */
@@ -144,12 +135,15 @@ public class RecommendationsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * A filter used to provide the type of the source object, for which a list of recommendations will be returned for review.
+         * A filter used to provide the type of the source object, for which a list of
+         * recommendations will be returned for review.
          */
         private com.oracle.bmc.datacatalog.model.RecommendationResourceType sourceObjectType = null;
 
         /**
-         * A filter used to provide the type of the source object, for which a list of recommendations will be returned for review.
+         * A filter used to provide the type of the source object, for which a list of
+         * recommendations will be returned for review.
+         *
          * @param sourceObjectType the value to set
          * @return this builder instance
          */
@@ -159,13 +153,12 @@ public class RecommendationsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /**
-         * A filter used to return only recommendations having the requested status.
-         */
+        /** A filter used to return only recommendations having the requested status. */
         private com.oracle.bmc.datacatalog.model.RecommendationStatus recommendationStatus = null;
 
         /**
          * A filter used to return only recommendations having the requested status.
+         *
          * @param recommendationStatus the value to set
          * @return this builder instance
          */
@@ -175,13 +168,12 @@ public class RecommendationsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -192,18 +184,19 @@ public class RecommendationsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -215,6 +208,7 @@ public class RecommendationsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(RecommendationsRequest o) {
@@ -232,10 +226,11 @@ public class RecommendationsRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of RecommendationsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of RecommendationsRequest
          */
@@ -249,7 +244,8 @@ public class RecommendationsRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of RecommendationsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of RecommendationsRequest
@@ -263,12 +259,14 @@ public class RecommendationsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.recommendationStatus = recommendationStatus;
             request.opcRequestId = opcRequestId;
             return request;
-            // new RecommendationsRequest(catalogId, recommendationType, sourceObjectKey, sourceObjectType, recommendationStatus, opcRequestId);
+            // new RecommendationsRequest(catalogId, recommendationType, sourceObjectKey,
+            // sourceObjectType, recommendationStatus, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -283,6 +281,7 @@ public class RecommendationsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

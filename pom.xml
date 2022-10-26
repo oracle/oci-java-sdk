@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>2.46.0</version>
+  <version>3.0.0-beta1</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -34,17 +34,16 @@
   </scm>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <javax.annotation.version>1.3.2</javax.annotation.version>
     <jackson.version>2.13.1</jackson.version>
     <jackson.databind.version>2.13.2.1</jackson.databind.version>
     <jersey.version>2.35</jersey.version>
+    <apache-httpcomponents.version>4.5.13</apache-httpcomponents.version>
     <apache-httpcomponents.httpclient.version>4.5.13</apache-httpcomponents.httpclient.version>
     <apache-httpcomponents.httpcore.version>4.4.13</apache-httpcomponents.httpcore.version>
-    <guava.version>31.0.1-jre</guava.version>
     <junit.version>4.13.2</junit.version>
     <jsr305.version>3.0.2</jsr305.version>
     <slf4j.version>1.7.33</slf4j.version>
-    <jakarta.annotations.version>1.3.5</jakarta.annotations.version>
+    <javax.annotation.version>1.3.2</javax.annotation.version>
     <jakarta.ws.rs-api.version>2.1.6</jakarta.ws.rs-api.version>
     <!-- Update resilience4jVersion and io.vavr.version together -->
     <resilience4jVersion>1.7.1</resilience4jVersion>
@@ -64,6 +63,37 @@
     <exec.mainClass>com.acme.Undefined</exec.mainClass>
   </properties>
   <profiles>
+    <profile>
+      <id>ziponly</id>
+      <modules>
+        <module>bmc-dist</module>
+      </modules>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.commonjava.maven.plugins</groupId>
+            <artifactId>directory-maven-plugin</artifactId>
+            <version>0.1</version>
+            <executions>
+              <execution>
+                <id>directories</id>
+                <goals>
+                  <goal>directory-of</goal>
+                </goals>
+                <phase>initialize</phase>
+                <configuration>
+                  <property>ocijavasdk.basedir</property>
+                  <project>
+                    <groupId>com.oracle.oci.sdk</groupId>
+                    <artifactId>oci-java-sdk</artifactId>
+                  </project>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
     <profile>
       <id>dev</id>
       <build>
@@ -137,6 +167,7 @@
                   <style>AOSP</style>
                   <filterModified>true</filterModified>
                   <skip>false</skip>
+                  <filterModified>false</filterModified>
                 </configuration>
                 <goals>
                   <goal>format</goal>
@@ -290,7 +321,19 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>2.10</version>
+          <version>3.1.2</version>
+          <executions>
+            <execution>
+              <id>check-dependencies</id>
+              <goals>
+                <goal>analyze-only</goal>
+              </goals>
+              <phase>verify</phase>
+              <configuration>
+                <failOnWarning>false</failOnWarning>
+              </configuration>
+            </execution>
+          </executions>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -300,7 +343,7 @@
         <plugin>
           <groupId>com.theoryinpractise</groupId>
           <artifactId>googleformatter-maven-plugin</artifactId>
-          <version>1.0.5</version>
+          <version>1.7.5</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -361,14 +404,13 @@
             <!-- Exclude classes that shouldn't be exposed to end users, ex, those in 'internal' packages -->
             <excludePackageNames>*.internal.*</excludePackageNames>
             <aggregate>true</aggregate>
-            <minmemory>1024m</minmemory>
-            <maxmemory>4096m</maxmemory>
+            <minmemory>2048m</minmemory>
+            <maxmemory>6144m</maxmemory>
             <doclint>none</doclint>
             <sourcepath>src/main/java</sourcepath>
             <links>
               <link>https://jax-rs-spec.java.net/nonav/2.0-rev-a/apidocs</link>
               <link>https://jersey.java.net/apidocs/${jersey.version}/jersey</link>
-              <link>http://google.github.io/guava/releases/${guava.version}/api/docs</link>
             </links>
           </configuration>
         </plugin>
@@ -386,6 +428,11 @@
               <exclude>${excluded.testcases}</exclude>
             </excludes>
           </configuration>
+          <executions>
+            <execution>
+              <id>run-tests</id>
+            </execution>
+          </executions>
           <dependencies>
             <dependency>
               <groupId>org.apache.maven.surefire</groupId>
@@ -395,15 +442,15 @@
           </dependencies>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-assembly-plugin</artifactId>
-          <version>3.1.0</version>
-        </plugin>
-        <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>exec-maven-plugin</artifactId>
           <version>1.6.0</version>
           <inherited>true</inherited>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>3.1.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -416,6 +463,35 @@
               <version>1.3</version>
             </dependency>
           </dependencies>
+        </plugin>
+        <plugin>
+          <groupId>com.oracle.oci.sdk.utilities</groupId>
+          <artifactId>dex-add-files-to-jar-files-plugin</artifactId>
+          <version>1.0.18</version>
+          <executions>
+            <execution>
+              <id>add-files-to-jar-files</id>
+              <!-- Run in pre-integration-test phase, which comes after the package phase. -->
+              <!-- That way, all jar files have been built already. -->
+              <phase>pre-integration-test</phase>
+              <goals>
+                <goal>add</goal>
+              </goals>
+              <configuration>
+                <files>
+                  <file>LICENSE.txt</file>
+                  <file>THIRD_PARTY_LICENSES.txt</file>
+                  <file>NOTICE.txt</file>
+                </files>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <!-- http://stdevtools.us.oracle.com:7777/twiki/pub/INTEGTeam/CodeSigningUserDoc/User_Doc_Code_Sign_V3.0.htm#_Toc432167412 -->
+          <groupId>com.oracle.ccss</groupId>
+          <artifactId>codesign-maven-plugin</artifactId>
+          <version>4.4</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -442,6 +518,10 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
       </plugin>
+      <plugin>
+        <groupId>com.oracle.oci.sdk.utilities</groupId>
+        <artifactId>dex-add-files-to-jar-files-plugin</artifactId>
+      </plugin>
     </plugins>
   </build>
   <reporting>
@@ -453,64 +533,12 @@
       </plugin>
     </plugins>
   </reporting>
-  <dependencies>
-    <!-- Test dependencies -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.hamcrest</groupId>
-      <artifactId>hamcrest-junit</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-core</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.powermock</groupId>
-      <artifactId>powermock-module-junit4</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.powermock</groupId>
-      <artifactId>powermock-api-mockito</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <!-- Build only dependencies -->
-    <dependency>
-      <groupId>javax.annotation</groupId>
-      <artifactId>javax.annotation-api</artifactId>
-    </dependency>
-    <!-- Direct dependencies -->
-    <dependency>
-      <groupId>jakarta.ws.rs</groupId>
-      <artifactId>jakarta.ws.rs-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-    </dependency>
-  </dependencies>
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>com.nimbusds</groupId>
         <artifactId>nimbus-jose-jwt</artifactId>
         <version>${nimbus.jose.jwt.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>jakarta.ws.rs</groupId>
-        <artifactId>jakarta.ws.rs-api</artifactId>
-        <version>${jakarta.ws.rs-api.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>javax.annotation</groupId>
-        <artifactId>javax.annotation-api</artifactId>
-        <version>${javax.annotation.version}</version>
       </dependency>
       <dependency>
         <groupId>net.jodah</groupId>
@@ -533,49 +561,9 @@
         <version>${bouncycastle.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.glassfish.hk2</groupId>
-        <artifactId>hk2-api</artifactId>
-        <version>${hk2.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.glassfish.hk2</groupId>
-        <artifactId>hk2-locator</artifactId>
-        <version>${hk2.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.glassfish.jersey.connectors</groupId>
-        <artifactId>jersey-apache-connector</artifactId>
-        <version>${jersey.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.glassfish.jersey.core</groupId>
-        <artifactId>jersey-client</artifactId>
-        <version>${jersey.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.glassfish.jersey.core</groupId>
-        <artifactId>jersey-common</artifactId>
-        <version>${jersey.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.glassfish.jersey.inject</groupId>
-        <artifactId>jersey-hk2</artifactId>
-        <version>${jersey.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.glassfish.jersey.media</groupId>
-        <artifactId>jersey-media-json-jackson</artifactId>
-        <version>${jersey.version}</version>
-      </dependency>
-      <dependency>
         <groupId>com.google.code.findbugs</groupId>
         <artifactId>jsr305</artifactId>
         <version>${jsr305.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava</artifactId>
-        <version>${guava.version}</version>
       </dependency>
       <dependency>
         <groupId>org.hamcrest</groupId>
@@ -639,11 +627,6 @@
         <version>${apache-httpcomponents.httpclient.version}</version>
       </dependency>
       <dependency>
-        <groupId>jakarta.annotation</groupId>
-        <artifactId>jakarta.annotation-api</artifactId>
-        <version>${jakarta.annotations.version}</version>
-      </dependency>
-      <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <version>${junit.version}</version>
@@ -683,19 +666,26 @@
         <artifactId>slf4j-simple</artifactId>
         <version>${slf4j.version}</version>
       </dependency>
+      <dependency>
+        <groupId>javax.annotation</groupId>
+        <artifactId>javax.annotation-api</artifactId>
+        <version>${javax.annotation.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
   <modules>
     <module>bmc-enforcer-rules</module>
-    <module>bmc-audit</module>
     <module>bmc-bom</module>
     <module>bmc-circuitbreaker</module>
+    <module>bmc-common-httpclient</module>
+    <module>bmc-common-httpclient-choices</module>
     <module>bmc-common</module>
+    <!-- client modules -->
+    <module>bmc-audit</module>
     <module>bmc-core</module>
     <module>bmc-database</module>
     <module>bmc-dns</module>
     <module>bmc-email</module>
-    <module>bmc-examples</module>
     <module>bmc-filestorage</module>
     <module>bmc-identity</module>
     <module>bmc-loadbalancer</module>
@@ -733,7 +723,6 @@
     <module>bmc-secrets</module>
     <module>bmc-vault</module>
     <module>bmc-bds</module>
-    <module>bmc-encryption</module>
     <module>bmc-cims</module>
     <module>bmc-datasafe</module>
     <module>bmc-mysql</module>
@@ -810,7 +799,12 @@
     <module>bmc-opensearch</module>
     <module>bmc-cloudmigrations</module>
     <module>bmc-cloudbridge</module>
+    <!-- End client modules -->
+    <module>bmc-encryption</module>
     <module>bmc-full</module>
     <module>bmc-shaded</module>
+    <module>bmc-examples</module>
+    <module>bmc-other-examples</module>
+    <module>bmc-disasterrecovery</module>
   </modules>
 </project>

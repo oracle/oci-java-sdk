@@ -9,17 +9,14 @@ import com.oracle.bmc.dns.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public class GetResolverResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * The current version of the resource, ending with a
-     * representation-specific suffix. This value may be used in If-Match
-     * and If-None-Match headers for later requests of the same resource.
-     *
+     * The current version of the resource, ending with a representation-specific suffix. This value
+     * may be used in If-Match and If-None-Match headers for later requests of the same resource.
      */
     private String etag;
 
     /**
-     * The current version of the resource, ending with a
-     * representation-specific suffix. This value may be used in If-Match
-     * and If-None-Match headers for later requests of the same resource.
+     * The current version of the resource, ending with a representation-specific suffix. This value
+     * may be used in If-Match and If-None-Match headers for later requests of the same resource.
      *
      * @return the value
      */
@@ -28,15 +25,14 @@ public class GetResolverResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to
-     * contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to
-     * contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -44,13 +40,12 @@ public class GetResolverResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /**
-     * The returned Resolver instance, or null if {@link #isNotModified()} is true.
-     */
+    /** The returned Resolver instance, or null if {@link #isNotModified()} is true. */
     private com.oracle.bmc.dns.model.Resolver resolver;
 
     /**
      * The returned Resolver instance, or null if {@link #isNotModified()} is true.
+     *
      * @return the value
      */
     public com.oracle.bmc.dns.model.Resolver getResolver() {
@@ -58,18 +53,17 @@ public class GetResolverResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Flag to indicate whether or not the object was modified.  If this is true,
-     * the getter for the object itself will return null.  Callers should check this
-     * if they specified one of the request params that might result in a conditional
-     * response (like 'if-match'/'if-none-match').
+     * Flag to indicate whether or not the object was modified. If this is true, the getter for the
+     * object itself will return null. Callers should check this if they specified one of the
+     * request params that might result in a conditional response (like 'if-match'/'if-none-match').
      */
     private boolean isNotModified;
 
     /**
-     * Flag to indicate whether or not the object was modified.  If this is true,
-     * the getter for the object itself will return null.  Callers should check this
-     * if they specified one of the request params that might result in a conditional
-     * response (like 'if-match'/'if-none-match').
+     * Flag to indicate whether or not the object was modified. If this is true, the getter for the
+     * object itself will return null. Callers should check this if they specified one of the
+     * request params that might result in a conditional response (like 'if-match'/'if-none-match').
+     *
      * @param true if the object was not modified
      */
     public boolean isNotModified() {
@@ -86,7 +80,7 @@ public class GetResolverResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private GetResolverResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.dns.model.Resolver resolver,
@@ -98,33 +92,35 @@ public class GetResolverResponse extends com.oracle.bmc.responses.BmcResponse {
         this.isNotModified = isNotModified;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetResolverResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * The current version of the resource, ending with a
-         * representation-specific suffix. This value may be used in If-Match
-         * and If-None-Match headers for later requests of the same resource.
-         *
+         * The current version of the resource, ending with a representation-specific suffix. This
+         * value may be used in If-Match and If-None-Match headers for later requests of the same
+         * resource.
          */
         private String etag;
 
         /**
-         * The current version of the resource, ending with a
-         * representation-specific suffix. This value may be used in If-Match
-         * and If-None-Match headers for later requests of the same resource.
+         * The current version of the resource, ending with a representation-specific suffix. This
+         * value may be used in If-Match and If-None-Match headers for later requests of the same
+         * resource.
          *
          * @param etag the value to set
          * @return this builder
@@ -135,15 +131,14 @@ public class GetResolverResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to
-         * contact Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to
-         * contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -153,13 +148,12 @@ public class GetResolverResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * The returned Resolver instance, or null if {@link #isNotModified()} is true.
-         */
+        /** The returned Resolver instance, or null if {@link #isNotModified()} is true. */
         private com.oracle.bmc.dns.model.Resolver resolver;
 
         /**
          * The returned Resolver instance, or null if {@link #isNotModified()} is true.
+         *
          * @param resolver the value to set
          * @return this builder
          */
@@ -169,18 +163,19 @@ public class GetResolverResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Flag to indicate whether or not the object was modified.  If this is true,
-         * the getter for the object itself will return null.  Callers should check this
-         * if they specified one of the request params that might result in a conditional
-         * response (like 'if-match'/'if-none-match').
+         * Flag to indicate whether or not the object was modified. If this is true, the getter for
+         * the object itself will return null. Callers should check this if they specified one of
+         * the request params that might result in a conditional response (like
+         * 'if-match'/'if-none-match').
          */
         private boolean isNotModified;
 
         /**
-         * Flag to indicate whether or not the object was modified.  If this is true,
-         * the getter for the object itself will return null.  Callers should check this
-         * if they specified one of the request params that might result in a conditional
-         * response (like 'if-match'/'if-none-match').
+         * Flag to indicate whether or not the object was modified. If this is true, the getter for
+         * the object itself will return null. Callers should check this if they specified one of
+         * the request params that might result in a conditional response (like
+         * 'if-match'/'if-none-match').
+         *
          * @param true if the object was not modified
          */
         public Builder isNotModified(boolean isNotModified) {
@@ -190,8 +185,10 @@ public class GetResolverResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetResolverResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -204,8 +201,10 @@ public class GetResolverResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetResolverResponse build() {
             return new GetResolverResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, resolver, isNotModified);
@@ -214,6 +213,7 @@ public class GetResolverResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

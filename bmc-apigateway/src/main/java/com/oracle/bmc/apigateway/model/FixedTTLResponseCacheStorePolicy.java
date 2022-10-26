@@ -5,42 +5,41 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * How a response from a backend is cached in the Response Cache.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * How a response from a backend is cached in the Response Cache. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = FixedTTLResponseCacheStorePolicy.Builder.class
-)
+        builder = FixedTTLResponseCacheStorePolicy.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class FixedTTLResponseCacheStorePolicy extends ResponseCacheStorePolicy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
-         *
-         **/
+         * Sets the number of seconds for a response from a backend being stored in the Response
+         * Cache before it expires.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeToLiveInSeconds")
         private Integer timeToLiveInSeconds;
 
         /**
-         * Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
+         * Sets the number of seconds for a response from a backend being stored in the Response
+         * Cache before it expires.
          *
          * @param timeToLiveInSeconds the value to set
          * @return this builder
-         **/
+         */
         public Builder timeToLiveInSeconds(Integer timeToLiveInSeconds) {
             this.timeToLiveInSeconds = timeToLiveInSeconds;
             this.__explicitlySet__.add("timeToLiveInSeconds");
@@ -68,9 +67,7 @@ public final class FixedTTLResponseCacheStorePolicy extends ResponseCacheStorePo
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -86,17 +83,18 @@ public final class FixedTTLResponseCacheStorePolicy extends ResponseCacheStorePo
     }
 
     /**
-     * Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
-     *
-     **/
+     * Sets the number of seconds for a response from a backend being stored in the Response Cache
+     * before it expires.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeToLiveInSeconds")
     private final Integer timeToLiveInSeconds;
 
     /**
-     * Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
+     * Sets the number of seconds for a response from a backend being stored in the Response Cache
+     * before it expires.
      *
      * @return the value
-     **/
+     */
     public Integer getTimeToLiveInSeconds() {
         return timeToLiveInSeconds;
     }
@@ -108,6 +106,7 @@ public final class FixedTTLResponseCacheStorePolicy extends ResponseCacheStorePo
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

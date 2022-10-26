@@ -5,21 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * LogAnalyticsMetric
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * LogAnalyticsMetric <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = LogAnalyticsMetric.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsMetric extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = LogAnalyticsMetric.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class LogAnalyticsMetric
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "aggregationField",
@@ -92,138 +93,127 @@ public final class LogAnalyticsMetric extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The aggregation field.
-         **/
+        /** The aggregation field. */
         @com.fasterxml.jackson.annotation.JsonProperty("aggregationField")
         private String aggregationField;
 
         /**
          * The aggregation field.
+         *
          * @param aggregationField the value to set
          * @return this builder
-         **/
+         */
         public Builder aggregationField(String aggregationField) {
             this.aggregationField = aggregationField;
             this.__explicitlySet__.add("aggregationField");
             return this;
         }
-        /**
-         * The bucket metadata.
-         **/
+        /** The bucket metadata. */
         @com.fasterxml.jackson.annotation.JsonProperty("bucketMetadata")
         private String bucketMetadata;
 
         /**
          * The bucket metadata.
+         *
          * @param bucketMetadata the value to set
          * @return this builder
-         **/
+         */
         public Builder bucketMetadata(String bucketMetadata) {
             this.bucketMetadata = bucketMetadata;
             this.__explicitlySet__.add("bucketMetadata");
             return this;
         }
-        /**
-         * The clock period.
-         **/
+        /** The clock period. */
         @com.fasterxml.jackson.annotation.JsonProperty("clockPeriod")
         private String clockPeriod;
 
         /**
          * The clock period.
+         *
          * @param clockPeriod the value to set
          * @return this builder
-         **/
+         */
         public Builder clockPeriod(String clockPeriod) {
             this.clockPeriod = clockPeriod;
             this.__explicitlySet__.add("clockPeriod");
             return this;
         }
-        /**
-         * The metric description.
-         **/
+        /** The metric description. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The metric description.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The metric edit version.
-         **/
+        /** The metric edit version. */
         @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
         private Long editVersion;
 
         /**
          * The metric edit version.
+         *
          * @param editVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder editVersion(Long editVersion) {
             this.editVersion = editVersion;
             this.__explicitlySet__.add("editVersion");
             return this;
         }
-        /**
-         * The field name.
-         **/
+        /** The field name. */
         @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
         private String fieldName;
 
         /**
          * The field name.
+         *
          * @param fieldName the value to set
          * @return this builder
-         **/
+         */
         public Builder fieldName(String fieldName) {
             this.fieldName = fieldName;
             this.__explicitlySet__.add("fieldName");
             return this;
         }
-        /**
-         * The field values.
-         **/
+        /** The field values. */
         @com.fasterxml.jackson.annotation.JsonProperty("fieldValues")
         private java.util.List<String> fieldValues;
 
         /**
          * The field values.
+         *
          * @param fieldValues the value to set
          * @return this builder
-         **/
+         */
         public Builder fieldValues(java.util.List<String> fieldValues) {
             this.fieldValues = fieldValues;
             this.__explicitlySet__.add("fieldValues");
             return this;
         }
-        /**
-         * The grouping fields.
-         **/
+        /** The grouping fields. */
         @com.fasterxml.jackson.annotation.JsonProperty("groupingField")
         private String groupingField;
 
         /**
          * The grouping fields.
+         *
          * @param groupingField the value to set
          * @return this builder
-         **/
+         */
         public Builder groupingField(String groupingField) {
             this.groupingField = groupingField;
             this.__explicitlySet__.add("groupingField");
             return this;
         }
-        /**
-         * A flag inidcating whether or not the metric is enabled.
-         *
-         **/
+        /** A flag inidcating whether or not the metric is enabled. */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
@@ -232,104 +222,94 @@ public final class LogAnalyticsMetric extends com.oracle.bmc.http.internal.Expli
          *
          * @param isEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
         /**
-         * The system flag.  A value of false denotes a custom, or user
-         * defined object.  A value of true denotes a built in object.
-         *
-         **/
+         * The system flag. A value of false denotes a custom, or user defined object. A value of
+         * true denotes a built in object.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
         private Boolean isSystem;
 
         /**
-         * The system flag.  A value of false denotes a custom, or user
-         * defined object.  A value of true denotes a built in object.
+         * The system flag. A value of false denotes a custom, or user defined object. A value of
+         * true denotes a built in object.
          *
          * @param isSystem the value to set
          * @return this builder
-         **/
+         */
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = isSystem;
             this.__explicitlySet__.add("isSystem");
             return this;
         }
-        /**
-         * The metric display name.
-         **/
+        /** The metric display name. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The metric display name.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The metric unique identifier.
-         **/
+        /** The metric unique identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("metricReference")
         private Long metricReference;
 
         /**
          * The metric unique identifier.
+         *
          * @param metricReference the value to set
          * @return this builder
-         **/
+         */
         public Builder metricReference(Long metricReference) {
             this.metricReference = metricReference;
             this.__explicitlySet__.add("metricReference");
             return this;
         }
-        /**
-         * The metric name.
-         **/
+        /** The metric name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The metric name.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The metric type, specifying the type of aggreation to perform.  Default value
-         * is COUNT.
-         *
-         **/
+         * The metric type, specifying the type of aggreation to perform. Default value is COUNT.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("metricType")
         private MetricType metricType;
 
         /**
-         * The metric type, specifying the type of aggreation to perform.  Default value
-         * is COUNT.
+         * The metric type, specifying the type of aggreation to perform. Default value is COUNT.
          *
          * @param metricType the value to set
          * @return this builder
-         **/
+         */
         public Builder metricType(MetricType metricType) {
             this.metricType = metricType;
             this.__explicitlySet__.add("metricType");
             return this;
         }
-        /**
-         * A flag specifying whether or not the metric source is enabled.
-         *
-         **/
+        /** A flag specifying whether or not the metric source is enabled. */
         @com.fasterxml.jackson.annotation.JsonProperty("isMetricSourceEnabled")
         private Boolean isMetricSourceEnabled;
 
@@ -338,96 +318,88 @@ public final class LogAnalyticsMetric extends com.oracle.bmc.http.internal.Expli
          *
          * @param isMetricSourceEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isMetricSourceEnabled(Boolean isMetricSourceEnabled) {
             this.isMetricSourceEnabled = isMetricSourceEnabled;
             this.__explicitlySet__.add("isMetricSourceEnabled");
             return this;
         }
-        /**
-         * The metric operator.
-         **/
+        /** The metric operator. */
         @com.fasterxml.jackson.annotation.JsonProperty("operator")
         private Operator operator;
 
         /**
          * The metric operator.
+         *
          * @param operator the value to set
          * @return this builder
-         **/
+         */
         public Builder operator(Operator operator) {
             this.operator = operator;
             this.__explicitlySet__.add("operator");
             return this;
         }
-        /**
-         * The metric sources.
-         **/
+        /** The metric sources. */
         @com.fasterxml.jackson.annotation.JsonProperty("sources")
         private java.util.List<LogAnalyticsSource> sources;
 
         /**
          * The metric sources.
+         *
          * @param sources the value to set
          * @return this builder
-         **/
+         */
         public Builder sources(java.util.List<LogAnalyticsSource> sources) {
             this.sources = sources;
             this.__explicitlySet__.add("sources");
             return this;
         }
-        /**
-         * The entity type.
-         **/
+        /** The entity type. */
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
         /**
          * The entity type.
+         *
          * @param entityType the value to set
          * @return this builder
-         **/
+         */
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
-        /**
-         * The last updated date.
-         **/
+        /** The last updated date. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The last updated date.
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * The unit type.
-         **/
+        /** The unit type. */
         @com.fasterxml.jackson.annotation.JsonProperty("unitType")
         private String unitType;
 
         /**
          * The unit type.
+         *
          * @param unitType the value to set
          * @return this builder
-         **/
+         */
         public Builder unitType(String unitType) {
             this.unitType = unitType;
             this.__explicitlySet__.add("unitType");
             return this;
         }
-        /**
-         * A flag specifying whether or not this is a custom (user defined) metric.
-         *
-         **/
+        /** A flag specifying whether or not this is a custom (user defined) metric. */
         @com.fasterxml.jackson.annotation.JsonProperty("isUserCustomized")
         private Boolean isUserCustomized;
 
@@ -436,7 +408,7 @@ public final class LogAnalyticsMetric extends com.oracle.bmc.http.internal.Expli
          *
          * @param isUserCustomized the value to set
          * @return this builder
-         **/
+         */
         public Builder isUserCustomized(Boolean isUserCustomized) {
             this.isUserCustomized = isUserCustomized;
             this.__explicitlySet__.add("isUserCustomized");
@@ -545,9 +517,7 @@ public final class LogAnalyticsMetric extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -556,122 +526,111 @@ public final class LogAnalyticsMetric extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * The aggregation field.
-     **/
+    /** The aggregation field. */
     @com.fasterxml.jackson.annotation.JsonProperty("aggregationField")
     private final String aggregationField;
 
     /**
      * The aggregation field.
+     *
      * @return the value
-     **/
+     */
     public String getAggregationField() {
         return aggregationField;
     }
 
-    /**
-     * The bucket metadata.
-     **/
+    /** The bucket metadata. */
     @com.fasterxml.jackson.annotation.JsonProperty("bucketMetadata")
     private final String bucketMetadata;
 
     /**
      * The bucket metadata.
+     *
      * @return the value
-     **/
+     */
     public String getBucketMetadata() {
         return bucketMetadata;
     }
 
-    /**
-     * The clock period.
-     **/
+    /** The clock period. */
     @com.fasterxml.jackson.annotation.JsonProperty("clockPeriod")
     private final String clockPeriod;
 
     /**
      * The clock period.
+     *
      * @return the value
-     **/
+     */
     public String getClockPeriod() {
         return clockPeriod;
     }
 
-    /**
-     * The metric description.
-     **/
+    /** The metric description. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The metric description.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The metric edit version.
-     **/
+    /** The metric edit version. */
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
     private final Long editVersion;
 
     /**
      * The metric edit version.
+     *
      * @return the value
-     **/
+     */
     public Long getEditVersion() {
         return editVersion;
     }
 
-    /**
-     * The field name.
-     **/
+    /** The field name. */
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     private final String fieldName;
 
     /**
      * The field name.
+     *
      * @return the value
-     **/
+     */
     public String getFieldName() {
         return fieldName;
     }
 
-    /**
-     * The field values.
-     **/
+    /** The field values. */
     @com.fasterxml.jackson.annotation.JsonProperty("fieldValues")
     private final java.util.List<String> fieldValues;
 
     /**
      * The field values.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getFieldValues() {
         return fieldValues;
     }
 
-    /**
-     * The grouping fields.
-     **/
+    /** The grouping fields. */
     @com.fasterxml.jackson.annotation.JsonProperty("groupingField")
     private final String groupingField;
 
     /**
      * The grouping fields.
+     *
      * @return the value
-     **/
+     */
     public String getGroupingField() {
         return groupingField;
     }
 
-    /**
-     * A flag inidcating whether or not the metric is enabled.
-     *
-     **/
+    /** A flag inidcating whether or not the metric is enabled. */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
@@ -679,77 +638,69 @@ public final class LogAnalyticsMetric extends com.oracle.bmc.http.internal.Expli
      * A flag inidcating whether or not the metric is enabled.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
     /**
-     * The system flag.  A value of false denotes a custom, or user
-     * defined object.  A value of true denotes a built in object.
-     *
-     **/
+     * The system flag. A value of false denotes a custom, or user defined object. A value of true
+     * denotes a built in object.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     private final Boolean isSystem;
 
     /**
-     * The system flag.  A value of false denotes a custom, or user
-     * defined object.  A value of true denotes a built in object.
+     * The system flag. A value of false denotes a custom, or user defined object. A value of true
+     * denotes a built in object.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsSystem() {
         return isSystem;
     }
 
-    /**
-     * The metric display name.
-     **/
+    /** The metric display name. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The metric display name.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The metric unique identifier.
-     **/
+    /** The metric unique identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("metricReference")
     private final Long metricReference;
 
     /**
      * The metric unique identifier.
+     *
      * @return the value
-     **/
+     */
     public Long getMetricReference() {
         return metricReference;
     }
 
-    /**
-     * The metric name.
-     **/
+    /** The metric name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The metric name.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The metric type, specifying the type of aggreation to perform.  Default value
-     * is COUNT.
-     *
-     **/
-    public enum MetricType {
+    /** The metric type, specifying the type of aggreation to perform. Default value is COUNT. */
+    public enum MetricType implements com.oracle.bmc.http.internal.BmcEnum {
         Count("COUNT"),
         Sum("SUM"),
         Average("AVERAGE"),
@@ -758,8 +709,8 @@ public final class LogAnalyticsMetric extends com.oracle.bmc.http.internal.Expli
         AverageDistribution("AVERAGE_DISTRIBUTION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -798,28 +749,20 @@ public final class LogAnalyticsMetric extends com.oracle.bmc.http.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /**
-     * The metric type, specifying the type of aggreation to perform.  Default value
-     * is COUNT.
-     *
-     **/
+    /** The metric type, specifying the type of aggreation to perform. Default value is COUNT. */
     @com.fasterxml.jackson.annotation.JsonProperty("metricType")
     private final MetricType metricType;
 
     /**
-     * The metric type, specifying the type of aggreation to perform.  Default value
-     * is COUNT.
+     * The metric type, specifying the type of aggreation to perform. Default value is COUNT.
      *
      * @return the value
-     **/
+     */
     public MetricType getMetricType() {
         return metricType;
     }
 
-    /**
-     * A flag specifying whether or not the metric source is enabled.
-     *
-     **/
+    /** A flag specifying whether or not the metric source is enabled. */
     @com.fasterxml.jackson.annotation.JsonProperty("isMetricSourceEnabled")
     private final Boolean isMetricSourceEnabled;
 
@@ -827,23 +770,21 @@ public final class LogAnalyticsMetric extends com.oracle.bmc.http.internal.Expli
      * A flag specifying whether or not the metric source is enabled.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsMetricSourceEnabled() {
         return isMetricSourceEnabled;
     }
 
-    /**
-     * The metric operator.
-     **/
-    public enum Operator {
+    /** The metric operator. */
+    public enum Operator implements com.oracle.bmc.http.internal.BmcEnum {
         ContainsIgnoreCase("CONTAINS_IGNORE_CASE"),
         InIgnoreCase("IN_IGNORE_CASE"),
         EqualIgnoreCase("EQUAL_IGNORE_CASE"),
         NotNull("NOT_NULL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -882,80 +823,72 @@ public final class LogAnalyticsMetric extends com.oracle.bmc.http.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /**
-     * The metric operator.
-     **/
+    /** The metric operator. */
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
     private final Operator operator;
 
     /**
      * The metric operator.
+     *
      * @return the value
-     **/
+     */
     public Operator getOperator() {
         return operator;
     }
 
-    /**
-     * The metric sources.
-     **/
+    /** The metric sources. */
     @com.fasterxml.jackson.annotation.JsonProperty("sources")
     private final java.util.List<LogAnalyticsSource> sources;
 
     /**
      * The metric sources.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<LogAnalyticsSource> getSources() {
         return sources;
     }
 
-    /**
-     * The entity type.
-     **/
+    /** The entity type. */
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
     /**
      * The entity type.
+     *
      * @return the value
-     **/
+     */
     public String getEntityType() {
         return entityType;
     }
 
-    /**
-     * The last updated date.
-     **/
+    /** The last updated date. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The last updated date.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The unit type.
-     **/
+    /** The unit type. */
     @com.fasterxml.jackson.annotation.JsonProperty("unitType")
     private final String unitType;
 
     /**
      * The unit type.
+     *
      * @return the value
-     **/
+     */
     public String getUnitType() {
         return unitType;
     }
 
-    /**
-     * A flag specifying whether or not this is a custom (user defined) metric.
-     *
-     **/
+    /** A flag specifying whether or not this is a custom (user defined) metric. */
     @com.fasterxml.jackson.annotation.JsonProperty("isUserCustomized")
     private final Boolean isUserCustomized;
 
@@ -963,7 +896,7 @@ public final class LogAnalyticsMetric extends com.oracle.bmc.http.internal.Expli
      * A flag specifying whether or not this is a custom (user defined) metric.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsUserCustomized() {
         return isUserCustomized;
     }
@@ -975,6 +908,7 @@ public final class LogAnalyticsMetric extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

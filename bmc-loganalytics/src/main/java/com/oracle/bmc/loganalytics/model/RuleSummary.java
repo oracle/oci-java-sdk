@@ -5,20 +5,20 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * A generic rule summary object - represents an ingest time rule or a scheduled task.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A generic rule summary object - represents an ingest time rule or a scheduled task. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RuleSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class RuleSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -68,29 +68,27 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
-         * a resource that is provisioned and managed by the customer on their premises or on the cloud.
-         *
-         **/
+         * The log analytics entity OCID. This ID is a reference used by log analytics features and
+         * it represents a resource that is provisioned and managed by the customer on their
+         * premises or on the cloud.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
-         * a resource that is provisioned and managed by the customer on their premises or on the cloud.
+         * The log analytics entity OCID. This ID is a reference used by log analytics features and
+         * it represents a resource that is provisioned and managed by the customer on their
+         * premises or on the cloud.
          *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * Description for this resource.
-         *
-         **/
+        /** Description for this resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -99,32 +97,32 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
          *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         **/
+         * Compartment Identifier [OCID]
+         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Compartment Identifier [OCID]
+         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The date and time the resource was created, in the format defined by RFC3339.
-         *
-         **/
+        /** The date and time the resource was created, in the format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -133,16 +131,13 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * The date and time the resource was last updated, in the format defined by RFC3339.
-         *
-         **/
+        /** The date and time the resource was last updated, in the format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
@@ -151,27 +146,26 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
          *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -180,8 +174,7 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -191,17 +184,14 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /**
-         * The current state of the logging analytics rule.
-         *
-         **/
+        /** The current state of the logging analytics rule. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ConfigLifecycleState lifecycleState;
 
@@ -210,16 +200,13 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
          *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(ConfigLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * The kind of rule - either an ingest time rule or a scheduled task.
-         *
-         **/
+        /** The kind of rule - either an ingest time rule or a scheduled task. */
         @com.fasterxml.jackson.annotation.JsonProperty("kind")
         private RuleKind kind;
 
@@ -228,71 +215,67 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
          *
          * @param kind the value to set
          * @return this builder
-         **/
+         */
         public Builder kind(RuleKind kind) {
             this.kind = kind;
             this.__explicitlySet__.add("kind");
             return this;
         }
-        /**
-         * The ingest time rule or scheduled task display name.
-         **/
+        /** The ingest time rule or scheduled task display name. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The ingest time rule or scheduled task display name.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * A flag indicating whether or not the ingest time rule or scheduled task is enabled.
-         **/
+        /** A flag indicating whether or not the ingest time rule or scheduled task is enabled. */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * A flag indicating whether or not the ingest time rule or scheduled task is enabled.
+         *
          * @param isEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-        /**
-         * The most recent task execution status.
-         **/
+        /** The most recent task execution status. */
         @com.fasterxml.jackson.annotation.JsonProperty("lastExecutionStatus")
         private LastExecutionStatus lastExecutionStatus;
 
         /**
          * The most recent task execution status.
+         *
          * @param lastExecutionStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder lastExecutionStatus(LastExecutionStatus lastExecutionStatus) {
             this.lastExecutionStatus = lastExecutionStatus;
             this.__explicitlySet__.add("lastExecutionStatus");
             return this;
         }
-        /**
-         * The date and time the scheduled task last executed, in the format defined by RFC3339.
-         **/
+        /** The date and time the scheduled task last executed, in the format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastExecuted")
         private java.util.Date timeLastExecuted;
 
         /**
          * The date and time the scheduled task last executed, in the format defined by RFC3339.
+         *
          * @param timeLastExecuted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeLastExecuted(java.util.Date timeLastExecuted) {
             this.timeLastExecuted = timeLastExecuted;
             this.__explicitlySet__.add("timeLastExecuted");
@@ -369,9 +352,7 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -381,27 +362,25 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
-     * a resource that is provisioned and managed by the customer on their premises or on the cloud.
-     *
-     **/
+     * The log analytics entity OCID. This ID is a reference used by log analytics features and it
+     * represents a resource that is provisioned and managed by the customer on their premises or on
+     * the cloud.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
-     * a resource that is provisioned and managed by the customer on their premises or on the cloud.
+     * The log analytics entity OCID. This ID is a reference used by log analytics features and it
+     * represents a resource that is provisioned and managed by the customer on their premises or on
+     * the cloud.
      *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * Description for this resource.
-     *
-     **/
+    /** Description for this resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
@@ -409,29 +388,29 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
      * Description for this resource.
      *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
     /**
-     * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     **/
+     * Compartment Identifier [OCID]
+     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Compartment Identifier [OCID]
+     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The date and time the resource was created, in the format defined by RFC3339.
-     *
-     **/
+    /** The date and time the resource was created, in the format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -439,15 +418,12 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
      * The date and time the resource was created, in the format defined by RFC3339.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The date and time the resource was last updated, in the format defined by RFC3339.
-     *
-     **/
+    /** The date and time the resource was last updated, in the format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
@@ -455,51 +431,46 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
      * The date and time the resource was last updated, in the format defined by RFC3339.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
-    /**
-     * The current state of the logging analytics rule.
-     *
-     **/
+    /** The current state of the logging analytics rule. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ConfigLifecycleState lifecycleState;
 
@@ -507,15 +478,12 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
      * The current state of the logging analytics rule.
      *
      * @return the value
-     **/
+     */
     public ConfigLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * The kind of rule - either an ingest time rule or a scheduled task.
-     *
-     **/
+    /** The kind of rule - either an ingest time rule or a scheduled task. */
     @com.fasterxml.jackson.annotation.JsonProperty("kind")
     private final RuleKind kind;
 
@@ -523,49 +491,45 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
      * The kind of rule - either an ingest time rule or a scheduled task.
      *
      * @return the value
-     **/
+     */
     public RuleKind getKind() {
         return kind;
     }
 
-    /**
-     * The ingest time rule or scheduled task display name.
-     **/
+    /** The ingest time rule or scheduled task display name. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The ingest time rule or scheduled task display name.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * A flag indicating whether or not the ingest time rule or scheduled task is enabled.
-     **/
+    /** A flag indicating whether or not the ingest time rule or scheduled task is enabled. */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * A flag indicating whether or not the ingest time rule or scheduled task is enabled.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
-    /**
-     * The most recent task execution status.
-     **/
-    public enum LastExecutionStatus {
+    /** The most recent task execution status. */
+    public enum LastExecutionStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Failed("FAILED"),
         Succeeded("SUCCEEDED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -604,30 +568,28 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             return UnknownEnumValue;
         }
     };
-    /**
-     * The most recent task execution status.
-     **/
+    /** The most recent task execution status. */
     @com.fasterxml.jackson.annotation.JsonProperty("lastExecutionStatus")
     private final LastExecutionStatus lastExecutionStatus;
 
     /**
      * The most recent task execution status.
+     *
      * @return the value
-     **/
+     */
     public LastExecutionStatus getLastExecutionStatus() {
         return lastExecutionStatus;
     }
 
-    /**
-     * The date and time the scheduled task last executed, in the format defined by RFC3339.
-     **/
+    /** The date and time the scheduled task last executed, in the format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastExecuted")
     private final java.util.Date timeLastExecuted;
 
     /**
      * The date and time the scheduled task last executed, in the format defined by RFC3339.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeLastExecuted() {
         return timeLastExecuted;
     }
@@ -639,6 +601,7 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

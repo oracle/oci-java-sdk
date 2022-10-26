@@ -9,15 +9,14 @@ import com.oracle.bmc.oda.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class GetImportedPackageResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -26,25 +25,27 @@ public class GetImportedPackageResponse extends com.oracle.bmc.responses.BmcResp
     }
 
     /**
-     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
+     * control.
      */
     private String etag;
 
     /**
-     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
+     * control.
+     *
      * @return the value
      */
     public String getEtag() {
         return etag;
     }
 
-    /**
-     * The returned ImportedPackage instance.
-     */
+    /** The returned ImportedPackage instance. */
     private com.oracle.bmc.oda.model.ImportedPackage importedPackage;
 
     /**
      * The returned ImportedPackage instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.oda.model.ImportedPackage getImportedPackage() {
@@ -60,7 +61,7 @@ public class GetImportedPackageResponse extends com.oracle.bmc.responses.BmcResp
     })
     private GetImportedPackageResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.oda.model.ImportedPackage importedPackage) {
@@ -70,31 +71,33 @@ public class GetImportedPackageResponse extends com.oracle.bmc.responses.BmcResp
         this.importedPackage = importedPackage;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetImportedPackageResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -105,12 +108,15 @@ public class GetImportedPackageResponse extends com.oracle.bmc.responses.BmcResp
         }
 
         /**
-         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
+         * control.
          */
         private String etag;
 
         /**
-         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
+         * control.
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -119,13 +125,12 @@ public class GetImportedPackageResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /**
-         * The returned ImportedPackage instance.
-         */
+        /** The returned ImportedPackage instance. */
         private com.oracle.bmc.oda.model.ImportedPackage importedPackage;
 
         /**
          * The returned ImportedPackage instance.
+         *
          * @param importedPackage the value to set
          * @return this builder
          */
@@ -136,8 +141,10 @@ public class GetImportedPackageResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetImportedPackageResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -150,8 +157,10 @@ public class GetImportedPackageResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetImportedPackageResponse build() {
             return new GetImportedPackageResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, importedPackage);
@@ -160,6 +169,7 @@ public class GetImportedPackageResponse extends com.oracle.bmc.responses.BmcResp
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -25,9 +25,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * This class provides a basic example of how to tag buckets in Object Storage.
- */
+/** This class provides a basic example of how to tag buckets in Object Storage. */
 public class ObjectStorageBucketTaggingExample {
     private static final String CONFIG_LOCATION = "~/.oci/config";
     private static final String CONFIG_PROFILE = "DEFAULT";
@@ -36,12 +34,12 @@ public class ObjectStorageBucketTaggingExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     * <ul>
-     *   <li>The first argument is the OCID of the compartment where we'll create a bucket</li>
-     *   <li>The second is the name of bucket to create</li>
-     *   <li>The third is the name (not OCID) of the tag namespace to use in defined tags</li>
-     *   <li>The fourth is the name of a tag in the tag namespace to use defined tags</li>
-     * </ul>
+     *     <ul>
+     *       <li>The first argument is the OCID of the compartment where we'll create a bucket
+     *       <li>The second is the name of bucket to create
+     *       <li>The third is the name (not OCID) of the tag namespace to use in defined tags
+     *       <li>The fourth is the name of a tag in the tag namespace to use defined tags
+     *     </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 4) {
@@ -54,8 +52,10 @@ public class ObjectStorageBucketTaggingExample {
         final String tagNamespace = args[2];
         final String tagName = args[3];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();

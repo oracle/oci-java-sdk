@@ -5,22 +5,22 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * DB System restart parameters.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * DB System restart parameters. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = RestartDbSystemDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = RestartDbSystemDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class RestartDbSystemDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"shutdownType"})
     public RestartDbSystemDetails(InnoDbShutdownMode shutdownType) {
@@ -33,8 +33,7 @@ public final class RestartDbSystemDetails
         /**
          * The InnoDB shutdown mode to use, following the option
          * "[innodb_fast_shutdown](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_fast_shutdown)".
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("shutdownType")
         private InnoDbShutdownMode shutdownType;
 
@@ -44,7 +43,7 @@ public final class RestartDbSystemDetails
          *
          * @param shutdownType the value to set
          * @return this builder
-         **/
+         */
         public Builder shutdownType(InnoDbShutdownMode shutdownType) {
             this.shutdownType = shutdownType;
             this.__explicitlySet__.add("shutdownType");
@@ -71,9 +70,7 @@ public final class RestartDbSystemDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -85,8 +82,7 @@ public final class RestartDbSystemDetails
     /**
      * The InnoDB shutdown mode to use, following the option
      * "[innodb_fast_shutdown](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_fast_shutdown)".
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("shutdownType")
     private final InnoDbShutdownMode shutdownType;
 
@@ -95,7 +91,7 @@ public final class RestartDbSystemDetails
      * "[innodb_fast_shutdown](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_fast_shutdown)".
      *
      * @return the value
-     **/
+     */
     public InnoDbShutdownMode getShutdownType() {
         return shutdownType;
     }
@@ -107,6 +103,7 @@ public final class RestartDbSystemDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

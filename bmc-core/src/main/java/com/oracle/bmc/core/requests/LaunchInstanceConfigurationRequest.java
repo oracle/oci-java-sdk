@@ -6,32 +6,27 @@ package com.oracle.bmc.core.requests;
 
 import com.oracle.bmc.core.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/LaunchInstanceConfigurationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use LaunchInstanceConfigurationRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/LaunchInstanceConfigurationExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * LaunchInstanceConfigurationRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class LaunchInstanceConfigurationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.InstanceConfigurationInstanceDetails> {
 
-    /**
-     * The OCID of the instance configuration.
-     */
+    /** The OCID of the instance configuration. */
     private String instanceConfigurationId;
 
-    /**
-     * The OCID of the instance configuration.
-     */
+    /** The OCID of the instance configuration. */
     public String getInstanceConfigurationId() {
         return instanceConfigurationId;
     }
-    /**
-     * Instance configuration Instance Details
-     */
+    /** Instance configuration Instance Details */
     private com.oracle.bmc.core.model.InstanceConfigurationInstanceDetails instanceConfiguration;
 
-    /**
-     * Instance configuration Instance Details
-     */
+    /** Instance configuration Instance Details */
     public com.oracle.bmc.core.model.InstanceConfigurationInstanceDetails
             getInstanceConfiguration() {
         return instanceConfiguration;
@@ -39,20 +34,18 @@ public class LaunchInstanceConfigurationRequest
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * may be rejected).
-     *
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request may be rejected).
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * may be rejected).
-     *
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request may be rejected).
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -60,6 +53,7 @@ public class LaunchInstanceConfigurationRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -72,17 +66,15 @@ public class LaunchInstanceConfigurationRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     LaunchInstanceConfigurationRequest,
                     com.oracle.bmc.core.model.InstanceConfigurationInstanceDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the instance configuration.
-         */
+        /** The OCID of the instance configuration. */
         private String instanceConfigurationId = null;
 
         /**
          * The OCID of the instance configuration.
+         *
          * @param instanceConfigurationId the value to set
          * @return this builder instance
          */
@@ -91,14 +83,13 @@ public class LaunchInstanceConfigurationRequest
             return this;
         }
 
-        /**
-         * Instance configuration Instance Details
-         */
+        /** Instance configuration Instance Details */
         private com.oracle.bmc.core.model.InstanceConfigurationInstanceDetails
                 instanceConfiguration = null;
 
         /**
          * Instance configuration Instance Details
+         *
          * @param instanceConfiguration the value to set
          * @return this builder instance
          */
@@ -111,20 +102,19 @@ public class LaunchInstanceConfigurationRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * may be rejected).
-         *
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request may be rejected).
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request may be rejected).
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -136,18 +126,19 @@ public class LaunchInstanceConfigurationRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -159,6 +150,7 @@ public class LaunchInstanceConfigurationRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(LaunchInstanceConfigurationRequest o) {
@@ -173,10 +165,11 @@ public class LaunchInstanceConfigurationRequest
         /**
          * Build the instance of LaunchInstanceConfigurationRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of LaunchInstanceConfigurationRequest
          */
@@ -189,6 +182,7 @@ public class LaunchInstanceConfigurationRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -201,7 +195,8 @@ public class LaunchInstanceConfigurationRequest
         /**
          * Build the instance of LaunchInstanceConfigurationRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of LaunchInstanceConfigurationRequest
@@ -212,12 +207,14 @@ public class LaunchInstanceConfigurationRequest
             request.instanceConfiguration = instanceConfiguration;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new LaunchInstanceConfigurationRequest(instanceConfigurationId, instanceConfiguration, opcRetryToken);
+            // new LaunchInstanceConfigurationRequest(instanceConfigurationId,
+            // instanceConfiguration, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -229,6 +226,7 @@ public class LaunchInstanceConfigurationRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

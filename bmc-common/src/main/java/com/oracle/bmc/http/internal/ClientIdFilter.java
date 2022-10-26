@@ -4,30 +4,20 @@
  */
 package com.oracle.bmc.http.internal;
 
-import java.io.IOException;
-
-import javax.annotation.Priority;
-import javax.ws.rs.Priorities;
-import javax.ws.rs.client.ClientRequestContext;
-import javax.ws.rs.client.ClientRequestFilter;
-import javax.ws.rs.core.HttpHeaders;
-import javax.ws.rs.core.MultivaluedMap;
-
 import com.oracle.bmc.ClientRuntime;
+import com.oracle.bmc.http.client.HttpRequest;
+import com.oracle.bmc.http.client.RequestInterceptor;
 
 /**
  * Filter that adds the client identifier headers to every request.
- * <p>
- * The headers will always be replaced if they exist already.
+ *
+ * <p>The headers will always be replaced if they exist already.
  */
-@Priority(Priorities.HEADER_DECORATOR)
-public class ClientIdFilter implements ClientRequestFilter {
+public class ClientIdFilter implements RequestInterceptor {
 
     @Override
-    public void filter(ClientRequestContext requestContext) throws IOException {
-        MultivaluedMap<String, Object> headers = requestContext.getHeaders();
-
-        headers.putSingle(HttpHeaders.USER_AGENT, ClientRuntime.getRuntime().getUserAgent());
-        headers.putSingle("opc-client-info", ClientRuntime.getRuntime().getClientInfo());
+    public void intercept(HttpRequest request) {
+        request.header("User-Agent", ClientRuntime.getRuntime().getUserAgent());
+        request.header("opc-client-info", ClientRuntime.getRuntime().getClientInfo());
     }
 }

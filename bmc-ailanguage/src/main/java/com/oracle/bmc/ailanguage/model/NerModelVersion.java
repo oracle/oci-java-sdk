@@ -4,13 +4,11 @@
  */
 package com.oracle.bmc.ailanguage.model;
 
-/**
- * Posible Named Entity Recognition versions.
- **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-public enum NerModelVersion {
-    V21("V2.1"),
-    V11("V1.1"),
+/** Posible Named Entity Recognition versions. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+public enum NerModelVersion implements com.oracle.bmc.http.internal.BmcEnum {
+    V21("V2_1"),
+    V11("V1_1"),
     ;
 
     private final String value;

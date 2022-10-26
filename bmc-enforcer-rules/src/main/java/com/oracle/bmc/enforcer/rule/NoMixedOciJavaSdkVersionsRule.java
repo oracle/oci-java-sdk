@@ -160,8 +160,7 @@ public class NoMixedOciJavaSdkVersionsRule extends AbstractNonCacheableEnforcerR
                             "Artifacts in version "
                                     + version
                                     + " before: "
-                                    + artifactSet
-                                            .stream()
+                                    + artifactSet.stream()
                                             .map(a -> a.getId())
                                             .collect(Collectors.joining(", ")));
                     artifactSet.removeAll(ignored);
@@ -169,8 +168,7 @@ public class NoMixedOciJavaSdkVersionsRule extends AbstractNonCacheableEnforcerR
                             "Artifacts in version "
                                     + version
                                     + " after: "
-                                    + artifactSet
-                                            .stream()
+                                    + artifactSet.stream()
                                             .map(a -> a.getId())
                                             .collect(Collectors.joining(", ")));
                 }

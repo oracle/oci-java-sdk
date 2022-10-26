@@ -5,25 +5,24 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Unit details of a data object column of TIME unit category.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Unit details of a data object column of TIME unit category. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DataObjectTimeColumnUnit.Builder.class
-)
+        builder = DataObjectTimeColumnUnit.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "unitCategory"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "unitCategory")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DataObjectTimeColumnUnit extends DataObjectColumnUnit {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,17 +34,16 @@ public final class DataObjectTimeColumnUnit extends DataObjectColumnUnit {
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Time unit.
-         **/
+        /** Time unit. */
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private Unit unit;
 
         /**
          * Time unit.
+         *
          * @param unit the value to set
          * @return this builder
-         **/
+         */
         public Builder unit(Unit unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
@@ -76,9 +74,7 @@ public final class DataObjectTimeColumnUnit extends DataObjectColumnUnit {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -93,10 +89,8 @@ public final class DataObjectTimeColumnUnit extends DataObjectColumnUnit {
         this.unit = unit;
     }
 
-    /**
-     * Time unit.
-     **/
-    public enum Unit {
+    /** Time unit. */
+    public enum Unit implements com.oracle.bmc.http.internal.BmcEnum {
         NanoSecond("NANO_SECOND"),
         MicroSecond("MICRO_SECOND"),
         MilliSecond("MILLI_SECOND"),
@@ -109,8 +103,8 @@ public final class DataObjectTimeColumnUnit extends DataObjectColumnUnit {
         Year("YEAR"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -147,16 +141,15 @@ public final class DataObjectTimeColumnUnit extends DataObjectColumnUnit {
             return UnknownEnumValue;
         }
     };
-    /**
-     * Time unit.
-     **/
+    /** Time unit. */
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final Unit unit;
 
     /**
      * Time unit.
+     *
      * @return the value
-     **/
+     */
     public Unit getUnit() {
         return unit;
     }
@@ -168,6 +161,7 @@ public final class DataObjectTimeColumnUnit extends DataObjectColumnUnit {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

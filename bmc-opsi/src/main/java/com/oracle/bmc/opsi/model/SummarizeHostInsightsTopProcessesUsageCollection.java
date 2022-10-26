@@ -5,23 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Top level response object.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Top level response object. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SummarizeHostInsightsTopProcessesUsageCollection.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SummarizeHostInsightsTopProcessesUsageCollection.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SummarizeHostInsightsTopProcessesUsageCollection
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timestamp", "items"})
     public SummarizeHostInsightsTopProcessesUsageCollection(
@@ -33,33 +32,31 @@ public final class SummarizeHostInsightsTopProcessesUsageCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The start timestamp that was passed into the request.
-         **/
+        /** The start timestamp that was passed into the request. */
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
          * The start timestamp that was passed into the request.
+         *
          * @param timestamp the value to set
          * @return this builder
-         **/
+         */
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-        /**
-         * List of usage data samples for a top process on a specific date.
-         **/
+        /** List of usage data samples for a top process on a specific date. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<TopProcessesUsage> items;
 
         /**
          * List of usage data samples for a top process on a specific date.
+         *
          * @param items the value to set
          * @return this builder
-         **/
+         */
         public Builder items(java.util.List<TopProcessesUsage> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -91,9 +88,7 @@ public final class SummarizeHostInsightsTopProcessesUsageCollection
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -102,30 +97,28 @@ public final class SummarizeHostInsightsTopProcessesUsageCollection
         return new Builder().copy(this);
     }
 
-    /**
-     * The start timestamp that was passed into the request.
-     **/
+    /** The start timestamp that was passed into the request. */
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
      * The start timestamp that was passed into the request.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimestamp() {
         return timestamp;
     }
 
-    /**
-     * List of usage data samples for a top process on a specific date.
-     **/
+    /** List of usage data samples for a top process on a specific date. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<TopProcessesUsage> items;
 
     /**
      * List of usage data samples for a top process on a specific date.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<TopProcessesUsage> getItems() {
         return items;
     }
@@ -137,6 +130,7 @@ public final class SummarizeHostInsightsTopProcessesUsageCollection
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -23,7 +23,8 @@ public class AnnouncementsServiceExample {
     private static final String CONFIG_LOCATION = "~/.oci/config";
     private static final String CONFIG_PROFILE = "DEFAULT";
 
-    // Announcements Service doesn't expose a create api publicly, you will need to refer to an existing announcement to run the example
+    // Announcements Service doesn't expose a create api publicly, you will need to refer to an
+    // existing announcement to run the example
     private static final String ANNOUNCEMENT_ID = "<announcement_id>";
 
     // The compartment id must be the tenancy id
@@ -31,8 +32,10 @@ public class AnnouncementsServiceExample {
 
     public static void main(String[] args) throws Exception {
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -123,7 +126,8 @@ public class AnnouncementsServiceExample {
         AnnouncementUserStatusDetails announcementUserStatusDetails =
                 AnnouncementUserStatusDetails.builder()
                         .userStatusAnnouncementId(
-                                annoucementId) // The announcement id is redundantly specified here on purpose
+                                annoucementId) // The announcement id is redundantly specified here
+                        // on purpose
                         .timeAcknowledged(timeAcknowledged)
                         .build();
         UpdateAnnouncementUserStatusRequest request =

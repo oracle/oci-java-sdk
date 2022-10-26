@@ -5,22 +5,22 @@
 package com.oracle.bmc.blockchain.model;
 
 /**
- * Blockchain Platform details for creating a new service.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Blockchain Platform details for creating a new service. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateBlockchainPlatformDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateBlockchainPlatformDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateBlockchainPlatformDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -66,145 +66,140 @@ public final class CreateBlockchainPlatformDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Platform Instance Display name, can be renamed
-         **/
+        /** Platform Instance Display name, can be renamed */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Platform Instance Display name, can be renamed
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Compartment Identifier
-         **/
+        /** Compartment Identifier */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * Platform Instance Description
-         **/
+        /** Platform Instance Description */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Platform Instance Description
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * Role of platform - founder or participant
-         **/
+        /** Role of platform - founder or participant */
         @com.fasterxml.jackson.annotation.JsonProperty("platformRole")
         private BlockchainPlatform.PlatformRole platformRole;
 
         /**
          * Role of platform - founder or participant
+         *
          * @param platformRole the value to set
          * @return this builder
-         **/
+         */
         public Builder platformRole(BlockchainPlatform.PlatformRole platformRole) {
             this.platformRole = platformRole;
             this.__explicitlySet__.add("platformRole");
             return this;
         }
         /**
-         * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
-         **/
+         * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or
+         * ENTERPRISE_EXTRA_LARGE
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("computeShape")
         private BlockchainPlatform.ComputeShape computeShape;
 
         /**
-         * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
+         * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or
+         * ENTERPRISE_EXTRA_LARGE
+         *
          * @param computeShape the value to set
          * @return this builder
-         **/
+         */
         public Builder computeShape(BlockchainPlatform.ComputeShape computeShape) {
             this.computeShape = computeShape;
             this.__explicitlySet__.add("computeShape");
             return this;
         }
-        /**
-         * Bring your own license
-         **/
+        /** Bring your own license */
         @com.fasterxml.jackson.annotation.JsonProperty("isByol")
         private Boolean isByol;
 
         /**
          * Bring your own license
+         *
          * @param isByol the value to set
          * @return this builder
-         **/
+         */
         public Builder isByol(Boolean isByol) {
             this.isByol = isByol;
             this.__explicitlySet__.add("isByol");
             return this;
         }
-        /**
-         * Platform version
-         **/
+        /** Platform version */
         @com.fasterxml.jackson.annotation.JsonProperty("platformVersion")
         private String platformVersion;
 
         /**
          * Platform version
+         *
          * @param platformVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder platformVersion(String platformVersion) {
             this.platformVersion = platformVersion;
             this.__explicitlySet__.add("platformVersion");
             return this;
         }
-        /**
-         * IDCS access token with Identity Domain Administrator role
-         **/
+        /** IDCS access token with Identity Domain Administrator role */
         @com.fasterxml.jackson.annotation.JsonProperty("idcsAccessToken")
         private String idcsAccessToken;
 
         /**
          * IDCS access token with Identity Domain Administrator role
+         *
          * @param idcsAccessToken the value to set
          * @return this builder
-         **/
+         */
         public Builder idcsAccessToken(String idcsAccessToken) {
             this.idcsAccessToken = idcsAccessToken;
             this.__explicitlySet__.add("idcsAccessToken");
             return this;
         }
-        /**
-         * Identifier for a federated user
-         **/
+        /** Identifier for a federated user */
         @com.fasterxml.jackson.annotation.JsonProperty("federatedUserId")
         private String federatedUserId;
 
         /**
          * Identifier for a federated user
+         *
          * @param federatedUserId the value to set
          * @return this builder
-         **/
+         */
         public Builder federatedUserId(String federatedUserId) {
             this.federatedUserId = federatedUserId;
             this.__explicitlySet__.add("federatedUserId");
@@ -212,49 +207,45 @@ public final class CreateBlockchainPlatformDetails
         }
         /**
          * Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file.
-         * The Archive file is a zip file containing third part CA Certificates,
-         * the ca key and certificate files used when issuing enrollment certificates
-         * (ECerts) and transaction certificates (TCerts). The chainfile (if it exists)
-         * contains the certificate chain which should be trusted for this CA, where
-         * the 1st in the chain is always the root CA certificate.
-         * File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
-         *
-         **/
+         * The Archive file is a zip file containing third part CA Certificates, the ca key and
+         * certificate files used when issuing enrollment certificates (ECerts) and transaction
+         * certificates (TCerts). The chainfile (if it exists) contains the certificate chain which
+         * should be trusted for this CA, where the 1st in the chain is always the root CA
+         * certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("caCertArchiveText")
         private String caCertArchiveText;
 
         /**
          * Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file.
-         * The Archive file is a zip file containing third part CA Certificates,
-         * the ca key and certificate files used when issuing enrollment certificates
-         * (ECerts) and transaction certificates (TCerts). The chainfile (if it exists)
-         * contains the certificate chain which should be trusted for this CA, where
-         * the 1st in the chain is always the root CA certificate.
-         * File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
+         * The Archive file is a zip file containing third part CA Certificates, the ca key and
+         * certificate files used when issuing enrollment certificates (ECerts) and transaction
+         * certificates (TCerts). The chainfile (if it exists) contains the certificate chain which
+         * should be trusted for this CA, where the 1st in the chain is always the root CA
+         * certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
          *
          * @param caCertArchiveText the value to set
          * @return this builder
-         **/
+         */
         public Builder caCertArchiveText(String caCertArchiveText) {
             this.caCertArchiveText = caCertArchiveText;
             this.__explicitlySet__.add("caCertArchiveText");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -263,8 +254,7 @@ public final class CreateBlockchainPlatformDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -274,7 +264,7 @@ public final class CreateBlockchainPlatformDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -348,9 +338,7 @@ public final class CreateBlockchainPlatformDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -359,192 +347,182 @@ public final class CreateBlockchainPlatformDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * Platform Instance Display name, can be renamed
-     **/
+    /** Platform Instance Display name, can be renamed */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Platform Instance Display name, can be renamed
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Compartment Identifier
-     **/
+    /** Compartment Identifier */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * Platform Instance Description
-     **/
+    /** Platform Instance Description */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Platform Instance Description
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * Role of platform - founder or participant
-     **/
+    /** Role of platform - founder or participant */
     @com.fasterxml.jackson.annotation.JsonProperty("platformRole")
     private final BlockchainPlatform.PlatformRole platformRole;
 
     /**
      * Role of platform - founder or participant
+     *
      * @return the value
-     **/
+     */
     public BlockchainPlatform.PlatformRole getPlatformRole() {
         return platformRole;
     }
 
     /**
-     * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
-     **/
+     * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or
+     * ENTERPRISE_EXTRA_LARGE
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("computeShape")
     private final BlockchainPlatform.ComputeShape computeShape;
 
     /**
-     * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
+     * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or
+     * ENTERPRISE_EXTRA_LARGE
+     *
      * @return the value
-     **/
+     */
     public BlockchainPlatform.ComputeShape getComputeShape() {
         return computeShape;
     }
 
-    /**
-     * Bring your own license
-     **/
+    /** Bring your own license */
     @com.fasterxml.jackson.annotation.JsonProperty("isByol")
     private final Boolean isByol;
 
     /**
      * Bring your own license
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsByol() {
         return isByol;
     }
 
-    /**
-     * Platform version
-     **/
+    /** Platform version */
     @com.fasterxml.jackson.annotation.JsonProperty("platformVersion")
     private final String platformVersion;
 
     /**
      * Platform version
+     *
      * @return the value
-     **/
+     */
     public String getPlatformVersion() {
         return platformVersion;
     }
 
-    /**
-     * IDCS access token with Identity Domain Administrator role
-     **/
+    /** IDCS access token with Identity Domain Administrator role */
     @com.fasterxml.jackson.annotation.JsonProperty("idcsAccessToken")
     private final String idcsAccessToken;
 
     /**
      * IDCS access token with Identity Domain Administrator role
+     *
      * @return the value
-     **/
+     */
     public String getIdcsAccessToken() {
         return idcsAccessToken;
     }
 
-    /**
-     * Identifier for a federated user
-     **/
+    /** Identifier for a federated user */
     @com.fasterxml.jackson.annotation.JsonProperty("federatedUserId")
     private final String federatedUserId;
 
     /**
      * Identifier for a federated user
+     *
      * @return the value
-     **/
+     */
     public String getFederatedUserId() {
         return federatedUserId;
     }
 
     /**
-     * Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file.
-     * The Archive file is a zip file containing third part CA Certificates,
-     * the ca key and certificate files used when issuing enrollment certificates
-     * (ECerts) and transaction certificates (TCerts). The chainfile (if it exists)
-     * contains the certificate chain which should be trusted for this CA, where
-     * the 1st in the chain is always the root CA certificate.
-     * File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
-     *
-     **/
+     * Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The
+     * Archive file is a zip file containing third part CA Certificates, the ca key and certificate
+     * files used when issuing enrollment certificates (ECerts) and transaction certificates
+     * (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted
+     * for this CA, where the 1st in the chain is always the root CA certificate. File list in zip
+     * file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("caCertArchiveText")
     private final String caCertArchiveText;
 
     /**
-     * Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file.
-     * The Archive file is a zip file containing third part CA Certificates,
-     * the ca key and certificate files used when issuing enrollment certificates
-     * (ECerts) and transaction certificates (TCerts). The chainfile (if it exists)
-     * contains the certificate chain which should be trusted for this CA, where
-     * the 1st in the chain is always the root CA certificate.
-     * File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
+     * Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The
+     * Archive file is a zip file containing third part CA Certificates, the ca key and certificate
+     * files used when issuing enrollment certificates (ECerts) and transaction certificates
+     * (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted
+     * for this CA, where the 1st in the chain is always the root CA certificate. File list in zip
+     * file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
      *
      * @return the value
-     **/
+     */
     public String getCaCertArchiveText() {
         return caCertArchiveText;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -556,6 +534,7 @@ public final class CreateBlockchainPlatformDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

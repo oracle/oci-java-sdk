@@ -5,23 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Route distribution statements to update in the route distribution.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Route distribution statements to update in the route distribution. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateDrgRouteDistributionStatementDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateDrgRouteDistributionStatementDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateDrgRouteDistributionStatementDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "matchCriteria", "priority"})
     public UpdateDrgRouteDistributionStatementDetails(
@@ -36,10 +35,7 @@ public final class UpdateDrgRouteDistributionStatementDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The Oracle-assigned ID of each route distribution statement to be updated.
-         *
-         **/
+        /** The Oracle-assigned ID of each route distribution statement to be updated. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -48,16 +44,13 @@ public final class UpdateDrgRouteDistributionStatementDetails
          *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The action is applied only if all of the match criteria is met.
-         *
-         **/
+        /** The action is applied only if all of the match criteria is met. */
         @com.fasterxml.jackson.annotation.JsonProperty("matchCriteria")
         private java.util.List<DrgRouteDistributionMatchCriteria> matchCriteria;
 
@@ -66,17 +59,14 @@ public final class UpdateDrgRouteDistributionStatementDetails
          *
          * @param matchCriteria the value to set
          * @return this builder
-         **/
+         */
         public Builder matchCriteria(
                 java.util.List<DrgRouteDistributionMatchCriteria> matchCriteria) {
             this.matchCriteria = matchCriteria;
             this.__explicitlySet__.add("matchCriteria");
             return this;
         }
-        /**
-         * The priority of the statement you'd like to update.
-         *
-         **/
+        /** The priority of the statement you'd like to update. */
         @com.fasterxml.jackson.annotation.JsonProperty("priority")
         private Integer priority;
 
@@ -85,7 +75,7 @@ public final class UpdateDrgRouteDistributionStatementDetails
          *
          * @param priority the value to set
          * @return this builder
-         **/
+         */
         public Builder priority(Integer priority) {
             this.priority = priority;
             this.__explicitlySet__.add("priority");
@@ -120,9 +110,7 @@ public final class UpdateDrgRouteDistributionStatementDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -131,10 +119,7 @@ public final class UpdateDrgRouteDistributionStatementDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The Oracle-assigned ID of each route distribution statement to be updated.
-     *
-     **/
+    /** The Oracle-assigned ID of each route distribution statement to be updated. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
@@ -142,15 +127,12 @@ public final class UpdateDrgRouteDistributionStatementDetails
      * The Oracle-assigned ID of each route distribution statement to be updated.
      *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The action is applied only if all of the match criteria is met.
-     *
-     **/
+    /** The action is applied only if all of the match criteria is met. */
     @com.fasterxml.jackson.annotation.JsonProperty("matchCriteria")
     private final java.util.List<DrgRouteDistributionMatchCriteria> matchCriteria;
 
@@ -158,15 +140,12 @@ public final class UpdateDrgRouteDistributionStatementDetails
      * The action is applied only if all of the match criteria is met.
      *
      * @return the value
-     **/
+     */
     public java.util.List<DrgRouteDistributionMatchCriteria> getMatchCriteria() {
         return matchCriteria;
     }
 
-    /**
-     * The priority of the statement you'd like to update.
-     *
-     **/
+    /** The priority of the statement you'd like to update. */
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
     private final Integer priority;
 
@@ -174,7 +153,7 @@ public final class UpdateDrgRouteDistributionStatementDetails
      * The priority of the statement you'd like to update.
      *
      * @return the value
-     **/
+     */
     public Integer getPriority() {
         return priority;
     }
@@ -186,6 +165,7 @@ public final class UpdateDrgRouteDistributionStatementDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,22 +5,22 @@
 package com.oracle.bmc.identity.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateNetworkSourceDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateNetworkSourceDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateNetworkSourceDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "description",
@@ -49,25 +49,25 @@ public final class UpdateNetworkSourceDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The description you assign to the network source. Does not have to be unique, and it's changeable.
-         **/
+         * The description you assign to the network source. Does not have to be unique, and it's
+         * changeable.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * The description you assign to the network source. Does not have to be unique, and it's changeable.
+         * The description you assign to the network source. Does not have to be unique, and it's
+         * changeable.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * A list of allowed public IP addresses and CIDR ranges.
-         *
-         **/
+        /** A list of allowed public IP addresses and CIDR ranges. */
         @com.fasterxml.jackson.annotation.JsonProperty("publicSourceList")
         private java.util.List<String> publicSourceList;
 
@@ -76,37 +76,33 @@ public final class UpdateNetworkSourceDetails
          *
          * @param publicSourceList the value to set
          * @return this builder
-         **/
+         */
         public Builder publicSourceList(java.util.List<String> publicSourceList) {
             this.publicSourceList = publicSourceList;
             this.__explicitlySet__.add("publicSourceList");
             return this;
         }
         /**
-         * A list of allowed VCN OCID and IP range pairs.
-         * Example:{@code "vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]}
-         *
-         **/
+         * A list of allowed VCN OCID and IP range pairs. Example:{@code "vcnId":
+         * "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("virtualSourceList")
         private java.util.List<NetworkSources_virtualSourceList> virtualSourceList;
 
         /**
-         * A list of allowed VCN OCID and IP range pairs.
-         * Example:{@code "vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]}
+         * A list of allowed VCN OCID and IP range pairs. Example:{@code "vcnId":
+         * "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]}
          *
          * @param virtualSourceList the value to set
          * @return this builder
-         **/
+         */
         public Builder virtualSourceList(
                 java.util.List<NetworkSources_virtualSourceList> virtualSourceList) {
             this.virtualSourceList = virtualSourceList;
             this.__explicitlySet__.add("virtualSourceList");
             return this;
         }
-        /**
-         * -- The services attribute has no effect and is reserved for use by Oracle. --
-         *
-         **/
+        /** -- The services attribute has no effect and is reserved for use by Oracle. -- */
         @com.fasterxml.jackson.annotation.JsonProperty("services")
         private java.util.List<String> services;
 
@@ -115,51 +111,53 @@ public final class UpdateNetworkSourceDetails
          *
          * @param services the value to set
          * @return this builder
-         **/
+         */
         public Builder services(java.util.List<String> services) {
             this.services = services;
             this.__explicitlySet__.add("services");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
-         *
-         **/
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
-         *
-         **/
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -209,9 +207,7 @@ public final class UpdateNetworkSourceDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -221,23 +217,23 @@ public final class UpdateNetworkSourceDetails
     }
 
     /**
-     * The description you assign to the network source. Does not have to be unique, and it's changeable.
-     **/
+     * The description you assign to the network source. Does not have to be unique, and it's
+     * changeable.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * The description you assign to the network source. Does not have to be unique, and it's changeable.
+     * The description you assign to the network source. Does not have to be unique, and it's
+     * changeable.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * A list of allowed public IP addresses and CIDR ranges.
-     *
-     **/
+    /** A list of allowed public IP addresses and CIDR ranges. */
     @com.fasterxml.jackson.annotation.JsonProperty("publicSourceList")
     private final java.util.List<String> publicSourceList;
 
@@ -245,33 +241,29 @@ public final class UpdateNetworkSourceDetails
      * A list of allowed public IP addresses and CIDR ranges.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getPublicSourceList() {
         return publicSourceList;
     }
 
     /**
-     * A list of allowed VCN OCID and IP range pairs.
-     * Example:{@code "vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]}
-     *
-     **/
+     * A list of allowed VCN OCID and IP range pairs. Example:{@code "vcnId":
+     * "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("virtualSourceList")
     private final java.util.List<NetworkSources_virtualSourceList> virtualSourceList;
 
     /**
-     * A list of allowed VCN OCID and IP range pairs.
-     * Example:{@code "vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]}
+     * A list of allowed VCN OCID and IP range pairs. Example:{@code "vcnId":
+     * "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]}
      *
      * @return the value
-     **/
+     */
     public java.util.List<NetworkSources_virtualSourceList> getVirtualSourceList() {
         return virtualSourceList;
     }
 
-    /**
-     * -- The services attribute has no effect and is reserved for use by Oracle. --
-     *
-     **/
+    /** -- The services attribute has no effect and is reserved for use by Oracle. -- */
     @com.fasterxml.jackson.annotation.JsonProperty("services")
     private final java.util.List<String> services;
 
@@ -279,47 +271,49 @@ public final class UpdateNetworkSourceDetails
      * -- The services attribute has no effect and is reserved for use by Oracle. --
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getServices() {
         return services;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
-     *
-     **/
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -331,6 +325,7 @@ public final class UpdateNetworkSourceDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

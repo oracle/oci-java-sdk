@@ -10,15 +10,14 @@ import com.oracle.bmc.mysql.model.*;
 public class GetAnalyticsClusterMemoryEstimateResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -26,14 +25,13 @@ public class GetAnalyticsClusterMemoryEstimateResponse
         return opcRequestId;
     }
 
-    /**
-     * The returned AnalyticsClusterMemoryEstimate instance.
-     */
+    /** The returned AnalyticsClusterMemoryEstimate instance. */
     private com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate
             analyticsClusterMemoryEstimate;
 
     /**
      * The returned AnalyticsClusterMemoryEstimate instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate
@@ -49,7 +47,7 @@ public class GetAnalyticsClusterMemoryEstimateResponse
     })
     private GetAnalyticsClusterMemoryEstimateResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate
                     analyticsClusterMemoryEstimate) {
@@ -58,31 +56,34 @@ public class GetAnalyticsClusterMemoryEstimateResponse
         this.analyticsClusterMemoryEstimate = analyticsClusterMemoryEstimate;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetAnalyticsClusterMemoryEstimateResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -92,14 +93,13 @@ public class GetAnalyticsClusterMemoryEstimateResponse
             return this;
         }
 
-        /**
-         * The returned AnalyticsClusterMemoryEstimate instance.
-         */
+        /** The returned AnalyticsClusterMemoryEstimate instance. */
         private com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate
                 analyticsClusterMemoryEstimate;
 
         /**
          * The returned AnalyticsClusterMemoryEstimate instance.
+         *
          * @param analyticsClusterMemoryEstimate the value to set
          * @return this builder
          */
@@ -112,8 +112,10 @@ public class GetAnalyticsClusterMemoryEstimateResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetAnalyticsClusterMemoryEstimateResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -125,8 +127,10 @@ public class GetAnalyticsClusterMemoryEstimateResponse
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetAnalyticsClusterMemoryEstimateResponse build() {
             return new GetAnalyticsClusterMemoryEstimateResponse(
                     __httpStatusCode__, headers, opcRequestId, analyticsClusterMemoryEstimate);
@@ -135,6 +139,7 @@ public class GetAnalyticsClusterMemoryEstimateResponse
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

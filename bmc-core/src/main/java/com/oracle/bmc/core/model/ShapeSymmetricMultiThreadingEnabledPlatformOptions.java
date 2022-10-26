@@ -5,23 +5,23 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Configuration options for symmetric multithreading (also called simultaneous multithreading or SMT).
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Configuration options for symmetric multithreading (also called simultaneous multithreading or
+ * SMT). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ShapeSymmetricMultiThreadingEnabledPlatformOptions.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ShapeSymmetricMultiThreadingEnabledPlatformOptions.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ShapeSymmetricMultiThreadingEnabledPlatformOptions
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"allowedValues", "isDefaultEnabled"})
     public ShapeSymmetricMultiThreadingEnabledPlatformOptions(
@@ -33,10 +33,7 @@ public final class ShapeSymmetricMultiThreadingEnabledPlatformOptions
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Whether symmetric multithreading can be enabled.
-         *
-         **/
+        /** Whether symmetric multithreading can be enabled. */
         @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
         private java.util.List<Boolean> allowedValues;
 
@@ -45,16 +42,13 @@ public final class ShapeSymmetricMultiThreadingEnabledPlatformOptions
          *
          * @param allowedValues the value to set
          * @return this builder
-         **/
+         */
         public Builder allowedValues(java.util.List<Boolean> allowedValues) {
             this.allowedValues = allowedValues;
             this.__explicitlySet__.add("allowedValues");
             return this;
         }
-        /**
-         * Whether symmetric multithreading is enabled by default.
-         *
-         **/
+        /** Whether symmetric multithreading is enabled by default. */
         @com.fasterxml.jackson.annotation.JsonProperty("isDefaultEnabled")
         private Boolean isDefaultEnabled;
 
@@ -63,7 +57,7 @@ public final class ShapeSymmetricMultiThreadingEnabledPlatformOptions
          *
          * @param isDefaultEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isDefaultEnabled(Boolean isDefaultEnabled) {
             this.isDefaultEnabled = isDefaultEnabled;
             this.__explicitlySet__.add("isDefaultEnabled");
@@ -95,9 +89,7 @@ public final class ShapeSymmetricMultiThreadingEnabledPlatformOptions
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -106,10 +98,7 @@ public final class ShapeSymmetricMultiThreadingEnabledPlatformOptions
         return new Builder().copy(this);
     }
 
-    /**
-     * Whether symmetric multithreading can be enabled.
-     *
-     **/
+    /** Whether symmetric multithreading can be enabled. */
     @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
     private final java.util.List<Boolean> allowedValues;
 
@@ -117,15 +106,12 @@ public final class ShapeSymmetricMultiThreadingEnabledPlatformOptions
      * Whether symmetric multithreading can be enabled.
      *
      * @return the value
-     **/
+     */
     public java.util.List<Boolean> getAllowedValues() {
         return allowedValues;
     }
 
-    /**
-     * Whether symmetric multithreading is enabled by default.
-     *
-     **/
+    /** Whether symmetric multithreading is enabled by default. */
     @com.fasterxml.jackson.annotation.JsonProperty("isDefaultEnabled")
     private final Boolean isDefaultEnabled;
 
@@ -133,7 +119,7 @@ public final class ShapeSymmetricMultiThreadingEnabledPlatformOptions
      * Whether symmetric multithreading is enabled by default.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsDefaultEnabled() {
         return isDefaultEnabled;
     }
@@ -145,6 +131,7 @@ public final class ShapeSymmetricMultiThreadingEnabledPlatformOptions
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

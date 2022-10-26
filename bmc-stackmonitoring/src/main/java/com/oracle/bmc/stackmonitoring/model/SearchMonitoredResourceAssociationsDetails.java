@@ -5,22 +5,22 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * The information required to search monitored resource associations.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information required to search monitored resource associations. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SearchMonitoredResourceAssociationsDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SearchMonitoredResourceAssociationsDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SearchMonitoredResourceAssociationsDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -61,164 +61,166 @@ public final class SearchMonitoredResourceAssociationsDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         **/
+         * Compartment Identifier
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Compartment Identifier
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         **/
+         * Source Monitored Resource Identifier
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceId")
         private String sourceResourceId;
 
         /**
-         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Source Monitored Resource Identifier
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         *
          * @param sourceResourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceResourceId(String sourceResourceId) {
             this.sourceResourceId = sourceResourceId;
             this.__explicitlySet__.add("sourceResourceId");
             return this;
         }
-        /**
-         * Source Monitored Resource Name
-         **/
+        /** Source Monitored Resource Name */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceName")
         private String sourceResourceName;
 
         /**
          * Source Monitored Resource Name
+         *
          * @param sourceResourceName the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceResourceName(String sourceResourceName) {
             this.sourceResourceName = sourceResourceName;
             this.__explicitlySet__.add("sourceResourceName");
             return this;
         }
-        /**
-         * Source Monitored Resource Type
-         **/
+        /** Source Monitored Resource Type */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceType")
         private String sourceResourceType;
 
         /**
          * Source Monitored Resource Type
+         *
          * @param sourceResourceType the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceResourceType(String sourceResourceType) {
             this.sourceResourceType = sourceResourceType;
             this.__explicitlySet__.add("sourceResourceType");
             return this;
         }
         /**
-         * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         **/
+         * Destination Monitored Resource Identifier
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceId")
         private String destinationResourceId;
 
         /**
-         * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Destination Monitored Resource Identifier
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         *
          * @param destinationResourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder destinationResourceId(String destinationResourceId) {
             this.destinationResourceId = destinationResourceId;
             this.__explicitlySet__.add("destinationResourceId");
             return this;
         }
-        /**
-         * Source Monitored Resource Name
-         **/
+        /** Source Monitored Resource Name */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceName")
         private String destinationResourceName;
 
         /**
          * Source Monitored Resource Name
+         *
          * @param destinationResourceName the value to set
          * @return this builder
-         **/
+         */
         public Builder destinationResourceName(String destinationResourceName) {
             this.destinationResourceName = destinationResourceName;
             this.__explicitlySet__.add("destinationResourceName");
             return this;
         }
-        /**
-         * Source Monitored Resource Type
-         **/
+        /** Source Monitored Resource Type */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceType")
         private String destinationResourceType;
 
         /**
          * Source Monitored Resource Type
+         *
          * @param destinationResourceType the value to set
          * @return this builder
-         **/
+         */
         public Builder destinationResourceType(String destinationResourceType) {
             this.destinationResourceType = destinationResourceType;
             this.__explicitlySet__.add("destinationResourceType");
             return this;
         }
-        /**
-         * Association type to be created between source and destination resources
-         **/
+        /** Association type to be created between source and destination resources */
         @com.fasterxml.jackson.annotation.JsonProperty("associationType")
         private String associationType;
 
         /**
          * Association type to be created between source and destination resources
+         *
          * @param associationType the value to set
          * @return this builder
-         **/
+         */
         public Builder associationType(String associationType) {
             this.associationType = associationType;
             this.__explicitlySet__.add("associationType");
             return this;
         }
         /**
-         * The field to sort by. Only one sort order may be provided.
-         * Default order for timeCreated is descending. Default order for assocType is descending.
-         *
-         **/
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
+         * is descending. Default order for assocType is descending.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
         private SortBy sortBy;
 
         /**
-         * The field to sort by. Only one sort order may be provided.
-         * Default order for timeCreated is descending. Default order for assocType is descending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
+         * is descending. Default order for assocType is descending.
          *
          * @param sortBy the value to set
          * @return this builder
-         **/
+         */
         public Builder sortBy(SortBy sortBy) {
             this.sortBy = sortBy;
             this.__explicitlySet__.add("sortBy");
             return this;
         }
-        /**
-         * The sort order to use, either 'ASC' or 'DESC'.
-         **/
+        /** The sort order to use, either 'ASC' or 'DESC'. */
         @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
         private SortOrder sortOrder;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
+         *
          * @param sortOrder the value to set
          * @return this builder
-         **/
+         */
         public Builder sortOrder(SortOrder sortOrder) {
             this.sortOrder = sortOrder;
             this.__explicitlySet__.add("sortOrder");
@@ -283,9 +285,7 @@ public final class SearchMonitoredResourceAssociationsDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -295,123 +295,126 @@ public final class SearchMonitoredResourceAssociationsDetails
     }
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     **/
+     * Compartment Identifier
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     **/
+     * Source Monitored Resource Identifier
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceId")
     private final String sourceResourceId;
 
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Source Monitored Resource Identifier
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     *
      * @return the value
-     **/
+     */
     public String getSourceResourceId() {
         return sourceResourceId;
     }
 
-    /**
-     * Source Monitored Resource Name
-     **/
+    /** Source Monitored Resource Name */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceName")
     private final String sourceResourceName;
 
     /**
      * Source Monitored Resource Name
+     *
      * @return the value
-     **/
+     */
     public String getSourceResourceName() {
         return sourceResourceName;
     }
 
-    /**
-     * Source Monitored Resource Type
-     **/
+    /** Source Monitored Resource Type */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceType")
     private final String sourceResourceType;
 
     /**
      * Source Monitored Resource Type
+     *
      * @return the value
-     **/
+     */
     public String getSourceResourceType() {
         return sourceResourceType;
     }
 
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     **/
+     * Destination Monitored Resource Identifier
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceId")
     private final String destinationResourceId;
 
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     *
      * @return the value
-     **/
+     */
     public String getDestinationResourceId() {
         return destinationResourceId;
     }
 
-    /**
-     * Source Monitored Resource Name
-     **/
+    /** Source Monitored Resource Name */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceName")
     private final String destinationResourceName;
 
     /**
      * Source Monitored Resource Name
+     *
      * @return the value
-     **/
+     */
     public String getDestinationResourceName() {
         return destinationResourceName;
     }
 
-    /**
-     * Source Monitored Resource Type
-     **/
+    /** Source Monitored Resource Type */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceType")
     private final String destinationResourceType;
 
     /**
      * Source Monitored Resource Type
+     *
      * @return the value
-     **/
+     */
     public String getDestinationResourceType() {
         return destinationResourceType;
     }
 
-    /**
-     * Association type to be created between source and destination resources
-     **/
+    /** Association type to be created between source and destination resources */
     @com.fasterxml.jackson.annotation.JsonProperty("associationType")
     private final String associationType;
 
     /**
      * Association type to be created between source and destination resources
+     *
      * @return the value
-     **/
+     */
     public String getAssociationType() {
         return associationType;
     }
 
     /**
-     * The field to sort by. Only one sort order may be provided.
-     * Default order for timeCreated is descending. Default order for assocType is descending.
-     *
-     **/
-    public enum SortBy {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
+     * descending. Default order for assocType is descending.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TimeCreated("TIME_CREATED"),
         AssocType("ASSOC_TYPE"),
         ;
@@ -444,33 +447,31 @@ public final class SearchMonitoredResourceAssociationsDetails
         }
     };
     /**
-     * The field to sort by. Only one sort order may be provided.
-     * Default order for timeCreated is descending. Default order for assocType is descending.
-     *
-     **/
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
+     * descending. Default order for assocType is descending.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
     private final SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided.
-     * Default order for timeCreated is descending. Default order for assocType is descending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
+     * descending. Default order for assocType is descending.
      *
      * @return the value
-     **/
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
 
-    /**
-     * The sort order to use, either 'ASC' or 'DESC'.
-     **/
+    /** The sort order to use, either 'ASC' or 'DESC'. */
     @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
     private final SortOrder sortOrder;
 
     /**
      * The sort order to use, either 'ASC' or 'DESC'.
+     *
      * @return the value
-     **/
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -482,6 +483,7 @@ public final class SearchMonitoredResourceAssociationsDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

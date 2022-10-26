@@ -8,10 +8,7 @@ import com.oracle.bmc.apmsynthetics.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class GetDedicatedVantagePointResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,15 +21,14 @@ public class GetDedicatedVantagePointResponse extends com.oracle.bmc.responses.B
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,13 +36,12 @@ public class GetDedicatedVantagePointResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /**
-     * The returned DedicatedVantagePoint instance.
-     */
+    /** The returned DedicatedVantagePoint instance. */
     private com.oracle.bmc.apmsynthetics.model.DedicatedVantagePoint dedicatedVantagePoint;
 
     /**
      * The returned DedicatedVantagePoint instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.apmsynthetics.model.DedicatedVantagePoint getDedicatedVantagePoint() {
@@ -62,7 +57,7 @@ public class GetDedicatedVantagePointResponse extends com.oracle.bmc.responses.B
     })
     private GetDedicatedVantagePointResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.apmsynthetics.model.DedicatedVantagePoint dedicatedVantagePoint) {
@@ -72,25 +67,26 @@ public class GetDedicatedVantagePointResponse extends com.oracle.bmc.responses.B
         this.dedicatedVantagePoint = dedicatedVantagePoint;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetDedicatedVantagePointResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -105,15 +101,14 @@ public class GetDedicatedVantagePointResponse extends com.oracle.bmc.responses.B
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -123,13 +118,12 @@ public class GetDedicatedVantagePointResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /**
-         * The returned DedicatedVantagePoint instance.
-         */
+        /** The returned DedicatedVantagePoint instance. */
         private com.oracle.bmc.apmsynthetics.model.DedicatedVantagePoint dedicatedVantagePoint;
 
         /**
          * The returned DedicatedVantagePoint instance.
+         *
          * @param dedicatedVantagePoint the value to set
          * @return this builder
          */
@@ -141,8 +135,10 @@ public class GetDedicatedVantagePointResponse extends com.oracle.bmc.responses.B
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetDedicatedVantagePointResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -155,8 +151,10 @@ public class GetDedicatedVantagePointResponse extends com.oracle.bmc.responses.B
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetDedicatedVantagePointResponse build() {
             return new GetDedicatedVantagePointResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, dedicatedVantagePoint);
@@ -165,6 +163,7 @@ public class GetDedicatedVantagePointResponse extends com.oracle.bmc.responses.B
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

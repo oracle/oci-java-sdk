@@ -6,69 +6,57 @@ package com.oracle.bmc.apmsynthetics.requests;
 
 import com.oracle.bmc.apmsynthetics.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/CreateScriptExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateScriptRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/CreateScriptExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateScriptRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class CreateScriptRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.apmsynthetics.model.CreateScriptDetails> {
 
-    /**
-     * The APM domain ID the request is intended for.
-     *
-     */
+    /** The APM domain ID the request is intended for. */
     private String apmDomainId;
 
-    /**
-     * The APM domain ID the request is intended for.
-     *
-     */
+    /** The APM domain ID the request is intended for. */
     public String getApmDomainId() {
         return apmDomainId;
     }
-    /**
-     * The configuration details for creating a script.
-     */
+    /** The configuration details for creating a script. */
     private com.oracle.bmc.apmsynthetics.model.CreateScriptDetails createScriptDetails;
 
-    /**
-     * The configuration details for creating a script.
-     */
+    /** The configuration details for creating a script. */
     public com.oracle.bmc.apmsynthetics.model.CreateScriptDetails getCreateScriptDetails() {
         return createScriptDetails;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * might be rejected.
-     *
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * might be rejected.
-     *
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
     /**
-     * Unique identifier for the request.
-     * If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique identifier for the request.
-     * If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -76,6 +64,7 @@ public class CreateScriptRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -87,14 +76,10 @@ public class CreateScriptRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateScriptRequest, com.oracle.bmc.apmsynthetics.model.CreateScriptDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The APM domain ID the request is intended for.
-         *
-         */
+        /** The APM domain ID the request is intended for. */
         private String apmDomainId = null;
 
         /**
@@ -108,13 +93,12 @@ public class CreateScriptRequest
             return this;
         }
 
-        /**
-         * The configuration details for creating a script.
-         */
+        /** The configuration details for creating a script. */
         private com.oracle.bmc.apmsynthetics.model.CreateScriptDetails createScriptDetails = null;
 
         /**
          * The configuration details for creating a script.
+         *
          * @param createScriptDetails the value to set
          * @return this builder instance
          */
@@ -126,20 +110,19 @@ public class CreateScriptRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * might be rejected.
-         *
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -150,15 +133,14 @@ public class CreateScriptRequest
         }
 
         /**
-         * Unique identifier for the request.
-         * If you need to contact Oracle about a particular request, please provide the request ID.
-         *
+         * Unique identifier for the request. If you need to contact Oracle about a particular
+         * request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique identifier for the request.
-         * If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique identifier for the request. If you need to contact Oracle about a particular
+         * request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -170,18 +152,19 @@ public class CreateScriptRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -193,6 +176,7 @@ public class CreateScriptRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(CreateScriptRequest o) {
@@ -208,10 +192,11 @@ public class CreateScriptRequest
         /**
          * Build the instance of CreateScriptRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of CreateScriptRequest
          */
@@ -224,6 +209,7 @@ public class CreateScriptRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -236,7 +222,8 @@ public class CreateScriptRequest
         /**
          * Build the instance of CreateScriptRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateScriptRequest
@@ -248,12 +235,14 @@ public class CreateScriptRequest
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             return request;
-            // new CreateScriptRequest(apmDomainId, createScriptDetails, opcRetryToken, opcRequestId);
+            // new CreateScriptRequest(apmDomainId, createScriptDetails, opcRetryToken,
+            // opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -266,6 +255,7 @@ public class CreateScriptRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

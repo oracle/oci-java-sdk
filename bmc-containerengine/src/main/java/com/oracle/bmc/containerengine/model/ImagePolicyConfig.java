@@ -5,21 +5,22 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * The properties that define a image verification policy.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The properties that define a image verification policy. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ImagePolicyConfig.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ImagePolicyConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ImagePolicyConfig.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ImagePolicyConfig
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isPolicyEnabled", "keyDetails"})
     public ImagePolicyConfig(Boolean isPolicyEnabled, java.util.List<KeyDetails> keyDetails) {
@@ -31,32 +32,34 @@ public final class ImagePolicyConfig extends com.oracle.bmc.http.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
-         **/
+         * Whether the image verification policy is enabled. Defaults to false. If set to true, the
+         * images will be verified against the policy at runtime.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isPolicyEnabled")
         private Boolean isPolicyEnabled;
 
         /**
-         * Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
+         * Whether the image verification policy is enabled. Defaults to false. If set to true, the
+         * images will be verified against the policy at runtime.
+         *
          * @param isPolicyEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isPolicyEnabled(Boolean isPolicyEnabled) {
             this.isPolicyEnabled = isPolicyEnabled;
             this.__explicitlySet__.add("isPolicyEnabled");
             return this;
         }
-        /**
-         * A list of KMS key details.
-         **/
+        /** A list of KMS key details. */
         @com.fasterxml.jackson.annotation.JsonProperty("keyDetails")
         private java.util.List<KeyDetails> keyDetails;
 
         /**
          * A list of KMS key details.
+         *
          * @param keyDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder keyDetails(java.util.List<KeyDetails> keyDetails) {
             this.keyDetails = keyDetails;
             this.__explicitlySet__.add("keyDetails");
@@ -86,9 +89,7 @@ public final class ImagePolicyConfig extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -98,29 +99,31 @@ public final class ImagePolicyConfig extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
-     **/
+     * Whether the image verification policy is enabled. Defaults to false. If set to true, the
+     * images will be verified against the policy at runtime.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isPolicyEnabled")
     private final Boolean isPolicyEnabled;
 
     /**
-     * Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
+     * Whether the image verification policy is enabled. Defaults to false. If set to true, the
+     * images will be verified against the policy at runtime.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsPolicyEnabled() {
         return isPolicyEnabled;
     }
 
-    /**
-     * A list of KMS key details.
-     **/
+    /** A list of KMS key details. */
     @com.fasterxml.jackson.annotation.JsonProperty("keyDetails")
     private final java.util.List<KeyDetails> keyDetails;
 
     /**
      * A list of KMS key details.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<KeyDetails> getKeyDetails() {
         return keyDetails;
     }
@@ -132,6 +135,7 @@ public final class ImagePolicyConfig extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

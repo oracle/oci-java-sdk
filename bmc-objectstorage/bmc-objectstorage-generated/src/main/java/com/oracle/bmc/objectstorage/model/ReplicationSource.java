@@ -5,21 +5,22 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
- * The details of a replication source bucket that replicates to a target destination bucket.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details of a replication source bucket that replicates to a target destination bucket. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ReplicationSource.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ReplicationSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ReplicationSource.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ReplicationSource
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"policyName", "sourceRegionName", "sourceBucketName"})
     public ReplicationSource(String policyName, String sourceRegionName, String sourceBucketName) {
@@ -31,49 +32,46 @@ public final class ReplicationSource extends com.oracle.bmc.http.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the policy.
-         **/
+        /** The name of the policy. */
         @com.fasterxml.jackson.annotation.JsonProperty("policyName")
         private String policyName;
 
         /**
          * The name of the policy.
+         *
          * @param policyName the value to set
          * @return this builder
-         **/
+         */
         public Builder policyName(String policyName) {
             this.policyName = policyName;
             this.__explicitlySet__.add("policyName");
             return this;
         }
-        /**
-         * The source region replicating data from, for example "us-ashburn-1".
-         **/
+        /** The source region replicating data from, for example "us-ashburn-1". */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceRegionName")
         private String sourceRegionName;
 
         /**
          * The source region replicating data from, for example "us-ashburn-1".
+         *
          * @param sourceRegionName the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceRegionName(String sourceRegionName) {
             this.sourceRegionName = sourceRegionName;
             this.__explicitlySet__.add("sourceRegionName");
             return this;
         }
-        /**
-         * The source bucket replicating data from.
-         **/
+        /** The source bucket replicating data from. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceBucketName")
         private String sourceBucketName;
 
         /**
          * The source bucket replicating data from.
+         *
          * @param sourceBucketName the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceBucketName(String sourceBucketName) {
             this.sourceBucketName = sourceBucketName;
             this.__explicitlySet__.add("sourceBucketName");
@@ -108,9 +106,7 @@ public final class ReplicationSource extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,44 +115,41 @@ public final class ReplicationSource extends com.oracle.bmc.http.internal.Explic
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the policy.
-     **/
+    /** The name of the policy. */
     @com.fasterxml.jackson.annotation.JsonProperty("policyName")
     private final String policyName;
 
     /**
      * The name of the policy.
+     *
      * @return the value
-     **/
+     */
     public String getPolicyName() {
         return policyName;
     }
 
-    /**
-     * The source region replicating data from, for example "us-ashburn-1".
-     **/
+    /** The source region replicating data from, for example "us-ashburn-1". */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceRegionName")
     private final String sourceRegionName;
 
     /**
      * The source region replicating data from, for example "us-ashburn-1".
+     *
      * @return the value
-     **/
+     */
     public String getSourceRegionName() {
         return sourceRegionName;
     }
 
-    /**
-     * The source bucket replicating data from.
-     **/
+    /** The source bucket replicating data from. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceBucketName")
     private final String sourceBucketName;
 
     /**
      * The source bucket replicating data from.
+     *
      * @return the value
-     **/
+     */
     public String getSourceBucketName() {
         return sourceBucketName;
     }
@@ -168,6 +161,7 @@ public final class ReplicationSource extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

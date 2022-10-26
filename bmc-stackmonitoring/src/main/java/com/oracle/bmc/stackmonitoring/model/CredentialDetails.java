@@ -5,21 +5,22 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * DiscoveryJob Credential Details.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * DiscoveryJob Credential Details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CredentialDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CredentialDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = CredentialDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class CredentialDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"credentialName", "credentialType", "properties"})
     public CredentialDetails(
@@ -32,33 +33,31 @@ public final class CredentialDetails extends com.oracle.bmc.http.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Name of Credential
-         **/
+        /** Name of Credential */
         @com.fasterxml.jackson.annotation.JsonProperty("credentialName")
         private String credentialName;
 
         /**
          * Name of Credential
+         *
          * @param credentialName the value to set
          * @return this builder
-         **/
+         */
         public Builder credentialName(String credentialName) {
             this.credentialName = credentialName;
             this.__explicitlySet__.add("credentialName");
             return this;
         }
-        /**
-         * Name of Credential Type
-         **/
+        /** Name of Credential Type */
         @com.fasterxml.jackson.annotation.JsonProperty("credentialType")
         private String credentialType;
 
         /**
          * Name of Credential Type
+         *
          * @param credentialType the value to set
          * @return this builder
-         **/
+         */
         public Builder credentialType(String credentialType) {
             this.credentialType = credentialType;
             this.__explicitlySet__.add("credentialType");
@@ -102,9 +101,7 @@ public final class CredentialDetails extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -113,30 +110,28 @@ public final class CredentialDetails extends com.oracle.bmc.http.internal.Explic
         return new Builder().copy(this);
     }
 
-    /**
-     * Name of Credential
-     **/
+    /** Name of Credential */
     @com.fasterxml.jackson.annotation.JsonProperty("credentialName")
     private final String credentialName;
 
     /**
      * Name of Credential
+     *
      * @return the value
-     **/
+     */
     public String getCredentialName() {
         return credentialName;
     }
 
-    /**
-     * Name of Credential Type
-     **/
+    /** Name of Credential Type */
     @com.fasterxml.jackson.annotation.JsonProperty("credentialType")
     private final String credentialType;
 
     /**
      * Name of Credential Type
+     *
      * @return the value
-     **/
+     */
     public String getCredentialType() {
         return credentialType;
     }
@@ -155,6 +150,7 @@ public final class CredentialDetails extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,25 +6,26 @@ package com.oracle.bmc.core.model;
 
 /**
  * Specifies the volume that the volume backup policy is assigned to.
- * <p>
- * For more information about Oracle defined backup policies and custom backup policies,
- * see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>For more information about Oracle defined backup policies and custom backup policies, see
+ * [Policy-Based
+ * Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = VolumeBackupPolicyAssignment.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = VolumeBackupPolicyAssignment.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class VolumeBackupPolicyAssignment
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"assetId", "id", "policyId", "timeCreated"})
     public VolumeBackupPolicyAssignment(
@@ -38,42 +39,37 @@ public final class VolumeBackupPolicyAssignment
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the volume the policy has been assigned to.
-         **/
+        /** The OCID of the volume the policy has been assigned to. */
         @com.fasterxml.jackson.annotation.JsonProperty("assetId")
         private String assetId;
 
         /**
          * The OCID of the volume the policy has been assigned to.
+         *
          * @param assetId the value to set
          * @return this builder
-         **/
+         */
         public Builder assetId(String assetId) {
             this.assetId = assetId;
             this.__explicitlySet__.add("assetId");
             return this;
         }
-        /**
-         * The OCID of the volume backup policy assignment.
-         **/
+        /** The OCID of the volume backup policy assignment. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the volume backup policy assignment.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The OCID of the volume backup policy that has been assigned to the volume.
-         *
-         **/
+        /** The OCID of the volume backup policy that has been assigned to the volume. */
         @com.fasterxml.jackson.annotation.JsonProperty("policyId")
         private String policyId;
 
@@ -82,7 +78,7 @@ public final class VolumeBackupPolicyAssignment
          *
          * @param policyId the value to set
          * @return this builder
-         **/
+         */
         public Builder policyId(String policyId) {
             this.policyId = policyId;
             this.__explicitlySet__.add("policyId");
@@ -91,8 +87,7 @@ public final class VolumeBackupPolicyAssignment
         /**
          * The date and time the volume backup policy was assigned to the volume. The format is
          * defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -102,7 +97,7 @@ public final class VolumeBackupPolicyAssignment
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -140,9 +135,7 @@ public final class VolumeBackupPolicyAssignment
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -151,38 +144,33 @@ public final class VolumeBackupPolicyAssignment
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the volume the policy has been assigned to.
-     **/
+    /** The OCID of the volume the policy has been assigned to. */
     @com.fasterxml.jackson.annotation.JsonProperty("assetId")
     private final String assetId;
 
     /**
      * The OCID of the volume the policy has been assigned to.
+     *
      * @return the value
-     **/
+     */
     public String getAssetId() {
         return assetId;
     }
 
-    /**
-     * The OCID of the volume backup policy assignment.
-     **/
+    /** The OCID of the volume backup policy assignment. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the volume backup policy assignment.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The OCID of the volume backup policy that has been assigned to the volume.
-     *
-     **/
+    /** The OCID of the volume backup policy that has been assigned to the volume. */
     @com.fasterxml.jackson.annotation.JsonProperty("policyId")
     private final String policyId;
 
@@ -190,25 +178,24 @@ public final class VolumeBackupPolicyAssignment
      * The OCID of the volume backup policy that has been assigned to the volume.
      *
      * @return the value
-     **/
+     */
     public String getPolicyId() {
         return policyId;
     }
 
     /**
-     * The date and time the volume backup policy was assigned to the volume. The format is
-     * defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
-     **/
+     * The date and time the volume backup policy was assigned to the volume. The format is defined
+     * by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the volume backup policy was assigned to the volume. The format is
-     * defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the volume backup policy was assigned to the volume. The format is defined
+     * by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -220,6 +207,7 @@ public final class VolumeBackupPolicyAssignment
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

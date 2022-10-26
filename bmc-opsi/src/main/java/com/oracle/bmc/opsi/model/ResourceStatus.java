@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/**
- * Possible statuses of a resource in Operations Insights.
- **/
+/** Possible statuses of a resource in Operations Insights. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum ResourceStatus {
+public enum ResourceStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Disabled("DISABLED"),
     Enabled("ENABLED"),
     Terminated("TERMINATED"),

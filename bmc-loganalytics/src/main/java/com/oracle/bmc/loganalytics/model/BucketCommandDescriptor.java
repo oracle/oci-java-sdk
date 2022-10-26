@@ -5,26 +5,24 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Command descriptor for querylanguage BUCKET command.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Command descriptor for querylanguage BUCKET command. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = BucketCommandDescriptor.Builder.class
-)
+        builder = BucketCommandDescriptor.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "name"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "name")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class BucketCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -81,10 +79,7 @@ public final class BucketCommandDescriptor extends AbstractCommandDescriptor {
             this.__explicitlySet__.add("isHidden");
             return this;
         }
-        /**
-         * number of auto calculated ranges to compute if specified.
-         *
-         **/
+        /** number of auto calculated ranges to compute if specified. */
         @com.fasterxml.jackson.annotation.JsonProperty("maxBuckets")
         private Integer maxBuckets;
 
@@ -93,34 +88,32 @@ public final class BucketCommandDescriptor extends AbstractCommandDescriptor {
          *
          * @param maxBuckets the value to set
          * @return this builder
-         **/
+         */
         public Builder maxBuckets(Integer maxBuckets) {
             this.maxBuckets = maxBuckets;
             this.__explicitlySet__.add("maxBuckets");
             return this;
         }
         /**
-         * Size of each numeric range if specified. Data type should match numeric field data type specified in the query string.
-         *
-         **/
+         * Size of each numeric range if specified. Data type should match numeric field data type
+         * specified in the query string.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("span")
         private java.math.BigDecimal span;
 
         /**
-         * Size of each numeric range if specified. Data type should match numeric field data type specified in the query string.
+         * Size of each numeric range if specified. Data type should match numeric field data type
+         * specified in the query string.
          *
          * @param span the value to set
          * @return this builder
-         **/
+         */
         public Builder span(java.math.BigDecimal span) {
             this.span = span;
             this.__explicitlySet__.add("span");
             return this;
         }
-        /**
-         * List of the specified numeric ranges.
-         *
-         **/
+        /** List of the specified numeric ranges. */
         @com.fasterxml.jackson.annotation.JsonProperty("ranges")
         private java.util.List<BucketRange> ranges;
 
@@ -129,25 +122,26 @@ public final class BucketCommandDescriptor extends AbstractCommandDescriptor {
          *
          * @param ranges the value to set
          * @return this builder
-         **/
+         */
         public Builder ranges(java.util.List<BucketRange> ranges) {
             this.ranges = ranges;
             this.__explicitlySet__.add("ranges");
             return this;
         }
         /**
-         * Default value to use in place of null if a result does not fit into any of the specified / calculated ranges.
-         *
-         **/
+         * Default value to use in place of null if a result does not fit into any of the specified
+         * / calculated ranges.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private String defaultValue;
 
         /**
-         * Default value to use in place of null if a result does not fit into any of the specified / calculated ranges.
+         * Default value to use in place of null if a result does not fit into any of the specified
+         * / calculated ranges.
          *
          * @param defaultValue the value to set
          * @return this builder
-         **/
+         */
         public Builder defaultValue(String defaultValue) {
             this.defaultValue = defaultValue;
             this.__explicitlySet__.add("defaultValue");
@@ -212,9 +206,7 @@ public final class BucketCommandDescriptor extends AbstractCommandDescriptor {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -248,10 +240,7 @@ public final class BucketCommandDescriptor extends AbstractCommandDescriptor {
         this.defaultValue = defaultValue;
     }
 
-    /**
-     * number of auto calculated ranges to compute if specified.
-     *
-     **/
+    /** number of auto calculated ranges to compute if specified. */
     @com.fasterxml.jackson.annotation.JsonProperty("maxBuckets")
     private final Integer maxBuckets;
 
@@ -259,31 +248,29 @@ public final class BucketCommandDescriptor extends AbstractCommandDescriptor {
      * number of auto calculated ranges to compute if specified.
      *
      * @return the value
-     **/
+     */
     public Integer getMaxBuckets() {
         return maxBuckets;
     }
 
     /**
-     * Size of each numeric range if specified. Data type should match numeric field data type specified in the query string.
-     *
-     **/
+     * Size of each numeric range if specified. Data type should match numeric field data type
+     * specified in the query string.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("span")
     private final java.math.BigDecimal span;
 
     /**
-     * Size of each numeric range if specified. Data type should match numeric field data type specified in the query string.
+     * Size of each numeric range if specified. Data type should match numeric field data type
+     * specified in the query string.
      *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getSpan() {
         return span;
     }
 
-    /**
-     * List of the specified numeric ranges.
-     *
-     **/
+    /** List of the specified numeric ranges. */
     @com.fasterxml.jackson.annotation.JsonProperty("ranges")
     private final java.util.List<BucketRange> ranges;
 
@@ -291,23 +278,24 @@ public final class BucketCommandDescriptor extends AbstractCommandDescriptor {
      * List of the specified numeric ranges.
      *
      * @return the value
-     **/
+     */
     public java.util.List<BucketRange> getRanges() {
         return ranges;
     }
 
     /**
-     * Default value to use in place of null if a result does not fit into any of the specified / calculated ranges.
-     *
-     **/
+     * Default value to use in place of null if a result does not fit into any of the specified /
+     * calculated ranges.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     private final String defaultValue;
 
     /**
-     * Default value to use in place of null if a result does not fit into any of the specified / calculated ranges.
+     * Default value to use in place of null if a result does not fit into any of the specified /
+     * calculated ranges.
      *
      * @return the value
-     **/
+     */
     public String getDefaultValue() {
         return defaultValue;
     }
@@ -319,6 +307,7 @@ public final class BucketCommandDescriptor extends AbstractCommandDescriptor {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

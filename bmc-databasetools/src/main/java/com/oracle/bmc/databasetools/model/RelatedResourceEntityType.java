@@ -5,10 +5,11 @@
 package com.oracle.bmc.databasetools.model;
 
 /**
- * The related Oracle Database type, either an Autonomous Database, a container database (CDB), or a pluggable database (PDB).
- **/
+ * The related Oracle Database type, either an Autonomous Database, a container database (CDB), or a
+ * pluggable database (PDB).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
-public enum RelatedResourceEntityType {
+public enum RelatedResourceEntityType implements com.oracle.bmc.http.internal.BmcEnum {
     Autonomousdatabase("AUTONOMOUSDATABASE"),
     Database("DATABASE"),
     Pluggabledatabase("PLUGGABLEDATABASE"),

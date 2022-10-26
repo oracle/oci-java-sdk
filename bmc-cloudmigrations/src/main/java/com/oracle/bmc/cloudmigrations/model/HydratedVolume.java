@@ -5,19 +5,21 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /**
- * Description of the hydration server volume.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Description of the hydration server volume. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HydratedVolume.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HydratedVolume extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class HydratedVolume
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"uuid", "volumeId", "volumeType", "unmodifiedVolumeId"})
     public HydratedVolume(
@@ -31,65 +33,61 @@ public final class HydratedVolume extends com.oracle.bmc.http.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * ID of the vCenter disk obtained from Inventory.
-         **/
+        /** ID of the vCenter disk obtained from Inventory. */
         @com.fasterxml.jackson.annotation.JsonProperty("uuid")
         private String uuid;
 
         /**
          * ID of the vCenter disk obtained from Inventory.
+         *
          * @param uuid the value to set
          * @return this builder
-         **/
+         */
         public Builder uuid(String uuid) {
             this.uuid = uuid;
             this.__explicitlySet__.add("uuid");
             return this;
         }
-        /**
-         * ID of the hydration server volume
-         **/
+        /** ID of the hydration server volume */
         @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
         private String volumeId;
 
         /**
          * ID of the hydration server volume
+         *
          * @param volumeId the value to set
          * @return this builder
-         **/
+         */
         public Builder volumeId(String volumeId) {
             this.volumeId = volumeId;
             this.__explicitlySet__.add("volumeId");
             return this;
         }
-        /**
-         * The hydration server volume type
-         **/
+        /** The hydration server volume type */
         @com.fasterxml.jackson.annotation.JsonProperty("volumeType")
         private VolumeType volumeType;
 
         /**
          * The hydration server volume type
+         *
          * @param volumeType the value to set
          * @return this builder
-         **/
+         */
         public Builder volumeType(VolumeType volumeType) {
             this.volumeType = volumeType;
             this.__explicitlySet__.add("volumeType");
             return this;
         }
-        /**
-         * ID of the unmodified volume
-         **/
+        /** ID of the unmodified volume */
         @com.fasterxml.jackson.annotation.JsonProperty("unmodifiedVolumeId")
         private String unmodifiedVolumeId;
 
         /**
          * ID of the unmodified volume
+         *
          * @param unmodifiedVolumeId the value to set
          * @return this builder
-         **/
+         */
         public Builder unmodifiedVolumeId(String unmodifiedVolumeId) {
             this.unmodifiedVolumeId = unmodifiedVolumeId;
             this.__explicitlySet__.add("unmodifiedVolumeId");
@@ -127,9 +125,7 @@ public final class HydratedVolume extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -138,44 +134,40 @@ public final class HydratedVolume extends com.oracle.bmc.http.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /**
-     * ID of the vCenter disk obtained from Inventory.
-     **/
+    /** ID of the vCenter disk obtained from Inventory. */
     @com.fasterxml.jackson.annotation.JsonProperty("uuid")
     private final String uuid;
 
     /**
      * ID of the vCenter disk obtained from Inventory.
+     *
      * @return the value
-     **/
+     */
     public String getUuid() {
         return uuid;
     }
 
-    /**
-     * ID of the hydration server volume
-     **/
+    /** ID of the hydration server volume */
     @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
     private final String volumeId;
 
     /**
      * ID of the hydration server volume
+     *
      * @return the value
-     **/
+     */
     public String getVolumeId() {
         return volumeId;
     }
 
-    /**
-     * The hydration server volume type
-     **/
-    public enum VolumeType {
+    /** The hydration server volume type */
+    public enum VolumeType implements com.oracle.bmc.http.internal.BmcEnum {
         Boot("BOOT"),
         Block("BLOCK"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -214,30 +206,28 @@ public final class HydratedVolume extends com.oracle.bmc.http.internal.Explicitl
             return UnknownEnumValue;
         }
     };
-    /**
-     * The hydration server volume type
-     **/
+    /** The hydration server volume type */
     @com.fasterxml.jackson.annotation.JsonProperty("volumeType")
     private final VolumeType volumeType;
 
     /**
      * The hydration server volume type
+     *
      * @return the value
-     **/
+     */
     public VolumeType getVolumeType() {
         return volumeType;
     }
 
-    /**
-     * ID of the unmodified volume
-     **/
+    /** ID of the unmodified volume */
     @com.fasterxml.jackson.annotation.JsonProperty("unmodifiedVolumeId")
     private final String unmodifiedVolumeId;
 
     /**
      * ID of the unmodified volume
+     *
      * @return the value
-     **/
+     */
     public String getUnmodifiedVolumeId() {
         return unmodifiedVolumeId;
     }
@@ -249,6 +239,7 @@ public final class HydratedVolume extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

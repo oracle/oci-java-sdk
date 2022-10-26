@@ -9,15 +9,14 @@ import com.oracle.bmc.core.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,10 +24,7 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -41,16 +37,17 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
-     * Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the work request. Use
+     * [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
      * with this ID to track the status of the request.
-     *
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
-     * Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the work request. Use
+     * [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
      * with this ID to track the status of the request.
      *
      * @return the value
@@ -59,10 +56,7 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
         return opcWorkRequestId;
     }
 
-    /**
-     * Location of the resource.
-     *
-     */
+    /** Location of the resource. */
     private String location;
 
     /**
@@ -74,13 +68,12 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
         return location;
     }
 
-    /**
-     * The returned InstancePoolInstance instance.
-     */
+    /** The returned InstancePoolInstance instance. */
     private com.oracle.bmc.core.model.InstancePoolInstance instancePoolInstance;
 
     /**
      * The returned InstancePoolInstance instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.core.model.InstancePoolInstance getInstancePoolInstance() {
@@ -98,7 +91,7 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
     })
     private AttachInstancePoolInstanceResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String etag,
             String opcWorkRequestId,
@@ -112,31 +105,34 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
         this.instancePoolInstance = instancePoolInstance;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    AttachInstancePoolInstanceResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -146,10 +142,7 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -164,16 +157,17 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
-         * Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the work request. Use
+         * [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
          * with this ID to track the status of the request.
-         *
          */
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
-         * Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the work request. Use
+         * [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
          * with this ID to track the status of the request.
          *
          * @param opcWorkRequestId the value to set
@@ -184,10 +178,7 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /**
-         * Location of the resource.
-         *
-         */
+        /** Location of the resource. */
         private String location;
 
         /**
@@ -201,13 +192,12 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /**
-         * The returned InstancePoolInstance instance.
-         */
+        /** The returned InstancePoolInstance instance. */
         private com.oracle.bmc.core.model.InstancePoolInstance instancePoolInstance;
 
         /**
          * The returned InstancePoolInstance instance.
+         *
          * @param instancePoolInstance the value to set
          * @return this builder
          */
@@ -219,8 +209,10 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(AttachInstancePoolInstanceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -235,8 +227,10 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public AttachInstancePoolInstanceResponse build() {
             return new AttachInstancePoolInstanceResponse(
                     __httpStatusCode__,
@@ -251,6 +245,7 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

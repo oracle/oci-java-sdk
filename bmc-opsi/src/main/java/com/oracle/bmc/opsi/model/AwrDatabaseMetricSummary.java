@@ -5,22 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * The summary of the AWR metric data for a particular metric at a specific time.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The summary of the AWR metric data for a particular metric at a specific time. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AwrDatabaseMetricSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AwrDatabaseMetricSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AwrDatabaseMetricSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "timestamp", "avgValue", "minValue", "maxValue"})
     public AwrDatabaseMetricSummary(
@@ -39,81 +39,76 @@ public final class AwrDatabaseMetricSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the metric.
-         **/
+        /** The name of the metric. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the metric.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The time of the sampling.
-         **/
+        /** The time of the sampling. */
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
          * The time of the sampling.
+         *
          * @param timestamp the value to set
          * @return this builder
-         **/
+         */
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-        /**
-         * The average value of the sampling period.
-         **/
+        /** The average value of the sampling period. */
         @com.fasterxml.jackson.annotation.JsonProperty("avgValue")
         private Double avgValue;
 
         /**
          * The average value of the sampling period.
+         *
          * @param avgValue the value to set
          * @return this builder
-         **/
+         */
         public Builder avgValue(Double avgValue) {
             this.avgValue = avgValue;
             this.__explicitlySet__.add("avgValue");
             return this;
         }
-        /**
-         * The minimum value of the sampling period.
-         **/
+        /** The minimum value of the sampling period. */
         @com.fasterxml.jackson.annotation.JsonProperty("minValue")
         private Double minValue;
 
         /**
          * The minimum value of the sampling period.
+         *
          * @param minValue the value to set
          * @return this builder
-         **/
+         */
         public Builder minValue(Double minValue) {
             this.minValue = minValue;
             this.__explicitlySet__.add("minValue");
             return this;
         }
-        /**
-         * The maximum value of the sampling period.
-         **/
+        /** The maximum value of the sampling period. */
         @com.fasterxml.jackson.annotation.JsonProperty("maxValue")
         private Double maxValue;
 
         /**
          * The maximum value of the sampling period.
+         *
          * @param maxValue the value to set
          * @return this builder
-         **/
+         */
         public Builder maxValue(Double maxValue) {
             this.maxValue = maxValue;
             this.__explicitlySet__.add("maxValue");
@@ -154,9 +149,7 @@ public final class AwrDatabaseMetricSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -165,72 +158,67 @@ public final class AwrDatabaseMetricSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the metric.
-     **/
+    /** The name of the metric. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the metric.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The time of the sampling.
-     **/
+    /** The time of the sampling. */
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
      * The time of the sampling.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimestamp() {
         return timestamp;
     }
 
-    /**
-     * The average value of the sampling period.
-     **/
+    /** The average value of the sampling period. */
     @com.fasterxml.jackson.annotation.JsonProperty("avgValue")
     private final Double avgValue;
 
     /**
      * The average value of the sampling period.
+     *
      * @return the value
-     **/
+     */
     public Double getAvgValue() {
         return avgValue;
     }
 
-    /**
-     * The minimum value of the sampling period.
-     **/
+    /** The minimum value of the sampling period. */
     @com.fasterxml.jackson.annotation.JsonProperty("minValue")
     private final Double minValue;
 
     /**
      * The minimum value of the sampling period.
+     *
      * @return the value
-     **/
+     */
     public Double getMinValue() {
         return minValue;
     }
 
-    /**
-     * The maximum value of the sampling period.
-     **/
+    /** The maximum value of the sampling period. */
     @com.fasterxml.jackson.annotation.JsonProperty("maxValue")
     private final Double maxValue;
 
     /**
      * The maximum value of the sampling period.
+     *
      * @return the value
-     **/
+     */
     public Double getMaxValue() {
         return maxValue;
     }
@@ -242,6 +230,7 @@ public final class AwrDatabaseMetricSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

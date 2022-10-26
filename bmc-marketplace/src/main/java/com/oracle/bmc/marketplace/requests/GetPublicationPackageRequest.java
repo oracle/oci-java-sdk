@@ -6,45 +6,38 @@ package com.oracle.bmc.marketplace.requests;
 
 import com.oracle.bmc.marketplace.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetPublicationPackageExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetPublicationPackageRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetPublicationPackageExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * GetPublicationPackageRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public class GetPublicationPackageRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The unique identifier for the publication.
-     */
+    /** The unique identifier for the publication. */
     private String publicationId;
 
-    /**
-     * The unique identifier for the publication.
-     */
+    /** The unique identifier for the publication. */
     public String getPublicationId() {
         return publicationId;
     }
-    /**
-     * The version of the package. Package versions are unique within a listing.
-     */
+    /** The version of the package. Package versions are unique within a listing. */
     private String packageVersion;
 
-    /**
-     * The version of the package. Package versions are unique within a listing.
-     */
+    /** The version of the package. Package versions are unique within a listing. */
     public String getPackageVersion() {
         return packageVersion;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -53,17 +46,15 @@ public class GetPublicationPackageRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetPublicationPackageRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The unique identifier for the publication.
-         */
+        /** The unique identifier for the publication. */
         private String publicationId = null;
 
         /**
          * The unique identifier for the publication.
+         *
          * @param publicationId the value to set
          * @return this builder instance
          */
@@ -72,13 +63,12 @@ public class GetPublicationPackageRequest
             return this;
         }
 
-        /**
-         * The version of the package. Package versions are unique within a listing.
-         */
+        /** The version of the package. Package versions are unique within a listing. */
         private String packageVersion = null;
 
         /**
          * The version of the package. Package versions are unique within a listing.
+         *
          * @param packageVersion the value to set
          * @return this builder instance
          */
@@ -88,15 +78,14 @@ public class GetPublicationPackageRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
-         * please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
-         * please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -108,18 +97,19 @@ public class GetPublicationPackageRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -131,6 +121,7 @@ public class GetPublicationPackageRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetPublicationPackageRequest o) {
@@ -145,10 +136,11 @@ public class GetPublicationPackageRequest
         /**
          * Build the instance of GetPublicationPackageRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetPublicationPackageRequest
          */
@@ -162,7 +154,8 @@ public class GetPublicationPackageRequest
         /**
          * Build the instance of GetPublicationPackageRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetPublicationPackageRequest
@@ -179,6 +172,7 @@ public class GetPublicationPackageRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -190,6 +184,7 @@ public class GetPublicationPackageRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

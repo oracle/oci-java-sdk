@@ -5,22 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Summary information for a compatible image and shape.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary information for a compatible image and shape. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ImageShapeCompatibilitySummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ImageShapeCompatibilitySummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ImageShapeCompatibilitySummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"imageId", "shape", "memoryConstraints", "ocpuConstraints"})
     public ImageShapeCompatibilitySummary(
@@ -38,32 +38,34 @@ public final class ImageShapeCompatibilitySummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         **/
+         * The image
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
         /**
-         * The image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The image
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
          * @param imageId the value to set
          * @return this builder
-         **/
+         */
         public Builder imageId(String imageId) {
             this.imageId = imageId;
             this.__explicitlySet__.add("imageId");
             return this;
         }
-        /**
-         * The shape name.
-         **/
+        /** The shape name. */
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
          * The shape name.
+         *
          * @param shape the value to set
          * @return this builder
-         **/
+         */
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
@@ -119,9 +121,7 @@ public final class ImageShapeCompatibilitySummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -131,29 +131,31 @@ public final class ImageShapeCompatibilitySummary
     }
 
     /**
-     * The image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     **/
+     * The image
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     private final String imageId;
 
     /**
-     * The image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The image
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
-     **/
+     */
     public String getImageId() {
         return imageId;
     }
 
-    /**
-     * The shape name.
-     **/
+    /** The shape name. */
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
      * The shape name.
+     *
      * @return the value
-     **/
+     */
     public String getShape() {
         return shape;
     }
@@ -179,6 +181,7 @@ public final class ImageShapeCompatibilitySummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -55,30 +55,25 @@ import java.util.Map;
  * This class demonstrates how to use the Email Service in the Java SDK. This will cover:
  *
  * <ul>
- *   <li>Creating, retrieving, updating, moving, listing, and deleting approved senders</li>
- *   <li>Creating, retrieving, listing, and deleting email suppressions</li>
- *   <li>
- *       Creating, updating, listing, and deleting SMTP credentials
- *       See <a href="https://docs.cloud.oracle.com/iaas/Content/Email/Tasks/configuresmtpconnection.htm">here</a> for more
- *       information on sending emails with your IAM user
- *   </li>
+ *   <li>Creating, retrieving, updating, moving, listing, and deleting approved senders
+ *   <li>Creating, retrieving, listing, and deleting email suppressions
+ *   <li>Creating, updating, listing, and deleting SMTP credentials See <a
+ *       href="https://docs.cloud.oracle.com/iaas/Content/Email/Tasks/configuresmtpconnection.htm">here</a>
+ *       for more information on sending emails with your IAM user
  * </ul>
  *
  * This class makes the following assumptions:
+ *
  * <ul>
- *   <li>
- *      The configuration file used by service clients will be sourced from the default
- *      location (~/.oci/config) and the DEFAULT profile will be used
- *   </li>
- *   <li>Resources will be created in us-phoenix-1</li>
- *   <li>An approved sender with the given email address does not already exist</li>
- *   <li>An SMTP credential will be created for user defined in the configuration file</li>
- *   <li>
- *      You have the appropriate permissions to create, move email senders in the compartment you've specified
- *      and can also create email suppressions at the tenancy level
- *   </li>
- *   <li>Your user does not already have the maximum number of smtp credentials [2]</li>
- * <ul>
+ *   <li>The configuration file used by service clients will be sourced from the default location
+ *       (~/.oci/config) and the DEFAULT profile will be used
+ *   <li>Resources will be created in us-phoenix-1
+ *   <li>An approved sender with the given email address does not already exist
+ *   <li>An SMTP credential will be created for user defined in the configuration file
+ *   <li>You have the appropriate permissions to create, move email senders in the compartment
+ *       you've specified and can also create email suppressions at the tenancy level
+ *   <li>Your user does not already have the maximum number of smtp credentials [2]
+ *       <ul>
  */
 public class EmailServiceExample {
     private static final String CONFIG_LOCATION = "~/.oci/config";
@@ -88,18 +83,14 @@ public class EmailServiceExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     * <ul>
-     *   <li>
-     *       The OCID of the compartment where email senders will be created.
-     *       <p>
-     *         <b>Note:</b> Suppressions are always created at the tenancy level. Your tenancy OCID will be read
-     *         from your configuration file
-     *       </p>
-     *   </li>
-     *   <li>The OCID of the target compartment where email senders will be moved to</li>
-     *   <li>The email address to add as a sender</li>
-     *   <li>The email address to add as a suppression</li>
-     * </ul>
+     *     <ul>
+     *       <li>The OCID of the compartment where email senders will be created.
+     *           <p><b>Note:</b> Suppressions are always created at the tenancy level. Your tenancy
+     *           OCID will be read from your configuration file
+     *       <li>The OCID of the target compartment where email senders will be moved to
+     *       <li>The email address to add as a sender
+     *       <li>The email address to add as a suppression
+     *     </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 4) {
@@ -112,8 +103,10 @@ public class EmailServiceExample {
         final String senderEmailAddress = args[2];
         final String suppressionEmailAddress = args[3];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -174,7 +167,6 @@ public class EmailServiceExample {
      * @param emailClient the client used to communicate with the Email Service
      * @param compartmentId the OCID of the compartment where the sender will be created
      * @param senderEmailAddress the email address of the approved sender
-     *
      * @return the created Sender
      */
     private static Sender createEmailSender(
@@ -345,13 +337,12 @@ public class EmailServiceExample {
     }
 
     /**
-     * Create suppression record.
-     * For informational purposes only, as suppression records are not normally created directly.
+     * Create suppression record. For informational purposes only, as suppression records are not
+     * normally created directly.
      *
      * @param emailClient the client used to communicate with the Email Service
      * @param compartmentId the OCID of the <b>TENANCY</b> where the suppression will be created
      * @param suppressionEmailAddress the suppression to add
-     *
      * @return the created Suppression
      */
     private static Suppression createSuppression(
@@ -469,12 +460,11 @@ public class EmailServiceExample {
     }
 
     /**
-     * Create an SMTP credential.
-     * Be sure to retrieve the password from the response as it is the only time it is available.
+     * Create an SMTP credential. Be sure to retrieve the password from the response as it is the
+     * only time it is available.
      *
      * @param identityClient the client used to communicate with the Identity Service
      * @param userId the OCID of the user to create the SMTP credential for
-     *
      * @return SmtpCredential the created credential
      */
     private static SmtpCredential createSmtpCredential(
@@ -502,13 +492,12 @@ public class EmailServiceExample {
     }
 
     /**
-     * Update an SMTP credential.
-     * We can update the description for the credential, but not anything else
+     * Update an SMTP credential. We can update the description for the credential, but not anything
+     * else
      *
      * @param identityClient the client used to communicate with the Identity Service
      * @param userId the OCID of the user to create the SMTP credential for
      * @param smtpCredential the credential to update
-     *
      * @return SmtpCredentialSummary a summary of the updated credential
      */
     private static SmtpCredentialSummary updateSmtpCredential(
@@ -536,8 +525,7 @@ public class EmailServiceExample {
     }
 
     /**
-     * List SMTP credentials for a user.
-     * A user can only have two active SMTP credentials
+     * List SMTP credentials for a user. A user can only have two active SMTP credentials
      *
      * @param identityClient the client used to communicate with the Identity Service
      * @param userId the OCID of the user to retrieve credentials for

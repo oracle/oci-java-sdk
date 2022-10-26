@@ -5,22 +5,22 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * Properties used in the create data asset operations.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Properties used in the create data asset operations. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateDataAssetDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateDataAssetDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateDataAssetDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -81,193 +81,195 @@ public final class CreateDataAssetDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Generated key that can be used in API calls to identify the data asset.
-         **/
+        /** Generated key that can be used in API calls to identify the data asset. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Generated key that can be used in API calls to identify the data asset.
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /**
-         * The model version of an object.
-         **/
+        /** The model version of an object. */
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
          * The model version of an object.
+         *
          * @param modelVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
             return this;
         }
-        /**
-         * The type of the object.
-         **/
+        /** The type of the object. */
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
         /**
          * The type of the object.
+         *
          * @param modelType the value to set
          * @return this builder
-         **/
+         */
         public Builder modelType(String modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
             return this;
         }
         /**
-         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         **/
+         * Free form text without any restriction on the permitted characters. Name can have
+         * letters, numbers, and special characters. The value is editable and is restricted to 1000
+         * characters.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have
+         * letters, numbers, and special characters. The value is editable and is restricted to 1000
+         * characters.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * User-defined description of the data asset.
-         **/
+        /** User-defined description of the data asset. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * User-defined description of the data asset.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-         **/
+         * The status of an object that can be set to value 1 for shallow references across objects,
+         * other values reserved.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         * The status of an object that can be set to value 1 for shallow references across objects,
+         * other values reserved.
+         *
          * @param objectStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
             return this;
         }
-        /**
-         * The version of the object that is used to track changes in the object instance.
-         **/
+        /** The version of the object that is used to track changes in the object instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
         private Integer objectVersion;
 
         /**
          * The version of the object that is used to track changes in the object instance.
+         *
          * @param objectVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = objectVersion;
             this.__explicitlySet__.add("objectVersion");
             return this;
         }
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
-         **/
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with
+         * an upper case letter or underscore. The value can be modified.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with
+         * an upper case letter or underscore. The value can be modified.
+         *
          * @param identifier the value to set
          * @return this builder
-         **/
+         */
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-        /**
-         * The external key of the object.
-         **/
+        /** The external key of the object. */
         @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
         private String externalKey;
 
         /**
          * The external key of the object.
+         *
          * @param externalKey the value to set
          * @return this builder
-         **/
+         */
         public Builder externalKey(String externalKey) {
             this.externalKey = externalKey;
             this.__explicitlySet__.add("externalKey");
             return this;
         }
-        /**
-         * Additional properties for the data asset.
-         **/
+        /** Additional properties for the data asset. */
         @com.fasterxml.jackson.annotation.JsonProperty("assetProperties")
         private java.util.Map<String, String> assetProperties;
 
         /**
          * Additional properties for the data asset.
+         *
          * @param assetProperties the value to set
          * @return this builder
-         **/
+         */
         public Builder assetProperties(java.util.Map<String, String> assetProperties) {
             this.assetProperties = assetProperties;
             this.__explicitlySet__.add("assetProperties");
             return this;
         }
-        /**
-         * All the properties for the data asset in a key-value map format.
-         **/
+        /** All the properties for the data asset in a key-value map format. */
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, Object> properties;
 
         /**
          * All the properties for the data asset in a key-value map format.
+         *
          * @param properties the value to set
          * @return this builder
-         **/
+         */
         public Builder properties(java.util.Map<String, Object> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
             return this;
         }
-        /**
-         * Specific DataAsset Type
-         **/
+        /** Specific DataAsset Type */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * Specific DataAsset Type
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -309,17 +311,16 @@ public final class CreateDataAssetDetails
             this.__explicitlySet__.add("defaultConnection");
             return this;
         }
-        /**
-         * The list of endpoints with which this data asset is associated.
-         **/
+        /** The list of endpoints with which this data asset is associated. */
         @com.fasterxml.jackson.annotation.JsonProperty("endPoints")
         private java.util.List<DpEndpoint> endPoints;
 
         /**
          * The list of endpoints with which this data asset is associated.
+         *
          * @param endPoints the value to set
          * @return this builder
-         **/
+         */
         public Builder endPoints(java.util.List<DpEndpoint> endPoints) {
             this.endPoints = endPoints;
             this.__explicitlySet__.add("endPoints");
@@ -412,9 +413,7 @@ public final class CreateDataAssetDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -423,170 +422,170 @@ public final class CreateDataAssetDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * Generated key that can be used in API calls to identify the data asset.
-     **/
+    /** Generated key that can be used in API calls to identify the data asset. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Generated key that can be used in API calls to identify the data asset.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * The model version of an object.
-     **/
+    /** The model version of an object. */
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The model version of an object.
+     *
      * @return the value
-     **/
+     */
     public String getModelVersion() {
         return modelVersion;
     }
 
-    /**
-     * The type of the object.
-     **/
+    /** The type of the object. */
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
     /**
      * The type of the object.
+     *
      * @return the value
-     **/
+     */
     public String getModelType() {
         return modelType;
     }
 
     /**
-     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     **/
+     * Free form text without any restriction on the permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * User-defined description of the data asset.
-     **/
+    /** User-defined description of the data asset. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * User-defined description of the data asset.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-     **/
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectStatus() {
         return objectStatus;
     }
 
-    /**
-     * The version of the object that is used to track changes in the object instance.
-     **/
+    /** The version of the object that is used to track changes in the object instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
     /**
      * The version of the object that is used to track changes in the object instance.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectVersion() {
         return objectVersion;
     }
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
-     **/
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an
+     * upper case letter or underscore. The value can be modified.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an
+     * upper case letter or underscore. The value can be modified.
+     *
      * @return the value
-     **/
+     */
     public String getIdentifier() {
         return identifier;
     }
 
-    /**
-     * The external key of the object.
-     **/
+    /** The external key of the object. */
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
     private final String externalKey;
 
     /**
      * The external key of the object.
+     *
      * @return the value
-     **/
+     */
     public String getExternalKey() {
         return externalKey;
     }
 
-    /**
-     * Additional properties for the data asset.
-     **/
+    /** Additional properties for the data asset. */
     @com.fasterxml.jackson.annotation.JsonProperty("assetProperties")
     private final java.util.Map<String, String> assetProperties;
 
     /**
      * Additional properties for the data asset.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getAssetProperties() {
         return assetProperties;
     }
 
-    /**
-     * All the properties for the data asset in a key-value map format.
-     **/
+    /** All the properties for the data asset in a key-value map format. */
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.Map<String, Object> properties;
 
     /**
      * All the properties for the data asset in a key-value map format.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, Object> getProperties() {
         return properties;
     }
 
-    /**
-     * Specific DataAsset Type
-     **/
+    /** Specific DataAsset Type */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * Specific DataAsset Type
+     *
      * @return the value
-     **/
+     */
     public String getType() {
         return type;
     }
@@ -619,16 +618,15 @@ public final class CreateDataAssetDetails
         return defaultConnection;
     }
 
-    /**
-     * The list of endpoints with which this data asset is associated.
-     **/
+    /** The list of endpoints with which this data asset is associated. */
     @com.fasterxml.jackson.annotation.JsonProperty("endPoints")
     private final java.util.List<DpEndpoint> endPoints;
 
     /**
      * The list of endpoints with which this data asset is associated.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<DpEndpoint> getEndPoints() {
         return endPoints;
     }
@@ -640,6 +638,7 @@ public final class CreateDataAssetDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

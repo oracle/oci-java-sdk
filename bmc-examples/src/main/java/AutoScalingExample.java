@@ -53,29 +53,33 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * This class provides an example of how you can create an AutoScalingConfiguration and use that with a InstancePools.
- * It will show how to setup an AutoscalongConfiguration that will cause the pool to scale out to 2 instances. It will
- * then wait for the pool to become available (with instances launched).  It then shows how to perform an update and
- * clean up. It will:
+ * This class provides an example of how you can create an AutoScalingConfiguration and use that
+ * with a InstancePools. It will show how to setup an AutoscalongConfiguration that will cause the
+ * pool to scale out to 2 instances. It will then wait for the pool to become available (with
+ * instances launched). It then shows how to perform an update and clean up. It will:
+ *
  * <ul>
- * <li>Create the InstanceConfiguration</li>
- * <li>Create a pool based off that configuration, placing that instance on 1 AD.</li>
- * <li>Wait for the pool to come online (which means an instance has been launched).</li>
- * <li>Create an AutoScalingConfiguration for that pool.</li>
- * <li>Wait for the InstancePool to scale up. (There are now two instances).</li>
- * <li>Clean everything up.</li>
+ *   <li>Create the InstanceConfiguration
+ *   <li>Create a pool based off that configuration, placing that instance on 1 AD.
+ *   <li>Wait for the pool to come online (which means an instance has been launched).
+ *   <li>Create an AutoScalingConfiguration for that pool.
+ *   <li>Wait for the InstancePool to scale up. (There are now two instances).
+ *   <li>Clean everything up.
  * </ul>
  */
 public class AutoScalingExample {
 
     /**
      * @param args Parameters to use for the autoscalingConfiguration as follows:
-     * <ul>
-     *   <li>The first argument is the ocid of the compartment for the config/pool/autoscalingConfiguration.</li>
-     *   <li>The second is the availability domain to launch the instance/pool.</li>
-     *   <li>Third parameter is the subnet for the launched instances.</li>
-     *   <li>The fourth parameter is the ocid for the image source for the instances in the pool.</li>
-     * </ul>
+     *     <ul>
+     *       <li>The first argument is the ocid of the compartment for the
+     *           config/pool/autoscalingConfiguration.
+     *       <li>The second is the availability domain to launch the instance/pool.
+     *       <li>Third parameter is the subnet for the launched instances.
+     *       <li>The fourth parameter is the ocid for the image source for the instances in the
+     *           pool.
+     *     </ul>
+     *
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
@@ -93,8 +97,10 @@ public class AutoScalingExample {
         final String subnetId = args[2];
         final String imageId = args[3];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -124,7 +130,8 @@ public class AutoScalingExample {
                 createAndStartInstancePool(
                         client, instanceConfiguration, subnetId, availabilityDomain, compartmentId);
 
-        // Wait for the pool to scale out and enter a running state.  (This will leave one instance running)
+        // Wait for the pool to scale out and enter a running state.  (This will leave one instance
+        // running)
         ComputeManagementWaiters waiter = client.getWaiters();
         GetInstancePoolRequest getInstancePoolRequest =
                 GetInstancePoolRequest.builder().instancePoolId(instancePool.getId()).build();
@@ -133,7 +140,8 @@ public class AutoScalingExample {
         waiter.forInstancePool(getInstancePoolRequest, InstancePool.LifecycleState.Running)
                 .execute();
 
-        // create the autoscaling configuration for a pool. Since we have set the initial size to be different than the
+        // create the autoscaling configuration for a pool. Since we have set the initial size to be
+        // different than the
         // current pool size, the pool will immediately go into scaling
         AutoScalingConfiguration autoScalingConfiguration =
                 createAutoscalingConfiguration(

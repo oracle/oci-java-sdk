@@ -6,7 +6,9 @@ package com.oracle.bmc.licensemanager.requests;
 
 import com.oracle.bmc.licensemanager.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/UpdateConfigurationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateConfigurationRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/UpdateConfigurationExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateConfigurationRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 public class UpdateConfigurationRequest
@@ -14,44 +16,42 @@ public class UpdateConfigurationRequest
                 com.oracle.bmc.licensemanager.model.UpdateConfigurationDetails> {
 
     /**
-     * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
-     *
+     * The compartment
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for
+     * the license record, product license, and configuration.
      */
     private String compartmentId;
 
     /**
-     * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
-     *
+     * The compartment
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for
+     * the license record, product license, and configuration.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * Configuration details that need to be updated.
-     */
+    /** Configuration details that need to be updated. */
     private com.oracle.bmc.licensemanager.model.UpdateConfigurationDetails
             updateConfigurationDetails;
 
-    /**
-     * Configuration details that need to be updated.
-     */
+    /** Configuration details that need to be updated. */
     public com.oracle.bmc.licensemanager.model.UpdateConfigurationDetails
             getUpdateConfigurationDetails() {
         return updateConfigurationDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
@@ -59,14 +59,12 @@ public class UpdateConfigurationRequest
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -74,6 +72,7 @@ public class UpdateConfigurationRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -86,18 +85,20 @@ public class UpdateConfigurationRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateConfigurationRequest,
                     com.oracle.bmc.licensemanager.model.UpdateConfigurationDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
-         *
+         * The compartment
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used
+         * for the license record, product license, and configuration.
          */
         private String compartmentId = null;
 
         /**
-         * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
+         * The compartment
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used
+         * for the license record, product license, and configuration.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -107,14 +108,13 @@ public class UpdateConfigurationRequest
             return this;
         }
 
-        /**
-         * Configuration details that need to be updated.
-         */
+        /** Configuration details that need to be updated. */
         private com.oracle.bmc.licensemanager.model.UpdateConfigurationDetails
                 updateConfigurationDetails = null;
 
         /**
          * Configuration details that need to be updated.
+         *
          * @param updateConfigurationDetails the value to set
          * @return this builder instance
          */
@@ -126,17 +126,18 @@ public class UpdateConfigurationRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -147,15 +148,14 @@ public class UpdateConfigurationRequest
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
+         * about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
+         * about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -167,18 +167,19 @@ public class UpdateConfigurationRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -190,6 +191,7 @@ public class UpdateConfigurationRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateConfigurationRequest o) {
@@ -205,10 +207,11 @@ public class UpdateConfigurationRequest
         /**
          * Build the instance of UpdateConfigurationRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateConfigurationRequest
          */
@@ -221,6 +224,7 @@ public class UpdateConfigurationRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -233,7 +237,8 @@ public class UpdateConfigurationRequest
         /**
          * Build the instance of UpdateConfigurationRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateConfigurationRequest
@@ -245,12 +250,14 @@ public class UpdateConfigurationRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateConfigurationRequest(compartmentId, updateConfigurationDetails, ifMatch, opcRequestId);
+            // new UpdateConfigurationRequest(compartmentId, updateConfigurationDetails, ifMatch,
+            // opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -263,6 +270,7 @@ public class UpdateConfigurationRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

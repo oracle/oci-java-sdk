@@ -8,10 +8,7 @@ import com.oracle.bmc.cloudbridge.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public class SubmitHistoricalMetricsResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,15 +21,14 @@ public class SubmitHistoricalMetricsResponse extends com.oracle.bmc.responses.Bm
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,13 +36,12 @@ public class SubmitHistoricalMetricsResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /**
-     * The returned HistoricalMetricCollection instance.
-     */
+    /** The returned HistoricalMetricCollection instance. */
     private com.oracle.bmc.cloudbridge.model.HistoricalMetricCollection historicalMetricCollection;
 
     /**
      * The returned HistoricalMetricCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.cloudbridge.model.HistoricalMetricCollection
@@ -63,7 +58,7 @@ public class SubmitHistoricalMetricsResponse extends com.oracle.bmc.responses.Bm
     })
     private SubmitHistoricalMetricsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.cloudbridge.model.HistoricalMetricCollection
@@ -74,25 +69,26 @@ public class SubmitHistoricalMetricsResponse extends com.oracle.bmc.responses.Bm
         this.historicalMetricCollection = historicalMetricCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    SubmitHistoricalMetricsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -107,15 +103,14 @@ public class SubmitHistoricalMetricsResponse extends com.oracle.bmc.responses.Bm
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -125,14 +120,13 @@ public class SubmitHistoricalMetricsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /**
-         * The returned HistoricalMetricCollection instance.
-         */
+        /** The returned HistoricalMetricCollection instance. */
         private com.oracle.bmc.cloudbridge.model.HistoricalMetricCollection
                 historicalMetricCollection;
 
         /**
          * The returned HistoricalMetricCollection instance.
+         *
          * @param historicalMetricCollection the value to set
          * @return this builder
          */
@@ -145,8 +139,10 @@ public class SubmitHistoricalMetricsResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(SubmitHistoricalMetricsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -159,8 +155,10 @@ public class SubmitHistoricalMetricsResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public SubmitHistoricalMetricsResponse build() {
             return new SubmitHistoricalMetricsResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, historicalMetricCollection);
@@ -169,6 +167,7 @@ public class SubmitHistoricalMetricsResponse extends com.oracle.bmc.responses.Bm
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

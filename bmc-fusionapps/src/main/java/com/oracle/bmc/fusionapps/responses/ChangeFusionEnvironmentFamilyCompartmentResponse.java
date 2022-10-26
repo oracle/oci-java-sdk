@@ -10,15 +10,14 @@ import com.oracle.bmc.fusionapps.model.*;
 public class ChangeFusionEnvironmentFamilyCompartmentResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -27,12 +26,15 @@ public class ChangeFusionEnvironmentFamilyCompartmentResponse
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * work request.
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * work request.
+     *
      * @return the value
      */
     public String getOpcWorkRequestId() {
@@ -47,7 +49,7 @@ public class ChangeFusionEnvironmentFamilyCompartmentResponse
     })
     private ChangeFusionEnvironmentFamilyCompartmentResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcWorkRequestId) {
         super(__httpStatusCode__, headers);
@@ -55,31 +57,34 @@ public class ChangeFusionEnvironmentFamilyCompartmentResponse
         this.opcWorkRequestId = opcWorkRequestId;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    ChangeFusionEnvironmentFamilyCompartmentResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -90,12 +95,15 @@ public class ChangeFusionEnvironmentFamilyCompartmentResponse
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * work request.
          */
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * work request.
+         *
          * @param opcWorkRequestId the value to set
          * @return this builder
          */
@@ -106,8 +114,10 @@ public class ChangeFusionEnvironmentFamilyCompartmentResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ChangeFusionEnvironmentFamilyCompartmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -119,8 +129,10 @@ public class ChangeFusionEnvironmentFamilyCompartmentResponse
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ChangeFusionEnvironmentFamilyCompartmentResponse build() {
             return new ChangeFusionEnvironmentFamilyCompartmentResponse(
                     __httpStatusCode__, headers, opcRequestId, opcWorkRequestId);
@@ -129,6 +141,7 @@ public class ChangeFusionEnvironmentFamilyCompartmentResponse
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

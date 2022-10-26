@@ -5,22 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Sighting Endpoints summary.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Sighting Endpoints summary. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SightingEndpointSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SightingEndpointSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SightingEndpointSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -69,209 +69,196 @@ public final class SightingEndpointSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Unique identifier for sighting endpoints
-         **/
+        /** Unique identifier for sighting endpoints */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique identifier for sighting endpoints
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * Sighitng Id for sighting endpoints
-         **/
+        /** Sighitng Id for sighting endpoints */
         @com.fasterxml.jackson.annotation.JsonProperty("sightingId")
         private String sightingId;
 
         /**
          * Sighitng Id for sighting endpoints
+         *
          * @param sightingId the value to set
          * @return this builder
-         **/
+         */
         public Builder sightingId(String sightingId) {
             this.sightingId = sightingId;
             this.__explicitlySet__.add("sightingId");
             return this;
         }
-        /**
-         * Problem Id for sighting endpoints
-         **/
+        /** Problem Id for sighting endpoints */
         @com.fasterxml.jackson.annotation.JsonProperty("problemId")
         private String problemId;
 
         /**
          * Problem Id for sighting endpoints
+         *
          * @param problemId the value to set
          * @return this builder
-         **/
+         */
         public Builder problemId(String problemId) {
             this.problemId = problemId;
             this.__explicitlySet__.add("problemId");
             return this;
         }
-        /**
-         * IP Address
-         **/
+        /** IP Address */
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
          * IP Address
+         *
          * @param ipAddress the value to set
          * @return this builder
-         **/
+         */
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-        /**
-         * IP Address type
-         **/
+        /** IP Address type */
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddressType")
         private String ipAddressType;
 
         /**
          * IP Address type
+         *
          * @param ipAddressType the value to set
          * @return this builder
-         **/
+         */
         public Builder ipAddressType(String ipAddressType) {
             this.ipAddressType = ipAddressType;
             this.__explicitlySet__.add("ipAddressType");
             return this;
         }
-        /**
-         * IP Address classification type
-         **/
+        /** IP Address classification type */
         @com.fasterxml.jackson.annotation.JsonProperty("ipClassificationType")
         private String ipClassificationType;
 
         /**
          * IP Address classification type
+         *
          * @param ipClassificationType the value to set
          * @return this builder
-         **/
+         */
         public Builder ipClassificationType(String ipClassificationType) {
             this.ipClassificationType = ipClassificationType;
             this.__explicitlySet__.add("ipClassificationType");
             return this;
         }
-        /**
-         * Country
-         **/
+        /** Country */
         @com.fasterxml.jackson.annotation.JsonProperty("country")
         private String country;
 
         /**
          * Country
+         *
          * @param country the value to set
          * @return this builder
-         **/
+         */
         public Builder country(String country) {
             this.country = country;
             this.__explicitlySet__.add("country");
             return this;
         }
-        /**
-         * Latitude
-         **/
+        /** Latitude */
         @com.fasterxml.jackson.annotation.JsonProperty("latitude")
         private Double latitude;
 
         /**
          * Latitude
+         *
          * @param latitude the value to set
          * @return this builder
-         **/
+         */
         public Builder latitude(Double latitude) {
             this.latitude = latitude;
             this.__explicitlySet__.add("latitude");
             return this;
         }
-        /**
-         * Longitude
-         **/
+        /** Longitude */
         @com.fasterxml.jackson.annotation.JsonProperty("longitude")
         private Double longitude;
 
         /**
          * Longitude
+         *
          * @param longitude the value to set
          * @return this builder
-         **/
+         */
         public Builder longitude(Double longitude) {
             this.longitude = longitude;
             this.__explicitlySet__.add("longitude");
             return this;
         }
-        /**
-         * ASN number
-         **/
+        /** ASN number */
         @com.fasterxml.jackson.annotation.JsonProperty("asnNumber")
         private String asnNumber;
 
         /**
          * ASN number
+         *
          * @param asnNumber the value to set
          * @return this builder
-         **/
+         */
         public Builder asnNumber(String asnNumber) {
             this.asnNumber = asnNumber;
             this.__explicitlySet__.add("asnNumber");
             return this;
         }
-        /**
-         * Regions where activities were performed from this IP
-         **/
+        /** Regions where activities were performed from this IP */
         @com.fasterxml.jackson.annotation.JsonProperty("regions")
         private java.util.List<String> regions;
 
         /**
          * Regions where activities were performed from this IP
+         *
          * @param regions the value to set
          * @return this builder
-         **/
+         */
         public Builder regions(java.util.List<String> regions) {
             this.regions = regions;
             this.__explicitlySet__.add("regions");
             return this;
         }
-        /**
-         * Services where activities were performed from this IP
-         **/
+        /** Services where activities were performed from this IP */
         @com.fasterxml.jackson.annotation.JsonProperty("services")
         private java.util.List<String> services;
 
         /**
          * Services where activities were performed from this IP
+         *
          * @param services the value to set
          * @return this builder
-         **/
+         */
         public Builder services(java.util.List<String> services) {
             this.services = services;
             this.__explicitlySet__.add("services");
             return this;
         }
-        /**
-         * Time when activities were created
-         **/
+        /** Time when activities were created */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
         private java.util.Date timeLastDetected;
 
         /**
          * Time when activities were created
+         *
          * @param timeLastDetected the value to set
          * @return this builder
-         **/
+         */
         public Builder timeLastDetected(java.util.Date timeLastDetected) {
             this.timeLastDetected = timeLastDetected;
             this.__explicitlySet__.add("timeLastDetected");
@@ -348,9 +335,7 @@ public final class SightingEndpointSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -359,184 +344,171 @@ public final class SightingEndpointSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique identifier for sighting endpoints
-     **/
+    /** Unique identifier for sighting endpoints */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier for sighting endpoints
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * Sighitng Id for sighting endpoints
-     **/
+    /** Sighitng Id for sighting endpoints */
     @com.fasterxml.jackson.annotation.JsonProperty("sightingId")
     private final String sightingId;
 
     /**
      * Sighitng Id for sighting endpoints
+     *
      * @return the value
-     **/
+     */
     public String getSightingId() {
         return sightingId;
     }
 
-    /**
-     * Problem Id for sighting endpoints
-     **/
+    /** Problem Id for sighting endpoints */
     @com.fasterxml.jackson.annotation.JsonProperty("problemId")
     private final String problemId;
 
     /**
      * Problem Id for sighting endpoints
+     *
      * @return the value
-     **/
+     */
     public String getProblemId() {
         return problemId;
     }
 
-    /**
-     * IP Address
-     **/
+    /** IP Address */
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
      * IP Address
+     *
      * @return the value
-     **/
+     */
     public String getIpAddress() {
         return ipAddress;
     }
 
-    /**
-     * IP Address type
-     **/
+    /** IP Address type */
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddressType")
     private final String ipAddressType;
 
     /**
      * IP Address type
+     *
      * @return the value
-     **/
+     */
     public String getIpAddressType() {
         return ipAddressType;
     }
 
-    /**
-     * IP Address classification type
-     **/
+    /** IP Address classification type */
     @com.fasterxml.jackson.annotation.JsonProperty("ipClassificationType")
     private final String ipClassificationType;
 
     /**
      * IP Address classification type
+     *
      * @return the value
-     **/
+     */
     public String getIpClassificationType() {
         return ipClassificationType;
     }
 
-    /**
-     * Country
-     **/
+    /** Country */
     @com.fasterxml.jackson.annotation.JsonProperty("country")
     private final String country;
 
     /**
      * Country
+     *
      * @return the value
-     **/
+     */
     public String getCountry() {
         return country;
     }
 
-    /**
-     * Latitude
-     **/
+    /** Latitude */
     @com.fasterxml.jackson.annotation.JsonProperty("latitude")
     private final Double latitude;
 
     /**
      * Latitude
+     *
      * @return the value
-     **/
+     */
     public Double getLatitude() {
         return latitude;
     }
 
-    /**
-     * Longitude
-     **/
+    /** Longitude */
     @com.fasterxml.jackson.annotation.JsonProperty("longitude")
     private final Double longitude;
 
     /**
      * Longitude
+     *
      * @return the value
-     **/
+     */
     public Double getLongitude() {
         return longitude;
     }
 
-    /**
-     * ASN number
-     **/
+    /** ASN number */
     @com.fasterxml.jackson.annotation.JsonProperty("asnNumber")
     private final String asnNumber;
 
     /**
      * ASN number
+     *
      * @return the value
-     **/
+     */
     public String getAsnNumber() {
         return asnNumber;
     }
 
-    /**
-     * Regions where activities were performed from this IP
-     **/
+    /** Regions where activities were performed from this IP */
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     private final java.util.List<String> regions;
 
     /**
      * Regions where activities were performed from this IP
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getRegions() {
         return regions;
     }
 
-    /**
-     * Services where activities were performed from this IP
-     **/
+    /** Services where activities were performed from this IP */
     @com.fasterxml.jackson.annotation.JsonProperty("services")
     private final java.util.List<String> services;
 
     /**
      * Services where activities were performed from this IP
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getServices() {
         return services;
     }
 
-    /**
-     * Time when activities were created
-     **/
+    /** Time when activities were created */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
     private final java.util.Date timeLastDetected;
 
     /**
      * Time when activities were created
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeLastDetected() {
         return timeLastDetected;
     }
@@ -548,6 +520,7 @@ public final class SightingEndpointSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

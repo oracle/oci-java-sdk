@@ -5,22 +5,22 @@
 package com.oracle.bmc.operatoraccesscontrol.model;
 
 /**
- * Summary of why the already approved access request was revoked.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary of why the already approved access request was revoked. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = RevokeAccessRequestDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = RevokeAccessRequestDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class RevokeAccessRequestDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"approverComment"})
     public RevokeAccessRequestDetails(String approverComment) {
@@ -30,17 +30,16 @@ public final class RevokeAccessRequestDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Comment specified by the approver explaining why the approval is revoked.
-         **/
+        /** Comment specified by the approver explaining why the approval is revoked. */
         @com.fasterxml.jackson.annotation.JsonProperty("approverComment")
         private String approverComment;
 
         /**
          * Comment specified by the approver explaining why the approval is revoked.
+         *
          * @param approverComment the value to set
          * @return this builder
-         **/
+         */
         public Builder approverComment(String approverComment) {
             this.approverComment = approverComment;
             this.__explicitlySet__.add("approverComment");
@@ -67,9 +66,7 @@ public final class RevokeAccessRequestDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -78,16 +75,15 @@ public final class RevokeAccessRequestDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * Comment specified by the approver explaining why the approval is revoked.
-     **/
+    /** Comment specified by the approver explaining why the approval is revoked. */
     @com.fasterxml.jackson.annotation.JsonProperty("approverComment")
     private final String approverComment;
 
     /**
      * Comment specified by the approver explaining why the approval is revoked.
+     *
      * @return the value
-     **/
+     */
     public String getApproverComment() {
         return approverComment;
     }
@@ -99,6 +95,7 @@ public final class RevokeAccessRequestDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

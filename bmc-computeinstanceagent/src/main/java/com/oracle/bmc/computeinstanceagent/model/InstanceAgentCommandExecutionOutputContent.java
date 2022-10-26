@@ -5,39 +5,36 @@
 package com.oracle.bmc.computeinstanceagent.model;
 
 /**
- * The execution output from a command.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The execution output from a command. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "outputType",
-    defaultImpl = InstanceAgentCommandExecutionOutputContent.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "outputType",
+        defaultImpl = InstanceAgentCommandExecutionOutputContent.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = InstanceAgentCommandExecutionOutputViaTextDetails.class,
-        name = "TEXT"
-    ),
+            value = InstanceAgentCommandExecutionOutputViaTextDetails.class,
+            name = "TEXT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = InstanceAgentCommandExecutionOutputViaObjectStorageUriDetails.class,
-        name = "OBJECT_STORAGE_URI"
-    ),
+            value = InstanceAgentCommandExecutionOutputViaObjectStorageUriDetails.class,
+            name = "OBJECT_STORAGE_URI"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = InstanceAgentCommandExecutionOutputViaObjectStorageTupleDetails.class,
-        name = "OBJECT_STORAGE_TUPLE"
-    )
+            value = InstanceAgentCommandExecutionOutputViaObjectStorageTupleDetails.class,
+            name = "OBJECT_STORAGE_TUPLE")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public class InstanceAgentCommandExecutionOutputContent
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"exitCode", "message"})
     protected InstanceAgentCommandExecutionOutputContent(Integer exitCode, String message) {
@@ -46,32 +43,32 @@ public class InstanceAgentCommandExecutionOutputContent
         this.message = message;
     }
 
-    /**
-     * The exit code for the command. Exit code {@code 0} indicates success.
-     **/
+    /** The exit code for the command. Exit code {@code 0} indicates success. */
     @com.fasterxml.jackson.annotation.JsonProperty("exitCode")
     private final Integer exitCode;
 
     /**
      * The exit code for the command. Exit code {@code 0} indicates success.
+     *
      * @return the value
-     **/
+     */
     public Integer getExitCode() {
         return exitCode;
     }
 
     /**
-     * An optional status message that Oracle Cloud Agent can populate for additional troubleshooting.
-     *
-     **/
+     * An optional status message that Oracle Cloud Agent can populate for additional
+     * troubleshooting.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
-     * An optional status message that Oracle Cloud Agent can populate for additional troubleshooting.
+     * An optional status message that Oracle Cloud Agent can populate for additional
+     * troubleshooting.
      *
      * @return the value
-     **/
+     */
     public String getMessage() {
         return message;
     }
@@ -83,6 +80,7 @@ public class InstanceAgentCommandExecutionOutputContent
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -124,23 +122,22 @@ public class InstanceAgentCommandExecutionOutputContent
 
     /**
      * The output destination type for the command. The following values are supported:
-     * <p>
-     * - TEXT - the command output is returned as plain text.
-     * - OBJECT_STORAGE_URI - the command output is saved to an Object Storage URL.
-     * - OBJECT_STORAGE_TUPLE - the command output is saved to an Object Storage bucket.
-     * <p>
-     * For background information about Object Storage buckets and URLs, see
-     * [Overview of Object Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm).
      *
-     **/
-    public enum OutputType {
+     * <p>- TEXT - the command output is returned as plain text. - OBJECT_STORAGE_URI - the command
+     * output is saved to an Object Storage URL. - OBJECT_STORAGE_TUPLE - the command output is
+     * saved to an Object Storage bucket.
+     *
+     * <p>For background information about Object Storage buckets and URLs, see [Overview of Object
+     * Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm).
+     */
+    public enum OutputType implements com.oracle.bmc.http.internal.BmcEnum {
         Text("TEXT"),
         ObjectStorageUri("OBJECT_STORAGE_URI"),
         ObjectStorageTuple("OBJECT_STORAGE_TUPLE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 

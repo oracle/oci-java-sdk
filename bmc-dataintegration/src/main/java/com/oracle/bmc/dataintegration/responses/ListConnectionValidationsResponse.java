@@ -9,15 +9,14 @@ import com.oracle.bmc.dataintegration.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class ListConnectionValidationsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -26,13 +25,16 @@ public class ListConnectionValidationsResponse extends com.oracle.bmc.responses.
     }
 
     /**
-     * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * Retrieves the next page of results. When this header appears in the response, additional
+     * pages of results remain. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
     /**
-     * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Retrieves the next page of results. When this header appears in the response, additional
+     * pages of results remain. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -41,13 +43,16 @@ public class ListConnectionValidationsResponse extends com.oracle.bmc.responses.
     }
 
     /**
-     * Retrieves the previous page of results. When this header appears in the response, previous pages of results exist. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * Retrieves the previous page of results. When this header appears in the response, previous
+     * pages of results exist. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcPrevPage;
 
     /**
-     * Retrieves the previous page of results. When this header appears in the response, previous pages of results exist. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Retrieves the previous page of results. When this header appears in the response, previous
+     * pages of results exist. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -55,10 +60,7 @@ public class ListConnectionValidationsResponse extends com.oracle.bmc.responses.
         return opcPrevPage;
     }
 
-    /**
-     * Total items in the entire list.
-     *
-     */
+    /** Total items in the entire list. */
     private Integer opcTotalItems;
 
     /**
@@ -70,14 +72,13 @@ public class ListConnectionValidationsResponse extends com.oracle.bmc.responses.
         return opcTotalItems;
     }
 
-    /**
-     * The returned ConnectionValidationSummaryCollection instance.
-     */
+    /** The returned ConnectionValidationSummaryCollection instance. */
     private com.oracle.bmc.dataintegration.model.ConnectionValidationSummaryCollection
             connectionValidationSummaryCollection;
 
     /**
      * The returned ConnectionValidationSummaryCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.dataintegration.model.ConnectionValidationSummaryCollection
@@ -96,7 +97,7 @@ public class ListConnectionValidationsResponse extends com.oracle.bmc.responses.
     })
     private ListConnectionValidationsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcNextPage,
             String opcPrevPage,
@@ -111,31 +112,34 @@ public class ListConnectionValidationsResponse extends com.oracle.bmc.responses.
         this.connectionValidationSummaryCollection = connectionValidationSummaryCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    ListConnectionValidationsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -146,13 +150,16 @@ public class ListConnectionValidationsResponse extends com.oracle.bmc.responses.
         }
 
         /**
-         * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * Retrieves the next page of results. When this header appears in the response, additional
+         * pages of results remain. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
         /**
-         * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Retrieves the next page of results. When this header appears in the response, additional
+         * pages of results remain. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -163,13 +170,16 @@ public class ListConnectionValidationsResponse extends com.oracle.bmc.responses.
         }
 
         /**
-         * Retrieves the previous page of results. When this header appears in the response, previous pages of results exist. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * Retrieves the previous page of results. When this header appears in the response,
+         * previous pages of results exist. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcPrevPage;
 
         /**
-         * Retrieves the previous page of results. When this header appears in the response, previous pages of results exist. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Retrieves the previous page of results. When this header appears in the response,
+         * previous pages of results exist. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcPrevPage the value to set
          * @return this builder
@@ -179,10 +189,7 @@ public class ListConnectionValidationsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /**
-         * Total items in the entire list.
-         *
-         */
+        /** Total items in the entire list. */
         private Integer opcTotalItems;
 
         /**
@@ -196,14 +203,13 @@ public class ListConnectionValidationsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /**
-         * The returned ConnectionValidationSummaryCollection instance.
-         */
+        /** The returned ConnectionValidationSummaryCollection instance. */
         private com.oracle.bmc.dataintegration.model.ConnectionValidationSummaryCollection
                 connectionValidationSummaryCollection;
 
         /**
          * The returned ConnectionValidationSummaryCollection instance.
+         *
          * @param connectionValidationSummaryCollection the value to set
          * @return this builder
          */
@@ -216,8 +222,10 @@ public class ListConnectionValidationsResponse extends com.oracle.bmc.responses.
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListConnectionValidationsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -232,8 +240,10 @@ public class ListConnectionValidationsResponse extends com.oracle.bmc.responses.
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListConnectionValidationsResponse build() {
             return new ListConnectionValidationsResponse(
                     __httpStatusCode__,
@@ -248,6 +258,7 @@ public class ListConnectionValidationsResponse extends com.oracle.bmc.responses.
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -9,17 +9,14 @@ import com.oracle.bmc.healthchecks.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 public class CreateOnDemandHttpProbeResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to
-     * contact Oracle about a particular request, please provide
-     * the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to
-     * contact Oracle about a particular request, please provide
-     * the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -27,26 +24,24 @@ public class CreateOnDemandHttpProbeResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /**
-     * The URL for fetching probe results.
-     */
+    /** The URL for fetching probe results. */
     private String location;
 
     /**
      * The URL for fetching probe results.
+     *
      * @return the value
      */
     public String getLocation() {
         return location;
     }
 
-    /**
-     * The returned HttpProbe instance.
-     */
+    /** The returned HttpProbe instance. */
     private com.oracle.bmc.healthchecks.model.HttpProbe httpProbe;
 
     /**
      * The returned HttpProbe instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.healthchecks.model.HttpProbe getHttpProbe() {
@@ -62,7 +57,7 @@ public class CreateOnDemandHttpProbeResponse extends com.oracle.bmc.responses.Bm
     })
     private CreateOnDemandHttpProbeResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String location,
             com.oracle.bmc.healthchecks.model.HttpProbe httpProbe) {
@@ -72,33 +67,34 @@ public class CreateOnDemandHttpProbeResponse extends com.oracle.bmc.responses.Bm
         this.httpProbe = httpProbe;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    CreateOnDemandHttpProbeResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to
-         * contact Oracle about a particular request, please provide
-         * the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to
-         * contact Oracle about a particular request, please provide
-         * the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -108,13 +104,12 @@ public class CreateOnDemandHttpProbeResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /**
-         * The URL for fetching probe results.
-         */
+        /** The URL for fetching probe results. */
         private String location;
 
         /**
          * The URL for fetching probe results.
+         *
          * @param location the value to set
          * @return this builder
          */
@@ -123,13 +118,12 @@ public class CreateOnDemandHttpProbeResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /**
-         * The returned HttpProbe instance.
-         */
+        /** The returned HttpProbe instance. */
         private com.oracle.bmc.healthchecks.model.HttpProbe httpProbe;
 
         /**
          * The returned HttpProbe instance.
+         *
          * @param httpProbe the value to set
          * @return this builder
          */
@@ -140,8 +134,10 @@ public class CreateOnDemandHttpProbeResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateOnDemandHttpProbeResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -154,8 +150,10 @@ public class CreateOnDemandHttpProbeResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateOnDemandHttpProbeResponse build() {
             return new CreateOnDemandHttpProbeResponse(
                     __httpStatusCode__, headers, opcRequestId, location, httpProbe);
@@ -164,6 +162,7 @@ public class CreateOnDemandHttpProbeResponse extends com.oracle.bmc.responses.Bm
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -9,15 +9,14 @@ import com.oracle.bmc.oda.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class GetPackageResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,13 +24,12 @@ public class GetPackageResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /**
-     * The returned PackageItem instance.
-     */
+    /** The returned PackageItem instance. */
     private com.oracle.bmc.oda.model.PackageItem packageItem;
 
     /**
      * The returned PackageItem instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.oda.model.PackageItem getPackageItem() {
@@ -46,7 +44,7 @@ public class GetPackageResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private GetPackageResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.oda.model.PackageItem packageItem) {
         super(__httpStatusCode__, headers);
@@ -54,31 +52,33 @@ public class GetPackageResponse extends com.oracle.bmc.responses.BmcResponse {
         this.packageItem = packageItem;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetPackageResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -88,13 +88,12 @@ public class GetPackageResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * The returned PackageItem instance.
-         */
+        /** The returned PackageItem instance. */
         private com.oracle.bmc.oda.model.PackageItem packageItem;
 
         /**
          * The returned PackageItem instance.
+         *
          * @param packageItem the value to set
          * @return this builder
          */
@@ -105,8 +104,10 @@ public class GetPackageResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetPackageResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -118,8 +119,10 @@ public class GetPackageResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetPackageResponse build() {
             return new GetPackageResponse(__httpStatusCode__, headers, opcRequestId, packageItem);
         }
@@ -127,6 +130,7 @@ public class GetPackageResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

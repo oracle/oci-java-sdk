@@ -5,23 +5,22 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * A Terraform version supported for use with stacks.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A Terraform version supported for use with stacks. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = TerraformVersionSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = TerraformVersionSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class TerraformVersionSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "isDefault"})
     public TerraformVersionSummary(String name, Boolean isDefault) {
@@ -32,10 +31,7 @@ public final class TerraformVersionSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * A supported Terraform version. Example: {@code 0.12.x}
-         *
-         **/
+        /** A supported Terraform version. Example: {@code 0.12.x} */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -44,23 +40,26 @@ public final class TerraformVersionSummary
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * Indicates whether this Terraform version is used by default in {@link #createStack(CreateStackRequest) createStack}.
-         **/
+         * Indicates whether this Terraform version is used by default in {@link
+         * #createStack(CreateStackRequest) createStack}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
         /**
-         * Indicates whether this Terraform version is used by default in {@link #createStack(CreateStackRequest) createStack}.
+         * Indicates whether this Terraform version is used by default in {@link
+         * #createStack(CreateStackRequest) createStack}.
+         *
          * @param isDefault the value to set
          * @return this builder
-         **/
+         */
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = isDefault;
             this.__explicitlySet__.add("isDefault");
@@ -90,9 +89,7 @@ public final class TerraformVersionSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -101,10 +98,7 @@ public final class TerraformVersionSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * A supported Terraform version. Example: {@code 0.12.x}
-     *
-     **/
+    /** A supported Terraform version. Example: {@code 0.12.x} */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -112,21 +106,24 @@ public final class TerraformVersionSummary
      * A supported Terraform version. Example: {@code 0.12.x}
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
-     * Indicates whether this Terraform version is used by default in {@link #createStack(CreateStackRequest) createStack}.
-     **/
+     * Indicates whether this Terraform version is used by default in {@link
+     * #createStack(CreateStackRequest) createStack}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
     /**
-     * Indicates whether this Terraform version is used by default in {@link #createStack(CreateStackRequest) createStack}.
+     * Indicates whether this Terraform version is used by default in {@link
+     * #createStack(CreateStackRequest) createStack}.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsDefault() {
         return isDefault;
     }
@@ -138,6 +135,7 @@ public final class TerraformVersionSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

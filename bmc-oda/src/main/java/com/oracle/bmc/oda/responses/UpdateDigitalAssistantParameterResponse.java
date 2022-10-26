@@ -9,12 +9,15 @@ import com.oracle.bmc.oda.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class UpdateDigitalAssistantParameterResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
+     * control.
      */
     private String etag;
 
     /**
-     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
+     * control.
+     *
      * @return the value
      */
     public String getEtag() {
@@ -22,15 +25,14 @@ public class UpdateDigitalAssistantParameterResponse extends com.oracle.bmc.resp
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -38,13 +40,12 @@ public class UpdateDigitalAssistantParameterResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /**
-     * The returned DigitalAssistantParameter instance.
-     */
+    /** The returned DigitalAssistantParameter instance. */
     private com.oracle.bmc.oda.model.DigitalAssistantParameter digitalAssistantParameter;
 
     /**
      * The returned DigitalAssistantParameter instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.oda.model.DigitalAssistantParameter getDigitalAssistantParameter() {
@@ -60,7 +61,7 @@ public class UpdateDigitalAssistantParameterResponse extends com.oracle.bmc.resp
     })
     private UpdateDigitalAssistantParameterResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.oda.model.DigitalAssistantParameter digitalAssistantParameter) {
@@ -70,28 +71,35 @@ public class UpdateDigitalAssistantParameterResponse extends com.oracle.bmc.resp
         this.digitalAssistantParameter = digitalAssistantParameter;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    UpdateDigitalAssistantParameterResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
+         * control.
          */
         private String etag;
 
         /**
-         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
+         * control.
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -101,15 +109,14 @@ public class UpdateDigitalAssistantParameterResponse extends com.oracle.bmc.resp
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -119,13 +126,12 @@ public class UpdateDigitalAssistantParameterResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /**
-         * The returned DigitalAssistantParameter instance.
-         */
+        /** The returned DigitalAssistantParameter instance. */
         private com.oracle.bmc.oda.model.DigitalAssistantParameter digitalAssistantParameter;
 
         /**
          * The returned DigitalAssistantParameter instance.
+         *
          * @param digitalAssistantParameter the value to set
          * @return this builder
          */
@@ -137,8 +143,10 @@ public class UpdateDigitalAssistantParameterResponse extends com.oracle.bmc.resp
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(UpdateDigitalAssistantParameterResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,8 +159,10 @@ public class UpdateDigitalAssistantParameterResponse extends com.oracle.bmc.resp
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public UpdateDigitalAssistantParameterResponse build() {
             return new UpdateDigitalAssistantParameterResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, digitalAssistantParameter);
@@ -161,6 +171,7 @@ public class UpdateDigitalAssistantParameterResponse extends com.oracle.bmc.resp
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

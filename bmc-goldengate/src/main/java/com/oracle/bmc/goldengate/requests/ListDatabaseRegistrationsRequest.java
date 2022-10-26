@@ -6,101 +6,76 @@ package com.oracle.bmc.goldengate.requests;
 
 import com.oracle.bmc.goldengate.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListDatabaseRegistrationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDatabaseRegistrationsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListDatabaseRegistrationsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ListDatabaseRegistrationsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class ListDatabaseRegistrationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The ID of the compartment in which to list resources.
-     *
-     */
+    /** The ID of the compartment in which to list resources. */
     private String compartmentId;
 
-    /**
-     * The ID of the compartment in which to list resources.
-     *
-     */
+    /** The ID of the compartment in which to list resources. */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * A filter to return only the resources that match the 'lifecycleState' given.
-     *
-     */
+    /** A filter to return only the resources that match the 'lifecycleState' given. */
     private com.oracle.bmc.goldengate.model.LifecycleState lifecycleState;
 
-    /**
-     * A filter to return only the resources that match the 'lifecycleState' given.
-     *
-     */
+    /** A filter to return only the resources that match the 'lifecycleState' given. */
     public com.oracle.bmc.goldengate.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /**
-     * A filter to return only the resources that match the entire 'displayName' given.
-     *
-     */
+    /** A filter to return only the resources that match the entire 'displayName' given. */
     private String displayName;
 
-    /**
-     * A filter to return only the resources that match the entire 'displayName' given.
-     *
-     */
+    /** A filter to return only the resources that match the entire 'displayName' given. */
     public String getDisplayName() {
         return displayName;
     }
-    /**
-     * The maximum number of items to return.
-     *
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     *
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
-     *
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
-     *
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order to use, either 'asc' or 'desc'.
-     *
-     */
+    /** The sort order to use, either 'asc' or 'desc'. */
     private com.oracle.bmc.goldengate.model.SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either 'asc' or 'desc'.
-     *
-     */
+    /** The sort order to use, either 'asc' or 'desc'. */
     public com.oracle.bmc.goldengate.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is descending.  Default order for 'displayName' is ascending. If no value is specified timeCreated is the default.
-     *
+     * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is
+     * descending. Default order for 'displayName' is ascending. If no value is specified
+     * timeCreated is the default.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is descending.  Default order for 'displayName' is ascending. If no value is specified timeCreated is the default.
-     *
-     **/
-    public enum SortBy {
+     * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is
+     * descending. Default order for 'displayName' is ascending. If no value is specified
+     * timeCreated is the default.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -134,22 +109,17 @@ public class ListDatabaseRegistrationsRequest
     };
 
     /**
-     * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is descending.  Default order for 'displayName' is ascending. If no value is specified timeCreated is the default.
-     *
+     * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is
+     * descending. Default order for 'displayName' is ascending. If no value is specified
+     * timeCreated is the default.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The client request ID for tracing.
-     *
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     *
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -157,14 +127,10 @@ public class ListDatabaseRegistrationsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDatabaseRegistrationsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The ID of the compartment in which to list resources.
-         *
-         */
+        /** The ID of the compartment in which to list resources. */
         private String compartmentId = null;
 
         /**
@@ -178,10 +144,7 @@ public class ListDatabaseRegistrationsRequest
             return this;
         }
 
-        /**
-         * A filter to return only the resources that match the 'lifecycleState' given.
-         *
-         */
+        /** A filter to return only the resources that match the 'lifecycleState' given. */
         private com.oracle.bmc.goldengate.model.LifecycleState lifecycleState = null;
 
         /**
@@ -196,10 +159,7 @@ public class ListDatabaseRegistrationsRequest
             return this;
         }
 
-        /**
-         * A filter to return only the resources that match the entire 'displayName' given.
-         *
-         */
+        /** A filter to return only the resources that match the entire 'displayName' given. */
         private String displayName = null;
 
         /**
@@ -213,10 +173,7 @@ public class ListDatabaseRegistrationsRequest
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         *
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
@@ -231,13 +188,14 @@ public class ListDatabaseRegistrationsRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
          *
          * @param page the value to set
          * @return this builder instance
@@ -247,10 +205,7 @@ public class ListDatabaseRegistrationsRequest
             return this;
         }
 
-        /**
-         * The sort order to use, either 'asc' or 'desc'.
-         *
-         */
+        /** The sort order to use, either 'asc' or 'desc'. */
         private com.oracle.bmc.goldengate.model.SortOrder sortOrder = null;
 
         /**
@@ -265,13 +220,16 @@ public class ListDatabaseRegistrationsRequest
         }
 
         /**
-         * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is descending.  Default order for 'displayName' is ascending. If no value is specified timeCreated is the default.
-         *
+         * The field to sort by. Only one sort order can be provided. Default order for
+         * 'timeCreated' is descending. Default order for 'displayName' is ascending. If no value is
+         * specified timeCreated is the default.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is descending.  Default order for 'displayName' is ascending. If no value is specified timeCreated is the default.
+         * The field to sort by. Only one sort order can be provided. Default order for
+         * 'timeCreated' is descending. Default order for 'displayName' is ascending. If no value is
+         * specified timeCreated is the default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -281,10 +239,7 @@ public class ListDatabaseRegistrationsRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         *
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
@@ -300,18 +255,19 @@ public class ListDatabaseRegistrationsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -323,6 +279,7 @@ public class ListDatabaseRegistrationsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListDatabaseRegistrationsRequest o) {
@@ -342,10 +299,11 @@ public class ListDatabaseRegistrationsRequest
         /**
          * Build the instance of ListDatabaseRegistrationsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListDatabaseRegistrationsRequest
          */
@@ -359,7 +317,8 @@ public class ListDatabaseRegistrationsRequest
         /**
          * Build the instance of ListDatabaseRegistrationsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDatabaseRegistrationsRequest
@@ -375,12 +334,14 @@ public class ListDatabaseRegistrationsRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListDatabaseRegistrationsRequest(compartmentId, lifecycleState, displayName, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListDatabaseRegistrationsRequest(compartmentId, lifecycleState, displayName,
+            // limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -397,6 +358,7 @@ public class ListDatabaseRegistrationsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

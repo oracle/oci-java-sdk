@@ -5,19 +5,20 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * MatchInfo
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * MatchInfo <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MatchInfo.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MatchInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class MatchInfo extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"matchingLogEntryEndIndex", "regexScore", "stepCount"})
     public MatchInfo(Integer matchingLogEntryEndIndex, Integer regexScore, Integer stepCount) {
@@ -29,49 +30,46 @@ public final class MatchInfo extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The end index of the matching log entry.
-         **/
+        /** The end index of the matching log entry. */
         @com.fasterxml.jackson.annotation.JsonProperty("matchingLogEntryEndIndex")
         private Integer matchingLogEntryEndIndex;
 
         /**
          * The end index of the matching log entry.
+         *
          * @param matchingLogEntryEndIndex the value to set
          * @return this builder
-         **/
+         */
         public Builder matchingLogEntryEndIndex(Integer matchingLogEntryEndIndex) {
             this.matchingLogEntryEndIndex = matchingLogEntryEndIndex;
             this.__explicitlySet__.add("matchingLogEntryEndIndex");
             return this;
         }
-        /**
-         * The regular expression score.
-         **/
+        /** The regular expression score. */
         @com.fasterxml.jackson.annotation.JsonProperty("regexScore")
         private Integer regexScore;
 
         /**
          * The regular expression score.
+         *
          * @param regexScore the value to set
          * @return this builder
-         **/
+         */
         public Builder regexScore(Integer regexScore) {
             this.regexScore = regexScore;
             this.__explicitlySet__.add("regexScore");
             return this;
         }
-        /**
-         * The step count.
-         **/
+        /** The step count. */
         @com.fasterxml.jackson.annotation.JsonProperty("stepCount")
         private Integer stepCount;
 
         /**
          * The step count.
+         *
          * @param stepCount the value to set
          * @return this builder
-         **/
+         */
         public Builder stepCount(Integer stepCount) {
             this.stepCount = stepCount;
             this.__explicitlySet__.add("stepCount");
@@ -105,9 +103,7 @@ public final class MatchInfo extends com.oracle.bmc.http.internal.ExplicitlySetB
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,44 +112,41 @@ public final class MatchInfo extends com.oracle.bmc.http.internal.ExplicitlySetB
         return new Builder().copy(this);
     }
 
-    /**
-     * The end index of the matching log entry.
-     **/
+    /** The end index of the matching log entry. */
     @com.fasterxml.jackson.annotation.JsonProperty("matchingLogEntryEndIndex")
     private final Integer matchingLogEntryEndIndex;
 
     /**
      * The end index of the matching log entry.
+     *
      * @return the value
-     **/
+     */
     public Integer getMatchingLogEntryEndIndex() {
         return matchingLogEntryEndIndex;
     }
 
-    /**
-     * The regular expression score.
-     **/
+    /** The regular expression score. */
     @com.fasterxml.jackson.annotation.JsonProperty("regexScore")
     private final Integer regexScore;
 
     /**
      * The regular expression score.
+     *
      * @return the value
-     **/
+     */
     public Integer getRegexScore() {
         return regexScore;
     }
 
-    /**
-     * The step count.
-     **/
+    /** The step count. */
     @com.fasterxml.jackson.annotation.JsonProperty("stepCount")
     private final Integer stepCount;
 
     /**
      * The step count.
+     *
      * @return the value
-     **/
+     */
     public Integer getStepCount() {
         return stepCount;
     }
@@ -165,6 +158,7 @@ public final class MatchInfo extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

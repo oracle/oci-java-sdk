@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/**
- * Possible types of query replication status.
- **/
+/** Possible types of query replication status. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum QueryReplicationStatus {
+public enum QueryReplicationStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Provisioning("PROVISIONING"),
     Failed("FAILED"),
     Succeeded("SUCCEEDED"),

@@ -5,23 +5,22 @@
 package com.oracle.bmc.optimizer.model;
 
 /**
- * The metadata associated with the resource action summary.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The metadata associated with the resource action summary. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ResourceActionSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ResourceActionSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ResourceActionSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -85,129 +84,121 @@ public final class ResourceActionSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The unique OCID associated with the resource action.
-         **/
+        /** The unique OCID associated with the resource action. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique OCID associated with the resource action.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The unique OCID associated with the category.
-         **/
+        /** The unique OCID associated with the category. */
         @com.fasterxml.jackson.annotation.JsonProperty("categoryId")
         private String categoryId;
 
         /**
          * The unique OCID associated with the category.
+         *
          * @param categoryId the value to set
          * @return this builder
-         **/
+         */
         public Builder categoryId(String categoryId) {
             this.categoryId = categoryId;
             this.__explicitlySet__.add("categoryId");
             return this;
         }
-        /**
-         * The unique OCID associated with the recommendation.
-         **/
+        /** The unique OCID associated with the recommendation. */
         @com.fasterxml.jackson.annotation.JsonProperty("recommendationId")
         private String recommendationId;
 
         /**
          * The unique OCID associated with the recommendation.
+         *
          * @param recommendationId the value to set
          * @return this builder
-         **/
+         */
         public Builder recommendationId(String recommendationId) {
             this.recommendationId = recommendationId;
             this.__explicitlySet__.add("recommendationId");
             return this;
         }
-        /**
-         * The unique OCID associated with the resource.
-         **/
+        /** The unique OCID associated with the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
          * The unique OCID associated with the resource.
+         *
          * @param resourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /**
-         * The name assigned to the resource.
-         **/
+        /** The name assigned to the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name assigned to the resource.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The kind of resource.
-         **/
+        /** The kind of resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
          * The kind of resource.
+         *
          * @param resourceType the value to set
          * @return this builder
-         **/
+         */
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /**
-         * The OCID of the compartment.
-         **/
+        /** The OCID of the compartment. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The name associated with the compartment.
-         **/
+        /** The name associated with the compartment. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentName")
         private String compartmentName;
 
         /**
          * The name associated with the compartment.
+         *
          * @param compartmentName the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentName(String compartmentName) {
             this.compartmentName = compartmentName;
             this.__explicitlySet__.add("compartmentName");
@@ -222,71 +213,71 @@ public final class ResourceActionSummary
             this.__explicitlySet__.add("action");
             return this;
         }
-        /**
-         * The resource action's current state.
-         **/
+        /** The resource action's current state. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The resource action's current state.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * The estimated cost savings, in dollars, for the resource action.
-         **/
+        /** The estimated cost savings, in dollars, for the resource action. */
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedCostSaving")
         private Double estimatedCostSaving;
 
         /**
          * The estimated cost savings, in dollars, for the resource action.
+         *
          * @param estimatedCostSaving the value to set
          * @return this builder
-         **/
+         */
         public Builder estimatedCostSaving(Double estimatedCostSaving) {
             this.estimatedCostSaving = estimatedCostSaving;
             this.__explicitlySet__.add("estimatedCostSaving");
             return this;
         }
-        /**
-         * The current status of the resource action.
-         **/
+        /** The current status of the resource action. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * The current status of the resource action.
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
         /**
-         * The date and time that the resource action entered its current status. The format is defined by RFC3339.
-         * <p>
-         * For example, "The status of the resource action changed from {@code pending} to {@code current(ignored)} on this date and time."
+         * The date and time that the resource action entered its current status. The format is
+         * defined by RFC3339.
          *
-         **/
+         * <p>For example, "The status of the resource action changed from {@code pending} to {@code
+         * current(ignored)} on this date and time."
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStatusBegin")
         private java.util.Date timeStatusBegin;
 
         /**
-         * The date and time that the resource action entered its current status. The format is defined by RFC3339.
-         * <p>
-         * For example, "The status of the resource action changed from {@code pending} to {@code current(ignored)} on this date and time."
+         * The date and time that the resource action entered its current status. The format is
+         * defined by RFC3339.
+         *
+         * <p>For example, "The status of the resource action changed from {@code pending} to {@code
+         * current(ignored)} on this date and time."
          *
          * @param timeStatusBegin the value to set
          * @return this builder
-         **/
+         */
         public Builder timeStatusBegin(java.util.Date timeStatusBegin) {
             this.timeStatusBegin = timeStatusBegin;
             this.__explicitlySet__.add("timeStatusBegin");
@@ -294,23 +285,22 @@ public final class ResourceActionSummary
         }
         /**
          * The date and time the current status will change. The format is defined by RFC3339.
-         * <p>
-         * For example, "The current {@code postponed} status of the resource action will end and change to {@code pending} on this
-         * date and time."
          *
-         **/
+         * <p>For example, "The current {@code postponed} status of the resource action will end and
+         * change to {@code pending} on this date and time."
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStatusEnd")
         private java.util.Date timeStatusEnd;
 
         /**
          * The date and time the current status will change. The format is defined by RFC3339.
-         * <p>
-         * For example, "The current {@code postponed} status of the resource action will end and change to {@code pending} on this
-         * date and time."
+         *
+         * <p>For example, "The current {@code postponed} status of the resource action will end and
+         * change to {@code pending} on this date and time."
          *
          * @param timeStatusEnd the value to set
          * @return this builder
-         **/
+         */
         public Builder timeStatusEnd(java.util.Date timeStatusEnd) {
             this.timeStatusEnd = timeStatusEnd;
             this.__explicitlySet__.add("timeStatusEnd");
@@ -318,103 +308,103 @@ public final class ResourceActionSummary
         }
         /**
          * Custom metadata key/value pairs for the resource action.
-         * <p>
-         **Metadata Example**
-         * <p>
-         * "metadata" : {
-         *          "cpuRecommendedShape": "VM.Standard1.1",
-         *          "computeMemoryUtilization": "26.05734124418388",
-         *          "currentShape": "VM.Standard1.2",
-         *          "instanceRecommendedShape": "VM.Standard1.1",
-         *          "computeCpuUtilization": "7.930035319720132",
-         *          "memoryRecommendedShape": "None"
-         *       }
          *
-         **/
+         * <p>*Metadata Example**
+         *
+         * <p>"metadata" : { "cpuRecommendedShape": "VM.Standard1.1", "computeMemoryUtilization":
+         * "26.05734124418388", "currentShape": "VM.Standard1.2", "instanceRecommendedShape":
+         * "VM.Standard1.1", "computeCpuUtilization": "7.930035319720132", "memoryRecommendedShape":
+         * "None" }
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
 
         /**
          * Custom metadata key/value pairs for the resource action.
-         * <p>
-         **Metadata Example**
-         * <p>
-         * "metadata" : {
-         *          "cpuRecommendedShape": "VM.Standard1.1",
-         *          "computeMemoryUtilization": "26.05734124418388",
-         *          "currentShape": "VM.Standard1.2",
-         *          "instanceRecommendedShape": "VM.Standard1.1",
-         *          "computeCpuUtilization": "7.930035319720132",
-         *          "memoryRecommendedShape": "None"
-         *       }
+         *
+         * <p>*Metadata Example**
+         *
+         * <p>"metadata" : { "cpuRecommendedShape": "VM.Standard1.1", "computeMemoryUtilization":
+         * "26.05734124418388", "currentShape": "VM.Standard1.2", "instanceRecommendedShape":
+         * "VM.Standard1.1", "computeCpuUtilization": "7.930035319720132", "memoryRecommendedShape":
+         * "None" }
          *
          * @param metadata the value to set
          * @return this builder
-         **/
+         */
         public Builder metadata(java.util.Map<String, String> metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
             return this;
         }
         /**
-         * Additional metadata key/value pairs that you provide.
-         * They serve the same purpose and functionality as fields in the {@code metadata} object.
-         * <p>
-         * They are distinguished from {@code metadata} fields in that these can be nested JSON objects (whereas {@code metadata} fields are string/string maps only).
-         * <p>
-         * For example:
-         * <p>
-         * {@code {"CurrentShape": {"name":"VM.Standard2.16"}, "RecommendedShape": {"name":"VM.Standard2.8"}}}
+         * Additional metadata key/value pairs that you provide. They serve the same purpose and
+         * functionality as fields in the {@code metadata} object.
          *
-         **/
+         * <p>They are distinguished from {@code metadata} fields in that these can be nested JSON
+         * objects (whereas {@code metadata} fields are string/string maps only).
+         *
+         * <p>For example:
+         *
+         * <p>{@code {"CurrentShape": {"name":"VM.Standard2.16"}, "RecommendedShape":
+         * {"name":"VM.Standard2.8"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
         private java.util.Map<String, Object> extendedMetadata;
 
         /**
-         * Additional metadata key/value pairs that you provide.
-         * They serve the same purpose and functionality as fields in the {@code metadata} object.
-         * <p>
-         * They are distinguished from {@code metadata} fields in that these can be nested JSON objects (whereas {@code metadata} fields are string/string maps only).
-         * <p>
-         * For example:
-         * <p>
-         * {@code {"CurrentShape": {"name":"VM.Standard2.16"}, "RecommendedShape": {"name":"VM.Standard2.8"}}}
+         * Additional metadata key/value pairs that you provide. They serve the same purpose and
+         * functionality as fields in the {@code metadata} object.
+         *
+         * <p>They are distinguished from {@code metadata} fields in that these can be nested JSON
+         * objects (whereas {@code metadata} fields are string/string maps only).
+         *
+         * <p>For example:
+         *
+         * <p>{@code {"CurrentShape": {"name":"VM.Standard2.16"}, "RecommendedShape":
+         * {"name":"VM.Standard2.8"}}}
          *
          * @param extendedMetadata the value to set
          * @return this builder
-         **/
+         */
         public Builder extendedMetadata(java.util.Map<String, Object> extendedMetadata) {
             this.extendedMetadata = extendedMetadata;
             this.__explicitlySet__.add("extendedMetadata");
             return this;
         }
         /**
-         * The date and time the resource action details were created, in the format defined by RFC3339.
-         **/
+         * The date and time the resource action details were created, in the format defined by
+         * RFC3339.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the resource action details were created, in the format defined by RFC3339.
+         * The date and time the resource action details were created, in the format defined by
+         * RFC3339.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time the resource action details were last updated, in the format defined by RFC3339.
-         **/
+         * The date and time the resource action details were last updated, in the format defined by
+         * RFC3339.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the resource action details were last updated, in the format defined by RFC3339.
+         * The date and time the resource action details were last updated, in the format defined by
+         * RFC3339.
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -511,9 +501,7 @@ public final class ResourceActionSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -522,114 +510,106 @@ public final class ResourceActionSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * The unique OCID associated with the resource action.
-     **/
+    /** The unique OCID associated with the resource action. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique OCID associated with the resource action.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The unique OCID associated with the category.
-     **/
+    /** The unique OCID associated with the category. */
     @com.fasterxml.jackson.annotation.JsonProperty("categoryId")
     private final String categoryId;
 
     /**
      * The unique OCID associated with the category.
+     *
      * @return the value
-     **/
+     */
     public String getCategoryId() {
         return categoryId;
     }
 
-    /**
-     * The unique OCID associated with the recommendation.
-     **/
+    /** The unique OCID associated with the recommendation. */
     @com.fasterxml.jackson.annotation.JsonProperty("recommendationId")
     private final String recommendationId;
 
     /**
      * The unique OCID associated with the recommendation.
+     *
      * @return the value
-     **/
+     */
     public String getRecommendationId() {
         return recommendationId;
     }
 
-    /**
-     * The unique OCID associated with the resource.
-     **/
+    /** The unique OCID associated with the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
      * The unique OCID associated with the resource.
+     *
      * @return the value
-     **/
+     */
     public String getResourceId() {
         return resourceId;
     }
 
-    /**
-     * The name assigned to the resource.
-     **/
+    /** The name assigned to the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name assigned to the resource.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The kind of resource.
-     **/
+    /** The kind of resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
      * The kind of resource.
+     *
      * @return the value
-     **/
+     */
     public String getResourceType() {
         return resourceType;
     }
 
-    /**
-     * The OCID of the compartment.
-     **/
+    /** The OCID of the compartment. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The name associated with the compartment.
-     **/
+    /** The name associated with the compartment. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentName")
     private final String compartmentName;
 
     /**
      * The name associated with the compartment.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentName() {
         return compartmentName;
     }
@@ -641,182 +621,179 @@ public final class ResourceActionSummary
         return action;
     }
 
-    /**
-     * The resource action's current state.
-     **/
+    /** The resource action's current state. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The resource action's current state.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * The estimated cost savings, in dollars, for the resource action.
-     **/
+    /** The estimated cost savings, in dollars, for the resource action. */
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedCostSaving")
     private final Double estimatedCostSaving;
 
     /**
      * The estimated cost savings, in dollars, for the resource action.
+     *
      * @return the value
-     **/
+     */
     public Double getEstimatedCostSaving() {
         return estimatedCostSaving;
     }
 
-    /**
-     * The current status of the resource action.
-     **/
+    /** The current status of the resource action. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * The current status of the resource action.
+     *
      * @return the value
-     **/
+     */
     public Status getStatus() {
         return status;
     }
 
     /**
-     * The date and time that the resource action entered its current status. The format is defined by RFC3339.
-     * <p>
-     * For example, "The status of the resource action changed from {@code pending} to {@code current(ignored)} on this date and time."
+     * The date and time that the resource action entered its current status. The format is defined
+     * by RFC3339.
      *
-     **/
+     * <p>For example, "The status of the resource action changed from {@code pending} to {@code
+     * current(ignored)} on this date and time."
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStatusBegin")
     private final java.util.Date timeStatusBegin;
 
     /**
-     * The date and time that the resource action entered its current status. The format is defined by RFC3339.
-     * <p>
-     * For example, "The status of the resource action changed from {@code pending} to {@code current(ignored)} on this date and time."
+     * The date and time that the resource action entered its current status. The format is defined
+     * by RFC3339.
+     *
+     * <p>For example, "The status of the resource action changed from {@code pending} to {@code
+     * current(ignored)} on this date and time."
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeStatusBegin() {
         return timeStatusBegin;
     }
 
     /**
      * The date and time the current status will change. The format is defined by RFC3339.
-     * <p>
-     * For example, "The current {@code postponed} status of the resource action will end and change to {@code pending} on this
-     * date and time."
      *
-     **/
+     * <p>For example, "The current {@code postponed} status of the resource action will end and
+     * change to {@code pending} on this date and time."
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStatusEnd")
     private final java.util.Date timeStatusEnd;
 
     /**
      * The date and time the current status will change. The format is defined by RFC3339.
-     * <p>
-     * For example, "The current {@code postponed} status of the resource action will end and change to {@code pending} on this
-     * date and time."
+     *
+     * <p>For example, "The current {@code postponed} status of the resource action will end and
+     * change to {@code pending} on this date and time."
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeStatusEnd() {
         return timeStatusEnd;
     }
 
     /**
      * Custom metadata key/value pairs for the resource action.
-     * <p>
-     **Metadata Example**
-     * <p>
-     * "metadata" : {
-     *          "cpuRecommendedShape": "VM.Standard1.1",
-     *          "computeMemoryUtilization": "26.05734124418388",
-     *          "currentShape": "VM.Standard1.2",
-     *          "instanceRecommendedShape": "VM.Standard1.1",
-     *          "computeCpuUtilization": "7.930035319720132",
-     *          "memoryRecommendedShape": "None"
-     *       }
      *
-     **/
+     * <p>*Metadata Example**
+     *
+     * <p>"metadata" : { "cpuRecommendedShape": "VM.Standard1.1", "computeMemoryUtilization":
+     * "26.05734124418388", "currentShape": "VM.Standard1.2", "instanceRecommendedShape":
+     * "VM.Standard1.1", "computeCpuUtilization": "7.930035319720132", "memoryRecommendedShape":
+     * "None" }
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final java.util.Map<String, String> metadata;
 
     /**
      * Custom metadata key/value pairs for the resource action.
-     * <p>
-     **Metadata Example**
-     * <p>
-     * "metadata" : {
-     *          "cpuRecommendedShape": "VM.Standard1.1",
-     *          "computeMemoryUtilization": "26.05734124418388",
-     *          "currentShape": "VM.Standard1.2",
-     *          "instanceRecommendedShape": "VM.Standard1.1",
-     *          "computeCpuUtilization": "7.930035319720132",
-     *          "memoryRecommendedShape": "None"
-     *       }
+     *
+     * <p>*Metadata Example**
+     *
+     * <p>"metadata" : { "cpuRecommendedShape": "VM.Standard1.1", "computeMemoryUtilization":
+     * "26.05734124418388", "currentShape": "VM.Standard1.2", "instanceRecommendedShape":
+     * "VM.Standard1.1", "computeCpuUtilization": "7.930035319720132", "memoryRecommendedShape":
+     * "None" }
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getMetadata() {
         return metadata;
     }
 
     /**
-     * Additional metadata key/value pairs that you provide.
-     * They serve the same purpose and functionality as fields in the {@code metadata} object.
-     * <p>
-     * They are distinguished from {@code metadata} fields in that these can be nested JSON objects (whereas {@code metadata} fields are string/string maps only).
-     * <p>
-     * For example:
-     * <p>
-     * {@code {"CurrentShape": {"name":"VM.Standard2.16"}, "RecommendedShape": {"name":"VM.Standard2.8"}}}
+     * Additional metadata key/value pairs that you provide. They serve the same purpose and
+     * functionality as fields in the {@code metadata} object.
      *
-     **/
+     * <p>They are distinguished from {@code metadata} fields in that these can be nested JSON
+     * objects (whereas {@code metadata} fields are string/string maps only).
+     *
+     * <p>For example:
+     *
+     * <p>{@code {"CurrentShape": {"name":"VM.Standard2.16"}, "RecommendedShape":
+     * {"name":"VM.Standard2.8"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
     private final java.util.Map<String, Object> extendedMetadata;
 
     /**
-     * Additional metadata key/value pairs that you provide.
-     * They serve the same purpose and functionality as fields in the {@code metadata} object.
-     * <p>
-     * They are distinguished from {@code metadata} fields in that these can be nested JSON objects (whereas {@code metadata} fields are string/string maps only).
-     * <p>
-     * For example:
-     * <p>
-     * {@code {"CurrentShape": {"name":"VM.Standard2.16"}, "RecommendedShape": {"name":"VM.Standard2.8"}}}
+     * Additional metadata key/value pairs that you provide. They serve the same purpose and
+     * functionality as fields in the {@code metadata} object.
+     *
+     * <p>They are distinguished from {@code metadata} fields in that these can be nested JSON
+     * objects (whereas {@code metadata} fields are string/string maps only).
+     *
+     * <p>For example:
+     *
+     * <p>{@code {"CurrentShape": {"name":"VM.Standard2.16"}, "RecommendedShape":
+     * {"name":"VM.Standard2.8"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, Object> getExtendedMetadata() {
         return extendedMetadata;
     }
 
     /**
      * The date and time the resource action details were created, in the format defined by RFC3339.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the resource action details were created, in the format defined by RFC3339.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time the resource action details were last updated, in the format defined by RFC3339.
-     **/
+     * The date and time the resource action details were last updated, in the format defined by
+     * RFC3339.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the resource action details were last updated, in the format defined by RFC3339.
+     * The date and time the resource action details were last updated, in the format defined by
+     * RFC3339.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -828,6 +805,7 @@ public final class ResourceActionSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

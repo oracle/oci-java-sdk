@@ -5,22 +5,22 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Subscribed service commitment details
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Subscribed service commitment details <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CommitmentService.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CommitmentService extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = CommitmentService.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class CommitmentService
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeStart",
@@ -48,10 +48,7 @@ public final class CommitmentService extends com.oracle.bmc.http.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Commitment start date
-         *
-         **/
+        /** Commitment start date */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
@@ -60,16 +57,13 @@ public final class CommitmentService extends com.oracle.bmc.http.internal.Explic
          *
          * @param timeStart the value to set
          * @return this builder
-         **/
+         */
         public Builder timeStart(java.util.Date timeStart) {
             this.timeStart = timeStart;
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-        /**
-         * Commitment end date
-         *
-         **/
+        /** Commitment end date */
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
@@ -78,16 +72,13 @@ public final class CommitmentService extends com.oracle.bmc.http.internal.Explic
          *
          * @param timeEnd the value to set
          * @return this builder
-         **/
+         */
         public Builder timeEnd(java.util.Date timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-        /**
-         * Commitment quantity
-         *
-         **/
+        /** Commitment quantity */
         @com.fasterxml.jackson.annotation.JsonProperty("quantity")
         private String quantity;
 
@@ -96,16 +87,13 @@ public final class CommitmentService extends com.oracle.bmc.http.internal.Explic
          *
          * @param quantity the value to set
          * @return this builder
-         **/
+         */
         public Builder quantity(String quantity) {
             this.quantity = quantity;
             this.__explicitlySet__.add("quantity");
             return this;
         }
-        /**
-         * Commitment available amount
-         *
-         **/
+        /** Commitment available amount */
         @com.fasterxml.jackson.annotation.JsonProperty("availableAmount")
         private String availableAmount;
 
@@ -114,16 +102,13 @@ public final class CommitmentService extends com.oracle.bmc.http.internal.Explic
          *
          * @param availableAmount the value to set
          * @return this builder
-         **/
+         */
         public Builder availableAmount(String availableAmount) {
             this.availableAmount = availableAmount;
             this.__explicitlySet__.add("availableAmount");
             return this;
         }
-        /**
-         * Commitment line net amount
-         *
-         **/
+        /** Commitment line net amount */
         @com.fasterxml.jackson.annotation.JsonProperty("lineNetAmount")
         private String lineNetAmount;
 
@@ -132,16 +117,13 @@ public final class CommitmentService extends com.oracle.bmc.http.internal.Explic
          *
          * @param lineNetAmount the value to set
          * @return this builder
-         **/
+         */
         public Builder lineNetAmount(String lineNetAmount) {
             this.lineNetAmount = lineNetAmount;
             this.__explicitlySet__.add("lineNetAmount");
             return this;
         }
-        /**
-         * Funded Allocation line value
-         *
-         **/
+        /** Funded Allocation line value */
         @com.fasterxml.jackson.annotation.JsonProperty("fundedAllocationValue")
         private String fundedAllocationValue;
 
@@ -150,7 +132,7 @@ public final class CommitmentService extends com.oracle.bmc.http.internal.Explic
          *
          * @param fundedAllocationValue the value to set
          * @return this builder
-         **/
+         */
         public Builder fundedAllocationValue(String fundedAllocationValue) {
             this.fundedAllocationValue = fundedAllocationValue;
             this.__explicitlySet__.add("fundedAllocationValue");
@@ -199,9 +181,7 @@ public final class CommitmentService extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -210,10 +190,7 @@ public final class CommitmentService extends com.oracle.bmc.http.internal.Explic
         return new Builder().copy(this);
     }
 
-    /**
-     * Commitment start date
-     *
-     **/
+    /** Commitment start date */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
@@ -221,15 +198,12 @@ public final class CommitmentService extends com.oracle.bmc.http.internal.Explic
      * Commitment start date
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeStart() {
         return timeStart;
     }
 
-    /**
-     * Commitment end date
-     *
-     **/
+    /** Commitment end date */
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
@@ -237,15 +211,12 @@ public final class CommitmentService extends com.oracle.bmc.http.internal.Explic
      * Commitment end date
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
 
-    /**
-     * Commitment quantity
-     *
-     **/
+    /** Commitment quantity */
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
     private final String quantity;
 
@@ -253,15 +224,12 @@ public final class CommitmentService extends com.oracle.bmc.http.internal.Explic
      * Commitment quantity
      *
      * @return the value
-     **/
+     */
     public String getQuantity() {
         return quantity;
     }
 
-    /**
-     * Commitment available amount
-     *
-     **/
+    /** Commitment available amount */
     @com.fasterxml.jackson.annotation.JsonProperty("availableAmount")
     private final String availableAmount;
 
@@ -269,15 +237,12 @@ public final class CommitmentService extends com.oracle.bmc.http.internal.Explic
      * Commitment available amount
      *
      * @return the value
-     **/
+     */
     public String getAvailableAmount() {
         return availableAmount;
     }
 
-    /**
-     * Commitment line net amount
-     *
-     **/
+    /** Commitment line net amount */
     @com.fasterxml.jackson.annotation.JsonProperty("lineNetAmount")
     private final String lineNetAmount;
 
@@ -285,15 +250,12 @@ public final class CommitmentService extends com.oracle.bmc.http.internal.Explic
      * Commitment line net amount
      *
      * @return the value
-     **/
+     */
     public String getLineNetAmount() {
         return lineNetAmount;
     }
 
-    /**
-     * Funded Allocation line value
-     *
-     **/
+    /** Funded Allocation line value */
     @com.fasterxml.jackson.annotation.JsonProperty("fundedAllocationValue")
     private final String fundedAllocationValue;
 
@@ -301,7 +263,7 @@ public final class CommitmentService extends com.oracle.bmc.http.internal.Explic
      * Funded Allocation line value
      *
      * @return the value
-     **/
+     */
     public String getFundedAllocationValue() {
         return fundedAllocationValue;
     }
@@ -313,6 +275,7 @@ public final class CommitmentService extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

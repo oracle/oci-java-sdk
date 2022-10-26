@@ -6,133 +6,115 @@ package com.oracle.bmc.cims.requests;
 
 import com.oracle.bmc.cims.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/ListIncidentsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListIncidentsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/ListIncidentsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListIncidentsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The Customer Support Identifier associated with the support account.
-     */
+    /** The Customer Support Identifier associated with the support account. */
     private String csi;
 
-    /**
-     * The Customer Support Identifier associated with the support account.
-     */
+    /** The Customer Support Identifier associated with the support account. */
     public String getCsi() {
         return csi;
     }
-    /**
-     * The OCID of the tenancy.
-     */
+    /** The OCID of the tenancy. */
     private String compartmentId;
 
-    /**
-     * The OCID of the tenancy.
-     */
+    /** The OCID of the tenancy. */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+     * Cloud Infrastructure account.
      */
     private String ocid;
 
     /**
-     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+     * Cloud Infrastructure account.
      */
     public String getOcid() {
         return ocid;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
-    /**
-     * The key to use to sort the returned items.
-     */
+    /** The key to use to sort the returned items. */
     private com.oracle.bmc.cims.model.SortBy sortBy;
 
-    /**
-     * The key to use to sort the returned items.
-     */
+    /** The key to use to sort the returned items. */
     public com.oracle.bmc.cims.model.SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The order to sort the results in.
-     */
+    /** The order to sort the results in. */
     private com.oracle.bmc.cims.model.SortOrder sortOrder;
 
-    /**
-     * The order to sort the results in.
-     */
+    /** The order to sort the results in. */
     public com.oracle.bmc.cims.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /**
-     * The current state of the ticket.
-     */
+    /** The current state of the ticket. */
     private com.oracle.bmc.cims.model.LifecycleState lifecycleState;
 
-    /**
-     * The current state of the ticket.
-     */
+    /** The current state of the ticket. */
     public com.oracle.bmc.cims.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * The region of the tenancy.
-     */
+    /** The region of the tenancy. */
     private String homeregion;
 
-    /**
-     * The region of the tenancy.
-     */
+    /** The region of the tenancy. */
     public String getHomeregion() {
         return homeregion;
     }
-    /**
-     * The kind of support request.
-     */
+    /** The kind of support request. */
     private String problemType;
 
-    /**
-     * The kind of support request.
-     */
+    /** The kind of support request. */
     public String getProblemType() {
         return problemType;
     }
@@ -140,17 +122,15 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListIncidentsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The Customer Support Identifier associated with the support account.
-         */
+        /** The Customer Support Identifier associated with the support account. */
         private String csi = null;
 
         /**
          * The Customer Support Identifier associated with the support account.
+         *
          * @param csi the value to set
          * @return this builder instance
          */
@@ -159,13 +139,12 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The OCID of the tenancy.
-         */
+        /** The OCID of the tenancy. */
         private String compartmentId = null;
 
         /**
          * The OCID of the tenancy.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -175,12 +154,15 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+         * Cloud Infrastructure account.
          */
         private String ocid = null;
 
         /**
-         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+         * Cloud Infrastructure account.
+         *
          * @param ocid the value to set
          * @return this builder instance
          */
@@ -190,13 +172,16 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -206,13 +191,12 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The key to use to sort the returned items.
-         */
+        /** The key to use to sort the returned items. */
         private com.oracle.bmc.cims.model.SortBy sortBy = null;
 
         /**
          * The key to use to sort the returned items.
+         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -221,13 +205,12 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The order to sort the results in.
-         */
+        /** The order to sort the results in. */
         private com.oracle.bmc.cims.model.SortOrder sortOrder = null;
 
         /**
          * The order to sort the results in.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -236,13 +219,12 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The current state of the ticket.
-         */
+        /** The current state of the ticket. */
         private com.oracle.bmc.cims.model.LifecycleState lifecycleState = null;
 
         /**
          * The current state of the ticket.
+         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -252,13 +234,16 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -269,12 +254,15 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -283,13 +271,12 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The region of the tenancy.
-         */
+        /** The region of the tenancy. */
         private String homeregion = null;
 
         /**
          * The region of the tenancy.
+         *
          * @param homeregion the value to set
          * @return this builder instance
          */
@@ -298,13 +285,12 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The kind of support request.
-         */
+        /** The kind of support request. */
         private String problemType = null;
 
         /**
          * The kind of support request.
+         *
          * @param problemType the value to set
          * @return this builder instance
          */
@@ -315,18 +301,19 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -338,6 +325,7 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListIncidentsRequest o) {
@@ -360,10 +348,11 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of ListIncidentsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListIncidentsRequest
          */
@@ -377,7 +366,8 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of ListIncidentsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListIncidentsRequest
@@ -396,12 +386,14 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.homeregion = homeregion;
             request.problemType = problemType;
             return request;
-            // new ListIncidentsRequest(csi, compartmentId, ocid, limit, sortBy, sortOrder, lifecycleState, page, opcRequestId, homeregion, problemType);
+            // new ListIncidentsRequest(csi, compartmentId, ocid, limit, sortBy, sortOrder,
+            // lifecycleState, page, opcRequestId, homeregion, problemType);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -421,6 +413,7 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

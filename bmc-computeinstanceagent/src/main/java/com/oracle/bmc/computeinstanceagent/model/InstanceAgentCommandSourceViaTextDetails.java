@@ -5,56 +5,53 @@
 package com.oracle.bmc.computeinstanceagent.model;
 
 /**
- * The source of the command when provided using plain text.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The source of the command when provided using plain text. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = InstanceAgentCommandSourceViaTextDetails.Builder.class
-)
+        builder = InstanceAgentCommandSourceViaTextDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "sourceType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "sourceType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class InstanceAgentCommandSourceViaTextDetails
         extends InstanceAgentCommandSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The plain text command.
-         **/
+        /** The plain text command. */
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
         /**
          * The plain text command.
+         *
          * @param text the value to set
          * @return this builder
-         **/
+         */
         public Builder text(String text) {
             this.text = text;
             this.__explicitlySet__.add("text");
             return this;
         }
-        /**
-         * SHA-256 checksum value of the text content.
-         **/
+        /** SHA-256 checksum value of the text content. */
         @com.fasterxml.jackson.annotation.JsonProperty("textSha256")
         private String textSha256;
 
         /**
          * SHA-256 checksum value of the text content.
+         *
          * @param textSha256 the value to set
          * @return this builder
-         **/
+         */
         public Builder textSha256(String textSha256) {
             this.textSha256 = textSha256;
             this.__explicitlySet__.add("textSha256");
@@ -85,9 +82,7 @@ public final class InstanceAgentCommandSourceViaTextDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -103,30 +98,28 @@ public final class InstanceAgentCommandSourceViaTextDetails
         this.textSha256 = textSha256;
     }
 
-    /**
-     * The plain text command.
-     **/
+    /** The plain text command. */
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
     /**
      * The plain text command.
+     *
      * @return the value
-     **/
+     */
     public String getText() {
         return text;
     }
 
-    /**
-     * SHA-256 checksum value of the text content.
-     **/
+    /** SHA-256 checksum value of the text content. */
     @com.fasterxml.jackson.annotation.JsonProperty("textSha256")
     private final String textSha256;
 
     /**
      * SHA-256 checksum value of the text content.
+     *
      * @return the value
-     **/
+     */
     public String getTextSha256() {
         return textSha256;
     }
@@ -138,6 +131,7 @@ public final class InstanceAgentCommandSourceViaTextDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

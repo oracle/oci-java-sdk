@@ -5,23 +5,22 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * A list of DatabaseRegistrations.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A list of DatabaseRegistrations. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DatabaseRegistrationCollection.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DatabaseRegistrationCollection.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DatabaseRegistrationCollection
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items"})
     public DatabaseRegistrationCollection(java.util.List<DatabaseRegistrationSummary> items) {
@@ -31,10 +30,7 @@ public final class DatabaseRegistrationCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * An array of DatabaseRegistration summaries.
-         *
-         **/
+        /** An array of DatabaseRegistration summaries. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DatabaseRegistrationSummary> items;
 
@@ -43,7 +39,7 @@ public final class DatabaseRegistrationCollection
          *
          * @param items the value to set
          * @return this builder
-         **/
+         */
         public Builder items(java.util.List<DatabaseRegistrationSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -70,9 +66,7 @@ public final class DatabaseRegistrationCollection
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -81,10 +75,7 @@ public final class DatabaseRegistrationCollection
         return new Builder().copy(this);
     }
 
-    /**
-     * An array of DatabaseRegistration summaries.
-     *
-     **/
+    /** An array of DatabaseRegistration summaries. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DatabaseRegistrationSummary> items;
 
@@ -92,7 +83,7 @@ public final class DatabaseRegistrationCollection
      * An array of DatabaseRegistration summaries.
      *
      * @return the value
-     **/
+     */
     public java.util.List<DatabaseRegistrationSummary> getItems() {
         return items;
     }
@@ -104,6 +95,7 @@ public final class DatabaseRegistrationCollection
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

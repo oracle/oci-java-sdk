@@ -6,71 +6,67 @@ package com.oracle.bmc.certificates.requests;
 
 import com.oracle.bmc.certificates.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificates/GetCertificateBundleExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetCertificateBundleRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificates/GetCertificateBundleExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetCertificateBundleRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public class GetCertificateBundleRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The OCID of the certificate.
-     */
+    /** The OCID of the certificate. */
     private String certificateId;
 
-    /**
-     * The OCID of the certificate.
-     */
+    /** The OCID of the certificate. */
     public String getCertificateId() {
         return certificateId;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The version number of the certificate. The default value is 0, which means that this query parameter is ignored.
+     * The version number of the certificate. The default value is 0, which means that this query
+     * parameter is ignored.
      */
     private Long versionNumber;
 
     /**
-     * The version number of the certificate. The default value is 0, which means that this query parameter is ignored.
+     * The version number of the certificate. The default value is 0, which means that this query
+     * parameter is ignored.
      */
     public Long getVersionNumber() {
         return versionNumber;
     }
     /**
-     * The name of the certificate. (This might be referred to as the name of the certificate version, as every certificate consists of at least one version.) Names are unique across versions of a given certificate.
-     *
+     * The name of the certificate. (This might be referred to as the name of the certificate
+     * version, as every certificate consists of at least one version.) Names are unique across
+     * versions of a given certificate.
      */
     private String certificateVersionName;
 
     /**
-     * The name of the certificate. (This might be referred to as the name of the certificate version, as every certificate consists of at least one version.) Names are unique across versions of a given certificate.
-     *
+     * The name of the certificate. (This might be referred to as the name of the certificate
+     * version, as every certificate consists of at least one version.) Names are unique across
+     * versions of a given certificate.
      */
     public String getCertificateVersionName() {
         return certificateVersionName;
     }
-    /**
-     * The rotation state of the certificate version.
-     */
+    /** The rotation state of the certificate version. */
     private Stage stage;
 
-    /**
-     * The rotation state of the certificate version.
-     **/
-    public enum Stage {
+    /** The rotation state of the certificate version. */
+    public enum Stage implements com.oracle.bmc.http.internal.BmcEnum {
         Current("CURRENT"),
         Pending("PENDING"),
         Latest("LATEST"),
@@ -106,23 +102,25 @@ public class GetCertificateBundleRequest
         }
     };
 
-    /**
-     * The rotation state of the certificate version.
-     */
+    /** The rotation state of the certificate version. */
     public Stage getStage() {
         return stage;
     }
     /**
-     * The type of certificate bundle. By default, the private key fields are not returned. When querying for certificate bundles, to return results with certificate contents, the private key in PEM format, and the private key passphrase, specify the value of this parameter as {@code CERTIFICATE_CONTENT_WITH_PRIVATE_KEY}.
-     *
+     * The type of certificate bundle. By default, the private key fields are not returned. When
+     * querying for certificate bundles, to return results with certificate contents, the private
+     * key in PEM format, and the private key passphrase, specify the value of this parameter as
+     * {@code CERTIFICATE_CONTENT_WITH_PRIVATE_KEY}.
      */
     private CertificateBundleType certificateBundleType;
 
     /**
-     * The type of certificate bundle. By default, the private key fields are not returned. When querying for certificate bundles, to return results with certificate contents, the private key in PEM format, and the private key passphrase, specify the value of this parameter as {@code CERTIFICATE_CONTENT_WITH_PRIVATE_KEY}.
-     *
-     **/
-    public enum CertificateBundleType {
+     * The type of certificate bundle. By default, the private key fields are not returned. When
+     * querying for certificate bundles, to return results with certificate contents, the private
+     * key in PEM format, and the private key passphrase, specify the value of this parameter as
+     * {@code CERTIFICATE_CONTENT_WITH_PRIVATE_KEY}.
+     */
+    public enum CertificateBundleType implements com.oracle.bmc.http.internal.BmcEnum {
         CertificateContentPublicOnly("CERTIFICATE_CONTENT_PUBLIC_ONLY"),
         CertificateContentWithPrivateKey("CERTIFICATE_CONTENT_WITH_PRIVATE_KEY"),
         ;
@@ -156,8 +154,10 @@ public class GetCertificateBundleRequest
     };
 
     /**
-     * The type of certificate bundle. By default, the private key fields are not returned. When querying for certificate bundles, to return results with certificate contents, the private key in PEM format, and the private key passphrase, specify the value of this parameter as {@code CERTIFICATE_CONTENT_WITH_PRIVATE_KEY}.
-     *
+     * The type of certificate bundle. By default, the private key fields are not returned. When
+     * querying for certificate bundles, to return results with certificate contents, the private
+     * key in PEM format, and the private key passphrase, specify the value of this parameter as
+     * {@code CERTIFICATE_CONTENT_WITH_PRIVATE_KEY}.
      */
     public CertificateBundleType getCertificateBundleType() {
         return certificateBundleType;
@@ -166,17 +166,15 @@ public class GetCertificateBundleRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetCertificateBundleRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the certificate.
-         */
+        /** The OCID of the certificate. */
         private String certificateId = null;
 
         /**
          * The OCID of the certificate.
+         *
          * @param certificateId the value to set
          * @return this builder instance
          */
@@ -186,15 +184,14 @@ public class GetCertificateBundleRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
-         * please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
-         * please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -205,12 +202,15 @@ public class GetCertificateBundleRequest
         }
 
         /**
-         * The version number of the certificate. The default value is 0, which means that this query parameter is ignored.
+         * The version number of the certificate. The default value is 0, which means that this
+         * query parameter is ignored.
          */
         private Long versionNumber = null;
 
         /**
-         * The version number of the certificate. The default value is 0, which means that this query parameter is ignored.
+         * The version number of the certificate. The default value is 0, which means that this
+         * query parameter is ignored.
+         *
          * @param versionNumber the value to set
          * @return this builder instance
          */
@@ -220,13 +220,16 @@ public class GetCertificateBundleRequest
         }
 
         /**
-         * The name of the certificate. (This might be referred to as the name of the certificate version, as every certificate consists of at least one version.) Names are unique across versions of a given certificate.
-         *
+         * The name of the certificate. (This might be referred to as the name of the certificate
+         * version, as every certificate consists of at least one version.) Names are unique across
+         * versions of a given certificate.
          */
         private String certificateVersionName = null;
 
         /**
-         * The name of the certificate. (This might be referred to as the name of the certificate version, as every certificate consists of at least one version.) Names are unique across versions of a given certificate.
+         * The name of the certificate. (This might be referred to as the name of the certificate
+         * version, as every certificate consists of at least one version.) Names are unique across
+         * versions of a given certificate.
          *
          * @param certificateVersionName the value to set
          * @return this builder instance
@@ -236,13 +239,12 @@ public class GetCertificateBundleRequest
             return this;
         }
 
-        /**
-         * The rotation state of the certificate version.
-         */
+        /** The rotation state of the certificate version. */
         private Stage stage = null;
 
         /**
          * The rotation state of the certificate version.
+         *
          * @param stage the value to set
          * @return this builder instance
          */
@@ -252,13 +254,18 @@ public class GetCertificateBundleRequest
         }
 
         /**
-         * The type of certificate bundle. By default, the private key fields are not returned. When querying for certificate bundles, to return results with certificate contents, the private key in PEM format, and the private key passphrase, specify the value of this parameter as {@code CERTIFICATE_CONTENT_WITH_PRIVATE_KEY}.
-         *
+         * The type of certificate bundle. By default, the private key fields are not returned. When
+         * querying for certificate bundles, to return results with certificate contents, the
+         * private key in PEM format, and the private key passphrase, specify the value of this
+         * parameter as {@code CERTIFICATE_CONTENT_WITH_PRIVATE_KEY}.
          */
         private CertificateBundleType certificateBundleType = null;
 
         /**
-         * The type of certificate bundle. By default, the private key fields are not returned. When querying for certificate bundles, to return results with certificate contents, the private key in PEM format, and the private key passphrase, specify the value of this parameter as {@code CERTIFICATE_CONTENT_WITH_PRIVATE_KEY}.
+         * The type of certificate bundle. By default, the private key fields are not returned. When
+         * querying for certificate bundles, to return results with certificate contents, the
+         * private key in PEM format, and the private key passphrase, specify the value of this
+         * parameter as {@code CERTIFICATE_CONTENT_WITH_PRIVATE_KEY}.
          *
          * @param certificateBundleType the value to set
          * @return this builder instance
@@ -270,18 +277,19 @@ public class GetCertificateBundleRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -293,6 +301,7 @@ public class GetCertificateBundleRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetCertificateBundleRequest o) {
@@ -310,10 +319,11 @@ public class GetCertificateBundleRequest
         /**
          * Build the instance of GetCertificateBundleRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetCertificateBundleRequest
          */
@@ -327,7 +337,8 @@ public class GetCertificateBundleRequest
         /**
          * Build the instance of GetCertificateBundleRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetCertificateBundleRequest
@@ -341,12 +352,14 @@ public class GetCertificateBundleRequest
             request.stage = stage;
             request.certificateBundleType = certificateBundleType;
             return request;
-            // new GetCertificateBundleRequest(certificateId, opcRequestId, versionNumber, certificateVersionName, stage, certificateBundleType);
+            // new GetCertificateBundleRequest(certificateId, opcRequestId, versionNumber,
+            // certificateVersionName, stage, certificateBundleType);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -361,6 +374,7 @@ public class GetCertificateBundleRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

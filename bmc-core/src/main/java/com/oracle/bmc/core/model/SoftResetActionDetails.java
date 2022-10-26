@@ -5,66 +5,70 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Parameters for the softReset {@link #instanceAction(InstanceActionRequest) instanceAction}. If omitted, default values are used.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Parameters for the softReset {@link #instanceAction(InstanceActionRequest) instanceAction}. If
+ * omitted, default values are used. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SoftResetActionDetails.Builder.class
-)
+        builder = SoftResetActionDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "actionType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "actionType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SoftResetActionDetails extends InstancePowerActionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * For instances that use a DenseIO shape, the flag denoting whether
-         * [reboot migration](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm#reboot)
+         * For instances that use a DenseIO shape, the flag denoting whether [reboot
+         * migration](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm#reboot)
          * is performed for the instance. The default value is {@code false}.
-         * <p>
-         * If the instance has a date in the Maintenance reboot field and you do nothing (or set this flag to {@code false}), the instance
-         * will be rebuilt at the scheduled maintenance time. The instance will experience 2-6 hours of downtime during the
-         * maintenance process. The local NVMe-based SSD will be preserved.
-         * <p>
-         * If you want to minimize downtime and can delete the SSD, you can set this flag to {@code true} and proactively reboot the
-         * instance before the scheduled maintenance time. The instance will be reboot migrated to a healthy host and the SSD will be
-         * deleted. A short downtime occurs during the migration.
-         * <p>
-         **Caution:** When {@code true}, the SSD is permanently deleted. We recommend that you create a backup of the SSD before proceeding.
          *
-         **/
+         * <p>If the instance has a date in the Maintenance reboot field and you do nothing (or set
+         * this flag to {@code false}), the instance will be rebuilt at the scheduled maintenance
+         * time. The instance will experience 2-6 hours of downtime during the maintenance process.
+         * The local NVMe-based SSD will be preserved.
+         *
+         * <p>If you want to minimize downtime and can delete the SSD, you can set this flag to
+         * {@code true} and proactively reboot the instance before the scheduled maintenance time.
+         * The instance will be reboot migrated to a healthy host and the SSD will be deleted. A
+         * short downtime occurs during the migration.
+         *
+         * <p>*Caution:** When {@code true}, the SSD is permanently deleted. We recommend that you
+         * create a backup of the SSD before proceeding.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("allowDenseRebootMigration")
         private Boolean allowDenseRebootMigration;
 
         /**
-         * For instances that use a DenseIO shape, the flag denoting whether
-         * [reboot migration](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm#reboot)
+         * For instances that use a DenseIO shape, the flag denoting whether [reboot
+         * migration](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm#reboot)
          * is performed for the instance. The default value is {@code false}.
-         * <p>
-         * If the instance has a date in the Maintenance reboot field and you do nothing (or set this flag to {@code false}), the instance
-         * will be rebuilt at the scheduled maintenance time. The instance will experience 2-6 hours of downtime during the
-         * maintenance process. The local NVMe-based SSD will be preserved.
-         * <p>
-         * If you want to minimize downtime and can delete the SSD, you can set this flag to {@code true} and proactively reboot the
-         * instance before the scheduled maintenance time. The instance will be reboot migrated to a healthy host and the SSD will be
-         * deleted. A short downtime occurs during the migration.
-         * <p>
-         **Caution:** When {@code true}, the SSD is permanently deleted. We recommend that you create a backup of the SSD before proceeding.
+         *
+         * <p>If the instance has a date in the Maintenance reboot field and you do nothing (or set
+         * this flag to {@code false}), the instance will be rebuilt at the scheduled maintenance
+         * time. The instance will experience 2-6 hours of downtime during the maintenance process.
+         * The local NVMe-based SSD will be preserved.
+         *
+         * <p>If you want to minimize downtime and can delete the SSD, you can set this flag to
+         * {@code true} and proactively reboot the instance before the scheduled maintenance time.
+         * The instance will be reboot migrated to a healthy host and the SSD will be deleted. A
+         * short downtime occurs during the migration.
+         *
+         * <p>*Caution:** When {@code true}, the SSD is permanently deleted. We recommend that you
+         * create a backup of the SSD before proceeding.
          *
          * @param allowDenseRebootMigration the value to set
          * @return this builder
-         **/
+         */
         public Builder allowDenseRebootMigration(Boolean allowDenseRebootMigration) {
             this.allowDenseRebootMigration = allowDenseRebootMigration;
             this.__explicitlySet__.add("allowDenseRebootMigration");
@@ -92,9 +96,7 @@ public final class SoftResetActionDetails extends InstancePowerActionDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -110,41 +112,46 @@ public final class SoftResetActionDetails extends InstancePowerActionDetails {
     }
 
     /**
-     * For instances that use a DenseIO shape, the flag denoting whether
-     * [reboot migration](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm#reboot)
+     * For instances that use a DenseIO shape, the flag denoting whether [reboot
+     * migration](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm#reboot)
      * is performed for the instance. The default value is {@code false}.
-     * <p>
-     * If the instance has a date in the Maintenance reboot field and you do nothing (or set this flag to {@code false}), the instance
-     * will be rebuilt at the scheduled maintenance time. The instance will experience 2-6 hours of downtime during the
-     * maintenance process. The local NVMe-based SSD will be preserved.
-     * <p>
-     * If you want to minimize downtime and can delete the SSD, you can set this flag to {@code true} and proactively reboot the
-     * instance before the scheduled maintenance time. The instance will be reboot migrated to a healthy host and the SSD will be
-     * deleted. A short downtime occurs during the migration.
-     * <p>
-     **Caution:** When {@code true}, the SSD is permanently deleted. We recommend that you create a backup of the SSD before proceeding.
      *
-     **/
+     * <p>If the instance has a date in the Maintenance reboot field and you do nothing (or set this
+     * flag to {@code false}), the instance will be rebuilt at the scheduled maintenance time. The
+     * instance will experience 2-6 hours of downtime during the maintenance process. The local
+     * NVMe-based SSD will be preserved.
+     *
+     * <p>If you want to minimize downtime and can delete the SSD, you can set this flag to {@code
+     * true} and proactively reboot the instance before the scheduled maintenance time. The instance
+     * will be reboot migrated to a healthy host and the SSD will be deleted. A short downtime
+     * occurs during the migration.
+     *
+     * <p>*Caution:** When {@code true}, the SSD is permanently deleted. We recommend that you
+     * create a backup of the SSD before proceeding.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("allowDenseRebootMigration")
     private final Boolean allowDenseRebootMigration;
 
     /**
-     * For instances that use a DenseIO shape, the flag denoting whether
-     * [reboot migration](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm#reboot)
+     * For instances that use a DenseIO shape, the flag denoting whether [reboot
+     * migration](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm#reboot)
      * is performed for the instance. The default value is {@code false}.
-     * <p>
-     * If the instance has a date in the Maintenance reboot field and you do nothing (or set this flag to {@code false}), the instance
-     * will be rebuilt at the scheduled maintenance time. The instance will experience 2-6 hours of downtime during the
-     * maintenance process. The local NVMe-based SSD will be preserved.
-     * <p>
-     * If you want to minimize downtime and can delete the SSD, you can set this flag to {@code true} and proactively reboot the
-     * instance before the scheduled maintenance time. The instance will be reboot migrated to a healthy host and the SSD will be
-     * deleted. A short downtime occurs during the migration.
-     * <p>
-     **Caution:** When {@code true}, the SSD is permanently deleted. We recommend that you create a backup of the SSD before proceeding.
+     *
+     * <p>If the instance has a date in the Maintenance reboot field and you do nothing (or set this
+     * flag to {@code false}), the instance will be rebuilt at the scheduled maintenance time. The
+     * instance will experience 2-6 hours of downtime during the maintenance process. The local
+     * NVMe-based SSD will be preserved.
+     *
+     * <p>If you want to minimize downtime and can delete the SSD, you can set this flag to {@code
+     * true} and proactively reboot the instance before the scheduled maintenance time. The instance
+     * will be reboot migrated to a healthy host and the SSD will be deleted. A short downtime
+     * occurs during the migration.
+     *
+     * <p>*Caution:** When {@code true}, the SSD is permanently deleted. We recommend that you
+     * create a backup of the SSD before proceeding.
      *
      * @return the value
-     **/
+     */
     public Boolean getAllowDenseRebootMigration() {
         return allowDenseRebootMigration;
     }
@@ -156,6 +163,7 @@ public final class SoftResetActionDetails extends InstancePowerActionDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

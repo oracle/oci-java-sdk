@@ -6,22 +6,22 @@ package com.oracle.bmc.database.model;
 
 /**
  * Request to create cloud Exadata infrastructure. Applies to Exadata Cloud Service instances only.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateCloudExadataInfrastructureDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateCloudExadataInfrastructureDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateCloudExadataInfrastructureDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -61,60 +61,60 @@ public final class CreateCloudExadataInfrastructureDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The availability domain where the cloud Exadata infrastructure is located.
-         **/
+        /** The availability domain where the cloud Exadata infrastructure is located. */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
          * The availability domain where the cloud Exadata infrastructure is located.
+         *
          * @param availabilityDomain the value to set
          * @return this builder
-         **/
+         */
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
-         *
-         **/
+         * The user-friendly name for the cloud Exadata infrastructure resource. The name does not
+         * need to be unique.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
+         * The user-friendly name for the cloud Exadata infrastructure resource. The name does not
+         * need to be unique.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The shape of the cloud Exadata infrastructure resource.
-         *
-         **/
+        /** The shape of the cloud Exadata infrastructure resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
@@ -123,39 +123,37 @@ public final class CreateCloudExadataInfrastructureDetails
          *
          * @param shape the value to set
          * @return this builder
-         **/
+         */
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-        /**
-         * The number of compute servers for the cloud Exadata infrastructure.
-         **/
+        /** The number of compute servers for the cloud Exadata infrastructure. */
         @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
         private Integer computeCount;
 
         /**
          * The number of compute servers for the cloud Exadata infrastructure.
+         *
          * @param computeCount the value to set
          * @return this builder
-         **/
+         */
         public Builder computeCount(Integer computeCount) {
             this.computeCount = computeCount;
             this.__explicitlySet__.add("computeCount");
             return this;
         }
-        /**
-         * The number of storage servers for the cloud Exadata infrastructure.
-         **/
+        /** The number of storage servers for the cloud Exadata infrastructure. */
         @com.fasterxml.jackson.annotation.JsonProperty("storageCount")
         private Integer storageCount;
 
         /**
          * The number of storage servers for the cloud Exadata infrastructure.
+         *
          * @param storageCount the value to set
          * @return this builder
-         **/
+         */
         public Builder storageCount(Integer storageCount) {
             this.storageCount = storageCount;
             this.__explicitlySet__.add("storageCount");
@@ -171,61 +169,62 @@ public final class CreateCloudExadataInfrastructureDetails
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         *
-         **/
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /**
-         * Customer contacts.
-         **/
+        /** Customer contacts. */
         @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
         private java.util.List<CustomerContact> customerContacts;
 
         /**
          * Customer contacts.
+         *
          * @param customerContacts the value to set
          * @return this builder
-         **/
+         */
         public Builder customerContacts(java.util.List<CustomerContact> customerContacts) {
             this.customerContacts = customerContacts;
             this.__explicitlySet__.add("customerContacts");
@@ -290,9 +289,7 @@ public final class CreateCloudExadataInfrastructureDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -301,54 +298,54 @@ public final class CreateCloudExadataInfrastructureDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The availability domain where the cloud Exadata infrastructure is located.
-     **/
+    /** The availability domain where the cloud Exadata infrastructure is located. */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
      * The availability domain where the cloud Exadata infrastructure is located.
+     *
      * @return the value
-     **/
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
-     *
-     **/
+     * The user-friendly name for the cloud Exadata infrastructure resource. The name does not need
+     * to be unique.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
+     * The user-friendly name for the cloud Exadata infrastructure resource. The name does not need
+     * to be unique.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The shape of the cloud Exadata infrastructure resource.
-     *
-     **/
+    /** The shape of the cloud Exadata infrastructure resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
@@ -356,35 +353,33 @@ public final class CreateCloudExadataInfrastructureDetails
      * The shape of the cloud Exadata infrastructure resource.
      *
      * @return the value
-     **/
+     */
     public String getShape() {
         return shape;
     }
 
-    /**
-     * The number of compute servers for the cloud Exadata infrastructure.
-     **/
+    /** The number of compute servers for the cloud Exadata infrastructure. */
     @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
     private final Integer computeCount;
 
     /**
      * The number of compute servers for the cloud Exadata infrastructure.
+     *
      * @return the value
-     **/
+     */
     public Integer getComputeCount() {
         return computeCount;
     }
 
-    /**
-     * The number of storage servers for the cloud Exadata infrastructure.
-     **/
+    /** The number of storage servers for the cloud Exadata infrastructure. */
     @com.fasterxml.jackson.annotation.JsonProperty("storageCount")
     private final Integer storageCount;
 
     /**
      * The number of storage servers for the cloud Exadata infrastructure.
+     *
      * @return the value
-     **/
+     */
     public Integer getStorageCount() {
         return storageCount;
     }
@@ -397,55 +392,56 @@ public final class CreateCloudExadataInfrastructureDetails
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
-    /**
-     * Customer contacts.
-     **/
+    /** Customer contacts. */
     @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
     private final java.util.List<CustomerContact> customerContacts;
 
     /**
      * Customer contacts.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<CustomerContact> getCustomerContacts() {
         return customerContacts;
     }
@@ -457,6 +453,7 @@ public final class CreateCloudExadataInfrastructureDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

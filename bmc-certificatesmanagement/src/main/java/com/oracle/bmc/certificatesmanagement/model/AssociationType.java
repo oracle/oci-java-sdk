@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.certificatesmanagement.model;
 
-/**
- * Type of the association.
- **/
+/** Type of the association. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-public enum AssociationType {
+public enum AssociationType implements com.oracle.bmc.http.internal.BmcEnum {
     Certificate("CERTIFICATE"),
     CertificateAuthority("CERTIFICATE_AUTHORITY"),
     CaBundle("CA_BUNDLE"),

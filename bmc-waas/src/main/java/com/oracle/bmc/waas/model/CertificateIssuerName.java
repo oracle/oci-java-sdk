@@ -5,22 +5,22 @@
 package com.oracle.bmc.waas.model;
 
 /**
- * The issuer of the certificate.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The issuer of the certificate. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CertificateIssuerName.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CertificateIssuerName.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CertificateIssuerName
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "country",
@@ -52,112 +52,109 @@ public final class CertificateIssuerName
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-         **/
+         * ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of
+         * codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("country")
         private String country;
 
         /**
-         * ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+         * ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of
+         * codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+         *
          * @param country the value to set
          * @return this builder
-         **/
+         */
         public Builder country(String country) {
             this.country = country;
             this.__explicitlySet__.add("country");
             return this;
         }
-        /**
-         * The province where the organization is located.
-         **/
+        /** The province where the organization is located. */
         @com.fasterxml.jackson.annotation.JsonProperty("stateProvince")
         private String stateProvince;
 
         /**
          * The province where the organization is located.
+         *
          * @param stateProvince the value to set
          * @return this builder
-         **/
+         */
         public Builder stateProvince(String stateProvince) {
             this.stateProvince = stateProvince;
             this.__explicitlySet__.add("stateProvince");
             return this;
         }
-        /**
-         * The city in which the organization is located.
-         **/
+        /** The city in which the organization is located. */
         @com.fasterxml.jackson.annotation.JsonProperty("locality")
         private String locality;
 
         /**
          * The city in which the organization is located.
+         *
          * @param locality the value to set
          * @return this builder
-         **/
+         */
         public Builder locality(String locality) {
             this.locality = locality;
             this.__explicitlySet__.add("locality");
             return this;
         }
-        /**
-         * The organization name.
-         **/
+        /** The organization name. */
         @com.fasterxml.jackson.annotation.JsonProperty("organization")
         private String organization;
 
         /**
          * The organization name.
+         *
          * @param organization the value to set
          * @return this builder
-         **/
+         */
         public Builder organization(String organization) {
             this.organization = organization;
             this.__explicitlySet__.add("organization");
             return this;
         }
-        /**
-         * The field to differentiate between divisions within an organization.
-         **/
+        /** The field to differentiate between divisions within an organization. */
         @com.fasterxml.jackson.annotation.JsonProperty("organizationalUnit")
         private String organizationalUnit;
 
         /**
          * The field to differentiate between divisions within an organization.
+         *
          * @param organizationalUnit the value to set
          * @return this builder
-         **/
+         */
         public Builder organizationalUnit(String organizationalUnit) {
             this.organizationalUnit = organizationalUnit;
             this.__explicitlySet__.add("organizationalUnit");
             return this;
         }
-        /**
-         * The Certificate Authority (CA) name.
-         **/
+        /** The Certificate Authority (CA) name. */
         @com.fasterxml.jackson.annotation.JsonProperty("commonName")
         private String commonName;
 
         /**
          * The Certificate Authority (CA) name.
+         *
          * @param commonName the value to set
          * @return this builder
-         **/
+         */
         public Builder commonName(String commonName) {
             this.commonName = commonName;
             this.__explicitlySet__.add("commonName");
             return this;
         }
-        /**
-         * The email address of the server's administrator.
-         **/
+        /** The email address of the server's administrator. */
         @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
         private String emailAddress;
 
         /**
          * The email address of the server's administrator.
+         *
          * @param emailAddress the value to set
          * @return this builder
-         **/
+         */
         public Builder emailAddress(String emailAddress) {
             this.emailAddress = emailAddress;
             this.__explicitlySet__.add("emailAddress");
@@ -210,9 +207,7 @@ public final class CertificateIssuerName
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -222,99 +217,96 @@ public final class CertificateIssuerName
     }
 
     /**
-     * ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-     **/
+     * ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of
+     * codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("country")
     private final String country;
 
     /**
-     * ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+     * ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of
+     * codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+     *
      * @return the value
-     **/
+     */
     public String getCountry() {
         return country;
     }
 
-    /**
-     * The province where the organization is located.
-     **/
+    /** The province where the organization is located. */
     @com.fasterxml.jackson.annotation.JsonProperty("stateProvince")
     private final String stateProvince;
 
     /**
      * The province where the organization is located.
+     *
      * @return the value
-     **/
+     */
     public String getStateProvince() {
         return stateProvince;
     }
 
-    /**
-     * The city in which the organization is located.
-     **/
+    /** The city in which the organization is located. */
     @com.fasterxml.jackson.annotation.JsonProperty("locality")
     private final String locality;
 
     /**
      * The city in which the organization is located.
+     *
      * @return the value
-     **/
+     */
     public String getLocality() {
         return locality;
     }
 
-    /**
-     * The organization name.
-     **/
+    /** The organization name. */
     @com.fasterxml.jackson.annotation.JsonProperty("organization")
     private final String organization;
 
     /**
      * The organization name.
+     *
      * @return the value
-     **/
+     */
     public String getOrganization() {
         return organization;
     }
 
-    /**
-     * The field to differentiate between divisions within an organization.
-     **/
+    /** The field to differentiate between divisions within an organization. */
     @com.fasterxml.jackson.annotation.JsonProperty("organizationalUnit")
     private final String organizationalUnit;
 
     /**
      * The field to differentiate between divisions within an organization.
+     *
      * @return the value
-     **/
+     */
     public String getOrganizationalUnit() {
         return organizationalUnit;
     }
 
-    /**
-     * The Certificate Authority (CA) name.
-     **/
+    /** The Certificate Authority (CA) name. */
     @com.fasterxml.jackson.annotation.JsonProperty("commonName")
     private final String commonName;
 
     /**
      * The Certificate Authority (CA) name.
+     *
      * @return the value
-     **/
+     */
     public String getCommonName() {
         return commonName;
     }
 
-    /**
-     * The email address of the server's administrator.
-     **/
+    /** The email address of the server's administrator. */
     @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
     private final String emailAddress;
 
     /**
      * The email address of the server's administrator.
+     *
      * @return the value
-     **/
+     */
     public String getEmailAddress() {
         return emailAddress;
     }
@@ -326,6 +318,7 @@ public final class CertificateIssuerName
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

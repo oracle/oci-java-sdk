@@ -5,22 +5,22 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * User-defined service variables.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * User-defined service variables. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ConfigurationVariables.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ConfigurationVariables.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ConfigurationVariables
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "completionType",
@@ -267,17 +267,16 @@ public final class ConfigurationVariables
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * ("completion_type")
-         **/
+        /** ("completion_type") */
         @com.fasterxml.jackson.annotation.JsonProperty("completionType")
         private CompletionType completionType;
 
         /**
          * ("completion_type")
+         *
          * @param completionType the value to set
          * @return this builder
-         **/
+         */
         public Builder completionType(CompletionType completionType) {
             this.completionType = completionType;
             this.__explicitlySet__.add("completionType");
@@ -285,43 +284,47 @@ public final class ConfigurationVariables
         }
         /**
          * If enabled, the server stores all temporary tables on disk rather than in memory.
-         * <p>
-         * bigTables corresponds to the MySQL server variable [big_tables](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_big_tables).
          *
-         **/
+         * <p>bigTables corresponds to the MySQL server variable
+         * [big_tables](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_big_tables).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("bigTables")
         private Boolean bigTables;
 
         /**
          * If enabled, the server stores all temporary tables on disk rather than in memory.
-         * <p>
-         * bigTables corresponds to the MySQL server variable [big_tables](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_big_tables).
+         *
+         * <p>bigTables corresponds to the MySQL server variable
+         * [big_tables](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_big_tables).
          *
          * @param bigTables the value to set
          * @return this builder
-         **/
+         */
         public Builder bigTables(Boolean bigTables) {
             this.bigTables = bigTables;
             this.__explicitlySet__.add("bigTables");
             return this;
         }
         /**
-         * Set the chunking size for updates to the global memory usage counter Global_connection_memory.
-         * <p>
-         * connectionMemoryChunkSize corresponds to the MySQL system variable [connection_memory_chunk_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_chunk_size).
+         * Set the chunking size for updates to the global memory usage counter
+         * Global_connection_memory.
          *
-         **/
+         * <p>connectionMemoryChunkSize corresponds to the MySQL system variable
+         * [connection_memory_chunk_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_chunk_size).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("connectionMemoryChunkSize")
         private Integer connectionMemoryChunkSize;
 
         /**
-         * Set the chunking size for updates to the global memory usage counter Global_connection_memory.
-         * <p>
-         * connectionMemoryChunkSize corresponds to the MySQL system variable [connection_memory_chunk_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_chunk_size).
+         * Set the chunking size for updates to the global memory usage counter
+         * Global_connection_memory.
+         *
+         * <p>connectionMemoryChunkSize corresponds to the MySQL system variable
+         * [connection_memory_chunk_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_chunk_size).
          *
          * @param connectionMemoryChunkSize the value to set
          * @return this builder
-         **/
+         */
         public Builder connectionMemoryChunkSize(Integer connectionMemoryChunkSize) {
             this.connectionMemoryChunkSize = connectionMemoryChunkSize;
             this.__explicitlySet__.add("connectionMemoryChunkSize");
@@ -329,37 +332,37 @@ public final class ConfigurationVariables
         }
         /**
          * Set the maximum amount of memory that can be used by a single user connection.
-         * <p>
-         * connectionMemoryLimit corresponds to the MySQL system variable [connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_limit).
          *
-         **/
+         * <p>connectionMemoryLimit corresponds to the MySQL system variable
+         * [connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_limit).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("connectionMemoryLimit")
         private Long connectionMemoryLimit;
 
         /**
          * Set the maximum amount of memory that can be used by a single user connection.
-         * <p>
-         * connectionMemoryLimit corresponds to the MySQL system variable [connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_limit).
+         *
+         * <p>connectionMemoryLimit corresponds to the MySQL system variable
+         * [connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_limit).
          *
          * @param connectionMemoryLimit the value to set
          * @return this builder
-         **/
+         */
         public Builder connectionMemoryLimit(Long connectionMemoryLimit) {
             this.connectionMemoryLimit = connectionMemoryLimit;
             this.__explicitlySet__.add("connectionMemoryLimit");
             return this;
         }
-        /**
-         * ("default_authentication_plugin")
-         **/
+        /** ("default_authentication_plugin") */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultAuthenticationPlugin")
         private DefaultAuthenticationPlugin defaultAuthenticationPlugin;
 
         /**
          * ("default_authentication_plugin")
+         *
          * @param defaultAuthenticationPlugin the value to set
          * @return this builder
-         **/
+         */
         public Builder defaultAuthenticationPlugin(
                 DefaultAuthenticationPlugin defaultAuthenticationPlugin) {
             this.defaultAuthenticationPlugin = defaultAuthenticationPlugin;
@@ -368,21 +371,22 @@ public final class ConfigurationVariables
         }
         /**
          * Set the total amount of memory that can be used by all user connections.
-         * <p>
-         * globalConnectionMemoryLimit corresponds to the MySQL system variable [global_connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_limit).
          *
-         **/
+         * <p>globalConnectionMemoryLimit corresponds to the MySQL system variable
+         * [global_connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_limit).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("globalConnectionMemoryLimit")
         private Long globalConnectionMemoryLimit;
 
         /**
          * Set the total amount of memory that can be used by all user connections.
-         * <p>
-         * globalConnectionMemoryLimit corresponds to the MySQL system variable [global_connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_limit).
+         *
+         * <p>globalConnectionMemoryLimit corresponds to the MySQL system variable
+         * [global_connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_limit).
          *
          * @param globalConnectionMemoryLimit the value to set
          * @return this builder
-         **/
+         */
         public Builder globalConnectionMemoryLimit(Long globalConnectionMemoryLimit) {
             this.globalConnectionMemoryLimit = globalConnectionMemoryLimit;
             this.__explicitlySet__.add("globalConnectionMemoryLimit");
@@ -390,354 +394,365 @@ public final class ConfigurationVariables
         }
         /**
          * Determines whether the MySQL server calculates Global_connection_memory.
-         * <p>
-         * globalConnectionMemoryTracking corresponds to the MySQL system variable [global_connection_memory_tracking](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_tracking).
          *
-         **/
+         * <p>globalConnectionMemoryTracking corresponds to the MySQL system variable
+         * [global_connection_memory_tracking](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_tracking).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("globalConnectionMemoryTracking")
         private Boolean globalConnectionMemoryTracking;
 
         /**
          * Determines whether the MySQL server calculates Global_connection_memory.
-         * <p>
-         * globalConnectionMemoryTracking corresponds to the MySQL system variable [global_connection_memory_tracking](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_tracking).
+         *
+         * <p>globalConnectionMemoryTracking corresponds to the MySQL system variable
+         * [global_connection_memory_tracking](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_tracking).
          *
          * @param globalConnectionMemoryTracking the value to set
          * @return this builder
-         **/
+         */
         public Builder globalConnectionMemoryTracking(Boolean globalConnectionMemoryTracking) {
             this.globalConnectionMemoryTracking = globalConnectionMemoryTracking;
             this.__explicitlySet__.add("globalConnectionMemoryTracking");
             return this;
         }
-        /**
-         * ("transaction_isolation")
-         **/
+        /** ("transaction_isolation") */
         @com.fasterxml.jackson.annotation.JsonProperty("transactionIsolation")
         private TransactionIsolation transactionIsolation;
 
         /**
          * ("transaction_isolation")
+         *
          * @param transactionIsolation the value to set
          * @return this builder
-         **/
+         */
         public Builder transactionIsolation(TransactionIsolation transactionIsolation) {
             this.transactionIsolation = transactionIsolation;
             this.__explicitlySet__.add("transactionIsolation");
             return this;
         }
-        /**
-         * ("innodb_ft_server_stopword_table")
-         **/
+        /** ("innodb_ft_server_stopword_table") */
         @com.fasterxml.jackson.annotation.JsonProperty("innodbFtServerStopwordTable")
         private String innodbFtServerStopwordTable;
 
         /**
          * ("innodb_ft_server_stopword_table")
+         *
          * @param innodbFtServerStopwordTable the value to set
          * @return this builder
-         **/
+         */
         public Builder innodbFtServerStopwordTable(String innodbFtServerStopwordTable) {
             this.innodbFtServerStopwordTable = innodbFtServerStopwordTable;
             this.__explicitlySet__.add("innodbFtServerStopwordTable");
             return this;
         }
-        /**
-         * ("mandatory_roles")
-         **/
+        /** ("mandatory_roles") */
         @com.fasterxml.jackson.annotation.JsonProperty("mandatoryRoles")
         private String mandatoryRoles;
 
         /**
          * ("mandatory_roles")
+         *
          * @param mandatoryRoles the value to set
          * @return this builder
-         **/
+         */
         public Builder mandatoryRoles(String mandatoryRoles) {
             this.mandatoryRoles = mandatoryRoles;
             this.__explicitlySet__.add("mandatoryRoles");
             return this;
         }
-        /**
-         * ("autocommit")
-         **/
+        /** ("autocommit") */
         @com.fasterxml.jackson.annotation.JsonProperty("autocommit")
         private Boolean autocommit;
 
         /**
          * ("autocommit")
+         *
          * @param autocommit the value to set
          * @return this builder
-         **/
+         */
         public Builder autocommit(Boolean autocommit) {
             this.autocommit = autocommit;
             this.__explicitlySet__.add("autocommit");
             return this;
         }
-        /**
-         * ("foreign_key_checks")
-         **/
+        /** ("foreign_key_checks") */
         @com.fasterxml.jackson.annotation.JsonProperty("foreignKeyChecks")
         private Boolean foreignKeyChecks;
 
         /**
          * ("foreign_key_checks")
+         *
          * @param foreignKeyChecks the value to set
          * @return this builder
-         **/
+         */
         public Builder foreignKeyChecks(Boolean foreignKeyChecks) {
             this.foreignKeyChecks = foreignKeyChecks;
             this.__explicitlySet__.add("foreignKeyChecks");
             return this;
         }
         /**
-         * - EVENTUAL:
-         *     Both RO and RW transactions do not wait for preceding transactions to be applied before executing.
-         *     A RW transaction does not wait for other members to apply a transaction. This means that a transaction
-         *     could be externalized on one member before the others. This also means that in the event of a primary failover,
-         *     the new primary can accept new RO and RW transactions before the previous primary transactions are all applied.
-         *     RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
-         * - BEFORE_ON_PRIMARY_FAILOVER:
-         *     New RO or RW transactions with a newly elected primary that is applying backlog from the old
-         *     primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens,
-         *     intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that
-         *     clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal,
-         *     but does depend on the size of the backlog.
-         * - BEFORE:
-         *     A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding
-         *     transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the
-         *     latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is
-         *     used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
-         * - AFTER:
-         *     A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions.
-         *     This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or
-         *     a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that
-         *     applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent
-         *     reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction,
-         *     by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees
-         *     provided by BEFORE_ON_PRIMARY_FAILOVER.
-         * - BEFORE_AND_AFTER:
-         *     A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been
-         *     applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place.
-         *     This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
-         *
-         **/
+         * - EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be
+         * applied before executing. A RW transaction does not wait for other members to apply a
+         * transaction. This means that a transaction could be externalized on one member before the
+         * others. This also means that in the event of a primary failover, the new primary can
+         * accept new RO and RW transactions before the previous primary transactions are all
+         * applied. RO transactions could result in outdated values, RW transactions could result in
+         * a rollback due to conflicts. - BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with
+         * a newly elected primary that is applying backlog from the old primary are held (not
+         * applied) until any backlog has been applied. This ensures that when a primary failover
+         * happens, intentionally or not, clients always see the latest value on the primary. This
+         * guarantees consistency, but means that clients must be able to handle the delay in the
+         * event that a backlog is being applied. Usually this delay should be minimal, but does
+         * depend on the size of the backlog. - BEFORE: A RW transaction waits for all preceding
+         * transactions to complete before being applied. A RO transaction waits for all preceding
+         * transactions to complete before being executed. This ensures that this transaction reads
+         * the latest value by only affecting the latency of the transaction. This reduces the
+         * overhead of synchronization on every RW transaction, by ensuring synchronization is used
+         * only on RO transactions. This consistency level also includes the consistency guarantees
+         * provided by BEFORE_ON_PRIMARY_FAILOVER. - AFTER: A RW transaction waits until its changes
+         * have been applied to all of the other members. This value has no effect on RO
+         * transactions. This mode ensures that when a transaction is committed on the local member,
+         * any subsequent transaction reads the written value or a more recent value on any group
+         * member. Use this mode with a group that is used for predominantly RO operations to ensure
+         * that applied RW transactions are applied everywhere once they commit. This could be used
+         * by your application to ensure that subsequent reads fetch the latest data which includes
+         * the latest writes. This reduces the overhead of synchronization on every RO transaction,
+         * by ensuring synchronization is used only on RW transactions. This consistency level also
+         * includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER. -
+         * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete
+         * before being applied and 2) until its changes have been applied on other members. A RO
+         * transaction waits for all preceding transactions to complete before execution takes
+         * place. This consistency level also includes the consistency guarantees provided by
+         * BEFORE_ON_PRIMARY_FAILOVER.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("groupReplicationConsistency")
         private GroupReplicationConsistency groupReplicationConsistency;
 
         /**
-         * - EVENTUAL:
-         *     Both RO and RW transactions do not wait for preceding transactions to be applied before executing.
-         *     A RW transaction does not wait for other members to apply a transaction. This means that a transaction
-         *     could be externalized on one member before the others. This also means that in the event of a primary failover,
-         *     the new primary can accept new RO and RW transactions before the previous primary transactions are all applied.
-         *     RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
-         * - BEFORE_ON_PRIMARY_FAILOVER:
-         *     New RO or RW transactions with a newly elected primary that is applying backlog from the old
-         *     primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens,
-         *     intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that
-         *     clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal,
-         *     but does depend on the size of the backlog.
-         * - BEFORE:
-         *     A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding
-         *     transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the
-         *     latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is
-         *     used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
-         * - AFTER:
-         *     A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions.
-         *     This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or
-         *     a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that
-         *     applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent
-         *     reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction,
-         *     by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees
-         *     provided by BEFORE_ON_PRIMARY_FAILOVER.
-         * - BEFORE_AND_AFTER:
-         *     A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been
-         *     applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place.
-         *     This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+         * - EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be
+         * applied before executing. A RW transaction does not wait for other members to apply a
+         * transaction. This means that a transaction could be externalized on one member before the
+         * others. This also means that in the event of a primary failover, the new primary can
+         * accept new RO and RW transactions before the previous primary transactions are all
+         * applied. RO transactions could result in outdated values, RW transactions could result in
+         * a rollback due to conflicts. - BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with
+         * a newly elected primary that is applying backlog from the old primary are held (not
+         * applied) until any backlog has been applied. This ensures that when a primary failover
+         * happens, intentionally or not, clients always see the latest value on the primary. This
+         * guarantees consistency, but means that clients must be able to handle the delay in the
+         * event that a backlog is being applied. Usually this delay should be minimal, but does
+         * depend on the size of the backlog. - BEFORE: A RW transaction waits for all preceding
+         * transactions to complete before being applied. A RO transaction waits for all preceding
+         * transactions to complete before being executed. This ensures that this transaction reads
+         * the latest value by only affecting the latency of the transaction. This reduces the
+         * overhead of synchronization on every RW transaction, by ensuring synchronization is used
+         * only on RO transactions. This consistency level also includes the consistency guarantees
+         * provided by BEFORE_ON_PRIMARY_FAILOVER. - AFTER: A RW transaction waits until its changes
+         * have been applied to all of the other members. This value has no effect on RO
+         * transactions. This mode ensures that when a transaction is committed on the local member,
+         * any subsequent transaction reads the written value or a more recent value on any group
+         * member. Use this mode with a group that is used for predominantly RO operations to ensure
+         * that applied RW transactions are applied everywhere once they commit. This could be used
+         * by your application to ensure that subsequent reads fetch the latest data which includes
+         * the latest writes. This reduces the overhead of synchronization on every RO transaction,
+         * by ensuring synchronization is used only on RW transactions. This consistency level also
+         * includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER. -
+         * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete
+         * before being applied and 2) until its changes have been applied on other members. A RO
+         * transaction waits for all preceding transactions to complete before execution takes
+         * place. This consistency level also includes the consistency guarantees provided by
+         * BEFORE_ON_PRIMARY_FAILOVER.
          *
          * @param groupReplicationConsistency the value to set
          * @return this builder
-         **/
+         */
         public Builder groupReplicationConsistency(
                 GroupReplicationConsistency groupReplicationConsistency) {
             this.groupReplicationConsistency = groupReplicationConsistency;
             this.__explicitlySet__.add("groupReplicationConsistency");
             return this;
         }
-        /**
-         * ("innodb_ft_enable_stopword")
-         **/
+        /** ("innodb_ft_enable_stopword") */
         @com.fasterxml.jackson.annotation.JsonProperty("innodbFtEnableStopword")
         private Boolean innodbFtEnableStopword;
 
         /**
          * ("innodb_ft_enable_stopword")
+         *
          * @param innodbFtEnableStopword the value to set
          * @return this builder
-         **/
+         */
         public Builder innodbFtEnableStopword(Boolean innodbFtEnableStopword) {
             this.innodbFtEnableStopword = innodbFtEnableStopword;
             this.__explicitlySet__.add("innodbFtEnableStopword");
             return this;
         }
         /**
-         * Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
-         * <p>
-         * This is the MySQL variable "innodb_log_writer_threads". For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_log_writer_threads)
+         * Enables dedicated log writer threads for writing redo log records from the log buffer to
+         * the system buffers and flushing the system buffers to the redo log files.
          *
-         **/
+         * <p>This is the MySQL variable "innodb_log_writer_threads". For more information, please
+         * see the [MySQL
+         * documentation](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_log_writer_threads)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("innodbLogWriterThreads")
         private Boolean innodbLogWriterThreads;
 
         /**
-         * Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
-         * <p>
-         * This is the MySQL variable "innodb_log_writer_threads". For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_log_writer_threads)
+         * Enables dedicated log writer threads for writing redo log records from the log buffer to
+         * the system buffers and flushing the system buffers to the redo log files.
+         *
+         * <p>This is the MySQL variable "innodb_log_writer_threads". For more information, please
+         * see the [MySQL
+         * documentation](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_log_writer_threads)
          *
          * @param innodbLogWriterThreads the value to set
          * @return this builder
-         **/
+         */
         public Builder innodbLogWriterThreads(Boolean innodbLogWriterThreads) {
             this.innodbLogWriterThreads = innodbLogWriterThreads;
             this.__explicitlySet__.add("innodbLogWriterThreads");
             return this;
         }
-        /**
-         * ("local_infile")
-         **/
+        /** ("local_infile") */
         @com.fasterxml.jackson.annotation.JsonProperty("localInfile")
         private Boolean localInfile;
 
         /**
          * ("local_infile")
+         *
          * @param localInfile the value to set
          * @return this builder
-         **/
+         */
         public Builder localInfile(Boolean localInfile) {
             this.localInfile = localInfile;
             this.__explicitlySet__.add("localInfile");
             return this;
         }
-        /**
-         * ("mysql_firewall_mode")
-         **/
+        /** ("mysql_firewall_mode") */
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlFirewallMode")
         private Boolean mysqlFirewallMode;
 
         /**
          * ("mysql_firewall_mode")
+         *
          * @param mysqlFirewallMode the value to set
          * @return this builder
-         **/
+         */
         public Builder mysqlFirewallMode(Boolean mysqlFirewallMode) {
             this.mysqlFirewallMode = mysqlFirewallMode;
             this.__explicitlySet__.add("mysqlFirewallMode");
             return this;
         }
         /**
-         * ("mysqlx_enable_hello_notice") DEPRECATED -- variable should not be settable and will be ignored
-         **/
+         * ("mysqlx_enable_hello_notice") DEPRECATED -- variable should not be settable and will be
+         * ignored
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxEnableHelloNotice")
         private Boolean mysqlxEnableHelloNotice;
 
         /**
-         * ("mysqlx_enable_hello_notice") DEPRECATED -- variable should not be settable and will be ignored
+         * ("mysqlx_enable_hello_notice") DEPRECATED -- variable should not be settable and will be
+         * ignored
+         *
          * @param mysqlxEnableHelloNotice the value to set
          * @return this builder
-         **/
+         */
         public Builder mysqlxEnableHelloNotice(Boolean mysqlxEnableHelloNotice) {
             this.mysqlxEnableHelloNotice = mysqlxEnableHelloNotice;
             this.__explicitlySet__.add("mysqlxEnableHelloNotice");
             return this;
         }
-        /**
-         * ("sql_require_primary_key")
-         **/
+        /** ("sql_require_primary_key") */
         @com.fasterxml.jackson.annotation.JsonProperty("sqlRequirePrimaryKey")
         private Boolean sqlRequirePrimaryKey;
 
         /**
          * ("sql_require_primary_key")
+         *
          * @param sqlRequirePrimaryKey the value to set
          * @return this builder
-         **/
+         */
         public Builder sqlRequirePrimaryKey(Boolean sqlRequirePrimaryKey) {
             this.sqlRequirePrimaryKey = sqlRequirePrimaryKey;
             this.__explicitlySet__.add("sqlRequirePrimaryKey");
             return this;
         }
-        /**
-         * ("sql_warnings")
-         **/
+        /** ("sql_warnings") */
         @com.fasterxml.jackson.annotation.JsonProperty("sqlWarnings")
         private Boolean sqlWarnings;
 
         /**
          * ("sql_warnings")
+         *
          * @param sqlWarnings the value to set
          * @return this builder
-         **/
+         */
         public Builder sqlWarnings(Boolean sqlWarnings) {
             this.sqlWarnings = sqlWarnings;
             this.__explicitlySet__.add("sqlWarnings");
             return this;
         }
         /**
-         * Sets the binary log expiration period in seconds.
-         * binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
-         *
-         **/
+         * Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to
+         * the MySQL binary logging system variable
+         * [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("binlogExpireLogsSeconds")
         private Integer binlogExpireLogsSeconds;
 
         /**
-         * Sets the binary log expiration period in seconds.
-         * binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
+         * Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to
+         * the MySQL binary logging system variable
+         * [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
          *
          * @param binlogExpireLogsSeconds the value to set
          * @return this builder
-         **/
+         */
         public Builder binlogExpireLogsSeconds(Integer binlogExpireLogsSeconds) {
             this.binlogExpireLogsSeconds = binlogExpireLogsSeconds;
             this.__explicitlySet__.add("binlogExpireLogsSeconds");
             return this;
         }
         /**
-         * Configures the amount of table metadata added to the binary log when using row-based logging.
-         * binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
-         *
-         **/
+         * Configures the amount of table metadata added to the binary log when using row-based
+         * logging. binlogRowMetadata corresponds to the MySQL binary logging system variable
+         * [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("binlogRowMetadata")
         private BinlogRowMetadata binlogRowMetadata;
 
         /**
-         * Configures the amount of table metadata added to the binary log when using row-based logging.
-         * binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
+         * Configures the amount of table metadata added to the binary log when using row-based
+         * logging. binlogRowMetadata corresponds to the MySQL binary logging system variable
+         * [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
          *
          * @param binlogRowMetadata the value to set
          * @return this builder
-         **/
+         */
         public Builder binlogRowMetadata(BinlogRowMetadata binlogRowMetadata) {
             this.binlogRowMetadata = binlogRowMetadata;
             this.__explicitlySet__.add("binlogRowMetadata");
             return this;
         }
         /**
-         * When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document.
-         * binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
-         *
-         **/
+         * When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for
+         * updates that modify only a small portion of a JSON document. binlogRowValueOptions
+         * corresponds to the MySQL binary logging system variable
+         * [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("binlogRowValueOptions")
         private String binlogRowValueOptions;
 
         /**
-         * When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document.
-         * binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
+         * When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for
+         * updates that modify only a small portion of a JSON document. binlogRowValueOptions
+         * corresponds to the MySQL binary logging system variable
+         * [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
          *
          * @param binlogRowValueOptions the value to set
          * @return this builder
-         **/
+         */
         public Builder binlogRowValueOptions(String binlogRowValueOptions) {
             this.binlogRowValueOptions = binlogRowValueOptions;
             this.__explicitlySet__.add("binlogRowValueOptions");
@@ -745,65 +760,68 @@ public final class ConfigurationVariables
         }
         /**
          * Enables compression for transactions that are written to binary log files on this server.
-         * binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
-         *
-         **/
+         * binlogTransactionCompression corresponds to the MySQL binary logging system variable
+         * [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("binlogTransactionCompression")
         private Boolean binlogTransactionCompression;
 
         /**
          * Enables compression for transactions that are written to binary log files on this server.
-         * binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
+         * binlogTransactionCompression corresponds to the MySQL binary logging system variable
+         * [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
          *
          * @param binlogTransactionCompression the value to set
          * @return this builder
-         **/
+         */
         public Builder binlogTransactionCompression(Boolean binlogTransactionCompression) {
             this.binlogTransactionCompression = binlogTransactionCompression;
             this.__explicitlySet__.add("binlogTransactionCompression");
             return this;
         }
         /**
-         * The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
-         * <p>
-         * innodbBufferPoolSize corresponds to the MySQL server system variable
-         * [innodb_buffer_pool_size](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size).
-         * <p>
-         * The default and maximum values depend on the amount of RAM provisioned by the shape.
-         * See [Default User Variables](https://docs.cloud.oracle.com/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
+         * The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches
+         * table and index data.
          *
-         **/
+         * <p>innodbBufferPoolSize corresponds to the MySQL server system variable
+         * [innodb_buffer_pool_size](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size).
+         *
+         * <p>The default and maximum values depend on the amount of RAM provisioned by the shape.
+         * See [Default User
+         * Variables](https://docs.cloud.oracle.com/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("innodbBufferPoolSize")
         private Long innodbBufferPoolSize;
 
         /**
-         * The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
-         * <p>
-         * innodbBufferPoolSize corresponds to the MySQL server system variable
+         * The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches
+         * table and index data.
+         *
+         * <p>innodbBufferPoolSize corresponds to the MySQL server system variable
          * [innodb_buffer_pool_size](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size).
-         * <p>
-         * The default and maximum values depend on the amount of RAM provisioned by the shape.
-         * See [Default User Variables](https://docs.cloud.oracle.com/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
+         *
+         * <p>The default and maximum values depend on the amount of RAM provisioned by the shape.
+         * See [Default User
+         * Variables](https://docs.cloud.oracle.com/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
          *
          * @param innodbBufferPoolSize the value to set
          * @return this builder
-         **/
+         */
         public Builder innodbBufferPoolSize(Long innodbBufferPoolSize) {
             this.innodbBufferPoolSize = innodbBufferPoolSize;
             this.__explicitlySet__.add("innodbBufferPoolSize");
             return this;
         }
-        /**
-         * ("innodb_ft_result_cache_limit")
-         **/
+        /** ("innodb_ft_result_cache_limit") */
         @com.fasterxml.jackson.annotation.JsonProperty("innodbFtResultCacheLimit")
         private Long innodbFtResultCacheLimit;
 
         /**
          * ("innodb_ft_result_cache_limit")
+         *
          * @param innodbFtResultCacheLimit the value to set
          * @return this builder
-         **/
+         */
         public Builder innodbFtResultCacheLimit(Long innodbFtResultCacheLimit) {
             this.innodbFtResultCacheLimit = innodbFtResultCacheLimit;
             this.__explicitlySet__.add("innodbFtResultCacheLimit");
@@ -811,321 +829,322 @@ public final class ConfigurationVariables
         }
         /**
          * Sets the size of the transaction cache.
-         * <p>
-         * maxBinlogCacheSize corresponds to the MySQL server system variable [max_binlog_cache_size](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_max_binlog_cache_size).
          *
-         **/
+         * <p>maxBinlogCacheSize corresponds to the MySQL server system variable
+         * [max_binlog_cache_size](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_max_binlog_cache_size).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("maxBinlogCacheSize")
         private Long maxBinlogCacheSize;
 
         /**
          * Sets the size of the transaction cache.
-         * <p>
-         * maxBinlogCacheSize corresponds to the MySQL server system variable [max_binlog_cache_size](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_max_binlog_cache_size).
+         *
+         * <p>maxBinlogCacheSize corresponds to the MySQL server system variable
+         * [max_binlog_cache_size](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_max_binlog_cache_size).
          *
          * @param maxBinlogCacheSize the value to set
          * @return this builder
-         **/
+         */
         public Builder maxBinlogCacheSize(Long maxBinlogCacheSize) {
             this.maxBinlogCacheSize = maxBinlogCacheSize;
             this.__explicitlySet__.add("maxBinlogCacheSize");
             return this;
         }
-        /**
-         * ("max_connect_errors")
-         **/
+        /** ("max_connect_errors") */
         @com.fasterxml.jackson.annotation.JsonProperty("maxConnectErrors")
         private Long maxConnectErrors;
 
         /**
          * ("max_connect_errors")
+         *
          * @param maxConnectErrors the value to set
          * @return this builder
-         **/
+         */
         public Builder maxConnectErrors(Long maxConnectErrors) {
             this.maxConnectErrors = maxConnectErrors;
             this.__explicitlySet__.add("maxConnectErrors");
             return this;
         }
         /**
-         * This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
-         * <p>
-         * maxHeapTableSize corresponds to the MySQL system variable
-         * [max_heap_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_heap_table_size)
+         * This variable sets the maximum size to which user-created MEMORY tables are permitted to
+         * grow.
          *
-         **/
+         * <p>maxHeapTableSize corresponds to the MySQL system variable
+         * [max_heap_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_heap_table_size)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("maxHeapTableSize")
         private Long maxHeapTableSize;
 
         /**
-         * This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
-         * <p>
-         * maxHeapTableSize corresponds to the MySQL system variable
+         * This variable sets the maximum size to which user-created MEMORY tables are permitted to
+         * grow.
+         *
+         * <p>maxHeapTableSize corresponds to the MySQL system variable
          * [max_heap_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_heap_table_size)
          *
          * @param maxHeapTableSize the value to set
          * @return this builder
-         **/
+         */
         public Builder maxHeapTableSize(Long maxHeapTableSize) {
             this.maxHeapTableSize = maxHeapTableSize;
             this.__explicitlySet__.add("maxHeapTableSize");
             return this;
         }
-        /**
-         * ("max_connections")
-         **/
+        /** ("max_connections") */
         @com.fasterxml.jackson.annotation.JsonProperty("maxConnections")
         private Integer maxConnections;
 
         /**
          * ("max_connections")
+         *
          * @param maxConnections the value to set
          * @return this builder
-         **/
+         */
         public Builder maxConnections(Integer maxConnections) {
             this.maxConnections = maxConnections;
             this.__explicitlySet__.add("maxConnections");
             return this;
         }
-        /**
-         * ("max_prepared_stmt_count")
-         **/
+        /** ("max_prepared_stmt_count") */
         @com.fasterxml.jackson.annotation.JsonProperty("maxPreparedStmtCount")
         private Integer maxPreparedStmtCount;
 
         /**
          * ("max_prepared_stmt_count")
+         *
          * @param maxPreparedStmtCount the value to set
          * @return this builder
-         **/
+         */
         public Builder maxPreparedStmtCount(Integer maxPreparedStmtCount) {
             this.maxPreparedStmtCount = maxPreparedStmtCount;
             this.__explicitlySet__.add("maxPreparedStmtCount");
             return this;
         }
         /**
-         * The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
-         * <p>
-         * connectTimeout corresponds to the MySQL system variable
-         * [connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_connect_timeout)
-         * <p>
-         * Increasing the connect_timeout value might help if clients frequently encounter errors of the form
-         * "Lost connection to MySQL server at 'XXX', system error: errno".
+         * The number of seconds that the mysqld server waits for a connect packet before responding
+         * with Bad handshake.
          *
-         **/
+         * <p>connectTimeout corresponds to the MySQL system variable
+         * [connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_connect_timeout)
+         *
+         * <p>Increasing the connect_timeout value might help if clients frequently encounter errors
+         * of the form "Lost connection to MySQL server at 'XXX', system error: errno".
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("connectTimeout")
         private Integer connectTimeout;
 
         /**
-         * The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
-         * <p>
-         * connectTimeout corresponds to the MySQL system variable
+         * The number of seconds that the mysqld server waits for a connect packet before responding
+         * with Bad handshake.
+         *
+         * <p>connectTimeout corresponds to the MySQL system variable
          * [connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_connect_timeout)
-         * <p>
-         * Increasing the connect_timeout value might help if clients frequently encounter errors of the form
-         * "Lost connection to MySQL server at 'XXX', system error: errno".
+         *
+         * <p>Increasing the connect_timeout value might help if clients frequently encounter errors
+         * of the form "Lost connection to MySQL server at 'XXX', system error: errno".
          *
          * @param connectTimeout the value to set
          * @return this builder
-         **/
+         */
         public Builder connectTimeout(Integer connectTimeout) {
             this.connectTimeout = connectTimeout;
             this.__explicitlySet__.add("connectTimeout");
             return this;
         }
-        /**
-         * ("cte_max_recursion_depth")
-         **/
+        /** ("cte_max_recursion_depth") */
         @com.fasterxml.jackson.annotation.JsonProperty("cteMaxRecursionDepth")
         private Long cteMaxRecursionDepth;
 
         /**
          * ("cte_max_recursion_depth")
+         *
          * @param cteMaxRecursionDepth the value to set
          * @return this builder
-         **/
+         */
         public Builder cteMaxRecursionDepth(Long cteMaxRecursionDepth) {
             this.cteMaxRecursionDepth = cteMaxRecursionDepth;
             this.__explicitlySet__.add("cteMaxRecursionDepth");
             return this;
         }
         /**
-         * ("generated_random_password_length") DEPRECATED -- variable should not be settable and will be ignored
-         **/
+         * ("generated_random_password_length") DEPRECATED -- variable should not be settable and
+         * will be ignored
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("generatedRandomPasswordLength")
         private Integer generatedRandomPasswordLength;
 
         /**
-         * ("generated_random_password_length") DEPRECATED -- variable should not be settable and will be ignored
+         * ("generated_random_password_length") DEPRECATED -- variable should not be settable and
+         * will be ignored
+         *
          * @param generatedRandomPasswordLength the value to set
          * @return this builder
-         **/
+         */
         public Builder generatedRandomPasswordLength(Integer generatedRandomPasswordLength) {
             this.generatedRandomPasswordLength = generatedRandomPasswordLength;
             this.__explicitlySet__.add("generatedRandomPasswordLength");
             return this;
         }
-        /**
-         * ("information_schema_stats_expiry")
-         **/
+        /** ("information_schema_stats_expiry") */
         @com.fasterxml.jackson.annotation.JsonProperty("informationSchemaStatsExpiry")
         private Integer informationSchemaStatsExpiry;
 
         /**
          * ("information_schema_stats_expiry")
+         *
          * @param informationSchemaStatsExpiry the value to set
          * @return this builder
-         **/
+         */
         public Builder informationSchemaStatsExpiry(Integer informationSchemaStatsExpiry) {
             this.informationSchemaStatsExpiry = informationSchemaStatsExpiry;
             this.__explicitlySet__.add("informationSchemaStatsExpiry");
             return this;
         }
         /**
-         * Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
-         * <p>
-         * innodbBufferPoolDumpPct corresponds to the MySQL InnoDB system variable
-         * [innodb_buffer_pool_dump_pct](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_dump_pct).
-         * <p>
-         * The range is 1 to 100. The default value is 25.
-         * <p>
-         * For example, if there are 4 buffer pools with 100 pages each, and innodb_buffer_pool_dump_pct is set to 25,
-         * the 25 most recently used pages from each buffer pool are dumped.
+         * Specifies the percentage of the most recently used pages for each buffer pool to read out
+         * and dump.
          *
-         **/
+         * <p>innodbBufferPoolDumpPct corresponds to the MySQL InnoDB system variable
+         * [innodb_buffer_pool_dump_pct](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_dump_pct).
+         *
+         * <p>The range is 1 to 100. The default value is 25.
+         *
+         * <p>For example, if there are 4 buffer pools with 100 pages each, and
+         * innodb_buffer_pool_dump_pct is set to 25, the 25 most recently used pages from each
+         * buffer pool are dumped.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("innodbBufferPoolDumpPct")
         private Integer innodbBufferPoolDumpPct;
 
         /**
-         * Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
-         * <p>
-         * innodbBufferPoolDumpPct corresponds to the MySQL InnoDB system variable
+         * Specifies the percentage of the most recently used pages for each buffer pool to read out
+         * and dump.
+         *
+         * <p>innodbBufferPoolDumpPct corresponds to the MySQL InnoDB system variable
          * [innodb_buffer_pool_dump_pct](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_dump_pct).
-         * <p>
-         * The range is 1 to 100. The default value is 25.
-         * <p>
-         * For example, if there are 4 buffer pools with 100 pages each, and innodb_buffer_pool_dump_pct is set to 25,
-         * the 25 most recently used pages from each buffer pool are dumped.
+         *
+         * <p>The range is 1 to 100. The default value is 25.
+         *
+         * <p>For example, if there are 4 buffer pools with 100 pages each, and
+         * innodb_buffer_pool_dump_pct is set to 25, the 25 most recently used pages from each
+         * buffer pool are dumped.
          *
          * @param innodbBufferPoolDumpPct the value to set
          * @return this builder
-         **/
+         */
         public Builder innodbBufferPoolDumpPct(Integer innodbBufferPoolDumpPct) {
             this.innodbBufferPoolDumpPct = innodbBufferPoolDumpPct;
             this.__explicitlySet__.add("innodbBufferPoolDumpPct");
             return this;
         }
-        /**
-         * ("innodb_buffer_pool_instances")
-         **/
+        /** ("innodb_buffer_pool_instances") */
         @com.fasterxml.jackson.annotation.JsonProperty("innodbBufferPoolInstances")
         private Integer innodbBufferPoolInstances;
 
         /**
          * ("innodb_buffer_pool_instances")
+         *
          * @param innodbBufferPoolInstances the value to set
          * @return this builder
-         **/
+         */
         public Builder innodbBufferPoolInstances(Integer innodbBufferPoolInstances) {
             this.innodbBufferPoolInstances = innodbBufferPoolInstances;
             this.__explicitlySet__.add("innodbBufferPoolInstances");
             return this;
         }
         /**
-         * innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
-         *
-         **/
+         * innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size]
+         * (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("innodbDdlBufferSize")
         private Long innodbDdlBufferSize;
 
         /**
-         * innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+         * innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size]
+         * (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
          *
          * @param innodbDdlBufferSize the value to set
          * @return this builder
-         **/
+         */
         public Builder innodbDdlBufferSize(Long innodbDdlBufferSize) {
             this.innodbDdlBufferSize = innodbDdlBufferSize;
             this.__explicitlySet__.add("innodbDdlBufferSize");
             return this;
         }
         /**
-         * innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
-         *
-         **/
+         * innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads]
+         * (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("innodbDdlThreads")
         private Integer innodbDdlThreads;
 
         /**
-         * innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+         * innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads]
+         * (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
          *
          * @param innodbDdlThreads the value to set
          * @return this builder
-         **/
+         */
         public Builder innodbDdlThreads(Integer innodbDdlThreads) {
             this.innodbDdlThreads = innodbDdlThreads;
             this.__explicitlySet__.add("innodbDdlThreads");
             return this;
         }
-        /**
-         * ("innodb_ft_max_token_size")
-         **/
+        /** ("innodb_ft_max_token_size") */
         @com.fasterxml.jackson.annotation.JsonProperty("innodbFtMaxTokenSize")
         private Integer innodbFtMaxTokenSize;
 
         /**
          * ("innodb_ft_max_token_size")
+         *
          * @param innodbFtMaxTokenSize the value to set
          * @return this builder
-         **/
+         */
         public Builder innodbFtMaxTokenSize(Integer innodbFtMaxTokenSize) {
             this.innodbFtMaxTokenSize = innodbFtMaxTokenSize;
             this.__explicitlySet__.add("innodbFtMaxTokenSize");
             return this;
         }
-        /**
-         * ("innodb_ft_min_token_size")
-         **/
+        /** ("innodb_ft_min_token_size") */
         @com.fasterxml.jackson.annotation.JsonProperty("innodbFtMinTokenSize")
         private Integer innodbFtMinTokenSize;
 
         /**
          * ("innodb_ft_min_token_size")
+         *
          * @param innodbFtMinTokenSize the value to set
          * @return this builder
-         **/
+         */
         public Builder innodbFtMinTokenSize(Integer innodbFtMinTokenSize) {
             this.innodbFtMinTokenSize = innodbFtMinTokenSize;
             this.__explicitlySet__.add("innodbFtMinTokenSize");
             return this;
         }
-        /**
-         * ("innodb_ft_num_word_optimize")
-         **/
+        /** ("innodb_ft_num_word_optimize") */
         @com.fasterxml.jackson.annotation.JsonProperty("innodbFtNumWordOptimize")
         private Integer innodbFtNumWordOptimize;
 
         /**
          * ("innodb_ft_num_word_optimize")
+         *
          * @param innodbFtNumWordOptimize the value to set
          * @return this builder
-         **/
+         */
         public Builder innodbFtNumWordOptimize(Integer innodbFtNumWordOptimize) {
             this.innodbFtNumWordOptimize = innodbFtNumWordOptimize;
             this.__explicitlySet__.add("innodbFtNumWordOptimize");
             return this;
         }
-        /**
-         * ("innodb_lock_wait_timeout")
-         **/
+        /** ("innodb_lock_wait_timeout") */
         @com.fasterxml.jackson.annotation.JsonProperty("innodbLockWaitTimeout")
         private Integer innodbLockWaitTimeout;
 
         /**
          * ("innodb_lock_wait_timeout")
+         *
          * @param innodbLockWaitTimeout the value to set
          * @return this builder
-         **/
+         */
         public Builder innodbLockWaitTimeout(Integer innodbLockWaitTimeout) {
             this.innodbLockWaitTimeout = innodbLockWaitTimeout;
             this.__explicitlySet__.add("innodbLockWaitTimeout");
@@ -1133,159 +1152,170 @@ public final class ConfigurationVariables
         }
         /**
          * The desired maximum purge lag in terms of transactions.
-         * <p>
-         * InnoDB maintains a list of transactions that have index records delete-marked by UPDATE or DELETE operations. The length of the list is the purge lag.
-         * <p>
-         * If this value is exceeded, a delay is imposed on INSERT, UPDATE, and DELETE operations to allow time for purge to catch up.
-         * <p>
-         * The default value is 0, which means there is no maximum purge lag and no delay.
-         * <p>
-         * innodbMaxPurgeLag corresponds to the MySQL server system variable
-         * [innodb_max_purge_lag](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag).
          *
-         **/
+         * <p>InnoDB maintains a list of transactions that have index records delete-marked by
+         * UPDATE or DELETE operations. The length of the list is the purge lag.
+         *
+         * <p>If this value is exceeded, a delay is imposed on INSERT, UPDATE, and DELETE operations
+         * to allow time for purge to catch up.
+         *
+         * <p>The default value is 0, which means there is no maximum purge lag and no delay.
+         *
+         * <p>innodbMaxPurgeLag corresponds to the MySQL server system variable
+         * [innodb_max_purge_lag](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("innodbMaxPurgeLag")
         private Long innodbMaxPurgeLag;
 
         /**
          * The desired maximum purge lag in terms of transactions.
-         * <p>
-         * InnoDB maintains a list of transactions that have index records delete-marked by UPDATE or DELETE operations. The length of the list is the purge lag.
-         * <p>
-         * If this value is exceeded, a delay is imposed on INSERT, UPDATE, and DELETE operations to allow time for purge to catch up.
-         * <p>
-         * The default value is 0, which means there is no maximum purge lag and no delay.
-         * <p>
-         * innodbMaxPurgeLag corresponds to the MySQL server system variable
+         *
+         * <p>InnoDB maintains a list of transactions that have index records delete-marked by
+         * UPDATE or DELETE operations. The length of the list is the purge lag.
+         *
+         * <p>If this value is exceeded, a delay is imposed on INSERT, UPDATE, and DELETE operations
+         * to allow time for purge to catch up.
+         *
+         * <p>The default value is 0, which means there is no maximum purge lag and no delay.
+         *
+         * <p>innodbMaxPurgeLag corresponds to the MySQL server system variable
          * [innodb_max_purge_lag](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag).
          *
          * @param innodbMaxPurgeLag the value to set
          * @return this builder
-         **/
+         */
         public Builder innodbMaxPurgeLag(Long innodbMaxPurgeLag) {
             this.innodbMaxPurgeLag = innodbMaxPurgeLag;
             this.__explicitlySet__.add("innodbMaxPurgeLag");
             return this;
         }
         /**
-         * The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
-         * <p>
-         * The specified innodb_max_purge_lag_delay value is an upper limit on the delay period.
-         * <p>
-         * innodbMaxPurgeLagDelay corresponds to the MySQL server system variable
-         * [innodb_max_purge_lag_delay](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag_delay).
+         * The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag
+         * threshold is exceeded.
          *
-         **/
+         * <p>The specified innodb_max_purge_lag_delay value is an upper limit on the delay period.
+         *
+         * <p>innodbMaxPurgeLagDelay corresponds to the MySQL server system variable
+         * [innodb_max_purge_lag_delay](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag_delay).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("innodbMaxPurgeLagDelay")
         private Integer innodbMaxPurgeLagDelay;
 
         /**
-         * The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
-         * <p>
-         * The specified innodb_max_purge_lag_delay value is an upper limit on the delay period.
-         * <p>
-         * innodbMaxPurgeLagDelay corresponds to the MySQL server system variable
+         * The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag
+         * threshold is exceeded.
+         *
+         * <p>The specified innodb_max_purge_lag_delay value is an upper limit on the delay period.
+         *
+         * <p>innodbMaxPurgeLagDelay corresponds to the MySQL server system variable
          * [innodb_max_purge_lag_delay](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag_delay).
          *
          * @param innodbMaxPurgeLagDelay the value to set
          * @return this builder
-         **/
+         */
         public Builder innodbMaxPurgeLagDelay(Integer innodbMaxPurgeLagDelay) {
             this.innodbMaxPurgeLagDelay = innodbMaxPurgeLagDelay;
             this.__explicitlySet__.add("innodbMaxPurgeLagDelay");
             return this;
         }
         /**
-         * The number of seconds the server waits for activity on an interactive connection before closing it.
-         * <p>
-         * interactiveTimeout corresponds to the MySQL system variable.
-         * [interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
+         * The number of seconds the server waits for activity on an interactive connection before
+         * closing it.
          *
-         **/
+         * <p>interactiveTimeout corresponds to the MySQL system variable.
+         * [interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("interactiveTimeout")
         private Integer interactiveTimeout;
 
         /**
-         * The number of seconds the server waits for activity on an interactive connection before closing it.
-         * <p>
-         * interactiveTimeout corresponds to the MySQL system variable.
+         * The number of seconds the server waits for activity on an interactive connection before
+         * closing it.
+         *
+         * <p>interactiveTimeout corresponds to the MySQL system variable.
          * [interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
          *
          * @param interactiveTimeout the value to set
          * @return this builder
-         **/
+         */
         public Builder interactiveTimeout(Integer interactiveTimeout) {
             this.interactiveTimeout = interactiveTimeout;
             this.__explicitlySet__.add("interactiveTimeout");
             return this;
         }
         /**
-         * The number of index pages to sample when estimating cardinality and other statistics for an indexed column,
-         * such as those calculated by ANALYZE TABLE.
-         * <p>
-         * innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable
-         * [innodb_stats_persistent_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
-         * <p>
-         * innodb_stats_persistent_sample_pages only applies when innodb_stats_persistent is enabled for a table;
-         * when innodb_stats_persistent is disabled, innodb_stats_transient_sample_pages applies instead.
+         * The number of index pages to sample when estimating cardinality and other statistics for
+         * an indexed column, such as those calculated by ANALYZE TABLE.
          *
-         **/
+         * <p>innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable
+         * [innodb_stats_persistent_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
+         *
+         * <p>innodb_stats_persistent_sample_pages only applies when innodb_stats_persistent is
+         * enabled for a table; when innodb_stats_persistent is disabled,
+         * innodb_stats_transient_sample_pages applies instead.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("innodbStatsPersistentSamplePages")
         private Long innodbStatsPersistentSamplePages;
 
         /**
-         * The number of index pages to sample when estimating cardinality and other statistics for an indexed column,
-         * such as those calculated by ANALYZE TABLE.
-         * <p>
-         * innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable
+         * The number of index pages to sample when estimating cardinality and other statistics for
+         * an indexed column, such as those calculated by ANALYZE TABLE.
+         *
+         * <p>innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable
          * [innodb_stats_persistent_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
-         * <p>
-         * innodb_stats_persistent_sample_pages only applies when innodb_stats_persistent is enabled for a table;
-         * when innodb_stats_persistent is disabled, innodb_stats_transient_sample_pages applies instead.
+         *
+         * <p>innodb_stats_persistent_sample_pages only applies when innodb_stats_persistent is
+         * enabled for a table; when innodb_stats_persistent is disabled,
+         * innodb_stats_transient_sample_pages applies instead.
          *
          * @param innodbStatsPersistentSamplePages the value to set
          * @return this builder
-         **/
+         */
         public Builder innodbStatsPersistentSamplePages(Long innodbStatsPersistentSamplePages) {
             this.innodbStatsPersistentSamplePages = innodbStatsPersistentSamplePages;
             this.__explicitlySet__.add("innodbStatsPersistentSamplePages");
             return this;
         }
         /**
-         * The number of index pages to sample when estimating cardinality and other statistics for an indexed column,
-         * such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
-         * <p>
-         * innodbStatsTransientSamplePages corresponds to the MySQL InnoDB system variable
-         * [innodb_stats_transient_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_transient_sample_pages)
-         * <p>
-         * innodb_stats_transient_sample_pages only applies when innodb_stats_persistent is disabled for a table;
-         * when innodb_stats_persistent is enabled, innodb_stats_persistent_sample_pages applies instead.
-         * <p>
-         * innodb_stats_persistent is ON by default and cannot be changed. It is possible to override it using the
-         * STATS_PERSISTENT clause of the [CREATE TABLE](https://dev.mysql.com/doc/refman/8.0/en/create-table.html) and
-         * [ALTER TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html) statements.
+         * The number of index pages to sample when estimating cardinality and other statistics for
+         * an indexed column, such as those calculated by [ANALYZE
+         * TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
          *
-         **/
+         * <p>innodbStatsTransientSamplePages corresponds to the MySQL InnoDB system variable
+         * [innodb_stats_transient_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_transient_sample_pages)
+         *
+         * <p>innodb_stats_transient_sample_pages only applies when innodb_stats_persistent is
+         * disabled for a table; when innodb_stats_persistent is enabled,
+         * innodb_stats_persistent_sample_pages applies instead.
+         *
+         * <p>innodb_stats_persistent is ON by default and cannot be changed. It is possible to
+         * override it using the STATS_PERSISTENT clause of the [CREATE
+         * TABLE](https://dev.mysql.com/doc/refman/8.0/en/create-table.html) and [ALTER
+         * TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html) statements.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("innodbStatsTransientSamplePages")
         private Long innodbStatsTransientSamplePages;
 
         /**
-         * The number of index pages to sample when estimating cardinality and other statistics for an indexed column,
-         * such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
-         * <p>
-         * innodbStatsTransientSamplePages corresponds to the MySQL InnoDB system variable
+         * The number of index pages to sample when estimating cardinality and other statistics for
+         * an indexed column, such as those calculated by [ANALYZE
+         * TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+         *
+         * <p>innodbStatsTransientSamplePages corresponds to the MySQL InnoDB system variable
          * [innodb_stats_transient_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_transient_sample_pages)
-         * <p>
-         * innodb_stats_transient_sample_pages only applies when innodb_stats_persistent is disabled for a table;
-         * when innodb_stats_persistent is enabled, innodb_stats_persistent_sample_pages applies instead.
-         * <p>
-         * innodb_stats_persistent is ON by default and cannot be changed. It is possible to override it using the
-         * STATS_PERSISTENT clause of the [CREATE TABLE](https://dev.mysql.com/doc/refman/8.0/en/create-table.html) and
-         * [ALTER TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html) statements.
+         *
+         * <p>innodb_stats_transient_sample_pages only applies when innodb_stats_persistent is
+         * disabled for a table; when innodb_stats_persistent is enabled,
+         * innodb_stats_persistent_sample_pages applies instead.
+         *
+         * <p>innodb_stats_persistent is ON by default and cannot be changed. It is possible to
+         * override it using the STATS_PERSISTENT clause of the [CREATE
+         * TABLE](https://dev.mysql.com/doc/refman/8.0/en/create-table.html) and [ALTER
+         * TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html) statements.
          *
          * @param innodbStatsTransientSamplePages the value to set
          * @return this builder
-         **/
+         */
         public Builder innodbStatsTransientSamplePages(Long innodbStatsTransientSamplePages) {
             this.innodbStatsTransientSamplePages = innodbStatsTransientSamplePages;
             this.__explicitlySet__.add("innodbStatsTransientSamplePages");
@@ -1293,93 +1323,98 @@ public final class ConfigurationVariables
         }
         /**
          * The maximum size of one packet or any generated/intermediate string.
-         * <p>
-         * This is the mysql variable "max_allowed_packet".
          *
-         **/
+         * <p>This is the mysql variable "max_allowed_packet".
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("maxAllowedPacket")
         private Integer maxAllowedPacket;
 
         /**
          * The maximum size of one packet or any generated/intermediate string.
-         * <p>
-         * This is the mysql variable "max_allowed_packet".
+         *
+         * <p>This is the mysql variable "max_allowed_packet".
          *
          * @param maxAllowedPacket the value to set
          * @return this builder
-         **/
+         */
         public Builder maxAllowedPacket(Integer maxAllowedPacket) {
             this.maxAllowedPacket = maxAllowedPacket;
             this.__explicitlySet__.add("maxAllowedPacket");
             return this;
         }
-        /**
-         * ("max_execution_time")
-         **/
+        /** ("max_execution_time") */
         @com.fasterxml.jackson.annotation.JsonProperty("maxExecutionTime")
         private Long maxExecutionTime;
 
         /**
          * ("max_execution_time")
+         *
          * @param maxExecutionTime the value to set
          * @return this builder
-         **/
+         */
         public Builder maxExecutionTime(Long maxExecutionTime) {
             this.maxExecutionTime = maxExecutionTime;
             this.__explicitlySet__.add("maxExecutionTime");
             return this;
         }
         /**
-         * The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
-         * <p>
-         * mysqlxConnectTimeout corresponds to the MySQL X Plugin system variable
-         * [mysqlx_connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_connect_timeout)
+         * The number of seconds X Plugin waits for the first packet to be received from newly
+         * connected clients.
          *
-         **/
+         * <p>mysqlxConnectTimeout corresponds to the MySQL X Plugin system variable
+         * [mysqlx_connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_connect_timeout)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxConnectTimeout")
         private Integer mysqlxConnectTimeout;
 
         /**
-         * The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
-         * <p>
-         * mysqlxConnectTimeout corresponds to the MySQL X Plugin system variable
+         * The number of seconds X Plugin waits for the first packet to be received from newly
+         * connected clients.
+         *
+         * <p>mysqlxConnectTimeout corresponds to the MySQL X Plugin system variable
          * [mysqlx_connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_connect_timeout)
          *
          * @param mysqlxConnectTimeout the value to set
          * @return this builder
-         **/
+         */
         public Builder mysqlxConnectTimeout(Integer mysqlxConnectTimeout) {
             this.mysqlxConnectTimeout = mysqlxConnectTimeout;
             this.__explicitlySet__.add("mysqlxConnectTimeout");
             return this;
         }
         /**
-         * ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and will be ignored
-         **/
+         * ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and
+         * will be ignored
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxDocumentIdUniquePrefix")
         private Integer mysqlxDocumentIdUniquePrefix;
 
         /**
-         * ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and will be ignored
+         * ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and
+         * will be ignored
+         *
          * @param mysqlxDocumentIdUniquePrefix the value to set
          * @return this builder
-         **/
+         */
         public Builder mysqlxDocumentIdUniquePrefix(Integer mysqlxDocumentIdUniquePrefix) {
             this.mysqlxDocumentIdUniquePrefix = mysqlxDocumentIdUniquePrefix;
             this.__explicitlySet__.add("mysqlxDocumentIdUniquePrefix");
             return this;
         }
         /**
-         * ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and will be ignored
-         **/
+         * ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and
+         * will be ignored
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxIdleWorkerThreadTimeout")
         private Integer mysqlxIdleWorkerThreadTimeout;
 
         /**
-         * ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and will be ignored
+         * ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and
+         * will be ignored
+         *
          * @param mysqlxIdleWorkerThreadTimeout the value to set
          * @return this builder
-         **/
+         */
         public Builder mysqlxIdleWorkerThreadTimeout(Integer mysqlxIdleWorkerThreadTimeout) {
             this.mysqlxIdleWorkerThreadTimeout = mysqlxIdleWorkerThreadTimeout;
             this.__explicitlySet__.add("mysqlxIdleWorkerThreadTimeout");
@@ -1387,23 +1422,22 @@ public final class ConfigurationVariables
         }
         /**
          * The number of seconds to wait for interactive clients to timeout.
-         * <p>
-         * mysqlxInteractiveTimeout corresponds to the MySQL X Plugin system variable.
-         * [mysqlx_interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_interactive_timeout)
          *
-         **/
+         * <p>mysqlxInteractiveTimeout corresponds to the MySQL X Plugin system variable.
+         * [mysqlx_interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_interactive_timeout)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxInteractiveTimeout")
         private Integer mysqlxInteractiveTimeout;
 
         /**
          * The number of seconds to wait for interactive clients to timeout.
-         * <p>
-         * mysqlxInteractiveTimeout corresponds to the MySQL X Plugin system variable.
+         *
+         * <p>mysqlxInteractiveTimeout corresponds to the MySQL X Plugin system variable.
          * [mysqlx_interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_interactive_timeout)
          *
          * @param mysqlxInteractiveTimeout the value to set
          * @return this builder
-         **/
+         */
         public Builder mysqlxInteractiveTimeout(Integer mysqlxInteractiveTimeout) {
             this.mysqlxInteractiveTimeout = mysqlxInteractiveTimeout;
             this.__explicitlySet__.add("mysqlxInteractiveTimeout");
@@ -1411,65 +1445,66 @@ public final class ConfigurationVariables
         }
         /**
          * The maximum size of network packets that can be received by X Plugin.
-         * <p>
-         * This is the mysql variable "mysqlx_max_allowed_packet".
          *
-         **/
+         * <p>This is the mysql variable "mysqlx_max_allowed_packet".
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxMaxAllowedPacket")
         private Integer mysqlxMaxAllowedPacket;
 
         /**
          * The maximum size of network packets that can be received by X Plugin.
-         * <p>
-         * This is the mysql variable "mysqlx_max_allowed_packet".
+         *
+         * <p>This is the mysql variable "mysqlx_max_allowed_packet".
          *
          * @param mysqlxMaxAllowedPacket the value to set
          * @return this builder
-         **/
+         */
         public Builder mysqlxMaxAllowedPacket(Integer mysqlxMaxAllowedPacket) {
             this.mysqlxMaxAllowedPacket = mysqlxMaxAllowedPacket;
             this.__explicitlySet__.add("mysqlxMaxAllowedPacket");
             return this;
         }
         /**
-         * ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be ignored
-         **/
+         * ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be
+         * ignored
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxMinWorkerThreads")
         private Integer mysqlxMinWorkerThreads;
 
         /**
-         * ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be ignored
+         * ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be
+         * ignored
+         *
          * @param mysqlxMinWorkerThreads the value to set
          * @return this builder
-         **/
+         */
         public Builder mysqlxMinWorkerThreads(Integer mysqlxMinWorkerThreads) {
             this.mysqlxMinWorkerThreads = mysqlxMinWorkerThreads;
             this.__explicitlySet__.add("mysqlxMinWorkerThreads");
             return this;
         }
         /**
-         * The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the
-         * read operation is not successful, X Plugin closes the connection and returns a warning notice with the error
-         * code ER_IO_READ_ERROR to the client application.
-         * <p>
-         * mysqlxReadTimeout corresponds to the MySQL X Plugin system variable
-         * [mysqlx_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_read_timeout)
+         * The number of seconds that X Plugin waits for blocking read operations to complete. After
+         * this time, if the read operation is not successful, X Plugin closes the connection and
+         * returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
          *
-         **/
+         * <p>mysqlxReadTimeout corresponds to the MySQL X Plugin system variable
+         * [mysqlx_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_read_timeout)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxReadTimeout")
         private Integer mysqlxReadTimeout;
 
         /**
-         * The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the
-         * read operation is not successful, X Plugin closes the connection and returns a warning notice with the error
-         * code ER_IO_READ_ERROR to the client application.
-         * <p>
-         * mysqlxReadTimeout corresponds to the MySQL X Plugin system variable
+         * The number of seconds that X Plugin waits for blocking read operations to complete. After
+         * this time, if the read operation is not successful, X Plugin closes the connection and
+         * returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
+         *
+         * <p>mysqlxReadTimeout corresponds to the MySQL X Plugin system variable
          * [mysqlx_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_read_timeout)
          *
          * @param mysqlxReadTimeout the value to set
          * @return this builder
-         **/
+         */
         public Builder mysqlxReadTimeout(Integer mysqlxReadTimeout) {
             this.mysqlxReadTimeout = mysqlxReadTimeout;
             this.__explicitlySet__.add("mysqlxReadTimeout");
@@ -1477,49 +1512,49 @@ public final class ConfigurationVariables
         }
         /**
          * The number of seconds that X Plugin waits for activity on a connection.
-         * <p>
-         * mysqlxWaitTimeout corresponds to the MySQL X Plugin system variable.
-         * [mysqlx_wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_wait_timeout)
          *
-         **/
+         * <p>mysqlxWaitTimeout corresponds to the MySQL X Plugin system variable.
+         * [mysqlx_wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_wait_timeout)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxWaitTimeout")
         private Integer mysqlxWaitTimeout;
 
         /**
          * The number of seconds that X Plugin waits for activity on a connection.
-         * <p>
-         * mysqlxWaitTimeout corresponds to the MySQL X Plugin system variable.
+         *
+         * <p>mysqlxWaitTimeout corresponds to the MySQL X Plugin system variable.
          * [mysqlx_wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_wait_timeout)
          *
          * @param mysqlxWaitTimeout the value to set
          * @return this builder
-         **/
+         */
         public Builder mysqlxWaitTimeout(Integer mysqlxWaitTimeout) {
             this.mysqlxWaitTimeout = mysqlxWaitTimeout;
             this.__explicitlySet__.add("mysqlxWaitTimeout");
             return this;
         }
         /**
-         * The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the
-         * write operation is not successful, X Plugin closes the connection.
-         * <p>
-         * mysqlxReadmysqlxWriteTimeoutTimeout corresponds to the MySQL X Plugin system variable
-         * [mysqlx_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_write_timeout)
+         * The number of seconds that X Plugin waits for blocking write operations to complete.
+         * After this time, if the write operation is not successful, X Plugin closes the
+         * connection.
          *
-         **/
+         * <p>mysqlxReadmysqlxWriteTimeoutTimeout corresponds to the MySQL X Plugin system variable
+         * [mysqlx_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_write_timeout)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxWriteTimeout")
         private Integer mysqlxWriteTimeout;
 
         /**
-         * The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the
-         * write operation is not successful, X Plugin closes the connection.
-         * <p>
-         * mysqlxReadmysqlxWriteTimeoutTimeout corresponds to the MySQL X Plugin system variable
+         * The number of seconds that X Plugin waits for blocking write operations to complete.
+         * After this time, if the write operation is not successful, X Plugin closes the
+         * connection.
+         *
+         * <p>mysqlxReadmysqlxWriteTimeoutTimeout corresponds to the MySQL X Plugin system variable
          * [mysqlx_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_write_timeout)
          *
          * @param mysqlxWriteTimeout the value to set
          * @return this builder
-         **/
+         */
         public Builder mysqlxWriteTimeout(Integer mysqlxWriteTimeout) {
             this.mysqlxWriteTimeout = mysqlxWriteTimeout;
             this.__explicitlySet__.add("mysqlxWriteTimeout");
@@ -1527,79 +1562,81 @@ public final class ConfigurationVariables
         }
         /**
          * The number of seconds to wait for more data from a connection before aborting the read.
-         * <p>
-         * netReadTimeout corresponds to the MySQL system variable
-         * [net_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_read_timeout)
          *
-         **/
+         * <p>netReadTimeout corresponds to the MySQL system variable
+         * [net_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_read_timeout)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("netReadTimeout")
         private Integer netReadTimeout;
 
         /**
          * The number of seconds to wait for more data from a connection before aborting the read.
-         * <p>
-         * netReadTimeout corresponds to the MySQL system variable
+         *
+         * <p>netReadTimeout corresponds to the MySQL system variable
          * [net_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_read_timeout)
          *
          * @param netReadTimeout the value to set
          * @return this builder
-         **/
+         */
         public Builder netReadTimeout(Integer netReadTimeout) {
             this.netReadTimeout = netReadTimeout;
             this.__explicitlySet__.add("netReadTimeout");
             return this;
         }
         /**
-         * The number of seconds to wait for a block to be written to a connection before aborting the write.
-         * <p>
-         * netWriteTimeout corresponds to the MySQL system variable
-         * [net_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_write_timeout)
+         * The number of seconds to wait for a block to be written to a connection before aborting
+         * the write.
          *
-         **/
+         * <p>netWriteTimeout corresponds to the MySQL system variable
+         * [net_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_write_timeout)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("netWriteTimeout")
         private Integer netWriteTimeout;
 
         /**
-         * The number of seconds to wait for a block to be written to a connection before aborting the write.
-         * <p>
-         * netWriteTimeout corresponds to the MySQL system variable
+         * The number of seconds to wait for a block to be written to a connection before aborting
+         * the write.
+         *
+         * <p>netWriteTimeout corresponds to the MySQL system variable
          * [net_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_write_timeout)
          *
          * @param netWriteTimeout the value to set
          * @return this builder
-         **/
+         */
         public Builder netWriteTimeout(Integer netWriteTimeout) {
             this.netWriteTimeout = netWriteTimeout;
             this.__explicitlySet__.add("netWriteTimeout");
             return this;
         }
-        /**
-         * ("parser_max_mem_size")
-         **/
+        /** ("parser_max_mem_size") */
         @com.fasterxml.jackson.annotation.JsonProperty("parserMaxMemSize")
         private Long parserMaxMemSize;
 
         /**
          * ("parser_max_mem_size")
+         *
          * @param parserMaxMemSize the value to set
          * @return this builder
-         **/
+         */
         public Builder parserMaxMemSize(Long parserMaxMemSize) {
             this.parserMaxMemSize = parserMaxMemSize;
             this.__explicitlySet__.add("parserMaxMemSize");
             return this;
         }
         /**
-         * ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
-         **/
+         * ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be
+         * ignored
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("queryAllocBlockSize")
         private Long queryAllocBlockSize;
 
         /**
-         * ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
+         * ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be
+         * ignored
+         *
          * @param queryAllocBlockSize the value to set
          * @return this builder
-         **/
+         */
         public Builder queryAllocBlockSize(Long queryAllocBlockSize) {
             this.queryAllocBlockSize = queryAllocBlockSize;
             this.__explicitlySet__.add("queryAllocBlockSize");
@@ -1607,89 +1644,94 @@ public final class ConfigurationVariables
         }
         /**
          * ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("queryPreallocSize")
         private Long queryPreallocSize;
 
         /**
          * ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
+         *
          * @param queryPreallocSize the value to set
          * @return this builder
-         **/
+         */
         public Builder queryPreallocSize(Long queryPreallocSize) {
             this.queryPreallocSize = queryPreallocSize;
             this.__explicitlySet__.add("queryPreallocSize");
             return this;
         }
         /**
-         * regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
-         *
-         **/
+         * regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit]
+         * (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("regexpTimeLimit")
         private Integer regexpTimeLimit;
 
         /**
-         * regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+         * regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit]
+         * (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
          *
          * @param regexpTimeLimit the value to set
          * @return this builder
-         **/
+         */
         public Builder regexpTimeLimit(Integer regexpTimeLimit) {
             this.regexpTimeLimit = regexpTimeLimit;
             this.__explicitlySet__.add("regexpTimeLimit");
             return this;
         }
-        /**
-         * ("sql_mode")
-         **/
+        /** ("sql_mode") */
         @com.fasterxml.jackson.annotation.JsonProperty("sqlMode")
         private String sqlMode;
 
         /**
          * ("sql_mode")
+         *
          * @param sqlMode the value to set
          * @return this builder
-         **/
+         */
         public Builder sqlMode(String sqlMode) {
             this.sqlMode = sqlMode;
             this.__explicitlySet__.add("sqlMode");
             return this;
         }
         /**
-         * The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
-         * <p>
-         * tmp_table_size corresponds to the MySQL system variable
-         * [tmp_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_tmp_table_size)
+         * The maximum size of internal in-memory temporary tables. This variable does not apply to
+         * user-created MEMORY tables.
          *
-         **/
+         * <p>tmp_table_size corresponds to the MySQL system variable
+         * [tmp_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_tmp_table_size)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("tmpTableSize")
         private Long tmpTableSize;
 
         /**
-         * The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
-         * <p>
-         * tmp_table_size corresponds to the MySQL system variable
+         * The maximum size of internal in-memory temporary tables. This variable does not apply to
+         * user-created MEMORY tables.
+         *
+         * <p>tmp_table_size corresponds to the MySQL system variable
          * [tmp_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_tmp_table_size)
          *
          * @param tmpTableSize the value to set
          * @return this builder
-         **/
+         */
         public Builder tmpTableSize(Long tmpTableSize) {
             this.tmpTableSize = tmpTableSize;
             this.__explicitlySet__.add("tmpTableSize");
             return this;
         }
         /**
-         * Set the default compression level for the deflate algorithm. ("mysqlx_deflate_default_compression_level")
-         **/
+         * Set the default compression level for the deflate algorithm.
+         * ("mysqlx_deflate_default_compression_level")
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxDeflateDefaultCompressionLevel")
         private Integer mysqlxDeflateDefaultCompressionLevel;
 
         /**
-         * Set the default compression level for the deflate algorithm. ("mysqlx_deflate_default_compression_level")
+         * Set the default compression level for the deflate algorithm.
+         * ("mysqlx_deflate_default_compression_level")
+         *
          * @param mysqlxDeflateDefaultCompressionLevel the value to set
          * @return this builder
-         **/
+         */
         public Builder mysqlxDeflateDefaultCompressionLevel(
                 Integer mysqlxDeflateDefaultCompressionLevel) {
             this.mysqlxDeflateDefaultCompressionLevel = mysqlxDeflateDefaultCompressionLevel;
@@ -1697,16 +1739,19 @@ public final class ConfigurationVariables
             return this;
         }
         /**
-         * Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlx_deflate_max_client_compression_level")
-         **/
+         * Limit the upper bound of accepted compression levels for the deflate algorithm.
+         * ("mysqlx_deflate_max_client_compression_level")
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxDeflateMaxClientCompressionLevel")
         private Integer mysqlxDeflateMaxClientCompressionLevel;
 
         /**
-         * Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlx_deflate_max_client_compression_level")
+         * Limit the upper bound of accepted compression levels for the deflate algorithm.
+         * ("mysqlx_deflate_max_client_compression_level")
+         *
          * @param mysqlxDeflateMaxClientCompressionLevel the value to set
          * @return this builder
-         **/
+         */
         public Builder mysqlxDeflateMaxClientCompressionLevel(
                 Integer mysqlxDeflateMaxClientCompressionLevel) {
             this.mysqlxDeflateMaxClientCompressionLevel = mysqlxDeflateMaxClientCompressionLevel;
@@ -1714,16 +1759,19 @@ public final class ConfigurationVariables
             return this;
         }
         /**
-         * Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlx_lz4_max_client_compression_level")
-         **/
+         * Limit the upper bound of accepted compression levels for the lz4 algorithm.
+         * ("mysqlx_lz4_max_client_compression_level")
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxLz4MaxClientCompressionLevel")
         private Integer mysqlxLz4MaxClientCompressionLevel;
 
         /**
-         * Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlx_lz4_max_client_compression_level")
+         * Limit the upper bound of accepted compression levels for the lz4 algorithm.
+         * ("mysqlx_lz4_max_client_compression_level")
+         *
          * @param mysqlxLz4MaxClientCompressionLevel the value to set
          * @return this builder
-         **/
+         */
         public Builder mysqlxLz4MaxClientCompressionLevel(
                 Integer mysqlxLz4MaxClientCompressionLevel) {
             this.mysqlxLz4MaxClientCompressionLevel = mysqlxLz4MaxClientCompressionLevel;
@@ -1731,32 +1779,38 @@ public final class ConfigurationVariables
             return this;
         }
         /**
-         * Set the default compression level for the lz4 algorithm. ("mysqlx_lz4_default_compression_level")
-         **/
+         * Set the default compression level for the lz4 algorithm.
+         * ("mysqlx_lz4_default_compression_level")
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxLz4DefaultCompressionLevel")
         private Integer mysqlxLz4DefaultCompressionLevel;
 
         /**
-         * Set the default compression level for the lz4 algorithm. ("mysqlx_lz4_default_compression_level")
+         * Set the default compression level for the lz4 algorithm.
+         * ("mysqlx_lz4_default_compression_level")
+         *
          * @param mysqlxLz4DefaultCompressionLevel the value to set
          * @return this builder
-         **/
+         */
         public Builder mysqlxLz4DefaultCompressionLevel(Integer mysqlxLz4DefaultCompressionLevel) {
             this.mysqlxLz4DefaultCompressionLevel = mysqlxLz4DefaultCompressionLevel;
             this.__explicitlySet__.add("mysqlxLz4DefaultCompressionLevel");
             return this;
         }
         /**
-         * Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlx_zstd_max_client_compression_level")
-         **/
+         * Limit the upper bound of accepted compression levels for the zstd algorithm.
+         * ("mysqlx_zstd_max_client_compression_level")
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxZstdMaxClientCompressionLevel")
         private Integer mysqlxZstdMaxClientCompressionLevel;
 
         /**
-         * Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlx_zstd_max_client_compression_level")
+         * Limit the upper bound of accepted compression levels for the zstd algorithm.
+         * ("mysqlx_zstd_max_client_compression_level")
+         *
          * @param mysqlxZstdMaxClientCompressionLevel the value to set
          * @return this builder
-         **/
+         */
         public Builder mysqlxZstdMaxClientCompressionLevel(
                 Integer mysqlxZstdMaxClientCompressionLevel) {
             this.mysqlxZstdMaxClientCompressionLevel = mysqlxZstdMaxClientCompressionLevel;
@@ -1764,16 +1818,19 @@ public final class ConfigurationVariables
             return this;
         }
         /**
-         * Set the default compression level for the zstd algorithm. ("mysqlx_zstd_default_compression_level")
-         **/
+         * Set the default compression level for the zstd algorithm.
+         * ("mysqlx_zstd_default_compression_level")
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxZstdDefaultCompressionLevel")
         private Integer mysqlxZstdDefaultCompressionLevel;
 
         /**
-         * Set the default compression level for the zstd algorithm. ("mysqlx_zstd_default_compression_level")
+         * Set the default compression level for the zstd algorithm.
+         * ("mysqlx_zstd_default_compression_level")
+         *
          * @param mysqlxZstdDefaultCompressionLevel the value to set
          * @return this builder
-         **/
+         */
         public Builder mysqlxZstdDefaultCompressionLevel(
                 Integer mysqlxZstdDefaultCompressionLevel) {
             this.mysqlxZstdDefaultCompressionLevel = mysqlxZstdDefaultCompressionLevel;
@@ -1782,15 +1839,16 @@ public final class ConfigurationVariables
         }
         /**
          * DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlZstdDefaultCompressionLevel")
         private Integer mysqlZstdDefaultCompressionLevel;
 
         /**
          * DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
+         *
          * @param mysqlZstdDefaultCompressionLevel the value to set
          * @return this builder
-         **/
+         */
         public Builder mysqlZstdDefaultCompressionLevel(Integer mysqlZstdDefaultCompressionLevel) {
             this.mysqlZstdDefaultCompressionLevel = mysqlZstdDefaultCompressionLevel;
             this.__explicitlySet__.add("mysqlZstdDefaultCompressionLevel");
@@ -1798,87 +1856,95 @@ public final class ConfigurationVariables
         }
         /**
          * Each session that must perform a sort allocates a buffer of this size.
-         * <p>
-         * sortBufferSize corresponds to the MySQL system variable [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
          *
-         **/
+         * <p>sortBufferSize corresponds to the MySQL system variable
+         * [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sortBufferSize")
         private Long sortBufferSize;
 
         /**
          * Each session that must perform a sort allocates a buffer of this size.
-         * <p>
-         * sortBufferSize corresponds to the MySQL system variable [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
+         *
+         * <p>sortBufferSize corresponds to the MySQL system variable
+         * [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
          *
          * @param sortBufferSize the value to set
          * @return this builder
-         **/
+         */
         public Builder sortBufferSize(Long sortBufferSize) {
             this.sortBufferSize = sortBufferSize;
             this.__explicitlySet__.add("sortBufferSize");
             return this;
         }
         /**
-         * The number of seconds the server waits for activity on a noninteractive connection before closing it.
-         * <p>
-         * waitTimeout corresponds to the MySQL system variable.
-         * [wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
+         * The number of seconds the server waits for activity on a noninteractive connection before
+         * closing it.
          *
-         **/
+         * <p>waitTimeout corresponds to the MySQL system variable.
+         * [wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("waitTimeout")
         private Integer waitTimeout;
 
         /**
-         * The number of seconds the server waits for activity on a noninteractive connection before closing it.
-         * <p>
-         * waitTimeout corresponds to the MySQL system variable.
+         * The number of seconds the server waits for activity on a noninteractive connection before
+         * closing it.
+         *
+         * <p>waitTimeout corresponds to the MySQL system variable.
          * [wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
          *
          * @param waitTimeout the value to set
          * @return this builder
-         **/
+         */
         public Builder waitTimeout(Integer waitTimeout) {
             this.waitTimeout = waitTimeout;
             this.__explicitlySet__.add("waitTimeout");
             return this;
         }
         /**
-         * Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening
-         * for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit.
-         * threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
-         *
-         **/
+         * Controls whether the thread pool uses dedicated listener threads. If enabled, a listener
+         * thread in each thread group is dedicated to the task of listening for network events from
+         * clients, ensuring that the maximum number of query worker threads is no more than the
+         * value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners
+         * corresponds to the MySQL Database Service-specific system variable
+         * thread_pool_dedicated_listeners.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("threadPoolDedicatedListeners")
         private Boolean threadPoolDedicatedListeners;
 
         /**
-         * Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening
-         * for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit.
-         * threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+         * Controls whether the thread pool uses dedicated listener threads. If enabled, a listener
+         * thread in each thread group is dedicated to the task of listening for network events from
+         * clients, ensuring that the maximum number of query worker threads is no more than the
+         * value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners
+         * corresponds to the MySQL Database Service-specific system variable
+         * thread_pool_dedicated_listeners.
          *
          * @param threadPoolDedicatedListeners the value to set
          * @return this builder
-         **/
+         */
         public Builder threadPoolDedicatedListeners(Boolean threadPoolDedicatedListeners) {
             this.threadPoolDedicatedListeners = threadPoolDedicatedListeners;
             this.__explicitlySet__.add("threadPoolDedicatedListeners");
             return this;
         }
         /**
-         * Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit.
-         * threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
-         *
-         **/
+         * Limits the maximum number of open transactions to the defined value. The default value is
+         * 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL
+         * Database Service-specific system variable thread_pool_max_transactions_limit.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("threadPoolMaxTransactionsLimit")
         private Integer threadPoolMaxTransactionsLimit;
 
         /**
-         * Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit.
-         * threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+         * Limits the maximum number of open transactions to the defined value. The default value is
+         * 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL
+         * Database Service-specific system variable thread_pool_max_transactions_limit.
          *
          * @param threadPoolMaxTransactionsLimit the value to set
          * @return this builder
-         **/
+         */
         public Builder threadPoolMaxTransactionsLimit(Integer threadPoolMaxTransactionsLimit) {
             this.threadPoolMaxTransactionsLimit = threadPoolMaxTransactionsLimit;
             this.__explicitlySet__.add("threadPoolMaxTransactionsLimit");
@@ -1886,31 +1952,36 @@ public final class ConfigurationVariables
         }
         /**
          * Initializes the time zone for each client that connects.
-         * <p>
-         * This corresponds to the MySQL System Variable "time_zone".
-         * <p>
-         * The values can be given in one of the following formats, none of which are case-sensitive:
-         * <p>
-         * - As a string indicating an offset from UTC of the form [H]H:MM, prefixed with a + or -, such as '+10:00', '-6:00', or '+05:30'. The permitted range is '-13:59' to '+14:00', inclusive.
-         * - As a named time zone, as defined by the "IANA Time Zone database", such as 'Europe/Helsinki', 'US/Eastern', 'MET', or 'UTC'.
          *
-         **/
+         * <p>This corresponds to the MySQL System Variable "time_zone".
+         *
+         * <p>The values can be given in one of the following formats, none of which are
+         * case-sensitive:
+         *
+         * <p>- As a string indicating an offset from UTC of the form [H]H:MM, prefixed with a + or
+         * -, such as '+10:00', '-6:00', or '+05:30'. The permitted range is '-13:59' to '+14:00',
+         * inclusive. - As a named time zone, as defined by the "IANA Time Zone database", such as
+         * 'Europe/Helsinki', 'US/Eastern', 'MET', or 'UTC'.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private String timeZone;
 
         /**
          * Initializes the time zone for each client that connects.
-         * <p>
-         * This corresponds to the MySQL System Variable "time_zone".
-         * <p>
-         * The values can be given in one of the following formats, none of which are case-sensitive:
-         * <p>
-         * - As a string indicating an offset from UTC of the form [H]H:MM, prefixed with a + or -, such as '+10:00', '-6:00', or '+05:30'. The permitted range is '-13:59' to '+14:00', inclusive.
-         * - As a named time zone, as defined by the "IANA Time Zone database", such as 'Europe/Helsinki', 'US/Eastern', 'MET', or 'UTC'.
+         *
+         * <p>This corresponds to the MySQL System Variable "time_zone".
+         *
+         * <p>The values can be given in one of the following formats, none of which are
+         * case-sensitive:
+         *
+         * <p>- As a string indicating an offset from UTC of the form [H]H:MM, prefixed with a + or
+         * -, such as '+10:00', '-6:00', or '+05:30'. The permitted range is '-13:59' to '+14:00',
+         * inclusive. - As a named time zone, as defined by the "IANA Time Zone database", such as
+         * 'Europe/Helsinki', 'US/Eastern', 'MET', or 'UTC'.
          *
          * @param timeZone the value to set
          * @return this builder
-         **/
+         */
         public Builder timeZone(String timeZone) {
             this.timeZone = timeZone;
             this.__explicitlySet__.add("timeZone");
@@ -2256,9 +2327,7 @@ public final class ConfigurationVariables
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -2267,17 +2336,15 @@ public final class ConfigurationVariables
         return new Builder().copy(this);
     }
 
-    /**
-     * ("completion_type")
-     **/
-    public enum CompletionType {
+    /** ("completion_type") */
+    public enum CompletionType implements com.oracle.bmc.http.internal.BmcEnum {
         NoChain("NO_CHAIN"),
         Chain("CHAIN"),
         Release("RELEASE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -2316,91 +2383,93 @@ public final class ConfigurationVariables
             return UnknownEnumValue;
         }
     };
-    /**
-     * ("completion_type")
-     **/
+    /** ("completion_type") */
     @com.fasterxml.jackson.annotation.JsonProperty("completionType")
     private final CompletionType completionType;
 
     /**
      * ("completion_type")
+     *
      * @return the value
-     **/
+     */
     public CompletionType getCompletionType() {
         return completionType;
     }
 
     /**
      * If enabled, the server stores all temporary tables on disk rather than in memory.
-     * <p>
-     * bigTables corresponds to the MySQL server variable [big_tables](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_big_tables).
      *
-     **/
+     * <p>bigTables corresponds to the MySQL server variable
+     * [big_tables](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_big_tables).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("bigTables")
     private final Boolean bigTables;
 
     /**
      * If enabled, the server stores all temporary tables on disk rather than in memory.
-     * <p>
-     * bigTables corresponds to the MySQL server variable [big_tables](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_big_tables).
+     *
+     * <p>bigTables corresponds to the MySQL server variable
+     * [big_tables](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_big_tables).
      *
      * @return the value
-     **/
+     */
     public Boolean getBigTables() {
         return bigTables;
     }
 
     /**
-     * Set the chunking size for updates to the global memory usage counter Global_connection_memory.
-     * <p>
-     * connectionMemoryChunkSize corresponds to the MySQL system variable [connection_memory_chunk_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_chunk_size).
+     * Set the chunking size for updates to the global memory usage counter
+     * Global_connection_memory.
      *
-     **/
+     * <p>connectionMemoryChunkSize corresponds to the MySQL system variable
+     * [connection_memory_chunk_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_chunk_size).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("connectionMemoryChunkSize")
     private final Integer connectionMemoryChunkSize;
 
     /**
-     * Set the chunking size for updates to the global memory usage counter Global_connection_memory.
-     * <p>
-     * connectionMemoryChunkSize corresponds to the MySQL system variable [connection_memory_chunk_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_chunk_size).
+     * Set the chunking size for updates to the global memory usage counter
+     * Global_connection_memory.
+     *
+     * <p>connectionMemoryChunkSize corresponds to the MySQL system variable
+     * [connection_memory_chunk_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_chunk_size).
      *
      * @return the value
-     **/
+     */
     public Integer getConnectionMemoryChunkSize() {
         return connectionMemoryChunkSize;
     }
 
     /**
      * Set the maximum amount of memory that can be used by a single user connection.
-     * <p>
-     * connectionMemoryLimit corresponds to the MySQL system variable [connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_limit).
      *
-     **/
+     * <p>connectionMemoryLimit corresponds to the MySQL system variable
+     * [connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_limit).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("connectionMemoryLimit")
     private final Long connectionMemoryLimit;
 
     /**
      * Set the maximum amount of memory that can be used by a single user connection.
-     * <p>
-     * connectionMemoryLimit corresponds to the MySQL system variable [connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_limit).
+     *
+     * <p>connectionMemoryLimit corresponds to the MySQL system variable
+     * [connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_limit).
      *
      * @return the value
-     **/
+     */
     public Long getConnectionMemoryLimit() {
         return connectionMemoryLimit;
     }
 
-    /**
-     * ("default_authentication_plugin")
-     **/
-    public enum DefaultAuthenticationPlugin {
+    /** ("default_authentication_plugin") */
+    public enum DefaultAuthenticationPlugin implements com.oracle.bmc.http.internal.BmcEnum {
         MysqlNativePassword("mysql_native_password"),
         Sha256Password("sha256_password"),
         CachingSha2Password("caching_sha2_password"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -2439,64 +2508,63 @@ public final class ConfigurationVariables
             return UnknownEnumValue;
         }
     };
-    /**
-     * ("default_authentication_plugin")
-     **/
+    /** ("default_authentication_plugin") */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultAuthenticationPlugin")
     private final DefaultAuthenticationPlugin defaultAuthenticationPlugin;
 
     /**
      * ("default_authentication_plugin")
+     *
      * @return the value
-     **/
+     */
     public DefaultAuthenticationPlugin getDefaultAuthenticationPlugin() {
         return defaultAuthenticationPlugin;
     }
 
     /**
      * Set the total amount of memory that can be used by all user connections.
-     * <p>
-     * globalConnectionMemoryLimit corresponds to the MySQL system variable [global_connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_limit).
      *
-     **/
+     * <p>globalConnectionMemoryLimit corresponds to the MySQL system variable
+     * [global_connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_limit).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("globalConnectionMemoryLimit")
     private final Long globalConnectionMemoryLimit;
 
     /**
      * Set the total amount of memory that can be used by all user connections.
-     * <p>
-     * globalConnectionMemoryLimit corresponds to the MySQL system variable [global_connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_limit).
+     *
+     * <p>globalConnectionMemoryLimit corresponds to the MySQL system variable
+     * [global_connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_limit).
      *
      * @return the value
-     **/
+     */
     public Long getGlobalConnectionMemoryLimit() {
         return globalConnectionMemoryLimit;
     }
 
     /**
      * Determines whether the MySQL server calculates Global_connection_memory.
-     * <p>
-     * globalConnectionMemoryTracking corresponds to the MySQL system variable [global_connection_memory_tracking](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_tracking).
      *
-     **/
+     * <p>globalConnectionMemoryTracking corresponds to the MySQL system variable
+     * [global_connection_memory_tracking](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_tracking).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("globalConnectionMemoryTracking")
     private final Boolean globalConnectionMemoryTracking;
 
     /**
      * Determines whether the MySQL server calculates Global_connection_memory.
-     * <p>
-     * globalConnectionMemoryTracking corresponds to the MySQL system variable [global_connection_memory_tracking](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_tracking).
+     *
+     * <p>globalConnectionMemoryTracking corresponds to the MySQL system variable
+     * [global_connection_memory_tracking](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_tracking).
      *
      * @return the value
-     **/
+     */
     public Boolean getGlobalConnectionMemoryTracking() {
         return globalConnectionMemoryTracking;
     }
 
-    /**
-     * ("transaction_isolation")
-     **/
-    public enum TransactionIsolation {
+    /** ("transaction_isolation") */
+    public enum TransactionIsolation implements com.oracle.bmc.http.internal.BmcEnum {
         ReadUncommitted("READ-UNCOMMITTED"),
         ReadCommited("READ-COMMITED"),
         ReadCommitted("READ-COMMITTED"),
@@ -2504,8 +2572,8 @@ public final class ConfigurationVariables
         Serializable("SERIALIZABLE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -2544,109 +2612,106 @@ public final class ConfigurationVariables
             return UnknownEnumValue;
         }
     };
-    /**
-     * ("transaction_isolation")
-     **/
+    /** ("transaction_isolation") */
     @com.fasterxml.jackson.annotation.JsonProperty("transactionIsolation")
     private final TransactionIsolation transactionIsolation;
 
     /**
      * ("transaction_isolation")
+     *
      * @return the value
-     **/
+     */
     public TransactionIsolation getTransactionIsolation() {
         return transactionIsolation;
     }
 
-    /**
-     * ("innodb_ft_server_stopword_table")
-     **/
+    /** ("innodb_ft_server_stopword_table") */
     @com.fasterxml.jackson.annotation.JsonProperty("innodbFtServerStopwordTable")
     private final String innodbFtServerStopwordTable;
 
     /**
      * ("innodb_ft_server_stopword_table")
+     *
      * @return the value
-     **/
+     */
     public String getInnodbFtServerStopwordTable() {
         return innodbFtServerStopwordTable;
     }
 
-    /**
-     * ("mandatory_roles")
-     **/
+    /** ("mandatory_roles") */
     @com.fasterxml.jackson.annotation.JsonProperty("mandatoryRoles")
     private final String mandatoryRoles;
 
     /**
      * ("mandatory_roles")
+     *
      * @return the value
-     **/
+     */
     public String getMandatoryRoles() {
         return mandatoryRoles;
     }
 
-    /**
-     * ("autocommit")
-     **/
+    /** ("autocommit") */
     @com.fasterxml.jackson.annotation.JsonProperty("autocommit")
     private final Boolean autocommit;
 
     /**
      * ("autocommit")
+     *
      * @return the value
-     **/
+     */
     public Boolean getAutocommit() {
         return autocommit;
     }
 
-    /**
-     * ("foreign_key_checks")
-     **/
+    /** ("foreign_key_checks") */
     @com.fasterxml.jackson.annotation.JsonProperty("foreignKeyChecks")
     private final Boolean foreignKeyChecks;
 
     /**
      * ("foreign_key_checks")
+     *
      * @return the value
-     **/
+     */
     public Boolean getForeignKeyChecks() {
         return foreignKeyChecks;
     }
 
     /**
-     * - EVENTUAL:
-     *     Both RO and RW transactions do not wait for preceding transactions to be applied before executing.
-     *     A RW transaction does not wait for other members to apply a transaction. This means that a transaction
-     *     could be externalized on one member before the others. This also means that in the event of a primary failover,
-     *     the new primary can accept new RO and RW transactions before the previous primary transactions are all applied.
-     *     RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
-     * - BEFORE_ON_PRIMARY_FAILOVER:
-     *     New RO or RW transactions with a newly elected primary that is applying backlog from the old
-     *     primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens,
-     *     intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that
-     *     clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal,
-     *     but does depend on the size of the backlog.
-     * - BEFORE:
-     *     A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding
-     *     transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the
-     *     latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is
-     *     used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
-     * - AFTER:
-     *     A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions.
-     *     This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or
-     *     a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that
-     *     applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent
-     *     reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction,
-     *     by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees
-     *     provided by BEFORE_ON_PRIMARY_FAILOVER.
-     * - BEFORE_AND_AFTER:
-     *     A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been
-     *     applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place.
-     *     This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
-     *
-     **/
-    public enum GroupReplicationConsistency {
+     * - EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied
+     * before executing. A RW transaction does not wait for other members to apply a transaction.
+     * This means that a transaction could be externalized on one member before the others. This
+     * also means that in the event of a primary failover, the new primary can accept new RO and RW
+     * transactions before the previous primary transactions are all applied. RO transactions could
+     * result in outdated values, RW transactions could result in a rollback due to conflicts. -
+     * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is
+     * applying backlog from the old primary are held (not applied) until any backlog has been
+     * applied. This ensures that when a primary failover happens, intentionally or not, clients
+     * always see the latest value on the primary. This guarantees consistency, but means that
+     * clients must be able to handle the delay in the event that a backlog is being applied.
+     * Usually this delay should be minimal, but does depend on the size of the backlog. - BEFORE: A
+     * RW transaction waits for all preceding transactions to complete before being applied. A RO
+     * transaction waits for all preceding transactions to complete before being executed. This
+     * ensures that this transaction reads the latest value by only affecting the latency of the
+     * transaction. This reduces the overhead of synchronization on every RW transaction, by
+     * ensuring synchronization is used only on RO transactions. This consistency level also
+     * includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER. - AFTER: A RW
+     * transaction waits until its changes have been applied to all of the other members. This value
+     * has no effect on RO transactions. This mode ensures that when a transaction is committed on
+     * the local member, any subsequent transaction reads the written value or a more recent value
+     * on any group member. Use this mode with a group that is used for predominantly RO operations
+     * to ensure that applied RW transactions are applied everywhere once they commit. This could be
+     * used by your application to ensure that subsequent reads fetch the latest data which includes
+     * the latest writes. This reduces the overhead of synchronization on every RO transaction, by
+     * ensuring synchronization is used only on RW transactions. This consistency level also
+     * includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER. -
+     * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before
+     * being applied and 2) until its changes have been applied on other members. A RO transaction
+     * waits for all preceding transactions to complete before execution takes place. This
+     * consistency level also includes the consistency guarantees provided by
+     * BEFORE_ON_PRIMARY_FAILOVER.
+     */
+    public enum GroupReplicationConsistency implements com.oracle.bmc.http.internal.BmcEnum {
         Eventual("EVENTUAL"),
         BeforeOnPrimaryFailover("BEFORE_ON_PRIMARY_FAILOVER"),
         Before("BEFORE"),
@@ -2654,8 +2719,8 @@ public final class ConfigurationVariables
         BeforeAndAfter("BEFORE_AND_AFTER"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -2695,211 +2760,220 @@ public final class ConfigurationVariables
         }
     };
     /**
-     * - EVENTUAL:
-     *     Both RO and RW transactions do not wait for preceding transactions to be applied before executing.
-     *     A RW transaction does not wait for other members to apply a transaction. This means that a transaction
-     *     could be externalized on one member before the others. This also means that in the event of a primary failover,
-     *     the new primary can accept new RO and RW transactions before the previous primary transactions are all applied.
-     *     RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
-     * - BEFORE_ON_PRIMARY_FAILOVER:
-     *     New RO or RW transactions with a newly elected primary that is applying backlog from the old
-     *     primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens,
-     *     intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that
-     *     clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal,
-     *     but does depend on the size of the backlog.
-     * - BEFORE:
-     *     A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding
-     *     transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the
-     *     latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is
-     *     used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
-     * - AFTER:
-     *     A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions.
-     *     This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or
-     *     a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that
-     *     applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent
-     *     reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction,
-     *     by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees
-     *     provided by BEFORE_ON_PRIMARY_FAILOVER.
-     * - BEFORE_AND_AFTER:
-     *     A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been
-     *     applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place.
-     *     This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
-     *
-     **/
+     * - EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied
+     * before executing. A RW transaction does not wait for other members to apply a transaction.
+     * This means that a transaction could be externalized on one member before the others. This
+     * also means that in the event of a primary failover, the new primary can accept new RO and RW
+     * transactions before the previous primary transactions are all applied. RO transactions could
+     * result in outdated values, RW transactions could result in a rollback due to conflicts. -
+     * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is
+     * applying backlog from the old primary are held (not applied) until any backlog has been
+     * applied. This ensures that when a primary failover happens, intentionally or not, clients
+     * always see the latest value on the primary. This guarantees consistency, but means that
+     * clients must be able to handle the delay in the event that a backlog is being applied.
+     * Usually this delay should be minimal, but does depend on the size of the backlog. - BEFORE: A
+     * RW transaction waits for all preceding transactions to complete before being applied. A RO
+     * transaction waits for all preceding transactions to complete before being executed. This
+     * ensures that this transaction reads the latest value by only affecting the latency of the
+     * transaction. This reduces the overhead of synchronization on every RW transaction, by
+     * ensuring synchronization is used only on RO transactions. This consistency level also
+     * includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER. - AFTER: A RW
+     * transaction waits until its changes have been applied to all of the other members. This value
+     * has no effect on RO transactions. This mode ensures that when a transaction is committed on
+     * the local member, any subsequent transaction reads the written value or a more recent value
+     * on any group member. Use this mode with a group that is used for predominantly RO operations
+     * to ensure that applied RW transactions are applied everywhere once they commit. This could be
+     * used by your application to ensure that subsequent reads fetch the latest data which includes
+     * the latest writes. This reduces the overhead of synchronization on every RO transaction, by
+     * ensuring synchronization is used only on RW transactions. This consistency level also
+     * includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER. -
+     * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before
+     * being applied and 2) until its changes have been applied on other members. A RO transaction
+     * waits for all preceding transactions to complete before execution takes place. This
+     * consistency level also includes the consistency guarantees provided by
+     * BEFORE_ON_PRIMARY_FAILOVER.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("groupReplicationConsistency")
     private final GroupReplicationConsistency groupReplicationConsistency;
 
     /**
-     * - EVENTUAL:
-     *     Both RO and RW transactions do not wait for preceding transactions to be applied before executing.
-     *     A RW transaction does not wait for other members to apply a transaction. This means that a transaction
-     *     could be externalized on one member before the others. This also means that in the event of a primary failover,
-     *     the new primary can accept new RO and RW transactions before the previous primary transactions are all applied.
-     *     RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
-     * - BEFORE_ON_PRIMARY_FAILOVER:
-     *     New RO or RW transactions with a newly elected primary that is applying backlog from the old
-     *     primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens,
-     *     intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that
-     *     clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal,
-     *     but does depend on the size of the backlog.
-     * - BEFORE:
-     *     A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding
-     *     transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the
-     *     latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is
-     *     used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
-     * - AFTER:
-     *     A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions.
-     *     This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or
-     *     a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that
-     *     applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent
-     *     reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction,
-     *     by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees
-     *     provided by BEFORE_ON_PRIMARY_FAILOVER.
-     * - BEFORE_AND_AFTER:
-     *     A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been
-     *     applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place.
-     *     This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+     * - EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied
+     * before executing. A RW transaction does not wait for other members to apply a transaction.
+     * This means that a transaction could be externalized on one member before the others. This
+     * also means that in the event of a primary failover, the new primary can accept new RO and RW
+     * transactions before the previous primary transactions are all applied. RO transactions could
+     * result in outdated values, RW transactions could result in a rollback due to conflicts. -
+     * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is
+     * applying backlog from the old primary are held (not applied) until any backlog has been
+     * applied. This ensures that when a primary failover happens, intentionally or not, clients
+     * always see the latest value on the primary. This guarantees consistency, but means that
+     * clients must be able to handle the delay in the event that a backlog is being applied.
+     * Usually this delay should be minimal, but does depend on the size of the backlog. - BEFORE: A
+     * RW transaction waits for all preceding transactions to complete before being applied. A RO
+     * transaction waits for all preceding transactions to complete before being executed. This
+     * ensures that this transaction reads the latest value by only affecting the latency of the
+     * transaction. This reduces the overhead of synchronization on every RW transaction, by
+     * ensuring synchronization is used only on RO transactions. This consistency level also
+     * includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER. - AFTER: A RW
+     * transaction waits until its changes have been applied to all of the other members. This value
+     * has no effect on RO transactions. This mode ensures that when a transaction is committed on
+     * the local member, any subsequent transaction reads the written value or a more recent value
+     * on any group member. Use this mode with a group that is used for predominantly RO operations
+     * to ensure that applied RW transactions are applied everywhere once they commit. This could be
+     * used by your application to ensure that subsequent reads fetch the latest data which includes
+     * the latest writes. This reduces the overhead of synchronization on every RO transaction, by
+     * ensuring synchronization is used only on RW transactions. This consistency level also
+     * includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER. -
+     * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before
+     * being applied and 2) until its changes have been applied on other members. A RO transaction
+     * waits for all preceding transactions to complete before execution takes place. This
+     * consistency level also includes the consistency guarantees provided by
+     * BEFORE_ON_PRIMARY_FAILOVER.
      *
      * @return the value
-     **/
+     */
     public GroupReplicationConsistency getGroupReplicationConsistency() {
         return groupReplicationConsistency;
     }
 
-    /**
-     * ("innodb_ft_enable_stopword")
-     **/
+    /** ("innodb_ft_enable_stopword") */
     @com.fasterxml.jackson.annotation.JsonProperty("innodbFtEnableStopword")
     private final Boolean innodbFtEnableStopword;
 
     /**
      * ("innodb_ft_enable_stopword")
+     *
      * @return the value
-     **/
+     */
     public Boolean getInnodbFtEnableStopword() {
         return innodbFtEnableStopword;
     }
 
     /**
-     * Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
-     * <p>
-     * This is the MySQL variable "innodb_log_writer_threads". For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_log_writer_threads)
+     * Enables dedicated log writer threads for writing redo log records from the log buffer to the
+     * system buffers and flushing the system buffers to the redo log files.
      *
-     **/
+     * <p>This is the MySQL variable "innodb_log_writer_threads". For more information, please see
+     * the [MySQL
+     * documentation](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_log_writer_threads)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("innodbLogWriterThreads")
     private final Boolean innodbLogWriterThreads;
 
     /**
-     * Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
-     * <p>
-     * This is the MySQL variable "innodb_log_writer_threads". For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_log_writer_threads)
+     * Enables dedicated log writer threads for writing redo log records from the log buffer to the
+     * system buffers and flushing the system buffers to the redo log files.
+     *
+     * <p>This is the MySQL variable "innodb_log_writer_threads". For more information, please see
+     * the [MySQL
+     * documentation](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_log_writer_threads)
      *
      * @return the value
-     **/
+     */
     public Boolean getInnodbLogWriterThreads() {
         return innodbLogWriterThreads;
     }
 
-    /**
-     * ("local_infile")
-     **/
+    /** ("local_infile") */
     @com.fasterxml.jackson.annotation.JsonProperty("localInfile")
     private final Boolean localInfile;
 
     /**
      * ("local_infile")
+     *
      * @return the value
-     **/
+     */
     public Boolean getLocalInfile() {
         return localInfile;
     }
 
-    /**
-     * ("mysql_firewall_mode")
-     **/
+    /** ("mysql_firewall_mode") */
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlFirewallMode")
     private final Boolean mysqlFirewallMode;
 
     /**
      * ("mysql_firewall_mode")
+     *
      * @return the value
-     **/
+     */
     public Boolean getMysqlFirewallMode() {
         return mysqlFirewallMode;
     }
 
     /**
-     * ("mysqlx_enable_hello_notice") DEPRECATED -- variable should not be settable and will be ignored
-     **/
+     * ("mysqlx_enable_hello_notice") DEPRECATED -- variable should not be settable and will be
+     * ignored
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxEnableHelloNotice")
     private final Boolean mysqlxEnableHelloNotice;
 
     /**
-     * ("mysqlx_enable_hello_notice") DEPRECATED -- variable should not be settable and will be ignored
+     * ("mysqlx_enable_hello_notice") DEPRECATED -- variable should not be settable and will be
+     * ignored
+     *
      * @return the value
-     **/
+     */
     public Boolean getMysqlxEnableHelloNotice() {
         return mysqlxEnableHelloNotice;
     }
 
-    /**
-     * ("sql_require_primary_key")
-     **/
+    /** ("sql_require_primary_key") */
     @com.fasterxml.jackson.annotation.JsonProperty("sqlRequirePrimaryKey")
     private final Boolean sqlRequirePrimaryKey;
 
     /**
      * ("sql_require_primary_key")
+     *
      * @return the value
-     **/
+     */
     public Boolean getSqlRequirePrimaryKey() {
         return sqlRequirePrimaryKey;
     }
 
-    /**
-     * ("sql_warnings")
-     **/
+    /** ("sql_warnings") */
     @com.fasterxml.jackson.annotation.JsonProperty("sqlWarnings")
     private final Boolean sqlWarnings;
 
     /**
      * ("sql_warnings")
+     *
      * @return the value
-     **/
+     */
     public Boolean getSqlWarnings() {
         return sqlWarnings;
     }
 
     /**
-     * Sets the binary log expiration period in seconds.
-     * binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
-     *
-     **/
+     * Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the
+     * MySQL binary logging system variable
+     * [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("binlogExpireLogsSeconds")
     private final Integer binlogExpireLogsSeconds;
 
     /**
-     * Sets the binary log expiration period in seconds.
-     * binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
+     * Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the
+     * MySQL binary logging system variable
+     * [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
      *
      * @return the value
-     **/
+     */
     public Integer getBinlogExpireLogsSeconds() {
         return binlogExpireLogsSeconds;
     }
 
     /**
      * Configures the amount of table metadata added to the binary log when using row-based logging.
-     * binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
-     *
-     **/
-    public enum BinlogRowMetadata {
+     * binlogRowMetadata corresponds to the MySQL binary logging system variable
+     * [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
+     */
+    public enum BinlogRowMetadata implements com.oracle.bmc.http.internal.BmcEnum {
         Full("FULL"),
         Minimal("MINIMAL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -2940,1092 +3014,1140 @@ public final class ConfigurationVariables
     };
     /**
      * Configures the amount of table metadata added to the binary log when using row-based logging.
-     * binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
-     *
-     **/
+     * binlogRowMetadata corresponds to the MySQL binary logging system variable
+     * [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("binlogRowMetadata")
     private final BinlogRowMetadata binlogRowMetadata;
 
     /**
      * Configures the amount of table metadata added to the binary log when using row-based logging.
-     * binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
+     * binlogRowMetadata corresponds to the MySQL binary logging system variable
+     * [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
      *
      * @return the value
-     **/
+     */
     public BinlogRowMetadata getBinlogRowMetadata() {
         return binlogRowMetadata;
     }
 
     /**
-     * When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document.
-     * binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
-     *
-     **/
+     * When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates
+     * that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the
+     * MySQL binary logging system variable
+     * [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("binlogRowValueOptions")
     private final String binlogRowValueOptions;
 
     /**
-     * When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document.
-     * binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
+     * When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates
+     * that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the
+     * MySQL binary logging system variable
+     * [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
      *
      * @return the value
-     **/
+     */
     public String getBinlogRowValueOptions() {
         return binlogRowValueOptions;
     }
 
     /**
      * Enables compression for transactions that are written to binary log files on this server.
-     * binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
-     *
-     **/
+     * binlogTransactionCompression corresponds to the MySQL binary logging system variable
+     * [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("binlogTransactionCompression")
     private final Boolean binlogTransactionCompression;
 
     /**
      * Enables compression for transactions that are written to binary log files on this server.
-     * binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
+     * binlogTransactionCompression corresponds to the MySQL binary logging system variable
+     * [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
      *
      * @return the value
-     **/
+     */
     public Boolean getBinlogTransactionCompression() {
         return binlogTransactionCompression;
     }
 
     /**
-     * The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
-     * <p>
-     * innodbBufferPoolSize corresponds to the MySQL server system variable
-     * [innodb_buffer_pool_size](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size).
-     * <p>
-     * The default and maximum values depend on the amount of RAM provisioned by the shape.
-     * See [Default User Variables](https://docs.cloud.oracle.com/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
+     * The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table
+     * and index data.
      *
-     **/
+     * <p>innodbBufferPoolSize corresponds to the MySQL server system variable
+     * [innodb_buffer_pool_size](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size).
+     *
+     * <p>The default and maximum values depend on the amount of RAM provisioned by the shape. See
+     * [Default User
+     * Variables](https://docs.cloud.oracle.com/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("innodbBufferPoolSize")
     private final Long innodbBufferPoolSize;
 
     /**
-     * The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
-     * <p>
-     * innodbBufferPoolSize corresponds to the MySQL server system variable
+     * The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table
+     * and index data.
+     *
+     * <p>innodbBufferPoolSize corresponds to the MySQL server system variable
      * [innodb_buffer_pool_size](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size).
-     * <p>
-     * The default and maximum values depend on the amount of RAM provisioned by the shape.
-     * See [Default User Variables](https://docs.cloud.oracle.com/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
+     *
+     * <p>The default and maximum values depend on the amount of RAM provisioned by the shape. See
+     * [Default User
+     * Variables](https://docs.cloud.oracle.com/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
      *
      * @return the value
-     **/
+     */
     public Long getInnodbBufferPoolSize() {
         return innodbBufferPoolSize;
     }
 
-    /**
-     * ("innodb_ft_result_cache_limit")
-     **/
+    /** ("innodb_ft_result_cache_limit") */
     @com.fasterxml.jackson.annotation.JsonProperty("innodbFtResultCacheLimit")
     private final Long innodbFtResultCacheLimit;
 
     /**
      * ("innodb_ft_result_cache_limit")
+     *
      * @return the value
-     **/
+     */
     public Long getInnodbFtResultCacheLimit() {
         return innodbFtResultCacheLimit;
     }
 
     /**
      * Sets the size of the transaction cache.
-     * <p>
-     * maxBinlogCacheSize corresponds to the MySQL server system variable [max_binlog_cache_size](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_max_binlog_cache_size).
      *
-     **/
+     * <p>maxBinlogCacheSize corresponds to the MySQL server system variable
+     * [max_binlog_cache_size](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_max_binlog_cache_size).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("maxBinlogCacheSize")
     private final Long maxBinlogCacheSize;
 
     /**
      * Sets the size of the transaction cache.
-     * <p>
-     * maxBinlogCacheSize corresponds to the MySQL server system variable [max_binlog_cache_size](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_max_binlog_cache_size).
+     *
+     * <p>maxBinlogCacheSize corresponds to the MySQL server system variable
+     * [max_binlog_cache_size](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_max_binlog_cache_size).
      *
      * @return the value
-     **/
+     */
     public Long getMaxBinlogCacheSize() {
         return maxBinlogCacheSize;
     }
 
-    /**
-     * ("max_connect_errors")
-     **/
+    /** ("max_connect_errors") */
     @com.fasterxml.jackson.annotation.JsonProperty("maxConnectErrors")
     private final Long maxConnectErrors;
 
     /**
      * ("max_connect_errors")
+     *
      * @return the value
-     **/
+     */
     public Long getMaxConnectErrors() {
         return maxConnectErrors;
     }
 
     /**
-     * This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
-     * <p>
-     * maxHeapTableSize corresponds to the MySQL system variable
-     * [max_heap_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_heap_table_size)
+     * This variable sets the maximum size to which user-created MEMORY tables are permitted to
+     * grow.
      *
-     **/
+     * <p>maxHeapTableSize corresponds to the MySQL system variable
+     * [max_heap_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_heap_table_size)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("maxHeapTableSize")
     private final Long maxHeapTableSize;
 
     /**
-     * This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
-     * <p>
-     * maxHeapTableSize corresponds to the MySQL system variable
+     * This variable sets the maximum size to which user-created MEMORY tables are permitted to
+     * grow.
+     *
+     * <p>maxHeapTableSize corresponds to the MySQL system variable
      * [max_heap_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_heap_table_size)
      *
      * @return the value
-     **/
+     */
     public Long getMaxHeapTableSize() {
         return maxHeapTableSize;
     }
 
-    /**
-     * ("max_connections")
-     **/
+    /** ("max_connections") */
     @com.fasterxml.jackson.annotation.JsonProperty("maxConnections")
     private final Integer maxConnections;
 
     /**
      * ("max_connections")
+     *
      * @return the value
-     **/
+     */
     public Integer getMaxConnections() {
         return maxConnections;
     }
 
-    /**
-     * ("max_prepared_stmt_count")
-     **/
+    /** ("max_prepared_stmt_count") */
     @com.fasterxml.jackson.annotation.JsonProperty("maxPreparedStmtCount")
     private final Integer maxPreparedStmtCount;
 
     /**
      * ("max_prepared_stmt_count")
+     *
      * @return the value
-     **/
+     */
     public Integer getMaxPreparedStmtCount() {
         return maxPreparedStmtCount;
     }
 
     /**
-     * The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
-     * <p>
-     * connectTimeout corresponds to the MySQL system variable
-     * [connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_connect_timeout)
-     * <p>
-     * Increasing the connect_timeout value might help if clients frequently encounter errors of the form
-     * "Lost connection to MySQL server at 'XXX', system error: errno".
+     * The number of seconds that the mysqld server waits for a connect packet before responding
+     * with Bad handshake.
      *
-     **/
+     * <p>connectTimeout corresponds to the MySQL system variable
+     * [connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_connect_timeout)
+     *
+     * <p>Increasing the connect_timeout value might help if clients frequently encounter errors of
+     * the form "Lost connection to MySQL server at 'XXX', system error: errno".
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("connectTimeout")
     private final Integer connectTimeout;
 
     /**
-     * The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
-     * <p>
-     * connectTimeout corresponds to the MySQL system variable
+     * The number of seconds that the mysqld server waits for a connect packet before responding
+     * with Bad handshake.
+     *
+     * <p>connectTimeout corresponds to the MySQL system variable
      * [connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_connect_timeout)
-     * <p>
-     * Increasing the connect_timeout value might help if clients frequently encounter errors of the form
-     * "Lost connection to MySQL server at 'XXX', system error: errno".
+     *
+     * <p>Increasing the connect_timeout value might help if clients frequently encounter errors of
+     * the form "Lost connection to MySQL server at 'XXX', system error: errno".
      *
      * @return the value
-     **/
+     */
     public Integer getConnectTimeout() {
         return connectTimeout;
     }
 
-    /**
-     * ("cte_max_recursion_depth")
-     **/
+    /** ("cte_max_recursion_depth") */
     @com.fasterxml.jackson.annotation.JsonProperty("cteMaxRecursionDepth")
     private final Long cteMaxRecursionDepth;
 
     /**
      * ("cte_max_recursion_depth")
+     *
      * @return the value
-     **/
+     */
     public Long getCteMaxRecursionDepth() {
         return cteMaxRecursionDepth;
     }
 
     /**
-     * ("generated_random_password_length") DEPRECATED -- variable should not be settable and will be ignored
-     **/
+     * ("generated_random_password_length") DEPRECATED -- variable should not be settable and will
+     * be ignored
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("generatedRandomPasswordLength")
     private final Integer generatedRandomPasswordLength;
 
     /**
-     * ("generated_random_password_length") DEPRECATED -- variable should not be settable and will be ignored
+     * ("generated_random_password_length") DEPRECATED -- variable should not be settable and will
+     * be ignored
+     *
      * @return the value
-     **/
+     */
     public Integer getGeneratedRandomPasswordLength() {
         return generatedRandomPasswordLength;
     }
 
-    /**
-     * ("information_schema_stats_expiry")
-     **/
+    /** ("information_schema_stats_expiry") */
     @com.fasterxml.jackson.annotation.JsonProperty("informationSchemaStatsExpiry")
     private final Integer informationSchemaStatsExpiry;
 
     /**
      * ("information_schema_stats_expiry")
+     *
      * @return the value
-     **/
+     */
     public Integer getInformationSchemaStatsExpiry() {
         return informationSchemaStatsExpiry;
     }
 
     /**
-     * Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
-     * <p>
-     * innodbBufferPoolDumpPct corresponds to the MySQL InnoDB system variable
-     * [innodb_buffer_pool_dump_pct](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_dump_pct).
-     * <p>
-     * The range is 1 to 100. The default value is 25.
-     * <p>
-     * For example, if there are 4 buffer pools with 100 pages each, and innodb_buffer_pool_dump_pct is set to 25,
-     * the 25 most recently used pages from each buffer pool are dumped.
+     * Specifies the percentage of the most recently used pages for each buffer pool to read out and
+     * dump.
      *
-     **/
+     * <p>innodbBufferPoolDumpPct corresponds to the MySQL InnoDB system variable
+     * [innodb_buffer_pool_dump_pct](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_dump_pct).
+     *
+     * <p>The range is 1 to 100. The default value is 25.
+     *
+     * <p>For example, if there are 4 buffer pools with 100 pages each, and
+     * innodb_buffer_pool_dump_pct is set to 25, the 25 most recently used pages from each buffer
+     * pool are dumped.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("innodbBufferPoolDumpPct")
     private final Integer innodbBufferPoolDumpPct;
 
     /**
-     * Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
-     * <p>
-     * innodbBufferPoolDumpPct corresponds to the MySQL InnoDB system variable
+     * Specifies the percentage of the most recently used pages for each buffer pool to read out and
+     * dump.
+     *
+     * <p>innodbBufferPoolDumpPct corresponds to the MySQL InnoDB system variable
      * [innodb_buffer_pool_dump_pct](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_dump_pct).
-     * <p>
-     * The range is 1 to 100. The default value is 25.
-     * <p>
-     * For example, if there are 4 buffer pools with 100 pages each, and innodb_buffer_pool_dump_pct is set to 25,
-     * the 25 most recently used pages from each buffer pool are dumped.
+     *
+     * <p>The range is 1 to 100. The default value is 25.
+     *
+     * <p>For example, if there are 4 buffer pools with 100 pages each, and
+     * innodb_buffer_pool_dump_pct is set to 25, the 25 most recently used pages from each buffer
+     * pool are dumped.
      *
      * @return the value
-     **/
+     */
     public Integer getInnodbBufferPoolDumpPct() {
         return innodbBufferPoolDumpPct;
     }
 
-    /**
-     * ("innodb_buffer_pool_instances")
-     **/
+    /** ("innodb_buffer_pool_instances") */
     @com.fasterxml.jackson.annotation.JsonProperty("innodbBufferPoolInstances")
     private final Integer innodbBufferPoolInstances;
 
     /**
      * ("innodb_buffer_pool_instances")
+     *
      * @return the value
-     **/
+     */
     public Integer getInnodbBufferPoolInstances() {
         return innodbBufferPoolInstances;
     }
 
     /**
-     * innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
-     *
-     **/
+     * innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size]
+     * (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("innodbDdlBufferSize")
     private final Long innodbDdlBufferSize;
 
     /**
-     * innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+     * innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size]
+     * (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
      *
      * @return the value
-     **/
+     */
     public Long getInnodbDdlBufferSize() {
         return innodbDdlBufferSize;
     }
 
     /**
-     * innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
-     *
-     **/
+     * innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads]
+     * (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("innodbDdlThreads")
     private final Integer innodbDdlThreads;
 
     /**
-     * innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+     * innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads]
+     * (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
      *
      * @return the value
-     **/
+     */
     public Integer getInnodbDdlThreads() {
         return innodbDdlThreads;
     }
 
-    /**
-     * ("innodb_ft_max_token_size")
-     **/
+    /** ("innodb_ft_max_token_size") */
     @com.fasterxml.jackson.annotation.JsonProperty("innodbFtMaxTokenSize")
     private final Integer innodbFtMaxTokenSize;
 
     /**
      * ("innodb_ft_max_token_size")
+     *
      * @return the value
-     **/
+     */
     public Integer getInnodbFtMaxTokenSize() {
         return innodbFtMaxTokenSize;
     }
 
-    /**
-     * ("innodb_ft_min_token_size")
-     **/
+    /** ("innodb_ft_min_token_size") */
     @com.fasterxml.jackson.annotation.JsonProperty("innodbFtMinTokenSize")
     private final Integer innodbFtMinTokenSize;
 
     /**
      * ("innodb_ft_min_token_size")
+     *
      * @return the value
-     **/
+     */
     public Integer getInnodbFtMinTokenSize() {
         return innodbFtMinTokenSize;
     }
 
-    /**
-     * ("innodb_ft_num_word_optimize")
-     **/
+    /** ("innodb_ft_num_word_optimize") */
     @com.fasterxml.jackson.annotation.JsonProperty("innodbFtNumWordOptimize")
     private final Integer innodbFtNumWordOptimize;
 
     /**
      * ("innodb_ft_num_word_optimize")
+     *
      * @return the value
-     **/
+     */
     public Integer getInnodbFtNumWordOptimize() {
         return innodbFtNumWordOptimize;
     }
 
-    /**
-     * ("innodb_lock_wait_timeout")
-     **/
+    /** ("innodb_lock_wait_timeout") */
     @com.fasterxml.jackson.annotation.JsonProperty("innodbLockWaitTimeout")
     private final Integer innodbLockWaitTimeout;
 
     /**
      * ("innodb_lock_wait_timeout")
+     *
      * @return the value
-     **/
+     */
     public Integer getInnodbLockWaitTimeout() {
         return innodbLockWaitTimeout;
     }
 
     /**
      * The desired maximum purge lag in terms of transactions.
-     * <p>
-     * InnoDB maintains a list of transactions that have index records delete-marked by UPDATE or DELETE operations. The length of the list is the purge lag.
-     * <p>
-     * If this value is exceeded, a delay is imposed on INSERT, UPDATE, and DELETE operations to allow time for purge to catch up.
-     * <p>
-     * The default value is 0, which means there is no maximum purge lag and no delay.
-     * <p>
-     * innodbMaxPurgeLag corresponds to the MySQL server system variable
-     * [innodb_max_purge_lag](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag).
      *
-     **/
+     * <p>InnoDB maintains a list of transactions that have index records delete-marked by UPDATE or
+     * DELETE operations. The length of the list is the purge lag.
+     *
+     * <p>If this value is exceeded, a delay is imposed on INSERT, UPDATE, and DELETE operations to
+     * allow time for purge to catch up.
+     *
+     * <p>The default value is 0, which means there is no maximum purge lag and no delay.
+     *
+     * <p>innodbMaxPurgeLag corresponds to the MySQL server system variable
+     * [innodb_max_purge_lag](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("innodbMaxPurgeLag")
     private final Long innodbMaxPurgeLag;
 
     /**
      * The desired maximum purge lag in terms of transactions.
-     * <p>
-     * InnoDB maintains a list of transactions that have index records delete-marked by UPDATE or DELETE operations. The length of the list is the purge lag.
-     * <p>
-     * If this value is exceeded, a delay is imposed on INSERT, UPDATE, and DELETE operations to allow time for purge to catch up.
-     * <p>
-     * The default value is 0, which means there is no maximum purge lag and no delay.
-     * <p>
-     * innodbMaxPurgeLag corresponds to the MySQL server system variable
+     *
+     * <p>InnoDB maintains a list of transactions that have index records delete-marked by UPDATE or
+     * DELETE operations. The length of the list is the purge lag.
+     *
+     * <p>If this value is exceeded, a delay is imposed on INSERT, UPDATE, and DELETE operations to
+     * allow time for purge to catch up.
+     *
+     * <p>The default value is 0, which means there is no maximum purge lag and no delay.
+     *
+     * <p>innodbMaxPurgeLag corresponds to the MySQL server system variable
      * [innodb_max_purge_lag](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag).
      *
      * @return the value
-     **/
+     */
     public Long getInnodbMaxPurgeLag() {
         return innodbMaxPurgeLag;
     }
 
     /**
-     * The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
-     * <p>
-     * The specified innodb_max_purge_lag_delay value is an upper limit on the delay period.
-     * <p>
-     * innodbMaxPurgeLagDelay corresponds to the MySQL server system variable
-     * [innodb_max_purge_lag_delay](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag_delay).
+     * The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag
+     * threshold is exceeded.
      *
-     **/
+     * <p>The specified innodb_max_purge_lag_delay value is an upper limit on the delay period.
+     *
+     * <p>innodbMaxPurgeLagDelay corresponds to the MySQL server system variable
+     * [innodb_max_purge_lag_delay](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag_delay).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("innodbMaxPurgeLagDelay")
     private final Integer innodbMaxPurgeLagDelay;
 
     /**
-     * The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
-     * <p>
-     * The specified innodb_max_purge_lag_delay value is an upper limit on the delay period.
-     * <p>
-     * innodbMaxPurgeLagDelay corresponds to the MySQL server system variable
+     * The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag
+     * threshold is exceeded.
+     *
+     * <p>The specified innodb_max_purge_lag_delay value is an upper limit on the delay period.
+     *
+     * <p>innodbMaxPurgeLagDelay corresponds to the MySQL server system variable
      * [innodb_max_purge_lag_delay](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag_delay).
      *
      * @return the value
-     **/
+     */
     public Integer getInnodbMaxPurgeLagDelay() {
         return innodbMaxPurgeLagDelay;
     }
 
     /**
-     * The number of seconds the server waits for activity on an interactive connection before closing it.
-     * <p>
-     * interactiveTimeout corresponds to the MySQL system variable.
-     * [interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
+     * The number of seconds the server waits for activity on an interactive connection before
+     * closing it.
      *
-     **/
+     * <p>interactiveTimeout corresponds to the MySQL system variable.
+     * [interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("interactiveTimeout")
     private final Integer interactiveTimeout;
 
     /**
-     * The number of seconds the server waits for activity on an interactive connection before closing it.
-     * <p>
-     * interactiveTimeout corresponds to the MySQL system variable.
+     * The number of seconds the server waits for activity on an interactive connection before
+     * closing it.
+     *
+     * <p>interactiveTimeout corresponds to the MySQL system variable.
      * [interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
      *
      * @return the value
-     **/
+     */
     public Integer getInteractiveTimeout() {
         return interactiveTimeout;
     }
 
     /**
-     * The number of index pages to sample when estimating cardinality and other statistics for an indexed column,
-     * such as those calculated by ANALYZE TABLE.
-     * <p>
-     * innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable
-     * [innodb_stats_persistent_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
-     * <p>
-     * innodb_stats_persistent_sample_pages only applies when innodb_stats_persistent is enabled for a table;
-     * when innodb_stats_persistent is disabled, innodb_stats_transient_sample_pages applies instead.
+     * The number of index pages to sample when estimating cardinality and other statistics for an
+     * indexed column, such as those calculated by ANALYZE TABLE.
      *
-     **/
+     * <p>innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable
+     * [innodb_stats_persistent_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
+     *
+     * <p>innodb_stats_persistent_sample_pages only applies when innodb_stats_persistent is enabled
+     * for a table; when innodb_stats_persistent is disabled, innodb_stats_transient_sample_pages
+     * applies instead.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("innodbStatsPersistentSamplePages")
     private final Long innodbStatsPersistentSamplePages;
 
     /**
-     * The number of index pages to sample when estimating cardinality and other statistics for an indexed column,
-     * such as those calculated by ANALYZE TABLE.
-     * <p>
-     * innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable
+     * The number of index pages to sample when estimating cardinality and other statistics for an
+     * indexed column, such as those calculated by ANALYZE TABLE.
+     *
+     * <p>innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable
      * [innodb_stats_persistent_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
-     * <p>
-     * innodb_stats_persistent_sample_pages only applies when innodb_stats_persistent is enabled for a table;
-     * when innodb_stats_persistent is disabled, innodb_stats_transient_sample_pages applies instead.
+     *
+     * <p>innodb_stats_persistent_sample_pages only applies when innodb_stats_persistent is enabled
+     * for a table; when innodb_stats_persistent is disabled, innodb_stats_transient_sample_pages
+     * applies instead.
      *
      * @return the value
-     **/
+     */
     public Long getInnodbStatsPersistentSamplePages() {
         return innodbStatsPersistentSamplePages;
     }
 
     /**
-     * The number of index pages to sample when estimating cardinality and other statistics for an indexed column,
-     * such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
-     * <p>
-     * innodbStatsTransientSamplePages corresponds to the MySQL InnoDB system variable
-     * [innodb_stats_transient_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_transient_sample_pages)
-     * <p>
-     * innodb_stats_transient_sample_pages only applies when innodb_stats_persistent is disabled for a table;
-     * when innodb_stats_persistent is enabled, innodb_stats_persistent_sample_pages applies instead.
-     * <p>
-     * innodb_stats_persistent is ON by default and cannot be changed. It is possible to override it using the
-     * STATS_PERSISTENT clause of the [CREATE TABLE](https://dev.mysql.com/doc/refman/8.0/en/create-table.html) and
-     * [ALTER TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html) statements.
+     * The number of index pages to sample when estimating cardinality and other statistics for an
+     * indexed column, such as those calculated by [ANALYZE
+     * TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
      *
-     **/
+     * <p>innodbStatsTransientSamplePages corresponds to the MySQL InnoDB system variable
+     * [innodb_stats_transient_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_transient_sample_pages)
+     *
+     * <p>innodb_stats_transient_sample_pages only applies when innodb_stats_persistent is disabled
+     * for a table; when innodb_stats_persistent is enabled, innodb_stats_persistent_sample_pages
+     * applies instead.
+     *
+     * <p>innodb_stats_persistent is ON by default and cannot be changed. It is possible to override
+     * it using the STATS_PERSISTENT clause of the [CREATE
+     * TABLE](https://dev.mysql.com/doc/refman/8.0/en/create-table.html) and [ALTER
+     * TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html) statements.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("innodbStatsTransientSamplePages")
     private final Long innodbStatsTransientSamplePages;
 
     /**
-     * The number of index pages to sample when estimating cardinality and other statistics for an indexed column,
-     * such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
-     * <p>
-     * innodbStatsTransientSamplePages corresponds to the MySQL InnoDB system variable
+     * The number of index pages to sample when estimating cardinality and other statistics for an
+     * indexed column, such as those calculated by [ANALYZE
+     * TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+     *
+     * <p>innodbStatsTransientSamplePages corresponds to the MySQL InnoDB system variable
      * [innodb_stats_transient_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_transient_sample_pages)
-     * <p>
-     * innodb_stats_transient_sample_pages only applies when innodb_stats_persistent is disabled for a table;
-     * when innodb_stats_persistent is enabled, innodb_stats_persistent_sample_pages applies instead.
-     * <p>
-     * innodb_stats_persistent is ON by default and cannot be changed. It is possible to override it using the
-     * STATS_PERSISTENT clause of the [CREATE TABLE](https://dev.mysql.com/doc/refman/8.0/en/create-table.html) and
-     * [ALTER TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html) statements.
+     *
+     * <p>innodb_stats_transient_sample_pages only applies when innodb_stats_persistent is disabled
+     * for a table; when innodb_stats_persistent is enabled, innodb_stats_persistent_sample_pages
+     * applies instead.
+     *
+     * <p>innodb_stats_persistent is ON by default and cannot be changed. It is possible to override
+     * it using the STATS_PERSISTENT clause of the [CREATE
+     * TABLE](https://dev.mysql.com/doc/refman/8.0/en/create-table.html) and [ALTER
+     * TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html) statements.
      *
      * @return the value
-     **/
+     */
     public Long getInnodbStatsTransientSamplePages() {
         return innodbStatsTransientSamplePages;
     }
 
     /**
      * The maximum size of one packet or any generated/intermediate string.
-     * <p>
-     * This is the mysql variable "max_allowed_packet".
      *
-     **/
+     * <p>This is the mysql variable "max_allowed_packet".
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("maxAllowedPacket")
     private final Integer maxAllowedPacket;
 
     /**
      * The maximum size of one packet or any generated/intermediate string.
-     * <p>
-     * This is the mysql variable "max_allowed_packet".
+     *
+     * <p>This is the mysql variable "max_allowed_packet".
      *
      * @return the value
-     **/
+     */
     public Integer getMaxAllowedPacket() {
         return maxAllowedPacket;
     }
 
-    /**
-     * ("max_execution_time")
-     **/
+    /** ("max_execution_time") */
     @com.fasterxml.jackson.annotation.JsonProperty("maxExecutionTime")
     private final Long maxExecutionTime;
 
     /**
      * ("max_execution_time")
+     *
      * @return the value
-     **/
+     */
     public Long getMaxExecutionTime() {
         return maxExecutionTime;
     }
 
     /**
-     * The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
-     * <p>
-     * mysqlxConnectTimeout corresponds to the MySQL X Plugin system variable
-     * [mysqlx_connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_connect_timeout)
+     * The number of seconds X Plugin waits for the first packet to be received from newly connected
+     * clients.
      *
-     **/
+     * <p>mysqlxConnectTimeout corresponds to the MySQL X Plugin system variable
+     * [mysqlx_connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_connect_timeout)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxConnectTimeout")
     private final Integer mysqlxConnectTimeout;
 
     /**
-     * The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
-     * <p>
-     * mysqlxConnectTimeout corresponds to the MySQL X Plugin system variable
+     * The number of seconds X Plugin waits for the first packet to be received from newly connected
+     * clients.
+     *
+     * <p>mysqlxConnectTimeout corresponds to the MySQL X Plugin system variable
      * [mysqlx_connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_connect_timeout)
      *
      * @return the value
-     **/
+     */
     public Integer getMysqlxConnectTimeout() {
         return mysqlxConnectTimeout;
     }
 
     /**
-     * ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and will be ignored
-     **/
+     * ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and will
+     * be ignored
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxDocumentIdUniquePrefix")
     private final Integer mysqlxDocumentIdUniquePrefix;
 
     /**
-     * ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and will be ignored
+     * ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and will
+     * be ignored
+     *
      * @return the value
-     **/
+     */
     public Integer getMysqlxDocumentIdUniquePrefix() {
         return mysqlxDocumentIdUniquePrefix;
     }
 
     /**
-     * ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and will be ignored
-     **/
+     * ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and will
+     * be ignored
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxIdleWorkerThreadTimeout")
     private final Integer mysqlxIdleWorkerThreadTimeout;
 
     /**
-     * ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and will be ignored
+     * ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and will
+     * be ignored
+     *
      * @return the value
-     **/
+     */
     public Integer getMysqlxIdleWorkerThreadTimeout() {
         return mysqlxIdleWorkerThreadTimeout;
     }
 
     /**
      * The number of seconds to wait for interactive clients to timeout.
-     * <p>
-     * mysqlxInteractiveTimeout corresponds to the MySQL X Plugin system variable.
-     * [mysqlx_interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_interactive_timeout)
      *
-     **/
+     * <p>mysqlxInteractiveTimeout corresponds to the MySQL X Plugin system variable.
+     * [mysqlx_interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_interactive_timeout)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxInteractiveTimeout")
     private final Integer mysqlxInteractiveTimeout;
 
     /**
      * The number of seconds to wait for interactive clients to timeout.
-     * <p>
-     * mysqlxInteractiveTimeout corresponds to the MySQL X Plugin system variable.
+     *
+     * <p>mysqlxInteractiveTimeout corresponds to the MySQL X Plugin system variable.
      * [mysqlx_interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_interactive_timeout)
      *
      * @return the value
-     **/
+     */
     public Integer getMysqlxInteractiveTimeout() {
         return mysqlxInteractiveTimeout;
     }
 
     /**
      * The maximum size of network packets that can be received by X Plugin.
-     * <p>
-     * This is the mysql variable "mysqlx_max_allowed_packet".
      *
-     **/
+     * <p>This is the mysql variable "mysqlx_max_allowed_packet".
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxMaxAllowedPacket")
     private final Integer mysqlxMaxAllowedPacket;
 
     /**
      * The maximum size of network packets that can be received by X Plugin.
-     * <p>
-     * This is the mysql variable "mysqlx_max_allowed_packet".
+     *
+     * <p>This is the mysql variable "mysqlx_max_allowed_packet".
      *
      * @return the value
-     **/
+     */
     public Integer getMysqlxMaxAllowedPacket() {
         return mysqlxMaxAllowedPacket;
     }
 
     /**
-     * ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be ignored
-     **/
+     * ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be
+     * ignored
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxMinWorkerThreads")
     private final Integer mysqlxMinWorkerThreads;
 
     /**
-     * ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be ignored
+     * ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be
+     * ignored
+     *
      * @return the value
-     **/
+     */
     public Integer getMysqlxMinWorkerThreads() {
         return mysqlxMinWorkerThreads;
     }
 
     /**
-     * The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the
-     * read operation is not successful, X Plugin closes the connection and returns a warning notice with the error
-     * code ER_IO_READ_ERROR to the client application.
-     * <p>
-     * mysqlxReadTimeout corresponds to the MySQL X Plugin system variable
-     * [mysqlx_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_read_timeout)
+     * The number of seconds that X Plugin waits for blocking read operations to complete. After
+     * this time, if the read operation is not successful, X Plugin closes the connection and
+     * returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
      *
-     **/
+     * <p>mysqlxReadTimeout corresponds to the MySQL X Plugin system variable
+     * [mysqlx_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_read_timeout)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxReadTimeout")
     private final Integer mysqlxReadTimeout;
 
     /**
-     * The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the
-     * read operation is not successful, X Plugin closes the connection and returns a warning notice with the error
-     * code ER_IO_READ_ERROR to the client application.
-     * <p>
-     * mysqlxReadTimeout corresponds to the MySQL X Plugin system variable
+     * The number of seconds that X Plugin waits for blocking read operations to complete. After
+     * this time, if the read operation is not successful, X Plugin closes the connection and
+     * returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
+     *
+     * <p>mysqlxReadTimeout corresponds to the MySQL X Plugin system variable
      * [mysqlx_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_read_timeout)
      *
      * @return the value
-     **/
+     */
     public Integer getMysqlxReadTimeout() {
         return mysqlxReadTimeout;
     }
 
     /**
      * The number of seconds that X Plugin waits for activity on a connection.
-     * <p>
-     * mysqlxWaitTimeout corresponds to the MySQL X Plugin system variable.
-     * [mysqlx_wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_wait_timeout)
      *
-     **/
+     * <p>mysqlxWaitTimeout corresponds to the MySQL X Plugin system variable.
+     * [mysqlx_wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_wait_timeout)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxWaitTimeout")
     private final Integer mysqlxWaitTimeout;
 
     /**
      * The number of seconds that X Plugin waits for activity on a connection.
-     * <p>
-     * mysqlxWaitTimeout corresponds to the MySQL X Plugin system variable.
+     *
+     * <p>mysqlxWaitTimeout corresponds to the MySQL X Plugin system variable.
      * [mysqlx_wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_wait_timeout)
      *
      * @return the value
-     **/
+     */
     public Integer getMysqlxWaitTimeout() {
         return mysqlxWaitTimeout;
     }
 
     /**
-     * The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the
-     * write operation is not successful, X Plugin closes the connection.
-     * <p>
-     * mysqlxReadmysqlxWriteTimeoutTimeout corresponds to the MySQL X Plugin system variable
-     * [mysqlx_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_write_timeout)
+     * The number of seconds that X Plugin waits for blocking write operations to complete. After
+     * this time, if the write operation is not successful, X Plugin closes the connection.
      *
-     **/
+     * <p>mysqlxReadmysqlxWriteTimeoutTimeout corresponds to the MySQL X Plugin system variable
+     * [mysqlx_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_write_timeout)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxWriteTimeout")
     private final Integer mysqlxWriteTimeout;
 
     /**
-     * The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the
-     * write operation is not successful, X Plugin closes the connection.
-     * <p>
-     * mysqlxReadmysqlxWriteTimeoutTimeout corresponds to the MySQL X Plugin system variable
+     * The number of seconds that X Plugin waits for blocking write operations to complete. After
+     * this time, if the write operation is not successful, X Plugin closes the connection.
+     *
+     * <p>mysqlxReadmysqlxWriteTimeoutTimeout corresponds to the MySQL X Plugin system variable
      * [mysqlx_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_write_timeout)
      *
      * @return the value
-     **/
+     */
     public Integer getMysqlxWriteTimeout() {
         return mysqlxWriteTimeout;
     }
 
     /**
      * The number of seconds to wait for more data from a connection before aborting the read.
-     * <p>
-     * netReadTimeout corresponds to the MySQL system variable
-     * [net_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_read_timeout)
      *
-     **/
+     * <p>netReadTimeout corresponds to the MySQL system variable
+     * [net_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_read_timeout)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("netReadTimeout")
     private final Integer netReadTimeout;
 
     /**
      * The number of seconds to wait for more data from a connection before aborting the read.
-     * <p>
-     * netReadTimeout corresponds to the MySQL system variable
+     *
+     * <p>netReadTimeout corresponds to the MySQL system variable
      * [net_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_read_timeout)
      *
      * @return the value
-     **/
+     */
     public Integer getNetReadTimeout() {
         return netReadTimeout;
     }
 
     /**
-     * The number of seconds to wait for a block to be written to a connection before aborting the write.
-     * <p>
-     * netWriteTimeout corresponds to the MySQL system variable
-     * [net_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_write_timeout)
+     * The number of seconds to wait for a block to be written to a connection before aborting the
+     * write.
      *
-     **/
+     * <p>netWriteTimeout corresponds to the MySQL system variable
+     * [net_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_write_timeout)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("netWriteTimeout")
     private final Integer netWriteTimeout;
 
     /**
-     * The number of seconds to wait for a block to be written to a connection before aborting the write.
-     * <p>
-     * netWriteTimeout corresponds to the MySQL system variable
+     * The number of seconds to wait for a block to be written to a connection before aborting the
+     * write.
+     *
+     * <p>netWriteTimeout corresponds to the MySQL system variable
      * [net_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_write_timeout)
      *
      * @return the value
-     **/
+     */
     public Integer getNetWriteTimeout() {
         return netWriteTimeout;
     }
 
-    /**
-     * ("parser_max_mem_size")
-     **/
+    /** ("parser_max_mem_size") */
     @com.fasterxml.jackson.annotation.JsonProperty("parserMaxMemSize")
     private final Long parserMaxMemSize;
 
     /**
      * ("parser_max_mem_size")
+     *
      * @return the value
-     **/
+     */
     public Long getParserMaxMemSize() {
         return parserMaxMemSize;
     }
 
     /**
      * ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("queryAllocBlockSize")
     private final Long queryAllocBlockSize;
 
     /**
      * ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
+     *
      * @return the value
-     **/
+     */
     public Long getQueryAllocBlockSize() {
         return queryAllocBlockSize;
     }
 
-    /**
-     * ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
-     **/
+    /** ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored */
     @com.fasterxml.jackson.annotation.JsonProperty("queryPreallocSize")
     private final Long queryPreallocSize;
 
     /**
      * ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
+     *
      * @return the value
-     **/
+     */
     public Long getQueryPreallocSize() {
         return queryPreallocSize;
     }
 
     /**
-     * regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
-     *
-     **/
+     * regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit]
+     * (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("regexpTimeLimit")
     private final Integer regexpTimeLimit;
 
     /**
-     * regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+     * regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit]
+     * (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
      *
      * @return the value
-     **/
+     */
     public Integer getRegexpTimeLimit() {
         return regexpTimeLimit;
     }
 
-    /**
-     * ("sql_mode")
-     **/
+    /** ("sql_mode") */
     @com.fasterxml.jackson.annotation.JsonProperty("sqlMode")
     private final String sqlMode;
 
     /**
      * ("sql_mode")
+     *
      * @return the value
-     **/
+     */
     public String getSqlMode() {
         return sqlMode;
     }
 
     /**
-     * The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
-     * <p>
-     * tmp_table_size corresponds to the MySQL system variable
-     * [tmp_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_tmp_table_size)
+     * The maximum size of internal in-memory temporary tables. This variable does not apply to
+     * user-created MEMORY tables.
      *
-     **/
+     * <p>tmp_table_size corresponds to the MySQL system variable
+     * [tmp_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_tmp_table_size)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("tmpTableSize")
     private final Long tmpTableSize;
 
     /**
-     * The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
-     * <p>
-     * tmp_table_size corresponds to the MySQL system variable
+     * The maximum size of internal in-memory temporary tables. This variable does not apply to
+     * user-created MEMORY tables.
+     *
+     * <p>tmp_table_size corresponds to the MySQL system variable
      * [tmp_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_tmp_table_size)
      *
      * @return the value
-     **/
+     */
     public Long getTmpTableSize() {
         return tmpTableSize;
     }
 
     /**
-     * Set the default compression level for the deflate algorithm. ("mysqlx_deflate_default_compression_level")
-     **/
+     * Set the default compression level for the deflate algorithm.
+     * ("mysqlx_deflate_default_compression_level")
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxDeflateDefaultCompressionLevel")
     private final Integer mysqlxDeflateDefaultCompressionLevel;
 
     /**
-     * Set the default compression level for the deflate algorithm. ("mysqlx_deflate_default_compression_level")
+     * Set the default compression level for the deflate algorithm.
+     * ("mysqlx_deflate_default_compression_level")
+     *
      * @return the value
-     **/
+     */
     public Integer getMysqlxDeflateDefaultCompressionLevel() {
         return mysqlxDeflateDefaultCompressionLevel;
     }
 
     /**
-     * Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlx_deflate_max_client_compression_level")
-     **/
+     * Limit the upper bound of accepted compression levels for the deflate algorithm.
+     * ("mysqlx_deflate_max_client_compression_level")
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxDeflateMaxClientCompressionLevel")
     private final Integer mysqlxDeflateMaxClientCompressionLevel;
 
     /**
-     * Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlx_deflate_max_client_compression_level")
+     * Limit the upper bound of accepted compression levels for the deflate algorithm.
+     * ("mysqlx_deflate_max_client_compression_level")
+     *
      * @return the value
-     **/
+     */
     public Integer getMysqlxDeflateMaxClientCompressionLevel() {
         return mysqlxDeflateMaxClientCompressionLevel;
     }
 
     /**
-     * Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlx_lz4_max_client_compression_level")
-     **/
+     * Limit the upper bound of accepted compression levels for the lz4 algorithm.
+     * ("mysqlx_lz4_max_client_compression_level")
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxLz4MaxClientCompressionLevel")
     private final Integer mysqlxLz4MaxClientCompressionLevel;
 
     /**
-     * Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlx_lz4_max_client_compression_level")
+     * Limit the upper bound of accepted compression levels for the lz4 algorithm.
+     * ("mysqlx_lz4_max_client_compression_level")
+     *
      * @return the value
-     **/
+     */
     public Integer getMysqlxLz4MaxClientCompressionLevel() {
         return mysqlxLz4MaxClientCompressionLevel;
     }
 
     /**
-     * Set the default compression level for the lz4 algorithm. ("mysqlx_lz4_default_compression_level")
-     **/
+     * Set the default compression level for the lz4 algorithm.
+     * ("mysqlx_lz4_default_compression_level")
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxLz4DefaultCompressionLevel")
     private final Integer mysqlxLz4DefaultCompressionLevel;
 
     /**
-     * Set the default compression level for the lz4 algorithm. ("mysqlx_lz4_default_compression_level")
+     * Set the default compression level for the lz4 algorithm.
+     * ("mysqlx_lz4_default_compression_level")
+     *
      * @return the value
-     **/
+     */
     public Integer getMysqlxLz4DefaultCompressionLevel() {
         return mysqlxLz4DefaultCompressionLevel;
     }
 
     /**
-     * Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlx_zstd_max_client_compression_level")
-     **/
+     * Limit the upper bound of accepted compression levels for the zstd algorithm.
+     * ("mysqlx_zstd_max_client_compression_level")
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxZstdMaxClientCompressionLevel")
     private final Integer mysqlxZstdMaxClientCompressionLevel;
 
     /**
-     * Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlx_zstd_max_client_compression_level")
+     * Limit the upper bound of accepted compression levels for the zstd algorithm.
+     * ("mysqlx_zstd_max_client_compression_level")
+     *
      * @return the value
-     **/
+     */
     public Integer getMysqlxZstdMaxClientCompressionLevel() {
         return mysqlxZstdMaxClientCompressionLevel;
     }
 
     /**
-     * Set the default compression level for the zstd algorithm. ("mysqlx_zstd_default_compression_level")
-     **/
+     * Set the default compression level for the zstd algorithm.
+     * ("mysqlx_zstd_default_compression_level")
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxZstdDefaultCompressionLevel")
     private final Integer mysqlxZstdDefaultCompressionLevel;
 
     /**
-     * Set the default compression level for the zstd algorithm. ("mysqlx_zstd_default_compression_level")
+     * Set the default compression level for the zstd algorithm.
+     * ("mysqlx_zstd_default_compression_level")
+     *
      * @return the value
-     **/
+     */
     public Integer getMysqlxZstdDefaultCompressionLevel() {
         return mysqlxZstdDefaultCompressionLevel;
     }
 
-    /**
-     * DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
-     **/
+    /** DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored. */
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlZstdDefaultCompressionLevel")
     private final Integer mysqlZstdDefaultCompressionLevel;
 
     /**
      * DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
+     *
      * @return the value
-     **/
+     */
     public Integer getMysqlZstdDefaultCompressionLevel() {
         return mysqlZstdDefaultCompressionLevel;
     }
 
     /**
      * Each session that must perform a sort allocates a buffer of this size.
-     * <p>
-     * sortBufferSize corresponds to the MySQL system variable [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
      *
-     **/
+     * <p>sortBufferSize corresponds to the MySQL system variable
+     * [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sortBufferSize")
     private final Long sortBufferSize;
 
     /**
      * Each session that must perform a sort allocates a buffer of this size.
-     * <p>
-     * sortBufferSize corresponds to the MySQL system variable [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
+     *
+     * <p>sortBufferSize corresponds to the MySQL system variable
+     * [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
      *
      * @return the value
-     **/
+     */
     public Long getSortBufferSize() {
         return sortBufferSize;
     }
 
     /**
-     * The number of seconds the server waits for activity on a noninteractive connection before closing it.
-     * <p>
-     * waitTimeout corresponds to the MySQL system variable.
-     * [wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
+     * The number of seconds the server waits for activity on a noninteractive connection before
+     * closing it.
      *
-     **/
+     * <p>waitTimeout corresponds to the MySQL system variable.
+     * [wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("waitTimeout")
     private final Integer waitTimeout;
 
     /**
-     * The number of seconds the server waits for activity on a noninteractive connection before closing it.
-     * <p>
-     * waitTimeout corresponds to the MySQL system variable.
+     * The number of seconds the server waits for activity on a noninteractive connection before
+     * closing it.
+     *
+     * <p>waitTimeout corresponds to the MySQL system variable.
      * [wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
      *
      * @return the value
-     **/
+     */
     public Integer getWaitTimeout() {
         return waitTimeout;
     }
 
     /**
-     * Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening
-     * for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit.
-     * threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
-     *
-     **/
+     * Controls whether the thread pool uses dedicated listener threads. If enabled, a listener
+     * thread in each thread group is dedicated to the task of listening for network events from
+     * clients, ensuring that the maximum number of query worker threads is no more than the value
+     * specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the
+     * MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("threadPoolDedicatedListeners")
     private final Boolean threadPoolDedicatedListeners;
 
     /**
-     * Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening
-     * for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit.
-     * threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+     * Controls whether the thread pool uses dedicated listener threads. If enabled, a listener
+     * thread in each thread group is dedicated to the task of listening for network events from
+     * clients, ensuring that the maximum number of query worker threads is no more than the value
+     * specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the
+     * MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
      *
      * @return the value
-     **/
+     */
     public Boolean getThreadPoolDedicatedListeners() {
         return threadPoolDedicatedListeners;
     }
 
     /**
-     * Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit.
-     * threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
-     *
-     **/
+     * Limits the maximum number of open transactions to the defined value. The default value is 0,
+     * which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database
+     * Service-specific system variable thread_pool_max_transactions_limit.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("threadPoolMaxTransactionsLimit")
     private final Integer threadPoolMaxTransactionsLimit;
 
     /**
-     * Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit.
-     * threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+     * Limits the maximum number of open transactions to the defined value. The default value is 0,
+     * which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database
+     * Service-specific system variable thread_pool_max_transactions_limit.
      *
      * @return the value
-     **/
+     */
     public Integer getThreadPoolMaxTransactionsLimit() {
         return threadPoolMaxTransactionsLimit;
     }
 
     /**
      * Initializes the time zone for each client that connects.
-     * <p>
-     * This corresponds to the MySQL System Variable "time_zone".
-     * <p>
-     * The values can be given in one of the following formats, none of which are case-sensitive:
-     * <p>
-     * - As a string indicating an offset from UTC of the form [H]H:MM, prefixed with a + or -, such as '+10:00', '-6:00', or '+05:30'. The permitted range is '-13:59' to '+14:00', inclusive.
-     * - As a named time zone, as defined by the "IANA Time Zone database", such as 'Europe/Helsinki', 'US/Eastern', 'MET', or 'UTC'.
      *
-     **/
+     * <p>This corresponds to the MySQL System Variable "time_zone".
+     *
+     * <p>The values can be given in one of the following formats, none of which are case-sensitive:
+     *
+     * <p>- As a string indicating an offset from UTC of the form [H]H:MM, prefixed with a + or -,
+     * such as '+10:00', '-6:00', or '+05:30'. The permitted range is '-13:59' to '+14:00',
+     * inclusive. - As a named time zone, as defined by the "IANA Time Zone database", such as
+     * 'Europe/Helsinki', 'US/Eastern', 'MET', or 'UTC'.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final String timeZone;
 
     /**
      * Initializes the time zone for each client that connects.
-     * <p>
-     * This corresponds to the MySQL System Variable "time_zone".
-     * <p>
-     * The values can be given in one of the following formats, none of which are case-sensitive:
-     * <p>
-     * - As a string indicating an offset from UTC of the form [H]H:MM, prefixed with a + or -, such as '+10:00', '-6:00', or '+05:30'. The permitted range is '-13:59' to '+14:00', inclusive.
-     * - As a named time zone, as defined by the "IANA Time Zone database", such as 'Europe/Helsinki', 'US/Eastern', 'MET', or 'UTC'.
+     *
+     * <p>This corresponds to the MySQL System Variable "time_zone".
+     *
+     * <p>The values can be given in one of the following formats, none of which are case-sensitive:
+     *
+     * <p>- As a string indicating an offset from UTC of the form [H]H:MM, prefixed with a + or -,
+     * such as '+10:00', '-6:00', or '+05:30'. The permitted range is '-13:59' to '+14:00',
+     * inclusive. - As a named time zone, as defined by the "IANA Time Zone database", such as
+     * 'Europe/Helsinki', 'US/Eastern', 'MET', or 'UTC'.
      *
      * @return the value
-     **/
+     */
     public String getTimeZone() {
         return timeZone;
     }
@@ -4037,6 +4159,7 @@ public final class ConfigurationVariables
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

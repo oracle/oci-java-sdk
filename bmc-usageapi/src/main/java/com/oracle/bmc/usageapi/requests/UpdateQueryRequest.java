@@ -6,67 +6,55 @@ package com.oracle.bmc.usageapi.requests;
 
 import com.oracle.bmc.usageapi.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/UpdateQueryExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateQueryRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/UpdateQueryExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateQueryRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 public class UpdateQueryRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.usageapi.model.UpdateQueryDetails> {
 
-    /**
-     * The information to be updated.
-     */
+    /** The information to be updated. */
     private com.oracle.bmc.usageapi.model.UpdateQueryDetails updateQueryDetails;
 
-    /**
-     * The information to be updated.
-     */
+    /** The information to be updated. */
     public com.oracle.bmc.usageapi.model.UpdateQueryDetails getUpdateQueryDetails() {
         return updateQueryDetails;
     }
-    /**
-     * The query unique OCID.
-     */
+    /** The query unique OCID. */
     private String queryId;
 
-    /**
-     * The query unique OCID.
-     */
+    /** The query unique OCID. */
     public String getQueryId() {
         return queryId;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the {@code if-match} parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted, only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted, only if the etag you provide matches the
+     * resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the {@code if-match} parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted, only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted, only if the etag you provide matches the
+     * resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
@@ -74,6 +62,7 @@ public class UpdateQueryRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -85,17 +74,15 @@ public class UpdateQueryRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateQueryRequest, com.oracle.bmc.usageapi.model.UpdateQueryDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The information to be updated.
-         */
+        /** The information to be updated. */
         private com.oracle.bmc.usageapi.model.UpdateQueryDetails updateQueryDetails = null;
 
         /**
          * The information to be updated.
+         *
          * @param updateQueryDetails the value to set
          * @return this builder instance
          */
@@ -105,13 +92,12 @@ public class UpdateQueryRequest
             return this;
         }
 
-        /**
-         * The query unique OCID.
-         */
+        /** The query unique OCID. */
         private String queryId = null;
 
         /**
          * The query unique OCID.
+         *
          * @param queryId the value to set
          * @return this builder instance
          */
@@ -123,7 +109,6 @@ public class UpdateQueryRequest
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId = null;
 
@@ -140,21 +125,18 @@ public class UpdateQueryRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the {@code if-match} parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted, only if the etag you
-         * provide matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted, only if the etag you provide
+         * matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the {@code if-match} parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted, only if the etag you
-         * provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted, only if the etag you provide
+         * matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -166,18 +148,19 @@ public class UpdateQueryRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -189,6 +172,7 @@ public class UpdateQueryRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateQueryRequest o) {
@@ -204,10 +188,11 @@ public class UpdateQueryRequest
         /**
          * Build the instance of UpdateQueryRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateQueryRequest
          */
@@ -220,6 +205,7 @@ public class UpdateQueryRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -232,7 +218,8 @@ public class UpdateQueryRequest
         /**
          * Build the instance of UpdateQueryRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateQueryRequest
@@ -250,6 +237,7 @@ public class UpdateQueryRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -262,6 +250,7 @@ public class UpdateQueryRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

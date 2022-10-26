@@ -5,25 +5,24 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * The information about database to be analyzed.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information about database to be analyzed. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateEmManagedExternalDatabaseInsightDetails.Builder.class
-)
+        builder = CreateEmManagedExternalDatabaseInsightDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "entitySource"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "entitySource")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateEmManagedExternalDatabaseInsightDetails
         extends CreateDatabaseInsightDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -55,65 +54,65 @@ public final class CreateEmManagedExternalDatabaseInsightDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /**
-         * Enterprise Manager Unique Identifier
-         **/
+        /** Enterprise Manager Unique Identifier */
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerIdentifier")
         private String enterpriseManagerIdentifier;
 
         /**
          * Enterprise Manager Unique Identifier
+         *
          * @param enterpriseManagerIdentifier the value to set
          * @return this builder
-         **/
+         */
         public Builder enterpriseManagerIdentifier(String enterpriseManagerIdentifier) {
             this.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
             this.__explicitlySet__.add("enterpriseManagerIdentifier");
             return this;
         }
-        /**
-         * OPSI Enterprise Manager Bridge OCID
-         **/
+        /** OPSI Enterprise Manager Bridge OCID */
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerBridgeId")
         private String enterpriseManagerBridgeId;
 
         /**
          * OPSI Enterprise Manager Bridge OCID
+         *
          * @param enterpriseManagerBridgeId the value to set
          * @return this builder
-         **/
+         */
         public Builder enterpriseManagerBridgeId(String enterpriseManagerBridgeId) {
             this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
             this.__explicitlySet__.add("enterpriseManagerBridgeId");
             return this;
         }
-        /**
-         * Enterprise Manager Entity Unique Identifier
-         **/
+        /** Enterprise Manager Entity Unique Identifier */
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityIdentifier")
         private String enterpriseManagerEntityIdentifier;
 
         /**
          * Enterprise Manager Entity Unique Identifier
+         *
          * @param enterpriseManagerEntityIdentifier the value to set
          * @return this builder
-         **/
+         */
         public Builder enterpriseManagerEntityIdentifier(String enterpriseManagerEntityIdentifier) {
             this.enterpriseManagerEntityIdentifier = enterpriseManagerEntityIdentifier;
             this.__explicitlySet__.add("enterpriseManagerEntityIdentifier");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the Exadata insight.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
         private String exadataInsightId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the Exadata insight.
+         *
          * @param exadataInsightId the value to set
          * @return this builder
-         **/
+         */
         public Builder exadataInsightId(String exadataInsightId) {
             this.exadataInsightId = exadataInsightId;
             this.__explicitlySet__.add("exadataInsightId");
@@ -167,9 +166,7 @@ public final class CreateEmManagedExternalDatabaseInsightDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -194,58 +191,58 @@ public final class CreateEmManagedExternalDatabaseInsightDetails
         this.exadataInsightId = exadataInsightId;
     }
 
-    /**
-     * Enterprise Manager Unique Identifier
-     **/
+    /** Enterprise Manager Unique Identifier */
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerIdentifier")
     private final String enterpriseManagerIdentifier;
 
     /**
      * Enterprise Manager Unique Identifier
+     *
      * @return the value
-     **/
+     */
     public String getEnterpriseManagerIdentifier() {
         return enterpriseManagerIdentifier;
     }
 
-    /**
-     * OPSI Enterprise Manager Bridge OCID
-     **/
+    /** OPSI Enterprise Manager Bridge OCID */
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerBridgeId")
     private final String enterpriseManagerBridgeId;
 
     /**
      * OPSI Enterprise Manager Bridge OCID
+     *
      * @return the value
-     **/
+     */
     public String getEnterpriseManagerBridgeId() {
         return enterpriseManagerBridgeId;
     }
 
-    /**
-     * Enterprise Manager Entity Unique Identifier
-     **/
+    /** Enterprise Manager Entity Unique Identifier */
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityIdentifier")
     private final String enterpriseManagerEntityIdentifier;
 
     /**
      * Enterprise Manager Entity Unique Identifier
+     *
      * @return the value
-     **/
+     */
     public String getEnterpriseManagerEntityIdentifier() {
         return enterpriseManagerEntityIdentifier;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Exadata insight.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
     private final String exadataInsightId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Exadata insight.
+     *
      * @return the value
-     **/
+     */
     public String getExadataInsightId() {
         return exadataInsightId;
     }
@@ -257,6 +254,7 @@ public final class CreateEmManagedExternalDatabaseInsightDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

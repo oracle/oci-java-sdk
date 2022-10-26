@@ -5,22 +5,22 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * Information about a new endpoint.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Information about a new endpoint. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateEndpointDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateEndpointDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateEndpointDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "vcnId",
@@ -60,174 +60,164 @@ public final class CreateEndpointDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * VCN identifier where the subnet resides.
-         **/
+        /** VCN identifier where the subnet resides. */
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         /**
          * VCN identifier where the subnet resides.
+         *
          * @param vcnId the value to set
          * @return this builder
-         **/
+         */
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
             return this;
         }
-        /**
-         * Subnet identifier for the customer-connected databases.
-         **/
+        /** Subnet identifier for the customer-connected databases. */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
          * Subnet identifier for the customer-connected databases.
+         *
          * @param subnetId the value to set
          * @return this builder
-         **/
+         */
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
         /**
-         * The list of DNS zones to be used by the data assets to be harvested.
-         * Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
-         *
-         **/
+         * The list of DNS zones to be used by the data assets to be harvested. Example:
+         * custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dnsZones")
         private java.util.List<String> dnsZones;
 
         /**
-         * The list of DNS zones to be used by the data assets to be harvested.
-         * Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
+         * The list of DNS zones to be used by the data assets to be harvested. Example:
+         * custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
          *
          * @param dnsZones the value to set
          * @return this builder
-         **/
+         */
         public Builder dnsZones(java.util.List<String> dnsZones) {
             this.dnsZones = dnsZones;
             this.__explicitlySet__.add("dnsZones");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
+         * only for cross-compatibility. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
+         * only for cross-compatibility. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
+         * {@code {"foo-namespace": {"bar-key": "value"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
+         * {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /**
-         * Data Connectivity Management Registry description
-         **/
+        /** Data Connectivity Management Registry description */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Data Connectivity Management Registry description
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The Data Connectivity Management registry display name; registries can be renamed.
-         **/
+        /** The Data Connectivity Management registry display name; registries can be renamed. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The Data Connectivity Management registry display name; registries can be renamed.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Compartment Identifier
-         **/
+        /** Compartment Identifier */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * Endpoint size for reverse connection capacity.
-         **/
+        /** Endpoint size for reverse connection capacity. */
         @com.fasterxml.jackson.annotation.JsonProperty("endpointSize")
         private Integer endpointSize;
 
         /**
          * Endpoint size for reverse connection capacity.
+         *
          * @param endpointSize the value to set
          * @return this builder
-         **/
+         */
         public Builder endpointSize(Integer endpointSize) {
             this.endpointSize = endpointSize;
             this.__explicitlySet__.add("endpointSize");
             return this;
         }
-        /**
-         * The list of NSGs to which the private endpoint VNIC must be added.
-         **/
+        /** The list of NSGs to which the private endpoint VNIC must be added. */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
          * The list of NSGs to which the private endpoint VNIC must be added.
+         *
          * @param nsgIds the value to set
          * @return this builder
-         **/
+         */
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
@@ -292,9 +282,7 @@ public final class CreateEndpointDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -303,154 +291,144 @@ public final class CreateEndpointDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * VCN identifier where the subnet resides.
-     **/
+    /** VCN identifier where the subnet resides. */
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
     /**
      * VCN identifier where the subnet resides.
+     *
      * @return the value
-     **/
+     */
     public String getVcnId() {
         return vcnId;
     }
 
-    /**
-     * Subnet identifier for the customer-connected databases.
-     **/
+    /** Subnet identifier for the customer-connected databases. */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * Subnet identifier for the customer-connected databases.
+     *
      * @return the value
-     **/
+     */
     public String getSubnetId() {
         return subnetId;
     }
 
     /**
-     * The list of DNS zones to be used by the data assets to be harvested.
-     * Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
-     *
-     **/
+     * The list of DNS zones to be used by the data assets to be harvested. Example:
+     * custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dnsZones")
     private final java.util.List<String> dnsZones;
 
     /**
-     * The list of DNS zones to be used by the data assets to be harvested.
-     * Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
+     * The list of DNS zones to be used by the data assets to be harvested. Example:
+     * custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getDnsZones() {
         return dnsZones;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
+     * only for cross-compatibility. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
+     * only for cross-compatibility. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
-    /**
-     * Data Connectivity Management Registry description
-     **/
+    /** Data Connectivity Management Registry description */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Data Connectivity Management Registry description
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The Data Connectivity Management registry display name; registries can be renamed.
-     **/
+    /** The Data Connectivity Management registry display name; registries can be renamed. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The Data Connectivity Management registry display name; registries can be renamed.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Compartment Identifier
-     **/
+    /** Compartment Identifier */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * Endpoint size for reverse connection capacity.
-     **/
+    /** Endpoint size for reverse connection capacity. */
     @com.fasterxml.jackson.annotation.JsonProperty("endpointSize")
     private final Integer endpointSize;
 
     /**
      * Endpoint size for reverse connection capacity.
+     *
      * @return the value
-     **/
+     */
     public Integer getEndpointSize() {
         return endpointSize;
     }
 
-    /**
-     * The list of NSGs to which the private endpoint VNIC must be added.
-     **/
+    /** The list of NSGs to which the private endpoint VNIC must be added. */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
      * The list of NSGs to which the private endpoint VNIC must be added.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
@@ -462,6 +440,7 @@ public final class CreateEndpointDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

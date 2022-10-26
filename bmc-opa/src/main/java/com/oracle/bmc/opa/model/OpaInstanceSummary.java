@@ -5,21 +5,22 @@
 package com.oracle.bmc.opa.model;
 
 /**
- * Summary of the OpaInstance.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary of the OpaInstance. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210621")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = OpaInstanceSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OpaInstanceSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = OpaInstanceSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class OpaInstanceSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -74,213 +75,200 @@ public final class OpaInstanceSummary extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Unique identifier that is immutable on creation
-         **/
+        /** Unique identifier that is immutable on creation */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique identifier that is immutable on creation
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * OpaInstance Identifier, can be renamed
-         **/
+        /** OpaInstance Identifier, can be renamed */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * OpaInstance Identifier, can be renamed
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Description of the Process Automation instance.
-         **/
+        /** Description of the Process Automation instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description of the Process Automation instance.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * Compartment Identifier
-         **/
+        /** Compartment Identifier */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * OPA Instance URL
-         **/
+        /** OPA Instance URL */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceUrl")
         private String instanceUrl;
 
         /**
          * OPA Instance URL
+         *
          * @param instanceUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder instanceUrl(String instanceUrl) {
             this.instanceUrl = instanceUrl;
             this.__explicitlySet__.add("instanceUrl");
             return this;
         }
-        /**
-         * Parameter specifying which entitlement to use for billing purposes
-         **/
+        /** Parameter specifying which entitlement to use for billing purposes */
         @com.fasterxml.jackson.annotation.JsonProperty("consumptionModel")
         private OpaInstance.ConsumptionModel consumptionModel;
 
         /**
          * Parameter specifying which entitlement to use for billing purposes
+         *
          * @param consumptionModel the value to set
          * @return this builder
-         **/
+         */
         public Builder consumptionModel(OpaInstance.ConsumptionModel consumptionModel) {
             this.consumptionModel = consumptionModel;
             this.__explicitlySet__.add("consumptionModel");
             return this;
         }
-        /**
-         * Shape of the instance.
-         **/
+        /** Shape of the instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private OpaInstance.ShapeName shapeName;
 
         /**
          * Shape of the instance.
+         *
          * @param shapeName the value to set
          * @return this builder
-         **/
+         */
         public Builder shapeName(OpaInstance.ShapeName shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
             return this;
         }
-        /**
-         * MeteringType Identifier
-         **/
+        /** MeteringType Identifier */
         @com.fasterxml.jackson.annotation.JsonProperty("meteringType")
         private OpaInstance.MeteringType meteringType;
 
         /**
          * MeteringType Identifier
+         *
          * @param meteringType the value to set
          * @return this builder
-         **/
+         */
         public Builder meteringType(OpaInstance.MeteringType meteringType) {
             this.meteringType = meteringType;
             this.__explicitlySet__.add("meteringType");
             return this;
         }
-        /**
-         * The time the the OpaInstance was created. An RFC3339 formatted datetime string
-         **/
+        /** The time the the OpaInstance was created. An RFC3339 formatted datetime string */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the the OpaInstance was created. An RFC3339 formatted datetime string
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * The time the OpaInstance was updated. An RFC3339 formatted datetime string
-         **/
+        /** The time the OpaInstance was updated. An RFC3339 formatted datetime string */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time the OpaInstance was updated. An RFC3339 formatted datetime string
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * The current state of the OpaInstance.
-         **/
+        /** The current state of the OpaInstance. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private OpaInstance.LifecycleState lifecycleState;
 
         /**
          * The current state of the OpaInstance.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(OpaInstance.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * indicates if breakGlass is enabled for the opa instance.
-         **/
+        /** indicates if breakGlass is enabled for the opa instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("isBreakglassEnabled")
         private Boolean isBreakglassEnabled;
 
         /**
          * indicates if breakGlass is enabled for the opa instance.
+         *
          * @param isBreakglassEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isBreakglassEnabled(Boolean isBreakglassEnabled) {
             this.isBreakglassEnabled = isBreakglassEnabled;
             this.__explicitlySet__.add("isBreakglassEnabled");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -289,8 +277,7 @@ public final class OpaInstanceSummary extends com.oracle.bmc.http.internal.Expli
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -300,7 +287,7 @@ public final class OpaInstanceSummary extends com.oracle.bmc.http.internal.Expli
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -308,20 +295,19 @@ public final class OpaInstanceSummary extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         *
-         **/
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         **/
+         */
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -406,9 +392,7 @@ public final class OpaInstanceSummary extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -417,224 +401,209 @@ public final class OpaInstanceSummary extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique identifier that is immutable on creation
-     **/
+    /** Unique identifier that is immutable on creation */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier that is immutable on creation
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * OpaInstance Identifier, can be renamed
-     **/
+    /** OpaInstance Identifier, can be renamed */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * OpaInstance Identifier, can be renamed
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Description of the Process Automation instance.
-     **/
+    /** Description of the Process Automation instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of the Process Automation instance.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * Compartment Identifier
-     **/
+    /** Compartment Identifier */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * OPA Instance URL
-     **/
+    /** OPA Instance URL */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceUrl")
     private final String instanceUrl;
 
     /**
      * OPA Instance URL
+     *
      * @return the value
-     **/
+     */
     public String getInstanceUrl() {
         return instanceUrl;
     }
 
-    /**
-     * Parameter specifying which entitlement to use for billing purposes
-     **/
+    /** Parameter specifying which entitlement to use for billing purposes */
     @com.fasterxml.jackson.annotation.JsonProperty("consumptionModel")
     private final OpaInstance.ConsumptionModel consumptionModel;
 
     /**
      * Parameter specifying which entitlement to use for billing purposes
+     *
      * @return the value
-     **/
+     */
     public OpaInstance.ConsumptionModel getConsumptionModel() {
         return consumptionModel;
     }
 
-    /**
-     * Shape of the instance.
-     **/
+    /** Shape of the instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final OpaInstance.ShapeName shapeName;
 
     /**
      * Shape of the instance.
+     *
      * @return the value
-     **/
+     */
     public OpaInstance.ShapeName getShapeName() {
         return shapeName;
     }
 
-    /**
-     * MeteringType Identifier
-     **/
+    /** MeteringType Identifier */
     @com.fasterxml.jackson.annotation.JsonProperty("meteringType")
     private final OpaInstance.MeteringType meteringType;
 
     /**
      * MeteringType Identifier
+     *
      * @return the value
-     **/
+     */
     public OpaInstance.MeteringType getMeteringType() {
         return meteringType;
     }
 
-    /**
-     * The time the the OpaInstance was created. An RFC3339 formatted datetime string
-     **/
+    /** The time the the OpaInstance was created. An RFC3339 formatted datetime string */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the the OpaInstance was created. An RFC3339 formatted datetime string
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The time the OpaInstance was updated. An RFC3339 formatted datetime string
-     **/
+    /** The time the OpaInstance was updated. An RFC3339 formatted datetime string */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time the OpaInstance was updated. An RFC3339 formatted datetime string
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The current state of the OpaInstance.
-     **/
+    /** The current state of the OpaInstance. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final OpaInstance.LifecycleState lifecycleState;
 
     /**
      * The current state of the OpaInstance.
+     *
      * @return the value
-     **/
+     */
     public OpaInstance.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * indicates if breakGlass is enabled for the opa instance.
-     **/
+    /** indicates if breakGlass is enabled for the opa instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("isBreakglassEnabled")
     private final Boolean isBreakglassEnabled;
 
     /**
      * indicates if breakGlass is enabled for the opa instance.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsBreakglassEnabled() {
         return isBreakglassEnabled;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     *
-     **/
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -646,6 +615,7 @@ public final class OpaInstanceSummary extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

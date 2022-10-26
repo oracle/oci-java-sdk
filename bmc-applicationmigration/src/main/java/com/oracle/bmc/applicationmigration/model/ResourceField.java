@@ -5,19 +5,22 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * Resource object that can be used to pass details about any list of resources associated with Migrations. The List of resources are added to ConfigurationField to add the capability to pass lists of resources of any type and group.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Resource object that can be used to pass details about any list of resources associated with
+ * Migrations. The List of resources are added to ConfigurationField to add the capability to pass
+ * lists of resources of any type and group. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ResourceField.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResourceField extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ResourceField extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "group", "type", "value"})
     public ResourceField(String name, String group, String type, String value) {
@@ -30,65 +33,61 @@ public final class ResourceField extends com.oracle.bmc.http.internal.Explicitly
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The display name of the resource field.
-         **/
+        /** The display name of the resource field. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The display name of the resource field.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The name of the group to which this field belongs to.
-         **/
+        /** The name of the group to which this field belongs to. */
         @com.fasterxml.jackson.annotation.JsonProperty("group")
         private String group;
 
         /**
          * The name of the group to which this field belongs to.
+         *
          * @param group the value to set
          * @return this builder
-         **/
+         */
         public Builder group(String group) {
             this.group = group;
             this.__explicitlySet__.add("group");
             return this;
         }
-        /**
-         * The type of the resource field.
-         **/
+        /** The type of the resource field. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * The type of the resource field.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * The value of the field.
-         **/
+        /** The value of the field. */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * The value of the field.
+         *
          * @param value the value to set
          * @return this builder
-         **/
+         */
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -124,9 +123,7 @@ public final class ResourceField extends com.oracle.bmc.http.internal.Explicitly
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -135,58 +132,54 @@ public final class ResourceField extends com.oracle.bmc.http.internal.Explicitly
         return new Builder().copy(this);
     }
 
-    /**
-     * The display name of the resource field.
-     **/
+    /** The display name of the resource field. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The display name of the resource field.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The name of the group to which this field belongs to.
-     **/
+    /** The name of the group to which this field belongs to. */
     @com.fasterxml.jackson.annotation.JsonProperty("group")
     private final String group;
 
     /**
      * The name of the group to which this field belongs to.
+     *
      * @return the value
-     **/
+     */
     public String getGroup() {
         return group;
     }
 
-    /**
-     * The type of the resource field.
-     **/
+    /** The type of the resource field. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * The type of the resource field.
+     *
      * @return the value
-     **/
+     */
     public String getType() {
         return type;
     }
 
-    /**
-     * The value of the field.
-     **/
+    /** The value of the field. */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * The value of the field.
+     *
      * @return the value
-     **/
+     */
     public String getValue() {
         return value;
     }
@@ -198,6 +191,7 @@ public final class ResourceField extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

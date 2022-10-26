@@ -5,21 +5,22 @@
 package com.oracle.bmc.monitoring.model;
 
 /**
- * The configuration details for suppressing an alarm.
- * For information about alarms, see [Alarms Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview).
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The configuration details for suppressing an alarm. For information about alarms, see [Alarms
+ * Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview).
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Suppression.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Suppression extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Suppression extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"description", "timeSuppressFrom", "timeSuppressUntil"})
     public Suppression(
@@ -33,76 +34,75 @@ public final class Suppression extends com.oracle.bmc.http.internal.ExplicitlySe
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Human-readable reason for suppressing alarm notifications.
-         * It does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
-         * <p>
-         * Oracle recommends including tracking information for the event or associated work,
-         * such as a ticket number.
-         * <p>
-         * Example: {@code Planned outage due to change IT-1234.}
+         * Human-readable reason for suppressing alarm notifications. It does not have to be unique,
+         * and it's changeable. Avoid entering confidential information.
          *
-         **/
+         * <p>Oracle recommends including tracking information for the event or associated work,
+         * such as a ticket number.
+         *
+         * <p>Example: {@code Planned outage due to change IT-1234.}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Human-readable reason for suppressing alarm notifications.
-         * It does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
-         * <p>
-         * Oracle recommends including tracking information for the event or associated work,
+         * Human-readable reason for suppressing alarm notifications. It does not have to be unique,
+         * and it's changeable. Avoid entering confidential information.
+         *
+         * <p>Oracle recommends including tracking information for the event or associated work,
          * such as a ticket number.
-         * <p>
-         * Example: {@code Planned outage due to change IT-1234.}
+         *
+         * <p>Example: {@code Planned outage due to change IT-1234.}
          *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.
-         * <p>
-         * Example: {@code 2019-02-01T01:02:29.600Z}
+         * The start date and time for the suppression to take place, inclusive. Format defined by
+         * RFC3339.
          *
-         **/
+         * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressFrom")
         private java.util.Date timeSuppressFrom;
 
         /**
-         * The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.
-         * <p>
-         * Example: {@code 2019-02-01T01:02:29.600Z}
+         * The start date and time for the suppression to take place, inclusive. Format defined by
+         * RFC3339.
+         *
+         * <p>Example: {@code 2019-02-01T01:02:29.600Z}
          *
          * @param timeSuppressFrom the value to set
          * @return this builder
-         **/
+         */
         public Builder timeSuppressFrom(java.util.Date timeSuppressFrom) {
             this.timeSuppressFrom = timeSuppressFrom;
             this.__explicitlySet__.add("timeSuppressFrom");
             return this;
         }
         /**
-         * The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.
-         * <p>
-         * Example: {@code 2019-02-01T02:02:29.600Z}
+         * The end date and time for the suppression to take place, inclusive. Format defined by
+         * RFC3339.
          *
-         **/
+         * <p>Example: {@code 2019-02-01T02:02:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressUntil")
         private java.util.Date timeSuppressUntil;
 
         /**
-         * The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.
-         * <p>
-         * Example: {@code 2019-02-01T02:02:29.600Z}
+         * The end date and time for the suppression to take place, inclusive. Format defined by
+         * RFC3339.
+         *
+         * <p>Example: {@code 2019-02-01T02:02:29.600Z}
          *
          * @param timeSuppressUntil the value to set
          * @return this builder
-         **/
+         */
         public Builder timeSuppressUntil(java.util.Date timeSuppressUntil) {
             this.timeSuppressUntil = timeSuppressUntil;
             this.__explicitlySet__.add("timeSuppressUntil");
@@ -137,9 +137,7 @@ public final class Suppression extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -149,71 +147,70 @@ public final class Suppression extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * Human-readable reason for suppressing alarm notifications.
-     * It does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     * <p>
-     * Oracle recommends including tracking information for the event or associated work,
-     * such as a ticket number.
-     * <p>
-     * Example: {@code Planned outage due to change IT-1234.}
+     * Human-readable reason for suppressing alarm notifications. It does not have to be unique, and
+     * it's changeable. Avoid entering confidential information.
      *
-     **/
+     * <p>Oracle recommends including tracking information for the event or associated work, such as
+     * a ticket number.
+     *
+     * <p>Example: {@code Planned outage due to change IT-1234.}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Human-readable reason for suppressing alarm notifications.
-     * It does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     * <p>
-     * Oracle recommends including tracking information for the event or associated work,
-     * such as a ticket number.
-     * <p>
-     * Example: {@code Planned outage due to change IT-1234.}
+     * Human-readable reason for suppressing alarm notifications. It does not have to be unique, and
+     * it's changeable. Avoid entering confidential information.
+     *
+     * <p>Oracle recommends including tracking information for the event or associated work, such as
+     * a ticket number.
+     *
+     * <p>Example: {@code Planned outage due to change IT-1234.}
      *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
     /**
-     * The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.
-     * <p>
-     * Example: {@code 2019-02-01T01:02:29.600Z}
+     * The start date and time for the suppression to take place, inclusive. Format defined by
+     * RFC3339.
      *
-     **/
+     * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressFrom")
     private final java.util.Date timeSuppressFrom;
 
     /**
-     * The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.
-     * <p>
-     * Example: {@code 2019-02-01T01:02:29.600Z}
+     * The start date and time for the suppression to take place, inclusive. Format defined by
+     * RFC3339.
+     *
+     * <p>Example: {@code 2019-02-01T01:02:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeSuppressFrom() {
         return timeSuppressFrom;
     }
 
     /**
-     * The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.
-     * <p>
-     * Example: {@code 2019-02-01T02:02:29.600Z}
+     * The end date and time for the suppression to take place, inclusive. Format defined by
+     * RFC3339.
      *
-     **/
+     * <p>Example: {@code 2019-02-01T02:02:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressUntil")
     private final java.util.Date timeSuppressUntil;
 
     /**
-     * The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.
-     * <p>
-     * Example: {@code 2019-02-01T02:02:29.600Z}
+     * The end date and time for the suppression to take place, inclusive. Format defined by
+     * RFC3339.
+     *
+     * <p>Example: {@code 2019-02-01T02:02:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeSuppressUntil() {
         return timeSuppressUntil;
     }
@@ -225,6 +222,7 @@ public final class Suppression extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

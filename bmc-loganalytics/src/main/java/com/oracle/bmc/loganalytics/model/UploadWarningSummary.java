@@ -5,21 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Summary of Upload warnings.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary of Upload warnings. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UploadWarningSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UploadWarningSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = UploadWarningSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class UploadWarningSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"reference", "status", "timeStarted", "errorMessage"})
     public UploadWarningSummary(
@@ -33,65 +34,61 @@ public final class UploadWarningSummary extends com.oracle.bmc.http.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Unique internal identifier to refer upload warning.
-         **/
+        /** Unique internal identifier to refer upload warning. */
         @com.fasterxml.jackson.annotation.JsonProperty("reference")
         private String reference;
 
         /**
          * Unique internal identifier to refer upload warning.
+         *
          * @param reference the value to set
          * @return this builder
-         **/
+         */
         public Builder reference(String reference) {
             this.reference = reference;
             this.__explicitlySet__.add("reference");
             return this;
         }
-        /**
-         * Status of the upload. Ex - Failed.
-         **/
+        /** Status of the upload. Ex - Failed. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
         /**
          * Status of the upload. Ex - Failed.
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * The time when the upload processing started.
-         **/
+        /** The time when the upload processing started. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * The time when the upload processing started.
+         *
          * @param timeStarted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /**
-         * The details about upload processing failure.
-         **/
+        /** The details about upload processing failure. */
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
         /**
          * The details about upload processing failure.
+         *
          * @param errorMessage the value to set
          * @return this builder
-         **/
+         */
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
@@ -129,9 +126,7 @@ public final class UploadWarningSummary extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -140,58 +135,54 @@ public final class UploadWarningSummary extends com.oracle.bmc.http.internal.Exp
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique internal identifier to refer upload warning.
-     **/
+    /** Unique internal identifier to refer upload warning. */
     @com.fasterxml.jackson.annotation.JsonProperty("reference")
     private final String reference;
 
     /**
      * Unique internal identifier to refer upload warning.
+     *
      * @return the value
-     **/
+     */
     public String getReference() {
         return reference;
     }
 
-    /**
-     * Status of the upload. Ex - Failed.
-     **/
+    /** Status of the upload. Ex - Failed. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
     /**
      * Status of the upload. Ex - Failed.
+     *
      * @return the value
-     **/
+     */
     public String getStatus() {
         return status;
     }
 
-    /**
-     * The time when the upload processing started.
-     **/
+    /** The time when the upload processing started. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * The time when the upload processing started.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /**
-     * The details about upload processing failure.
-     **/
+    /** The details about upload processing failure. */
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
     /**
      * The details about upload processing failure.
+     *
      * @return the value
-     **/
+     */
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -203,6 +194,7 @@ public final class UploadWarningSummary extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,43 +5,39 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type",
-    defaultImpl = DrgAttachmentNetworkDetails.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type",
+        defaultImpl = DrgAttachmentNetworkDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = VcnDrgAttachmentNetworkDetails.class,
-        name = "VCN"
-    ),
+            value = VcnDrgAttachmentNetworkDetails.class,
+            name = "VCN"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = IpsecTunnelDrgAttachmentNetworkDetails.class,
-        name = "IPSEC_TUNNEL"
-    ),
+            value = IpsecTunnelDrgAttachmentNetworkDetails.class,
+            name = "IPSEC_TUNNEL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = VirtualCircuitDrgAttachmentNetworkDetails.class,
-        name = "VIRTUAL_CIRCUIT"
-    ),
+            value = VirtualCircuitDrgAttachmentNetworkDetails.class,
+            name = "VIRTUAL_CIRCUIT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = RemotePeeringConnectionDrgAttachmentNetworkDetails.class,
-        name = "REMOTE_PEERING_CONNECTION"
-    )
+            value = RemotePeeringConnectionDrgAttachmentNetworkDetails.class,
+            name = "REMOTE_PEERING_CONNECTION")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public class DrgAttachmentNetworkDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id"})
     protected DrgAttachmentNetworkDetails(String id) {
@@ -50,17 +46,18 @@ public class DrgAttachmentNetworkDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the network attached to the DRG.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the network attached to the DRG.
      *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
@@ -72,6 +69,7 @@ public class DrgAttachmentNetworkDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -106,9 +104,8 @@ public class DrgAttachmentNetworkDetails
         return result;
     }
 
-    /**
-     **/
-    public enum Type {
+    /** */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Vcn("VCN"),
         IpsecTunnel("IPSEC_TUNNEL"),
         VirtualCircuit("VIRTUAL_CIRCUIT"),

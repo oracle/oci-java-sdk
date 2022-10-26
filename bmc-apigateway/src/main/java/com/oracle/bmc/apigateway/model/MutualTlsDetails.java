@@ -5,20 +5,22 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Properties used to configure client mTLS verification when API Consumer makes connection to the gateway.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Properties used to configure client mTLS verification when API Consumer makes connection to the
+ * gateway. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MutualTlsDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MutualTlsDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class MutualTlsDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isVerifiedCertificateRequired", "allowedSans"})
     public MutualTlsDetails(
@@ -31,32 +33,34 @@ public final class MutualTlsDetails extends com.oracle.bmc.http.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Determines whether to enable client verification when API Consumer makes connection to the gateway.
-         **/
+         * Determines whether to enable client verification when API Consumer makes connection to
+         * the gateway.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isVerifiedCertificateRequired")
         private Boolean isVerifiedCertificateRequired;
 
         /**
-         * Determines whether to enable client verification when API Consumer makes connection to the gateway.
+         * Determines whether to enable client verification when API Consumer makes connection to
+         * the gateway.
+         *
          * @param isVerifiedCertificateRequired the value to set
          * @return this builder
-         **/
+         */
         public Builder isVerifiedCertificateRequired(Boolean isVerifiedCertificateRequired) {
             this.isVerifiedCertificateRequired = isVerifiedCertificateRequired;
             this.__explicitlySet__.add("isVerifiedCertificateRequired");
             return this;
         }
-        /**
-         * Allowed list of CN or SAN which will be used for verification of certificate.
-         **/
+        /** Allowed list of CN or SAN which will be used for verification of certificate. */
         @com.fasterxml.jackson.annotation.JsonProperty("allowedSans")
         private java.util.List<String> allowedSans;
 
         /**
          * Allowed list of CN or SAN which will be used for verification of certificate.
+         *
          * @param allowedSans the value to set
          * @return this builder
-         **/
+         */
         public Builder allowedSans(java.util.List<String> allowedSans) {
             this.allowedSans = allowedSans;
             this.__explicitlySet__.add("allowedSans");
@@ -87,9 +91,7 @@ public final class MutualTlsDetails extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -99,29 +101,31 @@ public final class MutualTlsDetails extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Determines whether to enable client verification when API Consumer makes connection to the gateway.
-     **/
+     * Determines whether to enable client verification when API Consumer makes connection to the
+     * gateway.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isVerifiedCertificateRequired")
     private final Boolean isVerifiedCertificateRequired;
 
     /**
-     * Determines whether to enable client verification when API Consumer makes connection to the gateway.
+     * Determines whether to enable client verification when API Consumer makes connection to the
+     * gateway.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsVerifiedCertificateRequired() {
         return isVerifiedCertificateRequired;
     }
 
-    /**
-     * Allowed list of CN or SAN which will be used for verification of certificate.
-     **/
+    /** Allowed list of CN or SAN which will be used for verification of certificate. */
     @com.fasterxml.jackson.annotation.JsonProperty("allowedSans")
     private final java.util.List<String> allowedSans;
 
     /**
      * Allowed list of CN or SAN which will be used for verification of certificate.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getAllowedSans() {
         return allowedSans;
     }
@@ -133,6 +137,7 @@ public final class MutualTlsDetails extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

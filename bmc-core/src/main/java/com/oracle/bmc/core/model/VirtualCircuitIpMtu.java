@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.core.model;
 
-/**
- * The layer 3 IP MTU to use with this virtual circuit.
- **/
+/** The layer 3 IP MTU to use with this virtual circuit. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public enum VirtualCircuitIpMtu {
+public enum VirtualCircuitIpMtu implements com.oracle.bmc.http.internal.BmcEnum {
     Mtu1500("MTU_1500"),
     Mtu9000("MTU_9000"),
 

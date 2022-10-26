@@ -5,23 +5,22 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * The configuration details for creating a template.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The configuration details for creating a template. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateTemplateDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateTemplateDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateTemplateDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -56,84 +55,87 @@ public final class CreateTemplateDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this template.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing this template.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this template.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing this template.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The template's display name. Avoid entering confidential information.
-         **/
+        /** The template's display name. Avoid entering confidential information. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The template's display name. Avoid entering confidential information.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Description of the template. Avoid entering confidential information.
-         **/
+        /** Description of the template. Avoid entering confidential information. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description of the template. Avoid entering confidential information.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * Detailed description of the template. This description is displayed in the Console page listing templates when the template is expanded. Avoid entering confidential information.
-         **/
+         * Detailed description of the template. This description is displayed in the Console page
+         * listing templates when the template is expanded. Avoid entering confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("longDescription")
         private String longDescription;
 
         /**
-         * Detailed description of the template. This description is displayed in the Console page listing templates when the template is expanded. Avoid entering confidential information.
+         * Detailed description of the template. This description is displayed in the Console page
+         * listing templates when the template is expanded. Avoid entering confidential information.
+         *
          * @param longDescription the value to set
          * @return this builder
-         **/
+         */
         public Builder longDescription(String longDescription) {
             this.longDescription = longDescription;
             this.__explicitlySet__.add("longDescription");
             return this;
         }
         /**
-         * Base64-encoded logo to use as the template icon.
-         * Template icon file requirements: PNG format, 50 KB maximum, 110 x 110 pixels.
-         *
-         **/
+         * Base64-encoded logo to use as the template icon. Template icon file requirements: PNG
+         * format, 50 KB maximum, 110 x 110 pixels.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("logoFileBase64Encoded")
         private String logoFileBase64Encoded;
 
         /**
-         * Base64-encoded logo to use as the template icon.
-         * Template icon file requirements: PNG format, 50 KB maximum, 110 x 110 pixels.
+         * Base64-encoded logo to use as the template icon. Template icon file requirements: PNG
+         * format, 50 KB maximum, 110 x 110 pixels.
          *
          * @param logoFileBase64Encoded the value to set
          * @return this builder
-         **/
+         */
         public Builder logoFileBase64Encoded(String logoFileBase64Encoded) {
             this.logoFileBase64Encoded = logoFileBase64Encoded;
             this.__explicitlySet__.add("logoFileBase64Encoded");
@@ -150,44 +152,46 @@ public final class CreateTemplateDetails
             return this;
         }
         /**
-         * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags associated with the resource. Each tag is a key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags associated with the resource. Each tag is a key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -245,9 +249,7 @@ public final class CreateTemplateDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -257,75 +259,78 @@ public final class CreateTemplateDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this template.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing this template.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this template.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing this template.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The template's display name. Avoid entering confidential information.
-     **/
+    /** The template's display name. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The template's display name. Avoid entering confidential information.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Description of the template. Avoid entering confidential information.
-     **/
+    /** Description of the template. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of the template. Avoid entering confidential information.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
     /**
-     * Detailed description of the template. This description is displayed in the Console page listing templates when the template is expanded. Avoid entering confidential information.
-     **/
+     * Detailed description of the template. This description is displayed in the Console page
+     * listing templates when the template is expanded. Avoid entering confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("longDescription")
     private final String longDescription;
 
     /**
-     * Detailed description of the template. This description is displayed in the Console page listing templates when the template is expanded. Avoid entering confidential information.
+     * Detailed description of the template. This description is displayed in the Console page
+     * listing templates when the template is expanded. Avoid entering confidential information.
+     *
      * @return the value
-     **/
+     */
     public String getLongDescription() {
         return longDescription;
     }
 
     /**
-     * Base64-encoded logo to use as the template icon.
-     * Template icon file requirements: PNG format, 50 KB maximum, 110 x 110 pixels.
-     *
-     **/
+     * Base64-encoded logo to use as the template icon. Template icon file requirements: PNG format,
+     * 50 KB maximum, 110 x 110 pixels.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("logoFileBase64Encoded")
     private final String logoFileBase64Encoded;
 
     /**
-     * Base64-encoded logo to use as the template icon.
-     * Template icon file requirements: PNG format, 50 KB maximum, 110 x 110 pixels.
+     * Base64-encoded logo to use as the template icon. Template icon file requirements: PNG format,
+     * 50 KB maximum, 110 x 110 pixels.
      *
      * @return the value
-     **/
+     */
     public String getLogoFileBase64Encoded() {
         return logoFileBase64Encoded;
     }
@@ -338,41 +343,43 @@ public final class CreateTemplateDetails
     }
 
     /**
-     * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
-     *
-     **/
+     * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -384,6 +391,7 @@ public final class CreateTemplateDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

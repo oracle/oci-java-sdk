@@ -18,18 +18,20 @@ import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
 /**
  * This example demonstrates how to use the SDK retries.
  *
- * Retry configuration may be set at
- * a) the SDK level (using {@link Retriers#setDefaultRetryConfiguration(RetryConfiguration)}
- * b) the client level (using {@link ClientConfiguration}
- * c) the request level (using {@link com.oracle.bmc.requests.BmcRequest#setRetryConfiguration(RetryConfiguration)}
+ * <p>Retry configuration may be set at a) the SDK level (using {@link
+ * Retriers#setDefaultRetryConfiguration(RetryConfiguration)} b) the client level (using {@link
+ * ClientConfiguration} c) the request level (using {@link
+ * com.oracle.bmc.requests.BmcRequest#setRetryConfiguration(RetryConfiguration)}
  */
 public class RetryExample {
     public static void main(String[] args) throws Exception {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -43,7 +45,8 @@ public class RetryExample {
                         .terminationStrategy(new MaxAttemptsTerminationStrategy(3))
                         .build());
 
-        // Override the default retry strategy for the identity client and update retry attempts to 4
+        // Override the default retry strategy for the identity client and update retry attempts to
+        // 4
         final Identity identityClient =
                 new IdentityClient(
                         provider,
@@ -55,7 +58,8 @@ public class RetryExample {
                                                 .build())
                                 .build());
 
-        // Override the client's retry strategy for the list regions request and wait for 5ms between retrying
+        // Override the client's retry strategy for the list regions request and wait for 5ms
+        // between retrying
         final ListRegionsRequest listRegionsRequest =
                 ListRegionsRequest.builder()
                         .retryConfiguration(

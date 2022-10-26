@@ -6,7 +6,10 @@ package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalPluggableDatabaseOperationsInsightsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use EnableExternalPluggableDatabaseOperationsInsightsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalPluggableDatabaseOperationsInsightsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * EnableExternalPluggableDatabaseOperationsInsightsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class EnableExternalPluggableDatabaseOperationsInsightsRequest
@@ -15,27 +18,23 @@ public class EnableExternalPluggableDatabaseOperationsInsightsRequest
                         .EnableExternalPluggableDatabaseOperationsInsightsDetails> {
 
     /**
-     * The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The ExternalPluggableDatabaseId
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private String externalPluggableDatabaseId;
 
     /**
-     * The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The ExternalPluggableDatabaseId
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     public String getExternalPluggableDatabaseId() {
         return externalPluggableDatabaseId;
     }
-    /**
-     * Details to enable Operations Insights on the external pluggable database
-     *
-     */
+    /** Details to enable Operations Insights on the external pluggable database */
     private com.oracle.bmc.database.model.EnableExternalPluggableDatabaseOperationsInsightsDetails
             enableExternalPluggableDatabaseOperationsInsightsDetails;
 
-    /**
-     * Details to enable Operations Insights on the external pluggable database
-     *
-     */
+    /** Details to enable Operations Insights on the external pluggable database */
     public com.oracle.bmc.database.model.EnableExternalPluggableDatabaseOperationsInsightsDetails
             getEnableExternalPluggableDatabaseOperationsInsightsDetails() {
         return enableExternalPluggableDatabaseOperationsInsightsDetails;
@@ -43,50 +42,42 @@ public class EnableExternalPluggableDatabaseOperationsInsightsRequest
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * may be rejected).
-     *
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request may be rejected).
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * may be rejected).
-     *
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request may be rejected).
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /**
-     * Unique identifier for the request.
-     *
-     */
+    /** Unique identifier for the request. */
     private String opcRequestId;
 
-    /**
-     * Unique identifier for the request.
-     *
-     */
+    /** Unique identifier for the request. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
@@ -94,6 +85,7 @@ public class EnableExternalPluggableDatabaseOperationsInsightsRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -108,17 +100,19 @@ public class EnableExternalPluggableDatabaseOperationsInsightsRequest
                     EnableExternalPluggableDatabaseOperationsInsightsRequest,
                     com.oracle.bmc.database.model
                             .EnableExternalPluggableDatabaseOperationsInsightsDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The ExternalPluggableDatabaseId
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          */
         private String externalPluggableDatabaseId = null;
 
         /**
-         * The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The ExternalPluggableDatabaseId
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param externalPluggableDatabaseId the value to set
          * @return this builder instance
          */
@@ -127,10 +121,7 @@ public class EnableExternalPluggableDatabaseOperationsInsightsRequest
             return this;
         }
 
-        /**
-         * Details to enable Operations Insights on the external pluggable database
-         *
-         */
+        /** Details to enable Operations Insights on the external pluggable database */
         private com.oracle.bmc.database.model
                         .EnableExternalPluggableDatabaseOperationsInsightsDetails
                 enableExternalPluggableDatabaseOperationsInsightsDetails = null;
@@ -152,20 +143,19 @@ public class EnableExternalPluggableDatabaseOperationsInsightsRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * may be rejected).
-         *
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request may be rejected).
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request may be rejected).
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -175,10 +165,7 @@ public class EnableExternalPluggableDatabaseOperationsInsightsRequest
             return this;
         }
 
-        /**
-         * Unique identifier for the request.
-         *
-         */
+        /** Unique identifier for the request. */
         private String opcRequestId = null;
 
         /**
@@ -193,17 +180,18 @@ public class EnableExternalPluggableDatabaseOperationsInsightsRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -215,18 +203,19 @@ public class EnableExternalPluggableDatabaseOperationsInsightsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -238,6 +227,7 @@ public class EnableExternalPluggableDatabaseOperationsInsightsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(EnableExternalPluggableDatabaseOperationsInsightsRequest o) {
@@ -253,12 +243,14 @@ public class EnableExternalPluggableDatabaseOperationsInsightsRequest
         }
 
         /**
-         * Build the instance of EnableExternalPluggableDatabaseOperationsInsightsRequest as configured by this builder
+         * Build the instance of EnableExternalPluggableDatabaseOperationsInsightsRequest as
+         * configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of EnableExternalPluggableDatabaseOperationsInsightsRequest
          */
@@ -272,6 +264,7 @@ public class EnableExternalPluggableDatabaseOperationsInsightsRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -285,9 +278,11 @@ public class EnableExternalPluggableDatabaseOperationsInsightsRequest
         }
 
         /**
-         * Build the instance of EnableExternalPluggableDatabaseOperationsInsightsRequest as configured by this builder
+         * Build the instance of EnableExternalPluggableDatabaseOperationsInsightsRequest as
+         * configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of EnableExternalPluggableDatabaseOperationsInsightsRequest
@@ -303,12 +298,16 @@ public class EnableExternalPluggableDatabaseOperationsInsightsRequest
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new EnableExternalPluggableDatabaseOperationsInsightsRequest(externalPluggableDatabaseId, enableExternalPluggableDatabaseOperationsInsightsDetails, opcRetryToken, opcRequestId, ifMatch);
+            // new
+            // EnableExternalPluggableDatabaseOperationsInsightsRequest(externalPluggableDatabaseId,
+            // enableExternalPluggableDatabaseOperationsInsightsDetails, opcRetryToken,
+            // opcRequestId, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -323,6 +322,7 @@ public class EnableExternalPluggableDatabaseOperationsInsightsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

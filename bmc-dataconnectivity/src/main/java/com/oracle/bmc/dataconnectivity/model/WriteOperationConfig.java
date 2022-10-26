@@ -5,25 +5,24 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * The information about the write operation.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information about the write operation. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = WriteOperationConfig.Builder.class
-)
+        builder = WriteOperationConfig.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class WriteOperationConfig extends AbstractDataOperationConfig {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,33 +34,31 @@ public final class WriteOperationConfig extends AbstractDataOperationConfig {
             this.__explicitlySet__.add("derivedAttributes");
             return this;
         }
-        /**
-         * The object key.
-         **/
+        /** The object key. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The object key.
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /**
-         * The model version of the object.
-         **/
+        /** The model version of the object. */
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
          * The model version of the object.
+         *
          * @param modelVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -76,17 +73,16 @@ public final class WriteOperationConfig extends AbstractDataOperationConfig {
             this.__explicitlySet__.add("parentRef");
             return this;
         }
-        /**
-         * An array of operations.
-         **/
+        /** An array of operations. */
         @com.fasterxml.jackson.annotation.JsonProperty("operations")
         private java.util.List<PushDownOperation> operations;
 
         /**
          * An array of operations.
+         *
          * @param operations the value to set
          * @return this builder
-         **/
+         */
         public Builder operations(java.util.List<PushDownOperation> operations) {
             this.operations = operations;
             this.__explicitlySet__.add("operations");
@@ -119,17 +115,16 @@ public final class WriteOperationConfig extends AbstractDataOperationConfig {
             this.__explicitlySet__.add("writeAttribute");
             return this;
         }
-        /**
-         * The mode for the write operation.
-         **/
+        /** The mode for the write operation. */
         @com.fasterxml.jackson.annotation.JsonProperty("writeMode")
         private WriteMode writeMode;
 
         /**
          * The mode for the write operation.
+         *
          * @param writeMode the value to set
          * @return this builder
-         **/
+         */
         public Builder writeMode(WriteMode writeMode) {
             this.writeMode = writeMode;
             this.__explicitlySet__.add("writeMode");
@@ -145,32 +140,34 @@ public final class WriteOperationConfig extends AbstractDataOperationConfig {
             return this;
         }
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-         **/
+         * The status of an object that can be set to value 1 for shallow references across objects,
+         * other values reserved.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         * The status of an object that can be set to value 1 for shallow references across objects,
+         * other values reserved.
+         *
          * @param objectStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
             return this;
         }
-        /**
-         * The number of rows are rejected based on the operation that errors out.
-         **/
+        /** The number of rows are rejected based on the operation that errors out. */
         @com.fasterxml.jackson.annotation.JsonProperty("rejectLimit")
         private Integer rejectLimit;
 
         /**
          * The number of rows are rejected based on the operation that errors out.
+         *
          * @param rejectLimit the value to set
          * @return this builder
-         **/
+         */
         public Builder rejectLimit(Integer rejectLimit) {
             this.rejectLimit = rejectLimit;
             this.__explicitlySet__.add("rejectLimit");
@@ -243,9 +240,7 @@ public final class WriteOperationConfig extends AbstractDataOperationConfig {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -282,30 +277,28 @@ public final class WriteOperationConfig extends AbstractDataOperationConfig {
         this.rejectLimit = rejectLimit;
     }
 
-    /**
-     * The object key.
-     **/
+    /** The object key. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The object key.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * The model version of the object.
-     **/
+    /** The model version of the object. */
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The model version of the object.
+     *
      * @return the value
-     **/
+     */
     public String getModelVersion() {
         return modelVersion;
     }
@@ -317,16 +310,15 @@ public final class WriteOperationConfig extends AbstractDataOperationConfig {
         return parentRef;
     }
 
-    /**
-     * An array of operations.
-     **/
+    /** An array of operations. */
     @com.fasterxml.jackson.annotation.JsonProperty("operations")
     private final java.util.List<PushDownOperation> operations;
 
     /**
      * An array of operations.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<PushDownOperation> getOperations() {
         return operations;
     }
@@ -352,10 +344,8 @@ public final class WriteOperationConfig extends AbstractDataOperationConfig {
         return writeAttribute;
     }
 
-    /**
-     * The mode for the write operation.
-     **/
-    public enum WriteMode {
+    /** The mode for the write operation. */
+    public enum WriteMode implements com.oracle.bmc.http.internal.BmcEnum {
         Overwrite("OVERWRITE"),
         Append("APPEND"),
         Merge("MERGE"),
@@ -390,16 +380,15 @@ public final class WriteOperationConfig extends AbstractDataOperationConfig {
             throw new IllegalArgumentException("Invalid WriteMode: " + key);
         }
     };
-    /**
-     * The mode for the write operation.
-     **/
+    /** The mode for the write operation. */
     @com.fasterxml.jackson.annotation.JsonProperty("writeMode")
     private final WriteMode writeMode;
 
     /**
      * The mode for the write operation.
+     *
      * @return the value
-     **/
+     */
     public WriteMode getWriteMode() {
         return writeMode;
     }
@@ -412,29 +401,31 @@ public final class WriteOperationConfig extends AbstractDataOperationConfig {
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-     **/
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectStatus() {
         return objectStatus;
     }
 
-    /**
-     * The number of rows are rejected based on the operation that errors out.
-     **/
+    /** The number of rows are rejected based on the operation that errors out. */
     @com.fasterxml.jackson.annotation.JsonProperty("rejectLimit")
     private final Integer rejectLimit;
 
     /**
      * The number of rows are rejected based on the operation that errors out.
+     *
      * @return the value
-     **/
+     */
     public Integer getRejectLimit() {
         return rejectLimit;
     }
@@ -446,6 +437,7 @@ public final class WriteOperationConfig extends AbstractDataOperationConfig {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,134 +6,103 @@ package com.oracle.bmc.opsi.requests;
 
 import com.oracle.bmc.opsi.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAwrDatabaseParametersExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeAwrDatabaseParametersRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAwrDatabaseParametersExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * SummarizeAwrDatabaseParametersRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class SummarizeAwrDatabaseParametersRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * Unique Awr Hub identifier
-     */
+    /** Unique Awr Hub identifier */
     private String awrHubId;
 
-    /**
-     * Unique Awr Hub identifier
-     */
+    /** Unique Awr Hub identifier */
     public String getAwrHubId() {
         return awrHubId;
     }
     /**
-     * The internal ID of the database. The internal ID of the database is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
-     * It can be retrieved from the following endpoint:
-     * /awrHubs/{awrHubId}/awrDatabases
-     *
+     * The internal ID of the database. The internal ID of the database is not the
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabases
      */
     private String awrSourceDatabaseIdentifier;
 
     /**
-     * The internal ID of the database. The internal ID of the database is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
-     * It can be retrieved from the following endpoint:
-     * /awrHubs/{awrHubId}/awrDatabases
-     *
+     * The internal ID of the database. The internal ID of the database is not the
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabases
      */
     public String getAwrSourceDatabaseIdentifier() {
         return awrSourceDatabaseIdentifier;
     }
-    /**
-     * The optional single value query parameter to filter by database instance number.
-     */
+    /** The optional single value query parameter to filter by database instance number. */
     private String instanceNumber;
 
-    /**
-     * The optional single value query parameter to filter by database instance number.
-     */
+    /** The optional single value query parameter to filter by database instance number. */
     public String getInstanceNumber() {
         return instanceNumber;
     }
-    /**
-     * The optional greater than or equal to filter on the snapshot ID.
-     *
-     */
+    /** The optional greater than or equal to filter on the snapshot ID. */
     private Integer beginSnapshotIdentifierGreaterThanOrEqualTo;
 
-    /**
-     * The optional greater than or equal to filter on the snapshot ID.
-     *
-     */
+    /** The optional greater than or equal to filter on the snapshot ID. */
     public Integer getBeginSnapshotIdentifierGreaterThanOrEqualTo() {
         return beginSnapshotIdentifierGreaterThanOrEqualTo;
     }
-    /**
-     * The optional less than or equal to query parameter to filter the snapshot Identifier.
-     *
-     */
+    /** The optional less than or equal to query parameter to filter the snapshot Identifier. */
     private Integer endSnapshotIdentifierLessThanOrEqualTo;
 
-    /**
-     * The optional less than or equal to query parameter to filter the snapshot Identifier.
-     *
-     */
+    /** The optional less than or equal to query parameter to filter the snapshot Identifier. */
     public Integer getEndSnapshotIdentifierLessThanOrEqualTo() {
         return endSnapshotIdentifierLessThanOrEqualTo;
     }
     /**
-     * The optional greater than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
-     *
+     * The optional greater than or equal to query parameter to filter the timestamp. The timestamp
+     * format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
      */
     private java.util.Date timeGreaterThanOrEqualTo;
 
     /**
-     * The optional greater than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
-     *
+     * The optional greater than or equal to query parameter to filter the timestamp. The timestamp
+     * format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
      */
     public java.util.Date getTimeGreaterThanOrEqualTo() {
         return timeGreaterThanOrEqualTo;
     }
     /**
-     * The optional less than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
-     *
+     * The optional less than or equal to query parameter to filter the timestamp. The timestamp
+     * format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
      */
     private java.util.Date timeLessThanOrEqualTo;
 
     /**
-     * The optional less than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
-     *
+     * The optional less than or equal to query parameter to filter the timestamp. The timestamp
+     * format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
      */
     public java.util.Date getTimeLessThanOrEqualTo() {
         return timeLessThanOrEqualTo;
     }
-    /**
-     * The optional multiple value query parameter to filter the entity name.
-     */
+    /** The optional multiple value query parameter to filter the entity name. */
     private java.util.List<String> name;
 
-    /**
-     * The optional multiple value query parameter to filter the entity name.
-     */
+    /** The optional multiple value query parameter to filter the entity name. */
     public java.util.List<String> getName() {
         return name;
     }
-    /**
-     * The optional contains query parameter to filter the entity name by any part of the name.
-     */
+    /** The optional contains query parameter to filter the entity name by any part of the name. */
     private String nameContains;
 
-    /**
-     * The optional contains query parameter to filter the entity name by any part of the name.
-     */
+    /** The optional contains query parameter to filter the entity name by any part of the name. */
     public String getNameContains() {
         return nameContains;
     }
-    /**
-     * The optional query parameter to filter database parameters whose values were changed.
-     */
+    /** The optional query parameter to filter database parameters whose values were changed. */
     private ValueChanged valueChanged;
 
-    /**
-     * The optional query parameter to filter database parameters whose values were changed.
-     **/
-    public enum ValueChanged {
+    /** The optional query parameter to filter database parameters whose values were changed. */
+    public enum ValueChanged implements com.oracle.bmc.http.internal.BmcEnum {
         Y("Y"),
         N("N"),
         ;
@@ -166,21 +135,21 @@ public class SummarizeAwrDatabaseParametersRequest
         }
     };
 
-    /**
-     * The optional query parameter to filter database parameters whose values were changed.
-     */
+    /** The optional query parameter to filter database parameters whose values were changed. */
     public ValueChanged getValueChanged() {
         return valueChanged;
     }
     /**
-     * The optional query parameter to filter the database parameters that had the default value in the last snapshot.
+     * The optional query parameter to filter the database parameters that had the default value in
+     * the last snapshot.
      */
     private ValueDefault valueDefault;
 
     /**
-     * The optional query parameter to filter the database parameters that had the default value in the last snapshot.
-     **/
-    public enum ValueDefault {
+     * The optional query parameter to filter the database parameters that had the default value in
+     * the last snapshot.
+     */
+    public enum ValueDefault implements com.oracle.bmc.http.internal.BmcEnum {
         True("TRUE"),
         False("FALSE"),
         ;
@@ -214,20 +183,23 @@ public class SummarizeAwrDatabaseParametersRequest
     };
 
     /**
-     * The optional query parameter to filter the database parameters that had the default value in the last snapshot.
+     * The optional query parameter to filter the database parameters that had the default value in
+     * the last snapshot.
      */
     public ValueDefault getValueDefault() {
         return valueDefault;
     }
     /**
-     * The optional query parameter to filter the database parameters that had a modified value in the last snapshot.
+     * The optional query parameter to filter the database parameters that had a modified value in
+     * the last snapshot.
      */
     private ValueModified valueModified;
 
     /**
-     * The optional query parameter to filter the database parameters that had a modified value in the last snapshot.
-     **/
-    public enum ValueModified {
+     * The optional query parameter to filter the database parameters that had a modified value in
+     * the last snapshot.
+     */
+    public enum ValueModified implements com.oracle.bmc.http.internal.BmcEnum {
         Modified("MODIFIED"),
         SystemMod("SYSTEM_MOD"),
         False("FALSE"),
@@ -262,58 +234,49 @@ public class SummarizeAwrDatabaseParametersRequest
     };
 
     /**
-     * The optional query parameter to filter the database parameters that had a modified value in the last snapshot.
+     * The optional query parameter to filter the database parameters that had a modified value in
+     * the last snapshot.
      */
     public ValueModified getValueModified() {
         return valueModified;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from
-     * the previous "List" call. For important details about how pagination works,
-     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from
-     * the previous "List" call. For important details about how pagination works,
-     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to
-     * return in a paginated "List" call.
-     * For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-     * Example: {@code 50}
-     *
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example:
+     * {@code 50}
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to
-     * return in a paginated "List" call.
-     * For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-     * Example: {@code 50}
-     *
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example:
+     * {@code 50}
      */
     public Integer getLimit() {
         return limit;
     }
-    /**
-     * The option to sort the AWR database parameter change history data.
-     */
+    /** The option to sort the AWR database parameter change history data. */
     private SortBy sortBy;
 
-    /**
-     * The option to sort the AWR database parameter change history data.
-     **/
-    public enum SortBy {
+    /** The option to sort the AWR database parameter change history data. */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         IsChanged("IS_CHANGED"),
         Name("NAME"),
         ;
@@ -346,36 +309,26 @@ public class SummarizeAwrDatabaseParametersRequest
         }
     };
 
-    /**
-     * The option to sort the AWR database parameter change history data.
-     */
+    /** The option to sort the AWR database parameter change history data. */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     private com.oracle.bmc.opsi.model.SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     public com.oracle.bmc.opsi.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -384,17 +337,15 @@ public class SummarizeAwrDatabaseParametersRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SummarizeAwrDatabaseParametersRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique Awr Hub identifier
-         */
+        /** Unique Awr Hub identifier */
         private String awrHubId = null;
 
         /**
          * Unique Awr Hub identifier
+         *
          * @param awrHubId the value to set
          * @return this builder instance
          */
@@ -404,17 +355,16 @@ public class SummarizeAwrDatabaseParametersRequest
         }
 
         /**
-         * The internal ID of the database. The internal ID of the database is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
-         * It can be retrieved from the following endpoint:
-         * /awrHubs/{awrHubId}/awrDatabases
-         *
+         * The internal ID of the database. The internal ID of the database is not the
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabases
          */
         private String awrSourceDatabaseIdentifier = null;
 
         /**
-         * The internal ID of the database. The internal ID of the database is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
-         * It can be retrieved from the following endpoint:
-         * /awrHubs/{awrHubId}/awrDatabases
+         * The internal ID of the database. The internal ID of the database is not the
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabases
          *
          * @param awrSourceDatabaseIdentifier the value to set
          * @return this builder instance
@@ -424,13 +374,12 @@ public class SummarizeAwrDatabaseParametersRequest
             return this;
         }
 
-        /**
-         * The optional single value query parameter to filter by database instance number.
-         */
+        /** The optional single value query parameter to filter by database instance number. */
         private String instanceNumber = null;
 
         /**
          * The optional single value query parameter to filter by database instance number.
+         *
          * @param instanceNumber the value to set
          * @return this builder instance
          */
@@ -439,10 +388,7 @@ public class SummarizeAwrDatabaseParametersRequest
             return this;
         }
 
-        /**
-         * The optional greater than or equal to filter on the snapshot ID.
-         *
-         */
+        /** The optional greater than or equal to filter on the snapshot ID. */
         private Integer beginSnapshotIdentifierGreaterThanOrEqualTo = null;
 
         /**
@@ -458,10 +404,7 @@ public class SummarizeAwrDatabaseParametersRequest
             return this;
         }
 
-        /**
-         * The optional less than or equal to query parameter to filter the snapshot Identifier.
-         *
-         */
+        /** The optional less than or equal to query parameter to filter the snapshot Identifier. */
         private Integer endSnapshotIdentifierLessThanOrEqualTo = null;
 
         /**
@@ -477,13 +420,14 @@ public class SummarizeAwrDatabaseParametersRequest
         }
 
         /**
-         * The optional greater than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
-         *
+         * The optional greater than or equal to query parameter to filter the timestamp. The
+         * timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
          */
         private java.util.Date timeGreaterThanOrEqualTo = null;
 
         /**
-         * The optional greater than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
+         * The optional greater than or equal to query parameter to filter the timestamp. The
+         * timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
          *
          * @param timeGreaterThanOrEqualTo the value to set
          * @return this builder instance
@@ -494,13 +438,14 @@ public class SummarizeAwrDatabaseParametersRequest
         }
 
         /**
-         * The optional less than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
-         *
+         * The optional less than or equal to query parameter to filter the timestamp. The timestamp
+         * format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
          */
         private java.util.Date timeLessThanOrEqualTo = null;
 
         /**
-         * The optional less than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
+         * The optional less than or equal to query parameter to filter the timestamp. The timestamp
+         * format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
          *
          * @param timeLessThanOrEqualTo the value to set
          * @return this builder instance
@@ -510,13 +455,12 @@ public class SummarizeAwrDatabaseParametersRequest
             return this;
         }
 
-        /**
-         * The optional multiple value query parameter to filter the entity name.
-         */
+        /** The optional multiple value query parameter to filter the entity name. */
         private java.util.List<String> name = null;
 
         /**
          * The optional multiple value query parameter to filter the entity name.
+         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -527,6 +471,7 @@ public class SummarizeAwrDatabaseParametersRequest
 
         /**
          * Singular setter. The optional multiple value query parameter to filter the entity name.
+         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -541,6 +486,7 @@ public class SummarizeAwrDatabaseParametersRequest
 
         /**
          * The optional contains query parameter to filter the entity name by any part of the name.
+         *
          * @param nameContains the value to set
          * @return this builder instance
          */
@@ -549,13 +495,12 @@ public class SummarizeAwrDatabaseParametersRequest
             return this;
         }
 
-        /**
-         * The optional query parameter to filter database parameters whose values were changed.
-         */
+        /** The optional query parameter to filter database parameters whose values were changed. */
         private ValueChanged valueChanged = null;
 
         /**
          * The optional query parameter to filter database parameters whose values were changed.
+         *
          * @param valueChanged the value to set
          * @return this builder instance
          */
@@ -565,12 +510,15 @@ public class SummarizeAwrDatabaseParametersRequest
         }
 
         /**
-         * The optional query parameter to filter the database parameters that had the default value in the last snapshot.
+         * The optional query parameter to filter the database parameters that had the default value
+         * in the last snapshot.
          */
         private ValueDefault valueDefault = null;
 
         /**
-         * The optional query parameter to filter the database parameters that had the default value in the last snapshot.
+         * The optional query parameter to filter the database parameters that had the default value
+         * in the last snapshot.
+         *
          * @param valueDefault the value to set
          * @return this builder instance
          */
@@ -580,12 +528,15 @@ public class SummarizeAwrDatabaseParametersRequest
         }
 
         /**
-         * The optional query parameter to filter the database parameters that had a modified value in the last snapshot.
+         * The optional query parameter to filter the database parameters that had a modified value
+         * in the last snapshot.
          */
         private ValueModified valueModified = null;
 
         /**
-         * The optional query parameter to filter the database parameters that had a modified value in the last snapshot.
+         * The optional query parameter to filter the database parameters that had a modified value
+         * in the last snapshot.
+         *
          * @param valueModified the value to set
          * @return this builder instance
          */
@@ -595,17 +546,16 @@ public class SummarizeAwrDatabaseParametersRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from
-         * the previous "List" call. For important details about how pagination works,
-         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from
-         * the previous "List" call. For important details about how pagination works,
-         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -616,20 +566,17 @@ public class SummarizeAwrDatabaseParametersRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to
-         * return in a paginated "List" call.
-         * For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
-         *
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to
-         * return in a paginated "List" call.
-         * For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
          * @param limit the value to set
@@ -640,13 +587,12 @@ public class SummarizeAwrDatabaseParametersRequest
             return this;
         }
 
-        /**
-         * The option to sort the AWR database parameter change history data.
-         */
+        /** The option to sort the AWR database parameter change history data. */
         private SortBy sortBy = null;
 
         /**
          * The option to sort the AWR database parameter change history data.
+         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -655,10 +601,7 @@ public class SummarizeAwrDatabaseParametersRequest
             return this;
         }
 
-        /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-         *
-         */
+        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
         private com.oracle.bmc.opsi.model.SortOrder sortOrder = null;
 
         /**
@@ -673,15 +616,14 @@ public class SummarizeAwrDatabaseParametersRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -693,18 +635,19 @@ public class SummarizeAwrDatabaseParametersRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -716,6 +659,7 @@ public class SummarizeAwrDatabaseParametersRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(SummarizeAwrDatabaseParametersRequest o) {
@@ -745,10 +689,11 @@ public class SummarizeAwrDatabaseParametersRequest
         /**
          * Build the instance of SummarizeAwrDatabaseParametersRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of SummarizeAwrDatabaseParametersRequest
          */
@@ -762,7 +707,8 @@ public class SummarizeAwrDatabaseParametersRequest
         /**
          * Build the instance of SummarizeAwrDatabaseParametersRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of SummarizeAwrDatabaseParametersRequest
@@ -789,12 +735,17 @@ public class SummarizeAwrDatabaseParametersRequest
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             return request;
-            // new SummarizeAwrDatabaseParametersRequest(awrHubId, awrSourceDatabaseIdentifier, instanceNumber, beginSnapshotIdentifierGreaterThanOrEqualTo, endSnapshotIdentifierLessThanOrEqualTo, timeGreaterThanOrEqualTo, timeLessThanOrEqualTo, name, nameContains, valueChanged, valueDefault, valueModified, page, limit, sortBy, sortOrder, opcRequestId);
+            // new SummarizeAwrDatabaseParametersRequest(awrHubId, awrSourceDatabaseIdentifier,
+            // instanceNumber, beginSnapshotIdentifierGreaterThanOrEqualTo,
+            // endSnapshotIdentifierLessThanOrEqualTo, timeGreaterThanOrEqualTo,
+            // timeLessThanOrEqualTo, name, nameContains, valueChanged, valueDefault, valueModified,
+            // page, limit, sortBy, sortOrder, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -821,6 +772,7 @@ public class SummarizeAwrDatabaseParametersRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

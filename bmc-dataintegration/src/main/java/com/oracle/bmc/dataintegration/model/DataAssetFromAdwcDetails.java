@@ -5,25 +5,24 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Details for the Autonomous Data Warehouse data asset type.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details for the Autonomous Data Warehouse data asset type. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DataAssetFromAdwcDetails.Builder.class
-)
+        builder = DataAssetFromAdwcDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DataAssetFromAdwcDetails extends DataAsset {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -143,49 +142,46 @@ public final class DataAssetFromAdwcDetails extends DataAsset {
             this.__explicitlySet__.add("keyMap");
             return this;
         }
-        /**
-         * The Autonomous Data Warehouse instance service name.
-         **/
+        /** The Autonomous Data Warehouse instance service name. */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
         /**
          * The Autonomous Data Warehouse instance service name.
+         *
          * @param serviceName the value to set
          * @return this builder
-         **/
+         */
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
             return this;
         }
-        /**
-         * Array of service names that are available for selection in the serviceName property.
-         **/
+        /** Array of service names that are available for selection in the serviceName property. */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceNames")
         private java.util.List<String> serviceNames;
 
         /**
          * Array of service names that are available for selection in the serviceName property.
+         *
          * @param serviceNames the value to set
          * @return this builder
-         **/
+         */
         public Builder serviceNames(java.util.List<String> serviceNames) {
             this.serviceNames = serviceNames;
             this.__explicitlySet__.add("serviceNames");
             return this;
         }
-        /**
-         * The Autonomous Data Warehouse driver class.
-         **/
+        /** The Autonomous Data Warehouse driver class. */
         @com.fasterxml.jackson.annotation.JsonProperty("driverClass")
         private String driverClass;
 
         /**
          * The Autonomous Data Warehouse driver class.
+         *
          * @param driverClass the value to set
          * @return this builder
-         **/
+         */
         public Builder driverClass(String driverClass) {
             this.driverClass = driverClass;
             this.__explicitlySet__.add("driverClass");
@@ -326,9 +322,7 @@ public final class DataAssetFromAdwcDetails extends DataAsset {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -382,44 +376,41 @@ public final class DataAssetFromAdwcDetails extends DataAsset {
         this.bucketSchema = bucketSchema;
     }
 
-    /**
-     * The Autonomous Data Warehouse instance service name.
-     **/
+    /** The Autonomous Data Warehouse instance service name. */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
     /**
      * The Autonomous Data Warehouse instance service name.
+     *
      * @return the value
-     **/
+     */
     public String getServiceName() {
         return serviceName;
     }
 
-    /**
-     * Array of service names that are available for selection in the serviceName property.
-     **/
+    /** Array of service names that are available for selection in the serviceName property. */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceNames")
     private final java.util.List<String> serviceNames;
 
     /**
      * Array of service names that are available for selection in the serviceName property.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getServiceNames() {
         return serviceNames;
     }
 
-    /**
-     * The Autonomous Data Warehouse driver class.
-     **/
+    /** The Autonomous Data Warehouse driver class. */
     @com.fasterxml.jackson.annotation.JsonProperty("driverClass")
     private final String driverClass;
 
     /**
      * The Autonomous Data Warehouse driver class.
+     *
      * @return the value
-     **/
+     */
     public String getDriverClass() {
         return driverClass;
     }
@@ -459,6 +450,7 @@ public final class DataAssetFromAdwcDetails extends DataAsset {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

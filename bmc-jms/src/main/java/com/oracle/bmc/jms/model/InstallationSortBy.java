@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.jms.model;
 
-/**
- * The field to sort installations.
- **/
+/** The field to sort installations. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum InstallationSortBy {
+public enum InstallationSortBy implements com.oracle.bmc.http.internal.BmcEnum {
     JreDistribution("jreDistribution"),
     JreVendor("jreVendor"),
     JreVersion("jreVersion"),

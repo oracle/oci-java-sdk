@@ -4,28 +4,31 @@
  */
 package com.oracle.bmc.cloudmigrations;
 
-import com.oracle.bmc.cloudmigrations.internal.http.*;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.cloudmigrations.requests.*;
 import com.oracle.bmc.cloudmigrations.responses.*;
 
+import java.util.Objects;
+
 /**
- * Async client implementation for Migration service. <br/>
- * There are two ways to use async client:
- * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
- * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
- * because the stream will be closed right after the AsyncHandler is invoked. <br/>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
- * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
- * is used, it is still safe to use the Future to determine whether or not the request was completed via
- * Future.isDone/isCancelled.<br/>
- * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for Migration service. <br>
+ * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
+ * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
+ * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
+ * will be closed right after the AsyncHandler is invoked. <br>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
+ * with the Java Future.<br>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or
+ * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
+ * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
+ * whether or not the request was completed via Future.isDone/isCancelled.<br>
+ * Please refer to
+ * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
-public class MigrationAsyncClient implements MigrationAsync {
-    /**
-     * Service instance for Migration.
-     */
+public class MigrationAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
+        implements MigrationAsync {
+    /** Service instance for Migration. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("MIGRATION")
@@ -37,268 +40,16 @@ public class MigrationAsyncClient implements MigrationAsync {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(MigrationAsyncClient.class);
 
-    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-            authenticationDetailsProvider;
-
-    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
-            apacheConnectionClosingStrategy;
-    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
-    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
-    private final java.util.Map<
-                    com.oracle.bmc.http.signing.SigningStrategy,
-                    com.oracle.bmc.http.signing.RequestSignerFactory>
-            signingStrategyRequestSignerFactories;
-    private final boolean isNonBufferingApacheClient;
-    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
-
-    /**
-     * Used to synchronize any updates on the `this.client` object.
-     */
-    private final Object clientUpdate = new Object();
-
-    /**
-     * Stores the actual client object used to make the API calls.
-     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
-     *       For any writes to the object, please synchronize on `this.clientUpdate`.
-     */
-    private volatile com.oracle.bmc.http.internal.RestClient client;
-
-    /**
-     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
-     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
-     */
-    private volatile String overrideEndpoint = null;
-
-    /**
-     * Creates a new service instance using the given authentication provider.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     */
-    public MigrationAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     */
-    public MigrationAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(authenticationDetailsProvider, configuration, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     */
-    public MigrationAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     */
-    public MigrationAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public MigrationAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                additionalClientConfigurators,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public MigrationAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
-                        .createDefaultRequestSignerFactories(),
-                additionalClientConfigurators,
-                endpoint);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public MigrationAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
-     */
-    public MigrationAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
-        this.authenticationDetailsProvider = authenticationDetailsProvider;
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
-                new java.util.ArrayList<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
-            authenticationDetailsConfigurators.addAll(
-                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
-                                    this.authenticationDetailsProvider)
-                            .getClientConfigurators());
-        }
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
-                new java.util.ArrayList<>(additionalClientConfigurators);
-        allConfigurators.addAll(authenticationDetailsConfigurators);
-        this.restClientFactory =
-                restClientFactoryBuilder
-                        .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(allConfigurators)
-                        .build();
-        this.isNonBufferingApacheClient =
-                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        restClientFactory.getClientConfigurator());
-        this.apacheConnectionClosingStrategy =
-                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
-                        restClientFactory.getClientConfigurator());
-        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
-        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
-        this.clientConfigurationToUse = configuration;
-
-        this.refreshClient();
-
-        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
-            com.oracle.bmc.auth.RegionProvider provider =
-                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
-
-            if (provider.getRegion() != null) {
-                this.setRegion(provider.getRegion());
-                if (endpoint != null) {
-                    LOG.info(
-                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
-                            provider.getRegion(),
-                            endpoint);
-                }
-            }
-        }
-        if (endpoint != null) {
-            setEndpoint(endpoint);
-        }
+    private MigrationAsyncClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                    authenticationDetailsProvider) {
+        super(builder, authenticationDetailsProvider);
     }
 
     /**
      * Create a builder for this client.
+     *
      * @return builder
      */
     public static Builder builder() {
@@ -306,8 +57,8 @@ public class MigrationAsyncClient implements MigrationAsync {
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
+     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, MigrationAsyncClient> {
@@ -320,121 +71,26 @@ public class MigrationAsyncClient implements MigrationAsync {
 
         /**
          * Build the client.
+         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public MigrationAsyncClient build(
                 @javax.annotation.Nonnull
-                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                        authenticationDetailsProvider) {
-            if (authenticationDetailsProvider == null) {
-                throw new NullPointerException(
-                        "authenticationDetailsProvider is marked non-null but is null");
-            }
-            return new MigrationAsyncClient(
-                    authenticationDetailsProvider,
-                    configuration,
-                    clientConfigurator,
-                    requestSignerFactory,
-                    signingStrategyRequestSignerFactories,
-                    additionalClientConfigurators,
-                    endpoint);
+                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                                authenticationDetailsProvider) {
+            return new MigrationAsyncClient(this, authenticationDetailsProvider);
         }
-    }
-
-    com.oracle.bmc.http.internal.RestClient getClient() {
-        return client;
-    }
-
-    @Override
-    public void refreshClient() {
-        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                this.defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        this.signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
-            }
-        }
-
-        com.oracle.bmc.http.internal.RestClient refreshedClient =
-                this.restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        this.clientConfigurationToUse,
-                        this.isNonBufferingApacheClient);
-
-        synchronized (clientUpdate) {
-            if (this.overrideEndpoint != null) {
-                refreshedClient.setEndpoint(this.overrideEndpoint);
-            }
-
-            this.client = refreshedClient;
-        }
-
-        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint) {
-        LOG.info("Setting endpoint to {}", endpoint);
-
-        synchronized (clientUpdate) {
-            this.overrideEndpoint = endpoint;
-            client.setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
-        }
-        return endpoint;
     }
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        java.util.Optional<String> endpoint =
-                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
-        if (endpoint.isPresent()) {
-            setEndpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + SERVICE + " is not known in region " + region);
-        }
+        super.setRegion(region);
     }
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
-        try {
-            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-            setRegion(region);
-        } catch (IllegalArgumentException e) {
-            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-            setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public void close() {
-        client.close();
+        super.setRegion(regionId);
     }
 
     @Override
@@ -443,41 +99,26 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CancelWorkRequestRequest, CancelWorkRequestResponse>
                     handler) {
-        LOG.trace("Called async cancelWorkRequest");
-        final CancelWorkRequestRequest interceptedRequest =
-                CancelWorkRequestConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "CancelWorkRequest", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
-                transformer =
-                        CancelWorkRequestConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CancelWorkRequestRequest, CancelWorkRequestResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CancelWorkRequestRequest, CancelWorkRequestResponse>,
-                        java.util.concurrent.Future<CancelWorkRequestResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CancelWorkRequestRequest, CancelWorkRequestResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, CancelWorkRequestResponse::builder)
+                .logger(LOG, "cancelWorkRequest")
+                .serviceDetails(
+                        "Migration",
+                        "CancelWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/WorkRequest/CancelWorkRequest")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(CancelWorkRequestRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -488,52 +129,35 @@ public class MigrationAsyncClient implements MigrationAsync {
                                     ChangeMigrationCompartmentRequest,
                                     ChangeMigrationCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeMigrationCompartment");
-        final ChangeMigrationCompartmentRequest interceptedRequest =
-                ChangeMigrationCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeMigrationCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getMigrationId(), "migrationId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMigrationCompartmentDetails(),
+                "changeMigrationCompartmentDetails is required");
+
+        return clientCall(request, ChangeMigrationCompartmentResponse::builder)
+                .logger(LOG, "changeMigrationCompartment")
+                .serviceDetails(
                         "Migration",
                         "ChangeMigrationCompartment",
-                        ib.getRequestUri().toString(),
-                        "");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeMigrationCompartmentResponse>
-                transformer =
-                        ChangeMigrationCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeMigrationCompartmentRequest, ChangeMigrationCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeMigrationCompartmentRequest,
-                                ChangeMigrationCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeMigrationCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeMigrationCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeMigrationCompartmentRequest, ChangeMigrationCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/Migration/ChangeMigrationCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeMigrationCompartmentRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrations")
+                .appendPathParam(request.getMigrationId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeMigrationCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeMigrationCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -544,54 +168,37 @@ public class MigrationAsyncClient implements MigrationAsync {
                                     ChangeMigrationPlanCompartmentRequest,
                                     ChangeMigrationPlanCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeMigrationPlanCompartment");
-        final ChangeMigrationPlanCompartmentRequest interceptedRequest =
-                ChangeMigrationPlanCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeMigrationPlanCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getMigrationPlanId(), "migrationPlanId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMigrationPlanCompartmentDetails(),
+                "changeMigrationPlanCompartmentDetails is required");
+
+        return clientCall(request, ChangeMigrationPlanCompartmentResponse::builder)
+                .logger(LOG, "changeMigrationPlanCompartment")
+                .serviceDetails(
                         "Migration",
                         "ChangeMigrationPlanCompartment",
-                        ib.getRequestUri().toString(),
-                        "");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeMigrationPlanCompartmentResponse>
-                transformer =
-                        ChangeMigrationPlanCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeMigrationPlanCompartmentRequest,
-                        ChangeMigrationPlanCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeMigrationPlanCompartmentRequest,
-                                ChangeMigrationPlanCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeMigrationPlanCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeMigrationPlanCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeMigrationPlanCompartmentRequest, ChangeMigrationPlanCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/ChangeMigrationPlanCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeMigrationPlanCompartmentRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrationPlans")
+                .appendPathParam(request.getMigrationPlanId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeMigrationPlanCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeMigrationPlanCompartmentResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -602,56 +209,38 @@ public class MigrationAsyncClient implements MigrationAsync {
                                     ChangeReplicationScheduleCompartmentRequest,
                                     ChangeReplicationScheduleCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeReplicationScheduleCompartment");
-        final ChangeReplicationScheduleCompartmentRequest interceptedRequest =
-                ChangeReplicationScheduleCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeReplicationScheduleCompartmentConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getReplicationScheduleId(), "replicationScheduleId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeReplicationScheduleCompartmentDetails(),
+                "changeReplicationScheduleCompartmentDetails is required");
+
+        return clientCall(request, ChangeReplicationScheduleCompartmentResponse::builder)
+                .logger(LOG, "changeReplicationScheduleCompartment")
+                .serviceDetails(
                         "Migration",
                         "ChangeReplicationScheduleCompartment",
-                        ib.getRequestUri().toString(),
-                        "");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeReplicationScheduleCompartmentResponse>
-                transformer =
-                        ChangeReplicationScheduleCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeReplicationScheduleCompartmentRequest,
-                        ChangeReplicationScheduleCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeReplicationScheduleCompartmentRequest,
-                                ChangeReplicationScheduleCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeReplicationScheduleCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeReplicationScheduleCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeReplicationScheduleCompartmentRequest,
-                    ChangeReplicationScheduleCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/ReplicationSchedule/ChangeReplicationScheduleCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeReplicationScheduleCompartmentRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("replicationSchedules")
+                .appendPathParam(request.getReplicationScheduleId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeReplicationScheduleCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeReplicationScheduleCompartmentResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -660,47 +249,30 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateMigrationRequest, CreateMigrationResponse>
                     handler) {
-        LOG.trace("Called async createMigration");
-        final CreateMigrationRequest interceptedRequest =
-                CreateMigrationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateMigrationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "CreateMigration", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateMigrationResponse>
-                transformer =
-                        CreateMigrationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateMigrationRequest, CreateMigrationResponse>
-                handlerToUse = handler;
+        Objects.requireNonNull(
+                request.getCreateMigrationDetails(), "createMigrationDetails is required");
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateMigrationRequest, CreateMigrationResponse>,
-                        java.util.concurrent.Future<CreateMigrationResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateMigrationDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateMigrationRequest, CreateMigrationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, CreateMigrationResponse::builder)
+                .logger(LOG, "createMigration")
+                .serviceDetails(
+                        "Migration",
+                        "CreateMigration",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/Migration/CreateMigration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMigrationRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrations")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.cloudmigrations.model.Migration.class,
+                        CreateMigrationResponse.Builder::migration)
+                .handleResponseHeaderString("etag", CreateMigrationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateMigrationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -709,48 +281,38 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateMigrationAssetRequest, CreateMigrationAssetResponse>
                     handler) {
-        LOG.trace("Called async createMigrationAsset");
-        final CreateMigrationAssetRequest interceptedRequest =
-                CreateMigrationAssetConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateMigrationAssetConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "CreateMigrationAsset", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateMigrationAssetResponse>
-                transformer =
-                        CreateMigrationAssetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateMigrationAssetRequest, CreateMigrationAssetResponse>
-                handlerToUse = handler;
+        Objects.requireNonNull(
+                request.getCreateMigrationAssetDetails(),
+                "createMigrationAssetDetails is required");
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateMigrationAssetRequest, CreateMigrationAssetResponse>,
-                        java.util.concurrent.Future<CreateMigrationAssetResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateMigrationAssetDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateMigrationAssetRequest, CreateMigrationAssetResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, CreateMigrationAssetResponse::builder)
+                .logger(LOG, "createMigrationAsset")
+                .serviceDetails(
+                        "Migration",
+                        "CreateMigrationAsset",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAsset/CreateMigrationAsset")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMigrationAssetRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrationAssets")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.cloudmigrations.model.MigrationAsset.class,
+                        CreateMigrationAssetResponse.Builder::migrationAsset)
+                .handleResponseHeaderString("etag", CreateMigrationAssetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateMigrationAssetResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateMigrationAssetResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateMigrationAssetResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location", CreateMigrationAssetResponse.Builder::contentLocation)
+                .callAsync(handler);
     }
 
     @Override
@@ -759,48 +321,37 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateMigrationPlanRequest, CreateMigrationPlanResponse>
                     handler) {
-        LOG.trace("Called async createMigrationPlan");
-        final CreateMigrationPlanRequest interceptedRequest =
-                CreateMigrationPlanConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateMigrationPlanConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "CreateMigrationPlan", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateMigrationPlanResponse>
-                transformer =
-                        CreateMigrationPlanConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateMigrationPlanRequest, CreateMigrationPlanResponse>
-                handlerToUse = handler;
+        Objects.requireNonNull(
+                request.getCreateMigrationPlanDetails(), "createMigrationPlanDetails is required");
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateMigrationPlanRequest, CreateMigrationPlanResponse>,
-                        java.util.concurrent.Future<CreateMigrationPlanResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateMigrationPlanDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateMigrationPlanRequest, CreateMigrationPlanResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, CreateMigrationPlanResponse::builder)
+                .logger(LOG, "createMigrationPlan")
+                .serviceDetails(
+                        "Migration",
+                        "CreateMigrationPlan",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/CreateMigrationPlan")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMigrationPlanRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrationPlans")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.cloudmigrations.model.MigrationPlan.class,
+                        CreateMigrationPlanResponse.Builder::migrationPlan)
+                .handleResponseHeaderString("etag", CreateMigrationPlanResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateMigrationPlanResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateMigrationPlanResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateMigrationPlanResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location", CreateMigrationPlanResponse.Builder::contentLocation)
+                .callAsync(handler);
     }
 
     @Override
@@ -809,53 +360,39 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateReplicationScheduleRequest, CreateReplicationScheduleResponse>
                     handler) {
-        LOG.trace("Called async createReplicationSchedule");
-        final CreateReplicationScheduleRequest interceptedRequest =
-                CreateReplicationScheduleConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateReplicationScheduleConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateReplicationScheduleDetails(),
+                "createReplicationScheduleDetails is required");
+
+        return clientCall(request, CreateReplicationScheduleResponse::builder)
+                .logger(LOG, "createReplicationSchedule")
+                .serviceDetails(
                         "Migration",
                         "CreateReplicationSchedule",
-                        ib.getRequestUri().toString(),
-                        "");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateReplicationScheduleResponse>
-                transformer =
-                        CreateReplicationScheduleConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateReplicationScheduleRequest, CreateReplicationScheduleResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateReplicationScheduleRequest,
-                                CreateReplicationScheduleResponse>,
-                        java.util.concurrent.Future<CreateReplicationScheduleResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateReplicationScheduleDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateReplicationScheduleRequest, CreateReplicationScheduleResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/ReplicationSchedule/CreateReplicationSchedule")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateReplicationScheduleRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("replicationSchedules")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.cloudmigrations.model.ReplicationSchedule.class,
+                        CreateReplicationScheduleResponse.Builder::replicationSchedule)
+                .handleResponseHeaderString("etag", CreateReplicationScheduleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateReplicationScheduleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateReplicationScheduleResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateReplicationScheduleResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location",
+                        CreateReplicationScheduleResponse.Builder::contentLocation)
+                .callAsync(handler);
     }
 
     @Override
@@ -864,47 +401,35 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateTargetAssetRequest, CreateTargetAssetResponse>
                     handler) {
-        LOG.trace("Called async createTargetAsset");
-        final CreateTargetAssetRequest interceptedRequest =
-                CreateTargetAssetConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateTargetAssetConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "CreateTargetAsset", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateTargetAssetResponse>
-                transformer =
-                        CreateTargetAssetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateTargetAssetRequest, CreateTargetAssetResponse>
-                handlerToUse = handler;
+        Objects.requireNonNull(
+                request.getCreateTargetAssetDetails(), "createTargetAssetDetails is required");
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateTargetAssetRequest, CreateTargetAssetResponse>,
-                        java.util.concurrent.Future<CreateTargetAssetResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateTargetAssetDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateTargetAssetRequest, CreateTargetAssetResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, CreateTargetAssetResponse::builder)
+                .logger(LOG, "createTargetAsset")
+                .serviceDetails(
+                        "Migration",
+                        "CreateTargetAsset",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/TargetAsset/CreateTargetAsset")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateTargetAssetRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("targetAssets")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.cloudmigrations.model.TargetAsset.class,
+                        CreateTargetAssetResponse.Builder::targetAsset)
+                .handleResponseHeaderString("etag", CreateTargetAssetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateTargetAssetResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateTargetAssetResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("location", CreateTargetAssetResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location", CreateTargetAssetResponse.Builder::contentLocation)
+                .callAsync(handler);
     }
 
     @Override
@@ -913,41 +438,28 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteMigrationRequest, DeleteMigrationResponse>
                     handler) {
-        LOG.trace("Called async deleteMigration");
-        final DeleteMigrationRequest interceptedRequest =
-                DeleteMigrationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteMigrationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "DeleteMigration", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteMigrationResponse>
-                transformer =
-                        DeleteMigrationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteMigrationRequest, DeleteMigrationResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteMigrationRequest, DeleteMigrationResponse>,
-                        java.util.concurrent.Future<DeleteMigrationResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getMigrationId(), "migrationId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteMigrationRequest, DeleteMigrationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteMigrationResponse::builder)
+                .logger(LOG, "deleteMigration")
+                .serviceDetails(
+                        "Migration",
+                        "DeleteMigration",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/Migration/DeleteMigration")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMigrationRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrations")
+                .appendPathParam(request.getMigrationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteMigrationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteMigrationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -956,42 +468,29 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteMigrationAssetRequest, DeleteMigrationAssetResponse>
                     handler) {
-        LOG.trace("Called async deleteMigrationAsset");
-        final DeleteMigrationAssetRequest interceptedRequest =
-                DeleteMigrationAssetConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteMigrationAssetConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "DeleteMigrationAsset", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteMigrationAssetResponse>
-                transformer =
-                        DeleteMigrationAssetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteMigrationAssetRequest, DeleteMigrationAssetResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteMigrationAssetRequest, DeleteMigrationAssetResponse>,
-                        java.util.concurrent.Future<DeleteMigrationAssetResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getMigrationAssetId(), "migrationAssetId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteMigrationAssetRequest, DeleteMigrationAssetResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteMigrationAssetResponse::builder)
+                .logger(LOG, "deleteMigrationAsset")
+                .serviceDetails(
+                        "Migration",
+                        "DeleteMigrationAsset",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAsset/DeleteMigrationAsset")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMigrationAssetRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrationAssets")
+                .appendPathParam(request.getMigrationAssetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteMigrationAssetResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteMigrationAssetResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1000,42 +499,29 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteMigrationPlanRequest, DeleteMigrationPlanResponse>
                     handler) {
-        LOG.trace("Called async deleteMigrationPlan");
-        final DeleteMigrationPlanRequest interceptedRequest =
-                DeleteMigrationPlanConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteMigrationPlanConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "DeleteMigrationPlan", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteMigrationPlanResponse>
-                transformer =
-                        DeleteMigrationPlanConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteMigrationPlanRequest, DeleteMigrationPlanResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteMigrationPlanRequest, DeleteMigrationPlanResponse>,
-                        java.util.concurrent.Future<DeleteMigrationPlanResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getMigrationPlanId(), "migrationPlanId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteMigrationPlanRequest, DeleteMigrationPlanResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteMigrationPlanResponse::builder)
+                .logger(LOG, "deleteMigrationPlan")
+                .serviceDetails(
+                        "Migration",
+                        "DeleteMigrationPlan",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/DeleteMigrationPlan")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMigrationPlanRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrationPlans")
+                .appendPathParam(request.getMigrationPlanId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteMigrationPlanResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteMigrationPlanResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1044,47 +530,30 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteReplicationScheduleRequest, DeleteReplicationScheduleResponse>
                     handler) {
-        LOG.trace("Called async deleteReplicationSchedule");
-        final DeleteReplicationScheduleRequest interceptedRequest =
-                DeleteReplicationScheduleConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteReplicationScheduleConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getReplicationScheduleId(), "replicationScheduleId must not be blank");
+
+        return clientCall(request, DeleteReplicationScheduleResponse::builder)
+                .logger(LOG, "deleteReplicationSchedule")
+                .serviceDetails(
                         "Migration",
                         "DeleteReplicationSchedule",
-                        ib.getRequestUri().toString(),
-                        "");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteReplicationScheduleResponse>
-                transformer =
-                        DeleteReplicationScheduleConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteReplicationScheduleRequest, DeleteReplicationScheduleResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteReplicationScheduleRequest,
-                                DeleteReplicationScheduleResponse>,
-                        java.util.concurrent.Future<DeleteReplicationScheduleResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteReplicationScheduleRequest, DeleteReplicationScheduleResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/ReplicationSchedule/DeleteReplicationSchedule")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteReplicationScheduleRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("replicationSchedules")
+                .appendPathParam(request.getReplicationScheduleId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteReplicationScheduleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteReplicationScheduleResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1093,41 +562,28 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteTargetAssetRequest, DeleteTargetAssetResponse>
                     handler) {
-        LOG.trace("Called async deleteTargetAsset");
-        final DeleteTargetAssetRequest interceptedRequest =
-                DeleteTargetAssetConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteTargetAssetConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "DeleteTargetAsset", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteTargetAssetResponse>
-                transformer =
-                        DeleteTargetAssetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteTargetAssetRequest, DeleteTargetAssetResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteTargetAssetRequest, DeleteTargetAssetResponse>,
-                        java.util.concurrent.Future<DeleteTargetAssetResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getTargetAssetId(), "targetAssetId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteTargetAssetRequest, DeleteTargetAssetResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteTargetAssetResponse::builder)
+                .logger(LOG, "deleteTargetAsset")
+                .serviceDetails(
+                        "Migration",
+                        "DeleteTargetAsset",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/TargetAsset/DeleteTargetAsset")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteTargetAssetRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("targetAssets")
+                .appendPathParam(request.getTargetAssetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteTargetAssetResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteTargetAssetResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1136,43 +592,32 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ExecuteMigrationPlanRequest, ExecuteMigrationPlanResponse>
                     handler) {
-        LOG.trace("Called async executeMigrationPlan");
-        final ExecuteMigrationPlanRequest interceptedRequest =
-                ExecuteMigrationPlanConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ExecuteMigrationPlanConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ExecuteMigrationPlan", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, ExecuteMigrationPlanResponse>
-                transformer =
-                        ExecuteMigrationPlanConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ExecuteMigrationPlanRequest, ExecuteMigrationPlanResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ExecuteMigrationPlanRequest, ExecuteMigrationPlanResponse>,
-                        java.util.concurrent.Future<ExecuteMigrationPlanResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getMigrationPlanId(), "migrationPlanId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ExecuteMigrationPlanRequest, ExecuteMigrationPlanResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, ExecuteMigrationPlanResponse::builder)
+                .logger(LOG, "executeMigrationPlan")
+                .serviceDetails(
+                        "Migration",
+                        "ExecuteMigrationPlan",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/ExecuteMigrationPlan")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ExecuteMigrationPlanRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrationPlans")
+                .appendPathParam(request.getMigrationPlanId())
+                .appendPathParam("actions")
+                .appendPathParam("execute")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ExecuteMigrationPlanResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ExecuteMigrationPlanResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1181,52 +626,29 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ExportMigrationPlanRequest, ExportMigrationPlanResponse>
                     handler) {
-        LOG.trace("Called async exportMigrationPlan");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "exportMigrationPlan returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
-        final ExportMigrationPlanRequest interceptedRequest =
-                ExportMigrationPlanConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ExportMigrationPlanConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ExportMigrationPlan", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, ExportMigrationPlanResponse>
-                transformer =
-                        ExportMigrationPlanConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ExportMigrationPlanRequest, ExportMigrationPlanResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ExportMigrationPlanRequest, ExportMigrationPlanResponse>,
-                        java.util.concurrent.Future<ExportMigrationPlanResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getMigrationPlanId(), "migrationPlanId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ExportMigrationPlanRequest, ExportMigrationPlanResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, ExportMigrationPlanResponse::builder)
+                .logger(LOG, "exportMigrationPlan")
+                .serviceDetails(
+                        "Migration",
+                        "ExportMigrationPlan",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/ExportMigrationPlan")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ExportMigrationPlanRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrationPlans")
+                .appendPathParam(request.getMigrationPlanId())
+                .appendPathParam("actions")
+                .appendPathParam("export")
+                .accept("text/csv")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        java.io.InputStream.class, ExportMigrationPlanResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-request-id", ExportMigrationPlanResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1234,40 +656,29 @@ public class MigrationAsyncClient implements MigrationAsync {
             GetMigrationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetMigrationRequest, GetMigrationResponse>
                     handler) {
-        LOG.trace("Called async getMigration");
-        final GetMigrationRequest interceptedRequest =
-                GetMigrationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetMigrationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "GetMigration", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetMigrationResponse>
-                transformer =
-                        GetMigrationConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetMigrationRequest, GetMigrationResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetMigrationRequest, GetMigrationResponse>,
-                        java.util.concurrent.Future<GetMigrationResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getMigrationId(), "migrationId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetMigrationRequest, GetMigrationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, GetMigrationResponse::builder)
+                .logger(LOG, "getMigration")
+                .serviceDetails(
+                        "Migration",
+                        "GetMigration",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/Migration/GetMigration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMigrationRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrations")
+                .appendPathParam(request.getMigrationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudmigrations.model.Migration.class,
+                        GetMigrationResponse.Builder::migration)
+                .handleResponseHeaderString("etag", GetMigrationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMigrationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1276,41 +687,29 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetMigrationAssetRequest, GetMigrationAssetResponse>
                     handler) {
-        LOG.trace("Called async getMigrationAsset");
-        final GetMigrationAssetRequest interceptedRequest =
-                GetMigrationAssetConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetMigrationAssetConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "GetMigrationAsset", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetMigrationAssetResponse>
-                transformer =
-                        GetMigrationAssetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetMigrationAssetRequest, GetMigrationAssetResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetMigrationAssetRequest, GetMigrationAssetResponse>,
-                        java.util.concurrent.Future<GetMigrationAssetResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getMigrationAssetId(), "migrationAssetId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetMigrationAssetRequest, GetMigrationAssetResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, GetMigrationAssetResponse::builder)
+                .logger(LOG, "getMigrationAsset")
+                .serviceDetails(
+                        "Migration",
+                        "GetMigrationAsset",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAsset/GetMigrationAsset")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMigrationAssetRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrationAssets")
+                .appendPathParam(request.getMigrationAssetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudmigrations.model.MigrationAsset.class,
+                        GetMigrationAssetResponse.Builder::migrationAsset)
+                .handleResponseHeaderString("etag", GetMigrationAssetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMigrationAssetResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1319,41 +718,29 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetMigrationPlanRequest, GetMigrationPlanResponse>
                     handler) {
-        LOG.trace("Called async getMigrationPlan");
-        final GetMigrationPlanRequest interceptedRequest =
-                GetMigrationPlanConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetMigrationPlanConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "GetMigrationPlan", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetMigrationPlanResponse>
-                transformer =
-                        GetMigrationPlanConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetMigrationPlanRequest, GetMigrationPlanResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetMigrationPlanRequest, GetMigrationPlanResponse>,
-                        java.util.concurrent.Future<GetMigrationPlanResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getMigrationPlanId(), "migrationPlanId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetMigrationPlanRequest, GetMigrationPlanResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, GetMigrationPlanResponse::builder)
+                .logger(LOG, "getMigrationPlan")
+                .serviceDetails(
+                        "Migration",
+                        "GetMigrationPlan",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/GetMigrationPlan")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMigrationPlanRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrationPlans")
+                .appendPathParam(request.getMigrationPlanId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudmigrations.model.MigrationPlan.class,
+                        GetMigrationPlanResponse.Builder::migrationPlan)
+                .handleResponseHeaderString("etag", GetMigrationPlanResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMigrationPlanResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1362,42 +749,30 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetReplicationProgressRequest, GetReplicationProgressResponse>
                     handler) {
-        LOG.trace("Called async getReplicationProgress");
-        final GetReplicationProgressRequest interceptedRequest =
-                GetReplicationProgressConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetReplicationProgressConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "GetReplicationProgress", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetReplicationProgressResponse>
-                transformer =
-                        GetReplicationProgressConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetReplicationProgressRequest, GetReplicationProgressResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetReplicationProgressRequest, GetReplicationProgressResponse>,
-                        java.util.concurrent.Future<GetReplicationProgressResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getMigrationAssetId(), "migrationAssetId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetReplicationProgressRequest, GetReplicationProgressResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, GetReplicationProgressResponse::builder)
+                .logger(LOG, "getReplicationProgress")
+                .serviceDetails(
+                        "Migration",
+                        "GetReplicationProgress",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAsset/GetReplicationProgress")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetReplicationProgressRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrationAssets")
+                .appendPathParam(request.getMigrationAssetId())
+                .appendPathParam("actions")
+                .appendPathParam("replicationProgress")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudmigrations.model.ReplicationProgress.class,
+                        GetReplicationProgressResponse.Builder::replicationProgress)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetReplicationProgressResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1406,42 +781,30 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetReplicationScheduleRequest, GetReplicationScheduleResponse>
                     handler) {
-        LOG.trace("Called async getReplicationSchedule");
-        final GetReplicationScheduleRequest interceptedRequest =
-                GetReplicationScheduleConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetReplicationScheduleConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "GetReplicationSchedule", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetReplicationScheduleResponse>
-                transformer =
-                        GetReplicationScheduleConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetReplicationScheduleRequest, GetReplicationScheduleResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetReplicationScheduleRequest, GetReplicationScheduleResponse>,
-                        java.util.concurrent.Future<GetReplicationScheduleResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(
+                request.getReplicationScheduleId(), "replicationScheduleId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetReplicationScheduleRequest, GetReplicationScheduleResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, GetReplicationScheduleResponse::builder)
+                .logger(LOG, "getReplicationSchedule")
+                .serviceDetails(
+                        "Migration",
+                        "GetReplicationSchedule",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/ReplicationSchedule/GetReplicationSchedule")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetReplicationScheduleRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("replicationSchedules")
+                .appendPathParam(request.getReplicationScheduleId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudmigrations.model.ReplicationSchedule.class,
+                        GetReplicationScheduleResponse.Builder::replicationSchedule)
+                .handleResponseHeaderString("etag", GetReplicationScheduleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetReplicationScheduleResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1450,40 +813,29 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetTargetAssetRequest, GetTargetAssetResponse>
                     handler) {
-        LOG.trace("Called async getTargetAsset");
-        final GetTargetAssetRequest interceptedRequest =
-                GetTargetAssetConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetTargetAssetConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "GetTargetAsset", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetTargetAssetResponse>
-                transformer =
-                        GetTargetAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetTargetAssetRequest, GetTargetAssetResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetTargetAssetRequest, GetTargetAssetResponse>,
-                        java.util.concurrent.Future<GetTargetAssetResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getTargetAssetId(), "targetAssetId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetTargetAssetRequest, GetTargetAssetResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, GetTargetAssetResponse::builder)
+                .logger(LOG, "getTargetAsset")
+                .serviceDetails(
+                        "Migration",
+                        "GetTargetAsset",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/TargetAsset/GetTargetAsset")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetTargetAssetRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("targetAssets")
+                .appendPathParam(request.getTargetAssetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudmigrations.model.TargetAsset.class,
+                        GetTargetAssetResponse.Builder::targetAsset)
+                .handleResponseHeaderString("etag", GetTargetAssetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetTargetAssetResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1492,40 +844,31 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetWorkRequestRequest, GetWorkRequestResponse>
                     handler) {
-        LOG.trace("Called async getWorkRequest");
-        final GetWorkRequestRequest interceptedRequest =
-                GetWorkRequestConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "GetWorkRequest", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetWorkRequestRequest, GetWorkRequestResponse>,
-                        java.util.concurrent.Future<GetWorkRequestResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetWorkRequestRequest, GetWorkRequestResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, GetWorkRequestResponse::builder)
+                .logger(LOG, "getWorkRequest")
+                .serviceDetails(
+                        "Migration",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/WorkRequest/GetWorkRequest")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetWorkRequestRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudmigrations.model.WorkRequest.class,
+                        GetWorkRequestResponse.Builder::workRequest)
+                .handleResponseHeaderString("etag", GetWorkRequestResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callAsync(handler);
     }
 
     @Override
@@ -1534,60 +877,36 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ImportMigrationPlanRequest, ImportMigrationPlanResponse>
                     handler) {
-        LOG.trace("Called async importMigrationPlan");
-        if (request.getRetryConfiguration() != null
-                || authenticationDetailsProvider
-                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            request =
-                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
-                            request, ImportMigrationPlanRequest.builder());
-        }
-        final ImportMigrationPlanRequest interceptedRequest =
-                ImportMigrationPlanConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ImportMigrationPlanConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ImportMigrationPlan", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, ImportMigrationPlanResponse>
-                transformer =
-                        ImportMigrationPlanConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ImportMigrationPlanRequest, ImportMigrationPlanResponse>
-                handlerToUse =
-                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ImportMigrationPlanRequest, ImportMigrationPlanResponse>,
-                        java.util.concurrent.Future<ImportMigrationPlanResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getImportMigrationPlanDetails(),
-                                ib,
-                                transformer);
+        Validate.notBlank(request.getMigrationPlanId(), "migrationPlanId must not be blank");
+        Objects.requireNonNull(
+                request.getImportMigrationPlanDetails(), "importMigrationPlanDetails is required");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ImportMigrationPlanRequest, ImportMigrationPlanResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {
-                    LOG.debug("Resetting stream");
-                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
-                            interceptedRequest.getImportMigrationPlanDetails(), true);
-                }
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, ImportMigrationPlanResponse::builder)
+                .logger(LOG, "importMigrationPlan")
+                .serviceDetails(
+                        "Migration",
+                        "ImportMigrationPlan",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/ImportMigrationPlan")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ImportMigrationPlanRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrationPlans")
+                .appendPathParam(request.getMigrationPlanId())
+                .appendPathParam("actions")
+                .appendPathParam("import")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ImportMigrationPlanResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ImportMigrationPlanResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1596,42 +915,39 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListAvailableShapesRequest, ListAvailableShapesResponse>
                     handler) {
-        LOG.trace("Called async listAvailableShapes");
-        final ListAvailableShapesRequest interceptedRequest =
-                ListAvailableShapesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListAvailableShapesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ListAvailableShapes", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListAvailableShapesResponse>
-                transformer =
-                        ListAvailableShapesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListAvailableShapesRequest, ListAvailableShapesResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListAvailableShapesRequest, ListAvailableShapesResponse>,
-                        java.util.concurrent.Future<ListAvailableShapesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getMigrationPlanId(), "migrationPlanId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListAvailableShapesRequest, ListAvailableShapesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, ListAvailableShapesResponse::builder)
+                .logger(LOG, "listAvailableShapes")
+                .serviceDetails(
+                        "Migration",
+                        "ListAvailableShapes",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/AvailableShapesCollection/ListAvailableShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAvailableShapesRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrationPlans")
+                .appendPathParam(request.getMigrationPlanId())
+                .appendPathParam("availableShapes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("dvhHostId", request.getDvhHostId())
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("reservedCapacityId", request.getReservedCapacityId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudmigrations.model.AvailableShapesCollection.class,
+                        ListAvailableShapesResponse.Builder::availableShapesCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAvailableShapesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAvailableShapesResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -1640,42 +956,35 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListMigrationAssetsRequest, ListMigrationAssetsResponse>
                     handler) {
-        LOG.trace("Called async listMigrationAssets");
-        final ListMigrationAssetsRequest interceptedRequest =
-                ListMigrationAssetsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListMigrationAssetsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ListMigrationAssets", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListMigrationAssetsResponse>
-                transformer =
-                        ListMigrationAssetsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListMigrationAssetsRequest, ListMigrationAssetsResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListMigrationAssetsRequest, ListMigrationAssetsResponse>,
-                        java.util.concurrent.Future<ListMigrationAssetsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListMigrationAssetsRequest, ListMigrationAssetsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, ListMigrationAssetsResponse::builder)
+                .logger(LOG, "listMigrationAssets")
+                .serviceDetails(
+                        "Migration",
+                        "ListMigrationAssets",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAssetCollection/ListMigrationAssets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMigrationAssetsRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrationAssets")
+                .appendQueryParam("migrationId", request.getMigrationId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("migrationAssetId", request.getMigrationAssetId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudmigrations.model.MigrationAssetCollection.class,
+                        ListMigrationAssetsResponse.Builder::migrationAssetCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMigrationAssetsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMigrationAssetsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -1684,41 +993,36 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListMigrationPlansRequest, ListMigrationPlansResponse>
                     handler) {
-        LOG.trace("Called async listMigrationPlans");
-        final ListMigrationPlansRequest interceptedRequest =
-                ListMigrationPlansConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListMigrationPlansConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ListMigrationPlans", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListMigrationPlansResponse>
-                transformer =
-                        ListMigrationPlansConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListMigrationPlansRequest, ListMigrationPlansResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListMigrationPlansRequest, ListMigrationPlansResponse>,
-                        java.util.concurrent.Future<ListMigrationPlansResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListMigrationPlansRequest, ListMigrationPlansResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, ListMigrationPlansResponse::builder)
+                .logger(LOG, "listMigrationPlans")
+                .serviceDetails(
+                        "Migration",
+                        "ListMigrationPlans",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlanCollection/ListMigrationPlans")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMigrationPlansRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrationPlans")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("migrationId", request.getMigrationId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("migrationPlanId", request.getMigrationPlanId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudmigrations.model.MigrationPlanCollection.class,
+                        ListMigrationPlansResponse.Builder::migrationPlanCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMigrationPlansResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMigrationPlansResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -1727,40 +1031,35 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListMigrationsRequest, ListMigrationsResponse>
                     handler) {
-        LOG.trace("Called async listMigrations");
-        final ListMigrationsRequest interceptedRequest =
-                ListMigrationsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListMigrationsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ListMigrations", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListMigrationsResponse>
-                transformer =
-                        ListMigrationsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListMigrationsRequest, ListMigrationsResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListMigrationsRequest, ListMigrationsResponse>,
-                        java.util.concurrent.Future<ListMigrationsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListMigrationsRequest, ListMigrationsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, ListMigrationsResponse::builder)
+                .logger(LOG, "listMigrations")
+                .serviceDetails(
+                        "Migration",
+                        "ListMigrations",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationCollection/ListMigrations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMigrationsRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrations")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("migrationId", request.getMigrationId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudmigrations.model.MigrationCollection.class,
+                        ListMigrationsResponse.Builder::migrationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMigrationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMigrationsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -1769,43 +1068,35 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListReplicationSchedulesRequest, ListReplicationSchedulesResponse>
                     handler) {
-        LOG.trace("Called async listReplicationSchedules");
-        final ListReplicationSchedulesRequest interceptedRequest =
-                ListReplicationSchedulesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListReplicationSchedulesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ListReplicationSchedules", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListReplicationSchedulesResponse>
-                transformer =
-                        ListReplicationSchedulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListReplicationSchedulesRequest, ListReplicationSchedulesResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListReplicationSchedulesRequest, ListReplicationSchedulesResponse>,
-                        java.util.concurrent.Future<ListReplicationSchedulesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListReplicationSchedulesRequest, ListReplicationSchedulesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, ListReplicationSchedulesResponse::builder)
+                .logger(LOG, "listReplicationSchedules")
+                .serviceDetails(
+                        "Migration",
+                        "ListReplicationSchedules",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/ReplicationScheduleCollection/ListReplicationSchedules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListReplicationSchedulesRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("replicationSchedules")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("replicationScheduleId", request.getReplicationScheduleId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudmigrations.model.ReplicationScheduleCollection.class,
+                        ListReplicationSchedulesResponse.Builder::replicationScheduleCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListReplicationSchedulesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListReplicationSchedulesResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -1814,41 +1105,35 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListTargetAssetsRequest, ListTargetAssetsResponse>
                     handler) {
-        LOG.trace("Called async listTargetAssets");
-        final ListTargetAssetsRequest interceptedRequest =
-                ListTargetAssetsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListTargetAssetsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ListTargetAssets", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListTargetAssetsResponse>
-                transformer =
-                        ListTargetAssetsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListTargetAssetsRequest, ListTargetAssetsResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListTargetAssetsRequest, ListTargetAssetsResponse>,
-                        java.util.concurrent.Future<ListTargetAssetsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListTargetAssetsRequest, ListTargetAssetsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, ListTargetAssetsResponse::builder)
+                .logger(LOG, "listTargetAssets")
+                .serviceDetails(
+                        "Migration",
+                        "ListTargetAssets",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/TargetAssetCollection/ListTargetAssets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListTargetAssetsRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("targetAssets")
+                .appendQueryParam("migrationPlanId", request.getMigrationPlanId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("targetAssetId", request.getTargetAssetId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudmigrations.model.TargetAssetCollection.class,
+                        ListTargetAssetsResponse.Builder::targetAssetCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListTargetAssetsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListTargetAssetsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -1857,42 +1142,35 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
                     handler) {
-        LOG.trace("Called async listWorkRequestErrors");
-        final ListWorkRequestErrorsRequest interceptedRequest =
-                ListWorkRequestErrorsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
-                transformer =
-                        ListWorkRequestErrorsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>,
-                        java.util.concurrent.Future<ListWorkRequestErrorsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, ListWorkRequestErrorsResponse::builder)
+                .logger(LOG, "listWorkRequestErrors")
+                .serviceDetails(
+                        "Migration",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/WorkRequestError/ListWorkRequestErrors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestErrorsRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .appendPathParam("errors")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudmigrations.model.WorkRequestErrorCollection.class,
+                        ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1901,42 +1179,35 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
                     handler) {
-        LOG.trace("Called async listWorkRequestLogs");
-        final ListWorkRequestLogsRequest interceptedRequest =
-                ListWorkRequestLogsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
-                transformer =
-                        ListWorkRequestLogsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>,
-                        java.util.concurrent.Future<ListWorkRequestLogsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, ListWorkRequestLogsResponse::builder)
+                .logger(LOG, "listWorkRequestLogs")
+                .serviceDetails(
+                        "Migration",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/WorkRequestLogEntry/ListWorkRequestLogs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestLogsRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .appendPathParam("logs")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudmigrations.model.WorkRequestLogEntryCollection.class,
+                        ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1945,41 +1216,36 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListWorkRequestsRequest, ListWorkRequestsResponse>
                     handler) {
-        LOG.trace("Called async listWorkRequests");
-        final ListWorkRequestsRequest interceptedRequest =
-                ListWorkRequestsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ListWorkRequests", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer =
-                        ListWorkRequestsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListWorkRequestsRequest, ListWorkRequestsResponse>,
-                        java.util.concurrent.Future<ListWorkRequestsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListWorkRequestsRequest, ListWorkRequestsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, ListWorkRequestsResponse::builder)
+                .logger(LOG, "listWorkRequests")
+                .serviceDetails(
+                        "Migration",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/WorkRequest/ListWorkRequests")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestsRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("workRequests")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("workRequestId", request.getWorkRequestId())
+                .appendEnumQueryParam("status", request.getStatus())
+                .appendEnumQueryParam("operationType", request.getOperationType())
+                .appendQueryParam("resourceId", request.getResourceId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudmigrations.model.WorkRequestSummaryCollection.class,
+                        ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -1988,42 +1254,31 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             RefreshMigrationRequest, RefreshMigrationResponse>
                     handler) {
-        LOG.trace("Called async refreshMigration");
-        final RefreshMigrationRequest interceptedRequest =
-                RefreshMigrationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RefreshMigrationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "RefreshMigration", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, RefreshMigrationResponse>
-                transformer =
-                        RefreshMigrationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<RefreshMigrationRequest, RefreshMigrationResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                RefreshMigrationRequest, RefreshMigrationResponse>,
-                        java.util.concurrent.Future<RefreshMigrationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getMigrationId(), "migrationId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    RefreshMigrationRequest, RefreshMigrationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, RefreshMigrationResponse::builder)
+                .logger(LOG, "refreshMigration")
+                .serviceDetails(
+                        "Migration",
+                        "RefreshMigration",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/Migration/RefreshMigration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RefreshMigrationRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrations")
+                .appendPathParam(request.getMigrationId())
+                .appendPathParam("actions")
+                .appendPathParam("refresh")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", RefreshMigrationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RefreshMigrationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2032,43 +1287,32 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             RefreshMigrationAssetRequest, RefreshMigrationAssetResponse>
                     handler) {
-        LOG.trace("Called async refreshMigrationAsset");
-        final RefreshMigrationAssetRequest interceptedRequest =
-                RefreshMigrationAssetConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RefreshMigrationAssetConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "RefreshMigrationAsset", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, RefreshMigrationAssetResponse>
-                transformer =
-                        RefreshMigrationAssetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        RefreshMigrationAssetRequest, RefreshMigrationAssetResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                RefreshMigrationAssetRequest, RefreshMigrationAssetResponse>,
-                        java.util.concurrent.Future<RefreshMigrationAssetResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getMigrationAssetId(), "migrationAssetId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    RefreshMigrationAssetRequest, RefreshMigrationAssetResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, RefreshMigrationAssetResponse::builder)
+                .logger(LOG, "refreshMigrationAsset")
+                .serviceDetails(
+                        "Migration",
+                        "RefreshMigrationAsset",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAsset/RefreshMigrationAsset")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RefreshMigrationAssetRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrationAssets")
+                .appendPathParam(request.getMigrationAssetId())
+                .appendPathParam("actions")
+                .appendPathParam("refresh")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RefreshMigrationAssetResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RefreshMigrationAssetResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2077,43 +1321,32 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             RefreshMigrationPlanRequest, RefreshMigrationPlanResponse>
                     handler) {
-        LOG.trace("Called async refreshMigrationPlan");
-        final RefreshMigrationPlanRequest interceptedRequest =
-                RefreshMigrationPlanConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RefreshMigrationPlanConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "RefreshMigrationPlan", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, RefreshMigrationPlanResponse>
-                transformer =
-                        RefreshMigrationPlanConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        RefreshMigrationPlanRequest, RefreshMigrationPlanResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                RefreshMigrationPlanRequest, RefreshMigrationPlanResponse>,
-                        java.util.concurrent.Future<RefreshMigrationPlanResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getMigrationPlanId(), "migrationPlanId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    RefreshMigrationPlanRequest, RefreshMigrationPlanResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, RefreshMigrationPlanResponse::builder)
+                .logger(LOG, "refreshMigrationPlan")
+                .serviceDetails(
+                        "Migration",
+                        "RefreshMigrationPlan",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/RefreshMigrationPlan")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RefreshMigrationPlanRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrationPlans")
+                .appendPathParam(request.getMigrationPlanId())
+                .appendPathParam("actions")
+                .appendPathParam("refresh")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RefreshMigrationPlanResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RefreshMigrationPlanResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2122,43 +1355,32 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             StartAssetReplicationRequest, StartAssetReplicationResponse>
                     handler) {
-        LOG.trace("Called async startAssetReplication");
-        final StartAssetReplicationRequest interceptedRequest =
-                StartAssetReplicationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                StartAssetReplicationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "StartAssetReplication", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, StartAssetReplicationResponse>
-                transformer =
-                        StartAssetReplicationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        StartAssetReplicationRequest, StartAssetReplicationResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                StartAssetReplicationRequest, StartAssetReplicationResponse>,
-                        java.util.concurrent.Future<StartAssetReplicationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getMigrationAssetId(), "migrationAssetId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    StartAssetReplicationRequest, StartAssetReplicationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, StartAssetReplicationResponse::builder)
+                .logger(LOG, "startAssetReplication")
+                .serviceDetails(
+                        "Migration",
+                        "StartAssetReplication",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAsset/StartAssetReplication")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StartAssetReplicationRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrationAssets")
+                .appendPathParam(request.getMigrationAssetId())
+                .appendPathParam("actions")
+                .appendPathParam("startAssetReplication")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        StartAssetReplicationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", StartAssetReplicationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2167,48 +1389,32 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             StartMigrationReplicationRequest, StartMigrationReplicationResponse>
                     handler) {
-        LOG.trace("Called async startMigrationReplication");
-        final StartMigrationReplicationRequest interceptedRequest =
-                StartMigrationReplicationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                StartMigrationReplicationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getMigrationId(), "migrationId must not be blank");
+
+        return clientCall(request, StartMigrationReplicationResponse::builder)
+                .logger(LOG, "startMigrationReplication")
+                .serviceDetails(
                         "Migration",
                         "StartMigrationReplication",
-                        ib.getRequestUri().toString(),
-                        "");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, StartMigrationReplicationResponse>
-                transformer =
-                        StartMigrationReplicationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        StartMigrationReplicationRequest, StartMigrationReplicationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                StartMigrationReplicationRequest,
-                                StartMigrationReplicationResponse>,
-                        java.util.concurrent.Future<StartMigrationReplicationResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    StartMigrationReplicationRequest, StartMigrationReplicationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/Migration/StartMigrationReplication")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StartMigrationReplicationRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrations")
+                .appendPathParam(request.getMigrationId())
+                .appendPathParam("actions")
+                .appendPathParam("startMigrationReplication")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        StartMigrationReplicationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", StartMigrationReplicationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2217,46 +1423,33 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateMigrationRequest, UpdateMigrationResponse>
                     handler) {
-        LOG.trace("Called async updateMigration");
-        final UpdateMigrationRequest interceptedRequest =
-                UpdateMigrationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateMigrationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "UpdateMigration", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateMigrationResponse>
-                transformer =
-                        UpdateMigrationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateMigrationRequest, UpdateMigrationResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateMigrationRequest, UpdateMigrationResponse>,
-                        java.util.concurrent.Future<UpdateMigrationResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateMigrationDetails(),
-                                ib,
-                                transformer);
+        Validate.notBlank(request.getMigrationId(), "migrationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMigrationDetails(), "updateMigrationDetails is required");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateMigrationRequest, UpdateMigrationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, UpdateMigrationResponse::builder)
+                .logger(LOG, "updateMigration")
+                .serviceDetails(
+                        "Migration",
+                        "UpdateMigration",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/Migration/UpdateMigration")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMigrationRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrations")
+                .appendPathParam(request.getMigrationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.cloudmigrations.model.Migration.class,
+                        UpdateMigrationResponse.Builder::migration)
+                .handleResponseHeaderString("etag", UpdateMigrationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateMigrationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2265,47 +1458,34 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateMigrationAssetRequest, UpdateMigrationAssetResponse>
                     handler) {
-        LOG.trace("Called async updateMigrationAsset");
-        final UpdateMigrationAssetRequest interceptedRequest =
-                UpdateMigrationAssetConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateMigrationAssetConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "UpdateMigrationAsset", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateMigrationAssetResponse>
-                transformer =
-                        UpdateMigrationAssetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateMigrationAssetRequest, UpdateMigrationAssetResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateMigrationAssetRequest, UpdateMigrationAssetResponse>,
-                        java.util.concurrent.Future<UpdateMigrationAssetResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateMigrationAssetDetails(),
-                                ib,
-                                transformer);
+        Validate.notBlank(request.getMigrationAssetId(), "migrationAssetId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMigrationAssetDetails(),
+                "updateMigrationAssetDetails is required");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateMigrationAssetRequest, UpdateMigrationAssetResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, UpdateMigrationAssetResponse::builder)
+                .logger(LOG, "updateMigrationAsset")
+                .serviceDetails(
+                        "Migration",
+                        "UpdateMigrationAsset",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAsset/UpdateMigrationAsset")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMigrationAssetRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrationAssets")
+                .appendPathParam(request.getMigrationAssetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.cloudmigrations.model.MigrationAsset.class,
+                        UpdateMigrationAssetResponse.Builder::migrationAsset)
+                .handleResponseHeaderString("etag", UpdateMigrationAssetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateMigrationAssetResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2314,47 +1494,32 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateMigrationPlanRequest, UpdateMigrationPlanResponse>
                     handler) {
-        LOG.trace("Called async updateMigrationPlan");
-        final UpdateMigrationPlanRequest interceptedRequest =
-                UpdateMigrationPlanConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateMigrationPlanConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "UpdateMigrationPlan", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateMigrationPlanResponse>
-                transformer =
-                        UpdateMigrationPlanConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateMigrationPlanRequest, UpdateMigrationPlanResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateMigrationPlanRequest, UpdateMigrationPlanResponse>,
-                        java.util.concurrent.Future<UpdateMigrationPlanResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateMigrationPlanDetails(),
-                                ib,
-                                transformer);
+        Validate.notBlank(request.getMigrationPlanId(), "migrationPlanId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMigrationPlanDetails(), "updateMigrationPlanDetails is required");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateMigrationPlanRequest, UpdateMigrationPlanResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, UpdateMigrationPlanResponse::builder)
+                .logger(LOG, "updateMigrationPlan")
+                .serviceDetails(
+                        "Migration",
+                        "UpdateMigrationPlan",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/UpdateMigrationPlan")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMigrationPlanRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("migrationPlans")
+                .appendPathParam(request.getMigrationPlanId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateMigrationPlanResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateMigrationPlanResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2363,52 +1528,34 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateReplicationScheduleRequest, UpdateReplicationScheduleResponse>
                     handler) {
-        LOG.trace("Called async updateReplicationSchedule");
-        final UpdateReplicationScheduleRequest interceptedRequest =
-                UpdateReplicationScheduleConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateReplicationScheduleConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getReplicationScheduleId(), "replicationScheduleId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateReplicationScheduleDetails(),
+                "updateReplicationScheduleDetails is required");
+
+        return clientCall(request, UpdateReplicationScheduleResponse::builder)
+                .logger(LOG, "updateReplicationSchedule")
+                .serviceDetails(
                         "Migration",
                         "UpdateReplicationSchedule",
-                        ib.getRequestUri().toString(),
-                        "");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateReplicationScheduleResponse>
-                transformer =
-                        UpdateReplicationScheduleConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateReplicationScheduleRequest, UpdateReplicationScheduleResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateReplicationScheduleRequest,
-                                UpdateReplicationScheduleResponse>,
-                        java.util.concurrent.Future<UpdateReplicationScheduleResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateReplicationScheduleDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateReplicationScheduleRequest, UpdateReplicationScheduleResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/ReplicationSchedule/UpdateReplicationSchedule")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateReplicationScheduleRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("replicationSchedules")
+                .appendPathParam(request.getReplicationScheduleId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateReplicationScheduleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateReplicationScheduleResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2417,45 +1564,189 @@ public class MigrationAsyncClient implements MigrationAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateTargetAssetRequest, UpdateTargetAssetResponse>
                     handler) {
-        LOG.trace("Called async updateTargetAsset");
-        final UpdateTargetAssetRequest interceptedRequest =
-                UpdateTargetAssetConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateTargetAssetConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Migration", "UpdateTargetAsset", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateTargetAssetResponse>
-                transformer =
-                        UpdateTargetAssetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateTargetAssetRequest, UpdateTargetAssetResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateTargetAssetRequest, UpdateTargetAssetResponse>,
-                        java.util.concurrent.Future<UpdateTargetAssetResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateTargetAssetDetails(),
-                                ib,
-                                transformer);
+        Validate.notBlank(request.getTargetAssetId(), "targetAssetId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateTargetAssetDetails(), "updateTargetAssetDetails is required");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateTargetAssetRequest, UpdateTargetAssetResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, UpdateTargetAssetResponse::builder)
+                .logger(LOG, "updateTargetAsset")
+                .serviceDetails(
+                        "Migration",
+                        "UpdateTargetAsset",
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/TargetAsset/UpdateTargetAsset")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateTargetAssetRequest::builder)
+                .basePath("/20220919")
+                .appendPathParam("targetAssets")
+                .appendPathParam(request.getTargetAssetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateTargetAssetResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateTargetAssetResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public MigrationAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(builder(), authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public MigrationAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(builder().configuration(configuration), authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public MigrationAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                builder().configuration(configuration).clientConfigurator(clientConfigurator),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public MigrationAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public MigrationAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public MigrationAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public MigrationAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider);
     }
 }

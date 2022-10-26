@@ -9,15 +9,14 @@ import com.oracle.bmc.apmconfig.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 public class RetrieveNamespaceMetricsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,10 +24,7 @@ public class RetrieveNamespaceMetricsResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -40,13 +36,12 @@ public class RetrieveNamespaceMetricsResponse extends com.oracle.bmc.responses.B
         return etag;
     }
 
-    /**
-     * The returned NamespaceMetricCollection instance.
-     */
+    /** The returned NamespaceMetricCollection instance. */
     private com.oracle.bmc.apmconfig.model.NamespaceMetricCollection namespaceMetricCollection;
 
     /**
      * The returned NamespaceMetricCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.apmconfig.model.NamespaceMetricCollection getNamespaceMetricCollection() {
@@ -62,7 +57,7 @@ public class RetrieveNamespaceMetricsResponse extends com.oracle.bmc.responses.B
     })
     private RetrieveNamespaceMetricsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.apmconfig.model.NamespaceMetricCollection namespaceMetricCollection) {
@@ -72,31 +67,34 @@ public class RetrieveNamespaceMetricsResponse extends com.oracle.bmc.responses.B
         this.namespaceMetricCollection = namespaceMetricCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    RetrieveNamespaceMetricsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -106,10 +104,7 @@ public class RetrieveNamespaceMetricsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -123,13 +118,12 @@ public class RetrieveNamespaceMetricsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /**
-         * The returned NamespaceMetricCollection instance.
-         */
+        /** The returned NamespaceMetricCollection instance. */
         private com.oracle.bmc.apmconfig.model.NamespaceMetricCollection namespaceMetricCollection;
 
         /**
          * The returned NamespaceMetricCollection instance.
+         *
          * @param namespaceMetricCollection the value to set
          * @return this builder
          */
@@ -142,8 +136,10 @@ public class RetrieveNamespaceMetricsResponse extends com.oracle.bmc.responses.B
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(RetrieveNamespaceMetricsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -156,8 +152,10 @@ public class RetrieveNamespaceMetricsResponse extends com.oracle.bmc.responses.B
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public RetrieveNamespaceMetricsResponse build() {
             return new RetrieveNamespaceMetricsResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, namespaceMetricCollection);
@@ -166,6 +164,7 @@ public class RetrieveNamespaceMetricsResponse extends com.oracle.bmc.responses.B
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

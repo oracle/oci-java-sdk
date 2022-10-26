@@ -5,20 +5,20 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Pre-Authenticated Request Link for ODMS Agent log use.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Pre-Authenticated Request Link for ODMS Agent log use. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ParLink.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ParLink extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ParLink extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"parLink"})
     public ParLink(String parLink) {
@@ -28,10 +28,7 @@ public final class ParLink extends com.oracle.bmc.http.internal.ExplicitlySetBmc
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Pre-Authenticated Request URI.
-         *
-         **/
+        /** Pre-Authenticated Request URI. */
         @com.fasterxml.jackson.annotation.JsonProperty("parLink")
         private String parLink;
 
@@ -40,7 +37,7 @@ public final class ParLink extends com.oracle.bmc.http.internal.ExplicitlySetBmc
          *
          * @param parLink the value to set
          * @return this builder
-         **/
+         */
         public Builder parLink(String parLink) {
             this.parLink = parLink;
             this.__explicitlySet__.add("parLink");
@@ -67,9 +64,7 @@ public final class ParLink extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -78,10 +73,7 @@ public final class ParLink extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         return new Builder().copy(this);
     }
 
-    /**
-     * Pre-Authenticated Request URI.
-     *
-     **/
+    /** Pre-Authenticated Request URI. */
     @com.fasterxml.jackson.annotation.JsonProperty("parLink")
     private final String parLink;
 
@@ -89,7 +81,7 @@ public final class ParLink extends com.oracle.bmc.http.internal.ExplicitlySetBmc
      * Pre-Authenticated Request URI.
      *
      * @return the value
-     **/
+     */
     public String getParLink() {
         return parLink;
     }
@@ -101,6 +93,7 @@ public final class ParLink extends com.oracle.bmc.http.internal.ExplicitlySetBmc
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

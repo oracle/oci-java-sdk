@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.bastion.model;
 
-/**
- * Possible Dns Proxy statuses.
- **/
+/** Possible Dns Proxy statuses. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
-public enum BastionDnsProxyStatus {
+public enum BastionDnsProxyStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Disabled("DISABLED"),
     Enabled("ENABLED"),
 

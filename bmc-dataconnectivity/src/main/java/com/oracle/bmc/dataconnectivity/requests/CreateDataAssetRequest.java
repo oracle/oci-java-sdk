@@ -6,62 +6,52 @@ package com.oracle.bmc.dataconnectivity.requests;
 
 import com.oracle.bmc.dataconnectivity.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/CreateDataAssetExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateDataAssetRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/CreateDataAssetExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateDataAssetRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 public class CreateDataAssetRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dataconnectivity.model.CreateDataAssetDetails> {
 
-    /**
-     * The registry OCID.
-     */
+    /** The registry OCID. */
     private String registryId;
 
-    /**
-     * The registry OCID.
-     */
+    /** The registry OCID. */
     public String getRegistryId() {
         return registryId;
     }
-    /**
-     * The information required to create a data asset.
-     */
+    /** The information required to create a data asset. */
     private com.oracle.bmc.dataconnectivity.model.CreateDataAssetDetails createDataAssetDetails;
 
-    /**
-     * The information required to create a data asset.
-     */
+    /** The information required to create a data asset. */
     public com.oracle.bmc.dataconnectivity.model.CreateDataAssetDetails
             getCreateDataAssetDetails() {
         return createDataAssetDetails;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
-     *
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without the risk of executing that same action again.
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
-     *
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without the risk of executing that same action again.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -69,6 +59,7 @@ public class CreateDataAssetRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -81,17 +72,15 @@ public class CreateDataAssetRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateDataAssetRequest,
                     com.oracle.bmc.dataconnectivity.model.CreateDataAssetDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The registry OCID.
-         */
+        /** The registry OCID. */
         private String registryId = null;
 
         /**
          * The registry OCID.
+         *
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -100,14 +89,13 @@ public class CreateDataAssetRequest
             return this;
         }
 
-        /**
-         * The information required to create a data asset.
-         */
+        /** The information required to create a data asset. */
         private com.oracle.bmc.dataconnectivity.model.CreateDataAssetDetails
                 createDataAssetDetails = null;
 
         /**
          * The information required to create a data asset.
+         *
          * @param createDataAssetDetails the value to set
          * @return this builder instance
          */
@@ -119,17 +107,14 @@ public class CreateDataAssetRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -140,13 +125,14 @@ public class CreateDataAssetRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
-         *
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without the risk of executing that same action again.
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without the risk of executing that same action again.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -158,18 +144,19 @@ public class CreateDataAssetRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -181,6 +168,7 @@ public class CreateDataAssetRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(CreateDataAssetRequest o) {
@@ -196,10 +184,11 @@ public class CreateDataAssetRequest
         /**
          * Build the instance of CreateDataAssetRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of CreateDataAssetRequest
          */
@@ -212,6 +201,7 @@ public class CreateDataAssetRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -224,7 +214,8 @@ public class CreateDataAssetRequest
         /**
          * Build the instance of CreateDataAssetRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateDataAssetRequest
@@ -236,12 +227,14 @@ public class CreateDataAssetRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new CreateDataAssetRequest(registryId, createDataAssetDetails, opcRequestId, opcRetryToken);
+            // new CreateDataAssetRequest(registryId, createDataAssetDetails, opcRequestId,
+            // opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -254,6 +247,7 @@ public class CreateDataAssetRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

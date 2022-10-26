@@ -6,70 +6,60 @@ package com.oracle.bmc.goldengate.requests;
 
 import com.oracle.bmc.goldengate.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/UpdateDeploymentBackupExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateDeploymentBackupRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/UpdateDeploymentBackupExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * UpdateDeploymentBackupRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class UpdateDeploymentBackupRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.goldengate.model.UpdateDeploymentBackupDetails> {
 
-    /**
-     * A unique DeploymentBackup identifier.
-     *
-     */
+    /** A unique DeploymentBackup identifier. */
     private String deploymentBackupId;
 
-    /**
-     * A unique DeploymentBackup identifier.
-     *
-     */
+    /** A unique DeploymentBackup identifier. */
     public String getDeploymentBackupId() {
         return deploymentBackupId;
     }
-    /**
-     * The information to be updated.
-     *
-     */
+    /** The information to be updated. */
     private com.oracle.bmc.goldengate.model.UpdateDeploymentBackupDetails
             updateDeploymentBackupDetails;
 
-    /**
-     * The information to be updated.
-     *
-     */
+    /** The information to be updated. */
     public com.oracle.bmc.goldengate.model.UpdateDeploymentBackupDetails
             getUpdateDeploymentBackupDetails() {
         return updateDeploymentBackupDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource is updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource is updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /**
-     * The client request ID for tracing.
-     *
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     *
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -82,14 +72,10 @@ public class UpdateDeploymentBackupRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateDeploymentBackupRequest,
                     com.oracle.bmc.goldengate.model.UpdateDeploymentBackupDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * A unique DeploymentBackup identifier.
-         *
-         */
+        /** A unique DeploymentBackup identifier. */
         private String deploymentBackupId = null;
 
         /**
@@ -103,10 +89,7 @@ public class UpdateDeploymentBackupRequest
             return this;
         }
 
-        /**
-         * The information to be updated.
-         *
-         */
+        /** The information to be updated. */
         private com.oracle.bmc.goldengate.model.UpdateDeploymentBackupDetails
                 updateDeploymentBackupDetails = null;
 
@@ -124,13 +107,18 @@ public class UpdateDeploymentBackupRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource is updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource is updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -140,10 +128,7 @@ public class UpdateDeploymentBackupRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         *
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
@@ -159,18 +144,19 @@ public class UpdateDeploymentBackupRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -182,6 +168,7 @@ public class UpdateDeploymentBackupRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateDeploymentBackupRequest o) {
@@ -197,10 +184,11 @@ public class UpdateDeploymentBackupRequest
         /**
          * Build the instance of UpdateDeploymentBackupRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateDeploymentBackupRequest
          */
@@ -213,6 +201,7 @@ public class UpdateDeploymentBackupRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -225,7 +214,8 @@ public class UpdateDeploymentBackupRequest
         /**
          * Build the instance of UpdateDeploymentBackupRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateDeploymentBackupRequest
@@ -237,12 +227,14 @@ public class UpdateDeploymentBackupRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateDeploymentBackupRequest(deploymentBackupId, updateDeploymentBackupDetails, ifMatch, opcRequestId);
+            // new UpdateDeploymentBackupRequest(deploymentBackupId, updateDeploymentBackupDetails,
+            // ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -255,6 +247,7 @@ public class UpdateDeploymentBackupRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.managementagent.model;
 
-/**
- * Possible types of actions.
- **/
+/** Possible types of actions. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-public enum ActionTypes {
+public enum ActionTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Created("CREATED"),
     Updated("UPDATED"),
     Deleted("DELETED"),

@@ -9,13 +9,14 @@ import com.oracle.bmc.datasafe.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class DownloadSecurityAssessmentReportResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,13 +25,16 @@ public class DownloadSecurityAssessmentReportResponse extends com.oracle.bmc.res
     }
 
     /**
-     * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
-     *
+     * For optimistic concurrency control. For more information, see [ETags for Optimistic
+     * Concurrency
+     * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
      */
     private String etag;
 
     /**
-     * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+     * For optimistic concurrency control. For more information, see [ETags for Optimistic
+     * Concurrency
+     * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
      *
      * @return the value
      */
@@ -38,26 +42,24 @@ public class DownloadSecurityAssessmentReportResponse extends com.oracle.bmc.res
         return etag;
     }
 
-    /**
-     * Size of the file.
-     */
+    /** Size of the file. */
     private Long contentLength;
 
     /**
      * Size of the file.
+     *
      * @return the value
      */
     public Long getContentLength() {
         return contentLength;
     }
 
-    /**
-     * The returned java.io.InputStream instance.
-     */
+    /** The returned java.io.InputStream instance. */
     private java.io.InputStream inputStream;
 
     /**
      * The returned java.io.InputStream instance.
+     *
      * @return the value
      */
     public java.io.InputStream getInputStream() {
@@ -74,7 +76,7 @@ public class DownloadSecurityAssessmentReportResponse extends com.oracle.bmc.res
     })
     private DownloadSecurityAssessmentReportResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String etag,
             Long contentLength,
@@ -86,29 +88,34 @@ public class DownloadSecurityAssessmentReportResponse extends com.oracle.bmc.res
         this.inputStream = inputStream;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    DownloadSecurityAssessmentReportResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -119,13 +126,16 @@ public class DownloadSecurityAssessmentReportResponse extends com.oracle.bmc.res
         }
 
         /**
-         * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
-         *
+         * For optimistic concurrency control. For more information, see [ETags for Optimistic
+         * Concurrency
+         * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
          */
         private String etag;
 
         /**
-         * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         * For optimistic concurrency control. For more information, see [ETags for Optimistic
+         * Concurrency
+         * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
          *
          * @param etag the value to set
          * @return this builder
@@ -135,13 +145,12 @@ public class DownloadSecurityAssessmentReportResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /**
-         * Size of the file.
-         */
+        /** Size of the file. */
         private Long contentLength;
 
         /**
          * Size of the file.
+         *
          * @param contentLength the value to set
          * @return this builder
          */
@@ -150,13 +159,12 @@ public class DownloadSecurityAssessmentReportResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /**
-         * The returned java.io.InputStream instance.
-         */
+        /** The returned java.io.InputStream instance. */
         private java.io.InputStream inputStream;
 
         /**
          * The returned java.io.InputStream instance.
+         *
          * @param inputStream the value to set
          * @return this builder
          */
@@ -167,8 +175,10 @@ public class DownloadSecurityAssessmentReportResponse extends com.oracle.bmc.res
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(DownloadSecurityAssessmentReportResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -182,8 +192,10 @@ public class DownloadSecurityAssessmentReportResponse extends com.oracle.bmc.res
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public DownloadSecurityAssessmentReportResponse build() {
             return new DownloadSecurityAssessmentReportResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, contentLength, inputStream);
@@ -192,6 +204,7 @@ public class DownloadSecurityAssessmentReportResponse extends com.oracle.bmc.res
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

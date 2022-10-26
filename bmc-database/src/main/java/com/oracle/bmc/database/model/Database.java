@@ -5,19 +5,20 @@
 package com.oracle.bmc.database.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Database.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Database extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -110,242 +111,255 @@ public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBm
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * database.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * database.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The character set for the database.
-         **/
+        /** The character set for the database. */
         @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
         private String characterSet;
 
         /**
          * The character set for the database.
+         *
          * @param characterSet the value to set
          * @return this builder
-         **/
+         */
         public Builder characterSet(String characterSet) {
             this.characterSet = characterSet;
             this.__explicitlySet__.add("characterSet");
             return this;
         }
-        /**
-         * The national character set for the database.
-         **/
+        /** The national character set for the database. */
         @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
         private String ncharacterSet;
 
         /**
          * The national character set for the database.
+         *
          * @param ncharacterSet the value to set
          * @return this builder
-         **/
+         */
         public Builder ncharacterSet(String ncharacterSet) {
             this.ncharacterSet = ncharacterSet;
             this.__explicitlySet__.add("ncharacterSet");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Database Home.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dbHomeId")
         private String dbHomeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Database Home.
+         *
          * @param dbHomeId the value to set
          * @return this builder
-         **/
+         */
         public Builder dbHomeId(String dbHomeId) {
             this.dbHomeId = dbHomeId;
             this.__explicitlySet__.add("dbHomeId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * DB system.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * DB system.
+         *
          * @param dbSystemId the value to set
          * @return this builder
-         **/
+         */
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = dbSystemId;
             this.__explicitlySet__.add("dbSystemId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * VM cluster.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
         private String vmClusterId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * VM cluster.
+         *
          * @param vmClusterId the value to set
          * @return this builder
-         **/
+         */
         public Builder vmClusterId(String vmClusterId) {
             this.vmClusterId = vmClusterId;
             this.__explicitlySet__.add("vmClusterId");
             return this;
         }
-        /**
-         * The database name.
-         **/
+        /** The database name. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbName")
         private String dbName;
 
         /**
          * The database name.
+         *
          * @param dbName the value to set
          * @return this builder
-         **/
+         */
         public Builder dbName(String dbName) {
             this.dbName = dbName;
             this.__explicitlySet__.add("dbName");
             return this;
         }
         /**
-         * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-         **/
+         * The name of the pluggable database. The name must begin with an alphabetic character and
+         * can contain a maximum of thirty alphanumeric characters. Special characters are not
+         * permitted. Pluggable database should not be same as database name.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("pdbName")
         private String pdbName;
 
         /**
-         * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
+         * The name of the pluggable database. The name must begin with an alphabetic character and
+         * can contain a maximum of thirty alphanumeric characters. Special characters are not
+         * permitted. Pluggable database should not be same as database name.
+         *
          * @param pdbName the value to set
          * @return this builder
-         **/
+         */
         public Builder pdbName(String pdbName) {
             this.pdbName = pdbName;
             this.__explicitlySet__.add("pdbName");
             return this;
         }
-        /**
-         * The database workload type.
-         **/
+        /** The database workload type. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
         private String dbWorkload;
 
         /**
          * The database workload type.
+         *
          * @param dbWorkload the value to set
          * @return this builder
-         **/
+         */
         public Builder dbWorkload(String dbWorkload) {
             this.dbWorkload = dbWorkload;
             this.__explicitlySet__.add("dbWorkload");
             return this;
         }
         /**
-         * A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
-         *
-         **/
+         * A system-generated name for the database to ensure uniqueness within an Oracle Data Guard
+         * group (a primary database and its standby databases). The unique name cannot be changed.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
         private String dbUniqueName;
 
         /**
-         * A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
+         * A system-generated name for the database to ensure uniqueness within an Oracle Data Guard
+         * group (a primary database and its standby databases). The unique name cannot be changed.
          *
          * @param dbUniqueName the value to set
          * @return this builder
-         **/
+         */
         public Builder dbUniqueName(String dbUniqueName) {
             this.dbUniqueName = dbUniqueName;
             this.__explicitlySet__.add("dbUniqueName");
             return this;
         }
-        /**
-         * Additional information about the current lifecycle state.
-         **/
+        /** Additional information about the current lifecycle state. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Additional information about the current lifecycle state.
+         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /**
-         * The current state of the database.
-         **/
+        /** The current state of the database. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the database.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * The date and time the database was created.
-         **/
+        /** The date and time the database was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the database was created.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * The date and time when the latest database backup was created.
-         **/
+        /** The date and time when the latest database backup was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("lastBackupTimestamp")
         private java.util.Date lastBackupTimestamp;
 
         /**
          * The date and time when the latest database backup was created.
+         *
          * @param lastBackupTimestamp the value to set
          * @return this builder
-         **/
+         */
         public Builder lastBackupTimestamp(java.util.Date lastBackupTimestamp) {
             this.lastBackupTimestamp = lastBackupTimestamp;
             this.__explicitlySet__.add("lastBackupTimestamp");
@@ -361,127 +375,144 @@ public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         *
-         **/
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /**
-         * The Connection strings used to connect to the Oracle Database.
-         **/
+        /** The Connection strings used to connect to the Oracle Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("connectionStrings")
         private DatabaseConnectionStrings connectionStrings;
 
         /**
          * The Connection strings used to connect to the Oracle Database.
+         *
          * @param connectionStrings the value to set
          * @return this builder
-         **/
+         */
         public Builder connectionStrings(DatabaseConnectionStrings connectionStrings) {
             this.connectionStrings = connectionStrings;
             this.__explicitlySet__.add("connectionStrings");
             return this;
         }
         /**
-         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-         **/
+         * The OCID of the key container that is used as the master encryption key in database
+         * transparent data encryption (TDE) operations.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
         /**
-         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         * The OCID of the key container that is used as the master encryption key in database
+         * transparent data encryption (TDE) operations.
+         *
          * @param kmsKeyId the value to set
          * @return this builder
-         **/
+         */
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             this.__explicitlySet__.add("kmsKeyId");
             return this;
         }
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-         *
-         **/
+         * The OCID of the key container version that is used in database transparent data
+         * encryption (TDE) operations KMS Key can have multiple key versions. If none is specified,
+         * the current key version (latest) of the Key Id is used for the operation.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
         private String kmsKeyVersionId;
 
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+         * The OCID of the key container version that is used in database transparent data
+         * encryption (TDE) operations KMS Key can have multiple key versions. If none is specified,
+         * the current key version (latest) of the Key Id is used for the operation.
          *
          * @param kmsKeyVersionId the value to set
          * @return this builder
-         **/
+         */
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
             this.kmsKeyVersionId = kmsKeyVersionId;
             this.__explicitlySet__.add("kmsKeyVersionId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Oracle Cloud Infrastructure
+         * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Oracle Cloud Infrastructure
+         * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         *
          * @param vaultId the value to set
          * @return this builder
-         **/
+         */
         public Builder vaultId(String vaultId) {
             this.vaultId = vaultId;
             this.__explicitlySet__.add("vaultId");
             return this;
         }
         /**
-         * Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-         **/
+         * Point in time recovery timeStamp of the source database at which cloned database system
+         * is cloned from the source database system, as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabasePointInTimeRecoveryTimestamp")
         private java.util.Date sourceDatabasePointInTimeRecoveryTimestamp;
 
         /**
-         * Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+         * Point in time recovery timeStamp of the source database at which cloned database system
+         * is cloned from the source database system, as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339)
+         *
          * @param sourceDatabasePointInTimeRecoveryTimestamp the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceDatabasePointInTimeRecoveryTimestamp(
                 java.util.Date sourceDatabasePointInTimeRecoveryTimestamp) {
             this.sourceDatabasePointInTimeRecoveryTimestamp =
@@ -490,32 +521,34 @@ public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The database software image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         **/
+         * The database software image
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
         private String databaseSoftwareImageId;
 
         /**
-         * The database software image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * The database software image
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         *
          * @param databaseSoftwareImageId the value to set
          * @return this builder
-         **/
+         */
         public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
             this.databaseSoftwareImageId = databaseSoftwareImageId;
             this.__explicitlySet__.add("databaseSoftwareImageId");
             return this;
         }
-        /**
-         * True if the database is a container database.
-         **/
+        /** True if the database is a container database. */
         @com.fasterxml.jackson.annotation.JsonProperty("isCdb")
         private Boolean isCdb;
 
         /**
          * True if the database is a container database.
+         *
          * @param isCdb the value to set
          * @return this builder
-         **/
+         */
         public Builder isCdb(Boolean isCdb) {
             this.isCdb = isCdb;
             this.__explicitlySet__.add("isCdb");
@@ -531,10 +564,7 @@ public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBm
             this.__explicitlySet__.add("databaseManagementConfig");
             return this;
         }
-        /**
-         * Specifies a prefix for the {@code Oracle SID} of the database to be created.
-         *
-         **/
+        /** Specifies a prefix for the {@code Oracle SID} of the database to be created. */
         @com.fasterxml.jackson.annotation.JsonProperty("sidPrefix")
         private String sidPrefix;
 
@@ -543,7 +573,7 @@ public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBm
          *
          * @param sidPrefix the value to set
          * @return this builder
-         **/
+         */
         public Builder sidPrefix(String sidPrefix) {
             this.sidPrefix = sidPrefix;
             this.__explicitlySet__.add("sidPrefix");
@@ -677,9 +707,7 @@ public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -689,179 +717,193 @@ public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * database.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * database.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The character set for the database.
-     **/
+    /** The character set for the database. */
     @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
     private final String characterSet;
 
     /**
      * The character set for the database.
+     *
      * @return the value
-     **/
+     */
     public String getCharacterSet() {
         return characterSet;
     }
 
-    /**
-     * The national character set for the database.
-     **/
+    /** The national character set for the database. */
     @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
     private final String ncharacterSet;
 
     /**
      * The national character set for the database.
+     *
      * @return the value
-     **/
+     */
     public String getNcharacterSet() {
         return ncharacterSet;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Database Home.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dbHomeId")
     private final String dbHomeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Database Home.
+     *
      * @return the value
-     **/
+     */
     public String getDbHomeId() {
         return dbHomeId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * system.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * system.
+     *
      * @return the value
-     **/
+     */
     public String getDbSystemId() {
         return dbSystemId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * cluster.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
     private final String vmClusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * cluster.
+     *
      * @return the value
-     **/
+     */
     public String getVmClusterId() {
         return vmClusterId;
     }
 
-    /**
-     * The database name.
-     **/
+    /** The database name. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
     private final String dbName;
 
     /**
      * The database name.
+     *
      * @return the value
-     **/
+     */
     public String getDbName() {
         return dbName;
     }
 
     /**
-     * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-     **/
+     * The name of the pluggable database. The name must begin with an alphabetic character and can
+     * contain a maximum of thirty alphanumeric characters. Special characters are not permitted.
+     * Pluggable database should not be same as database name.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("pdbName")
     private final String pdbName;
 
     /**
-     * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
+     * The name of the pluggable database. The name must begin with an alphabetic character and can
+     * contain a maximum of thirty alphanumeric characters. Special characters are not permitted.
+     * Pluggable database should not be same as database name.
+     *
      * @return the value
-     **/
+     */
     public String getPdbName() {
         return pdbName;
     }
 
-    /**
-     * The database workload type.
-     **/
+    /** The database workload type. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
     private final String dbWorkload;
 
     /**
      * The database workload type.
+     *
      * @return the value
-     **/
+     */
     public String getDbWorkload() {
         return dbWorkload;
     }
 
     /**
-     * A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
-     *
-     **/
+     * A system-generated name for the database to ensure uniqueness within an Oracle Data Guard
+     * group (a primary database and its standby databases). The unique name cannot be changed.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
     private final String dbUniqueName;
 
     /**
-     * A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
+     * A system-generated name for the database to ensure uniqueness within an Oracle Data Guard
+     * group (a primary database and its standby databases). The unique name cannot be changed.
      *
      * @return the value
-     **/
+     */
     public String getDbUniqueName() {
         return dbUniqueName;
     }
 
-    /**
-     * Additional information about the current lifecycle state.
-     **/
+    /** Additional information about the current lifecycle state. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Additional information about the current lifecycle state.
+     *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /**
-     * The current state of the database.
-     **/
-    public enum LifecycleState {
+    /** The current state of the database. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
         Updating("UPDATING"),
@@ -874,8 +916,8 @@ public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBm
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -914,44 +956,41 @@ public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current state of the database.
-     **/
+    /** The current state of the database. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the database.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * The date and time the database was created.
-     **/
+    /** The date and time the database was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the database was created.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The date and time when the latest database backup was created.
-     **/
+    /** The date and time when the latest database backup was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("lastBackupTimestamp")
     private final java.util.Date lastBackupTimestamp;
 
     /**
      * The date and time when the latest database backup was created.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getLastBackupTimestamp() {
         return lastBackupTimestamp;
     }
@@ -964,141 +1003,160 @@ public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
-    /**
-     * The Connection strings used to connect to the Oracle Database.
-     **/
+    /** The Connection strings used to connect to the Oracle Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("connectionStrings")
     private final DatabaseConnectionStrings connectionStrings;
 
     /**
      * The Connection strings used to connect to the Oracle Database.
+     *
      * @return the value
-     **/
+     */
     public DatabaseConnectionStrings getConnectionStrings() {
         return connectionStrings;
     }
 
     /**
-     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-     **/
+     * The OCID of the key container that is used as the master encryption key in database
+     * transparent data encryption (TDE) operations.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
-     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+     * The OCID of the key container that is used as the master encryption key in database
+     * transparent data encryption (TDE) operations.
+     *
      * @return the value
-     **/
+     */
     public String getKmsKeyId() {
         return kmsKeyId;
     }
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-     *
-     **/
+     * The OCID of the key container version that is used in database transparent data encryption
+     * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
+     * key version (latest) of the Key Id is used for the operation.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     * The OCID of the key container version that is used in database transparent data encryption
+     * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
+     * key version (latest) of the Key Id is used for the operation.
      *
      * @return the value
-     **/
+     */
     public String getKmsKeyVersionId() {
         return kmsKeyVersionId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Oracle Cloud Infrastructure
+     * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Oracle Cloud Infrastructure
+     * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     *
      * @return the value
-     **/
+     */
     public String getVaultId() {
         return vaultId;
     }
 
     /**
-     * Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-     **/
+     * Point in time recovery timeStamp of the source database at which cloned database system is
+     * cloned from the source database system, as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabasePointInTimeRecoveryTimestamp")
     private final java.util.Date sourceDatabasePointInTimeRecoveryTimestamp;
 
     /**
-     * Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+     * Point in time recovery timeStamp of the source database at which cloned database system is
+     * cloned from the source database system, as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339)
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getSourceDatabasePointInTimeRecoveryTimestamp() {
         return sourceDatabasePointInTimeRecoveryTimestamp;
     }
 
     /**
-     * The database software image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     **/
+     * The database software image
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
     private final String databaseSoftwareImageId;
 
     /**
-     * The database software image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * The database software image
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     *
      * @return the value
-     **/
+     */
     public String getDatabaseSoftwareImageId() {
         return databaseSoftwareImageId;
     }
 
-    /**
-     * True if the database is a container database.
-     **/
+    /** True if the database is a container database. */
     @com.fasterxml.jackson.annotation.JsonProperty("isCdb")
     private final Boolean isCdb;
 
     /**
      * True if the database is a container database.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsCdb() {
         return isCdb;
     }
@@ -1110,10 +1168,7 @@ public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return databaseManagementConfig;
     }
 
-    /**
-     * Specifies a prefix for the {@code Oracle SID} of the database to be created.
-     *
-     **/
+    /** Specifies a prefix for the {@code Oracle SID} of the database to be created. */
     @com.fasterxml.jackson.annotation.JsonProperty("sidPrefix")
     private final String sidPrefix;
 
@@ -1121,7 +1176,7 @@ public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBm
      * Specifies a prefix for the {@code Oracle SID} of the database to be created.
      *
      * @return the value
-     **/
+     */
     public String getSidPrefix() {
         return sidPrefix;
     }
@@ -1133,6 +1188,7 @@ public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

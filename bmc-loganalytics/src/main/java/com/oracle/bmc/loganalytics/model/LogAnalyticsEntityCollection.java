@@ -5,23 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Collection of log analytics entities.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Collection of log analytics entities. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = LogAnalyticsEntityCollection.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = LogAnalyticsEntityCollection.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class LogAnalyticsEntityCollection
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items"})
     public LogAnalyticsEntityCollection(java.util.List<LogAnalyticsEntitySummary> items) {
@@ -31,17 +30,16 @@ public final class LogAnalyticsEntityCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Array of log analytics entity summary.
-         **/
+        /** Array of log analytics entity summary. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<LogAnalyticsEntitySummary> items;
 
         /**
          * Array of log analytics entity summary.
+         *
          * @param items the value to set
          * @return this builder
-         **/
+         */
         public Builder items(java.util.List<LogAnalyticsEntitySummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -68,9 +66,7 @@ public final class LogAnalyticsEntityCollection
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -79,16 +75,15 @@ public final class LogAnalyticsEntityCollection
         return new Builder().copy(this);
     }
 
-    /**
-     * Array of log analytics entity summary.
-     **/
+    /** Array of log analytics entity summary. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<LogAnalyticsEntitySummary> items;
 
     /**
      * Array of log analytics entity summary.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<LogAnalyticsEntitySummary> getItems() {
         return items;
     }
@@ -100,6 +95,7 @@ public final class LogAnalyticsEntityCollection
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

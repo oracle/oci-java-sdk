@@ -5,22 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details required to reset database parameter values.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details required to reset database parameter values. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ResetDatabaseParametersDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ResetDatabaseParametersDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ResetDatabaseParametersDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"credentials", "scope", "parameters"})
     public ResetDatabaseParametersDetails(
@@ -46,49 +46,43 @@ public final class ResetDatabaseParametersDetails
         }
         /**
          * The clause used to specify when the parameter change takes effect.
-         * <p>
-         * Use {@code MEMORY} to make the change in memory and ensure that it takes
-         * effect immediately. Use {@code SPFILE} to make the change in the server
-         * parameter file. The change takes effect when the database is next
-         * shut down and started up again. Use {@code BOTH} to make the change in
-         * memory and in the server parameter file. The change takes effect
-         * immediately and persists after the database is shut down and
-         * started up again.
          *
-         **/
+         * <p>Use {@code MEMORY} to make the change in memory and ensure that it takes effect
+         * immediately. Use {@code SPFILE} to make the change in the server parameter file. The
+         * change takes effect when the database is next shut down and started up again. Use {@code
+         * BOTH} to make the change in memory and in the server parameter file. The change takes
+         * effect immediately and persists after the database is shut down and started up again.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private ParameterScope scope;
 
         /**
          * The clause used to specify when the parameter change takes effect.
-         * <p>
-         * Use {@code MEMORY} to make the change in memory and ensure that it takes
-         * effect immediately. Use {@code SPFILE} to make the change in the server
-         * parameter file. The change takes effect when the database is next
-         * shut down and started up again. Use {@code BOTH} to make the change in
-         * memory and in the server parameter file. The change takes effect
-         * immediately and persists after the database is shut down and
-         * started up again.
+         *
+         * <p>Use {@code MEMORY} to make the change in memory and ensure that it takes effect
+         * immediately. Use {@code SPFILE} to make the change in the server parameter file. The
+         * change takes effect when the database is next shut down and started up again. Use {@code
+         * BOTH} to make the change in memory and in the server parameter file. The change takes
+         * effect immediately and persists after the database is shut down and started up again.
          *
          * @param scope the value to set
          * @return this builder
-         **/
+         */
         public Builder scope(ParameterScope scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
             return this;
         }
-        /**
-         * A list of database parameter names.
-         **/
+        /** A list of database parameter names. */
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.List<String> parameters;
 
         /**
          * A list of database parameter names.
+         *
          * @param parameters the value to set
          * @return this builder
-         **/
+         */
         public Builder parameters(java.util.List<String> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
@@ -123,9 +117,7 @@ public final class ResetDatabaseParametersDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -143,46 +135,40 @@ public final class ResetDatabaseParametersDetails
 
     /**
      * The clause used to specify when the parameter change takes effect.
-     * <p>
-     * Use {@code MEMORY} to make the change in memory and ensure that it takes
-     * effect immediately. Use {@code SPFILE} to make the change in the server
-     * parameter file. The change takes effect when the database is next
-     * shut down and started up again. Use {@code BOTH} to make the change in
-     * memory and in the server parameter file. The change takes effect
-     * immediately and persists after the database is shut down and
-     * started up again.
      *
-     **/
+     * <p>Use {@code MEMORY} to make the change in memory and ensure that it takes effect
+     * immediately. Use {@code SPFILE} to make the change in the server parameter file. The change
+     * takes effect when the database is next shut down and started up again. Use {@code BOTH} to
+     * make the change in memory and in the server parameter file. The change takes effect
+     * immediately and persists after the database is shut down and started up again.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final ParameterScope scope;
 
     /**
      * The clause used to specify when the parameter change takes effect.
-     * <p>
-     * Use {@code MEMORY} to make the change in memory and ensure that it takes
-     * effect immediately. Use {@code SPFILE} to make the change in the server
-     * parameter file. The change takes effect when the database is next
-     * shut down and started up again. Use {@code BOTH} to make the change in
-     * memory and in the server parameter file. The change takes effect
-     * immediately and persists after the database is shut down and
-     * started up again.
+     *
+     * <p>Use {@code MEMORY} to make the change in memory and ensure that it takes effect
+     * immediately. Use {@code SPFILE} to make the change in the server parameter file. The change
+     * takes effect when the database is next shut down and started up again. Use {@code BOTH} to
+     * make the change in memory and in the server parameter file. The change takes effect
+     * immediately and persists after the database is shut down and started up again.
      *
      * @return the value
-     **/
+     */
     public ParameterScope getScope() {
         return scope;
     }
 
-    /**
-     * A list of database parameter names.
-     **/
+    /** A list of database parameter names. */
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.List<String> parameters;
 
     /**
      * A list of database parameter names.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getParameters() {
         return parameters;
     }
@@ -194,6 +180,7 @@ public final class ResetDatabaseParametersDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

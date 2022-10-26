@@ -5,23 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The results of the comparison between two security assessment resources.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The results of the comparison between two security assessment resources. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SecurityAssessmentComparisonPerTarget.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SecurityAssessmentComparisonPerTarget.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SecurityAssessmentComparisonPerTarget
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "baselineTargetId",
@@ -58,145 +57,136 @@ public final class SecurityAssessmentComparisonPerTarget
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the target that is used as a baseline in this comparison.
-         **/
+        /** The OCID of the target that is used as a baseline in this comparison. */
         @com.fasterxml.jackson.annotation.JsonProperty("baselineTargetId")
         private String baselineTargetId;
 
         /**
          * The OCID of the target that is used as a baseline in this comparison.
+         *
          * @param baselineTargetId the value to set
          * @return this builder
-         **/
+         */
         public Builder baselineTargetId(String baselineTargetId) {
             this.baselineTargetId = baselineTargetId;
             this.__explicitlySet__.add("baselineTargetId");
             return this;
         }
-        /**
-         * The OCID of the target to be compared against the baseline target.
-         **/
+        /** The OCID of the target to be compared against the baseline target. */
         @com.fasterxml.jackson.annotation.JsonProperty("currentTargetId")
         private String currentTargetId;
 
         /**
          * The OCID of the target to be compared against the baseline target.
+         *
          * @param currentTargetId the value to set
          * @return this builder
-         **/
+         */
         public Builder currentTargetId(String currentTargetId) {
             this.currentTargetId = currentTargetId;
             this.__explicitlySet__.add("currentTargetId");
             return this;
         }
-        /**
-         * A comparison between findings belonging to Auditing category.
-         **/
+        /** A comparison between findings belonging to Auditing category. */
         @com.fasterxml.jackson.annotation.JsonProperty("auditing")
         private java.util.List<Diffs> auditing;
 
         /**
          * A comparison between findings belonging to Auditing category.
+         *
          * @param auditing the value to set
          * @return this builder
-         **/
+         */
         public Builder auditing(java.util.List<Diffs> auditing) {
             this.auditing = auditing;
             this.__explicitlySet__.add("auditing");
             return this;
         }
-        /**
-         * A comparison between findings belonging to Authorization Control category.
-         **/
+        /** A comparison between findings belonging to Authorization Control category. */
         @com.fasterxml.jackson.annotation.JsonProperty("authorizationControl")
         private java.util.List<Diffs> authorizationControl;
 
         /**
          * A comparison between findings belonging to Authorization Control category.
+         *
          * @param authorizationControl the value to set
          * @return this builder
-         **/
+         */
         public Builder authorizationControl(java.util.List<Diffs> authorizationControl) {
             this.authorizationControl = authorizationControl;
             this.__explicitlySet__.add("authorizationControl");
             return this;
         }
-        /**
-         * Comparison between findings belonging to Data Encryption category.
-         **/
+        /** Comparison between findings belonging to Data Encryption category. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataEncryption")
         private java.util.List<Diffs> dataEncryption;
 
         /**
          * Comparison between findings belonging to Data Encryption category.
+         *
          * @param dataEncryption the value to set
          * @return this builder
-         **/
+         */
         public Builder dataEncryption(java.util.List<Diffs> dataEncryption) {
             this.dataEncryption = dataEncryption;
             this.__explicitlySet__.add("dataEncryption");
             return this;
         }
-        /**
-         * Comparison between findings belonging to Database Configuration category.
-         **/
+        /** Comparison between findings belonging to Database Configuration category. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbConfiguration")
         private java.util.List<Diffs> dbConfiguration;
 
         /**
          * Comparison between findings belonging to Database Configuration category.
+         *
          * @param dbConfiguration the value to set
          * @return this builder
-         **/
+         */
         public Builder dbConfiguration(java.util.List<Diffs> dbConfiguration) {
             this.dbConfiguration = dbConfiguration;
             this.__explicitlySet__.add("dbConfiguration");
             return this;
         }
-        /**
-         * Comparison between findings belonging to Fine-Grained Access Control category.
-         **/
+        /** Comparison between findings belonging to Fine-Grained Access Control category. */
         @com.fasterxml.jackson.annotation.JsonProperty("fineGrainedAccessControl")
         private java.util.List<Diffs> fineGrainedAccessControl;
 
         /**
          * Comparison between findings belonging to Fine-Grained Access Control category.
+         *
          * @param fineGrainedAccessControl the value to set
          * @return this builder
-         **/
+         */
         public Builder fineGrainedAccessControl(java.util.List<Diffs> fineGrainedAccessControl) {
             this.fineGrainedAccessControl = fineGrainedAccessControl;
             this.__explicitlySet__.add("fineGrainedAccessControl");
             return this;
         }
-        /**
-         * Comparison between findings belonging to Privileges and Roles category.
-         **/
+        /** Comparison between findings belonging to Privileges and Roles category. */
         @com.fasterxml.jackson.annotation.JsonProperty("privilegesAndRoles")
         private java.util.List<Diffs> privilegesAndRoles;
 
         /**
          * Comparison between findings belonging to Privileges and Roles category.
+         *
          * @param privilegesAndRoles the value to set
          * @return this builder
-         **/
+         */
         public Builder privilegesAndRoles(java.util.List<Diffs> privilegesAndRoles) {
             this.privilegesAndRoles = privilegesAndRoles;
             this.__explicitlySet__.add("privilegesAndRoles");
             return this;
         }
-        /**
-         * Comparison between findings belonging to User Accounts category.
-         **/
+        /** Comparison between findings belonging to User Accounts category. */
         @com.fasterxml.jackson.annotation.JsonProperty("userAccounts")
         private java.util.List<Diffs> userAccounts;
 
         /**
          * Comparison between findings belonging to User Accounts category.
+         *
          * @param userAccounts the value to set
          * @return this builder
-         **/
+         */
         public Builder userAccounts(java.util.List<Diffs> userAccounts) {
             this.userAccounts = userAccounts;
             this.__explicitlySet__.add("userAccounts");
@@ -257,9 +247,7 @@ public final class SecurityAssessmentComparisonPerTarget
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -268,128 +256,119 @@ public final class SecurityAssessmentComparisonPerTarget
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the target that is used as a baseline in this comparison.
-     **/
+    /** The OCID of the target that is used as a baseline in this comparison. */
     @com.fasterxml.jackson.annotation.JsonProperty("baselineTargetId")
     private final String baselineTargetId;
 
     /**
      * The OCID of the target that is used as a baseline in this comparison.
+     *
      * @return the value
-     **/
+     */
     public String getBaselineTargetId() {
         return baselineTargetId;
     }
 
-    /**
-     * The OCID of the target to be compared against the baseline target.
-     **/
+    /** The OCID of the target to be compared against the baseline target. */
     @com.fasterxml.jackson.annotation.JsonProperty("currentTargetId")
     private final String currentTargetId;
 
     /**
      * The OCID of the target to be compared against the baseline target.
+     *
      * @return the value
-     **/
+     */
     public String getCurrentTargetId() {
         return currentTargetId;
     }
 
-    /**
-     * A comparison between findings belonging to Auditing category.
-     **/
+    /** A comparison between findings belonging to Auditing category. */
     @com.fasterxml.jackson.annotation.JsonProperty("auditing")
     private final java.util.List<Diffs> auditing;
 
     /**
      * A comparison between findings belonging to Auditing category.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Diffs> getAuditing() {
         return auditing;
     }
 
-    /**
-     * A comparison between findings belonging to Authorization Control category.
-     **/
+    /** A comparison between findings belonging to Authorization Control category. */
     @com.fasterxml.jackson.annotation.JsonProperty("authorizationControl")
     private final java.util.List<Diffs> authorizationControl;
 
     /**
      * A comparison between findings belonging to Authorization Control category.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Diffs> getAuthorizationControl() {
         return authorizationControl;
     }
 
-    /**
-     * Comparison between findings belonging to Data Encryption category.
-     **/
+    /** Comparison between findings belonging to Data Encryption category. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataEncryption")
     private final java.util.List<Diffs> dataEncryption;
 
     /**
      * Comparison between findings belonging to Data Encryption category.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Diffs> getDataEncryption() {
         return dataEncryption;
     }
 
-    /**
-     * Comparison between findings belonging to Database Configuration category.
-     **/
+    /** Comparison between findings belonging to Database Configuration category. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbConfiguration")
     private final java.util.List<Diffs> dbConfiguration;
 
     /**
      * Comparison between findings belonging to Database Configuration category.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Diffs> getDbConfiguration() {
         return dbConfiguration;
     }
 
-    /**
-     * Comparison between findings belonging to Fine-Grained Access Control category.
-     **/
+    /** Comparison between findings belonging to Fine-Grained Access Control category. */
     @com.fasterxml.jackson.annotation.JsonProperty("fineGrainedAccessControl")
     private final java.util.List<Diffs> fineGrainedAccessControl;
 
     /**
      * Comparison between findings belonging to Fine-Grained Access Control category.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Diffs> getFineGrainedAccessControl() {
         return fineGrainedAccessControl;
     }
 
-    /**
-     * Comparison between findings belonging to Privileges and Roles category.
-     **/
+    /** Comparison between findings belonging to Privileges and Roles category. */
     @com.fasterxml.jackson.annotation.JsonProperty("privilegesAndRoles")
     private final java.util.List<Diffs> privilegesAndRoles;
 
     /**
      * Comparison between findings belonging to Privileges and Roles category.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Diffs> getPrivilegesAndRoles() {
         return privilegesAndRoles;
     }
 
-    /**
-     * Comparison between findings belonging to User Accounts category.
-     **/
+    /** Comparison between findings belonging to User Accounts category. */
     @com.fasterxml.jackson.annotation.JsonProperty("userAccounts")
     private final java.util.List<Diffs> userAccounts;
 
     /**
      * Comparison between findings belonging to User Accounts category.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Diffs> getUserAccounts() {
         return userAccounts;
     }
@@ -401,6 +380,7 @@ public final class SecurityAssessmentComparisonPerTarget
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

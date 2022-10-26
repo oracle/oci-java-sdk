@@ -5,20 +5,20 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Deployment Data for an OggDeployment
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Deployment Data for an OggDeployment <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OggDeployment.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OggDeployment extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class OggDeployment extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "deploymentName",
@@ -38,27 +38,25 @@ public final class OggDeployment extends com.oracle.bmc.http.internal.Explicitly
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
-         *
-         **/
+         * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters
+         * long, must contain only alphanumeric characters and must start with a letter.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentName")
         private String deploymentName;
 
         /**
-         * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+         * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters
+         * long, must contain only alphanumeric characters and must start with a letter.
          *
          * @param deploymentName the value to set
          * @return this builder
-         **/
+         */
         public Builder deploymentName(String deploymentName) {
             this.deploymentName = deploymentName;
             this.__explicitlySet__.add("deploymentName");
             return this;
         }
-        /**
-         * The GoldenGate deployment console username.
-         *
-         **/
+        /** The GoldenGate deployment console username. */
         @com.fasterxml.jackson.annotation.JsonProperty("adminUsername")
         private String adminUsername;
 
@@ -67,16 +65,13 @@ public final class OggDeployment extends com.oracle.bmc.http.internal.Explicitly
          *
          * @param adminUsername the value to set
          * @return this builder
-         **/
+         */
         public Builder adminUsername(String adminUsername) {
             this.adminUsername = adminUsername;
             this.__explicitlySet__.add("adminUsername");
             return this;
         }
-        /**
-         * Version of OGG
-         *
-         **/
+        /** Version of OGG */
         @com.fasterxml.jackson.annotation.JsonProperty("oggVersion")
         private String oggVersion;
 
@@ -85,16 +80,13 @@ public final class OggDeployment extends com.oracle.bmc.http.internal.Explicitly
          *
          * @param oggVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder oggVersion(String oggVersion) {
             this.oggVersion = oggVersion;
             this.__explicitlySet__.add("oggVersion");
             return this;
         }
-        /**
-         * A PEM-encoded SSL certificate.
-         *
-         **/
+        /** A PEM-encoded SSL certificate. */
         @com.fasterxml.jackson.annotation.JsonProperty("certificate")
         private String certificate;
 
@@ -103,7 +95,7 @@ public final class OggDeployment extends com.oracle.bmc.http.internal.Explicitly
          *
          * @param certificate the value to set
          * @return this builder
-         **/
+         */
         public Builder certificate(String certificate) {
             this.certificate = certificate;
             this.__explicitlySet__.add("certificate");
@@ -144,9 +136,7 @@ public final class OggDeployment extends com.oracle.bmc.http.internal.Explicitly
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -156,25 +146,23 @@ public final class OggDeployment extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
-     *
-     **/
+     * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters
+     * long, must contain only alphanumeric characters and must start with a letter.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentName")
     private final String deploymentName;
 
     /**
-     * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+     * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters
+     * long, must contain only alphanumeric characters and must start with a letter.
      *
      * @return the value
-     **/
+     */
     public String getDeploymentName() {
         return deploymentName;
     }
 
-    /**
-     * The GoldenGate deployment console username.
-     *
-     **/
+    /** The GoldenGate deployment console username. */
     @com.fasterxml.jackson.annotation.JsonProperty("adminUsername")
     private final String adminUsername;
 
@@ -182,15 +170,12 @@ public final class OggDeployment extends com.oracle.bmc.http.internal.Explicitly
      * The GoldenGate deployment console username.
      *
      * @return the value
-     **/
+     */
     public String getAdminUsername() {
         return adminUsername;
     }
 
-    /**
-     * Version of OGG
-     *
-     **/
+    /** Version of OGG */
     @com.fasterxml.jackson.annotation.JsonProperty("oggVersion")
     private final String oggVersion;
 
@@ -198,15 +183,12 @@ public final class OggDeployment extends com.oracle.bmc.http.internal.Explicitly
      * Version of OGG
      *
      * @return the value
-     **/
+     */
     public String getOggVersion() {
         return oggVersion;
     }
 
-    /**
-     * A PEM-encoded SSL certificate.
-     *
-     **/
+    /** A PEM-encoded SSL certificate. */
     @com.fasterxml.jackson.annotation.JsonProperty("certificate")
     private final String certificate;
 
@@ -214,7 +196,7 @@ public final class OggDeployment extends com.oracle.bmc.http.internal.Explicitly
      * A PEM-encoded SSL certificate.
      *
      * @return the value
-     **/
+     */
     public String getCertificate() {
         return certificate;
     }
@@ -226,6 +208,7 @@ public final class OggDeployment extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

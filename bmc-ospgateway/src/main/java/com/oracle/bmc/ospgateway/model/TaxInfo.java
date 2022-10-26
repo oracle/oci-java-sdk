@@ -5,19 +5,20 @@
 package com.oracle.bmc.ospgateway.model;
 
 /**
- * Tax details.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Tax details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TaxInfo.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TaxInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class TaxInfo extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "taxPayerId",
@@ -42,81 +43,76 @@ public final class TaxInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmc
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Tay payer identifier.
-         **/
+        /** Tay payer identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("taxPayerId")
         private String taxPayerId;
 
         /**
          * Tay payer identifier.
+         *
          * @param taxPayerId the value to set
          * @return this builder
-         **/
+         */
         public Builder taxPayerId(String taxPayerId) {
             this.taxPayerId = taxPayerId;
             this.__explicitlySet__.add("taxPayerId");
             return this;
         }
-        /**
-         * Tax registration number.
-         **/
+        /** Tax registration number. */
         @com.fasterxml.jackson.annotation.JsonProperty("taxRegNumber")
         private String taxRegNumber;
 
         /**
          * Tax registration number.
+         *
          * @param taxRegNumber the value to set
          * @return this builder
-         **/
+         */
         public Builder taxRegNumber(String taxRegNumber) {
             this.taxRegNumber = taxRegNumber;
             this.__explicitlySet__.add("taxRegNumber");
             return this;
         }
-        /**
-         * Tax exemption reason code.
-         **/
+        /** Tax exemption reason code. */
         @com.fasterxml.jackson.annotation.JsonProperty("noTaxReasonCode")
         private String noTaxReasonCode;
 
         /**
          * Tax exemption reason code.
+         *
          * @param noTaxReasonCode the value to set
          * @return this builder
-         **/
+         */
         public Builder noTaxReasonCode(String noTaxReasonCode) {
             this.noTaxReasonCode = noTaxReasonCode;
             this.__explicitlySet__.add("noTaxReasonCode");
             return this;
         }
-        /**
-         * Tax exemption reason description.
-         **/
+        /** Tax exemption reason description. */
         @com.fasterxml.jackson.annotation.JsonProperty("noTaxReasonCodeDetails")
         private String noTaxReasonCodeDetails;
 
         /**
          * Tax exemption reason description.
+         *
          * @param noTaxReasonCodeDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder noTaxReasonCodeDetails(String noTaxReasonCodeDetails) {
             this.noTaxReasonCodeDetails = noTaxReasonCodeDetails;
             this.__explicitlySet__.add("noTaxReasonCodeDetails");
             return this;
         }
-        /**
-         * Brazilian companies' CNPJ number.
-         **/
+        /** Brazilian companies' CNPJ number. */
         @com.fasterxml.jackson.annotation.JsonProperty("taxCnpj")
         private String taxCnpj;
 
         /**
          * Brazilian companies' CNPJ number.
+         *
          * @param taxCnpj the value to set
          * @return this builder
-         **/
+         */
         public Builder taxCnpj(String taxCnpj) {
             this.taxCnpj = taxCnpj;
             this.__explicitlySet__.add("taxCnpj");
@@ -161,9 +157,7 @@ public final class TaxInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -172,72 +166,67 @@ public final class TaxInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         return new Builder().copy(this);
     }
 
-    /**
-     * Tay payer identifier.
-     **/
+    /** Tay payer identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("taxPayerId")
     private final String taxPayerId;
 
     /**
      * Tay payer identifier.
+     *
      * @return the value
-     **/
+     */
     public String getTaxPayerId() {
         return taxPayerId;
     }
 
-    /**
-     * Tax registration number.
-     **/
+    /** Tax registration number. */
     @com.fasterxml.jackson.annotation.JsonProperty("taxRegNumber")
     private final String taxRegNumber;
 
     /**
      * Tax registration number.
+     *
      * @return the value
-     **/
+     */
     public String getTaxRegNumber() {
         return taxRegNumber;
     }
 
-    /**
-     * Tax exemption reason code.
-     **/
+    /** Tax exemption reason code. */
     @com.fasterxml.jackson.annotation.JsonProperty("noTaxReasonCode")
     private final String noTaxReasonCode;
 
     /**
      * Tax exemption reason code.
+     *
      * @return the value
-     **/
+     */
     public String getNoTaxReasonCode() {
         return noTaxReasonCode;
     }
 
-    /**
-     * Tax exemption reason description.
-     **/
+    /** Tax exemption reason description. */
     @com.fasterxml.jackson.annotation.JsonProperty("noTaxReasonCodeDetails")
     private final String noTaxReasonCodeDetails;
 
     /**
      * Tax exemption reason description.
+     *
      * @return the value
-     **/
+     */
     public String getNoTaxReasonCodeDetails() {
         return noTaxReasonCodeDetails;
     }
 
-    /**
-     * Brazilian companies' CNPJ number.
-     **/
+    /** Brazilian companies' CNPJ number. */
     @com.fasterxml.jackson.annotation.JsonProperty("taxCnpj")
     private final String taxCnpj;
 
     /**
      * Brazilian companies' CNPJ number.
+     *
      * @return the value
-     **/
+     */
     public String getTaxCnpj() {
         return taxCnpj;
     }
@@ -249,6 +238,7 @@ public final class TaxInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmc
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,51 +5,45 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Build source required for the Build stage.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Build source required for the Build stage. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "connectionType",
-    defaultImpl = BuildSource.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "connectionType",
+        defaultImpl = BuildSource.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = VbsBuildSource.class, name = "VBS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = BitbucketServerBuildSource.class,
-        name = "BITBUCKET_SERVER"
-    ),
+            value = BitbucketServerBuildSource.class,
+            name = "BITBUCKET_SERVER"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GithubBuildSource.class,
-        name = "GITHUB"
-    ),
+            value = GithubBuildSource.class,
+            name = "GITHUB"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = BitbucketCloudBuildSource.class,
-        name = "BITBUCKET_CLOUD"
-    ),
+            value = BitbucketCloudBuildSource.class,
+            name = "BITBUCKET_CLOUD"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GitlabServerBuildSource.class,
-        name = "GITLAB_SERVER"
-    ),
+            value = GitlabServerBuildSource.class,
+            name = "GITLAB_SERVER"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = DevopsCodeRepositoryBuildSource.class,
-        name = "DEVOPS_CODE_REPOSITORY"
-    ),
+            value = DevopsCodeRepositoryBuildSource.class,
+            name = "DEVOPS_CODE_REPOSITORY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GitlabBuildSource.class,
-        name = "GITLAB"
-    )
+            value = GitlabBuildSource.class,
+            name = "GITLAB")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class BuildSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class BuildSource extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "repositoryUrl", "branch"})
     protected BuildSource(String name, String repositoryUrl, String branch) {
@@ -60,43 +54,44 @@ public class BuildSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
-     **/
+     * Name of the build source. This must be unique within a build source collection. The name can
+     * be used by customers to locate the working directory pertinent to this repository.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
+     * Name of the build source. This must be unique within a build source collection. The name can
+     * be used by customers to locate the working directory pertinent to this repository.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * URL for the repository.
-     **/
+    /** URL for the repository. */
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
     private final String repositoryUrl;
 
     /**
      * URL for the repository.
+     *
      * @return the value
-     **/
+     */
     public String getRepositoryUrl() {
         return repositoryUrl;
     }
 
-    /**
-     * Branch name.
-     **/
+    /** Branch name. */
     @com.fasterxml.jackson.annotation.JsonProperty("branch")
     private final String branch;
 
     /**
      * Branch name.
+     *
      * @return the value
-     **/
+     */
     public String getBranch() {
         return branch;
     }
@@ -108,6 +103,7 @@ public class BuildSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -151,10 +147,8 @@ public class BuildSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         return result;
     }
 
-    /**
-     * The type of source provider.
-     **/
-    public enum ConnectionType {
+    /** The type of source provider. */
+    public enum ConnectionType implements com.oracle.bmc.http.internal.BmcEnum {
         Github("GITHUB"),
         Gitlab("GITLAB"),
         GitlabServer("GITLAB_SERVER"),
@@ -164,8 +158,8 @@ public class BuildSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         Vbs("VBS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 

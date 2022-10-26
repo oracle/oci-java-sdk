@@ -36,16 +36,6 @@ public class FileBasedResourcePrincipalFederationClientTest {
                     }
 
                     @Override
-                    public RSAPublicKey getPublicKey() {
-                        return null;
-                    }
-
-                    @Override
-                    public RSAPrivateKey getPrivateKey() {
-                        return null;
-                    }
-
-                    @Override
                     public void refreshKeys() {}
                 };
         String path = temp.getAbsolutePath();

@@ -5,25 +5,24 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The details to create a basic auth rest connection.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details to create a basic auth rest connection. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateConnectionFromRestBasicAuth.Builder.class
-)
+        builder = CreateConnectionFromRestBasicAuth.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateConnectionFromRestBasicAuth extends CreateConnectionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -108,17 +107,16 @@ public final class CreateConnectionFromRestBasicAuth extends CreateConnectionDet
             this.__explicitlySet__.add("registryMetadata");
             return this;
         }
-        /**
-         * Username for the connection.
-         **/
+        /** Username for the connection. */
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
          * Username for the connection.
+         *
          * @param username the value to set
          * @return this builder
-         **/
+         */
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
@@ -133,17 +131,16 @@ public final class CreateConnectionFromRestBasicAuth extends CreateConnectionDet
             this.__explicitlySet__.add("passwordSecret");
             return this;
         }
-        /**
-         * Optional header name if used other than default header(Authorization).
-         **/
+        /** Optional header name if used other than default header(Authorization). */
         @com.fasterxml.jackson.annotation.JsonProperty("authHeader")
         private String authHeader;
 
         /**
          * Optional header name if used other than default header(Authorization).
+         *
          * @param authHeader the value to set
          * @return this builder
-         **/
+         */
         public Builder authHeader(String authHeader) {
             this.authHeader = authHeader;
             this.__explicitlySet__.add("authHeader");
@@ -216,9 +213,7 @@ public final class CreateConnectionFromRestBasicAuth extends CreateConnectionDet
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -256,16 +251,15 @@ public final class CreateConnectionFromRestBasicAuth extends CreateConnectionDet
         this.authHeader = authHeader;
     }
 
-    /**
-     * Username for the connection.
-     **/
+    /** Username for the connection. */
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
      * Username for the connection.
+     *
      * @return the value
-     **/
+     */
     public String getUsername() {
         return username;
     }
@@ -277,16 +271,15 @@ public final class CreateConnectionFromRestBasicAuth extends CreateConnectionDet
         return passwordSecret;
     }
 
-    /**
-     * Optional header name if used other than default header(Authorization).
-     **/
+    /** Optional header name if used other than default header(Authorization). */
     @com.fasterxml.jackson.annotation.JsonProperty("authHeader")
     private final String authHeader;
 
     /**
      * Optional header name if used other than default header(Authorization).
+     *
      * @return the value
-     **/
+     */
     public String getAuthHeader() {
         return authHeader;
     }
@@ -298,6 +291,7 @@ public final class CreateConnectionFromRestBasicAuth extends CreateConnectionDet
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

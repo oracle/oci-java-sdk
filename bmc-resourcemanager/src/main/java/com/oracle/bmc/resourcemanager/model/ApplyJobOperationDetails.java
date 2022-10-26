@@ -5,26 +5,24 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * Job details that are specific to apply operations.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Job details that are specific to apply operations. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ApplyJobOperationDetails.Builder.class
-)
+        builder = ApplyJobOperationDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "operation"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "operation")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ApplyJobOperationDetails extends JobOperationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -38,40 +36,40 @@ public final class ApplyJobOperationDetails extends JobOperationDetails {
             return this;
         }
         /**
-         * Specifies the source of the execution plan to apply.
-         * Use {@code AUTO_APPROVED} to run the job without an execution plan.
-         *
-         **/
+         * Specifies the source of the execution plan to apply. Use {@code AUTO_APPROVED} to run the
+         * job without an execution plan.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("executionPlanStrategy")
         private ExecutionPlanStrategy executionPlanStrategy;
 
         /**
-         * Specifies the source of the execution plan to apply.
-         * Use {@code AUTO_APPROVED} to run the job without an execution plan.
+         * Specifies the source of the execution plan to apply. Use {@code AUTO_APPROVED} to run the
+         * job without an execution plan.
          *
          * @param executionPlanStrategy the value to set
          * @return this builder
-         **/
+         */
         public Builder executionPlanStrategy(ExecutionPlanStrategy executionPlanStrategy) {
             this.executionPlanStrategy = executionPlanStrategy;
             this.__explicitlySet__.add("executionPlanStrategy");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the plan job that contains the execution plan used for this job,
-         * or {@code null} if no execution plan was used.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the plan job that contains the execution plan used for this job, or {@code null} if no
+         * execution plan was used.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("executionPlanJobId")
         private String executionPlanJobId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the plan job that contains the execution plan used for this job,
-         * or {@code null} if no execution plan was used.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the plan job that contains the execution plan used for this job, or {@code null} if no
+         * execution plan was used.
          *
          * @param executionPlanJobId the value to set
          * @return this builder
-         **/
+         */
         public Builder executionPlanJobId(String executionPlanJobId) {
             this.executionPlanJobId = executionPlanJobId;
             this.__explicitlySet__.add("executionPlanJobId");
@@ -108,9 +106,7 @@ public final class ApplyJobOperationDetails extends JobOperationDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -138,18 +134,17 @@ public final class ApplyJobOperationDetails extends JobOperationDetails {
     }
 
     /**
-     * Specifies the source of the execution plan to apply.
-     * Use {@code AUTO_APPROVED} to run the job without an execution plan.
-     *
-     **/
-    public enum ExecutionPlanStrategy {
+     * Specifies the source of the execution plan to apply. Use {@code AUTO_APPROVED} to run the job
+     * without an execution plan.
+     */
+    public enum ExecutionPlanStrategy implements com.oracle.bmc.http.internal.BmcEnum {
         FromPlanJobId("FROM_PLAN_JOB_ID"),
         FromLatestPlanJob("FROM_LATEST_PLAN_JOB"),
         AutoApproved("AUTO_APPROVED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -189,37 +184,37 @@ public final class ApplyJobOperationDetails extends JobOperationDetails {
         }
     };
     /**
-     * Specifies the source of the execution plan to apply.
-     * Use {@code AUTO_APPROVED} to run the job without an execution plan.
-     *
-     **/
+     * Specifies the source of the execution plan to apply. Use {@code AUTO_APPROVED} to run the job
+     * without an execution plan.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("executionPlanStrategy")
     private final ExecutionPlanStrategy executionPlanStrategy;
 
     /**
-     * Specifies the source of the execution plan to apply.
-     * Use {@code AUTO_APPROVED} to run the job without an execution plan.
+     * Specifies the source of the execution plan to apply. Use {@code AUTO_APPROVED} to run the job
+     * without an execution plan.
      *
      * @return the value
-     **/
+     */
     public ExecutionPlanStrategy getExecutionPlanStrategy() {
         return executionPlanStrategy;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the plan job that contains the execution plan used for this job,
-     * or {@code null} if no execution plan was used.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the plan job that contains the execution plan used for this job, or {@code null} if no
+     * execution plan was used.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("executionPlanJobId")
     private final String executionPlanJobId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the plan job that contains the execution plan used for this job,
-     * or {@code null} if no execution plan was used.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the plan job that contains the execution plan used for this job, or {@code null} if no
+     * execution plan was used.
      *
      * @return the value
-     **/
+     */
     public String getExecutionPlanJobId() {
         return executionPlanJobId;
     }
@@ -231,6 +226,7 @@ public final class ApplyJobOperationDetails extends JobOperationDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

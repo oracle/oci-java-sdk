@@ -4,12 +4,9 @@
  */
 package com.oracle.bmc.dns.model;
 
-/**
- * The DNS scope of the resource.
- *
- **/
+/** The DNS scope of the resource. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-public enum Scope {
+public enum Scope implements com.oracle.bmc.http.internal.BmcEnum {
     Global("GLOBAL"),
     Private("PRIVATE"),
 

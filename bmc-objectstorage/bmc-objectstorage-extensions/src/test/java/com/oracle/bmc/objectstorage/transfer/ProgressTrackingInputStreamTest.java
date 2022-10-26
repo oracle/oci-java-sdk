@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.objectstorage.transfer;
 
-import com.oracle.bmc.io.DuplicatableInputStream;
+import com.oracle.bmc.http.client.io.DuplicatableInputStream;
 import org.junit.Test;
 import org.mockito.InOrder;
 import org.mockito.Mockito;

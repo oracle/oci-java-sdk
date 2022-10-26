@@ -5,23 +5,23 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * The native shape field object.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The native shape field object. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = NativeShapeField.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class NativeShapeField extends TypedObject {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -87,65 +87,61 @@ public final class NativeShapeField extends TypedObject {
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The type reference.
-         **/
+        /** The type reference. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Object type;
 
         /**
          * The type reference.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(Object type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * The position of the attribute.
-         **/
+        /** The position of the attribute. */
         @com.fasterxml.jackson.annotation.JsonProperty("position")
         private Integer position;
 
         /**
          * The position of the attribute.
+         *
          * @param position the value to set
          * @return this builder
-         **/
+         */
         public Builder position(Integer position) {
             this.position = position;
             this.__explicitlySet__.add("position");
             return this;
         }
-        /**
-         * The default value.
-         **/
+        /** The default value. */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValueString")
         private String defaultValueString;
 
         /**
          * The default value.
+         *
          * @param defaultValueString the value to set
          * @return this builder
-         **/
+         */
         public Builder defaultValueString(String defaultValueString) {
             this.defaultValueString = defaultValueString;
             this.__explicitlySet__.add("defaultValueString");
             return this;
         }
-        /**
-         * Specifies whether the field is mandatory.
-         **/
+        /** Specifies whether the field is mandatory. */
         @com.fasterxml.jackson.annotation.JsonProperty("isMandatory")
         private Boolean isMandatory;
 
         /**
          * Specifies whether the field is mandatory.
+         *
          * @param isMandatory the value to set
          * @return this builder
-         **/
+         */
         public Builder isMandatory(Boolean isMandatory) {
             this.isMandatory = isMandatory;
             this.__explicitlySet__.add("isMandatory");
@@ -214,9 +210,7 @@ public final class NativeShapeField extends TypedObject {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -245,58 +239,54 @@ public final class NativeShapeField extends TypedObject {
         this.isMandatory = isMandatory;
     }
 
-    /**
-     * The type reference.
-     **/
+    /** The type reference. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Object type;
 
     /**
      * The type reference.
+     *
      * @return the value
-     **/
+     */
     public Object getType() {
         return type;
     }
 
-    /**
-     * The position of the attribute.
-     **/
+    /** The position of the attribute. */
     @com.fasterxml.jackson.annotation.JsonProperty("position")
     private final Integer position;
 
     /**
      * The position of the attribute.
+     *
      * @return the value
-     **/
+     */
     public Integer getPosition() {
         return position;
     }
 
-    /**
-     * The default value.
-     **/
+    /** The default value. */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValueString")
     private final String defaultValueString;
 
     /**
      * The default value.
+     *
      * @return the value
-     **/
+     */
     public String getDefaultValueString() {
         return defaultValueString;
     }
 
-    /**
-     * Specifies whether the field is mandatory.
-     **/
+    /** Specifies whether the field is mandatory. */
     @com.fasterxml.jackson.annotation.JsonProperty("isMandatory")
     private final Boolean isMandatory;
 
     /**
      * Specifies whether the field is mandatory.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsMandatory() {
         return isMandatory;
     }
@@ -308,6 +298,7 @@ public final class NativeShapeField extends TypedObject {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

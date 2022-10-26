@@ -5,12 +5,11 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled,
- * and whether to enable or disable syncing of the Binary Logs.
- *
- **/
+ * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or
+ * disabled, and whether to enable or disable syncing of the Binary Logs.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-public enum CrashRecoveryStatus {
+public enum CrashRecoveryStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Enabled("ENABLED"),
     Disabled("DISABLED"),
 

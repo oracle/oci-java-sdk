@@ -5,27 +5,25 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Validate a JWT token present in the header or query parameter. A valid
- * policy must specify either tokenHeader or tokenQueryParam.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Validate a JWT token present in the header or query parameter. A valid policy must specify either
+ * tokenHeader or tokenQueryParam. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = JwtAuthenticationPolicy.Builder.class
-)
+        builder = JwtAuthenticationPolicy.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class JwtAuthenticationPolicy extends AuthenticationPolicy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -37,121 +35,114 @@ public final class JwtAuthenticationPolicy extends AuthenticationPolicy {
             this.__explicitlySet__.add("isAnonymousAccessAllowed");
             return this;
         }
-        /**
-         * The name of the header containing the authentication token.
-         **/
+        /** The name of the header containing the authentication token. */
         @com.fasterxml.jackson.annotation.JsonProperty("tokenHeader")
         private String tokenHeader;
 
         /**
          * The name of the header containing the authentication token.
+         *
          * @param tokenHeader the value to set
          * @return this builder
-         **/
+         */
         public Builder tokenHeader(String tokenHeader) {
             this.tokenHeader = tokenHeader;
             this.__explicitlySet__.add("tokenHeader");
             return this;
         }
-        /**
-         * The name of the query parameter containing the authentication token.
-         **/
+        /** The name of the query parameter containing the authentication token. */
         @com.fasterxml.jackson.annotation.JsonProperty("tokenQueryParam")
         private String tokenQueryParam;
 
         /**
          * The name of the query parameter containing the authentication token.
+         *
          * @param tokenQueryParam the value to set
          * @return this builder
-         **/
+         */
         public Builder tokenQueryParam(String tokenQueryParam) {
             this.tokenQueryParam = tokenQueryParam;
             this.__explicitlySet__.add("tokenQueryParam");
             return this;
         }
         /**
-         * The authentication scheme that is to be used when authenticating
-         * the token. This must to be provided if "tokenHeader" is specified.
-         *
-         **/
+         * The authentication scheme that is to be used when authenticating the token. This must to
+         * be provided if "tokenHeader" is specified.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("tokenAuthScheme")
         private String tokenAuthScheme;
 
         /**
-         * The authentication scheme that is to be used when authenticating
-         * the token. This must to be provided if "tokenHeader" is specified.
+         * The authentication scheme that is to be used when authenticating the token. This must to
+         * be provided if "tokenHeader" is specified.
          *
          * @param tokenAuthScheme the value to set
          * @return this builder
-         **/
+         */
         public Builder tokenAuthScheme(String tokenAuthScheme) {
             this.tokenAuthScheme = tokenAuthScheme;
             this.__explicitlySet__.add("tokenAuthScheme");
             return this;
         }
-        /**
-         * A list of parties that could have issued the token.
-         **/
+        /** A list of parties that could have issued the token. */
         @com.fasterxml.jackson.annotation.JsonProperty("issuers")
         private java.util.List<String> issuers;
 
         /**
          * A list of parties that could have issued the token.
+         *
          * @param issuers the value to set
          * @return this builder
-         **/
+         */
         public Builder issuers(java.util.List<String> issuers) {
             this.issuers = issuers;
             this.__explicitlySet__.add("issuers");
             return this;
         }
-        /**
-         * The list of intended recipients for the token.
-         **/
+        /** The list of intended recipients for the token. */
         @com.fasterxml.jackson.annotation.JsonProperty("audiences")
         private java.util.List<String> audiences;
 
         /**
          * The list of intended recipients for the token.
+         *
          * @param audiences the value to set
          * @return this builder
-         **/
+         */
         public Builder audiences(java.util.List<String> audiences) {
             this.audiences = audiences;
             this.__explicitlySet__.add("audiences");
             return this;
         }
-        /**
-         * A list of claims which should be validated to consider the token valid.
-         **/
+        /** A list of claims which should be validated to consider the token valid. */
         @com.fasterxml.jackson.annotation.JsonProperty("verifyClaims")
         private java.util.List<JsonWebTokenClaim> verifyClaims;
 
         /**
          * A list of claims which should be validated to consider the token valid.
+         *
          * @param verifyClaims the value to set
          * @return this builder
-         **/
+         */
         public Builder verifyClaims(java.util.List<JsonWebTokenClaim> verifyClaims) {
             this.verifyClaims = verifyClaims;
             this.__explicitlySet__.add("verifyClaims");
             return this;
         }
         /**
-         * The maximum expected time difference between the system clocks
-         * of the token issuer and the API Gateway.
-         *
-         **/
+         * The maximum expected time difference between the system clocks of the token issuer and
+         * the API Gateway.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("maxClockSkewInSeconds")
         private Float maxClockSkewInSeconds;
 
         /**
-         * The maximum expected time difference between the system clocks
-         * of the token issuer and the API Gateway.
+         * The maximum expected time difference between the system clocks of the token issuer and
+         * the API Gateway.
          *
          * @param maxClockSkewInSeconds the value to set
          * @return this builder
-         **/
+         */
         public Builder maxClockSkewInSeconds(Float maxClockSkewInSeconds) {
             this.maxClockSkewInSeconds = maxClockSkewInSeconds;
             this.__explicitlySet__.add("maxClockSkewInSeconds");
@@ -221,9 +212,7 @@ public final class JwtAuthenticationPolicy extends AuthenticationPolicy {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -254,108 +243,101 @@ public final class JwtAuthenticationPolicy extends AuthenticationPolicy {
         this.publicKeys = publicKeys;
     }
 
-    /**
-     * The name of the header containing the authentication token.
-     **/
+    /** The name of the header containing the authentication token. */
     @com.fasterxml.jackson.annotation.JsonProperty("tokenHeader")
     private final String tokenHeader;
 
     /**
      * The name of the header containing the authentication token.
+     *
      * @return the value
-     **/
+     */
     public String getTokenHeader() {
         return tokenHeader;
     }
 
-    /**
-     * The name of the query parameter containing the authentication token.
-     **/
+    /** The name of the query parameter containing the authentication token. */
     @com.fasterxml.jackson.annotation.JsonProperty("tokenQueryParam")
     private final String tokenQueryParam;
 
     /**
      * The name of the query parameter containing the authentication token.
+     *
      * @return the value
-     **/
+     */
     public String getTokenQueryParam() {
         return tokenQueryParam;
     }
 
     /**
-     * The authentication scheme that is to be used when authenticating
-     * the token. This must to be provided if "tokenHeader" is specified.
-     *
-     **/
+     * The authentication scheme that is to be used when authenticating the token. This must to be
+     * provided if "tokenHeader" is specified.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("tokenAuthScheme")
     private final String tokenAuthScheme;
 
     /**
-     * The authentication scheme that is to be used when authenticating
-     * the token. This must to be provided if "tokenHeader" is specified.
+     * The authentication scheme that is to be used when authenticating the token. This must to be
+     * provided if "tokenHeader" is specified.
      *
      * @return the value
-     **/
+     */
     public String getTokenAuthScheme() {
         return tokenAuthScheme;
     }
 
-    /**
-     * A list of parties that could have issued the token.
-     **/
+    /** A list of parties that could have issued the token. */
     @com.fasterxml.jackson.annotation.JsonProperty("issuers")
     private final java.util.List<String> issuers;
 
     /**
      * A list of parties that could have issued the token.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getIssuers() {
         return issuers;
     }
 
-    /**
-     * The list of intended recipients for the token.
-     **/
+    /** The list of intended recipients for the token. */
     @com.fasterxml.jackson.annotation.JsonProperty("audiences")
     private final java.util.List<String> audiences;
 
     /**
      * The list of intended recipients for the token.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getAudiences() {
         return audiences;
     }
 
-    /**
-     * A list of claims which should be validated to consider the token valid.
-     **/
+    /** A list of claims which should be validated to consider the token valid. */
     @com.fasterxml.jackson.annotation.JsonProperty("verifyClaims")
     private final java.util.List<JsonWebTokenClaim> verifyClaims;
 
     /**
      * A list of claims which should be validated to consider the token valid.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<JsonWebTokenClaim> getVerifyClaims() {
         return verifyClaims;
     }
 
     /**
-     * The maximum expected time difference between the system clocks
-     * of the token issuer and the API Gateway.
-     *
-     **/
+     * The maximum expected time difference between the system clocks of the token issuer and the
+     * API Gateway.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("maxClockSkewInSeconds")
     private final Float maxClockSkewInSeconds;
 
     /**
-     * The maximum expected time difference between the system clocks
-     * of the token issuer and the API Gateway.
+     * The maximum expected time difference between the system clocks of the token issuer and the
+     * API Gateway.
      *
      * @return the value
-     **/
+     */
     public Float getMaxClockSkewInSeconds() {
         return maxClockSkewInSeconds;
     }
@@ -374,6 +356,7 @@ public final class JwtAuthenticationPolicy extends AuthenticationPolicy {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

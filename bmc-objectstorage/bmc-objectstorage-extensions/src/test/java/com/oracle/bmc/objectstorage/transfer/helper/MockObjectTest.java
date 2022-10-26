@@ -17,10 +17,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class MockObjectTest {
 
-    /**
-     * Use this for all tests to save setup/teardown time. Tests should not
-     * modify this data!
-     */
+    /** Use this for all tests to save setup/teardown time. Tests should not modify this data! */
     private static byte[] data;
 
     @BeforeClass

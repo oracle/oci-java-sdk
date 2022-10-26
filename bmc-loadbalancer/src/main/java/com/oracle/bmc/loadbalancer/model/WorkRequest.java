@@ -5,23 +5,24 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * Many of the API requests you use to create and configure load balancing do not take effect immediately.
- * In these cases, the request spawns an asynchronous work flow to fulfill the request. WorkRequest objects provide visibility
- * for in-progress work flows.
- * For more information about work requests, see [Viewing the State of a Work Request](https://docs.cloud.oracle.com/Content/Balance/Tasks/viewingworkrequest.htm).
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Many of the API requests you use to create and configure load balancing do not take effect
+ * immediately. In these cases, the request spawns an asynchronous work flow to fulfill the request.
+ * WorkRequest objects provide visibility for in-progress work flows. For more information about
+ * work requests, see [Viewing the State of a Work
+ * Request](https://docs.cloud.oracle.com/Content/Balance/Tasks/viewingworkrequest.htm). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkRequest.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class WorkRequest extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -59,36 +60,38 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * work request.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * work request.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer with which the work request
-         * is associated.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * load balancer with which the work request is associated.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
         private String loadBalancerId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer with which the work request
-         * is associated.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * load balancer with which the work request is associated.
          *
          * @param loadBalancerId the value to set
          * @return this builder
-         **/
+         */
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = loadBalancerId;
             this.__explicitlySet__.add("loadBalancerId");
@@ -96,46 +99,45 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         }
         /**
          * The type of action the work request represents.
-         * <p>
-         * Example: {@code CreateListener}
          *
-         **/
+         * <p>Example: {@code CreateListener}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * The type of action the work request represents.
-         * <p>
-         * Example: {@code CreateListener}
+         *
+         * <p>Example: {@code CreateListener}
          *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the load balancer.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the load balancer.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The current state of the work request.
-         *
-         **/
+        /** The current state of the work request. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -144,39 +146,32 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
          *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A collection of data, related to the load balancer provisioning process, that helps with debugging in the event of failure.
-         * Possible data elements include:
-         * <p>
-         * - workflow name
-         * - event ID
-         * - work request ID
-         * - load balancer ID
-         * - workflow completion message
+         * A collection of data, related to the load balancer provisioning process, that helps with
+         * debugging in the event of failure. Possible data elements include:
          *
-         **/
+         * <p>- workflow name - event ID - work request ID - load balancer ID - workflow completion
+         * message
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
-         * A collection of data, related to the load balancer provisioning process, that helps with debugging in the event of failure.
-         * Possible data elements include:
-         * <p>
-         * - workflow name
-         * - event ID
-         * - work request ID
-         * - load balancer ID
-         * - workflow completion message
+         * A collection of data, related to the load balancer provisioning process, that helps with
+         * debugging in the event of failure. Possible data elements include:
+         *
+         * <p>- workflow name - event ID - work request ID - load balancer ID - workflow completion
+         * message
          *
          * @param message the value to set
          * @return this builder
-         **/
+         */
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
@@ -184,21 +179,20 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         }
         /**
          * The date and time the work request was created, in the format defined by RFC3339.
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         **/
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
         /**
          * The date and time the work request was created, in the format defined by RFC3339.
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeAccepted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
@@ -206,21 +200,20 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         }
         /**
          * The date and time the work request was completed, in the format defined by RFC3339.
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         **/
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
          * The date and time the work request was completed, in the format defined by RFC3339.
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeFinished the value to set
          * @return this builder
-         **/
+         */
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
@@ -290,9 +283,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -302,84 +293,85 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * work request.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * work request.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer with which the work request
-     * is associated.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * load balancer with which the work request is associated.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
     private final String loadBalancerId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer with which the work request
-     * is associated.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * load balancer with which the work request is associated.
      *
      * @return the value
-     **/
+     */
     public String getLoadBalancerId() {
         return loadBalancerId;
     }
 
     /**
      * The type of action the work request represents.
-     * <p>
-     * Example: {@code CreateListener}
      *
-     **/
+     * <p>Example: {@code CreateListener}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * The type of action the work request represents.
-     * <p>
-     * Example: {@code CreateListener}
+     *
+     * <p>Example: {@code CreateListener}
      *
      * @return the value
-     **/
+     */
     public String getType() {
         return type;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the load balancer.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the load balancer.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The current state of the work request.
-     *
-     **/
-    public enum LifecycleState {
+    /** The current state of the work request. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
         Failed("FAILED"),
         Succeeded("SUCCEEDED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -418,10 +410,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current state of the work request.
-     *
-     **/
+    /** The current state of the work request. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
@@ -429,77 +418,68 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
      * The current state of the work request.
      *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A collection of data, related to the load balancer provisioning process, that helps with debugging in the event of failure.
-     * Possible data elements include:
-     * <p>
-     * - workflow name
-     * - event ID
-     * - work request ID
-     * - load balancer ID
-     * - workflow completion message
+     * A collection of data, related to the load balancer provisioning process, that helps with
+     * debugging in the event of failure. Possible data elements include:
      *
-     **/
+     * <p>- workflow name - event ID - work request ID - load balancer ID - workflow completion
+     * message
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
-     * A collection of data, related to the load balancer provisioning process, that helps with debugging in the event of failure.
-     * Possible data elements include:
-     * <p>
-     * - workflow name
-     * - event ID
-     * - work request ID
-     * - load balancer ID
-     * - workflow completion message
+     * A collection of data, related to the load balancer provisioning process, that helps with
+     * debugging in the event of failure. Possible data elements include:
+     *
+     * <p>- workflow name - event ID - work request ID - load balancer ID - workflow completion
+     * message
      *
      * @return the value
-     **/
+     */
     public String getMessage() {
         return message;
     }
 
     /**
      * The date and time the work request was created, in the format defined by RFC3339.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     **/
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
     /**
      * The date and time the work request was created, in the format defined by RFC3339.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
 
     /**
      * The date and time the work request was completed, in the format defined by RFC3339.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     **/
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
      * The date and time the work request was completed, in the format defined by RFC3339.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
@@ -518,6 +498,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

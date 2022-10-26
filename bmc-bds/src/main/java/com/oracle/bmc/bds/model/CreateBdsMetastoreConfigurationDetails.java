@@ -5,22 +5,22 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * The request body when creating BDS metastore configuration.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The request body when creating BDS metastore configuration. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateBdsMetastoreConfigurationDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateBdsMetastoreConfigurationDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateBdsMetastoreConfigurationDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -45,81 +45,76 @@ public final class CreateBdsMetastoreConfigurationDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The display name of the metastore configuration
-         **/
+        /** The display name of the metastore configuration */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The display name of the metastore configuration
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The OCID of the Data Catalog metastore.
-         **/
+        /** The OCID of the Data Catalog metastore. */
         @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
         private String metastoreId;
 
         /**
          * The OCID of the Data Catalog metastore.
+         *
          * @param metastoreId the value to set
          * @return this builder
-         **/
+         */
         public Builder metastoreId(String metastoreId) {
             this.metastoreId = metastoreId;
             this.__explicitlySet__.add("metastoreId");
             return this;
         }
-        /**
-         * The ID of BDS Api Key used for Data Catalog metastore integration.
-         **/
+        /** The ID of BDS Api Key used for Data Catalog metastore integration. */
         @com.fasterxml.jackson.annotation.JsonProperty("bdsApiKeyId")
         private String bdsApiKeyId;
 
         /**
          * The ID of BDS Api Key used for Data Catalog metastore integration.
+         *
          * @param bdsApiKeyId the value to set
          * @return this builder
-         **/
+         */
         public Builder bdsApiKeyId(String bdsApiKeyId) {
             this.bdsApiKeyId = bdsApiKeyId;
             this.__explicitlySet__.add("bdsApiKeyId");
             return this;
         }
-        /**
-         * Base-64 encoded passphrase of the BDS Api Key.
-         **/
+        /** Base-64 encoded passphrase of the BDS Api Key. */
         @com.fasterxml.jackson.annotation.JsonProperty("bdsApiKeyPassphrase")
         private String bdsApiKeyPassphrase;
 
         /**
          * Base-64 encoded passphrase of the BDS Api Key.
+         *
          * @param bdsApiKeyPassphrase the value to set
          * @return this builder
-         **/
+         */
         public Builder bdsApiKeyPassphrase(String bdsApiKeyPassphrase) {
             this.bdsApiKeyPassphrase = bdsApiKeyPassphrase;
             this.__explicitlySet__.add("bdsApiKeyPassphrase");
             return this;
         }
-        /**
-         * Base-64 encoded password for the cluster admin user.
-         **/
+        /** Base-64 encoded password for the cluster admin user. */
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
         private String clusterAdminPassword;
 
         /**
          * Base-64 encoded password for the cluster admin user.
+         *
          * @param clusterAdminPassword the value to set
          * @return this builder
-         **/
+         */
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
@@ -164,9 +159,7 @@ public final class CreateBdsMetastoreConfigurationDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -175,72 +168,67 @@ public final class CreateBdsMetastoreConfigurationDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The display name of the metastore configuration
-     **/
+    /** The display name of the metastore configuration */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The display name of the metastore configuration
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The OCID of the Data Catalog metastore.
-     **/
+    /** The OCID of the Data Catalog metastore. */
     @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
     private final String metastoreId;
 
     /**
      * The OCID of the Data Catalog metastore.
+     *
      * @return the value
-     **/
+     */
     public String getMetastoreId() {
         return metastoreId;
     }
 
-    /**
-     * The ID of BDS Api Key used for Data Catalog metastore integration.
-     **/
+    /** The ID of BDS Api Key used for Data Catalog metastore integration. */
     @com.fasterxml.jackson.annotation.JsonProperty("bdsApiKeyId")
     private final String bdsApiKeyId;
 
     /**
      * The ID of BDS Api Key used for Data Catalog metastore integration.
+     *
      * @return the value
-     **/
+     */
     public String getBdsApiKeyId() {
         return bdsApiKeyId;
     }
 
-    /**
-     * Base-64 encoded passphrase of the BDS Api Key.
-     **/
+    /** Base-64 encoded passphrase of the BDS Api Key. */
     @com.fasterxml.jackson.annotation.JsonProperty("bdsApiKeyPassphrase")
     private final String bdsApiKeyPassphrase;
 
     /**
      * Base-64 encoded passphrase of the BDS Api Key.
+     *
      * @return the value
-     **/
+     */
     public String getBdsApiKeyPassphrase() {
         return bdsApiKeyPassphrase;
     }
 
-    /**
-     * Base-64 encoded password for the cluster admin user.
-     **/
+    /** Base-64 encoded password for the cluster admin user. */
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
     private final String clusterAdminPassword;
 
     /**
      * Base-64 encoded password for the cluster admin user.
+     *
      * @return the value
-     **/
+     */
     public String getClusterAdminPassword() {
         return clusterAdminPassword;
     }
@@ -252,6 +240,7 @@ public final class CreateBdsMetastoreConfigurationDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -262,8 +251,8 @@ public final class CreateBdsMetastoreConfigurationDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", metastoreId=").append(String.valueOf(this.metastoreId));
         sb.append(", bdsApiKeyId=").append(String.valueOf(this.bdsApiKeyId));
-        sb.append(", bdsApiKeyPassphrase=").append(String.valueOf(this.bdsApiKeyPassphrase));
-        sb.append(", clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
+        sb.append(", bdsApiKeyPassphrase=").append("<redacted>");
+        sb.append(", clusterAdminPassword=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

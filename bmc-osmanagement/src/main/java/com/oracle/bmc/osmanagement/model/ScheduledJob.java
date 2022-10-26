@@ -5,19 +5,20 @@
 package com.oracle.bmc.osmanagement.model;
 
 /**
- * Detailed information about a Scheduled Job
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Detailed information about a Scheduled Job <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ScheduledJob.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ScheduledJob extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -90,113 +91,106 @@ public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * OCID for the Scheduled Job
-         **/
+        /** OCID for the Scheduled Job */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * OCID for the Scheduled Job
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * OCID for the Compartment
-         **/
+        /** OCID for the Compartment */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * OCID for the Compartment
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * Scheduled Job name
-         **/
+        /** Scheduled Job name */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Scheduled Job name
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Details describing the Scheduled Job.
-         **/
+        /** Details describing the Scheduled Job. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Details describing the Scheduled Job.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * the type of scheduling this Scheduled Job follows
-         **/
+        /** the type of scheduling this Scheduled Job follows */
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
         private ScheduleTypes scheduleType;
 
         /**
          * the type of scheduling this Scheduled Job follows
+         *
          * @param scheduleType the value to set
          * @return this builder
-         **/
+         */
         public Builder scheduleType(ScheduleTypes scheduleType) {
             this.scheduleType = scheduleType;
             this.__explicitlySet__.add("scheduleType");
             return this;
         }
-        /**
-         * the time of the next execution of this Scheduled Job
-         **/
+        /** the time of the next execution of this Scheduled Job */
         @com.fasterxml.jackson.annotation.JsonProperty("timeNextExecution")
         private java.util.Date timeNextExecution;
 
         /**
          * the time of the next execution of this Scheduled Job
+         *
          * @param timeNextExecution the value to set
          * @return this builder
-         **/
+         */
         public Builder timeNextExecution(java.util.Date timeNextExecution) {
             this.timeNextExecution = timeNextExecution;
             this.__explicitlySet__.add("timeNextExecution");
             return this;
         }
-        /**
-         * the time of the last execution of this Scheduled Job
-         **/
+        /** the time of the last execution of this Scheduled Job */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastExecution")
         private java.util.Date timeLastExecution;
 
         /**
          * the time of the last execution of this Scheduled Job
+         *
          * @param timeLastExecution the value to set
          * @return this builder
-         **/
+         */
         public Builder timeLastExecution(java.util.Date timeLastExecution) {
             this.timeLastExecution = timeLastExecution;
             this.__explicitlySet__.add("timeLastExecution");
@@ -204,163 +198,167 @@ public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlyS
         }
         /**
          * the interval period for a recurring Scheduled Job (only if schedule type is RECURRING)
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("intervalType")
         private IntervalTypes intervalType;
 
         /**
          * the interval period for a recurring Scheduled Job (only if schedule type is RECURRING)
+         *
          * @param intervalType the value to set
          * @return this builder
-         **/
+         */
         public Builder intervalType(IntervalTypes intervalType) {
             this.intervalType = intervalType;
             this.__explicitlySet__.add("intervalType");
             return this;
         }
         /**
-         * the value for the interval period for a recurring Scheduled Job (only if schedule type is RECURRING)
-         **/
+         * the value for the interval period for a recurring Scheduled Job (only if schedule type is
+         * RECURRING)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("intervalValue")
         private String intervalValue;
 
         /**
-         * the value for the interval period for a recurring Scheduled Job (only if schedule type is RECURRING)
+         * the value for the interval period for a recurring Scheduled Job (only if schedule type is
+         * RECURRING)
+         *
          * @param intervalValue the value to set
          * @return this builder
-         **/
+         */
         public Builder intervalValue(String intervalValue) {
             this.intervalValue = intervalValue;
             this.__explicitlySet__.add("intervalValue");
             return this;
         }
         /**
-         * the list of managed instances this scheduled job operates on (mutually exclusive with managedInstanceGroups)
-         **/
+         * the list of managed instances this scheduled job operates on (mutually exclusive with
+         * managedInstanceGroups)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstances")
         private java.util.List<Id> managedInstances;
 
         /**
-         * the list of managed instances this scheduled job operates on (mutually exclusive with managedInstanceGroups)
+         * the list of managed instances this scheduled job operates on (mutually exclusive with
+         * managedInstanceGroups)
+         *
          * @param managedInstances the value to set
          * @return this builder
-         **/
+         */
         public Builder managedInstances(java.util.List<Id> managedInstances) {
             this.managedInstances = managedInstances;
             this.__explicitlySet__.add("managedInstances");
             return this;
         }
         /**
-         * the list of managed instance groups this scheduled job operates on (mutually exclusive with managedInstances)
-         **/
+         * the list of managed instance groups this scheduled job operates on (mutually exclusive
+         * with managedInstances)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceGroups")
         private java.util.List<Id> managedInstanceGroups;
 
         /**
-         * the list of managed instance groups this scheduled job operates on (mutually exclusive with managedInstances)
+         * the list of managed instance groups this scheduled job operates on (mutually exclusive
+         * with managedInstances)
+         *
          * @param managedInstanceGroups the value to set
          * @return this builder
-         **/
+         */
         public Builder managedInstanceGroups(java.util.List<Id> managedInstanceGroups) {
             this.managedInstanceGroups = managedInstanceGroups;
             this.__explicitlySet__.add("managedInstanceGroups");
             return this;
         }
-        /**
-         * the type of operation this Scheduled Job performs
-         **/
+        /** the type of operation this Scheduled Job performs */
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationTypes operationType;
 
         /**
          * the type of operation this Scheduled Job performs
+         *
          * @param operationType the value to set
          * @return this builder
-         **/
+         */
         public Builder operationType(OperationTypes operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
-        /**
-         * Type of the update (only if operation type is UPDATEALL)
-         **/
+        /** Type of the update (only if operation type is UPDATEALL) */
         @com.fasterxml.jackson.annotation.JsonProperty("updateType")
         private PackageUpdateTypes updateType;
 
         /**
          * Type of the update (only if operation type is UPDATEALL)
+         *
          * @param updateType the value to set
          * @return this builder
-         **/
+         */
         public Builder updateType(PackageUpdateTypes updateType) {
             this.updateType = updateType;
             this.__explicitlySet__.add("updateType");
             return this;
         }
-        /**
-         * the names of the updates (only if operation type is INSTALL/UPDATE/REMOVE)
-         **/
+        /** the names of the updates (only if operation type is INSTALL/UPDATE/REMOVE) */
         @com.fasterxml.jackson.annotation.JsonProperty("packageNames")
         private java.util.List<PackageName> packageNames;
 
         /**
          * the names of the updates (only if operation type is INSTALL/UPDATE/REMOVE)
+         *
          * @param packageNames the value to set
          * @return this builder
-         **/
+         */
         public Builder packageNames(java.util.List<PackageName> packageNames) {
             this.packageNames = packageNames;
             this.__explicitlySet__.add("packageNames");
             return this;
         }
-        /**
-         * list of Work Requests associated with this Scheduled Job
-         **/
+        /** list of Work Requests associated with this Scheduled Job */
         @com.fasterxml.jackson.annotation.JsonProperty("workRequests")
         private java.util.List<Id> workRequests;
 
         /**
          * list of Work Requests associated with this Scheduled Job
+         *
          * @param workRequests the value to set
          * @return this builder
-         **/
+         */
         public Builder workRequests(java.util.List<Id> workRequests) {
             this.workRequests = workRequests;
             this.__explicitlySet__.add("workRequests");
             return this;
         }
-        /**
-         * The current state of the Scheduled Job.
-         **/
+        /** The current state of the Scheduled Job. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleStates lifecycleState;
 
         /**
          * The current state of the Scheduled Job.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -369,8 +367,7 @@ public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlyS
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -380,7 +377,7 @@ public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlyS
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -388,52 +385,53 @@ public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * The unique names of the Windows Updates (only if operation type is INSTALL).
-         * This is only applicable when the osFamily is for Windows managed instances.
-         *
-         **/
+         * The unique names of the Windows Updates (only if operation type is INSTALL). This is only
+         * applicable when the osFamily is for Windows managed instances.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("updateNames")
         private java.util.List<String> updateNames;
 
         /**
-         * The unique names of the Windows Updates (only if operation type is INSTALL).
-         * This is only applicable when the osFamily is for Windows managed instances.
+         * The unique names of the Windows Updates (only if operation type is INSTALL). This is only
+         * applicable when the osFamily is for Windows managed instances.
          *
          * @param updateNames the value to set
          * @return this builder
-         **/
+         */
         public Builder updateNames(java.util.List<String> updateNames) {
             this.updateNames = updateNames;
             this.__explicitlySet__.add("updateNames");
             return this;
         }
-        /**
-         * The Operating System type of the managed instance.
-         **/
+        /** The Operating System type of the managed instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
         private OsFamilies osFamily;
 
         /**
          * The Operating System type of the managed instance.
+         *
          * @param osFamily the value to set
          * @return this builder
-         **/
+         */
         public Builder osFamily(OsFamilies osFamily) {
             this.osFamily = osFamily;
             this.__explicitlySet__.add("osFamily");
             return this;
         }
         /**
-         * true, if the schedule job has its update capabilities restricted. (Used to track Autonomous Scheduled Job)
-         **/
+         * true, if the schedule job has its update capabilities restricted. (Used to track
+         * Autonomous Scheduled Job)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isRestricted")
         private Boolean isRestricted;
 
         /**
-         * true, if the schedule job has its update capabilities restricted. (Used to track Autonomous Scheduled Job)
+         * true, if the schedule job has its update capabilities restricted. (Used to track
+         * Autonomous Scheduled Job)
+         *
          * @param isRestricted the value to set
          * @return this builder
-         **/
+         */
         public Builder isRestricted(Boolean isRestricted) {
             this.isRestricted = isRestricted;
             this.__explicitlySet__.add("isRestricted");
@@ -542,9 +540,7 @@ public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -553,308 +549,303 @@ public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /**
-     * OCID for the Scheduled Job
-     **/
+    /** OCID for the Scheduled Job */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * OCID for the Scheduled Job
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * OCID for the Compartment
-     **/
+    /** OCID for the Compartment */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * OCID for the Compartment
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * Scheduled Job name
-     **/
+    /** Scheduled Job name */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Scheduled Job name
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Details describing the Scheduled Job.
-     **/
+    /** Details describing the Scheduled Job. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Details describing the Scheduled Job.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * the type of scheduling this Scheduled Job follows
-     **/
+    /** the type of scheduling this Scheduled Job follows */
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
     private final ScheduleTypes scheduleType;
 
     /**
      * the type of scheduling this Scheduled Job follows
+     *
      * @return the value
-     **/
+     */
     public ScheduleTypes getScheduleType() {
         return scheduleType;
     }
 
-    /**
-     * the time of the next execution of this Scheduled Job
-     **/
+    /** the time of the next execution of this Scheduled Job */
     @com.fasterxml.jackson.annotation.JsonProperty("timeNextExecution")
     private final java.util.Date timeNextExecution;
 
     /**
      * the time of the next execution of this Scheduled Job
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeNextExecution() {
         return timeNextExecution;
     }
 
-    /**
-     * the time of the last execution of this Scheduled Job
-     **/
+    /** the time of the last execution of this Scheduled Job */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastExecution")
     private final java.util.Date timeLastExecution;
 
     /**
      * the time of the last execution of this Scheduled Job
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeLastExecution() {
         return timeLastExecution;
     }
 
-    /**
-     * the interval period for a recurring Scheduled Job (only if schedule type is RECURRING)
-     **/
+    /** the interval period for a recurring Scheduled Job (only if schedule type is RECURRING) */
     @com.fasterxml.jackson.annotation.JsonProperty("intervalType")
     private final IntervalTypes intervalType;
 
     /**
      * the interval period for a recurring Scheduled Job (only if schedule type is RECURRING)
+     *
      * @return the value
-     **/
+     */
     public IntervalTypes getIntervalType() {
         return intervalType;
     }
 
     /**
-     * the value for the interval period for a recurring Scheduled Job (only if schedule type is RECURRING)
-     **/
+     * the value for the interval period for a recurring Scheduled Job (only if schedule type is
+     * RECURRING)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("intervalValue")
     private final String intervalValue;
 
     /**
-     * the value for the interval period for a recurring Scheduled Job (only if schedule type is RECURRING)
+     * the value for the interval period for a recurring Scheduled Job (only if schedule type is
+     * RECURRING)
+     *
      * @return the value
-     **/
+     */
     public String getIntervalValue() {
         return intervalValue;
     }
 
     /**
-     * the list of managed instances this scheduled job operates on (mutually exclusive with managedInstanceGroups)
-     **/
+     * the list of managed instances this scheduled job operates on (mutually exclusive with
+     * managedInstanceGroups)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstances")
     private final java.util.List<Id> managedInstances;
 
     /**
-     * the list of managed instances this scheduled job operates on (mutually exclusive with managedInstanceGroups)
+     * the list of managed instances this scheduled job operates on (mutually exclusive with
+     * managedInstanceGroups)
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Id> getManagedInstances() {
         return managedInstances;
     }
 
     /**
-     * the list of managed instance groups this scheduled job operates on (mutually exclusive with managedInstances)
-     **/
+     * the list of managed instance groups this scheduled job operates on (mutually exclusive with
+     * managedInstances)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceGroups")
     private final java.util.List<Id> managedInstanceGroups;
 
     /**
-     * the list of managed instance groups this scheduled job operates on (mutually exclusive with managedInstances)
+     * the list of managed instance groups this scheduled job operates on (mutually exclusive with
+     * managedInstances)
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Id> getManagedInstanceGroups() {
         return managedInstanceGroups;
     }
 
-    /**
-     * the type of operation this Scheduled Job performs
-     **/
+    /** the type of operation this Scheduled Job performs */
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationTypes operationType;
 
     /**
      * the type of operation this Scheduled Job performs
+     *
      * @return the value
-     **/
+     */
     public OperationTypes getOperationType() {
         return operationType;
     }
 
-    /**
-     * Type of the update (only if operation type is UPDATEALL)
-     **/
+    /** Type of the update (only if operation type is UPDATEALL) */
     @com.fasterxml.jackson.annotation.JsonProperty("updateType")
     private final PackageUpdateTypes updateType;
 
     /**
      * Type of the update (only if operation type is UPDATEALL)
+     *
      * @return the value
-     **/
+     */
     public PackageUpdateTypes getUpdateType() {
         return updateType;
     }
 
-    /**
-     * the names of the updates (only if operation type is INSTALL/UPDATE/REMOVE)
-     **/
+    /** the names of the updates (only if operation type is INSTALL/UPDATE/REMOVE) */
     @com.fasterxml.jackson.annotation.JsonProperty("packageNames")
     private final java.util.List<PackageName> packageNames;
 
     /**
      * the names of the updates (only if operation type is INSTALL/UPDATE/REMOVE)
+     *
      * @return the value
-     **/
+     */
     public java.util.List<PackageName> getPackageNames() {
         return packageNames;
     }
 
-    /**
-     * list of Work Requests associated with this Scheduled Job
-     **/
+    /** list of Work Requests associated with this Scheduled Job */
     @com.fasterxml.jackson.annotation.JsonProperty("workRequests")
     private final java.util.List<Id> workRequests;
 
     /**
      * list of Work Requests associated with this Scheduled Job
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Id> getWorkRequests() {
         return workRequests;
     }
 
-    /**
-     * The current state of the Scheduled Job.
-     **/
+    /** The current state of the Scheduled Job. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleStates lifecycleState;
 
     /**
      * The current state of the Scheduled Job.
+     *
      * @return the value
-     **/
+     */
     public LifecycleStates getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * The unique names of the Windows Updates (only if operation type is INSTALL).
-     * This is only applicable when the osFamily is for Windows managed instances.
-     *
-     **/
+     * The unique names of the Windows Updates (only if operation type is INSTALL). This is only
+     * applicable when the osFamily is for Windows managed instances.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("updateNames")
     private final java.util.List<String> updateNames;
 
     /**
-     * The unique names of the Windows Updates (only if operation type is INSTALL).
-     * This is only applicable when the osFamily is for Windows managed instances.
+     * The unique names of the Windows Updates (only if operation type is INSTALL). This is only
+     * applicable when the osFamily is for Windows managed instances.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getUpdateNames() {
         return updateNames;
     }
 
-    /**
-     * The Operating System type of the managed instance.
-     **/
+    /** The Operating System type of the managed instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final OsFamilies osFamily;
 
     /**
      * The Operating System type of the managed instance.
+     *
      * @return the value
-     **/
+     */
     public OsFamilies getOsFamily() {
         return osFamily;
     }
 
     /**
-     * true, if the schedule job has its update capabilities restricted. (Used to track Autonomous Scheduled Job)
-     **/
+     * true, if the schedule job has its update capabilities restricted. (Used to track Autonomous
+     * Scheduled Job)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isRestricted")
     private final Boolean isRestricted;
 
     /**
-     * true, if the schedule job has its update capabilities restricted. (Used to track Autonomous Scheduled Job)
+     * true, if the schedule job has its update capabilities restricted. (Used to track Autonomous
+     * Scheduled Job)
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsRestricted() {
         return isRestricted;
     }
@@ -866,6 +857,7 @@ public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

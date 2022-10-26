@@ -5,19 +5,21 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The object containing the ADDM task metadata.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The object containing the ADDM task metadata. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AddmTaskSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AddmTaskSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class AddmTaskSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "taskName",
@@ -63,158 +65,150 @@ public final class AddmTaskSummary extends com.oracle.bmc.http.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the ADDM task.
-         **/
+        /** The name of the ADDM task. */
         @com.fasterxml.jackson.annotation.JsonProperty("taskName")
         private String taskName;
 
         /**
          * The name of the ADDM task.
+         *
          * @param taskName the value to set
          * @return this builder
-         **/
+         */
         public Builder taskName(String taskName) {
             this.taskName = taskName;
             this.__explicitlySet__.add("taskName");
             return this;
         }
-        /**
-         * The ID number of the ADDM task.
-         **/
+        /** The ID number of the ADDM task. */
         @com.fasterxml.jackson.annotation.JsonProperty("taskId")
         private Long taskId;
 
         /**
          * The ID number of the ADDM task.
+         *
          * @param taskId the value to set
          * @return this builder
-         **/
+         */
         public Builder taskId(Long taskId) {
             this.taskId = taskId;
             this.__explicitlySet__.add("taskId");
             return this;
         }
-        /**
-         * The description of the ADDM task.
-         **/
+        /** The description of the ADDM task. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the ADDM task.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The database user who owns the ADDM task.
-         **/
+        /** The database user who owns the ADDM task. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbUser")
         private String dbUser;
 
         /**
          * The database user who owns the ADDM task.
+         *
          * @param dbUser the value to set
          * @return this builder
-         **/
+         */
         public Builder dbUser(String dbUser) {
             this.dbUser = dbUser;
             this.__explicitlySet__.add("dbUser");
             return this;
         }
-        /**
-         * The status of the ADDM task.
-         **/
+        /** The status of the ADDM task. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * The status of the ADDM task.
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * The creation date of the ADDM task.
-         **/
+        /** The creation date of the ADDM task. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The creation date of the ADDM task.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * A description of how the task was created.
-         **/
+        /** A description of how the task was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("howCreated")
         private HowCreated howCreated;
 
         /**
          * A description of how the task was created.
+         *
          * @param howCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder howCreated(HowCreated howCreated) {
             this.howCreated = howCreated;
             this.__explicitlySet__.add("howCreated");
             return this;
         }
         /**
-         * The timestamp of the beginning AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
-         *
-         **/
+         * The timestamp of the beginning AWR snapshot used in the ADDM task as defined by date-time
+         * RFC3339 format.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("startSnapshotTime")
         private java.util.Date startSnapshotTime;
 
         /**
-         * The timestamp of the beginning AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+         * The timestamp of the beginning AWR snapshot used in the ADDM task as defined by date-time
+         * RFC3339 format.
          *
          * @param startSnapshotTime the value to set
          * @return this builder
-         **/
+         */
         public Builder startSnapshotTime(java.util.Date startSnapshotTime) {
             this.startSnapshotTime = startSnapshotTime;
             this.__explicitlySet__.add("startSnapshotTime");
             return this;
         }
         /**
-         * The timestamp of the ending AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
-         *
-         **/
+         * The timestamp of the ending AWR snapshot used in the ADDM task as defined by date-time
+         * RFC3339 format.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("endSnapshotTime")
         private java.util.Date endSnapshotTime;
 
         /**
-         * The timestamp of the ending AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+         * The timestamp of the ending AWR snapshot used in the ADDM task as defined by date-time
+         * RFC3339 format.
          *
          * @param endSnapshotTime the value to set
          * @return this builder
-         **/
+         */
         public Builder endSnapshotTime(java.util.Date endSnapshotTime) {
             this.endSnapshotTime = endSnapshotTime;
             this.__explicitlySet__.add("endSnapshotTime");
             return this;
         }
-        /**
-         * The ID number of the beginning AWR snapshot.
-         *
-         **/
+        /** The ID number of the beginning AWR snapshot. */
         @com.fasterxml.jackson.annotation.JsonProperty("beginSnapshotId")
         private Long beginSnapshotId;
 
@@ -223,16 +217,13 @@ public final class AddmTaskSummary extends com.oracle.bmc.http.internal.Explicit
          *
          * @param beginSnapshotId the value to set
          * @return this builder
-         **/
+         */
         public Builder beginSnapshotId(Long beginSnapshotId) {
             this.beginSnapshotId = beginSnapshotId;
             this.__explicitlySet__.add("beginSnapshotId");
             return this;
         }
-        /**
-         * The ID number of the ending AWR snapshot.
-         *
-         **/
+        /** The ID number of the ending AWR snapshot. */
         @com.fasterxml.jackson.annotation.JsonProperty("endSnapshotId")
         private Long endSnapshotId;
 
@@ -241,23 +232,22 @@ public final class AddmTaskSummary extends com.oracle.bmc.http.internal.Explicit
          *
          * @param endSnapshotId the value to set
          * @return this builder
-         **/
+         */
         public Builder endSnapshotId(Long endSnapshotId) {
             this.endSnapshotId = endSnapshotId;
             this.__explicitlySet__.add("endSnapshotId");
             return this;
         }
-        /**
-         * The number of ADDM findings.
-         **/
+        /** The number of ADDM findings. */
         @com.fasterxml.jackson.annotation.JsonProperty("findings")
         private Long findings;
 
         /**
          * The number of ADDM findings.
+         *
          * @param findings the value to set
          * @return this builder
-         **/
+         */
         public Builder findings(Long findings) {
             this.findings = findings;
             this.__explicitlySet__.add("findings");
@@ -330,9 +320,7 @@ public final class AddmTaskSummary extends com.oracle.bmc.http.internal.Explicit
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -341,66 +329,60 @@ public final class AddmTaskSummary extends com.oracle.bmc.http.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the ADDM task.
-     **/
+    /** The name of the ADDM task. */
     @com.fasterxml.jackson.annotation.JsonProperty("taskName")
     private final String taskName;
 
     /**
      * The name of the ADDM task.
+     *
      * @return the value
-     **/
+     */
     public String getTaskName() {
         return taskName;
     }
 
-    /**
-     * The ID number of the ADDM task.
-     **/
+    /** The ID number of the ADDM task. */
     @com.fasterxml.jackson.annotation.JsonProperty("taskId")
     private final Long taskId;
 
     /**
      * The ID number of the ADDM task.
+     *
      * @return the value
-     **/
+     */
     public Long getTaskId() {
         return taskId;
     }
 
-    /**
-     * The description of the ADDM task.
-     **/
+    /** The description of the ADDM task. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the ADDM task.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The database user who owns the ADDM task.
-     **/
+    /** The database user who owns the ADDM task. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbUser")
     private final String dbUser;
 
     /**
      * The database user who owns the ADDM task.
+     *
      * @return the value
-     **/
+     */
     public String getDbUser() {
         return dbUser;
     }
 
-    /**
-     * The status of the ADDM task.
-     **/
-    public enum Status {
+    /** The status of the ADDM task. */
+    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Initial("INITIAL"),
         Executing("EXECUTING"),
         Interrupted("INTERRUPTED"),
@@ -408,8 +390,8 @@ public final class AddmTaskSummary extends com.oracle.bmc.http.internal.Explicit
         Error("ERROR"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -447,44 +429,40 @@ public final class AddmTaskSummary extends com.oracle.bmc.http.internal.Explicit
             return UnknownEnumValue;
         }
     };
-    /**
-     * The status of the ADDM task.
-     **/
+    /** The status of the ADDM task. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * The status of the ADDM task.
+     *
      * @return the value
-     **/
+     */
     public Status getStatus() {
         return status;
     }
 
-    /**
-     * The creation date of the ADDM task.
-     **/
+    /** The creation date of the ADDM task. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The creation date of the ADDM task.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * A description of how the task was created.
-     **/
-    public enum HowCreated {
+    /** A description of how the task was created. */
+    public enum HowCreated implements com.oracle.bmc.http.internal.BmcEnum {
         Auto("AUTO"),
         Manual("MANUAL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -523,56 +501,54 @@ public final class AddmTaskSummary extends com.oracle.bmc.http.internal.Explicit
             return UnknownEnumValue;
         }
     };
-    /**
-     * A description of how the task was created.
-     **/
+    /** A description of how the task was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("howCreated")
     private final HowCreated howCreated;
 
     /**
      * A description of how the task was created.
+     *
      * @return the value
-     **/
+     */
     public HowCreated getHowCreated() {
         return howCreated;
     }
 
     /**
-     * The timestamp of the beginning AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
-     *
-     **/
+     * The timestamp of the beginning AWR snapshot used in the ADDM task as defined by date-time
+     * RFC3339 format.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("startSnapshotTime")
     private final java.util.Date startSnapshotTime;
 
     /**
-     * The timestamp of the beginning AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+     * The timestamp of the beginning AWR snapshot used in the ADDM task as defined by date-time
+     * RFC3339 format.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getStartSnapshotTime() {
         return startSnapshotTime;
     }
 
     /**
-     * The timestamp of the ending AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
-     *
-     **/
+     * The timestamp of the ending AWR snapshot used in the ADDM task as defined by date-time
+     * RFC3339 format.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("endSnapshotTime")
     private final java.util.Date endSnapshotTime;
 
     /**
-     * The timestamp of the ending AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+     * The timestamp of the ending AWR snapshot used in the ADDM task as defined by date-time
+     * RFC3339 format.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getEndSnapshotTime() {
         return endSnapshotTime;
     }
 
-    /**
-     * The ID number of the beginning AWR snapshot.
-     *
-     **/
+    /** The ID number of the beginning AWR snapshot. */
     @com.fasterxml.jackson.annotation.JsonProperty("beginSnapshotId")
     private final Long beginSnapshotId;
 
@@ -580,15 +556,12 @@ public final class AddmTaskSummary extends com.oracle.bmc.http.internal.Explicit
      * The ID number of the beginning AWR snapshot.
      *
      * @return the value
-     **/
+     */
     public Long getBeginSnapshotId() {
         return beginSnapshotId;
     }
 
-    /**
-     * The ID number of the ending AWR snapshot.
-     *
-     **/
+    /** The ID number of the ending AWR snapshot. */
     @com.fasterxml.jackson.annotation.JsonProperty("endSnapshotId")
     private final Long endSnapshotId;
 
@@ -596,21 +569,20 @@ public final class AddmTaskSummary extends com.oracle.bmc.http.internal.Explicit
      * The ID number of the ending AWR snapshot.
      *
      * @return the value
-     **/
+     */
     public Long getEndSnapshotId() {
         return endSnapshotId;
     }
 
-    /**
-     * The number of ADDM findings.
-     **/
+    /** The number of ADDM findings. */
     @com.fasterxml.jackson.annotation.JsonProperty("findings")
     private final Long findings;
 
     /**
      * The number of ADDM findings.
+     *
      * @return the value
-     **/
+     */
     public Long getFindings() {
         return findings;
     }
@@ -622,6 +594,7 @@ public final class AddmTaskSummary extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

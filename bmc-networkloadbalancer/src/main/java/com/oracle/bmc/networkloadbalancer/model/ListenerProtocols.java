@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.networkloadbalancer.model;
 
-/**
- * Protocols supported for the listener of the network load balancer.
- **/
+/** Protocols supported for the listener of the network load balancer. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-public enum ListenerProtocols {
+public enum ListenerProtocols implements com.oracle.bmc.http.internal.BmcEnum {
     Any("ANY"),
     Tcp("TCP"),
     Udp("UDP"),

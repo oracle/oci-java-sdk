@@ -5,21 +5,22 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * Summary of vault replicas
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary of vault replicas <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = VaultReplicaSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VaultReplicaSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = VaultReplicaSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class VaultReplicaSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"cryptoEndpoint", "managementEndpoint", "region", "status"})
     public VaultReplicaSummary(
@@ -33,10 +34,7 @@ public final class VaultReplicaSummary extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The vault replica's crypto endpoint
-         *
-         **/
+        /** The vault replica's crypto endpoint */
         @com.fasterxml.jackson.annotation.JsonProperty("cryptoEndpoint")
         private String cryptoEndpoint;
 
@@ -45,16 +43,13 @@ public final class VaultReplicaSummary extends com.oracle.bmc.http.internal.Expl
          *
          * @param cryptoEndpoint the value to set
          * @return this builder
-         **/
+         */
         public Builder cryptoEndpoint(String cryptoEndpoint) {
             this.cryptoEndpoint = cryptoEndpoint;
             this.__explicitlySet__.add("cryptoEndpoint");
             return this;
         }
-        /**
-         * The vault replica's management endpoint
-         *
-         **/
+        /** The vault replica's management endpoint */
         @com.fasterxml.jackson.annotation.JsonProperty("managementEndpoint")
         private String managementEndpoint;
 
@@ -63,16 +58,13 @@ public final class VaultReplicaSummary extends com.oracle.bmc.http.internal.Expl
          *
          * @param managementEndpoint the value to set
          * @return this builder
-         **/
+         */
         public Builder managementEndpoint(String managementEndpoint) {
             this.managementEndpoint = managementEndpoint;
             this.__explicitlySet__.add("managementEndpoint");
             return this;
         }
-        /**
-         * Region to which vault is replicated to
-         *
-         **/
+        /** Region to which vault is replicated to */
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
@@ -81,7 +73,7 @@ public final class VaultReplicaSummary extends com.oracle.bmc.http.internal.Expl
          *
          * @param region the value to set
          * @return this builder
-         **/
+         */
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
@@ -128,9 +120,7 @@ public final class VaultReplicaSummary extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -139,10 +129,7 @@ public final class VaultReplicaSummary extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * The vault replica's crypto endpoint
-     *
-     **/
+    /** The vault replica's crypto endpoint */
     @com.fasterxml.jackson.annotation.JsonProperty("cryptoEndpoint")
     private final String cryptoEndpoint;
 
@@ -150,15 +137,12 @@ public final class VaultReplicaSummary extends com.oracle.bmc.http.internal.Expl
      * The vault replica's crypto endpoint
      *
      * @return the value
-     **/
+     */
     public String getCryptoEndpoint() {
         return cryptoEndpoint;
     }
 
-    /**
-     * The vault replica's management endpoint
-     *
-     **/
+    /** The vault replica's management endpoint */
     @com.fasterxml.jackson.annotation.JsonProperty("managementEndpoint")
     private final String managementEndpoint;
 
@@ -166,15 +150,12 @@ public final class VaultReplicaSummary extends com.oracle.bmc.http.internal.Expl
      * The vault replica's management endpoint
      *
      * @return the value
-     **/
+     */
     public String getManagementEndpoint() {
         return managementEndpoint;
     }
 
-    /**
-     * Region to which vault is replicated to
-     *
-     **/
+    /** Region to which vault is replicated to */
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
@@ -182,22 +163,21 @@ public final class VaultReplicaSummary extends com.oracle.bmc.http.internal.Expl
      * Region to which vault is replicated to
      *
      * @return the value
-     **/
+     */
     public String getRegion() {
         return region;
     }
 
-    /**
-     **/
-    public enum Status {
+    /** */
+    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Created("CREATED"),
         Deleting("DELETING"),
         Deleted("DELETED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -250,6 +230,7 @@ public final class VaultReplicaSummary extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -14,7 +14,7 @@ Example:
           <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-enforcer-rules</artifactId>
-            <version>2.40.1</version> <!-- use latest version -->
+            <version>2.46.0</version> <!-- use latest version -->
             <optional>false</optional>
           </dependency>
         </dependencies>
@@ -58,3 +58,14 @@ Use 'mvn dependency:tree' to locate the source of the dependencies with the mixe
 [INFO] ------------------------------------------------------------------------
 ```
 
+## Installation
+
+If you have access to Maven Central, Maven should automatically download the enforcer rule. If you do not have access to Maven Central, you can install the `oci-java-sdk-enforcer-rules` Maven package in your local repository using the following command line:
+
+```
+mvn install:install-file -Dfile=buildTools/oci-java-sdk-enforcer-rules/lib/oci-java-sdk-enforcer-rules-2.46.0.jar -DpomFile=buildTools/oci-java-sdk-enforcer-rules/lib/oci-java-sdk-enforcer-rules-2.46.0.pom
+```
+
+Note that exact version (e.g. `2.46.0`) varies based on what version of the OCI Java SDK you downloaded and are using, and that the paths (i.e. `buildTools/oci-java-sdk-enforcer-rules/lib/`) are taken to be from the root of the ZIP file distributable.
+
+For more information about installing Maven packages, see [Guide to installing 3rd party JARs](https://maven.apache.org/guides/mini/guide-3rd-party-jars-local.html).

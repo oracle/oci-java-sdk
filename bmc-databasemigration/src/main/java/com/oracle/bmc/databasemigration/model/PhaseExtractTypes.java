@@ -4,12 +4,9 @@
  */
 package com.oracle.bmc.databasemigration.model;
 
-/**
- * Job Phase extract type.
- *
- **/
+/** Job Phase extract type. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-public enum PhaseExtractTypes {
+public enum PhaseExtractTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Error("ERROR"),
 
     /**

@@ -5,20 +5,21 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Summary of a namespace
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary of a namespace <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = NamespaceSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class NamespaceSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class NamespaceSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -46,101 +47,95 @@ public final class NamespaceSummary extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Unique namespace key that is immutable.
-         **/
+        /** Unique namespace key that is immutable. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Unique namespace key that is immutable.
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /**
-         * Name of the namespace
-         **/
+        /** Name of the namespace */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Name of the namespace
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Detailed description of the namespace.
-         **/
+        /** Detailed description of the namespace. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Detailed description of the namespace.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * If this field is defined by service or by a user
-         **/
+        /** If this field is defined by service or by a user */
         @com.fasterxml.jackson.annotation.JsonProperty("isServiceDefined")
         private Boolean isServiceDefined;
 
         /**
          * If this field is defined by service or by a user
+         *
          * @param isServiceDefined the value to set
          * @return this builder
-         **/
+         */
         public Builder isServiceDefined(Boolean isServiceDefined) {
             this.isServiceDefined = isServiceDefined;
             this.__explicitlySet__.add("isServiceDefined");
             return this;
         }
-        /**
-         * The current state of the namespace.
-         **/
+        /** The current state of the namespace. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the namespace.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * The date and time the namespace was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * Example: {@code 2019-03-25T21:10:29.600Z}
-         *
-         **/
+         * The date and time the namespace was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the namespace was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * Example: {@code 2019-03-25T21:10:29.600Z}
+         * The date and time the namespace was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -189,9 +184,7 @@ public final class NamespaceSummary extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -200,90 +193,84 @@ public final class NamespaceSummary extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique namespace key that is immutable.
-     **/
+    /** Unique namespace key that is immutable. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Unique namespace key that is immutable.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * Name of the namespace
-     **/
+    /** Name of the namespace */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Name of the namespace
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Detailed description of the namespace.
-     **/
+    /** Detailed description of the namespace. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Detailed description of the namespace.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * If this field is defined by service or by a user
-     **/
+    /** If this field is defined by service or by a user */
     @com.fasterxml.jackson.annotation.JsonProperty("isServiceDefined")
     private final Boolean isServiceDefined;
 
     /**
      * If this field is defined by service or by a user
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsServiceDefined() {
         return isServiceDefined;
     }
 
-    /**
-     * The current state of the namespace.
-     **/
+    /** The current state of the namespace. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the namespace.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * The date and time the namespace was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Example: {@code 2019-03-25T21:10:29.600Z}
-     *
-     **/
+     * The date and time the namespace was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the namespace was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Example: {@code 2019-03-25T21:10:29.600Z}
+     * The date and time the namespace was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -295,6 +282,7 @@ public final class NamespaceSummary extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

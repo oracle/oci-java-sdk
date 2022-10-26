@@ -5,22 +5,22 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /**
- * Security Rule used in the firewall policy rules.
- * Security Rules determine whether to block or allow a session based on traffic attributes,
- * such as  the source and destination IP address, protocol/port, and the HTTP(S) target URL.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Security Rule used in the firewall policy rules. Security Rules determine whether to block or
+ * allow a session based on traffic attributes, such as the source and destination IP address,
+ * protocol/port, and the HTTP(S) target URL. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SecurityRule.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SecurityRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class SecurityRule extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "condition", "action", "inspection"})
     public SecurityRule(
@@ -37,17 +37,16 @@ public final class SecurityRule extends com.oracle.bmc.http.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Name for the Security rule, must be unique within the policy.
-         **/
+        /** Name for the Security rule, must be unique within the policy. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name for the Security rule, must be unique within the policy.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -64,51 +63,53 @@ public final class SecurityRule extends com.oracle.bmc.http.internal.ExplicitlyS
         }
         /**
          * Types of Action on the Traffic flow.
-         * <p>
-         * ALLOW - Allows the traffic.
-         *   * DROP - Silently drops the traffic, e.g. without sending a TCP reset.
-         *   * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
-         *   * INSPECT - Inspects traffic for vulnerability as specified in {@code inspection}, which may result in rejection.
          *
-         **/
+         * <p>ALLOW - Allows the traffic. * DROP - Silently drops the traffic, e.g. without sending
+         * a TCP reset. * REJECT - Rejects the traffic, sending a TCP reset to client and/or server
+         * as applicable. * INSPECT - Inspects traffic for vulnerability as specified in {@code
+         * inspection}, which may result in rejection.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
         /**
          * Types of Action on the Traffic flow.
-         * <p>
-         * ALLOW - Allows the traffic.
-         *   * DROP - Silently drops the traffic, e.g. without sending a TCP reset.
-         *   * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
-         *   * INSPECT - Inspects traffic for vulnerability as specified in {@code inspection}, which may result in rejection.
+         *
+         * <p>ALLOW - Allows the traffic. * DROP - Silently drops the traffic, e.g. without sending
+         * a TCP reset. * REJECT - Rejects the traffic, sending a TCP reset to client and/or server
+         * as applicable. * INSPECT - Inspects traffic for vulnerability as specified in {@code
+         * inspection}, which may result in rejection.
          *
          * @param action the value to set
          * @return this builder
-         **/
+         */
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
             return this;
         }
         /**
-         * Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
-         * <p>
-         * INTRUSION_DETECTION - Intrusion Detection.
-         *   * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in {@code type}.
+         * Type of inspection to affect the Traffic flow. This is only applicable if action is
+         * INSPECT.
          *
-         **/
+         * <p>INTRUSION_DETECTION - Intrusion Detection. * INTRUSION_PREVENTION - Intrusion
+         * Detection and Prevention. Traffic classified as potentially malicious will be rejected as
+         * described in {@code type}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("inspection")
         private Inspection inspection;
 
         /**
-         * Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
-         * <p>
-         * INTRUSION_DETECTION - Intrusion Detection.
-         *   * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in {@code type}.
+         * Type of inspection to affect the Traffic flow. This is only applicable if action is
+         * INSPECT.
+         *
+         * <p>INTRUSION_DETECTION - Intrusion Detection. * INTRUSION_PREVENTION - Intrusion
+         * Detection and Prevention. Traffic classified as potentially malicious will be rejected as
+         * described in {@code type}.
          *
          * @param inspection the value to set
          * @return this builder
-         **/
+         */
         public Builder inspection(Inspection inspection) {
             this.inspection = inspection;
             this.__explicitlySet__.add("inspection");
@@ -145,9 +146,7 @@ public final class SecurityRule extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -156,16 +155,15 @@ public final class SecurityRule extends com.oracle.bmc.http.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /**
-     * Name for the Security rule, must be unique within the policy.
-     **/
+    /** Name for the Security rule, must be unique within the policy. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name for the Security rule, must be unique within the policy.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
@@ -179,22 +177,21 @@ public final class SecurityRule extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Types of Action on the Traffic flow.
-     * <p>
-     * ALLOW - Allows the traffic.
-     *   * DROP - Silently drops the traffic, e.g. without sending a TCP reset.
-     *   * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
-     *   * INSPECT - Inspects traffic for vulnerability as specified in {@code inspection}, which may result in rejection.
      *
-     **/
-    public enum Action {
+     * <p>ALLOW - Allows the traffic. * DROP - Silently drops the traffic, e.g. without sending a
+     * TCP reset. * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as
+     * applicable. * INSPECT - Inspects traffic for vulnerability as specified in {@code
+     * inspection}, which may result in rejection.
+     */
+    public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
         Allow("ALLOW"),
         Drop("DROP"),
         Reject("REJECT"),
         Inspect("INSPECT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -234,44 +231,43 @@ public final class SecurityRule extends com.oracle.bmc.http.internal.ExplicitlyS
     };
     /**
      * Types of Action on the Traffic flow.
-     * <p>
-     * ALLOW - Allows the traffic.
-     *   * DROP - Silently drops the traffic, e.g. without sending a TCP reset.
-     *   * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
-     *   * INSPECT - Inspects traffic for vulnerability as specified in {@code inspection}, which may result in rejection.
      *
-     **/
+     * <p>ALLOW - Allows the traffic. * DROP - Silently drops the traffic, e.g. without sending a
+     * TCP reset. * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as
+     * applicable. * INSPECT - Inspects traffic for vulnerability as specified in {@code
+     * inspection}, which may result in rejection.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
     /**
      * Types of Action on the Traffic flow.
-     * <p>
-     * ALLOW - Allows the traffic.
-     *   * DROP - Silently drops the traffic, e.g. without sending a TCP reset.
-     *   * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
-     *   * INSPECT - Inspects traffic for vulnerability as specified in {@code inspection}, which may result in rejection.
+     *
+     * <p>ALLOW - Allows the traffic. * DROP - Silently drops the traffic, e.g. without sending a
+     * TCP reset. * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as
+     * applicable. * INSPECT - Inspects traffic for vulnerability as specified in {@code
+     * inspection}, which may result in rejection.
      *
      * @return the value
-     **/
+     */
     public Action getAction() {
         return action;
     }
 
     /**
      * Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
-     * <p>
-     * INTRUSION_DETECTION - Intrusion Detection.
-     *   * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in {@code type}.
      *
-     **/
-    public enum Inspection {
+     * <p>INTRUSION_DETECTION - Intrusion Detection. * INTRUSION_PREVENTION - Intrusion Detection
+     * and Prevention. Traffic classified as potentially malicious will be rejected as described in
+     * {@code type}.
+     */
+    public enum Inspection implements com.oracle.bmc.http.internal.BmcEnum {
         IntrusionDetection("INTRUSION_DETECTION"),
         IntrusionPrevention("INTRUSION_PREVENTION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -312,22 +308,23 @@ public final class SecurityRule extends com.oracle.bmc.http.internal.ExplicitlyS
     };
     /**
      * Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
-     * <p>
-     * INTRUSION_DETECTION - Intrusion Detection.
-     *   * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in {@code type}.
      *
-     **/
+     * <p>INTRUSION_DETECTION - Intrusion Detection. * INTRUSION_PREVENTION - Intrusion Detection
+     * and Prevention. Traffic classified as potentially malicious will be rejected as described in
+     * {@code type}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("inspection")
     private final Inspection inspection;
 
     /**
      * Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
-     * <p>
-     * INTRUSION_DETECTION - Intrusion Detection.
-     *   * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in {@code type}.
+     *
+     * <p>INTRUSION_DETECTION - Intrusion Detection. * INTRUSION_PREVENTION - Intrusion Detection
+     * and Prevention. Traffic classified as potentially malicious will be rejected as described in
+     * {@code type}.
      *
      * @return the value
-     **/
+     */
     public Inspection getInspection() {
         return inspection;
     }
@@ -339,6 +336,7 @@ public final class SecurityRule extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

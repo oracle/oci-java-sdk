@@ -5,25 +5,24 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies Trigger Deployment Pipleline stage specific run details.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Specifies Trigger Deployment Pipleline stage specific run details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = TriggerDeploymentPipelineStageRunProgress.Builder.class
-)
+        builder = TriggerDeploymentPipelineStageRunProgress.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "buildPipelineStageType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "buildPipelineStageType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class TriggerDeploymentPipelineStageRunProgress extends BuildPipelineStageRunProgress {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -100,17 +99,16 @@ public final class TriggerDeploymentPipelineStageRunProgress extends BuildPipeli
             this.__explicitlySet__.add("artifactOverrideParameters");
             return this;
         }
-        /**
-         * Identifier of the deployment triggered.
-         **/
+        /** Identifier of the deployment triggered. */
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
         private String deploymentId;
 
         /**
          * Identifier of the deployment triggered.
+         *
          * @param deploymentId the value to set
          * @return this builder
-         **/
+         */
         public Builder deploymentId(String deploymentId) {
             this.deploymentId = deploymentId;
             this.__explicitlySet__.add("deploymentId");
@@ -171,9 +169,7 @@ public final class TriggerDeploymentPipelineStageRunProgress extends BuildPipeli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -219,16 +215,15 @@ public final class TriggerDeploymentPipelineStageRunProgress extends BuildPipeli
         return artifactOverrideParameters;
     }
 
-    /**
-     * Identifier of the deployment triggered.
-     **/
+    /** Identifier of the deployment triggered. */
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
     private final String deploymentId;
 
     /**
      * Identifier of the deployment triggered.
+     *
      * @return the value
-     **/
+     */
     public String getDeploymentId() {
         return deploymentId;
     }
@@ -240,6 +235,7 @@ public final class TriggerDeploymentPipelineStageRunProgress extends BuildPipeli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

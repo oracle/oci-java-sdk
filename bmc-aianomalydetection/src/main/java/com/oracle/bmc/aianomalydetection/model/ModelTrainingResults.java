@@ -5,21 +5,22 @@
 package com.oracle.bmc.aianomalydetection.model;
 
 /**
- * Specifies the details for an Anomaly Detection model trained with MSET.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Specifies the details for an Anomaly Detection model trained with MSET. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ModelTrainingResults.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ModelTrainingResults extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ModelTrainingResults.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ModelTrainingResults
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "fap",
@@ -47,81 +48,80 @@ public final class ModelTrainingResults extends com.oracle.bmc.http.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The final-achieved model accuracy metric on individual value level
-         **/
+        /** The final-achieved model accuracy metric on individual value level */
         @com.fasterxml.jackson.annotation.JsonProperty("fap")
         private Float fap;
 
         /**
          * The final-achieved model accuracy metric on individual value level
+         *
          * @param fap the value to set
          * @return this builder
-         **/
+         */
         public Builder fap(Float fap) {
             this.fap = fap;
             this.__explicitlySet__.add("fap");
             return this;
         }
-        /**
-         * The model accuracy metric on timestamp level.
-         **/
+        /** The model accuracy metric on timestamp level. */
         @com.fasterxml.jackson.annotation.JsonProperty("multivariateFap")
         private Float multivariateFap;
 
         /**
          * The model accuracy metric on timestamp level.
+         *
          * @param multivariateFap the value to set
          * @return this builder
-         **/
+         */
         public Builder multivariateFap(Float multivariateFap) {
             this.multivariateFap = multivariateFap;
             this.__explicitlySet__.add("multivariateFap");
             return this;
         }
-        /**
-         * A boolean value to indicate if train goal/targetFap is achieved for trained model
-         **/
+        /** A boolean value to indicate if train goal/targetFap is achieved for trained model */
         @com.fasterxml.jackson.annotation.JsonProperty("isTrainingGoalAchieved")
         private Boolean isTrainingGoalAchieved;
 
         /**
          * A boolean value to indicate if train goal/targetFap is achieved for trained model
+         *
          * @param isTrainingGoalAchieved the value to set
          * @return this builder
-         **/
+         */
         public Builder isTrainingGoalAchieved(Boolean isTrainingGoalAchieved) {
             this.isTrainingGoalAchieved = isTrainingGoalAchieved;
             this.__explicitlySet__.add("isTrainingGoalAchieved");
             return this;
         }
         /**
-         * A warning message to explain the reason when targetFap cannot be achieved for trained model
-         **/
+         * A warning message to explain the reason when targetFap cannot be achieved for trained
+         * model
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("warning")
         private String warning;
 
         /**
-         * A warning message to explain the reason when targetFap cannot be achieved for trained model
+         * A warning message to explain the reason when targetFap cannot be achieved for trained
+         * model
+         *
          * @param warning the value to set
          * @return this builder
-         **/
+         */
         public Builder warning(String warning) {
             this.warning = warning;
             this.__explicitlySet__.add("warning");
             return this;
         }
-        /**
-         * The list of signal details.
-         **/
+        /** The list of signal details. */
         @com.fasterxml.jackson.annotation.JsonProperty("signalDetails")
         private java.util.List<PerSignalDetails> signalDetails;
 
         /**
          * The list of signal details.
+         *
          * @param signalDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder signalDetails(java.util.List<PerSignalDetails> signalDetails) {
             this.signalDetails = signalDetails;
             this.__explicitlySet__.add("signalDetails");
@@ -179,9 +179,7 @@ public final class ModelTrainingResults extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -190,72 +188,69 @@ public final class ModelTrainingResults extends com.oracle.bmc.http.internal.Exp
         return new Builder().copy(this);
     }
 
-    /**
-     * The final-achieved model accuracy metric on individual value level
-     **/
+    /** The final-achieved model accuracy metric on individual value level */
     @com.fasterxml.jackson.annotation.JsonProperty("fap")
     private final Float fap;
 
     /**
      * The final-achieved model accuracy metric on individual value level
+     *
      * @return the value
-     **/
+     */
     public Float getFap() {
         return fap;
     }
 
-    /**
-     * The model accuracy metric on timestamp level.
-     **/
+    /** The model accuracy metric on timestamp level. */
     @com.fasterxml.jackson.annotation.JsonProperty("multivariateFap")
     private final Float multivariateFap;
 
     /**
      * The model accuracy metric on timestamp level.
+     *
      * @return the value
-     **/
+     */
     public Float getMultivariateFap() {
         return multivariateFap;
     }
 
-    /**
-     * A boolean value to indicate if train goal/targetFap is achieved for trained model
-     **/
+    /** A boolean value to indicate if train goal/targetFap is achieved for trained model */
     @com.fasterxml.jackson.annotation.JsonProperty("isTrainingGoalAchieved")
     private final Boolean isTrainingGoalAchieved;
 
     /**
      * A boolean value to indicate if train goal/targetFap is achieved for trained model
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsTrainingGoalAchieved() {
         return isTrainingGoalAchieved;
     }
 
     /**
      * A warning message to explain the reason when targetFap cannot be achieved for trained model
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("warning")
     private final String warning;
 
     /**
      * A warning message to explain the reason when targetFap cannot be achieved for trained model
+     *
      * @return the value
-     **/
+     */
     public String getWarning() {
         return warning;
     }
 
-    /**
-     * The list of signal details.
-     **/
+    /** The list of signal details. */
     @com.fasterxml.jackson.annotation.JsonProperty("signalDetails")
     private final java.util.List<PerSignalDetails> signalDetails;
 
     /**
      * The list of signal details.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<PerSignalDetails> getSignalDetails() {
         return signalDetails;
     }
@@ -274,6 +269,7 @@ public final class ModelTrainingResults extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,21 +5,22 @@
 package com.oracle.bmc.ospgateway.model;
 
 /**
- * Request object for invoice payment
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Request object for invoice payment <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = PayInvoiceDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PayInvoiceDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = PayInvoiceDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class PayInvoiceDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"languageCode", "returnUrl", "email"})
     public PayInvoiceDetails(String languageCode, String returnUrl, String email) {
@@ -31,49 +32,46 @@ public final class PayInvoiceDetails extends com.oracle.bmc.http.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Language code
-         **/
+        /** Language code */
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private String languageCode;
 
         /**
          * Language code
+         *
          * @param languageCode the value to set
          * @return this builder
-         **/
+         */
         public Builder languageCode(String languageCode) {
             this.languageCode = languageCode;
             this.__explicitlySet__.add("languageCode");
             return this;
         }
-        /**
-         * Callback URL
-         **/
+        /** Callback URL */
         @com.fasterxml.jackson.annotation.JsonProperty("returnUrl")
         private String returnUrl;
 
         /**
          * Callback URL
+         *
          * @param returnUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder returnUrl(String returnUrl) {
             this.returnUrl = returnUrl;
             this.__explicitlySet__.add("returnUrl");
             return this;
         }
-        /**
-         * User email
-         **/
+        /** User email */
         @com.fasterxml.jackson.annotation.JsonProperty("email")
         private String email;
 
         /**
          * User email
+         *
          * @param email the value to set
          * @return this builder
-         **/
+         */
         public Builder email(String email) {
             this.email = email;
             this.__explicitlySet__.add("email");
@@ -107,9 +105,7 @@ public final class PayInvoiceDetails extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -118,44 +114,41 @@ public final class PayInvoiceDetails extends com.oracle.bmc.http.internal.Explic
         return new Builder().copy(this);
     }
 
-    /**
-     * Language code
-     **/
+    /** Language code */
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final String languageCode;
 
     /**
      * Language code
+     *
      * @return the value
-     **/
+     */
     public String getLanguageCode() {
         return languageCode;
     }
 
-    /**
-     * Callback URL
-     **/
+    /** Callback URL */
     @com.fasterxml.jackson.annotation.JsonProperty("returnUrl")
     private final String returnUrl;
 
     /**
      * Callback URL
+     *
      * @return the value
-     **/
+     */
     public String getReturnUrl() {
         return returnUrl;
     }
 
-    /**
-     * User email
-     **/
+    /** User email */
     @com.fasterxml.jackson.annotation.JsonProperty("email")
     private final String email;
 
     /**
      * User email
+     *
      * @return the value
-     **/
+     */
     public String getEmail() {
         return email;
     }
@@ -167,6 +160,7 @@ public final class PayInvoiceDetails extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

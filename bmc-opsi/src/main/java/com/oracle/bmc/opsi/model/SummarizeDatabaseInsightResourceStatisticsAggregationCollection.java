@@ -5,22 +5,23 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Returns list of the Databases with resource statistics like usage,capacity,utilization and usage change percent.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Returns list of the Databases with resource statistics like usage,capacity,utilization and usage
+ * change percent. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SummarizeDatabaseInsightResourceStatisticsAggregationCollection.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SummarizeDatabaseInsightResourceStatisticsAggregationCollection.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SummarizeDatabaseInsightResourceStatisticsAggregationCollection
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeIntervalStart",
@@ -45,42 +46,37 @@ public final class SummarizeDatabaseInsightResourceStatisticsAggregationCollecti
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The start timestamp that was passed into the request.
-         **/
+        /** The start timestamp that was passed into the request. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
         private java.util.Date timeIntervalStart;
 
         /**
          * The start timestamp that was passed into the request.
+         *
          * @param timeIntervalStart the value to set
          * @return this builder
-         **/
+         */
         public Builder timeIntervalStart(java.util.Date timeIntervalStart) {
             this.timeIntervalStart = timeIntervalStart;
             this.__explicitlySet__.add("timeIntervalStart");
             return this;
         }
-        /**
-         * The end timestamp that was passed into the request.
-         **/
+        /** The end timestamp that was passed into the request. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
         private java.util.Date timeIntervalEnd;
 
         /**
          * The end timestamp that was passed into the request.
+         *
          * @param timeIntervalEnd the value to set
          * @return this builder
-         **/
+         */
         public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
             this.timeIntervalEnd = timeIntervalEnd;
             this.__explicitlySet__.add("timeIntervalEnd");
             return this;
         }
-        /**
-         * Defines the type of resource metric (example: CPU, STORAGE)
-         *
-         **/
+        /** Defines the type of resource metric (example: CPU, STORAGE) */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceMetric")
         private ResourceMetric resourceMetric;
 
@@ -89,39 +85,37 @@ public final class SummarizeDatabaseInsightResourceStatisticsAggregationCollecti
          *
          * @param resourceMetric the value to set
          * @return this builder
-         **/
+         */
         public Builder resourceMetric(ResourceMetric resourceMetric) {
             this.resourceMetric = resourceMetric;
             this.__explicitlySet__.add("resourceMetric");
             return this;
         }
-        /**
-         * Displays usage unit ( CORES, GB , PERCENT, MBPS)
-         **/
+        /** Displays usage unit ( CORES, GB , PERCENT, MBPS) */
         @com.fasterxml.jackson.annotation.JsonProperty("usageUnit")
         private UsageUnit usageUnit;
 
         /**
          * Displays usage unit ( CORES, GB , PERCENT, MBPS)
+         *
          * @param usageUnit the value to set
          * @return this builder
-         **/
+         */
         public Builder usageUnit(UsageUnit usageUnit) {
             this.usageUnit = usageUnit;
             this.__explicitlySet__.add("usageUnit");
             return this;
         }
-        /**
-         * Collection of Resource Statistics items
-         **/
+        /** Collection of Resource Statistics items */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ResourceStatisticsAggregation> items;
 
         /**
          * Collection of Resource Statistics items
+         *
          * @param items the value to set
          * @return this builder
-         **/
+         */
         public Builder items(java.util.List<ResourceStatisticsAggregation> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -166,9 +160,7 @@ public final class SummarizeDatabaseInsightResourceStatisticsAggregationCollecti
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -177,39 +169,34 @@ public final class SummarizeDatabaseInsightResourceStatisticsAggregationCollecti
         return new Builder().copy(this);
     }
 
-    /**
-     * The start timestamp that was passed into the request.
-     **/
+    /** The start timestamp that was passed into the request. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
     private final java.util.Date timeIntervalStart;
 
     /**
      * The start timestamp that was passed into the request.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
 
-    /**
-     * The end timestamp that was passed into the request.
-     **/
+    /** The end timestamp that was passed into the request. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
     private final java.util.Date timeIntervalEnd;
 
     /**
      * The end timestamp that was passed into the request.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
 
-    /**
-     * Defines the type of resource metric (example: CPU, STORAGE)
-     *
-     **/
-    public enum ResourceMetric {
+    /** Defines the type of resource metric (example: CPU, STORAGE) */
+    public enum ResourceMetric implements com.oracle.bmc.http.internal.BmcEnum {
         Cpu("CPU"),
         Storage("STORAGE"),
         Io("IO"),
@@ -218,8 +205,8 @@ public final class SummarizeDatabaseInsightResourceStatisticsAggregationCollecti
         MemorySga("MEMORY_SGA"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -258,10 +245,7 @@ public final class SummarizeDatabaseInsightResourceStatisticsAggregationCollecti
             return UnknownEnumValue;
         }
     };
-    /**
-     * Defines the type of resource metric (example: CPU, STORAGE)
-     *
-     **/
+    /** Defines the type of resource metric (example: CPU, STORAGE) */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceMetric")
     private final ResourceMetric resourceMetric;
 
@@ -269,15 +253,13 @@ public final class SummarizeDatabaseInsightResourceStatisticsAggregationCollecti
      * Defines the type of resource metric (example: CPU, STORAGE)
      *
      * @return the value
-     **/
+     */
     public ResourceMetric getResourceMetric() {
         return resourceMetric;
     }
 
-    /**
-     * Displays usage unit ( CORES, GB , PERCENT, MBPS)
-     **/
-    public enum UsageUnit {
+    /** Displays usage unit ( CORES, GB , PERCENT, MBPS) */
+    public enum UsageUnit implements com.oracle.bmc.http.internal.BmcEnum {
         Cores("CORES"),
         Gb("GB"),
         Mbps("MBPS"),
@@ -285,8 +267,8 @@ public final class SummarizeDatabaseInsightResourceStatisticsAggregationCollecti
         Percent("PERCENT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -325,30 +307,28 @@ public final class SummarizeDatabaseInsightResourceStatisticsAggregationCollecti
             return UnknownEnumValue;
         }
     };
-    /**
-     * Displays usage unit ( CORES, GB , PERCENT, MBPS)
-     **/
+    /** Displays usage unit ( CORES, GB , PERCENT, MBPS) */
     @com.fasterxml.jackson.annotation.JsonProperty("usageUnit")
     private final UsageUnit usageUnit;
 
     /**
      * Displays usage unit ( CORES, GB , PERCENT, MBPS)
+     *
      * @return the value
-     **/
+     */
     public UsageUnit getUsageUnit() {
         return usageUnit;
     }
 
-    /**
-     * Collection of Resource Statistics items
-     **/
+    /** Collection of Resource Statistics items */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ResourceStatisticsAggregation> items;
 
     /**
      * Collection of Resource Statistics items
+     *
      * @return the value
-     **/
+     */
     public java.util.List<ResourceStatisticsAggregation> getItems() {
         return items;
     }
@@ -360,6 +340,7 @@ public final class SummarizeDatabaseInsightResourceStatisticsAggregationCollecti
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,22 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * LogAnalyticsConfigWorkRequest
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * LogAnalyticsConfigWorkRequest <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = LogAnalyticsConfigWorkRequest.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = LogAnalyticsConfigWorkRequest.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class LogAnalyticsConfigWorkRequest
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -57,149 +57,136 @@ public final class LogAnalyticsConfigWorkRequest
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The workrequest unique identifier.
-         **/
+        /** The workrequest unique identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The workrequest unique identifier.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The compartment unique identifier.
-         **/
+        /** The compartment unique identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The compartment unique identifier.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The operation type
-         **/
+        /** The operation type */
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
         /**
          * The operation type
+         *
          * @param operationType the value to set
          * @return this builder
-         **/
+         */
         public Builder operationType(OperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
-        /**
-         * The list of config work request responses.
-         **/
+        /** The list of config work request responses. */
         @com.fasterxml.jackson.annotation.JsonProperty("payload")
         private java.util.List<LogAnalyticsConfigWorkRequestPayload> payload;
 
         /**
          * The list of config work request responses.
+         *
          * @param payload the value to set
          * @return this builder
-         **/
+         */
         public Builder payload(java.util.List<LogAnalyticsConfigWorkRequestPayload> payload) {
             this.payload = payload;
             this.__explicitlySet__.add("payload");
             return this;
         }
-        /**
-         * The completion percentage.
-         **/
+        /** The completion percentage. */
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Long percentComplete;
 
         /**
          * The completion percentage.
+         *
          * @param percentComplete the value to set
          * @return this builder
-         **/
+         */
         public Builder percentComplete(Long percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
             return this;
         }
-        /**
-         * The time at which the work request was started.
-         **/
+        /** The time at which the work request was started. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * The time at which the work request was started.
+         *
          * @param timeStarted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /**
-         * The time at which the work request was accepted.
-         **/
+        /** The time at which the work request was accepted. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
         /**
          * The time at which the work request was accepted.
+         *
          * @param timeAccepted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
             return this;
         }
-        /**
-         * The time at which the work request was finished.
-         **/
+        /** The time at which the work request was finished. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
          * The time at which the work request was finished.
+         *
          * @param timeFinished the value to set
          * @return this builder
-         **/
+         */
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
-        /**
-         * The lifecycle status.  Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED
-         * or FAILED
-         *
-         **/
+        /** The lifecycle status. Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED or FAILED */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The lifecycle status.  Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED
-         * or FAILED
+         * The lifecycle status. Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED or FAILED
          *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -260,9 +247,7 @@ public final class LogAnalyticsConfigWorkRequest
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -271,38 +256,34 @@ public final class LogAnalyticsConfigWorkRequest
         return new Builder().copy(this);
     }
 
-    /**
-     * The workrequest unique identifier.
-     **/
+    /** The workrequest unique identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The workrequest unique identifier.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The compartment unique identifier.
-     **/
+    /** The compartment unique identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The compartment unique identifier.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The operation type
-     **/
-    public enum OperationType {
+    /** The operation type */
+    public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
         CreateAssociations("CREATE_ASSOCIATIONS"),
         DeleteAssociations("DELETE_ASSOCIATIONS"),
         AppendLookupData("APPEND_LOOKUP_DATA"),
@@ -312,8 +293,8 @@ public final class LogAnalyticsConfigWorkRequest
         DisableIngestTimeRule("DISABLE_INGEST_TIME_RULE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -352,104 +333,94 @@ public final class LogAnalyticsConfigWorkRequest
             return UnknownEnumValue;
         }
     };
-    /**
-     * The operation type
-     **/
+    /** The operation type */
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
     /**
      * The operation type
+     *
      * @return the value
-     **/
+     */
     public OperationType getOperationType() {
         return operationType;
     }
 
-    /**
-     * The list of config work request responses.
-     **/
+    /** The list of config work request responses. */
     @com.fasterxml.jackson.annotation.JsonProperty("payload")
     private final java.util.List<LogAnalyticsConfigWorkRequestPayload> payload;
 
     /**
      * The list of config work request responses.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<LogAnalyticsConfigWorkRequestPayload> getPayload() {
         return payload;
     }
 
-    /**
-     * The completion percentage.
-     **/
+    /** The completion percentage. */
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Long percentComplete;
 
     /**
      * The completion percentage.
+     *
      * @return the value
-     **/
+     */
     public Long getPercentComplete() {
         return percentComplete;
     }
 
-    /**
-     * The time at which the work request was started.
-     **/
+    /** The time at which the work request was started. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * The time at which the work request was started.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /**
-     * The time at which the work request was accepted.
-     **/
+    /** The time at which the work request was accepted. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
     /**
      * The time at which the work request was accepted.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
 
-    /**
-     * The time at which the work request was finished.
-     **/
+    /** The time at which the work request was finished. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
      * The time at which the work request was finished.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
 
-    /**
-     * The lifecycle status.  Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED
-     * or FAILED
-     *
-     **/
-    public enum LifecycleState {
+    /** The lifecycle status. Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED or FAILED */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
         Succeeded("SUCCEEDED"),
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -488,20 +459,15 @@ public final class LogAnalyticsConfigWorkRequest
             return UnknownEnumValue;
         }
     };
-    /**
-     * The lifecycle status.  Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED
-     * or FAILED
-     *
-     **/
+    /** The lifecycle status. Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED or FAILED */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The lifecycle status.  Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED
-     * or FAILED
+     * The lifecycle status. Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED or FAILED
      *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -513,6 +479,7 @@ public final class LogAnalyticsConfigWorkRequest
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

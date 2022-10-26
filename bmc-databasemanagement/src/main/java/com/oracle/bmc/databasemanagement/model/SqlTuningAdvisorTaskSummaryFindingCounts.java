@@ -5,22 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The number of findings in the SQL Tuning Advisor summary report.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The number of findings in the SQL Tuning Advisor summary report. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SqlTuningAdvisorTaskSummaryFindingCounts.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SqlTuningAdvisorTaskSummaryFindingCounts.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SqlTuningAdvisorTaskSummaryFindingCounts
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "recommendedSqlProfile",
@@ -48,97 +48,95 @@ public final class SqlTuningAdvisorTaskSummaryFindingCounts
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The number of distinct SQL statements with recommended SQL profiles.
-         **/
+        /** The number of distinct SQL statements with recommended SQL profiles. */
         @com.fasterxml.jackson.annotation.JsonProperty("recommendedSqlProfile")
         private Integer recommendedSqlProfile;
 
         /**
          * The number of distinct SQL statements with recommended SQL profiles.
+         *
          * @param recommendedSqlProfile the value to set
          * @return this builder
-         **/
+         */
         public Builder recommendedSqlProfile(Integer recommendedSqlProfile) {
             this.recommendedSqlProfile = recommendedSqlProfile;
             this.__explicitlySet__.add("recommendedSqlProfile");
             return this;
         }
-        /**
-         * The number of distinct SQL statements with implemented SQL profiles.
-         **/
+        /** The number of distinct SQL statements with implemented SQL profiles. */
         @com.fasterxml.jackson.annotation.JsonProperty("implementedSqlProfile")
         private Integer implementedSqlProfile;
 
         /**
          * The number of distinct SQL statements with implemented SQL profiles.
+         *
          * @param implementedSqlProfile the value to set
          * @return this builder
-         **/
+         */
         public Builder implementedSqlProfile(Integer implementedSqlProfile) {
             this.implementedSqlProfile = implementedSqlProfile;
             this.__explicitlySet__.add("implementedSqlProfile");
             return this;
         }
-        /**
-         * The number of distinct SQL statements with index recommendations.
-         **/
+        /** The number of distinct SQL statements with index recommendations. */
         @com.fasterxml.jackson.annotation.JsonProperty("index")
         private Integer index;
 
         /**
          * The number of distinct SQL statements with index recommendations.
+         *
          * @param index the value to set
          * @return this builder
-         **/
+         */
         public Builder index(Integer index) {
             this.index = index;
             this.__explicitlySet__.add("index");
             return this;
         }
-        /**
-         * The number of distinct SQL statements with restructured SQL recommendations.
-         **/
+        /** The number of distinct SQL statements with restructured SQL recommendations. */
         @com.fasterxml.jackson.annotation.JsonProperty("restructure")
         private Integer restructure;
 
         /**
          * The number of distinct SQL statements with restructured SQL recommendations.
+         *
          * @param restructure the value to set
          * @return this builder
-         **/
+         */
         public Builder restructure(Integer restructure) {
             this.restructure = restructure;
             this.__explicitlySet__.add("restructure");
             return this;
         }
         /**
-         * The number of distinct SQL statements with stale or missing optimizer statistics recommendations.
-         **/
+         * The number of distinct SQL statements with stale or missing optimizer statistics
+         * recommendations.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("statistics")
         private Integer statistics;
 
         /**
-         * The number of distinct SQL statements with stale or missing optimizer statistics recommendations.
+         * The number of distinct SQL statements with stale or missing optimizer statistics
+         * recommendations.
+         *
          * @param statistics the value to set
          * @return this builder
-         **/
+         */
         public Builder statistics(Integer statistics) {
             this.statistics = statistics;
             this.__explicitlySet__.add("statistics");
             return this;
         }
-        /**
-         * The number of distinct SQL statements with alternative plan recommendations.
-         **/
+        /** The number of distinct SQL statements with alternative plan recommendations. */
         @com.fasterxml.jackson.annotation.JsonProperty("alternatePlan")
         private Integer alternatePlan;
 
         /**
          * The number of distinct SQL statements with alternative plan recommendations.
+         *
          * @param alternatePlan the value to set
          * @return this builder
-         **/
+         */
         public Builder alternatePlan(Integer alternatePlan) {
             this.alternatePlan = alternatePlan;
             this.__explicitlySet__.add("alternatePlan");
@@ -187,9 +185,7 @@ public final class SqlTuningAdvisorTaskSummaryFindingCounts
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -198,86 +194,84 @@ public final class SqlTuningAdvisorTaskSummaryFindingCounts
         return new Builder().copy(this);
     }
 
-    /**
-     * The number of distinct SQL statements with recommended SQL profiles.
-     **/
+    /** The number of distinct SQL statements with recommended SQL profiles. */
     @com.fasterxml.jackson.annotation.JsonProperty("recommendedSqlProfile")
     private final Integer recommendedSqlProfile;
 
     /**
      * The number of distinct SQL statements with recommended SQL profiles.
+     *
      * @return the value
-     **/
+     */
     public Integer getRecommendedSqlProfile() {
         return recommendedSqlProfile;
     }
 
-    /**
-     * The number of distinct SQL statements with implemented SQL profiles.
-     **/
+    /** The number of distinct SQL statements with implemented SQL profiles. */
     @com.fasterxml.jackson.annotation.JsonProperty("implementedSqlProfile")
     private final Integer implementedSqlProfile;
 
     /**
      * The number of distinct SQL statements with implemented SQL profiles.
+     *
      * @return the value
-     **/
+     */
     public Integer getImplementedSqlProfile() {
         return implementedSqlProfile;
     }
 
-    /**
-     * The number of distinct SQL statements with index recommendations.
-     **/
+    /** The number of distinct SQL statements with index recommendations. */
     @com.fasterxml.jackson.annotation.JsonProperty("index")
     private final Integer index;
 
     /**
      * The number of distinct SQL statements with index recommendations.
+     *
      * @return the value
-     **/
+     */
     public Integer getIndex() {
         return index;
     }
 
-    /**
-     * The number of distinct SQL statements with restructured SQL recommendations.
-     **/
+    /** The number of distinct SQL statements with restructured SQL recommendations. */
     @com.fasterxml.jackson.annotation.JsonProperty("restructure")
     private final Integer restructure;
 
     /**
      * The number of distinct SQL statements with restructured SQL recommendations.
+     *
      * @return the value
-     **/
+     */
     public Integer getRestructure() {
         return restructure;
     }
 
     /**
-     * The number of distinct SQL statements with stale or missing optimizer statistics recommendations.
-     **/
+     * The number of distinct SQL statements with stale or missing optimizer statistics
+     * recommendations.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("statistics")
     private final Integer statistics;
 
     /**
-     * The number of distinct SQL statements with stale or missing optimizer statistics recommendations.
+     * The number of distinct SQL statements with stale or missing optimizer statistics
+     * recommendations.
+     *
      * @return the value
-     **/
+     */
     public Integer getStatistics() {
         return statistics;
     }
 
-    /**
-     * The number of distinct SQL statements with alternative plan recommendations.
-     **/
+    /** The number of distinct SQL statements with alternative plan recommendations. */
     @com.fasterxml.jackson.annotation.JsonProperty("alternatePlan")
     private final Integer alternatePlan;
 
     /**
      * The number of distinct SQL statements with alternative plan recommendations.
+     *
      * @return the value
-     **/
+     */
     public Integer getAlternatePlan() {
         return alternatePlan;
     }
@@ -289,6 +283,7 @@ public final class SqlTuningAdvisorTaskSummaryFindingCounts
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

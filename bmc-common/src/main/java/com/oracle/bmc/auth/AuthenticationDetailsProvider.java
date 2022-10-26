@@ -5,12 +5,12 @@
 package com.oracle.bmc.auth;
 
 /**
- * Interface defining a BasicAuthenticationDetailsProvider that also provides
- * the individual components used to create the keyId.
- * <p>
- * The {@link #getKeyId()} method should be implemented as "tentantId/userId/fingerprint".  See
- * <a href="https://docs.cloud.oracle.com/Content/API/Concepts/signingrequests.htm">docs
- * </a> for more information.
+ * Interface defining a BasicAuthenticationDetailsProvider that also provides the individual
+ * components used to create the keyId.
+ *
+ * <p>The {@link #getKeyId()} method should be implemented as "tentantId/userId/fingerprint". See <a
+ * href="https://docs.cloud.oracle.com/Content/API/Concepts/signingrequests.htm">docs </a> for more
+ * information.
  */
 public interface AuthenticationDetailsProvider extends BasicAuthenticationDetailsProvider {
     /**

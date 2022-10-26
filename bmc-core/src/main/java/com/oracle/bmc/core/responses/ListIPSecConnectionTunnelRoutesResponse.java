@@ -9,17 +9,16 @@ import com.oracle.bmc.core.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListIPSecConnectionTunnelRoutesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For list pagination. When this header appears in the response, additional pages
-     * of results remain. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. When this header appears in the response, additional pages of results
+     * remain. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
     /**
-     * For list pagination. When this header appears in the response, additional pages
-     * of results remain. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages of results
+     * remain. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -28,15 +27,14 @@ public class ListIPSecConnectionTunnelRoutesResponse extends com.oracle.bmc.resp
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -44,10 +42,7 @@ public class ListIPSecConnectionTunnelRoutesResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /**
-     * For list pagination. A pagination token to get the total number of results available.
-     *
-     */
+    /** For list pagination. A pagination token to get the total number of results available. */
     private Integer opcTotalItems;
 
     /**
@@ -59,13 +54,12 @@ public class ListIPSecConnectionTunnelRoutesResponse extends com.oracle.bmc.resp
         return opcTotalItems;
     }
 
-    /**
-     * A list of com.oracle.bmc.core.model.TunnelRouteSummary instances.
-     */
+    /** A list of com.oracle.bmc.core.model.TunnelRouteSummary instances. */
     private java.util.List<com.oracle.bmc.core.model.TunnelRouteSummary> items;
 
     /**
      * A list of com.oracle.bmc.core.model.TunnelRouteSummary instances.
+     *
      * @return the value
      */
     public java.util.List<com.oracle.bmc.core.model.TunnelRouteSummary> getItems() {
@@ -82,7 +76,7 @@ public class ListIPSecConnectionTunnelRoutesResponse extends com.oracle.bmc.resp
     })
     private ListIPSecConnectionTunnelRoutesResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcNextPage,
             String opcRequestId,
             Integer opcTotalItems,
@@ -94,33 +88,36 @@ public class ListIPSecConnectionTunnelRoutesResponse extends com.oracle.bmc.resp
         this.items = items;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    ListIPSecConnectionTunnelRoutesResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For list pagination. When this header appears in the response, additional pages
-         * of results remain. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. When this header appears in the response, additional pages of
+         * results remain. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
         /**
-         * For list pagination. When this header appears in the response, additional pages
-         * of results remain. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages of
+         * results remain. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -131,15 +128,14 @@ public class ListIPSecConnectionTunnelRoutesResponse extends com.oracle.bmc.resp
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -149,10 +145,7 @@ public class ListIPSecConnectionTunnelRoutesResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /**
-         * For list pagination. A pagination token to get the total number of results available.
-         *
-         */
+        /** For list pagination. A pagination token to get the total number of results available. */
         private Integer opcTotalItems;
 
         /**
@@ -166,13 +159,12 @@ public class ListIPSecConnectionTunnelRoutesResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /**
-         * A list of com.oracle.bmc.core.model.TunnelRouteSummary instances.
-         */
+        /** A list of com.oracle.bmc.core.model.TunnelRouteSummary instances. */
         private java.util.List<com.oracle.bmc.core.model.TunnelRouteSummary> items;
 
         /**
          * A list of com.oracle.bmc.core.model.TunnelRouteSummary instances.
+         *
          * @param items the value to set
          * @return this builder
          */
@@ -183,8 +175,10 @@ public class ListIPSecConnectionTunnelRoutesResponse extends com.oracle.bmc.resp
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListIPSecConnectionTunnelRoutesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -198,8 +192,10 @@ public class ListIPSecConnectionTunnelRoutesResponse extends com.oracle.bmc.resp
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListIPSecConnectionTunnelRoutesResponse build() {
             return new ListIPSecConnectionTunnelRoutesResponse(
                     __httpStatusCode__, headers, opcNextPage, opcRequestId, opcTotalItems, items);
@@ -208,6 +204,7 @@ public class ListIPSecConnectionTunnelRoutesResponse extends com.oracle.bmc.resp
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

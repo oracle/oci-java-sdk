@@ -9,15 +9,14 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public class GetAssignedSubscriptionResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,10 +24,7 @@ public class GetAssignedSubscriptionResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -40,14 +36,13 @@ public class GetAssignedSubscriptionResponse extends com.oracle.bmc.responses.Bm
         return etag;
     }
 
-    /**
-     * The returned AssignedSubscription instance.
-     */
+    /** The returned AssignedSubscription instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.AssignedSubscription
             assignedSubscription;
 
     /**
      * The returned AssignedSubscription instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.tenantmanagercontrolplane.model.AssignedSubscription
@@ -64,7 +59,7 @@ public class GetAssignedSubscriptionResponse extends com.oracle.bmc.responses.Bm
     })
     private GetAssignedSubscriptionResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.tenantmanagercontrolplane.model.AssignedSubscription
@@ -75,31 +70,34 @@ public class GetAssignedSubscriptionResponse extends com.oracle.bmc.responses.Bm
         this.assignedSubscription = assignedSubscription;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetAssignedSubscriptionResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -109,10 +107,7 @@ public class GetAssignedSubscriptionResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -126,14 +121,13 @@ public class GetAssignedSubscriptionResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /**
-         * The returned AssignedSubscription instance.
-         */
+        /** The returned AssignedSubscription instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.AssignedSubscription
                 assignedSubscription;
 
         /**
          * The returned AssignedSubscription instance.
+         *
          * @param assignedSubscription the value to set
          * @return this builder
          */
@@ -146,8 +140,10 @@ public class GetAssignedSubscriptionResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetAssignedSubscriptionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -160,8 +156,10 @@ public class GetAssignedSubscriptionResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetAssignedSubscriptionResponse build() {
             return new GetAssignedSubscriptionResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, assignedSubscription);
@@ -170,6 +168,7 @@ public class GetAssignedSubscriptionResponse extends com.oracle.bmc.responses.Bm
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

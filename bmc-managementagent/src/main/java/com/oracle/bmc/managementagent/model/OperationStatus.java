@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.managementagent.model;
 
-/**
- * Possible operation status.
- **/
+/** Possible operation status. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-public enum OperationStatus {
+public enum OperationStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Created("CREATED"),
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),

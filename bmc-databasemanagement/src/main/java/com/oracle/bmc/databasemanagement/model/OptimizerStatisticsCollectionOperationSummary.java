@@ -5,22 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The summary of the Optimizer Statistics Collection operation.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The summary of the Optimizer Statistics Collection operation. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = OptimizerStatisticsCollectionOperationSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = OptimizerStatisticsCollectionOperationSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class OptimizerStatisticsCollectionOperationSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -69,213 +69,200 @@ public final class OptimizerStatisticsCollectionOperationSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The ID of the operation.
-         **/
+        /** The ID of the operation. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private Integer id;
 
         /**
          * The ID of the operation.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(Integer id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The name of the operation.
-         **/
+        /** The name of the operation. */
         @com.fasterxml.jackson.annotation.JsonProperty("operationName")
         private String operationName;
 
         /**
          * The name of the operation.
+         *
          * @param operationName the value to set
          * @return this builder
-         **/
+         */
         public Builder operationName(String operationName) {
             this.operationName = operationName;
             this.__explicitlySet__.add("operationName");
             return this;
         }
-        /**
-         * The target object type such as Table, Index, and Partition.
-         **/
+        /** The target object type such as Table, Index, and Partition. */
         @com.fasterxml.jackson.annotation.JsonProperty("target")
         private String target;
 
         /**
          * The target object type such as Table, Index, and Partition.
+         *
          * @param target the value to set
          * @return this builder
-         **/
+         */
         public Builder target(String target) {
             this.target = target;
             this.__explicitlySet__.add("target");
             return this;
         }
-        /**
-         * The name of the job.
-         **/
+        /** The name of the job. */
         @com.fasterxml.jackson.annotation.JsonProperty("jobName")
         private String jobName;
 
         /**
          * The name of the job.
+         *
          * @param jobName the value to set
          * @return this builder
-         **/
+         */
         public Builder jobName(String jobName) {
             this.jobName = jobName;
             this.__explicitlySet__.add("jobName");
             return this;
         }
-        /**
-         * The status of the operation such as Completed, and Failed.
-         **/
+        /** The status of the operation such as Completed, and Failed. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * The status of the operation such as Completed, and Failed.
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * The start time of the operation.
-         **/
+        /** The start time of the operation. */
         @com.fasterxml.jackson.annotation.JsonProperty("startTime")
         private String startTime;
 
         /**
          * The start time of the operation.
+         *
          * @param startTime the value to set
          * @return this builder
-         **/
+         */
         public Builder startTime(String startTime) {
             this.startTime = startTime;
             this.__explicitlySet__.add("startTime");
             return this;
         }
-        /**
-         * The end time of the operation.
-         **/
+        /** The end time of the operation. */
         @com.fasterxml.jackson.annotation.JsonProperty("endTime")
         private String endTime;
 
         /**
          * The end time of the operation.
+         *
          * @param endTime the value to set
          * @return this builder
-         **/
+         */
         public Builder endTime(String endTime) {
             this.endTime = endTime;
             this.__explicitlySet__.add("endTime");
             return this;
         }
-        /**
-         * The time it takes to complete the operation (in seconds).
-         **/
+        /** The time it takes to complete the operation (in seconds). */
         @com.fasterxml.jackson.annotation.JsonProperty("durationInSeconds")
         private java.math.BigDecimal durationInSeconds;
 
         /**
          * The time it takes to complete the operation (in seconds).
+         *
          * @param durationInSeconds the value to set
          * @return this builder
-         **/
+         */
         public Builder durationInSeconds(java.math.BigDecimal durationInSeconds) {
             this.durationInSeconds = durationInSeconds;
             this.__explicitlySet__.add("durationInSeconds");
             return this;
         }
-        /**
-         * The number of objects for which statistics collection is completed.
-         **/
+        /** The number of objects for which statistics collection is completed. */
         @com.fasterxml.jackson.annotation.JsonProperty("completedCount")
         private Integer completedCount;
 
         /**
          * The number of objects for which statistics collection is completed.
+         *
          * @param completedCount the value to set
          * @return this builder
-         **/
+         */
         public Builder completedCount(Integer completedCount) {
             this.completedCount = completedCount;
             this.__explicitlySet__.add("completedCount");
             return this;
         }
-        /**
-         * The number of objects for which statistics collection is in progress.
-         **/
+        /** The number of objects for which statistics collection is in progress. */
         @com.fasterxml.jackson.annotation.JsonProperty("inProgressCount")
         private Integer inProgressCount;
 
         /**
          * The number of objects for which statistics collection is in progress.
+         *
          * @param inProgressCount the value to set
          * @return this builder
-         **/
+         */
         public Builder inProgressCount(Integer inProgressCount) {
             this.inProgressCount = inProgressCount;
             this.__explicitlySet__.add("inProgressCount");
             return this;
         }
-        /**
-         * The number of objects for which statistics collection failed.
-         **/
+        /** The number of objects for which statistics collection failed. */
         @com.fasterxml.jackson.annotation.JsonProperty("failedCount")
         private Integer failedCount;
 
         /**
          * The number of objects for which statistics collection failed.
+         *
          * @param failedCount the value to set
          * @return this builder
-         **/
+         */
         public Builder failedCount(Integer failedCount) {
             this.failedCount = failedCount;
             this.__explicitlySet__.add("failedCount");
             return this;
         }
-        /**
-         * The number of objects for which statistics collection timed out.
-         **/
+        /** The number of objects for which statistics collection timed out. */
         @com.fasterxml.jackson.annotation.JsonProperty("timedOutCount")
         private Integer timedOutCount;
 
         /**
          * The number of objects for which statistics collection timed out.
+         *
          * @param timedOutCount the value to set
          * @return this builder
-         **/
+         */
         public Builder timedOutCount(Integer timedOutCount) {
             this.timedOutCount = timedOutCount;
             this.__explicitlySet__.add("timedOutCount");
             return this;
         }
         /**
-         * The total number of objects for which statistics is collected. This number is the sum of all the objects
-         * with various statuses: completed, inProgress, failed, and timedOut.
-         *
-         **/
+         * The total number of objects for which statistics is collected. This number is the sum of
+         * all the objects with various statuses: completed, inProgress, failed, and timedOut.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("totalObjectsCount")
         private Integer totalObjectsCount;
 
         /**
-         * The total number of objects for which statistics is collected. This number is the sum of all the objects
-         * with various statuses: completed, inProgress, failed, and timedOut.
+         * The total number of objects for which statistics is collected. This number is the sum of
+         * all the objects with various statuses: completed, inProgress, failed, and timedOut.
          *
          * @param totalObjectsCount the value to set
          * @return this builder
-         **/
+         */
         public Builder totalObjectsCount(Integer totalObjectsCount) {
             this.totalObjectsCount = totalObjectsCount;
             this.__explicitlySet__.add("totalObjectsCount");
@@ -352,9 +339,7 @@ public final class OptimizerStatisticsCollectionOperationSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -363,74 +348,68 @@ public final class OptimizerStatisticsCollectionOperationSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * The ID of the operation.
-     **/
+    /** The ID of the operation. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final Integer id;
 
     /**
      * The ID of the operation.
+     *
      * @return the value
-     **/
+     */
     public Integer getId() {
         return id;
     }
 
-    /**
-     * The name of the operation.
-     **/
+    /** The name of the operation. */
     @com.fasterxml.jackson.annotation.JsonProperty("operationName")
     private final String operationName;
 
     /**
      * The name of the operation.
+     *
      * @return the value
-     **/
+     */
     public String getOperationName() {
         return operationName;
     }
 
-    /**
-     * The target object type such as Table, Index, and Partition.
-     **/
+    /** The target object type such as Table, Index, and Partition. */
     @com.fasterxml.jackson.annotation.JsonProperty("target")
     private final String target;
 
     /**
      * The target object type such as Table, Index, and Partition.
+     *
      * @return the value
-     **/
+     */
     public String getTarget() {
         return target;
     }
 
-    /**
-     * The name of the job.
-     **/
+    /** The name of the job. */
     @com.fasterxml.jackson.annotation.JsonProperty("jobName")
     private final String jobName;
 
     /**
      * The name of the job.
+     *
      * @return the value
-     **/
+     */
     public String getJobName() {
         return jobName;
     }
 
-    /**
-     * The status of the operation such as Completed, and Failed.
-     **/
-    public enum Status {
+    /** The status of the operation such as Completed, and Failed. */
+    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         InProgress("IN_PROGRESS"),
         Completed("COMPLETED"),
         Failed("FAILED"),
         TimedOut("TIMED_OUT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -468,132 +447,123 @@ public final class OptimizerStatisticsCollectionOperationSummary
             return UnknownEnumValue;
         }
     };
-    /**
-     * The status of the operation such as Completed, and Failed.
-     **/
+    /** The status of the operation such as Completed, and Failed. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * The status of the operation such as Completed, and Failed.
+     *
      * @return the value
-     **/
+     */
     public Status getStatus() {
         return status;
     }
 
-    /**
-     * The start time of the operation.
-     **/
+    /** The start time of the operation. */
     @com.fasterxml.jackson.annotation.JsonProperty("startTime")
     private final String startTime;
 
     /**
      * The start time of the operation.
+     *
      * @return the value
-     **/
+     */
     public String getStartTime() {
         return startTime;
     }
 
-    /**
-     * The end time of the operation.
-     **/
+    /** The end time of the operation. */
     @com.fasterxml.jackson.annotation.JsonProperty("endTime")
     private final String endTime;
 
     /**
      * The end time of the operation.
+     *
      * @return the value
-     **/
+     */
     public String getEndTime() {
         return endTime;
     }
 
-    /**
-     * The time it takes to complete the operation (in seconds).
-     **/
+    /** The time it takes to complete the operation (in seconds). */
     @com.fasterxml.jackson.annotation.JsonProperty("durationInSeconds")
     private final java.math.BigDecimal durationInSeconds;
 
     /**
      * The time it takes to complete the operation (in seconds).
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getDurationInSeconds() {
         return durationInSeconds;
     }
 
-    /**
-     * The number of objects for which statistics collection is completed.
-     **/
+    /** The number of objects for which statistics collection is completed. */
     @com.fasterxml.jackson.annotation.JsonProperty("completedCount")
     private final Integer completedCount;
 
     /**
      * The number of objects for which statistics collection is completed.
+     *
      * @return the value
-     **/
+     */
     public Integer getCompletedCount() {
         return completedCount;
     }
 
-    /**
-     * The number of objects for which statistics collection is in progress.
-     **/
+    /** The number of objects for which statistics collection is in progress. */
     @com.fasterxml.jackson.annotation.JsonProperty("inProgressCount")
     private final Integer inProgressCount;
 
     /**
      * The number of objects for which statistics collection is in progress.
+     *
      * @return the value
-     **/
+     */
     public Integer getInProgressCount() {
         return inProgressCount;
     }
 
-    /**
-     * The number of objects for which statistics collection failed.
-     **/
+    /** The number of objects for which statistics collection failed. */
     @com.fasterxml.jackson.annotation.JsonProperty("failedCount")
     private final Integer failedCount;
 
     /**
      * The number of objects for which statistics collection failed.
+     *
      * @return the value
-     **/
+     */
     public Integer getFailedCount() {
         return failedCount;
     }
 
-    /**
-     * The number of objects for which statistics collection timed out.
-     **/
+    /** The number of objects for which statistics collection timed out. */
     @com.fasterxml.jackson.annotation.JsonProperty("timedOutCount")
     private final Integer timedOutCount;
 
     /**
      * The number of objects for which statistics collection timed out.
+     *
      * @return the value
-     **/
+     */
     public Integer getTimedOutCount() {
         return timedOutCount;
     }
 
     /**
-     * The total number of objects for which statistics is collected. This number is the sum of all the objects
-     * with various statuses: completed, inProgress, failed, and timedOut.
-     *
-     **/
+     * The total number of objects for which statistics is collected. This number is the sum of all
+     * the objects with various statuses: completed, inProgress, failed, and timedOut.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("totalObjectsCount")
     private final Integer totalObjectsCount;
 
     /**
-     * The total number of objects for which statistics is collected. This number is the sum of all the objects
-     * with various statuses: completed, inProgress, failed, and timedOut.
+     * The total number of objects for which statistics is collected. This number is the sum of all
+     * the objects with various statuses: completed, inProgress, failed, and timedOut.
      *
      * @return the value
-     **/
+     */
     public Integer getTotalObjectsCount() {
         return totalObjectsCount;
     }
@@ -605,6 +575,7 @@ public final class OptimizerStatisticsCollectionOperationSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

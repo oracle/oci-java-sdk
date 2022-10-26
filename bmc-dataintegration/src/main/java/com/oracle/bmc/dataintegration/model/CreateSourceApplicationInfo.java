@@ -5,22 +5,22 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The information about the application.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information about the application. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateSourceApplicationInfo.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateSourceApplicationInfo.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateSourceApplicationInfo
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"workspaceId", "applicationKey", "copyType"})
     public CreateSourceApplicationInfo(
@@ -34,48 +34,59 @@ public final class CreateSourceApplicationInfo
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
-         **/
+         * The OCID of the workspace containing the application. This allows cross workspace
+         * deployment to publish an application from a different workspace into the current
+         * workspace specified in this operation.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("workspaceId")
         private String workspaceId;
 
         /**
-         * The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
+         * The OCID of the workspace containing the application. This allows cross workspace
+         * deployment to publish an application from a different workspace into the current
+         * workspace specified in this operation.
+         *
          * @param workspaceId the value to set
          * @return this builder
-         **/
+         */
         public Builder workspaceId(String workspaceId) {
             this.workspaceId = workspaceId;
             this.__explicitlySet__.add("workspaceId");
             return this;
         }
-        /**
-         * The source application key to use when creating the application.
-         **/
+        /** The source application key to use when creating the application. */
         @com.fasterxml.jackson.annotation.JsonProperty("applicationKey")
         private String applicationKey;
 
         /**
          * The source application key to use when creating the application.
+         *
          * @param applicationKey the value to set
          * @return this builder
-         **/
+         */
         public Builder applicationKey(String applicationKey) {
             this.applicationKey = applicationKey;
             this.__explicitlySet__.add("applicationKey");
             return this;
         }
         /**
-         * Parameter to specify the link between SOURCE and TARGET application after copying. CONNECTED    - Indicate that TARGET application is conneced to SOURCE and can be synced after copy. DISCONNECTED - Indicate that TARGET application is not conneced to SOURCE and can evolve independently.
-         **/
+         * Parameter to specify the link between SOURCE and TARGET application after copying.
+         * CONNECTED - Indicate that TARGET application is conneced to SOURCE and can be synced
+         * after copy. DISCONNECTED - Indicate that TARGET application is not conneced to SOURCE and
+         * can evolve independently.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("copyType")
         private CopyType copyType;
 
         /**
-         * Parameter to specify the link between SOURCE and TARGET application after copying. CONNECTED    - Indicate that TARGET application is conneced to SOURCE and can be synced after copy. DISCONNECTED - Indicate that TARGET application is not conneced to SOURCE and can evolve independently.
+         * Parameter to specify the link between SOURCE and TARGET application after copying.
+         * CONNECTED - Indicate that TARGET application is conneced to SOURCE and can be synced
+         * after copy. DISCONNECTED - Indicate that TARGET application is not conneced to SOURCE and
+         * can evolve independently.
+         *
          * @param copyType the value to set
          * @return this builder
-         **/
+         */
         public Builder copyType(CopyType copyType) {
             this.copyType = copyType;
             this.__explicitlySet__.add("copyType");
@@ -110,9 +121,7 @@ public final class CreateSourceApplicationInfo
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -122,37 +131,44 @@ public final class CreateSourceApplicationInfo
     }
 
     /**
-     * The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
-     **/
+     * The OCID of the workspace containing the application. This allows cross workspace deployment
+     * to publish an application from a different workspace into the current workspace specified in
+     * this operation.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("workspaceId")
     private final String workspaceId;
 
     /**
-     * The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
+     * The OCID of the workspace containing the application. This allows cross workspace deployment
+     * to publish an application from a different workspace into the current workspace specified in
+     * this operation.
+     *
      * @return the value
-     **/
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
 
-    /**
-     * The source application key to use when creating the application.
-     **/
+    /** The source application key to use when creating the application. */
     @com.fasterxml.jackson.annotation.JsonProperty("applicationKey")
     private final String applicationKey;
 
     /**
      * The source application key to use when creating the application.
+     *
      * @return the value
-     **/
+     */
     public String getApplicationKey() {
         return applicationKey;
     }
 
     /**
-     * Parameter to specify the link between SOURCE and TARGET application after copying. CONNECTED    - Indicate that TARGET application is conneced to SOURCE and can be synced after copy. DISCONNECTED - Indicate that TARGET application is not conneced to SOURCE and can evolve independently.
-     **/
-    public enum CopyType {
+     * Parameter to specify the link between SOURCE and TARGET application after copying. CONNECTED
+     * - Indicate that TARGET application is conneced to SOURCE and can be synced after copy.
+     * DISCONNECTED - Indicate that TARGET application is not conneced to SOURCE and can evolve
+     * independently.
+     */
+    public enum CopyType implements com.oracle.bmc.http.internal.BmcEnum {
         Connected("CONNECTED"),
         Disconnected("DISCONNECTED"),
         ;
@@ -185,15 +201,22 @@ public final class CreateSourceApplicationInfo
         }
     };
     /**
-     * Parameter to specify the link between SOURCE and TARGET application after copying. CONNECTED    - Indicate that TARGET application is conneced to SOURCE and can be synced after copy. DISCONNECTED - Indicate that TARGET application is not conneced to SOURCE and can evolve independently.
-     **/
+     * Parameter to specify the link between SOURCE and TARGET application after copying. CONNECTED
+     * - Indicate that TARGET application is conneced to SOURCE and can be synced after copy.
+     * DISCONNECTED - Indicate that TARGET application is not conneced to SOURCE and can evolve
+     * independently.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("copyType")
     private final CopyType copyType;
 
     /**
-     * Parameter to specify the link between SOURCE and TARGET application after copying. CONNECTED    - Indicate that TARGET application is conneced to SOURCE and can be synced after copy. DISCONNECTED - Indicate that TARGET application is not conneced to SOURCE and can evolve independently.
+     * Parameter to specify the link between SOURCE and TARGET application after copying. CONNECTED
+     * - Indicate that TARGET application is conneced to SOURCE and can be synced after copy.
+     * DISCONNECTED - Indicate that TARGET application is not conneced to SOURCE and can evolve
+     * independently.
+     *
      * @return the value
-     **/
+     */
     public CopyType getCopyType() {
         return copyType;
     }
@@ -205,6 +228,7 @@ public final class CreateSourceApplicationInfo
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

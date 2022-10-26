@@ -5,130 +5,123 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Details of metric to post to OCI Monitoring if ingest time rule condition(s) are satisfied.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details of metric to post to OCI Monitoring if ingest time rule condition(s) are satisfied. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = IngestTimeRuleMetricExtractionAction.Builder.class
-)
+        builder = IngestTimeRuleMetricExtractionAction.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class IngestTimeRuleMetricExtractionAction extends IngestTimeRuleAction {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The compartment OCID (/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
-         *
-         **/
+         * The compartment OCID (/iaas/Content/General/Concepts/identifiers.htm) of the extracted
+         * metric.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The compartment OCID (/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+         * The compartment OCID (/iaas/Content/General/Concepts/identifiers.htm) of the extracted
+         * metric.
          *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The namespace of the extracted metric.
-         * A valid value starts with an alphabetical character and includes only
-         * alphanumeric characters and underscores (_).
-         *
-         **/
+         * The namespace of the extracted metric. A valid value starts with an alphabetical
+         * character and includes only alphanumeric characters and underscores (_).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
-         * The namespace of the extracted metric.
-         * A valid value starts with an alphabetical character and includes only
-         * alphanumeric characters and underscores (_).
+         * The namespace of the extracted metric. A valid value starts with an alphabetical
+         * character and includes only alphanumeric characters and underscores (_).
          *
          * @param namespace the value to set
          * @return this builder
-         **/
+         */
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
         /**
-         * The metric name of the extracted metric.
-         * A valid value starts with an alphabetical character and includes only
-         * alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-         *
-         **/
+         * The metric name of the extracted metric. A valid value starts with an alphabetical
+         * character and includes only alphanumeric characters, periods (.), underscores (_),
+         * hyphens (-), and dollar signs ($).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("metricName")
         private String metricName;
 
         /**
-         * The metric name of the extracted metric.
-         * A valid value starts with an alphabetical character and includes only
-         * alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+         * The metric name of the extracted metric. A valid value starts with an alphabetical
+         * character and includes only alphanumeric characters, periods (.), underscores (_),
+         * hyphens (-), and dollar signs ($).
          *
          * @param metricName the value to set
          * @return this builder
-         **/
+         */
         public Builder metricName(String metricName) {
             this.metricName = metricName;
             this.__explicitlySet__.add("metricName");
             return this;
         }
         /**
-         * The resourceGroup of the extracted metric.
-         * A valid value starts with an alphabetical character and includes only
-         * alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-         *
-         **/
+         * The resourceGroup of the extracted metric. A valid value starts with an alphabetical
+         * character and includes only alphanumeric characters, periods (.), underscores (_),
+         * hyphens (-), and dollar signs ($).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
         private String resourceGroup;
 
         /**
-         * The resourceGroup of the extracted metric.
-         * A valid value starts with an alphabetical character and includes only
-         * alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+         * The resourceGroup of the extracted metric. A valid value starts with an alphabetical
+         * character and includes only alphanumeric characters, periods (.), underscores (_),
+         * hyphens (-), and dollar signs ($).
          *
          * @param resourceGroup the value to set
          * @return this builder
-         **/
+         */
         public Builder resourceGroup(String resourceGroup) {
             this.resourceGroup = resourceGroup;
             this.__explicitlySet__.add("resourceGroup");
             return this;
         }
         /**
-         * Additional dimensions to publish for the extracted metric.
-         * A valid list contains the source field names whose values are to be published as dimensions.
-         * The source name itself is specified using a special macro SOURCE_NAME
-         *
-         **/
+         * Additional dimensions to publish for the extracted metric. A valid list contains the
+         * source field names whose values are to be published as dimensions. The source name itself
+         * is specified using a special macro SOURCE_NAME
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.List<String> dimensions;
 
         /**
-         * Additional dimensions to publish for the extracted metric.
-         * A valid list contains the source field names whose values are to be published as dimensions.
-         * The source name itself is specified using a special macro SOURCE_NAME
+         * Additional dimensions to publish for the extracted metric. A valid list contains the
+         * source field names whose values are to be published as dimensions. The source name itself
+         * is specified using a special macro SOURCE_NAME
          *
          * @param dimensions the value to set
          * @return this builder
-         **/
+         */
         public Builder dimensions(java.util.List<String> dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
@@ -173,9 +166,7 @@ public final class IngestTimeRuleMetricExtractionAction extends IngestTimeRuleAc
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -200,97 +191,92 @@ public final class IngestTimeRuleMetricExtractionAction extends IngestTimeRuleAc
     }
 
     /**
-     * The compartment OCID (/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
-     *
-     **/
+     * The compartment OCID (/iaas/Content/General/Concepts/identifiers.htm) of the extracted
+     * metric.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The compartment OCID (/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+     * The compartment OCID (/iaas/Content/General/Concepts/identifiers.htm) of the extracted
+     * metric.
      *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The namespace of the extracted metric.
-     * A valid value starts with an alphabetical character and includes only
-     * alphanumeric characters and underscores (_).
-     *
-     **/
+     * The namespace of the extracted metric. A valid value starts with an alphabetical character
+     * and includes only alphanumeric characters and underscores (_).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
-     * The namespace of the extracted metric.
-     * A valid value starts with an alphabetical character and includes only
-     * alphanumeric characters and underscores (_).
+     * The namespace of the extracted metric. A valid value starts with an alphabetical character
+     * and includes only alphanumeric characters and underscores (_).
      *
      * @return the value
-     **/
+     */
     public String getNamespace() {
         return namespace;
     }
 
     /**
-     * The metric name of the extracted metric.
-     * A valid value starts with an alphabetical character and includes only
-     * alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-     *
-     **/
+     * The metric name of the extracted metric. A valid value starts with an alphabetical character
+     * and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and
+     * dollar signs ($).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("metricName")
     private final String metricName;
 
     /**
-     * The metric name of the extracted metric.
-     * A valid value starts with an alphabetical character and includes only
-     * alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+     * The metric name of the extracted metric. A valid value starts with an alphabetical character
+     * and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and
+     * dollar signs ($).
      *
      * @return the value
-     **/
+     */
     public String getMetricName() {
         return metricName;
     }
 
     /**
-     * The resourceGroup of the extracted metric.
-     * A valid value starts with an alphabetical character and includes only
-     * alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-     *
-     **/
+     * The resourceGroup of the extracted metric. A valid value starts with an alphabetical
+     * character and includes only alphanumeric characters, periods (.), underscores (_), hyphens
+     * (-), and dollar signs ($).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
     private final String resourceGroup;
 
     /**
-     * The resourceGroup of the extracted metric.
-     * A valid value starts with an alphabetical character and includes only
-     * alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+     * The resourceGroup of the extracted metric. A valid value starts with an alphabetical
+     * character and includes only alphanumeric characters, periods (.), underscores (_), hyphens
+     * (-), and dollar signs ($).
      *
      * @return the value
-     **/
+     */
     public String getResourceGroup() {
         return resourceGroup;
     }
 
     /**
-     * Additional dimensions to publish for the extracted metric.
-     * A valid list contains the source field names whose values are to be published as dimensions.
-     * The source name itself is specified using a special macro SOURCE_NAME
-     *
-     **/
+     * Additional dimensions to publish for the extracted metric. A valid list contains the source
+     * field names whose values are to be published as dimensions. The source name itself is
+     * specified using a special macro SOURCE_NAME
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.List<String> dimensions;
 
     /**
-     * Additional dimensions to publish for the extracted metric.
-     * A valid list contains the source field names whose values are to be published as dimensions.
-     * The source name itself is specified using a special macro SOURCE_NAME
+     * Additional dimensions to publish for the extracted metric. A valid list contains the source
+     * field names whose values are to be published as dimensions. The source name itself is
+     * specified using a special macro SOURCE_NAME
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getDimensions() {
         return dimensions;
     }
@@ -302,6 +288,7 @@ public final class IngestTimeRuleMetricExtractionAction extends IngestTimeRuleAc
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

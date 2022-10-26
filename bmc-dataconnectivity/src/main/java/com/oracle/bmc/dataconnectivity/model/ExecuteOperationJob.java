@@ -5,21 +5,22 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * Response of executeOperationJob.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Response of executeOperationJob. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ExecuteOperationJob.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExecuteOperationJob extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ExecuteOperationJob.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ExecuteOperationJob
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "operationStatus",
@@ -44,81 +45,76 @@ public final class ExecuteOperationJob extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Status of the operation job for all sets of input.
-         **/
+        /** Status of the operation job for all sets of input. */
         @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
         private String operationStatus;
 
         /**
          * Status of the operation job for all sets of input.
+         *
          * @param operationStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder operationStatus(String operationStatus) {
             this.operationStatus = operationStatus;
             this.__explicitlySet__.add("operationStatus");
             return this;
         }
-        /**
-         * Error message when the whole operation fails.
-         **/
+        /** Error message when the whole operation fails. */
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
         /**
          * Error message when the whole operation fails.
+         *
          * @param errorMessage the value to set
          * @return this builder
-         **/
+         */
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
             return this;
         }
-        /**
-         * Name of the operation.
-         **/
+        /** Name of the operation. */
         @com.fasterxml.jackson.annotation.JsonProperty("operationName")
         private String operationName;
 
         /**
          * Name of the operation.
+         *
          * @param operationName the value to set
          * @return this builder
-         **/
+         */
         public Builder operationName(String operationName) {
             this.operationName = operationName;
             this.__explicitlySet__.add("operationName");
             return this;
         }
-        /**
-         * The list of names of OUT/INOUT parameters.
-         **/
+        /** The list of names of OUT/INOUT parameters. */
         @com.fasterxml.jackson.annotation.JsonProperty("outParams")
         private java.util.List<String> outParams;
 
         /**
          * The list of names of OUT/INOUT parameters.
+         *
          * @param outParams the value to set
          * @return this builder
-         **/
+         */
         public Builder outParams(java.util.List<String> outParams) {
             this.outParams = outParams;
             this.__explicitlySet__.add("outParams");
             return this;
         }
-        /**
-         * The list of operation execution result for each input set.
-         **/
+        /** The list of operation execution result for each input set. */
         @com.fasterxml.jackson.annotation.JsonProperty("operationResult")
         private java.util.List<OperationExecResult> operationResult;
 
         /**
          * The list of operation execution result for each input set.
+         *
          * @param operationResult the value to set
          * @return this builder
-         **/
+         */
         public Builder operationResult(java.util.List<OperationExecResult> operationResult) {
             this.operationResult = operationResult;
             this.__explicitlySet__.add("operationResult");
@@ -163,9 +159,7 @@ public final class ExecuteOperationJob extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -174,72 +168,67 @@ public final class ExecuteOperationJob extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * Status of the operation job for all sets of input.
-     **/
+    /** Status of the operation job for all sets of input. */
     @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
     private final String operationStatus;
 
     /**
      * Status of the operation job for all sets of input.
+     *
      * @return the value
-     **/
+     */
     public String getOperationStatus() {
         return operationStatus;
     }
 
-    /**
-     * Error message when the whole operation fails.
-     **/
+    /** Error message when the whole operation fails. */
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
     /**
      * Error message when the whole operation fails.
+     *
      * @return the value
-     **/
+     */
     public String getErrorMessage() {
         return errorMessage;
     }
 
-    /**
-     * Name of the operation.
-     **/
+    /** Name of the operation. */
     @com.fasterxml.jackson.annotation.JsonProperty("operationName")
     private final String operationName;
 
     /**
      * Name of the operation.
+     *
      * @return the value
-     **/
+     */
     public String getOperationName() {
         return operationName;
     }
 
-    /**
-     * The list of names of OUT/INOUT parameters.
-     **/
+    /** The list of names of OUT/INOUT parameters. */
     @com.fasterxml.jackson.annotation.JsonProperty("outParams")
     private final java.util.List<String> outParams;
 
     /**
      * The list of names of OUT/INOUT parameters.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getOutParams() {
         return outParams;
     }
 
-    /**
-     * The list of operation execution result for each input set.
-     **/
+    /** The list of operation execution result for each input set. */
     @com.fasterxml.jackson.annotation.JsonProperty("operationResult")
     private final java.util.List<OperationExecResult> operationResult;
 
     /**
      * The list of operation execution result for each input set.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<OperationExecResult> getOperationResult() {
         return operationResult;
     }
@@ -251,6 +240,7 @@ public final class ExecuteOperationJob extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

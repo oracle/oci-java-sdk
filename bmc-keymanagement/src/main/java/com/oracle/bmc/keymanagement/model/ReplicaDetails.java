@@ -5,19 +5,21 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * Details of replication status
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details of replication status <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ReplicaDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ReplicaDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ReplicaDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"region", "status"})
     public ReplicaDetails(String region, Status status) {
@@ -28,10 +30,7 @@ public final class ReplicaDetails extends com.oracle.bmc.http.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The replica region
-         *
-         **/
+        /** The replica region */
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
@@ -40,23 +39,22 @@ public final class ReplicaDetails extends com.oracle.bmc.http.internal.Explicitl
          *
          * @param region the value to set
          * @return this builder
-         **/
+         */
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-        /**
-         * Replication status associated with a replicationId
-         **/
+        /** Replication status associated with a replicationId */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * Replication status associated with a replicationId
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -86,9 +84,7 @@ public final class ReplicaDetails extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -97,10 +93,7 @@ public final class ReplicaDetails extends com.oracle.bmc.http.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /**
-     * The replica region
-     *
-     **/
+    /** The replica region */
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
@@ -108,21 +101,19 @@ public final class ReplicaDetails extends com.oracle.bmc.http.internal.Explicitl
      * The replica region
      *
      * @return the value
-     **/
+     */
     public String getRegion() {
         return region;
     }
 
-    /**
-     * Replication status associated with a replicationId
-     **/
-    public enum Status {
+    /** Replication status associated with a replicationId */
+    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Replicating("REPLICATING"),
         Replicated("REPLICATED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -160,16 +151,15 @@ public final class ReplicaDetails extends com.oracle.bmc.http.internal.Explicitl
             return UnknownEnumValue;
         }
     };
-    /**
-     * Replication status associated with a replicationId
-     **/
+    /** Replication status associated with a replicationId */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * Replication status associated with a replicationId
+     *
      * @return the value
-     **/
+     */
     public Status getStatus() {
         return status;
     }
@@ -181,6 +171,7 @@ public final class ReplicaDetails extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

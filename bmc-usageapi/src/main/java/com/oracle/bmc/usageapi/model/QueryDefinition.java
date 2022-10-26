@@ -5,19 +5,21 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * The common fields for queries.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The common fields for queries. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = QueryDefinition.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class QueryDefinition extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class QueryDefinition
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName", "reportQuery", "costAnalysisUI", "version"})
     public QueryDefinition(
@@ -34,17 +36,16 @@ public final class QueryDefinition extends com.oracle.bmc.http.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The query display name. Avoid entering confidential information.
-         **/
+        /** The query display name. Avoid entering confidential information. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The query display name. Avoid entering confidential information.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -68,17 +69,16 @@ public final class QueryDefinition extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("costAnalysisUI");
             return this;
         }
-        /**
-         * The saved query version.
-         **/
+        /** The saved query version. */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private java.math.BigDecimal version;
 
         /**
          * The saved query version.
+         *
          * @param version the value to set
          * @return this builder
-         **/
+         */
         public Builder version(java.math.BigDecimal version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -116,9 +116,7 @@ public final class QueryDefinition extends com.oracle.bmc.http.internal.Explicit
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -127,16 +125,15 @@ public final class QueryDefinition extends com.oracle.bmc.http.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /**
-     * The query display name. Avoid entering confidential information.
-     **/
+    /** The query display name. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The query display name. Avoid entering confidential information.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -155,16 +152,15 @@ public final class QueryDefinition extends com.oracle.bmc.http.internal.Explicit
         return costAnalysisUI;
     }
 
-    /**
-     * The saved query version.
-     **/
+    /** The saved query version. */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final java.math.BigDecimal version;
 
     /**
      * The saved query version.
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getVersion() {
         return version;
     }
@@ -176,6 +172,7 @@ public final class QueryDefinition extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

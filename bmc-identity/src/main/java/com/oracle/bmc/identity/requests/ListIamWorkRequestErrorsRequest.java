@@ -6,62 +6,47 @@ package com.oracle.bmc.identity.requests;
 
 import com.oracle.bmc.identity.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListIamWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListIamWorkRequestErrorsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListIamWorkRequestErrorsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ListIamWorkRequestErrorsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListIamWorkRequestErrorsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The OCID of the IAM work request.
-     */
+    /** The OCID of the IAM work request. */
     private String iamWorkRequestId;
 
-    /**
-     * The OCID of the IAM work request.
-     */
+    /** The OCID of the IAM work request. */
     public String getIamWorkRequestId() {
         return iamWorkRequestId;
     }
-    /**
-     * The maximum number of items to return in a paginated "List" call.
-     *
-     */
+    /** The maximum number of items to return in a paginated "List" call. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return in a paginated "List" call.
-     *
-     */
+    /** The maximum number of items to return in a paginated "List" call. */
     public Integer getLimit() {
         return limit;
     }
-    /**
-     * The value of the {@code opc-next-page} response header from the previous "List" call.
-     *
-     */
+    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
     private String page;
 
-    /**
-     * The value of the {@code opc-next-page} response header from the previous "List" call.
-     *
-     */
+    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
     public String getPage() {
         return page;
     }
     /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The NAME sort order
-     * is case sensitive.
-     *
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The NAME
+     * sort order is case sensitive.
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The NAME sort order
-     * is case sensitive.
-     *
-     **/
-    public enum SortOrder {
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The NAME
+     * sort order is case sensitive.
+     */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -95,9 +80,8 @@ public class ListIamWorkRequestErrorsRequest
     };
 
     /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The NAME sort order
-     * is case sensitive.
-     *
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The NAME
+     * sort order is case sensitive.
      */
     public SortOrder getSortOrder() {
         return sortOrder;
@@ -105,14 +89,12 @@ public class ListIamWorkRequestErrorsRequest
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -121,17 +103,15 @@ public class ListIamWorkRequestErrorsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListIamWorkRequestErrorsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the IAM work request.
-         */
+        /** The OCID of the IAM work request. */
         private String iamWorkRequestId = null;
 
         /**
          * The OCID of the IAM work request.
+         *
          * @param iamWorkRequestId the value to set
          * @return this builder instance
          */
@@ -140,10 +120,7 @@ public class ListIamWorkRequestErrorsRequest
             return this;
         }
 
-        /**
-         * The maximum number of items to return in a paginated "List" call.
-         *
-         */
+        /** The maximum number of items to return in a paginated "List" call. */
         private Integer limit = null;
 
         /**
@@ -157,10 +134,7 @@ public class ListIamWorkRequestErrorsRequest
             return this;
         }
 
-        /**
-         * The value of the {@code opc-next-page} response header from the previous "List" call.
-         *
-         */
+        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
         private String page = null;
 
         /**
@@ -175,15 +149,14 @@ public class ListIamWorkRequestErrorsRequest
         }
 
         /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The NAME sort order
-         * is case sensitive.
-         *
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
+         * NAME sort order is case sensitive.
          */
         private SortOrder sortOrder = null;
 
         /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The NAME sort order
-         * is case sensitive.
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
+         * NAME sort order is case sensitive.
          *
          * @param sortOrder the value to set
          * @return this builder instance
@@ -196,7 +169,6 @@ public class ListIamWorkRequestErrorsRequest
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId = null;
 
@@ -214,18 +186,19 @@ public class ListIamWorkRequestErrorsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -237,6 +210,7 @@ public class ListIamWorkRequestErrorsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListIamWorkRequestErrorsRequest o) {
@@ -253,10 +227,11 @@ public class ListIamWorkRequestErrorsRequest
         /**
          * Build the instance of ListIamWorkRequestErrorsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListIamWorkRequestErrorsRequest
          */
@@ -270,7 +245,8 @@ public class ListIamWorkRequestErrorsRequest
         /**
          * Build the instance of ListIamWorkRequestErrorsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListIamWorkRequestErrorsRequest
@@ -283,12 +259,14 @@ public class ListIamWorkRequestErrorsRequest
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListIamWorkRequestErrorsRequest(iamWorkRequestId, limit, page, sortOrder, opcRequestId);
+            // new ListIamWorkRequestErrorsRequest(iamWorkRequestId, limit, page, sortOrder,
+            // opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -302,6 +280,7 @@ public class ListIamWorkRequestErrorsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,22 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Listing Resource Version
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Listing Resource Version <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AppCatalogListingResourceVersion.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AppCatalogListingResourceVersion.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AppCatalogListingResourceVersion
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "listingId",
@@ -54,69 +54,67 @@ public final class AppCatalogListingResourceVersion
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the listing this resource version belongs to.
-         **/
+        /** The OCID of the listing this resource version belongs to. */
         @com.fasterxml.jackson.annotation.JsonProperty("listingId")
         private String listingId;
 
         /**
          * The OCID of the listing this resource version belongs to.
+         *
          * @param listingId the value to set
          * @return this builder
-         **/
+         */
         public Builder listingId(String listingId) {
             this.listingId = listingId;
             this.__explicitlySet__.add("listingId");
             return this;
         }
         /**
-         * Date and time the listing resource version was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
-         * Example: {@code 2018-03-20T12:32:53.532Z}
-         *
-         **/
+         * Date and time the listing resource version was published, in
+         * [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: {@code
+         * 2018-03-20T12:32:53.532Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timePublished")
         private java.util.Date timePublished;
 
         /**
-         * Date and time the listing resource version was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
-         * Example: {@code 2018-03-20T12:32:53.532Z}
+         * Date and time the listing resource version was published, in
+         * [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: {@code
+         * 2018-03-20T12:32:53.532Z}
          *
          * @param timePublished the value to set
          * @return this builder
-         **/
+         */
         public Builder timePublished(java.util.Date timePublished) {
             this.timePublished = timePublished;
             this.__explicitlySet__.add("timePublished");
             return this;
         }
-        /**
-         * OCID of the listing resource.
-         **/
+        /** OCID of the listing resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("listingResourceId")
         private String listingResourceId;
 
         /**
          * OCID of the listing resource.
+         *
          * @param listingResourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder listingResourceId(String listingResourceId) {
             this.listingResourceId = listingResourceId;
             this.__explicitlySet__.add("listingResourceId");
             return this;
         }
-        /**
-         * Resource Version.
-         **/
+        /** Resource Version. */
         @com.fasterxml.jackson.annotation.JsonProperty("listingResourceVersion")
         private String listingResourceVersion;
 
         /**
          * Resource Version.
+         *
          * @param listingResourceVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder listingResourceVersion(String listingResourceVersion) {
             this.listingResourceVersion = listingResourceVersion;
             this.__explicitlySet__.add("listingResourceVersion");
@@ -124,27 +122,26 @@ public final class AppCatalogListingResourceVersion
         }
         /**
          * List of regions that this listing resource version is available.
-         * <p>
-         * For information about regions, see
-         * [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-         * <p>
-         * Example: {@code ["us-ashburn-1", "us-phoenix-1"]}
          *
-         **/
+         * <p>For information about regions, see [Regions and Availability
+         * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         *
+         * <p>Example: {@code ["us-ashburn-1", "us-phoenix-1"]}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("availableRegions")
         private java.util.List<String> availableRegions;
 
         /**
          * List of regions that this listing resource version is available.
-         * <p>
-         * For information about regions, see
-         * [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-         * <p>
-         * Example: {@code ["us-ashburn-1", "us-phoenix-1"]}
+         *
+         * <p>For information about regions, see [Regions and Availability
+         * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         *
+         * <p>Example: {@code ["us-ashburn-1", "us-phoenix-1"]}
          *
          * @param availableRegions the value to set
          * @return this builder
-         **/
+         */
         public Builder availableRegions(java.util.List<String> availableRegions) {
             this.availableRegions = availableRegions;
             this.__explicitlySet__.add("availableRegions");
@@ -152,57 +149,56 @@ public final class AppCatalogListingResourceVersion
         }
         /**
          * Array of shapes compatible with this resource.
-         * <p>
-         * You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
-         * <p>
-         * Example: {@code ["VM.Standard1.1", "VM.Standard1.2"]}
          *
-         **/
+         * <p>You can enumerate all available shapes by calling {@link
+         * #listShapes(ListShapesRequest) listShapes}.
+         *
+         * <p>Example: {@code ["VM.Standard1.1", "VM.Standard1.2"]}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compatibleShapes")
         private java.util.List<String> compatibleShapes;
 
         /**
          * Array of shapes compatible with this resource.
-         * <p>
-         * You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
-         * <p>
-         * Example: {@code ["VM.Standard1.1", "VM.Standard1.2"]}
+         *
+         * <p>You can enumerate all available shapes by calling {@link
+         * #listShapes(ListShapesRequest) listShapes}.
+         *
+         * <p>Example: {@code ["VM.Standard1.1", "VM.Standard1.2"]}
          *
          * @param compatibleShapes the value to set
          * @return this builder
-         **/
+         */
         public Builder compatibleShapes(java.util.List<String> compatibleShapes) {
             this.compatibleShapes = compatibleShapes;
             this.__explicitlySet__.add("compatibleShapes");
             return this;
         }
-        /**
-         * List of accessible ports for instances launched with this listing resource version.
-         **/
+        /** List of accessible ports for instances launched with this listing resource version. */
         @com.fasterxml.jackson.annotation.JsonProperty("accessiblePorts")
         private java.util.List<Integer> accessiblePorts;
 
         /**
          * List of accessible ports for instances launched with this listing resource version.
+         *
          * @param accessiblePorts the value to set
          * @return this builder
-         **/
+         */
         public Builder accessiblePorts(java.util.List<Integer> accessiblePorts) {
             this.accessiblePorts = accessiblePorts;
             this.__explicitlySet__.add("accessiblePorts");
             return this;
         }
-        /**
-         * Allowed actions for the listing resource.
-         **/
+        /** Allowed actions for the listing resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("allowedActions")
         private java.util.List<AllowedActions> allowedActions;
 
         /**
          * Allowed actions for the listing resource.
+         *
          * @param allowedActions the value to set
          * @return this builder
-         **/
+         */
         public Builder allowedActions(java.util.List<AllowedActions> allowedActions) {
             this.allowedActions = allowedActions;
             this.__explicitlySet__.add("allowedActions");
@@ -259,9 +255,7 @@ public final class AppCatalogListingResourceVersion
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -270,133 +264,129 @@ public final class AppCatalogListingResourceVersion
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the listing this resource version belongs to.
-     **/
+    /** The OCID of the listing this resource version belongs to. */
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
     private final String listingId;
 
     /**
      * The OCID of the listing this resource version belongs to.
+     *
      * @return the value
-     **/
+     */
     public String getListingId() {
         return listingId;
     }
 
     /**
-     * Date and time the listing resource version was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
-     * Example: {@code 2018-03-20T12:32:53.532Z}
-     *
-     **/
+     * Date and time the listing resource version was published, in
+     * [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: {@code
+     * 2018-03-20T12:32:53.532Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timePublished")
     private final java.util.Date timePublished;
 
     /**
-     * Date and time the listing resource version was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
-     * Example: {@code 2018-03-20T12:32:53.532Z}
+     * Date and time the listing resource version was published, in
+     * [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: {@code
+     * 2018-03-20T12:32:53.532Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimePublished() {
         return timePublished;
     }
 
-    /**
-     * OCID of the listing resource.
-     **/
+    /** OCID of the listing resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("listingResourceId")
     private final String listingResourceId;
 
     /**
      * OCID of the listing resource.
+     *
      * @return the value
-     **/
+     */
     public String getListingResourceId() {
         return listingResourceId;
     }
 
-    /**
-     * Resource Version.
-     **/
+    /** Resource Version. */
     @com.fasterxml.jackson.annotation.JsonProperty("listingResourceVersion")
     private final String listingResourceVersion;
 
     /**
      * Resource Version.
+     *
      * @return the value
-     **/
+     */
     public String getListingResourceVersion() {
         return listingResourceVersion;
     }
 
     /**
      * List of regions that this listing resource version is available.
-     * <p>
-     * For information about regions, see
-     * [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-     * <p>
-     * Example: {@code ["us-ashburn-1", "us-phoenix-1"]}
      *
-     **/
+     * <p>For information about regions, see [Regions and Availability
+     * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     *
+     * <p>Example: {@code ["us-ashburn-1", "us-phoenix-1"]}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("availableRegions")
     private final java.util.List<String> availableRegions;
 
     /**
      * List of regions that this listing resource version is available.
-     * <p>
-     * For information about regions, see
-     * [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-     * <p>
-     * Example: {@code ["us-ashburn-1", "us-phoenix-1"]}
+     *
+     * <p>For information about regions, see [Regions and Availability
+     * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     *
+     * <p>Example: {@code ["us-ashburn-1", "us-phoenix-1"]}
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getAvailableRegions() {
         return availableRegions;
     }
 
     /**
      * Array of shapes compatible with this resource.
-     * <p>
-     * You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
-     * <p>
-     * Example: {@code ["VM.Standard1.1", "VM.Standard1.2"]}
      *
-     **/
+     * <p>You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest)
+     * listShapes}.
+     *
+     * <p>Example: {@code ["VM.Standard1.1", "VM.Standard1.2"]}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compatibleShapes")
     private final java.util.List<String> compatibleShapes;
 
     /**
      * Array of shapes compatible with this resource.
-     * <p>
-     * You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
-     * <p>
-     * Example: {@code ["VM.Standard1.1", "VM.Standard1.2"]}
+     *
+     * <p>You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest)
+     * listShapes}.
+     *
+     * <p>Example: {@code ["VM.Standard1.1", "VM.Standard1.2"]}
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getCompatibleShapes() {
         return compatibleShapes;
     }
 
-    /**
-     * List of accessible ports for instances launched with this listing resource version.
-     **/
+    /** List of accessible ports for instances launched with this listing resource version. */
     @com.fasterxml.jackson.annotation.JsonProperty("accessiblePorts")
     private final java.util.List<Integer> accessiblePorts;
 
     /**
      * List of accessible ports for instances launched with this listing resource version.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Integer> getAccessiblePorts() {
         return accessiblePorts;
     }
 
-    /**
-     **/
-    public enum AllowedActions {
+    /** */
+    public enum AllowedActions implements com.oracle.bmc.http.internal.BmcEnum {
         Snapshot("SNAPSHOT"),
         BootVolumeDetach("BOOT_VOLUME_DETACH"),
         PreserveBootVolume("PRESERVE_BOOT_VOLUME"),
@@ -406,8 +396,8 @@ public final class AppCatalogListingResourceVersion
         CaptureConsoleHistory("CAPTURE_CONSOLE_HISTORY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -446,16 +436,15 @@ public final class AppCatalogListingResourceVersion
             return UnknownEnumValue;
         }
     };
-    /**
-     * Allowed actions for the listing resource.
-     **/
+    /** Allowed actions for the listing resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("allowedActions")
     private final java.util.List<AllowedActions> allowedActions;
 
     /**
      * Allowed actions for the listing resource.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<AllowedActions> getAllowedActions() {
         return allowedActions;
     }
@@ -467,6 +456,7 @@ public final class AppCatalogListingResourceVersion
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

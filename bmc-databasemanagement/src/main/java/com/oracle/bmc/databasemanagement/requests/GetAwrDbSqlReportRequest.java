@@ -6,116 +6,98 @@ package com.oracle.bmc.databasemanagement.requests;
 
 import com.oracle.bmc.databasemanagement.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetAwrDbSqlReportExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetAwrDbSqlReportRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetAwrDbSqlReportExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetAwrDbSqlReportRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class GetAwrDbSqlReportRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Managed Database.
      */
     private String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Managed Database.
      */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
     /**
-     * The parameter to filter the database by internal ID.
-     * Note that the internal ID of the database can be retrieved from the following endpoint:
+     * The parameter to filter the database by internal ID. Note that the internal ID of the
+     * database can be retrieved from the following endpoint:
      * /managedDatabases/{managedDatabaseId}/awrDbs
-     *
      */
     private String awrDbId;
 
     /**
-     * The parameter to filter the database by internal ID.
-     * Note that the internal ID of the database can be retrieved from the following endpoint:
+     * The parameter to filter the database by internal ID. Note that the internal ID of the
+     * database can be retrieved from the following endpoint:
      * /managedDatabases/{managedDatabaseId}/awrDbs
-     *
      */
     public String getAwrDbId() {
         return awrDbId;
     }
     /**
-     * The parameter to filter SQL by ID. Note that the SQL ID is generated internally by Oracle for each SQL statement and can be retrieved from AWR Report API (/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbReport) or Performance Hub API (/internal/managedDatabases/{managedDatabaseId}/actions/retrievePerformanceData)
-     *
+     * The parameter to filter SQL by ID. Note that the SQL ID is generated internally by Oracle for
+     * each SQL statement and can be retrieved from AWR Report API
+     * (/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbReport) or Performance Hub API
+     * (/internal/managedDatabases/{managedDatabaseId}/actions/retrievePerformanceData)
      */
     private String sqlId;
 
     /**
-     * The parameter to filter SQL by ID. Note that the SQL ID is generated internally by Oracle for each SQL statement and can be retrieved from AWR Report API (/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbReport) or Performance Hub API (/internal/managedDatabases/{managedDatabaseId}/actions/retrievePerformanceData)
-     *
+     * The parameter to filter SQL by ID. Note that the SQL ID is generated internally by Oracle for
+     * each SQL statement and can be retrieved from AWR Report API
+     * (/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbReport) or Performance Hub API
+     * (/internal/managedDatabases/{managedDatabaseId}/actions/retrievePerformanceData)
      */
     public String getSqlId() {
         return sqlId;
     }
-    /**
-     * The optional single value query parameter to filter the database instance number.
-     */
+    /** The optional single value query parameter to filter the database instance number. */
     private String instNum;
 
-    /**
-     * The optional single value query parameter to filter the database instance number.
-     */
+    /** The optional single value query parameter to filter the database instance number. */
     public String getInstNum() {
         return instNum;
     }
-    /**
-     * The optional greater than or equal to filter on the snapshot ID.
-     */
+    /** The optional greater than or equal to filter on the snapshot ID. */
     private Integer beginSnIdGreaterThanOrEqualTo;
 
-    /**
-     * The optional greater than or equal to filter on the snapshot ID.
-     */
+    /** The optional greater than or equal to filter on the snapshot ID. */
     public Integer getBeginSnIdGreaterThanOrEqualTo() {
         return beginSnIdGreaterThanOrEqualTo;
     }
-    /**
-     * The optional less than or equal to query parameter to filter the snapshot ID.
-     */
+    /** The optional less than or equal to query parameter to filter the snapshot ID. */
     private Integer endSnIdLessThanOrEqualTo;
 
-    /**
-     * The optional less than or equal to query parameter to filter the snapshot ID.
-     */
+    /** The optional less than or equal to query parameter to filter the snapshot ID. */
     public Integer getEndSnIdLessThanOrEqualTo() {
         return endSnIdLessThanOrEqualTo;
     }
-    /**
-     * The optional greater than or equal to query parameter to filter the timestamp.
-     */
+    /** The optional greater than or equal to query parameter to filter the timestamp. */
     private java.util.Date timeGreaterThanOrEqualTo;
 
-    /**
-     * The optional greater than or equal to query parameter to filter the timestamp.
-     */
+    /** The optional greater than or equal to query parameter to filter the timestamp. */
     public java.util.Date getTimeGreaterThanOrEqualTo() {
         return timeGreaterThanOrEqualTo;
     }
-    /**
-     * The optional less than or equal to query parameter to filter the timestamp.
-     */
+    /** The optional less than or equal to query parameter to filter the timestamp. */
     private java.util.Date timeLessThanOrEqualTo;
 
-    /**
-     * The optional less than or equal to query parameter to filter the timestamp.
-     */
+    /** The optional less than or equal to query parameter to filter the timestamp. */
     public java.util.Date getTimeLessThanOrEqualTo() {
         return timeLessThanOrEqualTo;
     }
-    /**
-     * The format of the AWR report.
-     */
+    /** The format of the AWR report. */
     private ReportFormat reportFormat;
 
-    /**
-     * The format of the AWR report.
-     **/
-    public enum ReportFormat {
+    /** The format of the AWR report. */
+    public enum ReportFormat implements com.oracle.bmc.http.internal.BmcEnum {
         Html("HTML"),
         Text("TEXT"),
         ;
@@ -148,57 +130,47 @@ public class GetAwrDbSqlReportRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
-    /**
-     * The format of the AWR report.
-     */
+    /** The format of the AWR report. */
     public ReportFormat getReportFormat() {
         return reportFormat;
     }
     /**
-     * The optional query parameter to filter the database container by an exact ID value.
-     * Note that the database container ID can be retrieved from the following endpoint:
+     * The optional query parameter to filter the database container by an exact ID value. Note that
+     * the database container ID can be retrieved from the following endpoint:
      * /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
-     *
      */
     private Integer containerId;
 
     /**
-     * The optional query parameter to filter the database container by an exact ID value.
-     * Note that the database container ID can be retrieved from the following endpoint:
+     * The optional query parameter to filter the database container by an exact ID value. Note that
+     * the database container ID can be retrieved from the following endpoint:
      * /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
-     *
      */
     public Integer getContainerId() {
         return containerId;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * might be rejected.
-     *
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * might be rejected.
-     *
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -207,17 +179,19 @@ public class GetAwrDbSqlReportRequest extends com.oracle.bmc.requests.BmcRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetAwrDbSqlReportRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Managed Database.
          */
         private String managedDatabaseId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Managed Database.
+         *
          * @param managedDatabaseId the value to set
          * @return this builder instance
          */
@@ -227,16 +201,15 @@ public class GetAwrDbSqlReportRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The parameter to filter the database by internal ID.
-         * Note that the internal ID of the database can be retrieved from the following endpoint:
+         * The parameter to filter the database by internal ID. Note that the internal ID of the
+         * database can be retrieved from the following endpoint:
          * /managedDatabases/{managedDatabaseId}/awrDbs
-         *
          */
         private String awrDbId = null;
 
         /**
-         * The parameter to filter the database by internal ID.
-         * Note that the internal ID of the database can be retrieved from the following endpoint:
+         * The parameter to filter the database by internal ID. Note that the internal ID of the
+         * database can be retrieved from the following endpoint:
          * /managedDatabases/{managedDatabaseId}/awrDbs
          *
          * @param awrDbId the value to set
@@ -248,13 +221,18 @@ public class GetAwrDbSqlReportRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The parameter to filter SQL by ID. Note that the SQL ID is generated internally by Oracle for each SQL statement and can be retrieved from AWR Report API (/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbReport) or Performance Hub API (/internal/managedDatabases/{managedDatabaseId}/actions/retrievePerformanceData)
-         *
+         * The parameter to filter SQL by ID. Note that the SQL ID is generated internally by Oracle
+         * for each SQL statement and can be retrieved from AWR Report API
+         * (/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbReport) or Performance Hub
+         * API (/internal/managedDatabases/{managedDatabaseId}/actions/retrievePerformanceData)
          */
         private String sqlId = null;
 
         /**
-         * The parameter to filter SQL by ID. Note that the SQL ID is generated internally by Oracle for each SQL statement and can be retrieved from AWR Report API (/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbReport) or Performance Hub API (/internal/managedDatabases/{managedDatabaseId}/actions/retrievePerformanceData)
+         * The parameter to filter SQL by ID. Note that the SQL ID is generated internally by Oracle
+         * for each SQL statement and can be retrieved from AWR Report API
+         * (/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbReport) or Performance Hub
+         * API (/internal/managedDatabases/{managedDatabaseId}/actions/retrievePerformanceData)
          *
          * @param sqlId the value to set
          * @return this builder instance
@@ -264,13 +242,12 @@ public class GetAwrDbSqlReportRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The optional single value query parameter to filter the database instance number.
-         */
+        /** The optional single value query parameter to filter the database instance number. */
         private String instNum = null;
 
         /**
          * The optional single value query parameter to filter the database instance number.
+         *
          * @param instNum the value to set
          * @return this builder instance
          */
@@ -279,13 +256,12 @@ public class GetAwrDbSqlReportRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The optional greater than or equal to filter on the snapshot ID.
-         */
+        /** The optional greater than or equal to filter on the snapshot ID. */
         private Integer beginSnIdGreaterThanOrEqualTo = null;
 
         /**
          * The optional greater than or equal to filter on the snapshot ID.
+         *
          * @param beginSnIdGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -294,13 +270,12 @@ public class GetAwrDbSqlReportRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The optional less than or equal to query parameter to filter the snapshot ID.
-         */
+        /** The optional less than or equal to query parameter to filter the snapshot ID. */
         private Integer endSnIdLessThanOrEqualTo = null;
 
         /**
          * The optional less than or equal to query parameter to filter the snapshot ID.
+         *
          * @param endSnIdLessThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -309,13 +284,12 @@ public class GetAwrDbSqlReportRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The optional greater than or equal to query parameter to filter the timestamp.
-         */
+        /** The optional greater than or equal to query parameter to filter the timestamp. */
         private java.util.Date timeGreaterThanOrEqualTo = null;
 
         /**
          * The optional greater than or equal to query parameter to filter the timestamp.
+         *
          * @param timeGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -324,13 +298,12 @@ public class GetAwrDbSqlReportRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The optional less than or equal to query parameter to filter the timestamp.
-         */
+        /** The optional less than or equal to query parameter to filter the timestamp. */
         private java.util.Date timeLessThanOrEqualTo = null;
 
         /**
          * The optional less than or equal to query parameter to filter the timestamp.
+         *
          * @param timeLessThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -339,13 +312,12 @@ public class GetAwrDbSqlReportRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The format of the AWR report.
-         */
+        /** The format of the AWR report. */
         private ReportFormat reportFormat = null;
 
         /**
          * The format of the AWR report.
+         *
          * @param reportFormat the value to set
          * @return this builder instance
          */
@@ -355,16 +327,15 @@ public class GetAwrDbSqlReportRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The optional query parameter to filter the database container by an exact ID value.
-         * Note that the database container ID can be retrieved from the following endpoint:
+         * The optional query parameter to filter the database container by an exact ID value. Note
+         * that the database container ID can be retrieved from the following endpoint:
          * /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
-         *
          */
         private Integer containerId = null;
 
         /**
-         * The optional query parameter to filter the database container by an exact ID value.
-         * Note that the database container ID can be retrieved from the following endpoint:
+         * The optional query parameter to filter the database container by an exact ID value. Note
+         * that the database container ID can be retrieved from the following endpoint:
          * /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
          *
          * @param containerId the value to set
@@ -375,13 +346,12 @@ public class GetAwrDbSqlReportRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -392,20 +362,19 @@ public class GetAwrDbSqlReportRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * might be rejected.
-         *
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -417,18 +386,19 @@ public class GetAwrDbSqlReportRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -440,6 +410,7 @@ public class GetAwrDbSqlReportRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetAwrDbSqlReportRequest o) {
@@ -463,10 +434,11 @@ public class GetAwrDbSqlReportRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of GetAwrDbSqlReportRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetAwrDbSqlReportRequest
          */
@@ -480,7 +452,8 @@ public class GetAwrDbSqlReportRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of GetAwrDbSqlReportRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetAwrDbSqlReportRequest
@@ -500,12 +473,15 @@ public class GetAwrDbSqlReportRequest extends com.oracle.bmc.requests.BmcRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new GetAwrDbSqlReportRequest(managedDatabaseId, awrDbId, sqlId, instNum, beginSnIdGreaterThanOrEqualTo, endSnIdLessThanOrEqualTo, timeGreaterThanOrEqualTo, timeLessThanOrEqualTo, reportFormat, containerId, opcRequestId, opcRetryToken);
+            // new GetAwrDbSqlReportRequest(managedDatabaseId, awrDbId, sqlId, instNum,
+            // beginSnIdGreaterThanOrEqualTo, endSnIdLessThanOrEqualTo, timeGreaterThanOrEqualTo,
+            // timeLessThanOrEqualTo, reportFormat, containerId, opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -526,6 +502,7 @@ public class GetAwrDbSqlReportRequest extends com.oracle.bmc.requests.BmcRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

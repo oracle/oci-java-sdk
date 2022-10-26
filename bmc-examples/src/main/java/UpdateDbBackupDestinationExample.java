@@ -17,13 +17,15 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * This class provides a basic example of how to update a database with BackupDestination using the Java SDK.
- * <p></p>
+ * This class provides a basic example of how to update a database with BackupDestination using the
+ * Java SDK.
+ *
+ * <p>
+ *
  * <ul>
- *   <li>
- *     Updating database with backupDestination. See:
- *       <a href="https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm">overview</a>
- *       for more information</li>
+ *   <li>Updating database with backupDestination. See: <a
+ *       href="https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm">overview</a>
+ *       for more information
  * </ul>
  */
 public class UpdateDbBackupDestinationExample {
@@ -35,9 +37,7 @@ public class UpdateDbBackupDestinationExample {
     private static final Map<String, Opts> mappings =
             Arrays.stream(Opts.values()).collect(Collectors.toMap(Opts::getArgName, o -> o));
 
-    /**
-     * Defines the arguments for this example.
-     */
+    /** Defines the arguments for this example. */
     private enum Opts {
         DATABASE_OCID("--databaseOcid", "The OCID of a database.", true),
         BACKUP_DESTINATION_OCID(
@@ -74,8 +74,8 @@ public class UpdateDbBackupDestinationExample {
      * A helper method for parsing command line arguments.
      *
      * @param argv the arguments as passed
-     * @return a mapping of argument to its value. Arguments may be missing from the map if they were not supplied by
-     * the user and not required.
+     * @return a mapping of argument to its value. Arguments may be missing from the map if they
+     *     were not supplied by the user and not required.
      */
     private static Map<Opts, String> parseOpts(String[] argv) {
         if (argv == null) {
@@ -116,12 +116,12 @@ public class UpdateDbBackupDestinationExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *             <ul>
-     *             <li>Database OCID</li>
-     *             <li>BackupDestination OCID</li>
-     *             <li>BackupDestination Type</li>
-     *             </ul>
-     *             vpcUser and vpcPassword arguments are required for ZDLRA case.
+     *     <ul>
+     *       <li>Database OCID
+     *       <li>BackupDestination OCID
+     *       <li>BackupDestination Type
+     *     </ul>
+     *     vpcUser and vpcPassword arguments are required for ZDLRA case.
      */
     public static void main(String[] args) throws Exception {
 
@@ -133,8 +133,10 @@ public class UpdateDbBackupDestinationExample {
         final String vpcUser = argumentMap.getOrDefault(Opts.VPC_USER, null);
         final String vpcPassword = argumentMap.getOrDefault(Opts.VPC_PASSWORD, null);
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();

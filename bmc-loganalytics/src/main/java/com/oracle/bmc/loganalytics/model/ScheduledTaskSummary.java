@@ -5,21 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Summary information about a scheduled task.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary information about a scheduled task. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ScheduledTaskSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ScheduledTaskSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ScheduledTaskSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -72,59 +73,59 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the data plane resource.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the data plane resource.
          *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * Task type.
-         **/
+        /** Task type. */
         @com.fasterxml.jackson.annotation.JsonProperty("taskType")
         private TaskType taskType;
 
         /**
          * Task type.
+         *
          * @param taskType the value to set
          * @return this builder
-         **/
+         */
         public Builder taskType(TaskType taskType) {
             this.taskType = taskType;
             this.__explicitlySet__.add("taskType");
             return this;
         }
         /**
-         * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         **/
+         * Compartment Identifier [OCID]
+         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Compartment Identifier [OCID]
+         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The date and time the schedule task was created, in the format defined by RFC3339.
-         *
-         **/
+        /** The date and time the schedule task was created, in the format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -133,7 +134,7 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -141,8 +142,7 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
         }
         /**
          * The date and time the scheduled task was last updated, in the format defined by RFC3339.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
@@ -151,115 +151,113 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
          *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * The current state of the scheduled task.
-         **/
+        /** The current state of the scheduled task. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ScheduledTask.LifecycleState lifecycleState;
 
         /**
          * The current state of the scheduled task.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(ScheduledTask.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * Status of the scheduled task.
-         **/
+        /** Status of the scheduled task. */
         @com.fasterxml.jackson.annotation.JsonProperty("taskStatus")
         private TaskStatus taskStatus;
 
         /**
          * Status of the scheduled task.
+         *
          * @param taskStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder taskStatus(TaskStatus taskStatus) {
             this.taskStatus = taskStatus;
             this.__explicitlySet__.add("taskStatus");
             return this;
         }
-        /**
-         * reason for taskStatus PAUSED.
-         **/
+        /** reason for taskStatus PAUSED. */
         @com.fasterxml.jackson.annotation.JsonProperty("pauseReason")
         private ScheduledTask.PauseReason pauseReason;
 
         /**
          * reason for taskStatus PAUSED.
+         *
          * @param pauseReason the value to set
          * @return this builder
-         **/
+         */
         public Builder pauseReason(ScheduledTask.PauseReason pauseReason) {
             this.pauseReason = pauseReason;
             this.__explicitlySet__.add("pauseReason");
             return this;
         }
         /**
-         * most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
-         **/
+         * most recent Work Request Identifier [OCID]
+         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * asynchronous request.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
         private String workRequestId;
 
         /**
-         * most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+         * most recent Work Request Identifier [OCID]
+         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * asynchronous request.
+         *
          * @param workRequestId the value to set
          * @return this builder
-         **/
+         */
         public Builder workRequestId(String workRequestId) {
             this.workRequestId = workRequestId;
             this.__explicitlySet__.add("workRequestId");
             return this;
         }
         /**
-         * A user-friendly name that is changeable and that does not have to be unique.
-         * Format: a leading alphanumeric, followed by zero or more
-         * alphanumerics, underscores, spaces, backslashes, or hyphens in any order).
-         * No trailing spaces allowed.
-         *
-         **/
+         * A user-friendly name that is changeable and that does not have to be unique. Format: a
+         * leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces,
+         * backslashes, or hyphens in any order). No trailing spaces allowed.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name that is changeable and that does not have to be unique.
-         * Format: a leading alphanumeric, followed by zero or more
-         * alphanumerics, underscores, spaces, backslashes, or hyphens in any order).
-         * No trailing spaces allowed.
+         * A user-friendly name that is changeable and that does not have to be unique. Format: a
+         * leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces,
+         * backslashes, or hyphens in any order). No trailing spaces allowed.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -268,8 +266,7 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -279,40 +276,38 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /**
-         * The most recent task execution status.
-         **/
+        /** The most recent task execution status. */
         @com.fasterxml.jackson.annotation.JsonProperty("lastExecutionStatus")
         private LastExecutionStatus lastExecutionStatus;
 
         /**
          * The most recent task execution status.
+         *
          * @param lastExecutionStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder lastExecutionStatus(LastExecutionStatus lastExecutionStatus) {
             this.lastExecutionStatus = lastExecutionStatus;
             this.__explicitlySet__.add("lastExecutionStatus");
             return this;
         }
-        /**
-         * The date and time the scheduled task last executed, in the format defined by RFC3339.
-         **/
+        /** The date and time the scheduled task last executed, in the format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastExecuted")
         private java.util.Date timeLastExecuted;
 
         /**
          * The date and time the scheduled task last executed, in the format defined by RFC3339.
+         *
          * @param timeLastExecuted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeLastExecuted(java.util.Date timeLastExecuted) {
             this.timeLastExecuted = timeLastExecuted;
             this.__explicitlySet__.add("timeLastExecuted");
@@ -393,9 +388,7 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -405,53 +398,53 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the data plane resource.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the data plane resource.
      *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * Task type.
-     **/
+    /** Task type. */
     @com.fasterxml.jackson.annotation.JsonProperty("taskType")
     private final TaskType taskType;
 
     /**
      * Task type.
+     *
      * @return the value
-     **/
+     */
     public TaskType getTaskType() {
         return taskType;
     }
 
     /**
-     * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     **/
+     * Compartment Identifier [OCID]
+     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Compartment Identifier [OCID]
+     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The date and time the schedule task was created, in the format defined by RFC3339.
-     *
-     **/
+    /** The date and time the schedule task was created, in the format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -459,15 +452,12 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
      * The date and time the schedule task was created, in the format defined by RFC3339.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The date and time the scheduled task was last updated, in the format defined by RFC3339.
-     *
-     **/
+    /** The date and time the scheduled task was last updated, in the format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
@@ -475,37 +465,34 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
      * The date and time the scheduled task was last updated, in the format defined by RFC3339.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The current state of the scheduled task.
-     **/
+    /** The current state of the scheduled task. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ScheduledTask.LifecycleState lifecycleState;
 
     /**
      * The current state of the scheduled task.
+     *
      * @return the value
-     **/
+     */
     public ScheduledTask.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * Status of the scheduled task.
-     **/
-    public enum TaskStatus {
+    /** Status of the scheduled task. */
+    public enum TaskStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Ready("READY"),
         Paused("PAUSED"),
         Completed("COMPLETED"),
         Blocked("BLOCKED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -544,116 +531,112 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
             return UnknownEnumValue;
         }
     };
-    /**
-     * Status of the scheduled task.
-     **/
+    /** Status of the scheduled task. */
     @com.fasterxml.jackson.annotation.JsonProperty("taskStatus")
     private final TaskStatus taskStatus;
 
     /**
      * Status of the scheduled task.
+     *
      * @return the value
-     **/
+     */
     public TaskStatus getTaskStatus() {
         return taskStatus;
     }
 
-    /**
-     * reason for taskStatus PAUSED.
-     **/
+    /** reason for taskStatus PAUSED. */
     @com.fasterxml.jackson.annotation.JsonProperty("pauseReason")
     private final ScheduledTask.PauseReason pauseReason;
 
     /**
      * reason for taskStatus PAUSED.
+     *
      * @return the value
-     **/
+     */
     public ScheduledTask.PauseReason getPauseReason() {
         return pauseReason;
     }
 
     /**
-     * most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
-     **/
+     * most recent Work Request Identifier [OCID]
+     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * asynchronous request.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
     private final String workRequestId;
 
     /**
-     * most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+     * most recent Work Request Identifier [OCID]
+     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * asynchronous request.
+     *
      * @return the value
-     **/
+     */
     public String getWorkRequestId() {
         return workRequestId;
     }
 
     /**
-     * A user-friendly name that is changeable and that does not have to be unique.
-     * Format: a leading alphanumeric, followed by zero or more
-     * alphanumerics, underscores, spaces, backslashes, or hyphens in any order).
-     * No trailing spaces allowed.
-     *
-     **/
+     * A user-friendly name that is changeable and that does not have to be unique. Format: a
+     * leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces,
+     * backslashes, or hyphens in any order). No trailing spaces allowed.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name that is changeable and that does not have to be unique.
-     * Format: a leading alphanumeric, followed by zero or more
-     * alphanumerics, underscores, spaces, backslashes, or hyphens in any order).
-     * No trailing spaces allowed.
+     * A user-friendly name that is changeable and that does not have to be unique. Format: a
+     * leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces,
+     * backslashes, or hyphens in any order). No trailing spaces allowed.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
-    /**
-     * The most recent task execution status.
-     **/
-    public enum LastExecutionStatus {
+    /** The most recent task execution status. */
+    public enum LastExecutionStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Failed("FAILED"),
         Succeeded("SUCCEEDED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -692,30 +675,28 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
             return UnknownEnumValue;
         }
     };
-    /**
-     * The most recent task execution status.
-     **/
+    /** The most recent task execution status. */
     @com.fasterxml.jackson.annotation.JsonProperty("lastExecutionStatus")
     private final LastExecutionStatus lastExecutionStatus;
 
     /**
      * The most recent task execution status.
+     *
      * @return the value
-     **/
+     */
     public LastExecutionStatus getLastExecutionStatus() {
         return lastExecutionStatus;
     }
 
-    /**
-     * The date and time the scheduled task last executed, in the format defined by RFC3339.
-     **/
+    /** The date and time the scheduled task last executed, in the format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastExecuted")
     private final java.util.Date timeLastExecuted;
 
     /**
      * The date and time the scheduled task last executed, in the format defined by RFC3339.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeLastExecuted() {
         return timeLastExecuted;
     }
@@ -727,6 +708,7 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,19 +5,21 @@
 package com.oracle.bmc.nosql.model;
 
 /**
- * Results of ListTables.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Results of ListTables. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TableCollection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TableCollection extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class TableCollection
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "items",
@@ -42,81 +44,76 @@ public final class TableCollection extends com.oracle.bmc.http.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * A page of TableSummary objects.
-         **/
+        /** A page of TableSummary objects. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<TableSummary> items;
 
         /**
          * A page of TableSummary objects.
+         *
          * @param items the value to set
          * @return this builder
-         **/
+         */
         public Builder items(java.util.List<TableSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
             return this;
         }
-        /**
-         * The maximum number of reclaimable tables allowed in the tenancy.
-         **/
+        /** The maximum number of reclaimable tables allowed in the tenancy. */
         @com.fasterxml.jackson.annotation.JsonProperty("maxAutoReclaimableTables")
         private Integer maxAutoReclaimableTables;
 
         /**
          * The maximum number of reclaimable tables allowed in the tenancy.
+         *
          * @param maxAutoReclaimableTables the value to set
          * @return this builder
-         **/
+         */
         public Builder maxAutoReclaimableTables(Integer maxAutoReclaimableTables) {
             this.maxAutoReclaimableTables = maxAutoReclaimableTables;
             this.__explicitlySet__.add("maxAutoReclaimableTables");
             return this;
         }
-        /**
-         * The current number of reclaimable tables in the tenancy.
-         **/
+        /** The current number of reclaimable tables in the tenancy. */
         @com.fasterxml.jackson.annotation.JsonProperty("autoReclaimableTables")
         private Integer autoReclaimableTables;
 
         /**
          * The current number of reclaimable tables in the tenancy.
+         *
          * @param autoReclaimableTables the value to set
          * @return this builder
-         **/
+         */
         public Builder autoReclaimableTables(Integer autoReclaimableTables) {
             this.autoReclaimableTables = autoReclaimableTables;
             this.__explicitlySet__.add("autoReclaimableTables");
             return this;
         }
-        /**
-         * The current number of on demand capacity tables in the tenancy.
-         **/
+        /** The current number of on demand capacity tables in the tenancy. */
         @com.fasterxml.jackson.annotation.JsonProperty("onDemandCapacityTables")
         private Integer onDemandCapacityTables;
 
         /**
          * The current number of on demand capacity tables in the tenancy.
+         *
          * @param onDemandCapacityTables the value to set
          * @return this builder
-         **/
+         */
         public Builder onDemandCapacityTables(Integer onDemandCapacityTables) {
             this.onDemandCapacityTables = onDemandCapacityTables;
             this.__explicitlySet__.add("onDemandCapacityTables");
             return this;
         }
-        /**
-         * The maximum number of on demand capacity tables allowed in the tenancy.
-         **/
+        /** The maximum number of on demand capacity tables allowed in the tenancy. */
         @com.fasterxml.jackson.annotation.JsonProperty("maxOnDemandCapacityTables")
         private Integer maxOnDemandCapacityTables;
 
         /**
          * The maximum number of on demand capacity tables allowed in the tenancy.
+         *
          * @param maxOnDemandCapacityTables the value to set
          * @return this builder
-         **/
+         */
         public Builder maxOnDemandCapacityTables(Integer maxOnDemandCapacityTables) {
             this.maxOnDemandCapacityTables = maxOnDemandCapacityTables;
             this.__explicitlySet__.add("maxOnDemandCapacityTables");
@@ -161,9 +158,7 @@ public final class TableCollection extends com.oracle.bmc.http.internal.Explicit
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -172,72 +167,67 @@ public final class TableCollection extends com.oracle.bmc.http.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /**
-     * A page of TableSummary objects.
-     **/
+    /** A page of TableSummary objects. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<TableSummary> items;
 
     /**
      * A page of TableSummary objects.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<TableSummary> getItems() {
         return items;
     }
 
-    /**
-     * The maximum number of reclaimable tables allowed in the tenancy.
-     **/
+    /** The maximum number of reclaimable tables allowed in the tenancy. */
     @com.fasterxml.jackson.annotation.JsonProperty("maxAutoReclaimableTables")
     private final Integer maxAutoReclaimableTables;
 
     /**
      * The maximum number of reclaimable tables allowed in the tenancy.
+     *
      * @return the value
-     **/
+     */
     public Integer getMaxAutoReclaimableTables() {
         return maxAutoReclaimableTables;
     }
 
-    /**
-     * The current number of reclaimable tables in the tenancy.
-     **/
+    /** The current number of reclaimable tables in the tenancy. */
     @com.fasterxml.jackson.annotation.JsonProperty("autoReclaimableTables")
     private final Integer autoReclaimableTables;
 
     /**
      * The current number of reclaimable tables in the tenancy.
+     *
      * @return the value
-     **/
+     */
     public Integer getAutoReclaimableTables() {
         return autoReclaimableTables;
     }
 
-    /**
-     * The current number of on demand capacity tables in the tenancy.
-     **/
+    /** The current number of on demand capacity tables in the tenancy. */
     @com.fasterxml.jackson.annotation.JsonProperty("onDemandCapacityTables")
     private final Integer onDemandCapacityTables;
 
     /**
      * The current number of on demand capacity tables in the tenancy.
+     *
      * @return the value
-     **/
+     */
     public Integer getOnDemandCapacityTables() {
         return onDemandCapacityTables;
     }
 
-    /**
-     * The maximum number of on demand capacity tables allowed in the tenancy.
-     **/
+    /** The maximum number of on demand capacity tables allowed in the tenancy. */
     @com.fasterxml.jackson.annotation.JsonProperty("maxOnDemandCapacityTables")
     private final Integer maxOnDemandCapacityTables;
 
     /**
      * The maximum number of on demand capacity tables allowed in the tenancy.
+     *
      * @return the value
-     **/
+     */
     public Integer getMaxOnDemandCapacityTables() {
         return maxOnDemandCapacityTables;
     }
@@ -249,6 +239,7 @@ public final class TableCollection extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

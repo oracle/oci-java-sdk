@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.managementagent.model;
 
-/**
- * Supported edit modes for config.
- **/
+/** Supported edit modes for config. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-public enum EditModes {
+public enum EditModes implements com.oracle.bmc.http.internal.BmcEnum {
     ReadOnly("READ_ONLY"),
     Writable("WRITABLE"),
     Extensible("EXTENSIBLE"),

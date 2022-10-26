@@ -5,21 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Contains resource statistics with usage unit
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Contains resource statistics with usage unit <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ResourceStatistics.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResourceStatistics extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ResourceStatistics.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ResourceStatistics
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "usage",
@@ -53,10 +54,7 @@ public final class ResourceStatistics extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Total amount used of the resource metric type (CPU, STORAGE).
-         *
-         **/
+        /** Total amount used of the resource metric type (CPU, STORAGE). */
         @com.fasterxml.jackson.annotation.JsonProperty("usage")
         private Double usage;
 
@@ -65,125 +63,128 @@ public final class ResourceStatistics extends com.oracle.bmc.http.internal.Expli
          *
          * @param usage the value to set
          * @return this builder
-         **/
+         */
         public Builder usage(Double usage) {
             this.usage = usage;
             this.__explicitlySet__.add("usage");
             return this;
         }
         /**
-         * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
-         *
-         **/
+         * The maximum allocated amount of the resource metric type (CPU, STORAGE) for a set of
+         * databases.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("capacity")
         private Double capacity;
 
         /**
-         * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
+         * The maximum allocated amount of the resource metric type (CPU, STORAGE) for a set of
+         * databases.
          *
          * @param capacity the value to set
          * @return this builder
-         **/
+         */
         public Builder capacity(Double capacity) {
             this.capacity = capacity;
             this.__explicitlySet__.add("capacity");
             return this;
         }
         /**
-         * The base allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
-         *
-         **/
+         * The base allocated amount of the resource metric type (CPU, STORAGE) for a set of
+         * databases.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("baseCapacity")
         private Double baseCapacity;
 
         /**
-         * The base allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
+         * The base allocated amount of the resource metric type (CPU, STORAGE) for a set of
+         * databases.
          *
          * @param baseCapacity the value to set
          * @return this builder
-         **/
+         */
         public Builder baseCapacity(Double baseCapacity) {
             this.baseCapacity = baseCapacity;
             this.__explicitlySet__.add("baseCapacity");
             return this;
         }
         /**
-         * Indicates if auto scaling feature is enabled or disabled on a database. It will be false for all metrics other than CPU.
-         **/
+         * Indicates if auto scaling feature is enabled or disabled on a database. It will be false
+         * for all metrics other than CPU.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
         private Boolean isAutoScalingEnabled;
 
         /**
-         * Indicates if auto scaling feature is enabled or disabled on a database. It will be false for all metrics other than CPU.
+         * Indicates if auto scaling feature is enabled or disabled on a database. It will be false
+         * for all metrics other than CPU.
+         *
          * @param isAutoScalingEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
             this.isAutoScalingEnabled = isAutoScalingEnabled;
             this.__explicitlySet__.add("isAutoScalingEnabled");
             return this;
         }
-        /**
-         * Resource utilization in percentage
-         **/
+        /** Resource utilization in percentage */
         @com.fasterxml.jackson.annotation.JsonProperty("utilizationPercent")
         private Double utilizationPercent;
 
         /**
          * Resource utilization in percentage
+         *
          * @param utilizationPercent the value to set
          * @return this builder
-         **/
+         */
         public Builder utilizationPercent(Double utilizationPercent) {
             this.utilizationPercent = utilizationPercent;
             this.__explicitlySet__.add("utilizationPercent");
             return this;
         }
-        /**
-         * Change in resource utilization in percentage
-         **/
+        /** Change in resource utilization in percentage */
         @com.fasterxml.jackson.annotation.JsonProperty("usageChangePercent")
         private Double usageChangePercent;
 
         /**
          * Change in resource utilization in percentage
+         *
          * @param usageChangePercent the value to set
          * @return this builder
-         **/
+         */
         public Builder usageChangePercent(Double usageChangePercent) {
             this.usageChangePercent = usageChangePercent;
             this.__explicitlySet__.add("usageChangePercent");
             return this;
         }
-        /**
-         * Array of instance metrics
-         **/
+        /** Array of instance metrics */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceMetrics")
         private java.util.List<InstanceMetrics> instanceMetrics;
 
         /**
          * Array of instance metrics
+         *
          * @param instanceMetrics the value to set
          * @return this builder
-         **/
+         */
         public Builder instanceMetrics(java.util.List<InstanceMetrics> instanceMetrics) {
             this.instanceMetrics = instanceMetrics;
             this.__explicitlySet__.add("instanceMetrics");
             return this;
         }
         /**
-         * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
-         *
-         **/
+         * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only
+         * applies to CPU and does not not apply for Autonomous Databases.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("totalHostCapacity")
         private Double totalHostCapacity;
 
         /**
-         * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+         * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only
+         * applies to CPU and does not not apply for Autonomous Databases.
          *
          * @param totalHostCapacity the value to set
          * @return this builder
-         **/
+         */
         public Builder totalHostCapacity(Double totalHostCapacity) {
             this.totalHostCapacity = totalHostCapacity;
             this.__explicitlySet__.add("totalHostCapacity");
@@ -240,9 +241,7 @@ public final class ResourceStatistics extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -251,10 +250,7 @@ public final class ResourceStatistics extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * Total amount used of the resource metric type (CPU, STORAGE).
-     *
-     **/
+    /** Total amount used of the resource metric type (CPU, STORAGE). */
     @com.fasterxml.jackson.annotation.JsonProperty("usage")
     private final Double usage;
 
@@ -262,111 +258,112 @@ public final class ResourceStatistics extends com.oracle.bmc.http.internal.Expli
      * Total amount used of the resource metric type (CPU, STORAGE).
      *
      * @return the value
-     **/
+     */
     public Double getUsage() {
         return usage;
     }
 
     /**
-     * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
-     *
-     **/
+     * The maximum allocated amount of the resource metric type (CPU, STORAGE) for a set of
+     * databases.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
     private final Double capacity;
 
     /**
-     * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
+     * The maximum allocated amount of the resource metric type (CPU, STORAGE) for a set of
+     * databases.
      *
      * @return the value
-     **/
+     */
     public Double getCapacity() {
         return capacity;
     }
 
     /**
-     * The base allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
-     *
-     **/
+     * The base allocated amount of the resource metric type (CPU, STORAGE) for a set of databases.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("baseCapacity")
     private final Double baseCapacity;
 
     /**
-     * The base allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
+     * The base allocated amount of the resource metric type (CPU, STORAGE) for a set of databases.
      *
      * @return the value
-     **/
+     */
     public Double getBaseCapacity() {
         return baseCapacity;
     }
 
     /**
-     * Indicates if auto scaling feature is enabled or disabled on a database. It will be false for all metrics other than CPU.
-     **/
+     * Indicates if auto scaling feature is enabled or disabled on a database. It will be false for
+     * all metrics other than CPU.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
     private final Boolean isAutoScalingEnabled;
 
     /**
-     * Indicates if auto scaling feature is enabled or disabled on a database. It will be false for all metrics other than CPU.
+     * Indicates if auto scaling feature is enabled or disabled on a database. It will be false for
+     * all metrics other than CPU.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsAutoScalingEnabled() {
         return isAutoScalingEnabled;
     }
 
-    /**
-     * Resource utilization in percentage
-     **/
+    /** Resource utilization in percentage */
     @com.fasterxml.jackson.annotation.JsonProperty("utilizationPercent")
     private final Double utilizationPercent;
 
     /**
      * Resource utilization in percentage
+     *
      * @return the value
-     **/
+     */
     public Double getUtilizationPercent() {
         return utilizationPercent;
     }
 
-    /**
-     * Change in resource utilization in percentage
-     **/
+    /** Change in resource utilization in percentage */
     @com.fasterxml.jackson.annotation.JsonProperty("usageChangePercent")
     private final Double usageChangePercent;
 
     /**
      * Change in resource utilization in percentage
+     *
      * @return the value
-     **/
+     */
     public Double getUsageChangePercent() {
         return usageChangePercent;
     }
 
-    /**
-     * Array of instance metrics
-     **/
+    /** Array of instance metrics */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceMetrics")
     private final java.util.List<InstanceMetrics> instanceMetrics;
 
     /**
      * Array of instance metrics
+     *
      * @return the value
-     **/
+     */
     public java.util.List<InstanceMetrics> getInstanceMetrics() {
         return instanceMetrics;
     }
 
     /**
-     * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
-     *
-     **/
+     * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only
+     * applies to CPU and does not not apply for Autonomous Databases.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("totalHostCapacity")
     private final Double totalHostCapacity;
 
     /**
-     * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+     * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only
+     * applies to CPU and does not not apply for Autonomous Databases.
      *
      * @return the value
-     **/
+     */
     public Double getTotalHostCapacity() {
         return totalHostCapacity;
     }
@@ -378,6 +375,7 @@ public final class ResourceStatistics extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

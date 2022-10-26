@@ -6,7 +6,10 @@ package com.oracle.bmc.waa.requests;
 
 import com.oracle.bmc.waa.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/PurgeWebAppAccelerationCacheExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use PurgeWebAppAccelerationCacheRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/PurgeWebAppAccelerationCacheExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * PurgeWebAppAccelerationCacheRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211230")
 public class PurgeWebAppAccelerationCacheRequest
@@ -14,43 +17,38 @@ public class PurgeWebAppAccelerationCacheRequest
                 com.oracle.bmc.waa.model.PurgeWebAppAccelerationCacheDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WebAppAcceleration.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * WebAppAcceleration.
      */
     private String webAppAccelerationId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WebAppAcceleration.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * WebAppAcceleration.
      */
     public String getWebAppAccelerationId() {
         return webAppAccelerationId;
     }
-    /**
-     * Options for the cache purge.
-     */
+    /** Options for the cache purge. */
     private com.oracle.bmc.waa.model.PurgeWebAppAccelerationCacheDetails
             purgeWebAppAccelerationCacheDetails;
 
-    /**
-     * Options for the cache purge.
-     */
+    /** Options for the cache purge. */
     public com.oracle.bmc.waa.model.PurgeWebAppAccelerationCacheDetails
             getPurgeWebAppAccelerationCacheDetails() {
         return purgeWebAppAccelerationCacheDetails;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -63,17 +61,19 @@ public class PurgeWebAppAccelerationCacheRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     PurgeWebAppAccelerationCacheRequest,
                     com.oracle.bmc.waa.model.PurgeWebAppAccelerationCacheDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WebAppAcceleration.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * WebAppAcceleration.
          */
         private String webAppAccelerationId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WebAppAcceleration.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * WebAppAcceleration.
+         *
          * @param webAppAccelerationId the value to set
          * @return this builder instance
          */
@@ -82,14 +82,13 @@ public class PurgeWebAppAccelerationCacheRequest
             return this;
         }
 
-        /**
-         * Options for the cache purge.
-         */
+        /** Options for the cache purge. */
         private com.oracle.bmc.waa.model.PurgeWebAppAccelerationCacheDetails
                 purgeWebAppAccelerationCacheDetails = null;
 
         /**
          * Options for the cache purge.
+         *
          * @param purgeWebAppAccelerationCacheDetails the value to set
          * @return this builder instance
          */
@@ -100,13 +99,12 @@ public class PurgeWebAppAccelerationCacheRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -117,18 +115,19 @@ public class PurgeWebAppAccelerationCacheRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -140,6 +139,7 @@ public class PurgeWebAppAccelerationCacheRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(PurgeWebAppAccelerationCacheRequest o) {
@@ -154,10 +154,11 @@ public class PurgeWebAppAccelerationCacheRequest
         /**
          * Build the instance of PurgeWebAppAccelerationCacheRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of PurgeWebAppAccelerationCacheRequest
          */
@@ -170,6 +171,7 @@ public class PurgeWebAppAccelerationCacheRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -182,7 +184,8 @@ public class PurgeWebAppAccelerationCacheRequest
         /**
          * Build the instance of PurgeWebAppAccelerationCacheRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of PurgeWebAppAccelerationCacheRequest
@@ -193,12 +196,14 @@ public class PurgeWebAppAccelerationCacheRequest
             request.purgeWebAppAccelerationCacheDetails = purgeWebAppAccelerationCacheDetails;
             request.opcRequestId = opcRequestId;
             return request;
-            // new PurgeWebAppAccelerationCacheRequest(webAppAccelerationId, purgeWebAppAccelerationCacheDetails, opcRequestId);
+            // new PurgeWebAppAccelerationCacheRequest(webAppAccelerationId,
+            // purgeWebAppAccelerationCacheDetails, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -210,6 +215,7 @@ public class PurgeWebAppAccelerationCacheRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

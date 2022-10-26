@@ -5,20 +5,20 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * A tag definition that belongs to a specific tag namespace.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A tag definition that belongs to a specific tag namespace. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TagSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TagSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class TagSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -58,113 +58,111 @@ public final class TagSummary extends com.oracle.bmc.http.internal.ExplicitlySet
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the compartment that contains the tag definition.
-         **/
+        /** The OCID of the compartment that contains the tag definition. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that contains the tag definition.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The OCID of the tag definition.
-         **/
+        /** The OCID of the tag definition. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the tag definition.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The name assigned to the tag during creation. This is the tag key definition.
-         * The name must be unique within the tag namespace and cannot be changed.
-         *
-         **/
+         * The name assigned to the tag during creation. This is the tag key definition. The name
+         * must be unique within the tag namespace and cannot be changed.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name assigned to the tag during creation. This is the tag key definition.
-         * The name must be unique within the tag namespace and cannot be changed.
+         * The name assigned to the tag during creation. This is the tag key definition. The name
+         * must be unique within the tag namespace and cannot be changed.
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The description you assign to the tag.
-         **/
+        /** The description you assign to the tag. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description you assign to the tag.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
-         *
-         **/
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
-         *
-         **/
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -172,65 +170,67 @@ public final class TagSummary extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * Whether the tag is retired.
-         * See [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys).
-         *
-         **/
+         * Whether the tag is retired. See [Retiring Key Definitions and Namespace
+         * Definitions](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isRetired")
         private Boolean isRetired;
 
         /**
-         * Whether the tag is retired.
-         * See [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys).
+         * Whether the tag is retired. See [Retiring Key Definitions and Namespace
+         * Definitions](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys).
          *
          * @param isRetired the value to set
          * @return this builder
-         **/
+         */
         public Builder isRetired(Boolean isRetired) {
             this.isRetired = isRetired;
             this.__explicitlySet__.add("isRetired");
             return this;
         }
         /**
-         * The tag's current state. After creating a tag, make sure its {@code lifecycleState} is ACTIVE before using it. After retiring a tag, make sure its {@code lifecycleState} is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's {@code lifecycleState} changes from DELETING to DELETED.
-         **/
+         * The tag's current state. After creating a tag, make sure its {@code lifecycleState} is
+         * ACTIVE before using it. After retiring a tag, make sure its {@code lifecycleState} is
+         * INACTIVE before using it. If you delete a tag, you cannot delete another tag until the
+         * deleted tag's {@code lifecycleState} changes from DELETING to DELETED.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Tag.LifecycleState lifecycleState;
 
         /**
-         * The tag's current state. After creating a tag, make sure its {@code lifecycleState} is ACTIVE before using it. After retiring a tag, make sure its {@code lifecycleState} is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's {@code lifecycleState} changes from DELETING to DELETED.
+         * The tag's current state. After creating a tag, make sure its {@code lifecycleState} is
+         * ACTIVE before using it. After retiring a tag, make sure its {@code lifecycleState} is
+         * INACTIVE before using it. If you delete a tag, you cannot delete another tag until the
+         * deleted tag's {@code lifecycleState} changes from DELETING to DELETED.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(Tag.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * Date and time the tag was created, in the format defined by RFC3339.
-         * Example: {@code 2016-08-25T21:10:29.600Z}
-         *
-         **/
+         * Date and time the tag was created, in the format defined by RFC3339. Example: {@code
+         * 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * Date and time the tag was created, in the format defined by RFC3339.
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         * Date and time the tag was created, in the format defined by RFC3339. Example: {@code
+         * 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * Indicates whether the tag is enabled for cost tracking.
-         *
-         **/
+        /** Indicates whether the tag is enabled for cost tracking. */
         @com.fasterxml.jackson.annotation.JsonProperty("isCostTracking")
         private Boolean isCostTracking;
 
@@ -239,7 +239,7 @@ public final class TagSummary extends com.oracle.bmc.http.internal.ExplicitlySet
          *
          * @param isCostTracking the value to set
          * @return this builder
-         **/
+         */
         public Builder isCostTracking(Boolean isCostTracking) {
             this.isCostTracking = isCostTracking;
             this.__explicitlySet__.add("isCostTracking");
@@ -304,9 +304,7 @@ public final class TagSummary extends com.oracle.bmc.http.internal.ExplicitlySet
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -315,160 +313,160 @@ public final class TagSummary extends com.oracle.bmc.http.internal.ExplicitlySet
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the compartment that contains the tag definition.
-     **/
+    /** The OCID of the compartment that contains the tag definition. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that contains the tag definition.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The OCID of the tag definition.
-     **/
+    /** The OCID of the tag definition. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the tag definition.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * The name assigned to the tag during creation. This is the tag key definition.
-     * The name must be unique within the tag namespace and cannot be changed.
-     *
-     **/
+     * The name assigned to the tag during creation. This is the tag key definition. The name must
+     * be unique within the tag namespace and cannot be changed.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name assigned to the tag during creation. This is the tag key definition.
-     * The name must be unique within the tag namespace and cannot be changed.
+     * The name assigned to the tag during creation. This is the tag key definition. The name must
+     * be unique within the tag namespace and cannot be changed.
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The description you assign to the tag.
-     **/
+    /** The description you assign to the tag. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description you assign to the tag.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
-     *
-     **/
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Whether the tag is retired.
-     * See [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys).
-     *
-     **/
+     * Whether the tag is retired. See [Retiring Key Definitions and Namespace
+     * Definitions](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isRetired")
     private final Boolean isRetired;
 
     /**
-     * Whether the tag is retired.
-     * See [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys).
+     * Whether the tag is retired. See [Retiring Key Definitions and Namespace
+     * Definitions](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys).
      *
      * @return the value
-     **/
+     */
     public Boolean getIsRetired() {
         return isRetired;
     }
 
     /**
-     * The tag's current state. After creating a tag, make sure its {@code lifecycleState} is ACTIVE before using it. After retiring a tag, make sure its {@code lifecycleState} is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's {@code lifecycleState} changes from DELETING to DELETED.
-     **/
+     * The tag's current state. After creating a tag, make sure its {@code lifecycleState} is ACTIVE
+     * before using it. After retiring a tag, make sure its {@code lifecycleState} is INACTIVE
+     * before using it. If you delete a tag, you cannot delete another tag until the deleted tag's
+     * {@code lifecycleState} changes from DELETING to DELETED.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Tag.LifecycleState lifecycleState;
 
     /**
-     * The tag's current state. After creating a tag, make sure its {@code lifecycleState} is ACTIVE before using it. After retiring a tag, make sure its {@code lifecycleState} is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's {@code lifecycleState} changes from DELETING to DELETED.
+     * The tag's current state. After creating a tag, make sure its {@code lifecycleState} is ACTIVE
+     * before using it. After retiring a tag, make sure its {@code lifecycleState} is INACTIVE
+     * before using it. If you delete a tag, you cannot delete another tag until the deleted tag's
+     * {@code lifecycleState} changes from DELETING to DELETED.
+     *
      * @return the value
-     **/
+     */
     public Tag.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * Date and time the tag was created, in the format defined by RFC3339.
-     * Example: {@code 2016-08-25T21:10:29.600Z}
-     *
-     **/
+     * Date and time the tag was created, in the format defined by RFC3339. Example: {@code
+     * 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * Date and time the tag was created, in the format defined by RFC3339.
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     * Date and time the tag was created, in the format defined by RFC3339. Example: {@code
+     * 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * Indicates whether the tag is enabled for cost tracking.
-     *
-     **/
+    /** Indicates whether the tag is enabled for cost tracking. */
     @com.fasterxml.jackson.annotation.JsonProperty("isCostTracking")
     private final Boolean isCostTracking;
 
@@ -476,7 +474,7 @@ public final class TagSummary extends com.oracle.bmc.http.internal.ExplicitlySet
      * Indicates whether the tag is enabled for cost tracking.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsCostTracking() {
         return isCostTracking;
     }
@@ -488,6 +486,7 @@ public final class TagSummary extends com.oracle.bmc.http.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

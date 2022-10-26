@@ -5,21 +5,22 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * A parameter to a resource.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A parameter to a resource. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ParameterDefinition.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ParameterDefinition extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ParameterDefinition.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ParameterDefinition
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -65,193 +66,193 @@ public final class ParameterDefinition extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the parameter
-         **/
+        /** The name of the parameter */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the parameter
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Enumerated parameter type.
-         **/
+        /** Enumerated parameter type. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * Enumerated parameter type.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * Description of the parameter.
-         **/
+        /** Description of the parameter. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description of the parameter.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * Is this parameter required. Ignored for parameters with direction = OUTPUT.
-         **/
+        /** Is this parameter required. Ignored for parameters with direction = OUTPUT. */
         @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
         private Boolean isRequired;
 
         /**
          * Is this parameter required. Ignored for parameters with direction = OUTPUT.
+         *
          * @param isRequired the value to set
          * @return this builder
-         **/
+         */
         public Builder isRequired(Boolean isRequired) {
             this.isRequired = isRequired;
             this.__explicitlySet__.add("isRequired");
             return this;
         }
         /**
-         * Is the data for this parameter sensitive (e.g. should the data be hidden in UI, encrypted if stored, etc.)
-         **/
+         * Is the data for this parameter sensitive (e.g. should the data be hidden in UI, encrypted
+         * if stored, etc.)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isSensitive")
         private Boolean isSensitive;
 
         /**
-         * Is the data for this parameter sensitive (e.g. should the data be hidden in UI, encrypted if stored, etc.)
+         * Is the data for this parameter sensitive (e.g. should the data be hidden in UI, encrypted
+         * if stored, etc.)
+         *
          * @param isSensitive the value to set
          * @return this builder
-         **/
+         */
         public Builder isSensitive(Boolean isSensitive) {
             this.isSensitive = isSensitive;
             this.__explicitlySet__.add("isSensitive");
             return this;
         }
-        /**
-         * Default value for the parameter.
-         **/
+        /** Default value for the parameter. */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private String defaultValue;
 
         /**
          * Default value for the parameter.
+         *
          * @param defaultValue the value to set
          * @return this builder
-         **/
+         */
         public Builder defaultValue(String defaultValue) {
             this.defaultValue = defaultValue;
             this.__explicitlySet__.add("defaultValue");
             return this;
         }
-        /**
-         * Used for character string types such as STRING to constrain the length of the value
-         **/
+        /** Used for character string types such as STRING to constrain the length of the value */
         @com.fasterxml.jackson.annotation.JsonProperty("minLength")
         private Integer minLength;
 
         /**
          * Used for character string types such as STRING to constrain the length of the value
+         *
          * @param minLength the value to set
          * @return this builder
-         **/
+         */
         public Builder minLength(Integer minLength) {
             this.minLength = minLength;
             this.__explicitlySet__.add("minLength");
             return this;
         }
-        /**
-         * Used for character string types such as STRING to constrain the length of the value
-         **/
+        /** Used for character string types such as STRING to constrain the length of the value */
         @com.fasterxml.jackson.annotation.JsonProperty("maxLength")
         private Integer maxLength;
 
         /**
          * Used for character string types such as STRING to constrain the length of the value
+         *
          * @param maxLength the value to set
          * @return this builder
-         **/
+         */
         public Builder maxLength(Integer maxLength) {
             this.maxLength = maxLength;
             this.__explicitlySet__.add("maxLength");
             return this;
         }
-        /**
-         * Regular expression used to validate the value of a string type such as STRING
-         **/
+        /** Regular expression used to validate the value of a string type such as STRING */
         @com.fasterxml.jackson.annotation.JsonProperty("pattern")
         private String pattern;
 
         /**
          * Regular expression used to validate the value of a string type such as STRING
+         *
          * @param pattern the value to set
          * @return this builder
-         **/
+         */
         public Builder pattern(String pattern) {
             this.pattern = pattern;
             this.__explicitlySet__.add("pattern");
             return this;
         }
-        /**
-         * Is this parameter an input parameter, output parameter, or both?
-         **/
+        /** Is this parameter an input parameter, output parameter, or both? */
         @com.fasterxml.jackson.annotation.JsonProperty("direction")
         private Direction direction;
 
         /**
          * Is this parameter an input parameter, output parameter, or both?
+         *
          * @param direction the value to set
          * @return this builder
-         **/
+         */
         public Builder direction(Direction direction) {
             this.direction = direction;
             this.__explicitlySet__.add("direction");
             return this;
         }
         /**
-         * A forward-slash-delimited 'path' in an imaginary hierarchy, at which this parameter's UI widgets should be placed
-         **/
+         * A forward-slash-delimited 'path' in an imaginary hierarchy, at which this parameter's UI
+         * widgets should be placed
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("uiPlacementHint")
         private String uiPlacementHint;
 
         /**
-         * A forward-slash-delimited 'path' in an imaginary hierarchy, at which this parameter's UI widgets should be placed
+         * A forward-slash-delimited 'path' in an imaginary hierarchy, at which this parameter's UI
+         * widgets should be placed
+         *
          * @param uiPlacementHint the value to set
          * @return this builder
-         **/
+         */
         public Builder uiPlacementHint(String uiPlacementHint) {
             this.uiPlacementHint = uiPlacementHint;
             this.__explicitlySet__.add("uiPlacementHint");
             return this;
         }
         /**
-         * Any configuration needed to help the resource type process this parameter (e.g. link to manifest, etc.).
-         **/
+         * Any configuration needed to help the resource type process this parameter (e.g. link to
+         * manifest, etc.).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceTypeMetadata")
         private Object resourceTypeMetadata;
 
         /**
-         * Any configuration needed to help the resource type process this parameter (e.g. link to manifest, etc.).
+         * Any configuration needed to help the resource type process this parameter (e.g. link to
+         * manifest, etc.).
+         *
          * @param resourceTypeMetadata the value to set
          * @return this builder
-         **/
+         */
         public Builder resourceTypeMetadata(Object resourceTypeMetadata) {
             this.resourceTypeMetadata = resourceTypeMetadata;
             this.__explicitlySet__.add("resourceTypeMetadata");
@@ -324,9 +325,7 @@ public final class ParameterDefinition extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -335,32 +334,29 @@ public final class ParameterDefinition extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the parameter
-     **/
+    /** The name of the parameter */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the parameter
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Enumerated parameter type.
-     **/
-    public enum Type {
+    /** Enumerated parameter type. */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         String("STRING"),
         Uri("URI"),
         Url("URL"),
         Number("NUMBER"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -397,128 +393,122 @@ public final class ParameterDefinition extends com.oracle.bmc.http.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /**
-     * Enumerated parameter type.
-     **/
+    /** Enumerated parameter type. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * Enumerated parameter type.
+     *
      * @return the value
-     **/
+     */
     public Type getType() {
         return type;
     }
 
-    /**
-     * Description of the parameter.
-     **/
+    /** Description of the parameter. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of the parameter.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * Is this parameter required. Ignored for parameters with direction = OUTPUT.
-     **/
+    /** Is this parameter required. Ignored for parameters with direction = OUTPUT. */
     @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
     private final Boolean isRequired;
 
     /**
      * Is this parameter required. Ignored for parameters with direction = OUTPUT.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsRequired() {
         return isRequired;
     }
 
     /**
-     * Is the data for this parameter sensitive (e.g. should the data be hidden in UI, encrypted if stored, etc.)
-     **/
+     * Is the data for this parameter sensitive (e.g. should the data be hidden in UI, encrypted if
+     * stored, etc.)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isSensitive")
     private final Boolean isSensitive;
 
     /**
-     * Is the data for this parameter sensitive (e.g. should the data be hidden in UI, encrypted if stored, etc.)
+     * Is the data for this parameter sensitive (e.g. should the data be hidden in UI, encrypted if
+     * stored, etc.)
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsSensitive() {
         return isSensitive;
     }
 
-    /**
-     * Default value for the parameter.
-     **/
+    /** Default value for the parameter. */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     private final String defaultValue;
 
     /**
      * Default value for the parameter.
+     *
      * @return the value
-     **/
+     */
     public String getDefaultValue() {
         return defaultValue;
     }
 
-    /**
-     * Used for character string types such as STRING to constrain the length of the value
-     **/
+    /** Used for character string types such as STRING to constrain the length of the value */
     @com.fasterxml.jackson.annotation.JsonProperty("minLength")
     private final Integer minLength;
 
     /**
      * Used for character string types such as STRING to constrain the length of the value
+     *
      * @return the value
-     **/
+     */
     public Integer getMinLength() {
         return minLength;
     }
 
-    /**
-     * Used for character string types such as STRING to constrain the length of the value
-     **/
+    /** Used for character string types such as STRING to constrain the length of the value */
     @com.fasterxml.jackson.annotation.JsonProperty("maxLength")
     private final Integer maxLength;
 
     /**
      * Used for character string types such as STRING to constrain the length of the value
+     *
      * @return the value
-     **/
+     */
     public Integer getMaxLength() {
         return maxLength;
     }
 
-    /**
-     * Regular expression used to validate the value of a string type such as STRING
-     **/
+    /** Regular expression used to validate the value of a string type such as STRING */
     @com.fasterxml.jackson.annotation.JsonProperty("pattern")
     private final String pattern;
 
     /**
      * Regular expression used to validate the value of a string type such as STRING
+     *
      * @return the value
-     **/
+     */
     public String getPattern() {
         return pattern;
     }
 
-    /**
-     * Is this parameter an input parameter, output parameter, or both?
-     **/
-    public enum Direction {
+    /** Is this parameter an input parameter, output parameter, or both? */
+    public enum Direction implements com.oracle.bmc.http.internal.BmcEnum {
         Input("INPUT"),
         Output("OUTPUT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -557,44 +547,49 @@ public final class ParameterDefinition extends com.oracle.bmc.http.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /**
-     * Is this parameter an input parameter, output parameter, or both?
-     **/
+    /** Is this parameter an input parameter, output parameter, or both? */
     @com.fasterxml.jackson.annotation.JsonProperty("direction")
     private final Direction direction;
 
     /**
      * Is this parameter an input parameter, output parameter, or both?
+     *
      * @return the value
-     **/
+     */
     public Direction getDirection() {
         return direction;
     }
 
     /**
-     * A forward-slash-delimited 'path' in an imaginary hierarchy, at which this parameter's UI widgets should be placed
-     **/
+     * A forward-slash-delimited 'path' in an imaginary hierarchy, at which this parameter's UI
+     * widgets should be placed
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("uiPlacementHint")
     private final String uiPlacementHint;
 
     /**
-     * A forward-slash-delimited 'path' in an imaginary hierarchy, at which this parameter's UI widgets should be placed
+     * A forward-slash-delimited 'path' in an imaginary hierarchy, at which this parameter's UI
+     * widgets should be placed
+     *
      * @return the value
-     **/
+     */
     public String getUiPlacementHint() {
         return uiPlacementHint;
     }
 
     /**
-     * Any configuration needed to help the resource type process this parameter (e.g. link to manifest, etc.).
-     **/
+     * Any configuration needed to help the resource type process this parameter (e.g. link to
+     * manifest, etc.).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceTypeMetadata")
     private final Object resourceTypeMetadata;
 
     /**
-     * Any configuration needed to help the resource type process this parameter (e.g. link to manifest, etc.).
+     * Any configuration needed to help the resource type process this parameter (e.g. link to
+     * manifest, etc.).
+     *
      * @return the value
-     **/
+     */
     public Object getResourceTypeMetadata() {
         return resourceTypeMetadata;
     }
@@ -606,6 +601,7 @@ public final class ParameterDefinition extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,22 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Payment Term details
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Payment Term details <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SubscribedServicePaymentTerm.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SubscribedServicePaymentTerm.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SubscribedServicePaymentTerm
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -55,10 +54,7 @@ public final class SubscribedServicePaymentTerm
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Payment Term name
-         *
-         **/
+        /** Payment Term name */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -67,16 +63,13 @@ public final class SubscribedServicePaymentTerm
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Payment Term value
-         *
-         **/
+        /** Payment Term value */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
@@ -85,16 +78,13 @@ public final class SubscribedServicePaymentTerm
          *
          * @param value the value to set
          * @return this builder
-         **/
+         */
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /**
-         * Payment term Description
-         *
-         **/
+        /** Payment term Description */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -103,16 +93,13 @@ public final class SubscribedServicePaymentTerm
          *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * Payment term active flag
-         *
-         **/
+        /** Payment term active flag */
         @com.fasterxml.jackson.annotation.JsonProperty("isActive")
         private Boolean isActive;
 
@@ -121,16 +108,13 @@ public final class SubscribedServicePaymentTerm
          *
          * @param isActive the value to set
          * @return this builder
-         **/
+         */
         public Builder isActive(Boolean isActive) {
             this.isActive = isActive;
             this.__explicitlySet__.add("isActive");
             return this;
         }
-        /**
-         * Payment term last update date
-         *
-         **/
+        /** Payment term last update date */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -139,16 +123,13 @@ public final class SubscribedServicePaymentTerm
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * User that created the Payment term
-         *
-         **/
+        /** User that created the Payment term */
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
@@ -157,16 +138,13 @@ public final class SubscribedServicePaymentTerm
          *
          * @param createdBy the value to set
          * @return this builder
-         **/
+         */
         public Builder createdBy(String createdBy) {
             this.createdBy = createdBy;
             this.__explicitlySet__.add("createdBy");
             return this;
         }
-        /**
-         * Payment term last update date
-         *
-         **/
+        /** Payment term last update date */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
@@ -175,16 +153,13 @@ public final class SubscribedServicePaymentTerm
          *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * User that updated the Payment term
-         *
-         **/
+        /** User that updated the Payment term */
         @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
         private String updatedBy;
 
@@ -193,7 +168,7 @@ public final class SubscribedServicePaymentTerm
          *
          * @param updatedBy the value to set
          * @return this builder
-         **/
+         */
         public Builder updatedBy(String updatedBy) {
             this.updatedBy = updatedBy;
             this.__explicitlySet__.add("updatedBy");
@@ -250,9 +225,7 @@ public final class SubscribedServicePaymentTerm
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -261,10 +234,7 @@ public final class SubscribedServicePaymentTerm
         return new Builder().copy(this);
     }
 
-    /**
-     * Payment Term name
-     *
-     **/
+    /** Payment Term name */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -272,15 +242,12 @@ public final class SubscribedServicePaymentTerm
      * Payment Term name
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Payment Term value
-     *
-     **/
+    /** Payment Term value */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
@@ -288,15 +255,12 @@ public final class SubscribedServicePaymentTerm
      * Payment Term value
      *
      * @return the value
-     **/
+     */
     public String getValue() {
         return value;
     }
 
-    /**
-     * Payment term Description
-     *
-     **/
+    /** Payment term Description */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
@@ -304,15 +268,12 @@ public final class SubscribedServicePaymentTerm
      * Payment term Description
      *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * Payment term active flag
-     *
-     **/
+    /** Payment term active flag */
     @com.fasterxml.jackson.annotation.JsonProperty("isActive")
     private final Boolean isActive;
 
@@ -320,15 +281,12 @@ public final class SubscribedServicePaymentTerm
      * Payment term active flag
      *
      * @return the value
-     **/
+     */
     public Boolean getIsActive() {
         return isActive;
     }
 
-    /**
-     * Payment term last update date
-     *
-     **/
+    /** Payment term last update date */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -336,15 +294,12 @@ public final class SubscribedServicePaymentTerm
      * Payment term last update date
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * User that created the Payment term
-     *
-     **/
+    /** User that created the Payment term */
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
@@ -352,15 +307,12 @@ public final class SubscribedServicePaymentTerm
      * User that created the Payment term
      *
      * @return the value
-     **/
+     */
     public String getCreatedBy() {
         return createdBy;
     }
 
-    /**
-     * Payment term last update date
-     *
-     **/
+    /** Payment term last update date */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
@@ -368,15 +320,12 @@ public final class SubscribedServicePaymentTerm
      * Payment term last update date
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * User that updated the Payment term
-     *
-     **/
+    /** User that updated the Payment term */
     @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
     private final String updatedBy;
 
@@ -384,7 +333,7 @@ public final class SubscribedServicePaymentTerm
      * User that updated the Payment term
      *
      * @return the value
-     **/
+     */
     public String getUpdatedBy() {
         return updatedBy;
     }
@@ -396,6 +345,7 @@ public final class SubscribedServicePaymentTerm
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

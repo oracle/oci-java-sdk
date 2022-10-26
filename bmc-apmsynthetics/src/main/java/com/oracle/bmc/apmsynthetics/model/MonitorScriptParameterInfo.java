@@ -5,25 +5,24 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Details of the script parameters in the monitor.
- * isOverwritten specifies that the script parameters are overwritten in the monitor.
- * If the user overwrites the parameter value in the monitor, then the overwritten values will be used to run the monitor.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details of the script parameters in the monitor. isOverwritten specifies that the script
+ * parameters are overwritten in the monitor. If the user overwrites the parameter value in the
+ * monitor, then the overwritten values will be used to run the monitor. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = MonitorScriptParameterInfo.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = MonitorScriptParameterInfo.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class MonitorScriptParameterInfo
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"monitorScriptParameter", "isSecret", "isOverwritten"})
     public MonitorScriptParameterInfo(
@@ -48,29 +47,25 @@ public final class MonitorScriptParameterInfo
             return this;
         }
         /**
-         * Describes if  the parameter value is secret and should be kept confidential.
-         * isSecret is specified in either CreateScript or UpdateScript API.
-         *
-         **/
+         * Describes if the parameter value is secret and should be kept confidential. isSecret is
+         * specified in either CreateScript or UpdateScript API.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isSecret")
         private Boolean isSecret;
 
         /**
-         * Describes if  the parameter value is secret and should be kept confidential.
-         * isSecret is specified in either CreateScript or UpdateScript API.
+         * Describes if the parameter value is secret and should be kept confidential. isSecret is
+         * specified in either CreateScript or UpdateScript API.
          *
          * @param isSecret the value to set
          * @return this builder
-         **/
+         */
         public Builder isSecret(Boolean isSecret) {
             this.isSecret = isSecret;
             this.__explicitlySet__.add("isSecret");
             return this;
         }
-        /**
-         * If parameter value is default or overwritten.
-         *
-         **/
+        /** If parameter value is default or overwritten. */
         @com.fasterxml.jackson.annotation.JsonProperty("isOverwritten")
         private Boolean isOverwritten;
 
@@ -79,7 +74,7 @@ public final class MonitorScriptParameterInfo
          *
          * @param isOverwritten the value to set
          * @return this builder
-         **/
+         */
         public Builder isOverwritten(Boolean isOverwritten) {
             this.isOverwritten = isOverwritten;
             this.__explicitlySet__.add("isOverwritten");
@@ -114,9 +109,7 @@ public final class MonitorScriptParameterInfo
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -133,27 +126,23 @@ public final class MonitorScriptParameterInfo
     }
 
     /**
-     * Describes if  the parameter value is secret and should be kept confidential.
-     * isSecret is specified in either CreateScript or UpdateScript API.
-     *
-     **/
+     * Describes if the parameter value is secret and should be kept confidential. isSecret is
+     * specified in either CreateScript or UpdateScript API.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isSecret")
     private final Boolean isSecret;
 
     /**
-     * Describes if  the parameter value is secret and should be kept confidential.
-     * isSecret is specified in either CreateScript or UpdateScript API.
+     * Describes if the parameter value is secret and should be kept confidential. isSecret is
+     * specified in either CreateScript or UpdateScript API.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsSecret() {
         return isSecret;
     }
 
-    /**
-     * If parameter value is default or overwritten.
-     *
-     **/
+    /** If parameter value is default or overwritten. */
     @com.fasterxml.jackson.annotation.JsonProperty("isOverwritten")
     private final Boolean isOverwritten;
 
@@ -161,7 +150,7 @@ public final class MonitorScriptParameterInfo
      * If parameter value is default or overwritten.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsOverwritten() {
         return isOverwritten;
     }
@@ -173,6 +162,7 @@ public final class MonitorScriptParameterInfo
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

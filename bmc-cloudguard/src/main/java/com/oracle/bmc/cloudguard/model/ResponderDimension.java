@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/**
- * Possible Dimensions for distinguishing Responder Executions
- **/
+/** Possible Dimensions for distinguishing Responder Executions */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum ResponderDimension {
+public enum ResponderDimension implements com.oracle.bmc.http.internal.BmcEnum {
     ResponderRuleType("RESPONDER_RULE_TYPE"),
     ResponderExecutionStatus("RESPONDER_EXECUTION_STATUS"),
     ;

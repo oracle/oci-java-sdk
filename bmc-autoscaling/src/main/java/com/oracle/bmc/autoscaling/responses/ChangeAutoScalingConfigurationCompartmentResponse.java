@@ -10,15 +10,14 @@ import com.oracle.bmc.autoscaling.model.*;
 public class ChangeAutoScalingConfigurationCompartmentResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * The resulting etag of the autoscaling configuration affected by this operation.
-     * For optimistic concurrency control. See {@code if-match}.
-     *
+     * The resulting etag of the autoscaling configuration affected by this operation. For
+     * optimistic concurrency control. See {@code if-match}.
      */
     private String etag;
 
     /**
-     * The resulting etag of the autoscaling configuration affected by this operation.
-     * For optimistic concurrency control. See {@code if-match}.
+     * The resulting etag of the autoscaling configuration affected by this operation. For
+     * optimistic concurrency control. See {@code if-match}.
      *
      * @return the value
      */
@@ -27,15 +26,14 @@ public class ChangeAutoScalingConfigurationCompartmentResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -46,7 +44,7 @@ public class ChangeAutoScalingConfigurationCompartmentResponse
     @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "etag", "opcRequestId"})
     private ChangeAutoScalingConfigurationCompartmentResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId) {
         super(__httpStatusCode__, headers);
@@ -54,31 +52,34 @@ public class ChangeAutoScalingConfigurationCompartmentResponse
         this.opcRequestId = opcRequestId;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    ChangeAutoScalingConfigurationCompartmentResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * The resulting etag of the autoscaling configuration affected by this operation.
-         * For optimistic concurrency control. See {@code if-match}.
-         *
+         * The resulting etag of the autoscaling configuration affected by this operation. For
+         * optimistic concurrency control. See {@code if-match}.
          */
         private String etag;
 
         /**
-         * The resulting etag of the autoscaling configuration affected by this operation.
-         * For optimistic concurrency control. See {@code if-match}.
+         * The resulting etag of the autoscaling configuration affected by this operation. For
+         * optimistic concurrency control. See {@code if-match}.
          *
          * @param etag the value to set
          * @return this builder
@@ -89,15 +90,14 @@ public class ChangeAutoScalingConfigurationCompartmentResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -109,8 +109,10 @@ public class ChangeAutoScalingConfigurationCompartmentResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ChangeAutoScalingConfigurationCompartmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -122,8 +124,10 @@ public class ChangeAutoScalingConfigurationCompartmentResponse
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ChangeAutoScalingConfigurationCompartmentResponse build() {
             return new ChangeAutoScalingConfigurationCompartmentResponse(
                     __httpStatusCode__, headers, etag, opcRequestId);
@@ -132,6 +136,7 @@ public class ChangeAutoScalingConfigurationCompartmentResponse
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

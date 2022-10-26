@@ -5,23 +5,22 @@
 package com.oracle.bmc.servicemesh.model;
 
 /**
- * Mutual TLS settings used when sending requests to virtual services within the mesh.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Mutual TLS settings used when sending requests to virtual services within the mesh. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateIngressGatewayMutualTransportLayerSecurityDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateIngressGatewayMutualTransportLayerSecurityDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateIngressGatewayMutualTransportLayerSecurityDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"maximumValidity"})
     public CreateIngressGatewayMutualTransportLayerSecurityDetails(Integer maximumValidity) {
@@ -32,24 +31,25 @@ public final class CreateIngressGatewayMutualTransportLayerSecurityDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration
-         * for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will
-         * be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days
-         * will be renewed every 30 days.
-         *
-         **/
+         * The number of days the mTLS certificate is valid. This value should be less than the
+         * Maximum Validity Duration for Certificates (Days) setting on the Certificate Authority
+         * associated with this Mesh. The certificate will be automatically renewed after 2/3 of the
+         * validity period, so a certificate with a maximum validity of 45 days will be renewed
+         * every 30 days.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("maximumValidity")
         private Integer maximumValidity;
 
         /**
-         * The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration
-         * for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will
-         * be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days
-         * will be renewed every 30 days.
+         * The number of days the mTLS certificate is valid. This value should be less than the
+         * Maximum Validity Duration for Certificates (Days) setting on the Certificate Authority
+         * associated with this Mesh. The certificate will be automatically renewed after 2/3 of the
+         * validity period, so a certificate with a maximum validity of 45 days will be renewed
+         * every 30 days.
          *
          * @param maximumValidity the value to set
          * @return this builder
-         **/
+         */
         public Builder maximumValidity(Integer maximumValidity) {
             this.maximumValidity = maximumValidity;
             this.__explicitlySet__.add("maximumValidity");
@@ -78,9 +78,7 @@ public final class CreateIngressGatewayMutualTransportLayerSecurityDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -90,23 +88,22 @@ public final class CreateIngressGatewayMutualTransportLayerSecurityDetails
     }
 
     /**
-     * The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration
-     * for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will
-     * be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days
-     * will be renewed every 30 days.
-     *
-     **/
+     * The number of days the mTLS certificate is valid. This value should be less than the Maximum
+     * Validity Duration for Certificates (Days) setting on the Certificate Authority associated
+     * with this Mesh. The certificate will be automatically renewed after 2/3 of the validity
+     * period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("maximumValidity")
     private final Integer maximumValidity;
 
     /**
-     * The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration
-     * for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will
-     * be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days
-     * will be renewed every 30 days.
+     * The number of days the mTLS certificate is valid. This value should be less than the Maximum
+     * Validity Duration for Certificates (Days) setting on the Certificate Authority associated
+     * with this Mesh. The certificate will be automatically renewed after 2/3 of the validity
+     * period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
      *
      * @return the value
-     **/
+     */
     public Integer getMaximumValidity() {
         return maximumValidity;
     }
@@ -118,6 +115,7 @@ public final class CreateIngressGatewayMutualTransportLayerSecurityDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

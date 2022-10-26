@@ -19,9 +19,7 @@ class ProgressTracker {
             throw new IllegalStateException(
                     String.format(
                             "IllegalState - bytes read %d causes total bytes read(%d) > total bytes(%d)",
-                            bytesRead,
-                            totalBytesRead,
-                            totalBytes));
+                            bytesRead, totalBytesRead, totalBytes));
         }
         progressReporter.onProgress(totalBytesRead, totalBytes);
     }
@@ -36,8 +34,7 @@ class ProgressTracker {
             throw new IllegalStateException(
                     String.format(
                             "Cannot invalidate %d bytes when total read bytes is %d",
-                            invalidByteCount,
-                            totalBytesRead));
+                            invalidByteCount, totalBytesRead));
         }
         totalBytesRead -= invalidByteCount;
     }

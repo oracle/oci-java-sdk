@@ -11,21 +11,19 @@ import com.oracle.bmc.loadbalancer.requests.ChangeLoadBalancerCompartmentRequest
 import com.oracle.bmc.loadbalancer.requests.GetWorkRequestRequest;
 import com.oracle.bmc.loadbalancer.responses.ChangeLoadBalancerCompartmentResponse;
 
-/**
- * Example Class to demonstrate changing the compartment of an existing LoadBalancer via the API
- */
+/** Example Class to demonstrate changing the compartment of an existing LoadBalancer via the API */
 public class ChangeLoadBalancerCompartmentExample {
 
     /**
-     * The entry point for the example.
-     * Please refer to https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer
-     * for information about using the load balancer API
-     * This example changes the compartment for an existing LoadBalancer
+     * The entry point for the example. Please refer to
+     * https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer for information about using the load
+     * balancer API This example changes the compartment for an existing LoadBalancer
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *             <ul>
-     *             <li>The OCID of the compartment where the load balancer will be moved.</li>
-     *             </ul>
+     *     <ul>
+     *       <li>The OCID of the compartment where the load balancer will be moved.
+     *     </ul>
+     *
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
@@ -40,8 +38,10 @@ public class ChangeLoadBalancerCompartmentExample {
         }
         final String compartmentId = args[0];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -59,9 +59,9 @@ public class ChangeLoadBalancerCompartmentExample {
     /**
      * Changes the compartment for an existing LoadBalancer
      *
-     * @param loadBalancerClient  client used to communicate with the service
-     * @param loadBalancerId      ID of the LoadBalancer to be updated
-     * @param targetCompartment   target compartment to which the LoadBalancer will be moved
+     * @param loadBalancerClient client used to communicate with the service
+     * @param loadBalancerId ID of the LoadBalancer to be updated
+     * @param targetCompartment target compartment to which the LoadBalancer will be moved
      */
     private static void changeLoadBalancerCompartment(
             LoadBalancerClient loadBalancerClient, String loadBalancerId, String targetCompartment)

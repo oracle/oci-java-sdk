@@ -4,24 +4,19 @@
  */
 package com.oracle.bmc.http.internal;
 
-import javax.annotation.Nonnull;
+import com.oracle.bmc.http.Priorities;
+import com.oracle.bmc.http.client.HttpRequest;
+import com.oracle.bmc.http.client.RequestInterceptor;
 
-import javax.annotation.Priority;
-import javax.ws.rs.client.ClientRequestContext;
-import javax.ws.rs.client.ClientRequestFilter;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
 import static com.oracle.bmc.http.signing.internal.Constants.CROSS_TENANCY_REQUEST_HEADER_NAME;
 
-/**
- * Filter that injects authentication headers into the request.
- */
-@Priority(CrossTenancyRequestClientFilter.PRIORITY)
-public class CrossTenancyRequestClientFilter implements ClientRequestFilter {
-    // run before javax.ws.rs.Priorities.AUTHENTICATION
-    public static final int PRIORITY = javax.ws.rs.Priorities.AUTHENTICATION - 1;
+/** Filter that injects authentication headers into the request. */
+public class CrossTenancyRequestClientFilter implements RequestInterceptor {
+    // run before Priorities.AUTHENTICATION
+    public static final int PRIORITY = Priorities.AUTHENTICATION - 1;
     private final String authorizedTenancyIdsValue;
 
     public CrossTenancyRequestClientFilter(String[] authorizedTenancyIds) {
@@ -38,13 +33,7 @@ public class CrossTenancyRequestClientFilter implements ClientRequestFilter {
     }
 
     @Override
-    public void filter(@Nonnull ClientRequestContext clientRequestContext) throws IOException {
-        if (clientRequestContext == null) {
-            throw new java.lang.NullPointerException(
-                    "clientRequestContext is marked non-null but is null");
-        }
-        clientRequestContext
-                .getHeaders()
-                .putSingle(CROSS_TENANCY_REQUEST_HEADER_NAME, authorizedTenancyIdsValue);
+    public void intercept(HttpRequest request) {
+        request.header(CROSS_TENANCY_REQUEST_HEADER_NAME, authorizedTenancyIdsValue);
     }
 }

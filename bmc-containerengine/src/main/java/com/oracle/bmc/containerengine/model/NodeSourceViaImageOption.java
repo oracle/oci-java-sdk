@@ -5,26 +5,25 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * An image can be specified as the source of nodes when launching a node pool using the {@code nodeSourceDetails} object.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * An image can be specified as the source of nodes when launching a node pool using the {@code
+ * nodeSourceDetails} object. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = NodeSourceViaImageOption.Builder.class
-)
+        builder = NodeSourceViaImageOption.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "sourceType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "sourceType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class NodeSourceViaImageOption extends NodeSourceOption {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -36,17 +35,16 @@ public final class NodeSourceViaImageOption extends NodeSourceOption {
             this.__explicitlySet__.add("sourceName");
             return this;
         }
-        /**
-         * The OCID of the image.
-         **/
+        /** The OCID of the image. */
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
         /**
          * The OCID of the image.
+         *
          * @param imageId the value to set
          * @return this builder
-         **/
+         */
         public Builder imageId(String imageId) {
             this.imageId = imageId;
             this.__explicitlySet__.add("imageId");
@@ -77,9 +75,7 @@ public final class NodeSourceViaImageOption extends NodeSourceOption {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -94,16 +90,15 @@ public final class NodeSourceViaImageOption extends NodeSourceOption {
         this.imageId = imageId;
     }
 
-    /**
-     * The OCID of the image.
-     **/
+    /** The OCID of the image. */
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     private final String imageId;
 
     /**
      * The OCID of the image.
+     *
      * @return the value
-     **/
+     */
     public String getImageId() {
         return imageId;
     }
@@ -115,6 +110,7 @@ public final class NodeSourceViaImageOption extends NodeSourceOption {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

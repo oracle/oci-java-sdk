@@ -5,26 +5,24 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details to create an Oracle Autonomous Database refreshable clone.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details to create an Oracle Autonomous Database refreshable clone. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateRefreshableAutonomousDatabaseCloneDetails.Builder.class
-)
+        builder = CreateRefreshableAutonomousDatabaseCloneDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "source"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "source")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateRefreshableAutonomousDatabaseCloneDetails
         extends CreateAutonomousDatabaseBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -376,32 +374,38 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * source Autonomous Database that you will clone to create a new Autonomous Database.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * source Autonomous Database that you will clone to create a new Autonomous Database.
+         *
          * @param sourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceId(String sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
             return this;
         }
         /**
-         * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
-         **/
+         * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being
+         * refreshed with data from the source Autonomous Database.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("refreshableMode")
         private RefreshableMode refreshableMode;
 
         /**
-         * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+         * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being
+         * refreshed with data from the source Autonomous Database.
+         *
          * @param refreshableMode the value to set
          * @return this builder
-         **/
+         */
         public Builder refreshableMode(RefreshableMode refreshableMode) {
             this.refreshableMode = refreshableMode;
             this.__explicitlySet__.add("refreshableMode");
@@ -588,9 +592,7 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -685,23 +687,27 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * source Autonomous Database that you will clone to create a new Autonomous Database.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * source Autonomous Database that you will clone to create a new Autonomous Database.
+     *
      * @return the value
-     **/
+     */
     public String getSourceId() {
         return sourceId;
     }
 
     /**
-     * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
-     **/
-    public enum RefreshableMode {
+     * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being
+     * refreshed with data from the source Autonomous Database.
+     */
+    public enum RefreshableMode implements com.oracle.bmc.http.internal.BmcEnum {
         Automatic("AUTOMATIC"),
         Manual("MANUAL"),
         ;
@@ -734,15 +740,18 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
         }
     };
     /**
-     * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
-     **/
+     * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being
+     * refreshed with data from the source Autonomous Database.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("refreshableMode")
     private final RefreshableMode refreshableMode;
 
     /**
-     * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+     * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being
+     * refreshed with data from the source Autonomous Database.
+     *
      * @return the value
-     **/
+     */
     public RefreshableMode getRefreshableMode() {
         return refreshableMode;
     }
@@ -754,6 +763,7 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -12,30 +12,31 @@ import java.util.Properties;
 
 import com.oracle.bmc.util.internal.StringUtils;
 
-/**
- * This class provides client info that will be sent to the servers as part of each request.
- */
+/** This class provides client info that will be sent to the servers as part of each request. */
 public class ClientRuntime {
     private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(ClientRuntime.class);
     /**
-     * Sets an extra piece of information into the user-agent header passed to the server.
-     * The format is (by convention) "Application/Version", ex "MyApp/1.3.5".
-     * <p>
-     * Note, this must be called BEFORE any service calls are ever made, and once set, cannot
-     * be changed after a call has been made.
+     * Sets an extra piece of information into the user-agent header passed to the server. The
+     * format is (by convention) "Application/Version", ex "MyApp/1.3.5".
+     *
+     * <p>Note, this must be called BEFORE any service calls are ever made, and once set, cannot be
+     * changed after a call has been made.
      */
     private static String clientUserAgent;
 
+    public static void setClientUserAgent(String clientUserAgent) {
+        ClientRuntime.clientUserAgent = clientUserAgent;
+    }
+
     /**
      * The user agent to send.
-     * <p>
-     * The agent will include runtime information, ex:
-     * <code>Oracle-JavaSDK/1.0.0 (Linux/3.10.0-229.el7.x86_64; Java/1.8.0_60; Java HotSpot(TM) 64-Bit Server VM/25.60-b23)</code>
+     *
+     * <p>The agent will include runtime information, ex: <code>
+     * Oracle-JavaSDK/1.0.0 (Linux/3.10.0-229.el7.x86_64; Java/1.8.0_60; Java HotSpot(TM) 64-Bit Server VM/25.60-b23)
+     * </code>
      */
     private final String userAgent;
-    /**
-     * The SDK client info to send.
-     */
+    /** The SDK client info to send. */
     private final String clientInfo;
 
     private static final String ENV_VAR_USER_AGENT = "OCI_SDK_APPEND_USER_AGENT";
@@ -113,10 +114,6 @@ public class ClientRuntime {
 
     public String getClientInfo() {
         return this.clientInfo;
-    }
-
-    public static void setClientUserAgent(String clientUserAgent) {
-        ClientRuntime.clientUserAgent = clientUserAgent;
     }
 
     // holder

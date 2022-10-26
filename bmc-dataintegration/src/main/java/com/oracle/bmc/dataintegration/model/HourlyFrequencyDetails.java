@@ -5,25 +5,24 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Frequency details model to set hourly frequency
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Frequency details model to set hourly frequency <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = HourlyFrequencyDetails.Builder.class
-)
+        builder = HourlyFrequencyDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class HourlyFrequencyDetails extends AbstractFrequencyDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -36,16 +35,19 @@ public final class HourlyFrequencyDetails extends AbstractFrequencyDetails {
             return this;
         }
         /**
-         * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
-         **/
+         * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can
+         * be scheduled for every month, once in two months, once in tree months etc.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("interval")
         private Integer interval;
 
         /**
-         * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+         * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can
+         * be scheduled for every month, once in two months, once in tree months etc.
+         *
          * @param interval the value to set
          * @return this builder
-         **/
+         */
         public Builder interval(Integer interval) {
             this.interval = interval;
             this.__explicitlySet__.add("interval");
@@ -88,9 +90,7 @@ public final class HourlyFrequencyDetails extends AbstractFrequencyDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -107,15 +107,18 @@ public final class HourlyFrequencyDetails extends AbstractFrequencyDetails {
     }
 
     /**
-     * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
-     **/
+     * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be
+     * scheduled for every month, once in two months, once in tree months etc.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("interval")
     private final Integer interval;
 
     /**
-     * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+     * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be
+     * scheduled for every month, once in two months, once in tree months etc.
+     *
      * @return the value
-     **/
+     */
     public Integer getInterval() {
         return interval;
     }
@@ -134,6 +137,7 @@ public final class HourlyFrequencyDetails extends AbstractFrequencyDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

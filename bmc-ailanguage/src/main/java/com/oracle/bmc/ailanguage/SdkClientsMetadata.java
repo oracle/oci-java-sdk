@@ -6,6 +6,6 @@ package com.oracle.bmc.ailanguage;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @SdkClients({AIServiceLanguageAsyncClient.class, AIServiceLanguageClient.class})
 public final class SdkClientsMetadata {}

@@ -5,22 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The number of statements in the SQL Tuning Advisor summary report.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The number of statements in the SQL Tuning Advisor summary report. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SqlTuningAdvisorTaskSummaryReportStatementCounts.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SqlTuningAdvisorTaskSummaryReportStatementCounts.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SqlTuningAdvisorTaskSummaryReportStatementCounts
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"distinctSql", "totalSql", "findingCount", "errorCount"})
     public SqlTuningAdvisorTaskSummaryReportStatementCounts(
@@ -34,65 +34,61 @@ public final class SqlTuningAdvisorTaskSummaryReportStatementCounts
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The number of distinct SQL statements.
-         **/
+        /** The number of distinct SQL statements. */
         @com.fasterxml.jackson.annotation.JsonProperty("distinctSql")
         private Integer distinctSql;
 
         /**
          * The number of distinct SQL statements.
+         *
          * @param distinctSql the value to set
          * @return this builder
-         **/
+         */
         public Builder distinctSql(Integer distinctSql) {
             this.distinctSql = distinctSql;
             this.__explicitlySet__.add("distinctSql");
             return this;
         }
-        /**
-         * The total number of SQL statements.
-         **/
+        /** The total number of SQL statements. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalSql")
         private Integer totalSql;
 
         /**
          * The total number of SQL statements.
+         *
          * @param totalSql the value to set
          * @return this builder
-         **/
+         */
         public Builder totalSql(Integer totalSql) {
             this.totalSql = totalSql;
             this.__explicitlySet__.add("totalSql");
             return this;
         }
-        /**
-         * The number of distinct SQL statements with findings.
-         **/
+        /** The number of distinct SQL statements with findings. */
         @com.fasterxml.jackson.annotation.JsonProperty("findingCount")
         private Integer findingCount;
 
         /**
          * The number of distinct SQL statements with findings.
+         *
          * @param findingCount the value to set
          * @return this builder
-         **/
+         */
         public Builder findingCount(Integer findingCount) {
             this.findingCount = findingCount;
             this.__explicitlySet__.add("findingCount");
             return this;
         }
-        /**
-         * The number of distinct SQL statements with errors.
-         **/
+        /** The number of distinct SQL statements with errors. */
         @com.fasterxml.jackson.annotation.JsonProperty("errorCount")
         private Integer errorCount;
 
         /**
          * The number of distinct SQL statements with errors.
+         *
          * @param errorCount the value to set
          * @return this builder
-         **/
+         */
         public Builder errorCount(Integer errorCount) {
             this.errorCount = errorCount;
             this.__explicitlySet__.add("errorCount");
@@ -130,9 +126,7 @@ public final class SqlTuningAdvisorTaskSummaryReportStatementCounts
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -141,58 +135,54 @@ public final class SqlTuningAdvisorTaskSummaryReportStatementCounts
         return new Builder().copy(this);
     }
 
-    /**
-     * The number of distinct SQL statements.
-     **/
+    /** The number of distinct SQL statements. */
     @com.fasterxml.jackson.annotation.JsonProperty("distinctSql")
     private final Integer distinctSql;
 
     /**
      * The number of distinct SQL statements.
+     *
      * @return the value
-     **/
+     */
     public Integer getDistinctSql() {
         return distinctSql;
     }
 
-    /**
-     * The total number of SQL statements.
-     **/
+    /** The total number of SQL statements. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalSql")
     private final Integer totalSql;
 
     /**
      * The total number of SQL statements.
+     *
      * @return the value
-     **/
+     */
     public Integer getTotalSql() {
         return totalSql;
     }
 
-    /**
-     * The number of distinct SQL statements with findings.
-     **/
+    /** The number of distinct SQL statements with findings. */
     @com.fasterxml.jackson.annotation.JsonProperty("findingCount")
     private final Integer findingCount;
 
     /**
      * The number of distinct SQL statements with findings.
+     *
      * @return the value
-     **/
+     */
     public Integer getFindingCount() {
         return findingCount;
     }
 
-    /**
-     * The number of distinct SQL statements with errors.
-     **/
+    /** The number of distinct SQL statements with errors. */
     @com.fasterxml.jackson.annotation.JsonProperty("errorCount")
     private final Integer errorCount;
 
     /**
      * The number of distinct SQL statements with errors.
+     *
      * @return the value
-     **/
+     */
     public Integer getErrorCount() {
         return errorCount;
     }
@@ -204,6 +194,7 @@ public final class SqlTuningAdvisorTaskSummaryReportStatementCounts
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

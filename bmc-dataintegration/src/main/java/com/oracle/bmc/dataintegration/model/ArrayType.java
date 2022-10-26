@@ -5,23 +5,23 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Array type object.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Array type object. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ArrayType.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ArrayType extends BaseType {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -78,17 +78,16 @@ public final class ArrayType extends BaseType {
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * Seeded type
-         **/
+        /** Seeded type */
         @com.fasterxml.jackson.annotation.JsonProperty("elementType")
         private String elementType;
 
         /**
          * Seeded type
+         *
          * @param elementType the value to set
          * @return this builder
-         **/
+         */
         public Builder elementType(String elementType) {
             this.elementType = elementType;
             this.__explicitlySet__.add("elementType");
@@ -141,9 +140,7 @@ public final class ArrayType extends BaseType {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -165,16 +162,15 @@ public final class ArrayType extends BaseType {
         this.elementType = elementType;
     }
 
-    /**
-     * Seeded type
-     **/
+    /** Seeded type */
     @com.fasterxml.jackson.annotation.JsonProperty("elementType")
     private final String elementType;
 
     /**
      * Seeded type
+     *
      * @return the value
-     **/
+     */
     public String getElementType() {
         return elementType;
     }
@@ -186,6 +182,7 @@ public final class ArrayType extends BaseType {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,21 +5,22 @@
 package com.oracle.bmc.managementagent.model;
 
 /**
- * A resource created or operated on by a work request.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A resource created or operated on by a work request. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = WorkRequestResource.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WorkRequestResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = WorkRequestResource.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class WorkRequestResource
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "entityType",
@@ -62,205 +63,196 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The resource type the work request affects.
-         **/
+        /** The resource type the work request affects. */
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
         /**
          * The resource type the work request affects.
+         *
          * @param entityType the value to set
          * @return this builder
-         **/
+         */
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
         /**
-         * The way in which this resource is affected by the work tracked in the work request.
-         * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
+         * The way in which this resource is affected by the work tracked in the work request. A
+         * resource being created, updated, or deleted will remain in the IN_PROGRESS state until
          * work is complete for that resource at which point it will transition to CREATED, UPDATED,
          * or DELETED, respectively.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("actionType")
         private ActionTypes actionType;
 
         /**
-         * The way in which this resource is affected by the work tracked in the work request.
-         * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
+         * The way in which this resource is affected by the work tracked in the work request. A
+         * resource being created, updated, or deleted will remain in the IN_PROGRESS state until
          * work is complete for that resource at which point it will transition to CREATED, UPDATED,
          * or DELETED, respectively.
          *
          * @param actionType the value to set
          * @return this builder
-         **/
+         */
         public Builder actionType(ActionTypes actionType) {
             this.actionType = actionType;
             this.__explicitlySet__.add("actionType");
             return this;
         }
-        /**
-         * The identifier of the resource the work request affects.
-         **/
+        /** The identifier of the resource the work request affects. */
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
          * The identifier of the resource the work request affects.
+         *
          * @param identifier the value to set
          * @return this builder
-         **/
+         */
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-        /**
-         * The identifier of the source the work request is requesting.
-         **/
+        /** The identifier of the source the work request is requesting. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
         /**
          * The identifier of the source the work request is requesting.
+         *
          * @param sourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceId(String sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
             return this;
         }
-        /**
-         * The name of the source the work request is requesting.
-         **/
+        /** The name of the source the work request is requesting. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
         private String sourceName;
 
         /**
          * The name of the source the work request is requesting.
+         *
          * @param sourceName the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceName(String sourceName) {
             this.sourceName = sourceName;
             this.__explicitlySet__.add("sourceName");
             return this;
         }
-        /**
-         * The version of the source the work request is requesting.
-         **/
+        /** The version of the source the work request is requesting. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceVersion")
         private String sourceVersion;
 
         /**
          * The version of the source the work request is requesting.
+         *
          * @param sourceVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceVersion(String sourceVersion) {
             this.sourceVersion = sourceVersion;
             this.__explicitlySet__.add("sourceVersion");
             return this;
         }
-        /**
-         * The URI path that the user can do a GET on to access the resource metadata
-         **/
+        /** The URI path that the user can do a GET on to access the resource metadata */
         @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
         private String entityUri;
 
         /**
          * The URI path that the user can do a GET on to access the resource metadata
+         *
          * @param entityUri the value to set
          * @return this builder
-         **/
+         */
         public Builder entityUri(String entityUri) {
             this.entityUri = entityUri;
             this.__explicitlySet__.add("entityUri");
             return this;
         }
         /**
-         * The date and time the request was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-         * section 14.29.
-         *
-         **/
+         * The date and time the request was created, as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
         /**
-         * The date and time the request was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-         * section 14.29.
+         * The date and time the request was created, as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
          *
          * @param timeAccepted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
             return this;
         }
         /**
-         * The date and time the request was started, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-         * section 14.29.
-         *
-         **/
+         * The date and time the request was started, as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
-         * The date and time the request was started, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-         * section 14.29.
+         * The date and time the request was started, as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
          *
          * @param timeStarted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
         /**
-         * The date and time the request was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-         * section 14.29.
-         *
-         **/
+         * The date and time the request was finished, as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
-         * The date and time the request was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-         * section 14.29.
+         * The date and time the request was finished, as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
          *
          * @param timeFinished the value to set
          * @return this builder
-         **/
+         */
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
         /**
-         * Additional metadata about the resource that has been operated upon by
-         * this work request. For WorkRequests operationType WORK_DELIVERY the metadata will contain: workDeliveryStatus
-         * indicating the status of the work delivery item as a WorkDeliveryStatus value, workSubmissionKey the WorkSubmission request id,
-         *  and workSubmissionDetails containing any details of result
-         *
-         **/
+         * Additional metadata about the resource that has been operated upon by this work request.
+         * For WorkRequests operationType WORK_DELIVERY the metadata will contain:
+         * workDeliveryStatus indicating the status of the work delivery item as a
+         * WorkDeliveryStatus value, workSubmissionKey the WorkSubmission request id, and
+         * workSubmissionDetails containing any details of result
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private Object metadata;
 
         /**
-         * Additional metadata about the resource that has been operated upon by
-         * this work request. For WorkRequests operationType WORK_DELIVERY the metadata will contain: workDeliveryStatus
-         * indicating the status of the work delivery item as a WorkDeliveryStatus value, workSubmissionKey the WorkSubmission request id,
-         *  and workSubmissionDetails containing any details of result
+         * Additional metadata about the resource that has been operated upon by this work request.
+         * For WorkRequests operationType WORK_DELIVERY the metadata will contain:
+         * workDeliveryStatus indicating the status of the work delivery item as a
+         * WorkDeliveryStatus value, workSubmissionKey the WorkSubmission request id, and
+         * workSubmissionDetails containing any details of result
          *
          * @param metadata the value to set
          * @return this builder
-         **/
+         */
         public Builder metadata(Object metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
@@ -329,9 +321,7 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -340,184 +330,175 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * The resource type the work request affects.
-     **/
+    /** The resource type the work request affects. */
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
     /**
      * The resource type the work request affects.
+     *
      * @return the value
-     **/
+     */
     public String getEntityType() {
         return entityType;
     }
 
     /**
-     * The way in which this resource is affected by the work tracked in the work request.
-     * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
-     * work is complete for that resource at which point it will transition to CREATED, UPDATED,
-     * or DELETED, respectively.
-     *
-     **/
+     * The way in which this resource is affected by the work tracked in the work request. A
+     * resource being created, updated, or deleted will remain in the IN_PROGRESS state until work
+     * is complete for that resource at which point it will transition to CREATED, UPDATED, or
+     * DELETED, respectively.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")
     private final ActionTypes actionType;
 
     /**
-     * The way in which this resource is affected by the work tracked in the work request.
-     * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
-     * work is complete for that resource at which point it will transition to CREATED, UPDATED,
-     * or DELETED, respectively.
+     * The way in which this resource is affected by the work tracked in the work request. A
+     * resource being created, updated, or deleted will remain in the IN_PROGRESS state until work
+     * is complete for that resource at which point it will transition to CREATED, UPDATED, or
+     * DELETED, respectively.
      *
      * @return the value
-     **/
+     */
     public ActionTypes getActionType() {
         return actionType;
     }
 
-    /**
-     * The identifier of the resource the work request affects.
-     **/
+    /** The identifier of the resource the work request affects. */
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
      * The identifier of the resource the work request affects.
+     *
      * @return the value
-     **/
+     */
     public String getIdentifier() {
         return identifier;
     }
 
-    /**
-     * The identifier of the source the work request is requesting.
-     **/
+    /** The identifier of the source the work request is requesting. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
     /**
      * The identifier of the source the work request is requesting.
+     *
      * @return the value
-     **/
+     */
     public String getSourceId() {
         return sourceId;
     }
 
-    /**
-     * The name of the source the work request is requesting.
-     **/
+    /** The name of the source the work request is requesting. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     private final String sourceName;
 
     /**
      * The name of the source the work request is requesting.
+     *
      * @return the value
-     **/
+     */
     public String getSourceName() {
         return sourceName;
     }
 
-    /**
-     * The version of the source the work request is requesting.
-     **/
+    /** The version of the source the work request is requesting. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceVersion")
     private final String sourceVersion;
 
     /**
      * The version of the source the work request is requesting.
+     *
      * @return the value
-     **/
+     */
     public String getSourceVersion() {
         return sourceVersion;
     }
 
-    /**
-     * The URI path that the user can do a GET on to access the resource metadata
-     **/
+    /** The URI path that the user can do a GET on to access the resource metadata */
     @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
     private final String entityUri;
 
     /**
      * The URI path that the user can do a GET on to access the resource metadata
+     *
      * @return the value
-     **/
+     */
     public String getEntityUri() {
         return entityUri;
     }
 
     /**
-     * The date and time the request was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-     * section 14.29.
-     *
-     **/
+     * The date and time the request was created, as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
     /**
-     * The date and time the request was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-     * section 14.29.
+     * The date and time the request was created, as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
 
     /**
-     * The date and time the request was started, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-     * section 14.29.
-     *
-     **/
+     * The date and time the request was started, as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
-     * The date and time the request was started, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-     * section 14.29.
+     * The date and time the request was started, as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
     /**
-     * The date and time the request was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-     * section 14.29.
-     *
-     **/
+     * The date and time the request was finished, as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
-     * The date and time the request was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-     * section 14.29.
+     * The date and time the request was finished, as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
 
     /**
-     * Additional metadata about the resource that has been operated upon by
-     * this work request. For WorkRequests operationType WORK_DELIVERY the metadata will contain: workDeliveryStatus
-     * indicating the status of the work delivery item as a WorkDeliveryStatus value, workSubmissionKey the WorkSubmission request id,
-     *  and workSubmissionDetails containing any details of result
-     *
-     **/
+     * Additional metadata about the resource that has been operated upon by this work request. For
+     * WorkRequests operationType WORK_DELIVERY the metadata will contain: workDeliveryStatus
+     * indicating the status of the work delivery item as a WorkDeliveryStatus value,
+     * workSubmissionKey the WorkSubmission request id, and workSubmissionDetails containing any
+     * details of result
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final Object metadata;
 
     /**
-     * Additional metadata about the resource that has been operated upon by
-     * this work request. For WorkRequests operationType WORK_DELIVERY the metadata will contain: workDeliveryStatus
-     * indicating the status of the work delivery item as a WorkDeliveryStatus value, workSubmissionKey the WorkSubmission request id,
-     *  and workSubmissionDetails containing any details of result
+     * Additional metadata about the resource that has been operated upon by this work request. For
+     * WorkRequests operationType WORK_DELIVERY the metadata will contain: workDeliveryStatus
+     * indicating the status of the work delivery item as a WorkDeliveryStatus value,
+     * workSubmissionKey the WorkSubmission request id, and workSubmissionDetails containing any
+     * details of result
      *
      * @return the value
-     **/
+     */
     public Object getMetadata() {
         return metadata;
     }
@@ -529,6 +510,7 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,22 +5,22 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * The Maintenance Policy for the DB System.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The Maintenance Policy for the DB System. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = MaintenanceDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MaintenanceDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = MaintenanceDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class MaintenanceDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"windowStartTime"})
     public MaintenanceDetails(String windowStartTime) {
@@ -32,29 +32,30 @@ public final class MaintenanceDetails extends com.oracle.bmc.http.internal.Expli
     public static class Builder {
         /**
          * The start time of the maintenance window.
-         * <p>
-         * This string is of the format: "{day-of-week} {time-of-day}".
-         * <p>
-         * "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
-         * <p>
-         * "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
          *
-         **/
+         * <p>This string is of the format: "{day-of-week} {time-of-day}".
+         *
+         * <p>"{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
+         *
+         * <p>"{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or
+         * sub-second time data will be truncated to zero.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("windowStartTime")
         private String windowStartTime;
 
         /**
          * The start time of the maintenance window.
-         * <p>
-         * This string is of the format: "{day-of-week} {time-of-day}".
-         * <p>
-         * "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
-         * <p>
-         * "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+         *
+         * <p>This string is of the format: "{day-of-week} {time-of-day}".
+         *
+         * <p>"{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
+         *
+         * <p>"{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or
+         * sub-second time data will be truncated to zero.
          *
          * @param windowStartTime the value to set
          * @return this builder
-         **/
+         */
         public Builder windowStartTime(String windowStartTime) {
             this.windowStartTime = windowStartTime;
             this.__explicitlySet__.add("windowStartTime");
@@ -81,9 +82,7 @@ public final class MaintenanceDetails extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -94,28 +93,29 @@ public final class MaintenanceDetails extends com.oracle.bmc.http.internal.Expli
 
     /**
      * The start time of the maintenance window.
-     * <p>
-     * This string is of the format: "{day-of-week} {time-of-day}".
-     * <p>
-     * "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
-     * <p>
-     * "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
      *
-     **/
+     * <p>This string is of the format: "{day-of-week} {time-of-day}".
+     *
+     * <p>"{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
+     *
+     * <p>"{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or
+     * sub-second time data will be truncated to zero.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("windowStartTime")
     private final String windowStartTime;
 
     /**
      * The start time of the maintenance window.
-     * <p>
-     * This string is of the format: "{day-of-week} {time-of-day}".
-     * <p>
-     * "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
-     * <p>
-     * "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+     *
+     * <p>This string is of the format: "{day-of-week} {time-of-day}".
+     *
+     * <p>"{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
+     *
+     * <p>"{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or
+     * sub-second time data will be truncated to zero.
      *
      * @return the value
-     **/
+     */
     public String getWindowStartTime() {
         return windowStartTime;
     }
@@ -127,6 +127,7 @@ public final class MaintenanceDetails extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

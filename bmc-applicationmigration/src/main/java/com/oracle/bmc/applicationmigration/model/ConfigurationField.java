@@ -5,24 +5,25 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * Provide configuration information about the application in the target environment. Application Migration migrates the application to
- * the target environment only after you provide this information. The information that you must provide varies depending on the type of
- * application that you are migrating.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Provide configuration information about the application in the target environment. Application
+ * Migration migrates the application to the target environment only after you provide this
+ * information. The information that you must provide varies depending on the type of application
+ * that you are migrating. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ConfigurationField.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ConfigurationField extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ConfigurationField.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ConfigurationField
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -56,90 +57,82 @@ public final class ConfigurationField extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the configuration field.
-         **/
+        /** The name of the configuration field. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the configuration field.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The name of the group to which this field belongs, if any.
-         **/
+        /** The name of the group to which this field belongs, if any. */
         @com.fasterxml.jackson.annotation.JsonProperty("group")
         private String group;
 
         /**
          * The name of the group to which this field belongs, if any.
+         *
          * @param group the value to set
          * @return this builder
-         **/
+         */
         public Builder group(String group) {
             this.group = group;
             this.__explicitlySet__.add("group");
             return this;
         }
-        /**
-         * The type of the configuration field.
-         **/
+        /** The type of the configuration field. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * The type of the configuration field.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * The value of the field.
-         **/
+        /** The value of the field. */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * The value of the field.
+         *
          * @param value the value to set
          * @return this builder
-         **/
+         */
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /**
-         * Help text to guide the user in setting the configuration value.
-         **/
+        /** Help text to guide the user in setting the configuration value. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Help text to guide the user in setting the configuration value.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * A list of resources associated with a specific configuration object.
-         *
-         **/
+        /** A list of resources associated with a specific configuration object. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceList")
         private java.util.List<ResourceField> resourceList;
 
@@ -148,16 +141,13 @@ public final class ConfigurationField extends com.oracle.bmc.http.internal.Expli
          *
          * @param resourceList the value to set
          * @return this builder
-         **/
+         */
         public Builder resourceList(java.util.List<ResourceField> resourceList) {
             this.resourceList = resourceList;
             this.__explicitlySet__.add("resourceList");
             return this;
         }
-        /**
-         * Indicates whether or not the field is required (defaults to {@code true}).
-         *
-         **/
+        /** Indicates whether or not the field is required (defaults to {@code true}). */
         @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
         private Boolean isRequired;
 
@@ -166,16 +156,13 @@ public final class ConfigurationField extends com.oracle.bmc.http.internal.Expli
          *
          * @param isRequired the value to set
          * @return this builder
-         **/
+         */
         public Builder isRequired(Boolean isRequired) {
             this.isRequired = isRequired;
             this.__explicitlySet__.add("isRequired");
             return this;
         }
-        /**
-         * Indicates whether or not the field may be modified (defaults to {@code true}).
-         *
-         **/
+        /** Indicates whether or not the field may be modified (defaults to {@code true}). */
         @com.fasterxml.jackson.annotation.JsonProperty("isMutable")
         private Boolean isMutable;
 
@@ -184,7 +171,7 @@ public final class ConfigurationField extends com.oracle.bmc.http.internal.Expli
          *
          * @param isMutable the value to set
          * @return this builder
-         **/
+         */
         public Builder isMutable(Boolean isMutable) {
             this.isMutable = isMutable;
             this.__explicitlySet__.add("isMutable");
@@ -241,9 +228,7 @@ public final class ConfigurationField extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -252,80 +237,72 @@ public final class ConfigurationField extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the configuration field.
-     **/
+    /** The name of the configuration field. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the configuration field.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The name of the group to which this field belongs, if any.
-     **/
+    /** The name of the group to which this field belongs, if any. */
     @com.fasterxml.jackson.annotation.JsonProperty("group")
     private final String group;
 
     /**
      * The name of the group to which this field belongs, if any.
+     *
      * @return the value
-     **/
+     */
     public String getGroup() {
         return group;
     }
 
-    /**
-     * The type of the configuration field.
-     **/
+    /** The type of the configuration field. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * The type of the configuration field.
+     *
      * @return the value
-     **/
+     */
     public String getType() {
         return type;
     }
 
-    /**
-     * The value of the field.
-     **/
+    /** The value of the field. */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * The value of the field.
+     *
      * @return the value
-     **/
+     */
     public String getValue() {
         return value;
     }
 
-    /**
-     * Help text to guide the user in setting the configuration value.
-     **/
+    /** Help text to guide the user in setting the configuration value. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Help text to guide the user in setting the configuration value.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * A list of resources associated with a specific configuration object.
-     *
-     **/
+    /** A list of resources associated with a specific configuration object. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceList")
     private final java.util.List<ResourceField> resourceList;
 
@@ -333,15 +310,12 @@ public final class ConfigurationField extends com.oracle.bmc.http.internal.Expli
      * A list of resources associated with a specific configuration object.
      *
      * @return the value
-     **/
+     */
     public java.util.List<ResourceField> getResourceList() {
         return resourceList;
     }
 
-    /**
-     * Indicates whether or not the field is required (defaults to {@code true}).
-     *
-     **/
+    /** Indicates whether or not the field is required (defaults to {@code true}). */
     @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
     private final Boolean isRequired;
 
@@ -349,15 +323,12 @@ public final class ConfigurationField extends com.oracle.bmc.http.internal.Expli
      * Indicates whether or not the field is required (defaults to {@code true}).
      *
      * @return the value
-     **/
+     */
     public Boolean getIsRequired() {
         return isRequired;
     }
 
-    /**
-     * Indicates whether or not the field may be modified (defaults to {@code true}).
-     *
-     **/
+    /** Indicates whether or not the field may be modified (defaults to {@code true}). */
     @com.fasterxml.jackson.annotation.JsonProperty("isMutable")
     private final Boolean isMutable;
 
@@ -365,7 +336,7 @@ public final class ConfigurationField extends com.oracle.bmc.http.internal.Expli
      * Indicates whether or not the field may be modified (defaults to {@code true}).
      *
      * @return the value
-     **/
+     */
     public Boolean getIsMutable() {
         return isMutable;
     }
@@ -377,6 +348,7 @@ public final class ConfigurationField extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

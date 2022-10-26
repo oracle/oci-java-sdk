@@ -9,15 +9,14 @@ import com.oracle.bmc.servicecatalog.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
 public class GetServiceCatalogResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,10 +24,7 @@ public class GetServiceCatalogResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -40,13 +36,12 @@ public class GetServiceCatalogResponse extends com.oracle.bmc.responses.BmcRespo
         return etag;
     }
 
-    /**
-     * The returned ServiceCatalog instance.
-     */
+    /** The returned ServiceCatalog instance. */
     private com.oracle.bmc.servicecatalog.model.ServiceCatalog serviceCatalog;
 
     /**
      * The returned ServiceCatalog instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.servicecatalog.model.ServiceCatalog getServiceCatalog() {
@@ -62,7 +57,7 @@ public class GetServiceCatalogResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private GetServiceCatalogResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.servicecatalog.model.ServiceCatalog serviceCatalog) {
@@ -72,31 +67,33 @@ public class GetServiceCatalogResponse extends com.oracle.bmc.responses.BmcRespo
         this.serviceCatalog = serviceCatalog;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetServiceCatalogResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -106,10 +103,7 @@ public class GetServiceCatalogResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -123,13 +117,12 @@ public class GetServiceCatalogResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /**
-         * The returned ServiceCatalog instance.
-         */
+        /** The returned ServiceCatalog instance. */
         private com.oracle.bmc.servicecatalog.model.ServiceCatalog serviceCatalog;
 
         /**
          * The returned ServiceCatalog instance.
+         *
          * @param serviceCatalog the value to set
          * @return this builder
          */
@@ -141,8 +134,10 @@ public class GetServiceCatalogResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetServiceCatalogResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -155,8 +150,10 @@ public class GetServiceCatalogResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetServiceCatalogResponse build() {
             return new GetServiceCatalogResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, serviceCatalog);
@@ -165,6 +162,7 @@ public class GetServiceCatalogResponse extends com.oracle.bmc.responses.BmcRespo
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

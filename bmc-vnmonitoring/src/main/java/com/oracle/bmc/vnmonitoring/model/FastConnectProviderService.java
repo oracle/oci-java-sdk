@@ -5,24 +5,23 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * A service offering from a supported provider. For more information,
- * see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A service offering from a supported provider. For more information, see [FastConnect
+ * Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = FastConnectProviderService.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = FastConnectProviderService.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class FastConnectProviderService
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "description",
@@ -57,53 +56,52 @@ public final class FastConnectProviderService
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The location of the provider's website or portal. This portal is where you can get information
-         * about the provider service, create a virtual circuit connection from the provider to Oracle
-         * Cloud Infrastructure, and retrieve your provider service key for that virtual circuit connection.
-         * <p>
-         * Example: {@code https://example.com}
+         * The location of the provider's website or portal. This portal is where you can get
+         * information about the provider service, create a virtual circuit connection from the
+         * provider to Oracle Cloud Infrastructure, and retrieve your provider service key for that
+         * virtual circuit connection.
          *
-         **/
+         * <p>Example: {@code https://example.com}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * The location of the provider's website or portal. This portal is where you can get information
-         * about the provider service, create a virtual circuit connection from the provider to Oracle
-         * Cloud Infrastructure, and retrieve your provider service key for that virtual circuit connection.
-         * <p>
-         * Example: {@code https://example.com}
+         * The location of the provider's website or portal. This portal is where you can get
+         * information about the provider service, create a virtual circuit connection from the
+         * provider to Oracle Cloud Infrastructure, and retrieve your provider service key for that
+         * virtual circuit connection.
+         *
+         * <p>Example: {@code https://example.com}
          *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the service offered by the provider.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the service offered by the provider.
          *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * Who is responsible for managing the private peering BGP information.
-         *
-         **/
+        /** Who is responsible for managing the private peering BGP information. */
         @com.fasterxml.jackson.annotation.JsonProperty("privatePeeringBgpManagement")
         private PrivatePeeringBgpManagement privatePeeringBgpManagement;
 
@@ -112,17 +110,14 @@ public final class FastConnectProviderService
          *
          * @param privatePeeringBgpManagement the value to set
          * @return this builder
-         **/
+         */
         public Builder privatePeeringBgpManagement(
                 PrivatePeeringBgpManagement privatePeeringBgpManagement) {
             this.privatePeeringBgpManagement = privatePeeringBgpManagement;
             this.__explicitlySet__.add("privatePeeringBgpManagement");
             return this;
         }
-        /**
-         * The name of the provider.
-         *
-         **/
+        /** The name of the provider. */
         @com.fasterxml.jackson.annotation.JsonProperty("providerName")
         private String providerName;
 
@@ -131,16 +126,13 @@ public final class FastConnectProviderService
          *
          * @param providerName the value to set
          * @return this builder
-         **/
+         */
         public Builder providerName(String providerName) {
             this.providerName = providerName;
             this.__explicitlySet__.add("providerName");
             return this;
         }
-        /**
-         * The name of the service offered by the provider.
-         *
-         **/
+        /** The name of the service offered by the provider. */
         @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
         private String providerServiceName;
 
@@ -149,16 +141,13 @@ public final class FastConnectProviderService
          *
          * @param providerServiceName the value to set
          * @return this builder
-         **/
+         */
         public Builder providerServiceName(String providerServiceName) {
             this.providerServiceName = providerServiceName;
             this.__explicitlySet__.add("providerServiceName");
             return this;
         }
-        /**
-         * Who is responsible for managing the public peering BGP information.
-         *
-         **/
+        /** Who is responsible for managing the public peering BGP information. */
         @com.fasterxml.jackson.annotation.JsonProperty("publicPeeringBgpManagement")
         private PublicPeeringBgpManagement publicPeeringBgpManagement;
 
@@ -167,17 +156,14 @@ public final class FastConnectProviderService
          *
          * @param publicPeeringBgpManagement the value to set
          * @return this builder
-         **/
+         */
         public Builder publicPeeringBgpManagement(
                 PublicPeeringBgpManagement publicPeeringBgpManagement) {
             this.publicPeeringBgpManagement = publicPeeringBgpManagement;
             this.__explicitlySet__.add("publicPeeringBgpManagement");
             return this;
         }
-        /**
-         * An array of virtual circuit types supported by this service.
-         *
-         **/
+        /** An array of virtual circuit types supported by this service. */
         @com.fasterxml.jackson.annotation.JsonProperty("supportedVirtualCircuitTypes")
         private java.util.List<SupportedVirtualCircuitTypes> supportedVirtualCircuitTypes;
 
@@ -186,17 +172,14 @@ public final class FastConnectProviderService
          *
          * @param supportedVirtualCircuitTypes the value to set
          * @return this builder
-         **/
+         */
         public Builder supportedVirtualCircuitTypes(
                 java.util.List<SupportedVirtualCircuitTypes> supportedVirtualCircuitTypes) {
             this.supportedVirtualCircuitTypes = supportedVirtualCircuitTypes;
             this.__explicitlySet__.add("supportedVirtualCircuitTypes");
             return this;
         }
-        /**
-         * Provider service type.
-         *
-         **/
+        /** Provider service type. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
@@ -205,7 +188,7 @@ public final class FastConnectProviderService
          *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -262,9 +245,7 @@ public final class FastConnectProviderService
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -274,50 +255,49 @@ public final class FastConnectProviderService
     }
 
     /**
-     * The location of the provider's website or portal. This portal is where you can get information
-     * about the provider service, create a virtual circuit connection from the provider to Oracle
-     * Cloud Infrastructure, and retrieve your provider service key for that virtual circuit connection.
-     * <p>
-     * Example: {@code https://example.com}
+     * The location of the provider's website or portal. This portal is where you can get
+     * information about the provider service, create a virtual circuit connection from the provider
+     * to Oracle Cloud Infrastructure, and retrieve your provider service key for that virtual
+     * circuit connection.
      *
-     **/
+     * <p>Example: {@code https://example.com}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * The location of the provider's website or portal. This portal is where you can get information
-     * about the provider service, create a virtual circuit connection from the provider to Oracle
-     * Cloud Infrastructure, and retrieve your provider service key for that virtual circuit connection.
-     * <p>
-     * Example: {@code https://example.com}
+     * The location of the provider's website or portal. This portal is where you can get
+     * information about the provider service, create a virtual circuit connection from the provider
+     * to Oracle Cloud Infrastructure, and retrieve your provider service key for that virtual
+     * circuit connection.
+     *
+     * <p>Example: {@code https://example.com}
      *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the service offered by the provider.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the service offered by the provider.
      *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * Who is responsible for managing the private peering BGP information.
-     *
-     **/
-    public enum PrivatePeeringBgpManagement {
+    /** Who is responsible for managing the private peering BGP information. */
+    public enum PrivatePeeringBgpManagement implements com.oracle.bmc.http.internal.BmcEnum {
         CustomerManaged("CUSTOMER_MANAGED"),
         ProviderManaged("PROVIDER_MANAGED"),
         OracleManaged("ORACLE_MANAGED"),
@@ -350,10 +330,7 @@ public final class FastConnectProviderService
             throw new IllegalArgumentException("Invalid PrivatePeeringBgpManagement: " + key);
         }
     };
-    /**
-     * Who is responsible for managing the private peering BGP information.
-     *
-     **/
+    /** Who is responsible for managing the private peering BGP information. */
     @com.fasterxml.jackson.annotation.JsonProperty("privatePeeringBgpManagement")
     private final PrivatePeeringBgpManagement privatePeeringBgpManagement;
 
@@ -361,15 +338,12 @@ public final class FastConnectProviderService
      * Who is responsible for managing the private peering BGP information.
      *
      * @return the value
-     **/
+     */
     public PrivatePeeringBgpManagement getPrivatePeeringBgpManagement() {
         return privatePeeringBgpManagement;
     }
 
-    /**
-     * The name of the provider.
-     *
-     **/
+    /** The name of the provider. */
     @com.fasterxml.jackson.annotation.JsonProperty("providerName")
     private final String providerName;
 
@@ -377,15 +351,12 @@ public final class FastConnectProviderService
      * The name of the provider.
      *
      * @return the value
-     **/
+     */
     public String getProviderName() {
         return providerName;
     }
 
-    /**
-     * The name of the service offered by the provider.
-     *
-     **/
+    /** The name of the service offered by the provider. */
     @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
     private final String providerServiceName;
 
@@ -393,16 +364,13 @@ public final class FastConnectProviderService
      * The name of the service offered by the provider.
      *
      * @return the value
-     **/
+     */
     public String getProviderServiceName() {
         return providerServiceName;
     }
 
-    /**
-     * Who is responsible for managing the public peering BGP information.
-     *
-     **/
-    public enum PublicPeeringBgpManagement {
+    /** Who is responsible for managing the public peering BGP information. */
+    public enum PublicPeeringBgpManagement implements com.oracle.bmc.http.internal.BmcEnum {
         CustomerManaged("CUSTOMER_MANAGED"),
         ProviderManaged("PROVIDER_MANAGED"),
         OracleManaged("ORACLE_MANAGED"),
@@ -435,10 +403,7 @@ public final class FastConnectProviderService
             throw new IllegalArgumentException("Invalid PublicPeeringBgpManagement: " + key);
         }
     };
-    /**
-     * Who is responsible for managing the public peering BGP information.
-     *
-     **/
+    /** Who is responsible for managing the public peering BGP information. */
     @com.fasterxml.jackson.annotation.JsonProperty("publicPeeringBgpManagement")
     private final PublicPeeringBgpManagement publicPeeringBgpManagement;
 
@@ -446,14 +411,13 @@ public final class FastConnectProviderService
      * Who is responsible for managing the public peering BGP information.
      *
      * @return the value
-     **/
+     */
     public PublicPeeringBgpManagement getPublicPeeringBgpManagement() {
         return publicPeeringBgpManagement;
     }
 
-    /**
-     **/
-    public enum SupportedVirtualCircuitTypes {
+    /** */
+    public enum SupportedVirtualCircuitTypes implements com.oracle.bmc.http.internal.BmcEnum {
         Public("PUBLIC"),
         Private("PRIVATE"),
         ;
@@ -485,10 +449,7 @@ public final class FastConnectProviderService
             throw new IllegalArgumentException("Invalid SupportedVirtualCircuitTypes: " + key);
         }
     };
-    /**
-     * An array of virtual circuit types supported by this service.
-     *
-     **/
+    /** An array of virtual circuit types supported by this service. */
     @com.fasterxml.jackson.annotation.JsonProperty("supportedVirtualCircuitTypes")
     private final java.util.List<SupportedVirtualCircuitTypes> supportedVirtualCircuitTypes;
 
@@ -496,16 +457,13 @@ public final class FastConnectProviderService
      * An array of virtual circuit types supported by this service.
      *
      * @return the value
-     **/
+     */
     public java.util.List<SupportedVirtualCircuitTypes> getSupportedVirtualCircuitTypes() {
         return supportedVirtualCircuitTypes;
     }
 
-    /**
-     * Provider service type.
-     *
-     **/
-    public enum Type {
+    /** Provider service type. */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Layer2("LAYER2"),
         Layer3("LAYER3"),
         ;
@@ -537,10 +495,7 @@ public final class FastConnectProviderService
             throw new IllegalArgumentException("Invalid Type: " + key);
         }
     };
-    /**
-     * Provider service type.
-     *
-     **/
+    /** Provider service type. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
@@ -548,7 +503,7 @@ public final class FastConnectProviderService
      * Provider service type.
      *
      * @return the value
-     **/
+     */
     public Type getType() {
         return type;
     }
@@ -560,6 +515,7 @@ public final class FastConnectProviderService
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

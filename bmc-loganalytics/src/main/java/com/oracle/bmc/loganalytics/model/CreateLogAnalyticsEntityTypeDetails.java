@@ -5,22 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Details for new log analytics entity type to be added.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details for new log analytics entity type to be added. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateLogAnalyticsEntityTypeDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateLogAnalyticsEntityTypeDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateLogAnalyticsEntityTypeDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "category", "properties"})
     public CreateLogAnalyticsEntityTypeDetails(
@@ -33,10 +33,7 @@ public final class CreateLogAnalyticsEntityTypeDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Log analytics entity type name.
-         *
-         **/
+        /** Log analytics entity type name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -45,16 +42,13 @@ public final class CreateLogAnalyticsEntityTypeDetails
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Log analytics entity type category. Category will be used for grouping and filtering.
-         *
-         **/
+        /** Log analytics entity type category. Category will be used for grouping and filtering. */
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private String category;
 
@@ -63,23 +57,22 @@ public final class CreateLogAnalyticsEntityTypeDetails
          *
          * @param category the value to set
          * @return this builder
-         **/
+         */
         public Builder category(String category) {
             this.category = category;
             this.__explicitlySet__.add("category");
             return this;
         }
-        /**
-         * Log analytics entity type property definition.
-         **/
+        /** Log analytics entity type property definition. */
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.List<EntityTypeProperty> properties;
 
         /**
          * Log analytics entity type property definition.
+         *
          * @param properties the value to set
          * @return this builder
-         **/
+         */
         public Builder properties(java.util.List<EntityTypeProperty> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -114,9 +107,7 @@ public final class CreateLogAnalyticsEntityTypeDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -125,10 +116,7 @@ public final class CreateLogAnalyticsEntityTypeDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * Log analytics entity type name.
-     *
-     **/
+    /** Log analytics entity type name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -136,15 +124,12 @@ public final class CreateLogAnalyticsEntityTypeDetails
      * Log analytics entity type name.
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Log analytics entity type category. Category will be used for grouping and filtering.
-     *
-     **/
+    /** Log analytics entity type category. Category will be used for grouping and filtering. */
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
@@ -152,21 +137,20 @@ public final class CreateLogAnalyticsEntityTypeDetails
      * Log analytics entity type category. Category will be used for grouping and filtering.
      *
      * @return the value
-     **/
+     */
     public String getCategory() {
         return category;
     }
 
-    /**
-     * Log analytics entity type property definition.
-     **/
+    /** Log analytics entity type property definition. */
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.List<EntityTypeProperty> properties;
 
     /**
      * Log analytics entity type property definition.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<EntityTypeProperty> getProperties() {
         return properties;
     }
@@ -178,6 +162,7 @@ public final class CreateLogAnalyticsEntityTypeDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -38,20 +38,21 @@ import com.oracle.bmc.core.responses.CreateVcnResponse;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Sample to demonstrate remote peering of two virtual cloud networks between two different regions within a single
- * compartment.
- * <p>
- * The sample relies on the correct IAM policies already being in place for a given compartment ID.
- * For more information, please refer to the
- * <a href="https://docs.cloud.oracle.com/Content/Network/Tasks/remoteVCNpeering.htm">Remote VCN
+ * Sample to demonstrate remote peering of two virtual cloud networks between two different regions
+ * within a single compartment.
+ *
+ * <p>The sample relies on the correct IAM policies already being in place for a given compartment
+ * ID. For more information, please refer to the <a
+ * href="https://docs.cloud.oracle.com/Content/Network/Tasks/remoteVCNpeering.htm">Remote VCN
  * Peering</a> documentation that is found on the Oracle Cloud Infrastructure developer portal.
- * <p>
- * The order of operations and waiting for the appropriate states is important. Each VCN can be set up
- * concurrently until the point where the connection is established. Deleting the connection and
- * resources can not be performed concurrently until the remote peering connection has been revoked. This sample
- * demonstrates the creation of resources on a single thread to more clearly demonstrate remote peering connections.
- * It is also worth noting that each VCN utilizes a dynamic routing gateway. DRGs are a finite resource and may require
- * contacting customer support if limits have been exceeded for a given tenancy.
+ *
+ * <p>The order of operations and waiting for the appropriate states is important. Each VCN can be
+ * set up concurrently until the point where the connection is established. Deleting the connection
+ * and resources can not be performed concurrently until the remote peering connection has been
+ * revoked. This sample demonstrates the creation of resources on a single thread to more clearly
+ * demonstrate remote peering connections. It is also worth noting that each VCN utilizes a dynamic
+ * routing gateway. DRGs are a finite resource and may require contacting customer support if limits
+ * have been exceeded for a given tenancy.
  */
 public class RemotePeeringConnectionExample {
     // Set this with your own compartment ID
@@ -99,8 +100,10 @@ public class RemotePeeringConnectionExample {
             throw new IllegalStateException("A compartment ID must be defined");
         }
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -126,7 +129,8 @@ public class RemotePeeringConnectionExample {
     }
 
     /**
-     * The primary business logic that creates two VCNs, establishes a remote peering connection, and cleans up.
+     * The primary business logic that creates two VCNs, establishes a remote peering connection,
+     * and cleans up.
      *
      * @throws Exception if an error occurred
      */
@@ -190,13 +194,15 @@ public class RemotePeeringConnectionExample {
                 ConnectRemotePeeringConnectionsRequest.builder()
                         .connectRemotePeeringConnectionsDetails(
                                 ConnectRemotePeeringConnectionsDetails.builder()
-                                        .peerId(
-                                                peerRemotePeeringConnectionId) // The peer's remote peering connection ID in IAD
+                                        .peerId(peerRemotePeeringConnectionId) // The peer's remote
+                                        // peering connection
+                                        // ID in IAD
                                         .peerRegionName(
                                                 peerRegion.getRegionId()) // e.g., "us-ashburn-1"
                                         .build())
                         .remotePeeringConnectionId(
-                                localRemotePeeringConnectionId) // The local peering connection ID in PHX
+                                localRemotePeeringConnectionId) // The local peering connection ID
+                        // in PHX
                         .build();
         localVirtualNetwork.connectRemotePeeringConnections(request);
 
@@ -226,7 +232,8 @@ public class RemotePeeringConnectionExample {
         System.out.println("    Deleting local remote peering connection in " + localRegionCode);
         deleteRemotePeeringConnection(localVirtualNetwork, localRemotePeeringConnectionId);
 
-        // Note: It is important to wait for the PeeringStatus to reflect a REVOKED status before proceeding
+        // Note: It is important to wait for the PeeringStatus to reflect a REVOKED status before
+        // proceeding
 
         System.out.println(
                 "    Waiting for remote peering connection status to be revoked in "
@@ -289,13 +296,11 @@ public class RemotePeeringConnectionExample {
                                         .displayName(
                                                 String.format(
                                                         "VCN-%s-%s",
-                                                        region.getRegionId(),
-                                                        TIMESTAMP_SUFFIX))
+                                                        region.getRegionId(), TIMESTAMP_SUFFIX))
                                         .dnsLabel(
                                                 String.format(
                                                         "dns%s%s",
-                                                        region.getRegionCode(),
-                                                        TIMESTAMP_SUFFIX))
+                                                        region.getRegionCode(), TIMESTAMP_SUFFIX))
                                         .build())
                         .build();
 
@@ -319,8 +324,7 @@ public class RemotePeeringConnectionExample {
                                         .displayName(
                                                 String.format(
                                                         "Drg-%s-%s",
-                                                        region.getRegionId(),
-                                                        TIMESTAMP_SUFFIX))
+                                                        region.getRegionId(), TIMESTAMP_SUFFIX))
                                         .build())
                         .build();
 
@@ -347,8 +351,7 @@ public class RemotePeeringConnectionExample {
                                         .displayName(
                                                 String.format(
                                                         "DrgAttachment-%s-%s",
-                                                        region.getRegionId(),
-                                                        TIMESTAMP_SUFFIX))
+                                                        region.getRegionId(), TIMESTAMP_SUFFIX))
                                         .drgId(drgId)
                                         .vcnId(vcnId)
                                         .build())
@@ -377,8 +380,7 @@ public class RemotePeeringConnectionExample {
                                         .displayName(
                                                 String.format(
                                                         "RemotePeeringConnection-%s-%s",
-                                                        region.getRegionId(),
-                                                        TIMESTAMP_SUFFIX))
+                                                        region.getRegionId(), TIMESTAMP_SUFFIX))
                                         .drgId(drgId)
                                         .build())
                         .build();

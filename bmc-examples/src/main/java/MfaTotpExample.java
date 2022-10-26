@@ -31,8 +31,10 @@ public class MfaTotpExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -44,9 +46,9 @@ public class MfaTotpExample {
         final String userId = provider.getUserId();
 
         Identity identityClient = new IdentityClient(provider);
-        //create MFA totp device
+        // create MFA totp device
         MfaTotpDevice device = createMfaTotpDevice(identityClient, userId);
-        //get MFA totp device
+        // get MFA totp device
         MfaTotpDeviceSummary summary =
                 getMfaTotpDeviceSummary(identityClient, userId, device.getId());
         // List all MFA Totp Devices for specified user
@@ -59,7 +61,7 @@ public class MfaTotpExample {
         for (MfaTotpDeviceSummary mfaTotpDevice : response.getItems()) {
             System.out.println(mfaTotpDevice);
         }
-        //delete MFA totp device
+        // delete MFA totp device
         deleteMfaTotpDevice(identityClient, userId, device.getId());
         System.out.println("Mfa totp device deleted");
     }

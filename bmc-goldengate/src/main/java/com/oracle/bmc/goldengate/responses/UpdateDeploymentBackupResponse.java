@@ -8,10 +8,7 @@ import com.oracle.bmc.goldengate.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class UpdateDeploymentBackupResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,13 +21,14 @@ public class UpdateDeploymentBackupResponse extends com.oracle.bmc.responses.Bmc
     }
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
-     *
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please include the request ID.
      */
     private String opcRequestId;
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please include the request ID.
      *
      * @return the value
      */
@@ -38,13 +36,12 @@ public class UpdateDeploymentBackupResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /**
-     * The returned DeploymentBackup instance.
-     */
+    /** The returned DeploymentBackup instance. */
     private com.oracle.bmc.goldengate.model.DeploymentBackup deploymentBackup;
 
     /**
      * The returned DeploymentBackup instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.goldengate.model.DeploymentBackup getDeploymentBackup() {
@@ -60,7 +57,7 @@ public class UpdateDeploymentBackupResponse extends com.oracle.bmc.responses.Bmc
     })
     private UpdateDeploymentBackupResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.goldengate.model.DeploymentBackup deploymentBackup) {
@@ -70,25 +67,26 @@ public class UpdateDeploymentBackupResponse extends com.oracle.bmc.responses.Bmc
         this.deploymentBackup = deploymentBackup;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    UpdateDeploymentBackupResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -103,13 +101,14 @@ public class UpdateDeploymentBackupResponse extends com.oracle.bmc.responses.Bmc
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
-         *
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please include the request ID.
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please include the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -119,13 +118,12 @@ public class UpdateDeploymentBackupResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /**
-         * The returned DeploymentBackup instance.
-         */
+        /** The returned DeploymentBackup instance. */
         private com.oracle.bmc.goldengate.model.DeploymentBackup deploymentBackup;
 
         /**
          * The returned DeploymentBackup instance.
+         *
          * @param deploymentBackup the value to set
          * @return this builder
          */
@@ -137,8 +135,10 @@ public class UpdateDeploymentBackupResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(UpdateDeploymentBackupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,8 +151,10 @@ public class UpdateDeploymentBackupResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public UpdateDeploymentBackupResponse build() {
             return new UpdateDeploymentBackupResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, deploymentBackup);
@@ -161,6 +163,7 @@ public class UpdateDeploymentBackupResponse extends com.oracle.bmc.responses.Bmc
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -6,132 +6,104 @@ package com.oracle.bmc.jms.requests;
 
 import com.oracle.bmc.jms.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListFleetsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListFleetsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListFleetsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListFleetsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-     *
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment in which to list resources.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-     *
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment in which to list resources.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * The ID of the Fleet.
-     */
+    /** The ID of the Fleet. */
     private String id;
 
-    /**
-     * The ID of the Fleet.
-     */
+    /** The ID of the Fleet. */
     public String getId() {
         return id;
     }
-    /**
-     * The state of the lifecycle.
-     */
+    /** The state of the lifecycle. */
     private com.oracle.bmc.jms.model.LifecycleState lifecycleState;
 
-    /**
-     * The state of the lifecycle.
-     */
+    /** The state of the lifecycle. */
     public com.oracle.bmc.jms.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /**
-     * The display name.
-     */
+    /** The display name. */
     private String displayName;
 
-    /**
-     * The display name.
-     */
+    /** The display name. */
     public String getDisplayName() {
         return displayName;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. The token is
+     * usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. The token is
+     * usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order, either 'asc' or 'desc'.
-     */
+    /** The sort order, either 'asc' or 'desc'. */
     private com.oracle.bmc.jms.model.SortOrder sortOrder;
 
-    /**
-     * The sort order, either 'asc' or 'desc'.
-     */
+    /** The sort order, either 'asc' or 'desc'. */
     public com.oracle.bmc.jms.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort Fleets. Only one sort order may be provided.
-     * Default order for _timeCreated_, _approximateJreCount_, _approximateInstallationCount_,
-     * _approximateApplicationCount_ and _approximateManagedInstanceCount_  is **descending**.
-     * Default order for _displayName_ is **ascending**.
-     * If no value is specified _timeCreated_ is default.
-     *
+     * The field to sort Fleets. Only one sort order may be provided. Default order for
+     * _timeCreated_, _approximateJreCount_, _approximateInstallationCount_,
+     * _approximateApplicationCount_ and _approximateManagedInstanceCount_ is **descending**.
+     * Default order for _displayName_ is **ascending**. If no value is specified _timeCreated_ is
+     * default.
      */
     private com.oracle.bmc.jms.model.SortBy sortBy;
 
     /**
-     * The field to sort Fleets. Only one sort order may be provided.
-     * Default order for _timeCreated_, _approximateJreCount_, _approximateInstallationCount_,
-     * _approximateApplicationCount_ and _approximateManagedInstanceCount_  is **descending**.
-     * Default order for _displayName_ is **ascending**.
-     * If no value is specified _timeCreated_ is default.
-     *
+     * The field to sort Fleets. Only one sort order may be provided. Default order for
+     * _timeCreated_, _approximateJreCount_, _approximateInstallationCount_,
+     * _approximateApplicationCount_ and _approximateManagedInstanceCount_ is **descending**.
+     * Default order for _displayName_ is **ascending**. If no value is specified _timeCreated_ is
+     * default.
      */
     public com.oracle.bmc.jms.model.SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * Filter the list with displayName contains the given value.
-     *
-     */
+    /** Filter the list with displayName contains the given value. */
     private String displayNameContains;
 
-    /**
-     * Filter the list with displayName contains the given value.
-     *
-     */
+    /** Filter the list with displayName contains the given value. */
     public String getDisplayNameContains() {
         return displayNameContains;
     }
@@ -139,18 +111,18 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListFleetsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-         *
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment in which to list resources.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -160,13 +132,12 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /**
-         * The ID of the Fleet.
-         */
+        /** The ID of the Fleet. */
         private String id = null;
 
         /**
          * The ID of the Fleet.
+         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -175,13 +146,12 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /**
-         * The state of the lifecycle.
-         */
+        /** The state of the lifecycle. */
         private com.oracle.bmc.jms.model.LifecycleState lifecycleState = null;
 
         /**
          * The state of the lifecycle.
+         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -190,13 +160,12 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /**
-         * The display name.
-         */
+        /** The display name. */
         private String displayName = null;
 
         /**
          * The display name.
+         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -205,13 +174,12 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -221,12 +189,15 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. The token is
+         * usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. The token is
+         * usually retrieved from a previous list call.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -235,13 +206,12 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /**
-         * The sort order, either 'asc' or 'desc'.
-         */
+        /** The sort order, either 'asc' or 'desc'. */
         private com.oracle.bmc.jms.model.SortOrder sortOrder = null;
 
         /**
          * The sort order, either 'asc' or 'desc'.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -251,21 +221,20 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
 
         /**
-         * The field to sort Fleets. Only one sort order may be provided.
-         * Default order for _timeCreated_, _approximateJreCount_, _approximateInstallationCount_,
-         * _approximateApplicationCount_ and _approximateManagedInstanceCount_  is **descending**.
-         * Default order for _displayName_ is **ascending**.
-         * If no value is specified _timeCreated_ is default.
-         *
+         * The field to sort Fleets. Only one sort order may be provided. Default order for
+         * _timeCreated_, _approximateJreCount_, _approximateInstallationCount_,
+         * _approximateApplicationCount_ and _approximateManagedInstanceCount_ is **descending**.
+         * Default order for _displayName_ is **ascending**. If no value is specified _timeCreated_
+         * is default.
          */
         private com.oracle.bmc.jms.model.SortBy sortBy = null;
 
         /**
-         * The field to sort Fleets. Only one sort order may be provided.
-         * Default order for _timeCreated_, _approximateJreCount_, _approximateInstallationCount_,
-         * _approximateApplicationCount_ and _approximateManagedInstanceCount_  is **descending**.
-         * Default order for _displayName_ is **ascending**.
-         * If no value is specified _timeCreated_ is default.
+         * The field to sort Fleets. Only one sort order may be provided. Default order for
+         * _timeCreated_, _approximateJreCount_, _approximateInstallationCount_,
+         * _approximateApplicationCount_ and _approximateManagedInstanceCount_ is **descending**.
+         * Default order for _displayName_ is **ascending**. If no value is specified _timeCreated_
+         * is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -275,13 +244,12 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -290,10 +258,7 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /**
-         * Filter the list with displayName contains the given value.
-         *
-         */
+        /** Filter the list with displayName contains the given value. */
         private String displayNameContains = null;
 
         /**
@@ -309,18 +274,19 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -332,6 +298,7 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListFleetsRequest o) {
@@ -353,10 +320,11 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         /**
          * Build the instance of ListFleetsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListFleetsRequest
          */
@@ -370,7 +338,8 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         /**
          * Build the instance of ListFleetsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListFleetsRequest
@@ -388,12 +357,14 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.opcRequestId = opcRequestId;
             request.displayNameContains = displayNameContains;
             return request;
-            // new ListFleetsRequest(compartmentId, id, lifecycleState, displayName, limit, page, sortOrder, sortBy, opcRequestId, displayNameContains);
+            // new ListFleetsRequest(compartmentId, id, lifecycleState, displayName, limit, page,
+            // sortOrder, sortBy, opcRequestId, displayNameContains);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -412,6 +383,7 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,25 +5,24 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * The configuration for a Web channel.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The configuration for a Web channel. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateWebChannelResult.Builder.class
-)
+        builder = CreateWebChannelResult.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateWebChannelResult extends CreateChannelResult {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -119,52 +118,49 @@ public final class CreateWebChannelResult extends CreateChannelResult {
             return this;
         }
         /**
-         * The secret key used to verify the authenticity of received messages.
-         * This is only returned this once.  If it is lost the keys will need to be rotated to generate a new key.
-         *
-         **/
+         * The secret key used to verify the authenticity of received messages. This is only
+         * returned this once. If it is lost the keys will need to be rotated to generate a new key.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("secretKey")
         private String secretKey;
 
         /**
-         * The secret key used to verify the authenticity of received messages.
-         * This is only returned this once.  If it is lost the keys will need to be rotated to generate a new key.
+         * The secret key used to verify the authenticity of received messages. This is only
+         * returned this once. If it is lost the keys will need to be rotated to generate a new key.
          *
          * @param secretKey the value to set
          * @return this builder
-         **/
+         */
         public Builder secretKey(String secretKey) {
             this.secretKey = secretKey;
             this.__explicitlySet__.add("secretKey");
             return this;
         }
-        /**
-         * The maximum time until the token expires (in minutes).
-         **/
+        /** The maximum time until the token expires (in minutes). */
         @com.fasterxml.jackson.annotation.JsonProperty("maxTokenExpirationTimeInMinutes")
         private Long maxTokenExpirationTimeInMinutes;
 
         /**
          * The maximum time until the token expires (in minutes).
+         *
          * @param maxTokenExpirationTimeInMinutes the value to set
          * @return this builder
-         **/
+         */
         public Builder maxTokenExpirationTimeInMinutes(Long maxTokenExpirationTimeInMinutes) {
             this.maxTokenExpirationTimeInMinutes = maxTokenExpirationTimeInMinutes;
             this.__explicitlySet__.add("maxTokenExpirationTimeInMinutes");
             return this;
         }
-        /**
-         * Whether client authentication is enabled or not.
-         **/
+        /** Whether client authentication is enabled or not. */
         @com.fasterxml.jackson.annotation.JsonProperty("isClientAuthenticationEnabled")
         private Boolean isClientAuthenticationEnabled;
 
         /**
          * Whether client authentication is enabled or not.
+         *
          * @param isClientAuthenticationEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isClientAuthenticationEnabled(Boolean isClientAuthenticationEnabled) {
             this.isClientAuthenticationEnabled = isClientAuthenticationEnabled;
             this.__explicitlySet__.add("isClientAuthenticationEnabled");
@@ -173,44 +169,44 @@ public final class CreateWebChannelResult extends CreateChannelResult {
         /**
          * A comma-delimited whitelist of allowed domains.
          *
-         * The channel will only communicate with the sites from the domains that you add to this list.
-         * For example, *.corp.example.com, *.hdr.example.com. Entering a single asterisk (*) allows unrestricted access
-         * to the channel from any domain.
+         * <p>The channel will only communicate with the sites from the domains that you add to this
+         * list. For example, *.corp.example.com, *.hdr.example.com. Entering a single asterisk (*)
+         * allows unrestricted access to the channel from any domain.
          *
-         * Typically, you'd only enter a single asterisk during development. For production, you would add an allowlist of domains.
-         *
-         **/
+         * <p>Typically, you'd only enter a single asterisk during development. For production, you
+         * would add an allowlist of domains.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("allowedDomains")
         private String allowedDomains;
 
         /**
          * A comma-delimited whitelist of allowed domains.
          *
-         * The channel will only communicate with the sites from the domains that you add to this list.
-         * For example, *.corp.example.com, *.hdr.example.com. Entering a single asterisk (*) allows unrestricted access
-         * to the channel from any domain.
+         * <p>The channel will only communicate with the sites from the domains that you add to this
+         * list. For example, *.corp.example.com, *.hdr.example.com. Entering a single asterisk (*)
+         * allows unrestricted access to the channel from any domain.
          *
-         * Typically, you'd only enter a single asterisk during development. For production, you would add an allowlist of domains.
+         * <p>Typically, you'd only enter a single asterisk during development. For production, you
+         * would add an allowlist of domains.
          *
          * @param allowedDomains the value to set
          * @return this builder
-         **/
+         */
         public Builder allowedDomains(String allowedDomains) {
             this.allowedDomains = allowedDomains;
             this.__explicitlySet__.add("allowedDomains");
             return this;
         }
-        /**
-         * The ID of the Skill or Digital Assistant that the Channel is routed to.
-         **/
+        /** The ID of the Skill or Digital Assistant that the Channel is routed to. */
         @com.fasterxml.jackson.annotation.JsonProperty("botId")
         private String botId;
 
         /**
          * The ID of the Skill or Digital Assistant that the Channel is routed to.
+         *
          * @param botId the value to set
          * @return this builder
-         **/
+         */
         public Builder botId(String botId) {
             this.botId = botId;
             this.__explicitlySet__.add("botId");
@@ -296,9 +292,7 @@ public final class CreateWebChannelResult extends CreateChannelResult {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -343,47 +337,44 @@ public final class CreateWebChannelResult extends CreateChannelResult {
     }
 
     /**
-     * The secret key used to verify the authenticity of received messages.
-     * This is only returned this once.  If it is lost the keys will need to be rotated to generate a new key.
-     *
-     **/
+     * The secret key used to verify the authenticity of received messages. This is only returned
+     * this once. If it is lost the keys will need to be rotated to generate a new key.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("secretKey")
     private final String secretKey;
 
     /**
-     * The secret key used to verify the authenticity of received messages.
-     * This is only returned this once.  If it is lost the keys will need to be rotated to generate a new key.
+     * The secret key used to verify the authenticity of received messages. This is only returned
+     * this once. If it is lost the keys will need to be rotated to generate a new key.
      *
      * @return the value
-     **/
+     */
     public String getSecretKey() {
         return secretKey;
     }
 
-    /**
-     * The maximum time until the token expires (in minutes).
-     **/
+    /** The maximum time until the token expires (in minutes). */
     @com.fasterxml.jackson.annotation.JsonProperty("maxTokenExpirationTimeInMinutes")
     private final Long maxTokenExpirationTimeInMinutes;
 
     /**
      * The maximum time until the token expires (in minutes).
+     *
      * @return the value
-     **/
+     */
     public Long getMaxTokenExpirationTimeInMinutes() {
         return maxTokenExpirationTimeInMinutes;
     }
 
-    /**
-     * Whether client authentication is enabled or not.
-     **/
+    /** Whether client authentication is enabled or not. */
     @com.fasterxml.jackson.annotation.JsonProperty("isClientAuthenticationEnabled")
     private final Boolean isClientAuthenticationEnabled;
 
     /**
      * Whether client authentication is enabled or not.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsClientAuthenticationEnabled() {
         return isClientAuthenticationEnabled;
     }
@@ -391,41 +382,41 @@ public final class CreateWebChannelResult extends CreateChannelResult {
     /**
      * A comma-delimited whitelist of allowed domains.
      *
-     * The channel will only communicate with the sites from the domains that you add to this list.
-     * For example, *.corp.example.com, *.hdr.example.com. Entering a single asterisk (*) allows unrestricted access
-     * to the channel from any domain.
+     * <p>The channel will only communicate with the sites from the domains that you add to this
+     * list. For example, *.corp.example.com, *.hdr.example.com. Entering a single asterisk (*)
+     * allows unrestricted access to the channel from any domain.
      *
-     * Typically, you'd only enter a single asterisk during development. For production, you would add an allowlist of domains.
-     *
-     **/
+     * <p>Typically, you'd only enter a single asterisk during development. For production, you
+     * would add an allowlist of domains.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("allowedDomains")
     private final String allowedDomains;
 
     /**
      * A comma-delimited whitelist of allowed domains.
      *
-     * The channel will only communicate with the sites from the domains that you add to this list.
-     * For example, *.corp.example.com, *.hdr.example.com. Entering a single asterisk (*) allows unrestricted access
-     * to the channel from any domain.
+     * <p>The channel will only communicate with the sites from the domains that you add to this
+     * list. For example, *.corp.example.com, *.hdr.example.com. Entering a single asterisk (*)
+     * allows unrestricted access to the channel from any domain.
      *
-     * Typically, you'd only enter a single asterisk during development. For production, you would add an allowlist of domains.
+     * <p>Typically, you'd only enter a single asterisk during development. For production, you
+     * would add an allowlist of domains.
      *
      * @return the value
-     **/
+     */
     public String getAllowedDomains() {
         return allowedDomains;
     }
 
-    /**
-     * The ID of the Skill or Digital Assistant that the Channel is routed to.
-     **/
+    /** The ID of the Skill or Digital Assistant that the Channel is routed to. */
     @com.fasterxml.jackson.annotation.JsonProperty("botId")
     private final String botId;
 
     /**
      * The ID of the Skill or Digital Assistant that the Channel is routed to.
+     *
      * @return the value
-     **/
+     */
     public String getBotId() {
         return botId;
     }
@@ -437,6 +428,7 @@ public final class CreateWebChannelResult extends CreateChannelResult {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -444,7 +436,7 @@ public final class CreateWebChannelResult extends CreateChannelResult {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateWebChannelResult(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append(", secretKey=").append(String.valueOf(this.secretKey));
+        sb.append(", secretKey=").append("<redacted>");
         sb.append(", maxTokenExpirationTimeInMinutes=")
                 .append(String.valueOf(this.maxTokenExpirationTimeInMinutes));
         sb.append(", isClientAuthenticationEnabled=")

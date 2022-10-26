@@ -5,19 +5,20 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * StatusSummary
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * StatusSummary <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = StatusSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class StatusSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class StatusSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "chunksProcessed",
@@ -42,81 +43,76 @@ public final class StatusSummary extends com.oracle.bmc.http.internal.Explicitly
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The number of chunks processed.
-         **/
+        /** The number of chunks processed. */
         @com.fasterxml.jackson.annotation.JsonProperty("chunksProcessed")
         private Long chunksProcessed;
 
         /**
          * The number of chunks processed.
+         *
          * @param chunksProcessed the value to set
          * @return this builder
-         **/
+         */
         public Builder chunksProcessed(Long chunksProcessed) {
             this.chunksProcessed = chunksProcessed;
             this.__explicitlySet__.add("chunksProcessed");
             return this;
         }
-        /**
-         * The failure details, if any.
-         **/
+        /** The failure details, if any. */
         @com.fasterxml.jackson.annotation.JsonProperty("failureDetails")
         private String failureDetails;
 
         /**
          * The failure details, if any.
+         *
          * @param failureDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder failureDetails(String failureDetails) {
             this.failureDetails = failureDetails;
             this.__explicitlySet__.add("failureDetails");
             return this;
         }
-        /**
-         * The filename.
-         **/
+        /** The filename. */
         @com.fasterxml.jackson.annotation.JsonProperty("filename")
         private String filename;
 
         /**
          * The filename.
+         *
          * @param filename the value to set
          * @return this builder
-         **/
+         */
         public Builder filename(String filename) {
             this.filename = filename;
             this.__explicitlySet__.add("filename");
             return this;
         }
-        /**
-         * The status.
-         **/
+        /** The status. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
         /**
          * The status.
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * The total number of chunks.
-         **/
+        /** The total number of chunks. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalChunks")
         private Long totalChunks;
 
         /**
          * The total number of chunks.
+         *
          * @param totalChunks the value to set
          * @return this builder
-         **/
+         */
         public Builder totalChunks(Long totalChunks) {
             this.totalChunks = totalChunks;
             this.__explicitlySet__.add("totalChunks");
@@ -161,9 +157,7 @@ public final class StatusSummary extends com.oracle.bmc.http.internal.Explicitly
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -172,72 +166,67 @@ public final class StatusSummary extends com.oracle.bmc.http.internal.Explicitly
         return new Builder().copy(this);
     }
 
-    /**
-     * The number of chunks processed.
-     **/
+    /** The number of chunks processed. */
     @com.fasterxml.jackson.annotation.JsonProperty("chunksProcessed")
     private final Long chunksProcessed;
 
     /**
      * The number of chunks processed.
+     *
      * @return the value
-     **/
+     */
     public Long getChunksProcessed() {
         return chunksProcessed;
     }
 
-    /**
-     * The failure details, if any.
-     **/
+    /** The failure details, if any. */
     @com.fasterxml.jackson.annotation.JsonProperty("failureDetails")
     private final String failureDetails;
 
     /**
      * The failure details, if any.
+     *
      * @return the value
-     **/
+     */
     public String getFailureDetails() {
         return failureDetails;
     }
 
-    /**
-     * The filename.
-     **/
+    /** The filename. */
     @com.fasterxml.jackson.annotation.JsonProperty("filename")
     private final String filename;
 
     /**
      * The filename.
+     *
      * @return the value
-     **/
+     */
     public String getFilename() {
         return filename;
     }
 
-    /**
-     * The status.
-     **/
+    /** The status. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
     /**
      * The status.
+     *
      * @return the value
-     **/
+     */
     public String getStatus() {
         return status;
     }
 
-    /**
-     * The total number of chunks.
-     **/
+    /** The total number of chunks. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalChunks")
     private final Long totalChunks;
 
     /**
      * The total number of chunks.
+     *
      * @return the value
-     **/
+     */
     public Long getTotalChunks() {
         return totalChunks;
     }
@@ -249,6 +238,7 @@ public final class StatusSummary extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

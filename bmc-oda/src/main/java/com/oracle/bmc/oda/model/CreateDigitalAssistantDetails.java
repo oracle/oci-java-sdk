@@ -5,43 +5,39 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * Properties that are required to create a Digital Assistant.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Properties that are required to create a Digital Assistant. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "kind",
-    defaultImpl = CreateDigitalAssistantDetails.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "kind",
+        defaultImpl = CreateDigitalAssistantDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateDigitalAssistantVersionDetails.class,
-        name = "VERSION"
-    ),
+            value = CreateDigitalAssistantVersionDetails.class,
+            name = "VERSION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CloneDigitalAssistantDetails.class,
-        name = "CLONE"
-    ),
+            value = CloneDigitalAssistantDetails.class,
+            name = "CLONE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateNewDigitalAssistantDetails.class,
-        name = "NEW"
-    ),
+            value = CreateNewDigitalAssistantDetails.class,
+            name = "NEW"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ExtendDigitalAssistantDetails.class,
-        name = "EXTEND"
-    )
+            value = ExtendDigitalAssistantDetails.class,
+            name = "EXTEND")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public class CreateDigitalAssistantDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "category",
@@ -70,108 +66,101 @@ public class CreateDigitalAssistantDetails
         this.definedTags = definedTags;
     }
 
-    /**
-     * The resource's category.  This is used to group resource's together.
-     **/
+    /** The resource's category. This is used to group resource's together. */
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
     /**
-     * The resource's category.  This is used to group resource's together.
+     * The resource's category. This is used to group resource's together.
+     *
      * @return the value
-     **/
+     */
     public String getCategory() {
         return category;
     }
 
-    /**
-     * A short description of the resource.
-     **/
+    /** A short description of the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A short description of the resource.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The ODA Platform Version for this resource.
-     **/
+    /** The ODA Platform Version for this resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("platformVersion")
     private final String platformVersion;
 
     /**
      * The ODA Platform Version for this resource.
+     *
      * @return the value
-     **/
+     */
     public String getPlatformVersion() {
         return platformVersion;
     }
 
-    /**
-     * The multilingual mode for the resource.
-     **/
+    /** The multilingual mode for the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("multilingualMode")
     private final BotMultilingualMode multilingualMode;
 
     /**
      * The multilingual mode for the resource.
+     *
      * @return the value
-     **/
+     */
     public BotMultilingualMode getMultilingualMode() {
         return multilingualMode;
     }
 
-    /**
-     * The primary language for the resource.
-     **/
+    /** The primary language for the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("primaryLanguageTag")
     private final String primaryLanguageTag;
 
     /**
      * The primary language for the resource.
+     *
      * @return the value
-     **/
+     */
     public String getPrimaryLanguageTag() {
         return primaryLanguageTag;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Example:
+     * {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Example:
+     * {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -183,6 +172,7 @@ public class CreateDigitalAssistantDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

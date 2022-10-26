@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Representation of disk performance detail parameters.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Representation of disk performance detail parameters. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DiskPerformanceDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DiskPerformanceDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DiskPerformanceDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"diskIops", "diskThroughputInMbps"})
     public DiskPerformanceDetails(Float diskIops, Float diskThroughputInMbps) {
@@ -32,33 +31,31 @@ public final class DiskPerformanceDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Disk IOPS in thousands.
-         **/
+        /** Disk IOPS in thousands. */
         @com.fasterxml.jackson.annotation.JsonProperty("diskIops")
         private Float diskIops;
 
         /**
          * Disk IOPS in thousands.
+         *
          * @param diskIops the value to set
          * @return this builder
-         **/
+         */
         public Builder diskIops(Float diskIops) {
             this.diskIops = diskIops;
             this.__explicitlySet__.add("diskIops");
             return this;
         }
-        /**
-         * Disk Throughput in Mbps.
-         **/
+        /** Disk Throughput in Mbps. */
         @com.fasterxml.jackson.annotation.JsonProperty("diskThroughputInMbps")
         private Float diskThroughputInMbps;
 
         /**
          * Disk Throughput in Mbps.
+         *
          * @param diskThroughputInMbps the value to set
          * @return this builder
-         **/
+         */
         public Builder diskThroughputInMbps(Float diskThroughputInMbps) {
             this.diskThroughputInMbps = diskThroughputInMbps;
             this.__explicitlySet__.add("diskThroughputInMbps");
@@ -89,9 +86,7 @@ public final class DiskPerformanceDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,30 +95,28 @@ public final class DiskPerformanceDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * Disk IOPS in thousands.
-     **/
+    /** Disk IOPS in thousands. */
     @com.fasterxml.jackson.annotation.JsonProperty("diskIops")
     private final Float diskIops;
 
     /**
      * Disk IOPS in thousands.
+     *
      * @return the value
-     **/
+     */
     public Float getDiskIops() {
         return diskIops;
     }
 
-    /**
-     * Disk Throughput in Mbps.
-     **/
+    /** Disk Throughput in Mbps. */
     @com.fasterxml.jackson.annotation.JsonProperty("diskThroughputInMbps")
     private final Float diskThroughputInMbps;
 
     /**
      * Disk Throughput in Mbps.
+     *
      * @return the value
-     **/
+     */
     public Float getDiskThroughputInMbps() {
         return diskThroughputInMbps;
     }
@@ -135,6 +128,7 @@ public final class DiskPerformanceDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

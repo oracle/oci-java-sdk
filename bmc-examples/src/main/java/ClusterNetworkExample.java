@@ -33,13 +33,10 @@ import java.util.Arrays;
 import java.util.Collections;
 
 /**
- * This class provides an example of how you can create an InstanceConfiguration and use it to create a Cluster Network.
- * It will:
- *  - Create the InstanceConfiguration
- *  - Create a Cluster Network based on that configuration.
- *  - Wait for the Cluster Network to go to Running state.
- *  - List instances of the Cluster Network
- *  - Clean everything up.
+ * This class provides an example of how you can create an InstanceConfiguration and use it to
+ * create a Cluster Network. It will: - Create the InstanceConfiguration - Create a Cluster Network
+ * based on that configuration. - Wait for the Cluster Network to go to Running state. - List
+ * instances of the Cluster Network - Clean everything up.
  */
 public class ClusterNetworkExample {
 
@@ -121,12 +118,13 @@ public class ClusterNetworkExample {
 
     /**
      * @param args Parameters to use for the cluster networks sample as follows:
-     * <ul>
-     *   <li>The first argument is the ocid of the compartment for the cluster network.</li>
-     *   <li>The second is the availability domain to launch instance in.</li>
-     *   <li>Third parameter is the subnet for the launched instances.</li>
-     *   <li>The fourth parameter is the ocid for the image source for the instance.</li>
-     * </ul>
+     *     <ul>
+     *       <li>The first argument is the ocid of the compartment for the cluster network.
+     *       <li>The second is the availability domain to launch instance in.
+     *       <li>Third parameter is the subnet for the launched instances.
+     *       <li>The fourth parameter is the ocid for the image source for the instance.
+     *     </ul>
+     *
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
@@ -144,8 +142,10 @@ public class ClusterNetworkExample {
         final String subnetId = args[2];
         final String imageId = args[3];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -162,7 +162,8 @@ public class ClusterNetworkExample {
                 createClusterNetwork(
                         client, instanceConfiguration, subnetId, availabilityDomain, compartmentId);
 
-        // Wait for the CN to scale out and enter a running state.  (This will leave one instance running)
+        // Wait for the CN to scale out and enter a running state.  (This will leave one instance
+        // running)
         ComputeManagementWaiters waiter = client.getWaiters();
         GetClusterNetworkRequest getClusterNetworkRequest =
                 GetClusterNetworkRequest.builder().clusterNetworkId(clusterNetwork.getId()).build();

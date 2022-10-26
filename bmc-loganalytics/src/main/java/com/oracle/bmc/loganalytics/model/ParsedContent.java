@@ -5,19 +5,20 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Parsed representation of the log file.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Parsed representation of the log file. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ParsedContent.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ParsedContent extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ParsedContent extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "fieldNames",
@@ -45,97 +46,91 @@ public final class ParsedContent extends com.oracle.bmc.http.internal.Explicitly
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * List of field names.
-         **/
+        /** List of field names. */
         @com.fasterxml.jackson.annotation.JsonProperty("fieldNames")
         private java.util.List<String> fieldNames;
 
         /**
          * List of field names.
+         *
          * @param fieldNames the value to set
          * @return this builder
-         **/
+         */
         public Builder fieldNames(java.util.List<String> fieldNames) {
             this.fieldNames = fieldNames;
             this.__explicitlySet__.add("fieldNames");
             return this;
         }
-        /**
-         * List of field display names.
-         **/
+        /** List of field display names. */
         @com.fasterxml.jackson.annotation.JsonProperty("fieldDisplayNames")
         private java.util.List<String> fieldDisplayNames;
 
         /**
          * List of field display names.
+         *
          * @param fieldDisplayNames the value to set
          * @return this builder
-         **/
+         */
         public Builder fieldDisplayNames(java.util.List<String> fieldDisplayNames) {
             this.fieldDisplayNames = fieldDisplayNames;
             this.__explicitlySet__.add("fieldDisplayNames");
             return this;
         }
-        /**
-         * Parsed field values.
-         **/
+        /** Parsed field values. */
         @com.fasterxml.jackson.annotation.JsonProperty("parsedFieldValues")
         private java.util.List<ParsedField> parsedFieldValues;
 
         /**
          * Parsed field values.
+         *
          * @param parsedFieldValues the value to set
          * @return this builder
-         **/
+         */
         public Builder parsedFieldValues(java.util.List<ParsedField> parsedFieldValues) {
             this.parsedFieldValues = parsedFieldValues;
             this.__explicitlySet__.add("parsedFieldValues");
             return this;
         }
-        /**
-         * Sample log entries picked up from the given file for validation.
-         **/
+        /** Sample log entries picked up from the given file for validation. */
         @com.fasterxml.jackson.annotation.JsonProperty("logContent")
         private String logContent;
 
         /**
          * Sample log entries picked up from the given file for validation.
+         *
          * @param logContent the value to set
          * @return this builder
-         **/
+         */
         public Builder logContent(String logContent) {
             this.logContent = logContent;
             this.__explicitlySet__.add("logContent");
             return this;
         }
-        /**
-         * Sample Size taken for validation.
-         **/
+        /** Sample Size taken for validation. */
         @com.fasterxml.jackson.annotation.JsonProperty("sampleSize")
         private Integer sampleSize;
 
         /**
          * Sample Size taken for validation.
+         *
          * @param sampleSize the value to set
          * @return this builder
-         **/
+         */
         public Builder sampleSize(Integer sampleSize) {
             this.sampleSize = sampleSize;
             this.__explicitlySet__.add("sampleSize");
             return this;
         }
-        /**
-         * Match Status.
-         **/
+        /** Match Status. */
         @com.fasterxml.jackson.annotation.JsonProperty("matchStatus")
         private String matchStatus;
 
         /**
          * Match Status.
+         *
          * @param matchStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder matchStatus(String matchStatus) {
             this.matchStatus = matchStatus;
             this.__explicitlySet__.add("matchStatus");
@@ -184,9 +179,7 @@ public final class ParsedContent extends com.oracle.bmc.http.internal.Explicitly
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -195,86 +188,80 @@ public final class ParsedContent extends com.oracle.bmc.http.internal.Explicitly
         return new Builder().copy(this);
     }
 
-    /**
-     * List of field names.
-     **/
+    /** List of field names. */
     @com.fasterxml.jackson.annotation.JsonProperty("fieldNames")
     private final java.util.List<String> fieldNames;
 
     /**
      * List of field names.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getFieldNames() {
         return fieldNames;
     }
 
-    /**
-     * List of field display names.
-     **/
+    /** List of field display names. */
     @com.fasterxml.jackson.annotation.JsonProperty("fieldDisplayNames")
     private final java.util.List<String> fieldDisplayNames;
 
     /**
      * List of field display names.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getFieldDisplayNames() {
         return fieldDisplayNames;
     }
 
-    /**
-     * Parsed field values.
-     **/
+    /** Parsed field values. */
     @com.fasterxml.jackson.annotation.JsonProperty("parsedFieldValues")
     private final java.util.List<ParsedField> parsedFieldValues;
 
     /**
      * Parsed field values.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<ParsedField> getParsedFieldValues() {
         return parsedFieldValues;
     }
 
-    /**
-     * Sample log entries picked up from the given file for validation.
-     **/
+    /** Sample log entries picked up from the given file for validation. */
     @com.fasterxml.jackson.annotation.JsonProperty("logContent")
     private final String logContent;
 
     /**
      * Sample log entries picked up from the given file for validation.
+     *
      * @return the value
-     **/
+     */
     public String getLogContent() {
         return logContent;
     }
 
-    /**
-     * Sample Size taken for validation.
-     **/
+    /** Sample Size taken for validation. */
     @com.fasterxml.jackson.annotation.JsonProperty("sampleSize")
     private final Integer sampleSize;
 
     /**
      * Sample Size taken for validation.
+     *
      * @return the value
-     **/
+     */
     public Integer getSampleSize() {
         return sampleSize;
     }
 
-    /**
-     * Match Status.
-     **/
+    /** Match Status. */
     @com.fasterxml.jackson.annotation.JsonProperty("matchStatus")
     private final String matchStatus;
 
     /**
      * Match Status.
+     *
      * @return the value
-     **/
+     */
     public String getMatchStatus() {
         return matchStatus;
     }
@@ -286,6 +273,7 @@ public final class ParsedContent extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

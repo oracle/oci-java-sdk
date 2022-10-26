@@ -9,15 +9,14 @@ import com.oracle.bmc.apmtraces.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class GetTraceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,13 +24,12 @@ public class GetTraceResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /**
-     * The returned Trace instance.
-     */
+    /** The returned Trace instance. */
     private com.oracle.bmc.apmtraces.model.Trace trace;
 
     /**
      * The returned Trace instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.apmtraces.model.Trace getTrace() {
@@ -41,7 +39,7 @@ public class GetTraceResponse extends com.oracle.bmc.responses.BmcResponse {
     @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId", "trace"})
     private GetTraceResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.apmtraces.model.Trace trace) {
         super(__httpStatusCode__, headers);
@@ -49,31 +47,33 @@ public class GetTraceResponse extends com.oracle.bmc.responses.BmcResponse {
         this.trace = trace;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetTraceResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -83,13 +83,12 @@ public class GetTraceResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * The returned Trace instance.
-         */
+        /** The returned Trace instance. */
         private com.oracle.bmc.apmtraces.model.Trace trace;
 
         /**
          * The returned Trace instance.
+         *
          * @param trace the value to set
          * @return this builder
          */
@@ -100,8 +99,10 @@ public class GetTraceResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetTraceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -113,8 +114,10 @@ public class GetTraceResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetTraceResponse build() {
             return new GetTraceResponse(__httpStatusCode__, headers, opcRequestId, trace);
         }
@@ -122,6 +125,7 @@ public class GetTraceResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

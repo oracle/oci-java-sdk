@@ -7,22 +7,17 @@ package com.oracle.bmc.http.signing;
 import com.oracle.bmc.ClientRuntime;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
+import com.oracle.bmc.http.client.HttpRequest;
 import com.oracle.bmc.http.internal.AuthnClientFilter;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import javax.annotation.Priority;
-import javax.ws.rs.Priorities;
-import javax.ws.rs.client.ClientRequestContext;
-import javax.ws.rs.core.HttpHeaders;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Filter that adds authentication and User-Agent headers to a request.
- */
-@Priority(Priorities.AUTHENTICATION)
+/** Filter that adds authentication and User-Agent headers to a request. */
 public class RequestSigningFilter extends AuthnClientFilter {
 
     /**
@@ -89,28 +84,11 @@ public class RequestSigningFilter extends AuthnClientFilter {
                 new ConfigFileAuthenticationDetailsProvider(configurationFilePath, profile));
     }
 
-    /**
-     * Filter method called before a request has been dispatched to a client
-     * transport layer.
-     * <p>
-     * Filters in the filter chain are ordered according to their {@code javax.annotation.Priority}
-     * class-level annotation value.
-     *
-     * @param requestContext request context.
-     * @throws IOException if an I/O exception occurs.
-     */
     @Override
-    public void filter(@Nonnull ClientRequestContext requestContext) throws IOException {
-        if (requestContext == null) {
-            throw new java.lang.NullPointerException(
-                    "requestContext is marked non-null but is null");
-        }
-        super.filter(requestContext);
+    public void intercept(HttpRequest request) {
+        super.intercept(request);
 
-        requestContext
-                .getHeaders()
-                .putSingle(
-                        HttpHeaders.USER_AGENT,
-                        ClientRuntime.getRuntime().getUserAgent() + " RequestSigningFilter");
+        request.header(
+                "User-Agent", ClientRuntime.getRuntime().getUserAgent() + " RequestSigningFilter");
     }
 }

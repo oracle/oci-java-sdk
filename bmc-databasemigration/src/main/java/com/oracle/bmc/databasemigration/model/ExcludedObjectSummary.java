@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Excluded object summary line.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Excluded object summary line. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ExcludedObjectSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ExcludedObjectSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ExcludedObjectSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"owner", "object", "type", "reasonCategory", "sourceRule"})
     public ExcludedObjectSummary(
@@ -40,10 +39,7 @@ public final class ExcludedObjectSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Database object owner.
-         *
-         **/
+        /** Database object owner. */
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private String owner;
 
@@ -52,16 +48,13 @@ public final class ExcludedObjectSummary
          *
          * @param owner the value to set
          * @return this builder
-         **/
+         */
         public Builder owner(String owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
             return this;
         }
-        /**
-         * Database object name.
-         *
-         **/
+        /** Database object name. */
         @com.fasterxml.jackson.annotation.JsonProperty("object")
         private String object;
 
@@ -70,16 +63,13 @@ public final class ExcludedObjectSummary
          *
          * @param object the value to set
          * @return this builder
-         **/
+         */
         public Builder object(String object) {
             this.object = object;
             this.__explicitlySet__.add("object");
             return this;
         }
-        /**
-         * Database object type.
-         *
-         **/
+        /** Database object type. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
@@ -88,16 +78,13 @@ public final class ExcludedObjectSummary
          *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * Reason category for object exclusion.
-         *
-         **/
+        /** Reason category for object exclusion. */
         @com.fasterxml.jackson.annotation.JsonProperty("reasonCategory")
         private ReasonKeywords reasonCategory;
 
@@ -106,16 +93,13 @@ public final class ExcludedObjectSummary
          *
          * @param reasonCategory the value to set
          * @return this builder
-         **/
+         */
         public Builder reasonCategory(ReasonKeywords reasonCategory) {
             this.reasonCategory = reasonCategory;
             this.__explicitlySet__.add("reasonCategory");
             return this;
         }
-        /**
-         * Reason for exclusion.
-         *
-         **/
+        /** Reason for exclusion. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceRule")
         private String sourceRule;
 
@@ -124,7 +108,7 @@ public final class ExcludedObjectSummary
          *
          * @param sourceRule the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceRule(String sourceRule) {
             this.sourceRule = sourceRule;
             this.__explicitlySet__.add("sourceRule");
@@ -169,9 +153,7 @@ public final class ExcludedObjectSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -180,10 +162,7 @@ public final class ExcludedObjectSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * Database object owner.
-     *
-     **/
+    /** Database object owner. */
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final String owner;
 
@@ -191,15 +170,12 @@ public final class ExcludedObjectSummary
      * Database object owner.
      *
      * @return the value
-     **/
+     */
     public String getOwner() {
         return owner;
     }
 
-    /**
-     * Database object name.
-     *
-     **/
+    /** Database object name. */
     @com.fasterxml.jackson.annotation.JsonProperty("object")
     private final String object;
 
@@ -207,15 +183,12 @@ public final class ExcludedObjectSummary
      * Database object name.
      *
      * @return the value
-     **/
+     */
     public String getObject() {
         return object;
     }
 
-    /**
-     * Database object type.
-     *
-     **/
+    /** Database object type. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
@@ -223,15 +196,12 @@ public final class ExcludedObjectSummary
      * Database object type.
      *
      * @return the value
-     **/
+     */
     public String getType() {
         return type;
     }
 
-    /**
-     * Reason category for object exclusion.
-     *
-     **/
+    /** Reason category for object exclusion. */
     @com.fasterxml.jackson.annotation.JsonProperty("reasonCategory")
     private final ReasonKeywords reasonCategory;
 
@@ -239,15 +209,12 @@ public final class ExcludedObjectSummary
      * Reason category for object exclusion.
      *
      * @return the value
-     **/
+     */
     public ReasonKeywords getReasonCategory() {
         return reasonCategory;
     }
 
-    /**
-     * Reason for exclusion.
-     *
-     **/
+    /** Reason for exclusion. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceRule")
     private final String sourceRule;
 
@@ -255,7 +222,7 @@ public final class ExcludedObjectSummary
      * Reason for exclusion.
      *
      * @return the value
-     **/
+     */
     public String getSourceRule() {
         return sourceRule;
     }
@@ -267,6 +234,7 @@ public final class ExcludedObjectSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

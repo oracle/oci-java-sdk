@@ -5,49 +5,44 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * The standalone job infrastructure configuration.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The standalone job infrastructure configuration. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = StandaloneJobInfrastructureConfigurationDetails.Builder.class
-)
+        builder = StandaloneJobInfrastructureConfigurationDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "jobInfrastructureType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "jobInfrastructureType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class StandaloneJobInfrastructureConfigurationDetails
         extends JobInfrastructureConfigurationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The shape used to launch the job run instances.
-         **/
+        /** The shape used to launch the job run instances. */
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
         /**
          * The shape used to launch the job run instances.
+         *
          * @param shapeName the value to set
          * @return this builder
-         **/
+         */
         public Builder shapeName(String shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
             return this;
         }
-        /**
-         * The subnet to create a secondary vnic in to attach to the instance running the job
-         *
-         **/
+        /** The subnet to create a secondary vnic in to attach to the instance running the job */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
@@ -56,16 +51,13 @@ public final class StandaloneJobInfrastructureConfigurationDetails
          *
          * @param subnetId the value to set
          * @return this builder
-         **/
+         */
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /**
-         * The size of the block storage volume to attach to the instance running the job
-         *
-         **/
+        /** The size of the block storage volume to attach to the instance running the job */
         @com.fasterxml.jackson.annotation.JsonProperty("blockStorageSizeInGBs")
         private Integer blockStorageSizeInGBs;
 
@@ -74,7 +66,7 @@ public final class StandaloneJobInfrastructureConfigurationDetails
          *
          * @param blockStorageSizeInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder blockStorageSizeInGBs(Integer blockStorageSizeInGBs) {
             this.blockStorageSizeInGBs = blockStorageSizeInGBs;
             this.__explicitlySet__.add("blockStorageSizeInGBs");
@@ -124,9 +116,7 @@ public final class StandaloneJobInfrastructureConfigurationDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -148,24 +138,20 @@ public final class StandaloneJobInfrastructureConfigurationDetails
         this.jobShapeConfigDetails = jobShapeConfigDetails;
     }
 
-    /**
-     * The shape used to launch the job run instances.
-     **/
+    /** The shape used to launch the job run instances. */
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final String shapeName;
 
     /**
      * The shape used to launch the job run instances.
+     *
      * @return the value
-     **/
+     */
     public String getShapeName() {
         return shapeName;
     }
 
-    /**
-     * The subnet to create a secondary vnic in to attach to the instance running the job
-     *
-     **/
+    /** The subnet to create a secondary vnic in to attach to the instance running the job */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
@@ -173,15 +159,12 @@ public final class StandaloneJobInfrastructureConfigurationDetails
      * The subnet to create a secondary vnic in to attach to the instance running the job
      *
      * @return the value
-     **/
+     */
     public String getSubnetId() {
         return subnetId;
     }
 
-    /**
-     * The size of the block storage volume to attach to the instance running the job
-     *
-     **/
+    /** The size of the block storage volume to attach to the instance running the job */
     @com.fasterxml.jackson.annotation.JsonProperty("blockStorageSizeInGBs")
     private final Integer blockStorageSizeInGBs;
 
@@ -189,7 +172,7 @@ public final class StandaloneJobInfrastructureConfigurationDetails
      * The size of the block storage volume to attach to the instance running the job
      *
      * @return the value
-     **/
+     */
     public Integer getBlockStorageSizeInGBs() {
         return blockStorageSizeInGBs;
     }
@@ -208,6 +191,7 @@ public final class StandaloneJobInfrastructureConfigurationDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

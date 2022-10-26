@@ -6,98 +6,75 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListDiscoveryJobResultsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDiscoveryJobResultsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListDiscoveryJobResultsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ListDiscoveryJobResultsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListDiscoveryJobResultsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The OCID of the discovery job.
-     */
+    /** The OCID of the discovery job. */
     private String discoveryJobId;
 
-    /**
-     * The OCID of the discovery job.
-     */
+    /** The OCID of the discovery job. */
     public String getDiscoveryJobId() {
         return discoveryJobId;
     }
-    /**
-     * A filter to return only the resources that match the specified discovery type.
-     */
+    /** A filter to return only the resources that match the specified discovery type. */
     private com.oracle.bmc.datasafe.model.DiscoveryJob.DiscoveryType discoveryType;
 
-    /**
-     * A filter to return only the resources that match the specified discovery type.
-     */
+    /** A filter to return only the resources that match the specified discovery type. */
     public com.oracle.bmc.datasafe.model.DiscoveryJob.DiscoveryType getDiscoveryType() {
         return discoveryType;
     }
-    /**
-     * A filter to return only the resources that match the specified planned action.
-     */
+    /** A filter to return only the resources that match the specified planned action. */
     private com.oracle.bmc.datasafe.model.DiscoveryJobResult.PlannedAction plannedAction;
 
-    /**
-     * A filter to return only the resources that match the specified planned action.
-     */
+    /** A filter to return only the resources that match the specified planned action. */
     public com.oracle.bmc.datasafe.model.DiscoveryJobResult.PlannedAction getPlannedAction() {
         return plannedAction;
     }
     /**
-     * A filter to return the discovery result resources based on the value of their isResultApplied attribute.
+     * A filter to return the discovery result resources based on the value of their isResultApplied
+     * attribute.
      */
     private Boolean isResultApplied;
 
     /**
-     * A filter to return the discovery result resources based on the value of their isResultApplied attribute.
+     * A filter to return the discovery result resources based on the value of their isResultApplied
+     * attribute.
      */
     public Boolean getIsResultApplied() {
         return isResultApplied;
     }
-    /**
-     * A filter to return only items related to specific schema name.
-     */
+    /** A filter to return only items related to specific schema name. */
     private java.util.List<String> schemaName;
 
-    /**
-     * A filter to return only items related to specific schema name.
-     */
+    /** A filter to return only items related to specific schema name. */
     public java.util.List<String> getSchemaName() {
         return schemaName;
     }
-    /**
-     * A filter to return only items related to a specific object name.
-     */
+    /** A filter to return only items related to a specific object name. */
     private java.util.List<String> objectName;
 
-    /**
-     * A filter to return only items related to a specific object name.
-     */
+    /** A filter to return only items related to a specific object name. */
     public java.util.List<String> getObjectName() {
         return objectName;
     }
-    /**
-     * A filter to return only a specific column based on column name.
-     */
+    /** A filter to return only a specific column based on column name. */
     private java.util.List<String> columnName;
 
-    /**
-     * A filter to return only a specific column based on column name.
-     */
+    /** A filter to return only a specific column based on column name. */
     public java.util.List<String> getColumnName() {
         return columnName;
     }
-    /**
-     * The sort order to use, either ascending (ASC) or descending (DESC).
-     */
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
     private SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either ascending (ASC) or descending (DESC).
-     **/
-    public enum SortOrder {
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -130,25 +107,23 @@ public class ListDiscoveryJobResultsRequest
         }
     };
 
-    /**
-     * The sort order to use, either ascending (ASC) or descending (DESC).
-     */
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeFinished is descending.
-     * The default order for discoveryType, schemaName, objectName, columnName and plannedAction is ascending.
-     *
+     * The field to sort by. You can specify only one sort order (sortOrder). The default order for
+     * timeFinished is descending. The default order for discoveryType, schemaName, objectName,
+     * columnName and plannedAction is ascending.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeFinished is descending.
-     * The default order for discoveryType, schemaName, objectName, columnName and plannedAction is ascending.
-     *
-     **/
-    public enum SortBy {
+     * The field to sort by. You can specify only one sort order (sortOrder). The default order for
+     * timeFinished is descending. The default order for discoveryType, schemaName, objectName,
+     * columnName and plannedAction is ascending.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         DiscoveryType("discoveryType"),
         TimeFinished("timeFinished"),
         SchemaName("schemaName"),
@@ -186,42 +161,48 @@ public class ListDiscoveryJobResultsRequest
     };
 
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeFinished is descending.
-     * The default order for discoveryType, schemaName, objectName, columnName and plannedAction is ascending.
-     *
+     * The field to sort by. You can specify only one sort order (sortOrder). The default order for
+     * timeFinished is descending. The default order for discoveryType, schemaName, objectName,
+     * columnName and plannedAction is ascending.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     private String opcRequestId;
 
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List"
+     * call. For details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List"
+     * call. For details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving
+     * results. It is usually retrieved from a previous "List" call. For details about how
+     * pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving
+     * results. It is usually retrieved from a previous "List" call. For details about how
+     * pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -230,17 +211,15 @@ public class ListDiscoveryJobResultsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDiscoveryJobResultsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the discovery job.
-         */
+        /** The OCID of the discovery job. */
         private String discoveryJobId = null;
 
         /**
          * The OCID of the discovery job.
+         *
          * @param discoveryJobId the value to set
          * @return this builder instance
          */
@@ -249,13 +228,12 @@ public class ListDiscoveryJobResultsRequest
             return this;
         }
 
-        /**
-         * A filter to return only the resources that match the specified discovery type.
-         */
+        /** A filter to return only the resources that match the specified discovery type. */
         private com.oracle.bmc.datasafe.model.DiscoveryJob.DiscoveryType discoveryType = null;
 
         /**
          * A filter to return only the resources that match the specified discovery type.
+         *
          * @param discoveryType the value to set
          * @return this builder instance
          */
@@ -265,13 +243,12 @@ public class ListDiscoveryJobResultsRequest
             return this;
         }
 
-        /**
-         * A filter to return only the resources that match the specified planned action.
-         */
+        /** A filter to return only the resources that match the specified planned action. */
         private com.oracle.bmc.datasafe.model.DiscoveryJobResult.PlannedAction plannedAction = null;
 
         /**
          * A filter to return only the resources that match the specified planned action.
+         *
          * @param plannedAction the value to set
          * @return this builder instance
          */
@@ -282,12 +259,15 @@ public class ListDiscoveryJobResultsRequest
         }
 
         /**
-         * A filter to return the discovery result resources based on the value of their isResultApplied attribute.
+         * A filter to return the discovery result resources based on the value of their
+         * isResultApplied attribute.
          */
         private Boolean isResultApplied = null;
 
         /**
-         * A filter to return the discovery result resources based on the value of their isResultApplied attribute.
+         * A filter to return the discovery result resources based on the value of their
+         * isResultApplied attribute.
+         *
          * @param isResultApplied the value to set
          * @return this builder instance
          */
@@ -296,13 +276,12 @@ public class ListDiscoveryJobResultsRequest
             return this;
         }
 
-        /**
-         * A filter to return only items related to specific schema name.
-         */
+        /** A filter to return only items related to specific schema name. */
         private java.util.List<String> schemaName = null;
 
         /**
          * A filter to return only items related to specific schema name.
+         *
          * @param schemaName the value to set
          * @return this builder instance
          */
@@ -313,6 +292,7 @@ public class ListDiscoveryJobResultsRequest
 
         /**
          * Singular setter. A filter to return only items related to specific schema name.
+         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -320,13 +300,12 @@ public class ListDiscoveryJobResultsRequest
             return this.schemaName(java.util.Arrays.asList(singularValue));
         }
 
-        /**
-         * A filter to return only items related to a specific object name.
-         */
+        /** A filter to return only items related to a specific object name. */
         private java.util.List<String> objectName = null;
 
         /**
          * A filter to return only items related to a specific object name.
+         *
          * @param objectName the value to set
          * @return this builder instance
          */
@@ -337,6 +316,7 @@ public class ListDiscoveryJobResultsRequest
 
         /**
          * Singular setter. A filter to return only items related to a specific object name.
+         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -344,13 +324,12 @@ public class ListDiscoveryJobResultsRequest
             return this.objectName(java.util.Arrays.asList(singularValue));
         }
 
-        /**
-         * A filter to return only a specific column based on column name.
-         */
+        /** A filter to return only a specific column based on column name. */
         private java.util.List<String> columnName = null;
 
         /**
          * A filter to return only a specific column based on column name.
+         *
          * @param columnName the value to set
          * @return this builder instance
          */
@@ -361,6 +340,7 @@ public class ListDiscoveryJobResultsRequest
 
         /**
          * Singular setter. A filter to return only a specific column based on column name.
+         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -368,13 +348,12 @@ public class ListDiscoveryJobResultsRequest
             return this.columnName(java.util.Arrays.asList(singularValue));
         }
 
-        /**
-         * The sort order to use, either ascending (ASC) or descending (DESC).
-         */
+        /** The sort order to use, either ascending (ASC) or descending (DESC). */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -384,15 +363,16 @@ public class ListDiscoveryJobResultsRequest
         }
 
         /**
-         * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeFinished is descending.
-         * The default order for discoveryType, schemaName, objectName, columnName and plannedAction is ascending.
-         *
+         * The field to sort by. You can specify only one sort order (sortOrder). The default order
+         * for timeFinished is descending. The default order for discoveryType, schemaName,
+         * objectName, columnName and plannedAction is ascending.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeFinished is descending.
-         * The default order for discoveryType, schemaName, objectName, columnName and plannedAction is ascending.
+         * The field to sort by. You can specify only one sort order (sortOrder). The default order
+         * for timeFinished is descending. The default order for discoveryType, schemaName,
+         * objectName, columnName and plannedAction is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -402,13 +382,12 @@ public class ListDiscoveryJobResultsRequest
             return this;
         }
 
-        /**
-         * Unique identifier for the request.
-         */
+        /** Unique identifier for the request. */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -418,12 +397,17 @@ public class ListDiscoveryJobResultsRequest
         }
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List"
+         * call. For details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List"
+         * call. For details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -433,12 +417,19 @@ public class ListDiscoveryJobResultsRequest
         }
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving
+         * results. It is usually retrieved from a previous "List" call. For details about how
+         * pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving
+         * results. It is usually retrieved from a previous "List" call. For details about how
+         * pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -449,18 +440,19 @@ public class ListDiscoveryJobResultsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -472,6 +464,7 @@ public class ListDiscoveryJobResultsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListDiscoveryJobResultsRequest o) {
@@ -495,10 +488,11 @@ public class ListDiscoveryJobResultsRequest
         /**
          * Build the instance of ListDiscoveryJobResultsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListDiscoveryJobResultsRequest
          */
@@ -512,7 +506,8 @@ public class ListDiscoveryJobResultsRequest
         /**
          * Build the instance of ListDiscoveryJobResultsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDiscoveryJobResultsRequest
@@ -532,12 +527,15 @@ public class ListDiscoveryJobResultsRequest
             request.limit = limit;
             request.page = page;
             return request;
-            // new ListDiscoveryJobResultsRequest(discoveryJobId, discoveryType, plannedAction, isResultApplied, schemaName, objectName, columnName, sortOrder, sortBy, opcRequestId, limit, page);
+            // new ListDiscoveryJobResultsRequest(discoveryJobId, discoveryType, plannedAction,
+            // isResultApplied, schemaName, objectName, columnName, sortOrder, sortBy, opcRequestId,
+            // limit, page);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -558,6 +556,7 @@ public class ListDiscoveryJobResultsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

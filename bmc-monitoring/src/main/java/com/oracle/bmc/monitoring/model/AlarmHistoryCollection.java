@@ -5,23 +5,22 @@
 package com.oracle.bmc.monitoring.model;
 
 /**
- * The configuration details for retrieving alarm history.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The configuration details for retrieving alarm history. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AlarmHistoryCollection.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AlarmHistoryCollection.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AlarmHistoryCollection
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"alarmId", "isEnabled", "entries"})
     public AlarmHistoryCollection(
@@ -35,18 +34,19 @@ public final class AlarmHistoryCollection
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm for which to retrieve history.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the alarm for which to retrieve history.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("alarmId")
         private String alarmId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm for which to retrieve history.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the alarm for which to retrieve history.
          *
          * @param alarmId the value to set
          * @return this builder
-         **/
+         */
         public Builder alarmId(String alarmId) {
             this.alarmId = alarmId;
             this.__explicitlySet__.add("alarmId");
@@ -54,30 +54,26 @@ public final class AlarmHistoryCollection
         }
         /**
          * Whether the alarm is enabled.
-         * <p>
-         * Example: {@code true}
          *
-         **/
+         * <p>Example: {@code true}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * Whether the alarm is enabled.
-         * <p>
-         * Example: {@code true}
+         *
+         * <p>Example: {@code true}
          *
          * @param isEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-        /**
-         * The set of history entries retrieved for the alarm.
-         *
-         **/
+        /** The set of history entries retrieved for the alarm. */
         @com.fasterxml.jackson.annotation.JsonProperty("entries")
         private java.util.List<AlarmHistoryEntry> entries;
 
@@ -86,7 +82,7 @@ public final class AlarmHistoryCollection
          *
          * @param entries the value to set
          * @return this builder
-         **/
+         */
         public Builder entries(java.util.List<AlarmHistoryEntry> entries) {
             this.entries = entries;
             this.__explicitlySet__.add("entries");
@@ -120,9 +116,7 @@ public final class AlarmHistoryCollection
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -132,45 +126,42 @@ public final class AlarmHistoryCollection
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm for which to retrieve history.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the alarm for which to retrieve history.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("alarmId")
     private final String alarmId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm for which to retrieve history.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the alarm for which to retrieve history.
      *
      * @return the value
-     **/
+     */
     public String getAlarmId() {
         return alarmId;
     }
 
     /**
      * Whether the alarm is enabled.
-     * <p>
-     * Example: {@code true}
      *
-     **/
+     * <p>Example: {@code true}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * Whether the alarm is enabled.
-     * <p>
-     * Example: {@code true}
+     *
+     * <p>Example: {@code true}
      *
      * @return the value
-     **/
+     */
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
-    /**
-     * The set of history entries retrieved for the alarm.
-     *
-     **/
+    /** The set of history entries retrieved for the alarm. */
     @com.fasterxml.jackson.annotation.JsonProperty("entries")
     private final java.util.List<AlarmHistoryEntry> entries;
 
@@ -178,7 +169,7 @@ public final class AlarmHistoryCollection
      * The set of history entries retrieved for the alarm.
      *
      * @return the value
-     **/
+     */
     public java.util.List<AlarmHistoryEntry> getEntries() {
         return entries;
     }
@@ -190,6 +181,7 @@ public final class AlarmHistoryCollection
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

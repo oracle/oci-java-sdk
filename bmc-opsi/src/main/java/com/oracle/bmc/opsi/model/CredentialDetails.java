@@ -5,35 +5,33 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * User credential details to connect to the database. This is supplied via the External Database Service.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * User credential details to connect to the database. This is supplied via the External Database
+ * Service. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "credentialType",
-    defaultImpl = CredentialDetails.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "credentialType",
+        defaultImpl = CredentialDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CredentialsBySource.class,
-        name = "CREDENTIALS_BY_SOURCE"
-    ),
+            value = CredentialsBySource.class,
+            name = "CREDENTIALS_BY_SOURCE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CredentialByVault.class,
-        name = "CREDENTIALS_BY_VAULT"
-    )
+            value = CredentialByVault.class,
+            name = "CREDENTIALS_BY_VAULT")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CredentialDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class CredentialDetails extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"credentialSourceName"})
     protected CredentialDetails(String credentialSourceName) {
@@ -42,15 +40,18 @@ public class CredentialDetails extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-     **/
+     * Credential source name that had been added in Management Agent wallet. This is supplied in
+     * the External Database Service.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("credentialSourceName")
     private final String credentialSourceName;
 
     /**
-     * Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+     * Credential source name that had been added in Management Agent wallet. This is supplied in
+     * the External Database Service.
+     *
      * @return the value
-     **/
+     */
     public String getCredentialSourceName() {
         return credentialSourceName;
     }
@@ -62,6 +63,7 @@ public class CredentialDetails extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -101,16 +103,14 @@ public class CredentialDetails extends com.oracle.bmc.http.internal.ExplicitlySe
         return result;
     }
 
-    /**
-     * Credential type.
-     **/
-    public enum CredentialType {
+    /** Credential type. */
+    public enum CredentialType implements com.oracle.bmc.http.internal.BmcEnum {
         CredentialsBySource("CREDENTIALS_BY_SOURCE"),
         CredentialsByVault("CREDENTIALS_BY_VAULT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 

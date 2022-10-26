@@ -5,42 +5,41 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * The resulting base object when you add an identity provider to your tenancy. A
- * {@link Saml2IdentityProvider}
- * is a specific type of {@code IdentityProvider} that supports the SAML 2.0 protocol. Each
- * {@code IdentityProvider} object has its own OCID. For more information, see
- * [Identity Providers and Federation](https://docs.cloud.oracle.com/Content/Identity/Concepts/federation.htm).
- * <p>
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
- * talk to an administrator. If you're an administrator who needs to write policies to give users access,
- * see [Get Started with Policies](https://docs.cloud.oracle.com/Content/Identity/policiesgs/get-started-with-policies.htm).
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you supply string
- * values using the API.
+ * The resulting base object when you add an identity provider to your tenancy. A {@link
+ * Saml2IdentityProvider} is a specific type of {@code IdentityProvider} that supports the SAML 2.0
+ * protocol. Each {@code IdentityProvider} object has its own OCID. For more information, see
+ * [Identity Providers and
+ * Federation](https://docs.cloud.oracle.com/Content/Identity/Concepts/federation.htm).
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
+ * authorized, talk to an administrator. If you're an administrator who needs to write policies to
+ * give users access, see [Get Started with
+ * Policies](https://docs.cloud.oracle.com/Content/Identity/policiesgs/get-started-with-policies.htm).
+ *
+ * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
+ * supply string values using the API. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "protocol",
-    defaultImpl = IdentityProvider.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "protocol",
+        defaultImpl = IdentityProvider.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = Saml2IdentityProvider.class,
-        name = "SAML2"
-    )
+            value = Saml2IdentityProvider.class,
+            name = "SAML2")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class IdentityProvider extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class IdentityProvider extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -78,134 +77,119 @@ public class IdentityProvider extends com.oracle.bmc.http.internal.ExplicitlySet
         this.definedTags = definedTags;
     }
 
-    /**
-     * The OCID of the {@code IdentityProvider}.
-     **/
+    /** The OCID of the {@code IdentityProvider}. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the {@code IdentityProvider}.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The OCID of the tenancy containing the {@code IdentityProvider}.
-     **/
+    /** The OCID of the tenancy containing the {@code IdentityProvider}. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the tenancy containing the {@code IdentityProvider}.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The name you assign to the {@code IdentityProvider} during creation. The name
-     * must be unique across all {@code IdentityProvider} objects in the tenancy and
-     * cannot be changed. This is the name federated users see when choosing
-     * which identity provider to use when signing in to the Oracle Cloud Infrastructure
-     * Console.
-     *
-     **/
+     * The name you assign to the {@code IdentityProvider} during creation. The name must be unique
+     * across all {@code IdentityProvider} objects in the tenancy and cannot be changed. This is the
+     * name federated users see when choosing which identity provider to use when signing in to the
+     * Oracle Cloud Infrastructure Console.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name you assign to the {@code IdentityProvider} during creation. The name
-     * must be unique across all {@code IdentityProvider} objects in the tenancy and
-     * cannot be changed. This is the name federated users see when choosing
-     * which identity provider to use when signing in to the Oracle Cloud Infrastructure
-     * Console.
+     * The name you assign to the {@code IdentityProvider} during creation. The name must be unique
+     * across all {@code IdentityProvider} objects in the tenancy and cannot be changed. This is the
+     * name federated users see when choosing which identity provider to use when signing in to the
+     * Oracle Cloud Infrastructure Console.
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
-     * The description you assign to the {@code IdentityProvider} during creation. Does
-     * not have to be unique, and it's changeable.
-     *
-     **/
+     * The description you assign to the {@code IdentityProvider} during creation. Does not have to
+     * be unique, and it's changeable.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * The description you assign to the {@code IdentityProvider} during creation. Does
-     * not have to be unique, and it's changeable.
+     * The description you assign to the {@code IdentityProvider} during creation. Does not have to
+     * be unique, and it's changeable.
      *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
     /**
-     * The identity provider service or product.
-     * Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft
-     * Active Directory Federation Services (ADFS).
-     * <p>
-     * Allowed values are:
-     * - {@code ADFS}
-     * - {@code IDCS}
-     * <p>
-     * Example: {@code IDCS}
+     * The identity provider service or product. Supported identity providers are Oracle Identity
+     * Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).
      *
-     **/
+     * <p>Allowed values are: - {@code ADFS} - {@code IDCS}
+     *
+     * <p>Example: {@code IDCS}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("productType")
     private final String productType;
 
     /**
-     * The identity provider service or product.
-     * Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft
-     * Active Directory Federation Services (ADFS).
-     * <p>
-     * Allowed values are:
-     * - {@code ADFS}
-     * - {@code IDCS}
-     * <p>
-     * Example: {@code IDCS}
+     * The identity provider service or product. Supported identity providers are Oracle Identity
+     * Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).
+     *
+     * <p>Allowed values are: - {@code ADFS} - {@code IDCS}
+     *
+     * <p>Example: {@code IDCS}
      *
      * @return the value
-     **/
+     */
     public String getProductType() {
         return productType;
     }
 
     /**
      * Date and time the {@code IdentityProvider} was created, in the format defined by RFC3339.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     **/
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * Date and time the {@code IdentityProvider} was created, in the format defined by RFC3339.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The current state. After creating an {@code IdentityProvider}, make sure its
-     * {@code lifecycleState} changes from CREATING to ACTIVE before using it.
-     *
-     **/
-    public enum LifecycleState {
+     * The current state. After creating an {@code IdentityProvider}, make sure its {@code
+     * lifecycleState} changes from CREATING to ACTIVE before using it.
+     */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Active("ACTIVE"),
         Inactive("INACTIVE"),
@@ -213,8 +197,8 @@ public class IdentityProvider extends com.oracle.bmc.http.internal.ExplicitlySet
         Deleted("DELETED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -254,73 +238,73 @@ public class IdentityProvider extends com.oracle.bmc.http.internal.ExplicitlySet
         }
     };
     /**
-     * The current state. After creating an {@code IdentityProvider}, make sure its
-     * {@code lifecycleState} changes from CREATING to ACTIVE before using it.
-     *
-     **/
+     * The current state. After creating an {@code IdentityProvider}, make sure its {@code
+     * lifecycleState} changes from CREATING to ACTIVE before using it.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state. After creating an {@code IdentityProvider}, make sure its
-     * {@code lifecycleState} changes from CREATING to ACTIVE before using it.
+     * The current state. After creating an {@code IdentityProvider}, make sure its {@code
+     * lifecycleState} changes from CREATING to ACTIVE before using it.
      *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * The detailed status of INACTIVE lifecycleState.
-     **/
+    /** The detailed status of INACTIVE lifecycleState. */
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
     private final Long inactiveStatus;
 
     /**
      * The detailed status of INACTIVE lifecycleState.
+     *
      * @return the value
-     **/
+     */
     public Long getInactiveStatus() {
         return inactiveStatus;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
-     *
-     **/
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -332,6 +316,7 @@ public class IdentityProvider extends com.oracle.bmc.http.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

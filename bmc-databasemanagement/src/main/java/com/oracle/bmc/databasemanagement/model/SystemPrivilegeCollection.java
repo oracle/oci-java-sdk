@@ -5,22 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A collection of system privileges granted to the current user.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A collection of system privileges granted to the current user. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SystemPrivilegeCollection.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SystemPrivilegeCollection.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SystemPrivilegeCollection
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items"})
     public SystemPrivilegeCollection(java.util.List<SystemPrivilegeSummary> items) {
@@ -30,17 +30,16 @@ public final class SystemPrivilegeCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * An array of system privileges.
-         **/
+        /** An array of system privileges. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SystemPrivilegeSummary> items;
 
         /**
          * An array of system privileges.
+         *
          * @param items the value to set
          * @return this builder
-         **/
+         */
         public Builder items(java.util.List<SystemPrivilegeSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -67,9 +66,7 @@ public final class SystemPrivilegeCollection
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -78,16 +75,15 @@ public final class SystemPrivilegeCollection
         return new Builder().copy(this);
     }
 
-    /**
-     * An array of system privileges.
-     **/
+    /** An array of system privileges. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SystemPrivilegeSummary> items;
 
     /**
      * An array of system privileges.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<SystemPrivilegeSummary> getItems() {
         return items;
     }
@@ -99,6 +95,7 @@ public final class SystemPrivilegeCollection
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

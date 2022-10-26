@@ -5,29 +5,30 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A detachable block volume device that allows you to dynamically expand
- * the storage capacity of an instance. For more information, see
- * [Overview of Cloud Volume Storage](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm).
- * <p>
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
- * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you
- * supply string values using the API.
+ * A detachable block volume device that allows you to dynamically expand the storage capacity of an
+ * instance. For more information, see [Overview of Cloud Volume
+ * Storage](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm).
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
+ * authorized, talk to an administrator. If you're an administrator who needs to write policies to
+ * give users access, see [Getting Started with
+ * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ *
+ * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
+ * supply string values using the API. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Volume.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Volume extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Volume extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -99,61 +100,60 @@ public final class Volume extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     public static class Builder {
         /**
          * The availability domain of the volume.
-         * <p>
-         * Example: {@code Uocm:PHX-AD-1}
          *
-         **/
+         * <p>Example: {@code Uocm:PHX-AD-1}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
          * The availability domain of the volume.
-         * <p>
-         * Example: {@code Uocm:PHX-AD-1}
+         *
+         * <p>Example: {@code Uocm:PHX-AD-1}
          *
          * @param availabilityDomain the value to set
          * @return this builder
-         **/
+         */
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-        /**
-         * The OCID of the compartment that contains the volume.
-         **/
+        /** The OCID of the compartment that contains the volume. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that contains the volume.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -161,107 +161,103 @@ public final class Volume extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
-         *
-         **/
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+         * {@code {"foo-namespace": {"bar-key": "value"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+         * {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         **/
+         */
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /**
-         * The OCID of the volume.
-         **/
+        /** The OCID of the volume. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the volume.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * Specifies whether the cloned volume's data has finished copying from the source volume or backup.
-         *
-         **/
+         * Specifies whether the cloned volume's data has finished copying from the source volume or
+         * backup.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
         private Boolean isHydrated;
 
         /**
-         * Specifies whether the cloned volume's data has finished copying from the source volume or backup.
+         * Specifies whether the cloned volume's data has finished copying from the source volume or
+         * backup.
          *
          * @param isHydrated the value to set
          * @return this builder
-         **/
+         */
         public Builder isHydrated(Boolean isHydrated) {
             this.isHydrated = isHydrated;
             this.__explicitlySet__.add("isHydrated");
             return this;
         }
-        /**
-         * The OCID of the Key Management key which is the master encryption key for the volume.
-         *
-         **/
+        /** The OCID of the Key Management key which is the master encryption key for the volume. */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
@@ -270,23 +266,22 @@ public final class Volume extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
          *
          * @param kmsKeyId the value to set
          * @return this builder
-         **/
+         */
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             this.__explicitlySet__.add("kmsKeyId");
             return this;
         }
-        /**
-         * The current state of a volume.
-         **/
+        /** The current state of a volume. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of a volume.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -294,81 +289,78 @@ public final class Volume extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         }
         /**
          * The number of volume performance units (VPUs) that will be applied to this volume per GB,
-         * representing the Block Volume service's elastic performance options.
-         * See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-         * <p>
-         * Allowed values:
-         * <p>
-         * {@code 0}: Represents Lower Cost option.
-         * <p>
-         * {@code 10}: Represents Balanced option.
-         * <p>
-         * {@code 20}: Represents Higher Performance option.
-         * <p>
-         * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
-         * <p>
-         * For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
+         * representing the Block Volume service's elastic performance options. See [Block Volume
+         * Performance
+         * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+         * for more information.
          *
-         **/
+         * <p>Allowed values:
+         *
+         * <p>{@code 0}: Represents Lower Cost option.
+         *
+         * <p>{@code 10}: Represents Balanced option.
+         *
+         * <p>{@code 20}: Represents Higher Performance option.
+         *
+         * <p>{@code 30}-{@code 120}: Represents the Ultra High Performance option.
+         *
+         * <p>For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
         private Long vpusPerGB;
 
         /**
          * The number of volume performance units (VPUs) that will be applied to this volume per GB,
-         * representing the Block Volume service's elastic performance options.
-         * See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-         * <p>
-         * Allowed values:
-         * <p>
-         * {@code 0}: Represents Lower Cost option.
-         * <p>
-         * {@code 10}: Represents Balanced option.
-         * <p>
-         * {@code 20}: Represents Higher Performance option.
-         * <p>
-         * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
-         * <p>
-         * For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
+         * representing the Block Volume service's elastic performance options. See [Block Volume
+         * Performance
+         * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+         * for more information.
+         *
+         * <p>Allowed values:
+         *
+         * <p>{@code 0}: Represents Lower Cost option.
+         *
+         * <p>{@code 10}: Represents Balanced option.
+         *
+         * <p>{@code 20}: Represents Higher Performance option.
+         *
+         * <p>{@code 30}-{@code 120}: Represents the Ultra High Performance option.
+         *
+         * <p>For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
          *
          * @param vpusPerGB the value to set
          * @return this builder
-         **/
+         */
         public Builder vpusPerGB(Long vpusPerGB) {
             this.vpusPerGB = vpusPerGB;
             this.__explicitlySet__.add("vpusPerGB");
             return this;
         }
-        /**
-         * The size of the volume in GBs.
-         **/
+        /** The size of the volume in GBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
         private Long sizeInGBs;
 
         /**
          * The size of the volume in GBs.
+         *
          * @param sizeInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder sizeInGBs(Long sizeInGBs) {
             this.sizeInGBs = sizeInGBs;
             this.__explicitlySet__.add("sizeInGBs");
             return this;
         }
-        /**
-         * The size of the volume in MBs. This field is deprecated. Use
-         * sizeInGBs instead.
-         *
-         **/
+        /** The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead. */
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
         private Long sizeInMBs;
 
         /**
-         * The size of the volume in MBs. This field is deprecated. Use
-         * sizeInGBs instead.
+         * The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
          *
          * @param sizeInMBs the value to set
          * @return this builder
-         **/
+         */
         public Builder sizeInMBs(Long sizeInMBs) {
             this.sizeInMBs = sizeInMBs;
             this.__explicitlySet__.add("sizeInMBs");
@@ -384,52 +376,55 @@ public final class Volume extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         **/
+         * The date and time the volume was created. Format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the volume was created. Format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * The OCID of the source volume group.
-         **/
+        /** The OCID of the source volume group. */
         @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupId")
         private String volumeGroupId;
 
         /**
          * The OCID of the source volume group.
+         *
          * @param volumeGroupId the value to set
          * @return this builder
-         **/
+         */
         public Builder volumeGroupId(String volumeGroupId) {
             this.volumeGroupId = volumeGroupId;
             this.__explicitlySet__.add("volumeGroupId");
             return this;
         }
         /**
-         * Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated.
-         * Use the {@code DetachedVolumeAutotunePolicy} instead to enable the volume for detached autotune.
-         *
-         **/
+         * Specifies whether the auto-tune performance is enabled for this volume. This field is
+         * deprecated. Use the {@code DetachedVolumeAutotunePolicy} instead to enable the volume for
+         * detached autotune.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoTuneEnabled")
         private Boolean isAutoTuneEnabled;
 
         /**
-         * Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated.
-         * Use the {@code DetachedVolumeAutotunePolicy} instead to enable the volume for detached autotune.
+         * Specifies whether the auto-tune performance is enabled for this volume. This field is
+         * deprecated. Use the {@code DetachedVolumeAutotunePolicy} instead to enable the volume for
+         * detached autotune.
          *
          * @param isAutoTuneEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isAutoTuneEnabled(Boolean isAutoTuneEnabled) {
             this.isAutoTuneEnabled = isAutoTuneEnabled;
             this.__explicitlySet__.add("isAutoTuneEnabled");
@@ -437,8 +432,7 @@ public final class Volume extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         }
         /**
          * The number of Volume Performance Units per GB that this volume is effectively tuned to.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("autoTunedVpusPerGB")
         private Long autoTunedVpusPerGB;
 
@@ -447,40 +441,38 @@ public final class Volume extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
          *
          * @param autoTunedVpusPerGB the value to set
          * @return this builder
-         **/
+         */
         public Builder autoTunedVpusPerGB(Long autoTunedVpusPerGB) {
             this.autoTunedVpusPerGB = autoTunedVpusPerGB;
             this.__explicitlySet__.add("autoTunedVpusPerGB");
             return this;
         }
-        /**
-         * The list of block volume replicas of this volume.
-         **/
+        /** The list of block volume replicas of this volume. */
         @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeReplicas")
         private java.util.List<BlockVolumeReplicaInfo> blockVolumeReplicas;
 
         /**
          * The list of block volume replicas of this volume.
+         *
          * @param blockVolumeReplicas the value to set
          * @return this builder
-         **/
+         */
         public Builder blockVolumeReplicas(
                 java.util.List<BlockVolumeReplicaInfo> blockVolumeReplicas) {
             this.blockVolumeReplicas = blockVolumeReplicas;
             this.__explicitlySet__.add("blockVolumeReplicas");
             return this;
         }
-        /**
-         * The list of autotune policies enabled for this volume.
-         **/
+        /** The list of autotune policies enabled for this volume. */
         @com.fasterxml.jackson.annotation.JsonProperty("autotunePolicies")
         private java.util.List<AutotunePolicy> autotunePolicies;
 
         /**
          * The list of autotune policies enabled for this volume.
+         *
          * @param autotunePolicies the value to set
          * @return this builder
-         **/
+         */
         public Builder autotunePolicies(java.util.List<AutotunePolicy> autotunePolicies) {
             this.autotunePolicies = autotunePolicies;
             this.__explicitlySet__.add("autotunePolicies");
@@ -585,9 +577,7 @@ public final class Volume extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -598,152 +588,147 @@ public final class Volume extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
 
     /**
      * The availability domain of the volume.
-     * <p>
-     * Example: {@code Uocm:PHX-AD-1}
      *
-     **/
+     * <p>Example: {@code Uocm:PHX-AD-1}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
      * The availability domain of the volume.
-     * <p>
-     * Example: {@code Uocm:PHX-AD-1}
+     *
+     * <p>Example: {@code Uocm:PHX-AD-1}
      *
      * @return the value
-     **/
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
-    /**
-     * The OCID of the compartment that contains the volume.
-     **/
+    /** The OCID of the compartment that contains the volume. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that contains the volume.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 
-    /**
-     * The OCID of the volume.
-     **/
+    /** The OCID of the volume. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the volume.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * Specifies whether the cloned volume's data has finished copying from the source volume or backup.
-     *
-     **/
+     * Specifies whether the cloned volume's data has finished copying from the source volume or
+     * backup.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
     private final Boolean isHydrated;
 
     /**
-     * Specifies whether the cloned volume's data has finished copying from the source volume or backup.
+     * Specifies whether the cloned volume's data has finished copying from the source volume or
+     * backup.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsHydrated() {
         return isHydrated;
     }
 
-    /**
-     * The OCID of the Key Management key which is the master encryption key for the volume.
-     *
-     **/
+    /** The OCID of the Key Management key which is the master encryption key for the volume. */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
@@ -751,15 +736,13 @@ public final class Volume extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
      * The OCID of the Key Management key which is the master encryption key for the volume.
      *
      * @return the value
-     **/
+     */
     public String getKmsKeyId() {
         return kmsKeyId;
     }
 
-    /**
-     * The current state of a volume.
-     **/
-    public enum LifecycleState {
+    /** The current state of a volume. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Provisioning("PROVISIONING"),
         Restoring("RESTORING"),
         Available("AVAILABLE"),
@@ -768,8 +751,8 @@ public final class Volume extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         Faulty("FAULTY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -808,92 +791,88 @@ public final class Volume extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current state of a volume.
-     **/
+    /** The current state of a volume. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of a volume.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
      * The number of volume performance units (VPUs) that will be applied to this volume per GB,
-     * representing the Block Volume service's elastic performance options.
-     * See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-     * <p>
-     * Allowed values:
-     * <p>
-     * {@code 0}: Represents Lower Cost option.
-     * <p>
-     * {@code 10}: Represents Balanced option.
-     * <p>
-     * {@code 20}: Represents Higher Performance option.
-     * <p>
-     * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
-     * <p>
-     * For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
+     * representing the Block Volume service's elastic performance options. See [Block Volume
+     * Performance
+     * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+     * for more information.
      *
-     **/
+     * <p>Allowed values:
+     *
+     * <p>{@code 0}: Represents Lower Cost option.
+     *
+     * <p>{@code 10}: Represents Balanced option.
+     *
+     * <p>{@code 20}: Represents Higher Performance option.
+     *
+     * <p>{@code 30}-{@code 120}: Represents the Ultra High Performance option.
+     *
+     * <p>For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
     private final Long vpusPerGB;
 
     /**
      * The number of volume performance units (VPUs) that will be applied to this volume per GB,
-     * representing the Block Volume service's elastic performance options.
-     * See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-     * <p>
-     * Allowed values:
-     * <p>
-     * {@code 0}: Represents Lower Cost option.
-     * <p>
-     * {@code 10}: Represents Balanced option.
-     * <p>
-     * {@code 20}: Represents Higher Performance option.
-     * <p>
-     * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
-     * <p>
-     * For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
+     * representing the Block Volume service's elastic performance options. See [Block Volume
+     * Performance
+     * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+     * for more information.
+     *
+     * <p>Allowed values:
+     *
+     * <p>{@code 0}: Represents Lower Cost option.
+     *
+     * <p>{@code 10}: Represents Balanced option.
+     *
+     * <p>{@code 20}: Represents Higher Performance option.
+     *
+     * <p>{@code 30}-{@code 120}: Represents the Ultra High Performance option.
+     *
+     * <p>For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
      *
      * @return the value
-     **/
+     */
     public Long getVpusPerGB() {
         return vpusPerGB;
     }
 
-    /**
-     * The size of the volume in GBs.
-     **/
+    /** The size of the volume in GBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
     private final Long sizeInGBs;
 
     /**
      * The size of the volume in GBs.
+     *
      * @return the value
-     **/
+     */
     public Long getSizeInGBs() {
         return sizeInGBs;
     }
 
-    /**
-     * The size of the volume in MBs. This field is deprecated. Use
-     * sizeInGBs instead.
-     *
-     **/
+    /** The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead. */
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
     private final Long sizeInMBs;
 
     /**
-     * The size of the volume in MBs. This field is deprecated. Use
-     * sizeInGBs instead.
+     * The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
      *
      * @return the value
-     **/
+     */
     public Long getSizeInMBs() {
         return sizeInMBs;
     }
@@ -906,55 +885,55 @@ public final class Volume extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     **/
+     * The date and time the volume was created. Format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the volume was created. Format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The OCID of the source volume group.
-     **/
+    /** The OCID of the source volume group. */
     @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupId")
     private final String volumeGroupId;
 
     /**
      * The OCID of the source volume group.
+     *
      * @return the value
-     **/
+     */
     public String getVolumeGroupId() {
         return volumeGroupId;
     }
 
     /**
-     * Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated.
-     * Use the {@code DetachedVolumeAutotunePolicy} instead to enable the volume for detached autotune.
-     *
-     **/
+     * Specifies whether the auto-tune performance is enabled for this volume. This field is
+     * deprecated. Use the {@code DetachedVolumeAutotunePolicy} instead to enable the volume for
+     * detached autotune.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoTuneEnabled")
     private final Boolean isAutoTuneEnabled;
 
     /**
-     * Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated.
-     * Use the {@code DetachedVolumeAutotunePolicy} instead to enable the volume for detached autotune.
+     * Specifies whether the auto-tune performance is enabled for this volume. This field is
+     * deprecated. Use the {@code DetachedVolumeAutotunePolicy} instead to enable the volume for
+     * detached autotune.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsAutoTuneEnabled() {
         return isAutoTuneEnabled;
     }
 
-    /**
-     * The number of Volume Performance Units per GB that this volume is effectively tuned to.
-     *
-     **/
+    /** The number of Volume Performance Units per GB that this volume is effectively tuned to. */
     @com.fasterxml.jackson.annotation.JsonProperty("autoTunedVpusPerGB")
     private final Long autoTunedVpusPerGB;
 
@@ -962,35 +941,33 @@ public final class Volume extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
      * The number of Volume Performance Units per GB that this volume is effectively tuned to.
      *
      * @return the value
-     **/
+     */
     public Long getAutoTunedVpusPerGB() {
         return autoTunedVpusPerGB;
     }
 
-    /**
-     * The list of block volume replicas of this volume.
-     **/
+    /** The list of block volume replicas of this volume. */
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeReplicas")
     private final java.util.List<BlockVolumeReplicaInfo> blockVolumeReplicas;
 
     /**
      * The list of block volume replicas of this volume.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<BlockVolumeReplicaInfo> getBlockVolumeReplicas() {
         return blockVolumeReplicas;
     }
 
-    /**
-     * The list of autotune policies enabled for this volume.
-     **/
+    /** The list of autotune policies enabled for this volume. */
     @com.fasterxml.jackson.annotation.JsonProperty("autotunePolicies")
     private final java.util.List<AutotunePolicy> autotunePolicies;
 
     /**
      * The list of autotune policies enabled for this volume.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<AutotunePolicy> getAutotunePolicies() {
         return autotunePolicies;
     }
@@ -1002,6 +979,7 @@ public final class Volume extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -7,6 +7,7 @@ package com.oracle.bmc.auth.internal;
 import javax.annotation.concurrent.Immutable;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.oracle.bmc.requests.BmcRequest;
 
 @Immutable
 @JsonInclude(JsonInclude.Include.NON_NULL)

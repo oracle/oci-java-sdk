@@ -6,18 +6,12 @@ package com.oracle.bmc.objectstorage.transfer.helper;
 
 import java.io.IOException;
 
-/**
- * Called by {@link MockObject} to inject failures.
- */
+/** Called by {@link MockObject} to inject failures. */
 public interface FailureInjector {
 
-    /**
-     * Called every time a getObject request is made.
-     */
+    /** Called every time a getObject request is made. */
     void onGetObjectRequest();
 
-    /**
-     * Called every time data is read.
-     */
+    /** Called every time data is read. */
     void onDataRead() throws IOException;
 }

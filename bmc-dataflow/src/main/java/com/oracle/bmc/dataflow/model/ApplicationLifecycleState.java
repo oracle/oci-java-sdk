@@ -4,12 +4,9 @@
  */
 package com.oracle.bmc.dataflow.model;
 
-/**
- * The lifecycle state of an application.
- *
- **/
+/** The lifecycle state of an application. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
-public enum ApplicationLifecycleState {
+public enum ApplicationLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Active("ACTIVE"),
     Deleted("DELETED"),
     Inactive("INACTIVE"),

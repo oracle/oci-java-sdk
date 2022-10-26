@@ -5,22 +5,22 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Connect Descriptor details.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Connect Descriptor details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ConnectDescriptor.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ConnectDescriptor extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ConnectDescriptor.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ConnectDescriptor
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"host", "port", "databaseServiceName", "connectString"})
     public ConnectDescriptor(
@@ -34,10 +34,7 @@ public final class ConnectDescriptor extends com.oracle.bmc.http.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Host of the connect descriptor.
-         *
-         **/
+        /** Host of the connect descriptor. */
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
@@ -46,16 +43,13 @@ public final class ConnectDescriptor extends com.oracle.bmc.http.internal.Explic
          *
          * @param host the value to set
          * @return this builder
-         **/
+         */
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-        /**
-         * Port of the connect descriptor.
-         *
-         **/
+        /** Port of the connect descriptor. */
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
@@ -64,16 +58,13 @@ public final class ConnectDescriptor extends com.oracle.bmc.http.internal.Explic
          *
          * @param port the value to set
          * @return this builder
-         **/
+         */
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-        /**
-         * Database service name.
-         *
-         **/
+        /** Database service name. */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseServiceName")
         private String databaseServiceName;
 
@@ -82,16 +73,13 @@ public final class ConnectDescriptor extends com.oracle.bmc.http.internal.Explic
          *
          * @param databaseServiceName the value to set
          * @return this builder
-         **/
+         */
         public Builder databaseServiceName(String databaseServiceName) {
             this.databaseServiceName = databaseServiceName;
             this.__explicitlySet__.add("databaseServiceName");
             return this;
         }
-        /**
-         * Connect string.
-         *
-         **/
+        /** Connect string. */
         @com.fasterxml.jackson.annotation.JsonProperty("connectString")
         private String connectString;
 
@@ -100,7 +88,7 @@ public final class ConnectDescriptor extends com.oracle.bmc.http.internal.Explic
          *
          * @param connectString the value to set
          * @return this builder
-         **/
+         */
         public Builder connectString(String connectString) {
             this.connectString = connectString;
             this.__explicitlySet__.add("connectString");
@@ -138,9 +126,7 @@ public final class ConnectDescriptor extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -149,10 +135,7 @@ public final class ConnectDescriptor extends com.oracle.bmc.http.internal.Explic
         return new Builder().copy(this);
     }
 
-    /**
-     * Host of the connect descriptor.
-     *
-     **/
+    /** Host of the connect descriptor. */
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
@@ -160,15 +143,12 @@ public final class ConnectDescriptor extends com.oracle.bmc.http.internal.Explic
      * Host of the connect descriptor.
      *
      * @return the value
-     **/
+     */
     public String getHost() {
         return host;
     }
 
-    /**
-     * Port of the connect descriptor.
-     *
-     **/
+    /** Port of the connect descriptor. */
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
@@ -176,15 +156,12 @@ public final class ConnectDescriptor extends com.oracle.bmc.http.internal.Explic
      * Port of the connect descriptor.
      *
      * @return the value
-     **/
+     */
     public Integer getPort() {
         return port;
     }
 
-    /**
-     * Database service name.
-     *
-     **/
+    /** Database service name. */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseServiceName")
     private final String databaseServiceName;
 
@@ -192,15 +169,12 @@ public final class ConnectDescriptor extends com.oracle.bmc.http.internal.Explic
      * Database service name.
      *
      * @return the value
-     **/
+     */
     public String getDatabaseServiceName() {
         return databaseServiceName;
     }
 
-    /**
-     * Connect string.
-     *
-     **/
+    /** Connect string. */
     @com.fasterxml.jackson.annotation.JsonProperty("connectString")
     private final String connectString;
 
@@ -208,7 +182,7 @@ public final class ConnectDescriptor extends com.oracle.bmc.http.internal.Explic
      * Connect string.
      *
      * @return the value
-     **/
+     */
     public String getConnectString() {
         return connectString;
     }
@@ -220,6 +194,7 @@ public final class ConnectDescriptor extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

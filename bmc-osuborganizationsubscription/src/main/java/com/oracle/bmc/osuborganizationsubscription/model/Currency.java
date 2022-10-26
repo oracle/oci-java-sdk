@@ -5,20 +5,20 @@
 package com.oracle.bmc.osuborganizationsubscription.model;
 
 /**
- * Currency details
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Currency details <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Currency.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Currency extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Currency extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "isoCode", "stdPrecision"})
     public Currency(String name, String isoCode, Long stdPrecision) {
@@ -30,10 +30,7 @@ public final class Currency extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Currency name
-         *
-         **/
+        /** Currency name */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -42,16 +39,13 @@ public final class Currency extends com.oracle.bmc.http.internal.ExplicitlySetBm
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Currency Code
-         *
-         **/
+        /** Currency Code */
         @com.fasterxml.jackson.annotation.JsonProperty("isoCode")
         private String isoCode;
 
@@ -60,16 +54,13 @@ public final class Currency extends com.oracle.bmc.http.internal.ExplicitlySetBm
          *
          * @param isoCode the value to set
          * @return this builder
-         **/
+         */
         public Builder isoCode(String isoCode) {
             this.isoCode = isoCode;
             this.__explicitlySet__.add("isoCode");
             return this;
         }
-        /**
-         * Standard Precision of the Currency
-         *
-         **/
+        /** Standard Precision of the Currency */
         @com.fasterxml.jackson.annotation.JsonProperty("stdPrecision")
         private Long stdPrecision;
 
@@ -78,7 +69,7 @@ public final class Currency extends com.oracle.bmc.http.internal.ExplicitlySetBm
          *
          * @param stdPrecision the value to set
          * @return this builder
-         **/
+         */
         public Builder stdPrecision(Long stdPrecision) {
             this.stdPrecision = stdPrecision;
             this.__explicitlySet__.add("stdPrecision");
@@ -111,9 +102,7 @@ public final class Currency extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -122,10 +111,7 @@ public final class Currency extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return new Builder().copy(this);
     }
 
-    /**
-     * Currency name
-     *
-     **/
+    /** Currency name */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -133,15 +119,12 @@ public final class Currency extends com.oracle.bmc.http.internal.ExplicitlySetBm
      * Currency name
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Currency Code
-     *
-     **/
+    /** Currency Code */
     @com.fasterxml.jackson.annotation.JsonProperty("isoCode")
     private final String isoCode;
 
@@ -149,15 +132,12 @@ public final class Currency extends com.oracle.bmc.http.internal.ExplicitlySetBm
      * Currency Code
      *
      * @return the value
-     **/
+     */
     public String getIsoCode() {
         return isoCode;
     }
 
-    /**
-     * Standard Precision of the Currency
-     *
-     **/
+    /** Standard Precision of the Currency */
     @com.fasterxml.jackson.annotation.JsonProperty("stdPrecision")
     private final Long stdPrecision;
 
@@ -165,7 +145,7 @@ public final class Currency extends com.oracle.bmc.http.internal.ExplicitlySetBm
      * Standard Precision of the Currency
      *
      * @return the value
-     **/
+     */
     public Long getStdPrecision() {
         return stdPrecision;
     }
@@ -177,6 +157,7 @@ public final class Currency extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

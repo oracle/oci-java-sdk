@@ -8,13 +8,12 @@ import com.oracle.bmc.containerengine.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 public class GetClusterResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
+     *
      * @return the value
      */
     public String getEtag() {
@@ -24,7 +23,6 @@ public class GetClusterResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
@@ -38,13 +36,12 @@ public class GetClusterResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /**
-     * The returned Cluster instance.
-     */
+    /** The returned Cluster instance. */
     private com.oracle.bmc.containerengine.model.Cluster cluster;
 
     /**
      * The returned Cluster instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.containerengine.model.Cluster getCluster() {
@@ -60,7 +57,7 @@ public class GetClusterResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private GetClusterResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.containerengine.model.Cluster cluster) {
@@ -70,28 +67,30 @@ public class GetClusterResponse extends com.oracle.bmc.responses.BmcResponse {
         this.cluster = cluster;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetClusterResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -103,7 +102,6 @@ public class GetClusterResponse extends com.oracle.bmc.responses.BmcResponse {
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId;
 
@@ -119,13 +117,12 @@ public class GetClusterResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * The returned Cluster instance.
-         */
+        /** The returned Cluster instance. */
         private com.oracle.bmc.containerengine.model.Cluster cluster;
 
         /**
          * The returned Cluster instance.
+         *
          * @param cluster the value to set
          * @return this builder
          */
@@ -136,8 +133,10 @@ public class GetClusterResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetClusterResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -150,8 +149,10 @@ public class GetClusterResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetClusterResponse build() {
             return new GetClusterResponse(__httpStatusCode__, headers, etag, opcRequestId, cluster);
         }
@@ -159,6 +160,7 @@ public class GetClusterResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

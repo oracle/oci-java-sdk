@@ -6,16 +6,12 @@ package com.oracle.bmc.waiter;
 
 import com.oracle.bmc.waiter.WaiterConfiguration.WaitContext;
 
-/**
- * Interface that defines how long to wait between poll attempts.
- */
+/** Interface that defines how long to wait between poll attempts. */
 public interface DelayStrategy {
     /**
-     * Returns the amount of time to wait (in millis) before making another poll
-     * attempt.
+     * Returns the amount of time to wait (in millis) before making another poll attempt.
      *
-     * @param context
-     *            The context after the last attempt.
+     * @param context The context after the last attempt.
      * @return The amount of time to wait, in millis.
      */
     long nextDelay(WaitContext context);

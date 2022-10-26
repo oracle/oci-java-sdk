@@ -21,20 +21,20 @@ import com.oracle.bmc.http.signing.RequestSignerFactory;
 import com.oracle.bmc.http.signing.SigningStrategy;
 
 /**
- * Factory class to create RequestSigner instances. Takes care of setting up the appropriate suppliers
- * based on the cacheability of the credentials (indicated by {@link AuthCachingPolicy}.  By default,
- * all credentials are cacheable.
- * <p>
- * This factory supports authentication providers that inherit from
- * {@link BasicAuthenticationDetailsProvider}.
+ * Factory class to create RequestSigner instances. Takes care of setting up the appropriate
+ * suppliers based on the cacheability of the credentials (indicated by {@link AuthCachingPolicy}.
+ * By default, all credentials are cacheable.
+ *
+ * <p>This factory supports authentication providers that inherit from {@link
+ * BasicAuthenticationDetailsProvider}.
  */
 public class DefaultRequestSignerFactory implements RequestSignerFactory {
     private final SigningStrategy signingStrategy;
 
     /**
      * {@inheritDoc}
-     * <p>
-     * Note, service parameter is not used by this factory.
+     *
+     * <p>Note, service parameter is not used by this factory.
      */
     @Override
     public RequestSigner createRequestSigner(
@@ -55,7 +55,7 @@ public class DefaultRequestSignerFactory implements RequestSignerFactory {
         return new RequestSignerImpl(keySupplier, signingStrategy, keyIdSupplier);
     }
 
-    private static Supplier<String> createKeyIdSupplier(
+    protected Supplier<String> createKeyIdSupplier(
             final BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             final AuthCachingPolicy policy) {
         boolean cacheKeyId = true;
@@ -83,7 +83,7 @@ public class DefaultRequestSignerFactory implements RequestSignerFactory {
         };
     }
 
-    private static KeySupplier<RSAPrivateKey> createKeySupplier(
+    public static KeySupplier<RSAPrivateKey> createKeySupplier(
             final BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             final AuthCachingPolicy policy) {
         boolean cachePrivateKey = true;
@@ -110,13 +110,14 @@ public class DefaultRequestSignerFactory implements RequestSignerFactory {
                 authenticationDetailsProvider.getPassphraseCharacters());
     }
 
-    private static AuthCachingPolicy getAuthCachingPolicy(
+    public static AuthCachingPolicy getAuthCachingPolicy(
             final BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
         return authenticationDetailsProvider.getClass().getAnnotation(AuthCachingPolicy.class);
     }
 
     /**
      * Create the default request signer factories.
+     *
      * @return default request signer factories
      */
     public static Map<SigningStrategy, RequestSignerFactory> createDefaultRequestSignerFactories() {

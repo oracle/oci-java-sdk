@@ -5,19 +5,21 @@
 package com.oracle.bmc.osmanagement.model;
 
 /**
- * A software source contains a collection of packages
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A software source contains a collection of packages <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SoftwareSource.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SoftwareSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class SoftwareSource
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -93,341 +95,320 @@ public final class SoftwareSource extends com.oracle.bmc.http.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * OCID for the Software Source
-         **/
+        /** OCID for the Software Source */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * OCID for the Software Source
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * OCID for the Compartment
-         **/
+        /** OCID for the Compartment */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * OCID for the Compartment
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * User friendly name for the software source
-         **/
+        /** User friendly name for the software source */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * User friendly name for the software source
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Information specified by the user about the software source
-         **/
+        /** Information specified by the user about the software source */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Information specified by the user about the software source
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * Type of the Software Source
-         **/
+        /** Type of the Software Source */
         @com.fasterxml.jackson.annotation.JsonProperty("repoType")
         private String repoType;
 
         /**
          * Type of the Software Source
+         *
          * @param repoType the value to set
          * @return this builder
-         **/
+         */
         public Builder repoType(String repoType) {
             this.repoType = repoType;
             this.__explicitlySet__.add("repoType");
             return this;
         }
-        /**
-         * The architecture type supported by the Software Source
-         **/
+        /** The architecture type supported by the Software Source */
         @com.fasterxml.jackson.annotation.JsonProperty("archType")
         private ArchTypes archType;
 
         /**
          * The architecture type supported by the Software Source
+         *
          * @param archType the value to set
          * @return this builder
-         **/
+         */
         public Builder archType(ArchTypes archType) {
             this.archType = archType;
             this.__explicitlySet__.add("archType");
             return this;
         }
-        /**
-         * URL for the repostiory
-         **/
+        /** URL for the repostiory */
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
         /**
          * URL for the repostiory
+         *
          * @param url the value to set
          * @return this builder
-         **/
+         */
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
-        /**
-         * OCID for the parent software source, if there is one
-         **/
+        /** OCID for the parent software source, if there is one */
         @com.fasterxml.jackson.annotation.JsonProperty("parentId")
         private String parentId;
 
         /**
          * OCID for the parent software source, if there is one
+         *
          * @param parentId the value to set
          * @return this builder
-         **/
+         */
         public Builder parentId(String parentId) {
             this.parentId = parentId;
             this.__explicitlySet__.add("parentId");
             return this;
         }
-        /**
-         * Display name the parent software source, if there is one
-         **/
+        /** Display name the parent software source, if there is one */
         @com.fasterxml.jackson.annotation.JsonProperty("parentName")
         private String parentName;
 
         /**
          * Display name the parent software source, if there is one
+         *
          * @param parentName the value to set
          * @return this builder
-         **/
+         */
         public Builder parentName(String parentName) {
             this.parentName = parentName;
             this.__explicitlySet__.add("parentName");
             return this;
         }
-        /**
-         * The yum repository checksum type used by this software source
-         **/
+        /** The yum repository checksum type used by this software source */
         @com.fasterxml.jackson.annotation.JsonProperty("checksumType")
         private ChecksumTypes checksumType;
 
         /**
          * The yum repository checksum type used by this software source
+         *
          * @param checksumType the value to set
          * @return this builder
-         **/
+         */
         public Builder checksumType(ChecksumTypes checksumType) {
             this.checksumType = checksumType;
             this.__explicitlySet__.add("checksumType");
             return this;
         }
-        /**
-         * Name of the person maintaining this software source
-         **/
+        /** Name of the person maintaining this software source */
         @com.fasterxml.jackson.annotation.JsonProperty("maintainerName")
         private String maintainerName;
 
         /**
          * Name of the person maintaining this software source
+         *
          * @param maintainerName the value to set
          * @return this builder
-         **/
+         */
         public Builder maintainerName(String maintainerName) {
             this.maintainerName = maintainerName;
             this.__explicitlySet__.add("maintainerName");
             return this;
         }
-        /**
-         * Email address of the person maintaining this software source
-         **/
+        /** Email address of the person maintaining this software source */
         @com.fasterxml.jackson.annotation.JsonProperty("maintainerEmail")
         private String maintainerEmail;
 
         /**
          * Email address of the person maintaining this software source
+         *
          * @param maintainerEmail the value to set
          * @return this builder
-         **/
+         */
         public Builder maintainerEmail(String maintainerEmail) {
             this.maintainerEmail = maintainerEmail;
             this.__explicitlySet__.add("maintainerEmail");
             return this;
         }
-        /**
-         * Phone number of the person maintaining this software source
-         **/
+        /** Phone number of the person maintaining this software source */
         @com.fasterxml.jackson.annotation.JsonProperty("maintainerPhone")
         private String maintainerPhone;
 
         /**
          * Phone number of the person maintaining this software source
+         *
          * @param maintainerPhone the value to set
          * @return this builder
-         **/
+         */
         public Builder maintainerPhone(String maintainerPhone) {
             this.maintainerPhone = maintainerPhone;
             this.__explicitlySet__.add("maintainerPhone");
             return this;
         }
-        /**
-         * URL of the GPG key for this software source
-         **/
+        /** URL of the GPG key for this software source */
         @com.fasterxml.jackson.annotation.JsonProperty("gpgKeyUrl")
         private String gpgKeyUrl;
 
         /**
          * URL of the GPG key for this software source
+         *
          * @param gpgKeyUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder gpgKeyUrl(String gpgKeyUrl) {
             this.gpgKeyUrl = gpgKeyUrl;
             this.__explicitlySet__.add("gpgKeyUrl");
             return this;
         }
-        /**
-         * ID of the GPG key for this software source
-         **/
+        /** ID of the GPG key for this software source */
         @com.fasterxml.jackson.annotation.JsonProperty("gpgKeyId")
         private String gpgKeyId;
 
         /**
          * ID of the GPG key for this software source
+         *
          * @param gpgKeyId the value to set
          * @return this builder
-         **/
+         */
         public Builder gpgKeyId(String gpgKeyId) {
             this.gpgKeyId = gpgKeyId;
             this.__explicitlySet__.add("gpgKeyId");
             return this;
         }
-        /**
-         * Fingerprint of the GPG key for this software source
-         **/
+        /** Fingerprint of the GPG key for this software source */
         @com.fasterxml.jackson.annotation.JsonProperty("gpgKeyFingerprint")
         private String gpgKeyFingerprint;
 
         /**
          * Fingerprint of the GPG key for this software source
+         *
          * @param gpgKeyFingerprint the value to set
          * @return this builder
-         **/
+         */
         public Builder gpgKeyFingerprint(String gpgKeyFingerprint) {
             this.gpgKeyFingerprint = gpgKeyFingerprint;
             this.__explicitlySet__.add("gpgKeyFingerprint");
             return this;
         }
-        /**
-         * status of the software source.
-         **/
+        /** status of the software source. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * status of the software source.
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * The current state of the Software Source.
-         **/
+        /** The current state of the Software Source. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleStates lifecycleState;
 
         /**
          * The current state of the Software Source.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * Number of packages
-         **/
+        /** Number of packages */
         @com.fasterxml.jackson.annotation.JsonProperty("packages")
         private Integer packages;
 
         /**
          * Number of packages
+         *
          * @param packages the value to set
          * @return this builder
-         **/
+         */
         public Builder packages(Integer packages) {
             this.packages = packages;
             this.__explicitlySet__.add("packages");
             return this;
         }
-        /**
-         * list of the Managed Instances associated with this Software Sources
-         **/
+        /** list of the Managed Instances associated with this Software Sources */
         @com.fasterxml.jackson.annotation.JsonProperty("associatedManagedInstances")
         private java.util.List<Id> associatedManagedInstances;
 
         /**
          * list of the Managed Instances associated with this Software Sources
+         *
          * @param associatedManagedInstances the value to set
          * @return this builder
-         **/
+         */
         public Builder associatedManagedInstances(java.util.List<Id> associatedManagedInstances) {
             this.associatedManagedInstances = associatedManagedInstances;
             this.__explicitlySet__.add("associatedManagedInstances");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -436,8 +417,7 @@ public final class SoftwareSource extends com.oracle.bmc.http.internal.Explicitl
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -447,7 +427,7 @@ public final class SoftwareSource extends com.oracle.bmc.http.internal.Explicitl
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -561,9 +541,7 @@ public final class SoftwareSource extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -572,242 +550,224 @@ public final class SoftwareSource extends com.oracle.bmc.http.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /**
-     * OCID for the Software Source
-     **/
+    /** OCID for the Software Source */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * OCID for the Software Source
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * OCID for the Compartment
-     **/
+    /** OCID for the Compartment */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * OCID for the Compartment
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * User friendly name for the software source
-     **/
+    /** User friendly name for the software source */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * User friendly name for the software source
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Information specified by the user about the software source
-     **/
+    /** Information specified by the user about the software source */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Information specified by the user about the software source
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * Type of the Software Source
-     **/
+    /** Type of the Software Source */
     @com.fasterxml.jackson.annotation.JsonProperty("repoType")
     private final String repoType;
 
     /**
      * Type of the Software Source
+     *
      * @return the value
-     **/
+     */
     public String getRepoType() {
         return repoType;
     }
 
-    /**
-     * The architecture type supported by the Software Source
-     **/
+    /** The architecture type supported by the Software Source */
     @com.fasterxml.jackson.annotation.JsonProperty("archType")
     private final ArchTypes archType;
 
     /**
      * The architecture type supported by the Software Source
+     *
      * @return the value
-     **/
+     */
     public ArchTypes getArchType() {
         return archType;
     }
 
-    /**
-     * URL for the repostiory
-     **/
+    /** URL for the repostiory */
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
      * URL for the repostiory
+     *
      * @return the value
-     **/
+     */
     public String getUrl() {
         return url;
     }
 
-    /**
-     * OCID for the parent software source, if there is one
-     **/
+    /** OCID for the parent software source, if there is one */
     @com.fasterxml.jackson.annotation.JsonProperty("parentId")
     private final String parentId;
 
     /**
      * OCID for the parent software source, if there is one
+     *
      * @return the value
-     **/
+     */
     public String getParentId() {
         return parentId;
     }
 
-    /**
-     * Display name the parent software source, if there is one
-     **/
+    /** Display name the parent software source, if there is one */
     @com.fasterxml.jackson.annotation.JsonProperty("parentName")
     private final String parentName;
 
     /**
      * Display name the parent software source, if there is one
+     *
      * @return the value
-     **/
+     */
     public String getParentName() {
         return parentName;
     }
 
-    /**
-     * The yum repository checksum type used by this software source
-     **/
+    /** The yum repository checksum type used by this software source */
     @com.fasterxml.jackson.annotation.JsonProperty("checksumType")
     private final ChecksumTypes checksumType;
 
     /**
      * The yum repository checksum type used by this software source
+     *
      * @return the value
-     **/
+     */
     public ChecksumTypes getChecksumType() {
         return checksumType;
     }
 
-    /**
-     * Name of the person maintaining this software source
-     **/
+    /** Name of the person maintaining this software source */
     @com.fasterxml.jackson.annotation.JsonProperty("maintainerName")
     private final String maintainerName;
 
     /**
      * Name of the person maintaining this software source
+     *
      * @return the value
-     **/
+     */
     public String getMaintainerName() {
         return maintainerName;
     }
 
-    /**
-     * Email address of the person maintaining this software source
-     **/
+    /** Email address of the person maintaining this software source */
     @com.fasterxml.jackson.annotation.JsonProperty("maintainerEmail")
     private final String maintainerEmail;
 
     /**
      * Email address of the person maintaining this software source
+     *
      * @return the value
-     **/
+     */
     public String getMaintainerEmail() {
         return maintainerEmail;
     }
 
-    /**
-     * Phone number of the person maintaining this software source
-     **/
+    /** Phone number of the person maintaining this software source */
     @com.fasterxml.jackson.annotation.JsonProperty("maintainerPhone")
     private final String maintainerPhone;
 
     /**
      * Phone number of the person maintaining this software source
+     *
      * @return the value
-     **/
+     */
     public String getMaintainerPhone() {
         return maintainerPhone;
     }
 
-    /**
-     * URL of the GPG key for this software source
-     **/
+    /** URL of the GPG key for this software source */
     @com.fasterxml.jackson.annotation.JsonProperty("gpgKeyUrl")
     private final String gpgKeyUrl;
 
     /**
      * URL of the GPG key for this software source
+     *
      * @return the value
-     **/
+     */
     public String getGpgKeyUrl() {
         return gpgKeyUrl;
     }
 
-    /**
-     * ID of the GPG key for this software source
-     **/
+    /** ID of the GPG key for this software source */
     @com.fasterxml.jackson.annotation.JsonProperty("gpgKeyId")
     private final String gpgKeyId;
 
     /**
      * ID of the GPG key for this software source
+     *
      * @return the value
-     **/
+     */
     public String getGpgKeyId() {
         return gpgKeyId;
     }
 
-    /**
-     * Fingerprint of the GPG key for this software source
-     **/
+    /** Fingerprint of the GPG key for this software source */
     @com.fasterxml.jackson.annotation.JsonProperty("gpgKeyFingerprint")
     private final String gpgKeyFingerprint;
 
     /**
      * Fingerprint of the GPG key for this software source
+     *
      * @return the value
-     **/
+     */
     public String getGpgKeyFingerprint() {
         return gpgKeyFingerprint;
     }
 
-    /**
-     * status of the software source.
-     **/
-    public enum Status {
+    /** status of the software source. */
+    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Normal("NORMAL"),
         Unreachable("UNREACHABLE"),
         Error("ERROR"),
         Warning("WARNING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -845,94 +805,88 @@ public final class SoftwareSource extends com.oracle.bmc.http.internal.Explicitl
             return UnknownEnumValue;
         }
     };
-    /**
-     * status of the software source.
-     **/
+    /** status of the software source. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * status of the software source.
+     *
      * @return the value
-     **/
+     */
     public Status getStatus() {
         return status;
     }
 
-    /**
-     * The current state of the Software Source.
-     **/
+    /** The current state of the Software Source. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleStates lifecycleState;
 
     /**
      * The current state of the Software Source.
+     *
      * @return the value
-     **/
+     */
     public LifecycleStates getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * Number of packages
-     **/
+    /** Number of packages */
     @com.fasterxml.jackson.annotation.JsonProperty("packages")
     private final Integer packages;
 
     /**
      * Number of packages
+     *
      * @return the value
-     **/
+     */
     public Integer getPackages() {
         return packages;
     }
 
-    /**
-     * list of the Managed Instances associated with this Software Sources
-     **/
+    /** list of the Managed Instances associated with this Software Sources */
     @com.fasterxml.jackson.annotation.JsonProperty("associatedManagedInstances")
     private final java.util.List<Id> associatedManagedInstances;
 
     /**
      * list of the Managed Instances associated with this Software Sources
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Id> getAssociatedManagedInstances() {
         return associatedManagedInstances;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -944,6 +898,7 @@ public final class SoftwareSource extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

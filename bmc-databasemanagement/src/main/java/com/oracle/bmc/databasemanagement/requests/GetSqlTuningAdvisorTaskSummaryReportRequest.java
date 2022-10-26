@@ -6,43 +6,52 @@ package com.oracle.bmc.databasemanagement.requests;
 
 import com.oracle.bmc.databasemanagement.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetSqlTuningAdvisorTaskSummaryReportExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetSqlTuningAdvisorTaskSummaryReportRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetSqlTuningAdvisorTaskSummaryReportExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * GetSqlTuningAdvisorTaskSummaryReportRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class GetSqlTuningAdvisorTaskSummaryReportRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Managed Database.
      */
     private String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Managed Database.
      */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
     /**
-     * The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The SQL tuning task identifier. This is not the
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private Long sqlTuningAdvisorTaskId;
 
     /**
-     * The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The SQL tuning task identifier. This is not the
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     public Long getSqlTuningAdvisorTaskId() {
         return sqlTuningAdvisorTaskId;
     }
     /**
-     * How far back the API will search for begin and end exec id. Unused if neither exec ids nor time filter query params are supplied. This is applicable only for Auto SQL Tuning tasks.
+     * How far back the API will search for begin and end exec id. Unused if neither exec ids nor
+     * time filter query params are supplied. This is applicable only for Auto SQL Tuning tasks.
      */
     private SearchPeriod searchPeriod;
 
     /**
-     * How far back the API will search for begin and end exec id. Unused if neither exec ids nor time filter query params are supplied. This is applicable only for Auto SQL Tuning tasks.
-     **/
-    public enum SearchPeriod {
+     * How far back the API will search for begin and end exec id. Unused if neither exec ids nor
+     * time filter query params are supplied. This is applicable only for Auto SQL Tuning tasks.
+     */
+    public enum SearchPeriod implements com.oracle.bmc.http.internal.BmcEnum {
         Last24Hr("LAST_24HR"),
         Last7Day("LAST_7DAY"),
         Last31Day("LAST_31DAY"),
@@ -79,63 +88,68 @@ public class GetSqlTuningAdvisorTaskSummaryReportRequest
     };
 
     /**
-     * How far back the API will search for begin and end exec id. Unused if neither exec ids nor time filter query params are supplied. This is applicable only for Auto SQL Tuning tasks.
+     * How far back the API will search for begin and end exec id. Unused if neither exec ids nor
+     * time filter query params are supplied. This is applicable only for Auto SQL Tuning tasks.
      */
     public SearchPeriod getSearchPeriod() {
         return searchPeriod;
     }
     /**
-     * The optional greater than or equal to query parameter to filter the timestamp. This is applicable only for Auto SQL Tuning tasks.
+     * The optional greater than or equal to query parameter to filter the timestamp. This is
+     * applicable only for Auto SQL Tuning tasks.
      */
     private java.util.Date timeGreaterThanOrEqualTo;
 
     /**
-     * The optional greater than or equal to query parameter to filter the timestamp. This is applicable only for Auto SQL Tuning tasks.
+     * The optional greater than or equal to query parameter to filter the timestamp. This is
+     * applicable only for Auto SQL Tuning tasks.
      */
     public java.util.Date getTimeGreaterThanOrEqualTo() {
         return timeGreaterThanOrEqualTo;
     }
     /**
-     * The optional less than or equal to query parameter to filter the timestamp. This is applicable only for Auto SQL Tuning tasks.
+     * The optional less than or equal to query parameter to filter the timestamp. This is
+     * applicable only for Auto SQL Tuning tasks.
      */
     private java.util.Date timeLessThanOrEqualTo;
 
     /**
-     * The optional less than or equal to query parameter to filter the timestamp. This is applicable only for Auto SQL Tuning tasks.
+     * The optional less than or equal to query parameter to filter the timestamp. This is
+     * applicable only for Auto SQL Tuning tasks.
      */
     public java.util.Date getTimeLessThanOrEqualTo() {
         return timeLessThanOrEqualTo;
     }
     /**
-     * The optional greater than or equal to filter on the execution ID related to a specific SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
+     * The optional greater than or equal to filter on the execution ID related to a specific SQL
+     * Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
      */
     private Long beginExecIdGreaterThanOrEqualTo;
 
     /**
-     * The optional greater than or equal to filter on the execution ID related to a specific SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
+     * The optional greater than or equal to filter on the execution ID related to a specific SQL
+     * Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
      */
     public Long getBeginExecIdGreaterThanOrEqualTo() {
         return beginExecIdGreaterThanOrEqualTo;
     }
     /**
-     * The optional less than or equal to query parameter to filter on the execution ID related to a specific SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
+     * The optional less than or equal to query parameter to filter on the execution ID related to a
+     * specific SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
      */
     private Long endExecIdLessThanOrEqualTo;
 
     /**
-     * The optional less than or equal to query parameter to filter on the execution ID related to a specific SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
+     * The optional less than or equal to query parameter to filter on the execution ID related to a
+     * specific SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
      */
     public Long getEndExecIdLessThanOrEqualTo() {
         return endExecIdLessThanOrEqualTo;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -143,17 +157,19 @@ public class GetSqlTuningAdvisorTaskSummaryReportRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetSqlTuningAdvisorTaskSummaryReportRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Managed Database.
          */
         private String managedDatabaseId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Managed Database.
+         *
          * @param managedDatabaseId the value to set
          * @return this builder instance
          */
@@ -163,12 +179,15 @@ public class GetSqlTuningAdvisorTaskSummaryReportRequest
         }
 
         /**
-         * The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The SQL tuning task identifier. This is not the
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          */
         private Long sqlTuningAdvisorTaskId = null;
 
         /**
-         * The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The SQL tuning task identifier. This is not the
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param sqlTuningAdvisorTaskId the value to set
          * @return this builder instance
          */
@@ -178,12 +197,17 @@ public class GetSqlTuningAdvisorTaskSummaryReportRequest
         }
 
         /**
-         * How far back the API will search for begin and end exec id. Unused if neither exec ids nor time filter query params are supplied. This is applicable only for Auto SQL Tuning tasks.
+         * How far back the API will search for begin and end exec id. Unused if neither exec ids
+         * nor time filter query params are supplied. This is applicable only for Auto SQL Tuning
+         * tasks.
          */
         private SearchPeriod searchPeriod = null;
 
         /**
-         * How far back the API will search for begin and end exec id. Unused if neither exec ids nor time filter query params are supplied. This is applicable only for Auto SQL Tuning tasks.
+         * How far back the API will search for begin and end exec id. Unused if neither exec ids
+         * nor time filter query params are supplied. This is applicable only for Auto SQL Tuning
+         * tasks.
+         *
          * @param searchPeriod the value to set
          * @return this builder instance
          */
@@ -193,12 +217,15 @@ public class GetSqlTuningAdvisorTaskSummaryReportRequest
         }
 
         /**
-         * The optional greater than or equal to query parameter to filter the timestamp. This is applicable only for Auto SQL Tuning tasks.
+         * The optional greater than or equal to query parameter to filter the timestamp. This is
+         * applicable only for Auto SQL Tuning tasks.
          */
         private java.util.Date timeGreaterThanOrEqualTo = null;
 
         /**
-         * The optional greater than or equal to query parameter to filter the timestamp. This is applicable only for Auto SQL Tuning tasks.
+         * The optional greater than or equal to query parameter to filter the timestamp. This is
+         * applicable only for Auto SQL Tuning tasks.
+         *
          * @param timeGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -208,12 +235,15 @@ public class GetSqlTuningAdvisorTaskSummaryReportRequest
         }
 
         /**
-         * The optional less than or equal to query parameter to filter the timestamp. This is applicable only for Auto SQL Tuning tasks.
+         * The optional less than or equal to query parameter to filter the timestamp. This is
+         * applicable only for Auto SQL Tuning tasks.
          */
         private java.util.Date timeLessThanOrEqualTo = null;
 
         /**
-         * The optional less than or equal to query parameter to filter the timestamp. This is applicable only for Auto SQL Tuning tasks.
+         * The optional less than or equal to query parameter to filter the timestamp. This is
+         * applicable only for Auto SQL Tuning tasks.
+         *
          * @param timeLessThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -223,12 +253,15 @@ public class GetSqlTuningAdvisorTaskSummaryReportRequest
         }
 
         /**
-         * The optional greater than or equal to filter on the execution ID related to a specific SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
+         * The optional greater than or equal to filter on the execution ID related to a specific
+         * SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
          */
         private Long beginExecIdGreaterThanOrEqualTo = null;
 
         /**
-         * The optional greater than or equal to filter on the execution ID related to a specific SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
+         * The optional greater than or equal to filter on the execution ID related to a specific
+         * SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
+         *
          * @param beginExecIdGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -238,12 +271,15 @@ public class GetSqlTuningAdvisorTaskSummaryReportRequest
         }
 
         /**
-         * The optional less than or equal to query parameter to filter on the execution ID related to a specific SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
+         * The optional less than or equal to query parameter to filter on the execution ID related
+         * to a specific SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
          */
         private Long endExecIdLessThanOrEqualTo = null;
 
         /**
-         * The optional less than or equal to query parameter to filter on the execution ID related to a specific SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
+         * The optional less than or equal to query parameter to filter on the execution ID related
+         * to a specific SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
+         *
          * @param endExecIdLessThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -252,13 +288,12 @@ public class GetSqlTuningAdvisorTaskSummaryReportRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -269,18 +304,19 @@ public class GetSqlTuningAdvisorTaskSummaryReportRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -292,6 +328,7 @@ public class GetSqlTuningAdvisorTaskSummaryReportRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetSqlTuningAdvisorTaskSummaryReportRequest o) {
@@ -309,12 +346,14 @@ public class GetSqlTuningAdvisorTaskSummaryReportRequest
         }
 
         /**
-         * Build the instance of GetSqlTuningAdvisorTaskSummaryReportRequest as configured by this builder
+         * Build the instance of GetSqlTuningAdvisorTaskSummaryReportRequest as configured by this
+         * builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetSqlTuningAdvisorTaskSummaryReportRequest
          */
@@ -326,9 +365,11 @@ public class GetSqlTuningAdvisorTaskSummaryReportRequest
         }
 
         /**
-         * Build the instance of GetSqlTuningAdvisorTaskSummaryReportRequest as configured by this builder
+         * Build the instance of GetSqlTuningAdvisorTaskSummaryReportRequest as configured by this
+         * builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetSqlTuningAdvisorTaskSummaryReportRequest
@@ -345,12 +386,16 @@ public class GetSqlTuningAdvisorTaskSummaryReportRequest
             request.endExecIdLessThanOrEqualTo = endExecIdLessThanOrEqualTo;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetSqlTuningAdvisorTaskSummaryReportRequest(managedDatabaseId, sqlTuningAdvisorTaskId, searchPeriod, timeGreaterThanOrEqualTo, timeLessThanOrEqualTo, beginExecIdGreaterThanOrEqualTo, endExecIdLessThanOrEqualTo, opcRequestId);
+            // new GetSqlTuningAdvisorTaskSummaryReportRequest(managedDatabaseId,
+            // sqlTuningAdvisorTaskId, searchPeriod, timeGreaterThanOrEqualTo,
+            // timeLessThanOrEqualTo, beginExecIdGreaterThanOrEqualTo, endExecIdLessThanOrEqualTo,
+            // opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -367,6 +412,7 @@ public class GetSqlTuningAdvisorTaskSummaryReportRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

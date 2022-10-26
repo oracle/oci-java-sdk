@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.lockbox.model;
 
-/**
- * Possible approver types for approver levels.
- **/
+/** Possible approver types for approver levels. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
-public enum ApproverType {
+public enum ApproverType implements com.oracle.bmc.http.internal.BmcEnum {
     Group("GROUP"),
     User("USER"),
 

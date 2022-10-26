@@ -5,19 +5,20 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Claim.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Claim extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Claim extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "value", "issuer"})
     public Claim(String key, String value, String issuer) {
@@ -29,49 +30,46 @@ public final class Claim extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The key of the claim.
-         **/
+        /** The key of the claim. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The key of the claim.
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /**
-         * The value of the claim.
-         **/
+        /** The value of the claim. */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * The value of the claim.
+         *
          * @param value the value to set
          * @return this builder
-         **/
+         */
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /**
-         * The issuer of the claim.
-         **/
+        /** The issuer of the claim. */
         @com.fasterxml.jackson.annotation.JsonProperty("issuer")
         private String issuer;
 
         /**
          * The issuer of the claim.
+         *
          * @param issuer the value to set
          * @return this builder
-         **/
+         */
         public Builder issuer(String issuer) {
             this.issuer = issuer;
             this.__explicitlySet__.add("issuer");
@@ -104,9 +102,7 @@ public final class Claim extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,44 +111,41 @@ public final class Claim extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         return new Builder().copy(this);
     }
 
-    /**
-     * The key of the claim.
-     **/
+    /** The key of the claim. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The key of the claim.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * The value of the claim.
-     **/
+    /** The value of the claim. */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * The value of the claim.
+     *
      * @return the value
-     **/
+     */
     public String getValue() {
         return value;
     }
 
-    /**
-     * The issuer of the claim.
-     **/
+    /** The issuer of the claim. */
     @com.fasterxml.jackson.annotation.JsonProperty("issuer")
     private final String issuer;
 
     /**
      * The issuer of the claim.
+     *
      * @return the value
-     **/
+     */
     public String getIssuer() {
         return issuer;
     }
@@ -164,6 +157,7 @@ public final class Claim extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

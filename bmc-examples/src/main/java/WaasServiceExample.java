@@ -22,30 +22,26 @@ import java.util.*;
  * This class demonstrates how to use the WAAS service in the Java SDK. This will cover:
  *
  * <ul>
- *   <li>Creating, retrieving, listing, moving and deleting WAAS policies</li>
- *   <li>Uploading, retrieving, listing, moving and deleting SSL certificates</li>
- *   <li>Creating and updating WAF protection rules</li>
- *   <li>Updating challenges (CAPTCHAs, device fingerprints, etc.)</li>
+ *   <li>Creating, retrieving, listing, moving and deleting WAAS policies
+ *   <li>Uploading, retrieving, listing, moving and deleting SSL certificates
+ *   <li>Creating and updating WAF protection rules
+ *   <li>Updating challenges (CAPTCHAs, device fingerprints, etc.)
  * </ul>
  *
  * This class makes the following assumptions:
+ *
  * <ul>
- *   <li>
- *     The configuration file used by service clients will be sourced from the default
- *     location (~/.oci/config) and the DEFAULT profile will be used.
- *   </li>
- *   <li>
- *     You have the appropriate permissions to create, update, read, and
- *     inspect WAAS policies in the compartment you've specified.
- *   </li>
+ *   <li>The configuration file used by service clients will be sourced from the default location
+ *       (~/.oci/config) and the DEFAULT profile will be used.
+ *   <li>You have the appropriate permissions to create, update, read, and inspect WAAS policies in
+ *       the compartment you've specified.
  * </ul>
  */
 public class WaasServiceExample {
 
-    /**
-     * Configuration for the example, replace these with your own values.
-     */
+    /** Configuration for the example, replace these with your own values. */
     private static final String CONFIG_LOCATION = "~/.oci/config";
+
     private static final String CONFIG_PROFILE = "DEFAULT";
     private static final String COMPARTMENT_ID = "ocid1.compartment.oc1...aaaaaa";
     private static final String TARGET_COMPARTMENT_ID = "ocid1.compartment.oc1...xxxxxx";
@@ -62,37 +58,25 @@ public class WaasServiceExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     * <ul>
-     *   <li>
-     *       The OCID of the compartment where the WAAS policy will be created.
-     *       <p>
-     *         <b>Note:</b> Your tenancy OCID will be read
-     *         from your configuration file
-     *       </p>
-     *   </li>
-     *   <li>
-     *       The web application domain that will be pointed to the CNAME of the
-     *       Web Application Firewall.
-     *   </li>
-     *   <li>
-     *       The origin domain that the Web Application Firewall will forward traffic to.
-     *   </li>
-     *   <li>
-     *       <b>Optionally:</b> The path to the PEM encoded RSA private key used by the
-     *        Web Application Firewall to accept HTTPS traffic for your domain
-     *   </li>
-     *   <li>
-     *       <b>Optionally:</b> The path to the PEM encoded SSL certificate used by the
-     *        Web Application Firewall to accept HTTPS traffic for your domain
-     *   </li>
-     * </ul>
-     *
-     * The request flow should look like the following:
-     *             User -> `domain` -> OCI Web Application Firewall -> `origin`
+     *     <ul>
+     *       <li>The OCID of the compartment where the WAAS policy will be created.
+     *           <p><b>Note:</b> Your tenancy OCID will be read from your configuration file
+     *       <li>The web application domain that will be pointed to the CNAME of the Web Application
+     *           Firewall.
+     *       <li>The origin domain that the Web Application Firewall will forward traffic to.
+     *       <li><b>Optionally:</b> The path to the PEM encoded RSA private key used by the Web
+     *           Application Firewall to accept HTTPS traffic for your domain
+     *       <li><b>Optionally:</b> The path to the PEM encoded SSL certificate used by the Web
+     *           Application Firewall to accept HTTPS traffic for your domain
+     *     </ul>
+     *     The request flow should look like the following: User -> `domain` -> OCI Web Application
+     *     Firewall -> `origin`
      */
     public static void main(String[] args) throws Exception {
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -161,9 +145,9 @@ public class WaasServiceExample {
      * @param waasClient the client used to communicate with the WAAS service
      * @param compartmentId the OCID of the compartment that owns the certificate
      * @param privateKey the PEM encoded RSA private key used to encrypt traffic
-     * @param certificate the PEM encoded X.509 certificate(s) used to encrypt traffic; may be a concatenation of the
-     *                    leaf certificate followed by an intermediate certificate if necessary
-     *
+     * @param certificate the PEM encoded X.509 certificate(s) used to encrypt traffic; may be a
+     *     concatenation of the leaf certificate followed by an intermediate certificate if
+     *     necessary
      * @return the uploaded certificate
      */
     private static Certificate uploadCertificate(
@@ -192,9 +176,9 @@ public class WaasServiceExample {
     /**
      * Changes the compartment for an existing SSL Certificate
      *
-     * @param waasClient            client used to communicate with the service
-     * @param certificateId         ID of the waasPolicy to be updated
-     * @param targetCompartment     target compartment to which the LoadBalancer will be moved
+     * @param waasClient client used to communicate with the service
+     * @param certificateId ID of the waasPolicy to be updated
+     * @param targetCompartment target compartment to which the LoadBalancer will be moved
      */
     private static void changeCertificateCompartment(
             final WaasClient waasClient,
@@ -219,7 +203,6 @@ public class WaasServiceExample {
      * @param waasClient the client used to communicate with the WAAS service
      * @param compartmentId the OCID of the compartment where the policy will be created
      * @param domain the web application domain
-     *
      * @return the created WaasPolicy
      */
     private static WaasPolicy createPolicy(
@@ -314,9 +297,9 @@ public class WaasServiceExample {
     /**
      * Changes the compartment for an existing WAAS Policy
      *
-     * @param waasClient            client used to communicate with the service
-     * @param waasPolicyId          ID of the waasPolicy to be updated
-     * @param targetCompartment     target compartment to which the WAAS Policy will be moved
+     * @param waasClient client used to communicate with the service
+     * @param waasPolicyId ID of the waasPolicy to be updated
+     * @param targetCompartment target compartment to which the WAAS Policy will be moved
      */
     private static void changePolicyCompartment(
             final WaasClient waasClient,
@@ -391,7 +374,6 @@ public class WaasServiceExample {
      * @param expires the duration, in seconds, that the CAPTCHA response is valid
      * @param failureMessage text displayed to user when the CAPTCHA challenge failed
      * @param submitLabel text displayed on the button the user clicks to submit the challenge
-     *
      * @return the created CAPTCHA
      */
     private static Captcha addCaptcha(

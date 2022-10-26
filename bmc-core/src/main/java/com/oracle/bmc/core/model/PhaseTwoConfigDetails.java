@@ -5,22 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Configuration details for IPSec phase two configuration parameters.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Configuration details for IPSec phase two configuration parameters. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = PhaseTwoConfigDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = PhaseTwoConfigDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class PhaseTwoConfigDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isCustomPhaseTwoConfig",
@@ -48,26 +48,22 @@ public final class PhaseTwoConfigDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Indicates whether custom configuration is enabled for phase two options.
-         **/
+        /** Indicates whether custom configuration is enabled for phase two options. */
         @com.fasterxml.jackson.annotation.JsonProperty("isCustomPhaseTwoConfig")
         private Boolean isCustomPhaseTwoConfig;
 
         /**
          * Indicates whether custom configuration is enabled for phase two options.
+         *
          * @param isCustomPhaseTwoConfig the value to set
          * @return this builder
-         **/
+         */
         public Builder isCustomPhaseTwoConfig(Boolean isCustomPhaseTwoConfig) {
             this.isCustomPhaseTwoConfig = isCustomPhaseTwoConfig;
             this.__explicitlySet__.add("isCustomPhaseTwoConfig");
             return this;
         }
-        /**
-         * The authentication algorithm proposed during phase two tunnel negotiation.
-         *
-         **/
+        /** The authentication algorithm proposed during phase two tunnel negotiation. */
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationAlgorithm")
         private AuthenticationAlgorithm authenticationAlgorithm;
 
@@ -76,16 +72,13 @@ public final class PhaseTwoConfigDetails
          *
          * @param authenticationAlgorithm the value to set
          * @return this builder
-         **/
+         */
         public Builder authenticationAlgorithm(AuthenticationAlgorithm authenticationAlgorithm) {
             this.authenticationAlgorithm = authenticationAlgorithm;
             this.__explicitlySet__.add("authenticationAlgorithm");
             return this;
         }
-        /**
-         * The encryption algorithm proposed during phase two tunnel negotiation.
-         *
-         **/
+        /** The encryption algorithm proposed during phase two tunnel negotiation. */
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
         private EncryptionAlgorithm encryptionAlgorithm;
 
@@ -94,57 +87,56 @@ public final class PhaseTwoConfigDetails
          *
          * @param encryptionAlgorithm the value to set
          * @return this builder
-         **/
+         */
         public Builder encryptionAlgorithm(EncryptionAlgorithm encryptionAlgorithm) {
             this.encryptionAlgorithm = encryptionAlgorithm;
             this.__explicitlySet__.add("encryptionAlgorithm");
             return this;
         }
         /**
-         * Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
-         *
-         **/
+         * Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which
+         * is equivalent to 1 hour.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifetimeInSeconds")
         private Integer lifetimeInSeconds;
 
         /**
-         * Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+         * Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which
+         * is equivalent to 1 hour.
          *
          * @param lifetimeInSeconds the value to set
          * @return this builder
-         **/
+         */
         public Builder lifetimeInSeconds(Integer lifetimeInSeconds) {
             this.lifetimeInSeconds = lifetimeInSeconds;
             this.__explicitlySet__.add("lifetimeInSeconds");
             return this;
         }
-        /**
-         * Indicates whether perfect forward secrecy (PFS) is enabled.
-         **/
+        /** Indicates whether perfect forward secrecy (PFS) is enabled. */
         @com.fasterxml.jackson.annotation.JsonProperty("isPfsEnabled")
         private Boolean isPfsEnabled;
 
         /**
          * Indicates whether perfect forward secrecy (PFS) is enabled.
+         *
          * @param isPfsEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isPfsEnabled(Boolean isPfsEnabled) {
             this.isPfsEnabled = isPfsEnabled;
             this.__explicitlySet__.add("isPfsEnabled");
             return this;
         }
-        /**
-         * The Diffie-Hellman group used for PFS, if PFS is enabled.
-         **/
+        /** The Diffie-Hellman group used for PFS, if PFS is enabled. */
         @com.fasterxml.jackson.annotation.JsonProperty("pfsDhGroup")
         private PfsDhGroup pfsDhGroup;
 
         /**
          * The Diffie-Hellman group used for PFS, if PFS is enabled.
+         *
          * @param pfsDhGroup the value to set
          * @return this builder
-         **/
+         */
         public Builder pfsDhGroup(PfsDhGroup pfsDhGroup) {
             this.pfsDhGroup = pfsDhGroup;
             this.__explicitlySet__.add("pfsDhGroup");
@@ -193,9 +185,7 @@ public final class PhaseTwoConfigDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -204,25 +194,21 @@ public final class PhaseTwoConfigDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * Indicates whether custom configuration is enabled for phase two options.
-     **/
+    /** Indicates whether custom configuration is enabled for phase two options. */
     @com.fasterxml.jackson.annotation.JsonProperty("isCustomPhaseTwoConfig")
     private final Boolean isCustomPhaseTwoConfig;
 
     /**
      * Indicates whether custom configuration is enabled for phase two options.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsCustomPhaseTwoConfig() {
         return isCustomPhaseTwoConfig;
     }
 
-    /**
-     * The authentication algorithm proposed during phase two tunnel negotiation.
-     *
-     **/
-    public enum AuthenticationAlgorithm {
+    /** The authentication algorithm proposed during phase two tunnel negotiation. */
+    public enum AuthenticationAlgorithm implements com.oracle.bmc.http.internal.BmcEnum {
         HmacSha2256128("HMAC_SHA2_256_128"),
         HmacSha1128("HMAC_SHA1_128"),
         ;
@@ -254,10 +240,7 @@ public final class PhaseTwoConfigDetails
             throw new IllegalArgumentException("Invalid AuthenticationAlgorithm: " + key);
         }
     };
-    /**
-     * The authentication algorithm proposed during phase two tunnel negotiation.
-     *
-     **/
+    /** The authentication algorithm proposed during phase two tunnel negotiation. */
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationAlgorithm")
     private final AuthenticationAlgorithm authenticationAlgorithm;
 
@@ -265,16 +248,13 @@ public final class PhaseTwoConfigDetails
      * The authentication algorithm proposed during phase two tunnel negotiation.
      *
      * @return the value
-     **/
+     */
     public AuthenticationAlgorithm getAuthenticationAlgorithm() {
         return authenticationAlgorithm;
     }
 
-    /**
-     * The encryption algorithm proposed during phase two tunnel negotiation.
-     *
-     **/
-    public enum EncryptionAlgorithm {
+    /** The encryption algorithm proposed during phase two tunnel negotiation. */
+    public enum EncryptionAlgorithm implements com.oracle.bmc.http.internal.BmcEnum {
         Aes256Gcm("AES_256_GCM"),
         Aes192Gcm("AES_192_GCM"),
         Aes128Gcm("AES_128_GCM"),
@@ -310,10 +290,7 @@ public final class PhaseTwoConfigDetails
             throw new IllegalArgumentException("Invalid EncryptionAlgorithm: " + key);
         }
     };
-    /**
-     * The encryption algorithm proposed during phase two tunnel negotiation.
-     *
-     **/
+    /** The encryption algorithm proposed during phase two tunnel negotiation. */
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
     private final EncryptionAlgorithm encryptionAlgorithm;
 
@@ -321,45 +298,43 @@ public final class PhaseTwoConfigDetails
      * The encryption algorithm proposed during phase two tunnel negotiation.
      *
      * @return the value
-     **/
+     */
     public EncryptionAlgorithm getEncryptionAlgorithm() {
         return encryptionAlgorithm;
     }
 
     /**
-     * Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
-     *
-     **/
+     * Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is
+     * equivalent to 1 hour.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifetimeInSeconds")
     private final Integer lifetimeInSeconds;
 
     /**
-     * Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+     * Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is
+     * equivalent to 1 hour.
      *
      * @return the value
-     **/
+     */
     public Integer getLifetimeInSeconds() {
         return lifetimeInSeconds;
     }
 
-    /**
-     * Indicates whether perfect forward secrecy (PFS) is enabled.
-     **/
+    /** Indicates whether perfect forward secrecy (PFS) is enabled. */
     @com.fasterxml.jackson.annotation.JsonProperty("isPfsEnabled")
     private final Boolean isPfsEnabled;
 
     /**
      * Indicates whether perfect forward secrecy (PFS) is enabled.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsPfsEnabled() {
         return isPfsEnabled;
     }
 
-    /**
-     * The Diffie-Hellman group used for PFS, if PFS is enabled.
-     **/
-    public enum PfsDhGroup {
+    /** The Diffie-Hellman group used for PFS, if PFS is enabled. */
+    public enum PfsDhGroup implements com.oracle.bmc.http.internal.BmcEnum {
         Group2("GROUP2"),
         Group5("GROUP5"),
         Group14("GROUP14"),
@@ -395,16 +370,15 @@ public final class PhaseTwoConfigDetails
             throw new IllegalArgumentException("Invalid PfsDhGroup: " + key);
         }
     };
-    /**
-     * The Diffie-Hellman group used for PFS, if PFS is enabled.
-     **/
+    /** The Diffie-Hellman group used for PFS, if PFS is enabled. */
     @com.fasterxml.jackson.annotation.JsonProperty("pfsDhGroup")
     private final PfsDhGroup pfsDhGroup;
 
     /**
      * The Diffie-Hellman group used for PFS, if PFS is enabled.
+     *
      * @return the value
-     **/
+     */
     public PfsDhGroup getPfsDhGroup() {
         return pfsDhGroup;
     }
@@ -416,6 +390,7 @@ public final class PhaseTwoConfigDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,10 +5,11 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * List of (Oracle) Data Safe services, the only production service is DataSafe, the other services are used in devtest.
- **/
+ * List of (Oracle) Data Safe services, the only production service is DataSafe, the other services
+ * are used in devtest.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum ServiceList {
+public enum ServiceList implements com.oracle.bmc.http.internal.BmcEnum {
     DataSafe("DataSafe"),
     DataSafeDev("DataSafe-dev"),
     DataSafeDev1("DataSafe-dev1"),

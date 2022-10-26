@@ -6,71 +6,70 @@ package com.oracle.bmc.dataintegration.requests;
 
 import com.oracle.bmc.dataintegration.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestErrorsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListWorkRequestErrorsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ListWorkRequestErrorsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class ListWorkRequestErrorsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The ID of the asynchronous work request to retrieve.
-     */
+    /** The ID of the asynchronous work request to retrieve. */
     private String workRequestId;
 
-    /**
-     * The ID of the asynchronous work request to retrieve.
-     */
+    /** The ID of the asynchronous work request to retrieve. */
     public String getWorkRequestId() {
         return workRequestId;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code
+     * opc-prev-page} response header from the previous {@code List} call. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code
+     * opc-prev-page} response header from the previous {@code List} call. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
     /**
-     * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Sets the maximum number of results per page, or items to return in a paginated {@code List}
+     * call. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Sets the maximum number of results per page, or items to return in a paginated {@code List}
+     * call. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
-    /**
-     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
-     */
+    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
     private SortOrder sortOrder;
 
-    /**
-     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
-     **/
-    public enum SortOrder {
+    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -103,21 +102,25 @@ public class ListWorkRequestErrorsRequest
         }
     };
 
-    /**
-     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
-     */
+    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+     * fields, results are shown in descending order. All other fields default to ascending order.
+     * Sorting related parameters are ignored when parameter {@code query} is present (search
+     * operation and sorting order is by relevance score in descending order).
      */
     private SortBy sortBy;
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
-     **/
-    public enum SortBy {
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+     * fields, results are shown in descending order. All other fields default to ascending order.
+     * Sorting related parameters are ignored when parameter {@code query} is present (search
+     * operation and sorting order is by relevance score in descending order).
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TimeCreated("TIME_CREATED"),
         DisplayName("DISPLAY_NAME"),
         TimeUpdated("TIME_UPDATED"),
@@ -152,7 +155,10 @@ public class ListWorkRequestErrorsRequest
     };
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+     * fields, results are shown in descending order. All other fields default to ascending order.
+     * Sorting related parameters are ignored when parameter {@code query} is present (search
+     * operation and sorting order is by relevance score in descending order).
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -161,17 +167,15 @@ public class ListWorkRequestErrorsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListWorkRequestErrorsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The ID of the asynchronous work request to retrieve.
-         */
+        /** The ID of the asynchronous work request to retrieve. */
         private String workRequestId = null;
 
         /**
          * The ID of the asynchronous work request to retrieve.
+         *
          * @param workRequestId the value to set
          * @return this builder instance
          */
@@ -181,17 +185,14 @@ public class ListWorkRequestErrorsRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -202,12 +203,17 @@ public class ListWorkRequestErrorsRequest
         }
 
         /**
-         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the
+         * {@code opc-prev-page} response header from the previous {@code List} call. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the
+         * {@code opc-prev-page} response header from the previous {@code List} call. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -217,12 +223,17 @@ public class ListWorkRequestErrorsRequest
         }
 
         /**
-         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Sets the maximum number of results per page, or items to return in a paginated {@code
+         * List} call. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Sets the maximum number of results per page, or items to return in a paginated {@code
+         * List} call. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -238,6 +249,7 @@ public class ListWorkRequestErrorsRequest
 
         /**
          * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -247,12 +259,19 @@ public class ListWorkRequestErrorsRequest
         }
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+         * fields, results are shown in descending order. All other fields default to ascending
+         * order. Sorting related parameters are ignored when parameter {@code query} is present
+         * (search operation and sorting order is by relevance score in descending order).
          */
         private SortBy sortBy = null;
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+         * fields, results are shown in descending order. All other fields default to ascending
+         * order. Sorting related parameters are ignored when parameter {@code query} is present
+         * (search operation and sorting order is by relevance score in descending order).
+         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -263,18 +282,19 @@ public class ListWorkRequestErrorsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -286,6 +306,7 @@ public class ListWorkRequestErrorsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListWorkRequestErrorsRequest o) {
@@ -303,10 +324,11 @@ public class ListWorkRequestErrorsRequest
         /**
          * Build the instance of ListWorkRequestErrorsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListWorkRequestErrorsRequest
          */
@@ -320,7 +342,8 @@ public class ListWorkRequestErrorsRequest
         /**
          * Build the instance of ListWorkRequestErrorsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListWorkRequestErrorsRequest
@@ -334,12 +357,14 @@ public class ListWorkRequestErrorsRequest
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListWorkRequestErrorsRequest(workRequestId, opcRequestId, page, limit, sortOrder, sortBy);
+            // new ListWorkRequestErrorsRequest(workRequestId, opcRequestId, page, limit, sortOrder,
+            // sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -354,6 +379,7 @@ public class ListWorkRequestErrorsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

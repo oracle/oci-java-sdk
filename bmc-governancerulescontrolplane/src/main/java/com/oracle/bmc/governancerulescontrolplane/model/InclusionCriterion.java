@@ -5,21 +5,23 @@
 package com.oracle.bmc.governancerulescontrolplane.model;
 
 /**
- * Represents the criterion for the inclusion of the child tenancies under a governance rule. This can be either TENANCY or TAG.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Represents the criterion for the inclusion of the child tenancies under a governance rule. This
+ * can be either TENANCY or TAG. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = InclusionCriterion.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InclusionCriterion extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = InclusionCriterion.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class InclusionCriterion
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -51,32 +53,42 @@ public final class InclusionCriterion extends com.oracle.bmc.http.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the inclusion criterion.
-         **/
+         * The Oracle ID
+         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * inclusion criterion.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the inclusion criterion.
+         * The Oracle ID
+         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * inclusion criterion.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the governance rule. Every inclusion criterion is associated with a governance rule.
-         **/
+         * The Oracle ID
+         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * governance rule. Every inclusion criterion is associated with a governance rule.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("governanceRuleId")
         private String governanceRuleId;
 
         /**
-         * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the governance rule. Every inclusion criterion is associated with a governance rule.
+         * The Oracle ID
+         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * governance rule. Every inclusion criterion is associated with a governance rule.
+         *
          * @param governanceRuleId the value to set
          * @return this builder
-         **/
+         */
         public Builder governanceRuleId(String governanceRuleId) {
             this.governanceRuleId = governanceRuleId;
             this.__explicitlySet__.add("governanceRuleId");
@@ -84,15 +96,16 @@ public final class InclusionCriterion extends com.oracle.bmc.http.internal.Expli
         }
         /**
          * Type of inclusion criterion - TENANCY, ALL or TAG. We support TENANCY and ALL for now.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * Type of inclusion criterion - TENANCY, ALL or TAG. We support TENANCY and ALL for now.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -107,17 +120,16 @@ public final class InclusionCriterion extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("association");
             return this;
         }
-        /**
-         * The current state of the inclusion criterion.
-         **/
+        /** The current state of the inclusion criterion. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the inclusion criterion.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -125,21 +137,20 @@ public final class InclusionCriterion extends com.oracle.bmc.http.internal.Expli
         }
         /**
          * Date and time the inclusion criterion was created. An RFC3339 formatted datetime string.
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         **/
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * Date and time the inclusion criterion was created. An RFC3339 formatted datetime string.
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -147,21 +158,20 @@ public final class InclusionCriterion extends com.oracle.bmc.http.internal.Expli
         }
         /**
          * Date and time the inclusion criterion was updated. An RFC3339 formatted datetime string.
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         **/
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * Date and time the inclusion criterion was updated. An RFC3339 formatted datetime string.
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -214,9 +224,7 @@ public final class InclusionCriterion extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -226,43 +234,51 @@ public final class InclusionCriterion extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the inclusion criterion.
-     **/
+     * The Oracle ID
+     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * inclusion criterion.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the inclusion criterion.
+     * The Oracle ID
+     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * inclusion criterion.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the governance rule. Every inclusion criterion is associated with a governance rule.
-     **/
+     * The Oracle ID
+     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * governance rule. Every inclusion criterion is associated with a governance rule.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("governanceRuleId")
     private final String governanceRuleId;
 
     /**
-     * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the governance rule. Every inclusion criterion is associated with a governance rule.
+     * The Oracle ID
+     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * governance rule. Every inclusion criterion is associated with a governance rule.
+     *
      * @return the value
-     **/
+     */
     public String getGovernanceRuleId() {
         return governanceRuleId;
     }
 
-    /**
-     * Type of inclusion criterion - TENANCY, ALL or TAG. We support TENANCY and ALL for now.
-     **/
-    public enum Type {
+    /** Type of inclusion criterion - TENANCY, ALL or TAG. We support TENANCY and ALL for now. */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Tenancy("TENANCY"),
         All("ALL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -299,16 +315,15 @@ public final class InclusionCriterion extends com.oracle.bmc.http.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /**
-     * Type of inclusion criterion - TENANCY, ALL or TAG. We support TENANCY and ALL for now.
-     **/
+    /** Type of inclusion criterion - TENANCY, ALL or TAG. We support TENANCY and ALL for now. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * Type of inclusion criterion - TENANCY, ALL or TAG. We support TENANCY and ALL for now.
+     *
      * @return the value
-     **/
+     */
     public Type getType() {
         return type;
     }
@@ -320,16 +335,14 @@ public final class InclusionCriterion extends com.oracle.bmc.http.internal.Expli
         return association;
     }
 
-    /**
-     * The current state of the inclusion criterion.
-     **/
-    public enum LifecycleState {
+    /** The current state of the inclusion criterion. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Active("ACTIVE"),
         Deleted("DELETED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -368,56 +381,53 @@ public final class InclusionCriterion extends com.oracle.bmc.http.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current state of the inclusion criterion.
-     **/
+    /** The current state of the inclusion criterion. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the inclusion criterion.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
      * Date and time the inclusion criterion was created. An RFC3339 formatted datetime string.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     **/
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * Date and time the inclusion criterion was created. An RFC3339 formatted datetime string.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
      * Date and time the inclusion criterion was updated. An RFC3339 formatted datetime string.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     **/
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * Date and time the inclusion criterion was updated. An RFC3339 formatted datetime string.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -429,6 +439,7 @@ public final class InclusionCriterion extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

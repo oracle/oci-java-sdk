@@ -5,22 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Upsert LogAnalytics Field Details
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Upsert LogAnalytics Field Details <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpsertLogAnalyticsFieldDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpsertLogAnalyticsFieldDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpsertLogAnalyticsFieldDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dataType",
@@ -45,26 +45,22 @@ public final class UpsertLogAnalyticsFieldDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The data type.
-         **/
+        /** The data type. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
         /**
          * The data type.
+         *
          * @param dataType the value to set
          * @return this builder
-         **/
+         */
         public Builder dataType(String dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-        /**
-         * A flag indicating whether or not the field is multi-valued.
-         *
-         **/
+        /** A flag indicating whether or not the field is multi-valued. */
         @com.fasterxml.jackson.annotation.JsonProperty("isMultiValued")
         private Boolean isMultiValued;
 
@@ -73,55 +69,52 @@ public final class UpsertLogAnalyticsFieldDetails
          *
          * @param isMultiValued the value to set
          * @return this builder
-         **/
+         */
         public Builder isMultiValued(Boolean isMultiValued) {
             this.isMultiValued = isMultiValued;
             this.__explicitlySet__.add("isMultiValued");
             return this;
         }
-        /**
-         * The field description.
-         **/
+        /** The field description. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The field description.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The field display name.
-         **/
+        /** The field display name. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The field display name.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The field internal name.
-         **/
+        /** The field internal name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The field internal name.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -166,9 +159,7 @@ public final class UpsertLogAnalyticsFieldDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -177,24 +168,20 @@ public final class UpsertLogAnalyticsFieldDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The data type.
-     **/
+    /** The data type. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
     /**
      * The data type.
+     *
      * @return the value
-     **/
+     */
     public String getDataType() {
         return dataType;
     }
 
-    /**
-     * A flag indicating whether or not the field is multi-valued.
-     *
-     **/
+    /** A flag indicating whether or not the field is multi-valued. */
     @com.fasterxml.jackson.annotation.JsonProperty("isMultiValued")
     private final Boolean isMultiValued;
 
@@ -202,49 +189,46 @@ public final class UpsertLogAnalyticsFieldDetails
      * A flag indicating whether or not the field is multi-valued.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsMultiValued() {
         return isMultiValued;
     }
 
-    /**
-     * The field description.
-     **/
+    /** The field description. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The field description.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The field display name.
-     **/
+    /** The field display name. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The field display name.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The field internal name.
-     **/
+    /** The field internal name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The field internal name.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
@@ -256,6 +240,7 @@ public final class UpsertLogAnalyticsFieldDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,77 +6,59 @@ package com.oracle.bmc.datacatalog.requests;
 
 import com.oracle.bmc.datacatalog.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetAttributeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetAttributeRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetAttributeExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetAttributeRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * Unique catalog identifier.
-     */
+    /** Unique catalog identifier. */
     private String catalogId;
 
-    /**
-     * Unique catalog identifier.
-     */
+    /** Unique catalog identifier. */
     public String getCatalogId() {
         return catalogId;
     }
-    /**
-     * Unique data asset key.
-     */
+    /** Unique data asset key. */
     private String dataAssetKey;
 
-    /**
-     * Unique data asset key.
-     */
+    /** Unique data asset key. */
     public String getDataAssetKey() {
         return dataAssetKey;
     }
-    /**
-     * Unique entity key.
-     */
+    /** Unique entity key. */
     private String entityKey;
 
-    /**
-     * Unique entity key.
-     */
+    /** Unique entity key. */
     public String getEntityKey() {
         return entityKey;
     }
-    /**
-     * Unique attribute key.
-     */
+    /** Unique attribute key. */
     private String attributeKey;
 
-    /**
-     * Unique attribute key.
-     */
+    /** Unique attribute key. */
     public String getAttributeKey() {
         return attributeKey;
     }
     /**
-     * Indicates whether the list of objects and their relationships to this object will be provided in the response.
+     * Indicates whether the list of objects and their relationships to this object will be provided
+     * in the response.
      */
     private Boolean isIncludeObjectRelationships;
 
     /**
-     * Indicates whether the list of objects and their relationships to this object will be provided in the response.
+     * Indicates whether the list of objects and their relationships to this object will be provided
+     * in the response.
      */
     public Boolean getIsIncludeObjectRelationships() {
         return isIncludeObjectRelationships;
     }
-    /**
-     * Specifies the fields to return in an entity attribute response.
-     *
-     */
+    /** Specifies the fields to return in an entity attribute response. */
     private java.util.List<Fields> fields;
 
-    /**
-     * Specifies the fields to return in an entity attribute response.
-     *
-     **/
-    public enum Fields {
+    /** Specifies the fields to return in an entity attribute response. */
+    public enum Fields implements com.oracle.bmc.http.internal.BmcEnum {
         Key("key"),
         DisplayName("displayName"),
         Description("description"),
@@ -135,21 +117,14 @@ public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
-    /**
-     * Specifies the fields to return in an entity attribute response.
-     *
-     */
+    /** Specifies the fields to return in an entity attribute response. */
     public java.util.List<Fields> getFields() {
         return fields;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -157,17 +132,15 @@ public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetAttributeRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique catalog identifier.
-         */
+        /** Unique catalog identifier. */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         *
          * @param catalogId the value to set
          * @return this builder instance
          */
@@ -176,13 +149,12 @@ public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * Unique data asset key.
-         */
+        /** Unique data asset key. */
         private String dataAssetKey = null;
 
         /**
          * Unique data asset key.
+         *
          * @param dataAssetKey the value to set
          * @return this builder instance
          */
@@ -191,13 +163,12 @@ public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * Unique entity key.
-         */
+        /** Unique entity key. */
         private String entityKey = null;
 
         /**
          * Unique entity key.
+         *
          * @param entityKey the value to set
          * @return this builder instance
          */
@@ -206,13 +177,12 @@ public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * Unique attribute key.
-         */
+        /** Unique attribute key. */
         private String attributeKey = null;
 
         /**
          * Unique attribute key.
+         *
          * @param attributeKey the value to set
          * @return this builder instance
          */
@@ -222,12 +192,15 @@ public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Indicates whether the list of objects and their relationships to this object will be provided in the response.
+         * Indicates whether the list of objects and their relationships to this object will be
+         * provided in the response.
          */
         private Boolean isIncludeObjectRelationships = null;
 
         /**
-         * Indicates whether the list of objects and their relationships to this object will be provided in the response.
+         * Indicates whether the list of objects and their relationships to this object will be
+         * provided in the response.
+         *
          * @param isIncludeObjectRelationships the value to set
          * @return this builder instance
          */
@@ -236,10 +209,7 @@ public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * Specifies the fields to return in an entity attribute response.
-         *
-         */
+        /** Specifies the fields to return in an entity attribute response. */
         private java.util.List<Fields> fields = null;
 
         /**
@@ -263,13 +233,12 @@ public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -280,18 +249,19 @@ public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -303,6 +273,7 @@ public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetAttributeRequest o) {
@@ -321,10 +292,11 @@ public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of GetAttributeRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetAttributeRequest
          */
@@ -338,7 +310,8 @@ public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of GetAttributeRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetAttributeRequest
@@ -353,12 +326,14 @@ public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.fields = fields;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetAttributeRequest(catalogId, dataAssetKey, entityKey, attributeKey, isIncludeObjectRelationships, fields, opcRequestId);
+            // new GetAttributeRequest(catalogId, dataAssetKey, entityKey, attributeKey,
+            // isIncludeObjectRelationships, fields, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -374,6 +349,7 @@ public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

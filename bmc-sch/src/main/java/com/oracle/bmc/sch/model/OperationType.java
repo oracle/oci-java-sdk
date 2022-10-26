@@ -4,12 +4,9 @@
  */
 package com.oracle.bmc.sch.model;
 
-/**
- * Possible operation types.
- *
- **/
+/** Possible operation types. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
-public enum OperationType {
+public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateServiceConnector("CREATE_SERVICE_CONNECTOR"),
     UpdateServiceConnector("UPDATE_SERVICE_CONNECTOR"),
     DeleteServiceConnector("DELETE_SERVICE_CONNECTOR"),

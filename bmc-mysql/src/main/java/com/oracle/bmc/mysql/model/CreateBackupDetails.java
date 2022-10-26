@@ -5,21 +5,22 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * Complete information for a Backup.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Complete information for a Backup. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateBackupDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateBackupDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = CreateBackupDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class CreateBackupDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -50,101 +51,95 @@ public final class CreateBackupDetails extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * A user-supplied display name for the backup.
-         **/
+        /** A user-supplied display name for the backup. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * A user-supplied display name for the backup.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * A user-supplied description for the backup.
-         **/
+        /** A user-supplied description for the backup. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A user-supplied description for the backup.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The type of backup.
-         **/
+        /** The type of backup. */
         @com.fasterxml.jackson.annotation.JsonProperty("backupType")
         private BackupType backupType;
 
         /**
          * The type of backup.
+         *
          * @param backupType the value to set
          * @return this builder
-         **/
+         */
         public Builder backupType(BackupType backupType) {
             this.backupType = backupType;
             this.__explicitlySet__.add("backupType");
             return this;
         }
-        /**
-         * The OCID of the DB System the Backup is associated with.
-         **/
+        /** The OCID of the DB System the Backup is associated with. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
         /**
          * The OCID of the DB System the Backup is associated with.
+         *
          * @param dbSystemId the value to set
          * @return this builder
-         **/
+         */
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = dbSystemId;
             this.__explicitlySet__.add("dbSystemId");
             return this;
         }
-        /**
-         * Number of days to retain this backup.
-         **/
+        /** Number of days to retain this backup. */
         @com.fasterxml.jackson.annotation.JsonProperty("retentionInDays")
         private Integer retentionInDays;
 
         /**
          * Number of days to retain this backup.
+         *
          * @param retentionInDays the value to set
          * @return this builder
-         **/
+         */
         public Builder retentionInDays(Integer retentionInDays) {
             this.retentionInDays = retentionInDays;
             this.__explicitlySet__.add("retentionInDays");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -153,8 +148,7 @@ public final class CreateBackupDetails extends com.oracle.bmc.http.internal.Expl
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -164,7 +158,7 @@ public final class CreateBackupDetails extends com.oracle.bmc.http.internal.Expl
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -218,9 +212,7 @@ public final class CreateBackupDetails extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -229,38 +221,34 @@ public final class CreateBackupDetails extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * A user-supplied display name for the backup.
-     **/
+    /** A user-supplied display name for the backup. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A user-supplied display name for the backup.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * A user-supplied description for the backup.
-     **/
+    /** A user-supplied description for the backup. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A user-supplied description for the backup.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The type of backup.
-     **/
-    public enum BackupType {
+    /** The type of backup. */
+    public enum BackupType implements com.oracle.bmc.http.internal.BmcEnum {
         Full("FULL"),
         Incremental("INCREMENTAL"),
         ;
@@ -292,80 +280,75 @@ public final class CreateBackupDetails extends com.oracle.bmc.http.internal.Expl
             throw new IllegalArgumentException("Invalid BackupType: " + key);
         }
     };
-    /**
-     * The type of backup.
-     **/
+    /** The type of backup. */
     @com.fasterxml.jackson.annotation.JsonProperty("backupType")
     private final BackupType backupType;
 
     /**
      * The type of backup.
+     *
      * @return the value
-     **/
+     */
     public BackupType getBackupType() {
         return backupType;
     }
 
-    /**
-     * The OCID of the DB System the Backup is associated with.
-     **/
+    /** The OCID of the DB System the Backup is associated with. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
     /**
      * The OCID of the DB System the Backup is associated with.
+     *
      * @return the value
-     **/
+     */
     public String getDbSystemId() {
         return dbSystemId;
     }
 
-    /**
-     * Number of days to retain this backup.
-     **/
+    /** Number of days to retain this backup. */
     @com.fasterxml.jackson.annotation.JsonProperty("retentionInDays")
     private final Integer retentionInDays;
 
     /**
      * Number of days to retain this backup.
+     *
      * @return the value
-     **/
+     */
     public Integer getRetentionInDays() {
         return retentionInDays;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -377,6 +360,7 @@ public final class CreateBackupDetails extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

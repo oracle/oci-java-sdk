@@ -7,46 +7,44 @@ package com.oracle.bmc.certificatesmanagement;
 import com.oracle.bmc.certificatesmanagement.requests.*;
 import com.oracle.bmc.certificatesmanagement.responses.*;
 
-/**
- * API for managing certificates.
- */
+/** API for managing certificates. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public interface CertificatesManagementAsync extends AutoCloseable {
 
-    /**
-     * Rebuilds the client from scratch.
-     * Useful to refresh certificates.
-     */
+    /** Rebuilds the client from scratch. Useful to refresh certificates. */
     void refreshClient();
 
     /**
      * Sets the endpoint to call (ex, https://www.example.com).
+     *
      * @param endpoint The endpoint of the serice.
      */
     void setEndpoint(String endpoint);
 
-    /**
-     * Gets the set endpoint for REST call (ex, https://www.example.com)
-     */
+    /** Gets the set endpoint for REST call (ex, https://www.example.com) */
     String getEndpoint();
 
     /**
      * Sets the region to call (ex, Region.US_PHOENIX_1).
-     * <p>
-     * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
+     *
+     * <p>Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the
+     * endpoint. If the service is not available in this region, however, an
+     * IllegalArgumentException will be raised.
+     *
      * @param region The region of the service.
      */
     void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
-     * <p>
-     * Note, this will first try to map the region ID to a known Region and call
-     * {@link #setRegion(Region) setRegion}.
-     * <p>
-     * If no known Region could be determined, it will create an endpoint based on the
-     * default endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
+     *
+     * <p>Note, this will first try to map the region ID to a known Region and call {@link
+     * #setRegion(Region) setRegion}.
+     *
+     * <p>If no known Region could be determined, it will create an endpoint based on the default
+     * endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
      * and then call {@link #setEndpoint(String) setEndpoint}.
+     *
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
@@ -56,10 +54,10 @@ public interface CertificatesManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CancelCertificateAuthorityDeletionResponse>
             cancelCertificateAuthorityDeletion(
@@ -71,16 +69,15 @@ public interface CertificatesManagementAsync extends AutoCloseable {
 
     /**
      * Cancels the scheduled deletion of the specified certificate authority (CA) version. Canceling
-     * a scheduled deletion restores the CA version's lifecycle state to what
-     * it was before its scheduled deletion.
-     *
+     * a scheduled deletion restores the CA version's lifecycle state to what it was before its
+     * scheduled deletion.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CancelCertificateAuthorityVersionDeletionResponse>
             cancelCertificateAuthorityVersionDeletion(
@@ -91,17 +88,16 @@ public interface CertificatesManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Cancels the pending deletion of the specified certificate. Canceling
-     * a scheduled deletion restores the certificate's lifecycle state to what
-     * it was before you scheduled the certificate for deletion.
-     *
+     * Cancels the pending deletion of the specified certificate. Canceling a scheduled deletion
+     * restores the certificate's lifecycle state to what it was before you scheduled the
+     * certificate for deletion.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CancelCertificateDeletionResponse> cancelCertificateDeletion(
             CancelCertificateDeletionRequest request,
@@ -114,10 +110,10 @@ public interface CertificatesManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CancelCertificateVersionDeletionResponse>
             cancelCertificateVersionDeletion(
@@ -129,17 +125,17 @@ public interface CertificatesManagementAsync extends AutoCloseable {
 
     /**
      * Moves a CA bundle to a different compartment in the same tenancy. For information about
-     * moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
-     * <p>
-     * When provided, if-match is checked against the ETag values of the secret.
+     * moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
+     * <p>When provided, if-match is checked against the ETag values of the secret.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeCaBundleCompartmentResponse> changeCaBundleCompartment(
             ChangeCaBundleCompartmentRequest request,
@@ -148,18 +144,18 @@ public interface CertificatesManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves a certificate authority (CA) to a different compartment within the same tenancy. For information about
-     * moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
-     * <p>
-     * When provided, If-Match is checked against the ETag values of the source.
+     * Moves a certificate authority (CA) to a different compartment within the same tenancy. For
+     * information about moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
+     * <p>When provided, If-Match is checked against the ETag values of the source.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeCertificateAuthorityCompartmentResponse>
             changeCertificateAuthorityCompartment(
@@ -171,17 +167,17 @@ public interface CertificatesManagementAsync extends AutoCloseable {
 
     /**
      * Moves a certificate to a different compartment within the same tenancy. For information about
-     * moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
-     * <p>
-     * When provided, if-match is checked against the ETag values of the secret.
+     * moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
+     * <p>When provided, if-match is checked against the ETag values of the secret.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeCertificateCompartmentResponse> changeCertificateCompartment(
             ChangeCertificateCompartmentRequest request,
@@ -195,10 +191,10 @@ public interface CertificatesManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateCaBundleResponse> createCaBundle(
             CreateCaBundleRequest request,
@@ -210,10 +206,10 @@ public interface CertificatesManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateCertificateResponse> createCertificate(
             CreateCertificateRequest request,
@@ -226,10 +222,10 @@ public interface CertificatesManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateCertificateAuthorityResponse> createCertificateAuthority(
             CreateCertificateAuthorityRequest request,
@@ -242,10 +238,10 @@ public interface CertificatesManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteCaBundleResponse> deleteCaBundle(
             DeleteCaBundleRequest request,
@@ -257,10 +253,10 @@ public interface CertificatesManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetAssociationResponse> getAssociation(
             GetAssociationRequest request,
@@ -272,10 +268,10 @@ public interface CertificatesManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetCaBundleResponse> getCaBundle(
             GetCaBundleRequest request,
@@ -286,10 +282,10 @@ public interface CertificatesManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetCertificateResponse> getCertificate(
             GetCertificateRequest request,
@@ -301,10 +297,10 @@ public interface CertificatesManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetCertificateAuthorityResponse> getCertificateAuthority(
             GetCertificateAuthorityRequest request,
@@ -317,10 +313,10 @@ public interface CertificatesManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetCertificateAuthorityVersionResponse>
             getCertificateAuthorityVersion(
@@ -335,10 +331,10 @@ public interface CertificatesManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetCertificateVersionResponse> getCertificateVersion(
             GetCertificateVersionRequest request,
@@ -347,16 +343,16 @@ public interface CertificatesManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists all associations that match the query parameters.
-     * Optionally, you can use the parameter `FilterByAssociationIdQueryParam` to limit the result set to a single item that matches the specified association.
-     *
+     * Lists all associations that match the query parameters. Optionally, you can use the parameter
+     * `FilterByAssociationIdQueryParam` to limit the result set to a single item that matches the
+     * specified association.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAssociationsResponse> listAssociations(
             ListAssociationsRequest request,
@@ -364,16 +360,16 @@ public interface CertificatesManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists all CA bundles that match the query parameters.
-     * Optionally, you can use the parameter `FilterByCaBundleIdQueryParam` to limit the result set to a single item that matches the specified CA bundle.
-     *
+     * Lists all CA bundles that match the query parameters. Optionally, you can use the parameter
+     * `FilterByCaBundleIdQueryParam` to limit the result set to a single item that matches the
+     * specified CA bundle.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListCaBundlesResponse> listCaBundles(
             ListCaBundlesRequest request,
@@ -381,16 +377,16 @@ public interface CertificatesManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists all certificate authorities (CAs) in the specified compartment.
-     * Optionally, you can use the parameter `FilterByCertificateAuthorityIdQueryParam` to limit the results to a single item that matches the specified CA.
-     *
+     * Lists all certificate authorities (CAs) in the specified compartment. Optionally, you can use
+     * the parameter `FilterByCertificateAuthorityIdQueryParam` to limit the results to a single
+     * item that matches the specified CA.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListCertificateAuthoritiesResponse> listCertificateAuthorities(
             ListCertificateAuthoritiesRequest request,
@@ -399,16 +395,16 @@ public interface CertificatesManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists all versions for the specified certificate authority (CA).
-     * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
-     *
+     * Lists all versions for the specified certificate authority (CA). Optionally, you can use the
+     * parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that
+     * matches the specified version number.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListCertificateAuthorityVersionsResponse>
             listCertificateAuthorityVersions(
@@ -419,16 +415,16 @@ public interface CertificatesManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists all certificate versions for the specified certificate.
-     * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the result set to a single item that matches the specified version number.
-     *
+     * Lists all certificate versions for the specified certificate. Optionally, you can use the
+     * parameter `FilterByVersionNumberQueryParam` to limit the result set to a single item that
+     * matches the specified version number.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListCertificateVersionsResponse> listCertificateVersions(
             ListCertificateVersionsRequest request,
@@ -437,16 +433,16 @@ public interface CertificatesManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists all certificates that match the query parameters.
-     * Optionally, you can use the parameter `FilterByCertificateIdQueryParam` to limit the result set to a single item that matches the specified certificate.
-     *
+     * Lists all certificates that match the query parameters. Optionally, you can use the parameter
+     * `FilterByCertificateIdQueryParam` to limit the result set to a single item that matches the
+     * specified certificate.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListCertificatesResponse> listCertificates(
             ListCertificatesRequest request,
@@ -458,10 +454,10 @@ public interface CertificatesManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RevokeCertificateAuthorityVersionResponse>
             revokeCertificateAuthorityVersion(
@@ -476,10 +472,10 @@ public interface CertificatesManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RevokeCertificateVersionResponse> revokeCertificateVersion(
             RevokeCertificateVersionRequest request,
@@ -488,15 +484,17 @@ public interface CertificatesManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Schedules the deletion of the specified certificate authority (CA). This sets the lifecycle state of the CA to `PENDING_DELETION` and then deletes it after the specified retention period ends. If needed, you can determine the status of the deletion by using `GetCertificateAuthority`.
-     *
+     * Schedules the deletion of the specified certificate authority (CA). This sets the lifecycle
+     * state of the CA to `PENDING_DELETION` and then deletes it after the specified retention
+     * period ends. If needed, you can determine the status of the deletion by using
+     * `GetCertificateAuthority`.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ScheduleCertificateAuthorityDeletionResponse>
             scheduleCertificateAuthorityDeletion(
@@ -507,17 +505,17 @@ public interface CertificatesManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Schedules the deletion of the specified certificate authority (CA) version.
-     * This sets the lifecycle state of the CA version to `PENDING_DELETION`
-     * and then deletes it after the specified retention period ends. If needed, you can determine the status of the deletion by using `GetCertificateAuthorityVersion`.
-     *
+     * Schedules the deletion of the specified certificate authority (CA) version. This sets the
+     * lifecycle state of the CA version to `PENDING_DELETION` and then deletes it after the
+     * specified retention period ends. If needed, you can determine the status of the deletion by
+     * using `GetCertificateAuthorityVersion`.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ScheduleCertificateAuthorityVersionDeletionResponse>
             scheduleCertificateAuthorityVersionDeletion(
@@ -528,17 +526,16 @@ public interface CertificatesManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Schedules the deletion of the specified certificate. This sets the lifecycle state of the certificate
-     * to `PENDING_DELETION` and then deletes it after the specified retention period ends.
-     * You can subsequently use `GetCertificate` to determine the current deletion status.
-     *
+     * Schedules the deletion of the specified certificate. This sets the lifecycle state of the
+     * certificate to `PENDING_DELETION` and then deletes it after the specified retention period
+     * ends. You can subsequently use `GetCertificate` to determine the current deletion status.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ScheduleCertificateDeletionResponse> scheduleCertificateDeletion(
             ScheduleCertificateDeletionRequest request,
@@ -547,18 +544,20 @@ public interface CertificatesManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Schedules the deletion of the specified certificate version. This sets the lifecycle state of the certificate version to `PENDING_DELETION` and then deletes it after the specified retention period ends. You can only
-     * delete a certificate version if the certificate version rotation state is marked as `DEPRECATED`.
-     * <p>
-     * You can subsequently use `GetCertificateVersion` to determine the current certificate version deletion status.
+     * Schedules the deletion of the specified certificate version. This sets the lifecycle state of
+     * the certificate version to `PENDING_DELETION` and then deletes it after the specified
+     * retention period ends. You can only delete a certificate version if the certificate version
+     * rotation state is marked as `DEPRECATED`.
      *
+     * <p>You can subsequently use `GetCertificateVersion` to determine the current certificate
+     * version deletion status.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ScheduleCertificateVersionDeletionResponse>
             scheduleCertificateVersionDeletion(
@@ -573,10 +572,10 @@ public interface CertificatesManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateCaBundleResponse> updateCaBundle(
             UpdateCaBundleRequest request,
@@ -588,10 +587,10 @@ public interface CertificatesManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateCertificateResponse> updateCertificate(
             UpdateCertificateRequest request,
@@ -604,10 +603,10 @@ public interface CertificatesManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateCertificateAuthorityResponse> updateCertificateAuthority(
             UpdateCertificateAuthorityRequest request,

@@ -6,65 +6,54 @@ package com.oracle.bmc.managementagent.requests;
 
 import com.oracle.bmc.managementagent.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/ListManagementAgentPluginsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListManagementAgentPluginsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/ListManagementAgentPluginsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ListManagementAgentPluginsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 public class ListManagementAgentPluginsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The OCID of the compartment to which a request will be scoped.
-     */
+    /** The OCID of the compartment to which a request will be scoped. */
     private String compartmentId;
 
-    /**
-     * The OCID of the compartment to which a request will be scoped.
-     */
+    /** The OCID of the compartment to which a request will be scoped. */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * Filter to return only Management Agent Plugins having the particular display name.
-     */
+    /** Filter to return only Management Agent Plugins having the particular display name. */
     private String displayName;
 
-    /**
-     * Filter to return only Management Agent Plugins having the particular display name.
-     */
+    /** Filter to return only Management Agent Plugins having the particular display name. */
     public String getDisplayName() {
         return displayName;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order to use, either 'asc' or 'desc'.
-     */
+    /** The sort order to use, either 'asc' or 'desc'. */
     private SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either 'asc' or 'desc'.
-     **/
-    public enum SortOrder {
+    /** The sort order to use, either 'asc' or 'desc'. */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -97,23 +86,21 @@ public class ListManagementAgentPluginsRequest
         }
     };
 
-    /**
-     * The sort order to use, either 'asc' or 'desc'.
-     */
+    /** The sort order to use, either 'asc' or 'desc'. */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Default order for displayName is ascending. If no value is specified displayName is default.
-     *
+     * The field to sort by. Default order for displayName is ascending. If no value is specified
+     * displayName is default.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Default order for displayName is ascending. If no value is specified displayName is default.
-     *
-     **/
-    public enum SortBy {
+     * The field to sort by. Default order for displayName is ascending. If no value is specified
+     * displayName is default.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         DisplayName("displayName"),
         ;
 
@@ -146,53 +133,37 @@ public class ListManagementAgentPluginsRequest
     };
 
     /**
-     * The field to sort by. Default order for displayName is ascending. If no value is specified displayName is default.
-     *
+     * The field to sort by. Default order for displayName is ascending. If no value is specified
+     * displayName is default.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * Filter to return only Management Agents in the particular lifecycle state.
-     */
+    /** Filter to return only Management Agents in the particular lifecycle state. */
     private com.oracle.bmc.managementagent.model.LifecycleStates lifecycleState;
 
-    /**
-     * Filter to return only Management Agents in the particular lifecycle state.
-     */
+    /** Filter to return only Management Agents in the particular lifecycle state. */
     public com.oracle.bmc.managementagent.model.LifecycleStates getLifecycleState() {
         return lifecycleState;
     }
-    /**
-     * Filter to return only results having the particular platform type.
-     */
+    /** Filter to return only results having the particular platform type. */
     private java.util.List<com.oracle.bmc.managementagent.model.PlatformTypes> platformType;
 
-    /**
-     * Filter to return only results having the particular platform type.
-     */
+    /** Filter to return only results having the particular platform type. */
     public java.util.List<com.oracle.bmc.managementagent.model.PlatformTypes> getPlatformType() {
         return platformType;
     }
-    /**
-     * The ManagementAgentID of the agent from which the Management Agents to be filtered.
-     */
+    /** The ManagementAgentID of the agent from which the Management Agents to be filtered. */
     private String agentId;
 
-    /**
-     * The ManagementAgentID of the agent from which the Management Agents to be filtered.
-     */
+    /** The ManagementAgentID of the agent from which the Management Agents to be filtered. */
     public String getAgentId() {
         return agentId;
     }
@@ -200,17 +171,15 @@ public class ListManagementAgentPluginsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListManagementAgentPluginsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the compartment to which a request will be scoped.
-         */
+        /** The OCID of the compartment to which a request will be scoped. */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment to which a request will be scoped.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -219,13 +188,12 @@ public class ListManagementAgentPluginsRequest
             return this;
         }
 
-        /**
-         * Filter to return only Management Agent Plugins having the particular display name.
-         */
+        /** Filter to return only Management Agent Plugins having the particular display name. */
         private String displayName = null;
 
         /**
          * Filter to return only Management Agent Plugins having the particular display name.
+         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -234,13 +202,12 @@ public class ListManagementAgentPluginsRequest
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -250,12 +217,15 @@ public class ListManagementAgentPluginsRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -264,13 +234,12 @@ public class ListManagementAgentPluginsRequest
             return this;
         }
 
-        /**
-         * The sort order to use, either 'asc' or 'desc'.
-         */
+        /** The sort order to use, either 'asc' or 'desc'. */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -280,13 +249,14 @@ public class ListManagementAgentPluginsRequest
         }
 
         /**
-         * The field to sort by. Default order for displayName is ascending. If no value is specified displayName is default.
-         *
+         * The field to sort by. Default order for displayName is ascending. If no value is
+         * specified displayName is default.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Default order for displayName is ascending. If no value is specified displayName is default.
+         * The field to sort by. Default order for displayName is ascending. If no value is
+         * specified displayName is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -296,13 +266,12 @@ public class ListManagementAgentPluginsRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -311,13 +280,12 @@ public class ListManagementAgentPluginsRequest
             return this;
         }
 
-        /**
-         * Filter to return only Management Agents in the particular lifecycle state.
-         */
+        /** Filter to return only Management Agents in the particular lifecycle state. */
         private com.oracle.bmc.managementagent.model.LifecycleStates lifecycleState = null;
 
         /**
          * Filter to return only Management Agents in the particular lifecycle state.
+         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -327,14 +295,13 @@ public class ListManagementAgentPluginsRequest
             return this;
         }
 
-        /**
-         * Filter to return only results having the particular platform type.
-         */
+        /** Filter to return only results having the particular platform type. */
         private java.util.List<com.oracle.bmc.managementagent.model.PlatformTypes> platformType =
                 null;
 
         /**
          * Filter to return only results having the particular platform type.
+         *
          * @param platformType the value to set
          * @return this builder instance
          */
@@ -346,6 +313,7 @@ public class ListManagementAgentPluginsRequest
 
         /**
          * Singular setter. Filter to return only results having the particular platform type.
+         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -353,13 +321,12 @@ public class ListManagementAgentPluginsRequest
             return this.platformType(java.util.Arrays.asList(singularValue));
         }
 
-        /**
-         * The ManagementAgentID of the agent from which the Management Agents to be filtered.
-         */
+        /** The ManagementAgentID of the agent from which the Management Agents to be filtered. */
         private String agentId = null;
 
         /**
          * The ManagementAgentID of the agent from which the Management Agents to be filtered.
+         *
          * @param agentId the value to set
          * @return this builder instance
          */
@@ -370,18 +337,19 @@ public class ListManagementAgentPluginsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -393,6 +361,7 @@ public class ListManagementAgentPluginsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListManagementAgentPluginsRequest o) {
@@ -414,10 +383,11 @@ public class ListManagementAgentPluginsRequest
         /**
          * Build the instance of ListManagementAgentPluginsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListManagementAgentPluginsRequest
          */
@@ -431,7 +401,8 @@ public class ListManagementAgentPluginsRequest
         /**
          * Build the instance of ListManagementAgentPluginsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListManagementAgentPluginsRequest
@@ -449,12 +420,14 @@ public class ListManagementAgentPluginsRequest
             request.platformType = platformType;
             request.agentId = agentId;
             return request;
-            // new ListManagementAgentPluginsRequest(compartmentId, displayName, limit, page, sortOrder, sortBy, opcRequestId, lifecycleState, platformType, agentId);
+            // new ListManagementAgentPluginsRequest(compartmentId, displayName, limit, page,
+            // sortOrder, sortBy, opcRequestId, lifecycleState, platformType, agentId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -473,6 +446,7 @@ public class ListManagementAgentPluginsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

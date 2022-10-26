@@ -5,19 +5,20 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The JSON type of the formatted text.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The JSON type of the formatted text. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JsonText.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class JsonText extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class JsonText extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"modelType", "configValues"})
     public JsonText(String modelType, ConfigValues configValues) {
@@ -28,17 +29,16 @@ public final class JsonText extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The object type.
-         **/
+        /** The object type. */
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
         /**
          * The object type.
+         *
          * @param modelType the value to set
          * @return this builder
-         **/
+         */
         public Builder modelType(String modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
@@ -77,9 +77,7 @@ public final class JsonText extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -88,16 +86,15 @@ public final class JsonText extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return new Builder().copy(this);
     }
 
-    /**
-     * The object type.
-     **/
+    /** The object type. */
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
     /**
      * The object type.
+     *
      * @return the value
-     **/
+     */
     public String getModelType() {
         return modelType;
     }
@@ -116,6 +113,7 @@ public final class JsonText extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

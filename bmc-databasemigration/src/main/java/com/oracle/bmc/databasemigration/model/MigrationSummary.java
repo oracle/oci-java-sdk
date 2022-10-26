@@ -5,20 +5,21 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Migration resource
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Migration resource <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MigrationSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MigrationSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class MigrationSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -82,10 +83,7 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the resource
-         *
-         **/
+        /** The OCID of the resource */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -94,16 +92,13 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
          *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * Migration Display Name
-         *
-         **/
+        /** Migration Display Name */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -112,16 +107,13 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * OCID of the compartment
-         *
-         **/
+        /** OCID of the compartment */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -130,16 +122,13 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
          *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * Migration type.
-         *
-         **/
+        /** Migration type. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private MigrationTypes type;
 
@@ -148,16 +137,13 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
          *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(MigrationTypes type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * The OCID of the Source Database Connection.
-         *
-         **/
+        /** The OCID of the Source Database Connection. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabaseConnectionId")
         private String sourceDatabaseConnectionId;
 
@@ -166,16 +152,13 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
          *
          * @param sourceDatabaseConnectionId the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceDatabaseConnectionId(String sourceDatabaseConnectionId) {
             this.sourceDatabaseConnectionId = sourceDatabaseConnectionId;
             this.__explicitlySet__.add("sourceDatabaseConnectionId");
             return this;
         }
-        /**
-         * The OCID of the Source Container Database Connection.
-         *
-         **/
+        /** The OCID of the Source Container Database Connection. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceContainerDatabaseConnectionId")
         private String sourceContainerDatabaseConnectionId;
 
@@ -184,17 +167,14 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
          *
          * @param sourceContainerDatabaseConnectionId the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceContainerDatabaseConnectionId(
                 String sourceContainerDatabaseConnectionId) {
             this.sourceContainerDatabaseConnectionId = sourceContainerDatabaseConnectionId;
             this.__explicitlySet__.add("sourceContainerDatabaseConnectionId");
             return this;
         }
-        /**
-         * The OCID of the Target Database Connection.
-         *
-         **/
+        /** The OCID of the Target Database Connection. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseConnectionId")
         private String targetDatabaseConnectionId;
 
@@ -203,16 +183,13 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
          *
          * @param targetDatabaseConnectionId the value to set
          * @return this builder
-         **/
+         */
         public Builder targetDatabaseConnectionId(String targetDatabaseConnectionId) {
             this.targetDatabaseConnectionId = targetDatabaseConnectionId;
             this.__explicitlySet__.add("targetDatabaseConnectionId");
             return this;
         }
-        /**
-         * OCID of the current ODMS Job in execution for the Migration, if any.
-         *
-         **/
+        /** OCID of the current ODMS Job in execution for the Migration, if any. */
         @com.fasterxml.jackson.annotation.JsonProperty("executingJobId")
         private String executingJobId;
 
@@ -221,16 +198,13 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
          *
          * @param executingJobId the value to set
          * @return this builder
-         **/
+         */
         public Builder executingJobId(String executingJobId) {
             this.executingJobId = executingJobId;
             this.__explicitlySet__.add("executingJobId");
             return this;
         }
-        /**
-         * The OCID of the registered on-premises ODMS Agent. Only valid for Offline Migrations.
-         *
-         **/
+        /** The OCID of the registered on-premises ODMS Agent. Only valid for Offline Migrations. */
         @com.fasterxml.jackson.annotation.JsonProperty("agentId")
         private String agentId;
 
@@ -239,7 +213,7 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
          *
          * @param agentId the value to set
          * @return this builder
-         **/
+         */
         public Builder agentId(String agentId) {
             this.agentId = agentId;
             this.__explicitlySet__.add("agentId");
@@ -254,10 +228,7 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("vaultDetails");
             return this;
         }
-        /**
-         * The time the Migration was created. An RFC3339 formatted datetime string.
-         *
-         **/
+        /** The time the Migration was created. An RFC3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -266,16 +237,13 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * The time of the last Migration details update. An RFC3339 formatted datetime string.
-         *
-         **/
+        /** The time of the last Migration details update. An RFC3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
@@ -284,16 +252,13 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
          *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * The time of last Migration. An RFC3339 formatted datetime string.
-         *
-         **/
+        /** The time of last Migration. An RFC3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastMigration")
         private java.util.Date timeLastMigration;
 
@@ -302,16 +267,13 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
          *
          * @param timeLastMigration the value to set
          * @return this builder
-         **/
+         */
         public Builder timeLastMigration(java.util.Date timeLastMigration) {
             this.timeLastMigration = timeLastMigration;
             this.__explicitlySet__.add("timeLastMigration");
             return this;
         }
-        /**
-         * The current state of the Migration.
-         *
-         **/
+        /** The current state of the Migration. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private MigrationLifecycleStates lifecycleState;
 
@@ -320,16 +282,13 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
          *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(MigrationLifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * Additional status related to the execution and current state of the Migration.
-         *
-         **/
+        /** Additional status related to the execution and current state of the Migration. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private MigrationStatus lifecycleDetails;
 
@@ -338,27 +297,26 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(MigrationStatus lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -367,8 +325,7 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -378,7 +335,7 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -386,20 +343,19 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         *
-         **/
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         **/
+         */
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -497,9 +453,7 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -508,10 +462,7 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the resource
-     *
-     **/
+    /** The OCID of the resource */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
@@ -519,15 +470,12 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
      * The OCID of the resource
      *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * Migration Display Name
-     *
-     **/
+    /** Migration Display Name */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -535,15 +483,12 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
      * Migration Display Name
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * OCID of the compartment
-     *
-     **/
+    /** OCID of the compartment */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
@@ -551,15 +496,12 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
      * OCID of the compartment
      *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * Migration type.
-     *
-     **/
+    /** Migration type. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final MigrationTypes type;
 
@@ -567,15 +509,12 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
      * Migration type.
      *
      * @return the value
-     **/
+     */
     public MigrationTypes getType() {
         return type;
     }
 
-    /**
-     * The OCID of the Source Database Connection.
-     *
-     **/
+    /** The OCID of the Source Database Connection. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabaseConnectionId")
     private final String sourceDatabaseConnectionId;
 
@@ -583,15 +522,12 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
      * The OCID of the Source Database Connection.
      *
      * @return the value
-     **/
+     */
     public String getSourceDatabaseConnectionId() {
         return sourceDatabaseConnectionId;
     }
 
-    /**
-     * The OCID of the Source Container Database Connection.
-     *
-     **/
+    /** The OCID of the Source Container Database Connection. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceContainerDatabaseConnectionId")
     private final String sourceContainerDatabaseConnectionId;
 
@@ -599,15 +535,12 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
      * The OCID of the Source Container Database Connection.
      *
      * @return the value
-     **/
+     */
     public String getSourceContainerDatabaseConnectionId() {
         return sourceContainerDatabaseConnectionId;
     }
 
-    /**
-     * The OCID of the Target Database Connection.
-     *
-     **/
+    /** The OCID of the Target Database Connection. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseConnectionId")
     private final String targetDatabaseConnectionId;
 
@@ -615,15 +548,12 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
      * The OCID of the Target Database Connection.
      *
      * @return the value
-     **/
+     */
     public String getTargetDatabaseConnectionId() {
         return targetDatabaseConnectionId;
     }
 
-    /**
-     * OCID of the current ODMS Job in execution for the Migration, if any.
-     *
-     **/
+    /** OCID of the current ODMS Job in execution for the Migration, if any. */
     @com.fasterxml.jackson.annotation.JsonProperty("executingJobId")
     private final String executingJobId;
 
@@ -631,15 +561,12 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
      * OCID of the current ODMS Job in execution for the Migration, if any.
      *
      * @return the value
-     **/
+     */
     public String getExecutingJobId() {
         return executingJobId;
     }
 
-    /**
-     * The OCID of the registered on-premises ODMS Agent. Only valid for Offline Migrations.
-     *
-     **/
+    /** The OCID of the registered on-premises ODMS Agent. Only valid for Offline Migrations. */
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
@@ -647,7 +574,7 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
      * The OCID of the registered on-premises ODMS Agent. Only valid for Offline Migrations.
      *
      * @return the value
-     **/
+     */
     public String getAgentId() {
         return agentId;
     }
@@ -659,10 +586,7 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
         return vaultDetails;
     }
 
-    /**
-     * The time the Migration was created. An RFC3339 formatted datetime string.
-     *
-     **/
+    /** The time the Migration was created. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -670,15 +594,12 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
      * The time the Migration was created. An RFC3339 formatted datetime string.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The time of the last Migration details update. An RFC3339 formatted datetime string.
-     *
-     **/
+    /** The time of the last Migration details update. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
@@ -686,15 +607,12 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
      * The time of the last Migration details update. An RFC3339 formatted datetime string.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The time of last Migration. An RFC3339 formatted datetime string.
-     *
-     **/
+    /** The time of last Migration. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastMigration")
     private final java.util.Date timeLastMigration;
 
@@ -702,15 +620,12 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
      * The time of last Migration. An RFC3339 formatted datetime string.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeLastMigration() {
         return timeLastMigration;
     }
 
-    /**
-     * The current state of the Migration.
-     *
-     **/
+    /** The current state of the Migration. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final MigrationLifecycleStates lifecycleState;
 
@@ -718,15 +633,12 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
      * The current state of the Migration.
      *
      * @return the value
-     **/
+     */
     public MigrationLifecycleStates getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * Additional status related to the execution and current state of the Migration.
-     *
-     **/
+    /** Additional status related to the execution and current state of the Migration. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final MigrationStatus lifecycleDetails;
 
@@ -734,61 +646,58 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
      * Additional status related to the execution and current state of the Migration.
      *
      * @return the value
-     **/
+     */
     public MigrationStatus getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     *
-     **/
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -800,6 +709,7 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

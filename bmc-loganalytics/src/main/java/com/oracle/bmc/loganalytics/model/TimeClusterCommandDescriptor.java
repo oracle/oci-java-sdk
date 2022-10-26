@@ -5,26 +5,24 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Command descriptor for querylanguage TIMECLUSTER command.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Command descriptor for querylanguage TIMECLUSTER command. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = TimeClusterCommandDescriptor.Builder.class
-)
+        builder = TimeClusterCommandDescriptor.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "name"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "name")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class TimeClusterCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -81,10 +79,7 @@ public final class TimeClusterCommandDescriptor extends AbstractCommandDescripto
             this.__explicitlySet__.add("isHidden");
             return this;
         }
-        /**
-         * Optional timestamp datatype field if specified. Default field is 'Start Time'.
-         *
-         **/
+        /** Optional timestamp datatype field if specified. Default field is 'Start Time'. */
         @com.fasterxml.jackson.annotation.JsonProperty("time")
         private AbstractField time;
 
@@ -93,34 +88,32 @@ public final class TimeClusterCommandDescriptor extends AbstractCommandDescripto
          *
          * @param time the value to set
          * @return this builder
-         **/
+         */
         public Builder time(AbstractField time) {
             this.time = time;
             this.__explicitlySet__.add("time");
             return this;
         }
         /**
-         * Option to control the size of buckets in the timeseries. Will be adjusted to a larger span if time range is very large.
-         *
-         **/
+         * Option to control the size of buckets in the timeseries. Will be adjusted to a larger
+         * span if time range is very large.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("span")
         private String span;
 
         /**
-         * Option to control the size of buckets in the timeseries. Will be adjusted to a larger span if time range is very large.
+         * Option to control the size of buckets in the timeseries. Will be adjusted to a larger
+         * span if time range is very large.
          *
          * @param span the value to set
          * @return this builder
-         **/
+         */
         public Builder span(String span) {
             this.span = span;
             this.__explicitlySet__.add("span");
             return this;
         }
-        /**
-         * Group by fields specified in the query string.
-         *
-         **/
+        /** Group by fields specified in the query string. */
         @com.fasterxml.jackson.annotation.JsonProperty("groupByFields")
         private java.util.List<AbstractField> groupByFields;
 
@@ -129,25 +122,26 @@ public final class TimeClusterCommandDescriptor extends AbstractCommandDescripto
          *
          * @param groupByFields the value to set
          * @return this builder
-         **/
+         */
         public Builder groupByFields(java.util.List<AbstractField> groupByFields) {
             this.groupByFields = groupByFields;
             this.__explicitlySet__.add("groupByFields");
             return this;
         }
         /**
-         * Statistical functions specified in the query string. Atleast 1 is required for a TIMECLUSTER command.
-         *
-         **/
+         * Statistical functions specified in the query string. Atleast 1 is required for a
+         * TIMECLUSTER command.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("functions")
         private java.util.List<FunctionField> functions;
 
         /**
-         * Statistical functions specified in the query string. Atleast 1 is required for a TIMECLUSTER command.
+         * Statistical functions specified in the query string. Atleast 1 is required for a
+         * TIMECLUSTER command.
          *
          * @param functions the value to set
          * @return this builder
-         **/
+         */
         public Builder functions(java.util.List<FunctionField> functions) {
             this.functions = functions;
             this.__explicitlySet__.add("functions");
@@ -212,9 +206,7 @@ public final class TimeClusterCommandDescriptor extends AbstractCommandDescripto
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -248,10 +240,7 @@ public final class TimeClusterCommandDescriptor extends AbstractCommandDescripto
         this.functions = functions;
     }
 
-    /**
-     * Optional timestamp datatype field if specified. Default field is 'Start Time'.
-     *
-     **/
+    /** Optional timestamp datatype field if specified. Default field is 'Start Time'. */
     @com.fasterxml.jackson.annotation.JsonProperty("time")
     private final AbstractField time;
 
@@ -259,31 +248,29 @@ public final class TimeClusterCommandDescriptor extends AbstractCommandDescripto
      * Optional timestamp datatype field if specified. Default field is 'Start Time'.
      *
      * @return the value
-     **/
+     */
     public AbstractField getTime() {
         return time;
     }
 
     /**
-     * Option to control the size of buckets in the timeseries. Will be adjusted to a larger span if time range is very large.
-     *
-     **/
+     * Option to control the size of buckets in the timeseries. Will be adjusted to a larger span if
+     * time range is very large.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("span")
     private final String span;
 
     /**
-     * Option to control the size of buckets in the timeseries. Will be adjusted to a larger span if time range is very large.
+     * Option to control the size of buckets in the timeseries. Will be adjusted to a larger span if
+     * time range is very large.
      *
      * @return the value
-     **/
+     */
     public String getSpan() {
         return span;
     }
 
-    /**
-     * Group by fields specified in the query string.
-     *
-     **/
+    /** Group by fields specified in the query string. */
     @com.fasterxml.jackson.annotation.JsonProperty("groupByFields")
     private final java.util.List<AbstractField> groupByFields;
 
@@ -291,23 +278,24 @@ public final class TimeClusterCommandDescriptor extends AbstractCommandDescripto
      * Group by fields specified in the query string.
      *
      * @return the value
-     **/
+     */
     public java.util.List<AbstractField> getGroupByFields() {
         return groupByFields;
     }
 
     /**
-     * Statistical functions specified in the query string. Atleast 1 is required for a TIMECLUSTER command.
-     *
-     **/
+     * Statistical functions specified in the query string. Atleast 1 is required for a TIMECLUSTER
+     * command.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("functions")
     private final java.util.List<FunctionField> functions;
 
     /**
-     * Statistical functions specified in the query string. Atleast 1 is required for a TIMECLUSTER command.
+     * Statistical functions specified in the query string. Atleast 1 is required for a TIMECLUSTER
+     * command.
      *
      * @return the value
-     **/
+     */
     public java.util.List<FunctionField> getFunctions() {
         return functions;
     }
@@ -319,6 +307,7 @@ public final class TimeClusterCommandDescriptor extends AbstractCommandDescripto
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

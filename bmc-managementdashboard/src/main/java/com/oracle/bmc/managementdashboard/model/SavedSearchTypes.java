@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.managementdashboard.model;
 
-/**
- * Determines how the saved search is displayed in a dashboard.
- **/
+/** Determines how the saved search is displayed in a dashboard. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
-public enum SavedSearchTypes {
+public enum SavedSearchTypes implements com.oracle.bmc.http.internal.BmcEnum {
     SearchShowInDashboard("SEARCH_SHOW_IN_DASHBOARD"),
     SearchDontShowInDashboard("SEARCH_DONT_SHOW_IN_DASHBOARD"),
     WidgetShowInDashboard("WIDGET_SHOW_IN_DASHBOARD"),

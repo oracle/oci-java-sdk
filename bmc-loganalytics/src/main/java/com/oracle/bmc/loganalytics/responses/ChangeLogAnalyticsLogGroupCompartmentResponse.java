@@ -10,13 +10,14 @@ import com.oracle.bmc.loganalytics.model.*;
 public class ChangeLogAnalyticsLogGroupCompartmentResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      *
      * @return the value
      */
@@ -27,35 +28,40 @@ public class ChangeLogAnalyticsLogGroupCompartmentResponse
     @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
     private ChangeLogAnalyticsLogGroupCompartmentResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    ChangeLogAnalyticsLogGroupCompartmentResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -67,8 +73,10 @@ public class ChangeLogAnalyticsLogGroupCompartmentResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ChangeLogAnalyticsLogGroupCompartmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -79,8 +87,10 @@ public class ChangeLogAnalyticsLogGroupCompartmentResponse
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ChangeLogAnalyticsLogGroupCompartmentResponse build() {
             return new ChangeLogAnalyticsLogGroupCompartmentResponse(
                     __httpStatusCode__, headers, opcRequestId);
@@ -89,6 +99,7 @@ public class ChangeLogAnalyticsLogGroupCompartmentResponse
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

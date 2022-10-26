@@ -5,19 +5,21 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of the Oracle Real Application Clusters (Oracle RAC) database instance.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details of the Oracle Real Application Clusters (Oracle RAC) database instance. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = InstanceDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InstanceDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class InstanceDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "name", "hostName", "status"})
     public InstanceDetails(Integer id, String name, String hostName, Status status) {
@@ -30,65 +32,61 @@ public final class InstanceDetails extends com.oracle.bmc.http.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The ID of the Oracle RAC database instance.
-         **/
+        /** The ID of the Oracle RAC database instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private Integer id;
 
         /**
          * The ID of the Oracle RAC database instance.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(Integer id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The name of the Oracle RAC database instance.
-         **/
+        /** The name of the Oracle RAC database instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the Oracle RAC database instance.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The name of the host of the Oracle RAC database instance.
-         **/
+        /** The name of the host of the Oracle RAC database instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
         /**
          * The name of the host of the Oracle RAC database instance.
+         *
          * @param hostName the value to set
          * @return this builder
-         **/
+         */
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-        /**
-         * The status of the Oracle RAC database instance.
-         **/
+        /** The status of the Oracle RAC database instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * The status of the Oracle RAC database instance.
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -125,9 +123,7 @@ public final class InstanceDetails extends com.oracle.bmc.http.internal.Explicit
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -136,59 +132,54 @@ public final class InstanceDetails extends com.oracle.bmc.http.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /**
-     * The ID of the Oracle RAC database instance.
-     **/
+    /** The ID of the Oracle RAC database instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final Integer id;
 
     /**
      * The ID of the Oracle RAC database instance.
+     *
      * @return the value
-     **/
+     */
     public Integer getId() {
         return id;
     }
 
-    /**
-     * The name of the Oracle RAC database instance.
-     **/
+    /** The name of the Oracle RAC database instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the Oracle RAC database instance.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The name of the host of the Oracle RAC database instance.
-     **/
+    /** The name of the host of the Oracle RAC database instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
      * The name of the host of the Oracle RAC database instance.
+     *
      * @return the value
-     **/
+     */
     public String getHostName() {
         return hostName;
     }
 
-    /**
-     * The status of the Oracle RAC database instance.
-     **/
-    public enum Status {
+    /** The status of the Oracle RAC database instance. */
+    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Up("UP"),
         Down("DOWN"),
         Unknown("UNKNOWN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -226,16 +217,15 @@ public final class InstanceDetails extends com.oracle.bmc.http.internal.Explicit
             return UnknownEnumValue;
         }
     };
-    /**
-     * The status of the Oracle RAC database instance.
-     **/
+    /** The status of the Oracle RAC database instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * The status of the Oracle RAC database instance.
+     *
      * @return the value
-     **/
+     */
     public Status getStatus() {
         return status;
     }
@@ -247,6 +237,7 @@ public final class InstanceDetails extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

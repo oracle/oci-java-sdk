@@ -5,22 +5,22 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * Credentials for an asset source.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Credentials for an asset source. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AssetSourceCredentials.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AssetSourceCredentials.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AssetSourceCredentials
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "secretId"})
     public AssetSourceCredentials(AssetSourceCredentialsType type, String secretId) {
@@ -31,39 +31,39 @@ public final class AssetSourceCredentials
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Authentication type
-         **/
+        /** Authentication type */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private AssetSourceCredentialsType type;
 
         /**
          * Authentication type
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(AssetSourceCredentialsType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the secret in a vault.
-         * If the the type of the credentials is BASIC{@code , the secret must contain the username and
-         * password in JSON format, which is in the form of }{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * secret in a vault. If the the type of the credentials is BASIC{@code , the secret must
+         * contain the username and password in JSON format, which is in the form of }{ "username":
+         * "<VMwareUser>", "password": "<VMwarePassword>" }.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the secret in a vault.
-         * If the the type of the credentials is BASIC{@code , the secret must contain the username and
-         * password in JSON format, which is in the form of }{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * secret in a vault. If the the type of the credentials is BASIC{@code , the secret must
+         * contain the username and password in JSON format, which is in the form of }{ "username":
+         * "<VMwareUser>", "password": "<VMwarePassword>" }.
          *
          * @param secretId the value to set
          * @return this builder
-         **/
+         */
         public Builder secretId(String secretId) {
             this.secretId = secretId;
             this.__explicitlySet__.add("secretId");
@@ -93,9 +93,7 @@ public final class AssetSourceCredentials
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -104,36 +102,36 @@ public final class AssetSourceCredentials
         return new Builder().copy(this);
     }
 
-    /**
-     * Authentication type
-     **/
+    /** Authentication type */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final AssetSourceCredentialsType type;
 
     /**
      * Authentication type
+     *
      * @return the value
-     **/
+     */
     public AssetSourceCredentialsType getType() {
         return type;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the secret in a vault.
-     * If the the type of the credentials is BASIC{@code , the secret must contain the username and
-     * password in JSON format, which is in the form of }{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * secret in a vault. If the the type of the credentials is BASIC{@code , the secret must
+     * contain the username and password in JSON format, which is in the form of }{ "username":
+     * "<VMwareUser>", "password": "<VMwarePassword>" }.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
     private final String secretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the secret in a vault.
-     * If the the type of the credentials is BASIC{@code , the secret must contain the username and
-     * password in JSON format, which is in the form of }{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * secret in a vault. If the the type of the credentials is BASIC{@code , the secret must
+     * contain the username and password in JSON format, which is in the form of }{ "username":
+     * "<VMwareUser>", "password": "<VMwarePassword>" }.
      *
      * @return the value
-     **/
+     */
     public String getSecretId() {
         return secretId;
     }
@@ -145,6 +143,7 @@ public final class AssetSourceCredentials
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

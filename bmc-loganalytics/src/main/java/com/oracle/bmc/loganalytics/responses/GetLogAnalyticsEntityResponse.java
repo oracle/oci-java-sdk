@@ -8,10 +8,7 @@ import com.oracle.bmc.loganalytics.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class GetLogAnalyticsEntityResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,13 +21,14 @@ public class GetLogAnalyticsEntityResponse extends com.oracle.bmc.responses.BmcR
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      *
      * @return the value
      */
@@ -38,13 +36,12 @@ public class GetLogAnalyticsEntityResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /**
-     * The returned LogAnalyticsEntity instance.
-     */
+    /** The returned LogAnalyticsEntity instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsEntity logAnalyticsEntity;
 
     /**
      * The returned LogAnalyticsEntity instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.loganalytics.model.LogAnalyticsEntity getLogAnalyticsEntity() {
@@ -60,7 +57,7 @@ public class GetLogAnalyticsEntityResponse extends com.oracle.bmc.responses.BmcR
     })
     private GetLogAnalyticsEntityResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.LogAnalyticsEntity logAnalyticsEntity) {
@@ -70,25 +67,25 @@ public class GetLogAnalyticsEntityResponse extends com.oracle.bmc.responses.BmcR
         this.logAnalyticsEntity = logAnalyticsEntity;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetLogAnalyticsEntityResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -103,13 +100,14 @@ public class GetLogAnalyticsEntityResponse extends com.oracle.bmc.responses.BmcR
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -119,13 +117,12 @@ public class GetLogAnalyticsEntityResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /**
-         * The returned LogAnalyticsEntity instance.
-         */
+        /** The returned LogAnalyticsEntity instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsEntity logAnalyticsEntity;
 
         /**
          * The returned LogAnalyticsEntity instance.
+         *
          * @param logAnalyticsEntity the value to set
          * @return this builder
          */
@@ -137,8 +134,10 @@ public class GetLogAnalyticsEntityResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetLogAnalyticsEntityResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,8 +150,10 @@ public class GetLogAnalyticsEntityResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetLogAnalyticsEntityResponse build() {
             return new GetLogAnalyticsEntityResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, logAnalyticsEntity);
@@ -161,6 +162,7 @@ public class GetLogAnalyticsEntityResponse extends com.oracle.bmc.responses.BmcR
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -5,22 +5,22 @@
 package com.oracle.bmc.opensearch.model;
 
 /**
- * The summary of information about an OpenSearch cluster backup.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The summary of information about an OpenSearch cluster backup. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = OpensearchClusterBackupSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = OpensearchClusterBackupSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class OpensearchClusterBackupSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -75,213 +75,216 @@ public final class OpensearchClusterBackupSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the cluster backup.
-         **/
+        /** The OCID of the cluster backup. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the cluster backup.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The name of the cluster backup. Avoid entering confidential information.
-         **/
+        /** The name of the cluster backup. Avoid entering confidential information. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name of the cluster backup. Avoid entering confidential information.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The OCID of the compartment where the cluster backup is located.
-         **/
+        /** The OCID of the compartment where the cluster backup is located. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment where the cluster backup is located.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Specifies whether the cluster backup was created manually, or automatically as a scheduled backup.
-         **/
+         * Specifies whether the cluster backup was created manually, or automatically as a
+         * scheduled backup.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("backupType")
         private OpensearchClusterBackup.BackupType backupType;
 
         /**
-         * Specifies whether the cluster backup was created manually, or automatically as a scheduled backup.
+         * Specifies whether the cluster backup was created manually, or automatically as a
+         * scheduled backup.
+         *
          * @param backupType the value to set
          * @return this builder
-         **/
+         */
         public Builder backupType(OpensearchClusterBackup.BackupType backupType) {
             this.backupType = backupType;
             this.__explicitlySet__.add("backupType");
             return this;
         }
-        /**
-         * The OCID of the source OpenSearch cluster for the cluster backup.
-         **/
+        /** The OCID of the source OpenSearch cluster for the cluster backup. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceClusterId")
         private String sourceClusterId;
 
         /**
          * The OCID of the source OpenSearch cluster for the cluster backup.
+         *
          * @param sourceClusterId the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceClusterId(String sourceClusterId) {
             this.sourceClusterId = sourceClusterId;
             this.__explicitlySet__.add("sourceClusterId");
             return this;
         }
         /**
-         * The date and time the cluster backup was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         **/
+         * The date and time the cluster backup was created. Format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the cluster backup was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the cluster backup was created. Format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time the cluster backup was updated. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         **/
+         * The date and time the cluster backup was updated. Format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the cluster backup was updated. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the cluster backup was updated. Format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * The current state of the cluster backup.
-         **/
+        /** The current state of the cluster backup. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private OpensearchClusterBackup.LifecycleState lifecycleState;
 
         /**
          * The current state of the cluster backup.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(OpensearchClusterBackup.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * Additional information about the current lifecycle state of the cluster backup.
-         **/
+        /** Additional information about the current lifecycle state of the cluster backup. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Additional information about the current lifecycle state of the cluster backup.
+         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * The date and time the cluster backup expires. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         **/
+         * The date and time the cluster backup expires. Format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpired")
         private java.util.Date timeExpired;
 
         /**
-         * The date and time the cluster backup expires. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the cluster backup expires. Format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
          * @param timeExpired the value to set
          * @return this builder
-         **/
+         */
         public Builder timeExpired(java.util.Date timeExpired) {
             this.timeExpired = timeExpired;
             this.__explicitlySet__.add("timeExpired");
             return this;
         }
-        /**
-         * The size in GB of the cluster backup.
-         **/
+        /** The size in GB of the cluster backup. */
         @com.fasterxml.jackson.annotation.JsonProperty("backupSize")
         private Double backupSize;
 
         /**
          * The size in GB of the cluster backup.
+         *
          * @param backupSize the value to set
          * @return this builder
-         **/
+         */
         public Builder backupSize(Double backupSize) {
             this.backupSize = backupSize;
             this.__explicitlySet__.add("backupSize");
             return this;
         }
-        /**
-         * The name of the source OpenSearch cluster for the cluster backup.
-         **/
+        /** The name of the source OpenSearch cluster for the cluster backup. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceClusterDisplayName")
         private String sourceClusterDisplayName;
 
         /**
          * The name of the source OpenSearch cluster for the cluster backup.
+         *
          * @param sourceClusterDisplayName the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceClusterDisplayName(String sourceClusterDisplayName) {
             this.sourceClusterDisplayName = sourceClusterDisplayName;
             this.__explicitlySet__.add("sourceClusterDisplayName");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -290,8 +293,7 @@ public final class OpensearchClusterBackupSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -301,7 +303,7 @@ public final class OpensearchClusterBackupSummary
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -309,20 +311,19 @@ public final class OpensearchClusterBackupSummary
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         *
-         **/
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         **/
+         */
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -407,9 +408,7 @@ public final class OpensearchClusterBackupSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -418,224 +417,225 @@ public final class OpensearchClusterBackupSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the cluster backup.
-     **/
+    /** The OCID of the cluster backup. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the cluster backup.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The name of the cluster backup. Avoid entering confidential information.
-     **/
+    /** The name of the cluster backup. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name of the cluster backup. Avoid entering confidential information.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The OCID of the compartment where the cluster backup is located.
-     **/
+    /** The OCID of the compartment where the cluster backup is located. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment where the cluster backup is located.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Specifies whether the cluster backup was created manually, or automatically as a scheduled backup.
-     **/
+     * Specifies whether the cluster backup was created manually, or automatically as a scheduled
+     * backup.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("backupType")
     private final OpensearchClusterBackup.BackupType backupType;
 
     /**
-     * Specifies whether the cluster backup was created manually, or automatically as a scheduled backup.
+     * Specifies whether the cluster backup was created manually, or automatically as a scheduled
+     * backup.
+     *
      * @return the value
-     **/
+     */
     public OpensearchClusterBackup.BackupType getBackupType() {
         return backupType;
     }
 
-    /**
-     * The OCID of the source OpenSearch cluster for the cluster backup.
-     **/
+    /** The OCID of the source OpenSearch cluster for the cluster backup. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceClusterId")
     private final String sourceClusterId;
 
     /**
      * The OCID of the source OpenSearch cluster for the cluster backup.
+     *
      * @return the value
-     **/
+     */
     public String getSourceClusterId() {
         return sourceClusterId;
     }
 
     /**
-     * The date and time the cluster backup was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     **/
+     * The date and time the cluster backup was created. Format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the cluster backup was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the cluster backup was created. Format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time the cluster backup was updated. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     **/
+     * The date and time the cluster backup was updated. Format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the cluster backup was updated. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the cluster backup was updated. Format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The current state of the cluster backup.
-     **/
+    /** The current state of the cluster backup. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final OpensearchClusterBackup.LifecycleState lifecycleState;
 
     /**
      * The current state of the cluster backup.
+     *
      * @return the value
-     **/
+     */
     public OpensearchClusterBackup.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * Additional information about the current lifecycle state of the cluster backup.
-     **/
+    /** Additional information about the current lifecycle state of the cluster backup. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Additional information about the current lifecycle state of the cluster backup.
+     *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * The date and time the cluster backup expires. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     **/
+     * The date and time the cluster backup expires. Format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpired")
     private final java.util.Date timeExpired;
 
     /**
-     * The date and time the cluster backup expires. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the cluster backup expires. Format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeExpired() {
         return timeExpired;
     }
 
-    /**
-     * The size in GB of the cluster backup.
-     **/
+    /** The size in GB of the cluster backup. */
     @com.fasterxml.jackson.annotation.JsonProperty("backupSize")
     private final Double backupSize;
 
     /**
      * The size in GB of the cluster backup.
+     *
      * @return the value
-     **/
+     */
     public Double getBackupSize() {
         return backupSize;
     }
 
-    /**
-     * The name of the source OpenSearch cluster for the cluster backup.
-     **/
+    /** The name of the source OpenSearch cluster for the cluster backup. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceClusterDisplayName")
     private final String sourceClusterDisplayName;
 
     /**
      * The name of the source OpenSearch cluster for the cluster backup.
+     *
      * @return the value
-     **/
+     */
     public String getSourceClusterDisplayName() {
         return sourceClusterDisplayName;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     *
-     **/
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -647,6 +647,7 @@ public final class OpensearchClusterBackupSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

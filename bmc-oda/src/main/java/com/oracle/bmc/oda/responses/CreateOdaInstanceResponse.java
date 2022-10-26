@@ -8,13 +8,12 @@ import com.oracle.bmc.oda.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class CreateOdaInstanceResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * Fully qualified URL for the newly created instance.
-     */
+    /** Fully qualified URL for the newly created instance. */
     private String location;
 
     /**
      * Fully qualified URL for the newly created instance.
+     *
      * @return the value
      */
     public String getLocation() {
@@ -22,12 +21,15 @@ public class CreateOdaInstanceResponse extends com.oracle.bmc.responses.BmcRespo
     }
 
     /**
-     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
+     * control.
      */
     private String etag;
 
     /**
-     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
+     * control.
+     *
      * @return the value
      */
     public String getEtag() {
@@ -35,15 +37,14 @@ public class CreateOdaInstanceResponse extends com.oracle.bmc.responses.BmcRespo
     }
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status
-     * of the operation.
-     *
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the operation.
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status
-     * of the operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the operation.
      *
      * @return the value
      */
@@ -52,15 +53,14 @@ public class CreateOdaInstanceResponse extends com.oracle.bmc.responses.BmcRespo
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -68,13 +68,12 @@ public class CreateOdaInstanceResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /**
-     * The returned OdaInstance instance.
-     */
+    /** The returned OdaInstance instance. */
     private com.oracle.bmc.oda.model.OdaInstance odaInstance;
 
     /**
      * The returned OdaInstance instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.oda.model.OdaInstance getOdaInstance() {
@@ -92,7 +91,7 @@ public class CreateOdaInstanceResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private CreateOdaInstanceResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String location,
             String etag,
             String opcWorkRequestId,
@@ -106,28 +105,30 @@ public class CreateOdaInstanceResponse extends com.oracle.bmc.responses.BmcRespo
         this.odaInstance = odaInstance;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateOdaInstanceResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * Fully qualified URL for the newly created instance.
-         */
+        /** Fully qualified URL for the newly created instance. */
         private String location;
 
         /**
          * Fully qualified URL for the newly created instance.
+         *
          * @param location the value to set
          * @return this builder
          */
@@ -137,12 +138,15 @@ public class CreateOdaInstanceResponse extends com.oracle.bmc.responses.BmcRespo
         }
 
         /**
-         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
+         * control.
          */
         private String etag;
 
         /**
-         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
+         * control.
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -152,15 +156,14 @@ public class CreateOdaInstanceResponse extends com.oracle.bmc.responses.BmcRespo
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status
-         * of the operation.
-         *
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the operation.
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status
-         * of the operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -171,15 +174,14 @@ public class CreateOdaInstanceResponse extends com.oracle.bmc.responses.BmcRespo
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -189,13 +191,12 @@ public class CreateOdaInstanceResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /**
-         * The returned OdaInstance instance.
-         */
+        /** The returned OdaInstance instance. */
         private com.oracle.bmc.oda.model.OdaInstance odaInstance;
 
         /**
          * The returned OdaInstance instance.
+         *
          * @param odaInstance the value to set
          * @return this builder
          */
@@ -206,8 +207,10 @@ public class CreateOdaInstanceResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateOdaInstanceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -222,8 +225,10 @@ public class CreateOdaInstanceResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateOdaInstanceResponse build() {
             return new CreateOdaInstanceResponse(
                     __httpStatusCode__,
@@ -238,6 +243,7 @@ public class CreateOdaInstanceResponse extends com.oracle.bmc.responses.BmcRespo
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

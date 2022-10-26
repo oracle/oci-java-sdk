@@ -9,13 +9,14 @@ import com.oracle.bmc.loganalytics.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class GetLabelSummaryResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      *
      * @return the value
      */
@@ -23,13 +24,12 @@ public class GetLabelSummaryResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /**
-     * The returned LabelSummaryReport instance.
-     */
+    /** The returned LabelSummaryReport instance. */
     private com.oracle.bmc.loganalytics.model.LabelSummaryReport labelSummaryReport;
 
     /**
      * The returned LabelSummaryReport instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.loganalytics.model.LabelSummaryReport getLabelSummaryReport() {
@@ -44,7 +44,7 @@ public class GetLabelSummaryResponse extends com.oracle.bmc.responses.BmcRespons
     })
     private GetLabelSummaryResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.LabelSummaryReport labelSummaryReport) {
         super(__httpStatusCode__, headers);
@@ -52,29 +52,33 @@ public class GetLabelSummaryResponse extends com.oracle.bmc.responses.BmcRespons
         this.labelSummaryReport = labelSummaryReport;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetLabelSummaryResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -84,13 +88,12 @@ public class GetLabelSummaryResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /**
-         * The returned LabelSummaryReport instance.
-         */
+        /** The returned LabelSummaryReport instance. */
         private com.oracle.bmc.loganalytics.model.LabelSummaryReport labelSummaryReport;
 
         /**
          * The returned LabelSummaryReport instance.
+         *
          * @param labelSummaryReport the value to set
          * @return this builder
          */
@@ -102,8 +105,10 @@ public class GetLabelSummaryResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetLabelSummaryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -115,8 +120,10 @@ public class GetLabelSummaryResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetLabelSummaryResponse build() {
             return new GetLabelSummaryResponse(
                     __httpStatusCode__, headers, opcRequestId, labelSummaryReport);
@@ -125,6 +132,7 @@ public class GetLabelSummaryResponse extends com.oracle.bmc.responses.BmcRespons
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

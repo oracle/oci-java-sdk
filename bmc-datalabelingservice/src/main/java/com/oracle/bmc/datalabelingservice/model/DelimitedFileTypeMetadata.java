@@ -5,103 +5,97 @@
 package com.oracle.bmc.datalabelingservice.model;
 
 /**
- * Metadata of delimited files.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Metadata of delimited files. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DelimitedFileTypeMetadata.Builder.class
-)
+        builder = DelimitedFileTypeMetadata.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "formatType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "formatType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DelimitedFileTypeMetadata extends TextFileTypeMetadata {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of a selected column.
-         **/
+        /** The name of a selected column. */
         @com.fasterxml.jackson.annotation.JsonProperty("columnName")
         private String columnName;
 
         /**
          * The name of a selected column.
+         *
          * @param columnName the value to set
          * @return this builder
-         **/
+         */
         public Builder columnName(String columnName) {
             this.columnName = columnName;
             this.__explicitlySet__.add("columnName");
             return this;
         }
-        /**
-         * The index of a selected column. This is a zero-based index.
-         **/
+        /** The index of a selected column. This is a zero-based index. */
         @com.fasterxml.jackson.annotation.JsonProperty("columnIndex")
         private Integer columnIndex;
 
         /**
          * The index of a selected column. This is a zero-based index.
+         *
          * @param columnIndex the value to set
          * @return this builder
-         **/
+         */
         public Builder columnIndex(Integer columnIndex) {
             this.columnIndex = columnIndex;
             this.__explicitlySet__.add("columnIndex");
             return this;
         }
-        /**
-         * A column delimiter
-         **/
+        /** A column delimiter */
         @com.fasterxml.jackson.annotation.JsonProperty("columnDelimiter")
         private String columnDelimiter;
 
         /**
          * A column delimiter
+         *
          * @param columnDelimiter the value to set
          * @return this builder
-         **/
+         */
         public Builder columnDelimiter(String columnDelimiter) {
             this.columnDelimiter = columnDelimiter;
             this.__explicitlySet__.add("columnDelimiter");
             return this;
         }
-        /**
-         * A line delimiter.
-         **/
+        /** A line delimiter. */
         @com.fasterxml.jackson.annotation.JsonProperty("lineDelimiter")
         private String lineDelimiter;
 
         /**
          * A line delimiter.
+         *
          * @param lineDelimiter the value to set
          * @return this builder
-         **/
+         */
         public Builder lineDelimiter(String lineDelimiter) {
             this.lineDelimiter = lineDelimiter;
             this.__explicitlySet__.add("lineDelimiter");
             return this;
         }
-        /**
-         * An escape character.
-         **/
+        /** An escape character. */
         @com.fasterxml.jackson.annotation.JsonProperty("escapeCharacter")
         private String escapeCharacter;
 
         /**
          * An escape character.
+         *
          * @param escapeCharacter the value to set
          * @return this builder
-         **/
+         */
         public Builder escapeCharacter(String escapeCharacter) {
             this.escapeCharacter = escapeCharacter;
             this.__explicitlySet__.add("escapeCharacter");
@@ -146,9 +140,7 @@ public final class DelimitedFileTypeMetadata extends TextFileTypeMetadata {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -172,72 +164,67 @@ public final class DelimitedFileTypeMetadata extends TextFileTypeMetadata {
         this.escapeCharacter = escapeCharacter;
     }
 
-    /**
-     * The name of a selected column.
-     **/
+    /** The name of a selected column. */
     @com.fasterxml.jackson.annotation.JsonProperty("columnName")
     private final String columnName;
 
     /**
      * The name of a selected column.
+     *
      * @return the value
-     **/
+     */
     public String getColumnName() {
         return columnName;
     }
 
-    /**
-     * The index of a selected column. This is a zero-based index.
-     **/
+    /** The index of a selected column. This is a zero-based index. */
     @com.fasterxml.jackson.annotation.JsonProperty("columnIndex")
     private final Integer columnIndex;
 
     /**
      * The index of a selected column. This is a zero-based index.
+     *
      * @return the value
-     **/
+     */
     public Integer getColumnIndex() {
         return columnIndex;
     }
 
-    /**
-     * A column delimiter
-     **/
+    /** A column delimiter */
     @com.fasterxml.jackson.annotation.JsonProperty("columnDelimiter")
     private final String columnDelimiter;
 
     /**
      * A column delimiter
+     *
      * @return the value
-     **/
+     */
     public String getColumnDelimiter() {
         return columnDelimiter;
     }
 
-    /**
-     * A line delimiter.
-     **/
+    /** A line delimiter. */
     @com.fasterxml.jackson.annotation.JsonProperty("lineDelimiter")
     private final String lineDelimiter;
 
     /**
      * A line delimiter.
+     *
      * @return the value
-     **/
+     */
     public String getLineDelimiter() {
         return lineDelimiter;
     }
 
-    /**
-     * An escape character.
-     **/
+    /** An escape character. */
     @com.fasterxml.jackson.annotation.JsonProperty("escapeCharacter")
     private final String escapeCharacter;
 
     /**
      * An escape character.
+     *
      * @return the value
-     **/
+     */
     public String getEscapeCharacter() {
         return escapeCharacter;
     }
@@ -249,6 +236,7 @@ public final class DelimitedFileTypeMetadata extends TextFileTypeMetadata {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

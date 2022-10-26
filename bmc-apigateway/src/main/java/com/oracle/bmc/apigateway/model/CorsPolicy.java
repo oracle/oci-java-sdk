@@ -5,20 +5,20 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Enable CORS (Cross-Origin-Resource-Sharing) request handling.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Enable CORS (Cross-Origin-Resource-Sharing) request handling. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CorsPolicy.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CorsPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class CorsPolicy extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "allowedOrigins",
@@ -47,122 +47,120 @@ public final class CorsPolicy extends com.oracle.bmc.http.internal.ExplicitlySet
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The list of allowed origins that the CORS handler will use to respond to CORS requests. The gateway will
-         * send the Access-Control-Allow-Origin header with the best origin match for the circumstances. '*' will match
-         * any origins, and 'null' will match queries from 'file:' origins. All other origins must be qualified with the
-         * scheme, full hostname, and port if necessary.
-         *
-         **/
+         * The list of allowed origins that the CORS handler will use to respond to CORS requests.
+         * The gateway will send the Access-Control-Allow-Origin header with the best origin match
+         * for the circumstances. '*' will match any origins, and 'null' will match queries from
+         * 'file:' origins. All other origins must be qualified with the scheme, full hostname, and
+         * port if necessary.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("allowedOrigins")
         private java.util.List<String> allowedOrigins;
 
         /**
-         * The list of allowed origins that the CORS handler will use to respond to CORS requests. The gateway will
-         * send the Access-Control-Allow-Origin header with the best origin match for the circumstances. '*' will match
-         * any origins, and 'null' will match queries from 'file:' origins. All other origins must be qualified with the
-         * scheme, full hostname, and port if necessary.
+         * The list of allowed origins that the CORS handler will use to respond to CORS requests.
+         * The gateway will send the Access-Control-Allow-Origin header with the best origin match
+         * for the circumstances. '*' will match any origins, and 'null' will match queries from
+         * 'file:' origins. All other origins must be qualified with the scheme, full hostname, and
+         * port if necessary.
          *
          * @param allowedOrigins the value to set
          * @return this builder
-         **/
+         */
         public Builder allowedOrigins(java.util.List<String> allowedOrigins) {
             this.allowedOrigins = allowedOrigins;
             this.__explicitlySet__.add("allowedOrigins");
             return this;
         }
         /**
-         * The list of allowed HTTP methods that will be returned for the preflight OPTIONS request in the
-         * Access-Control-Allow-Methods header. '*' will allow all methods.
-         *
-         **/
+         * The list of allowed HTTP methods that will be returned for the preflight OPTIONS request
+         * in the Access-Control-Allow-Methods header. '*' will allow all methods.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("allowedMethods")
         private java.util.List<String> allowedMethods;
 
         /**
-         * The list of allowed HTTP methods that will be returned for the preflight OPTIONS request in the
-         * Access-Control-Allow-Methods header. '*' will allow all methods.
+         * The list of allowed HTTP methods that will be returned for the preflight OPTIONS request
+         * in the Access-Control-Allow-Methods header. '*' will allow all methods.
          *
          * @param allowedMethods the value to set
          * @return this builder
-         **/
+         */
         public Builder allowedMethods(java.util.List<String> allowedMethods) {
             this.allowedMethods = allowedMethods;
             this.__explicitlySet__.add("allowedMethods");
             return this;
         }
         /**
-         * The list of headers that will be allowed from the client via the Access-Control-Allow-Headers header.
-         * '*' will allow all headers.
-         *
-         **/
+         * The list of headers that will be allowed from the client via the
+         * Access-Control-Allow-Headers header. '*' will allow all headers.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("allowedHeaders")
         private java.util.List<String> allowedHeaders;
 
         /**
-         * The list of headers that will be allowed from the client via the Access-Control-Allow-Headers header.
-         * '*' will allow all headers.
+         * The list of headers that will be allowed from the client via the
+         * Access-Control-Allow-Headers header. '*' will allow all headers.
          *
          * @param allowedHeaders the value to set
          * @return this builder
-         **/
+         */
         public Builder allowedHeaders(java.util.List<String> allowedHeaders) {
             this.allowedHeaders = allowedHeaders;
             this.__explicitlySet__.add("allowedHeaders");
             return this;
         }
         /**
-         * The list of headers that the client will be allowed to see from the response as indicated by the
-         * Access-Control-Expose-Headers header. '*' will expose all headers.
-         *
-         **/
+         * The list of headers that the client will be allowed to see from the response as indicated
+         * by the Access-Control-Expose-Headers header. '*' will expose all headers.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("exposedHeaders")
         private java.util.List<String> exposedHeaders;
 
         /**
-         * The list of headers that the client will be allowed to see from the response as indicated by the
-         * Access-Control-Expose-Headers header. '*' will expose all headers.
+         * The list of headers that the client will be allowed to see from the response as indicated
+         * by the Access-Control-Expose-Headers header. '*' will expose all headers.
          *
          * @param exposedHeaders the value to set
          * @return this builder
-         **/
+         */
         public Builder exposedHeaders(java.util.List<String> exposedHeaders) {
             this.exposedHeaders = exposedHeaders;
             this.__explicitlySet__.add("exposedHeaders");
             return this;
         }
         /**
-         * Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
-         *
-         **/
+         * Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with
+         * cookies.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isAllowCredentialsEnabled")
         private Boolean isAllowCredentialsEnabled;
 
         /**
-         * Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
+         * Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with
+         * cookies.
          *
          * @param isAllowCredentialsEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isAllowCredentialsEnabled(Boolean isAllowCredentialsEnabled) {
             this.isAllowCredentialsEnabled = isAllowCredentialsEnabled;
             this.__explicitlySet__.add("isAllowCredentialsEnabled");
             return this;
         }
         /**
-         * The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age
-         * if greater than 0.
-         *
-         **/
+         * The time in seconds for the client to cache preflight responses. This is sent as the
+         * Access-Control-Max-Age if greater than 0.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("maxAgeInSeconds")
         private Integer maxAgeInSeconds;
 
         /**
-         * The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age
-         * if greater than 0.
+         * The time in seconds for the client to cache preflight responses. This is sent as the
+         * Access-Control-Max-Age if greater than 0.
          *
          * @param maxAgeInSeconds the value to set
          * @return this builder
-         **/
+         */
         public Builder maxAgeInSeconds(Integer maxAgeInSeconds) {
             this.maxAgeInSeconds = maxAgeInSeconds;
             this.__explicitlySet__.add("maxAgeInSeconds");
@@ -211,9 +209,7 @@ public final class CorsPolicy extends com.oracle.bmc.http.internal.ExplicitlySet
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -223,111 +219,109 @@ public final class CorsPolicy extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The list of allowed origins that the CORS handler will use to respond to CORS requests. The gateway will
-     * send the Access-Control-Allow-Origin header with the best origin match for the circumstances. '*' will match
-     * any origins, and 'null' will match queries from 'file:' origins. All other origins must be qualified with the
-     * scheme, full hostname, and port if necessary.
-     *
-     **/
+     * The list of allowed origins that the CORS handler will use to respond to CORS requests. The
+     * gateway will send the Access-Control-Allow-Origin header with the best origin match for the
+     * circumstances. '*' will match any origins, and 'null' will match queries from 'file:'
+     * origins. All other origins must be qualified with the scheme, full hostname, and port if
+     * necessary.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("allowedOrigins")
     private final java.util.List<String> allowedOrigins;
 
     /**
-     * The list of allowed origins that the CORS handler will use to respond to CORS requests. The gateway will
-     * send the Access-Control-Allow-Origin header with the best origin match for the circumstances. '*' will match
-     * any origins, and 'null' will match queries from 'file:' origins. All other origins must be qualified with the
-     * scheme, full hostname, and port if necessary.
+     * The list of allowed origins that the CORS handler will use to respond to CORS requests. The
+     * gateway will send the Access-Control-Allow-Origin header with the best origin match for the
+     * circumstances. '*' will match any origins, and 'null' will match queries from 'file:'
+     * origins. All other origins must be qualified with the scheme, full hostname, and port if
+     * necessary.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getAllowedOrigins() {
         return allowedOrigins;
     }
 
     /**
-     * The list of allowed HTTP methods that will be returned for the preflight OPTIONS request in the
-     * Access-Control-Allow-Methods header. '*' will allow all methods.
-     *
-     **/
+     * The list of allowed HTTP methods that will be returned for the preflight OPTIONS request in
+     * the Access-Control-Allow-Methods header. '*' will allow all methods.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("allowedMethods")
     private final java.util.List<String> allowedMethods;
 
     /**
-     * The list of allowed HTTP methods that will be returned for the preflight OPTIONS request in the
-     * Access-Control-Allow-Methods header. '*' will allow all methods.
+     * The list of allowed HTTP methods that will be returned for the preflight OPTIONS request in
+     * the Access-Control-Allow-Methods header. '*' will allow all methods.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getAllowedMethods() {
         return allowedMethods;
     }
 
     /**
-     * The list of headers that will be allowed from the client via the Access-Control-Allow-Headers header.
-     * '*' will allow all headers.
-     *
-     **/
+     * The list of headers that will be allowed from the client via the Access-Control-Allow-Headers
+     * header. '*' will allow all headers.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("allowedHeaders")
     private final java.util.List<String> allowedHeaders;
 
     /**
-     * The list of headers that will be allowed from the client via the Access-Control-Allow-Headers header.
-     * '*' will allow all headers.
+     * The list of headers that will be allowed from the client via the Access-Control-Allow-Headers
+     * header. '*' will allow all headers.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getAllowedHeaders() {
         return allowedHeaders;
     }
 
     /**
-     * The list of headers that the client will be allowed to see from the response as indicated by the
-     * Access-Control-Expose-Headers header. '*' will expose all headers.
-     *
-     **/
+     * The list of headers that the client will be allowed to see from the response as indicated by
+     * the Access-Control-Expose-Headers header. '*' will expose all headers.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("exposedHeaders")
     private final java.util.List<String> exposedHeaders;
 
     /**
-     * The list of headers that the client will be allowed to see from the response as indicated by the
-     * Access-Control-Expose-Headers header. '*' will expose all headers.
+     * The list of headers that the client will be allowed to see from the response as indicated by
+     * the Access-Control-Expose-Headers header. '*' will expose all headers.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getExposedHeaders() {
         return exposedHeaders;
     }
 
     /**
-     * Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
-     *
-     **/
+     * Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with
+     * cookies.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isAllowCredentialsEnabled")
     private final Boolean isAllowCredentialsEnabled;
 
     /**
-     * Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
+     * Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with
+     * cookies.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsAllowCredentialsEnabled() {
         return isAllowCredentialsEnabled;
     }
 
     /**
-     * The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age
-     * if greater than 0.
-     *
-     **/
+     * The time in seconds for the client to cache preflight responses. This is sent as the
+     * Access-Control-Max-Age if greater than 0.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("maxAgeInSeconds")
     private final Integer maxAgeInSeconds;
 
     /**
-     * The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age
-     * if greater than 0.
+     * The time in seconds for the client to cache preflight responses. This is sent as the
+     * Access-Control-Max-Age if greater than 0.
      *
      * @return the value
-     **/
+     */
     public Integer getMaxAgeInSeconds() {
         return maxAgeInSeconds;
     }
@@ -339,6 +333,7 @@ public final class CorsPolicy extends com.oracle.bmc.http.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

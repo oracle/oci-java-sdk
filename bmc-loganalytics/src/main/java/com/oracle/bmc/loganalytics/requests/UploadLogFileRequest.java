@@ -6,150 +6,128 @@ package com.oracle.bmc.loganalytics.requests;
 
 import com.oracle.bmc.loganalytics.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UploadLogFileExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UploadLogFileRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UploadLogFileExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use UploadLogFileRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
 
-    /**
-     * The Logging Analytics namespace used for the request.
-     *
-     */
+    /** The Logging Analytics namespace used for the request. */
     private String namespaceName;
 
-    /**
-     * The Logging Analytics namespace used for the request.
-     *
-     */
+    /** The Logging Analytics namespace used for the request. */
     public String getNamespaceName() {
         return namespaceName;
     }
     /**
-     * The name of the upload. This can be considered as a container name where different kind of logs will be collected and searched together. This upload name/id can further be used for retrieving the details of the upload, including its status or deleting the upload.
-     *
+     * The name of the upload. This can be considered as a container name where different kind of
+     * logs will be collected and searched together. This upload name/id can further be used for
+     * retrieving the details of the upload, including its status or deleting the upload.
      */
     private String uploadName;
 
     /**
-     * The name of the upload. This can be considered as a container name where different kind of logs will be collected and searched together. This upload name/id can further be used for retrieving the details of the upload, including its status or deleting the upload.
-     *
+     * The name of the upload. This can be considered as a container name where different kind of
+     * logs will be collected and searched together. This upload name/id can further be used for
+     * retrieving the details of the upload, including its status or deleting the upload.
      */
     public String getUploadName() {
         return uploadName;
     }
-    /**
-     * Name of the log source that will be used to process the files being uploaded.
-     *
-     */
+    /** Name of the log source that will be used to process the files being uploaded. */
     private String logSourceName;
 
-    /**
-     * Name of the log source that will be used to process the files being uploaded.
-     *
-     */
+    /** Name of the log source that will be used to process the files being uploaded. */
     public String getLogSourceName() {
         return logSourceName;
     }
     /**
-     * The name of the file being uploaded. The extension of the filename part will be used to detect the type of file (like zip, tar).
-     *
+     * The name of the file being uploaded. The extension of the filename part will be used to
+     * detect the type of file (like zip, tar).
      */
     private String filename;
 
     /**
-     * The name of the file being uploaded. The extension of the filename part will be used to detect the type of file (like zip, tar).
-     *
+     * The name of the file being uploaded. The extension of the filename part will be used to
+     * detect the type of file (like zip, tar).
      */
     public String getFilename() {
         return filename;
     }
-    /**
-     * The log group OCID to which the log data in this upload will be mapped to.
-     *
-     */
+    /** The log group OCID to which the log data in this upload will be mapped to. */
     private String opcMetaLoggrpid;
 
-    /**
-     * The log group OCID to which the log data in this upload will be mapped to.
-     *
-     */
+    /** The log group OCID to which the log data in this upload will be mapped to. */
     public String getOpcMetaLoggrpid() {
         return opcMetaLoggrpid;
     }
-    /**
-     * Log data
-     */
+    /** Log data */
     private java.io.InputStream uploadLogFileBody;
 
-    /**
-     * Log data
-     */
+    /** Log data */
     public java.io.InputStream getUploadLogFileBody() {
         return uploadLogFileBody;
     }
-    /**
-     * The entity OCID.
-     *
-     */
+    /** The entity OCID. */
     private String entityId;
 
-    /**
-     * The entity OCID.
-     *
-     */
+    /** The entity OCID. */
     public String getEntityId() {
         return entityId;
     }
     /**
-     * Timezone to be used when processing log entries whose timestamps do not include an explicit timezone. When this property is not specified, the timezone of the entity specified is used. If the entity is also not specified or do not have a valid timezone then UTC is used
-     *
+     * Timezone to be used when processing log entries whose timestamps do not include an explicit
+     * timezone. When this property is not specified, the timezone of the entity specified is used.
+     * If the entity is also not specified or do not have a valid timezone then UTC is used
      */
     private String timezone;
 
     /**
-     * Timezone to be used when processing log entries whose timestamps do not include an explicit timezone. When this property is not specified, the timezone of the entity specified is used. If the entity is also not specified or do not have a valid timezone then UTC is used
-     *
+     * Timezone to be used when processing log entries whose timestamps do not include an explicit
+     * timezone. When this property is not specified, the timezone of the entity specified is used.
+     * If the entity is also not specified or do not have a valid timezone then UTC is used
      */
     public String getTimezone() {
         return timezone;
     }
     /**
-     * Character encoding to be used to detect the encoding type of file(s) being uploaded.
-     * When this property is not specified, system detected character encoding will be used.
-     *
+     * Character encoding to be used to detect the encoding type of file(s) being uploaded. When
+     * this property is not specified, system detected character encoding will be used.
      */
     private String charEncoding;
 
     /**
-     * Character encoding to be used to detect the encoding type of file(s) being uploaded.
-     * When this property is not specified, system detected character encoding will be used.
-     *
+     * Character encoding to be used to detect the encoding type of file(s) being uploaded. When
+     * this property is not specified, system detected character encoding will be used.
      */
     public String getCharEncoding() {
         return charEncoding;
     }
     /**
-     * This property is used to specify the format of the date. This is to be used for ambiguous dates like 12/11/10. This property can take any of the following values -  MONTH_DAY_YEAR, DAY_MONTH_YEAR, YEAR_MONTH_DAY, MONTH_DAY, DAY_MONTH.
-     *
+     * This property is used to specify the format of the date. This is to be used for ambiguous
+     * dates like 12/11/10. This property can take any of the following values - MONTH_DAY_YEAR,
+     * DAY_MONTH_YEAR, YEAR_MONTH_DAY, MONTH_DAY, DAY_MONTH.
      */
     private String dateFormat;
 
     /**
-     * This property is used to specify the format of the date. This is to be used for ambiguous dates like 12/11/10. This property can take any of the following values -  MONTH_DAY_YEAR, DAY_MONTH_YEAR, YEAR_MONTH_DAY, MONTH_DAY, DAY_MONTH.
-     *
+     * This property is used to specify the format of the date. This is to be used for ambiguous
+     * dates like 12/11/10. This property can take any of the following values - MONTH_DAY_YEAR,
+     * DAY_MONTH_YEAR, YEAR_MONTH_DAY, MONTH_DAY, DAY_MONTH.
      */
     public String getDateFormat() {
         return dateFormat;
     }
     /**
-     * Used to indicate the year where the log entries timestamp do not mention year (Ex: Nov  8 20:45:56).
-     *
+     * Used to indicate the year where the log entries timestamp do not mention year (Ex: Nov 8
+     * 20:45:56).
      */
     private String dateYear;
 
     /**
-     * Used to indicate the year where the log entries timestamp do not mention year (Ex: Nov  8 20:45:56).
-     *
+     * Used to indicate the year where the log entries timestamp do not mention year (Ex: Nov 8
+     * 20:45:56).
      */
     public String getDateYear() {
         return dateYear;
@@ -165,96 +143,86 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public Boolean getInvalidateCache() {
         return invalidateCache;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Logging Analytics performs an integrity check
-     * on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
-     * If the two hashes do not match, the log data is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
-     * <p>
-     * "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
+     * The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Logging
+     * Analytics performs an integrity check on the body of the HTTP request by computing the MD5
+     * hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes
+     * do not match, the log data is rejected and an HTTP-400 Unmatched Content MD5 error is
+     * returned with the message:
      *
+     * <p>"The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header
+     * (HEADER_MD5)"
      */
     private String contentMd5;
 
     /**
-     * The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Logging Analytics performs an integrity check
-     * on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
-     * If the two hashes do not match, the log data is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
-     * <p>
-     * "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
+     * The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Logging
+     * Analytics performs an integrity check on the body of the HTTP request by computing the MD5
+     * hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes
+     * do not match, the log data is rejected and an HTTP-400 Unmatched Content MD5 error is
+     * returned with the message:
      *
+     * <p>"The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header
+     * (HEADER_MD5)"
      */
     public String getContentMd5() {
         return contentMd5;
     }
-    /**
-     * The content type of the log data.
-     */
+    /** The content type of the log data. */
     private String contentType;
 
-    /**
-     * The content type of the log data.
-     */
+    /** The content type of the log data. */
     public String getContentType() {
         return contentType;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * might be rejected.
-     *
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * might be rejected.
-     *
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /**
-     * The log set that gets associated with the uploaded logs.
-     *
-     */
+    /** The log set that gets associated with the uploaded logs. */
     private String logSet;
 
-    /**
-     * The log set that gets associated with the uploaded logs.
-     *
-     */
+    /** The log set that gets associated with the uploaded logs. */
     public String getLogSet() {
         return logSet;
     }
     /**
-     * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
-     * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
-     * The only allowed value for this parameter is "100-Continue" (case-insensitive).
-     *
+     * A value of {@code 100-continue} requests preliminary verification of the request method,
+     * path, and headers before the request body is sent. If no error results from such
+     * verification, the server will send a 100 (Continue) interim response to indicate readiness
+     * for the request body. The only allowed value for this parameter is "100-Continue"
+     * (case-insensitive).
      */
     private String expect;
 
     /**
-     * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
-     * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
-     * The only allowed value for this parameter is "100-Continue" (case-insensitive).
-     *
+     * A value of {@code 100-continue} requests preliminary verification of the request method,
+     * path, and headers before the request body is sent. If no error results from such
+     * verification, the server will send a 100 (Continue) interim response to indicate readiness
+     * for the request body. The only allowed value for this parameter is "100-Continue"
+     * (case-insensitive).
      */
     public String getExpect() {
         return expect;
@@ -262,6 +230,7 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -278,14 +247,10 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UploadLogFileRequest, java.io.InputStream> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The Logging Analytics namespace used for the request.
-         *
-         */
+        /** The Logging Analytics namespace used for the request. */
         private String namespaceName = null;
 
         /**
@@ -300,13 +265,16 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * The name of the upload. This can be considered as a container name where different kind of logs will be collected and searched together. This upload name/id can further be used for retrieving the details of the upload, including its status or deleting the upload.
-         *
+         * The name of the upload. This can be considered as a container name where different kind
+         * of logs will be collected and searched together. This upload name/id can further be used
+         * for retrieving the details of the upload, including its status or deleting the upload.
          */
         private String uploadName = null;
 
         /**
-         * The name of the upload. This can be considered as a container name where different kind of logs will be collected and searched together. This upload name/id can further be used for retrieving the details of the upload, including its status or deleting the upload.
+         * The name of the upload. This can be considered as a container name where different kind
+         * of logs will be collected and searched together. This upload name/id can further be used
+         * for retrieving the details of the upload, including its status or deleting the upload.
          *
          * @param uploadName the value to set
          * @return this builder instance
@@ -316,10 +284,7 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * Name of the log source that will be used to process the files being uploaded.
-         *
-         */
+        /** Name of the log source that will be used to process the files being uploaded. */
         private String logSourceName = null;
 
         /**
@@ -334,13 +299,14 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * The name of the file being uploaded. The extension of the filename part will be used to detect the type of file (like zip, tar).
-         *
+         * The name of the file being uploaded. The extension of the filename part will be used to
+         * detect the type of file (like zip, tar).
          */
         private String filename = null;
 
         /**
-         * The name of the file being uploaded. The extension of the filename part will be used to detect the type of file (like zip, tar).
+         * The name of the file being uploaded. The extension of the filename part will be used to
+         * detect the type of file (like zip, tar).
          *
          * @param filename the value to set
          * @return this builder instance
@@ -350,10 +316,7 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The log group OCID to which the log data in this upload will be mapped to.
-         *
-         */
+        /** The log group OCID to which the log data in this upload will be mapped to. */
         private String opcMetaLoggrpid = null;
 
         /**
@@ -367,13 +330,12 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * Log data
-         */
+        /** Log data */
         private java.io.InputStream uploadLogFileBody = null;
 
         /**
          * Log data
+         *
          * @param uploadLogFileBody the value to set
          * @return this builder instance
          */
@@ -382,10 +344,7 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The entity OCID.
-         *
-         */
+        /** The entity OCID. */
         private String entityId = null;
 
         /**
@@ -400,13 +359,18 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * Timezone to be used when processing log entries whose timestamps do not include an explicit timezone. When this property is not specified, the timezone of the entity specified is used. If the entity is also not specified or do not have a valid timezone then UTC is used
-         *
+         * Timezone to be used when processing log entries whose timestamps do not include an
+         * explicit timezone. When this property is not specified, the timezone of the entity
+         * specified is used. If the entity is also not specified or do not have a valid timezone
+         * then UTC is used
          */
         private String timezone = null;
 
         /**
-         * Timezone to be used when processing log entries whose timestamps do not include an explicit timezone. When this property is not specified, the timezone of the entity specified is used. If the entity is also not specified or do not have a valid timezone then UTC is used
+         * Timezone to be used when processing log entries whose timestamps do not include an
+         * explicit timezone. When this property is not specified, the timezone of the entity
+         * specified is used. If the entity is also not specified or do not have a valid timezone
+         * then UTC is used
          *
          * @param timezone the value to set
          * @return this builder instance
@@ -417,15 +381,14 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * Character encoding to be used to detect the encoding type of file(s) being uploaded.
-         * When this property is not specified, system detected character encoding will be used.
-         *
+         * Character encoding to be used to detect the encoding type of file(s) being uploaded. When
+         * this property is not specified, system detected character encoding will be used.
          */
         private String charEncoding = null;
 
         /**
-         * Character encoding to be used to detect the encoding type of file(s) being uploaded.
-         * When this property is not specified, system detected character encoding will be used.
+         * Character encoding to be used to detect the encoding type of file(s) being uploaded. When
+         * this property is not specified, system detected character encoding will be used.
          *
          * @param charEncoding the value to set
          * @return this builder instance
@@ -436,13 +399,16 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * This property is used to specify the format of the date. This is to be used for ambiguous dates like 12/11/10. This property can take any of the following values -  MONTH_DAY_YEAR, DAY_MONTH_YEAR, YEAR_MONTH_DAY, MONTH_DAY, DAY_MONTH.
-         *
+         * This property is used to specify the format of the date. This is to be used for ambiguous
+         * dates like 12/11/10. This property can take any of the following values - MONTH_DAY_YEAR,
+         * DAY_MONTH_YEAR, YEAR_MONTH_DAY, MONTH_DAY, DAY_MONTH.
          */
         private String dateFormat = null;
 
         /**
-         * This property is used to specify the format of the date. This is to be used for ambiguous dates like 12/11/10. This property can take any of the following values -  MONTH_DAY_YEAR, DAY_MONTH_YEAR, YEAR_MONTH_DAY, MONTH_DAY, DAY_MONTH.
+         * This property is used to specify the format of the date. This is to be used for ambiguous
+         * dates like 12/11/10. This property can take any of the following values - MONTH_DAY_YEAR,
+         * DAY_MONTH_YEAR, YEAR_MONTH_DAY, MONTH_DAY, DAY_MONTH.
          *
          * @param dateFormat the value to set
          * @return this builder instance
@@ -453,13 +419,14 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * Used to indicate the year where the log entries timestamp do not mention year (Ex: Nov  8 20:45:56).
-         *
+         * Used to indicate the year where the log entries timestamp do not mention year (Ex: Nov 8
+         * 20:45:56).
          */
         private String dateYear = null;
 
         /**
-         * Used to indicate the year where the log entries timestamp do not mention year (Ex: Nov  8 20:45:56).
+         * Used to indicate the year where the log entries timestamp do not mention year (Ex: Nov 8
+         * 20:45:56).
          *
          * @param dateYear the value to set
          * @return this builder instance
@@ -470,12 +437,15 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * This property can be used to reset configuration cache in case of an issue with the upload.
+         * This property can be used to reset configuration cache in case of an issue with the
+         * upload.
          */
         private Boolean invalidateCache = null;
 
         /**
-         * This property can be used to reset configuration cache in case of an issue with the upload.
+         * This property can be used to reset configuration cache in case of an issue with the
+         * upload.
+         *
          * @param invalidateCache the value to set
          * @return this builder instance
          */
@@ -484,13 +454,12 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -500,21 +469,26 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Logging Analytics performs an integrity check
-         * on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
-         * If the two hashes do not match, the log data is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
-         * <p>
-         * "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
+         * The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Logging
+         * Analytics performs an integrity check on the body of the HTTP request by computing the
+         * MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two
+         * hashes do not match, the log data is rejected and an HTTP-400 Unmatched Content MD5 error
+         * is returned with the message:
          *
+         * <p>"The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5
+         * header (HEADER_MD5)"
          */
         private String contentMd5 = null;
 
         /**
-         * The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Logging Analytics performs an integrity check
-         * on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
-         * If the two hashes do not match, the log data is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
-         * <p>
-         * "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
+         * The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Logging
+         * Analytics performs an integrity check on the body of the HTTP request by computing the
+         * MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two
+         * hashes do not match, the log data is rejected and an HTTP-400 Unmatched Content MD5 error
+         * is returned with the message:
+         *
+         * <p>"The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5
+         * header (HEADER_MD5)"
          *
          * @param contentMd5 the value to set
          * @return this builder instance
@@ -524,13 +498,12 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The content type of the log data.
-         */
+        /** The content type of the log data. */
         private String contentType = null;
 
         /**
          * The content type of the log data.
+         *
          * @param contentType the value to set
          * @return this builder instance
          */
@@ -541,20 +514,19 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * might be rejected.
-         *
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -564,10 +536,7 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The log set that gets associated with the uploaded logs.
-         *
-         */
+        /** The log set that gets associated with the uploaded logs. */
         private String logSet = null;
 
         /**
@@ -582,17 +551,20 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
-         * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
-         * The only allowed value for this parameter is "100-Continue" (case-insensitive).
-         *
+         * A value of {@code 100-continue} requests preliminary verification of the request method,
+         * path, and headers before the request body is sent. If no error results from such
+         * verification, the server will send a 100 (Continue) interim response to indicate
+         * readiness for the request body. The only allowed value for this parameter is
+         * "100-Continue" (case-insensitive).
          */
         private String expect = null;
 
         /**
-         * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
-         * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
-         * The only allowed value for this parameter is "100-Continue" (case-insensitive).
+         * A value of {@code 100-continue} requests preliminary verification of the request method,
+         * path, and headers before the request body is sent. If no error results from such
+         * verification, the server will send a 100 (Continue) interim response to indicate
+         * readiness for the request body. The only allowed value for this parameter is
+         * "100-Continue" (case-insensitive).
          *
          * @param expect the value to set
          * @return this builder instance
@@ -604,18 +576,19 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -627,6 +600,7 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UploadLogFileRequest o) {
@@ -656,10 +630,11 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of UploadLogFileRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UploadLogFileRequest
          */
@@ -672,6 +647,7 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -684,7 +660,8 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of UploadLogFileRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UploadLogFileRequest
@@ -710,12 +687,16 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.logSet = logSet;
             request.expect = expect;
             return request;
-            // new UploadLogFileRequest(namespaceName, uploadName, logSourceName, filename, opcMetaLoggrpid, uploadLogFileBody, entityId, timezone, charEncoding, dateFormat, dateYear, invalidateCache, opcRequestId, contentMd5, contentType, opcRetryToken, logSet, expect);
+            // new UploadLogFileRequest(namespaceName, uploadName, logSourceName, filename,
+            // opcMetaLoggrpid, uploadLogFileBody, entityId, timezone, charEncoding, dateFormat,
+            // dateYear, invalidateCache, opcRequestId, contentMd5, contentType, opcRetryToken,
+            // logSet, expect);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -742,6 +723,7 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

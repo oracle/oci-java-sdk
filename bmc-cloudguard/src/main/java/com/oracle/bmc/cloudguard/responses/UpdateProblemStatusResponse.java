@@ -8,10 +8,7 @@ import com.oracle.bmc.cloudguard.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class UpdateProblemStatusResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,15 +21,14 @@ public class UpdateProblemStatusResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,13 +36,12 @@ public class UpdateProblemStatusResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /**
-     * The returned Problem instance.
-     */
+    /** The returned Problem instance. */
     private com.oracle.bmc.cloudguard.model.Problem problem;
 
     /**
      * The returned Problem instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.cloudguard.model.Problem getProblem() {
@@ -62,7 +57,7 @@ public class UpdateProblemStatusResponse extends com.oracle.bmc.responses.BmcRes
     })
     private UpdateProblemStatusResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.cloudguard.model.Problem problem) {
@@ -72,25 +67,25 @@ public class UpdateProblemStatusResponse extends com.oracle.bmc.responses.BmcRes
         this.problem = problem;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<UpdateProblemStatusResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -105,15 +100,14 @@ public class UpdateProblemStatusResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -123,13 +117,12 @@ public class UpdateProblemStatusResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /**
-         * The returned Problem instance.
-         */
+        /** The returned Problem instance. */
         private com.oracle.bmc.cloudguard.model.Problem problem;
 
         /**
          * The returned Problem instance.
+         *
          * @param problem the value to set
          * @return this builder
          */
@@ -140,8 +133,10 @@ public class UpdateProblemStatusResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(UpdateProblemStatusResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -154,8 +149,10 @@ public class UpdateProblemStatusResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public UpdateProblemStatusResponse build() {
             return new UpdateProblemStatusResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, problem);
@@ -164,6 +161,7 @@ public class UpdateProblemStatusResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

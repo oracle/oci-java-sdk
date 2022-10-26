@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
-/**
- * Possible lifecycle states for a resource.
- **/
+/** Possible lifecycle states for a resource. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
-public enum LifecycleState {
+public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Active("ACTIVE"),
     Inactive("INACTIVE"),

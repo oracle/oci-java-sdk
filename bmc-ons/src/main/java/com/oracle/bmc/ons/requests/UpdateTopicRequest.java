@@ -6,7 +6,9 @@ package com.oracle.bmc.ons.requests;
 
 import com.oracle.bmc.ons.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/UpdateTopicExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateTopicRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/UpdateTopicExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateTopicRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class UpdateTopicRequest
@@ -14,57 +16,51 @@ public class UpdateTopicRequest
                 com.oracle.bmc.ons.model.TopicAttributesDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to update.
-     *
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the topic to update.
      */
     private String topicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to update.
-     *
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the topic to update.
      */
     public String getTopicId() {
         return topicId;
     }
-    /**
-     * TopicAttributes
-     */
+    /** TopicAttributes */
     private com.oracle.bmc.ons.model.TopicAttributesDetails topicAttributesDetails;
 
-    /**
-     * TopicAttributes
-     */
+    /** TopicAttributes */
     public com.oracle.bmc.ons.model.TopicAttributesDetails getTopicAttributesDetails() {
         return topicAttributesDetails;
     }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * Used for optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * Used for optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+     * {@code if-match} parameter to the value of the etag from a previous GET or POST response for
+     * that resource. The resource will be updated or deleted only if the etag you provide matches
+     * the resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * Used for optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * Used for optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+     * {@code if-match} parameter to the value of the etag from a previous GET or POST response for
+     * that resource. The resource will be updated or deleted only if the etag you provide matches
+     * the resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
@@ -72,6 +68,7 @@ public class UpdateTopicRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -83,18 +80,18 @@ public class UpdateTopicRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateTopicRequest, com.oracle.bmc.ons.model.TopicAttributesDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to update.
-         *
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the topic to update.
          */
         private String topicId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to update.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the topic to update.
          *
          * @param topicId the value to set
          * @return this builder instance
@@ -104,13 +101,12 @@ public class UpdateTopicRequest
             return this;
         }
 
-        /**
-         * TopicAttributes
-         */
+        /** TopicAttributes */
         private com.oracle.bmc.ons.model.TopicAttributesDetails topicAttributesDetails = null;
 
         /**
          * TopicAttributes
+         *
          * @param topicAttributesDetails the value to set
          * @return this builder instance
          */
@@ -121,15 +117,14 @@ public class UpdateTopicRequest
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
+         * about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
+         * about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -140,17 +135,18 @@ public class UpdateTopicRequest
         }
 
         /**
-         * Used for optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-         *
+         * Used for optimistic concurrency control. In the PUT or DELETE call for a resource, set
+         * the {@code if-match} parameter to the value of the etag from a previous GET or POST
+         * response for that resource. The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * Used for optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * Used for optimistic concurrency control. In the PUT or DELETE call for a resource, set
+         * the {@code if-match} parameter to the value of the etag from a previous GET or POST
+         * response for that resource. The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -162,18 +158,19 @@ public class UpdateTopicRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -185,6 +182,7 @@ public class UpdateTopicRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateTopicRequest o) {
@@ -200,10 +198,11 @@ public class UpdateTopicRequest
         /**
          * Build the instance of UpdateTopicRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateTopicRequest
          */
@@ -216,6 +215,7 @@ public class UpdateTopicRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -228,7 +228,8 @@ public class UpdateTopicRequest
         /**
          * Build the instance of UpdateTopicRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateTopicRequest
@@ -246,6 +247,7 @@ public class UpdateTopicRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -258,6 +260,7 @@ public class UpdateTopicRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

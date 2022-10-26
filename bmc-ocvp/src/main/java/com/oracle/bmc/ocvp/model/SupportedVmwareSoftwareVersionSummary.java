@@ -5,24 +5,22 @@
 package com.oracle.bmc.ocvp.model;
 
 /**
- * A specific version of bundled VMware software supported by the Oracle Cloud
- * VMware Solution.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A specific version of bundled VMware software supported by the Oracle Cloud VMware Solution. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SupportedVmwareSoftwareVersionSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SupportedVmwareSoftwareVersionSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SupportedVmwareSoftwareVersionSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"version", "description"})
     public SupportedVmwareSoftwareVersionSummary(String version, String description) {
@@ -33,10 +31,7 @@ public final class SupportedVmwareSoftwareVersionSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * A short, unique string that identifies the version of bundled software.
-         *
-         **/
+        /** A short, unique string that identifies the version of bundled software. */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
@@ -45,23 +40,22 @@ public final class SupportedVmwareSoftwareVersionSummary
          *
          * @param version the value to set
          * @return this builder
-         **/
+         */
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /**
-         * A description of the software in the bundle.
-         **/
+        /** A description of the software in the bundle. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A description of the software in the bundle.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -92,9 +86,7 @@ public final class SupportedVmwareSoftwareVersionSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -103,10 +95,7 @@ public final class SupportedVmwareSoftwareVersionSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * A short, unique string that identifies the version of bundled software.
-     *
-     **/
+    /** A short, unique string that identifies the version of bundled software. */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
@@ -114,21 +103,20 @@ public final class SupportedVmwareSoftwareVersionSummary
      * A short, unique string that identifies the version of bundled software.
      *
      * @return the value
-     **/
+     */
     public String getVersion() {
         return version;
     }
 
-    /**
-     * A description of the software in the bundle.
-     **/
+    /** A description of the software in the bundle. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A description of the software in the bundle.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
@@ -140,6 +128,7 @@ public final class SupportedVmwareSoftwareVersionSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,56 +5,53 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * Auth Token and endpoint to access Oracle Cloud Infrastructure - Classic, which is the source environment from which you want to migrate the application.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Auth Token and endpoint to access Oracle Cloud Infrastructure - Classic, which is the source
+ * environment from which you want to migrate the application. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = OcicAuthorizationTokenDetails.Builder.class
-)
+        builder = OcicAuthorizationTokenDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class OcicAuthorizationTokenDetails extends AuthorizationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * AuthClient app url resource that the accesstoken is for.
-         **/
+        /** AuthClient app url resource that the accesstoken is for. */
         @com.fasterxml.jackson.annotation.JsonProperty("clientAppUrl")
         private String clientAppUrl;
 
         /**
          * AuthClient app url resource that the accesstoken is for.
+         *
          * @param clientAppUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder clientAppUrl(String clientAppUrl) {
             this.clientAppUrl = clientAppUrl;
             this.__explicitlySet__.add("clientAppUrl");
             return this;
         }
-        /**
-         * AccessToken to access the app endpoint.
-         **/
+        /** AccessToken to access the app endpoint. */
         @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
         private String accessToken;
 
         /**
          * AccessToken to access the app endpoint.
+         *
          * @param accessToken the value to set
          * @return this builder
-         **/
+         */
         public Builder accessToken(String accessToken) {
             this.accessToken = accessToken;
             this.__explicitlySet__.add("accessToken");
@@ -85,9 +82,7 @@ public final class OcicAuthorizationTokenDetails extends AuthorizationDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -103,30 +98,28 @@ public final class OcicAuthorizationTokenDetails extends AuthorizationDetails {
         this.accessToken = accessToken;
     }
 
-    /**
-     * AuthClient app url resource that the accesstoken is for.
-     **/
+    /** AuthClient app url resource that the accesstoken is for. */
     @com.fasterxml.jackson.annotation.JsonProperty("clientAppUrl")
     private final String clientAppUrl;
 
     /**
      * AuthClient app url resource that the accesstoken is for.
+     *
      * @return the value
-     **/
+     */
     public String getClientAppUrl() {
         return clientAppUrl;
     }
 
-    /**
-     * AccessToken to access the app endpoint.
-     **/
+    /** AccessToken to access the app endpoint. */
     @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
     private final String accessToken;
 
     /**
      * AccessToken to access the app endpoint.
+     *
      * @return the value
-     **/
+     */
     public String getAccessToken() {
         return accessToken;
     }
@@ -138,6 +131,7 @@ public final class OcicAuthorizationTokenDetails extends AuthorizationDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -146,7 +140,7 @@ public final class OcicAuthorizationTokenDetails extends AuthorizationDetails {
         sb.append("OcicAuthorizationTokenDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", clientAppUrl=").append(String.valueOf(this.clientAppUrl));
-        sb.append(", accessToken=").append(String.valueOf(this.accessToken));
+        sb.append(", accessToken=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

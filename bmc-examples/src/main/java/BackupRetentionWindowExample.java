@@ -44,26 +44,29 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 /**
- * This class provides a basic example of how to launch a DB system, create a new DbHome and update an existing database
- * with a recovery window as the input using the Java SDK. This will cover:
- * <p></p>
+ * This class provides a basic example of how to launch a DB system, create a new DbHome and update
+ * an existing database with a recovery window as the input using the Java SDK. This will cover:
+ *
+ * <p>
+ *
  * <ul>
- *   <li>Create a VCN and subnet for the DB system and its related resources</li>
- *   <li>
- *     Launch a DB system containing a single DB home and database. See:
- *       <a href="https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm">overview</a> and
- *       <a href="https://docs.cloud.oracle.com/Content/Database/Tasks/launchingDB.htm">managing DB systems</a>
- *       for more information
+ *   <li>Create a VCN and subnet for the DB system and its related resources
+ *   <li>Launch a DB system containing a single DB home and database. See: <a
+ *       href="https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm">overview</a>
+ *       and <a href="https://docs.cloud.oracle.com/Content/Database/Tasks/launchingDB.htm">managing
+ *       DB systems</a> for more information
  * </ul>
- * <p></p>
- * Resources created by this class will be removed when this example is done.
- * <p></p>
- * This class also makes assumptions on the following database parameters:
- * <p></p>
+ *
+ * <p>Resources created by this class will be removed when this example is done.
+ *
+ * <p>This class also makes assumptions on the following database parameters:
+ *
+ * <p>
+ *
  * <ul>
- *   <li>Core count</li>
- *   <li>DB edition</li>
- *   <li>DB version</li>
+ *   <li>Core count
+ *   <li>DB edition
+ *   <li>DB version
  * </ul>
  */
 public class BackupRetentionWindowExample {
@@ -85,13 +88,13 @@ public class BackupRetentionWindowExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *             <ul>
-     *             <li>The OCID of the compartment which owns the DB system</li>
-     *             <li>The availability domain where the DB system will be launched</li>
-     *             <li>The database recovery window input during launch of the DB system </li>
-     *             <li>The database recovery window input to create a new db home in the DB system </li>
-     *             <li>The database recovery window input to update an existing database's recovery window </li>
-     *             </ul>
+     *     <ul>
+     *       <li>The OCID of the compartment which owns the DB system
+     *       <li>The availability domain where the DB system will be launched
+     *       <li>The database recovery window input during launch of the DB system
+     *       <li>The database recovery window input to create a new db home in the DB system
+     *       <li>The database recovery window input to update an existing database's recovery window
+     *     </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 5) {
@@ -111,8 +114,10 @@ public class BackupRetentionWindowExample {
         int recoveryWindowForDbHome = Integer.parseInt(args[3]);
         int recoveryWindowForUpdate = Integer.parseInt(args[4]);
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -158,7 +163,6 @@ public class BackupRetentionWindowExample {
      * @param recoveryWindowForLaunch
      * @return OCID of the launched DbSystem
      * @throws Exception
-     *
      */
     private static String launchDbSystem(Subnet subnet, Integer recoveryWindowForLaunch)
             throws Exception {
@@ -231,7 +235,6 @@ public class BackupRetentionWindowExample {
      * @param recoveryWindowForUpdate
      * @param dbHomeId
      * @throws Exception
-     *
      */
     private static void updateDatabase(Integer recoveryWindowForUpdate, String dbHomeId)
             throws Exception {

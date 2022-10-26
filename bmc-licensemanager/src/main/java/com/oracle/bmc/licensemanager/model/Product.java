@@ -5,19 +5,20 @@
 package com.oracle.bmc.licensemanager.model;
 
 /**
- * Details of product.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details of product. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Product.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Product extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Product extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "count", "category"})
     public Product(String name, Double count, ProductCategory category) {
@@ -29,49 +30,46 @@ public final class Product extends com.oracle.bmc.http.internal.ExplicitlySetBmc
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Name of the product.
-         **/
+        /** Name of the product. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of the product.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Units required for the missing product.
-         **/
+        /** Units required for the missing product. */
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Double count;
 
         /**
          * Units required for the missing product.
+         *
          * @param count the value to set
          * @return this builder
-         **/
+         */
         public Builder count(Double count) {
             this.count = count;
             this.__explicitlySet__.add("count");
             return this;
         }
-        /**
-         * Product category base or option.
-         **/
+        /** Product category base or option. */
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private ProductCategory category;
 
         /**
          * Product category base or option.
+         *
          * @param category the value to set
          * @return this builder
-         **/
+         */
         public Builder category(ProductCategory category) {
             this.category = category;
             this.__explicitlySet__.add("category");
@@ -104,9 +102,7 @@ public final class Product extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,44 +111,41 @@ public final class Product extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         return new Builder().copy(this);
     }
 
-    /**
-     * Name of the product.
-     **/
+    /** Name of the product. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of the product.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Units required for the missing product.
-     **/
+    /** Units required for the missing product. */
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Double count;
 
     /**
      * Units required for the missing product.
+     *
      * @return the value
-     **/
+     */
     public Double getCount() {
         return count;
     }
 
-    /**
-     * Product category base or option.
-     **/
+    /** Product category base or option. */
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final ProductCategory category;
 
     /**
      * Product category base or option.
+     *
      * @return the value
-     **/
+     */
     public ProductCategory getCategory() {
         return category;
     }
@@ -164,6 +157,7 @@ public final class Product extends com.oracle.bmc.http.internal.ExplicitlySetBmc
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

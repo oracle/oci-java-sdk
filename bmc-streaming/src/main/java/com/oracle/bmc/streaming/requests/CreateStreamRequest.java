@@ -6,35 +6,31 @@ package com.oracle.bmc.streaming.requests;
 
 import com.oracle.bmc.streaming.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/CreateStreamExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateStreamRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/CreateStreamExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateStreamRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 public class CreateStreamRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.streaming.model.CreateStreamDetails> {
 
-    /**
-     * The stream to create.
-     */
+    /** The stream to create. */
     private com.oracle.bmc.streaming.model.CreateStreamDetails createStreamDetails;
 
-    /**
-     * The stream to create.
-     */
+    /** The stream to create. */
     public com.oracle.bmc.streaming.model.CreateStreamDetails getCreateStreamDetails() {
         return createStreamDetails;
     }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -42,6 +38,7 @@ public class CreateStreamRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -53,17 +50,15 @@ public class CreateStreamRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateStreamRequest, com.oracle.bmc.streaming.model.CreateStreamDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The stream to create.
-         */
+        /** The stream to create. */
         private com.oracle.bmc.streaming.model.CreateStreamDetails createStreamDetails = null;
 
         /**
          * The stream to create.
+         *
          * @param createStreamDetails the value to set
          * @return this builder instance
          */
@@ -74,15 +69,14 @@ public class CreateStreamRequest
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
+         * about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
+         * about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -94,18 +88,19 @@ public class CreateStreamRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -117,6 +112,7 @@ public class CreateStreamRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(CreateStreamRequest o) {
@@ -130,10 +126,11 @@ public class CreateStreamRequest
         /**
          * Build the instance of CreateStreamRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of CreateStreamRequest
          */
@@ -146,6 +143,7 @@ public class CreateStreamRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -158,7 +156,8 @@ public class CreateStreamRequest
         /**
          * Build the instance of CreateStreamRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateStreamRequest
@@ -174,6 +173,7 @@ public class CreateStreamRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -182,6 +182,7 @@ public class CreateStreamRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

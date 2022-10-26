@@ -5,19 +5,20 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * Defines the query options required for a {@code PathAnalyzerTest} resource.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Defines the query options required for a {@code PathAnalyzerTest} resource. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = QueryOptions.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class QueryOptions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class QueryOptions extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isBiDirectionalAnalysis"})
     public QueryOptions(Boolean isBiDirectionalAnalysis) {
@@ -27,17 +28,16 @@ public final class QueryOptions extends com.oracle.bmc.http.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * If true, a path analysis is done for both the forward and reverse routes.
-         **/
+        /** If true, a path analysis is done for both the forward and reverse routes. */
         @com.fasterxml.jackson.annotation.JsonProperty("isBiDirectionalAnalysis")
         private Boolean isBiDirectionalAnalysis;
 
         /**
          * If true, a path analysis is done for both the forward and reverse routes.
+         *
          * @param isBiDirectionalAnalysis the value to set
          * @return this builder
-         **/
+         */
         public Builder isBiDirectionalAnalysis(Boolean isBiDirectionalAnalysis) {
             this.isBiDirectionalAnalysis = isBiDirectionalAnalysis;
             this.__explicitlySet__.add("isBiDirectionalAnalysis");
@@ -64,9 +64,7 @@ public final class QueryOptions extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -75,16 +73,15 @@ public final class QueryOptions extends com.oracle.bmc.http.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /**
-     * If true, a path analysis is done for both the forward and reverse routes.
-     **/
+    /** If true, a path analysis is done for both the forward and reverse routes. */
     @com.fasterxml.jackson.annotation.JsonProperty("isBiDirectionalAnalysis")
     private final Boolean isBiDirectionalAnalysis;
 
     /**
      * If true, a path analysis is done for both the forward and reverse routes.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsBiDirectionalAnalysis() {
         return isBiDirectionalAnalysis;
     }
@@ -96,6 +93,7 @@ public final class QueryOptions extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

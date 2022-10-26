@@ -5,22 +5,22 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /**
- * The information about new Network Firewall.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information about new Network Firewall. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateNetworkFirewallDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateNetworkFirewallDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateNetworkFirewallDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -61,154 +61,169 @@ public final class CreateNetworkFirewallDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A user-friendly name for the Network Firewall. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-         **/
+         * A user-friendly name for the Network Firewall. Does not have to be unique, and it's
+         * changeable. Avoid entering confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name for the Network Firewall. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name for the Network Firewall. Does not have to be unique, and it's
+         * changeable. Avoid entering confidential information.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Network Firewall.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the Network Firewall.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Network Firewall.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the Network Firewall.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the subnet associated with the Network Firewall.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the subnet associated with the Network Firewall.
+         *
          * @param subnetId the value to set
          * @return this builder
-         **/
+         */
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
         /**
-         * Availability Domain where Network Firewall instance is created.
-         * To get a list of availability domains for a tenancy, use {@link #listAvailabilityDomains(ListAvailabilityDomainsRequest) listAvailabilityDomains} operation.
-         * Example: {@code kIdk:PHX-AD-1}
-         *
-         **/
+         * Availability Domain where Network Firewall instance is created. To get a list of
+         * availability domains for a tenancy, use {@link
+         * #listAvailabilityDomains(ListAvailabilityDomainsRequest) listAvailabilityDomains}
+         * operation. Example: {@code kIdk:PHX-AD-1}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * Availability Domain where Network Firewall instance is created.
-         * To get a list of availability domains for a tenancy, use {@link #listAvailabilityDomains(ListAvailabilityDomainsRequest) listAvailabilityDomains} operation.
-         * Example: {@code kIdk:PHX-AD-1}
+         * Availability Domain where Network Firewall instance is created. To get a list of
+         * availability domains for a tenancy, use {@link
+         * #listAvailabilityDomains(ListAvailabilityDomainsRequest) listAvailabilityDomains}
+         * operation. Example: {@code kIdk:PHX-AD-1}
          *
          * @param availabilityDomain the value to set
          * @return this builder
-         **/
+         */
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the Network Firewall Policy.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("networkFirewallPolicyId")
         private String networkFirewallPolicyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the Network Firewall Policy.
+         *
          * @param networkFirewallPolicyId the value to set
          * @return this builder
-         **/
+         */
         public Builder networkFirewallPolicyId(String networkFirewallPolicyId) {
             this.networkFirewallPolicyId = networkFirewallPolicyId;
             this.__explicitlySet__.add("networkFirewallPolicyId");
             return this;
         }
-        /**
-         * IPv4 address for the Network Firewall.
-         **/
+        /** IPv4 address for the Network Firewall. */
         @com.fasterxml.jackson.annotation.JsonProperty("ipv4Address")
         private String ipv4Address;
 
         /**
          * IPv4 address for the Network Firewall.
+         *
          * @param ipv4Address the value to set
          * @return this builder
-         **/
+         */
         public Builder ipv4Address(String ipv4Address) {
             this.ipv4Address = ipv4Address;
             this.__explicitlySet__.add("ipv4Address");
             return this;
         }
-        /**
-         * IPv6 address for the Network Firewall.
-         **/
+        /** IPv6 address for the Network Firewall. */
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6Address")
         private String ipv6Address;
 
         /**
          * IPv6 address for the Network Firewall.
+         *
          * @param ipv6Address the value to set
          * @return this builder
-         **/
+         */
         public Builder ipv6Address(String ipv6Address) {
             this.ipv6Address = ipv6Address;
             this.__explicitlySet__.add("ipv6Address");
             return this;
         }
         /**
-         * An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
-         **/
+         * An array of network security groups
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * associated with the Network Firewall.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
         private java.util.List<String> networkSecurityGroupIds;
 
         /**
-         * An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
+         * An array of network security groups
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * associated with the Network Firewall.
+         *
          * @param networkSecurityGroupIds the value to set
          * @return this builder
-         **/
+         */
         public Builder networkSecurityGroupIds(java.util.List<String> networkSecurityGroupIds) {
             this.networkSecurityGroupIds = networkSecurityGroupIds;
             this.__explicitlySet__.add("networkSecurityGroupIds");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -217,8 +232,7 @@ public final class CreateNetworkFirewallDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -228,7 +242,7 @@ public final class CreateNetworkFirewallDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -294,9 +308,7 @@ public final class CreateNetworkFirewallDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -306,155 +318,167 @@ public final class CreateNetworkFirewallDetails
     }
 
     /**
-     * A user-friendly name for the Network Firewall. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-     **/
+     * A user-friendly name for the Network Firewall. Does not have to be unique, and it's
+     * changeable. Avoid entering confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name for the Network Firewall. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name for the Network Firewall. Does not have to be unique, and it's
+     * changeable. Avoid entering confidential information.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Network Firewall.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the Network Firewall.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Network Firewall.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the Network Firewall.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the subnet associated with the Network Firewall.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the subnet associated with the Network Firewall.
+     *
      * @return the value
-     **/
+     */
     public String getSubnetId() {
         return subnetId;
     }
 
     /**
-     * Availability Domain where Network Firewall instance is created.
-     * To get a list of availability domains for a tenancy, use {@link #listAvailabilityDomains(ListAvailabilityDomainsRequest) listAvailabilityDomains} operation.
-     * Example: {@code kIdk:PHX-AD-1}
-     *
-     **/
+     * Availability Domain where Network Firewall instance is created. To get a list of availability
+     * domains for a tenancy, use {@link #listAvailabilityDomains(ListAvailabilityDomainsRequest)
+     * listAvailabilityDomains} operation. Example: {@code kIdk:PHX-AD-1}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * Availability Domain where Network Firewall instance is created.
-     * To get a list of availability domains for a tenancy, use {@link #listAvailabilityDomains(ListAvailabilityDomainsRequest) listAvailabilityDomains} operation.
-     * Example: {@code kIdk:PHX-AD-1}
+     * Availability Domain where Network Firewall instance is created. To get a list of availability
+     * domains for a tenancy, use {@link #listAvailabilityDomains(ListAvailabilityDomainsRequest)
+     * listAvailabilityDomains} operation. Example: {@code kIdk:PHX-AD-1}
      *
      * @return the value
-     **/
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Network Firewall Policy.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("networkFirewallPolicyId")
     private final String networkFirewallPolicyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Network Firewall Policy.
+     *
      * @return the value
-     **/
+     */
     public String getNetworkFirewallPolicyId() {
         return networkFirewallPolicyId;
     }
 
-    /**
-     * IPv4 address for the Network Firewall.
-     **/
+    /** IPv4 address for the Network Firewall. */
     @com.fasterxml.jackson.annotation.JsonProperty("ipv4Address")
     private final String ipv4Address;
 
     /**
      * IPv4 address for the Network Firewall.
+     *
      * @return the value
-     **/
+     */
     public String getIpv4Address() {
         return ipv4Address;
     }
 
-    /**
-     * IPv6 address for the Network Firewall.
-     **/
+    /** IPv6 address for the Network Firewall. */
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6Address")
     private final String ipv6Address;
 
     /**
      * IPv6 address for the Network Firewall.
+     *
      * @return the value
-     **/
+     */
     public String getIpv6Address() {
         return ipv6Address;
     }
 
     /**
-     * An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
-     **/
+     * An array of network security groups
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * associated with the Network Firewall.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
     private final java.util.List<String> networkSecurityGroupIds;
 
     /**
-     * An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
+     * An array of network security groups
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * associated with the Network Firewall.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getNetworkSecurityGroupIds() {
         return networkSecurityGroupIds;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -466,6 +490,7 @@ public final class CreateNetworkFirewallDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

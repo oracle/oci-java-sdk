@@ -5,22 +5,22 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Environment used in the pipeline.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Environment used in the pipeline. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DeployPipelineEnvironment.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DeployPipelineEnvironment.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DeployPipelineEnvironment
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "deployEnvironmentId",
@@ -39,33 +39,31 @@ public final class DeployPipelineEnvironment
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of an Environment
-         **/
+        /** The OCID of an Environment */
         @com.fasterxml.jackson.annotation.JsonProperty("deployEnvironmentId")
         private String deployEnvironmentId;
 
         /**
          * The OCID of an Environment
+         *
          * @param deployEnvironmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder deployEnvironmentId(String deployEnvironmentId) {
             this.deployEnvironmentId = deployEnvironmentId;
             this.__explicitlySet__.add("deployEnvironmentId");
             return this;
         }
-        /**
-         * Display name of the environment. Avoid entering confidential information.
-         **/
+        /** Display name of the environment. Avoid entering confidential information. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Display name of the environment. Avoid entering confidential information.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -109,9 +107,7 @@ public final class DeployPipelineEnvironment
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -120,30 +116,28 @@ public final class DeployPipelineEnvironment
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of an Environment
-     **/
+    /** The OCID of an Environment */
     @com.fasterxml.jackson.annotation.JsonProperty("deployEnvironmentId")
     private final String deployEnvironmentId;
 
     /**
      * The OCID of an Environment
+     *
      * @return the value
-     **/
+     */
     public String getDeployEnvironmentId() {
         return deployEnvironmentId;
     }
 
-    /**
-     * Display name of the environment. Avoid entering confidential information.
-     **/
+    /** Display name of the environment. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Display name of the environment. Avoid entering confidential information.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -162,6 +156,7 @@ public final class DeployPipelineEnvironment
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

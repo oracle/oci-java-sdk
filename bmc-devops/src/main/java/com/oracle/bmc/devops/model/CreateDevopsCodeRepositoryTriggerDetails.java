@@ -5,25 +5,24 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The trigger for DevOps code repository as the caller.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The trigger for DevOps code repository as the caller. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateDevopsCodeRepositoryTriggerDetails.Builder.class
-)
+        builder = CreateDevopsCodeRepositoryTriggerDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "triggerSource"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "triggerSource")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateDevopsCodeRepositoryTriggerDetails extends CreateTriggerDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -81,17 +80,16 @@ public final class CreateDevopsCodeRepositoryTriggerDetails extends CreateTrigge
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /**
-         * The OCID of the DevOps code repository.
-         **/
+        /** The OCID of the DevOps code repository. */
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
         private String repositoryId;
 
         /**
          * The OCID of the DevOps code repository.
+         *
          * @param repositoryId the value to set
          * @return this builder
-         **/
+         */
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = repositoryId;
             this.__explicitlySet__.add("repositoryId");
@@ -144,9 +142,7 @@ public final class CreateDevopsCodeRepositoryTriggerDetails extends CreateTrigge
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -168,16 +164,15 @@ public final class CreateDevopsCodeRepositoryTriggerDetails extends CreateTrigge
         this.repositoryId = repositoryId;
     }
 
-    /**
-     * The OCID of the DevOps code repository.
-     **/
+    /** The OCID of the DevOps code repository. */
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
     private final String repositoryId;
 
     /**
      * The OCID of the DevOps code repository.
+     *
      * @return the value
-     **/
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
@@ -189,6 +184,7 @@ public final class CreateDevopsCodeRepositoryTriggerDetails extends CreateTrigge
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

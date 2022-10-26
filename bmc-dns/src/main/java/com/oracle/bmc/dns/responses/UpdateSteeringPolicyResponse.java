@@ -9,15 +9,14 @@ import com.oracle.bmc.dns.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public class UpdateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to
-     * contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to
-     * contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -26,17 +25,14 @@ public class UpdateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
     }
 
     /**
-     * The current version of the resource, ending with a
-     * representation-specific suffix. This value may be used in If-Match
-     * and If-None-Match headers for later requests of the same resource.
-     *
+     * The current version of the resource, ending with a representation-specific suffix. This value
+     * may be used in If-Match and If-None-Match headers for later requests of the same resource.
      */
     private String eTag;
 
     /**
-     * The current version of the resource, ending with a
-     * representation-specific suffix. This value may be used in If-Match
-     * and If-None-Match headers for later requests of the same resource.
+     * The current version of the resource, ending with a representation-specific suffix. This value
+     * may be used in If-Match and If-None-Match headers for later requests of the same resource.
      *
      * @return the value
      */
@@ -44,13 +40,12 @@ public class UpdateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
         return eTag;
     }
 
-    /**
-     * The returned SteeringPolicy instance.
-     */
+    /** The returned SteeringPolicy instance. */
     private com.oracle.bmc.dns.model.SteeringPolicy steeringPolicy;
 
     /**
      * The returned SteeringPolicy instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.dns.model.SteeringPolicy getSteeringPolicy() {
@@ -66,7 +61,7 @@ public class UpdateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
     })
     private UpdateSteeringPolicyResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String eTag,
             com.oracle.bmc.dns.model.SteeringPolicy steeringPolicy) {
@@ -76,31 +71,33 @@ public class UpdateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
         this.steeringPolicy = steeringPolicy;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<UpdateSteeringPolicyResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to
-         * contact Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to
-         * contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -111,17 +108,16 @@ public class UpdateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
         }
 
         /**
-         * The current version of the resource, ending with a
-         * representation-specific suffix. This value may be used in If-Match
-         * and If-None-Match headers for later requests of the same resource.
-         *
+         * The current version of the resource, ending with a representation-specific suffix. This
+         * value may be used in If-Match and If-None-Match headers for later requests of the same
+         * resource.
          */
         private String eTag;
 
         /**
-         * The current version of the resource, ending with a
-         * representation-specific suffix. This value may be used in If-Match
-         * and If-None-Match headers for later requests of the same resource.
+         * The current version of the resource, ending with a representation-specific suffix. This
+         * value may be used in If-Match and If-None-Match headers for later requests of the same
+         * resource.
          *
          * @param eTag the value to set
          * @return this builder
@@ -131,13 +127,12 @@ public class UpdateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /**
-         * The returned SteeringPolicy instance.
-         */
+        /** The returned SteeringPolicy instance. */
         private com.oracle.bmc.dns.model.SteeringPolicy steeringPolicy;
 
         /**
          * The returned SteeringPolicy instance.
+         *
          * @param steeringPolicy the value to set
          * @return this builder
          */
@@ -148,8 +143,10 @@ public class UpdateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(UpdateSteeringPolicyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -162,8 +159,10 @@ public class UpdateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public UpdateSteeringPolicyResponse build() {
             return new UpdateSteeringPolicyResponse(
                     __httpStatusCode__, headers, opcRequestId, eTag, steeringPolicy);
@@ -172,6 +171,7 @@ public class UpdateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

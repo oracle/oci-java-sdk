@@ -8,10 +8,7 @@ import com.oracle.bmc.ocvp.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class UpdateEsxiHostResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,15 +21,14 @@ public class UpdateEsxiHostResponse extends com.oracle.bmc.responses.BmcResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,13 +36,12 @@ public class UpdateEsxiHostResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /**
-     * The returned EsxiHost instance.
-     */
+    /** The returned EsxiHost instance. */
     private com.oracle.bmc.ocvp.model.EsxiHost esxiHost;
 
     /**
      * The returned EsxiHost instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.ocvp.model.EsxiHost getEsxiHost() {
@@ -62,7 +57,7 @@ public class UpdateEsxiHostResponse extends com.oracle.bmc.responses.BmcResponse
     })
     private UpdateEsxiHostResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.ocvp.model.EsxiHost esxiHost) {
@@ -72,25 +67,25 @@ public class UpdateEsxiHostResponse extends com.oracle.bmc.responses.BmcResponse
         this.esxiHost = esxiHost;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<UpdateEsxiHostResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -105,15 +100,14 @@ public class UpdateEsxiHostResponse extends com.oracle.bmc.responses.BmcResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -123,13 +117,12 @@ public class UpdateEsxiHostResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /**
-         * The returned EsxiHost instance.
-         */
+        /** The returned EsxiHost instance. */
         private com.oracle.bmc.ocvp.model.EsxiHost esxiHost;
 
         /**
          * The returned EsxiHost instance.
+         *
          * @param esxiHost the value to set
          * @return this builder
          */
@@ -140,8 +133,10 @@ public class UpdateEsxiHostResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(UpdateEsxiHostResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -154,8 +149,10 @@ public class UpdateEsxiHostResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public UpdateEsxiHostResponse build() {
             return new UpdateEsxiHostResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, esxiHost);
@@ -164,6 +161,7 @@ public class UpdateEsxiHostResponse extends com.oracle.bmc.responses.BmcResponse
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

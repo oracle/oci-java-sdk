@@ -6,73 +6,57 @@ package com.oracle.bmc.devops.requests;
 
 import com.oracle.bmc.devops.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetFileDiffExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetFileDiffRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetFileDiffExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetFileDiffRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class GetFileDiffRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * Unique repository identifier.
-     */
+    /** Unique repository identifier. */
     private String repositoryId;
 
-    /**
-     * Unique repository identifier.
-     */
+    /** Unique repository identifier. */
     public String getRepositoryId() {
         return repositoryId;
     }
-    /**
-     * Path to a file within a repository.
-     */
+    /** Path to a file within a repository. */
     private String filePath;
 
-    /**
-     * Path to a file within a repository.
-     */
+    /** Path to a file within a repository. */
     public String getFilePath() {
         return filePath;
     }
-    /**
-     * The branch to compare changes against.
-     */
+    /** The branch to compare changes against. */
     private String baseVersion;
 
-    /**
-     * The branch to compare changes against.
-     */
+    /** The branch to compare changes against. */
     public String getBaseVersion() {
         return baseVersion;
     }
-    /**
-     * The branch where changes are coming from.
-     */
+    /** The branch where changes are coming from. */
     private String targetVersion;
 
-    /**
-     * The branch where changes are coming from.
-     */
+    /** The branch where changes are coming from. */
     public String getTargetVersion() {
         return targetVersion;
     }
-    /**
-     * Boolean to indicate whether to use merge base or most recent revision.
-     */
+    /** Boolean to indicate whether to use merge base or most recent revision. */
     private Boolean isComparisonFromMergeBase;
 
-    /**
-     * Boolean to indicate whether to use merge base or most recent revision.
-     */
+    /** Boolean to indicate whether to use merge base or most recent revision. */
     public Boolean getIsComparisonFromMergeBase() {
         return isComparisonFromMergeBase;
     }
     /**
-     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -81,17 +65,15 @@ public class GetFileDiffRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetFileDiffRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique repository identifier.
-         */
+        /** Unique repository identifier. */
         private String repositoryId = null;
 
         /**
          * Unique repository identifier.
+         *
          * @param repositoryId the value to set
          * @return this builder instance
          */
@@ -100,13 +82,12 @@ public class GetFileDiffRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * Path to a file within a repository.
-         */
+        /** Path to a file within a repository. */
         private String filePath = null;
 
         /**
          * Path to a file within a repository.
+         *
          * @param filePath the value to set
          * @return this builder instance
          */
@@ -115,13 +96,12 @@ public class GetFileDiffRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * The branch to compare changes against.
-         */
+        /** The branch to compare changes against. */
         private String baseVersion = null;
 
         /**
          * The branch to compare changes against.
+         *
          * @param baseVersion the value to set
          * @return this builder instance
          */
@@ -130,13 +110,12 @@ public class GetFileDiffRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * The branch where changes are coming from.
-         */
+        /** The branch where changes are coming from. */
         private String targetVersion = null;
 
         /**
          * The branch where changes are coming from.
+         *
          * @param targetVersion the value to set
          * @return this builder instance
          */
@@ -145,13 +124,12 @@ public class GetFileDiffRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * Boolean to indicate whether to use merge base or most recent revision.
-         */
+        /** Boolean to indicate whether to use merge base or most recent revision. */
         private Boolean isComparisonFromMergeBase = null;
 
         /**
          * Boolean to indicate whether to use merge base or most recent revision.
+         *
          * @param isComparisonFromMergeBase the value to set
          * @return this builder instance
          */
@@ -161,12 +139,15 @@ public class GetFileDiffRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide the request ID.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -177,18 +158,19 @@ public class GetFileDiffRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -200,6 +182,7 @@ public class GetFileDiffRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetFileDiffRequest o) {
@@ -217,10 +200,11 @@ public class GetFileDiffRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of GetFileDiffRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetFileDiffRequest
          */
@@ -234,7 +218,8 @@ public class GetFileDiffRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of GetFileDiffRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetFileDiffRequest
@@ -248,12 +233,14 @@ public class GetFileDiffRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.isComparisonFromMergeBase = isComparisonFromMergeBase;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetFileDiffRequest(repositoryId, filePath, baseVersion, targetVersion, isComparisonFromMergeBase, opcRequestId);
+            // new GetFileDiffRequest(repositoryId, filePath, baseVersion, targetVersion,
+            // isComparisonFromMergeBase, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -268,6 +255,7 @@ public class GetFileDiffRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

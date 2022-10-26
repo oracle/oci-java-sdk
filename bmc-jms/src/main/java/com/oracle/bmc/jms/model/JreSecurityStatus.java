@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.jms.model;
 
-/**
- * Possible security status of a Java Runtime.
- **/
+/** Possible security status of a Java Runtime. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum JreSecurityStatus {
+public enum JreSecurityStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Unknown("UNKNOWN"),
     UpToDate("UP_TO_DATE"),
     UpdateRequired("UPDATE_REQUIRED"),

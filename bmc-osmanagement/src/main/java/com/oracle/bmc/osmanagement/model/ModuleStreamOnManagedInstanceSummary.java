@@ -5,22 +5,22 @@
 package com.oracle.bmc.osmanagement.model;
 
 /**
- * Summary information pertaining to a module stream on a managed instance
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary information pertaining to a module stream on a managed instance <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ModuleStreamOnManagedInstanceSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ModuleStreamOnManagedInstanceSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ModuleStreamOnManagedInstanceSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "moduleName",
@@ -48,10 +48,7 @@ public final class ModuleStreamOnManagedInstanceSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the module that contains the stream.
-         *
-         **/
+        /** The name of the module that contains the stream. */
         @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
         private String moduleName;
 
@@ -60,16 +57,13 @@ public final class ModuleStreamOnManagedInstanceSummary
          *
          * @param moduleName the value to set
          * @return this builder
-         **/
+         */
         public Builder moduleName(String moduleName) {
             this.moduleName = moduleName;
             this.__explicitlySet__.add("moduleName");
             return this;
         }
-        /**
-         * The name of the stream.
-         *
-         **/
+        /** The name of the stream. */
         @com.fasterxml.jackson.annotation.JsonProperty("streamName")
         private String streamName;
 
@@ -78,7 +72,7 @@ public final class ModuleStreamOnManagedInstanceSummary
          *
          * @param streamName the value to set
          * @return this builder
-         **/
+         */
         public Builder streamName(String streamName) {
             this.streamName = streamName;
             this.__explicitlySet__.add("streamName");
@@ -86,98 +80,88 @@ public final class ModuleStreamOnManagedInstanceSummary
         }
         /**
          * The status of the stream
-         * <p>
-         * A stream with the "ENABLED" status can be used as a source for installing
-         * profiles.  Streams with this status are also "ACTIVE".
-         * <p>
-         * A stream with the "DISABLED" status cannot be the source for installing
-         * profiles.  To install profiles and packages from this stream, it must be
-         * enabled.
-         * <p>
-         * A stream with the "ACTIVE" status can be used as a source for installing
-         * profiles.  The packages that comprise the stream are also used when a
-         * matching package is installed directly.  In general, a stream can have
-         * this status if it is the default stream for the module and no stream has
-         * been explicitly enabled.
          *
-         **/
+         * <p>A stream with the "ENABLED" status can be used as a source for installing profiles.
+         * Streams with this status are also "ACTIVE".
+         *
+         * <p>A stream with the "DISABLED" status cannot be the source for installing profiles. To
+         * install profiles and packages from this stream, it must be enabled.
+         *
+         * <p>A stream with the "ACTIVE" status can be used as a source for installing profiles. The
+         * packages that comprise the stream are also used when a matching package is installed
+         * directly. In general, a stream can have this status if it is the default stream for the
+         * module and no stream has been explicitly enabled.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * The status of the stream
-         * <p>
-         * A stream with the "ENABLED" status can be used as a source for installing
-         * profiles.  Streams with this status are also "ACTIVE".
-         * <p>
-         * A stream with the "DISABLED" status cannot be the source for installing
-         * profiles.  To install profiles and packages from this stream, it must be
-         * enabled.
-         * <p>
-         * A stream with the "ACTIVE" status can be used as a source for installing
-         * profiles.  The packages that comprise the stream are also used when a
-         * matching package is installed directly.  In general, a stream can have
-         * this status if it is the default stream for the module and no stream has
-         * been explicitly enabled.
+         *
+         * <p>A stream with the "ENABLED" status can be used as a source for installing profiles.
+         * Streams with this status are also "ACTIVE".
+         *
+         * <p>A stream with the "DISABLED" status cannot be the source for installing profiles. To
+         * install profiles and packages from this stream, it must be enabled.
+         *
+         * <p>A stream with the "ACTIVE" status can be used as a source for installing profiles. The
+         * packages that comprise the stream are also used when a matching package is installed
+         * directly. In general, a stream can have this status if it is the default stream for the
+         * module and no stream has been explicitly enabled.
          *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * The set of profiles that the module stream contains.
-         **/
+        /** The set of profiles that the module stream contains. */
         @com.fasterxml.jackson.annotation.JsonProperty("profiles")
         private java.util.List<ModuleStreamProfileOnManagedInstanceSummary> profiles;
 
         /**
          * The set of profiles that the module stream contains.
+         *
          * @param profiles the value to set
          * @return this builder
-         **/
+         */
         public Builder profiles(
                 java.util.List<ModuleStreamProfileOnManagedInstanceSummary> profiles) {
             this.profiles = profiles;
             this.__explicitlySet__.add("profiles");
             return this;
         }
-        /**
-         * The OCID of the software source that provides this module stream.
-         **/
+        /** The OCID of the software source that provides this module stream. */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
         private String softwareSourceId;
 
         /**
          * The OCID of the software source that provides this module stream.
+         *
          * @param softwareSourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder softwareSourceId(String softwareSourceId) {
             this.softwareSourceId = softwareSourceId;
             this.__explicitlySet__.add("softwareSourceId");
             return this;
         }
         /**
-         * The date and time of the last status change for this profile, as
-         * described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-         * section 14.29.
-         *
-         **/
+         * The date and time of the last status change for this profile, as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
         private java.util.Date timeModified;
 
         /**
-         * The date and time of the last status change for this profile, as
-         * described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-         * section 14.29.
+         * The date and time of the last status change for this profile, as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
          *
          * @param timeModified the value to set
          * @return this builder
-         **/
+         */
         public Builder timeModified(java.util.Date timeModified) {
             this.timeModified = timeModified;
             this.__explicitlySet__.add("timeModified");
@@ -226,9 +210,7 @@ public final class ModuleStreamOnManagedInstanceSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -237,10 +219,7 @@ public final class ModuleStreamOnManagedInstanceSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the module that contains the stream.
-     *
-     **/
+    /** The name of the module that contains the stream. */
     @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
     private final String moduleName;
 
@@ -248,15 +227,12 @@ public final class ModuleStreamOnManagedInstanceSummary
      * The name of the module that contains the stream.
      *
      * @return the value
-     **/
+     */
     public String getModuleName() {
         return moduleName;
     }
 
-    /**
-     * The name of the stream.
-     *
-     **/
+    /** The name of the stream. */
     @com.fasterxml.jackson.annotation.JsonProperty("streamName")
     private final String streamName;
 
@@ -264,36 +240,33 @@ public final class ModuleStreamOnManagedInstanceSummary
      * The name of the stream.
      *
      * @return the value
-     **/
+     */
     public String getStreamName() {
         return streamName;
     }
 
     /**
      * The status of the stream
-     * <p>
-     * A stream with the "ENABLED" status can be used as a source for installing
-     * profiles.  Streams with this status are also "ACTIVE".
-     * <p>
-     * A stream with the "DISABLED" status cannot be the source for installing
-     * profiles.  To install profiles and packages from this stream, it must be
-     * enabled.
-     * <p>
-     * A stream with the "ACTIVE" status can be used as a source for installing
-     * profiles.  The packages that comprise the stream are also used when a
-     * matching package is installed directly.  In general, a stream can have
-     * this status if it is the default stream for the module and no stream has
-     * been explicitly enabled.
      *
-     **/
-    public enum Status {
+     * <p>A stream with the "ENABLED" status can be used as a source for installing profiles.
+     * Streams with this status are also "ACTIVE".
+     *
+     * <p>A stream with the "DISABLED" status cannot be the source for installing profiles. To
+     * install profiles and packages from this stream, it must be enabled.
+     *
+     * <p>A stream with the "ACTIVE" status can be used as a source for installing profiles. The
+     * packages that comprise the stream are also used when a matching package is installed
+     * directly. In general, a stream can have this status if it is the default stream for the
+     * module and no stream has been explicitly enabled.
+     */
+    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
         Active("ACTIVE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -333,90 +306,80 @@ public final class ModuleStreamOnManagedInstanceSummary
     };
     /**
      * The status of the stream
-     * <p>
-     * A stream with the "ENABLED" status can be used as a source for installing
-     * profiles.  Streams with this status are also "ACTIVE".
-     * <p>
-     * A stream with the "DISABLED" status cannot be the source for installing
-     * profiles.  To install profiles and packages from this stream, it must be
-     * enabled.
-     * <p>
-     * A stream with the "ACTIVE" status can be used as a source for installing
-     * profiles.  The packages that comprise the stream are also used when a
-     * matching package is installed directly.  In general, a stream can have
-     * this status if it is the default stream for the module and no stream has
-     * been explicitly enabled.
      *
-     **/
+     * <p>A stream with the "ENABLED" status can be used as a source for installing profiles.
+     * Streams with this status are also "ACTIVE".
+     *
+     * <p>A stream with the "DISABLED" status cannot be the source for installing profiles. To
+     * install profiles and packages from this stream, it must be enabled.
+     *
+     * <p>A stream with the "ACTIVE" status can be used as a source for installing profiles. The
+     * packages that comprise the stream are also used when a matching package is installed
+     * directly. In general, a stream can have this status if it is the default stream for the
+     * module and no stream has been explicitly enabled.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * The status of the stream
-     * <p>
-     * A stream with the "ENABLED" status can be used as a source for installing
-     * profiles.  Streams with this status are also "ACTIVE".
-     * <p>
-     * A stream with the "DISABLED" status cannot be the source for installing
-     * profiles.  To install profiles and packages from this stream, it must be
-     * enabled.
-     * <p>
-     * A stream with the "ACTIVE" status can be used as a source for installing
-     * profiles.  The packages that comprise the stream are also used when a
-     * matching package is installed directly.  In general, a stream can have
-     * this status if it is the default stream for the module and no stream has
-     * been explicitly enabled.
+     *
+     * <p>A stream with the "ENABLED" status can be used as a source for installing profiles.
+     * Streams with this status are also "ACTIVE".
+     *
+     * <p>A stream with the "DISABLED" status cannot be the source for installing profiles. To
+     * install profiles and packages from this stream, it must be enabled.
+     *
+     * <p>A stream with the "ACTIVE" status can be used as a source for installing profiles. The
+     * packages that comprise the stream are also used when a matching package is installed
+     * directly. In general, a stream can have this status if it is the default stream for the
+     * module and no stream has been explicitly enabled.
      *
      * @return the value
-     **/
+     */
     public Status getStatus() {
         return status;
     }
 
-    /**
-     * The set of profiles that the module stream contains.
-     **/
+    /** The set of profiles that the module stream contains. */
     @com.fasterxml.jackson.annotation.JsonProperty("profiles")
     private final java.util.List<ModuleStreamProfileOnManagedInstanceSummary> profiles;
 
     /**
      * The set of profiles that the module stream contains.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<ModuleStreamProfileOnManagedInstanceSummary> getProfiles() {
         return profiles;
     }
 
-    /**
-     * The OCID of the software source that provides this module stream.
-     **/
+    /** The OCID of the software source that provides this module stream. */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
     private final String softwareSourceId;
 
     /**
      * The OCID of the software source that provides this module stream.
+     *
      * @return the value
-     **/
+     */
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }
 
     /**
-     * The date and time of the last status change for this profile, as
-     * described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-     * section 14.29.
-     *
-     **/
+     * The date and time of the last status change for this profile, as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
     private final java.util.Date timeModified;
 
     /**
-     * The date and time of the last status change for this profile, as
-     * described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-     * section 14.29.
+     * The date and time of the last status change for this profile, as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeModified() {
         return timeModified;
     }
@@ -428,6 +391,7 @@ public final class ModuleStreamOnManagedInstanceSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,78 +5,65 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The AWR query result.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The AWR query result. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "awrResultType",
-    defaultImpl = AwrQueryResult.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "awrResultType",
+        defaultImpl = AwrQueryResult.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AwrDbParameterChangeCollection.class,
-        name = "AWRDB_DB_PARAMETER_CHANGE"
-    ),
+            value = AwrDbParameterChangeCollection.class,
+            name = "AWRDB_DB_PARAMETER_CHANGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AwrDbCpuUsageCollection.class,
-        name = "AWRDB_ASH_CPU_USAGE_SET"
-    ),
+            value = AwrDbCpuUsageCollection.class,
+            name = "AWRDB_ASH_CPU_USAGE_SET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AwrDbWaitEventBucketCollection.class,
-        name = "AWRDB_EVENT_HISTOGRAM_SET"
-    ),
+            value = AwrDbWaitEventBucketCollection.class,
+            name = "AWRDB_EVENT_HISTOGRAM_SET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AwrDbParameterCollection.class,
-        name = "AWRDB_DB_PARAMETER_SET"
-    ),
+            value = AwrDbParameterCollection.class,
+            name = "AWRDB_DB_PARAMETER_SET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AwrDbSysstatCollection.class,
-        name = "AWRDB_SYSSTAT_SET"
-    ),
+            value = AwrDbSysstatCollection.class,
+            name = "AWRDB_SYSSTAT_SET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AwrDbTopWaitEventCollection.class,
-        name = "AWRDB_TOP_EVENT_SET"
-    ),
+            value = AwrDbTopWaitEventCollection.class,
+            name = "AWRDB_TOP_EVENT_SET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AwrDbSnapshotCollection.class,
-        name = "AWRDB_SNAPSHOT_SET"
-    ),
+            value = AwrDbSnapshotCollection.class,
+            name = "AWRDB_SNAPSHOT_SET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AwrDbCollection.class,
-        name = "AWRDB_SET"
-    ),
+            value = AwrDbCollection.class,
+            name = "AWRDB_SET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AwrDbSnapshotRangeCollection.class,
-        name = "AWRDB_SNAPSHOT_RANGE_SET"
-    ),
+            value = AwrDbSnapshotRangeCollection.class,
+            name = "AWRDB_SNAPSHOT_RANGE_SET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AwrDbReport.class,
-        name = "AWRDB_DB_REPORT"
-    ),
+            value = AwrDbReport.class,
+            name = "AWRDB_DB_REPORT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AwrDbMetricCollection.class,
-        name = "AWRDB_METRICS_SET"
-    ),
+            value = AwrDbMetricCollection.class,
+            name = "AWRDB_METRICS_SET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AwrDbWaitEventCollection.class,
-        name = "AWRDB_EVENT_SET"
-    ),
+            value = AwrDbWaitEventCollection.class,
+            name = "AWRDB_EVENT_SET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AwrDbSqlReport.class,
-        name = "AWRDB_SQL_REPORT"
-    )
+            value = AwrDbSqlReport.class,
+            name = "AWRDB_SQL_REPORT")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class AwrQueryResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class AwrQueryResult extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "version", "queryKey", "dbQueryTimeInSecs"})
     protected AwrQueryResult(
@@ -88,58 +75,54 @@ public class AwrQueryResult extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.dbQueryTimeInSecs = dbQueryTimeInSecs;
     }
 
-    /**
-     * The name of the query result.
-     **/
+    /** The name of the query result. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the query result.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The version of the query result.
-     **/
+    /** The version of the query result. */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * The version of the query result.
+     *
      * @return the value
-     **/
+     */
     public String getVersion() {
         return version;
     }
 
-    /**
-     * The ID assigned to the query instance.
-     **/
+    /** The ID assigned to the query instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("queryKey")
     private final String queryKey;
 
     /**
      * The ID assigned to the query instance.
+     *
      * @return the value
-     **/
+     */
     public String getQueryKey() {
         return queryKey;
     }
 
-    /**
-     * The time taken to query the database tier (in seconds).
-     **/
+    /** The time taken to query the database tier (in seconds). */
     @com.fasterxml.jackson.annotation.JsonProperty("dbQueryTimeInSecs")
     private final Double dbQueryTimeInSecs;
 
     /**
      * The time taken to query the database tier (in seconds).
+     *
      * @return the value
-     **/
+     */
     public Double getDbQueryTimeInSecs() {
         return dbQueryTimeInSecs;
     }
@@ -151,6 +134,7 @@ public class AwrQueryResult extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -197,10 +181,8 @@ public class AwrQueryResult extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return result;
     }
 
-    /**
-     * The result type of AWR query.
-     **/
-    public enum AwrResultType {
+    /** The result type of AWR query. */
+    public enum AwrResultType implements com.oracle.bmc.http.internal.BmcEnum {
         AwrdbSet("AWRDB_SET"),
         AwrdbSnapshotRangeSet("AWRDB_SNAPSHOT_RANGE_SET"),
         AwrdbSnapshotSet("AWRDB_SNAPSHOT_SET"),

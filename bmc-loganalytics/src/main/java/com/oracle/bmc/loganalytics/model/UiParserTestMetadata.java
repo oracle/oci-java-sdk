@@ -5,21 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * UiParserTestMetadata
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * UiParserTestMetadata <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UiParserTestMetadata.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UiParserTestMetadata extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = UiParserTestMetadata.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class UiParserTestMetadata
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"lastModifiedTime", "logFileName", "timeZone"})
     public UiParserTestMetadata(
@@ -32,49 +33,46 @@ public final class UiParserTestMetadata extends com.oracle.bmc.http.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The last modified time.
-         **/
+        /** The last modified time. */
         @com.fasterxml.jackson.annotation.JsonProperty("lastModifiedTime")
         private String lastModifiedTime;
 
         /**
          * The last modified time.
+         *
          * @param lastModifiedTime the value to set
          * @return this builder
-         **/
+         */
         public Builder lastModifiedTime(String lastModifiedTime) {
             this.lastModifiedTime = lastModifiedTime;
             this.__explicitlySet__.add("lastModifiedTime");
             return this;
         }
-        /**
-         * The log file name.
-         **/
+        /** The log file name. */
         @com.fasterxml.jackson.annotation.JsonProperty("logFileName")
         private String logFileName;
 
         /**
          * The log file name.
+         *
          * @param logFileName the value to set
          * @return this builder
-         **/
+         */
         public Builder logFileName(String logFileName) {
             this.logFileName = logFileName;
             this.__explicitlySet__.add("logFileName");
             return this;
         }
-        /**
-         * The time zone.
-         **/
+        /** The time zone. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private java.util.Date timeZone;
 
         /**
          * The time zone.
+         *
          * @param timeZone the value to set
          * @return this builder
-         **/
+         */
         public Builder timeZone(java.util.Date timeZone) {
             this.timeZone = timeZone;
             this.__explicitlySet__.add("timeZone");
@@ -109,9 +107,7 @@ public final class UiParserTestMetadata extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -120,44 +116,41 @@ public final class UiParserTestMetadata extends com.oracle.bmc.http.internal.Exp
         return new Builder().copy(this);
     }
 
-    /**
-     * The last modified time.
-     **/
+    /** The last modified time. */
     @com.fasterxml.jackson.annotation.JsonProperty("lastModifiedTime")
     private final String lastModifiedTime;
 
     /**
      * The last modified time.
+     *
      * @return the value
-     **/
+     */
     public String getLastModifiedTime() {
         return lastModifiedTime;
     }
 
-    /**
-     * The log file name.
-     **/
+    /** The log file name. */
     @com.fasterxml.jackson.annotation.JsonProperty("logFileName")
     private final String logFileName;
 
     /**
      * The log file name.
+     *
      * @return the value
-     **/
+     */
     public String getLogFileName() {
         return logFileName;
     }
 
-    /**
-     * The time zone.
-     **/
+    /** The time zone. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final java.util.Date timeZone;
 
     /**
      * The time zone.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeZone() {
         return timeZone;
     }
@@ -169,6 +162,7 @@ public final class UiParserTestMetadata extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -9,15 +9,14 @@ import com.oracle.bmc.email.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 public class ListSuppressionsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -26,15 +25,16 @@ public class ListSuppressionsResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results remain.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. When this header appears in the response, additional pages of results
+     * remain. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results remain.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages of results
+     * remain. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -43,15 +43,16 @@ public class ListSuppressionsResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * For list pagination. When this header appears in the response, previous pages of results remain.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. When this header appears in the response, previous pages of results
+     * remain. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcPrevPage;
 
     /**
-     * For list pagination. When this header appears in the response, previous pages of results remain.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, previous pages of results
+     * remain. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -59,13 +60,12 @@ public class ListSuppressionsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcPrevPage;
     }
 
-    /**
-     * A list of com.oracle.bmc.email.model.SuppressionSummary instances.
-     */
+    /** A list of com.oracle.bmc.email.model.SuppressionSummary instances. */
     private java.util.List<com.oracle.bmc.email.model.SuppressionSummary> items;
 
     /**
      * A list of com.oracle.bmc.email.model.SuppressionSummary instances.
+     *
      * @return the value
      */
     public java.util.List<com.oracle.bmc.email.model.SuppressionSummary> getItems() {
@@ -82,7 +82,7 @@ public class ListSuppressionsResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private ListSuppressionsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcNextPage,
             String opcPrevPage,
@@ -94,31 +94,33 @@ public class ListSuppressionsResponse extends com.oracle.bmc.responses.BmcRespon
         this.items = items;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<ListSuppressionsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -129,15 +131,16 @@ public class ListSuppressionsResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of results remain.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. When this header appears in the response, additional pages of
+         * results remain. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of results remain.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages of
+         * results remain. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -148,15 +151,16 @@ public class ListSuppressionsResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * For list pagination. When this header appears in the response, previous pages of results remain.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. When this header appears in the response, previous pages of results
+         * remain. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcPrevPage;
 
         /**
-         * For list pagination. When this header appears in the response, previous pages of results remain.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, previous pages of results
+         * remain. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcPrevPage the value to set
          * @return this builder
@@ -166,13 +170,12 @@ public class ListSuppressionsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /**
-         * A list of com.oracle.bmc.email.model.SuppressionSummary instances.
-         */
+        /** A list of com.oracle.bmc.email.model.SuppressionSummary instances. */
         private java.util.List<com.oracle.bmc.email.model.SuppressionSummary> items;
 
         /**
          * A list of com.oracle.bmc.email.model.SuppressionSummary instances.
+         *
          * @param items the value to set
          * @return this builder
          */
@@ -183,8 +186,10 @@ public class ListSuppressionsResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListSuppressionsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -198,8 +203,10 @@ public class ListSuppressionsResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListSuppressionsResponse build() {
             return new ListSuppressionsResponse(
                     __httpStatusCode__, headers, opcRequestId, opcNextPage, opcPrevPage, items);
@@ -208,6 +215,7 @@ public class ListSuppressionsResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

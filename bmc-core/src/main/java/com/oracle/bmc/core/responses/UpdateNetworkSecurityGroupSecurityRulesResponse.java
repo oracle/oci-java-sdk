@@ -10,15 +10,14 @@ import com.oracle.bmc.core.model.*;
 public class UpdateNetworkSecurityGroupSecurityRulesResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -26,14 +25,13 @@ public class UpdateNetworkSecurityGroupSecurityRulesResponse
         return opcRequestId;
     }
 
-    /**
-     * The returned UpdatedNetworkSecurityGroupSecurityRules instance.
-     */
+    /** The returned UpdatedNetworkSecurityGroupSecurityRules instance. */
     private com.oracle.bmc.core.model.UpdatedNetworkSecurityGroupSecurityRules
             updatedNetworkSecurityGroupSecurityRules;
 
     /**
      * The returned UpdatedNetworkSecurityGroupSecurityRules instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.core.model.UpdatedNetworkSecurityGroupSecurityRules
@@ -49,7 +47,7 @@ public class UpdateNetworkSecurityGroupSecurityRulesResponse
     })
     private UpdateNetworkSecurityGroupSecurityRulesResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.core.model.UpdatedNetworkSecurityGroupSecurityRules
                     updatedNetworkSecurityGroupSecurityRules) {
@@ -58,31 +56,34 @@ public class UpdateNetworkSecurityGroupSecurityRulesResponse
         this.updatedNetworkSecurityGroupSecurityRules = updatedNetworkSecurityGroupSecurityRules;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    UpdateNetworkSecurityGroupSecurityRulesResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -92,14 +93,13 @@ public class UpdateNetworkSecurityGroupSecurityRulesResponse
             return this;
         }
 
-        /**
-         * The returned UpdatedNetworkSecurityGroupSecurityRules instance.
-         */
+        /** The returned UpdatedNetworkSecurityGroupSecurityRules instance. */
         private com.oracle.bmc.core.model.UpdatedNetworkSecurityGroupSecurityRules
                 updatedNetworkSecurityGroupSecurityRules;
 
         /**
          * The returned UpdatedNetworkSecurityGroupSecurityRules instance.
+         *
          * @param updatedNetworkSecurityGroupSecurityRules the value to set
          * @return this builder
          */
@@ -113,8 +113,10 @@ public class UpdateNetworkSecurityGroupSecurityRulesResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(UpdateNetworkSecurityGroupSecurityRulesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -127,8 +129,10 @@ public class UpdateNetworkSecurityGroupSecurityRulesResponse
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public UpdateNetworkSecurityGroupSecurityRulesResponse build() {
             return new UpdateNetworkSecurityGroupSecurityRulesResponse(
                     __httpStatusCode__,
@@ -140,6 +144,7 @@ public class UpdateNetworkSecurityGroupSecurityRulesResponse
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

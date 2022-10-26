@@ -6,116 +6,96 @@ package com.oracle.bmc.dataintegration.requests;
 
 import com.oracle.bmc.dataintegration.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListPipelinesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPipelinesRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListPipelinesExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPipelinesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The workspace ID.
-     */
+    /** The workspace ID. */
     private String workspaceId;
 
-    /**
-     * The workspace ID.
-     */
+    /** The workspace ID. */
     public String getWorkspaceId() {
         return workspaceId;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * Used to filter by the project or the folder object.
-     *
-     */
+    /** Used to filter by the project or the folder object. */
     private String aggregatorKey;
 
-    /**
-     * Used to filter by the project or the folder object.
-     *
-     */
+    /** Used to filter by the project or the folder object. */
     public String getAggregatorKey() {
         return aggregatorKey;
     }
-    /**
-     * Specifies the fields to get for an object.
-     */
+    /** Specifies the fields to get for an object. */
     private java.util.List<String> fields;
 
-    /**
-     * Specifies the fields to get for an object.
-     */
+    /** Specifies the fields to get for an object. */
     public java.util.List<String> getFields() {
         return fields;
     }
-    /**
-     * Used to filter by the name of the object.
-     */
+    /** Used to filter by the name of the object. */
     private String name;
 
-    /**
-     * Used to filter by the name of the object.
-     */
+    /** Used to filter by the name of the object. */
     public String getName() {
         return name;
     }
-    /**
-     * Used to filter by the identifier of the object.
-     */
+    /** Used to filter by the identifier of the object. */
     private java.util.List<String> identifier;
 
-    /**
-     * Used to filter by the identifier of the object.
-     */
+    /** Used to filter by the identifier of the object. */
     public java.util.List<String> getIdentifier() {
         return identifier;
     }
     /**
-     * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Sets the maximum number of results per page, or items to return in a paginated {@code List}
+     * call. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Sets the maximum number of results per page, or items to return in a paginated {@code List}
+     * call. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code
+     * opc-prev-page} response header from the previous {@code List} call. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code
+     * opc-prev-page} response header from the previous {@code List} call. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /**
-     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
-     */
+    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
     private SortOrder sortOrder;
 
-    /**
-     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
-     **/
-    public enum SortOrder {
+    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -148,21 +128,25 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
 
-    /**
-     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
-     */
+    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+     * fields, results are shown in descending order. All other fields default to ascending order.
+     * Sorting related parameters are ignored when parameter {@code query} is present (search
+     * operation and sorting order is by relevance score in descending order).
      */
     private SortBy sortBy;
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
-     **/
-    public enum SortBy {
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+     * fields, results are shown in descending order. All other fields default to ascending order.
+     * Sorting related parameters are ignored when parameter {@code query} is present (search
+     * operation and sorting order is by relevance score in descending order).
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TimeCreated("TIME_CREATED"),
         DisplayName("DISPLAY_NAME"),
         TimeUpdated("TIME_UPDATED"),
@@ -197,7 +181,10 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
     };
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+     * fields, results are shown in descending order. All other fields default to ascending order.
+     * Sorting related parameters are ignored when parameter {@code query} is present (search
+     * operation and sorting order is by relevance score in descending order).
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -206,17 +193,15 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListPipelinesRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The workspace ID.
-         */
+        /** The workspace ID. */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         *
          * @param workspaceId the value to set
          * @return this builder instance
          */
@@ -226,17 +211,14 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -246,10 +228,7 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * Used to filter by the project or the folder object.
-         *
-         */
+        /** Used to filter by the project or the folder object. */
         private String aggregatorKey = null;
 
         /**
@@ -263,13 +242,12 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * Specifies the fields to get for an object.
-         */
+        /** Specifies the fields to get for an object. */
         private java.util.List<String> fields = null;
 
         /**
          * Specifies the fields to get for an object.
+         *
          * @param fields the value to set
          * @return this builder instance
          */
@@ -280,6 +258,7 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Singular setter. Specifies the fields to get for an object.
+         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -287,13 +266,12 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
-        /**
-         * Used to filter by the name of the object.
-         */
+        /** Used to filter by the name of the object. */
         private String name = null;
 
         /**
          * Used to filter by the name of the object.
+         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -302,13 +280,12 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * Used to filter by the identifier of the object.
-         */
+        /** Used to filter by the identifier of the object. */
         private java.util.List<String> identifier = null;
 
         /**
          * Used to filter by the identifier of the object.
+         *
          * @param identifier the value to set
          * @return this builder instance
          */
@@ -319,6 +296,7 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Singular setter. Used to filter by the identifier of the object.
+         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -327,12 +305,17 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Sets the maximum number of results per page, or items to return in a paginated {@code
+         * List} call. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Sets the maximum number of results per page, or items to return in a paginated {@code
+         * List} call. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -342,12 +325,17 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the
+         * {@code opc-prev-page} response header from the previous {@code List} call. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the
+         * {@code opc-prev-page} response header from the previous {@code List} call. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -363,6 +351,7 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -372,12 +361,19 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+         * fields, results are shown in descending order. All other fields default to ascending
+         * order. Sorting related parameters are ignored when parameter {@code query} is present
+         * (search operation and sorting order is by relevance score in descending order).
          */
         private SortBy sortBy = null;
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
+         * fields, results are shown in descending order. All other fields default to ascending
+         * order. Sorting related parameters are ignored when parameter {@code query} is present
+         * (search operation and sorting order is by relevance score in descending order).
+         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -388,18 +384,19 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -411,6 +408,7 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListPipelinesRequest o) {
@@ -432,10 +430,11 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of ListPipelinesRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListPipelinesRequest
          */
@@ -449,7 +448,8 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of ListPipelinesRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListPipelinesRequest
@@ -467,12 +467,14 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListPipelinesRequest(workspaceId, opcRequestId, aggregatorKey, fields, name, identifier, limit, page, sortOrder, sortBy);
+            // new ListPipelinesRequest(workspaceId, opcRequestId, aggregatorKey, fields, name,
+            // identifier, limit, page, sortOrder, sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -491,6 +493,7 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

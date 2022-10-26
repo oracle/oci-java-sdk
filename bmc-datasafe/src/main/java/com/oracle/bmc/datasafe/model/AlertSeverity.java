@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/**
- * The severity level of the alert.
- **/
+/** The severity level of the alert. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum AlertSeverity {
+public enum AlertSeverity implements com.oracle.bmc.http.internal.BmcEnum {
     Critical("CRITICAL"),
     High("HIGH"),
     Medium("MEDIUM"),

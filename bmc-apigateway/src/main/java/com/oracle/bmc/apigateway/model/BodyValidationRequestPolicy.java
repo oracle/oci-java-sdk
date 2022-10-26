@@ -5,22 +5,22 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Validate the payload body of the incoming API requests on a specific route.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Validate the payload body of the incoming API requests on a specific route. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = BodyValidationRequestPolicy.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = BodyValidationRequestPolicy.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class BodyValidationRequestPolicy
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"required", "content", "validationMode"})
     public BodyValidationRequestPolicy(
@@ -35,55 +35,47 @@ public final class BodyValidationRequestPolicy
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Determines if the request body is required in the request.
-         **/
+        /** Determines if the request body is required in the request. */
         @com.fasterxml.jackson.annotation.JsonProperty("required")
         private Boolean required;
 
         /**
          * Determines if the request body is required in the request.
+         *
          * @param required the value to set
          * @return this builder
-         **/
+         */
         public Builder required(Boolean required) {
             this.required = required;
             this.__explicitlySet__.add("required");
             return this;
         }
         /**
-         * The content of the request body. The key is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D)
-         * subset restricted to the following schema
-         * <p>
-         * key ::= (
-         *           / (  "*" "/" "*" )
-         *           / ( type "/" "*" )
-         *           / ( type "/" subtype )
-         *           )
-         * <p>
-         * For requests that match multiple keys, only the most specific key is applicable.
-         * e.g. {@code text/plain} overrides {@code text/*}
+         * The content of the request body. The key is a [media type
+         * range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following
+         * schema
          *
-         **/
+         * <p>key ::= ( / ( "*" "/" "*" ) / ( type "/" "*" ) / ( type "/" subtype ) )
+         *
+         * <p>For requests that match multiple keys, only the most specific key is applicable. e.g.
+         * {@code text/plain} overrides {@code text/*}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("content")
         private java.util.Map<String, ContentValidation> content;
 
         /**
-         * The content of the request body. The key is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D)
-         * subset restricted to the following schema
-         * <p>
-         * key ::= (
-         *           / (  "*" "/" "*" )
-         *           / ( type "/" "*" )
-         *           / ( type "/" subtype )
-         *           )
-         * <p>
-         * For requests that match multiple keys, only the most specific key is applicable.
-         * e.g. {@code text/plain} overrides {@code text/*}
+         * The content of the request body. The key is a [media type
+         * range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following
+         * schema
+         *
+         * <p>key ::= ( / ( "*" "/" "*" ) / ( type "/" "*" ) / ( type "/" subtype ) )
+         *
+         * <p>For requests that match multiple keys, only the most specific key is applicable. e.g.
+         * {@code text/plain} overrides {@code text/*}
          *
          * @param content the value to set
          * @return this builder
-         **/
+         */
         public Builder content(java.util.Map<String, ContentValidation> content) {
             this.content = content;
             this.__explicitlySet__.add("content");
@@ -91,33 +83,32 @@ public final class BodyValidationRequestPolicy
         }
         /**
          * Validation behavior mode.
-         * <p>
-         * In {@code ENFORCING} mode, upon a validation failure, the request will be rejected with a 4xx response
-         * and not sent to the backend.
-         * <p>
-         * In {@code PERMISSIVE} mode, the result of the validation will be exposed as metrics while the request
-         * will follow the normal path.
-         * <p>
-         * {@code DISABLED} type turns the validation off.
          *
-         **/
+         * <p>In {@code ENFORCING} mode, upon a validation failure, the request will be rejected
+         * with a 4xx response and not sent to the backend.
+         *
+         * <p>In {@code PERMISSIVE} mode, the result of the validation will be exposed as metrics
+         * while the request will follow the normal path.
+         *
+         * <p>{@code DISABLED} type turns the validation off.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("validationMode")
         private ValidationMode validationMode;
 
         /**
          * Validation behavior mode.
-         * <p>
-         * In {@code ENFORCING} mode, upon a validation failure, the request will be rejected with a 4xx response
-         * and not sent to the backend.
-         * <p>
-         * In {@code PERMISSIVE} mode, the result of the validation will be exposed as metrics while the request
-         * will follow the normal path.
-         * <p>
-         * {@code DISABLED} type turns the validation off.
+         *
+         * <p>In {@code ENFORCING} mode, upon a validation failure, the request will be rejected
+         * with a 4xx response and not sent to the backend.
+         *
+         * <p>In {@code PERMISSIVE} mode, the result of the validation will be exposed as metrics
+         * while the request will follow the normal path.
+         *
+         * <p>{@code DISABLED} type turns the validation off.
          *
          * @param validationMode the value to set
          * @return this builder
-         **/
+         */
         public Builder validationMode(ValidationMode validationMode) {
             this.validationMode = validationMode;
             this.__explicitlySet__.add("validationMode");
@@ -152,9 +143,7 @@ public final class BodyValidationRequestPolicy
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -163,69 +152,60 @@ public final class BodyValidationRequestPolicy
         return new Builder().copy(this);
     }
 
-    /**
-     * Determines if the request body is required in the request.
-     **/
+    /** Determines if the request body is required in the request. */
     @com.fasterxml.jackson.annotation.JsonProperty("required")
     private final Boolean required;
 
     /**
      * Determines if the request body is required in the request.
+     *
      * @return the value
-     **/
+     */
     public Boolean getRequired() {
         return required;
     }
 
     /**
-     * The content of the request body. The key is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D)
-     * subset restricted to the following schema
-     * <p>
-     * key ::= (
-     *           / (  "*" "/" "*" )
-     *           / ( type "/" "*" )
-     *           / ( type "/" subtype )
-     *           )
-     * <p>
-     * For requests that match multiple keys, only the most specific key is applicable.
-     * e.g. {@code text/plain} overrides {@code text/*}
+     * The content of the request body. The key is a [media type
+     * range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following
+     * schema
      *
-     **/
+     * <p>key ::= ( / ( "*" "/" "*" ) / ( type "/" "*" ) / ( type "/" subtype ) )
+     *
+     * <p>For requests that match multiple keys, only the most specific key is applicable. e.g.
+     * {@code text/plain} overrides {@code text/*}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     private final java.util.Map<String, ContentValidation> content;
 
     /**
-     * The content of the request body. The key is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D)
-     * subset restricted to the following schema
-     * <p>
-     * key ::= (
-     *           / (  "*" "/" "*" )
-     *           / ( type "/" "*" )
-     *           / ( type "/" subtype )
-     *           )
-     * <p>
-     * For requests that match multiple keys, only the most specific key is applicable.
-     * e.g. {@code text/plain} overrides {@code text/*}
+     * The content of the request body. The key is a [media type
+     * range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following
+     * schema
+     *
+     * <p>key ::= ( / ( "*" "/" "*" ) / ( type "/" "*" ) / ( type "/" subtype ) )
+     *
+     * <p>For requests that match multiple keys, only the most specific key is applicable. e.g.
+     * {@code text/plain} overrides {@code text/*}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, ContentValidation> getContent() {
         return content;
     }
 
     /**
      * Validation behavior mode.
-     * <p>
-     * In {@code ENFORCING} mode, upon a validation failure, the request will be rejected with a 4xx response
-     * and not sent to the backend.
-     * <p>
-     * In {@code PERMISSIVE} mode, the result of the validation will be exposed as metrics while the request
-     * will follow the normal path.
-     * <p>
-     * {@code DISABLED} type turns the validation off.
      *
-     **/
-    public enum ValidationMode {
+     * <p>In {@code ENFORCING} mode, upon a validation failure, the request will be rejected with a
+     * 4xx response and not sent to the backend.
+     *
+     * <p>In {@code PERMISSIVE} mode, the result of the validation will be exposed as metrics while
+     * the request will follow the normal path.
+     *
+     * <p>{@code DISABLED} type turns the validation off.
+     */
+    public enum ValidationMode implements com.oracle.bmc.http.internal.BmcEnum {
         Enforcing("ENFORCING"),
         Permissive("PERMISSIVE"),
         Disabled("DISABLED"),
@@ -260,32 +240,31 @@ public final class BodyValidationRequestPolicy
     };
     /**
      * Validation behavior mode.
-     * <p>
-     * In {@code ENFORCING} mode, upon a validation failure, the request will be rejected with a 4xx response
-     * and not sent to the backend.
-     * <p>
-     * In {@code PERMISSIVE} mode, the result of the validation will be exposed as metrics while the request
-     * will follow the normal path.
-     * <p>
-     * {@code DISABLED} type turns the validation off.
      *
-     **/
+     * <p>In {@code ENFORCING} mode, upon a validation failure, the request will be rejected with a
+     * 4xx response and not sent to the backend.
+     *
+     * <p>In {@code PERMISSIVE} mode, the result of the validation will be exposed as metrics while
+     * the request will follow the normal path.
+     *
+     * <p>{@code DISABLED} type turns the validation off.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("validationMode")
     private final ValidationMode validationMode;
 
     /**
      * Validation behavior mode.
-     * <p>
-     * In {@code ENFORCING} mode, upon a validation failure, the request will be rejected with a 4xx response
-     * and not sent to the backend.
-     * <p>
-     * In {@code PERMISSIVE} mode, the result of the validation will be exposed as metrics while the request
-     * will follow the normal path.
-     * <p>
-     * {@code DISABLED} type turns the validation off.
+     *
+     * <p>In {@code ENFORCING} mode, upon a validation failure, the request will be rejected with a
+     * 4xx response and not sent to the backend.
+     *
+     * <p>In {@code PERMISSIVE} mode, the result of the validation will be exposed as metrics while
+     * the request will follow the normal path.
+     *
+     * <p>{@code DISABLED} type turns the validation off.
      *
      * @return the value
-     **/
+     */
     public ValidationMode getValidationMode() {
         return validationMode;
     }
@@ -297,6 +276,7 @@ public final class BodyValidationRequestPolicy
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

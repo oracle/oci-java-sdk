@@ -5,14 +5,12 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Type of rule as described below.
- * PRIMARYKEY - Primary key constraint defined in the source database.
- * FOREIGNKEY - Foreign key constraint defined in the source database.
- * UNIQUEKEY - Unique key constraint defined in the source database.
- *
- **/
+ * Type of rule as described below. PRIMARYKEY - Primary key constraint defined in the source
+ * database. FOREIGNKEY - Foreign key constraint defined in the source database. UNIQUEKEY - Unique
+ * key constraint defined in the source database.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-public enum RuleType {
+public enum RuleType implements com.oracle.bmc.http.internal.BmcEnum {
     Primarykey("PRIMARYKEY"),
     Foreignkey("FOREIGNKEY"),
     Uniquekey("UNIQUEKEY"),

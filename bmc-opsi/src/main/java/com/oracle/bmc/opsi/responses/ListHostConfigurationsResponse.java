@@ -9,15 +9,14 @@ import com.oracle.bmc.opsi.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class ListHostConfigurationsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,10 +24,7 @@ public class ListHostConfigurationsResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /**
-     * For pagination of a list of items. The total number of items in the result.
-     *
-     */
+    /** For pagination of a list of items. The total number of items in the result. */
     private Integer opcTotalItems;
 
     /**
@@ -41,17 +37,16 @@ public class ListHostConfigurationsResponse extends com.oracle.bmc.responses.Bmc
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-     * subsequent GET request to get the next batch of items.
-     *
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then a partial list might have been returned. Include this value as the {@code
+     * page} parameter for the subsequent GET request to get the next batch of items.
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-     * subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then a partial list might have been returned. Include this value as the {@code
+     * page} parameter for the subsequent GET request to get the next batch of items.
      *
      * @return the value
      */
@@ -59,13 +54,12 @@ public class ListHostConfigurationsResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /**
-     * The returned HostConfigurationCollection instance.
-     */
+    /** The returned HostConfigurationCollection instance. */
     private com.oracle.bmc.opsi.model.HostConfigurationCollection hostConfigurationCollection;
 
     /**
      * The returned HostConfigurationCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.opsi.model.HostConfigurationCollection getHostConfigurationCollection() {
@@ -82,7 +76,7 @@ public class ListHostConfigurationsResponse extends com.oracle.bmc.responses.Bmc
     })
     private ListHostConfigurationsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             Integer opcTotalItems,
             String opcNextPage,
@@ -94,31 +88,34 @@ public class ListHostConfigurationsResponse extends com.oracle.bmc.responses.Bmc
         this.hostConfigurationCollection = hostConfigurationCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    ListHostConfigurationsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -128,10 +125,7 @@ public class ListHostConfigurationsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /**
-         * For pagination of a list of items. The total number of items in the result.
-         *
-         */
+        /** For pagination of a list of items. The total number of items in the result. */
         private Integer opcTotalItems;
 
         /**
@@ -146,17 +140,16 @@ public class ListHostConfigurationsResponse extends com.oracle.bmc.responses.Bmc
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-         * subsequent GET request to get the next batch of items.
-         *
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then a partial list might have been returned. Include this value as the
+         * {@code page} parameter for the subsequent GET request to get the next batch of items.
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-         * subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then a partial list might have been returned. Include this value as the
+         * {@code page} parameter for the subsequent GET request to get the next batch of items.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -166,13 +159,12 @@ public class ListHostConfigurationsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /**
-         * The returned HostConfigurationCollection instance.
-         */
+        /** The returned HostConfigurationCollection instance. */
         private com.oracle.bmc.opsi.model.HostConfigurationCollection hostConfigurationCollection;
 
         /**
          * The returned HostConfigurationCollection instance.
+         *
          * @param hostConfigurationCollection the value to set
          * @return this builder
          */
@@ -184,8 +176,10 @@ public class ListHostConfigurationsResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListHostConfigurationsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -199,8 +193,10 @@ public class ListHostConfigurationsResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListHostConfigurationsResponse build() {
             return new ListHostConfigurationsResponse(
                     __httpStatusCode__,
@@ -214,6 +210,7 @@ public class ListHostConfigurationsResponse extends com.oracle.bmc.responses.Bmc
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

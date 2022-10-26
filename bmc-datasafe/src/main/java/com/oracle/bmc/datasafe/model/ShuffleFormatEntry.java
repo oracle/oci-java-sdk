@@ -5,33 +5,29 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The Shuffle masking format randomly shuffles values within a column. It
- * can also be used to shuffle column data within discrete units, or groups,
- * where there is a relationship among the members of each group. To learn more,
- * check Shuffle in the Data Safe documentation. The Shuffle masking format
- * randomly shuffles values within a column. It can also be used to shuffle
- * column data within discrete units, or groups, where there is a relationship
- * among the members of each group. To learn more, check Shuffle in the
- * Data Safe documentation.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The Shuffle masking format randomly shuffles values within a column. It can also be used to
+ * shuffle column data within discrete units, or groups, where there is a relationship among the
+ * members of each group. To learn more, check Shuffle in the Data Safe documentation. The Shuffle
+ * masking format randomly shuffles values within a column. It can also be used to shuffle column
+ * data within discrete units, or groups, where there is a relationship among the members of each
+ * group. To learn more, check Shuffle in the Data Safe documentation. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ShuffleFormatEntry.Builder.class
-)
+        builder = ShuffleFormatEntry.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ShuffleFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -44,22 +40,21 @@ public final class ShuffleFormatEntry extends FormatEntry {
             return this;
         }
         /**
-         * One or more reference columns to be used to group column values so that
-         * they can be shuffled within their own group. The grouping columns and
-         * the column to be masked must belong to the same table.
-         *
-         **/
+         * One or more reference columns to be used to group column values so that they can be
+         * shuffled within their own group. The grouping columns and the column to be masked must
+         * belong to the same table.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("groupingColumns")
         private java.util.List<String> groupingColumns;
 
         /**
-         * One or more reference columns to be used to group column values so that
-         * they can be shuffled within their own group. The grouping columns and
-         * the column to be masked must belong to the same table.
+         * One or more reference columns to be used to group column values so that they can be
+         * shuffled within their own group. The grouping columns and the column to be masked must
+         * belong to the same table.
          *
          * @param groupingColumns the value to set
          * @return this builder
-         **/
+         */
         public Builder groupingColumns(java.util.List<String> groupingColumns) {
             this.groupingColumns = groupingColumns;
             this.__explicitlySet__.add("groupingColumns");
@@ -90,9 +85,7 @@ public final class ShuffleFormatEntry extends FormatEntry {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -108,21 +101,20 @@ public final class ShuffleFormatEntry extends FormatEntry {
     }
 
     /**
-     * One or more reference columns to be used to group column values so that
-     * they can be shuffled within their own group. The grouping columns and
-     * the column to be masked must belong to the same table.
-     *
-     **/
+     * One or more reference columns to be used to group column values so that they can be shuffled
+     * within their own group. The grouping columns and the column to be masked must belong to the
+     * same table.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("groupingColumns")
     private final java.util.List<String> groupingColumns;
 
     /**
-     * One or more reference columns to be used to group column values so that
-     * they can be shuffled within their own group. The grouping columns and
-     * the column to be masked must belong to the same table.
+     * One or more reference columns to be used to group column values so that they can be shuffled
+     * within their own group. The grouping columns and the column to be masked must belong to the
+     * same table.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getGroupingColumns() {
         return groupingColumns;
     }
@@ -134,6 +126,7 @@ public final class ShuffleFormatEntry extends FormatEntry {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

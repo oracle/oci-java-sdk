@@ -5,19 +5,20 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Verify acceleration output.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Verify acceleration output. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VerifyOutput.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VerifyOutput extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class VerifyOutput extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "scheduledTaskId",
@@ -45,97 +46,91 @@ public final class VerifyOutput extends com.oracle.bmc.http.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Acceleration task identifier.
-         **/
+        /** Acceleration task identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledTaskId")
         private String scheduledTaskId;
 
         /**
          * Acceleration task identifier.
+         *
          * @param scheduledTaskId the value to set
          * @return this builder
-         **/
+         */
         public Builder scheduledTaskId(String scheduledTaskId) {
             this.scheduledTaskId = scheduledTaskId;
             this.__explicitlySet__.add("scheduledTaskId");
             return this;
         }
-        /**
-         * Response time in ms.
-         **/
+        /** Response time in ms. */
         @com.fasterxml.jackson.annotation.JsonProperty("responseTimeInMs")
         private Long responseTimeInMs;
 
         /**
          * Response time in ms.
+         *
          * @param responseTimeInMs the value to set
          * @return this builder
-         **/
+         */
         public Builder responseTimeInMs(Long responseTimeInMs) {
             this.responseTimeInMs = responseTimeInMs;
             this.__explicitlySet__.add("responseTimeInMs");
             return this;
         }
-        /**
-         * Total match count.
-         **/
+        /** Total match count. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalMatchedCount")
         private Long totalMatchedCount;
 
         /**
          * Total match count.
+         *
          * @param totalMatchedCount the value to set
          * @return this builder
-         **/
+         */
         public Builder totalMatchedCount(Long totalMatchedCount) {
             this.totalMatchedCount = totalMatchedCount;
             this.__explicitlySet__.add("totalMatchedCount");
             return this;
         }
-        /**
-         * Total count.
-         **/
+        /** Total count. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalCount")
         private Integer totalCount;
 
         /**
          * Total count.
+         *
          * @param totalCount the value to set
          * @return this builder
-         **/
+         */
         public Builder totalCount(Integer totalCount) {
             this.totalCount = totalCount;
             this.__explicitlySet__.add("totalCount");
             return this;
         }
-        /**
-         * Acceleration result columns, included if requested (shouldIncludeResults).
-         **/
+        /** Acceleration result columns, included if requested (shouldIncludeResults). */
         @com.fasterxml.jackson.annotation.JsonProperty("columns")
         private java.util.List<ResultColumn> columns;
 
         /**
          * Acceleration result columns, included if requested (shouldIncludeResults).
+         *
          * @param columns the value to set
          * @return this builder
-         **/
+         */
         public Builder columns(java.util.List<ResultColumn> columns) {
             this.columns = columns;
             this.__explicitlySet__.add("columns");
             return this;
         }
-        /**
-         * Acceleration result values, included if requested (shouldIncludeResults).
-         **/
+        /** Acceleration result values, included if requested (shouldIncludeResults). */
         @com.fasterxml.jackson.annotation.JsonProperty("results")
         private java.util.List<java.util.Map<String, Object>> results;
 
         /**
          * Acceleration result values, included if requested (shouldIncludeResults).
+         *
          * @param results the value to set
          * @return this builder
-         **/
+         */
         public Builder results(java.util.List<java.util.Map<String, Object>> results) {
             this.results = results;
             this.__explicitlySet__.add("results");
@@ -184,9 +179,7 @@ public final class VerifyOutput extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -195,86 +188,80 @@ public final class VerifyOutput extends com.oracle.bmc.http.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /**
-     * Acceleration task identifier.
-     **/
+    /** Acceleration task identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledTaskId")
     private final String scheduledTaskId;
 
     /**
      * Acceleration task identifier.
+     *
      * @return the value
-     **/
+     */
     public String getScheduledTaskId() {
         return scheduledTaskId;
     }
 
-    /**
-     * Response time in ms.
-     **/
+    /** Response time in ms. */
     @com.fasterxml.jackson.annotation.JsonProperty("responseTimeInMs")
     private final Long responseTimeInMs;
 
     /**
      * Response time in ms.
+     *
      * @return the value
-     **/
+     */
     public Long getResponseTimeInMs() {
         return responseTimeInMs;
     }
 
-    /**
-     * Total match count.
-     **/
+    /** Total match count. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalMatchedCount")
     private final Long totalMatchedCount;
 
     /**
      * Total match count.
+     *
      * @return the value
-     **/
+     */
     public Long getTotalMatchedCount() {
         return totalMatchedCount;
     }
 
-    /**
-     * Total count.
-     **/
+    /** Total count. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalCount")
     private final Integer totalCount;
 
     /**
      * Total count.
+     *
      * @return the value
-     **/
+     */
     public Integer getTotalCount() {
         return totalCount;
     }
 
-    /**
-     * Acceleration result columns, included if requested (shouldIncludeResults).
-     **/
+    /** Acceleration result columns, included if requested (shouldIncludeResults). */
     @com.fasterxml.jackson.annotation.JsonProperty("columns")
     private final java.util.List<ResultColumn> columns;
 
     /**
      * Acceleration result columns, included if requested (shouldIncludeResults).
+     *
      * @return the value
-     **/
+     */
     public java.util.List<ResultColumn> getColumns() {
         return columns;
     }
 
-    /**
-     * Acceleration result values, included if requested (shouldIncludeResults).
-     **/
+    /** Acceleration result values, included if requested (shouldIncludeResults). */
     @com.fasterxml.jackson.annotation.JsonProperty("results")
     private final java.util.List<java.util.Map<String, Object>> results;
 
     /**
      * Acceleration result values, included if requested (shouldIncludeResults).
+     *
      * @return the value
-     **/
+     */
     public java.util.List<java.util.Map<String, Object>> getResults() {
         return results;
     }
@@ -286,6 +273,7 @@ public final class VerifyOutput extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

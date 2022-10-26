@@ -6,114 +6,99 @@ package com.oracle.bmc.opsi.requests;
 
 import com.oracle.bmc.opsi.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeHostInsightResourceCapacityTrendExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeHostInsightResourceCapacityTrendRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeHostInsightResourceCapacityTrendExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * SummarizeHostInsightResourceCapacityTrendRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class SummarizeHostInsightResourceCapacityTrendRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * Filter by host resource metric.
-     * Supported values are CPU, MEMORY, and LOGICAL_MEMORY.
-     *
-     */
+    /** Filter by host resource metric. Supported values are CPU, MEMORY, and LOGICAL_MEMORY. */
     private String resourceMetric;
 
-    /**
-     * Filter by host resource metric.
-     * Supported values are CPU, MEMORY, and LOGICAL_MEMORY.
-     *
-     */
+    /** Filter by host resource metric. Supported values are CPU, MEMORY, and LOGICAL_MEMORY. */
     public String getResourceMetric() {
         return resourceMetric;
     }
     /**
-     * Specify time period in ISO 8601 format with respect to current time.
-     * Default is last 30 days represented by P30D.
-     * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
-     * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
-     *
+     * Specify time period in ISO 8601 format with respect to current time. Default is last 30 days
+     * represented by P30D. If timeInterval is specified, then timeIntervalStart and timeIntervalEnd
+     * will be ignored. Examples P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y
+     * (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
      */
     private String analysisTimeInterval;
 
     /**
-     * Specify time period in ISO 8601 format with respect to current time.
-     * Default is last 30 days represented by P30D.
-     * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
-     * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
-     *
+     * Specify time period in ISO 8601 format with respect to current time. Default is last 30 days
+     * represented by P30D. If timeInterval is specified, then timeIntervalStart and timeIntervalEnd
+     * will be ignored. Examples P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y
+     * (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
      */
     public String getAnalysisTimeInterval() {
         return analysisTimeInterval;
     }
     /**
-     * Analysis start time in UTC in ISO 8601 format(inclusive).
-     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
-     * The minimum allowed value is 2 years prior to the current day.
-     * timeIntervalStart and timeIntervalEnd parameters are used together.
-     * If analysisTimeInterval is specified, this parameter is ignored.
-     *
+     * Analysis start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
+     * (yyyy-MM-ddThh:mm:ssZ). The minimum allowed value is 2 years prior to the current day.
+     * timeIntervalStart and timeIntervalEnd parameters are used together. If analysisTimeInterval
+     * is specified, this parameter is ignored.
      */
     private java.util.Date timeIntervalStart;
 
     /**
-     * Analysis start time in UTC in ISO 8601 format(inclusive).
-     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
-     * The minimum allowed value is 2 years prior to the current day.
-     * timeIntervalStart and timeIntervalEnd parameters are used together.
-     * If analysisTimeInterval is specified, this parameter is ignored.
-     *
+     * Analysis start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
+     * (yyyy-MM-ddThh:mm:ssZ). The minimum allowed value is 2 years prior to the current day.
+     * timeIntervalStart and timeIntervalEnd parameters are used together. If analysisTimeInterval
+     * is specified, this parameter is ignored.
      */
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
     /**
-     * Analysis end time in UTC in ISO 8601 format(exclusive).
-     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
-     * timeIntervalStart and timeIntervalEnd are used together.
-     * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
-     *
+     * Analysis end time in UTC in ISO 8601 format(exclusive). Example 2019-10-30T00:00:00Z
+     * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd are used together. If
+     * timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
      */
     private java.util.Date timeIntervalEnd;
 
     /**
-     * Analysis end time in UTC in ISO 8601 format(exclusive).
-     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
-     * timeIntervalStart and timeIntervalEnd are used together.
-     * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
-     *
+     * Analysis end time in UTC in ISO 8601 format(exclusive). Example 2019-10-30T00:00:00Z
+     * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd are used together. If
+     * timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
      */
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
     /**
-     * Filter by one or more platform types.
-     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
-     *
+     * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
+     * host insight: [LINUX]. Supported platformType(s) for MACS-managed cloud host insight:
+     * [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS,
+     * SUNOS, ZLINUX].
      */
     private java.util.List<PlatformType> platformType;
 
     /**
-     * Filter by one or more platform types.
-     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
-     *
-     **/
-    public enum PlatformType {
+     * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
+     * host insight: [LINUX]. Supported platformType(s) for MACS-managed cloud host insight:
+     * [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS,
+     * SUNOS, ZLINUX].
+     */
+    public enum PlatformType implements com.oracle.bmc.http.internal.BmcEnum {
         Linux("LINUX"),
         Solaris("SOLARIS"),
         Sunos("SUNOS"),
@@ -149,60 +134,55 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
     };
 
     /**
-     * Filter by one or more platform types.
-     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
-     *
+     * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
+     * host insight: [LINUX]. Supported platformType(s) for MACS-managed cloud host insight:
+     * [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS,
+     * SUNOS, ZLINUX].
      */
     public java.util.List<PlatformType> getPlatformType() {
         return platformType;
     }
     /**
-     * Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
+     * Optional list of host insight resource
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private java.util.List<String> id;
 
     /**
-     * Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
+     * Optional list of host insight resource
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public java.util.List<String> getId() {
         return id;
     }
     /**
-     * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
+     * Optional list of exadata insight resource
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private java.util.List<String> exadataInsightId;
 
     /**
-     * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
+     * Optional list of exadata insight resource
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public java.util.List<String> getExadataInsightId() {
         return exadataInsightId;
     }
     /**
-     * Filter by utilization level by the following buckets:
-     *   - HIGH_UTILIZATION: DBs with utilization greater or equal than 75.
-     *   - LOW_UTILIZATION: DBs with utilization lower than 25.
-     *   - MEDIUM_HIGH_UTILIZATION: DBs with utilization greater or equal than 50 but lower than 75.
-     *   - MEDIUM_LOW_UTILIZATION: DBs with utilization greater or equal than 25 but lower than 50.
-     *
+     * Filter by utilization level by the following buckets: - HIGH_UTILIZATION: DBs with
+     * utilization greater or equal than 75. - LOW_UTILIZATION: DBs with utilization lower than 25.
+     * - MEDIUM_HIGH_UTILIZATION: DBs with utilization greater or equal than 50 but lower than 75. -
+     * MEDIUM_LOW_UTILIZATION: DBs with utilization greater or equal than 25 but lower than 50.
      */
     private UtilizationLevel utilizationLevel;
 
     /**
-     * Filter by utilization level by the following buckets:
-     *   - HIGH_UTILIZATION: DBs with utilization greater or equal than 75.
-     *   - LOW_UTILIZATION: DBs with utilization lower than 25.
-     *   - MEDIUM_HIGH_UTILIZATION: DBs with utilization greater or equal than 50 but lower than 75.
-     *   - MEDIUM_LOW_UTILIZATION: DBs with utilization greater or equal than 25 but lower than 50.
-     *
-     **/
-    public enum UtilizationLevel {
+     * Filter by utilization level by the following buckets: - HIGH_UTILIZATION: DBs with
+     * utilization greater or equal than 75. - LOW_UTILIZATION: DBs with utilization lower than 25.
+     * - MEDIUM_HIGH_UTILIZATION: DBs with utilization greater or equal than 50 but lower than 75. -
+     * MEDIUM_LOW_UTILIZATION: DBs with utilization greater or equal than 25 but lower than 50.
+     */
+    public enum UtilizationLevel implements com.oracle.bmc.http.internal.BmcEnum {
         HighUtilization("HIGH_UTILIZATION"),
         LowUtilization("LOW_UTILIZATION"),
         MediumHighUtilization("MEDIUM_HIGH_UTILIZATION"),
@@ -238,57 +218,41 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
     };
 
     /**
-     * Filter by utilization level by the following buckets:
-     *   - HIGH_UTILIZATION: DBs with utilization greater or equal than 75.
-     *   - LOW_UTILIZATION: DBs with utilization lower than 25.
-     *   - MEDIUM_HIGH_UTILIZATION: DBs with utilization greater or equal than 50 but lower than 75.
-     *   - MEDIUM_LOW_UTILIZATION: DBs with utilization greater or equal than 25 but lower than 50.
-     *
+     * Filter by utilization level by the following buckets: - HIGH_UTILIZATION: DBs with
+     * utilization greater or equal than 75. - LOW_UTILIZATION: DBs with utilization lower than 25.
+     * - MEDIUM_HIGH_UTILIZATION: DBs with utilization greater or equal than 50 but lower than 75. -
+     * MEDIUM_LOW_UTILIZATION: DBs with utilization greater or equal than 25 but lower than 50.
      */
     public UtilizationLevel getUtilizationLevel() {
         return utilizationLevel;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from
-     * the previous "List" call. For important details about how pagination works,
-     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from
-     * the previous "List" call. For important details about how pagination works,
-     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     private com.oracle.bmc.opsi.model.SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     public com.oracle.bmc.opsi.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /**
-     * Sorts using end timestamp or capacity
-     *
-     */
+    /** Sorts using end timestamp or capacity */
     private SortBy sortBy;
 
-    /**
-     * Sorts using end timestamp or capacity
-     *
-     **/
-    public enum SortBy {
+    /** Sorts using end timestamp or capacity */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         EndTimestamp("endTimestamp"),
         Capacity("capacity"),
         ;
@@ -321,143 +285,124 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
     };
 
-    /**
-     * Sorts using end timestamp or capacity
-     *
-     */
+    /** Sorts using end timestamp or capacity */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
-     * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
-     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
-     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
-     *
+     * A list of tag filters to apply. Only resources with a defined tag matching the value will be
+     * returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All inputs
+     * are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are
+     * interpreted as "OR". Values for different keys (i.e. different namespaces, different tag
+     * names, or both) are interpreted as "AND".
      */
     private java.util.List<String> definedTagEquals;
 
     /**
-     * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
-     * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
-     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
-     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
-     *
+     * A list of tag filters to apply. Only resources with a defined tag matching the value will be
+     * returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All inputs
+     * are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are
+     * interpreted as "OR". Values for different keys (i.e. different namespaces, different tag
+     * names, or both) are interpreted as "AND".
      */
     public java.util.List<String> getDefinedTagEquals() {
         return definedTagEquals;
     }
     /**
-     * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
-     * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
-     * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
-     *
+     * A list of tag filters to apply. Only resources with a freeform tag matching the value will be
+     * returned. The key for each tag is "{tagName}.{value}". All inputs are case-insensitive.
+     * Multiple values for the same tag name are interpreted as "OR". Values for different tag names
+     * are interpreted as "AND".
      */
     private java.util.List<String> freeformTagEquals;
 
     /**
-     * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
-     * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
-     * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
-     *
+     * A list of tag filters to apply. Only resources with a freeform tag matching the value will be
+     * returned. The key for each tag is "{tagName}.{value}". All inputs are case-insensitive.
+     * Multiple values for the same tag name are interpreted as "OR". Values for different tag names
+     * are interpreted as "AND".
      */
     public java.util.List<String> getFreeformTagEquals() {
         return freeformTagEquals;
     }
     /**
-     * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
-     * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
-     * or "{namespace}.true".  All inputs are case-insensitive.
-     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
-     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
-     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
-     *
+     * A list of tag existence filters to apply. Only resources for which the specified defined tags
+     * exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true"
+     * (for checking existence of a defined tag) or "{namespace}.true". All inputs are
+     * case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
+     * ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace
+     * and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
+     * different tag names, or both) are interpreted as "AND".
      */
     private java.util.List<String> definedTagExists;
 
     /**
-     * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
-     * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
-     * or "{namespace}.true".  All inputs are case-insensitive.
-     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
-     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
-     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
-     *
+     * A list of tag existence filters to apply. Only resources for which the specified defined tags
+     * exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true"
+     * (for checking existence of a defined tag) or "{namespace}.true". All inputs are
+     * case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
+     * ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace
+     * and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
+     * different tag names, or both) are interpreted as "AND".
      */
     public java.util.List<String> getDefinedTagExists() {
         return definedTagExists;
     }
     /**
-     * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
-     * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
-     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
-     * Multiple values for different tag names are interpreted as "AND".
-     *
+     * A list of tag existence filters to apply. Only resources for which the specified freeform
+     * tags exist the value will be returned. The key for each tag is "{tagName}.true". All inputs
+     * are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
+     * ("false" at the end) is not supported. Multiple values for different tag names are
+     * interpreted as "AND".
      */
     private java.util.List<String> freeformTagExists;
 
     /**
-     * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
-     * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
-     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
-     * Multiple values for different tag names are interpreted as "AND".
-     *
+     * A list of tag existence filters to apply. Only resources for which the specified freeform
+     * tags exist the value will be returned. The key for each tag is "{tagName}.true". All inputs
+     * are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
+     * ("false" at the end) is not supported. Multiple values for different tag names are
+     * interpreted as "AND".
      */
     public java.util.List<String> getFreeformTagExists() {
         return freeformTagExists;
     }
-    /**
-     * A flag to search all resources within a given compartment and all sub-compartments.
-     *
-     */
+    /** A flag to search all resources within a given compartment and all sub-compartments. */
     private Boolean compartmentIdInSubtree;
 
-    /**
-     * A flag to search all resources within a given compartment and all sub-compartments.
-     *
-     */
+    /** A flag to search all resources within a given compartment and all sub-compartments. */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
-    /**
-     * Filter by one or more host types.
-     * Possible values are CLOUD-HOST, EXTERNAL-HOST
-     *
-     */
+    /** Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST */
     private java.util.List<String> hostType;
 
-    /**
-     * Filter by one or more host types.
-     * Possible values are CLOUD-HOST, EXTERNAL-HOST
-     *
-     */
+    /** Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST */
     public java.util.List<String> getHostType() {
         return hostType;
     }
     /**
-     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host (Compute Id)
-     *
+     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * of the host (Compute Id)
      */
     private String hostId;
 
     /**
-     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host (Compute Id)
-     *
+     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * of the host (Compute Id)
      */
     public String getHostId() {
         return hostId;
@@ -466,17 +411,19 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SummarizeHostInsightResourceCapacityTrendRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -485,16 +432,11 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
             return this;
         }
 
-        /**
-         * Filter by host resource metric.
-         * Supported values are CPU, MEMORY, and LOGICAL_MEMORY.
-         *
-         */
+        /** Filter by host resource metric. Supported values are CPU, MEMORY, and LOGICAL_MEMORY. */
         private String resourceMetric = null;
 
         /**
-         * Filter by host resource metric.
-         * Supported values are CPU, MEMORY, and LOGICAL_MEMORY.
+         * Filter by host resource metric. Supported values are CPU, MEMORY, and LOGICAL_MEMORY.
          *
          * @param resourceMetric the value to set
          * @return this builder instance
@@ -505,19 +447,20 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * Specify time period in ISO 8601 format with respect to current time.
-         * Default is last 30 days represented by P30D.
-         * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
-         * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
-         *
+         * Specify time period in ISO 8601 format with respect to current time. Default is last 30
+         * days represented by P30D. If timeInterval is specified, then timeIntervalStart and
+         * timeIntervalEnd will be ignored. Examples P90D (last 90 days), P4W (last 4 weeks), P2M
+         * (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to
+         * current time (P25M).
          */
         private String analysisTimeInterval = null;
 
         /**
-         * Specify time period in ISO 8601 format with respect to current time.
-         * Default is last 30 days represented by P30D.
-         * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
-         * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+         * Specify time period in ISO 8601 format with respect to current time. Default is last 30
+         * days represented by P30D. If timeInterval is specified, then timeIntervalStart and
+         * timeIntervalEnd will be ignored. Examples P90D (last 90 days), P4W (last 4 weeks), P2M
+         * (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to
+         * current time (P25M).
          *
          * @param analysisTimeInterval the value to set
          * @return this builder instance
@@ -528,21 +471,18 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * Analysis start time in UTC in ISO 8601 format(inclusive).
-         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
-         * The minimum allowed value is 2 years prior to the current day.
-         * timeIntervalStart and timeIntervalEnd parameters are used together.
-         * If analysisTimeInterval is specified, this parameter is ignored.
-         *
+         * Analysis start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
+         * (yyyy-MM-ddThh:mm:ssZ). The minimum allowed value is 2 years prior to the current day.
+         * timeIntervalStart and timeIntervalEnd parameters are used together. If
+         * analysisTimeInterval is specified, this parameter is ignored.
          */
         private java.util.Date timeIntervalStart = null;
 
         /**
-         * Analysis start time in UTC in ISO 8601 format(inclusive).
-         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
-         * The minimum allowed value is 2 years prior to the current day.
-         * timeIntervalStart and timeIntervalEnd parameters are used together.
-         * If analysisTimeInterval is specified, this parameter is ignored.
+         * Analysis start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
+         * (yyyy-MM-ddThh:mm:ssZ). The minimum allowed value is 2 years prior to the current day.
+         * timeIntervalStart and timeIntervalEnd parameters are used together. If
+         * analysisTimeInterval is specified, this parameter is ignored.
          *
          * @param timeIntervalStart the value to set
          * @return this builder instance
@@ -553,19 +493,16 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * Analysis end time in UTC in ISO 8601 format(exclusive).
-         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
-         * timeIntervalStart and timeIntervalEnd are used together.
-         * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
-         *
+         * Analysis end time in UTC in ISO 8601 format(exclusive). Example 2019-10-30T00:00:00Z
+         * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd are used together. If
+         * timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
          */
         private java.util.Date timeIntervalEnd = null;
 
         /**
-         * Analysis end time in UTC in ISO 8601 format(exclusive).
-         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
-         * timeIntervalStart and timeIntervalEnd are used together.
-         * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+         * Analysis end time in UTC in ISO 8601 format(exclusive). Example 2019-10-30T00:00:00Z
+         * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd are used together. If
+         * timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
          *
          * @param timeIntervalEnd the value to set
          * @return this builder instance
@@ -576,19 +513,18 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * Filter by one or more platform types.
-         * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
-         *
+         * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
+         * host insight: [LINUX]. Supported platformType(s) for MACS-managed cloud host insight:
+         * [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS,
+         * SUNOS, ZLINUX].
          */
         private java.util.List<PlatformType> platformType = null;
 
         /**
-         * Filter by one or more platform types.
-         * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
+         * host insight: [LINUX]. Supported platformType(s) for MACS-managed cloud host insight:
+         * [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS,
+         * SUNOS, ZLINUX].
          *
          * @param platformType the value to set
          * @return this builder instance
@@ -599,10 +535,10 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * Singular setter. Filter by one or more platform types.
-         * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         * Singular setter. Filter by one or more platform types. Supported platformType(s) for
+         * MACS-managed external host insight: [LINUX]. Supported platformType(s) for MACS-managed
+         * cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host
+         * insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -612,13 +548,14 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * Optional list of host insight resource
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private java.util.List<String> id = null;
 
         /**
-         * Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Optional list of host insight resource
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param id the value to set
          * @return this builder instance
@@ -629,7 +566,8 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * Singular setter. Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Singular setter. Optional list of host insight resource
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -639,13 +577,14 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * Optional list of exadata insight resource
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private java.util.List<String> exadataInsightId = null;
 
         /**
-         * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Optional list of exadata insight resource
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param exadataInsightId the value to set
          * @return this builder instance
@@ -656,7 +595,8 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * Singular setter. Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Singular setter. Optional list of exadata insight resource
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -666,21 +606,20 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * Filter by utilization level by the following buckets:
-         *   - HIGH_UTILIZATION: DBs with utilization greater or equal than 75.
-         *   - LOW_UTILIZATION: DBs with utilization lower than 25.
-         *   - MEDIUM_HIGH_UTILIZATION: DBs with utilization greater or equal than 50 but lower than 75.
-         *   - MEDIUM_LOW_UTILIZATION: DBs with utilization greater or equal than 25 but lower than 50.
-         *
+         * Filter by utilization level by the following buckets: - HIGH_UTILIZATION: DBs with
+         * utilization greater or equal than 75. - LOW_UTILIZATION: DBs with utilization lower than
+         * 25. - MEDIUM_HIGH_UTILIZATION: DBs with utilization greater or equal than 50 but lower
+         * than 75. - MEDIUM_LOW_UTILIZATION: DBs with utilization greater or equal than 25 but
+         * lower than 50.
          */
         private UtilizationLevel utilizationLevel = null;
 
         /**
-         * Filter by utilization level by the following buckets:
-         *   - HIGH_UTILIZATION: DBs with utilization greater or equal than 75.
-         *   - LOW_UTILIZATION: DBs with utilization lower than 25.
-         *   - MEDIUM_HIGH_UTILIZATION: DBs with utilization greater or equal than 50 but lower than 75.
-         *   - MEDIUM_LOW_UTILIZATION: DBs with utilization greater or equal than 25 but lower than 50.
+         * Filter by utilization level by the following buckets: - HIGH_UTILIZATION: DBs with
+         * utilization greater or equal than 75. - LOW_UTILIZATION: DBs with utilization lower than
+         * 25. - MEDIUM_HIGH_UTILIZATION: DBs with utilization greater or equal than 50 but lower
+         * than 75. - MEDIUM_LOW_UTILIZATION: DBs with utilization greater or equal than 25 but
+         * lower than 50.
          *
          * @param utilizationLevel the value to set
          * @return this builder instance
@@ -691,17 +630,16 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from
-         * the previous "List" call. For important details about how pagination works,
-         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from
-         * the previous "List" call. For important details about how pagination works,
-         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -711,10 +649,7 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
             return this;
         }
 
-        /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-         *
-         */
+        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
         private com.oracle.bmc.opsi.model.SortOrder sortOrder = null;
 
         /**
@@ -728,10 +663,7 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
             return this;
         }
 
-        /**
-         * Sorts using end timestamp or capacity
-         *
-         */
+        /** Sorts using end timestamp or capacity */
         private SortBy sortBy = null;
 
         /**
@@ -746,15 +678,14 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -765,19 +696,20 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
-         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
-         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
-         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
-         *
+         * A list of tag filters to apply. Only resources with a defined tag matching the value will
+         * be returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All
+         * inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and
+         * tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
+         * different tag names, or both) are interpreted as "AND".
          */
         private java.util.List<String> definedTagEquals = null;
 
         /**
-         * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
-         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
-         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
-         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         * A list of tag filters to apply. Only resources with a defined tag matching the value will
+         * be returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All
+         * inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and
+         * tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
+         * different tag names, or both) are interpreted as "AND".
          *
          * @param definedTagEquals the value to set
          * @return this builder instance
@@ -788,10 +720,11 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * Singular setter. A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
-         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
-         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
-         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         * Singular setter. A list of tag filters to apply. Only resources with a defined tag
+         * matching the value will be returned. Each item in the list has the format
+         * "{namespace}.{tagName}.{value}". All inputs are case-insensitive. Multiple values for the
+         * same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different
+         * keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -801,17 +734,18 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
-         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
-         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
-         *
+         * A list of tag filters to apply. Only resources with a freeform tag matching the value
+         * will be returned. The key for each tag is "{tagName}.{value}". All inputs are
+         * case-insensitive. Multiple values for the same tag name are interpreted as "OR". Values
+         * for different tag names are interpreted as "AND".
          */
         private java.util.List<String> freeformTagEquals = null;
 
         /**
-         * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
-         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
-         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+         * A list of tag filters to apply. Only resources with a freeform tag matching the value
+         * will be returned. The key for each tag is "{tagName}.{value}". All inputs are
+         * case-insensitive. Multiple values for the same tag name are interpreted as "OR". Values
+         * for different tag names are interpreted as "AND".
          *
          * @param freeformTagEquals the value to set
          * @return this builder instance
@@ -822,9 +756,10 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * Singular setter. A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
-         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
-         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+         * Singular setter. A list of tag filters to apply. Only resources with a freeform tag
+         * matching the value will be returned. The key for each tag is "{tagName}.{value}". All
+         * inputs are case-insensitive. Multiple values for the same tag name are interpreted as
+         * "OR". Values for different tag names are interpreted as "AND".
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -834,23 +769,26 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
-         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
-         * or "{namespace}.true".  All inputs are case-insensitive.
-         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
-         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
-         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
-         *
+         * A list of tag existence filters to apply. Only resources for which the specified defined
+         * tags exist will be returned. Each item in the list has the format
+         * "{namespace}.{tagName}.true" (for checking existence of a defined tag) or
+         * "{namespace}.true". All inputs are case-insensitive. Currently, only existence ("true" at
+         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
+         * the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for
+         * different keys (i.e. different namespaces, different tag names, or both) are interpreted
+         * as "AND".
          */
         private java.util.List<String> definedTagExists = null;
 
         /**
-         * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
-         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
-         * or "{namespace}.true".  All inputs are case-insensitive.
-         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
-         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
-         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         * A list of tag existence filters to apply. Only resources for which the specified defined
+         * tags exist will be returned. Each item in the list has the format
+         * "{namespace}.{tagName}.true" (for checking existence of a defined tag) or
+         * "{namespace}.true". All inputs are case-insensitive. Currently, only existence ("true" at
+         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
+         * the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for
+         * different keys (i.e. different namespaces, different tag names, or both) are interpreted
+         * as "AND".
          *
          * @param definedTagExists the value to set
          * @return this builder instance
@@ -861,12 +799,14 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * Singular setter. A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
-         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
-         * or "{namespace}.true".  All inputs are case-insensitive.
-         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
-         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
-         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         * Singular setter. A list of tag existence filters to apply. Only resources for which the
+         * specified defined tags exist will be returned. Each item in the list has the format
+         * "{namespace}.{tagName}.true" (for checking existence of a defined tag) or
+         * "{namespace}.true". All inputs are case-insensitive. Currently, only existence ("true" at
+         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
+         * the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for
+         * different keys (i.e. different namespaces, different tag names, or both) are interpreted
+         * as "AND".
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -876,19 +816,20 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
-         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
-         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
-         * Multiple values for different tag names are interpreted as "AND".
-         *
+         * A list of tag existence filters to apply. Only resources for which the specified freeform
+         * tags exist the value will be returned. The key for each tag is "{tagName}.true". All
+         * inputs are case-insensitive. Currently, only existence ("true" at the end) is supported.
+         * Absence ("false" at the end) is not supported. Multiple values for different tag names
+         * are interpreted as "AND".
          */
         private java.util.List<String> freeformTagExists = null;
 
         /**
-         * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
-         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
-         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
-         * Multiple values for different tag names are interpreted as "AND".
+         * A list of tag existence filters to apply. Only resources for which the specified freeform
+         * tags exist the value will be returned. The key for each tag is "{tagName}.true". All
+         * inputs are case-insensitive. Currently, only existence ("true" at the end) is supported.
+         * Absence ("false" at the end) is not supported. Multiple values for different tag names
+         * are interpreted as "AND".
          *
          * @param freeformTagExists the value to set
          * @return this builder instance
@@ -899,10 +840,11 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * Singular setter. A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
-         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
-         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
-         * Multiple values for different tag names are interpreted as "AND".
+         * Singular setter. A list of tag existence filters to apply. Only resources for which the
+         * specified freeform tags exist the value will be returned. The key for each tag is
+         * "{tagName}.true". All inputs are case-insensitive. Currently, only existence ("true" at
+         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
+         * different tag names are interpreted as "AND".
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -911,10 +853,7 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
             return this.freeformTagExists(java.util.Arrays.asList(singularValue));
         }
 
-        /**
-         * A flag to search all resources within a given compartment and all sub-compartments.
-         *
-         */
+        /** A flag to search all resources within a given compartment and all sub-compartments. */
         private Boolean compartmentIdInSubtree = null;
 
         /**
@@ -928,16 +867,11 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
             return this;
         }
 
-        /**
-         * Filter by one or more host types.
-         * Possible values are CLOUD-HOST, EXTERNAL-HOST
-         *
-         */
+        /** Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST */
         private java.util.List<String> hostType = null;
 
         /**
-         * Filter by one or more host types.
-         * Possible values are CLOUD-HOST, EXTERNAL-HOST
+         * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
          *
          * @param hostType the value to set
          * @return this builder instance
@@ -948,8 +882,8 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * Singular setter. Filter by one or more host types.
-         * Possible values are CLOUD-HOST, EXTERNAL-HOST
+         * Singular setter. Filter by one or more host types. Possible values are CLOUD-HOST,
+         * EXTERNAL-HOST
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -959,13 +893,16 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host (Compute Id)
-         *
+         * Optional
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * the host (Compute Id)
          */
         private String hostId = null;
 
         /**
-         * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host (Compute Id)
+         * Optional
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * the host (Compute Id)
          *
          * @param hostId the value to set
          * @return this builder instance
@@ -977,18 +914,19 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -1000,6 +938,7 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(SummarizeHostInsightResourceCapacityTrendRequest o) {
@@ -1029,12 +968,14 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * Build the instance of SummarizeHostInsightResourceCapacityTrendRequest as configured by this builder
+         * Build the instance of SummarizeHostInsightResourceCapacityTrendRequest as configured by
+         * this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of SummarizeHostInsightResourceCapacityTrendRequest
          */
@@ -1047,9 +988,11 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
         }
 
         /**
-         * Build the instance of SummarizeHostInsightResourceCapacityTrendRequest as configured by this builder
+         * Build the instance of SummarizeHostInsightResourceCapacityTrendRequest as configured by
+         * this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of SummarizeHostInsightResourceCapacityTrendRequest
@@ -1078,12 +1021,17 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
             request.hostType = hostType;
             request.hostId = hostId;
             return request;
-            // new SummarizeHostInsightResourceCapacityTrendRequest(compartmentId, resourceMetric, analysisTimeInterval, timeIntervalStart, timeIntervalEnd, platformType, id, exadataInsightId, utilizationLevel, page, sortOrder, sortBy, opcRequestId, definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists, compartmentIdInSubtree, hostType, hostId);
+            // new SummarizeHostInsightResourceCapacityTrendRequest(compartmentId, resourceMetric,
+            // analysisTimeInterval, timeIntervalStart, timeIntervalEnd, platformType, id,
+            // exadataInsightId, utilizationLevel, page, sortOrder, sortBy, opcRequestId,
+            // definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists,
+            // compartmentIdInSubtree, hostType, hostId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -1112,6 +1060,7 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

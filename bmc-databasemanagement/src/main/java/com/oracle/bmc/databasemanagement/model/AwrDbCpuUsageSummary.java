@@ -5,21 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A summary of the AWR CPU resource limits and metrics.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A summary of the AWR CPU resource limits and metrics. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AwrDbCpuUsageSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AwrDbCpuUsageSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = AwrDbCpuUsageSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class AwrDbCpuUsageSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timestamp", "avgValue"})
     public AwrDbCpuUsageSummary(java.util.Date timestamp, Double avgValue) {
@@ -30,33 +31,31 @@ public final class AwrDbCpuUsageSummary extends com.oracle.bmc.http.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The timestamp for the CPU summary data.
-         **/
+        /** The timestamp for the CPU summary data. */
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
          * The timestamp for the CPU summary data.
+         *
          * @param timestamp the value to set
          * @return this builder
-         **/
+         */
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-        /**
-         * The average CPU usage per second.
-         **/
+        /** The average CPU usage per second. */
         @com.fasterxml.jackson.annotation.JsonProperty("avgValue")
         private Double avgValue;
 
         /**
          * The average CPU usage per second.
+         *
          * @param avgValue the value to set
          * @return this builder
-         **/
+         */
         public Builder avgValue(Double avgValue) {
             this.avgValue = avgValue;
             this.__explicitlySet__.add("avgValue");
@@ -86,9 +85,7 @@ public final class AwrDbCpuUsageSummary extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -97,30 +94,28 @@ public final class AwrDbCpuUsageSummary extends com.oracle.bmc.http.internal.Exp
         return new Builder().copy(this);
     }
 
-    /**
-     * The timestamp for the CPU summary data.
-     **/
+    /** The timestamp for the CPU summary data. */
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
      * The timestamp for the CPU summary data.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimestamp() {
         return timestamp;
     }
 
-    /**
-     * The average CPU usage per second.
-     **/
+    /** The average CPU usage per second. */
     @com.fasterxml.jackson.annotation.JsonProperty("avgValue")
     private final Double avgValue;
 
     /**
      * The average CPU usage per second.
+     *
      * @return the value
-     **/
+     */
     public Double getAvgValue() {
         return avgValue;
     }
@@ -132,6 +127,7 @@ public final class AwrDbCpuUsageSummary extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

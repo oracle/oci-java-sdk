@@ -8,10 +8,7 @@ import com.oracle.bmc.core.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class UpdateBootVolumeBackupResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -23,13 +20,12 @@ public class UpdateBootVolumeBackupResponse extends com.oracle.bmc.responses.Bmc
         return etag;
     }
 
-    /**
-     * The returned BootVolumeBackup instance.
-     */
+    /** The returned BootVolumeBackup instance. */
     private com.oracle.bmc.core.model.BootVolumeBackup bootVolumeBackup;
 
     /**
      * The returned BootVolumeBackup instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.core.model.BootVolumeBackup getBootVolumeBackup() {
@@ -39,7 +35,7 @@ public class UpdateBootVolumeBackupResponse extends com.oracle.bmc.responses.Bmc
     @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "etag", "bootVolumeBackup"})
     private UpdateBootVolumeBackupResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             com.oracle.bmc.core.model.BootVolumeBackup bootVolumeBackup) {
         super(__httpStatusCode__, headers);
@@ -47,25 +43,26 @@ public class UpdateBootVolumeBackupResponse extends com.oracle.bmc.responses.Bmc
         this.bootVolumeBackup = bootVolumeBackup;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    UpdateBootVolumeBackupResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -79,13 +76,12 @@ public class UpdateBootVolumeBackupResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /**
-         * The returned BootVolumeBackup instance.
-         */
+        /** The returned BootVolumeBackup instance. */
         private com.oracle.bmc.core.model.BootVolumeBackup bootVolumeBackup;
 
         /**
          * The returned BootVolumeBackup instance.
+         *
          * @param bootVolumeBackup the value to set
          * @return this builder
          */
@@ -97,8 +93,10 @@ public class UpdateBootVolumeBackupResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(UpdateBootVolumeBackupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -110,8 +108,10 @@ public class UpdateBootVolumeBackupResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public UpdateBootVolumeBackupResponse build() {
             return new UpdateBootVolumeBackupResponse(
                     __httpStatusCode__, headers, etag, bootVolumeBackup);
@@ -120,6 +120,7 @@ public class UpdateBootVolumeBackupResponse extends com.oracle.bmc.responses.Bmc
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

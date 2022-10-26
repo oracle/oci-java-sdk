@@ -5,21 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * The intraline diff result.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The intraline diff result. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CompareContentResult.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CompareContentResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = CompareContentResult.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class CompareContentResult
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"lineComparisonResults"})
     public CompareContentResult(java.util.List<CompareLineResult> lineComparisonResults) {
@@ -29,17 +30,16 @@ public final class CompareContentResult extends com.oracle.bmc.http.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * An array of line comparison results.
-         **/
+        /** An array of line comparison results. */
         @com.fasterxml.jackson.annotation.JsonProperty("lineComparisonResults")
         private java.util.List<CompareLineResult> lineComparisonResults;
 
         /**
          * An array of line comparison results.
+         *
          * @param lineComparisonResults the value to set
          * @return this builder
-         **/
+         */
         public Builder lineComparisonResults(
                 java.util.List<CompareLineResult> lineComparisonResults) {
             this.lineComparisonResults = lineComparisonResults;
@@ -67,9 +67,7 @@ public final class CompareContentResult extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -78,16 +76,15 @@ public final class CompareContentResult extends com.oracle.bmc.http.internal.Exp
         return new Builder().copy(this);
     }
 
-    /**
-     * An array of line comparison results.
-     **/
+    /** An array of line comparison results. */
     @com.fasterxml.jackson.annotation.JsonProperty("lineComparisonResults")
     private final java.util.List<CompareLineResult> lineComparisonResults;
 
     /**
      * An array of line comparison results.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<CompareLineResult> getLineComparisonResults() {
         return lineComparisonResults;
     }
@@ -99,6 +96,7 @@ public final class CompareContentResult extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

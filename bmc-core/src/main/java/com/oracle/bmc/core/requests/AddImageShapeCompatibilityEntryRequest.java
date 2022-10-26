@@ -6,7 +6,10 @@ package com.oracle.bmc.core.requests;
 
 import com.oracle.bmc.core.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddImageShapeCompatibilityEntryExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use AddImageShapeCompatibilityEntryRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddImageShapeCompatibilityEntryExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * AddImageShapeCompatibilityEntryRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class AddImageShapeCompatibilityEntryRequest
@@ -14,36 +17,30 @@ public class AddImageShapeCompatibilityEntryRequest
                 com.oracle.bmc.core.model.AddImageShapeCompatibilityEntryDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the image.
      */
     private String imageId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the image.
      */
     public String getImageId() {
         return imageId;
     }
-    /**
-     * Shape name.
-     */
+    /** Shape name. */
     private String shapeName;
 
-    /**
-     * Shape name.
-     */
+    /** Shape name. */
     public String getShapeName() {
         return shapeName;
     }
-    /**
-     * Image shape compatibility details
-     */
+    /** Image shape compatibility details */
     private com.oracle.bmc.core.model.AddImageShapeCompatibilityEntryDetails
             addImageShapeCompatibilityEntryDetails;
 
-    /**
-     * Image shape compatibility details
-     */
+    /** Image shape compatibility details */
     public com.oracle.bmc.core.model.AddImageShapeCompatibilityEntryDetails
             getAddImageShapeCompatibilityEntryDetails() {
         return addImageShapeCompatibilityEntryDetails;
@@ -51,6 +48,7 @@ public class AddImageShapeCompatibilityEntryRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -63,17 +61,19 @@ public class AddImageShapeCompatibilityEntryRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     AddImageShapeCompatibilityEntryRequest,
                     com.oracle.bmc.core.model.AddImageShapeCompatibilityEntryDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the image.
          */
         private String imageId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the image.
+         *
          * @param imageId the value to set
          * @return this builder instance
          */
@@ -82,13 +82,12 @@ public class AddImageShapeCompatibilityEntryRequest
             return this;
         }
 
-        /**
-         * Shape name.
-         */
+        /** Shape name. */
         private String shapeName = null;
 
         /**
          * Shape name.
+         *
          * @param shapeName the value to set
          * @return this builder instance
          */
@@ -97,14 +96,13 @@ public class AddImageShapeCompatibilityEntryRequest
             return this;
         }
 
-        /**
-         * Image shape compatibility details
-         */
+        /** Image shape compatibility details */
         private com.oracle.bmc.core.model.AddImageShapeCompatibilityEntryDetails
                 addImageShapeCompatibilityEntryDetails = null;
 
         /**
          * Image shape compatibility details
+         *
          * @param addImageShapeCompatibilityEntryDetails the value to set
          * @return this builder instance
          */
@@ -117,18 +115,19 @@ public class AddImageShapeCompatibilityEntryRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -140,6 +139,7 @@ public class AddImageShapeCompatibilityEntryRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(AddImageShapeCompatibilityEntryRequest o) {
@@ -152,12 +152,14 @@ public class AddImageShapeCompatibilityEntryRequest
         }
 
         /**
-         * Build the instance of AddImageShapeCompatibilityEntryRequest as configured by this builder
+         * Build the instance of AddImageShapeCompatibilityEntryRequest as configured by this
+         * builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of AddImageShapeCompatibilityEntryRequest
          */
@@ -170,6 +172,7 @@ public class AddImageShapeCompatibilityEntryRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -181,9 +184,11 @@ public class AddImageShapeCompatibilityEntryRequest
         }
 
         /**
-         * Build the instance of AddImageShapeCompatibilityEntryRequest as configured by this builder
+         * Build the instance of AddImageShapeCompatibilityEntryRequest as configured by this
+         * builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of AddImageShapeCompatibilityEntryRequest
@@ -195,12 +200,14 @@ public class AddImageShapeCompatibilityEntryRequest
             request.shapeName = shapeName;
             request.addImageShapeCompatibilityEntryDetails = addImageShapeCompatibilityEntryDetails;
             return request;
-            // new AddImageShapeCompatibilityEntryRequest(imageId, shapeName, addImageShapeCompatibilityEntryDetails);
+            // new AddImageShapeCompatibilityEntryRequest(imageId, shapeName,
+            // addImageShapeCompatibilityEntryDetails);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -212,6 +219,7 @@ public class AddImageShapeCompatibilityEntryRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

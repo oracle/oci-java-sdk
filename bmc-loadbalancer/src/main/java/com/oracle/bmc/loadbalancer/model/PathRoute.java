@@ -5,22 +5,24 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * A "path route rule" to evaluate an incoming URI path, and then route a matching request to the specified backend set.
- * <p>
- * Path route rules apply only to HTTP and HTTPS requests. They have no effect on TCP requests.
+ * A "path route rule" to evaluate an incoming URI path, and then route a matching request to the
+ * specified backend set.
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>Path route rules apply only to HTTP and HTTPS requests. They have no effect on TCP requests.
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PathRoute.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PathRoute extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class PathRoute extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"path", "pathMatchType", "backendSetName"})
     public PathRoute(String path, PathMatchType pathMatchType, String backendSetName) {
@@ -34,71 +36,70 @@ public final class PathRoute extends com.oracle.bmc.http.internal.ExplicitlySetB
     public static class Builder {
         /**
          * The path string to match against the incoming URI path.
-         * <p>
-         *  Path strings are case-insensitive.
-         * <p>
-         *  Asterisk (*) wildcards are not supported.
-         * <p>
-         *  Regular expressions are not supported.
-         * <p>
-         * Example: {@code /example/video/123}
          *
-         **/
+         * <p>Path strings are case-insensitive.
+         *
+         * <p>Asterisk (*) wildcards are not supported.
+         *
+         * <p>Regular expressions are not supported.
+         *
+         * <p>Example: {@code /example/video/123}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
         /**
          * The path string to match against the incoming URI path.
-         * <p>
-         *  Path strings are case-insensitive.
-         * <p>
-         *  Asterisk (*) wildcards are not supported.
-         * <p>
-         *  Regular expressions are not supported.
-         * <p>
-         * Example: {@code /example/video/123}
+         *
+         * <p>Path strings are case-insensitive.
+         *
+         * <p>Asterisk (*) wildcards are not supported.
+         *
+         * <p>Regular expressions are not supported.
+         *
+         * <p>Example: {@code /example/video/123}
          *
          * @param path the value to set
          * @return this builder
-         **/
+         */
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-        /**
-         * The type of matching to apply to incoming URIs.
-         **/
+        /** The type of matching to apply to incoming URIs. */
         @com.fasterxml.jackson.annotation.JsonProperty("pathMatchType")
         private PathMatchType pathMatchType;
 
         /**
          * The type of matching to apply to incoming URIs.
+         *
          * @param pathMatchType the value to set
          * @return this builder
-         **/
+         */
         public Builder pathMatchType(PathMatchType pathMatchType) {
             this.pathMatchType = pathMatchType;
             this.__explicitlySet__.add("pathMatchType");
             return this;
         }
         /**
-         * The name of the target backend set for requests where the incoming URI matches the specified path.
-         * <p>
-         * Example: {@code example_backend_set}
+         * The name of the target backend set for requests where the incoming URI matches the
+         * specified path.
          *
-         **/
+         * <p>Example: {@code example_backend_set}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")
         private String backendSetName;
 
         /**
-         * The name of the target backend set for requests where the incoming URI matches the specified path.
-         * <p>
-         * Example: {@code example_backend_set}
+         * The name of the target backend set for requests where the incoming URI matches the
+         * specified path.
+         *
+         * <p>Example: {@code example_backend_set}
          *
          * @param backendSetName the value to set
          * @return this builder
-         **/
+         */
         public Builder backendSetName(String backendSetName) {
             this.backendSetName = backendSetName;
             this.__explicitlySet__.add("backendSetName");
@@ -131,9 +132,7 @@ public final class PathRoute extends com.oracle.bmc.http.internal.ExplicitlySetB
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -144,66 +143,65 @@ public final class PathRoute extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     /**
      * The path string to match against the incoming URI path.
-     * <p>
-     *  Path strings are case-insensitive.
-     * <p>
-     *  Asterisk (*) wildcards are not supported.
-     * <p>
-     *  Regular expressions are not supported.
-     * <p>
-     * Example: {@code /example/video/123}
      *
-     **/
+     * <p>Path strings are case-insensitive.
+     *
+     * <p>Asterisk (*) wildcards are not supported.
+     *
+     * <p>Regular expressions are not supported.
+     *
+     * <p>Example: {@code /example/video/123}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
     /**
      * The path string to match against the incoming URI path.
-     * <p>
-     *  Path strings are case-insensitive.
-     * <p>
-     *  Asterisk (*) wildcards are not supported.
-     * <p>
-     *  Regular expressions are not supported.
-     * <p>
-     * Example: {@code /example/video/123}
+     *
+     * <p>Path strings are case-insensitive.
+     *
+     * <p>Asterisk (*) wildcards are not supported.
+     *
+     * <p>Regular expressions are not supported.
+     *
+     * <p>Example: {@code /example/video/123}
      *
      * @return the value
-     **/
+     */
     public String getPath() {
         return path;
     }
 
-    /**
-     * The type of matching to apply to incoming URIs.
-     **/
+    /** The type of matching to apply to incoming URIs. */
     @com.fasterxml.jackson.annotation.JsonProperty("pathMatchType")
     private final PathMatchType pathMatchType;
 
     /**
      * The type of matching to apply to incoming URIs.
+     *
      * @return the value
-     **/
+     */
     public PathMatchType getPathMatchType() {
         return pathMatchType;
     }
 
     /**
-     * The name of the target backend set for requests where the incoming URI matches the specified path.
-     * <p>
-     * Example: {@code example_backend_set}
+     * The name of the target backend set for requests where the incoming URI matches the specified
+     * path.
      *
-     **/
+     * <p>Example: {@code example_backend_set}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")
     private final String backendSetName;
 
     /**
-     * The name of the target backend set for requests where the incoming URI matches the specified path.
-     * <p>
-     * Example: {@code example_backend_set}
+     * The name of the target backend set for requests where the incoming URI matches the specified
+     * path.
+     *
+     * <p>Example: {@code example_backend_set}
      *
      * @return the value
-     **/
+     */
     public String getBackendSetName() {
         return backendSetName;
     }
@@ -215,6 +213,7 @@ public final class PathRoute extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

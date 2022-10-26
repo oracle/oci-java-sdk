@@ -5,50 +5,44 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * The data entity shape object.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The data entity shape object. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType",
-    defaultImpl = EntityShape.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType",
+        defaultImpl = EntityShape.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = EntityShapeFromDataStore.class,
-        name = "DATA_STORE_ENTITY"
-    ),
+            value = EntityShapeFromDataStore.class,
+            name = "DATA_STORE_ENTITY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = EntityShapeFromMessage.class,
-        name = "MESSAGE_ENTITY"
-    ),
+            value = EntityShapeFromMessage.class,
+            name = "MESSAGE_ENTITY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = EntityShapeFromTable.class,
-        name = "TABLE_ENTITY"
-    ),
+            value = EntityShapeFromTable.class,
+            name = "TABLE_ENTITY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = EntityShapeFromSQL.class,
-        name = "SQL_ENTITY"
-    ),
+            value = EntityShapeFromSQL.class,
+            name = "SQL_ENTITY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = EntityShapeFromView.class,
-        name = "VIEW_ENTITY"
-    ),
+            value = EntityShapeFromView.class,
+            name = "VIEW_ENTITY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = EntityShapeFromFile.class,
-        name = "FILE_ENTITY"
-    )
+            value = EntityShapeFromFile.class,
+            name = "FILE_ENTITY")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class EntityShape extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class EntityShape extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"metadata"})
     protected EntityShape(ObjectMetadata metadata) {
@@ -70,6 +64,7 @@ public class EntityShape extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -104,10 +99,8 @@ public class EntityShape extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         return result;
     }
 
-    /**
-     * The data entity type.
-     **/
-    public enum ModelType {
+    /** The data entity type. */
+    public enum ModelType implements com.oracle.bmc.http.internal.BmcEnum {
         ViewEntity("VIEW_ENTITY"),
         TableEntity("TABLE_ENTITY"),
         FileEntity("FILE_ENTITY"),
@@ -116,8 +109,8 @@ public class EntityShape extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         MessageEntity("MESSAGE_ENTITY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 

@@ -6,53 +6,45 @@ package com.oracle.bmc.databasemanagement.requests;
 
 import com.oracle.bmc.databasemanagement.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListAttentionLogsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAttentionLogsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListAttentionLogsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAttentionLogsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class ListAttentionLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Managed Database.
      */
     private String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Managed Database.
      */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
-    /**
-     * The optional greater than or equal to timestamp to filter the logs.
-     */
+    /** The optional greater than or equal to timestamp to filter the logs. */
     private java.util.Date timeGreaterThanOrEqualTo;
 
-    /**
-     * The optional greater than or equal to timestamp to filter the logs.
-     */
+    /** The optional greater than or equal to timestamp to filter the logs. */
     public java.util.Date getTimeGreaterThanOrEqualTo() {
         return timeGreaterThanOrEqualTo;
     }
-    /**
-     * The optional less than or equal to timestamp to filter the logs.
-     */
+    /** The optional less than or equal to timestamp to filter the logs. */
     private java.util.Date timeLessThanOrEqualTo;
 
-    /**
-     * The optional less than or equal to timestamp to filter the logs.
-     */
+    /** The optional less than or equal to timestamp to filter the logs. */
     public java.util.Date getTimeLessThanOrEqualTo() {
         return timeLessThanOrEqualTo;
     }
-    /**
-     * The optional parameter to filter the attention logs by urgency.
-     */
+    /** The optional parameter to filter the attention logs by urgency. */
     private UrgencyFilter urgencyFilter;
 
-    /**
-     * The optional parameter to filter the attention logs by urgency.
-     **/
-    public enum UrgencyFilter {
+    /** The optional parameter to filter the attention logs by urgency. */
+    public enum UrgencyFilter implements com.oracle.bmc.http.internal.BmcEnum {
         Immediate("IMMEDIATE"),
         Soon("SOON"),
         Deferrable("DEFERRABLE"),
@@ -88,21 +80,15 @@ public class ListAttentionLogsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
-    /**
-     * The optional parameter to filter the attention logs by urgency.
-     */
+    /** The optional parameter to filter the attention logs by urgency. */
     public UrgencyFilter getUrgencyFilter() {
         return urgencyFilter;
     }
-    /**
-     * The optional parameter to filter the attention or alert logs by type.
-     */
+    /** The optional parameter to filter the attention or alert logs by type. */
     private TypeFilter typeFilter;
 
-    /**
-     * The optional parameter to filter the attention or alert logs by type.
-     **/
-    public enum TypeFilter {
+    /** The optional parameter to filter the attention or alert logs by type. */
+    public enum TypeFilter implements com.oracle.bmc.http.internal.BmcEnum {
         Unknown("UNKNOWN"),
         IncidentError("INCIDENT_ERROR"),
         Error("ERROR"),
@@ -140,43 +126,29 @@ public class ListAttentionLogsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
-    /**
-     * The optional parameter to filter the attention or alert logs by type.
-     */
+    /** The optional parameter to filter the attention or alert logs by type. */
     public TypeFilter getTypeFilter() {
         return typeFilter;
     }
-    /**
-     * The optional query parameter to filter the attention or alert logs by search text.
-     */
+    /** The optional query parameter to filter the attention or alert logs by search text. */
     private String logSearchText;
 
-    /**
-     * The optional query parameter to filter the attention or alert logs by search text.
-     */
+    /** The optional query parameter to filter the attention or alert logs by search text. */
     public String getLogSearchText() {
         return logSearchText;
     }
-    /**
-     * The flag to indicate whether the search text is regular expression or not.
-     */
+    /** The flag to indicate whether the search text is regular expression or not. */
     private Boolean isRegularExpression;
 
-    /**
-     * The flag to indicate whether the search text is regular expression or not.
-     */
+    /** The flag to indicate whether the search text is regular expression or not. */
     public Boolean getIsRegularExpression() {
         return isRegularExpression;
     }
-    /**
-     * The possible sortBy values of attention logs.
-     */
+    /** The possible sortBy values of attention logs. */
     private SortBy sortBy;
 
-    /**
-     * The possible sortBy values of attention logs.
-     **/
-    public enum SortBy {
+    /** The possible sortBy values of attention logs. */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Urgency("URGENCY"),
         Type("TYPE"),
         Message("MESSAGE"),
@@ -213,57 +185,47 @@ public class ListAttentionLogsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
-    /**
-     * The possible sortBy values of attention logs.
-     */
+    /** The possible sortBy values of attention logs. */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending
+     * (\u2018DESC\u2019) order. Ascending order is the default order.
      */
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
 
     /**
-     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending
+     * (\u2018DESC\u2019) order. Ascending order is the default order.
      */
     public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
         return sortOrder;
     }
     /**
-     * The page token representing the page from where the next set of paginated results
-     * are retrieved. This is usually retrieved from a previous list call.
-     *
+     * The page token representing the page from where the next set of paginated results are
+     * retrieved. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page from where the next set of paginated results
-     * are retrieved. This is usually retrieved from a previous list call.
-     *
+     * The page token representing the page from where the next set of paginated results are
+     * retrieved. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The maximum number of records returned in the paginated response.
-     */
+    /** The maximum number of records returned in the paginated response. */
     private Integer limit;
 
-    /**
-     * The maximum number of records returned in the paginated response.
-     */
+    /** The maximum number of records returned in the paginated response. */
     public Integer getLimit() {
         return limit;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -271,17 +233,19 @@ public class ListAttentionLogsRequest extends com.oracle.bmc.requests.BmcRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListAttentionLogsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Managed Database.
          */
         private String managedDatabaseId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Managed Database.
+         *
          * @param managedDatabaseId the value to set
          * @return this builder instance
          */
@@ -290,13 +254,12 @@ public class ListAttentionLogsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The optional greater than or equal to timestamp to filter the logs.
-         */
+        /** The optional greater than or equal to timestamp to filter the logs. */
         private java.util.Date timeGreaterThanOrEqualTo = null;
 
         /**
          * The optional greater than or equal to timestamp to filter the logs.
+         *
          * @param timeGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -305,13 +268,12 @@ public class ListAttentionLogsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The optional less than or equal to timestamp to filter the logs.
-         */
+        /** The optional less than or equal to timestamp to filter the logs. */
         private java.util.Date timeLessThanOrEqualTo = null;
 
         /**
          * The optional less than or equal to timestamp to filter the logs.
+         *
          * @param timeLessThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -320,13 +282,12 @@ public class ListAttentionLogsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The optional parameter to filter the attention logs by urgency.
-         */
+        /** The optional parameter to filter the attention logs by urgency. */
         private UrgencyFilter urgencyFilter = null;
 
         /**
          * The optional parameter to filter the attention logs by urgency.
+         *
          * @param urgencyFilter the value to set
          * @return this builder instance
          */
@@ -335,13 +296,12 @@ public class ListAttentionLogsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The optional parameter to filter the attention or alert logs by type.
-         */
+        /** The optional parameter to filter the attention or alert logs by type. */
         private TypeFilter typeFilter = null;
 
         /**
          * The optional parameter to filter the attention or alert logs by type.
+         *
          * @param typeFilter the value to set
          * @return this builder instance
          */
@@ -350,13 +310,12 @@ public class ListAttentionLogsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The optional query parameter to filter the attention or alert logs by search text.
-         */
+        /** The optional query parameter to filter the attention or alert logs by search text. */
         private String logSearchText = null;
 
         /**
          * The optional query parameter to filter the attention or alert logs by search text.
+         *
          * @param logSearchText the value to set
          * @return this builder instance
          */
@@ -365,13 +324,12 @@ public class ListAttentionLogsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The flag to indicate whether the search text is regular expression or not.
-         */
+        /** The flag to indicate whether the search text is regular expression or not. */
         private Boolean isRegularExpression = null;
 
         /**
          * The flag to indicate whether the search text is regular expression or not.
+         *
          * @param isRegularExpression the value to set
          * @return this builder instance
          */
@@ -380,13 +338,12 @@ public class ListAttentionLogsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The possible sortBy values of attention logs.
-         */
+        /** The possible sortBy values of attention logs. */
         private SortBy sortBy = null;
 
         /**
          * The possible sortBy values of attention logs.
+         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -396,12 +353,15 @@ public class ListAttentionLogsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending
+         * (\u2018DESC\u2019) order. Ascending order is the default order.
          */
         private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder = null;
 
         /**
-         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending
+         * (\u2018DESC\u2019) order. Ascending order is the default order.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -411,15 +371,14 @@ public class ListAttentionLogsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The page token representing the page from where the next set of paginated results
-         * are retrieved. This is usually retrieved from a previous list call.
-         *
+         * The page token representing the page from where the next set of paginated results are
+         * retrieved. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page from where the next set of paginated results
-         * are retrieved. This is usually retrieved from a previous list call.
+         * The page token representing the page from where the next set of paginated results are
+         * retrieved. This is usually retrieved from a previous list call.
          *
          * @param page the value to set
          * @return this builder instance
@@ -429,13 +388,12 @@ public class ListAttentionLogsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The maximum number of records returned in the paginated response.
-         */
+        /** The maximum number of records returned in the paginated response. */
         private Integer limit = null;
 
         /**
          * The maximum number of records returned in the paginated response.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -444,13 +402,12 @@ public class ListAttentionLogsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -461,18 +418,19 @@ public class ListAttentionLogsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -484,6 +442,7 @@ public class ListAttentionLogsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListAttentionLogsRequest o) {
@@ -507,10 +466,11 @@ public class ListAttentionLogsRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of ListAttentionLogsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListAttentionLogsRequest
          */
@@ -524,7 +484,8 @@ public class ListAttentionLogsRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of ListAttentionLogsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListAttentionLogsRequest
@@ -544,12 +505,15 @@ public class ListAttentionLogsRequest extends com.oracle.bmc.requests.BmcRequest
             request.limit = limit;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListAttentionLogsRequest(managedDatabaseId, timeGreaterThanOrEqualTo, timeLessThanOrEqualTo, urgencyFilter, typeFilter, logSearchText, isRegularExpression, sortBy, sortOrder, page, limit, opcRequestId);
+            // new ListAttentionLogsRequest(managedDatabaseId, timeGreaterThanOrEqualTo,
+            // timeLessThanOrEqualTo, urgencyFilter, typeFilter, logSearchText, isRegularExpression,
+            // sortBy, sortOrder, page, limit, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -570,6 +534,7 @@ public class ListAttentionLogsRequest extends com.oracle.bmc.requests.BmcRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

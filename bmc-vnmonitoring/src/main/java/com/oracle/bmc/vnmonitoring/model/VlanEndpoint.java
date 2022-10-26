@@ -5,59 +5,59 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * Defines the details required for a VLAN-type {@code Endpoint}.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Defines the details required for a VLAN-type {@code Endpoint}. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VlanEndpoint.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class VlanEndpoint extends Endpoint {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The IPv4 address of the {@code Endpoint}.
-         **/
+        /** The IPv4 address of the {@code Endpoint}. */
         @com.fasterxml.jackson.annotation.JsonProperty("address")
         private String address;
 
         /**
          * The IPv4 address of the {@code Endpoint}.
+         *
          * @param address the value to set
          * @return this builder
-         **/
+         */
         public Builder address(String address) {
             this.address = address;
             this.__explicitlySet__.add("address");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address.
-         * This can be used to disambiguate which VLAN is queried, in case the endpoint IP
-         * address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * VLAN containing the IP address. This can be used to disambiguate which VLAN is queried,
+         * in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with
+         * overlapping IP ranges).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
         private String vlanId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address.
-         * This can be used to disambiguate which VLAN is queried, in case the endpoint IP
-         * address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * VLAN containing the IP address. This can be used to disambiguate which VLAN is queried,
+         * in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with
+         * overlapping IP ranges).
          *
          * @param vlanId the value to set
          * @return this builder
-         **/
+         */
         public Builder vlanId(String vlanId) {
             this.vlanId = vlanId;
             this.__explicitlySet__.add("vlanId");
@@ -87,9 +87,7 @@ public final class VlanEndpoint extends Endpoint {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -105,36 +103,36 @@ public final class VlanEndpoint extends Endpoint {
         this.vlanId = vlanId;
     }
 
-    /**
-     * The IPv4 address of the {@code Endpoint}.
-     **/
+    /** The IPv4 address of the {@code Endpoint}. */
     @com.fasterxml.jackson.annotation.JsonProperty("address")
     private final String address;
 
     /**
      * The IPv4 address of the {@code Endpoint}.
+     *
      * @return the value
-     **/
+     */
     public String getAddress() {
         return address;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address.
-     * This can be used to disambiguate which VLAN is queried, in case the endpoint IP
-     * address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in
+     * case the endpoint IP address belongs to more than one VLAN (when there are VLANs with
+     * overlapping IP ranges).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
     private final String vlanId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address.
-     * This can be used to disambiguate which VLAN is queried, in case the endpoint IP
-     * address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in
+     * case the endpoint IP address belongs to more than one VLAN (when there are VLANs with
+     * overlapping IP ranges).
      *
      * @return the value
-     **/
+     */
     public String getVlanId() {
         return vlanId;
     }
@@ -146,6 +144,7 @@ public final class VlanEndpoint extends Endpoint {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

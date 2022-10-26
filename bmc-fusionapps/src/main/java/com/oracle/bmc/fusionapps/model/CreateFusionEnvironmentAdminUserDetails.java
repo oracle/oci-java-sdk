@@ -5,22 +5,22 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * The credentials for the Fusion Applications service administrator.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The credentials for the Fusion Applications service administrator. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateFusionEnvironmentAdminUserDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateFusionEnvironmentAdminUserDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateFusionEnvironmentAdminUserDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "username",
@@ -45,81 +45,76 @@ public final class CreateFusionEnvironmentAdminUserDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The username for the administrator.
-         **/
+        /** The username for the administrator. */
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
          * The username for the administrator.
+         *
          * @param username the value to set
          * @return this builder
-         **/
+         */
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
-        /**
-         * The password for the administrator.
-         **/
+        /** The password for the administrator. */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
         /**
          * The password for the administrator.
+         *
          * @param password the value to set
          * @return this builder
-         **/
+         */
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
-        /**
-         * The email address for the administrator.
-         **/
+        /** The email address for the administrator. */
         @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
         private String emailAddress;
 
         /**
          * The email address for the administrator.
+         *
          * @param emailAddress the value to set
          * @return this builder
-         **/
+         */
         public Builder emailAddress(String emailAddress) {
             this.emailAddress = emailAddress;
             this.__explicitlySet__.add("emailAddress");
             return this;
         }
-        /**
-         * The administrator's first name.
-         **/
+        /** The administrator's first name. */
         @com.fasterxml.jackson.annotation.JsonProperty("firstName")
         private String firstName;
 
         /**
          * The administrator's first name.
+         *
          * @param firstName the value to set
          * @return this builder
-         **/
+         */
         public Builder firstName(String firstName) {
             this.firstName = firstName;
             this.__explicitlySet__.add("firstName");
             return this;
         }
-        /**
-         * The administrator's last name.
-         **/
+        /** The administrator's last name. */
         @com.fasterxml.jackson.annotation.JsonProperty("lastName")
         private String lastName;
 
         /**
          * The administrator's last name.
+         *
          * @param lastName the value to set
          * @return this builder
-         **/
+         */
         public Builder lastName(String lastName) {
             this.lastName = lastName;
             this.__explicitlySet__.add("lastName");
@@ -164,9 +159,7 @@ public final class CreateFusionEnvironmentAdminUserDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -175,72 +168,67 @@ public final class CreateFusionEnvironmentAdminUserDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The username for the administrator.
-     **/
+    /** The username for the administrator. */
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
      * The username for the administrator.
+     *
      * @return the value
-     **/
+     */
     public String getUsername() {
         return username;
     }
 
-    /**
-     * The password for the administrator.
-     **/
+    /** The password for the administrator. */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
      * The password for the administrator.
+     *
      * @return the value
-     **/
+     */
     public String getPassword() {
         return password;
     }
 
-    /**
-     * The email address for the administrator.
-     **/
+    /** The email address for the administrator. */
     @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
     private final String emailAddress;
 
     /**
      * The email address for the administrator.
+     *
      * @return the value
-     **/
+     */
     public String getEmailAddress() {
         return emailAddress;
     }
 
-    /**
-     * The administrator's first name.
-     **/
+    /** The administrator's first name. */
     @com.fasterxml.jackson.annotation.JsonProperty("firstName")
     private final String firstName;
 
     /**
      * The administrator's first name.
+     *
      * @return the value
-     **/
+     */
     public String getFirstName() {
         return firstName;
     }
 
-    /**
-     * The administrator's last name.
-     **/
+    /** The administrator's last name. */
     @com.fasterxml.jackson.annotation.JsonProperty("lastName")
     private final String lastName;
 
     /**
      * The administrator's last name.
+     *
      * @return the value
-     **/
+     */
     public String getLastName() {
         return lastName;
     }
@@ -252,6 +240,7 @@ public final class CreateFusionEnvironmentAdminUserDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -260,7 +249,7 @@ public final class CreateFusionEnvironmentAdminUserDetails
         sb.append("CreateFusionEnvironmentAdminUserDetails(");
         sb.append("super=").append(super.toString());
         sb.append("username=").append(String.valueOf(this.username));
-        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", password=").append("<redacted>");
         sb.append(", emailAddress=").append(String.valueOf(this.emailAddress));
         sb.append(", firstName=").append(String.valueOf(this.firstName));
         sb.append(", lastName=").append(String.valueOf(this.lastName));

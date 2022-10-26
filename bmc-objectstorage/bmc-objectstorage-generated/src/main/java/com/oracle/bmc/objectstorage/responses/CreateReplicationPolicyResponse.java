@@ -9,15 +9,14 @@ import com.oracle.bmc.objectstorage.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class CreateReplicationPolicyResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
-     * provide this request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide this request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
-     * provide this request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide this request ID.
      *
      * @return the value
      */
@@ -26,25 +25,27 @@ public class CreateReplicationPolicyResponse extends com.oracle.bmc.responses.Bm
     }
 
     /**
-     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when
+     * debugging.
      */
     private String opcClientRequestId;
 
     /**
-     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when
+     * debugging.
+     *
      * @return the value
      */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
 
-    /**
-     * The returned ReplicationPolicy instance.
-     */
+    /** The returned ReplicationPolicy instance. */
     private com.oracle.bmc.objectstorage.model.ReplicationPolicy replicationPolicy;
 
     /**
      * The returned ReplicationPolicy instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.objectstorage.model.ReplicationPolicy getReplicationPolicy() {
@@ -60,7 +61,7 @@ public class CreateReplicationPolicyResponse extends com.oracle.bmc.responses.Bm
     })
     private CreateReplicationPolicyResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcClientRequestId,
             com.oracle.bmc.objectstorage.model.ReplicationPolicy replicationPolicy) {
@@ -70,31 +71,34 @@ public class CreateReplicationPolicyResponse extends com.oracle.bmc.responses.Bm
         this.replicationPolicy = replicationPolicy;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    CreateReplicationPolicyResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
-         * provide this request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide this request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
-         * provide this request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide this request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -105,12 +109,15 @@ public class CreateReplicationPolicyResponse extends com.oracle.bmc.responses.Bm
         }
 
         /**
-         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when
+         * debugging.
          */
         private String opcClientRequestId;
 
         /**
-         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when
+         * debugging.
+         *
          * @param opcClientRequestId the value to set
          * @return this builder
          */
@@ -119,13 +126,12 @@ public class CreateReplicationPolicyResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /**
-         * The returned ReplicationPolicy instance.
-         */
+        /** The returned ReplicationPolicy instance. */
         private com.oracle.bmc.objectstorage.model.ReplicationPolicy replicationPolicy;
 
         /**
          * The returned ReplicationPolicy instance.
+         *
          * @param replicationPolicy the value to set
          * @return this builder
          */
@@ -137,8 +143,10 @@ public class CreateReplicationPolicyResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateReplicationPolicyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,8 +159,10 @@ public class CreateReplicationPolicyResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateReplicationPolicyResponse build() {
             return new CreateReplicationPolicyResponse(
                     __httpStatusCode__,
@@ -165,6 +175,7 @@ public class CreateReplicationPolicyResponse extends com.oracle.bmc.responses.Bm
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

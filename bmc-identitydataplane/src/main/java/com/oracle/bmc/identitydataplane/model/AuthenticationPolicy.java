@@ -5,22 +5,22 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- * Authentication policy, currently set for the given compartment
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Authentication policy, currently set for the given compartment <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AuthenticationPolicy.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AuthenticationPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = AuthenticationPolicy.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class AuthenticationPolicy
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"passwordPolicy", "compartmentId"})
     public AuthenticationPolicy(PasswordPolicy passwordPolicy, String compartmentId) {
@@ -31,33 +31,31 @@ public final class AuthenticationPolicy extends com.oracle.bmc.http.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Password policy.
-         **/
+        /** Password policy. */
         @com.fasterxml.jackson.annotation.JsonProperty("passwordPolicy")
         private PasswordPolicy passwordPolicy;
 
         /**
          * Password policy.
+         *
          * @param passwordPolicy the value to set
          * @return this builder
-         **/
+         */
         public Builder passwordPolicy(PasswordPolicy passwordPolicy) {
             this.passwordPolicy = passwordPolicy;
             this.__explicitlySet__.add("passwordPolicy");
             return this;
         }
-        /**
-         * Compartment OCID.
-         **/
+        /** Compartment OCID. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment OCID.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -88,9 +86,7 @@ public final class AuthenticationPolicy extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -99,30 +95,28 @@ public final class AuthenticationPolicy extends com.oracle.bmc.http.internal.Exp
         return new Builder().copy(this);
     }
 
-    /**
-     * Password policy.
-     **/
+    /** Password policy. */
     @com.fasterxml.jackson.annotation.JsonProperty("passwordPolicy")
     private final PasswordPolicy passwordPolicy;
 
     /**
      * Password policy.
+     *
      * @return the value
-     **/
+     */
     public PasswordPolicy getPasswordPolicy() {
         return passwordPolicy;
     }
 
-    /**
-     * Compartment OCID.
-     **/
+    /** Compartment OCID. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment OCID.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -134,6 +128,7 @@ public final class AuthenticationPolicy extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

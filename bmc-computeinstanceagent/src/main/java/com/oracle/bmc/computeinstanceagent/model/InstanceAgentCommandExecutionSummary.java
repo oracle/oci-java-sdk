@@ -5,22 +5,22 @@
 package com.oracle.bmc.computeinstanceagent.model;
 
 /**
- * Execution details for a command.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Execution details for a command. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = InstanceAgentCommandExecutionSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = InstanceAgentCommandExecutionSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class InstanceAgentCommandExecutionSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "instanceAgentCommandId",
@@ -58,90 +58,90 @@ public final class InstanceAgentCommandExecutionSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the command.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * command.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceAgentCommandId")
         private String instanceAgentCommandId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the command.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * command.
+         *
          * @param instanceAgentCommandId the value to set
          * @return this builder
-         **/
+         */
         public Builder instanceAgentCommandId(String instanceAgentCommandId) {
             this.instanceAgentCommandId = instanceAgentCommandId;
             this.__explicitlySet__.add("instanceAgentCommandId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the instance.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * instance.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the instance.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * instance.
+         *
          * @param instanceId the value to set
          * @return this builder
-         **/
+         */
         public Builder instanceId(String instanceId) {
             this.instanceId = instanceId;
             this.__explicitlySet__.add("instanceId");
             return this;
         }
         /**
-         * The command delivery state.
-         *  * {@code VISIBLE} - The command is visible to the instance.
-         *  * {@code PENDING} - The command is pending acknowledgment from the instance.
-         *  * {@code ACKED} - The command has been received and acknowledged by the instance.
-         *  * {@code ACKED_CANCELED} - The canceled command has been received and acknowledged by the instance.
-         *  * {@code EXPIRED} - The instance has not requested for commands and the command's delivery has expired.
-         *
-         **/
+         * The command delivery state. * {@code VISIBLE} - The command is visible to the instance. *
+         * {@code PENDING} - The command is pending acknowledgment from the instance. * {@code
+         * ACKED} - The command has been received and acknowledged by the instance. * {@code
+         * ACKED_CANCELED} - The canceled command has been received and acknowledged by the
+         * instance. * {@code EXPIRED} - The instance has not requested for commands and the
+         * command's delivery has expired.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("deliveryState")
         private DeliveryState deliveryState;
 
         /**
-         * The command delivery state.
-         *  * {@code VISIBLE} - The command is visible to the instance.
-         *  * {@code PENDING} - The command is pending acknowledgment from the instance.
-         *  * {@code ACKED} - The command has been received and acknowledged by the instance.
-         *  * {@code ACKED_CANCELED} - The canceled command has been received and acknowledged by the instance.
-         *  * {@code EXPIRED} - The instance has not requested for commands and the command's delivery has expired.
+         * The command delivery state. * {@code VISIBLE} - The command is visible to the instance. *
+         * {@code PENDING} - The command is pending acknowledgment from the instance. * {@code
+         * ACKED} - The command has been received and acknowledged by the instance. * {@code
+         * ACKED_CANCELED} - The canceled command has been received and acknowledged by the
+         * instance. * {@code EXPIRED} - The instance has not requested for commands and the
+         * command's delivery has expired.
          *
          * @param deliveryState the value to set
          * @return this builder
-         **/
+         */
         public Builder deliveryState(DeliveryState deliveryState) {
             this.deliveryState = deliveryState;
             this.__explicitlySet__.add("deliveryState");
             return this;
         }
         /**
-         * The command execution lifecycle state.
-         * * {@code ACCEPTED} - The command has been accepted to run.
-         * * {@code IN_PROGRESS} - The command is in progress.
-         * * {@code SUCCEEDED} - The command was successfully executed.
-         * * {@code FAILED} - The command failed to execute.
-         * * {@code TIMED_OUT} - The command execution timed out.
-         * * {@code CANCELED} - The command execution was canceled.
-         *
-         **/
+         * The command execution lifecycle state. * {@code ACCEPTED} - The command has been accepted
+         * to run. * {@code IN_PROGRESS} - The command is in progress. * {@code SUCCEEDED} - The
+         * command was successfully executed. * {@code FAILED} - The command failed to execute. *
+         * {@code TIMED_OUT} - The command execution timed out. * {@code CANCELED} - The command
+         * execution was canceled.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The command execution lifecycle state.
-         * * {@code ACCEPTED} - The command has been accepted to run.
-         * * {@code IN_PROGRESS} - The command is in progress.
-         * * {@code SUCCEEDED} - The command was successfully executed.
-         * * {@code FAILED} - The command failed to execute.
-         * * {@code TIMED_OUT} - The command execution timed out.
-         * * {@code CANCELED} - The command execution was canceled.
+         * The command execution lifecycle state. * {@code ACCEPTED} - The command has been accepted
+         * to run. * {@code IN_PROGRESS} - The command is in progress. * {@code SUCCEEDED} - The
+         * command was successfully executed. * {@code FAILED} - The command failed to execute. *
+         * {@code TIMED_OUT} - The command execution timed out. * {@code CANCELED} - The command
+         * execution was canceled.
          *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -150,8 +150,7 @@ public final class InstanceAgentCommandExecutionSummary
         /**
          * The date and time the command was created, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -161,7 +160,7 @@ public final class InstanceAgentCommandExecutionSummary
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -170,8 +169,7 @@ public final class InstanceAgentCommandExecutionSummary
         /**
          * The date and time the command was last updated, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
@@ -181,7 +179,7 @@ public final class InstanceAgentCommandExecutionSummary
          *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -189,47 +187,46 @@ public final class InstanceAgentCommandExecutionSummary
         }
         /**
          * A large, non-consecutive number that Oracle Cloud Agent assigns to each created command.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sequenceNumber")
         private Long sequenceNumber;
 
         /**
          * A large, non-consecutive number that Oracle Cloud Agent assigns to each created command.
+         *
          * @param sequenceNumber the value to set
          * @return this builder
-         **/
+         */
         public Builder sequenceNumber(Long sequenceNumber) {
             this.sequenceNumber = sequenceNumber;
             this.__explicitlySet__.add("sequenceNumber");
             return this;
         }
-        /**
-         * A user-friendly name. Does not have to be unique.
-         **/
+        /** A user-friendly name. Does not have to be unique. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * A user-friendly name. Does not have to be unique.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The execution output from a command.
-         **/
+        /** The execution output from a command. */
         @com.fasterxml.jackson.annotation.JsonProperty("content")
         private InstanceAgentCommandExecutionOutputContent content;
 
         /**
          * The execution output from a command.
+         *
          * @param content the value to set
          * @return this builder
-         **/
+         */
         public Builder content(InstanceAgentCommandExecutionOutputContent content) {
             this.content = content;
             this.__explicitlySet__.add("content");
@@ -290,9 +287,7 @@ public final class InstanceAgentCommandExecutionSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -302,43 +297,47 @@ public final class InstanceAgentCommandExecutionSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the command.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * command.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceAgentCommandId")
     private final String instanceAgentCommandId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the command.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * command.
+     *
      * @return the value
-     **/
+     */
     public String getInstanceAgentCommandId() {
         return instanceAgentCommandId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the instance.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * instance.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the instance.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * instance.
+     *
      * @return the value
-     **/
+     */
     public String getInstanceId() {
         return instanceId;
     }
 
     /**
-     * The command delivery state.
-     *  * {@code VISIBLE} - The command is visible to the instance.
-     *  * {@code PENDING} - The command is pending acknowledgment from the instance.
-     *  * {@code ACKED} - The command has been received and acknowledged by the instance.
-     *  * {@code ACKED_CANCELED} - The canceled command has been received and acknowledged by the instance.
-     *  * {@code EXPIRED} - The instance has not requested for commands and the command's delivery has expired.
-     *
-     **/
-    public enum DeliveryState {
+     * The command delivery state. * {@code VISIBLE} - The command is visible to the instance. *
+     * {@code PENDING} - The command is pending acknowledgment from the instance. * {@code ACKED} -
+     * The command has been received and acknowledged by the instance. * {@code ACKED_CANCELED} -
+     * The canceled command has been received and acknowledged by the instance. * {@code EXPIRED} -
+     * The instance has not requested for commands and the command's delivery has expired.
+     */
+    public enum DeliveryState implements com.oracle.bmc.http.internal.BmcEnum {
         Visible("VISIBLE"),
         Pending("PENDING"),
         Acked("ACKED"),
@@ -346,8 +345,8 @@ public final class InstanceAgentCommandExecutionSummary
         Expired("EXPIRED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -387,42 +386,36 @@ public final class InstanceAgentCommandExecutionSummary
         }
     };
     /**
-     * The command delivery state.
-     *  * {@code VISIBLE} - The command is visible to the instance.
-     *  * {@code PENDING} - The command is pending acknowledgment from the instance.
-     *  * {@code ACKED} - The command has been received and acknowledged by the instance.
-     *  * {@code ACKED_CANCELED} - The canceled command has been received and acknowledged by the instance.
-     *  * {@code EXPIRED} - The instance has not requested for commands and the command's delivery has expired.
-     *
-     **/
+     * The command delivery state. * {@code VISIBLE} - The command is visible to the instance. *
+     * {@code PENDING} - The command is pending acknowledgment from the instance. * {@code ACKED} -
+     * The command has been received and acknowledged by the instance. * {@code ACKED_CANCELED} -
+     * The canceled command has been received and acknowledged by the instance. * {@code EXPIRED} -
+     * The instance has not requested for commands and the command's delivery has expired.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("deliveryState")
     private final DeliveryState deliveryState;
 
     /**
-     * The command delivery state.
-     *  * {@code VISIBLE} - The command is visible to the instance.
-     *  * {@code PENDING} - The command is pending acknowledgment from the instance.
-     *  * {@code ACKED} - The command has been received and acknowledged by the instance.
-     *  * {@code ACKED_CANCELED} - The canceled command has been received and acknowledged by the instance.
-     *  * {@code EXPIRED} - The instance has not requested for commands and the command's delivery has expired.
+     * The command delivery state. * {@code VISIBLE} - The command is visible to the instance. *
+     * {@code PENDING} - The command is pending acknowledgment from the instance. * {@code ACKED} -
+     * The command has been received and acknowledged by the instance. * {@code ACKED_CANCELED} -
+     * The canceled command has been received and acknowledged by the instance. * {@code EXPIRED} -
+     * The instance has not requested for commands and the command's delivery has expired.
      *
      * @return the value
-     **/
+     */
     public DeliveryState getDeliveryState() {
         return deliveryState;
     }
 
     /**
-     * The command execution lifecycle state.
-     * * {@code ACCEPTED} - The command has been accepted to run.
-     * * {@code IN_PROGRESS} - The command is in progress.
-     * * {@code SUCCEEDED} - The command was successfully executed.
-     * * {@code FAILED} - The command failed to execute.
-     * * {@code TIMED_OUT} - The command execution timed out.
-     * * {@code CANCELED} - The command execution was canceled.
-     *
-     **/
-    public enum LifecycleState {
+     * The command execution lifecycle state. * {@code ACCEPTED} - The command has been accepted to
+     * run. * {@code IN_PROGRESS} - The command is in progress. * {@code SUCCEEDED} - The command
+     * was successfully executed. * {@code FAILED} - The command failed to execute. * {@code
+     * TIMED_OUT} - The command execution timed out. * {@code CANCELED} - The command execution was
+     * canceled.
+     */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
         Succeeded("SUCCEEDED"),
@@ -431,8 +424,8 @@ public final class InstanceAgentCommandExecutionSummary
         Canceled("CANCELED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -472,29 +465,24 @@ public final class InstanceAgentCommandExecutionSummary
         }
     };
     /**
-     * The command execution lifecycle state.
-     * * {@code ACCEPTED} - The command has been accepted to run.
-     * * {@code IN_PROGRESS} - The command is in progress.
-     * * {@code SUCCEEDED} - The command was successfully executed.
-     * * {@code FAILED} - The command failed to execute.
-     * * {@code TIMED_OUT} - The command execution timed out.
-     * * {@code CANCELED} - The command execution was canceled.
-     *
-     **/
+     * The command execution lifecycle state. * {@code ACCEPTED} - The command has been accepted to
+     * run. * {@code IN_PROGRESS} - The command is in progress. * {@code SUCCEEDED} - The command
+     * was successfully executed. * {@code FAILED} - The command failed to execute. * {@code
+     * TIMED_OUT} - The command execution timed out. * {@code CANCELED} - The command execution was
+     * canceled.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The command execution lifecycle state.
-     * * {@code ACCEPTED} - The command has been accepted to run.
-     * * {@code IN_PROGRESS} - The command is in progress.
-     * * {@code SUCCEEDED} - The command was successfully executed.
-     * * {@code FAILED} - The command failed to execute.
-     * * {@code TIMED_OUT} - The command execution timed out.
-     * * {@code CANCELED} - The command execution was canceled.
+     * The command execution lifecycle state. * {@code ACCEPTED} - The command has been accepted to
+     * run. * {@code IN_PROGRESS} - The command is in progress. * {@code SUCCEEDED} - The command
+     * was successfully executed. * {@code FAILED} - The command failed to execute. * {@code
+     * TIMED_OUT} - The command execution timed out. * {@code CANCELED} - The command execution was
+     * canceled.
      *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -502,8 +490,7 @@ public final class InstanceAgentCommandExecutionSummary
     /**
      * The date and time the command was created, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -512,7 +499,7 @@ public final class InstanceAgentCommandExecutionSummary
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -520,8 +507,7 @@ public final class InstanceAgentCommandExecutionSummary
     /**
      * The date and time the command was last updated, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
@@ -530,49 +516,46 @@ public final class InstanceAgentCommandExecutionSummary
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * A large, non-consecutive number that Oracle Cloud Agent assigns to each created command.
-     **/
+    /** A large, non-consecutive number that Oracle Cloud Agent assigns to each created command. */
     @com.fasterxml.jackson.annotation.JsonProperty("sequenceNumber")
     private final Long sequenceNumber;
 
     /**
      * A large, non-consecutive number that Oracle Cloud Agent assigns to each created command.
+     *
      * @return the value
-     **/
+     */
     public Long getSequenceNumber() {
         return sequenceNumber;
     }
 
-    /**
-     * A user-friendly name. Does not have to be unique.
-     **/
+    /** A user-friendly name. Does not have to be unique. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A user-friendly name. Does not have to be unique.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The execution output from a command.
-     **/
+    /** The execution output from a command. */
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     private final InstanceAgentCommandExecutionOutputContent content;
 
     /**
      * The execution output from a command.
+     *
      * @return the value
-     **/
+     */
     public InstanceAgentCommandExecutionOutputContent getContent() {
         return content;
     }
@@ -584,6 +567,7 @@ public final class InstanceAgentCommandExecutionSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

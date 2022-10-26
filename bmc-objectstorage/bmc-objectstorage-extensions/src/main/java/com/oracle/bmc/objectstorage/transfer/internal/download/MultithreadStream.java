@@ -19,79 +19,57 @@ import com.oracle.bmc.objectstorage.transfer.DownloadManager;
 import com.oracle.bmc.util.StreamUtils;
 
 /**
- * An InputStream that can resume a broken download by making a range read
- * request to Object Storage.
+ * An InputStream that can resume a broken download by making a range read request to Object
+ * Storage.
  */
 public class MultithreadStream extends InputStream {
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(MultithreadStream.class);
 
-    /**
-     * Download manager we can use to create new requests.
-     */
+    /** Download manager we can use to create new requests. */
     private final DownloadManager downloadManager;
 
-    /**
-     * Request that can be cloned to read the object.
-     */
+    /** Request that can be cloned to read the object. */
     private final GetObjectRequest baseRequest;
 
-    /**
-     * Total size of the object.
-     */
+    /** Total size of the object. */
     private final long objectSize;
 
-    /**
-     * Input stream we can read the first part from.
-     */
+    /** Input stream we can read the first part from. */
     private final InputStream firstPart;
 
-    /**
-     * Number of threads to use.
-     */
+    /** Number of threads to use. */
     private final int numThreads;
 
     /**
-     * Each thread will download up to this much data. An instance of this
-     * class uses about {@link #numThreads} * {@link #partSize} of buffer.
+     * Each thread will download up to this much data. An instance of this class uses about {@link
+     * #numThreads} * {@link #partSize} of buffer.
      */
     private final int partSize;
 
-    /**
-     * Used to manage the threads we have.
-     */
+    /** Used to manage the threads we have. */
     private final ExecutorService executorService;
 
     /**
-     * True if we should shutdown {@link #executorService} when finished. This
-     * is set to true if the constructor creates the executor service.
+     * True if we should shutdown {@link #executorService} when finished. This is set to true if the
+     * constructor creates the executor service.
      */
     private final boolean shutdownExecutorService;
 
-    /**
-     * Our async read operations.
-     */
+    /** Our async read operations. */
     private final AsyncRead[] asyncReads;
 
-    /**
-     * Which thread in {@link #asyncReads} is the current thread.
-     */
+    /** Which thread in {@link #asyncReads} is the current thread. */
     private int asyncReadIndex;
 
-    /**
-     * The offset that the next thread should start reading from.
-     */
+    /** The offset that the next thread should start reading from. */
     private long nextReadOffset;
 
-    /**
-     * Number of bytes read so far.
-     */
+    /** Number of bytes read so far. */
     private long bytesReadSoFar;
 
-    /**
-     * True if this stream has been closed.
-     */
+    /** True if this stream has been closed. */
     private boolean isClosed;
 
     public MultithreadStream(
@@ -276,32 +254,24 @@ public class MultithreadStream extends InputStream {
         }
     }
 
-    /**
-     * Wait for an async read to finish and return its buffer.
-     */
+    /** Wait for an async read to finish and return its buffer. */
     private byte[] joinAsyncRead(AsyncRead asyncRead)
             throws ExecutionException, InterruptedException {
         assert asyncRead.thread.allDataRead();
         return asyncRead.future.get();
     }
 
-    /**
-     * Returns true if all reads have been started.
-     */
+    /** Returns true if all reads have been started. */
     private boolean allReadsStarted() {
         return (this.nextReadOffset >= this.objectSize);
     }
 
-    /**
-     * Returns true if all reads have finished.
-     */
+    /** Returns true if all reads have finished. */
     private boolean allDataRead() {
         return (this.bytesReadSoFar >= this.objectSize);
     }
 
-    /**
-     * Update {@link #asyncReadIndex}.
-     */
+    /** Update {@link #asyncReadIndex}. */
     private void advanceAsyncReadIndex() {
         assert this.asyncReadIndex >= 0;
         assert this.asyncReadIndex < this.asyncReads.length;
@@ -325,11 +295,10 @@ public class MultithreadStream extends InputStream {
     }
 
     /**
-     * Start a new async read that will read {@link #partSize} bytes from
-     * the object starting as {@link #nextReadOffset}, offset by the range
-     * in {@link #baseRequest} if necessary.
-     * @param buffer An existing buffer to use. If this is null a new
-     *               buffer is allocated.
+     * Start a new async read that will read {@link #partSize} bytes from the object starting as
+     * {@link #nextReadOffset}, offset by the range in {@link #baseRequest} if necessary.
+     *
+     * @param buffer An existing buffer to use. If this is null a new buffer is allocated.
      * @return The new async read.
      */
     private AsyncRead startAsyncRead(@Nullable byte[] buffer) {
@@ -379,14 +348,10 @@ public class MultithreadStream extends InputStream {
     }
 
     private static final class AsyncRead {
-        /**
-         * Completes when the async thread finishes.
-         */
+        /** Completes when the async thread finishes. */
         private final Future<byte[]> future;
 
-        /**
-         * The download thread we can read from.
-         */
+        /** The download thread we can read from. */
         private final DownloadThread thread;
 
         public AsyncRead(Future<byte[]> future, DownloadThread thread) {
@@ -431,8 +396,10 @@ public class MultithreadStream extends InputStream {
     public RangeWrapper endOnlyRange() {
         long baseRequestRangeEnd = MultithreadStream.this.baseRequest.getRange().getEndByte();
         if (baseRequestRangeEnd > objectSize) {
-            // the requested "end-only" range was larger than the object (e.g. "-101" on a 100 byte object)
-            // the first request will just start at the beginning of the object and read partSize bytes
+            // the requested "end-only" range was larger than the object (e.g. "-101" on a 100 byte
+            // object)
+            // the first request will just start at the beginning of the object and read partSize
+            // bytes
             // that means it's as if we had requested exactly the right size range ("-100").
             baseRequestRangeEnd = objectSize;
         }

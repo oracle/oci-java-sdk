@@ -5,19 +5,21 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateKeyDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateKeyDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class CreateKeyDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -45,39 +47,39 @@ public final class CreateKeyDetails extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the compartment where you want to create the master encryption key.
-         **/
+        /** The OCID of the compartment where you want to create the master encryption key. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment where you want to create the master encryption key.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
-         *
-         **/
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -87,8 +89,7 @@ public final class CreateKeyDetails extends com.oracle.bmc.http.internal.Explici
         /**
          * A user-friendly name for the key. It does not have to be unique, and it is changeable.
          * Avoid entering confidential information.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -98,29 +99,30 @@ public final class CreateKeyDetails extends com.oracle.bmc.http.internal.Explici
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
-         *
-         **/
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -136,26 +138,33 @@ public final class CreateKeyDetails extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
-         * A protection mode of {@code HSM} means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
-         * the HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server, protected by the vault's RSA wrapping key which persists
-         * on the HSM. All cryptographic operations that use a key with a protection mode of {@code SOFTWARE} are performed on the server. By default,
-         * a key's protection mode is set to {@code HSM}. You can't change a key's protection mode after the key is created or imported.
-         *
-         **/
+         * The key's protection mode indicates how the key persists and where cryptographic
+         * operations that use the key are performed. A protection mode of {@code HSM} means that
+         * the key persists on a hardware security module (HSM) and all cryptographic operations are
+         * performed inside the HSM. A protection mode of {@code SOFTWARE} means that the key
+         * persists on the server, protected by the vault's RSA wrapping key which persists on the
+         * HSM. All cryptographic operations that use a key with a protection mode of {@code
+         * SOFTWARE} are performed on the server. By default, a key's protection mode is set to
+         * {@code HSM}. You can't change a key's protection mode after the key is created or
+         * imported.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
         private ProtectionMode protectionMode;
 
         /**
-         * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
-         * A protection mode of {@code HSM} means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
-         * the HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server, protected by the vault's RSA wrapping key which persists
-         * on the HSM. All cryptographic operations that use a key with a protection mode of {@code SOFTWARE} are performed on the server. By default,
-         * a key's protection mode is set to {@code HSM}. You can't change a key's protection mode after the key is created or imported.
+         * The key's protection mode indicates how the key persists and where cryptographic
+         * operations that use the key are performed. A protection mode of {@code HSM} means that
+         * the key persists on a hardware security module (HSM) and all cryptographic operations are
+         * performed inside the HSM. A protection mode of {@code SOFTWARE} means that the key
+         * persists on the server, protected by the vault's RSA wrapping key which persists on the
+         * HSM. All cryptographic operations that use a key with a protection mode of {@code
+         * SOFTWARE} are performed on the server. By default, a key's protection mode is set to
+         * {@code HSM}. You can't change a key's protection mode after the key is created or
+         * imported.
          *
          * @param protectionMode the value to set
          * @return this builder
-         **/
+         */
         public Builder protectionMode(ProtectionMode protectionMode) {
             this.protectionMode = protectionMode;
             this.__explicitlySet__.add("protectionMode");
@@ -204,9 +213,7 @@ public final class CreateKeyDetails extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -215,74 +222,74 @@ public final class CreateKeyDetails extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the compartment where you want to create the master encryption key.
-     **/
+    /** The OCID of the compartment where you want to create the master encryption key. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment where you want to create the master encryption key.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * A user-friendly name for the key. It does not have to be unique, and it is changeable.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid
+     * entering confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name for the key. It does not have to be unique, and it is changeable.
-     * Avoid entering confidential information.
+     * A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid
+     * entering confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
-     *
-     **/
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -295,14 +302,16 @@ public final class CreateKeyDetails extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
-     * A protection mode of {@code HSM} means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
-     * the HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server, protected by the vault's RSA wrapping key which persists
-     * on the HSM. All cryptographic operations that use a key with a protection mode of {@code SOFTWARE} are performed on the server. By default,
-     * a key's protection mode is set to {@code HSM}. You can't change a key's protection mode after the key is created or imported.
-     *
-     **/
-    public enum ProtectionMode {
+     * The key's protection mode indicates how the key persists and where cryptographic operations
+     * that use the key are performed. A protection mode of {@code HSM} means that the key persists
+     * on a hardware security module (HSM) and all cryptographic operations are performed inside the
+     * HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server,
+     * protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic
+     * operations that use a key with a protection mode of {@code SOFTWARE} are performed on the
+     * server. By default, a key's protection mode is set to {@code HSM}. You can't change a key's
+     * protection mode after the key is created or imported.
+     */
+    public enum ProtectionMode implements com.oracle.bmc.http.internal.BmcEnum {
         Hsm("HSM"),
         Software("SOFTWARE"),
         ;
@@ -335,25 +344,30 @@ public final class CreateKeyDetails extends com.oracle.bmc.http.internal.Explici
         }
     };
     /**
-     * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
-     * A protection mode of {@code HSM} means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
-     * the HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server, protected by the vault's RSA wrapping key which persists
-     * on the HSM. All cryptographic operations that use a key with a protection mode of {@code SOFTWARE} are performed on the server. By default,
-     * a key's protection mode is set to {@code HSM}. You can't change a key's protection mode after the key is created or imported.
-     *
-     **/
+     * The key's protection mode indicates how the key persists and where cryptographic operations
+     * that use the key are performed. A protection mode of {@code HSM} means that the key persists
+     * on a hardware security module (HSM) and all cryptographic operations are performed inside the
+     * HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server,
+     * protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic
+     * operations that use a key with a protection mode of {@code SOFTWARE} are performed on the
+     * server. By default, a key's protection mode is set to {@code HSM}. You can't change a key's
+     * protection mode after the key is created or imported.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
     private final ProtectionMode protectionMode;
 
     /**
-     * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
-     * A protection mode of {@code HSM} means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
-     * the HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server, protected by the vault's RSA wrapping key which persists
-     * on the HSM. All cryptographic operations that use a key with a protection mode of {@code SOFTWARE} are performed on the server. By default,
-     * a key's protection mode is set to {@code HSM}. You can't change a key's protection mode after the key is created or imported.
+     * The key's protection mode indicates how the key persists and where cryptographic operations
+     * that use the key are performed. A protection mode of {@code HSM} means that the key persists
+     * on a hardware security module (HSM) and all cryptographic operations are performed inside the
+     * HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server,
+     * protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic
+     * operations that use a key with a protection mode of {@code SOFTWARE} are performed on the
+     * server. By default, a key's protection mode is set to {@code HSM}. You can't change a key's
+     * protection mode after the key is created or imported.
      *
      * @return the value
-     **/
+     */
     public ProtectionMode getProtectionMode() {
         return protectionMode;
     }
@@ -365,6 +379,7 @@ public final class CreateKeyDetails extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -8,64 +8,65 @@ import com.oracle.bmc.dns.requests.*;
 import com.oracle.bmc.dns.responses.*;
 
 /**
- * API for the DNS service. Use this API to manage DNS zones, records, and other DNS resources.
- * For more information, see [Overview of the DNS Service](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnszonemanagement.htm).
- *
+ * API for the DNS service. Use this API to manage DNS zones, records, and other DNS resources. For
+ * more information, see [Overview of the DNS
+ * Service](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnszonemanagement.htm).
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public interface DnsAsync extends AutoCloseable {
 
-    /**
-     * Rebuilds the client from scratch.
-     * Useful to refresh certificates.
-     */
+    /** Rebuilds the client from scratch. Useful to refresh certificates. */
     void refreshClient();
 
     /**
      * Sets the endpoint to call (ex, https://www.example.com).
+     *
      * @param endpoint The endpoint of the serice.
      */
     void setEndpoint(String endpoint);
 
-    /**
-     * Gets the set endpoint for REST call (ex, https://www.example.com)
-     */
+    /** Gets the set endpoint for REST call (ex, https://www.example.com) */
     String getEndpoint();
 
     /**
      * Sets the region to call (ex, Region.US_PHOENIX_1).
-     * <p>
-     * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
+     *
+     * <p>Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the
+     * endpoint. If the service is not available in this region, however, an
+     * IllegalArgumentException will be raised.
+     *
      * @param region The region of the service.
      */
     void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
-     * <p>
-     * Note, this will first try to map the region ID to a known Region and call
-     * {@link #setRegion(Region) setRegion}.
-     * <p>
-     * If no known Region could be determined, it will create an endpoint based on the
-     * default endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
+     *
+     * <p>Note, this will first try to map the region ID to a known Region and call {@link
+     * #setRegion(Region) setRegion}.
+     *
+     * <p>If no known Region could be determined, it will create an endpoint based on the default
+     * endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
      * and then call {@link #setEndpoint(String) setEndpoint}.
+     *
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
 
     /**
-     * Moves a resolver into a different compartment along with its protected default view and any endpoints.
-     * <p>
-     * Zones in the default view are not moved. VCN-dedicated resolvers are initially created in the same compartment
-     * as their corresponding VCN, but can then be moved to a different compartment.
+     * Moves a resolver into a different compartment along with its protected default view and any
+     * endpoints.
      *
+     * <p>Zones in the default view are not moved. VCN-dedicated resolvers are initially created in
+     * the same compartment as their corresponding VCN, but can then be moved to a different
+     * compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeResolverCompartmentResponse> changeResolverCompartment(
             ChangeResolverCompartmentRequest request,
@@ -76,13 +77,12 @@ public interface DnsAsync extends AutoCloseable {
     /**
      * Moves a steering policy into a different compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeSteeringPolicyCompartmentResponse>
             changeSteeringPolicyCompartment(
@@ -95,13 +95,12 @@ public interface DnsAsync extends AutoCloseable {
     /**
      * Moves a TSIG key into a different compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeTsigKeyCompartmentResponse> changeTsigKeyCompartment(
             ChangeTsigKeyCompartmentRequest request,
@@ -111,16 +110,16 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Moves a view into a different compartment.
-     * <p>
-     * To change the compartment of a protected view, change the compartment of its corresponding resolver.
      *
+     * <p>To change the compartment of a protected view, change the compartment of its corresponding
+     * resolver.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeViewCompartmentResponse> changeViewCompartment(
             ChangeViewCompartmentRequest request,
@@ -130,21 +129,20 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Moves a zone into a different compartment.
-     * <p>
-     * Protected zones cannot have their compartment changed. When the zone name is provided as a path
-     * parameter and `PRIVATE` is used for the scope query parameter then the viewId query parameter is
-     * required.
-     * <p>
-     **Note:** All SteeringPolicyAttachment objects associated with this zone will also be moved into
-     * the provided compartment.
      *
+     * <p>Protected zones cannot have their compartment changed. When the zone name is provided as a
+     * path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
+     * parameter is required.
+     *
+     * <p>*Note:** All SteeringPolicyAttachment objects associated with this zone will also be moved
+     * into the provided compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeZoneCompartmentResponse> changeZoneCompartment(
             ChangeZoneCompartmentRequest request,
@@ -155,13 +153,12 @@ public interface DnsAsync extends AutoCloseable {
     /**
      * Creates a new resolver endpoint in the same compartment as the resolver.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateResolverEndpointResponse> createResolverEndpoint(
             CreateResolverEndpointRequest request,
@@ -170,16 +167,16 @@ public interface DnsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new steering policy in the specified compartment. For more information on
-     * creating policies with templates, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
-     *
+     * Creates a new steering policy in the specified compartment. For more information on creating
+     * policies with templates, see [Traffic Management API
+     * Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateSteeringPolicyResponse> createSteeringPolicy(
             CreateSteeringPolicyRequest request,
@@ -188,20 +185,19 @@ public interface DnsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new attachment between a steering policy and a domain, giving the
-     * policy permission to answer queries for the specified domain. A steering policy must
-     * be attached to a domain for the policy to answer DNS queries for that domain.
-     * <p>
-     * For the purposes of access control, the attachment is automatically placed
-     * into the same compartment as the domain's zone.
+     * Creates a new attachment between a steering policy and a domain, giving the policy permission
+     * to answer queries for the specified domain. A steering policy must be attached to a domain
+     * for the policy to answer DNS queries for that domain.
      *
+     * <p>For the purposes of access control, the attachment is automatically placed into the same
+     * compartment as the domain's zone.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateSteeringPolicyAttachmentResponse>
             createSteeringPolicyAttachment(
@@ -212,16 +208,15 @@ public interface DnsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Creates a new TSIG key in the specified compartment. There is no
-     * `opc-retry-token` header since TSIG key names must be globally unique.
-     *
+     * Creates a new TSIG key in the specified compartment. There is no `opc-retry-token` header
+     * since TSIG key names must be globally unique.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateTsigKeyResponse> createTsigKey(
             CreateTsigKeyRequest request,
@@ -231,13 +226,12 @@ public interface DnsAsync extends AutoCloseable {
     /**
      * Creates a new view in the specified compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateViewResponse> createView(
             CreateViewRequest request,
@@ -245,17 +239,17 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Creates a new zone in the specified compartment.
-     * <p>
-     * Private zones must have a zone type of `PRIMARY`. Creating a private zone at or under `oraclevcn.com`
-     * within the default protected view of a VCN-dedicated resolver is not permitted.
      *
+     * <p>Private zones must have a zone type of `PRIMARY`. Creating a private zone at or under
+     * `oraclevcn.com` within the default protected view of a VCN-dedicated resolver is not
+     * permitted.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateZoneResponse> createZone(
             CreateZoneRequest request,
@@ -263,17 +257,16 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Deletes all records at the specified zone and domain.
-     * <p>
-     * When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
-     * then the viewId query parameter is required.
      *
+     * <p>When the zone name is provided as a path parameter and `PRIVATE` is used for the scope
+     * query parameter then the viewId query parameter is required.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteDomainRecordsResponse> deleteDomainRecords(
             DeleteDomainRecordsRequest request,
@@ -283,17 +276,16 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Deletes all records in the specified RRSet.
-     * <p>
-     * When the zone name is provided as a path parameter and `PRIVATE` is used for the scope
-     * query parameter then the viewId query parameter is required.
      *
+     * <p>When the zone name is provided as a path parameter and `PRIVATE` is used for the scope
+     * query parameter then the viewId query parameter is required.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteRRSetResponse> deleteRRSet(
             DeleteRRSetRequest request,
@@ -301,18 +293,17 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Deletes the specified resolver endpoint.
-     * <p>
-     * Note that attempting to delete a resolver endpoint in the DELETED lifecycle state will result in
-     * a `404` response to be consistent with other operations of the API. Resolver endpoints may not
-     * be deleted if they are referenced by a resolver rule.
      *
+     * <p>Note that attempting to delete a resolver endpoint in the DELETED lifecycle state will
+     * result in a `404` response to be consistent with other operations of the API. Resolver
+     * endpoints may not be deleted if they are referenced by a resolver rule.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteResolverEndpointResponse> deleteResolverEndpoint(
             DeleteResolverEndpointRequest request,
@@ -322,18 +313,17 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Deletes the specified steering policy.
-     * <p>
-     * A `204` response indicates that the delete has been successful.
-     * Deletion will fail if the policy is attached to any zones. To detach a
-     * policy from a zone, see `DeleteSteeringPolicyAttachment`.
      *
+     * <p>A `204` response indicates that the delete has been successful. Deletion will fail if the
+     * policy is attached to any zones. To detach a policy from a zone, see
+     * `DeleteSteeringPolicyAttachment`.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteSteeringPolicyResponse> deleteSteeringPolicy(
             DeleteSteeringPolicyRequest request,
@@ -342,16 +332,15 @@ public interface DnsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the specified steering policy attachment.
-     * A `204` response indicates that the delete has been successful.
-     *
+     * Deletes the specified steering policy attachment. A `204` response indicates that the delete
+     * has been successful.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteSteeringPolicyAttachmentResponse>
             deleteSteeringPolicyAttachment(
@@ -364,13 +353,12 @@ public interface DnsAsync extends AutoCloseable {
     /**
      * Deletes the specified TSIG key.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteTsigKeyResponse> deleteTsigKey(
             DeleteTsigKeyRequest request,
@@ -379,19 +367,17 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Deletes the specified view.
-     * <p>
-     * Note that attempting to delete a view in the DELETED lifecycleState will result in a `404`
-     * response to be consistent with other operations of the API. Views cannot be
-     * deleted if they are referenced by non-deleted zones or resolvers.
-     * Protected views cannot be deleted.
      *
+     * <p>Note that attempting to delete a view in the DELETED lifecycleState will result in a `404`
+     * response to be consistent with other operations of the API. Views cannot be deleted if they
+     * are referenced by non-deleted zones or resolvers. Protected views cannot be deleted.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteViewResponse> deleteView(
             DeleteViewRequest request,
@@ -399,18 +385,17 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Deletes the specified zone and all its steering policy attachments.
-     * <p>
-     * A `204` response indicates that the zone has been successfully deleted. Protected zones cannot be deleted.
-     * When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
-     * then the viewId query parameter is required.
      *
+     * <p>A `204` response indicates that the zone has been successfully deleted. Protected zones
+     * cannot be deleted. When the zone name is provided as a path parameter and `PRIVATE` is used
+     * for the scope query parameter then the viewId query parameter is required.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteZoneResponse> deleteZone(
             DeleteZoneRequest request,
@@ -418,18 +403,18 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Gets a list of all records at the specified zone and domain.
-     * <p>
-     * The results are sorted by `rtype` in alphabetical order by default. You can optionally filter and/or sort
-     * the results using the listed parameters. When the zone name is provided as a path parameter and `PRIVATE`
-     * is used for the scope query parameter then the viewId query parameter is required.
      *
+     * <p>The results are sorted by `rtype` in alphabetical order by default. You can optionally
+     * filter and/or sort the results using the listed parameters. When the zone name is provided as
+     * a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
+     * parameter is required.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDomainRecordsResponse> getDomainRecords(
             GetDomainRecordsRequest request,
@@ -438,17 +423,17 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Gets a list of all records in the specified RRSet.
-     * <p>
-     * The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
-     * and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
      *
+     * <p>The results are sorted by `recordHash` by default. When the zone name is provided as a
+     * path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
+     * parameter is required.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetRRSetResponse> getRRSet(
             GetRRSetRequest request,
@@ -456,17 +441,16 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Gets information about a specific resolver.
-     * <p>
-     * Note that attempting to get a resolver in the DELETED lifecycleState will result in a `404`
-     * response to be consistent with other operations of the API.
      *
+     * <p>Note that attempting to get a resolver in the DELETED lifecycleState will result in a
+     * `404` response to be consistent with other operations of the API.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetResolverResponse> getResolver(
             GetResolverRequest request,
@@ -474,17 +458,16 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Gets information about a specific resolver endpoint.
-     * <p>
-     * Note that attempting to get a resolver endpoint in the DELETED lifecycle state will result
-     * in a `404` response to be consistent with other operations of the API.
      *
+     * <p>Note that attempting to get a resolver endpoint in the DELETED lifecycle state will result
+     * in a `404` response to be consistent with other operations of the API.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetResolverEndpointResponse> getResolverEndpoint(
             GetResolverEndpointRequest request,
@@ -495,13 +478,12 @@ public interface DnsAsync extends AutoCloseable {
     /**
      * Gets information about the specified steering policy.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetSteeringPolicyResponse> getSteeringPolicy(
             GetSteeringPolicyRequest request,
@@ -512,13 +494,12 @@ public interface DnsAsync extends AutoCloseable {
     /**
      * Gets information about the specified steering policy attachment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetSteeringPolicyAttachmentResponse> getSteeringPolicyAttachment(
             GetSteeringPolicyAttachmentRequest request,
@@ -529,13 +510,12 @@ public interface DnsAsync extends AutoCloseable {
     /**
      * Gets information about the specified TSIG key.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetTsigKeyResponse> getTsigKey(
             GetTsigKeyRequest request,
@@ -543,36 +523,34 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Gets information about a specific view.
-     * <p>
-     * Note that attempting to get a
-     * view in the DELETED lifecycleState will result in a `404` response to be
-     * consistent with other operations of the API.
      *
+     * <p>Note that attempting to get a view in the DELETED lifecycleState will result in a `404`
+     * response to be consistent with other operations of the API.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetViewResponse> getView(
             GetViewRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetViewRequest, GetViewResponse> handler);
 
     /**
-     * Gets information about the specified zone, including its creation date, zone type, and serial.
-     * <p>
-     * When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
-     * parameter then the viewId query parameter is required.
+     * Gets information about the specified zone, including its creation date, zone type, and
+     * serial.
      *
+     * <p>When the zone name is provided as a path parameter and `PRIVATE` is used for the scope
+     * query parameter then the viewId query parameter is required.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetZoneResponse> getZone(
             GetZoneRequest request,
@@ -581,13 +559,12 @@ public interface DnsAsync extends AutoCloseable {
     /**
      * Gets the requested zone's zone file.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetZoneContentResponse> getZoneContent(
             GetZoneContentRequest request,
@@ -596,19 +573,19 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Gets all records in the specified zone.
-     * <p>
-     * The results are sorted by `domain` in alphabetical order by default. For more information about records,
-     * see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-     * When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
-     * then the viewId query parameter is required.
      *
+     * <p>The results are sorted by `domain` in alphabetical order by default. For more information
+     * about records, see [Resource Record (RR)
+     * TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+     * When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
+     * parameter then the viewId query parameter is required.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetZoneRecordsResponse> getZoneRecords(
             GetZoneRecordsRequest request,
@@ -616,18 +593,18 @@ public interface DnsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of all endpoints within a resolver. The collection can be filtered by name or lifecycle state.
-     * It can be sorted on creation time or name both in ASC or DESC order. Note that when no lifecycleState
-     * query parameter is provided, the collection does not include resolver endpoints in the DELETED
-     * lifecycle state to be consistent with other operations of the API.
-     *
+     * Gets a list of all endpoints within a resolver. The collection can be filtered by name or
+     * lifecycle state. It can be sorted on creation time or name both in ASC or DESC order. Note
+     * that when no lifecycleState query parameter is provided, the collection does not include
+     * resolver endpoints in the DELETED lifecycle state to be consistent with other operations of
+     * the API.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListResolverEndpointsResponse> listResolverEndpoints(
             ListResolverEndpointsRequest request,
@@ -637,19 +614,18 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Gets a list of all resolvers within a compartment.
-     * <p>
-     * The collection can be filtered by display name, id, or lifecycle state. It can be sorted
+     *
+     * <p>The collection can be filtered by display name, id, or lifecycle state. It can be sorted
      * on creation time or displayName both in ASC or DESC order. Note that when no lifecycleState
      * query parameter is provided, the collection does not include resolvers in the DELETED
      * lifecycleState to be consistent with other operations of the API.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListResolversResponse> listResolvers(
             ListResolversRequest request,
@@ -659,13 +635,12 @@ public interface DnsAsync extends AutoCloseable {
     /**
      * Gets a list of all steering policies in the specified compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListSteeringPoliciesResponse> listSteeringPolicies(
             ListSteeringPoliciesRequest request,
@@ -676,13 +651,12 @@ public interface DnsAsync extends AutoCloseable {
     /**
      * Lists the steering policy attachments in the specified compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListSteeringPolicyAttachmentsResponse>
             listSteeringPolicyAttachments(
@@ -695,13 +669,12 @@ public interface DnsAsync extends AutoCloseable {
     /**
      * Gets a list of all TSIG keys in the specified compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListTsigKeysResponse> listTsigKeys(
             ListTsigKeysRequest request,
@@ -710,36 +683,34 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Gets a list of all views within a compartment.
-     * <p>
-     * The collection can be filtered by display name, id, or lifecycle state. It can be sorted
+     *
+     * <p>The collection can be filtered by display name, id, or lifecycle state. It can be sorted
      * on creation time or displayName both in ASC or DESC order. Note that when no lifecycleState
      * query parameter is provided, the collection does not include views in the DELETED
      * lifecycleState to be consistent with other operations of the API.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListViewsResponse> listViews(
             ListViewsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListViewsRequest, ListViewsResponse> handler);
 
     /**
-     * Gets a list of IP addresses of OCI nameservers for inbound and outbound transfer of zones in the specified
-     * compartment (which must be the root compartment of a tenancy) that transfer zone data with external master or
-     * downstream nameservers.
-     *
+     * Gets a list of IP addresses of OCI nameservers for inbound and outbound transfer of zones in
+     * the specified compartment (which must be the root compartment of a tenancy) that transfer
+     * zone data with external master or downstream nameservers.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListZoneTransferServersResponse> listZoneTransferServers(
             ListZoneTransferServersRequest request,
@@ -749,17 +720,16 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Gets a list of all zones in the specified compartment.
-     * <p>
-     * The collection can be filtered by name, time created, scope, associated view, and zone type.
-     * Filtering by view is only supported for private zones.
      *
+     * <p>The collection can be filtered by name, time created, scope, associated view, and zone
+     * type. Filtering by view is only supported for private zones.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListZonesResponse> listZones(
             ListZonesRequest request,
@@ -767,19 +737,18 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Updates records in the specified zone at a domain.
-     * <p>
-     * You can update one record or all records for the specified zone depending on the changes provided in the
-     * request body. You can also add or remove records using this function. When the zone name is provided as
-     * a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query parameter is
-     * required.
      *
+     * <p>You can update one record or all records for the specified zone depending on the changes
+     * provided in the request body. You can also add or remove records using this function. When
+     * the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
+     * parameter then the viewId query parameter is required.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<PatchDomainRecordsResponse> patchDomainRecords(
             PatchDomainRecordsRequest request,
@@ -789,17 +758,16 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Updates records in the specified RRSet.
-     * <p>
-     * When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
-     * parameter then the viewId query parameter is required.
      *
+     * <p>When the zone name is provided as a path parameter and `PRIVATE` is used for the scope
+     * query parameter then the viewId query parameter is required.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<PatchRRSetResponse> patchRRSet(
             PatchRRSetRequest request,
@@ -807,19 +775,18 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Updates a collection of records in the specified zone.
-     * <p>
-     * You can update one record or all records for the specified zone depending on the changes provided in the
-     * request body. You can also add or remove records using this function. When the zone name is provided as
-     * a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query parameter is
-     * required.
      *
+     * <p>You can update one record or all records for the specified zone depending on the changes
+     * provided in the request body. You can also add or remove records using this function. When
+     * the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
+     * parameter then the viewId query parameter is required.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<PatchZoneRecordsResponse> patchZoneRecords(
             PatchZoneRecordsRequest request,
@@ -827,20 +794,21 @@ public interface DnsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Replaces records in the specified zone at a domain with the records specified in the request body.
-     * <p>
-     * If a specified record does not exist, it will be created. If the record exists, then it will be updated to
-     * represent the record in the body of the request. If a record in the zone does not exist in the request body,
-     * the record will be removed from the zone. When the zone name is provided as a path parameter and `PRIVATE`
-     * is used for the scope query parameter then the viewId query parameter is required.
+     * Replaces records in the specified zone at a domain with the records specified in the request
+     * body.
      *
+     * <p>If a specified record does not exist, it will be created. If the record exists, then it
+     * will be updated to represent the record in the body of the request. If a record in the zone
+     * does not exist in the request body, the record will be removed from the zone. When the zone
+     * name is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
+     * the viewId query parameter is required.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateDomainRecordsResponse> updateDomainRecords(
             UpdateDomainRecordsRequest request,
@@ -850,17 +818,16 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Replaces records in the specified RRSet.
-     * <p>
-     * When the zone name is provided as a path parameter and `PRIVATE` is used for the scope
-     * query parameter then the viewId query parameter is required.
      *
+     * <p>When the zone name is provided as a path parameter and `PRIVATE` is used for the scope
+     * query parameter then the viewId query parameter is required.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateRRSetResponse> updateRRSet(
             UpdateRRSetRequest request,
@@ -869,13 +836,12 @@ public interface DnsAsync extends AutoCloseable {
     /**
      * Updates the specified resolver with your new information.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateResolverResponse> updateResolver(
             UpdateResolverRequest request,
@@ -885,13 +851,12 @@ public interface DnsAsync extends AutoCloseable {
     /**
      * Updates the specified resolver endpoint with your new information.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateResolverEndpointResponse> updateResolverEndpoint(
             UpdateResolverEndpointRequest request,
@@ -902,13 +867,12 @@ public interface DnsAsync extends AutoCloseable {
     /**
      * Updates the configuration of the specified steering policy.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateSteeringPolicyResponse> updateSteeringPolicy(
             UpdateSteeringPolicyRequest request,
@@ -919,13 +883,12 @@ public interface DnsAsync extends AutoCloseable {
     /**
      * Updates the specified steering policy attachment with your new information.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateSteeringPolicyAttachmentResponse>
             updateSteeringPolicyAttachment(
@@ -938,13 +901,12 @@ public interface DnsAsync extends AutoCloseable {
     /**
      * Updates the specified TSIG key.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateTsigKeyResponse> updateTsigKey(
             UpdateTsigKeyRequest request,
@@ -954,13 +916,12 @@ public interface DnsAsync extends AutoCloseable {
     /**
      * Updates the specified view with your new information.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateViewResponse> updateView(
             UpdateViewRequest request,
@@ -968,19 +929,19 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Updates the zone with the specified information.
-     * <p>
-     * Global secondary zones may have their external masters updated. For more information about secondary
-     * zones, see [Manage DNS Service Zone](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/managingdnszones.htm). When the zone name
-     * is provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId
-     * query parameter is required.
      *
+     * <p>Global secondary zones may have their external masters updated. For more information about
+     * secondary zones, see [Manage DNS Service
+     * Zone](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/managingdnszones.htm). When the
+     * zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
+     * then the viewId query parameter is required.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateZoneResponse> updateZone(
             UpdateZoneRequest request,
@@ -988,20 +949,19 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Replaces records in the specified zone with the records specified in the request body.
-     * <p>
-     * If a specified record does not exist, it will be created. If the record exists, then it will be updated
-     * to represent the record in the body of the request. If a record in the zone does not exist in the
-     * request body, the record will be removed from the zone. When the zone name is provided as a path
-     * parameter and `PRIVATE` is used for the scope query parameter then the viewId query parameter is
-     * required.
      *
+     * <p>If a specified record does not exist, it will be created. If the record exists, then it
+     * will be updated to represent the record in the body of the request. If a record in the zone
+     * does not exist in the request body, the record will be removed from the zone. When the zone
+     * name is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
+     * the viewId query parameter is required.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateZoneRecordsResponse> updateZoneRecords(
             UpdateZoneRecordsRequest request,

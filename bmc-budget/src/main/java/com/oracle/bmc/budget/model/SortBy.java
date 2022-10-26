@@ -5,13 +5,11 @@
 package com.oracle.bmc.budget.model;
 
 /**
- * The field to sort by. If not specified, the default is timeCreated.
- * The default sort order for timeCreated is DESC.
- * The default sort order for displayName is ASC in alphanumeric order.
- *
- **/
+ * The field to sort by. If not specified, the default is timeCreated. The default sort order for
+ * timeCreated is DESC. The default sort order for displayName is ASC in alphanumeric order.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
-public enum SortBy {
+public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
     TimeCreated("timeCreated"),
     DisplayName("displayName"),
     ;

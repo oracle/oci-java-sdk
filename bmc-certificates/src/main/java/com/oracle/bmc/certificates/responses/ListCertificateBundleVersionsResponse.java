@@ -9,26 +9,28 @@ import com.oracle.bmc.certificates.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public class ListCertificateBundleVersionsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /**
-     * The returned CertificateBundleVersionCollection instance.
-     */
+    /** The returned CertificateBundleVersionCollection instance. */
     private com.oracle.bmc.certificates.model.CertificateBundleVersionCollection
             certificateBundleVersionCollection;
 
     /**
      * The returned CertificateBundleVersionCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.certificates.model.CertificateBundleVersionCollection
@@ -44,7 +46,7 @@ public class ListCertificateBundleVersionsResponse extends com.oracle.bmc.respon
     })
     private ListCertificateBundleVersionsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.certificates.model.CertificateBundleVersionCollection
                     certificateBundleVersionCollection) {
@@ -53,28 +55,35 @@ public class ListCertificateBundleVersionsResponse extends com.oracle.bmc.respon
         this.certificateBundleVersionCollection = certificateBundleVersionCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    ListCertificateBundleVersionsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -83,14 +92,13 @@ public class ListCertificateBundleVersionsResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /**
-         * The returned CertificateBundleVersionCollection instance.
-         */
+        /** The returned CertificateBundleVersionCollection instance. */
         private com.oracle.bmc.certificates.model.CertificateBundleVersionCollection
                 certificateBundleVersionCollection;
 
         /**
          * The returned CertificateBundleVersionCollection instance.
+         *
          * @param certificateBundleVersionCollection the value to set
          * @return this builder
          */
@@ -103,8 +111,10 @@ public class ListCertificateBundleVersionsResponse extends com.oracle.bmc.respon
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListCertificateBundleVersionsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -116,8 +126,10 @@ public class ListCertificateBundleVersionsResponse extends com.oracle.bmc.respon
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListCertificateBundleVersionsResponse build() {
             return new ListCertificateBundleVersionsResponse(
                     __httpStatusCode__, headers, opcRequestId, certificateBundleVersionCollection);
@@ -126,6 +138,7 @@ public class ListCertificateBundleVersionsResponse extends com.oracle.bmc.respon
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

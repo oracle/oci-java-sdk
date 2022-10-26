@@ -5,27 +5,25 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The platform configuration used when launching a bare metal instance with one of the following shapes: BM.Standard.E4.128
- * or BM.DenseIO.E4.128 (the AMD Milan platform).
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The platform configuration used when launching a bare metal instance with one of the following
+ * shapes: BM.Standard.E4.128 or BM.DenseIO.E4.128 (the AMD Milan platform). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig.Builder.class
-)
+        builder = InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
         extends InstanceConfigurationLaunchInstancePlatformConfig {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -56,10 +54,7 @@ public final class InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
             this.__explicitlySet__.add("isMeasuredBootEnabled");
             return this;
         }
-        /**
-         * The number of NUMA nodes per socket (NPS).
-         *
-         **/
+        /** The number of NUMA nodes per socket (NPS). */
         @com.fasterxml.jackson.annotation.JsonProperty("numaNodesPerSocket")
         private NumaNodesPerSocket numaNodesPerSocket;
 
@@ -68,86 +63,82 @@ public final class InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
          *
          * @param numaNodesPerSocket the value to set
          * @return this builder
-         **/
+         */
         public Builder numaNodesPerSocket(NumaNodesPerSocket numaNodesPerSocket) {
             this.numaNodesPerSocket = numaNodesPerSocket;
             this.__explicitlySet__.add("numaNodesPerSocket");
             return this;
         }
         /**
-         * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also
-         * called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-         * <p>
-         * Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple
-         * independent threads of execution, to better use the resources and increase the efficiency
-         * of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which
-         * can provide higher or more predictable performance for some workloads.
+         * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is
+         * also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
          *
-         **/
+         * <p>Intel and AMD processors have two hardware execution threads per core (OCPU). SMT
+         * permits multiple independent threads of execution, to better use the resources and
+         * increase the efficiency of the CPU. When multithreading is disabled, only one thread is
+         * permitted to run on each core, which can provide higher or more predictable performance
+         * for some workloads.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isSymmetricMultiThreadingEnabled")
         private Boolean isSymmetricMultiThreadingEnabled;
 
         /**
-         * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also
-         * called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-         * <p>
-         * Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple
-         * independent threads of execution, to better use the resources and increase the efficiency
-         * of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which
-         * can provide higher or more predictable performance for some workloads.
+         * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is
+         * also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+         *
+         * <p>Intel and AMD processors have two hardware execution threads per core (OCPU). SMT
+         * permits multiple independent threads of execution, to better use the resources and
+         * increase the efficiency of the CPU. When multithreading is disabled, only one thread is
+         * permitted to run on each core, which can provide higher or more predictable performance
+         * for some workloads.
          *
          * @param isSymmetricMultiThreadingEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isSymmetricMultiThreadingEnabled(Boolean isSymmetricMultiThreadingEnabled) {
             this.isSymmetricMultiThreadingEnabled = isSymmetricMultiThreadingEnabled;
             this.__explicitlySet__.add("isSymmetricMultiThreadingEnabled");
             return this;
         }
         /**
-         * Whether the Access Control Service is enabled on the instance. When enabled,
-         * the platform can enforce PCIe device isolation, required for VFIO device pass-through.
-         *
-         **/
+         * Whether the Access Control Service is enabled on the instance. When enabled, the platform
+         * can enforce PCIe device isolation, required for VFIO device pass-through.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isAccessControlServiceEnabled")
         private Boolean isAccessControlServiceEnabled;
 
         /**
-         * Whether the Access Control Service is enabled on the instance. When enabled,
-         * the platform can enforce PCIe device isolation, required for VFIO device pass-through.
+         * Whether the Access Control Service is enabled on the instance. When enabled, the platform
+         * can enforce PCIe device isolation, required for VFIO device pass-through.
          *
          * @param isAccessControlServiceEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isAccessControlServiceEnabled(Boolean isAccessControlServiceEnabled) {
             this.isAccessControlServiceEnabled = isAccessControlServiceEnabled;
             this.__explicitlySet__.add("isAccessControlServiceEnabled");
             return this;
         }
         /**
-         * Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes
-         * or VT-x for Intel shapes.
-         *
-         **/
+         * Whether virtualization instructions are available. For example, Secure Virtual Machine
+         * for AMD shapes or VT-x for Intel shapes.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("areVirtualInstructionsEnabled")
         private Boolean areVirtualInstructionsEnabled;
 
         /**
-         * Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes
-         * or VT-x for Intel shapes.
+         * Whether virtualization instructions are available. For example, Secure Virtual Machine
+         * for AMD shapes or VT-x for Intel shapes.
          *
          * @param areVirtualInstructionsEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder areVirtualInstructionsEnabled(Boolean areVirtualInstructionsEnabled) {
             this.areVirtualInstructionsEnabled = areVirtualInstructionsEnabled;
             this.__explicitlySet__.add("areVirtualInstructionsEnabled");
             return this;
         }
-        /**
-         * Whether the input-output memory management unit is enabled.
-         *
-         **/
+        /** Whether the input-output memory management unit is enabled. */
         @com.fasterxml.jackson.annotation.JsonProperty("isInputOutputMemoryManagementUnitEnabled")
         private Boolean isInputOutputMemoryManagementUnitEnabled;
 
@@ -156,7 +147,7 @@ public final class InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
          *
          * @param isInputOutputMemoryManagementUnitEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isInputOutputMemoryManagementUnitEnabled(
                 Boolean isInputOutputMemoryManagementUnitEnabled) {
             this.isInputOutputMemoryManagementUnitEnabled =
@@ -165,30 +156,31 @@ public final class InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
             return this;
         }
         /**
-         * The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage
-         * results in a fractional number of cores, the system rounds up the number of cores across processors
-         * and provisions an instance with a whole number of cores.
-         * <p>
-         * If the applications that you run on the instance use a core-based licensing model and need fewer cores
-         * than the full size of the shape, you can disable cores to reduce your licensing costs. The instance
-         * itself is billed for the full shape, regardless of whether all cores are enabled.
+         * The percentage of cores enabled. Value must be a multiple of 25%. If the requested
+         * percentage results in a fractional number of cores, the system rounds up the number of
+         * cores across processors and provisions an instance with a whole number of cores.
          *
-         **/
+         * <p>If the applications that you run on the instance use a core-based licensing model and
+         * need fewer cores than the full size of the shape, you can disable cores to reduce your
+         * licensing costs. The instance itself is billed for the full shape, regardless of whether
+         * all cores are enabled.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("percentageOfCoresEnabled")
         private Integer percentageOfCoresEnabled;
 
         /**
-         * The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage
-         * results in a fractional number of cores, the system rounds up the number of cores across processors
-         * and provisions an instance with a whole number of cores.
-         * <p>
-         * If the applications that you run on the instance use a core-based licensing model and need fewer cores
-         * than the full size of the shape, you can disable cores to reduce your licensing costs. The instance
-         * itself is billed for the full shape, regardless of whether all cores are enabled.
+         * The percentage of cores enabled. Value must be a multiple of 25%. If the requested
+         * percentage results in a fractional number of cores, the system rounds up the number of
+         * cores across processors and provisions an instance with a whole number of cores.
+         *
+         * <p>If the applications that you run on the instance use a core-based licensing model and
+         * need fewer cores than the full size of the shape, you can disable cores to reduce your
+         * licensing costs. The instance itself is billed for the full shape, regardless of whether
+         * all cores are enabled.
          *
          * @param percentageOfCoresEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder percentageOfCoresEnabled(Integer percentageOfCoresEnabled) {
             this.percentageOfCoresEnabled = percentageOfCoresEnabled;
             this.__explicitlySet__.add("percentageOfCoresEnabled");
@@ -250,9 +242,7 @@ public final class InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -281,19 +271,16 @@ public final class InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
         this.percentageOfCoresEnabled = percentageOfCoresEnabled;
     }
 
-    /**
-     * The number of NUMA nodes per socket (NPS).
-     *
-     **/
-    public enum NumaNodesPerSocket {
+    /** The number of NUMA nodes per socket (NPS). */
+    public enum NumaNodesPerSocket implements com.oracle.bmc.http.internal.BmcEnum {
         Nps0("NPS0"),
         Nps1("NPS1"),
         Nps2("NPS2"),
         Nps4("NPS4"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -332,10 +319,7 @@ public final class InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
             return UnknownEnumValue;
         }
     };
-    /**
-     * The number of NUMA nodes per socket (NPS).
-     *
-     **/
+    /** The number of NUMA nodes per socket (NPS). */
     @com.fasterxml.jackson.annotation.JsonProperty("numaNodesPerSocket")
     private final NumaNodesPerSocket numaNodesPerSocket;
 
@@ -343,7 +327,7 @@ public final class InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
      * The number of NUMA nodes per socket (NPS).
      *
      * @return the value
-     **/
+     */
     public NumaNodesPerSocket getNumaNodesPerSocket() {
         return numaNodesPerSocket;
     }
@@ -351,71 +335,65 @@ public final class InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
     /**
      * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also
      * called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-     * <p>
-     * Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple
-     * independent threads of execution, to better use the resources and increase the efficiency
-     * of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which
-     * can provide higher or more predictable performance for some workloads.
      *
-     **/
+     * <p>Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits
+     * multiple independent threads of execution, to better use the resources and increase the
+     * efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run
+     * on each core, which can provide higher or more predictable performance for some workloads.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isSymmetricMultiThreadingEnabled")
     private final Boolean isSymmetricMultiThreadingEnabled;
 
     /**
      * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also
      * called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-     * <p>
-     * Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple
-     * independent threads of execution, to better use the resources and increase the efficiency
-     * of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which
-     * can provide higher or more predictable performance for some workloads.
+     *
+     * <p>Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits
+     * multiple independent threads of execution, to better use the resources and increase the
+     * efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run
+     * on each core, which can provide higher or more predictable performance for some workloads.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsSymmetricMultiThreadingEnabled() {
         return isSymmetricMultiThreadingEnabled;
     }
 
     /**
-     * Whether the Access Control Service is enabled on the instance. When enabled,
-     * the platform can enforce PCIe device isolation, required for VFIO device pass-through.
-     *
-     **/
+     * Whether the Access Control Service is enabled on the instance. When enabled, the platform can
+     * enforce PCIe device isolation, required for VFIO device pass-through.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isAccessControlServiceEnabled")
     private final Boolean isAccessControlServiceEnabled;
 
     /**
-     * Whether the Access Control Service is enabled on the instance. When enabled,
-     * the platform can enforce PCIe device isolation, required for VFIO device pass-through.
+     * Whether the Access Control Service is enabled on the instance. When enabled, the platform can
+     * enforce PCIe device isolation, required for VFIO device pass-through.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsAccessControlServiceEnabled() {
         return isAccessControlServiceEnabled;
     }
 
     /**
-     * Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes
-     * or VT-x for Intel shapes.
-     *
-     **/
+     * Whether virtualization instructions are available. For example, Secure Virtual Machine for
+     * AMD shapes or VT-x for Intel shapes.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("areVirtualInstructionsEnabled")
     private final Boolean areVirtualInstructionsEnabled;
 
     /**
-     * Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes
-     * or VT-x for Intel shapes.
+     * Whether virtualization instructions are available. For example, Secure Virtual Machine for
+     * AMD shapes or VT-x for Intel shapes.
      *
      * @return the value
-     **/
+     */
     public Boolean getAreVirtualInstructionsEnabled() {
         return areVirtualInstructionsEnabled;
     }
 
-    /**
-     * Whether the input-output memory management unit is enabled.
-     *
-     **/
+    /** Whether the input-output memory management unit is enabled. */
     @com.fasterxml.jackson.annotation.JsonProperty("isInputOutputMemoryManagementUnitEnabled")
     private final Boolean isInputOutputMemoryManagementUnitEnabled;
 
@@ -423,35 +401,36 @@ public final class InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
      * Whether the input-output memory management unit is enabled.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsInputOutputMemoryManagementUnitEnabled() {
         return isInputOutputMemoryManagementUnitEnabled;
     }
 
     /**
      * The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage
-     * results in a fractional number of cores, the system rounds up the number of cores across processors
-     * and provisions an instance with a whole number of cores.
-     * <p>
-     * If the applications that you run on the instance use a core-based licensing model and need fewer cores
-     * than the full size of the shape, you can disable cores to reduce your licensing costs. The instance
-     * itself is billed for the full shape, regardless of whether all cores are enabled.
+     * results in a fractional number of cores, the system rounds up the number of cores across
+     * processors and provisions an instance with a whole number of cores.
      *
-     **/
+     * <p>If the applications that you run on the instance use a core-based licensing model and need
+     * fewer cores than the full size of the shape, you can disable cores to reduce your licensing
+     * costs. The instance itself is billed for the full shape, regardless of whether all cores are
+     * enabled.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("percentageOfCoresEnabled")
     private final Integer percentageOfCoresEnabled;
 
     /**
      * The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage
-     * results in a fractional number of cores, the system rounds up the number of cores across processors
-     * and provisions an instance with a whole number of cores.
-     * <p>
-     * If the applications that you run on the instance use a core-based licensing model and need fewer cores
-     * than the full size of the shape, you can disable cores to reduce your licensing costs. The instance
-     * itself is billed for the full shape, regardless of whether all cores are enabled.
+     * results in a fractional number of cores, the system rounds up the number of cores across
+     * processors and provisions an instance with a whole number of cores.
+     *
+     * <p>If the applications that you run on the instance use a core-based licensing model and need
+     * fewer cores than the full size of the shape, you can disable cores to reduce your licensing
+     * costs. The instance itself is billed for the full shape, regardless of whether all cores are
+     * enabled.
      *
      * @return the value
-     **/
+     */
     public Integer getPercentageOfCoresEnabled() {
         return percentageOfCoresEnabled;
     }
@@ -463,6 +442,7 @@ public final class InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

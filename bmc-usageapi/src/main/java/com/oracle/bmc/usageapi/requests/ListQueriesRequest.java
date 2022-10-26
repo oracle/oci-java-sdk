@@ -6,74 +6,58 @@ package com.oracle.bmc.usageapi.requests;
 
 import com.oracle.bmc.usageapi.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListQueriesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListQueriesRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListQueriesExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListQueriesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 public class ListQueriesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The compartment ID in which to list resources.
-     */
+    /** The compartment ID in which to list resources. */
     private String compartmentId;
 
-    /**
-     * The compartment ID in which to list resources.
-     */
+    /** The compartment ID in which to list resources. */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * The maximumimum number of items to return.
-     */
+    /** The maximumimum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximumimum number of items to return.
-     */
+    /** The maximumimum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results.
-     * This is usually retrieved from a previous list call.
-     *
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results.
-     * This is usually retrieved from a previous list call.
-     *
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The field to sort by. If not specified, the default is displayName.
-     *
-     */
+    /** The field to sort by. If not specified, the default is displayName. */
     private SortBy sortBy;
 
-    /**
-     * The field to sort by. If not specified, the default is displayName.
-     *
-     **/
-    public enum SortBy {
+    /** The field to sort by. If not specified, the default is displayName. */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         DisplayName("displayName"),
         ;
 
@@ -105,22 +89,15 @@ public class ListQueriesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
-    /**
-     * The field to sort by. If not specified, the default is displayName.
-     *
-     */
+    /** The field to sort by. If not specified, the default is displayName. */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The sort order to use, whether 'asc' or 'desc'.
-     */
+    /** The sort order to use, whether 'asc' or 'desc'. */
     private SortOrder sortOrder;
 
-    /**
-     * The sort order to use, whether 'asc' or 'desc'.
-     **/
-    public enum SortOrder {
+    /** The sort order to use, whether 'asc' or 'desc'. */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -153,9 +130,7 @@ public class ListQueriesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
-    /**
-     * The sort order to use, whether 'asc' or 'desc'.
-     */
+    /** The sort order to use, whether 'asc' or 'desc'. */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -163,17 +138,15 @@ public class ListQueriesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListQueriesRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The compartment ID in which to list resources.
-         */
+        /** The compartment ID in which to list resources. */
         private String compartmentId = null;
 
         /**
          * The compartment ID in which to list resources.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -185,7 +158,6 @@ public class ListQueriesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId = null;
 
@@ -201,13 +173,12 @@ public class ListQueriesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * The maximumimum number of items to return.
-         */
+        /** The maximumimum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximumimum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -217,15 +188,14 @@ public class ListQueriesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The page token representing the page at which to start retrieving results.
-         * This is usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results.
-         * This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
          *
          * @param page the value to set
          * @return this builder instance
@@ -235,10 +205,7 @@ public class ListQueriesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * The field to sort by. If not specified, the default is displayName.
-         *
-         */
+        /** The field to sort by. If not specified, the default is displayName. */
         private SortBy sortBy = null;
 
         /**
@@ -252,13 +219,12 @@ public class ListQueriesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * The sort order to use, whether 'asc' or 'desc'.
-         */
+        /** The sort order to use, whether 'asc' or 'desc'. */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, whether 'asc' or 'desc'.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -269,18 +235,19 @@ public class ListQueriesRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -292,6 +259,7 @@ public class ListQueriesRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListQueriesRequest o) {
@@ -309,10 +277,11 @@ public class ListQueriesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListQueriesRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListQueriesRequest
          */
@@ -326,7 +295,8 @@ public class ListQueriesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListQueriesRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListQueriesRequest
@@ -346,6 +316,7 @@ public class ListQueriesRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -360,6 +331,7 @@ public class ListQueriesRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

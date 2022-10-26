@@ -6,176 +6,128 @@ package com.oracle.bmc.threatintelligence.requests;
 
 import com.oracle.bmc.threatintelligence.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/threatintelligence/ListIndicatorsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListIndicatorsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/threatintelligence/ListIndicatorsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListIndicatorsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The OCID of the tenancy (root compartment) that is used to filter results.
-     */
+    /** The OCID of the tenancy (root compartment) that is used to filter results. */
     private String compartmentId;
 
-    /**
-     * The OCID of the tenancy (root compartment) that is used to filter results.
-     */
+    /** The OCID of the tenancy (root compartment) that is used to filter results. */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * The threat type of entites to be returned. To filter for multiple threat types, repeat this parameter.
+     * The threat type of entites to be returned. To filter for multiple threat types, repeat this
+     * parameter.
      */
     private java.util.List<String> threatTypeName;
 
     /**
-     * The threat type of entites to be returned. To filter for multiple threat types, repeat this parameter.
+     * The threat type of entites to be returned. To filter for multiple threat types, repeat this
+     * parameter.
      */
     public java.util.List<String> getThreatTypeName() {
         return threatTypeName;
     }
-    /**
-     * The indicator type of entities to be returned.
-     */
+    /** The indicator type of entities to be returned. */
     private com.oracle.bmc.threatintelligence.model.IndicatorType type;
 
-    /**
-     * The indicator type of entities to be returned.
-     */
+    /** The indicator type of entities to be returned. */
     public com.oracle.bmc.threatintelligence.model.IndicatorType getType() {
         return type;
     }
-    /**
-     * The indicator value of entities to be returned.
-     */
+    /** The indicator value of entities to be returned. */
     private String value;
 
-    /**
-     * The indicator value of entities to be returned.
-     */
+    /** The indicator value of entities to be returned. */
     public String getValue() {
         return value;
     }
-    /**
-     * The minimum confidence score of entities to be returned.
-     */
+    /** The minimum confidence score of entities to be returned. */
     private Integer confidenceGreaterThanOrEqualTo;
 
-    /**
-     * The minimum confidence score of entities to be returned.
-     */
+    /** The minimum confidence score of entities to be returned. */
     public Integer getConfidenceGreaterThanOrEqualTo() {
         return confidenceGreaterThanOrEqualTo;
     }
-    /**
-     * The oldest update time of entities to be returned.
-     */
+    /** The oldest update time of entities to be returned. */
     private java.util.Date timeUpdatedGreaterThanOrEqualTo;
 
-    /**
-     * The oldest update time of entities to be returned.
-     */
+    /** The oldest update time of entities to be returned. */
     public java.util.Date getTimeUpdatedGreaterThanOrEqualTo() {
         return timeUpdatedGreaterThanOrEqualTo;
     }
-    /**
-     * Return indicators updated before the provided time.
-     */
+    /** Return indicators updated before the provided time. */
     private java.util.Date timeUpdatedLessThan;
 
-    /**
-     * Return indicators updated before the provided time.
-     */
+    /** Return indicators updated before the provided time. */
     public java.util.Date getTimeUpdatedLessThan() {
         return timeUpdatedLessThan;
     }
-    /**
-     * The oldest last seen time of entities to be returned.
-     */
+    /** The oldest last seen time of entities to be returned. */
     private java.util.Date timeLastSeenGreaterThanOrEqualTo;
 
-    /**
-     * The oldest last seen time of entities to be returned.
-     */
+    /** The oldest last seen time of entities to be returned. */
     public java.util.Date getTimeLastSeenGreaterThanOrEqualTo() {
         return timeLastSeenGreaterThanOrEqualTo;
     }
-    /**
-     * Return indicators last seen before the provided time.
-     */
+    /** Return indicators last seen before the provided time. */
     private java.util.Date timeLastSeenLessThan;
 
-    /**
-     * Return indicators last seen before the provided time.
-     */
+    /** Return indicators last seen before the provided time. */
     public java.util.Date getTimeLastSeenLessThan() {
         return timeLastSeenLessThan;
     }
-    /**
-     * The oldest created/first seen time of entities to be returned.
-     */
+    /** The oldest created/first seen time of entities to be returned. */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
-    /**
-     * The oldest created/first seen time of entities to be returned.
-     */
+    /** The oldest created/first seen time of entities to be returned. */
     public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
         return timeCreatedGreaterThanOrEqualTo;
     }
-    /**
-     * Return indicators created/first seen before the provided time.
-     */
+    /** Return indicators created/first seen before the provided time. */
     private java.util.Date timeCreatedLessThan;
 
-    /**
-     * Return indicators created/first seen before the provided time.
-     */
+    /** Return indicators created/first seen before the provided time. */
     public java.util.Date getTimeCreatedLessThan() {
         return timeCreatedLessThan;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from
+     * the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from
+     * the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order to use, either 'ASC' or 'DESC'.
-     */
+    /** The sort order to use, either 'ASC' or 'DESC'. */
     private com.oracle.bmc.threatintelligence.model.SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either 'ASC' or 'DESC'.
-     */
+    /** The sort order to use, either 'ASC' or 'DESC'. */
     public com.oracle.bmc.threatintelligence.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /**
-     * The field to sort by. Only one field to sort by may be provided.
-     *
-     */
+    /** The field to sort by. Only one field to sort by may be provided. */
     private SortBy sortBy;
 
-    /**
-     * The field to sort by. Only one field to sort by may be provided.
-     *
-     **/
-    public enum SortBy {
+    /** The field to sort by. Only one field to sort by may be provided. */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Confidence("confidence"),
         TimeCreated("timeCreated"),
         TimeUpdated("timeUpdated"),
@@ -210,21 +162,14 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
-    /**
-     * The field to sort by. Only one field to sort by may be provided.
-     *
-     */
+    /** The field to sort by. Only one field to sort by may be provided. */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -232,17 +177,15 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListIndicatorsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the tenancy (root compartment) that is used to filter results.
-         */
+        /** The OCID of the tenancy (root compartment) that is used to filter results. */
         private String compartmentId = null;
 
         /**
          * The OCID of the tenancy (root compartment) that is used to filter results.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -252,12 +195,15 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The threat type of entites to be returned. To filter for multiple threat types, repeat this parameter.
+         * The threat type of entites to be returned. To filter for multiple threat types, repeat
+         * this parameter.
          */
         private java.util.List<String> threatTypeName = null;
 
         /**
-         * The threat type of entites to be returned. To filter for multiple threat types, repeat this parameter.
+         * The threat type of entites to be returned. To filter for multiple threat types, repeat
+         * this parameter.
+         *
          * @param threatTypeName the value to set
          * @return this builder instance
          */
@@ -267,7 +213,9 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Singular setter. The threat type of entites to be returned. To filter for multiple threat types, repeat this parameter.
+         * Singular setter. The threat type of entites to be returned. To filter for multiple threat
+         * types, repeat this parameter.
+         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -275,13 +223,12 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this.threatTypeName(java.util.Arrays.asList(singularValue));
         }
 
-        /**
-         * The indicator type of entities to be returned.
-         */
+        /** The indicator type of entities to be returned. */
         private com.oracle.bmc.threatintelligence.model.IndicatorType type = null;
 
         /**
          * The indicator type of entities to be returned.
+         *
          * @param type the value to set
          * @return this builder instance
          */
@@ -290,13 +237,12 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * The indicator value of entities to be returned.
-         */
+        /** The indicator value of entities to be returned. */
         private String value = null;
 
         /**
          * The indicator value of entities to be returned.
+         *
          * @param value the value to set
          * @return this builder instance
          */
@@ -305,13 +251,12 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * The minimum confidence score of entities to be returned.
-         */
+        /** The minimum confidence score of entities to be returned. */
         private Integer confidenceGreaterThanOrEqualTo = null;
 
         /**
          * The minimum confidence score of entities to be returned.
+         *
          * @param confidenceGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -320,13 +265,12 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * The oldest update time of entities to be returned.
-         */
+        /** The oldest update time of entities to be returned. */
         private java.util.Date timeUpdatedGreaterThanOrEqualTo = null;
 
         /**
          * The oldest update time of entities to be returned.
+         *
          * @param timeUpdatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -336,13 +280,12 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * Return indicators updated before the provided time.
-         */
+        /** Return indicators updated before the provided time. */
         private java.util.Date timeUpdatedLessThan = null;
 
         /**
          * Return indicators updated before the provided time.
+         *
          * @param timeUpdatedLessThan the value to set
          * @return this builder instance
          */
@@ -351,13 +294,12 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * The oldest last seen time of entities to be returned.
-         */
+        /** The oldest last seen time of entities to be returned. */
         private java.util.Date timeLastSeenGreaterThanOrEqualTo = null;
 
         /**
          * The oldest last seen time of entities to be returned.
+         *
          * @param timeLastSeenGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -367,13 +309,12 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * Return indicators last seen before the provided time.
-         */
+        /** Return indicators last seen before the provided time. */
         private java.util.Date timeLastSeenLessThan = null;
 
         /**
          * Return indicators last seen before the provided time.
+         *
          * @param timeLastSeenLessThan the value to set
          * @return this builder instance
          */
@@ -382,13 +323,12 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * The oldest created/first seen time of entities to be returned.
-         */
+        /** The oldest created/first seen time of entities to be returned. */
         private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
 
         /**
          * The oldest created/first seen time of entities to be returned.
+         *
          * @param timeCreatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -398,13 +338,12 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * Return indicators created/first seen before the provided time.
-         */
+        /** Return indicators created/first seen before the provided time. */
         private java.util.Date timeCreatedLessThan = null;
 
         /**
          * Return indicators created/first seen before the provided time.
+         *
          * @param timeCreatedLessThan the value to set
          * @return this builder instance
          */
@@ -413,13 +352,12 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -429,12 +367,15 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come
+         * from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come
+         * from the {@code opc-next-page} header field of a previous response.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -443,13 +384,12 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * The sort order to use, either 'ASC' or 'DESC'.
-         */
+        /** The sort order to use, either 'ASC' or 'DESC'. */
         private com.oracle.bmc.threatintelligence.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -458,10 +398,7 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * The field to sort by. Only one field to sort by may be provided.
-         *
-         */
+        /** The field to sort by. Only one field to sort by may be provided. */
         private SortBy sortBy = null;
 
         /**
@@ -475,13 +412,12 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -492,18 +428,19 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -515,6 +452,7 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListIndicatorsRequest o) {
@@ -542,10 +480,11 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListIndicatorsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListIndicatorsRequest
          */
@@ -559,7 +498,8 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListIndicatorsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListIndicatorsRequest
@@ -583,12 +523,17 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListIndicatorsRequest(compartmentId, threatTypeName, type, value, confidenceGreaterThanOrEqualTo, timeUpdatedGreaterThanOrEqualTo, timeUpdatedLessThan, timeLastSeenGreaterThanOrEqualTo, timeLastSeenLessThan, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListIndicatorsRequest(compartmentId, threatTypeName, type, value,
+            // confidenceGreaterThanOrEqualTo, timeUpdatedGreaterThanOrEqualTo, timeUpdatedLessThan,
+            // timeLastSeenGreaterThanOrEqualTo, timeLastSeenLessThan,
+            // timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, limit, page, sortOrder, sortBy,
+            // opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -613,6 +558,7 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

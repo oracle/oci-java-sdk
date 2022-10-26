@@ -5,22 +5,22 @@
 package com.oracle.bmc.governancerulescontrolplane.model;
 
 /**
- * Summary of the tenancy attachment.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary of the tenancy attachment. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = TenancyAttachmentSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = TenancyAttachmentSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class TenancyAttachmentSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -55,80 +55,99 @@ public final class TenancyAttachmentSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the tenancy attachment.
-         **/
+         * The Oracle ID
+         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * tenancy attachment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the tenancy attachment.
+         * The Oracle ID
+         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * tenancy attachment.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the root compartment containing the tenancy attachment.
-         **/
+         * The Oracle ID
+         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * root compartment containing the tenancy attachment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the root compartment containing the tenancy attachment.
+         * The Oracle ID
+         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * root compartment containing the tenancy attachment.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the governance rule. Every tenancy attachment is associated with a governance rule.
-         **/
+         * The Oracle ID
+         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * governance rule. Every tenancy attachment is associated with a governance rule.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("governanceRuleId")
         private String governanceRuleId;
 
         /**
-         * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the governance rule. Every tenancy attachment is associated with a governance rule.
+         * The Oracle ID
+         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * governance rule. Every tenancy attachment is associated with a governance rule.
+         *
          * @param governanceRuleId the value to set
          * @return this builder
-         **/
+         */
         public Builder governanceRuleId(String governanceRuleId) {
             this.governanceRuleId = governanceRuleId;
             this.__explicitlySet__.add("governanceRuleId");
             return this;
         }
         /**
-         * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the tenancy to which the governance rule is attached.
-         **/
+         * The Oracle ID
+         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * tenancy to which the governance rule is attached.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
         /**
-         * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the tenancy to which the governance rule is attached.
+         * The Oracle ID
+         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * tenancy to which the governance rule is attached.
+         *
          * @param tenancyId the value to set
          * @return this builder
-         **/
+         */
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = tenancyId;
             this.__explicitlySet__.add("tenancyId");
             return this;
         }
-        /**
-         * The current state of the tenancy attachment.
-         **/
+        /** The current state of the tenancy attachment. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private TenancyAttachment.LifecycleState lifecycleState;
 
         /**
          * The current state of the tenancy attachment.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(TenancyAttachment.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -136,21 +155,20 @@ public final class TenancyAttachmentSummary
         }
         /**
          * Date and time the tenancy attachment was created. An RFC3339 formatted datetime string.
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         **/
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * Date and time the tenancy attachment was created. An RFC3339 formatted datetime string.
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -158,43 +176,43 @@ public final class TenancyAttachmentSummary
         }
         /**
          * Date and time the tenancy attachment was updated. An RFC3339 formatted datetime string.
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         **/
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * Date and time the tenancy attachment was updated. An RFC3339 formatted datetime string.
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * Date and time the tenancy attachment was last attempted. An RFC3339 formatted datetime string.
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         * Date and time the tenancy attachment was last attempted. An RFC3339 formatted datetime
+         * string.
          *
-         **/
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastAttempted")
         private java.util.Date timeLastAttempted;
 
         /**
-         * Date and time the tenancy attachment was last attempted. An RFC3339 formatted datetime string.
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         * Date and time the tenancy attachment was last attempted. An RFC3339 formatted datetime
+         * string.
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeLastAttempted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeLastAttempted(java.util.Date timeLastAttempted) {
             this.timeLastAttempted = timeLastAttempted;
             this.__explicitlySet__.add("timeLastAttempted");
@@ -251,9 +269,7 @@ public final class TenancyAttachmentSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -263,131 +279,149 @@ public final class TenancyAttachmentSummary
     }
 
     /**
-     * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the tenancy attachment.
-     **/
+     * The Oracle ID
+     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * tenancy attachment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the tenancy attachment.
+     * The Oracle ID
+     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * tenancy attachment.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the root compartment containing the tenancy attachment.
-     **/
+     * The Oracle ID
+     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the root
+     * compartment containing the tenancy attachment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the root compartment containing the tenancy attachment.
+     * The Oracle ID
+     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the root
+     * compartment containing the tenancy attachment.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the governance rule. Every tenancy attachment is associated with a governance rule.
-     **/
+     * The Oracle ID
+     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * governance rule. Every tenancy attachment is associated with a governance rule.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("governanceRuleId")
     private final String governanceRuleId;
 
     /**
-     * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the governance rule. Every tenancy attachment is associated with a governance rule.
+     * The Oracle ID
+     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * governance rule. Every tenancy attachment is associated with a governance rule.
+     *
      * @return the value
-     **/
+     */
     public String getGovernanceRuleId() {
         return governanceRuleId;
     }
 
     /**
-     * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the tenancy to which the governance rule is attached.
-     **/
+     * The Oracle ID
+     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * tenancy to which the governance rule is attached.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
     /**
-     * The Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the tenancy to which the governance rule is attached.
+     * The Oracle ID
+     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * tenancy to which the governance rule is attached.
+     *
      * @return the value
-     **/
+     */
     public String getTenancyId() {
         return tenancyId;
     }
 
-    /**
-     * The current state of the tenancy attachment.
-     **/
+    /** The current state of the tenancy attachment. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final TenancyAttachment.LifecycleState lifecycleState;
 
     /**
      * The current state of the tenancy attachment.
+     *
      * @return the value
-     **/
+     */
     public TenancyAttachment.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
      * Date and time the tenancy attachment was created. An RFC3339 formatted datetime string.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     **/
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * Date and time the tenancy attachment was created. An RFC3339 formatted datetime string.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
      * Date and time the tenancy attachment was updated. An RFC3339 formatted datetime string.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     **/
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * Date and time the tenancy attachment was updated. An RFC3339 formatted datetime string.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * Date and time the tenancy attachment was last attempted. An RFC3339 formatted datetime string.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     * Date and time the tenancy attachment was last attempted. An RFC3339 formatted datetime
+     * string.
      *
-     **/
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastAttempted")
     private final java.util.Date timeLastAttempted;
 
     /**
-     * Date and time the tenancy attachment was last attempted. An RFC3339 formatted datetime string.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     * Date and time the tenancy attachment was last attempted. An RFC3339 formatted datetime
+     * string.
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeLastAttempted() {
         return timeLastAttempted;
     }
@@ -399,6 +433,7 @@ public final class TenancyAttachmentSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.mediaservices.model;
 
-/**
- * The type of the media asset.
- **/
+/** The type of the media asset. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
-public enum AssetType {
+public enum AssetType implements com.oracle.bmc.http.internal.BmcEnum {
     Audio("AUDIO"),
     Video("VIDEO"),
     Playlist("PLAYLIST"),

@@ -6,64 +6,47 @@ package com.oracle.bmc.osmanagement.requests;
 
 import com.oracle.bmc.osmanagement.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/GetModuleStreamProfileExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetModuleStreamProfileRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/GetModuleStreamProfileExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * GetModuleStreamProfileRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class GetModuleStreamProfileRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The OCID of the software source.
-     */
+    /** The OCID of the software source. */
     private String softwareSourceId;
 
-    /**
-     * The OCID of the software source.
-     */
+    /** The OCID of the software source. */
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }
-    /**
-     * The name of the module
-     */
+    /** The name of the module */
     private String moduleName;
 
-    /**
-     * The name of the module
-     */
+    /** The name of the module */
     public String getModuleName() {
         return moduleName;
     }
-    /**
-     * The name of the stream of the containing module
-     */
+    /** The name of the stream of the containing module */
     private String streamName;
 
-    /**
-     * The name of the stream of the containing module
-     */
+    /** The name of the stream of the containing module */
     public String getStreamName() {
         return streamName;
     }
-    /**
-     * The name of the profile of the containing module stream
-     */
+    /** The name of the profile of the containing module stream */
     private String profileName;
 
-    /**
-     * The name of the profile of the containing module stream
-     */
+    /** The name of the profile of the containing module stream */
     public String getProfileName() {
         return profileName;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -71,17 +54,15 @@ public class GetModuleStreamProfileRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetModuleStreamProfileRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the software source.
-         */
+        /** The OCID of the software source. */
         private String softwareSourceId = null;
 
         /**
          * The OCID of the software source.
+         *
          * @param softwareSourceId the value to set
          * @return this builder instance
          */
@@ -90,13 +71,12 @@ public class GetModuleStreamProfileRequest
             return this;
         }
 
-        /**
-         * The name of the module
-         */
+        /** The name of the module */
         private String moduleName = null;
 
         /**
          * The name of the module
+         *
          * @param moduleName the value to set
          * @return this builder instance
          */
@@ -105,13 +85,12 @@ public class GetModuleStreamProfileRequest
             return this;
         }
 
-        /**
-         * The name of the stream of the containing module
-         */
+        /** The name of the stream of the containing module */
         private String streamName = null;
 
         /**
          * The name of the stream of the containing module
+         *
          * @param streamName the value to set
          * @return this builder instance
          */
@@ -120,13 +99,12 @@ public class GetModuleStreamProfileRequest
             return this;
         }
 
-        /**
-         * The name of the profile of the containing module stream
-         */
+        /** The name of the profile of the containing module stream */
         private String profileName = null;
 
         /**
          * The name of the profile of the containing module stream
+         *
          * @param profileName the value to set
          * @return this builder instance
          */
@@ -135,13 +113,12 @@ public class GetModuleStreamProfileRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -152,18 +129,19 @@ public class GetModuleStreamProfileRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -175,6 +153,7 @@ public class GetModuleStreamProfileRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetModuleStreamProfileRequest o) {
@@ -191,10 +170,11 @@ public class GetModuleStreamProfileRequest
         /**
          * Build the instance of GetModuleStreamProfileRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetModuleStreamProfileRequest
          */
@@ -208,7 +188,8 @@ public class GetModuleStreamProfileRequest
         /**
          * Build the instance of GetModuleStreamProfileRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetModuleStreamProfileRequest
@@ -221,12 +202,14 @@ public class GetModuleStreamProfileRequest
             request.profileName = profileName;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetModuleStreamProfileRequest(softwareSourceId, moduleName, streamName, profileName, opcRequestId);
+            // new GetModuleStreamProfileRequest(softwareSourceId, moduleName, streamName,
+            // profileName, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -240,6 +223,7 @@ public class GetModuleStreamProfileRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

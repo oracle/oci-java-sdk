@@ -9,13 +9,14 @@ import com.oracle.bmc.loganalytics.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class EstimateReleaseDataSizeResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      *
      * @return the value
      */
@@ -23,14 +24,13 @@ public class EstimateReleaseDataSizeResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /**
-     * The returned EstimateReleaseDataSizeResult instance.
-     */
+    /** The returned EstimateReleaseDataSizeResult instance. */
     private com.oracle.bmc.loganalytics.model.EstimateReleaseDataSizeResult
             estimateReleaseDataSizeResult;
 
     /**
      * The returned EstimateReleaseDataSizeResult instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.loganalytics.model.EstimateReleaseDataSizeResult
@@ -46,7 +46,7 @@ public class EstimateReleaseDataSizeResponse extends com.oracle.bmc.responses.Bm
     })
     private EstimateReleaseDataSizeResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.EstimateReleaseDataSizeResult
                     estimateReleaseDataSizeResult) {
@@ -55,29 +55,34 @@ public class EstimateReleaseDataSizeResponse extends com.oracle.bmc.responses.Bm
         this.estimateReleaseDataSizeResult = estimateReleaseDataSizeResult;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    EstimateReleaseDataSizeResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -87,14 +92,13 @@ public class EstimateReleaseDataSizeResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /**
-         * The returned EstimateReleaseDataSizeResult instance.
-         */
+        /** The returned EstimateReleaseDataSizeResult instance. */
         private com.oracle.bmc.loganalytics.model.EstimateReleaseDataSizeResult
                 estimateReleaseDataSizeResult;
 
         /**
          * The returned EstimateReleaseDataSizeResult instance.
+         *
          * @param estimateReleaseDataSizeResult the value to set
          * @return this builder
          */
@@ -107,8 +111,10 @@ public class EstimateReleaseDataSizeResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(EstimateReleaseDataSizeResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -120,8 +126,10 @@ public class EstimateReleaseDataSizeResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public EstimateReleaseDataSizeResponse build() {
             return new EstimateReleaseDataSizeResponse(
                     __httpStatusCode__, headers, opcRequestId, estimateReleaseDataSizeResult);
@@ -130,6 +138,7 @@ public class EstimateReleaseDataSizeResponse extends com.oracle.bmc.responses.Bm
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

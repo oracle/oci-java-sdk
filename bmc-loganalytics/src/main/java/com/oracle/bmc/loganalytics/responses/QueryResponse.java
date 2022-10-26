@@ -9,13 +9,14 @@ import com.oracle.bmc.loganalytics.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      *
      * @return the value
      */
@@ -24,17 +25,18 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
-     * subsequent request to get the next batch of items.
-     *
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then additional items may be available on the next page of the list. Include this
+     * value as the {@code page} parameter for the subsequent request to get the next batch of
+     * items.
      */
     private String opcNextPageId;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
-     * subsequent request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then additional items may be available on the next page of the list. Include this
+     * value as the {@code page} parameter for the subsequent request to get the next batch of
+     * items.
      *
      * @return the value
      */
@@ -43,17 +45,18 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then additional items may be available on the previous page of the list. Include this value as the {@code page} parameter for the
-     * subsequent request to get the previous batch of items.
-     *
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then additional items may be available on the previous page of the list. Include
+     * this value as the {@code page} parameter for the subsequent request to get the previous batch
+     * of items.
      */
     private String opcPrevPageId;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then additional items may be available on the previous page of the list. Include this value as the {@code page} parameter for the
-     * subsequent request to get the previous batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then additional items may be available on the previous page of the list. Include
+     * this value as the {@code page} parameter for the subsequent request to get the previous batch
+     * of items.
      *
      * @return the value
      */
@@ -62,13 +65,14 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-     *
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      *
      * @return the value
      */
@@ -76,10 +80,7 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcWorkRequestId;
     }
 
-    /**
-     * URI to entity or work request created.
-     *
-     */
+    /** URI to entity or work request created. */
     private String location;
 
     /**
@@ -91,13 +92,12 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
         return location;
     }
 
-    /**
-     * The returned QueryAggregation instance.
-     */
+    /** The returned QueryAggregation instance. */
     private com.oracle.bmc.loganalytics.model.QueryAggregation queryAggregation;
 
     /**
      * The returned QueryAggregation instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.loganalytics.model.QueryAggregation getQueryAggregation() {
@@ -116,7 +116,7 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private QueryResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcNextPageId,
             String opcPrevPageId,
@@ -132,29 +132,33 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
         this.queryAggregation = queryAggregation;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<QueryResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -165,17 +169,18 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
-         * subsequent request to get the next batch of items.
-         *
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then additional items may be available on the next page of the list.
+         * Include this value as the {@code page} parameter for the subsequent request to get the
+         * next batch of items.
          */
         private String opcNextPageId;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
-         * subsequent request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then additional items may be available on the next page of the list.
+         * Include this value as the {@code page} parameter for the subsequent request to get the
+         * next batch of items.
          *
          * @param opcNextPageId the value to set
          * @return this builder
@@ -186,17 +191,18 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then additional items may be available on the previous page of the list. Include this value as the {@code page} parameter for the
-         * subsequent request to get the previous batch of items.
-         *
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then additional items may be available on the previous page of the list.
+         * Include this value as the {@code page} parameter for the subsequent request to get the
+         * previous batch of items.
          */
         private String opcPrevPageId;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then additional items may be available on the previous page of the list. Include this value as the {@code page} parameter for the
-         * subsequent request to get the previous batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then additional items may be available on the previous page of the list.
+         * Include this value as the {@code page} parameter for the subsequent request to get the
+         * previous batch of items.
          *
          * @param opcPrevPageId the value to set
          * @return this builder
@@ -207,13 +213,14 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-         *
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -223,10 +230,7 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * URI to entity or work request created.
-         *
-         */
+        /** URI to entity or work request created. */
         private String location;
 
         /**
@@ -240,13 +244,12 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * The returned QueryAggregation instance.
-         */
+        /** The returned QueryAggregation instance. */
         private com.oracle.bmc.loganalytics.model.QueryAggregation queryAggregation;
 
         /**
          * The returned QueryAggregation instance.
+         *
          * @param queryAggregation the value to set
          * @return this builder
          */
@@ -258,8 +261,10 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(QueryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -275,8 +280,10 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public QueryResponse build() {
             return new QueryResponse(
                     __httpStatusCode__,
@@ -292,6 +299,7 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

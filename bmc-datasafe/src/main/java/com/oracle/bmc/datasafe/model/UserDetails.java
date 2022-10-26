@@ -5,20 +5,20 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The details of a particular user.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details of a particular user. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UserDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UserDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class UserDetails extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -46,97 +46,91 @@ public final class UserDetails extends com.oracle.bmc.http.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the user.
-         **/
+        /** The name of the user. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the user.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The status of the user account.
-         **/
+        /** The status of the user account. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
         /**
          * The status of the user account.
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * The name of the profile assigned to the user.
-         **/
+        /** The name of the profile assigned to the user. */
         @com.fasterxml.jackson.annotation.JsonProperty("profile")
         private String profile;
 
         /**
          * The name of the profile assigned to the user.
+         *
          * @param profile the value to set
          * @return this builder
-         **/
+         */
         public Builder profile(String profile) {
             this.profile = profile;
             this.__explicitlySet__.add("profile");
             return this;
         }
-        /**
-         * The default tablespace of the user.
-         **/
+        /** The default tablespace of the user. */
         @com.fasterxml.jackson.annotation.JsonProperty("tablespace")
         private String tablespace;
 
         /**
          * The default tablespace of the user.
+         *
          * @param tablespace the value to set
          * @return this builder
-         **/
+         */
         public Builder tablespace(String tablespace) {
             this.tablespace = tablespace;
             this.__explicitlySet__.add("tablespace");
             return this;
         }
-        /**
-         * Indicates whether or not the user is predefined by ORACLE.
-         **/
+        /** Indicates whether or not the user is predefined by ORACLE. */
         @com.fasterxml.jackson.annotation.JsonProperty("isUserPredefinedByOracle")
         private Boolean isUserPredefinedByOracle;
 
         /**
          * Indicates whether or not the user is predefined by ORACLE.
+         *
          * @param isUserPredefinedByOracle the value to set
          * @return this builder
-         **/
+         */
         public Builder isUserPredefinedByOracle(Boolean isUserPredefinedByOracle) {
             this.isUserPredefinedByOracle = isUserPredefinedByOracle;
             this.__explicitlySet__.add("isUserPredefinedByOracle");
             return this;
         }
-        /**
-         * The authentication type of the user.
-         **/
+        /** The authentication type of the user. */
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
         private AuthenticationType authenticationType;
 
         /**
          * The authentication type of the user.
+         *
          * @param authenticationType the value to set
          * @return this builder
-         **/
+         */
         public Builder authenticationType(AuthenticationType authenticationType) {
             this.authenticationType = authenticationType;
             this.__explicitlySet__.add("authenticationType");
@@ -185,9 +179,7 @@ public final class UserDetails extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -196,80 +188,73 @@ public final class UserDetails extends com.oracle.bmc.http.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the user.
-     **/
+    /** The name of the user. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the user.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The status of the user account.
-     **/
+    /** The status of the user account. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
     /**
      * The status of the user account.
+     *
      * @return the value
-     **/
+     */
     public String getStatus() {
         return status;
     }
 
-    /**
-     * The name of the profile assigned to the user.
-     **/
+    /** The name of the profile assigned to the user. */
     @com.fasterxml.jackson.annotation.JsonProperty("profile")
     private final String profile;
 
     /**
      * The name of the profile assigned to the user.
+     *
      * @return the value
-     **/
+     */
     public String getProfile() {
         return profile;
     }
 
-    /**
-     * The default tablespace of the user.
-     **/
+    /** The default tablespace of the user. */
     @com.fasterxml.jackson.annotation.JsonProperty("tablespace")
     private final String tablespace;
 
     /**
      * The default tablespace of the user.
+     *
      * @return the value
-     **/
+     */
     public String getTablespace() {
         return tablespace;
     }
 
-    /**
-     * Indicates whether or not the user is predefined by ORACLE.
-     **/
+    /** Indicates whether or not the user is predefined by ORACLE. */
     @com.fasterxml.jackson.annotation.JsonProperty("isUserPredefinedByOracle")
     private final Boolean isUserPredefinedByOracle;
 
     /**
      * Indicates whether or not the user is predefined by ORACLE.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsUserPredefinedByOracle() {
         return isUserPredefinedByOracle;
     }
 
-    /**
-     * The authentication type of the user.
-     **/
-    public enum AuthenticationType {
+    /** The authentication type of the user. */
+    public enum AuthenticationType implements com.oracle.bmc.http.internal.BmcEnum {
         Password("PASSWORD"),
         None("NONE"),
         ;
@@ -301,16 +286,15 @@ public final class UserDetails extends com.oracle.bmc.http.internal.ExplicitlySe
             throw new IllegalArgumentException("Invalid AuthenticationType: " + key);
         }
     };
-    /**
-     * The authentication type of the user.
-     **/
+    /** The authentication type of the user. */
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
     private final AuthenticationType authenticationType;
 
     /**
      * The authentication type of the user.
+     *
      * @return the value
-     **/
+     */
     public AuthenticationType getAuthenticationType() {
         return authenticationType;
     }
@@ -322,6 +306,7 @@ public final class UserDetails extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

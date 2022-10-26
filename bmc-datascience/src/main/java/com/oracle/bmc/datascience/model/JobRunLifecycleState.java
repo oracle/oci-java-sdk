@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.datascience.model;
 
-/**
- * The status of a job run.
- **/
+/** The status of a job run. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-public enum JobRunLifecycleState {
+public enum JobRunLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),
     Failed("FAILED"),
